@@ -1,0 +1,395 @@
+site_name: HVE Manual
+site_url: https://manuals.edccorp.com/
+site_description: HVE (Human Vehicle Environment) manual — dialog reference, user's manual, and physics program manuals, updated from source code.
+docs_dir: docs/manuals
+site_dir: site
+use_directory_urls: true
+
+theme:
+  name: material
+  logo: assets/hve-cube.png
+  favicon: assets/hve-cube.png
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.top
+    - navigation.footer
+    - navigation.indexes
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.arithmatex:
+      generic: true
+  - tables
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+
+extra_css:
+  - assets/brand.css
+
+extra_javascript:
+  - assets/mathjax.js
+  - https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js
+
+plugins:
+  - search
+
+nav:
+  - Home: README.md
+  - Dialog Reference:
+    - User Interface:
+      - Overview: 01-user-interface/README.md
+      - "3-D Editor Menu": 01-user-interface/3dEditor.md
+      - "Camera Setup Dialog Box": 01-user-interface/CameraSetDlg.md
+      - "Key Results Dialog Box": 01-user-interface/KeyResDlg.md
+      - "Light Editor Dialog Box": 01-user-interface/LightEdDlg.md
+      - "Object Attributes Dialog Box": 01-user-interface/ObjAttrDlg.md
+      - "Options Menu": 01-user-interface/OptionsMenu.md
+      - "Overlays Dialog Box": 01-user-interface/OverLayDlg.md
+      - "Playback Controls (Toolbar)": 01-user-interface/PlayBackControls.md
+      - "User Preferences Dialog Box": 01-user-interface/PrefDlg.md
+      - "Report Window Dialog Box": 01-user-interface/PrevWnd.md
+      - "Render Dialog Box": 01-user-interface/RendOptDlg.md
+      - "Select Object Dialog Box": 01-user-interface/SelObjDlg.md
+      - "Set Grid Dialog Box": 01-user-interface/SetGridDlg.md
+      - "Sky Attributes Dialog Box": 01-user-interface/SkyAttrDlg.md
+      - "Text Editor Dialog Box": 01-user-interface/TextEdDlg.md
+      - "Units Dialog Box": 01-user-interface/UnitsDlg.md
+    - Vehicles:
+      - Overview: 02-vehicles/README.md
+      - "A Stiffness Coefficient Dialog": 02-vehicles/AStiffDlg.md
+      - "Body Torsion Dialog": 02-vehicles/BodyTorDlg.md
+      - "B Stiffness Coefficient Dialog": 02-vehicles/BStiffDlg.md
+      - "CG To Front": 02-vehicles/CGsToAll.md
+      - "CG To Back": 02-vehicles/CGsToAll1.md
+      - "CG To Top": 02-vehicles/CGsToAll2.md
+      - "CG To Left": 02-vehicles/CGsToAll3.md
+      - "CG To Right": 02-vehicles/CGsToAll4.md
+      - "CG To Bottom": 02-vehicles/CGsToAll5.md
+      - "Inertia Dialog Box": 02-vehicles/InertiasDlg.md
+      - "Moving CG": 02-vehicles/MoveCGDlg.md
+      - "Payload Dialog Box": 02-vehicles/PayLoadDlg.md
+      - "Sprung Mass Dialog": 02-vehicles/SprungMassDlg.md
+      - "Stiffness Coefficient Dialog": 02-vehicles/StiffCoeffDlg.md
+      - "Vehicle Drag Dialog": 02-vehicles/VehDragDlg.md
+      - "Getting Information about the Vehicle": 02-vehicles/VehicleInfoDlg.md
+      - "Vehicle Inertia Dialog": 02-vehicles/VehInerDlg.md
+      - "Saving Vehicles": 02-vehicles/VehSaveAs.md
+    - Suspension & Steering:
+      - Overview: 03-suspension-steering/README.md
+      - "Anti-Pitch Dialog": 03-suspension-steering/AntiPitchDlg.md
+      - "Camber vs Jounce/Rebound Dialog": 03-suspension-steering/CamberDlg.md
+      - "Jounce and Rebound Stops Dialog": 03-suspension-steering/JouAndRebDlg.md
+      - "Roll Steer Dialog": 03-suspension-steering/RollSteerDlg.md
+      - "Roll Steer Properties": 03-suspension-steering/RollSteerNewDlg.md
+      - "Spindle Axis Dialog": 03-suspension-steering/SpndleAxisDlg.md
+      - "Springs and Shocks Dialog": 03-suspension-steering/SprindShocksDlg.md
+      - "Steering System Dialog": 03-suspension-steering/SteerSysDlg.md
+      - "Suspension Data Dialog": 03-suspension-steering/SuspDlg.md
+      - "Wheel Location Dialog": 03-suspension-steering/WheelLocDlg.md
+    - Brakes & Powertrain:
+      - Overview: 04-brakes-powertrain/README.md
+      - "Brake Assembly Dialog Box": 04-brakes-powertrain/BrkAsmblyDlg.md
+      - "Brake Designer Material Properties Dialog Box": 04-brakes-powertrain/BrkMatPropDlg.md
+      - "Brake Designer Single Piston Dialog Box": 04-brakes-powertrain/BrkSingPistDlg.md
+      - "Brake System Pressure vs Pedal Force Dialog Box": 04-brakes-powertrain/BrkSysVsPedFrcDlg.md
+      - "Differential Data Dialog Box": 04-brakes-powertrain/DiffDataDlg.md
+      - "Disk Brake Dialog Box": 04-brakes-powertrain/DiskBreakDlg.md
+      - "Drive Train Dialog Box": 04-brakes-powertrain/DriveTraDlg.md
+      - "Dual Piston Brake Dialog Box": 04-brakes-powertrain/DualPistBrkDlg.md
+      - "Dual Wedge Brake Dialog Box": 04-brakes-powertrain/DualWedgeBrkDlg.md
+      - "Duo Servo Brake Dialog Box": 04-brakes-powertrain/DueServoBrkDlg.md
+      - "Duplex Brake Dialog Box": 04-brakes-powertrain/DuplexBrkDlg.md
+      - "Transmission Data Dialog Box": 04-brakes-powertrain/TransDataDlg.md
+    - Tires & Wheels:
+      - Overview: 05-tires-wheels/README.md
+      - "Fy vs Inclination Angle Dialog": 05-tires-wheels/FyVsInclAngDlg.md
+      - "Slip vs Roll-Off Dialog": 05-tires-wheels/SlipVsRollOffDlg.md
+      - "Tire Friction Data Dialog": 05-tires-wheels/TireFrictDataDlg.md
+      - "Tire Information Dialog": 05-tires-wheels/TireInfoDlg.md
+      - "Tire Physical Data Dialog": 05-tires-wheels/TirePhyDataDlg.md
+      - "Tire Save As Dialog": 05-tires-wheels/TireSaveAsDlg.md
+      - "Wheels — Blow-out Page": 05-tires-wheels/WheelsDlg.md
+      - "Wheels — Damage (Displacement) Page": 05-tires-wheels/WheelsDlg1.md
+      - "Wheels — Brake Page": 05-tires-wheels/WheelsDlg2.md
+      - "Wheel Properties Dialog": 05-tires-wheels/WheelsPropDlg.md
+    - Safety Systems:
+      - Overview: 06-safety-systems/README.md
+      - "Accelerometers Dialog": 06-safety-systems/AcclMtrsDlg.md
+      - "Air Bag Restraints Dialog Box": 06-safety-systems/AirBagDlg.md
+      - "Airbag Restraint System Dialog Box": 06-safety-systems/AirBagSysDlg.md
+      - "Belt Restraint System Dialog Box": 06-safety-systems/BeltResSysDlg.md
+    - Humans:
+      - Overview: 07-humans/README.md
+      - "Inertial Data Dialog Box": 07-humans/Human.md
+      - "Human Contact Ellipsoids Dialog Box": 07-humans/Human1.md
+      - "Injury Tolerance Data Dialog Box": 07-humans/Human2.md
+      - "Joint Data Dialog Box": 07-humans/Human3.md
+      - "Human Information Dialog": 07-humans/HumanInfoDlg.md
+      - "Human CG Dialog Box": 07-humans/HumCGDlg.md
+      - "Human Joint Properties Dialog Box": 07-humans/HumJntPropDlg.md
+      - "Human Material Properties Dialog Box": 07-humans/HumMatProp.md
+      - "Selected Humans & Vehicles Dialog Box": 07-humans/SelHumVehDlg.md
+    - Environment:
+      - Overview: 08-environment/README.md
+      - "Box Editor Dialog": 08-environment/BoxEdDlg.md
+      - "Cone Editor Dialog": 08-environment/ConeEdtDlg.md
+      - "Contact Surfaces Dialog": 08-environment/ContSurfDlg.md
+      - "Cylinder Editor Dialog": 08-environment/CylinEdDlg.md
+      - "Environment Material Properties Dialog": 08-environment/EnvrMatPropDlg.md
+      - "Environment Information Dialog": 08-environment/EnvtInfoDlg.md
+      - "Lining Friction Properties Dialog": 08-environment/LinFriPropDlg.md
+      - "Material Properties Dialog": 08-environment/MatPropDlg.md
+      - "New Ellipsoid Dialog": 08-environment/NewEllpDlg.md
+      - "Sphere Editor Dialog": 08-environment/SpereEdtDlg.md
+      - "Surface Editor Dialog": 08-environment/SurfEdDlg.md
+    - Events & Driver Controls:
+      - Overview: 09-events-driver-controls/README.md
+      - "Contacts Dialog Box": 09-events-driver-controls/ContactsDlg.md
+      - "Driver Controls": 09-events-driver-controls/DriverControls.md
+      - "Driver Controls Path Follower Method": 09-events-driver-controls/DriverControls1.md
+      - "Driver Controls Wheel Data": 09-events-driver-controls/DriverControls2.md
+      - "Driver Controls Brake": 09-events-driver-controls/DriverControls3.md
+      - "Driver Controls Throttle": 09-events-driver-controls/DriverControls4.md
+      - "Driver Controls Gear": 09-events-driver-controls/DriverControls5.md
+      - "Driver Controls Filter": 09-events-driver-controls/DriverControls6.md
+      - "Driver Controls Path Follower": 09-events-driver-controls/DriverControls7.md
+      - "Driver Controls Speed Follower": 09-events-driver-controls/DriverControls8.md
+      - "Event Information Dialog Box": 09-events-driver-controls/EventInfo.md
+      - "Event Setup Menu": 09-events-driver-controls/EventSetup.md
+      - "Inter-Vehicle Connections Dialog": 09-events-driver-controls/IntrVehConnsDlg.md
+      - "Position/Velocity Dialog Box": 09-events-driver-controls/PosVelDlg.md
+      - "Simulation Controls Dialog Box": 09-events-driver-controls/SimuCtrlDlg.md
+    - Calculation Options:
+      - Overview: 10-calculation-options/README.md
+      - "Calculation Options for EDCRASH": 10-calculation-options/CalcOptEDCRASHDlg.md
+      - "Calculation Options for EDGEN": 10-calculation-options/CalcOptEDGENDlg.md
+      - "EDSMAC Calculation Options": 10-calculation-options/CalcOptEDSMAC.md
+      - "EDSMAC4 Calculation Options": 10-calculation-options/CalcOptEDSMAC4.md
+      - "EDSVS Calculation Options": 10-calculation-options/CalcOptEDSVS.md
+      - "EDVDS Calculation Options": 10-calculation-options/CalcOptEDVDS.md
+      - "EDVSM Calculation Options": 10-calculation-options/CalcOptEDVSM.md
+      - "EDVTS Calculation Options": 10-calculation-options/CalcOptEDVTS.md
+      - "Calculation Options for EDHIS": 10-calculation-options/CalcOptionsEDHIS.md
+    - Reports & Output:
+      - Overview: 11-reports-output/README.md
+      - "Accident History": 11-reports-output/AcciHistDlg.md
+      - "Collision Pulse In-Use Factors Dialog Box": 11-reports-output/ColPulFact.md
+      - "Collision Pulse Options Dialog Box": 11-reports-output/ColPulOptDlg.md
+      - "Collision Pulse": 11-reports-output/ColPulse.md
+      - "Common Reports Dialog Box": 11-reports-output/CommRepDlg.md
+      - "Common Scene Report Dialog": 11-reports-output/CommSceDlg.md
+      - "Damage Data": 11-reports-output/DamageData.md
+      - "Trajectory Report": 11-reports-output/TrajRepDlg.md
+      - "Variable Output Edit Dialog": 11-reports-output/VarOutEdDlg.md
+      - "Variable Output: Graph Dialog": 11-reports-output/VarOutGraphDlg.md
+      - "Variable Output Report": 11-reports-output/VarOutRepDlg.md
+      - "Selecting Variables": 11-reports-output/VarSelDlg.md
+  - HVE User's Manual:
+    - Overview: hve-users/README.md
+    - Overview:
+      - Overview: hve-users/01-overview/README.md
+      - "Using HVE — High-Level Overview": hve-users/01-overview/00-using-hve.md
+      - "Chapter 1 — What Is HVE?": hve-users/01-overview/01-what-is-hve.md
+      - "Chapter 2 — How To Use HVE": hve-users/01-overview/02-how-to-use-hve.md
+      - "Chapter 2: How To Use HVE — Part B": hve-users/01-overview/02b-how-to-use-hve.md
+      - "Chapter 2: How To Use HVE — Part C": hve-users/01-overview/02c-how-to-use-hve.md
+    - Menu Reference:
+      - Overview: hve-users/02-menu-reference/README.md
+      - "Chapter 3: File Menu": hve-users/02-menu-reference/03-files-menu.md
+      - "Chapter 4: Set-up Menu (Part A — Position/Velocity, Driver Controls)": hve-users/02-menu-reference/04a-setup-menu.md
+      - "Chapter 4: Set-up Menu (Part B — Damage Profiles through Notes)": hve-users/02-menu-reference/04b-setup-menu.md
+      - "Chapter 5: View Menu": hve-users/02-menu-reference/05-view-menu.md
+      - "Chapter 6: Options Menu": hve-users/02-menu-reference/06-options-menu.md
+      - "Chapter 7: Help Menu": hve-users/02-menu-reference/07-help-menu.md
+    - Human Editor:
+      - Overview: hve-users/03-human-editor/README.md
+      - "Chapter 8 — Creating and Editing Humans": hve-users/03-human-editor/08-creating-editing-humans.md
+      - "Chapter 9 — Human Model Definition": hve-users/03-human-editor/09-human-model-definition.md
+    - Vehicle Editor:
+      - Overview: hve-users/04-vehicle-editor/README.md
+      - "Chapter 10 — Creating & Editing Vehicles": hve-users/04-vehicle-editor/10-creating-editing-vehicles.md
+      - "Chapter 11 — Vehicle Model Definition (Part A: Sprung Mass)": hve-users/04-vehicle-editor/11a-sprung-mass.md
+      - "Chapter 11 — Vehicle Model Definition (Part B: Exterior)": hve-users/04-vehicle-editor/11b-exterior.md
+      - "Chapter 11 — Vehicle Model Definition (Part C: Suspension)": hve-users/04-vehicle-editor/11c-suspension.md
+      - "Chapter 11 — Vehicle Model Definition (Part D: Brakes, Tires and Wheels)": hve-users/04-vehicle-editor/11d-brakes-tires-wheels.md
+      - "Chapter 11 — Vehicle Model Definition (Part E: Drivetrain, Steering and Brake System)": hve-users/04-vehicle-editor/11e-drivetrain-steering-brake-system.md
+    - Environment Editor:
+      - Overview: hve-users/05-environment-editor/README.md
+      - "Chapter 12 — Creating & Editing Environments": hve-users/05-environment-editor/12-creating-editing-environments.md
+      - "Chapter 13 — Environment Model Definition": hve-users/05-environment-editor/13-environment-model-definition.md
+    - Event Editor:
+      - Overview: hve-users/06-event-editor/README.md
+      - "Chapter 15 — Creating & Editing Events": hve-users/06-event-editor/15-creating-editing-events.md
+      - "Chapter 16 — Event Model Definition": hve-users/06-event-editor/16-event-model-definition.md
+    - Playback Editor:
+      - Overview: hve-users/07-playback-editor/README.md
+      - "Chapter 17 — Creating Report and Playback Windows": hve-users/07-playback-editor/17-report-playback-windows.md
+      - "Chapter 18 — Editing the Event Sequence": hve-users/07-playback-editor/18-editing-event-sequence.md
+    - 3-D Editor:
+      - Overview: hve-users/08-3d-editor/README.md
+      - "Chapter 19 — Using the HVE 3-D Editor": hve-users/08-3d-editor/19-using-3d-editor.md
+      - "Chapter 20 — 3-D Editor Object Tools": hve-users/08-3d-editor/20-object-tools.md
+      - "Chapter 21 — Manipulators": hve-users/08-3d-editor/21-manipulators.md
+      - "Chapter 23 — Basic 3-D Editor Tutorial": hve-users/08-3d-editor/23-tutorial.md
+    - Video Output:
+      - Overview: hve-users/09-video-output/README.md
+      - "Chapter 26 — Video Basics": hve-users/09-video-output/26-video-basics.md
+      - "Chapter 27 — Using The HVE Video Interface": hve-users/09-video-output/27-video-interface.md
+    - Brake Designer:
+      - Overview: hve-users/10-brake-designer/README.md
+      - "Chapter 29 — HVE Brake Designer": hve-users/10-brake-designer/29-brake-designer.md
+      - "Chapter 30 — Brake Temperature Model": hve-users/10-brake-designer/30-brake-temperature.md
+      - "Chapter 31 — Antilock Braking Systems": hve-users/10-brake-designer/31-abs.md
+    - Appendices:
+      - Overview: hve-users/11-appendices/README.md
+      - "Chapter 32 — HVE Tutorial": hve-users/11-appendices/32-tutorial.md
+      - "Appendix I — Installation & Setup": hve-users/11-appendices/appendix-01-installation.md
+      - "Appendix II — Messages": hve-users/11-appendices/appendix-02-messages.md
+      - "Appendix III — Coordinate Systems": hve-users/11-appendices/appendix-03-coordinate-systems.md
+      - "Appendix IV — Units": hve-users/11-appendices/appendix-04-units.md
+      - "Appendix V — Collision Deformation Classification (CDC)": hve-users/11-appendices/appendix-05-cdc.md
+      - "Appendix VI — References": hve-users/11-appendices/appendix-06-references.md
+      - "Appendices VII, VIII and IX — Reserved": hve-users/11-appendices/appendix-07-09-reserved.md
+      - "Appendix X — Index (Topic Locator)": hve-users/11-appendices/appendix-10-index.md
+  - Program Manuals:
+    - Overview: programs/README.md
+    - EDCRASH:
+      - Overview: programs/EDCRASH/README.md
+      - "Chapter 1 — EDCRASH Program Description": programs/EDCRASH/01-program-description.md
+      - "Chapter 2 — EDCRASH Program Input": programs/EDCRASH/02-program-input.md
+      - "Chapter 3 — EDCRASH Program Output": programs/EDCRASH/03-program-output.md
+      - "Chapter 4 — Calculation Method": programs/EDCRASH/04-calculation-method.md
+      - "Chapter 5 — EDCRASH Tutorial": programs/EDCRASH/05-tutorial.md
+      - "Chapter 6 — Messages": programs/EDCRASH/06-messages.md
+      - "Chapter 7 — Technical References": programs/EDCRASH/07-technical-references.md
+    - EDGEN:
+      - Overview: programs/EDGEN/README.md
+      - "Chapter 1 — Program Description": programs/EDGEN/01-program-description.md
+      - "Chapter 2 — Program Input Parameters": programs/EDGEN/02-program-input.md
+      - "Chapter 3 — Program Output Results": programs/EDGEN/03-program-output.md
+      - "Chapter 4 — Calculation Method": programs/EDGEN/04-calculation-method.md
+      - "Chapter 5 — EDGEN Tutorial": programs/EDGEN/05-tutorial.md
+      - "Chapter 6 — Messages": programs/EDGEN/06-messages.md
+      - "Chapter 7 — Technical References": programs/EDGEN/07-references.md
+      - "Chapter 8 — Index": programs/EDGEN/08-index.md
+    - EDHIS:
+      - Overview: programs/EDHIS/README.md
+      - "Chapter 1 — EDHIS Program Description": programs/EDHIS/01-program-description.md
+      - "Chapter 2 — EDHIS Program Input": programs/EDHIS/02-program-input.md
+      - "Chapter 3 — EDHIS Program Output": programs/EDHIS/03-program-output.md
+      - "Chapter 4 — Calculation Method": programs/EDHIS/04-calculation-method.md
+      - "Chapter 5 — EDHIS Tutorial": programs/EDHIS/05-tutorial.md
+      - "Chapter 6 — Messages": programs/EDHIS/06-messages.md
+      - "Chapter 7 — References": programs/EDHIS/07-references.md
+    - EDSMAC:
+      - Overview: programs/EDSMAC/README.md
+      - "Chapter 1 — EDSMAC Program Description": programs/EDSMAC/01-program-description.md
+      - "Chapter 2 — EDSMAC Program Input": programs/EDSMAC/02-program-input.md
+      - "Chapter 3 — EDSMAC Program Output": programs/EDSMAC/03-program-output.md
+      - "Chapter 4 — Calculation Method": programs/EDSMAC/04-calculation-method.md
+      - "Chapter 5 — EDSMAC Tutorial": programs/EDSMAC/05-tutorial.md
+      - "Chapter 6 — Messages": programs/EDSMAC/06-messages.md
+      - "Chapter 7 — Technical References": programs/EDSMAC/07-technical-references.md
+      - "Chapter 8 — Index": programs/EDSMAC/08-index.md
+    - EDSMAC4:
+      - Overview: programs/EDSMAC4/README.md
+      - "Chapter 1 — EDSMAC4 Program Description": programs/EDSMAC4/01-program-description.md
+      - "Chapter 2 — EDSMAC4 Program Input": programs/EDSMAC4/02-program-input.md
+      - "Chapter 3 — EDSMAC4 Program Output": programs/EDSMAC4/03-program-output.md
+      - "Chapter 4 — Calculation Method": programs/EDSMAC4/04-calculation-method.md
+      - "Chapter 5 — EDSMAC4 Tutorial": programs/EDSMAC4/05-tutorial.md
+      - "Chapter 6 — Messages": programs/EDSMAC4/06-messages.md
+      - "Chapter 7 — Technical References": programs/EDSMAC4/07-references.md
+    - EDSVS:
+      - Overview: programs/EDSVS/README.md
+      - "Chapter 1 — EDSVS Program Description": programs/EDSVS/01-program-description.md
+      - "Chapter 2 — EDSVS Program Input": programs/EDSVS/02-program-input.md
+      - "Chapter 3 — EDSVS Program Output": programs/EDSVS/03-program-output.md
+      - "Chapter 4 — EDSVS Calculation Method": programs/EDSVS/04-calculation-method.md
+      - "Chapter 5 — EDSVS Tutorial": programs/EDSVS/05-tutorial.md
+      - "Chapter 6 — EDSVS Messages": programs/EDSVS/06-messages.md
+      - "Chapter 7 — Technical References": programs/EDSVS/07-technical-references.md
+      - "Chapter 8 — Index": programs/EDSVS/08-index.md
+    - EDVDS:
+      - Overview: programs/EDVDS/README.md
+      - "Chapter 1 — EDVDS Program Description": programs/EDVDS/01-program-description.md
+      - "Chapter 2 — EDVDS Program Input": programs/EDVDS/02-program-input.md
+      - "Chapter 3 — EDVDS Program Output": programs/EDVDS/03-program-output.md
+      - "Chapter 4 — Calculation Method": programs/EDVDS/04-calculation-method.md
+      - "Chapter 5 — EDVDS Tutorial": programs/EDVDS/05-tutorial.md
+      - "Chapter 6 — Messages": programs/EDVDS/06-messages.md
+      - "Chapter 7 — References": programs/EDVDS/07-references.md
+    - EDVSM:
+      - Overview: programs/EDVSM/README.md
+      - "Chapter 1 — EDVSM Program Description": programs/EDVSM/01-program-description.md
+      - "Chapter 2 — EDVSM Program Input": programs/EDVSM/02-program-input.md
+      - "Chapter 3 — EDVSM Program Output": programs/EDVSM/03-program-output.md
+      - "Chapter 4 — Calculation Method": programs/EDVSM/04-calculation-method.md
+      - "Chapter 5 — EDVSM Tutorial": programs/EDVSM/05-tutorial.md
+      - "Chapter 6 — Messages": programs/EDVSM/06-messages.md
+      - "Chapter 7 — References": programs/EDVSM/07-references.md
+      - "Chapter 8 — Index": programs/EDVSM/08-index.md
+    - EDVTS:
+      - Overview: programs/EDVTS/README.md
+      - "Chapter 1 — EDVTS Program Description": programs/EDVTS/01-program-description.md
+      - "Chapter 2 — EDVTS Program Input": programs/EDVTS/02-program-input.md
+      - "Chapter 3 — EDVTS Program Output": programs/EDVTS/03-program-output.md
+      - "Chapter 4 — Calculation Method": programs/EDVTS/04-calculation-method.md
+      - "Chapter 5 — EDVTS Tutorial": programs/EDVTS/05-tutorial.md
+      - "Chapter 6 — Messages": programs/EDVTS/06-messages.md
+      - "Chapter 7 — Technical References": programs/EDVTS/07-technical-references.md
+    - SIMON:
+      - Overview: programs/SIMON/README.md
+      - "Chapter 1 — SIMON Program Description": programs/SIMON/01-program-description.md
+      - "Chapter 2 — SIMON Program Input": programs/SIMON/02-program-input.md
+      - "Chapter 3 — SIMON Program Output": programs/SIMON/03-program-output.md
+      - "Chapter 4 — Calculation Method": programs/SIMON/04-calculation-method.md
+      - "Chapter 5 — SIMON Tutorial": programs/SIMON/05-tutorial.md
+      - "Chapter 6 — Messages": programs/SIMON/06-messages.md
+      - "Chapter 7 — Technical References": programs/SIMON/07-technical-references.md
+      - "Chapter 8 — Index": programs/SIMON/08-index.md
+    - DyMESH:
+      - Overview: programs/DyMESH/README.md
+      - "DyMESH Overview": programs/DyMESH/01-overview.md
+      - "Collision Model": programs/DyMESH/02-collision-model.md
+      - "Version 3": programs/DyMESH/03-version-3.md
+      - "Facts of Life": programs/DyMESH/04-facts-of-life.md
+    - GATB:
+      - Overview: programs/GATB/README.md
+      - "Chapter 1 — Program Description": programs/GATB/01-program-description.md
+      - "Chapter 2 — Program Input": programs/GATB/02-program-input.md
+      - "Chapter 3 — Program Output": programs/GATB/03-program-output.md
+      - "Chapter 4 — Calculation Method": programs/GATB/04-calculation-method.md
+      - "Chapter 5 — Tutorial": programs/GATB/05-tutorial.md
+      - "Chapter 6 — Messages": programs/GATB/06-messages.md
+      - "Chapter 7 — Technical References": programs/GATB/07-references.md
+      - "GEBOD Data Pages": programs/GATB/08-gebod-data-pages.md
+    - RDF:
+      - Overview: programs/RDF/README.md
+      - "Chapter 1 — Program Description": programs/RDF/01-program-description-and-input.md
+      - "Chapter 3 — Calculation Method": programs/RDF/02-calculation-method.md
+      - "Chapter 4 — Data File Format": programs/RDF/03-data-file-format.md
+    - DamageStudio:
+      - Overview: programs/DamageStudio/README.md
+      - "Chapter 32 — The DamageStudio Interface": programs/DamageStudio/01-interface.md
+      - "Chapter 32 (continued) — Using DamageStudio": programs/DamageStudio/02-using-damagestudio.md

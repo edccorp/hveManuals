@@ -1,0 +1,22 @@
+/* EDC / HVE brand palette — burgundy #680038, sampled from the EDC logo.
+   Overrides Material's default (indigo) for both light and dark schemes. */
+:root {
+  --md-primary-fg-color:        #680038;
+  --md-primary-fg-color--light: #8a1a52;
+  --md-primary-fg-color--dark:  #4d0029;
+  --md-primary-bg-color:        #ffffff;
+  --md-primary-bg-color--light: rgba(255, 255, 255, 0.7);
+  --md-accent-fg-color:         #9c2a5f;
+}
+
+/* Links pick up the brand color in both schemes. */
+[data-md-color-scheme="slate"] {
+  --md-accent-fg-color: #d06a94;
+}
+
+/* Home-page EDC logo: constrain width and center it. */
+.md-typeset .edc-hero {
+  display: block;
+  max-width: 420px;
+  margin: 0.5rem auto 1.5rem;
+}
