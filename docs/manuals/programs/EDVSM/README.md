@@ -4,16 +4,6 @@
 
 Fifth Edition (January 2006) — *converted to Markdown and updated against the current HVE source code (`Physics/Source/Edvsm/`, `Physics/Include/`, `HVEINV-64/`)*
 
-Engineering Dynamics Corporation
-8625 S.W. Cascade Boulevard, Suite 200
-Beaverton, Oregon 97008 USA
-phone 503.644.4500 / fax 503.526.0905
-e-mail info@edccorp.com / http://www.edccorp.com
-
-Copyright © Engineering Dynamics Corporation 1994–2006. All rights reserved.
-
-> **Trademarks:** HVE, SIMON, DyMESH, EDSVS, EDVTS, EDCRASH, EDSMAC, EDSMAC4, EDVSM, EDHIS, EDVDS, EDGEN, HVE-2D and EDVAP are trademarks of Engineering Dynamics Corporation. Windows and NT are trademarks of Microsoft, Inc.
-
 ## How to Use This Manual
 
 This manual is the user's manual for the EDVSM simulation model. The manual describes the model features and use. Input parameters and output reports are described at a high level. This manual is intended to be used in conjunction with the HVE User's Manual. The HVE User's Manual provides in-depth coverage of the human, vehicle and environment models, as well as the HVE Event Editor and Playback Editor. For specific model definitions, the user is referred to the HVE User's Manual.

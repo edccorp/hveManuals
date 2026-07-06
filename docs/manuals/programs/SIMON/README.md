@@ -5,14 +5,6 @@
 
 Updated Markdown edition, converted from the Fifth Edition printed manual (January 2006) and verified against the current HVE source code (SIMON physics engine in `Physics/Source/Simon/`, the DyMESH collision code in `Physics/Include/DYMESH.H` and `Physics/Source/LibHve/Dymesh.cpp`, and the HVE user-interface dialogs in `HVEINV-64/`). Passages that differ from the printed edition because the software has changed are marked with italic *(updated: ...)* notes. Figures from the printed manual are referenced by placeholder.
 
-> Engineering Dynamics Corporation
-> 8625 S.W. Cascade Boulevard, Suite 200
-> Beaverton, Oregon 97008-7100, USA
-> phone (503) 644-4500 — fax (503) 526-0905
-> info@edccorp.com — http://www.edccorp.com
->
-> Copyright © Engineering Dynamics Corporation 1982–2006. All rights reserved. HVE, SIMON, DyMESH, EDSVS, EDVTS, EDCRASH, EDSMAC, EDSMAC4, EDVSM, EDHIS, EDVDS, EDGEN, HVE-2D and EDVAP are trademarks of Engineering Dynamics Corporation. This publication was provided pursuant to a license agreement containing restrictions on its use (see the printed edition for the full License Agreement, Limited Warranty and Trademarks statements).
-
 ## How to Use This Manual
 
 This manual is the user's manual for the SIMON simulation model. The manual describes the model features and use. Input parameters and output reports are described at a high level. This manual is intended to be used in conjunction with the HVE User's Manual. The HVE User's Manual provides in-depth coverage of the human, vehicle and environment models, as well as the HVE Event Editor and Playback Editor. For specific model definitions, the user is referred to the HVE User's Manual.

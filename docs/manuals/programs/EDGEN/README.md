@@ -8,9 +8,6 @@ EDGEN is a 3-dimensional kinematics spreadsheet for the HVE (Human Vehicle Envir
 
 This manual is intended to be used in conjunction with the HVE User's Manual, which provides in-depth coverage of the human, vehicle and environment models, as well as the HVE Event Editor and Playback Editor.
 
-Copyright Engineering Dynamics Corporation 1994-2006. All rights reserved.
-Engineering Dynamics Corporation, 8625 S.W. Cascade Boulevard, Suite 200, Beaverton, Oregon 97008 USA — www.edccorp.com
-
 > **Note on HVE-2D:** EDGEN is compatible with both HVE and HVE-2D. When using HVE-2D the user is restricted to studying planar motion and the Human Editor is not available. Because these restrictions are not imposed by the physics program, this manual includes all features available in HVE.
 
 ## Contents

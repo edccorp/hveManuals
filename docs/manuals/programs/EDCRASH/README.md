@@ -6,8 +6,6 @@ Version 7 — Updated Markdown edition, based on the Sixth Edition (January 2006
 
 EDCRASH is an analysis used to reconstruct single and two vehicle accidents. It determines the conditions of impact, including the impact speeds and delta-V of the vehicles, using information obtained from vehicle and accident site inspections. EDCRASH is compatible with both HVE-2D and HVE.
 
-> Original publisher: Engineering Dynamics Corporation, 8625 S.W. Cascade Ave., Suite 200, Beaverton, Oregon 97008 USA — www.edccorp.com. Copyright © Engineering Dynamics Corporation 1982–2006. All rights reserved. HVE, SIMON, DyMESH, EDSVS, EDVTS, EDCRASH, EDSMAC, EDSMAC4, EDVSM, EDHIS, EDVDS, EDGEN, HVE-2D and EDVAP are trademarks of Engineering Dynamics Corporation.
-
 ## How to Use This Manual
 
 This manual describes the EDCRASH model features and use. Input parameters and output reports are described at a high level. This manual is intended to be used in conjunction with the HVE User's Manual, which provides in-depth coverage of the human, vehicle and environment models, as well as the Event Editor and Playback Editor.

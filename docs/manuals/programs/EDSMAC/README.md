@@ -6,8 +6,6 @@
 
 EDSMAC is a simulation analysis of single- or two-vehicle crashes, based on the SMAC program developed at Calspan for NHTSA, with extensions by Engineering Dynamics Corporation. This manual describes the model features and use; input parameters and output reports are described at a high level. It is intended to be used in conjunction with the HVE-2D User's Manual, which provides in-depth coverage of the vehicle and environment models, as well as the Event Editor and Playback Editor.
 
-> Original publication: Engineering Dynamics Corporation, 8625 S.W. Cascade Boulevard, Suite 200, Beaverton, Oregon 97008 USA — www.edccorp.com. Copyright Engineering Dynamics Corporation 1982-2006. All rights reserved. HVE, HVE-2D, SIMON, DyMESH, EDSVS, EDVTS, EDCRASH, EDSMAC, EDSMAC4, EDVSM, EDHIS, EDVDS, EDGEN and EDVAP are trademarks of Engineering Dynamics Corporation.
-
 ## Contents
 
 1. [Chapter 1 — EDSMAC Program Description](01-program-description.md) — Overview, model inputs and outputs, validation, basic procedure

@@ -6,8 +6,6 @@
 
 EDSVS is a simulation analysis of the response of a motor vehicle (4-wheeled automobile, or truck having tandem axles and dual tires) to driver inputs (accelerating, braking and steering). It is based on the TBST program developed at the University of Michigan Transportation Research Institute. This manual describes the model features and use; input parameters and output reports are described at a high level. It is intended to be used in conjunction with the HVE-2D or HVE User's Manual, which provides in-depth coverage of the human, vehicle and environment models, as well as the Event Editor and Playback Editor.
 
-> Original publication: Engineering Dynamics Corporation, 8625 S.W. Cascade Boulevard, Suite 200, Beaverton, Oregon 97008 USA — www.edccorp.com. Copyright Engineering Dynamics Corporation 1982-2006. All rights reserved. HVE, HVE-2D, SIMON, DyMESH, EDSVS, EDVTS, EDCRASH, EDSMAC, EDSMAC4, EDVSM, EDHIS, EDVDS, EDGEN and EDVAP are trademarks of Engineering Dynamics Corporation. Windows and NT are trademarks of Microsoft Corporation.
-
 ## How to Use This Manual
 
 EDSVS is compatible with both HVE-2D and HVE. If you are using EDSVS within the HVE environment, the Human, Vehicle and Environment Editors will have additional features that are not available in HVE-2D. These features are described in great detail in the HVE User's Manual. While some dialogs do look different, the required input for EDSVS is found in both. Where there are differences related to the use of EDSVS, these differences are noted in this manual. Information specific to HVE was designated with a grey background in the original manual; in this edition it is marked with **HVE:** prefixed blockquotes.

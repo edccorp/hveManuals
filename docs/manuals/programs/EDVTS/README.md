@@ -2,9 +2,7 @@
 
 **Engineering Dynamics Corporation Vehicle-Trailer Simulator, Version 7**
 
-Updated Markdown edition, converted from the Sixth Edition (January 2006) printed manual and verified against the current HVE source code (July 2026). Original publication: Engineering Dynamics Corporation, 8625 S.W. Cascade Boulevard, Suite 200, Beaverton, Oregon 97008 USA — phone 503.644.4500, fax 503.526.0905, e-mail info@edccorp.com, http://www.edccorp.com. Copyright Engineering Dynamics Corporation 1982-2006. All rights reserved.
-
-HVE, HVE-2D, SIMON, DyMESH, EDSVS, EDVTS, EDCRASH, EDSMAC, EDSMAC4, EDVSM, EDHIS, EDVDS, EDGEN and EDVAP are trademarks of Engineering Dynamics Corporation. Windows and NT are trademarks of Microsoft, Inc.
+Updated Markdown edition, converted from the Sixth Edition (January 2006) printed manual and verified against the current HVE source code (July 2026).
 
 ## How to Use This Manual
 

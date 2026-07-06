@@ -4,16 +4,6 @@
 
 Updated Markdown edition, converted from the Fifth Edition manual (January 2006) and verified against the current HVE source code (`Physics/Source/Edhis/`, `Physics/Include/HUMAN.H`, `HVEINV-64/`).
 
-Copyright Engineering Dynamics Corporation 1996–2006. All rights reserved.
-
-> Engineering Dynamics Corporation
-> 8625 S.W. Cascade Boulevard, Suite 200
-> Beaverton, Oregon 97008 USA
-> phone 503.644.4500 — fax 503.526.0905
-> e-mail info@edccorp.com — http://www.edccorp.com
-
-*HVE, SIMON, DyMESH, EDSVS, EDVTS, EDCRASH, EDSMAC, EDSMAC4, EDVSM, EDHIS, EDVDS, HVE-2D and EDVAP are trademarks of Engineering Dynamics Corporation. Windows and NT are trademarks of Microsoft, Inc.*
-
 ## How to Use This Manual
 
 This manual is the user's manual for the EDHIS simulation model. It describes the model's features and use. Input parameters and output reports are described at a high level. It is intended to be used in conjunction with the HVE User's Manual, which provides in-depth coverage of the human, vehicle and environment models, as well as the HVE Event Editor and Playback Editor. For specific model definitions, the user is referred to the HVE User's Manual (see `docs/manuals/`).

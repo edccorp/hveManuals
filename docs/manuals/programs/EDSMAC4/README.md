@@ -4,16 +4,6 @@
 
 Updated Markdown edition, converted from the Sixth Edition manual (January 2006) and verified against the current HVE source code (`Physics/Source/Edsmac4/`, `Physics/Include/`, `HVEINV-64/`).
 
-Copyright Engineering Dynamics Corporation 1982–2006. All rights reserved.
-
-> Engineering Dynamics Corporation
-> 8625 S.W. Cascade Avenue, Suite 200
-> Beaverton, Oregon 97008 USA
-> phone 503.644.4500 — fax 503.526.0905
-> e-mail info@edccorp.com — http://www.edccorp.com
-
-*HVE, HVE-2D, SIMON, DyMESH, EDSVS, EDVTS, EDCRASH, EDSMAC, EDSMAC4, EDVSM, EDHIS, EDVDS, EDGEN and EDVAP are trademarks of Engineering Dynamics Corporation. Windows is a trademark of Microsoft, Inc.*
-
 ## How to Use This Manual
 
 This manual is the user's manual for the EDSMAC4 simulation model. It describes the model's features and use. Input parameters and output reports are described at a high level. It is intended to be used in conjunction with the HVE-2D or HVE User's Manual, which provides in-depth coverage of the human, vehicle and environment models, as well as the Event Editor and Playback Editor. For specific model definitions, the user is referred to the User's Manual.

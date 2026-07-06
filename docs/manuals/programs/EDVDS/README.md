@@ -4,16 +4,6 @@
 
 *User's Manual, Fourth Edition (January 2006), converted to Markdown and updated against the current HVE source code.*
 
-Engineering Dynamics Corporation
-8625 S.W. Cascade Boulevard, Suite 200
-Beaverton, Oregon 97008 USA
-phone 503.644.4500 / fax 503.526.0905
-e-mail info@edccorp.com / http://www.edccorp.com
-
-Copyright © Engineering Dynamics Corporation 1982-2006. All rights reserved.
-
-> HVE, SIMON, DyMESH, EDSVS, EDVTS, EDCRASH, EDSMAC, EDSMAC4, EDVSM, EDHIS, EDVDS, EDGEN, HVE-2D and EDVAP are trademarks of Engineering Dynamics Corporation. Windows and NT are trademarks of Microsoft Corporation.
-
 > *(updated: this edition has been verified against the current EDVDS source (`Physics/Source/Edvds/`, including `Vdsinput2.cpp`) and the current HVE user interface resources. Notable updates: the Tire Model Method calculation option is Linear (default) or Semi-Empirical — the Table Look-Up option is disabled in the dialog and rejected by the physics program; the terrain (GetSurfaceInfo) search options have moved to the separate Get Surface Information Options dialog, where the By Elevation method is unsupported; and the message catalog has grown from 7 to 12 messages. See the individual chapters for details, and the [EDVDS Calculation Options reference](../../10-calculation-options/CalcOptEDVDS.md) for the current dialog.)*
 
 ## How to Use This Manual
