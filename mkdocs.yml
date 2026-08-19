@@ -374,6 +374,7 @@ nav:
       - "Collision Model": programs/DyMESH/02-collision-model.md
       - "Version 3": programs/DyMESH/03-version-3.md
       - "Facts of Life": programs/DyMESH/04-facts-of-life.md
+      - "Wheel vs. Environment": programs/DyMESH/05-wheel-environment.md
     - GATB:
       - Overview: programs/GATB/README.md
       - "Chapter 1 — Program Description": programs/GATB/01-program-description.md

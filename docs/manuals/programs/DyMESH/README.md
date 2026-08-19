@@ -46,6 +46,10 @@ discrepancy is called out with an italic *(updated: ...)* note.
    Version 3 capabilities.
 4. [Facts of Life](04-facts-of-life.md) — practical notes, caveats, and
    limitations.
+5. [Wheel vs. Environment](05-wheel-environment.md) — the DyMESH wheel vs.
+   environment contact model: the wheel and terrain as DyMESH objects, the
+   simulation loop, and the handoff between the point-contact tire model and
+   DyMESH.
 
 ## Related documentation
 

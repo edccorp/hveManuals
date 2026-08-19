@@ -94,7 +94,9 @@ Options**, the per-wheel **Set-up**, and the **Output vs. Time** results.
 The DyMESH Options dialog (Options menu) as shown in the deck contains:
 
 - **Use DyMESH** (master enable).
-- **Include Environment** — also run DyMESH contact against the environment.
+- **Include Environment** — also run DyMESH contact against the environment
+  (see [Wheel vs. Environment](05-wheel-environment.md) for the wheel side of
+  this feature and the tire-model handoff).
 - **Force To x-y Plane** — constrain the collision deformation/force to the
   horizontal plane.
 - **Search** — *Automatic* (use the calculated box size) or *Set Box Size* (use
