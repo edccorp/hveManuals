@@ -1910,10 +1910,10 @@ with $R_{rMult}$ being held at unity.
 
 ## Suspension Force
 
-Independent and solid axle suspensions are supported in SIMON. The equations of motion for each suspension type were discussed earlier (see Eqs. 7 through 10 and 18 through 26). Suspension force calculations for both models are identical. The force is calculated using a spring-damper model with additional coulomb friction, as shown in the model in Figure 4-15. The spring is free to move only in the vehicle-fixed z-direction. The total suspension force is the sum of the spring force, damping (shock absorber) force and coulomb friction force. The force from an anti-sway bar, used for producing additional roll stiffness, is also included in the model. Mathematically, the force, $F_s$, at each suspension location is
+Independent and solid axle suspensions are supported in SIMON. The equations of motion for each suspension type were discussed earlier (see Eqs. 7 through 10 and 18 through 26). The force is calculated using a spring-damper model with additional coulomb friction, as shown in the model in Figure 4-15. The spring is free to move only in the vehicle-fixed z-direction. The total suspension force is the sum of the spring force, the force from any engaged suspension stop, the damping (shock absorber) force, the coulomb friction force, the anti-sway bar force, the jacking force and the static suspension force. Mathematically, the force, $F_S$, at each suspension location is
 
 $$
-F_S = K\delta + C\dot\delta + F_\mu + \frac{K_{rs}}{\vec r_s}\phi_{Axle}
+F_S = K\left(\delta - \delta_{Payload}\right) + F_{Stop} + C\dot\delta + F_\mu + F_{Sway} + F_{Jack} + F_{S_0}
 \qquad (\text{Eq. 115})
 $$
 
@@ -1922,15 +1922,199 @@ where
 | Symbol | Definition |
 |---|---|
 | $K$ | Linear spring rate of suspension spring |
-| $\delta$ | Spring deflection from equilibrium (+ down) |
+| $\delta$ | Spring deflection from equilibrium (+ down), Eq. 115a |
+| $\delta_{Payload}$ | Static deflection produced by the payload, Eq. 115c |
+| $F_{Stop}$ | Force from an engaged jounce or rebound stop, Eq. 116 |
 | $C$ | Velocity-dependent damping rate |
-| $\dot\delta$ | Spring deflection rate |
-| $F_\mu$ | Coulomb friction |
-| $K_{rs}$ | Auxiliary roll stiffness of anti-sway bar |
-| $\vec r_s$ | Spring location, y-coordinate |
+| $\dot\delta$ | Spring deflection rate, Eq. 115b |
+| $F_\mu$ | Coulomb friction, Eq. 115d |
+| $F_{Sway}$ | Anti-sway bar force, Eq. 115e |
+| $F_{Jack}$ | Jacking force (independent suspensions only), Eq. 115f |
+| $F_{S_0}$ | Static suspension force at this suspension location |
+
+*(updated: earlier editions of this manual gave $F_S$ as the sum of the spring,
+damping, coulomb friction and anti-sway bar forces only. The static suspension
+force, the suspension stop force and the jacking force are also part of the
+total. Earlier editions also stated that the suspension force calculation is
+identical for the two suspension types; the spring deflection, deflection rate,
+axle roll angle, anti-sway bar force and jacking force are each calculated
+differently for independent and solid axle suspensions, as described below.)*
+
+### Spring deflection and deflection rate
+
+For an **independent suspension**, each side has its own vertical suspension
+degree of freedom, and the spring deflection and deflection rate are simply
+that degree of freedom and its derivative:
+
+$$
+\delta = z_{Susp} + \delta_{Payload},\qquad \dot\delta = \dot z_{Susp}
+\qquad (\text{Eq. 115a, independent})
+$$
+
+For a **solid axle suspension**, the axle has a single vertical degree of
+freedom and a roll degree of freedom, and the deflection at each spring
+depends on the spring's lateral position on the axle:
+
+$$
+\delta = z_{Axle} + \phi_{Axle}\,y_s + \delta_{Payload},\qquad
+\dot\delta = \dot z_{Axle} + \dot\phi_{Axle}\,y_s
+\qquad (\text{Eq. 115b, solid axle})
+$$
+
+where $y_s$ is the vehicle-fixed y-coordinate of the spring and $\phi_{Axle}$
+is the vehicle-fixed axle roll angle.
+
+*(updated: Eqs. 115a and 115b were not given in earlier editions.)*
+
+### Payload static deflection
+
+Adding a payload changes the static load carried by each suspension, and
+therefore the position each suspension sits at when the event begins. That
+change is applied as a fixed offset:
+
+$$
+\delta_{Payload} = \frac{F_{S_0} - F_{S_0,Empty}}{K}
+\qquad (\text{Eq. 115c})
+$$
+
+where $F_{S_0}$ is the static suspension force with the payload in place and
+$F_{S_0,Empty}$ is the static suspension force for the vehicle without it.
+$\delta_{Payload}$ is limited so that it cannot place the suspension beyond its
+jounce travel limit. The offset is also applied to the initial wheel center and
+steer axis positions, so that the vehicle begins the event at the ride height
+corresponding to its load.
+
+Note in Eq. 115 that the offset is removed again before the spring force is
+computed. The result is that the spring force is measured from the vehicle's
+loaded equilibrium position, while the suspension stops engage at the loaded
+position — that is, a heavily loaded vehicle begins the event closer to its
+jounce stop, as it should, but does not carry a spring preload from the payload
+in addition to its static suspension force.
+
+*(updated: this subsection describes behavior not documented in earlier
+editions.)*
+
+### Coulomb friction
+
+The coulomb friction force opposes suspension motion at a constant magnitude,
+except at very low deflection rates, where it is blended linearly through zero
+so that the force does not chatter as the suspension changes direction:
+
+$$
+F_\mu =
+\begin{cases}
+F_f\,\dfrac{\dot\delta}{\dot\delta_h}, & \dot\delta_h > 0 \ \text{and}\ \left|\dot\delta\right| < \dot\delta_h\\[10pt]
+F_f\,\mathrm{sgn}\left(\dot\delta\right), & \left|\dot\delta\right| > 0\\[4pt]
+0, & \dot\delta = 0
+\end{cases}
+\qquad (\text{Eq. 115d})
+$$
+
+where $F_f$ is the suspension friction force and $\dot\delta_h$ is the
+hysteresis deflection rate. Setting the hysteresis rate to zero disables the
+blend and applies the full friction force at any non-zero deflection rate.
+
+*(updated: earlier editions listed coulomb friction as a term in Eq. 115 but
+did not give its definition.)*
+
+### Anti-sway bar force
+
+The anti-sway bar produces equal and opposite vertical forces at the two sides
+of an axle, proportional to the axle roll angle. The lever arm over which the
+auxiliary roll stiffness acts differs by suspension type:
+
+$$
+F_{Sway} = \pm\,\frac{K_{rs}}{s}\,\phi_{Axle} \quad\text{(solid axle)},\qquad
+F_{Sway} = \pm\,\frac{K_{rs}}{t}\,\phi_{Axle} \quad\text{(independent)}
+\qquad (\text{Eq. 115e})
+$$
+
+where
+
+| Symbol | Definition |
+|---|---|
+| $K_{rs}$ | Auxiliary roll stiffness of the anti-sway bar |
+| $s$ | Lateral spring spacing on the axle (solid axle suspensions) |
+| $t$ | Current track width, the lateral distance between the two wheel centers (independent suspensions) |
 | $\phi_{Axle}$ | Vehicle-fixed axle roll angle |
 
-The model also includes suspension stops for both jounce (−) and rebound (+) spring deflections (see Figure 4-16). The effect of a suspension stop is to limit suspension travel by increasing significantly the suspension stiffness. The suspension force generated at a suspension stop is expressed mathematically as
+The sign is positive on the right side of the axle and negative on the left.
+
+For a solid axle suspension, $\phi_{Axle}$ is the axle roll degree of freedom.
+For an independent suspension there is no axle roll degree of freedom, so the
+axle roll angle is estimated from the current vertical positions of the two
+wheel centers:
+
+$$
+\phi_{Axle} = \frac{z_{Wheel,Right} - z_{Wheel,Left}}{t}
+\qquad (\text{Eq. 115e-1})
+$$
+
+This is a small-angle approximation. If the track width of an independent
+suspension is less than one inch, the vehicle data are rejected as invalid and
+the event is terminated.
+
+*(updated: earlier editions gave a single anti-sway bar term, $K_{rs}\phi_{Axle}$
+divided by the y-coordinate of the spring location, applied without a sign
+change between sides. The divisor is the lateral spring spacing for a solid
+axle and the track width for an independent suspension, and the force acts in
+opposite directions on the two sides.)*
+
+SIMON also reports an auxiliary roll moment for each axle,
+
+$$
+M_{Roll} = K_{rs}\,\phi_{Axle}
+\qquad (\text{Eq. 115e-2})
+$$
+
+which appears in the variable output as the axle sway bar roll moment. This is
+a reported quantity only; the roll stiffness enters the equations of motion
+through the anti-sway bar forces of Eq. 115e.
+
+### Jacking force
+
+On an independent suspension, the tire's lateral and vertical forces act at the
+tire-ground contact point, which is offset from the wheel center. As the
+suspension deflects, the linkage changes the wheel's camber angle and its
+lateral position. Those two geometric rates convert the tire forces into a
+vertical force at the spring — the jacking force:
+
+$$
+F_{Jack} = \sum_{Tires}\left[\frac{d\gamma}{dz}\left(F_y h_{c_z} - F_z h_{c_y}\right) - F_y\,\frac{d\left(t/2\right)}{dz}\right]
+\qquad (\text{Eq. 115f})
+$$
+
+where
+
+| Symbol | Definition |
+|---|---|
+| $d\gamma/dz$ | Rate of change of vehicle-fixed wheel camber angle with suspension jounce/rebound |
+| $d(t/2)/dz$ | Rate of change of the wheel center's vehicle-fixed y-coordinate with suspension jounce/rebound (half-track change) |
+| $F_y, F_z$ | Vehicle-fixed lateral and vertical tire forces at this wheel |
+| $h_{c_y}, h_{c_z}$ | Vehicle-fixed y and z components of the distance from the wheel center to the tire-ground contact point |
+
+Both geometric rates come from the vehicle's Camber vs. Jounce/Rebound and
+Half-track Change vs. Jounce/Rebound data. The jacking force is calculated for
+independent suspensions only; for a solid axle the equivalent effect is
+included in the axle equations of motion.
+
+*(updated: the jacking force was not documented in earlier editions.)*
+
+### Suspension stops
+
+The model also includes suspension stops for both jounce (−) and rebound (+) spring deflections (see Figure 4-16). The effect of a suspension stop is to limit suspension travel by increasing significantly the suspension stiffness. A stop engages when the spring deflection passes the corresponding travel limit,
+
+$$
+\delta_{Stop} =
+\begin{cases}
+\delta - \delta_{Rebound}, & \delta > \delta_{Rebound}\\[4pt]
+\delta - \delta_{Jounce}, & \delta < \delta_{Jounce}\\[4pt]
+0, & \text{otherwise}
+\end{cases}
+\qquad (\text{Eq. 115g})
+$$
+
+and the suspension force generated at a suspension stop is expressed mathematically as
 
 $$
 F_{Stop} =
@@ -1948,8 +2132,52 @@ where
 | $K_1$ | Stop linear rate |
 | $K_3$ | Stop cubic rate |
 | $\delta_{Stop}$ | Deformation of suspension stop |
+| $\delta_{Jounce}, \delta_{Rebound}$ | Jounce and rebound travel limits |
 | $\eta$ | Stop energy ratio |
 | $\delta\cdot\dot\delta$ | (−) if stop deformation is decreasing (used for reducing $F_{Stop}$; see Eq. 116) |
+
+The stop energy ratio makes the stop dissipate energy: while the stop is
+unloading, only the fraction $\eta$ of the elastic force is returned. On a
+**rebound** stop, the remaining fraction, $\left(1 - \eta\right)F_{Stop}$, is
+added to the damping force, so the energy removed from the spring appears in
+the shock absorber. On a **jounce** stop the remaining fraction is simply not
+applied.
+
+*(updated: the treatment of the energy-ratio remainder was not described in
+earlier editions, and it is not the same for the two stops.)*
+
+### Reported suspension forces
+
+The spring force reported in the variable output is the sum of the spring and
+stop forces, $K\left(\delta - \delta_{Payload}\right) + F_{Stop}$, rather than
+the spring force alone. The reported damping force includes the rebound-stop
+contribution described above.
+
+### Suspension limits
+
+SIMON terminates the event and reports a message if a suspension exceeds any of
+the following limits:
+
+| Condition | Limit | Message |
+|---|---|---|
+| Spring deflection | 50 in | *Event Termination: Excessive Suspension Deflection!* |
+| Deflection rate | 50,000 in/sec | *Event Termination: Excessive Suspension Velocity!* |
+| Spring plus stop force | 20 times the vehicle's sprung plus payload weight | *Event Termination: Excessive Suspension Force!* |
+
+These limits are not applied to a wheel while it is being contacted by the 3-D
+mesh collision model, because the forces and deflections during a wheel impact
+legitimately exceed them. Wheels being contacted by the collision model are
+instead checked against the wheel damage force and moment limits, which produce
+the messages *Event Termination: Excessive suspension force from DyMESH wheel
+impact* and *Event Termination: Excessive suspension moment from DyMESH wheel
+impact*.
+
+Reaching any of these limits normally means the vehicle or event data are
+producing an unrealistic response — for example a spring rate, stop rate or
+terrain feature that is far outside the range the model was built for.
+
+*(updated: this subsection describes behavior not documented in earlier
+editions.)*
 
 ![Figure 4-15](images/p117-032.png)
 *Figure 4-15: Suspension force model.*

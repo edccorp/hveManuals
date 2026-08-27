@@ -4,6 +4,14 @@ Messages can be issued by either the operating system, HVE or SIMON. Some of the
 
 Messages produced by HVE are described in the HVE User's Manual, Appendix II.
 
+Some conditions detected by SIMON halt the event and are reported by HVE as an
+*Event Termination* dialog rather than as an entry in the SIMON Messages
+report. These identify the vehicle, axle, side and wheel involved. The
+suspension terminations — *Excessive Suspension Force*, *Excessive Suspension
+Deflection*, *Excessive Suspension Velocity*, and the two DyMESH wheel impact
+terminations — are described with their limits under *Suspension Force* in
+[Chapter 4 — Calculation Method](04-calculation-method.md).
+
 Messages issued by SIMON appear in the SIMON Messages output report and may be one of three types:
 
 - **Fatal Messages (Level 1)** — These messages halt execution and are caused by the program's inability to continue the calculation procedure based on intermediate results that are inconsistent or incompatible with basic program assumptions.
