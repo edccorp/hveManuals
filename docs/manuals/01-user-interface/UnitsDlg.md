@@ -23,7 +23,7 @@ Pressing **OK** applies the selected unit system throughout HVE: key results dis
 > Note: The *Set Custom Units* button described in earlier versions of this help topic is no longer present in the dialog.
 
 ---
-*Source topic: UnitsDlg.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

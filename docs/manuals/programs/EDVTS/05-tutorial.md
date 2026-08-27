@@ -345,7 +345,7 @@ Finally, we must adjust the Roll Couple Distribution to reflect the fact that th
 - In the *Roll Couple Distribution* field, replace the default value, `0.55`, with a more representative value, `0.2`.
 - Apply the change.
 
-*(updated: The printed tutorial set this value through the Options menu's Calculation Options dialog. The current version does not present an EDVTS Calculation Options dialog; the roll-couple value is taken from the tow vehicle's suspension data (`Suspension.RollCoupleDist`). See [EDVTS Calculation Options](../../10-calculation-options/CalcOptEDVTS.md).)*
+*(updated: The printed tutorial set this value through the Options menu's Calculation Options dialog. The current version does not present an EDVTS Calculation Options dialog; the roll-couple value is taken from the tow vehicle's **Roll Couple Distribution** suspension value. See [EDVTS Calculation Options](../../10-calculation-options/CalcOptEDVTS.md).)*
 
 This event lasts more than 5 seconds. To prevent premature termination, let's increase the default maximum simulation time.
 

@@ -17,7 +17,7 @@ Prints the current graph.
 Both buttons close the graph dialog and return to the Variable Output report window.
 
 ---
-*Source topic: VarOutGraphDlg.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

@@ -1,6 +1,6 @@
 # Chapter 9 — Human Model Definition
 
-*Updated Markdown edition of the HVE User's Manual (HVE Version 5, Seventh Edition, January 2006), Chapter 9, manual pages 9-1 through 9-16. Verified against the current HVE application source (`HVEINV-64/`) and the physics human data structure (`Physics/Include/HUMAN.H`).*
+*Updated Markdown edition of the HVE User's Manual (HVE Version 5, Seventh Edition, January 2006), Chapter 9, manual pages 9-1 through 9-16. Revised for the current HVE release.*
 
 ## Overview
 
@@ -98,11 +98,10 @@ page](../../07-humans/Human1.md).
 ![Figure 9-5](../images/p322-189.png)
 *Figure 9-5: Human Contact Ellipsoids dialog.*
 
-Up to three individual ellipsoids may be supplied for each segment *(code:
-`MAXELLIPSOIDSPERSEGMENT` = 3)*. To create a new ellipsoid, click on Add, and
-enter a new name. To view and edit the properties of an existing ellipsoid,
-click on the combo box arrow to display the list of available ellipsoids, then
-select the desired ellipsoid.
+Up to three individual ellipsoids may be supplied for each segment. To create
+a new ellipsoid, click on Add, and enter a new name. To view and edit the
+properties of an existing ellipsoid, click on the combo box arrow to display
+the list of available ellipsoids, then select the desired ellipsoid.
 
 **Table 9-3: Contact Ellipsoid Parameters for each human segment**
 
@@ -145,7 +144,7 @@ force-deflection graph display.
 | Damping Constant | UtHumMatDamp | Material velocity-dependent deformation constant |
 | Friction Constant | UtNone | Inter-segment friction coefficient |
 | Maximum Force | UtHumForce | Force at which 3rd-order force-deflection relationship is abandoned |
-| Maximum Deflection | UtHumDispLength | Deflection at which 3rd-order force-deflection relationship is abandoned *(updated: unit name was listed as UtHumDispLinear in the original manual; the current code uses UtHumDispLength)* |
+| Maximum Deflection | UtHumDispLength | Deflection at which 3rd-order force-deflection relationship is abandoned *(updated: unit name was listed as UtHumDispLinear in the original manual; HVE now uses UtHumDispLength)* |
 | Unloading Slope | UtHumMatLinear | Linear unloading slope beginning at maximum deflection |
 
 ![Figure 9-8](../images/p326-190.png)
@@ -178,20 +177,20 @@ page](../../07-humans/Human2.md).
 | Chest SI | UtHumChestSI (g) | Chest Severity Index, an injury index indicating the maximum chest acceleration |
 | Chest Force | UtHumForce | The tolerance for peak force against the chest in the direction of the chest-fixed i-axis |
 | Chest Forward Acceleration | UtHumAccelLinear (g) | The tolerance for peak chest acceleration in the direction of the chest-fixed i-axis |
-| Maximum Axial Femur Load (Max Knee Force) | UtHumForce | The tolerance for peak axial loading of the femur *(updated: labeled "Max Knee Force" in the current dialog and stored as `KneeForce`)* |
+| Maximum Axial Femur Load (Max Knee Force) | UtHumForce | The tolerance for peak axial loading of the femur *(updated: labeled "Max Knee Force" in the current dialog)* |
 | Maximum Lap Belt Force — Left Belt / Right Belt | UtHumForce | The tolerance for lap belt tension, above which injury is expected to occur to the abdomen |
 | Maximum Torso Belt Force — Left Belt / Right Belt | UtHumForce | The tolerance for torso belt tension, above which injury is expected to occur to the torso |
 
 *(updated: the original manual listed a single Maximum Lap Belt Force and a
-single Maximum Torso Belt Force. The current human model stores four separate
-belt injury tolerances — `LeftLap`, `RightLap`, `LeftTorso` and `RightTorso` —
+single Maximum Torso Belt Force. The current human model uses four separate
+belt injury tolerances — left lap, right lap, left torso and right torso —
 and the current dialog provides separate left-belt and right-belt entries for
 both the lap and torso webbing.)*
 
 *(updated: the unit names for the head and chest acceleration tolerances were
-listed in the original manual as UtHumAccelAngle and UtHumAccelLength; the
-current code uses UtHumAccelAngular and UtHumAccelLinear, and Chest SI has its
-own unit type, UtHumChestSI.)*
+listed in the original manual as UtHumAccelAngle and UtHumAccelLength; HVE
+now uses UtHumAccelAngular and UtHumAccelLinear, and Chest SI has its own
+unit type, UtHumChestSI.)*
 
 ## Joint Parameters
 
@@ -200,10 +199,10 @@ joints. To view and edit the current human's joint parameters, click on the
 desired segment and choose Joints from the cascade menu. The Joints dialog is
 displayed, as shown in Figure 9-10 and Table 9-6. The dialog contains an
 option list containing the names of each joint attached to the selected
-segment (a segment may have up to 4 attached joints; code:
-`MAXJOINTSPERSEGMENT` = 4), and the joint i, j, k coordinates relative to the
-selected segment coordinate system (see Figures 9-2 and 9-11). Click on the
-option list to display and select a different joint. See also the [Joint Data
+segment (a segment may have up to 4 attached joints), and the joint i, j, k
+coordinates relative to the selected segment coordinate system (see Figures
+9-2 and 9-11). Click on the option list to display and select a different
+joint. See also the [Joint Data
 Dialog reference page](../../07-humans/Human3.md).
 
 ![Figure 9-10](../images/p329-192.png)

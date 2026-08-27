@@ -1,6 +1,6 @@
 # Physics Program Manuals
 
-Updated Markdown editions of the per-model program manuals, verified against the current physics engines in `Physics/Source/`. Part of the [HVE Manual](../README.md).
+Updated Markdown editions of the per-model program manuals, updated to match the current physics engines. Part of the [HVE Manual](../README.md).
 
 ## Manuals
 

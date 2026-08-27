@@ -69,7 +69,7 @@ The Driver Controls report displays a table of user-entered driver control table
 The Environment Data report displays the physical and visual information describing the environment. This information is displayed in two sections:
 
 - **General Environment Data** — Physical parameters describing the environment (Temperature and Pressure are not used in the EDVDS calculations) *(updated: the original manual said "EDSMAC4" here, a typographical error carried over from another manual)*
-- **3-D Environment Terrain Data** — Geometric parameters describing the terrain, including the 3-D geometry filename, number of polygons, the current GetSurfaceInfo method (From First Polygon, From Previous Polygon, From Previous Polygon Sorted, or By Elevation) and the minimum/maximum terrain elevations.
+- **3-D Environment Terrain Data** — Geometric parameters describing the terrain, including the 3-D geometry filename, number of polygons, the current Get Surface Information method (From First Polygon, From Previous Polygon, From Previous Polygon Sorted, or By Elevation) and the minimum/maximum terrain elevations.
 
 A typical Environment Data report is displayed in Figure 3-4.
 

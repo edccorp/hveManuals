@@ -30,9 +30,9 @@ No response by the user is necessary.
 
 **(Level 1 — Fatal)**
 
-During the collision phase, crush occurs along the vector, RHO, from the vehicle exterior towards the CG (refer to Chapter 4, Calculation Method). RHOBIC refers to the adjusted length of RHOBI (the length of the current RHO vector) which accounts for restitution. This message indicates that, while seeking equilibrium of the RHO vector lengths for both vehicles, one of their lengths became negative. PSIB is the clock angle of the defective vector.
+During the collision phase, crush occurs along the vector, RHO, from the vehicle exterior towards the CG (refer to Chapter 4, Calculation Method). The quantity named in the message is the adjusted length of the current RHO vector, after restitution has been accounted for. This message indicates that, while seeking equilibrium of the RHO vector lengths for both vehicles, one of their lengths became negative. The angle reported with the message is the clock angle of the defective vector.
 
-Since this error occurs during the iterative adjustment phase, reducing the value of DELRHO (see Calculation Options) may eliminate the problem. If you continue to experience the problem, send the offending input file to EDC for evaluation.
+Since this error occurs during the iterative adjustment phase, reducing the Vector Adjustment Increment (the quantity the message text calls DELRHO; see Calculation Options) may eliminate the problem. If you continue to experience the problem, send the offending input file to EDC for evaluation.
 
 ---
 
@@ -40,9 +40,9 @@ Since this error occurs during the iterative adjustment phase, reducing the valu
 
 **(Level 1 — Fatal)**
 
-During the collision phase, crush occurs along the vector, RHO, from the vehicle exterior towards the CG (refer to Chapter 4, Calculation Method). RHOBIT refers to the initial length of a RHO vector, computed from the vehicle's exterior dimensions before the restitution adjustment begins. This message indicates that the initial length of one of these vectors was zero or negative, which points to inconsistent or invalid vehicle exterior dimensions rather than a failure during the iterative adjustment phase.
+During the collision phase, crush occurs along the vector, RHO, from the vehicle exterior towards the CG (refer to Chapter 4, Calculation Method). The quantity named in the message is the initial length of a RHO vector, computed from the vehicle's exterior dimensions before the restitution adjustment begins. This message indicates that the initial length of one of these vectors was zero or negative, which points to inconsistent or invalid vehicle exterior dimensions rather than a failure during the iterative adjustment phase.
 
-Unlike the RHOBIC message above (which is issued when a vector length becomes negative *during* the restitution calculations), this error occurs at the outset of the collision phase. Check the vehicle exterior geometry for the reported vehicle. If the dimensions appear correct, send the offending input file to EDC for evaluation.
+Unlike the preceding message (which is issued when a vector length becomes negative *during* the restitution calculations), this error occurs at the outset of the collision phase. Check the vehicle exterior geometry for the reported vehicle. If the dimensions appear correct, send the offending input file to EDC for evaluation.
 
 ---
 
@@ -82,9 +82,9 @@ This condition may also occur for some impact configurations when the angle betw
 
 **(Level 1 — Fatal)**
 
-EDSMAC divides the damage region into a number of small, discrete angular intervals. Up to 100 discrete intervals are allowed for each damage region. The width of each interval is the user-entered value, DELPSI (see Calculation Model). If the value of DELPSI is too small, the number of intervals required to span the entire damage width will exceed 100 and the above error message is issued.
+EDSMAC divides the damage region into a number of small, discrete angular intervals. Up to 100 discrete intervals are allowed for each damage region. The width of each interval is the user-entered Vector Spacing (the quantity the message text calls DELPSI; see Calculation Method). If the Vector Spacing is too small, the number of intervals required to span the entire damage width will exceed 100 and the above error message is issued.
 
-Increase the value of DELPSI (see Calculation Options).
+Increase the Vector Spacing (see Calculation Options).
 
 ---
 
@@ -92,9 +92,9 @@ Increase the value of DELPSI (see Calculation Options).
 
 **(Level 1 — Fatal)**
 
-During the collision phase, force equilibrium is sought between each of the vehicle crush vectors using an iterative adjustment of the vector lengths, RHO. Up to 200 adjustments are allowed. If, after 200 adjustments, the force equilibrium is not reached (i.e., the difference in the inter-vehicle contact force is greater than the user-entered acceptable limit, ALAMB), the above error is issued.
+During the collision phase, force equilibrium is sought between each of the vehicle crush vectors using an iterative adjustment of the vector lengths, RHO. Up to 200 adjustments are allowed. If, after 200 adjustments, the force equilibrium is not reached (i.e., the difference in the inter-vehicle contact force is greater than the user-entered acceptable limit, the Max Pressure Error, which the message text calls ALAMB), the above error is issued.
 
-Increase the value of ALAMB or decrease the value of DELRHO (see Calculation Options).
+Increase the Max Pressure Error or decrease the Vector Adjustment Increment (see Calculation Options).
 
 ---
 

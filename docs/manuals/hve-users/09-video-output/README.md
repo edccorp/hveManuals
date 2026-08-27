@@ -1,6 +1,6 @@
 # Section Nine: Video Output
 
-*Updated Markdown edition of the HVE User's Manual (HVE Version 5, Seventh Edition, January 2006), Section Nine "Video Output". Verified against the current HVE application source (`HVEINV-64/`, in particular `AviWrite.cpp`, `VideoDlg.cpp`, `VideoOptionsDlg.cpp`, `CVideoWndPlay.cpp` and `PlayBackDlg.cpp`).*
+*Updated Markdown edition of the HVE User's Manual (HVE Version 5, Seventh Edition, January 2006), Section Nine "Video Output", revised to describe the current HVE video interface.*
 
 HVE has an integrated video output interface. This interface makes it quick,
 simple and convenient to record a simulation as a video. This section of the

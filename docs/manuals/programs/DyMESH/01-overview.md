@@ -62,9 +62,8 @@ objects) when the *Include Environment* option is selected, and — as of
 Version 3 — against the individual **wheels** of a vehicle (see
 [Version 3](03-version-3.md)).
 
-*(updated: In the current code DyMESH is a licensed feature gated by
-`FeatureMgr::GetDyMesh()`; the DyMESH Options dialog refuses to enable it without
-a license.)*
+*(updated: DyMESH is a licensed feature; the DyMESH Options dialog refuses to
+enable it without a license.)*
 
 ## History
 
@@ -88,16 +87,15 @@ define DyMESH **Version 2** (improved accelerations, crush-depth simulation /
 general damage profile, and restitution) and **Version 3** (user-defined
 third-order force-deflection curve fit, and the DyMESH Wheels collision model).
 
-*(updated: The current source implements DyMESH with selectable **Version 3** and
-**Version 4** behavior — the DyMESH Options dialog exposes "Version 3" and
-"Version 4" radio buttons, and `Event.h` carries a `VersionNo` field. Version 4
-additionally enables the "pushback reduction" restoration refinement
-(`UsePushbackReduction = (VersionNo == 4)` in `DyMeshInitialize`). The 2026 decks
-describe the model through "Version 3"; Version 4 is a further code-level
-refinement not covered by the slides.)*
+*(updated: The current version of HVE implements DyMESH with selectable
+**Version 3** and **Version 4** behavior — the DyMESH Options dialog exposes
+"Version 3" and "Version 4" radio buttons. Version 4 additionally enables the
+"pushback reduction" restoration refinement, which is not applied under
+Version 3. The 2026 decks describe the model through "Version 3"; Version 4 is a
+further refinement not covered by the slides.)*
 
 ---
-*Source: DyMESH Collision Simulation (2026 HVE Forum) — organized and verified against DYMESH.H / Dymesh.cpp, 2026-07-05.*
+*Source: DyMESH Collision Simulation (2026 HVE Forum). Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

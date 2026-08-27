@@ -15,7 +15,7 @@ Accident investigators can use EDVDS to determine how a driver may have lost veh
 
 EDVDS employs full 3-dimensional engineering models with up to 23 degrees of freedom for each vehicle. The program supports up to 4 axles per vehicle, solid axle suspension types with inter-tandem load transfer, and single and dual tires. Combination vehicles are connected using fixed and converter dollys with rigid or hinged drawbars. EDVDS also employs a comprehensive drivetrain model with engine performance parameters and multi-gear transmissions and differentials.
 
-Tire vs terrain is modeled transparently to the user. At each simulation timestep, the EDVDS tire model uses HVE's `GetSurfaceInfo()` function to query the terrain's physical characteristics (elevation, slope and friction) beneath each tire. The EDVDS tire model then uses this information to determine current tire forces at each tire.
+Tire vs terrain is modeled transparently to the user. At each simulation timestep, the EDVDS tire model uses HVE's Get Surface Information search to query the terrain's physical characteristics (elevation, slope and friction) beneath each tire. The EDVDS tire model then uses this information to determine current tire forces at each tire.
 
 ## Model Inputs
 

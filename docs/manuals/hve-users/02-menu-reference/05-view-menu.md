@@ -1,6 +1,6 @@
 # Chapter 5: View Menu
 
-*HVE User's Manual — Section Two: Menu Reference. Updated edition, verified against current HVE source code (HVEINV-64).*
+*HVE User's Manual — Section Two: Menu Reference. Updated edition, revised for the current HVE release.*
 
 The View Menu includes the following options:
 
@@ -44,7 +44,7 @@ These options allow you to set up the HVE user interface and to determine how th
 
 **Purpose:** Determine how the scene is viewed
 
-**Description:** Choosing Set Camera from the View Menu displays the Set Camera dialog. The Set Camera dialog allows the user to define what is visible in the viewers. It is called Set Camera because a camera metaphor is used to perform this task: determining how a scene is viewed is much like looking through a camera. See also the code-verified dialog reference: [Camera Set-up Dialog](../../01-user-interface/CameraSetDlg.md).
+**Description:** Choosing Set Camera from the View Menu displays the Set Camera dialog. The Set Camera dialog allows the user to define what is visible in the viewers. It is called Set Camera because a camera metaphor is used to perform this task: determining how a scene is viewed is much like looking through a camera. See also the dialog reference: [Camera Set-up Dialog](../../01-user-interface/CameraSetDlg.md).
 
 The Set Camera dialog is shown in Figure 5-2.
 
@@ -155,7 +155,7 @@ Pressing Delete View removes the current view from the list of views. The previo
 
 **Purpose:** Select or remove overlays from the selected viewer
 
-**Description:** Choosing Overlays from the View Menu displays the Overlays dialog. The Overlays dialog (see Figure 5-4) allows the user to display or remove objects from the scene. The Overlays dialog displays a multiple-selection list box displaying all the overlay names of the objects in the viewer. By default, all objects are selected, and therefore, are displayed in the viewer. Click on an overlay name to remove all objects using that name. See also the code-verified dialog reference: [Overlays Dialog](../../01-user-interface/OverLayDlg.md).
+**Description:** Choosing Overlays from the View Menu displays the Overlays dialog. The Overlays dialog (see Figure 5-4) allows the user to display or remove objects from the scene. The Overlays dialog displays a multiple-selection list box displaying all the overlay names of the objects in the viewer. By default, all objects are selected, and therefore, are displayed in the viewer. Click on an overlay name to remove all objects using that name. See also the dialog reference: [Overlays Dialog](../../01-user-interface/OverLayDlg.md).
 
 > **NOTE:** A good example of the use of overlays is accident site debris. By using HVE's 3-D Editor to name all objects 'Debris' when they are created, the debris may be displayed or removed from the scene to show how an accident site appeared before and after the accident.
 

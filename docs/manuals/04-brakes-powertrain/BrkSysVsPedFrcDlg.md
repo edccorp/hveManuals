@@ -26,7 +26,7 @@ Opens the ABS System Data dialog, used to edit the system-level ABS parameters: 
 Ratio of master cylinder pressure per unit of brake pedal force. This control is disabled if the current vehicle has no driver.
 
 ---
-*Source topic: BrkSysVsPedFrcDlg.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

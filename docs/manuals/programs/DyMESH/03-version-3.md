@@ -34,14 +34,11 @@ The wheel model reuses the DyMESH machinery by treating each wheel as its own
 DyMESH body:
 
 - **Treat each wheel as an independent DyMESH object.**
-- **Create the wheel mesh based on tire size.** In the code
-  (`InitializeDyMeshWheels` / `calcWheelMesh` in `Dymesh.cpp`) a cylindrical
-  wheel mesh is built from the tire radius and width, with
-  `NUM_DYMESH_WHEEL_INC` (80) angular increments. Wheel material stiffnesses are
-  set to their own constants — `TRUCK_WHEEL_A_STIFF` / `TRUCK_WHEEL_B_STIFF`
-  (500 / 100) or `PASS_CAR_WHEEL_A_STIFF` / `PASS_CAR_WHEEL_B_STIFF` (250 / 50)
-  — and a saturation deflection tied to the wheel half-width is assigned per
-  vertex (`deflMax`).
+- **Create the wheel mesh based on tire size.** A cylindrical wheel mesh is
+  built from the tire radius and width, using 80 angular increments. Wheel
+  material stiffnesses are set to their own values — $A$ / $B$ of 500 / 100 for
+  truck wheels, or 250 / 50 for passenger-car wheels — and a saturation
+  deflection tied to the wheel half-width is assigned per vertex.
 - **Place transforms in front of and following the DyMESH calculation** to carry
   the wheel's location, steer, camber, and spin into and out of the collision
   computation.
@@ -79,10 +76,10 @@ loop.
 ![Figure: Wheel loop flow chart](images/D3-p11-figwheels.png)
 *Figure: Wheels flow chart.*
 
-*(updated: In the current code these steps are implemented in
-`Physics/Source/Simon/PHYMODEL.CPP` as `DyMeshWheels()`, `UpdateWheelMesh()`,
-`AddWheelForceToSprungMass()`, `UpdateWheelMeshDamage()`, and
-`DyMeshWheelDispl()`.)*
+*(updated: in the current version of HVE these steps are carried out by SIMON,
+which updates each wheel mesh, adds the resulting wheel forces to the sprung
+mass, updates the wheel-mesh damage, and computes the resulting permanent wheel
+displacement.)*
 
 ## DyMESH Wheels user interface
 
@@ -94,9 +91,7 @@ Options**, the per-wheel **Set-up**, and the **Output vs. Time** results.
 The DyMESH Options dialog (Options menu) as shown in the deck contains:
 
 - **Use DyMESH** (master enable).
-- **Include Environment** — also run DyMESH contact against the environment
-  (see [Wheel vs. Environment](05-wheel-environment.md) for the wheel side of
-  this feature and the tire-model handoff).
+- **Include Environment** — also run DyMESH contact against the environment.
 - **Force To x-y Plane** — constrain the collision deformation/force to the
   horizontal plane.
 - **Search** — *Automatic* (use the calculated box size) or *Set Box Size* (use
@@ -108,14 +103,14 @@ The DyMESH Options dialog (Options menu) as shown in the deck contains:
 ![Figure: DyMESH Options dialog](images/D3-p14-24.png)
 *Figure: "DyMESH Options" dialog.*
 
-*(updated: The current `CDyMeshOptionsDlg` differs from the deck screenshot. The
-General area now also carries a **DyMESH Version No** selector — radio buttons
-**Version 3** and **Version 4** — a **Tow Vehicle / Trailer Contact** checkbox
-(`DyMeshGeometryConnection`), and separate **DyMESH start time** and
+*(updated: The current DyMESH Options dialog differs from the deck screenshot.
+The General area now also carries a **DyMESH Version No** selector — radio
+buttons **Version 3** and **Version 4** — a **Tow Vehicle / Trailer Contact**
+checkbox, and separate **DyMESH start time** and
 **Environment start time** fields. The **Force Smoothing** radio labels have been
 renamed to "**Version 1 and 2**" and "**Version 3 and Later**". The stand-alone
-**Timesteps** group shown in the deck is commented out in the current dialog
-code. An **Advanced** tab exposes the low-level search controls — Stop After
+**Timesteps** group shown in the deck is no longer present in the current
+dialog. An **Advanced** tab exposes the low-level search controls — Stop After
 one/two/all vertices, inside-vehicle test (master normal vs. CG), inside-polygon
 test (sub-areas vs. cross product), pushback method, "don't deform a single
 vertex", and "don't restore a large distance".)*
@@ -139,15 +134,15 @@ wheel force-deflection and moment-deflection parameters:
 ![Figure: Wheel Data dialog, Damage tab](images/D3-p15-26.png)
 *Figure: "Wheel Data" dialog, Damage tab, with the Use DyMESH force/moment fields highlighted.*
 
-See also the wheel-data / wheel-displacement inputs documented in
-[`../../05-tires-wheels/WheelsDlg1.md`](../../05-tires-wheels/WheelsDlg1.md).
+See also the wheel-data / wheel-displacement inputs documented in the
+[Wheel Data dialog reference](../../05-tires-wheels/WheelsDlg1.md).
 
 ### Output vs. time
 
 The Key Results output reports, per wheel, the collision impulses and moments in
 addition to the usual kinematics and kinetics — e.g. for "Axle 1, Right":
-`Fx Imp`, `Fy Imp`, `Fz Imp` (lb) and `Mx Imp`, `My Imp`, `Mz Imp` (ft-lb),
-alongside the whole-vehicle (Kinetics) impulses. This lets the user see how much
+**Fx Imp**, **Fy Imp**, **Fz Imp** (lb) and **Mx Imp**, **My Imp**, **Mz Imp**
+(ft-lb), alongside the whole-vehicle (Kinetics) impulses. This lets the user see how much
 of the collision load each wheel carried.
 
 ![Figure: Key Results output table with per-wheel impulses](images/D3-p16-28.png)
@@ -155,17 +150,25 @@ of the collision load each wheel carried.
 
 ## Wheel displacement capping *(updated)*
 
-*(updated: The current code adds a refinement not present in the 2026 decks. In
-`PHYMODEL.CPP`, `UpdateWheelMeshDamage()` now tracks the largest actual movement
-of any wheel-mesh vertex during contact, `MaxContactDispl` (the magnitude of the
-damaged-minus-undamaged vertex displacement). `DyMeshWheelDispl()` then **caps
-the computed permanent wheel displacement by that physical contact motion**: the
-force-derived displacement `Displ = (Ftotal - FConst)/FLinear` is limited by
-`Displ = min(Displ, MaxContactDispl)`, and the per-time-step change in the x/y
-wheel displacement is likewise scaled so it cannot exceed `MaxContactDispl`. This
-prevents the wheel from being "bent" further than the collision physically moved
-it. See commits `12131c2` / `16a1825`, "Cap DyMesh wheel displacement by contact
-motion.")*
+*(updated: the current version of HVE adds a refinement not present in the 2026
+decks. During each timestep the wheel-mesh damage update tracks the largest
+actual movement of any wheel-mesh vertex while in contact — the magnitude of the
+damaged-minus-undamaged vertex displacement, referred to below as the maximum
+wheel-mesh contact movement for that timestep. The permanent wheel displacement
+is then **capped by that physical contact motion**. The displacement derived
+from the collision force,*
+
+$$
+\delta_{Wheel} = \frac{F_{Total} - F_{Const}}{F_{Linear}}
+$$
+
+*where $F_{Total}$ is the collision force on the wheel and $F_{Const}$ and
+$F_{Linear}$ are the constant (no-damage) force threshold and the linear
+force-per-displacement rate from the wheel's damage data, is limited to no more
+than the maximum wheel-mesh contact movement, and the
+per-time-step change in the x/y wheel displacement is likewise scaled so it
+cannot exceed that movement. This prevents the wheel from being "bent" further
+than the collision physically moved it.)*
 
 ## Validation
 
@@ -199,7 +202,7 @@ pickup vs. Explorer on a graded road, and the RICSAC 1 (20 mph) and RICSAC 2
   release.**
 
 ---
-*Source: DyMESH Version 3 (2026 HVE Forum) — organized and verified against DYMESH.H / Dymesh.cpp, 2026-07-05.*
+*Source: DyMESH Version 3 (2026 HVE Forum). Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

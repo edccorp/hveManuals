@@ -41,7 +41,7 @@ Displays the Decimate/Tessellate dialog, used to reduce (decimate) or refine (te
 Selecting Apply causes the entered parameters to be accepted, and the first vertex will appear in the views at the specified X, Y and Z coordinate. A small, bright marker is displayed at the location of the first vertex. In Subdivide mode, Apply performs the surface split. Surface Editor actions applied this way are registered with the Undo/Redo manager.
 
 ---
-*Source topic: SurfEdDlg.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

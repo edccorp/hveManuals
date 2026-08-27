@@ -1,8 +1,8 @@
 # Chapter 29 — HVE Brake Designer
 
 *Updated Markdown edition of the HVE User's Manual (HVE Version 5, Seventh
-Edition, January 2006), Chapter 29, pages 29-1 through 29-30. Verified against the current HVE application source
-(`HVEINV-64/HveBrakes.cpp`, `BrakeDesign*.cpp`, `BrakeAssemblyDlg.cpp`).*
+Edition, January 2006), Chapter 29, pages 29-1 through 29-30, revised to describe the current HVE
+Brake Designer.*
 
 ## Overview
 
@@ -292,10 +292,9 @@ where
 | $R$ | Drum inner radius (in) |
 
 *(updated: the original text printed eq. 29-7 as "R/2"; the drum torque
-radius is the drum inner radius, which the code computes as drum
-diameter/2 — `TorqueRad = DrumDia*0.5` in `HveBrakes.cpp`. Similarly, the
-disc torque radius is computed as (outer diameter + inner diameter)/4, which
-equals $(R_o+R_i)/2$.)*
+radius is the drum inner radius, i.e. half the drum diameter. Similarly, the
+disc torque radius is one quarter of the sum of the outer and inner
+diameters, which equals $(R_o+R_i)/2$.)*
 
 ## Actuation Force
 
@@ -547,7 +546,7 @@ chapter (see Lining Friction). The material attributes, used for thermal
 analysis of the brake assembly, are described in
 [Chapter 30](30-brake-temperature.md).
 
-See also the code-verified dialog reference:
+See also the detailed dialog reference:
 [Disc Brake dialog](../../04-brakes-powertrain/DiskBreakDlg.md).
 
 ## Duo-Servo Drum Brake
@@ -584,7 +583,7 @@ The HVE Brake Designer dialog for duo-servo brakes is shown in Figure 29-11.
 ![Figure 29-11](../images/p728-348.png)
 *Figure 29-11 — HVE Brake Designer for duo-servo drum brake types.*
 
-See also the code-verified dialog reference:
+See also the detailed dialog reference:
 [Duo-Servo Drum Brake dialog](../../04-brakes-powertrain/DueServoBrkDlg.md).
 
 ## Duplex Drum Brake
@@ -597,7 +596,7 @@ abutted leading shoe. Thus, the total brake factor for a duplex brake is:
 
 $$BF = BF_1 + BF_2$$
 
-*(updated: the original text printed this as $BF = 2 \times BF_1$; the code
+*(updated: the original text printed this as $BF = 2 \times BF_1$; HVE
 calculates the two shoes' brake factors separately — allowing different
 front and rear lining angles — and sums them, which reduces to
 $2 \times BF_1$ when the shoes are identical.)*
@@ -614,7 +613,7 @@ The HVE Brake Designer dialog for duplex drum brakes is shown in Figure
 ![Figure 29-12](../images/p730-349.png)
 *Figure 29-12 — HVE Brake Designer for duplex drum brake types.*
 
-See also the code-verified dialog reference:
+See also the detailed dialog reference:
 [Duplex Drum Brake dialog](../../04-brakes-powertrain/DuplexBrkDlg.md).
 
 ## Single Piston Drum Brake
@@ -649,7 +648,7 @@ $$BrakeTorque = (BF_1 \, AF_{Primary\,Shoe} + BF_2 \, AF_{Secondary\,Shoe}) \tim
 
 *(updated: the original text printed the torque as
 $(AF_{Primary} + AF_{Secondary}) \times TR \times \eta_{Mech}$, omitting the
-brake factors; the code applies each shoe's brake factor to its own
+brake factors; HVE applies each shoe's brake factor to its own
 actuation force before summing.)*
 
 The HVE Brake Designer dialog for single piston drum brakes is shown in
@@ -658,7 +657,7 @@ Figure 29-13.
 ![Figure 29-13](../images/p731-350.png)
 *Figure 29-13 — HVE Brake Designer for single piston drum brake types.*
 
-See also the code-verified dialog reference:
+See also the detailed dialog reference:
 [Single Piston Drum Brake dialog](../../04-brakes-powertrain/BrkSingPistDlg.md).
 
 ## Dual Piston Drum Brake
@@ -682,7 +681,7 @@ The resulting brake torque for a dual piston drum brake is:
 
 $$BrakeTorque = (BF_1 \, AF_{Primary\,Shoe} + BF_2 \, AF_{Secondary\,Shoe}) \times TR \times \eta_{Mech}$$
 
-*(updated: as for the single piston brake, the code applies each shoe's
+*(updated: as for the single piston brake, HVE applies each shoe's
 brake factor to its own actuation force.)*
 
 The HVE Brake Designer dialog for dual piston drum brakes is shown in Figure
@@ -691,7 +690,7 @@ The HVE Brake Designer dialog for dual piston drum brakes is shown in Figure
 ![Figure 29-14](../images/p733-351.png)
 *Figure 29-14 — HVE Brake Designer for dual piston drum brake types.*
 
-See also the code-verified dialog reference:
+See also the detailed dialog reference:
 [Dual Piston Drum Brake dialog](../../04-brakes-powertrain/DualPistBrkDlg.md).
 
 ## S-Cam Drum Brake
@@ -708,8 +707,8 @@ shoes, the combined brake factor is:
 $$BF = \frac{4 \, BF_1 \, BF_2}{BF_1 + BF_2}$$
 
 *(updated: the original edition summed the leading- and trailing-shoe brake
-factors, $BF = BF_1 + BF_2$. The current code (`HveBrakes.cpp`, S-cam case)
-uses the equal-displacement relationship above, per Limpert, Eq. 2-22, which
+factors, $BF = BF_1 + BF_2$. The current version of HVE uses the
+equal-displacement relationship above, per Limpert, Eq. 2-22, which
 correctly accounts for the fixed-cam force redistribution between the
 shoes.)*
 
@@ -772,14 +771,13 @@ The HVE Brake Designer dialog for dual wedge drum brakes is shown in Figure
 ![Figure 29-17](../images/p737-354.png)
 *Figure 29-17 — HVE Brake Designer for dual wedge drum brake types.*
 
-See also the code-verified dialog reference:
+See also the detailed dialog reference:
 [Dual Wedge Drum Brake dialog](../../04-brakes-powertrain/DualWedgeBrkDlg.md).
 
 ## Air Disc Brake
 
 *(updated: this brake type was added after the original edition of the
-manual; it is documented here from the current source code
-(`BrakeDesignAirDiscBrake.cpp`, `HveBrakes.cpp` type 9).)*
+manual and is documented here from the current version of HVE.)*
 
 The air disc brake combines the caliper disc brake friction model with
 air-chamber actuation. The brake factor is calculated using equation 29-2

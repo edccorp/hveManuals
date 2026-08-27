@@ -37,7 +37,7 @@ Static convective energy transfer coefficient between the brake lining surface a
 Velocity-dependent energy transfer coefficient between the brake lining surface and adjacent air (i.e., this coefficient is multiplied by vehicle linear velocity to determine the convection rate).
 
 ---
-*Source topic: BrkMatPropDlg.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

@@ -14,7 +14,7 @@ Clicking an entry in the tree makes that human or vehicle the currently selected
 If no humans or vehicles have been selected for the event, a "No Humans or Vehicles Selected" message is displayed instead.
 
 ---
-*Source topic: SelHumVehDlg.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

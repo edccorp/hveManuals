@@ -57,7 +57,7 @@ Displays the Collision Pulse Options dialog, used to extract a portion of the to
 OK validates and saves the pulse data and closes the dialog; Cancel discards the changes.
 
 ---
-*Source topic: ColPulse.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

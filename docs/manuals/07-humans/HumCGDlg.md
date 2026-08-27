@@ -23,7 +23,7 @@ Displays the [Joint Data Dialog Box](Human3.md) for the joints attached to the s
 Closes the popup without making a selection.
 
 ---
-*Source topic: HumCGDlg.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

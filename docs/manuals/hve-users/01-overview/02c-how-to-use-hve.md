@@ -1,8 +1,7 @@
 # Chapter 2: How To Use HVE — Part C
 
-*Updated edition, verified against current HVE source code (HVEINV-64,
-Physics). Original: HVE User's Manual, Seventh Edition (Jan 2006), printed
-pages 2-70 through 2-104.*
+*Updated edition, revised for the current HVE release. Original: HVE User's
+Manual, Seventh Edition (Jan 2006), printed pages 2-70 through 2-104.*
 
 *Part A: [Basic concepts through Event Mode](02-how-to-use-hve.md) •
 Part B: [Report/Playback Windows, Cases, Databases, Printing, View
@@ -24,7 +23,7 @@ these options is saved when you exit HVE, so your user environment will be
 the same the next time you start HVE. These options are described below.
 
 See the [Options Menu reference](../../01-user-interface/OptionsMenu.md) for
-the complete, code-verified list of current Options menu items.
+the complete list of current Options menu items.
 
 ### Key Results Windows
 
@@ -585,7 +584,7 @@ specifically for each reconstruction or simulation model. This dialog is
 accessed from the Options menu.
 
 See the [Calculation Options reference](../../10-calculation-options/README.md) for
-code-verified descriptions of each model's Calculation Options dialog
+descriptions of each model's Calculation Options dialog
 (EDCRASH, EDGEN, EDHIS, EDSMAC, EDSMAC4, EDSVS, EDVDS, EDVSM, EDVTS and
 SIMON).
 
@@ -701,7 +700,7 @@ working environment. These preferences are saved when exiting HVE, so the
 next time HVE is used, the environment will be the same. The Preferences
 dialog is shown in Figure 2-73 (see the [User Preferences dialog
 reference](../../01-user-interface/PrefDlg.md) for the current,
-code-verified option list).
+option list).
 
 ![Figure 2-73](../images/p146-090.png)
 *Figure 2-73: The User Preferences dialog.*

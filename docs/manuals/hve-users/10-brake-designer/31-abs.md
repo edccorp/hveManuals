@@ -1,8 +1,8 @@
 # Chapter 31 — Antilock Braking Systems
 
 *Updated Markdown edition of the HVE User's Manual (HVE Version 5, Seventh
-Edition, January 2006), Chapter 31, pages 31-1 through 31-22. Verified against the current HVE application source
-(`HVEINV-64/ABSSystemDlg.cpp`, `ABSDesignerDlg.cpp`, `BrakePage.cpp`).*
+Edition, January 2006), Chapter 31, pages 31-1 through 31-22, revised to describe the current HVE
+ABS Designer.*
 
 ## Overview
 

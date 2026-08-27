@@ -21,7 +21,7 @@ This section provides a detailed explanation of the process of viewing, combinin
 - [Chapter 17](17-report-playback-windows.md) describes the process of creating Report and Playback windows.
 - [Chapter 18](18-editing-event-sequence.md) provides a detailed overview of the process of combining and editing multiple events.
 
-## Related code-verified reference pages
+## Related Reference Pages
 
 - [Playback Controls (Toolbar)](../../01-user-interface/PlayBackControls.md)
 - [Report Window Dialog Box](../../01-user-interface/PrevWnd.md)
@@ -29,7 +29,7 @@ This section provides a detailed explanation of the process of viewing, combinin
 - Output report reference: [Section 11 — Reports and Output](../../11-reports-output/README.md)
 
 ---
-*Converted and updated from the legacy HVE User's Manual (Seventh Edition, Jan 2006), Section Seven; verified against current source code (HVEINV-64) 2026-07-05.*
+*Converted and updated from the legacy HVE User's Manual (Seventh Edition, Jan 2006), Section Seven; revised to match the current version of HVE, 2026-07-05.*
 
 <!-- NAV -->
 

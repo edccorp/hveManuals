@@ -3,7 +3,7 @@
 **Engineering Dynamics Corporation**
 **SIMON (SIMulation mOdel Non-linear), Version 2**
 
-Updated Markdown edition, converted from the Fifth Edition printed manual (January 2006) and verified against the current HVE source code (SIMON physics engine in `Physics/Source/Simon/`, the DyMESH collision code in `Physics/Include/DYMESH.H` and `Physics/Source/LibHve/Dymesh.cpp`, and the HVE user-interface dialogs in `HVEINV-64/`). Passages that differ from the printed edition because the software has changed are marked with italic *(updated: ...)* notes. Figures from the printed manual are referenced by placeholder.
+Updated Markdown edition, converted from the Fifth Edition printed manual (January 2006) and brought up to date with the current version of HVE, covering the SIMON physics engine, the DyMESH collision model and the HVE user-interface dialogs. Passages that differ from the printed edition because the software has changed are marked with italic *(updated: ...)* notes. Figures from the printed manual are referenced by placeholder.
 
 ## How to Use This Manual
 
@@ -31,7 +31,7 @@ Engineering Dynamics Corporation provides technical assistance for supported use
 5. **[Chapter 5 — SIMON Tutorial](05-tutorial.md)**
    ISO 3888 lane-change maneuver with and without ABS: creating the vehicle and environment, setting up and executing the events, and viewing/printing all output reports
 6. **[Chapter 6 — Messages](06-messages.md)**
-   Complete catalog of SIMON run-time messages (fatal, diagnostic and informative), verified against `Physics/Source/Simon/SIMON.rsc`
+   Complete catalog of SIMON run-time messages (fatal, diagnostic and informative)
 7. **[Chapter 7 — Technical References](07-technical-references.md)**
    Published references for the SIMON, DyMESH, tire, brake and driver models
 8. **[Chapter 8 — Index](08-index.md)**
@@ -42,7 +42,7 @@ Engineering Dynamics Corporation provides technical assistance for supported use
 - **Calculation Options** have grown from three options (Tire Model Method, Steer DOF, Collision Acceleration Threshold) to include: three semi-empirical tire model versions, an AutoStart Steer DOF mode, a Hydroplaning Model (NASA / NASA-TTI / Gallaway), a Connection Model selector, a Connection Failure Start Time, a Solid Axle Inertia selector, an Accident History Basis (Impact Force / Acceleration) selector, and an Include Free Space damage-report option (see Chapter 2).
 - **DyMESH Options** are now configured in a dedicated dialog: Use DyMESH, Include Environment, Force to x-y Plane, Tow Vehicle / Trailer Contact, DyMESH Version 3/4, vehicle and environment start times, contact search (Automatic / Set Box Size) and mesh smoothing model (see Chapter 2).
 - **DyMESH wheel contact and damage**: wheels may carry collision meshes; collision forces beyond user-set thresholds displace and reorient wheels, and the displacement is now capped by the actual wheel-mesh contact motion each timestep (see Chapter 4, Sprung Mass Impact Model).
-- **Message catalog** extended with collision/damage-related messages Msg24–Msg36 and a roll/pitch limit message (see Chapter 6).
+- **Message catalog** extended with collision/damage-related messages and a roll/pitch limit message (see Chapter 6).
 
 <!-- NAV -->
 

@@ -63,7 +63,7 @@ Viewer contains the following components:
 
 The Position/Velocity dialog (see Figure 15-2) displays the position and
 orientation of the selected human or vehicle. It includes the following
-components (for the current, code-verified field reference see the
+components (for the current field reference see the
 [Position/Velocity dialog page](../../09-events-driver-controls/PosVelDlg.md)):
 
 ![Figure 15-2](../images/p484-figB15-2.png)
@@ -163,7 +163,7 @@ add a new event, perform the following steps:
 
 1. Click on *Add New Object*. The Event Information dialog (see Figure
    15-5) will be displayed, allowing the user to enter or select the
-   following options (see also the code-verified
+   following options (see also the
    [Event Information dialog page](../../09-events-driver-controls/EventInfo.md)):
 
    - **Event Name** — A user-editable field allowing the user to assign a
@@ -412,7 +412,7 @@ vehicle position, perform the following steps:
 
 ---
 
-*See also (code-verified dialog references):*
+*See also (dialog references):*
 [Event Information](../../09-events-driver-controls/EventInfo.md) ·
 [Event Setup menu](../../09-events-driver-controls/EventSetup.md) ·
 [Position/Velocity](../../09-events-driver-controls/PosVelDlg.md) ·

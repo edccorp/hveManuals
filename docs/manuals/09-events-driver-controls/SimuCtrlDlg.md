@@ -26,7 +26,7 @@ Termination conditions are used to define when the simulation terminates. Termin
 - **Acceleration Change Limit** — Maximum allowable change in acceleration during one timestep.
 
 ---
-*Source topic: SimuCtrlDlg.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

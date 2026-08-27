@@ -27,7 +27,7 @@ The Z coordinate of the impulse center. Enabled only when the current pulse type
 OK validates and assigns the options; Cancel discards the changes. The options are reset to zero when **New** is pressed in the Collision Pulse dialog.
 
 ---
-*Source topic: ColPulOptDlg.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

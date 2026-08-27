@@ -25,7 +25,7 @@ Vehicle-fixed y coordinate of the accelerometer. Default: 0. Typical range ±102
 Vehicle-fixed z coordinate of the accelerometer. Default: 0. Typical range ±300 in; allowed range ±500 in. This field is read-only if the event's calculation method does not compute 3-dimensional position and velocity (per the physics program's options).
 
 ---
-*Source topic: AcclMtrsDlg.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

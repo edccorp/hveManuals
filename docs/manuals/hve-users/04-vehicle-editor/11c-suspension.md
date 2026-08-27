@@ -24,7 +24,7 @@ select specific suspension properties:
   Anti-pitch and Roll Steer)
 
 Each of these properties is described in the following sections. See also
-the code-verified reference page,
+the reference page,
 [Suspension Data dialog](../../03-suspension-steering/SuspDlg.md).
 
 ### Suspension Type
@@ -88,7 +88,7 @@ for a tandem axle suspension, perform the following steps:
 
 The Springs and Shocks properties for the selected wheel location are
 displayed and edited using the Springs and Shocks dialog. See also the
-code-verified reference page,
+reference page,
 [Springs and Shocks dialog](../../03-suspension-steering/SprindShocksDlg.md).
 
 ![Figure 11-24](../images/p385-215.png)
@@ -204,7 +204,7 @@ The Suspension Inertial properties are described below.
 
 The Jounce and Rebound properties for the selected wheel location are
 displayed and edited using the Jounce/Rebound dialog. Suspension stops are
-used to limit the travel of the suspension. See also the code-verified
+used to limit the travel of the suspension. See also the
 reference page,
 [Jounce and Rebound dialog](../../03-suspension-steering/JouAndRebDlg.md).
 
@@ -260,7 +260,7 @@ The Jounce/Rebound properties are described below.
 
 The Spindle Axis geometry properties for the selected wheel location are
 displayed and edited using the Spindle Axis dialog. See also the
-code-verified reference page,
+reference page,
 [Spindle Axis dialog](../../03-suspension-steering/SpndleAxisDlg.md).
 
 ![Figure 11-29](../images/p393-218.png)
@@ -393,7 +393,7 @@ The Steer Axis Steering Stop parameters are described below.
 
 The Camber and Half-track properties for the selected wheel location are
 displayed and edited using the Camber & Half-track Table dialog. See also
-the code-verified reference page,
+the reference page,
 [Camber dialog](../../03-suspension-steering/CamberDlg.md).
 
 ![Figure 11-32](../images/p398-221.png)
@@ -448,7 +448,7 @@ The Camber and Half-track Table properties are described below.
 ### Anti-Pitch
 
 The Anti-Pitch properties for the selected wheel location are displayed and
-edited using the Anti-Pitch dialog. See also the code-verified reference
+edited using the Anti-Pitch dialog. See also the reference
 page, [Anti-Pitch dialog](../../03-suspension-steering/AntiPitchDlg.md).
 
 ![Figure 11-33](../images/p400-222.png)
@@ -492,7 +492,7 @@ edited using the Roll Steer dialog. The roll steer dialogs are different
 for independent and solid axle suspensions: independent suspensions use the
 polynomial-coefficient dialog with a *Roll Steer vs. Jounce/Rebound* graph;
 solid axle (and tandem) suspensions use a single-coefficient dialog. See
-also the code-verified reference pages,
+also the reference pages,
 [Roll Steer dialog (independent)](../../03-suspension-steering/RollSteerDlg.md)
 and
 [Roll Steer Properties (solid/tandem axle)](../../03-suspension-steering/RollSteerNewDlg.md).
@@ -544,8 +544,8 @@ The Roll Steer parameters are described below.
 
 ---
 *Source: HVE User's Manual (Version 5, Seventh Edition, Jan 2006), Chapter
-11, pages 11-40..11-61 — updated against source code (HVEINV-64, Physics)
-2026-07-05.*
+11, pages 11-40..11-61 — revised for the current HVE
+release, 2026-07-05.*
 
 <!-- NAV -->
 

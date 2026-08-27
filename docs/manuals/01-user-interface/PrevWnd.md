@@ -21,7 +21,7 @@ Contains the name for the report window. It defaults to the event currently sele
 A combo box containing all the available reports for the selected event. The user can select any report.
 
 ---
-*Source topic: PrevWnd.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

@@ -35,7 +35,7 @@ EDSMAC4 solves these equations of motion at discrete, user-entered time interval
 
 There are no degrees of freedom (and hence, no equations of motion) for vertical translation nor pitch or roll rotation. Thus, roll, pitch and vertical accelerations are ignored.
 
-In HVE, at each time step, the vehicle's roll, pitch and CG elevation are computed using `GetSurfaceInfo()` [25]. This approach allows the vehicle to sense when it is on a grade, and the equations of motion account for the grade. Surface slopes up to about 15 degrees are allowed (a message will be issued if this angle is exceeded). Thus, vehicle motion on hills, super-elevations, road crowns and even sloped shoulders may be modeled using EDSMAC4.
+In HVE, at each time step, the vehicle's roll, pitch and CG elevation are computed using HVE's surface-information search [25]. This approach allows the vehicle to sense when it is on a grade, and the equations of motion account for the grade. Surface slopes up to about 15 degrees are allowed (a message will be issued if this angle is exceeded). Thus, vehicle motion on hills, super-elevations, road crowns and even sloped shoulders may be modeled using EDSMAC4.
 
 *(updated: the current version also includes an optional dynamic **steer degree of freedom** — when enabled via the Steer DOF calculation option, wheel steer angles are computed from the torques acting on the steering system (tire friction, steering stops, gyroscopic precession, steering column friction) instead of being read directly from the driver steer tables; see [EDSMAC4 Calculation Options](../../10-calculation-options/CalcOptEDSMAC4.md#steer-dof).)*
 
@@ -43,7 +43,7 @@ In HVE, at each time step, the vehicle's roll, pitch and CG elevation are comput
 
 The EDSMAC4 collision model is described in detail in reference 23.
 
-During the collision phase, each vehicle's crush perimeter is described by a set of radial RHO vectors extending from the CG to the vehicle exterior, spaced at the user-entered Vector Spacing angle (`DELPSI`, default 2 degrees). When the perimeters of two vehicles overlap, the collision routine iteratively adjusts the lengths of corresponding RHO vectors (in increments of `DELRHO`) until force equilibrium between the two vehicles is achieved within the Vector Force Tolerance (`ALAMB`). Collision forces are computed from the A and B stiffness coefficients of the crushed surfaces; friction forces tangent to the crush surface are computed using the inter-vehicle friction coefficient (`AMU`, set per vehicle pair in the Vehicle Mesh dialog), reduced linearly below the minimum sliding velocity `ZETAV`. Restitution is applied using the parametric model with coefficients $C_0$, $C_1$ and $C_2$. *(This paragraph summarizes the algorithm implemented in `Physics/Source/Edsmac4/Coll2.cpp`; see references 21–23 for the full derivation.)*
+During the collision phase, each vehicle's crush perimeter is described by a set of radial RHO vectors extending from the CG to the vehicle exterior, spaced at the user-entered **Vector Spacing** angle (default 2 degrees). When the perimeters of two vehicles overlap, the collision calculation iteratively adjusts the lengths of corresponding RHO vectors, in steps of the **Vector Adjustment Increment**, until force equilibrium between the two vehicles is achieved within the **Vector Force Tolerance**. Collision forces are computed from the A and B stiffness coefficients of the crushed surfaces; friction forces tangent to the crush surface are computed using the inter-vehicle friction coefficient (set per vehicle pair in the Vehicle Mesh dialog), reduced linearly below the **Minimum Velocity for Friction**. Restitution is applied using the parametric model with coefficients $C_0$, $C_1$ and $C_2$. *(See references 21–23 for the full derivation.)*
 
 ### Trajectory Phase
 
@@ -61,7 +61,7 @@ EDSMAC4 models quasi-static longitudinal and lateral load transfers. This is acc
 
 EDSMAC4's vehicle model allows the user to study vehicles with tandem axles and dual tires.
 
-*(updated: when the **Hydroplane Model** calculation option is set to NASA, the available tire friction and rolling resistance are further modified at each tire travelling over a water polygon, based on water depth, tire inflation pressure and the tire's hydroplaning speed; see `Physics/Source/Edsmac4/Hydroplane.cpp` and [EDSMAC4 Calculation Options](../../10-calculation-options/CalcOptEDSMAC4.md#hydroplane-model).)*
+*(updated: when the **Hydroplane Model** calculation option is set to NASA, the available tire friction is further modified at each tire travelling over a water polygon. The NASA model predicts the hydroplaning speed from the tire's inflation pressure ($182.16\sqrt{P}$ in/sec, $P$ in lb/in²); above that speed the tire's friction switches to the water polygon's friction value. A rolling-resistance multiplier is also applied but is currently always unity. See [EDSMAC4 Calculation Options](../../10-calculation-options/CalcOptEDSMAC4.md#hydroplane-model).)*
 
 ## Assumptions
 

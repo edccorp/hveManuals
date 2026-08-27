@@ -39,7 +39,7 @@ The tolerance for torso belt tension, above which injury is expected to occur to
 > Note: The old help listed a single Max Lap Belt Force and a single Max Torso Belt Force; the current dialog provides separate left- and right-belt entries (stored as LeftLap, RightLap, LeftTorso and RightTorso in the human data structure). The old description of Max Lap Belt Force as "peak axial loading of the femur" was incorrect — femur axial loading is covered by Max Knee Force.
 
 ---
-*Source topic: Human2.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

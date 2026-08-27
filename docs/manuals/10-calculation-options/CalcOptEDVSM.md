@@ -12,23 +12,23 @@ EDVSM has the following user-selectable calculation options:
 
 ## Tire Model Method
 
-This radio group selects the method used to model the tire-terrain interaction. The selection is stored in `calcOptions.calcInt[0]`. The choices are:
+This radio group selects the method used to model the tire-terrain interaction. The choices are:
 
-- **Normal** (0, the default) — Tire forces are computed at the tire-road contact patch using the standard EDVSM point-contact tire model.
-- **Radial Spring** (1) — *Not currently available.* Intended for modeling tire traversal of sharp-edged terrain irregularities using radial springs distributed around the tire circumference. This choice is greyed out in the dialog, and the physics engine rejects any value other than Normal (`ERROR_TIRE_MODEL_NOT_SUPPORTED`).
-- **Sidewall Impact** (2) — *Not currently available.* Intended for modeling forces produced by contact between the tire sidewall and a curb-like obstacle. This choice is greyed out in the dialog and rejected by the physics engine.
+- **Normal** (the default) — Tire forces are computed at the tire-road contact patch using the standard EDVSM point-contact tire model.
+- **Radial Spring** — *Not currently available.* Intended for modeling tire traversal of sharp-edged terrain irregularities using radial springs distributed around the tire circumference. This choice is greyed out in the dialog; the physics engine accepts only Normal and reports a fatal error for any other selection.
+- **Sidewall Impact** — *Not currently available.* Intended for modeling forces produced by contact between the tire sidewall and a curb-like obstacle. This choice is greyed out in the dialog and rejected by the physics engine.
 
 ## Steer DOF
 
-This radio group controls the steering system's steer degree of freedom. The selection is stored in `calcOptions.calcInt[2]` and mapped to the HVOSM-heritage curb/steer option flag `indcrb`. The choices are:
+This radio group controls the steering system's steer degree of freedom. The choices are:
 
-- **Off** (0, the default; `indcrb = NO_CURB`) — The steer degree of freedom is not integrated; the front wheel steer angles follow the driver's steer input tables directly.
-- **Normal** (1; `indcrb = NO_CURB_W_STEER`) — The steer degree of freedom is active. The front wheel steer angle is computed dynamically from the moments acting about the steer axis (tire forces, gyroscopic moments, steering system stiffness and damping), so the simulated steering response includes steering system compliance effects.
-- **Append** (2) — *Not currently available.* This choice is greyed out in the dialog, and the physics engine rejects it (`ERROR_STEER_MODEL_NOT_SUPPORTED`).
+- **Off** (the default) — The steer degree of freedom is not integrated; the front wheel steer angles follow the driver's steer input tables directly.
+- **Normal** — The steer degree of freedom is active. The front wheel steer angle is computed dynamically from the moments acting about the steer axis (tire forces, gyroscopic moments, steering system stiffness and damping), so the simulated steering response includes steering system compliance effects.
+- **Append** — *Not currently available.* This choice is greyed out in the dialog; if it is ever selected the physics engine reports a fatal error and the event will not run.
 
 ## Vehicle Body vs Environment Contact
 
-This checkbox is stored in `calcOptions.calcBoolean[0]` and assigned to the physics engine's `AllowRollover` flag. The default is off (unchecked).
+The default is off (unchecked).
 
 When checked, EDVSM performs body-to-terrain contact calculations using the HVOSM hardpoint model extended by EDC to use the vehicle's 3-D body mesh: when the vehicle's roll or pitch angle exceeds a threshold (5 degrees), each body mesh vertex is tested against the terrain, and contact forces and moments (including friction) are applied to the sprung mass. Vertex deformations are accumulated, allowing a damage profile to be computed and visualized; Damage Profiles output is available in Playback mode only when this option is checked. Enabling this option also removes the wheel camber inclination limit that otherwise prevents rollover, so this option must be checked for rollover simulations.
 
@@ -39,7 +39,7 @@ When unchecked, body-terrain contact forces are not computed, and the simulation
 Earlier versions of this help topic listed the terrain surface-search choices **From First Polygon**, **From Previous Polygon** and **By Elevation** as EDVSM calculation options. These are no longer part of the EDVSM Calculation Options dialog. The surface-search method is now selected in the separate Get Surface Information Options dialog (Options menu). Note that EDVSM does not support the By Elevation method; choosing it for an EDVSM event produces an error message when the event is executed.
 
 ---
-*Source topic: CalcOptEDVSM.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

@@ -27,7 +27,7 @@ The simulation time at which the airbag begins to fill. Default: 0.0010 sec. All
 The length of time over which the airbag fills. Default: 0.05 sec. Typical range 0.0001-0.20 sec; allowed range 0-40 sec. Only editable when AutoStart is unchecked.
 
 ---
-*Source topic: AirBagSysDlg.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

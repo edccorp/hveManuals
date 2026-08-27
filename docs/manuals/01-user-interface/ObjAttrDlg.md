@@ -65,7 +65,7 @@ A row of picture buttons at the bottom of the dialog:
 - **Save** — Saves the selected object or group to a file so it can be re-used in other environments.
 
 ---
-*Source topic: ObjAttrDlg.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

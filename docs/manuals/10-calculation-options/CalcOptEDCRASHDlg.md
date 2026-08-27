@@ -14,46 +14,46 @@ The EDCRASH Calculation Options dialog contains four groups of options — Progr
 
 Four check boxes enable or disable individual EDCRASH calculation procedures:
 
-- **Common Velocity check** — When checked, EDCRASH tests the computed separation velocities of the two vehicles to be sure they are compatible with the assumption of a common velocity at maximum engagement (internal physics variable `ComVelChkIsUsed`). Default: checked.
-- **Modify Departure Angle** — When checked, EDCRASH tests, and possibly modifies, the departure (separation) angles based on the computed post-impact rotation and rollout velocity (internal physics variable `ModifyGamSepIsUsed`, applied by `ModifyGamSep()`). Default: checked.
-- **Auto - Set Rot/Lat Skidding** — When checked, EDCRASH automatically determines whether each vehicle experienced rotational/lateral skidding during its post-impact trajectory, rather than relying solely on the user-entered skidding flags (internal physics variable `AutoRotLatSkidIsUsed`, applied by `AutoSkid()`). Default: checked.
-- **Include Angular Momentum Solution** — When checked, EDCRASH includes a conservation of angular momentum solution in addition to the standard linear momentum solution (internal physics variable `AngMomentumIsUsed`). Default: unchecked. Note: this check box is disabled (grayed out) in the current version of the dialog and cannot be changed.
+- **Common Velocity check** — When checked, EDCRASH tests the computed separation velocities of the two vehicles to be sure they are compatible with the assumption of a common velocity at maximum engagement. Default: checked.
+- **Modify Departure Angle** — When checked, EDCRASH tests, and possibly modifies, the departure (separation) angles based on the computed post-impact rotation and rollout velocity. Default: checked.
+- **Auto - Set Rot/Lat Skidding** — When checked, EDCRASH automatically determines whether each vehicle experienced rotational/lateral skidding during its post-impact trajectory, rather than relying solely on the user-entered skidding flags. Default: checked.
+- **Include Angular Momentum Solution** — When checked, EDCRASH includes a conservation of angular momentum solution in addition to the standard linear momentum solution. Default: unchecked. Note: this check box is disabled (grayed out) in the current version of the dialog and cannot be changed.
 
 ## Separation Velocity Basis
 
-This group of radio buttons selects the method EDCRASH uses to compute the vehicles' separation velocities (internal option `calcInt[0]`; see `TRAJ_SIM`, `SUST_CONTACT` and `ITERATE_ON_SIDESLIP` in `Cradef.h`). The default is *Normal*.
+This group of radio buttons selects the method EDCRASH uses to compute the vehicles' separation velocities. The default is *Normal*.
 
 - **Normal** — Choosing *Normal* causes EDCRASH to perform its standard, energy-based calculations to provide an estimate for separation forward, lateral and angular velocities and departure angle.
-- **Trajectory Simulation** — Choosing *Trajectory Simulation* causes EDCRASH to perform its standard, energy-based calculations (same as choosing *Normal*), and then use the separation velocities and departure angles as the initial conditions for a trajectory simulation (`SetTrajSimulation`). The simulation is run iteratively until the simulated trajectory matches the evidence at rest (and, if entered, end-of-rotation and point-on-curve positions) within the tolerances entered in the *Simulation Convergence Criteria* group below, or until the specified number of runs is reached.
-- **Sustained Contact** — Choosing *Sustained Contact* causes EDCRASH to use a weighted drag factor based on the wheel lock-ups and weights of the individual vehicles (`SetSustainedContact`, applied by `SustainedContactSpeedCalc()`).
-- **Iterate on Sideslip** — Choosing *Iterate on Sideslip* requests an iterative solution on vehicle sideslip angle (`SetIterateOnSideslip`). Note: this option is not supported by the current EDCRASH physics engine; selecting it causes the event to terminate with an error (see `Crainput.cpp`).
+- **Trajectory Simulation** — Choosing *Trajectory Simulation* causes EDCRASH to perform its standard, energy-based calculations (same as choosing *Normal*), and then use the separation velocities and departure angles as the initial conditions for a trajectory simulation. The simulation is run iteratively until the simulated trajectory matches the evidence at rest (and, if entered, end-of-rotation and point-on-curve positions) within the tolerances entered in the *Simulation Convergence Criteria* group below, or until the specified number of runs is reached.
+- **Sustained Contact** — Choosing *Sustained Contact* causes EDCRASH to use a weighted drag factor based on the wheel lock-ups and weights of the individual vehicles.
+- **Iterate on Sideslip** — Choosing *Iterate on Sideslip* requests an iterative solution on vehicle sideslip angle. Note: this option is not supported by the current EDCRASH physics engine; selecting it causes the event to terminate with an error.
 
 ## Consistency Checks
 
 EDCRASH performs several tests that compare independently computed results and issues warning messages when they disagree by more than a user-specified tolerance. The tolerances are:
 
-- **PDOF Range, +/- (deg)** — Warning range for compatibility of the principal directions of force of the two vehicles (internal physics variable `PdofWarnRange`; stored internally in radians). Default: 10 degrees.
-- **Delta-V Range, +/- (%/100)** — Warning range for compatibility between the damage-based and momentum-based delta-V results (internal physics variable `DeltaVWarnRange`). Default: 0.10.
-- **K.E. Range, +/- (%/100)** — Warning range for the kinetic energy compatibility test (internal physics variable `KEWarnRange`). Default: 0.50.
-- **Newton's 3rd Law Range, +/- (%/100)** — Warning range for the test comparing the collision force magnitudes on the two vehicles, which should be equal and opposite per Newton's third law (internal physics variable `CollForceWarnRange`). Default: 1.00.
+- **PDOF Range, +/- (deg)** — Warning range for compatibility of the principal directions of force of the two vehicles (stored internally in radians). Default: 10 degrees.
+- **Delta-V Range, +/- (%/100)** — Warning range for compatibility between the damage-based and momentum-based delta-V results. Default: 0.10.
+- **K.E. Range, +/- (%/100)** — Warning range for the kinetic energy compatibility test. Default: 0.50.
+- **Newton's 3rd Law Range, +/- (%/100)** — Warning range for the test comparing the collision force magnitudes on the two vehicles, which should be equal and opposite per Newton's third law. Default: 1.00.
 
 ## Simulation Convergence Criteria
 
 These entries apply only when the Separation Velocity Basis is set to *Trajectory Simulation*; they are disabled for the other choices. They control the iteration used to match the simulated post-impact trajectory to the physical evidence:
 
-- **Number Of Runs** — Maximum number of trajectory simulation iterations per vehicle (internal physics variable `MaxTrajRuns`). Default: 5.
-- **Rest Error, X-Y (%/100)** — Allowable error in the simulated rest position (internal physics variable `Traj_error_range[0]`). Default: 0.10.
-- **Rest Error, Heading (%/100)** — Allowable error in the simulated heading angle at rest (`Traj_error_range[1]`). Default: 0.10.
-- **EOR Error, X-Y (%/100)** — Allowable error in the simulated end-of-rotation position (`Traj_error_range[2]`). Default: 0.15.
-- **EOR Error, Heading (%/100)** — Allowable error in the simulated heading angle at end of rotation (`Traj_error_range[3]`). Default: 0.15.
-- **POC Error, X-Y (%/100)** — Allowable error in the simulated position at the user-entered point on curve (`Traj_error_range[4]`). Default: 0.15.
+- **Number Of Runs** — Maximum number of trajectory simulation iterations per vehicle. Default: 5.
+- **Rest Error, X-Y (%/100)** — Allowable error in the simulated rest position. Default: 0.10.
+- **Rest Error, Heading (%/100)** — Allowable error in the simulated heading angle at rest. Default: 0.10.
+- **EOR Error, X-Y (%/100)** — Allowable error in the simulated end-of-rotation position. Default: 0.15.
+- **EOR Error, Heading (%/100)** — Allowable error in the simulated heading angle at end of rotation. Default: 0.15.
+- **POC Error, X-Y (%/100)** — Allowable error in the simulated position at the user-entered point on curve. Default: 0.15.
 
 ## Apply Defaults
 
 Pressing the *Apply Defaults* button restores every option in the dialog to its factory default value (the defaults listed above).
 
 ---
-*Source topic: CalcOptEDCRASHDlg.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

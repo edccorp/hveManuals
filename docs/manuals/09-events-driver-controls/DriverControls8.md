@@ -27,7 +27,7 @@ Time required for the driver to move between the throttle pedal and the brake pe
 Each parameter is entered with a slider or by typing directly into the associated edit field.
 
 ---
-*Source topic: DriverControls8.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

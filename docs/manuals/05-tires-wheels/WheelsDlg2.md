@@ -37,7 +37,7 @@ This group is new since the original help. It is enabled only when the active ph
 **Amount of Failure (Failure Extent)** — Fraction of braking capacity lost at the wheel (%/100); 1.0 represents complete loss of braking at that wheel.
 
 ---
-*Source topic: WheelsDlg2.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

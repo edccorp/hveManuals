@@ -1,6 +1,6 @@
 # Chapter 3: File Menu
 
-*HVE User's Manual — Section Two: Menu Reference. Updated edition, verified against current HVE source code (HVEINV-64).*
+*HVE User's Manual — Section Two: Menu Reference. Updated edition, revised for the current HVE release.*
 
 The File Menu includes the following options:
 

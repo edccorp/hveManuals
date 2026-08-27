@@ -51,7 +51,7 @@ Redraws the graph with the new values.
 OK validates the entries against their allowed ranges and stores the roll-off table for the tire. Cancel discards all changes.
 
 ---
-*Source topic: SlipVsRollOffDlg.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

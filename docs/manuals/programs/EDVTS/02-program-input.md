@@ -457,20 +457,20 @@ EDVTS uses the current simulation control parameters in the Simulation Controls 
 
 ### Calculation Options
 
-*(updated: The printed manual described two calculation options — Roll-Couple Distribution and GetSurfaceInfo — set through an EDVTS Calculation Options dialog. In the current version, **EDVTS does not present a Calculation Options dialog** (`Vtsinput.cpp` sets `CalcOptionsDlgIsUsed = FALSE`). The Roll Couple Distribution value is taken directly from the tow vehicle's suspension data (Vehicle Editor → Suspension Parameters; `Suspension.RollCoupleDist`, default 0.55), not from a per-event option. The terrain surface-search method (GetSurfaceInfo) is selected in the separate Get Surface Information Options dialog on the Options menu.)*
+*(updated: The printed manual described two calculation options — Roll-Couple Distribution and Get Surface Information — set through an EDVTS Calculation Options dialog. In the current version, **EDVTS does not present a Calculation Options dialog**. The Roll Couple Distribution value is taken directly from the tow vehicle's **Roll Couple Distribution** suspension value (Vehicle Editor → Suspension Parameters; default 0.55), not from a per-event option. The terrain surface-search method is selected in the separate **Get Surface Information Options** dialog on the Options menu.)*
 
 ![Figure 2-5](images/p038-005.png)
 *Figure 2-5: The Calculation Options dialog shown in the original printed manual. This dialog is no longer presented for EDVTS; the roll-couple value now comes from the vehicle's suspension data.*
 
 **Roll Couple Distribution** describes the ratio of lateral load transferred between the front and rear suspensions during cornering. This distribution depends directly on the characteristics of the front and rear suspension systems and chassis stiffness. As EDVTS is a limited-degree-of-freedom analysis, the effects of the suspension system and chassis are included in this one parameter. A good approximation for the fraction of the total load transfer borne by the front axle can be obtained by dividing the roll moment produced at the front suspension by the total roll moment (i.e., the total produced by both front and rear suspensions together) during a steady turn. Note that a neutral vehicle will tend to have a lateral load transfer coefficient equal to the percentage of load on the front axle; an understeering vehicle will tend to have a greater value and an oversteering vehicle will have a lesser value. The default value is 0.55 (55 percent of the roll couple carried by the front axle).
 
-For full details of the current dialog and how the value is applied by the physics engine, see [EDVTS Calculation Options](../../10-calculation-options/CalcOptEDVTS.md).
+For full details of the current dialog and how the value is applied by the simulation, see [EDVTS Calculation Options](../../10-calculation-options/CalcOptEDVTS.md).
 
 #### Get Surface Information
 
-Both HVE-2D and HVE use a function called GetSurfaceInfo to determine on which environment polygon each tire is riding. This function searches below the X,Y coordinates of each tire contact patch, and uses a user-selectable algorithm to determine the friction and other characteristics of the surface beneath.
+Both HVE-2D and HVE use a surface information lookup to determine on which environment polygon each tire is riding. The lookup searches below the X,Y coordinates of each tire contact patch, and uses a user-selectable algorithm to determine the friction and other characteristics of the surface beneath.
 
-The default value of GetSurfaceInfo is *From Previous Polygon*. This results in fastest execution, but does not work for all environments. Refer to the User's Manual for further information about how GetSurfaceInfo works.
+The default surface-search method is *From Previous Polygon*. This results in fastest execution, but does not work for all environments. Refer to the User's Manual for further information about how the surface information lookup works.
 
 *(updated: The surface-search method is now selected in the separate Get Surface Information Options dialog (Options menu), not in the EDVTS Calculation Options dialog. The available methods are From First Polygon, From Previous Polygon and From Previous Polygon (Sorted); the By Elevation method is not supported.)*
 

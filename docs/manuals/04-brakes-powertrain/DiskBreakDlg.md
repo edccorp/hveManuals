@@ -66,7 +66,7 @@ The following entries from the previous manual are no longer present in this dia
 - **Preview** button — removed; the schematic preview drawing is now always displayed in the dialog.
 
 ---
-*Source topic: DiskBreakDlg.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

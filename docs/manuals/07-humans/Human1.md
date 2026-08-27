@@ -29,7 +29,7 @@ Displays the [Human Material Properties Dialog Box](HumMatProp.md), used to view
 > Note: The old help linked the Material button to the (vehicle/environment) Material Properties dialog; the button actually opens the Human Material Properties dialog.
 
 ---
-*Source topic: Human1.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

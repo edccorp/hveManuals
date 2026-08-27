@@ -134,7 +134,7 @@ Customizes HVE according to various user-selectable preferences. Displays the [U
 > Note: The *Add Playback Window* command described in earlier versions of this help topic is no longer located in the Options menu. Playback windows are added from Playback mode (see the Playback Information dialog).
 
 ---
-*Source topic: OptionsMenu.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

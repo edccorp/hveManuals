@@ -94,7 +94,7 @@ Calculated wheel brake torque per unit of system pressure. On pressing OK, this 
 - **Preview** button — removed; the schematic preview drawing is now always displayed in the dialog.
 
 ---
-*Source topic: DualWedgeBrkDlg.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

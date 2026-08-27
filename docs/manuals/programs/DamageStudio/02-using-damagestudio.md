@@ -18,7 +18,7 @@ When a DamageStudio window is initially displayed, *Simulated* is the default vi
 
 Because it is the default option, the *Show* checkbox is automatically checked. The viewer displays the event's first vehicle in its original condition (i.e., undamaged). The Damage Profile group information is initially blank or zero, except for the impulse number, which is *Auto*. When the impulse number is *Auto* and the user plays the simulation event, DamageStudio will automatically update the impulse number and associated damage information at the correct time as the simulation progresses.
 
-*(updated: the Auto entry in the Impulse No. dropdown is only offered for the Simulated damage view; for the other views the dropdown lists impulse numbers only — see `ShowAutoImpulseOption()` in `DamageStudioReportDlg.cpp`.)*
+*(updated: the Auto entry in the Impulse No. dropdown is only offered for the Simulated damage view; for the other views the dropdown lists impulse numbers only.)*
 
 4. Use the Playback Controller to play the event.
 
@@ -72,7 +72,7 @@ Select *From File* in the Damage dropdown, check *Show*, and use the *Filename* 
 
 ## Damage Photograph ("Photograph(s)")
 
-*(Not currently available: the Photograph(s) option is present in the source code but removed from the viewer dropdown in the current release.)*
+*(Not currently available: the Photograph(s) option has been removed from the viewer dropdown in the current release.)*
 
 ## Some Notes About Damage Profiles
 

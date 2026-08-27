@@ -34,11 +34,11 @@
 | Event (creating, set-up, executing) | [Chapter 2 — Event](02-program-input.md) |
 | Event Data (report) | [Chapter 3](03-program-output.md), [Chapter 5](05-tutorial.md) |
 | Friction Table | [Chapter 2 — Tire](02-program-input.md) |
-| GetSurfaceInfo | [Chapter 2 — Get Surface Information Options](02-program-input.md), [Chapter 4 — Terrain Definition](04-calculation-method.md) |
+| Get Surface Information | [Chapter 2 — Get Surface Information Options](02-program-input.md), [Chapter 4 — Terrain Definition](04-calculation-method.md) |
 | Graphing Results | [Chapter 3 — Graphic Reports](03-program-output.md), [Chapter 5 — Graphing Results](05-tutorial.md) |
 | Human Occupants | [Chapter 2 — Humans](02-program-input.md), [Chapter 4 — Human Occupants](04-calculation-method.md) |
 | HVE Driver Model (Path Follower) | [Chapter 4 — Driver Controls](04-calculation-method.md), [Chapter 5 — Steering Input](05-tutorial.md) |
-| Hydroplaning Model | [Chapter 2 — Event Calculation Options](02-program-input.md) |
+| Hydroplaning Model | [Chapter 2 — Event Calculation Options](02-program-input.md); [Chapter 4 — Hydroplaning Model](04-calculation-method.md#hydroplaning-model) |
 | Inertias (sprung/unsprung, payload) | [Chapter 2](02-program-input.md), [Chapter 4 — Payloads](04-calculation-method.md) |
 | Inter-tandem Axle Load Transfer | [Chapter 2 — Suspension](02-program-input.md) |
 | Jounce and Rebound Stops | [Chapter 2 — Suspension](02-program-input.md), [Chapter 4 — Suspension Force](04-calculation-method.md) |

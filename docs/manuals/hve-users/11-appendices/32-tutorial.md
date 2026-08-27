@@ -1,8 +1,8 @@
 # Chapter 32 — HVE Tutorial
 
 *Updated Markdown edition of the HVE User's Manual (HVE Version 5, Seventh
-Edition, January 2006), Tutorial section, pages 32-1 through 32-60. Verified against the current HVE application source
-(`HVEINV-64/`).*
+Edition, January 2006), Tutorial section, pages 32-1 through 32-60, revised to reflect the current
+HVE software.*
 
 This section of the HVE User's Manual contains a tutorial illustrating HVE's
 features. For any new HVE user, this section is very important. The tutorial

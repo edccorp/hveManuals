@@ -63,7 +63,7 @@ Check this box to copy the suspension properties of this axle to the vehicle's o
 *(This option was added since the original help topic was written.)*
 
 ---
-*Source topic: SuspDlg.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

@@ -1,6 +1,6 @@
 # Chapter 4: Set-up Menu (Part A — Position/Velocity, Driver Controls)
 
-*HVE User's Manual — Section Two: Menu Reference. Updated edition, verified against current HVE source code (HVEINV-64). This chapter is split into two files: Part A covers Position/Velocity and Driver Controls; [Part B](04b-setup-menu.md) covers Damage Profiles through Contacts, plus the newer Signals and Notes options.*
+*HVE User's Manual — Section Two: Menu Reference. Updated edition, revised for the current HVE release. This chapter is split into two files: Part A covers Position/Velocity and Driver Controls; [Part B](04b-setup-menu.md) covers Damage Profiles through Contacts, plus the newer Signals and Notes options.*
 
 The Set-up menu is used by HVE's Event Editor. The Event Editor uses the Set-up menu for setting up events prior to execution.
 
@@ -34,7 +34,7 @@ This chapter explains how to use each of these options to supply various event-r
 
 **Purpose:** Assign position and velocity for the selected human or vehicle
 
-**Description:** Selecting Position/Velocity from the Set-up Menu allows the user to assign positions and velocities for each human and vehicle in the current event. See also the code-verified dialog reference: [Position/Velocity Dialog Box](../../09-events-driver-controls/PosVelDlg.md).
+**Description:** Selecting Position/Velocity from the Set-up Menu allows the user to assign positions and velocities for each human and vehicle in the current event. See also the dialog reference: [Position/Velocity Dialog Box](../../09-events-driver-controls/PosVelDlg.md).
 
 Positions and velocities may be entered for each of the following path locations:
 
@@ -174,7 +174,7 @@ Any of the eight position instances (i.e., Initial, Begin Braking, Impact, etc.)
 
 **Purpose:** Assign Throttle, Braking, Steering, Gear Selection and Wheel Data for the selected vehicle
 
-**Description:** Selecting Driver Controls from the Set-up Menu allows the user to enter parameters which describe how the driver attempted to control the vehicle. See also the code-verified dialog references: [Driver Controls](../../09-events-driver-controls/DriverControls.md) and its sub-pages for [Throttle](../../09-events-driver-controls/DriverControls4.md), [Brake](../../09-events-driver-controls/DriverControls3.md), [Steering](../../09-events-driver-controls/DriverControls.md), [Gear](../../09-events-driver-controls/DriverControls5.md), [Path Follower](../../09-events-driver-controls/DriverControls7.md) (with [Method](../../09-events-driver-controls/DriverControls1.md), [Speed Follower](../../09-events-driver-controls/DriverControls8.md) and [Neuro-muscular Filter](../../09-events-driver-controls/DriverControls6.md) tabs) and [Wheel Data](../../09-events-driver-controls/DriverControls2.md).
+**Description:** Selecting Driver Controls from the Set-up Menu allows the user to enter parameters which describe how the driver attempted to control the vehicle. See also the dialog references: [Driver Controls](../../09-events-driver-controls/DriverControls.md) and its sub-pages for [Throttle](../../09-events-driver-controls/DriverControls4.md), [Brake](../../09-events-driver-controls/DriverControls3.md), [Steering](../../09-events-driver-controls/DriverControls.md), [Gear](../../09-events-driver-controls/DriverControls5.md), [Path Follower](../../09-events-driver-controls/DriverControls7.md) (with [Method](../../09-events-driver-controls/DriverControls1.md), [Speed Follower](../../09-events-driver-controls/DriverControls8.md) and [Neuro-muscular Filter](../../09-events-driver-controls/DriverControls6.md) tabs) and [Wheel Data](../../09-events-driver-controls/DriverControls2.md).
 
 > **NOTE:** The word "attempted" is important here. Although a driver may attempt a certain level of braking or steering, the vehicle may not necessarily respond to those inputs due to limitations in the available frictional force at the tire-road interface.
 

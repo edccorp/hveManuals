@@ -27,7 +27,7 @@ Cubic constant (force per unit of wheel travel cubed) of the selected suspension
 Ratio of conserved to total energy (restitution) of the selected suspension stop, between 0 and 1.
 
 ---
-*Source topic: JouAndRebDlg.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

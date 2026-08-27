@@ -2,7 +2,7 @@
 
 **Vehicle Simulator** — User's Manual, Version 3
 
-Fifth Edition (January 2006) — *converted to Markdown and updated against the current HVE source code (`Physics/Source/Edvsm/`, `Physics/Include/`, `HVEINV-64/`)*
+Fifth Edition (January 2006) — *converted to Markdown and updated to match the current version of HVE*
 
 ## How to Use This Manual
 

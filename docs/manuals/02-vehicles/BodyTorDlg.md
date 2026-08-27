@@ -13,7 +13,7 @@ Specify the vehicle-fixed z-distance from the CG to the torsional roll axis. The
 Specify the torsional stiffness of the body.
 
 ---
-*Source topic: BodyTorDlg.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

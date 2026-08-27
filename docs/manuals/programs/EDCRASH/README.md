@@ -2,7 +2,7 @@
 
 **Engineering Dynamics Corporation Reconstruction of Accident Speeds on the Highway**
 
-Version 7 — Updated Markdown edition, based on the Sixth Edition (January 2006) printed manual and verified against the current HVE/EDCRASH source code.
+Version 7 — Updated Markdown edition, based on the Sixth Edition (January 2006) printed manual and revised to match the current HVE/EDCRASH release.
 
 EDCRASH is an analysis used to reconstruct single and two vehicle accidents. It determines the conditions of impact, including the impact speeds and delta-V of the vehicles, using information obtained from vehicle and accident site inspections. EDCRASH is compatible with both HVE-2D and HVE.
 
@@ -24,14 +24,14 @@ This manual describes the EDCRASH model features and use. Input parameters and o
 
 ## Related Documentation
 
-- [Calculation Options for EDCRASH](../../10-calculation-options/CalcOptEDCRASHDlg.md) — code-verified reference for every control in the EDCRASH Calculation Options dialog (Program Options, Separation Velocity Basis, Consistency Checks, Simulation Convergence Criteria).
+- [Calculation Options for EDCRASH](../../10-calculation-options/CalcOptEDCRASHDlg.md) — reference for every control in the EDCRASH Calculation Options dialog (Program Options, Separation Velocity Basis, Consistency Checks, Simulation Convergence Criteria).
 
 ## Notes on This Edition
 
-This Markdown edition preserves the substance of the original printed manual. Where the printed manual has become stale relative to the current source code (`Physics/Source/Edcrash/`, `HVEINV-64/`), the text has been updated and marked with an italic *(updated: ...)* note. Key updates:
+This Markdown edition preserves the substance of the original printed manual. Where the printed manual has become stale relative to the current release, the text has been updated and marked with an italic *(updated: ...)* note. Key updates:
 
 - The Calculation Options dialog now includes a fourth Program Options check box, *Include Angular Momentum Solution* (default off, currently disabled), and a fourth Separation Velocity Basis choice, *Iterate on Sideslip*, which is rejected by the current physics engine.
-- Default Consistency Check thresholds (PDOF ±10 deg, Delta-V ±0.10, K.E. ±0.50, Newton's 3rd Law ±1.00) and Simulation Convergence Criteria (5 runs; rest 0.10/0.10, EOR 0.15/0.15, POC 0.15) are confirmed against the current code.
+- Default Consistency Check thresholds (PDOF ±10 deg, Delta-V ±0.10, K.E. ±0.50, Newton's 3rd Law ±1.00) and Simulation Convergence Criteria (5 runs; rest 0.10/0.10, EOR 0.15/0.15, POC 0.15) match the current release.
 - Figures and report screenshots from the original are referenced by placeholder.
 - The original Chapter 8 (Index) is omitted; use full-text search across the chapter files instead.
 

@@ -11,7 +11,7 @@ This multiple-selection list box displays all the overlay names of the objects i
 The Scanned Image check box is used to display or remove a scanned image from the environment. A scanned image may be used for the entire environment, or just the sky. The check box is greyed out (disabled) unless the environment actually contains a scanned image (backdrop).
 
 ---
-*Source topic: OverLayDlg.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

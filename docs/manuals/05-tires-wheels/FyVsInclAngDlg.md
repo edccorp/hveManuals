@@ -55,7 +55,7 @@ Redraws the graph using the given data.
 OK validates the grid and parameter entries against their allowed ranges and stores the camber data for the tire. Cancel discards all changes.
 
 ---
-*Source topic: FyVsInclAngDlg.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

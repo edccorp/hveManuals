@@ -1,13 +1,13 @@
 # Environment Information Dialog
 
-A new environment is added to the current case using the Environment Information dialog (class `CEnvInfoDlg`). The dialog has three top-level fields — *Environment Name*, *Date of Crash* and *Time of Crash* — followed by a tabbed property sheet and the standard OK/Cancel buttons.
+A new environment is added to the current case using the Environment Information dialog. The dialog has three top-level fields — *Environment Name*, *Date of Crash* and *Time of Crash* — followed by a tabbed property sheet and the standard OK/Cancel buttons.
 
 The property sheet may contain up to five tabs — **Terrain**, **Sky**, **Physical**, **Location** and **Traffic Signals**. Which tabs appear depends on the run mode and viewer type:
 
 - The **Terrain** tab is always present.
-- In HVE-3D (RUN_MODE_3D), all five tabs are shown.
+- In HVE-3D, all five tabs are shown.
 - With a 3-D camera viewer, the **Sky**, **Location** and **Traffic Signals** tabs are added.
-- In HVE-2D, only the **Terrain** tab is present. The **Physical** tab (Wind Speed, Wind Direction, Temperature, Barometric Pressure, etc.) is built only in RUN_MODE_3D, so those fields are simply not shown in HVE-2D — they are not displayed read-only.
+- In HVE-2D, only the **Terrain** tab is present. The **Physical** tab (Wind Speed, Wind Direction, Temperature, Barometric Pressure, etc.) is present only in HVE-3D, so those fields are simply not shown in HVE-2D — they are not displayed read-only.
 
 ## Top-Level Fields
 
@@ -65,7 +65,7 @@ The Sky tab configures the sky image, sky dome and fog. (Shown only in 3-D run m
 
 ## Physical Tab
 
-The Physical tab holds the atmospheric and coordinate-system parameters. It is built only in RUN_MODE_3D (HVE-3D).
+The Physical tab holds the atmospheric and coordinate-system parameters. It is present only in HVE-3D.
 
 ### Angle of X Axis (deg)
 The angle of the user-defined earth-fixed coordinate system relative to true north. Valid range is -360 to +360 degrees.
@@ -116,7 +116,7 @@ The Traffic Signals tab configures the timing of traffic signals placed in the e
 OK validates each tab in turn and accepts the entered environment information; Cancel discards the changes.
 
 ---
-*Source topic: EnvtInfoDlg.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

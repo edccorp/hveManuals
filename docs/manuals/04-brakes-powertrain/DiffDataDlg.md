@@ -17,7 +17,7 @@ This data grid contains one row per differential speed and the following columns
 Radio buttons for the differential type: **Standard** (open), **Limited Slip** and **Locked**. These options are currently disabled: the HVE drivetrain model assumes an open (standard) differential, and Limited Slip and Locked are not yet implemented, so Standard is always selected. *(New group; not documented in the previous manual.)*
 
 ---
-*Source topic: DiffDataDlg.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

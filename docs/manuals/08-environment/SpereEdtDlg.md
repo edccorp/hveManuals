@@ -49,7 +49,7 @@ Radio buttons selecting what the coordinate fields are bound to when picking and
 Applies the values in the dialog to the selected sphere and registers the change with the undo/redo system, so the edit can be undone or redone. Pressing Enter (OK) also applies; pressing Esc (Cancel) is ignored — the dialog remains open.
 
 ---
-*Source topic: SpereEdtDlg.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

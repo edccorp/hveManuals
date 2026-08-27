@@ -47,8 +47,8 @@ environment model's physical properties:
 - Chapter 14 (reserved — a RoadTools overview placeholder in the legacy
   edition).
 
-Code-verified dialog references for this section are collected in
-[docs/manuals/08-environment](../../08-environment/README.md).
+Dialog references for this section are collected in the
+[Environment Dialog Reference](../../08-environment/README.md).
 
 <!-- NAV -->
 

@@ -27,7 +27,7 @@ Total weight of the entire human, calculated as the sum of the masses of all 15 
 Entered values are range-checked when OK is pressed; out-of-range values must be corrected before the dialog will close.
 
 ---
-*Source topic: Human.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

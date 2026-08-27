@@ -41,9 +41,9 @@ secondary/induced structural deformation that propagates away from the contact
 region. (This is the same limitation noted in the technical overview: "local
 behavior of structure not captured in all cases; no induced damage.")
 
-*(updated: This is consistent with the code — a vertex only enters the damage
-profile once it has penetrated a master surface and been restored; see the
-`IsDamaged` / `DamageThisTimeStep` handling and `MakeProfile()` in `Dymesh.cpp`.)*
+*(updated: this is consistent with how the damage profile is built — a vertex
+only enters the damage profile once it has been marked as damaged, which happens
+only after it has penetrated a master surface and been restored.)*
 
 ## 6. Mesh quality is a factor
 
@@ -66,12 +66,12 @@ as-delivered meshes are not suitable for the contact algorithm without
 tessellation.
 
 ---
-*Source: DyMESH Important Notes (2026 HVE Forum) — organized and verified against DYMESH.H / Dymesh.cpp, 2026-07-05.*
+*Source: DyMESH Important Notes (2026 HVE Forum). Updated to match the current version of HVE.*
 
 <!-- NAV -->
 
 ---
 
-← Previous: [DyMESH Version 3](03-version-3.md)  |  [Index](README.md)
+← Previous: [DyMESH Version 3](03-version-3.md)  |  [Index](README.md)  |  Next: [DyMESH Wheel vs. Environment](05-wheel-environment.md) →
 
 <!-- /NAV -->

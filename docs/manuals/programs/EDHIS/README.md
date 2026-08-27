@@ -2,7 +2,7 @@
 
 **Engineering Dynamics Corporation Human Impact Simulator, Version 3**
 
-Updated Markdown edition, converted from the Fifth Edition manual (January 2006) and verified against the current HVE source code (`Physics/Source/Edhis/`, `Physics/Include/HUMAN.H`, `HVEINV-64/`).
+Updated Markdown edition, converted from the Fifth Edition manual (January 2006) and revised to match the current HVE release.
 
 ## How to Use This Manual
 
@@ -26,7 +26,7 @@ Engineering Dynamics Corporation provides technical assistance for supported use
 
 *The original manual's Chapter 8 (Index) is omitted; use text search in this Markdown edition instead.*
 
-Related code-verified pages:
+Related reference pages:
 
 - [EDHIS Calculation Options](../../10-calculation-options/CalcOptionsEDHIS.md)
 - [Humans (HVE Human Editor)](../../07-humans/Human.md)

@@ -20,7 +20,7 @@
 
 ---
 
-*(updated: the current SIMON engine also embeds a run-time reference list in `Physics/Source/Simon/SIMON.rsc` (printed at the end of SIMON reports). That list includes additional works published after the Fifth Edition manual, notably:)*
+*(updated: the current SIMON engine also prints a reference list at the end of SIMON reports. That list includes additional works published after the Fifth Edition manual, notably:)*
 
 - Day, T.D., Roberts, S.G., "SIMON: A New Vehicle Simulation Model for Vehicle Design and Safety Research," SAE Technical Paper No. 2001-01-0503, Society of Automotive Engineers, Warrendale, PA, 2001.
 - Jackson, L., Poland, K., "Downhill Commercial Vehicle Simulations — Part A (Tractor/Semi-trailer Brake Fade)," National Transportation Safety Board, HVE White Paper No. WP-2003-1, Engineering Dynamics Corporation, Beaverton, OR, 2003.

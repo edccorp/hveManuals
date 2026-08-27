@@ -12,7 +12,7 @@ Errors issued by EDVDS appear in the EDVDS output and may be one of three types:
 
 All messages issued by EDVDS are listed below. Each message includes a description or nature of the cause, the level of the message (Informative, Diagnostic or Fatal), and the recommended action to eliminate the problem. If you receive an error message not listed below, first check to see if it is an HVE or operating system message by referring to the HVE Appendix or your computer's operating system manual. If the message is not listed in either place, please contact EDC with the offending error.
 
-*(updated: this catalog has been verified against the current message resources in `Physics/Source/Edvds/EDVDS.rsc`. Messages 1–7 below appear in the original printed manual; messages 8–12 have been added to EDVDS since the Fourth Edition was printed and are documented here for completeness.)*
+*(updated: messages 1–7 below appear in the original printed manual; messages 8–12 have been added to EDVDS since the Fourth Edition was printed and are documented here for completeness.)*
 
 ---
 
@@ -40,7 +40,7 @@ To solve the problem the user must eliminate the cause of the longitudinal tire 
 
 *(Level 1 - Fatal)*
 
-This message occurs if GetSurfaceInfo() failed to return a valid surface elevation. EDVDS should not return this condition; contact EDC if it occurs.
+This message occurs if the Get Surface Information search failed to return a valid surface elevation. EDVDS should not return this condition; contact EDC if it occurs.
 
 ---
 

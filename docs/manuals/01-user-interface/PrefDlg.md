@@ -73,10 +73,10 @@ When checked, each vehicle's 3-D geometry is stored inside the case file, making
 
 ## Reload language.rsc file on dialog exit
 
-When checked, HVE reloads the language resource file (language.rsc) when the dialog is closed. This is primarily useful for checking edits to translated dialog labels without restarting HVE.
+When checked, HVE reloads the language file when this dialog is closed. This lets you check edits to translated dialog labels without restarting HVE.
 
 ---
-*Source topic: PrefDlg.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

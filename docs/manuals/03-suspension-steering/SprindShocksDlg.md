@@ -32,7 +32,7 @@ Friction force required to initiate suspension travel.
 Minimum suspension velocity required for full coulomb friction force.
 
 ---
-*Source topic: SprindShocksDlg.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

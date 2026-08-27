@@ -1,6 +1,6 @@
 # Section Eleven: HVE Brake Designer
 
-*Updated Markdown edition of the HVE User's Manual (HVE Version 5, Seventh Edition, January 2006), Section Eleven "HVE Brake Designer" (Section Ten / Chapter 28 of the original manual is reserved for future use). Verified against the current HVE application source (`HVEINV-64/HveBrakes.cpp`, `BrakeDesign*.cpp`, `BrakeAssemblyDlg.cpp`, `ABSDesignerDlg.cpp`, `ABSSystemDlg.cpp`).*
+*Updated Markdown edition of the HVE User's Manual (HVE Version 5, Seventh Edition, January 2006), Section Eleven "HVE Brake Designer" (Section Ten / Chapter 28 of the original manual is reserved for future use), revised to describe the current HVE Brake Designer and ABS Designer.*
 
 The HVE Brake Designer is a time-domain simulation model of user-defined
 brake system components. The purpose of the HVE Brake Designer is to provide
@@ -61,9 +61,8 @@ Designer's interface.
 
 ## Related Dialog Reference Pages
 
-The individual brake dialogs are documented in detail (verified against
-current source code) in
-[`docs/manuals/04-brakes-powertrain/`](../../04-brakes-powertrain/README.md):
+The individual brake dialogs are documented in detail in the
+[Brakes and Powertrain reference](../../04-brakes-powertrain/README.md):
 
 - [Brake Assembly dialog](../../04-brakes-powertrain/BrkAsmblyDlg.md)
 - [Disc Brake designer dialog](../../04-brakes-powertrain/DiskBreakDlg.md)

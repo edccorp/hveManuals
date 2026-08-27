@@ -677,8 +677,8 @@ If the Brake Force or Percent Available Friction brake table options are used, t
 $$
 T_b =
 \begin{cases}
-F_{Wheel}\times\max\left(r_{Tire,Inner}, r_{Tire,Outer}\right), & \text{for BrakeForceMethod}\\[6pt]
-\theta_{Wheel}\times\displaystyle\sum_{i=0}^{N}\mu_p F_R\,r_{Tire}, & \text{for \%AvailFrictionMethod}
+F_{Wheel}\times\max\left(r_{Tire,Inner}, r_{Tire,Outer}\right), & \text{for the Brake Force method}\\[6pt]
+\theta_{Wheel}\times\displaystyle\sum_{i=0}^{N}\mu_p F_R\,r_{Tire}, & \text{for the \% Available Friction method}
 \end{cases}
 \qquad (\text{Eq. 49})
 $$
@@ -743,8 +743,8 @@ If the Tractive Effort or Percent Available Friction throttle table options are 
 $$
 T_d =
 \begin{cases}
-F_{Wheel}\times\max\left(r_{Tire,Inner}, r_{Tire,Outer}\right), & \text{for TractiveEffortMethod}\\[6pt]
-\theta_{Wheel}\times\displaystyle\sum_{i=1}^{N}\mu_P F_R\,r_{Tire}, & \text{for \%AvailableFrictionMethod}
+F_{Wheel}\times\max\left(r_{Tire,Inner}, r_{Tire,Outer}\right), & \text{for the Tractive Effort method}\\[6pt]
+\theta_{Wheel}\times\displaystyle\sum_{i=1}^{N}\mu_P F_R\,r_{Tire}, & \text{for the \% Available Friction method}
 \end{cases}
 \qquad (\text{Eq. 52})
 $$
@@ -1055,7 +1055,7 @@ Tire force calculations require that the tire-road interface be defined in terms
 
 ### Terrain Definition
 
-The first step is to define the terrain (contact patch coordinates, friction multiplier and surface normal) beneath the tire. This step is performed using HVE's `GetSurfaceInfo()` function. Given the current earth-fixed coordinates, $X_t, Y_t$, of the tire's center of rotation, `GetSurfaceInfo()` searches the entire environment polygon database until it finds the polygon beneath the tire (see Figure 4-10). For this polygon, `GetSurfaceInfo()` returns the earth-fixed elevation, $Z_t$, beneath the tire center, as well as the friction multiplier, $f$, and unit vector, $\vec U_{Terrain}$, representing the surface normal for the polygon directly beneath each tire.
+The first step is to define the terrain (contact patch coordinates, friction multiplier and surface normal) beneath the tire. This step is performed using HVE's surface-information search, controlled by the **Get Surface Information Options**. Given the current earth-fixed coordinates, $X_t, Y_t$, of the tire's center of rotation, the search examines the environment polygon database until it finds the polygon beneath the tire (see Figure 4-10). For this polygon, the search returns the earth-fixed elevation, $Z_t$, beneath the tire center, as well as the friction multiplier, $f$, and unit vector, $\vec U_{Terrain}$, representing the surface normal for the polygon directly beneath each tire.
 
 ![Figure 4-9](images/p105-028.png)
 *Figure 4-9: Wheel-terrain geometry.*
@@ -1078,9 +1078,9 @@ where
 | $\delta_w$ | Vehicle-fixed steer angle |
 
 ![Figure 4-10](images/p106-fig4-10.png)
-*Figure 4-10: GetSurfaceInfo() returns the terrain surface elevation, Z, friction multiplier, f, and surface normal, U, for the earth-fixed X,Y coordinates beneath the tire.*
+*Figure 4-10: The surface-information search returns the terrain surface elevation, Z, friction multiplier, f, and surface normal, U, for the earth-fixed X,Y coordinates beneath the tire.*
 
-Defining the surface normal returned by `GetSurfaceInfo()` as
+Defining the surface normal returned by the surface-information search as
 
 $$
 \vec U_{Terrain} = \begin{bmatrix}U_{Terrain_X}\\ U_{Terrain_Y}\\ U_{Terrain_Z}\end{bmatrix},
@@ -1135,7 +1135,7 @@ where
 | $\lambda_2$ | The equation defining the plane for the terrain beneath the wheel |
 | $\lambda_3$ | The equation defining a plane perpendicular to $\lambda_1$ and $\lambda_2$ passing through the wheel center $X_w, Y_w, Z_w$ |
 | $\vec U_w$ | Unit vector for the line in the earth-fixed coordinate system normal to the wheel plane (see Eq. 79) |
-| $\vec U_{Terrain}$ | Unit vector for the terrain surface normal returned by `GetSurfaceInfo()` |
+| $\vec U_{Terrain}$ | Unit vector for the terrain surface normal returned by the surface-information search |
 | $\vec D$ | Unit vector defining a line normal to both the wheel plane and the plane for the terrain beneath the wheel |
 
 $$
@@ -1231,7 +1231,7 @@ Tire radial force, $F_R$, is an important fundamental property as one of the pri
 
 SIMON uses the EDC semi-empirical tire model developed for EDVDS [2]. The basis for the EDC semi-empirical tire model is the HSRI tire model, developed at the University of Michigan Transportation Research Institute [3]. The model was extended to allow large tire slip angles, drive torque (i.e., tire forces that accelerate the vehicle) and drive and/or brake torque when the vehicle is rolling backwards. The SIMON implementation for load- and speed-dependent tire properties has been extended by replacing the method of partial derivatives with a table look-up method. An overview of the extended model is provided below for purposes of comparison with the HSRI and EDVDS tire models.
 
-*(updated: the current Calculation Options dialog offers three versions of the semi-empirical tire model — Vers 1, Vers 2 (default) and Vers 3 — representing successive refinements of the implementation in `Physics/Source/Simon/Tire.cpp`. A hydroplaning model (NASA, NASA-TTI or Gallaway; see `Physics/Source/Simon/Hydroplane.cpp`) may also be selected, which reduces the available tire-road friction as a function of speed, water depth and tire parameters.)*
+*(updated: the current Calculation Options dialog offers three versions of the semi-empirical tire model — Vers 1, Vers 2 (default) and Vers 3 — representing successive refinements of the model. A hydroplaning model (NASA, NASA-TTI or Gallaway) may also be selected, which reduces the available tire-road friction as a function of speed, water depth and tire parameters.)*
 
 The semi-empirical tire model describes empirically what is occurring at the tire-road shear interface, according to the current tire-road conditions. It employs a simplified theory assuming an adhesion region and a sliding region. The major assumptions made by the tire model are:
 
@@ -1415,6 +1415,187 @@ where
 The $-\mathrm{sgn}(\Omega)$ factor makes the moment resist wheel rotation, and the $R_{rMult}$ factor scales rolling resistance according to the selected hydroplaning model. (For $\left|\Omega\right| < $ a minimum spin threshold the moment is linearly ramped toward zero to avoid chatter.)
 
 The rolling resistance moment contributes to the equations of motion for the wheel spin degree of freedom (see Eqs. 27 through 32).
+
+## Hydroplaning Model
+
+*(updated: this section documents a capability added since the Fifth Edition
+manual.)*
+
+When a tire rolls through standing water, a wedge of water builds ahead of the
+contact patch. Above a critical speed the wedge lifts the tire off the pavement
+and the available tire-road friction collapses. SIMON models this effect by
+testing each tire, at each timestep, against a hydroplaning *threshold speed*
+computed from the tire and surface conditions, and switching that tire's
+friction between its dry-surface and water-surface values accordingly.
+
+### Selecting a model
+
+The hydroplaning model is chosen in the SIMON Calculation Options dialog
+(**Hydroplaning Model**):
+
+| Option | Notes |
+| --- | --- |
+| Off | Default. Friction is the dry-surface value and $R_{rMult} = 1$. |
+| NASA | NASA (Horne/Borne) spin-down model. |
+| NASA-TTI | Modified NASA model including contact-patch aspect ratio. |
+| Gallaway | Gallaway/TTI model including water depth and pavement macrotexture. |
+
+A fifth model, *Blythe-Day*, is named in the program's message text but is
+**not implemented**: it is not offered as a radio button in the dialog, and any
+attempt to request it is rejected with a fatal error, so the event will not run.
+
+> **NOTE:** Hydroplaning cannot be combined with the Soft Soil tire-terrain
+> model. Selecting both produces a fatal error and the event will not run.
+
+### Required input data
+
+Hydroplaning is evaluated only where a tire is in contact with an environment
+polygon whose object type is **Water**. Each water
+polygon carries its own water depth (static or dynamic), friction and material
+properties, assigned in the 3-D Editor's Object Attributes dialog. If the
+environment contains no water polygons, selecting a hydroplaning model has no
+effect on the simulation.
+
+The water polygon's **material friction** is the value the tire's friction multiplier switches to while hydroplaning, so it — not the tread or pressure data — determines *how much* friction remains once the threshold speed is exceeded. The tire and surface data below determine only *when* that switch occurs.
+
+> **NOTE:** The friction used while hydroplaning comes from the water polygon's material friction, assigned in the 3-D Editor's Object Attributes dialog.
+
+The models draw on the following data:
+
+| Symbol | Quantity | Source |
+| --- | --- | --- |
+| $P$ | Tire inflation pressure (lb/in²) | Tire Physical Data — *Nominal Pressure* |
+| $w_t$ | Tread width (in) | Tire Physical Data — *Tread Width* |
+| $d_t$ | Tread depth (in) | Tire Physical Data — *Tread Depth* |
+| $l_t$ | Contact patch (tread) length (in) | Computed each timestep from the deflected tire radius |
+| $WD$ | Water depth (in) | Water polygon (static or dynamic) |
+| $TXD$ | Pavement macrotexture depth (in) | Environment material properties |
+| $u_{Tire}$ | Forward tire velocity in the ground plane (in/sec) | Simulation state |
+
+The contact patch length is obtained from the undeflected and deflected tire
+radii,
+
+$$
+l_t = 2\sqrt{r_0^2 - r^2}
+$$
+
+so a more heavily loaded (more deflected) tire presents a longer contact patch,
+which raises the NASA-TTI threshold speed.
+
+### NASA (Horne/Borne) model
+
+The NASA model predicts the spin-down (total hydroplaning) speed purely from
+inflation pressure. A tire hydroplanes when
+
+$$
+\left|u_{Tire}\right| > 182.16\sqrt{P}
+$$
+
+with $u_{Tire}$ in in/sec and $P$ in lb/in². The coefficient is the familiar
+$v_p = 10.35\sqrt{P}$ mph expressed in in/sec ($10.35 \times 17.6 = 182.16$).
+
+### NASA-TTI model
+
+The NASA-TTI model modifies the NASA prediction using the aspect ratio of the
+contact patch, so that tire deflection and tread geometry influence the
+threshold. A tire hydroplanes when
+
+$$
+\left|u_{Tire}\right| > \frac{83.35 - 27.59\,\dfrac{w_t}{l_t} + 1.158319\,P}{0.09144}
+$$
+
+The bracketed expression evaluates the threshold in km/h; dividing by
+$0.09144$ converts it to in/sec. The implementation follows the form given by
+Ong and Fwa citing the 1986 Horne/TTI/NASA work. (An alternative expression
+attributed to Badger, $139.92\sqrt{P\,w_t/l_t}$, is not used, because no
+supporting reference was available for it.)
+
+If the computed contact patch length is less than 0.5 in — for example, a
+tire carrying almost no load — the NASA-TTI model reports no hydroplaning
+rather than dividing by a vanishing patch length.
+
+### Gallaway (TTI) model
+
+The Gallaway model is the most detailed of the three, adding water depth and
+pavement macrotexture. The predicted hydroplaning speed $V$ (mph) is
+
+$$
+V = SD^{0.04}\,P^{0.3}\,(TD + 1)^{0.06}\,A
+$$
+
+where $TD$ is the tread depth expressed in 32nds of an inch
+($TD = 32\,d_t$), $SD$ is the tire spin-down percentage, and $A$ is the larger
+of two water-depth/texture terms:
+
+$$
+A = \max\left(A_1,\; A_2\right)
+$$
+
+$$
+A_1 = \frac{10.409}{WD^{0.06}} + 3.507
+\qquad
+A_2 = \left(\frac{28.952}{WD^{0.06}} - 7.817\right)TXD^{0.14}
+$$
+
+For water depths below 0.005 in the water-depth terms are dropped,
+giving $A_1 = 3.507$ and $A_2 = -7.817\,TXD^{0.14}$, which avoids the
+singularity as $WD \rightarrow 0$. The tire hydroplanes when
+
+$$
+\left|u_{Tire}\right| > 17.6\,V
+$$
+
+(the factor 17.6 converts $V$ from mph to in/sec).
+
+> **NOTE:** The spin-down percentage $SD$ is currently **fixed at 10 percent**.
+> The Gallaway threshold therefore does not presently vary with the tire's
+> actual longitudinal slip.
+
+### Effect on the tire forces
+
+Each model returns a friction multiplier and a rolling-resistance multiplier
+for the tire:
+
+- **Friction multiplier ($F_{Mult}$).** This is the terrain friction multiplier that scales the tire's friction coefficients. The surface-information search returns two values for every tire: a multiplier for the Road, Friction Zone or Curb polygon under the tire, and a second multiplier taken from the material friction of the **Water** polygon under the tire. Below the threshold speed the hydroplaning model returns the first (dry-surface) value; at or above the threshold it returns the water value. The returned multiplier is applied directly to *both* the peak and sliding friction coefficients interpolated from the tire's friction tables:
+
+$$
+\mu_{peak} = F_{Mult}\,\mu_p(F_z, u)
+\qquad
+\mu_{slide} = F_{Mult}\,\mu_s(F_z, u)
+$$
+
+  Because $\mu_{peak}$ and $\mu_{slide}$ set the ceiling on the shear force the contact patch can develop, substituting the (much lower) water friction for the pavement friction reduces the tire force available in *every* direction. Longitudinal force is lost, so braking and drive traction fall away; lateral force is lost, so the tire can no longer generate the side force needed to hold a curve or resist yaw. This is the entire mechanism by which hydroplaning affects the simulated vehicle.
+
+  > **NOTE:** If no water polygon lies under the tire, the water multiplier is set equal to the dry-surface multiplier. The hydroplaning branch is then numerically identical to the non-hydroplaning branch, which is why hydroplaning has no effect unless the environment actually contains water polygons beneath the tire path.
+
+- **Rolling-resistance multiplier ($R_{rMult}$).** This value appears in the rolling-resistance moment (see Eq. 114). *All three models currently return $R_{rMult} = 1.0$*, so the additional drag of displacing water is not presently modeled; the multiplier exists so that a future model can add it. Note that this is a separate, secondary effect — the loss of available friction described above is unaffected by it.
+
+Because the transition is a threshold test evaluated per tire per timestep, an
+individual tire may enter and leave hydroplaning repeatedly during an event —
+for example as it crosses a puddle, as load transfer changes its contact patch,
+or as the vehicle decelerates back below the threshold speed.
+
+### Hydroplaning state and reporting
+
+SIMON tracks a hydroplaning state for each tire and records when hydroplaning
+starts and stops:
+
+| State | Meaning |
+| --- | --- |
+| Not yet hydroplaned | Tire has not yet hydroplaned. |
+| Hydroplaning | Tire is currently hydroplaning; start time and speed recorded. |
+| Contact regained | Tire has regained contact; end time and speed recorded. |
+
+The simulation time and forward tire speed are stored at both the start and the
+end of each hydroplaning episode. A tire that regains and then again loses
+contact returns to the hydroplaning state.
+
+When a hydroplaning model is active, SIMON also fills the water-related tire
+output tracks — *Water Depth*, *Macrotexture* and the water friction multiplier
+— which can be plotted or tabulated in a Variable Output report (see
+[Chapter 3](03-program-output.md)). The *Rolling Resist Mult*, *Fx' (water)* and
+*Fy' (water)* tracks are declared but are not currently populated, consistent
+with $R_{rMult}$ being held at unity.
 
 ## Suspension Force
 
@@ -1732,13 +1913,13 @@ These forces and moments are included in the dynamics engine (see Eqs. 3 and 7).
 
 SIMON uses HVE's DyMESH collision model to compute 3-dimensional forces and moments resulting from inter-vehicle collision. Simultaneous collision forces between any number of vehicles are allowed. The DyMESH collision model is described in references 7 and 8. In general, vehicle-fixed force components are calculated for each vertex. These forces are summed and the resulting summed forces and moments acting on the sprung mass are supplied to the dynamics engine (see Eqs. 3 and 7).
 
-*(updated: the current DyMESH implementation — `Physics/Include/DYMESH.H`, `Physics/Source/LibHve/Dymesh.cpp` and the SIMON-side interface in `Physics/Source/Simon/PHYMODEL.CPP` — includes several capabilities beyond those described in the Fifth Edition manual:)*
+*(updated: the current DyMESH implementation includes several capabilities beyond those described in the Fifth Edition manual:)*
 
 - *Two selectable algorithm versions (Version 3 and Version 4) and two mesh smoothing models, selected in the DyMESH Options dialog (see Chapter 2).*
 - *Vehicle-environment collision detection (Include Environment) with independent vehicle and environment start times.*
 - *Tow vehicle/trailer mesh contact for articulated vehicles.*
-- *DyMESH wheel contact and wheel damage. Each wheel can carry its own collision mesh (`DyMeshWheels()` and `UpdateWheelMeshDamage()` in `PHYMODEL.CPP`). Collision forces acting on a wheel mesh are added to the sprung mass, and forces exceeding the wheel's user-entered damage thresholds (Max No-Damage Force/Moment, Deformation Rate and Max Force/Moment — see the Event Editor's Vehicle Wheels dialog) produce permanent wheel displacement and reorientation, which in turn affect the wheel kinematics of Eqs. 58–62.*
-- *Wheel displacement capping. In the current code, the collision-induced x-y displacement of a wheel during a timestep is tracked against the maximum contact movement of the wheel mesh vertices for that timestep (`MaxContactDispl`); the computed force-based displacement is capped so it can never exceed the actual contact motion, and no displacement is produced when there is no mesh contact movement. This prevents overprediction of wheel set-back or track-width change in severe impacts ("Track and cap wheel contact displacement in DyMesh wheel updates," commits `12131c2`/`16a1825`).*
+- *DyMESH wheel contact and wheel damage. Each wheel can carry its own collision mesh. Collision forces acting on a wheel mesh are added to the sprung mass, and forces exceeding the wheel's user-entered damage thresholds (Max No-Damage Force/Moment, Deformation Rate and Max Force/Moment — see the Event Editor's Vehicle Wheels dialog) produce permanent wheel displacement and reorientation, which in turn affect the wheel kinematics of Eqs. 58–62.*
+- *Wheel displacement capping. The collision-induced x-y displacement of a wheel during a timestep is tracked against the maximum contact movement of the wheel mesh vertices for that timestep; the computed force-based displacement is capped so it can never exceed the actual contact motion, and no displacement is produced when there is no mesh contact movement. This prevents overprediction of wheel set-back or track-width change in severe impacts.*
 
 ## Software Implementation
 
@@ -1749,7 +1930,7 @@ SIMON is programmed using the C programming language. It is a modular program an
 ![Figure 4-20](images/p127-037.png)
 *Figure 4-20: Flowchart for SIMON main calculation procedures.*
 
-*(updated: the current SIMON engine sources reside in `Physics/Source/Simon/` — principal modules include `PHYMAIN.CPP` (main calculation loop), `PHYMODEL.CPP` (dynamics model and DyMESH interface), `PHYINPUT.CPP` (input processing and reports), `Tire.cpp` (tire model), `TORQUE.CPP` (wheel torque), `WHEELPOS.CPP` (wheel position), `suspension.cpp`, `sprungmass.cpp`, `AXLE.CPP`, `AERO.CPP` (aerodynamics), `connection.cpp` (inter-vehicle connections), `DRIVER.CPP` (driver model), `Hydroplane.cpp` (hydroplaning), `CollisionPulse.cpp` (collision pulse), `Road.cpp`, `OUTPUT.CPP` and `PINT1.CPP` (numerical integration).)*
+*(updated: the current SIMON engine is organized into modules covering the main calculation loop, the dynamics model and DyMESH interface, input processing and reports, the tire model, wheel torque, wheel position, suspension, sprung mass, axles, aerodynamics, inter-vehicle connections, the driver model, hydroplaning, the collision pulse, road and terrain handling, output, and numerical integration.)*
 
 <!-- NAV -->
 

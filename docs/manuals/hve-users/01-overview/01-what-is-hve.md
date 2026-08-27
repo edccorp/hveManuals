@@ -1,8 +1,8 @@
 # Chapter 1 — What Is HVE?
 
 *Updated Markdown edition of the HVE User's Manual (HVE Version 5, Seventh
-Edition, January 2006), Chapter 1, pages 1-1 through 1-7. Verified against the
-current HVE application source (`HVEINV-64/`).*
+Edition, January 2006), Chapter 1, pages 1-1 through 1-7. Revised for the
+current HVE release.*
 
 ## Overview
 
@@ -55,7 +55,7 @@ the Human Viewer. The current human may be modified using the tools available
 in the Human Editor. If the current human is no longer required for study, it
 may be deleted using the Delete Human pushbutton.
 
-*See also the code-verified dialog reference:
+*See also the dialog reference:
 [Humans](../../07-humans/README.md), in particular
 [HumanInfoDlg.md](../../07-humans/HumanInfoDlg.md).*
 

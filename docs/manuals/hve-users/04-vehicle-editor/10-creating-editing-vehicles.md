@@ -90,7 +90,7 @@ New vehicles are added to the current case using the Vehicle Editor dialog.
 To add a new vehicle, perform the following steps:
 
 1. Click on *Add New Object*. The Vehicle Information dialog (see the
-   code-verified reference page, [Vehicle Information dialog](../../02-vehicles/VehicleInfoDlg.md))
+   reference page, [Vehicle Information dialog](../../02-vehicles/VehicleInfoDlg.md))
    will be displayed, containing the following options:
    - **Name** — A user-editable field allowing the user to assign a name to
      the current vehicle. *(updated: if no name is entered, HVE generates a
@@ -172,7 +172,7 @@ steps:
    displayed, showing its current database keys.
 3. Choose *Save-As*. The Vehicle Save-As dialog will be displayed, allowing
    the user to enter a new *Make, Model, Year* and *Body Style*. A *Version*
-   and *3-D Geometry Filename* may also be entered (see the code-verified
+   and *3-D Geometry Filename* may also be entered (see the
    reference page, [Save As New Vehicle dialog](../../02-vehicles/VehSaveAs.md)).
 
    > **NOTE:** The 3-D geometry file must exist in the
@@ -252,8 +252,8 @@ chapter, [Vehicle Model Definition](11a-sprung-mass.md).
 
 ---
 *Source: HVE User's Manual (Version 5, Seventh Edition, Jan 2006), Chapter
-10, pages 10-1..10-8 — updated against source code (HVEINV-64, Physics)
-2026-07-05.*
+10, pages 10-1..10-8 — revised for the current HVE
+release, 2026-07-05.*
 
 <!-- NAV -->
 

@@ -23,7 +23,7 @@ The report is a table of positions and velocities at key phases of the collision
 For these programs, the times reported for the impact and separation phases are determined according to the **Accident History Basis** calculation option (*Force* or *Acceleration*), selected in the event's Calculation Options dialog.
 
 ---
-*Source topic: AcciHistDlg.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

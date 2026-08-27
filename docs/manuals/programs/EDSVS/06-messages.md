@@ -12,7 +12,7 @@ Errors issued by EDSVS appear in the EDSVS output and may be one of three types:
 
 All messages issued by EDSVS are listed below. Each message includes a description or nature of the cause, the level of the message (Informative, Diagnostic or Fatal), and the recommended action to eliminate the problem. If you receive an error message not listed below, first check to see if it is an HVE-2D, HVE or operating system message by referring to the User's Manual Appendix or your computer's operating system manual. If the message is not listed in either place, please contact EDC with the offending error.
 
-*(updated: The message catalog below has been verified against the current source, `Physics/Source/Edsvs/EDSVS.rsc`. The current catalog contains exactly these four messages (`Msg1`–`Msg4`); no messages have been added or removed since the Sixth Edition, and all of the current messages are Level 1 (Fatal) run-termination messages — the Diagnostic and Informative levels are defined but presently unused by EDSVS.)*
+*(updated: the current EDSVS message catalog contains exactly the four messages listed below; none have been added or removed since the Sixth Edition, and all four are Level 1 (Fatal) run-termination messages — the Diagnostic and Informative levels are defined but presently unused by EDSVS.)*
 
 ## Message Catalog
 
@@ -32,17 +32,17 @@ This message occurs when EDSVS calculates a negative vertical tire load, Fz. EDS
 
 **HVE:** This message applies to the 3-D terrain capability available in the HVE environment.
 
-This message occurs when the vehicle travels over a surface with a significant slope. At each timestep, EDSVS uses GetSurfaceInfo() to determine the current roll and pitch angles. If either of these angles exceeds the allowable value, the run terminates. The termination reflects the fact that the small angle assumption is used, and the error may become significant.
+This message occurs when the vehicle travels over a surface with a significant slope. At each timestep, EDSVS uses the Get Surface Information search to determine the current roll and pitch angles. If either of these angles exceeds the allowable value, the run terminates. The termination reflects the fact that the small angle assumption is used, and the error may become significant.
 
-### GetSurfaceInfo Failure
+### Get Surface Information Failure
 
-> *The simulation was terminated because GetSurfaceInfo() failed.*
+> *The simulation was terminated because GetSurfaceInfo() failed*
 
 **(Level 1 — Fatal)**
 
-This message occurs if GetSurfaceInfo() failed to return a valid surface elevation. EDSVS should not return this condition; contact EDC if it occurs.
+This message occurs if the Get Surface Information search failed to return a valid surface elevation. EDSVS should not return this condition; contact EDC if it occurs.
 
-*(updated: The surface search method used by GetSurfaceInfo() is now selected in the separate Get Surface Information Options dialog, not the EDSVS Calculation Options dialog; the By Elevation method is not supported. See the [EDSVS Calculation Options reference](../../10-calculation-options/CalcOptEDSVS.md).)*
+*(updated: the surface search method is now selected in the separate **Get Surface Information Options** dialog, not the EDSVS Calculation Options dialog; the **By Elevation** method is not supported. See [EDSVS Calculation Options](../../10-calculation-options/CalcOptEDSVS.md).)*
 
 ### Integration Error
 

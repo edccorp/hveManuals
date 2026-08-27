@@ -14,7 +14,7 @@ Displays the [Joint Properties Dialog Box](HumJntPropDlg.md) for the selected jo
 > Note: The old help linked the Properties button to this topic itself; the Joint Properties dialog is documented separately.
 
 ---
-*Source topic: Human3.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

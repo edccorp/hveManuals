@@ -52,7 +52,7 @@ For *Spot* lights only, the included angle of the cone of light.
 Applies the current settings to the selected light.
 
 ---
-*Source topic: LightEdDlg.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

@@ -41,7 +41,7 @@ Selects every variable in every output group for the current object. Shown only 
 OK accepts the selections and updates the Key Results window or Variable Output table; Cancel discards the changes.
 
 ---
-*Source topic: VarSelDlg.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

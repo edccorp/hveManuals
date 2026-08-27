@@ -16,7 +16,7 @@ An object, such as a surface or sphere, is always created by first selecting an 
 - **Signal Tool** — Used for creating traffic signal lights in the environment. *(updated: new tool; signal timing is coordinated with the Traffic Signals option in the Playback Information dialog.)*
 - **Edit Tool** — Used for editing existing objects.
 
-Each of these object tools is described in this chapter. The field-by-field dialog descriptions are kept in the code-verified reference pages linked from each section.
+Each of these object tools is described in this chapter. The field-by-field dialog descriptions are kept in the reference pages linked from each section.
 
 ## Surface Tool
 
@@ -26,7 +26,7 @@ The Surface Object Tool allows the user to create and edit 3-D surfaces, such as
 
 ### Surface Editor Dialog
 
-See the code-verified [Surface Editor Dialog](../../08-environment/SurfEdDlg.md) reference for full details. In summary, the dialog provides:
+See the [Surface Editor Dialog](../../08-environment/SurfEdDlg.md) reference for full details. In summary, the dialog provides:
 
 - **X,Y,Z Position Fields** — Display and allow editing of the selected object's local or global coordinates.
 - **Roll, Pitch, Yaw Orientation Fields** — Display and allow editing of the selected object's local or global orientation (active only in Object mode).
@@ -84,7 +84,7 @@ The Cone Object Tool allows the user to create and edit 3-D cones. Cones are use
 
 ### Cone Editor Dialog
 
-See the code-verified [Cone Editor Dialog](../../08-environment/ConeEdtDlg.md) reference. In summary, the dialog provides:
+See the [Cone Editor Dialog](../../08-environment/ConeEdtDlg.md) reference. In summary, the dialog provides:
 
 - **X,Y,Z Position Fields** — Display and allow editing of the selected object's local or global coordinates.
 - **Roll, Pitch, Yaw Orientation Fields** — Display and allow editing of the selected object's local or global orientation.
@@ -133,7 +133,7 @@ The Box Object Tool allows the user to create and edit 3-D boxes. Boxes are usef
 
 ### Box Editor Dialog
 
-See the code-verified [Box Editor Dialog](../../08-environment/BoxEdDlg.md) reference. In summary, the dialog provides:
+See the [Box Editor Dialog](../../08-environment/BoxEdDlg.md) reference. In summary, the dialog provides:
 
 - **X,Y,Z Position Fields** — Display and allow editing of the selected object's local or global coordinates.
 - **Roll, Pitch, Yaw Orientation Fields** — Display and allow editing of the selected object's local or global orientation.
@@ -183,7 +183,7 @@ The Cylinder Object Tool allows the user to create and edit 3-D cylinders. Cylin
 
 ### Cylinder Editor Dialog
 
-See the code-verified [Cylinder Editor Dialog](../../08-environment/CylinEdDlg.md) reference. In summary, the dialog provides:
+See the [Cylinder Editor Dialog](../../08-environment/CylinEdDlg.md) reference. In summary, the dialog provides:
 
 - **X,Y,Z Position Fields** — Display and allow editing of the selected object's local or global coordinates.
 - **Roll, Pitch, Yaw Orientation Fields** — Display and allow editing of the selected object's local or global orientation.
@@ -232,7 +232,7 @@ The Sphere Object Tool allows the user to create and edit 3-D spheres. Spheres a
 
 ### Sphere Editor Dialog
 
-See the code-verified [Sphere Editor Dialog](../../08-environment/SpereEdtDlg.md) reference. In summary, the dialog provides:
+See the [Sphere Editor Dialog](../../08-environment/SpereEdtDlg.md) reference. In summary, the dialog provides:
 
 - **X,Y,Z Position Fields** — Display and allow editing of the selected object's local or global coordinates.
 - **Roll, Pitch, Yaw Orientation Fields** — Display and allow editing of the selected object's local or global orientation.
@@ -282,7 +282,7 @@ The Text Object Tool allows the user to create and edit 3-D text. Text may be us
 
 ### Text Editor Dialog
 
-See the code-verified [Text Editor Dialog](../../01-user-interface/TextEdDlg.md) reference. In summary, the dialog provides:
+See the [Text Editor Dialog](../../01-user-interface/TextEdDlg.md) reference. In summary, the dialog provides:
 
 - **X,Y,Z Position Fields** — Display and allow editing of the selected object's local or global coordinates.
 - **Roll, Pitch, Yaw Orientation Fields** — Display and allow editing of the selected object's local or global orientation.
@@ -347,7 +347,7 @@ HVE supports three types of lights:
 
 ### Light Editor Dialog
 
-See the code-verified [Light Editor Dialog](../../01-user-interface/LightEdDlg.md) reference. In summary, the dialog provides:
+See the [Light Editor Dialog](../../01-user-interface/LightEdDlg.md) reference. In summary, the dialog provides:
 
 - **X,Y,Z Position Fields** — Display and allow editing of the light's coordinates. Used for Point and Spot lights; for Directional lights the fields remain enabled but the position values are simply ignored (a directional light illuminates from a direction, not a location).
 - **Azimuth, Zenith Angle Fields** — The direction in which the light points, entered as an azimuth (heading) angle and a zenith (angle from vertical). These fields are used for Directional and Spot lights. *(updated: earlier versions of this dialog used Roll/Pitch/Yaw orientation fields; the current dialog uses Azimuth/Zenith angles.)*
@@ -411,7 +411,7 @@ To edit an existing object, perform the following steps:
 > **NOTE:** The object remains selected for additional editing operations.
 
 ---
-*Converted and updated from the legacy HVE User's Manual (Seventh Edition, Jan 2006), Chapter 20; verified against current source code (HVEINV-64, SceneViewer) and the code-verified dialog reference pages 2026-07-05.*
+*Converted and updated from the legacy HVE User's Manual (Seventh Edition, Jan 2006), Chapter 20; revised to match the current version of HVE, 2026-07-05.*
 
 <!-- NAV -->
 

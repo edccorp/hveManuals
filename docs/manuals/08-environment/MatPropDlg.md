@@ -61,7 +61,7 @@ Saves the current settings to an HVE Material file (\*.matl) for later reuse.
 OK validates and accepts the material for the current contact surface; Cancel discards the changes.
 
 ---
-*Source topic: MatPropDlg.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

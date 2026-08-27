@@ -553,13 +553,13 @@ The Steer Degree of Freedom (DOF) model has three options.
 - **Normal** - Steering inputs are determined by forces and moments produced at the tire-terrain interface. The model is active during the entire event, over-riding any open-loop steer table.
 - **Append** - This model (not implemented) operates the same way as the Normal option, except it is activated only after the last time entry in the open-loop steer tables.
 
-*(updated: In the current code, Steer DOF is stored in calcInt[2]; Off maps to the NO_CURB solution mode and Normal to NO_CURB_W_STEER. The Append option remains unimplemented — it is disabled in the dialog and rejected by the physics.)*
+*(updated: Off and Normal select the two available steer-system solution modes. The Append option remains unimplemented — it is disabled in the dialog, and selecting it produces a fatal error and the event will not run.)*
 
 #### Vehicle Body vs. Environment Contact
 
 The Vehicle Body vs. Environment Contact check box is used when the user intends to simulate the rollover of a vehicle where the body of the vehicle contacts the ground. If the vehicle rolls over in a simulation without the box checked, the event may terminate with unexpected results.
 
-*(updated: This option is stored in calcBoolean[0] and sets the AllowRollover flag in the physics; it enables the HVOSM hardpoint body-mesh/terrain contact model and rollover simulation. It is off by default.)*
+*(updated: This option enables the HVOSM hardpoint body-mesh/terrain contact model and rollover simulation. It is off by default.)*
 
 ### GetSurfaceInfo Method
 

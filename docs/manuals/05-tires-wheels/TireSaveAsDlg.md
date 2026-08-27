@@ -33,7 +33,7 @@ Version string stored with the tire record (initialized from the source tire's v
 OK writes the tire to the user database. The combination of Type, Manufacturer, Model and Size forms the database key; if a tire with the same key already exists, you are asked whether to overwrite it. After saving, the vehicle database is rebuilt so the new tire is immediately available. Cancel closes the dialog without saving. Help displays this topic.
 
 ---
-*Source topic: TireSaveAsDlg.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

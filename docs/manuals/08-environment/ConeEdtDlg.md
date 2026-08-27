@@ -2,7 +2,7 @@
 
 The Cone Object Tool allows the user to create and edit 3-D cones. Cones are useful for creating highway delineator cones and simple trees. The Cone Editor dialog box displays information about the current cone object.
 
-The dialog is divided into a position/orientation group on the left and a shape group on the right. Position labels display the units for the current unit system (e.g. ft, deg); the labels are refreshed from the language/units resources whenever the dialog is activated, so changing the unit options updates the displayed units. Values typed into the dialog are applied to the selected cone when the Apply button is pressed (pressing Enter is equivalent to Apply).
+The dialog is divided into a position/orientation group on the left and a shape group on the right. Position labels display the units for the current unit system (e.g. ft, deg); the labels are refreshed from the current language and unit settings whenever the dialog is activated, so changing the unit options updates the displayed units. Values typed into the dialog are applied to the selected cone when the Apply button is pressed (pressing Enter is equivalent to Apply).
 
 ## Coordinates X
 
@@ -53,7 +53,7 @@ Radio buttons selecting what the coordinate fields are bound to when picking and
 Applies the values in the dialog to the selected cone and registers the change with the undo/redo system, so the edit can be undone or redone. Pressing Enter (OK) also applies; pressing Esc (Cancel) is ignored — the dialog remains open.
 
 ---
-*Source topic: ConeEdtDlg.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

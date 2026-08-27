@@ -77,7 +77,7 @@ Rate at which wheel angular displacement grows with contact moment above the no-
 Maximum contact moment (in-lb) used by the wheel damage model. (New since the original help.)
 
 ---
-*Source topic: WheelsDlg1.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

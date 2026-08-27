@@ -45,7 +45,7 @@ Linear damping of the linkage system.
 Rotational velocity required to develop the full steering friction torque.
 
 ---
-*Source topic: SteerSysDlg.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

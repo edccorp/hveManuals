@@ -17,7 +17,7 @@ Selects the type of brake table (the available choices depend on the calculation
 A table of the selected brake quantity versus time. Rows may be added, duplicated and edited directly in the grid. The *Copy Cell* and *Copy Row* buttons at the bottom of the Driver Controls dialog may be used to fill all columns of a row from column 1 and to duplicate rows.
 
 ---
-*Source topic: DriverControls3.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

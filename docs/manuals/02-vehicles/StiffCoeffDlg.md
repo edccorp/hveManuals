@@ -16,7 +16,7 @@ Assigns the linear spring rate (force vs. deflection constant) per unit of damag
 Assigns the linear spring rate (force vs. deflection constant) per unit of damage width required to produce permanent crush. This value differs from the B constant in that it assumes the force vs. deflection graph goes through zero.
 
 ---
-*Source topic: StiffCoeffDlg.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

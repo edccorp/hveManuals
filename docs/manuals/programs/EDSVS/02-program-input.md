@@ -172,7 +172,7 @@ The HVE-2D Suspension Model provides the following data:
 
 - Inter-tandem Load Transfer
 
-EDSVS supports all suspension types, including those with tandem axles. However, the suspension at each wheel is not modeled, per se. Rather, *roll couple distribution* (see Event, Calculation Options) is used. *(updated: in the current physics engine the roll couple distribution used by the simulation is read from the vehicle's suspension data, `Suspension.RollCoupleDist`, set on the Vehicle Editor's suspension screen — see [EDSVS Calculation Options](../../10-calculation-options/CalcOptEDSVS.md).)*
+EDSVS supports all suspension types, including those with tandem axles. However, the suspension at each wheel is not modeled, per se. Rather, *roll couple distribution* (see Event, Calculation Options) is used. *(updated: in the current version the roll couple distribution used by the simulation is read from the vehicle's **Roll Couple Distribution** suspension value, set on the Vehicle Editor's suspension screen — see [EDSVS Calculation Options](../../10-calculation-options/CalcOptEDSVS.md).)*
 
 ##### Inter-tandem Axle Load Transfer
 
@@ -431,17 +431,17 @@ The historically documented calculation option was:
 
 - Roll Couple Distribution
 
-*(updated: the original manual listed two calculation options — Roll-Couple Distribution and GetSurfaceInfo. In the current software the EDSVS engine does not present or use a Calculation Options dialog: it sets `CalcMethodHeader.Options.CalcOptionsDlgIsUsed = FALSE` (`Svsinput.cpp`), so no calculation-options dialog is shown for EDSVS and no `calcFloat`/`calcInt`/`calcOption` value is read by the engine. The Roll Couple Distribution used by the simulation is taken from the vehicle's suspension data (see below), and the GetSurfaceInfo terrain-search method is selected in the separate Get Surface Information Options dialog on the Options menu. Figure 2-4 above is retained for historical reference only; the dialog it shows is not active for EDSVS.)*
+*(updated: the original manual listed two calculation options — Roll-Couple Distribution and Get Surface Information. In the current software EDSVS does not present or use a Calculation Options dialog, and no calculation-option value is read by the simulation. The Roll Couple Distribution used by the simulation is taken from the vehicle's suspension data (see below), and the terrain surface-search method is selected in the separate **Get Surface Information Options** dialog on the Options menu. Figure 2-4 above is retained for historical reference only; the dialog it shows is not active for EDSVS.)*
 
 **Roll Couple Distribution** describes the ratio of lateral load transferred between the front and rear suspensions during cornering. This distribution depends directly on the characteristics of the front and rear suspension systems and chassis stiffness. As EDSVS is a 3-degree of freedom analysis, the effects of the suspension system and chassis are included in this one parameter. A good approximation for the fraction of the total load transfer borne by the front axle can be obtained by dividing the roll moment produced at the front suspension by the total roll moment (i.e., the total produced by both front and rear suspensions together) during a steady turn. Note that a neutral vehicle will tend to have a lateral load transfer coefficient equal to the percentage of load on the front axle; an understeering vehicle will tend to have a greater value and an oversteering vehicle will have a lesser value.
 
-*(updated: the Roll Couple Distribution is not entered through an EDSVS Calculation Options dialog. The current EDSVS physics engine assigns it directly from the vehicle's suspension data — `Vehicle[0].Wheel[0][0].Suspension.RollCoupleDist` in `Svsinput.cpp`, with the rear fraction computed as `gam2 = 1 - gam1` — so the value used by the simulation follows the vehicle editor's suspension setting. See the code-verified reference: [EDSVS Calculation Options](../../10-calculation-options/CalcOptEDSVS.md).)*
+*(updated: the Roll Couple Distribution is not entered through an EDSVS Calculation Options dialog. The current EDSVS simulation program takes it directly from the vehicle's **Roll Couple Distribution** suspension value (default 0.55), and computes the rear fraction as one minus the front fraction — so the value used by the simulation follows the Vehicle Editor's suspension setting. See [EDSVS Calculation Options](../../10-calculation-options/CalcOptEDSVS.md).)*
 
 #### Get Surface Information
 
-Both HVE-2D and HVE use a function called GetSurfaceInfo to determine on which environment polygon each tire is riding. This function searches below the X,Y coordinates of each tire contact patch, and uses a user-selectable algorithm to determine the friction and other characteristics of the surface beneath.
+Both HVE-2D and HVE use a surface information lookup to determine on which environment polygon each tire is riding. The lookup searches below the X,Y coordinates of each tire contact patch, and uses a user-selectable algorithm to determine the friction and other characteristics of the surface beneath.
 
-The default value of GetSurfaceInfo is *From Previous Polygon*. This results in fastest execution, but does not work for all environments. Refer to the User's Manual for further information about how GetSurfaceInfo works.
+The default surface-search method is *From Previous Polygon*. This results in fastest execution, but does not work for all environments. Refer to the User's Manual for further information about how the surface information lookup works.
 
 *(updated: the surface-search method is no longer part of the EDSVS Calculation Options dialog. It is selected in the separate Get Surface Information Options dialog (Options menu), which offers From First Polygon, From Previous Polygon and From Previous Polygon (Sorted); the By Elevation method is not supported. See [EDSVS Calculation Options](../../10-calculation-options/CalcOptEDSVS.md).)*
 

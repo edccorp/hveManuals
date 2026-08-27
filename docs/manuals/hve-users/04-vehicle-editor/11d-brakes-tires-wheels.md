@@ -7,7 +7,7 @@ properties, the Wheel Location and the Wheel Image.
 ## Brake Assembly Parameters
 
 The Brake Assembly properties for the selected wheel are displayed and
-edited using the Brake Assembly dialog. See also the code-verified
+edited using the Brake Assembly dialog. See also the
 reference page,
 [Brake Assembly dialog](../../04-brakes-powertrain/BrkAsmblyDlg.md).
 
@@ -116,7 +116,7 @@ a predefined suite of maneuvers or compliance test simulations. The HVE
 Brake Designer also includes a detailed tool for simulating ABS.
 
 The Brake Designer dialogs for the individual assembly types are documented
-in the code-verified reference pages:
+in the reference pages:
 [Disc Brake](../../04-brakes-powertrain/DiskBreakDlg.md),
 [Duo-Servo](../../04-brakes-powertrain/DueServoBrkDlg.md),
 [Duplex](../../04-brakes-powertrain/DuplexBrkDlg.md),
@@ -128,7 +128,7 @@ in the code-verified reference pages:
 ## Tire Properties
 
 The tire parameters for the current vehicle are displayed and edited using
-the Tire Information dialog. See also the code-verified reference page,
+the Tire Information dialog. See also the reference page,
 [Tire Information dialog](../../05-tires-wheels/TireInfoDlg.md).
 
 ![Figure 11-39](../images/p408-figB11-39.png)
@@ -185,7 +185,7 @@ Each of these is described in the following sections.
 ### Tire Physical Data
 
 The Tire Physical parameters for the selected wheel position are displayed
-and edited using the Tire Physical Data dialog. See also the code-verified
+and edited using the Tire Physical Data dialog. See also the
 reference page,
 [Tire Physical Data dialog](../../05-tires-wheels/TirePhyDataDlg.md).
 
@@ -286,7 +286,7 @@ The Tire Physical Data parameters are described below.
 
 The tire frictional properties for the selected wheel position are
 displayed and edited using the Tire Friction Data dialog. See also the
-code-verified reference page,
+reference page,
 [Tire Friction Data dialog](../../05-tires-wheels/TireFrictDataDlg.md).
 
 ![Figure 11-42](../images/p413-228.png)
@@ -446,7 +446,7 @@ The Tire Fy vs Slip Angle Data parameters are described below.
 
 The Tire Fy vs Inclination Angle Data (sometimes referred to as Camber
 Stiffness) for the selected wheel position are displayed and edited using
-the Tire Fy vs Inclination Angle Data dialog. See also the code-verified
+the Tire Fy vs Inclination Angle Data dialog. See also the
 reference page,
 [Fy vs Inclination Angle dialog](../../05-tires-wheels/FyVsInclAngDlg.md).
 
@@ -533,7 +533,7 @@ The Tire Fy vs Inclination Angle Data parameters are described below.
 
 The Tire Longitudinal and Lateral Slip vs Rolloff Data Tables for the
 selected wheel position are displayed and edited using the Tire Slip vs
-Rolloff Tables dialog. See also the code-verified reference page,
+Rolloff Tables dialog. See also the reference page,
 [Slip vs Rolloff dialog](../../05-tires-wheels/SlipVsRollOffDlg.md).
 
 ![Figure 11-45](../images/p422-231.png)
@@ -590,7 +590,7 @@ The Tire Slip vs Rolloff Data parameters are described below.
 
 The wheel location coordinates relative to the vehicle-fixed coordinate
 system are displayed and edited using the Wheel Location dialog. See also
-the code-verified reference page,
+the reference page,
 [Wheel Location dialog](../../03-suspension-steering/WheelLocDlg.md).
 
 ![Figure 11-46](../images/p425-232.png)
@@ -698,8 +698,8 @@ steps for each wheel.
 
 ---
 *Source: HVE User's Manual (Version 5, Seventh Edition, Jan 2006), Chapter
-11, pages 11-62..11-86 — updated against source code (HVEINV-64, Physics)
-2026-07-05.*
+11, pages 11-62..11-86 — revised for the current HVE
+release, 2026-07-05.*
 
 <!-- NAV -->
 

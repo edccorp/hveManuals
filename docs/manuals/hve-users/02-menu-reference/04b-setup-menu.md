@@ -605,7 +605,7 @@ To assign the desired tire-terrain model and associated parameters, perform the 
 
 The Point Contact Tire-Terrain Model is the default selection. To choose a different model:
 
-1. Click the Soft Soil radio button to select that option. When the tire travels over a soft soil (as determined using the Point Contact model approach), GetSurfaceInfo() will apply the Bekker soil parameters for the terrain beneath the tire.
+1. Click the Soft Soil radio button to select that option. When the tire travels over a soft soil (as determined using the Point Contact model approach), HVE's surface search will apply the Bekker soil parameters for the terrain beneath the tire.
 2. Click the Radial Spring radio button to select that option. The additional attributes required by the Radial Spring Tire-Terrain Model will be enabled. Edit the default parameters, if desired.
 3. Click the Sidewall Impact check box to select that option. The additional attributes required by the Sidewall Impact option will be enabled. Edit the default parameters, if desired.
 4. If desired, use the Axle, Side and Location option lists to select additional tire positions and select the appropriate tire-terrain model.
@@ -692,7 +692,7 @@ The simulation reports the velocity and acceleration for the current timestep in
 
 ## CONTACTS
 
-*(updated: in the current menu, Contacts appears before Restraints; the manual's original order is retained here to match the printed edition's cross-references. See also the code-verified dialog reference: [Contacts Dialog Box](../../09-events-driver-controls/ContactsDlg.md).)*
+*(updated: in the current menu, Contacts appears before Restraints; the manual's original order is retained here to match the printed edition's cross-references. See also the dialog reference: [Contacts Dialog Box](../../09-events-driver-controls/ContactsDlg.md).)*
 
 **Menu Option:** CONTACTS (Ctrl+T)
 

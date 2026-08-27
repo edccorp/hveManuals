@@ -1,8 +1,8 @@
 # Section Four: Vehicle Editor
 
 *Updated Markdown edition of the HVE User's Manual (HVE Version 5, Seventh
-Edition, January 2006), Section Four "Vehicle Editor". Verified against the current HVE application source (`HVEINV-64/`)
-and the physics vehicle data structure (`Physics/Include/VEHICLE.H`).*
+Edition, January 2006), Section Four "Vehicle Editor". Revised for the
+current HVE release.*
 
 The purpose of the HVE Vehicle Editor is to provide physically correct 3-D
 vehicle models for use in dynamic reconstructions and simulations. The HVE
@@ -53,10 +53,10 @@ To use the Vehicle Editor, perform the following steps:
     Parameters, Brake System Parameters and the HVE Brake Designer
     overview.
 
-## Related Code-Verified Dialog References
+## Related Dialog References
 
-Field-by-field dialog documentation verified against the current source
-code is maintained separately and cross-linked from the chapters above:
+Field-by-field dialog documentation is maintained separately and cross-linked
+from the chapters above:
 
 - [Vehicles (sprung mass, dimensions, stiffness)](../../02-vehicles/README.md)
 - [Suspension and Steering](../../03-suspension-steering/README.md)

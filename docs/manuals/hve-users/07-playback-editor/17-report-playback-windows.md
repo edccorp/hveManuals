@@ -214,7 +214,7 @@ The selected window will be printed on the system printer.
 For more information about using the Playback Controller, refer to the next chapter, [Editing the Event Sequence](18-editing-event-sequence.md), and to Section Nine: Video Output.
 
 ---
-*Converted and updated from the legacy HVE User's Manual (Seventh Edition, Jan 2006), Chapter 17; verified against current source code (HVEINV-64: PlayBackDlg.cpp, PreviewWindowDialog*.cpp, HVERSNT.rc) 2026-07-05.*
+*Converted and updated from the legacy HVE User's Manual (Seventh Edition, Jan 2006), Chapter 17; revised to match the current version of HVE, 2026-07-05.*
 
 <!-- NAV -->
 

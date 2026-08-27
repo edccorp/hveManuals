@@ -51,7 +51,7 @@ The friction coefficient at the connection between the tow vehicle and trailer.
 The maximum articulation angle allowable between the tow vehicle and trailer.
 
 ---
-*Source topic: IntrVehConnsDlg.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

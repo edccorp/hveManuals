@@ -32,7 +32,7 @@ The pitch moment of inertia of the payload.
 The yaw moment of inertia of the payload.
 
 ---
-*Source topic: PayLoadDlg.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

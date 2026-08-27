@@ -2,7 +2,7 @@
 
 **Collision Engineering Associates, Inc. — Version 5.56**
 
-Updated Markdown edition, converted from the Fifth Edition manual (December 2013; manual printed December 30, 2013) and verified against the current HVE source code (`Physics/Source/GATB/`, `Physics/Include/HUMAN.H`, `HVEINV-64/`).
+Updated Markdown edition, converted from the Fifth Edition manual (December 2013; manual printed December 30, 2013) and revised to match the behavior of the current HVE release.
 
 Copyright Collision Engineering Associates, Inc. 1999. All rights reserved.
 

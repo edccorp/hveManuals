@@ -2,7 +2,7 @@
 
 **Engineering Dynamics Corporation General Analysis Tool, Version 2**
 
-Third Edition (January 2006) — converted to Markdown and updated against the current HVE source code (July 2026).
+Third Edition (January 2006) — converted to Markdown and updated to match the current HVE release (July 2026).
 
 EDGEN is a 3-dimensional kinematics spreadsheet for the HVE (Human Vehicle Environment) simulation environment. It moves one human or one vehicle through up to eight user-specified positions and velocities, computing the average accelerations and the position/velocity time histories between them.
 
@@ -26,14 +26,13 @@ This manual is intended to be used in conjunction with the HVE User's Manual, wh
 - [Chapter 7 — Technical References](07-references.md)
 - [Chapter 8 — Index](08-index.md)
 
-## Related code-verified documentation
+## Related documentation
 
 - [Calculation Options for EDGEN (dialog reference)](../../10-calculation-options/CalcOptEDGENDlg.md)
-- Physics source: `Physics/Source/Edgen/` (`genlinear.cpp`, `genspline.cpp`, `Geninput.cpp`, `Output.cpp`, `gendef.h`)
 
 ## Source
 
-Converted from the legacy printed manual (~88 pages). Figures and screenshots from the printed manual are referenced by italic placeholders. Where the printed manual differed from the current source code, the text follows the code and is marked with *(updated: ...)* notes.
+Converted from the legacy printed manual (~88 pages). Figures and screenshots from the printed manual are referenced by italic placeholders. Where the printed manual differed from the current release, the text follows the current program behaviour and is marked with *(updated: ...)* notes.
 
 <!-- NAV -->
 

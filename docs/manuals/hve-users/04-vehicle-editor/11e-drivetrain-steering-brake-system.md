@@ -14,7 +14,7 @@ that are edited individually:
 - Transmission
 - Differential
 
-Each of these components is described below. See also the code-verified
+Each of these components is described below. See also the
 reference page,
 [Drivetrain dialog](../../04-brakes-powertrain/DriveTraDlg.md).
 
@@ -83,7 +83,7 @@ The Engine parameters are described below.
 
 The HVE Vehicle transmission is modeled by a reverse gear, neutral and up
 to 12 forward gears. The transmission is edited using the Transmission
-dialog. See also the code-verified reference page,
+dialog. See also the reference page,
 [Transmission Data dialog](../../04-brakes-powertrain/TransDataDlg.md).
 
 ![Figure 11-51](../images/p431-236.png)
@@ -131,7 +131,7 @@ The Transmission parameters are described below.
 ### Differential
 
 The HVE Vehicle differential is modeled by up to 3 ratios. The differential
-is edited using the Differential dialog. See also the code-verified
+is edited using the Differential dialog. See also the
 reference page,
 [Differential Data dialog](../../04-brakes-powertrain/DiffDataDlg.md).
 
@@ -173,7 +173,7 @@ The Differential parameters are described below.
 ## Steering System Parameters
 
 The Steering System parameters for the current vehicle are displayed and
-edited using the Steering System dialog. See also the code-verified
+edited using the Steering System dialog. See also the
 reference page,
 [Steering System dialog](../../03-suspension-steering/SteerSysDlg.md).
 
@@ -238,7 +238,7 @@ The Steering System parameters are described below.
 
 The Brake System parameters for the current vehicle are displayed and
 edited using the Brake System dialog (Brake System Pressure vs Pedal
-Force). See also the code-verified reference page,
+Force). See also the reference page,
 [Brake System Pressure vs Pedal Force dialog](../../04-brakes-powertrain/BrkSysVsPedFrcDlg.md).
 
 ![Figure 11-54](../images/p438-239.png)
@@ -313,7 +313,7 @@ Brake Type option list and Edit Brake pushbutton — see
 [Part D](11d-brakes-tires-wheels.md)) and from the ABS Designer pushbutton
 (per-wheel ABS data) and the Brake System dialog's ABS Edit pushbutton
 (system-level ABS data). The individual Brake Designer dialogs are
-documented in the code-verified reference pages in
+documented in the reference pages in
 [Brakes and Powertrain](../../04-brakes-powertrain/README.md):
 [Disc Brake](../../04-brakes-powertrain/DiskBreakDlg.md),
 [Duo-Servo](../../04-brakes-powertrain/DueServoBrkDlg.md),
@@ -327,8 +327,8 @@ Section Eleven; the current brake types additionally include Air Disc.)*
 
 ---
 *Source: HVE User's Manual (Version 5, Seventh Edition, Jan 2006), Chapter
-11, pages 11-87..11-98 — updated against source code (HVEINV-64, Physics)
-2026-07-05.*
+11, pages 11-87..11-98 — revised for the current HVE
+release, 2026-07-05.*
 
 <!-- NAV -->
 

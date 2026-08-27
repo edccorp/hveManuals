@@ -33,7 +33,7 @@ Multiplier applied to the angular acceleration about the vehicle's yaw axis.
 OK validates and assigns the factors; Cancel discards the changes. The factors are reset to 1.0 when **New** is pressed in the Collision Pulse dialog.
 
 ---
-*Source topic: ColPulFact.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

@@ -48,7 +48,7 @@ Displays the Electronic Stability System dialog, used to indicate whether Tracti
 Rotational inertia of drivetrain components.
 
 ---
-*Source topic: DriveTraDlg.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

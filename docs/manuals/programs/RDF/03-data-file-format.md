@@ -10,17 +10,17 @@ The header of the ReadDataFile data file must contain six lines before any time-
 
 - **First Line** — contains the version number. The version number is used to determine possible options and data format changes from one version to another.
 
-  *(updated: verified in `getFileDefinition()` in `ReadDataFileinput.cpp`. The line has the form `Version 3.500` — a word beginning with `V` or `v` followed by the version number. If this line is missing, the file is read as version 3.200 format, in which case the parent-object line (fourth line, below) must be omitted. The parent-object line is read only when the file version is 3.5 or later.)*
+  *(updated: the line has the form `Version 3.500` — a word beginning with `V` or `v` followed by the version number. If this line is missing, the file is read as version 3.200 format, in which case the parent-object line (fourth line, below) must be omitted. The parent-object line is read only when the file version is 3.5 or later.)*
 
 - **Second Line** — contains a key word, either `2D` or `3D`, to specify whether the data will be 2-dimensional tire data or fully 3-dimensional tire data.
 
-  *(updated: the parser accepts `2D` or `2d` for two-dimensional data, but due to a quirk in the comparison logic only the uppercase `3D` is recognized for three-dimensional data — always write the key in uppercase.)*
+  *(updated: either `2D` or `2d` is accepted for two-dimensional data, but only the uppercase `3D` is recognized for three-dimensional data — always write the key in uppercase.)*
 
 The difference between 2D and 3D tire data is that 2D data only requires (and uses) the steer angle for all the axles specified along with the skid flag. Therefore, for 2D tire data only two data values are required for each specified axle for each time in the data file. For every axle there will be two lines of data, the first for the right side and the second for the left side. If only one axle is specified then it will reference the front axle. For a tractor truck with three axles, the first axle is the steer axle, the second axle is the front drive axle, and the third axle is the aft drive axle. If the number of axles is set at two for a three-axle vehicle then the steer axle and front drive axles would require two data lines each (right and left).
 
 3D tire data contains more information. The displacement from normal position (x, y, z), the orientation from normal (steer, spin, camber or yaw, pitch, roll), the skid flag, and the contact location of the tire on the ground (cX, cY, cZ — used to draw skid) are all required for each time step. There are 10 data values required for each time step and each axle *side* for 3D tire data. Note that the ground contact (cX, cY, cZ) are relative to the world fixed coordinate system and the displacements and angles are with respect to the normal tire position.
 
-*(updated: verified against `ReadDataFiledef.h` (`TIRE_ITEMS2D` = 2, `TIRE_ITEMS3D` = 10) and `ComputeData()` in `ReadDataFilemain.cpp`. The ten 3D values are read in the order: x y z yaw pitch roll skid-flag cX cY cZ. The x, y, z displacements are added to the wheel location defined in the Vehicle Editor; the contact-point z is raised 0.02 inches when drawn so the skid appears just above the road surface. The skid flag (0 = not skidding, 1 = skidding) and contact point are applied to both tires of a dual pair; for 2D data the contact points of dual tires are offset laterally from the wheel location by half the tire spacing.)*
+*(updated: a 2D tire line carries 2 values and a 3D tire line carries 10. The ten 3D values are read in the order: x y z yaw pitch roll skid-flag cX cY cZ. The x, y, z displacements are added to the wheel location defined in the Vehicle Editor; the contact-point z is raised 0.02 inches when drawn so the skid appears just above the road surface. The skid flag (0 = not skidding, 1 = skidding) and contact point are applied to both tires of a dual pair; for 2D data the contact points of dual tires are offset laterally from the wheel location by half the tire spacing.)*
 
 - **Third Line** — Number of vehicles that this data file has data for.
 
@@ -28,7 +28,7 @@ The difference between 2D and 3D tire data is that 2D data only requires (and us
 
 For instance, relative data can be used to specify a windshield wiper rotating on the "parent" object. In this case the relative motion is simply rotational and the position does not move relative to the parent, even though the wiper may be moving relative to the world coordinates. Use zero (0) to indicate motion relative to the world, or the number of the object in the object list for relative motion. For example, if there are three vehicles in the event, specifying a "1" will cause motion in the data file to be relative to the first vehicle. There should be an entry on this line for every vehicle in the event, and they may all be zero. Entries, as always, should be separated by spaces. Also, the parent object must be specified prior to the child object. In other words, the second vehicle CANNOT be specified relative to the third vehicle... the parent must be specified before the child.
 
-*(updated: verified — the parser rejects the file with an error if the first vehicle's parent is not 0 ("FIRST VEHICLE MUST REFERENCE THE FIXED COORD. SYSTEM") or if any vehicle's parent number is greater than its own position in the list ("Parent Vehicle MUST be defined before child vehicle"). For a child object, the interpolated position is transformed through the parent's position and orientation, and the child's yaw/pitch/roll are added to the parent's angles — see `TransCoords()` in `TransCoord.cpp`.)*
+*(updated: the file is rejected with an error message if the first vehicle's parent is not 0 ("FIRST VEHICLE MUST REFERENCE THE FIXED COORD. SYSTEM") or if any vehicle's parent number is greater than its own position in the list ("Parent Vehicle MUST be defined before child vehicle"). For a child object, the interpolated position is transformed through the parent's position and orientation, and the child's yaw/pitch/roll are added to the parent's angles.)*
 
 - **Fifth Line** — Number of axles on each of the vehicles.
 
@@ -38,7 +38,7 @@ A number must be included for each vehicle in the ReadDataFile event. If the thi
 
 Human data are specified differently than vehicles. For a human, the only position data required is for the pelvis segment. The orientation data (yaw, pitch, roll) is specified for the pelvis as well as the other fourteen mass segments. The first data line contains six data values (x, y, z, yaw, pitch, roll) and the next 14 lines contain only three data values, the orientations relative to the parent segments. Again, all data values should be separated by spaces.
 
-*(updated: verified — humans are always read as 15 segments (`MAXHVESEGMENTS` = 15 in `Physics/Include/Hvedef.h`): one 6-value line for the lower torso (pelvis) followed by 14 3-value joint-orientation lines (`MAXHVEJOINTS` = 14). Note also that the current code positions the human's main segment relative to the *first* vehicle's coordinate system, and its internal logic assumes one human and one vehicle in the event — see `CalcMethodInfo()` in `ReadDataFileinput.cpp`.)*
+*(updated: humans are always read as 15 segments: one 6-value line for the lower torso (pelvis) followed by 14 3-value joint-orientation lines. Note also that the current release positions the human's main segment relative to the *first* vehicle's coordinate system, and assumes one human and one vehicle in the event.)*
 
 ## Data Values
 
@@ -48,7 +48,7 @@ If the value for Number of Axles is set to zero for any vehicle there will not b
 
 Human data is entered relative to the vehicle-fixed coordinate system.
 
-*(updated — order of values within a data line, verified in `ComputeData()`: each vehicle line is read as `X Y Z Yaw Pitch Roll`; internally the program reorders the angles to roll-pitch-yaw for HVE. Each time block consists of the time value followed by, for each vehicle in order: one vehicle line, then the tire lines (2 or 10 values each) for each axle, right side then left side; then, for each human: the 6-value pelvis line and 14 joint lines. The total number of data items per time block is limited to 100 (`MAX_POSSIBLE_OBJECTS` in `ReadDataFiledef.h`). Do not use commas or tabs — every value is read with a whitespace-delimited numeric read, and a non-numeric token ends the run as if the end of file had been reached.)*
+*(updated — order of values within a data line: each vehicle line is read as `X Y Z Yaw Pitch Roll`; internally the program reorders the angles to roll-pitch-yaw for HVE. Each time block consists of the time value followed by, for each vehicle in order: one vehicle line, then the tire lines (2 or 10 values each) for each axle, right side then left side; then, for each human: the 6-value pelvis line and 14 joint lines. The total number of data items per time block is limited to 100. Do not use commas or tabs — every value is read with a whitespace-delimited numeric read, and a non-numeric token ends the run as if the end of file had been reached.)*
 
 ## Examples
 
@@ -157,7 +157,7 @@ The data file for Example 3 is shown in Figure Ex-3 below.
 
 Line by line: line 1 = 2D tire data key; line 2 = number of vehicles = 2; line 3 = number of axles for each of the 2 vehicles; line 4 = number of humans = 0; then, for each time entry: the position/orientation line for vehicle 1 followed by its steer-and-skid-flag lines (axle 1 right side, axle 1 left side, axle 2 right side, axle 2 left side), then the same set of lines for vehicle 2. *(Figure reconstructed from the source scan; some steer-angle digits are approximate.)*
 
-*(updated: note that the Example 3 file in the original manual has no `Version` line. Verified against the parser: such a file is read as version 3.200 format, which is why it also has no parent-object line — the header is only five lines in that case.)*
+*(updated: note that the Example 3 file in the original manual has no `Version` line. Such a file is read as version 3.200 format, which is why it also has no parent-object line — the header is only five lines in that case.)*
 
 ### Example 4
 

@@ -31,7 +31,7 @@ The entered value is used to determine the steer angle at the left wheel. This a
 All values are entered with a slider or by typing directly into the associated edit field.
 
 ---
-*Source topic: DriverControls2.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

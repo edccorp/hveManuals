@@ -464,7 +464,7 @@ The Messages report for the *EDSMAC, Visibility Study* event is shown in Figure 
 
 ### Program Data
 
-The Program Data report displays the simulation controls (integration time steps and termination conditions), collision parameters used by the EDSMAC collision algorithm and the hard-coded values (RHOB Tests) used to determine if a vector passes through the end (front or back) or side (left or right).
+The Program Data report displays the simulation controls (integration time steps and termination conditions), collision parameters used by the EDSMAC collision algorithm and the fixed values (RHOB Tests), which cannot be changed by the user, that determine whether a vector passes through the end (front or back) or side (left or right).
 
 To view the Program Data report for the *EDSMAC, Visibility Study* event, perform the following steps:
 

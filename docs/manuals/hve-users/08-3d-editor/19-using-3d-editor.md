@@ -73,7 +73,7 @@ The Object Dialog (see Figure 19-4) displays 3-D geometry data for the current o
 
 ## Object Attributes Tool
 
-Every object created using the 3-D Editor has the following attributes (see also the code-verified [Object Attributes Dialog Box](../../01-user-interface/ObjAttrDlg.md) reference):
+Every object created using the 3-D Editor has the following attributes (see also the [Object Attributes Dialog Box](../../01-user-interface/ObjAttrDlg.md) reference):
 
 - **Object Name** — A non-editable text field that displays the name of the tool used to create the object (e.g., Box).
 - **Object Type** — An option list that allows the user to define the type of object (Human, Vehicle, Road, Friction Zone, Curb, Water or Other). *(updated: the Curb and Water types have been added since the legacy manual; selecting Water enables Water Depth controls.)*
@@ -304,7 +304,7 @@ The named group will be added to the library.
 > **NOTE:** Objects are saved according to their current location relative to the origin. This fact is important when the object is later selected from the library and positioned in the environment. If the object was located 50 ft from the origin when it was saved, it will be located 50 ft from the current coordinates when it is pasted back into the environment. Thus, you will normally want to move the object to the origin before saving it in the library.
 
 ---
-*Converted and updated from the legacy HVE User's Manual (Seventh Edition, Jan 2006), Chapter 19; verified against current source code (HVEINV-64, SceneViewer) and the code-verified dialog reference pages 2026-07-05.*
+*Converted and updated from the legacy HVE User's Manual (Seventh Edition, Jan 2006), Chapter 19; revised to match the current version of HVE, 2026-07-05.*
 
 <!-- NAV -->
 

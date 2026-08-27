@@ -27,7 +27,7 @@ A status line at the bottom of the dialog prompts the user (e.g., "Select any Hu
 > **Note:** The *Browse EXE* button described in earlier versions of this dialog has been removed; calculation methods are now located automatically in the calcMethods directory.
 
 ---
-*Source topic: EventInfo.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

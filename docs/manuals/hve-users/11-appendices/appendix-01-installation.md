@@ -5,8 +5,7 @@ Edition, January 2006), Appendix I, pages I-1 through I-10. The installation and
 2006-era distribution (CD-ROM, parallel-port EDKEY, Windows 95–XP) and are
 retained as legacy reference; consult EDC (www.edccorp.com) for current
 system requirements, installation media and licensing. The HVE file system
-section has been verified against the current source
-(`HVEINV-64/PathMgr.cpp`).*
+section describes the file locations used by the current version of HVE.*
 
 This section of the manual describes the basic computer hardware system
 requirements for using HVE and also how to install HVE software.
@@ -160,7 +159,7 @@ computer systems.
 | `hve\supportFiles\images\humans` | Subdirectory containing 2-D bitmap and 3-D geometry files for humans |
 | `hve\supportFiles\images\vehicles` | Subdirectory containing 2-D bitmap and 3-D geometry files for vehicles |
 | `hve\supportFiles\images\environments` | Subdirectory containing 2-D bitmap and 3-D geometry files for environments |
-| `hve\supportFiles\images\movies` | Subdirectory containing movie files (e.g., AVI) created using the Playback Editor, and (in a `frames` subdirectory) single-frame image output *(updated: the original table printed this as `supportFiles\movies`; the code (`PathMgr.cpp`) places movies under `supportFiles\images\movies` — in current installations under the public user directory, e.g. `C:\Users\Public\HVE\supportFiles\images\movies` — and the location may be overridden in the Video Options dialog)* |
+| `hve\supportFiles\images\movies` | Subdirectory containing movie files (e.g., AVI) created using the Playback Editor, and (in a `frames` subdirectory) single-frame image output *(updated: the original table printed this as `supportFiles\movies`; HVE places movies under `supportFiles\images\movies` — in current installations under the public user directory, e.g. `C:\Users\Public\HVE\supportFiles\images\movies` — and the location may be overridden in the Video Options dialog)* |
 | `hve\supportFiles\db` | Subdirectory containing human, vehicle and tire databases; also contains location and vehicle contact surface materials databases |
 | `hve\supportFiles\colPulse` | Subdirectory containing user-saved collision pulse files |
 | `hve\supportFiles\sys` | Subdirectory containing various HVE system and resource files |

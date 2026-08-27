@@ -21,7 +21,7 @@ Table of output values. The first column is Time (one row per output interval); 
 Selected cells may be copied to the clipboard by pressing **Ctrl+C**; the copied block is tab-separated and includes the column headers, ready for pasting into a spreadsheet.
 
 ---
-*Source topic: VarOutRepDlg.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

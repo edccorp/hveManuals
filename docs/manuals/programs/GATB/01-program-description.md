@@ -32,7 +32,7 @@ The GATB program uses the human model in HVE. This human model consists of 15 se
 
 **Table 1-1: List of HVE human segments and joints**
 
-*(Code note: the 15-segment/14-joint model matches the current HVE human structure in `Physics/Include/HUMAN.H` — `MAXHVESEGMENTS` is 15, with up to 3 contact ellipsoids and up to 4 joints per segment.)*
+*(Note: the 15-segment/14-joint model matches the current HVE human, which allows up to 3 contact ellipsoids and up to 4 joints per segment.)*
 
 ## Model Inputs
 

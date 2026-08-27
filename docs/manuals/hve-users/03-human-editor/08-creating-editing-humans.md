@@ -1,6 +1,6 @@
 # Chapter 8 — Creating and Editing Humans
 
-*Updated Markdown edition of the HVE User's Manual (HVE Version 5, Seventh Edition, January 2006), Chapter 8, manual pages 8-1 through 8-8. Verified against the current HVE application source (`HVEINV-64/`).*
+*Updated Markdown edition of the HVE User's Manual (HVE Version 5, Seventh Edition, January 2006), Chapter 8, manual pages 8-1 through 8-8. Revised for the current HVE release.*
 
 The Human Editor is used for creating and editing humans for the current case.
 These humans may also be used in other cases.

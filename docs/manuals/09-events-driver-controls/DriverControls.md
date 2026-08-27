@@ -39,7 +39,7 @@ A table of steering angle versus time. Rows may be added, duplicated and edited 
 When checked, the simulation applies Ackermann geometry to the steer angles, so that the inside and outside tires of a steerable axle are steered through slightly different angles.
 
 ---
-*Source topic: DriverControls.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

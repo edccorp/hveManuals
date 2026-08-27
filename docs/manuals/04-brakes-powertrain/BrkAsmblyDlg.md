@@ -47,7 +47,7 @@ Check this check box if you want all the properties set for this wheel to be cop
 Check this check box if you want all the properties set for this wheel to be copied to the wheels on the other axles. *(New option; not documented in the previous manual.)*
 
 ---
-*Source topic: BrkAsmblyDlg.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

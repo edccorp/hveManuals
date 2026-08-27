@@ -97,7 +97,7 @@ Assigns the axial load on the steering column required to begin collapsing the c
 Assigns the steering column angle, about the vehicle's pitch axis (normally a negative angle). Typical range ±45°; allowed range ±90°.
 
 ---
-*Source topic: AirBagDlg.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

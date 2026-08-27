@@ -72,7 +72,7 @@ dialog. To add a new environment, perform the following steps:
    and Time — sit above the tabs, and the tabs organize the remaining
    parameters:* Terrain, Sky, Physical, Location *and* Traffic Signals. *In
    HVE-3D all five tabs are shown; in HVE-2D only the Terrain tab is
-   present. See the code-verified [Environment Information Dialog](../../08-environment/EnvtInfoDlg.md).)*
+   present. See the [Environment Information Dialog](../../08-environment/EnvtInfoDlg.md).)*
    The following user-definable parameters are available:
 
    - **Location Database** *(Location tab)* — A user-editable database of
@@ -94,7 +94,7 @@ dialog. To add a new environment, perform the following steps:
    > [Chapter 13, Environment Model Definition](13-environment-model-definition.md).
 
    ![Figure 12-2](../images/p446-figB12-2.png)
-   *Figure 12-2: Environment Information dialog. See the code-verified field reference: [Environment Information Dialog](../../08-environment/EnvtInfoDlg.md).*
+   *Figure 12-2: Environment Information dialog. See the field reference: [Environment Information Dialog](../../08-environment/EnvtInfoDlg.md).*
 
    - **Name** *(top-level field)* — A user-editable field allowing the user
      to assign a name to the current environment.
@@ -123,9 +123,9 @@ dialog. To add a new environment, perform the following steps:
 
    > **NOTE:** *(updated)* The Physical (atmospheric) fields — Wind Speed,
    > Wind Direction, Temperature and Barometric Pressure — are not present
-   > in HVE-2D. The entire Physical tab is built only in RUN_MODE_3D
-   > (HVE-3D), so in HVE-2D these fields are simply not shown; they are not
-   > displayed read-only.
+   > in HVE-2D. The entire Physical tab appears only in HVE-3D, so in
+   > HVE-2D these fields are simply not shown; they are not displayed
+   > read-only.
 
    - **Gravitational Constant** *(Physical tab)* — The local acceleration of gravity.
 
@@ -250,7 +250,7 @@ environment. Like the Sky tab, it is shown only in 3-D run modes or with a
 timing; the Type and Layout fields describe the selected signal, and the
 *Is Active*, *Repeating* and *Signal Timing* controls (Start Time, or
 *Follow* another signal with an Overlap) define its cycle. See the
-code-verified [Environment Information Dialog](../../08-environment/EnvtInfoDlg.md)
+[Environment Information Dialog](../../08-environment/EnvtInfoDlg.md)
 for the full field reference.
 
 ## 3-D Environment Geometry
@@ -518,7 +518,7 @@ edit the current environment, perform the following steps:
 
 ---
 
-*See also (code-verified dialog references):*
+*See also (dialog references):*
 [Environment Information Dialog](../../08-environment/EnvtInfoDlg.md) ·
 [Environment Material Properties](../../08-environment/EnvrMatPropDlg.md) ·
 [Surface Editor](../../08-environment/SurfEdDlg.md)

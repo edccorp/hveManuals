@@ -13,7 +13,7 @@ Total weight of the axle and spring. HVE stores the corresponding mass internall
 Roll and yaw inertia of the axle. Do not include wheel inertias; they are included with the tires.
 
 ---
-*Source topic: InertiasDlg.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

@@ -48,7 +48,7 @@ The Accident History Report displays a table of initial and final positions and 
 ![Figure 3-1](images/p041-006.png)
 *Figure 3-1: Typical Accident History Output Report issued by EDSVS.*
 
-The report shows the Total Distance Travelled and Time, along with Initial and Final rows containing Position (X, Y, PSI) and Velocity (V-tot, u-vel, v-vel, Yaw Vel) values. *(Verified against the current report layout in `Physics/Source/Edsvs/EDSVS.rsc`, which also supports a "Rest" row.)*
+The report shows the Total Distance Travelled and Time, along with Initial and Final rows containing Position (X, Y, PSI) and Velocity (V-tot, u-vel, v-vel, Yaw Vel) values. *(updated: the current report layout also supports a "Rest" row.)*
 
 ### Messages
 
@@ -63,7 +63,7 @@ The Program Data Report includes the following information:
 
 - **Simulation Controls** — Integration parameters used for the current event (Max Simulation Time, Trajectory Phase dt, Output Interval, Linear Term Vel)
 
-*(updated: the current Program Data report also includes a General Program Information section — HVE Version, EDSVS Version, Date and Time of Execution, Dimension Basis — and General Environment Data and 3-D Environment Terrain Data sections, including the 3-D geometry filename, number of polygons, the GetSurfaceInfo mode, minimum/maximum terrain elevation, and counts of water, curb, friction-zone and road polygons; see `EDSVS.rsc`.)*
+*(updated: the current Program Data report also includes a General Program Information section — HVE Version, EDSVS Version, Date and Time of Execution, Dimension Basis — and General Environment Data and 3-D Environment Terrain Data sections, including the 3-D geometry filename, number of polygons, the Get Surface Information method in use, minimum/maximum terrain elevation, and counts of water, curb, friction-zone and road polygons.)*
 
 A typical Program Data Report is shown in Figure 3-3.
 

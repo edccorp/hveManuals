@@ -16,7 +16,7 @@ Spreadsheet-style table of the editable variables:
 OK validates the entries, stores the edited values back into the event's variable output data and refreshes the Variable Output table; Cancel discards the edits.
 
 ---
-*Source topic: VarOutEdDlg.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

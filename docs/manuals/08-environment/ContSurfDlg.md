@@ -45,7 +45,7 @@ Displays the [Material Properties Dialog Box](MatPropDlg.md) for the current con
 OK validates the corner coordinates and saves the contact surfaces to the vehicle; Cancel discards the changes.
 
 ---
-*Source topic: ContSurfDlg.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

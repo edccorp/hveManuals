@@ -48,7 +48,7 @@ The mechanical stiffness of the steering stop. Additional steering beyond the st
 The ratio of conserved to total energy of the selected steering stop, between 0 and 1 (this property is analogous to the Jounce and Rebound stop energy ratio). This parameter keeps the wheel from bouncing off the steering stop.
 
 ---
-*Source topic: SpndleAxisDlg.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

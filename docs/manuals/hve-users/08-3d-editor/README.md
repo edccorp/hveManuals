@@ -29,7 +29,7 @@ This section provides a detailed explanation of the process of creating and edit
 - Chapter 24 (reserved for future use)
 - Chapter 25 (reserved for future use)
 
-## Related code-verified reference pages
+## Related Reference Pages
 
 - [3-D Editor Menu](../../01-user-interface/3dEditor.md)
 - [Object Attributes Dialog Box](../../01-user-interface/ObjAttrDlg.md)
@@ -37,7 +37,7 @@ This section provides a detailed explanation of the process of creating and edit
 - Object editor dialogs: [Surface](../../08-environment/SurfEdDlg.md), [Cone](../../08-environment/ConeEdtDlg.md), [Box](../../08-environment/BoxEdDlg.md), [Cylinder](../../08-environment/CylinEdDlg.md), [Sphere](../../08-environment/SpereEdtDlg.md), [Text](../../01-user-interface/TextEdDlg.md), [Light](../../01-user-interface/LightEdDlg.md)
 
 ---
-*Converted and updated from the legacy HVE User's Manual (Seventh Edition, Jan 2006), Section Eight; verified against current source code (HVEINV-64, SceneViewer) 2026-07-05.*
+*Converted and updated from the legacy HVE User's Manual (Seventh Edition, Jan 2006), Section Eight; revised to match the current version of HVE, 2026-07-05.*
 
 <!-- NAV -->
 

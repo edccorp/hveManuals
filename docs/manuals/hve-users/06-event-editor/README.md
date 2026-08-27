@@ -49,11 +49,11 @@ available event-related options:
 - [Chapter 16 — Event Model Definition](16-event-model-definition.md)
   provides detailed definitions for the Event set-up options and outputs.
 
-Code-verified dialog references for this section — including the current
+Detailed dialog references for this section — including the current
 Driver Controls dialogs (Pedal Force brake tables, Wide-open Throttle
 tables, Ackermann steering, neuro-muscular filter and the HVE Driver
-path/speed follower) — are collected in
-[docs/manuals/09-events-driver-controls](../../09-events-driver-controls/README.md).
+path/speed follower) — are collected in the
+[Events and Driver Controls reference](../../09-events-driver-controls/README.md).
 
 <!-- NAV -->
 

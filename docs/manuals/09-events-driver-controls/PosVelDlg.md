@@ -54,7 +54,7 @@ This group contains the following items:
 Applies the currently displayed position and velocity values to the selected object and updates the object's display in the event editor.
 
 ---
-*Source topic: PosVelDlg.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

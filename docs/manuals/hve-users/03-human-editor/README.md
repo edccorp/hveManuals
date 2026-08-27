@@ -1,6 +1,6 @@
 # Section Three: Human Editor
 
-*Updated Markdown edition of the HVE User's Manual (HVE Version 5, Seventh Edition, January 2006), Section Three "Human Editor". Verified against the current HVE application source (`HVEINV-64/`) and the physics human data structure (`Physics/Include/HUMAN.H`).*
+*Updated Markdown edition of the HVE User's Manual (HVE Version 5, Seventh Edition, January 2006), Section Three "Human Editor". Revised for the current HVE release.*
 
 The purpose of the HVE Human Editor is to provide anthropomorphically correct
 3-D human models for use in dynamic reconstructions and simulations involving
@@ -45,8 +45,8 @@ of the human model's physical properties:
 
 ## Related Dialog Reference Pages
 
-The individual Human Editor dialogs are documented in detail (verified against
-current source code) in [`docs/manuals/07-humans/`](../../07-humans/README.md):
+The individual Human Editor dialogs are documented in detail in the
+[Human Dialog Reference](../../07-humans/README.md):
 
 - [Human Information Dialog (classic and GEBOD)](../../07-humans/HumanInfoDlg.md)
 - [Human CG (segment popup) Dialog](../../07-humans/HumCGDlg.md)

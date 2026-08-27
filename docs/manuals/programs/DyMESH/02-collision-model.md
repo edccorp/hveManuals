@@ -4,23 +4,20 @@ This chapter describes the technical model implemented by DyMESH: the mesh
 representation, the contact (Location) and restoration algorithm, the node
 force–deflection law, the three-dimensional stiffness, the vertex-displacement
 (crush-depth) treatment, restitution, and the coupling to the vehicle equations
-of motion. The description follows the *DyMESH Collision Simulation* deck and has
-been verified against `DYMESH.H` and `Dymesh.cpp`.
+of motion. The description follows the *DyMESH Collision Simulation* deck,
+updated to match the current version of HVE.
 
 ## 1. Mesh representation
 
 Each body is represented by the same **triangular surface mesh** used for its
-display. In the code this is a `DyMeshData` structure per body, holding an array
-of vertices (`VertArray`) and an array of triangular polygons (`PolyArray`):
+display: an array of vertices and an array of triangular polygons.
 
-- Each polygon stores its three vertex indices (`Vndx[3]`), an earth-fixed
-  outward **normal** (`EarthNormal`), an earth-fixed **center** (`EarthCtr`), and
-  its current and original **area** (`Area`, `AreaOrig`).
-- Each vertex stores undamaged and current (damaged) coordinates in both
-  earth-fixed and vehicle-fixed frames (`EarthCoordUndamaged`, `EarthCoord`,
-  `VehCoord`, ...), its current deformation vector (`Delta`), its accumulated
-  maximum deformation (`DeltaMaxTotal`), the force acting on it, and a per-vertex
-  **stiffness** array and **saturation crush**.
+- Each polygon carries its three vertex indices, an earth-fixed outward
+  **normal**, an earth-fixed **center**, and its current and original **area**.
+- Each vertex carries undamaged and current (damaged) coordinates in both the
+  earth-fixed and vehicle-fixed frames, its current deformation vector, its
+  accumulated maximum deformation, the force acting on it, and a per-vertex
+  **stiffness** set and **saturation crush**.
 
 During a run, one body is designated the **Master** (M) and the other the
 **Slave** (S). Master *surfaces* (polygons) are tested against Slave *nodes*
@@ -29,11 +26,11 @@ penetrated. The roles can be swapped every time step, or multiple times per time
 step, so that both bodies accumulate damage.
 
 Because the search over all polygons would be expensive, DyMESH restricts each
-test to a **search box** around each slave vertex (`GLOBAL_SEARCH_BOX`,
-`NaborBox` lists) and to precomputed neighbor lists (`NaborSurf`). The neighbor
-lists are only recomputed every few time steps (`CALC_NABOR_INTERVAL`) for
-efficiency. The box size is either computed automatically from the vehicle
-extents (`SetBoxSize`) or set by the user.
+test to a **search box** around each slave vertex, and to precomputed lists of
+neighboring surfaces. The neighbor lists are only recomputed every few time
+steps, for efficiency. The box size is either computed automatically from the
+vehicle extents or set by the user (**Search Option**: Automatic or Set Box
+Size).
 
 ## 2. Contact algorithm
 
@@ -66,14 +63,13 @@ The sequence over a contact is:
 
 A slave node is matched to the master surface it has penetrated. A candidate
 contact point is the intersection of a search ray from the slave node with the
-master triangle; an **inside-polygon test** (`InsidePolygonTest_CrossProd`, using
-the cross-product method) confirms the intersection lies within the triangle.
-The direction of the search ray can be chosen among several methods
-(`USE_LOCAL_AVERAGE_NORMAL`, `USE_VELOCITY`, `USE_POLY_NORMAL`,
-`USE_SPECIFIED_DIRECTION`; the disabled `USE_VERT_NORMAL`), and the local search
-may stop after the first, best-of-two, or best-of-all candidates
-(`STOP_AFTER_ONE / _TWO / _ALL`). These are exposed on the **Advanced** tab of
-the DyMESH Options dialog.
+master triangle; an **inside-polygon test**, using the cross-product method,
+confirms the intersection lies within the triangle. The direction of the search
+ray can be chosen among several methods — the local average normal, the velocity
+direction, the polygon normal, or a specified direction (a vertex-normal method
+also exists but is disabled) — and the local search may stop after the first,
+best-of-two, or best-of-all candidates. These are exposed on the **Advanced**
+tab of the DyMESH Options dialog.
 
 ### Restoration (pushback)
 
@@ -81,13 +77,11 @@ Once a slave node is found interior to a master surface, its penetration depth
 is the distance from the node to the master surface along the restoration
 direction. The node is restored (pushed back) toward the surface; the amount of
 that pushback, accumulated over time, is the node's permanent deformation. To
-prevent numerical instabilities, the pushback can be reduced
-(`PushbackReduction`, limited by `PUSHBACK_REDUCE_LIMIT`) and constrained not to
-restore across implausible distances (`TOOFAR_MARGIN`, `TOOFAR_MAXIMUM`).
+prevent numerical instabilities, the pushback can be reduced by a limited
+amount, and is constrained not to restore across implausible distances.
 
-*(updated: `PushbackReduction` is only active when DyMESH **Version 4** is
-selected — `UsePushbackReduction = (Event.Info.DyMeshOptions.VersionNo == 4)` in
-`DyMeshInitialize()`. Under Version 3 the reduction is not applied.)*
+*(updated: the pushback reduction is only active when DyMESH **Version 4** is
+selected. Under Version 3 the reduction is not applied.)*
 
 ## 3. Node force–deflection law
 
@@ -98,10 +92,10 @@ relationship. **DyMESH Version 3 extends the force-deflection relationship to a
 third-order polynomial** by adding $C$ and $D$ coefficients together with a
 **saturation deflection** $\delta_\mathrm{sat}$.
 
-The force on a single node is computed by `NodeForce()`. Let $\delta$ be the
+The force on a single node is computed as follows. Let $\delta$ be the
 node's current total deflection (penetration depth), $A_v$ be the area associated
-with the node, and $\delta_0$ be a small **null-band** offset (`NULL_TEST`,
-0.5 in) below which only the constant term acts. For increasing penetration
+with the node, and $\delta_0$ be a small **null-band** offset (0.5 in) below
+which only the constant term acts. For increasing penetration
 ($\delta > \delta_\mathrm{max}$) the node force per unit area follows a cubic:
 
 $$
@@ -110,10 +104,10 @@ F \;=\; \Big[\, A + B\,(\delta-\delta_0) + C\,(\delta-\delta_0)^2 + D\,(\delta-\
 $$
 
 where $A$ (constant, lb/in²), $B$ (linear, lb/in³), $C$ (quadratic, lb/in⁴), and
-$D$ (cubic, lb/in⁵) are the per-node stiffnesses (`Stiffness[0..3]`). Below the
-null band the force is simply $F = A\,A_v$. Once the deflection reaches the
-node's **saturation crush** $\delta_\mathrm{sat}$ (`SatCrush`, `nodeSat`), the
-force is held at its saturation value and does not increase further:
+$D$ (cubic, lb/in⁵) are the four per-node stiffnesses. Below the null band the
+force is simply $F = A\,A_v$. Once the deflection reaches the node's
+**saturation crush** $\delta_\mathrm{sat}$, the force is held at its saturation
+value and does not increase further:
 
 $$
 F_\mathrm{sat} \;=\; \Big[\, A + B\,(\delta_\mathrm{sat}-\delta_0) + C\,(\delta_\mathrm{sat}-\delta_0)^2 + D\,(\delta_\mathrm{sat}-\delta_0)^3 \,\Big]\, A_v
@@ -124,8 +118,8 @@ $$
 *Figure: Force vs. Deflection curve rising then flattening at the saturation deflection $\delta_\mathrm{sat}$.*
 
 The stiffnesses are assigned per body **surface** — front, right, back, left,
-top, bottom — via the `BodySurface` enumeration (`DefineVertStiffness`), so
-different faces of a vehicle can have different crush behavior.
+top and bottom — so different faces of a vehicle can have different crush
+behavior.
 
 ## 4. Three-dimensional (per-area) force-deflection
 
@@ -142,8 +136,8 @@ $$
 
 Here $A$ has units of force per width (lb/in) and $\tilde{A}$ has units of force
 per area (lb/in²); likewise $B$ (lb/in²) becomes $\tilde{B}$ (lb/in³). The
-default conversion height is 30 in (`CRUSH_HEIGHT = 30.0` in `DYMESH.H`, matching
-the dialog default).
+default conversion height is 30 in, matching the **Crush Height For Stiffness**
+dialog default.
 
 ![Figure: force-per-width and force-per-area crush plots](images/D1-p15-figfd2.png)
 *Figure: two force-deflection plots — Force per Width (lb/in) vs. Permanent Crush with intercept $A$ and slope $B$; and Force per Area (lb/in²) vs. Permanent Crush with $\tilde{A}$, $\tilde{B}$ and unloading slope $K_u$.*
@@ -214,16 +208,15 @@ share is the remainder, $\delta_\mathrm{total}(1-\theta)$. The softer body
 receives the larger share of crush, and the contact force is consistent for both
 bodies.
 
-*(updated: In the code, the master triangle's effective stiffness used at a
-contact is the average of its three corner vertices' stiffnesses
-(`SlaveNodeForce()` averages `Stiffness[0]` and `Stiffness[1]` over the three
-master verts), consistent with this force-equalization approach.)*
+*(updated: the master triangle's effective stiffness used at a contact is the
+average of the $A$ and $B$ stiffnesses of its three corner vertices, consistent
+with this force-equalization approach.)*
 
 ## 6. Restitution (unloading)
 
-After peak penetration the node **unloads** along an unloading branch. In
-`NodeForce()`, unloading is governed by a restitution coefficient
-$e$ (`RestitutionCoef`): a node only carries force while its current deflection
+After peak penetration the node **unloads** along an unloading branch.
+Unloading is governed by a restitution coefficient
+$e$: a node only carries force while its current deflection
 exceeds $(1-e)\,\delta_\mathrm{max}$, i.e. force goes to zero once the node has
 relaxed by the restitution fraction of its maximum deflection:
 
@@ -236,30 +229,29 @@ On the rebound branch the force is evaluated at the **rebound deformation**
 $\delta_r = \delta - (1-e)\,\delta_\mathrm{max}$ using the same cubic law as
 Eq. 1 (with $\delta_r$ in place of $\delta-\delta_0$), while the stored maximum
 deflection $\delta_\mathrm{max}$ is *not* updated. The unloading state of each
-node is tracked through a small state machine (`CANNOT_UNLOAD`,
-`START_UNLOAD`, `CAN_UNLOAD`, `NOW_UNLOADING`, `FINISHED_UNLOADING`) with
-thresholds `UNLOAD_BEGIN`, `UNLOAD_POT`, `UNLOAD_STOP`, and a per-step growth
-limit `MAX_GROW_UNLOAD`. A separately stored unloading slope $K_u$
-(`UnloadSlope`) defines the steeper unloading line (see the $K_u$ line in the
-force-per-area plot).
+node is tracked through a small sequence of states — cannot unload, beginning to
+unload, able to unload, now unloading, and finished unloading — governed by
+deflection thresholds and by a limit on how much the unloading can grow in a
+single time step. A separately stored unloading slope $K_u$ defines the steeper
+unloading line (see the $K_u$ line in the force-per-area plot).
 
 DyMESH Version 2 "greatly improved" the restitution model together with the
 accelerations and the crush-depth (general damage profile) simulation.
 
 ## 7. Friction
 
-Tangential (frictional) forces at the contact are computed by
-`SlaveNodeFriction()` using a material friction coefficient $\mu$
-(`FrictionCoefficient` for vehicle-vehicle interactions; per-material `Mu` for
-wheels), with a friction null band (`FRICTION_NULL_BAND`) that suppresses
-spurious tangential force at very low relative sliding velocity.
+Tangential (frictional) forces at the contact are computed from a material
+friction coefficient $\mu$ — the **Inter-vehicle Friction** value for
+vehicle-vehicle interactions, and the wheel material's own friction value for
+wheels — with a friction null band that suppresses spurious tangential force at
+very low relative sliding velocity.
 
 ## 8. Coupling to the equations of motion
 
 For each interacting pair, DyMESH sums the node forces and moments into a
-resultant force and moment on each body's center of gravity. `SumForcesMoments()`
-accumulates the earth-fixed node forces into vehicle-fixed `SumForce` and
-`SumMoment` (about the CG). These collision forces and moments are then **added
+resultant force and moment on each body's center of gravity: the earth-fixed
+node forces are accumulated into a vehicle-fixed summed force and a summed
+moment about the CG. These collision forces and moments are then **added
 to the vehicle's other external forces** (tires, drag, gravity, suspension) and
 the six-degree-of-freedom equations of motion are integrated by the host model
 (SIMON) over the collision time step. Because DyMESH is called every collision
@@ -268,11 +260,10 @@ force develops continuously through the contact rather than as a single impulse.
 
 The vehicle orientation used to transform between the vehicle-fixed and
 earth-fixed frames is the standard Euler-angle direction-cosine matrix
-$A$ (`Amtx`), built from roll $\phi$, pitch $\theta$, and yaw $\psi$ (see the
-transformation listing in `DYMESH.H`).
+$A$, built from roll $\phi$, pitch $\theta$, and yaw $\psi$.
 
 ---
-*Source: DyMESH Collision Simulation (2026 HVE Forum) — organized and verified against DYMESH.H / Dymesh.cpp, 2026-07-05.*
+*Source: DyMESH Collision Simulation (2026 HVE Forum). Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

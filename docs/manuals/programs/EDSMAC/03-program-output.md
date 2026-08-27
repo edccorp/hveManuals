@@ -71,8 +71,8 @@ A typical Messages Report simply lists the messages (or "No Messages") produced 
 The Program Data Report includes the following information:
 
 - **Simulation Controls** — Integration parameters used for the current event (maximum simulation time; collision, separation and trajectory phase timesteps; output interval; linear and angular termination velocities).
-- **Collision Parameters** — Parameters used within the collision model (angular sweep interval DELPSI, radial depth interval DELRHO, max pressure error ALAMB, inter-vehicle friction AMU, min friction velocity ZETAV, and restitution coefficients C0, C1, C2).
-- **Collision Criteria** — Parameters used to determine which side (front, back, right or left) a RHO vector intersects; used to determine the RHO vector's initial length (the PSILIM1–PSILIM8 angle limits for the PSIB range and RHOBI tests).
+- **Collision Parameters** — Parameters used within the collision model (Vector Spacing, the angular sweep interval; Vector Adjustment Increment, the radial depth interval; Max Pressure Error; Inter-vehicle Friction; Minimum Velocity for Friction; and the restitution coefficients $C_0$, $C_1$ and $C_2$).
+- **Collision Criteria** — Parameters used to determine which side (front, back, right or left) a RHO vector intersects; used to determine the RHO vector's initial length (the eight clock-angle limits that bracket each side, together with the corresponding initial RHO vector length tests).
 
 ![Figure 3-4](images/p044-009.png)
 

@@ -11,7 +11,7 @@ This dialog contains the following item:
 User-editable roll steer coefficient: the ratio of wheel (axle) steer angle to body roll angle.
 
 ---
-*Source topic: RollSteerNewDlg.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

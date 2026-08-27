@@ -13,7 +13,7 @@ Check box that turns the grid display on or off.
 The distance between grid lines or markers in the 3-D editor viewers, in the current user units.
 
 ---
-*Source topic: SetGridDlg.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

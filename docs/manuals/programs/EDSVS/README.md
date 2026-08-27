@@ -2,7 +2,7 @@
 
 **Engineering Dynamics Corporation Single Vehicle Simulator**
 
-*Version 7 — Sixth Edition (January 2006), converted to Markdown and updated against the current HVE source code (July 2026 edition).*
+*Version 7 — Sixth Edition (January 2006), converted to Markdown and updated to match the current HVE software (July 2026 edition).*
 
 EDSVS is a simulation analysis of the response of a motor vehicle (4-wheeled automobile, or truck having tandem axles and dual tires) to driver inputs (accelerating, braking and steering). It is based on the TBST program developed at the University of Michigan Transportation Research Institute. This manual describes the model features and use; input parameters and output reports are described at a high level. It is intended to be used in conjunction with the HVE-2D or HVE User's Manual, which provides in-depth coverage of the human, vehicle and environment models, as well as the Event Editor and Playback Editor.
 
@@ -19,21 +19,21 @@ If you have questions, Engineering Dynamics Corporation provides technical assis
 3. [Chapter 3 — EDSVS Program Output](03-program-output.md) — Alpha-numeric reports, graphic reports, variable output table, trajectory simulations
 4. [Chapter 4 — EDSVS Calculation Method](04-calculation-method.md) — Equations of motion, tire forces, antilock model, assumptions
 5. [Chapter 5 — EDSVS Tutorial](05-tutorial.md) — A complete run-off-road study, from vehicle creation to printed reports
-6. [Chapter 6 — EDSVS Messages](06-messages.md) — Complete list of EDSVS simulation messages (verified against the current message catalog)
+6. [Chapter 6 — EDSVS Messages](06-messages.md) — Complete list of EDSVS simulation messages
 7. [Chapter 7 — Technical References](07-technical-references.md)
 8. [Chapter 8 — Index](08-index.md) — Topic-to-chapter guide (replaces the printed page index)
 
 ## Related pages
 
-- [EDSVS Calculation Options (code-verified reference)](../../10-calculation-options/CalcOptEDSVS.md) — internal variable names, defaults, ranges and the current Get Surface Information Options dialog.
+- [EDSVS Calculation Options](../../10-calculation-options/CalcOptEDSVS.md) — current defaults, ranges and the Get Surface Information Options dialog.
 
 ## Notes on this edition
 
-This Markdown edition preserves the substance of the Sixth Edition manual and has been verified against the current physics engine (`Physics/Source/Edsvs/`, notably `Svsinput.cpp`, `Svsmain.cpp`, `Fct.cpp` and `EDSVS.rsc`) and the HVE user interface (`HVEINV-64`). Where the original manual was stale, the text follows the code and is marked with *(updated: ...)* notes. Key updates:
+This Markdown edition preserves the substance of the Sixth Edition manual and has been checked against the behavior of the current EDSVS simulation program and the current HVE user interface. Where the original manual was stale, the text describes the current software and is marked with *(updated: ...)* notes. Key updates:
 
-- The EDSVS engine does not present or use a Calculation Options dialog (`CalcOptionsDlgIsUsed = FALSE` in `Svsinput.cpp`); the Roll Couple Distribution used by the simulation is read from the vehicle's suspension data (`Suspension.RollCoupleDist`, default 0.55), not from `calcFloat[0]`.
-- Terrain surface-search (GetSurfaceInfo) selection moved to the separate Get Surface Information Options dialog; the By Elevation method is not supported.
-- The message catalog was verified against `Physics/Source/Edsvs/EDSVS.rsc`; the current catalog contains four termination messages (wheel lift-off, excessive roll/pitch, GetSurfaceInfo failure, integration error).
+- EDSVS does not present or use a Calculation Options dialog; the Roll Couple Distribution used by the simulation is read from the vehicle's **Roll Couple Distribution** suspension value (default 0.55), not from a per-event calculation option.
+- The terrain surface-search method is now selected in the separate **Get Surface Information Options** dialog; the **By Elevation** method is not supported.
+- The message catalog now contains four termination messages (wheel lift-off, excessive roll/pitch, surface information failure, integration error).
 
 Screenshots from the original manual are not reproduced; italic placeholders give the figure caption for each.
 

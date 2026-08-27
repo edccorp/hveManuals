@@ -10,7 +10,7 @@ Errors issued by EDSMAC4 appear in the EDSMAC4 output and may be one of three ty
 
 All messages issued by EDSMAC4 are listed below. Each message includes a description or nature of the cause, the level of the message (Informative, Diagnostic or Fatal), and the recommended action to eliminate the problem. If you receive an error message not listed below, first check to see if it is an HVE-2D/HVE or operating system message by referring to the User's Manual Appendix or your computer's operating system manual. If the message is not listed in either place, please contact EDC with the offending error.
 
-*(updated: the message texts below have been checked against the current message resource, `Physics/Source/Edsmac4/EDSMAC4.rsc`. Where the current wording or limits differ from the original manual, the code value is given with an italic note. Messages new to the current version are listed at the end of this chapter.)*
+*(updated: the message texts below reflect the current version of EDSMAC4. Where the current wording or limits differ from the original manual, the current value is given with an italic note. Messages new to the current version are listed at the end of this chapter.)*
 
 ---
 
@@ -192,7 +192,7 @@ Rapid rotation during the collision may result in subsequent inter-vehicle conta
 
 *(Level 2 — Diagnostic)*
 
-During the collision phase, inter-vehicle force balance between impacting vehicles is achieved through an incremental adjustment of each RHO vector. The amount of the adjustment is DelRho, a value assigned in the EDSMAC4 Calculation Options dialog. Because the adjustment is discrete, an exact balance of forces between RHO vectors will never be achieved. Therefore, a test is performed after each adjustment to determine if the force balance is within an allowable tolerance, Alamb, the value of which is also assigned in the EDSMAC4 Calculation Options dialog. If Alamb is too small, it is possible that a force balance between RHO vectors will never be achieved and the solution for collision force will fail to converge, resulting in a fatal error. To ensure solution stability, the value of Alamb is automatically assigned (see `AlambTest()` in `Scompute.cpp`).
+During the collision phase, inter-vehicle force balance between impacting vehicles is achieved through an incremental adjustment of each RHO vector. The amount of the adjustment is DelRho, a value assigned in the EDSMAC4 Calculation Options dialog. Because the adjustment is discrete, an exact balance of forces between RHO vectors will never be achieved. Therefore, a test is performed after each adjustment to determine if the force balance is within an allowable tolerance, Alamb, the value of which is also assigned in the EDSMAC4 Calculation Options dialog. If Alamb is too small, it is possible that a force balance between RHO vectors will never be achieved and the solution for collision force will fail to converge, resulting in a fatal error. To ensure solution stability, the value of Alamb is automatically assigned.
 
 ---
 
@@ -224,7 +224,7 @@ The original manual instructed: to confirm the difference in connection heights,
 
 ## Additional messages in the current version
 
-The following messages were added after the Sixth Edition manual was printed (message resource `Physics/Source/Edsmac4/EDSMAC4.rsc`, Msg23–Msg40):
+The following messages were added after the Sixth Edition manual was printed:
 
 - **Connection z-coordinate automatically calculated** (Informative) — See the note under the inter-vehicle connections message above.
 - **Negative crush depth** (Informative) — "One or more vehicles has (have) a negative crush depth. Refer to the Damage Data report's Crush Depth Tables to identify the specific vehicle(s). This may be the result of a vehicle geometry with reversed surface normals or missing polygons. It may also be the result of normal folding of the damaged surface. Inspect the vehicle geometry for these conditions."
@@ -240,7 +240,7 @@ The following messages were added after the Sixth Edition manual was printed (me
 - **Closing velocity less than zero** (Error) — "The closing velocity is less than zero, indicating a calculation error has occurred. Two vehicles cannot collide if their closing velocity is less than zero."
 - **Restitution not calculated for sustained contact** (Informative) — "The method used to calculate the coefficient of restitution in the Event Data output report (see INTER-VEHICLE COLLISION DATA) assumes an instantaneous impact. One or more collisions resulted in sustained contact (more than 0.5 seconds). A coefficient of restitution was not calculated for those collisions."
 - **Increased tessellation required** (Error) — "Increased tessellation of the vehicle geometry is required when using the option to initialize the Rho Vector lengths using the vehicle geometry. Use the Set-up, Vehicle Mesh dialog for this purpose." (Issued when the **Use Vehicle Geometry for Rho Vector Init** calculation option is checked but the vehicle mesh is too coarse.)
-- **MakeProfile() vertex index error** (Error) — "An error occurred in MakeProfile() because the vertex index was not within the damage table range."
+- **Damage profile vertex index error** (Error) — "An error occurred in MakeProfile() because the vertex index was not within the damage table range."
 - **Mesh dimensions differ from overall dimensions** (Informative) — "One or more vehicle(s) have mesh exterior dimensions that differ from the vehicle overall dimensions (CG to Front, CG to Back, CG to Right or CG to Left) by more than 0.5 inches (12.7 mm). As a result, the Damage Data output report for the affected vehicle(s) is subject to errors."
 - **Collision in progress at termination** (Informative) — "At the time the simulation was terminated, one or more vehicles were still undergoing a collision. The CollisionData results (see Damage Data output report) are incomplete for the last recorded impulse."
 - **Bad CDC** (Informative) — "One or more vehicles has a bad CDC (see Damage Data output report). This usually occurs while EDSMAC4 attempts to build the damage profile using the damaged vehicle geometry. There may be an insufficient number of damaged vertices to build the damage profile. Review the Damage Data report's Damage Width, Offset and Crush Depth table."

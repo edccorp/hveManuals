@@ -2,9 +2,9 @@
 
 **EDVDS** — Engineering Dynamics Corporation Vehicle Dynamics Simulator, Version 2
 
-*User's Manual, Fourth Edition (January 2006), converted to Markdown and updated against the current HVE source code.*
+*User's Manual, Fourth Edition (January 2006), converted to Markdown and updated to match the current HVE software.*
 
-> *(updated: this edition has been verified against the current EDVDS source (`Physics/Source/Edvds/`, including `Vdsinput2.cpp`) and the current HVE user interface resources. Notable updates: the Tire Model Method calculation option is Linear (default) or Semi-Empirical — the Table Look-Up option is disabled in the dialog and rejected by the physics program; the terrain (GetSurfaceInfo) search options have moved to the separate Get Surface Information Options dialog, where the By Elevation method is unsupported; and the message catalog has grown from 7 to 12 messages. See the individual chapters for details, and the [EDVDS Calculation Options reference](../../10-calculation-options/CalcOptEDVDS.md) for the current dialog.)*
+> *(updated: this edition describes the current EDVDS program and the current HVE user interface. Notable updates: the **Tire Model Method** calculation option is **Linear** (default) or **Semi-Empirical** — the **Table Look-Up** option is disabled in the dialog and is not supported by the physics program; the terrain search options have moved to the separate **Get Surface Information Options** dialog, where the **By Elevation** method is unsupported; and the message catalog has grown from 7 to 12 messages. See the individual chapters for details, and [EDVDS Calculation Options](../../10-calculation-options/CalcOptEDVDS.md) for the current dialog.)*
 
 ## How to Use This Manual
 
@@ -34,7 +34,7 @@ When you call, you should have the following information available:
 - [Chapter 5 — EDVDS Tutorial](05-tutorial.md)
   - A complete worked example: highway doubles losing control on a downhill curve (creating the vehicles, environment and event; executing; viewing and printing results)
 - [Chapter 6 — Messages](06-messages.md)
-  - Complete catalog of EDVDS run-time messages, verified against the current source
+  - Complete catalog of EDVDS run-time messages for the current version
 - [Chapter 7 — References](07-references.md)
   - Bibliography
 

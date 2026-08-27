@@ -1,9 +1,8 @@
 # Chapter 30 — Brake Temperature Model
 
 *Updated Markdown edition of the HVE User's Manual (HVE Version 5, Seventh
-Edition, January 2006), Chapter 30, pages 30-1 through 30-16. Verified against the current HVE application source
-(`HVEINV-64/BrakeDesignMaterialProperties.cpp` and the brake model in
-`HveBrakes.cpp`); see also the code-verified
+Edition, January 2006), Chapter 30, pages 30-1 through 30-16, revised to describe the current HVE
+brake temperature model; see also the
 [Brake Designer Material Properties dialog reference](../../04-brakes-powertrain/BrkMatPropDlg.md).*
 
 ## Overview

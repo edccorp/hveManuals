@@ -52,7 +52,7 @@ Edits the color used to represent this vehicle in reports.
 Displays the Lights dialog, used to configure the vehicle's lamps for visualization.
 
 ---
-*Source topic: SprungMassDlg.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

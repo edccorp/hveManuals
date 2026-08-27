@@ -117,6 +117,9 @@ where
 | $\delta_G$ | Wheel vehicle-fixed steer angle relative to ground plane |
 | $\theta_x$ | Angle from vehicle x-axis to ground plane |
 
+
+*(updated: hydroplaning is **not** modeled by EDVSM. The HVE physics library provides hydroplaning models (NASA, NASA-TTI, Gallaway), but only SIMON and EDSMAC4 invoke them; EDVSM offers no Hydroplaning Model calculation option, and any water-related tire output variables it reports are unused placeholders. See [SIMON — Hydroplaning Model](../SIMON/04-calculation-method.md#hydroplaning-model).)*
+
 ### Steering System Rotational Inertia
 
 The rotational inertia of the entire steering system is

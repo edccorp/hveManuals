@@ -35,7 +35,7 @@ Validates the table entries, saves them and redraws the graph using the latest d
 OK validates and accepts the tables; Cancel discards the changes.
 
 ---
-*Source topic: LinFriPropDlg.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

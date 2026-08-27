@@ -2,7 +2,7 @@
 
 **Engineering Dynamics Corporation Simulation Model of Automobile Collisions, 4th Revision — Version 6**
 
-Updated Markdown edition, converted from the Sixth Edition manual (January 2006) and verified against the current HVE source code (`Physics/Source/Edsmac4/`, `Physics/Include/`, `HVEINV-64/`).
+Updated Markdown edition, converted from the Sixth Edition manual (January 2006) and brought up to date with the current version of the EDSMAC4 program and the HVE user interface.
 
 ## How to Use This Manual
 
@@ -28,9 +28,9 @@ Engineering Dynamics Corporation provides technical assistance for supported use
 
 *The original manual's Chapter 8 (Index) is omitted; use text search in this Markdown edition instead.*
 
-Related code-verified pages:
+Related pages:
 
-- [EDSMAC4 Calculation Options](../../10-calculation-options/CalcOptEDSMAC4.md) — dialog-by-dialog reference for the EDSMAC4 Calculation Options dialog, verified against `Physics/Source/Edsmac4/Smainput.cpp`.
+- [EDSMAC4 Calculation Options](../../10-calculation-options/CalcOptEDSMAC4.md) — dialog-by-dialog reference for the EDSMAC4 Calculation Options dialog.
 
 <!-- NAV -->
 

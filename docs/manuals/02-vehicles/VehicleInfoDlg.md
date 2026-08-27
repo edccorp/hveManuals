@@ -59,7 +59,7 @@ Allows the user to save the current vehicle to the user vehicle database, either
 Removes the selected vehicle from its source database file after a confirmation prompt. Use with care; the vehicle entry is permanently removed from the database.
 
 ---
-*Source topic: VehicleInfoDlg.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

@@ -26,7 +26,7 @@ Validates the grid data and redraws the graph with the supplied data.
 Prints the displayed graph.
 
 ---
-*Source topic: AntiPitchDlg.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

@@ -42,7 +42,7 @@ Displays the Event Signals Setup dialog, used to assign traffic signal timing fo
 Displays the Event Notes dialog, used to enter free-form notes describing the current event.
 
 ---
-*Source topic: EventSetup.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

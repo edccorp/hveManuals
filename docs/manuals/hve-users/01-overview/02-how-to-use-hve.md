@@ -1,9 +1,9 @@
 # Chapter 2 — How To Use HVE
 
 *Updated Markdown edition of the HVE User's Manual (HVE Version 5, Seventh
-Edition, January 2006), Chapter 2, pages 2-1 through 2-104. Verified against
-the current HVE application source (`HVEINV-64/HVERSNT.rc` and related
-dialogs). Because of its length, Chapter 2 is split into three parts:*
+Edition, January 2006), Chapter 2, pages 2-1 through 2-104. Revised for
+the current HVE release. Because of its length, Chapter 2 is split into three
+parts:*
 
 | Part | Contents |
 | --- | --- |
@@ -65,8 +65,7 @@ which apply to all HVE operations. Refer to the Menu Reference section of this
 manual for detailed information about each option available in the HVE Menu
 Bar.
 
-*(updated: the current menu resource, `IDR_MAINFRAME` in
-`HVEINV-64/HVERSNT.rc`, confirms this menu bar: File, Edit, View, Mode,
+*(updated: the current HVE menu bar is File, Edit, View, Mode,
 Set-up, 3-D Edit, Options, Help. The current File menu includes New, Open,
 Save, Save As, Export Preview Case, Print, Print All, Video Creator, Export,
 FBX Export, recent files and Exit. The Help menu now also includes a User
@@ -128,7 +127,7 @@ required humans:
 
 The selected human is now displayed in the Human Viewer. At this point you
 may choose to edit the current human's properties (refer to the Human Editor
-section of this manual for details; see also the code-verified
+section of this manual for details; see also the
 [Human Information dialog reference](../../07-humans/HumanInfoDlg.md)). The
 above steps are repeated for each human to be included in the study.
 
@@ -219,7 +218,7 @@ editing. In this case, it has the current environment loaded and ready for
 editing its visual and surface friction properties.
 
 For more information about the 3-D Editor, refer to the *3-D Editor* tab in
-the *Tools* section of this manual (see also the code-verified
+the *Tools* section of this manual (see also the
 [3-D Editor reference](../../01-user-interface/3dEditor.md)).
 
 *(updated: the current 3-D Edit menu contains Launch 3-D Editor (Ctrl+L),
@@ -466,7 +465,7 @@ Set-up, Driver Controls..., Ctrl+D)*. There are two ways to select a vehicle:
 
 After the vehicle is selected, use the Driver Controls option to choose the
 desired method. The various methods are described below. *(See also the
-code-verified [Driver Controls
+[Driver Controls
 reference](../../09-events-driver-controls/DriverControls.md).)*
 
 **Throttle Table** — The Throttle Table allows you to provide tractive effort
@@ -764,7 +763,7 @@ selected vehicle.
 ### Wheel Data Options (Set-up, Wheels)
 
 The Wheels dialog (Set-up menu, *Wheels...*) contains four tabbed pages:
-Blow-out, Damage, Brake and Tire-Terrain. *(See also the code-verified
+Blow-out, Damage, Brake and Tire-Terrain. *(See also the
 [Wheels dialog reference](../../05-tires-wheels/WheelsDlg.md).)*
 
 #### HVE Tire Blow-out Model

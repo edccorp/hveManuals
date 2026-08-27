@@ -92,7 +92,7 @@ Validates the current entries, recalculates the delta-V, damage energy and peak 
 OK validates and saves the damage data and closes the dialog; Cancel discards the changes.
 
 ---
-*Source topic: DamageData.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

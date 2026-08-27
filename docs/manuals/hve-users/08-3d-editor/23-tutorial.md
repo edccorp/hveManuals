@@ -475,7 +475,7 @@ As a user of HVE, you don't need to be aware of object hierarchy, with two excep
 - Creating grouped objects (this is the subject of the next lesson in this tutorial), and
 - Understanding how a vehicle's tire chooses which surface to drive on.
 
-When an HVE-compatible simulation is executed, the tire model uses an HVE function, called `GetSurfaceInfo()`, to determine the elevation, surface normal and material attributes (e.g., friction) of the surface beneath the tire. If two or more surfaces exist beneath the tire, HVE uses the hierarchy to determine which surface to use. The subject of hierarchy is described in detail in [Chapter 20](20-object-tools.md), and will not be described further. However, we'll illustrate the issue with a simple example.
+When an HVE-compatible simulation is executed, the tire model queries HVE to determine the elevation, surface normal and material attributes (e.g., friction) of the surface beneath the tire. If two or more surfaces exist beneath the tire, HVE uses the hierarchy to determine which surface to use. The subject of hierarchy is described in detail in [Chapter 20](20-object-tools.md), and will not be described further. However, we'll illustrate the issue with a simple example.
 
 Let's create a raised median for our 4-lane highway:
 
@@ -496,13 +496,13 @@ Edit the color attributes:
 
 7. Change the Diffuse Color to 1.00, the Specular Color to 0.50 and the Shininess to 0.50. The median becomes yellow, as shown in Figure 23-26.
 
-There's only one problem with what we've done: if you execute an event on this road, you'll find that a vehicle drives right through the median; its tires don't respond to it. This happens because the road was created first, so `GetSurfaceInfo()` finds it first, and the tire never sees the median at all. Let's quickly solve this problem:
+There's only one problem with what we've done: if you execute an event on this road, you'll find that a vehicle drives right through the median; its tires don't respond to it. This happens because the road was created first, so HVE's surface lookup finds it first, and the tire never sees the median at all. Let's quickly solve this problem:
 
 1. Using the Object Attributes dialog, click on the Type option list (see Figure 23-27) and change the Type from Road to Friction Zone.
 
 Now the tire will respond to the median.
 
-> **NOTE:** When the simulation is executed, it loads all Friction Zone objects before loading Road objects. Therefore, `GetSurfaceInfo()` returns the information about the median.
+> **NOTE:** When the simulation is executed, it loads all Friction Zone objects before loading Road objects. Therefore, HVE's surface lookup returns the information about the median.
 
 ![Figure 23-25](../images/p657-330.png)
 *Figure 23-25 — Creating a raised median using the Box Tool.*
@@ -745,7 +745,7 @@ HVE has now shut down.
 This concludes Lesson 3 — Using Groups. You should now be familiar with creating and disassembling grouped objects, saving groups in the Highway Furnishings Library, and selecting objects from the Library and placing them in the scene.
 
 ---
-*Converted and updated from the legacy HVE User's Manual (Seventh Edition, Jan 2006), Chapter 23; verified against current source code (HVEINV-64, SceneViewer) and the code-verified dialog reference pages 2026-07-05.*
+*Converted and updated from the legacy HVE User's Manual (Seventh Edition, Jan 2006), Chapter 23; revised to match the current version of HVE, 2026-07-05.*
 
 <!-- NAV -->
 

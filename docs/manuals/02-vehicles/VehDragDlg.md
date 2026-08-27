@@ -43,7 +43,7 @@ Vehicle-fixed Z coordinate where the effective force from aerodynamic pressure i
 **Note:** The center-of-pressure coordinates are displayed relative to the sprung-mass CG or the total-mass CG, according to the current Vehicle Dimensions Basis selected in the user options.
 
 ---
-*Source topic: VehDragDlg.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

@@ -21,7 +21,7 @@ A table of the selected throttle quantity versus time. Rows may be added, duplic
 When checked, the drivetrain model includes the clutch (manual transmission) or torque converter (automatic transmission) when computing the drive torque delivered to the wheels.
 
 ---
-*Source topic: DriverControls4.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

@@ -22,7 +22,7 @@ Approximate CG height, calculated from the vehicle wheel positions and the tire 
 Applies the entered CG movement to the vehicle without closing the dialog, so the effect can be inspected. OK applies the movement and closes the dialog.
 
 ---
-*Source topic: MoveCGDlg.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

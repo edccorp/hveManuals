@@ -14,31 +14,31 @@ The EDHIS Calculation Options dialog controls the numerical integration method a
 
 ## Numerical Integration Method: Start
 
-This radio button group selects the method used to start the numerical integration, i.e., to generate the solution history points required before the predictor-corrector method can take over (internal physics variable `StartMethod`; see `EULER`, `RUNGEKUTTARALSTON` and `RUNGEKUTTA` in `HISDEF.H` and `Rk.cpp`). The default is *Modified Runge-Kutta*.
+This radio button group selects the method used to start the numerical integration, i.e., to generate the solution history points required before the predictor-corrector method can take over. The default is *Modified Runge-Kutta*.
 
-- **Euler** — Simple first-order Euler integration (`StartMethod` = 0).
-- **Modified Runge-Kutta** — Runge-Kutta-Ralston integration (`StartMethod` = 1). This is the default.
-- **Runge-Kutta** — Classical Runge-Kutta integration (`StartMethod` = 2).
+- **Euler** — Simple first-order Euler integration.
+- **Modified Runge-Kutta** — Runge-Kutta-Ralston integration. This is the default.
+- **Runge-Kutta** — Classical Runge-Kutta integration.
 
 ## Numerical Integration Method: Predictor-Corrector
 
-This radio button group selects the predictor-corrector method used for the main integration once enough starting points are available (internal physics variable `PredCorrMethod`; see `ADAMS` and `MILNE` in `HISDEF.H`). The default is *Milne-Hamming*.
+This radio button group selects the predictor-corrector method used for the main integration once enough starting points are available. The default is *Milne-Hamming*.
 
-- **Adams-Moulton** — Adams-Moulton predictor-corrector (`PredCorrMethod` = 0).
-- **Milne-Hamming** — Milne-Hamming predictor-corrector (`PredCorrMethod` = 1). This is the default.
+- **Adams-Moulton** — Adams-Moulton predictor-corrector.
+- **Milne-Hamming** — Milne-Hamming predictor-corrector. This is the default.
 
 ## Minimum Acceleration
 
-Slider/edit entry for the minimum acceleration threshold. Segment acceleration components whose magnitude is at or below this threshold are set to zero, suppressing numerical noise in the solution (internal physics variable `MinAccel`, applied in `Accel.cpp`; the test is only performed when the value is greater than zero). Default: 0.0000001 (1.0e-7).
+Slider/edit entry for the minimum acceleration threshold. Segment acceleration components whose magnitude is at or below this threshold are set to zero, suppressing numerical noise in the solution. The test is performed only when the value is greater than zero. Default: 0.0000001 (1.0e-7).
 
 ## Minimum Time Criterion (sec)
 
-Slider/edit entry for the minimum time precision (time epsilon) used by the integration and output control logic, e.g., when deciding whether the current simulation time has reached the next print time (internal physics variable `dtmin`, used in `Hismain.cpp` and `Output.cpp`). If entered as 0.0 (the default), EDHIS computes the value automatically from the integration time step and the maximum number of timestep bisections.
+Slider/edit entry for the minimum time precision (time epsilon) used by the integration and output control logic, e.g., when deciding whether the current simulation time has reached the next print time. If entered as 0.0 (the default), EDHIS computes the value automatically from the integration time step and the maximum number of timestep bisections.
 
-Note: in the current physics source (`Hisinput.cpp`), the two stored values are read in the opposite order from the dialog — the value entered as *Minimum Acceleration* is read into `dtmin` and the value entered as *Minimum Time Criterion* is read into `MinAccel` — and `dtmin` is then unconditionally reset to 1.0e-7. The practical effect is that `dtmin` is fixed at 1.0e-7 and the *Minimum Time Criterion* entry acts as the minimum-acceleration threshold (with the acceleration-zeroing test disabled at its 0.0 default).
+Note: in the current release these two entries behave as though they were interchanged — the value entered as *Minimum Acceleration* is applied as the minimum time criterion and the value entered as *Minimum Time Criterion* is applied as the minimum-acceleration threshold — and the minimum time criterion is then reset unconditionally to 1.0e-7. The practical effect is that the minimum time criterion is always 1.0e-7, and the *Minimum Time Criterion* entry is what actually sets the minimum-acceleration threshold (with the acceleration-zeroing test disabled at its 0.0 default).
 
 ---
-*Source topic: CalcOptionsEDHIS.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

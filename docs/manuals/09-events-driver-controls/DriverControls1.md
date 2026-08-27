@@ -23,7 +23,7 @@ The path correction is accomplished by means of a torque application at the stee
 > **Note:** The Variable Torque option is currently disabled in the user interface; Variable Steering is the available path follower method.
 
 ---
-*Source topic: DriverControls1.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

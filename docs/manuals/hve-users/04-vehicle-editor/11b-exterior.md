@@ -61,7 +61,7 @@ The Exterior Dimension parameters are described below.
 | --- | --- | --- |
 | CG to Front/Back/Side/Top/Bottom | UtVehDispLength | Vehicle-fixed distance from the CG to the front, right side, back, left side, top or bottom |
 
-See also the code-verified reference pages:
+See also the reference pages:
 [CG to Front](../../02-vehicles/CGsToAll.md),
 [CG to Right Side](../../02-vehicles/CGsToAll1.md),
 [CG to Back](../../02-vehicles/CGsToAll2.md),
@@ -119,15 +119,15 @@ The Exterior Stiffness parameters are described below.
 | B Stiffness | UtVehBStiff | Vehicle 'B' stiffness coefficient |
 | Kv Stiffness | UtVehKStiff | Vehicle 'Kv' stiffness coefficient |
 
-See also the code-verified reference pages:
+See also the reference pages:
 [Stiffness Coefficients dialog (2-D)](../../02-vehicles/StiffCoeffDlg.md),
 [A Stiffness](../../02-vehicles/AStiffDlg.md),
 [B Stiffness](../../02-vehicles/BStiffDlg.md).
 
 ---
 *Source: HVE User's Manual (Version 5, Seventh Edition, Jan 2006), Chapter
-11, pages 11-36..11-39 — updated against source code (HVEINV-64, Physics)
-2026-07-05.*
+11, pages 11-36..11-39 — revised for the current HVE
+release, 2026-07-05.*
 
 <!-- NAV -->
 

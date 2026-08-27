@@ -12,7 +12,7 @@ Errors issued by EDGEN appear in the EDGEN output and may be one of three types:
 
 All messages issued by EDGEN are listed below. Each message is followed by the level of the message (*Informative, Diagnostic* or *Fatal*), and the recommended action to eliminate the problem. If you receive an error message not listed below, first check to see if it is an HVE/HVE-2D or operating system message by referring to Appendix II (Messages) or your computer's operating system manual. If the message is not listed in either place, please contact EDC immediately with the offending error message and the input file that caused the error.
 
-*(All message texts below verified against the current source, `Physics/Source/Edgen/EDGEN.rsc`.)*
+*(All message texts below match the messages issued by the current release.)*
 
 ---
 

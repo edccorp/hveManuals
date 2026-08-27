@@ -40,7 +40,7 @@ Enter the i, j and k coordinates of the belt attachment point on the selected bo
 The amount of displacement between the ends of the belt allowed before creating belt tension, entered separately for the left and right belt segments (a negative value implies pre-load). Default: 0 in. Typical range -2.0 to 10.0 in; allowed range -4.0 to 100.0 in.
 
 ---
-*Source topic: BeltResSysDlg.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

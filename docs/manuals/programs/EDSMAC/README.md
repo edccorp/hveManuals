@@ -2,7 +2,7 @@
 
 **Engineering Dynamics Corporation Simulation Model of Automobile Collisions**
 
-*Version 4 — Fifth Edition (January 2006), converted to Markdown and updated against the current HVE source code (July 2026 edition).*
+*Version 4 — Fifth Edition (January 2006), converted to Markdown and updated to match the current HVE release (July 2026 edition).*
 
 EDSMAC is a simulation analysis of single- or two-vehicle crashes, based on the SMAC program developed at Calspan for NHTSA, with extensions by Engineering Dynamics Corporation. This manual describes the model features and use; input parameters and output reports are described at a high level. It is intended to be used in conjunction with the HVE-2D User's Manual, which provides in-depth coverage of the vehicle and environment models, as well as the Event Editor and Playback Editor.
 
@@ -19,14 +19,14 @@ EDSMAC is a simulation analysis of single- or two-vehicle crashes, based on the 
 
 ## Related pages
 
-- [EDSMAC Calculation Options (code-verified reference)](../../10-calculation-options/CalcOptEDSMAC.md) — internal variable names, defaults, ranges and the current Get Surface Information Options dialog.
+- [EDSMAC Calculation Options](../../10-calculation-options/CalcOptEDSMAC.md) — dialog reference giving defaults, ranges and the current Get Surface Information Options dialog.
 
 ## Notes on this edition
 
-This Markdown edition preserves the substance of the Fifth Edition manual and has been verified against the current physics engine (`Physics/Source/Edsmac/`, notably `SMAINPUT.CPP` and `COLL.CPP`) and the HVE user interface (`HVEINV-64/EdSmacDlg.cpp`, `Language.rsc`). Where the original manual was stale, the text follows the code and is marked with *(updated: ...)* notes. Key updates:
+This Markdown edition preserves the substance of the Fifth Edition manual and has been checked against the current EDSMAC physics model and the current HVE user interface. Where the original manual was stale, the text follows the current program behaviour and is marked with *(updated: ...)* notes. Key updates:
 
-- Calculation option defaults and labels (Vector Spacing default 2.0 deg, "Max Pressure Error" label for ALAMB).
-- Corrected AMU/ZETAV variable attribution (AMU = inter-vehicle friction; ZETAV = minimum velocity for friction).
+- Calculation option defaults and labels (Vector Spacing default 2.0 deg; the vector force tolerance is now labelled "Max Pressure Error").
+- Corrected descriptions of the two friction options (Inter-vehicle Friction is the friction coefficient; Minimum Velocity for Friction is the minimum relative velocity).
 - The restitution model $e = C_0 - C_1\delta + C_2\delta^2$ with current default coefficients.
 - Terrain search options are now in the separate Get Surface Information Options dialog; the "By Elevation" method is not supported.
 

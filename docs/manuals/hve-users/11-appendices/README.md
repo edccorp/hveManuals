@@ -2,8 +2,8 @@
 
 *Updated Markdown edition of the HVE User's Manual (HVE Version 5, Seventh
 Edition, January 2006), back matter: the HVE
-Tutorial, Appendices I–X. Verified against the current HVE application
-source (`HVEINV-64/`) where applicable.*
+Tutorial, Appendices I–X, revised to reflect the current HVE software where
+applicable.*
 
 ## Contents
 
@@ -27,7 +27,7 @@ source (`HVEINV-64/`) where applicable.*
 - Appendix I's installation/licensing procedures describe the 2006-era
   CD-ROM and parallel-port EDKEY distribution and are retained as legacy
   reference; the HVE file system tables have been checked against the
-  current path manager code (`HVEINV-64/PathMgr.cpp`).
+  file locations used by the current version of HVE.
 - Appendix IV's Environment Units table contained several descriptions
   mis-copied from the Engine table in the original printing; these have
   been corrected.

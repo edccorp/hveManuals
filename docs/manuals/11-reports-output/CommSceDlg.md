@@ -16,7 +16,7 @@ Visible only for Momentum Diagram reports. Advances the display to the next phas
 Visible only for Momentum Diagram reports. Steps the display back to the previous phase of the momentum analysis, wrapping from the first phase to the last.
 
 ---
-*Source topic: CommSceDlg.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

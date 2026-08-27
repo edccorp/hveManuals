@@ -177,7 +177,7 @@ EDVDS allows the user to choose from three tire models:
 
 - **Linear** — A simplified model, useful for non-limit maneuvers
 - **Tire Model (Semi-Empirical)** — A good, general purpose tire modeling method
-- **Tire Table** — The most sophisticated tire modeling technique *(updated: the Table Look-Up method is not currently available; it is greyed out in the Calculation Options dialog and the physics engine rejects it with an error if it is ever selected — see `Vdsinput2.cpp`, `ERROR_TIRE_MODEL_NOT_SUPPORTED`)*
+- **Tire Table** — The most sophisticated tire modeling technique *(updated: the **Table Look-Up** method is not currently available; it is greyed out in the Calculation Options dialog, and if it is ever selected the event terminates with a fatal error.)*
 
 The modeling technique selected is dependent upon the particular needs of the analysis. The desired tire model is an EDVDS calculation option (see [Event](#calculation-options)).
 
@@ -556,11 +556,11 @@ EDVDS uses the current simulation control parameters in the Simulation Controls 
 
 #### Calculation Options
 
-EDVDS has one calculation option (see Figure 2-6); for full details see the [EDVDS Calculation Options reference](../../10-calculation-options/CalcOptEDVDS.md):
+EDVDS has one calculation option (see Figure 2-6); for full details see [EDVDS Calculation Options](../../10-calculation-options/CalcOptEDVDS.md):
 
-- **Tire Model Method** — Select from three methods: Linear (the default; to be used only for simple, non-limit maneuvers), Semi-Empirical (the most robust method) and Table Look-Up (not currently implemented; the choice is greyed out in the dialog and rejected by the physics engine).
+- **Tire Model Method** — Select from three methods: **Linear** (the default; to be used only for simple, non-limit maneuvers), **Semi-Empirical** (the most robust method) and **Table Look-Up** (not currently implemented; the choice is greyed out in the dialog, and selecting it produces a fatal error and the event will not run).
 
-*(updated: the original manual stated that Semi-Empirical is the default. In the current code the dialog initializes `calcOptions.calcInt[0] = 0`, which is Linear (`LINEAR_TIRE`); Semi-Empirical is `TIRE_MODEL = 1`. See `HVEINV-64/EdVdsDlg.cpp` and `Physics/Source/Edvds/Vdsinput2.cpp`.)*
+*(updated: the original manual stated that Semi-Empirical is the default. In the current version the Calculation Options dialog opens with **Linear** selected; **Semi-Empirical** must be chosen explicitly.)*
 
 > **NOTE:** EDVDS will terminate with an error message if you select the Linear tire model method for an event that results in tire longitudinal or lateral slip beyond the linear range.
 
@@ -569,9 +569,9 @@ EDVDS has one calculation option (see Figure 2-6); for full details see the [EDV
 
 #### Get Surface Information
 
-This option determines how EDVDS selects the current terrain properties from the environment 3-D geometry file. The default value is *From Previous Polygon*. This option results in fastest execution, but does not work for all environments. Refer to the HVE User's Manual for further information about how GetSurfaceInfo works.
+This option determines how EDVDS selects the current terrain properties from the environment 3-D geometry file. The default value is *From Previous Polygon*. This option results in fastest execution, but does not work for all environments. Refer to the HVE User's Manual for further information about how the surface information lookup works.
 
-*(updated: the terrain search method is no longer part of the EDVDS Calculation Options dialog; it is selected in the separate Get Surface Information Options dialog (Options menu). The available methods are From First Polygon, From Previous Polygon and From Previous Polygon, Sorted. The By Elevation method is not supported by EDVDS — selecting it causes the event to terminate with an error (`ERROR_BAD_EVENT_GETSURFACE_OPT3_NOT_SUPPORTED` in `Vdsinput2.cpp`).)*
+*(updated: the terrain search method is no longer part of the EDVDS Calculation Options dialog; it is selected in the separate **Get Surface Information Options** dialog (Options menu). The available methods are **From First Polygon**, **From Previous Polygon** and **From Previous Polygon, Sorted**. The **By Elevation** method is not supported by EDVDS — selecting it causes the event to terminate with a fatal error.)*
 
 #### Event Execution
 

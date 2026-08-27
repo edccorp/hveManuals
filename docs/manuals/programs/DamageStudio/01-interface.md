@@ -17,7 +17,7 @@ DamageStudio provides the following information about a collision:
 - Crush vectors (color-coded arrows) that illustrate crush depth, free space and total crush
 - Damage profile visualization of the damage profile, along with a vector (arrow) that illustrates the PDOF and a sphere that illustrates the impulse center location
 
-*(The limits above are code-verified: the enums `MAX_COLLISION_PULSES = 10`, `MAX_CRUSH_DEPTHS = 10` and `MAX_CRUSH_ELEVATIONS = 5` live in `HVEINV-64/CalcStructs.h`. `Physics/Include/Hvedef.h` defines the same numeric limits under different names — `MAXCOLLISIONPULSES = 10`, `MAXCRUSHENTRIES = 10` and `MAXELEVATIONS = 5` (`Hvedef.h:44,48,49`).)*
+*(These limits are fixed: 10 collision pulses (impulses) per vehicle, 10 crush depths along the damage width, and 5 crush elevations along the damage height.)*
 
 ![Figure 32-1](images/p004-000.png)
 *Figure 32-1: Typical DamageStudio window.*
@@ -44,10 +44,10 @@ The Viewer Options group determines what is displayed in the 3-D viewer. The fiv
 | Geometry, Simulated Damage | *Simulated* | Available (simulation events only) |
 | Geometry, Undamaged | *None* | Available |
 | Geometry, From File | *From File* | Available |
-| Damage Photograph | *Photograph(s)* | Defined in the code, but currently removed from the dropdown (not selectable) |
+| Damage Photograph | *Photograph(s)* | Not available in the current release (removed from the dropdown, not selectable) |
 | Damage, User-entered | *User-entered* | Available |
 
-*(updated: the current Damage dropdown uses the short names shown in the middle column — the list describes the source of the damage shown for the vehicle geometry. "Simulated" is only offered for simulation events. The "Photograph(s)" entry is commented out of the dropdown in `DamageStudioReportDlg.cpp`, so the Damage Photograph view cannot currently be selected, although its supporting code — seven photo views with descriptions and an Info... button — remains present.)*
+*(updated: the current Damage dropdown uses the short names shown in the middle column — the list describes the source of the damage shown for the vehicle geometry. "Simulated" is only offered for simulation events. The "Photograph(s)" entry has been removed from the dropdown, so the Damage Photograph view cannot currently be selected, although the feature it describes — seven photo views with descriptions and an Info... button — is otherwise unchanged.)*
 
 The current Viewer Option is selected from the *Damage* dropdown list. The view is activated by clicking the *Show* checkbox. Clicking *Show* for more than one viewer option causes the selected views to be super-imposed (see Multiple Views, later in this chapter) for purposes of comparison.
 
@@ -85,7 +85,7 @@ The 3-D viewer displays the damaged vehicle and its current impulse center and P
 
 When the *None* (undamaged geometry) viewer option is selected, the 3-D viewer displays the original (undamaged) vehicle geometry. This view may be used for comparison with the simulated vehicle damage.
 
-*(updated: the original manual listed this option as "Not implemented"; it is implemented in the current code — see `updateUndamagedView()`/`loadUndamagedVehicle()` in `DamageStudioReportDlg.cpp` — including per-view transparency for overlay comparison.)*
+*(updated: the original manual listed this option as "Not implemented"; it is implemented in the current release, including per-view transparency for overlay comparison.)*
 
 #### Damage Profile
 
@@ -95,7 +95,7 @@ The Damage Profile group is disabled when the viewer option is *None*.
 
 When the *From File* viewer option is selected, the 3-D viewer displays a user-supplied vehicle geometry file (selected with the *Filename* field and *Open...* button). This file may show a damaged vehicle or undamaged vehicle. This view may be used for comparison with the simulated vehicle damage.
 
-*(updated: the original manual listed this option as "Not implemented"; it is implemented in the current code — see `updateFromFileView()` in `DamageStudioReportDlg.cpp`, which reads the named geometry file into the viewer scene.)*
+*(updated: the original manual listed this option as "Not implemented"; it is implemented in the current release, which reads the named geometry file into the viewer scene.)*
 
 #### Damage Profile
 
@@ -109,7 +109,7 @@ A dropdown list is provided that suggests the photographic views are Front, Righ
 
 A text box (displayed with the *Info...* button) is provided for each view that may contain user-supplied information that is descriptive of the view (e.g., camera position, focal length, etc.).
 
-*(updated: the Damage Photograph option remains unavailable in the current release — the entry is commented out of the viewer dropdown in `DamageStudioReportDlg.cpp`, although the underlying photo-view data structures (`CaDamageStudioData::PhotoView`, seven views with filenames, descriptions and per-view camera settings) and display code are present in the source.)*
+*(updated: the Damage Photograph option remains unavailable in the current release — the entry has been removed from the viewer dropdown, although the seven photo views, each with its file name, description and per-view camera settings, are otherwise still supported.)*
 
 #### Damage Profile
 
@@ -121,7 +121,7 @@ Each viewer option includes a *Show* checkbox. By clicking *Show* for more than 
 
 ## DamageStudio Options
 
-*(updated: this dialog is an addition since the original manual; see `DamageStudioOptionsDlg.cpp` and the `IDD_DAMAGE_STUDIO_OPTIONS` dialog resource.)*
+*(updated: this dialog is an addition since the original manual.)*
 
 Clicking the *Options...* button displays the DamageStudio Options dialog, which controls the graphic annotations drawn in the 3-D viewer:
 
@@ -133,7 +133,7 @@ For simulation events, the available key results are: Time; Impulse No; Total, L
 
 ## CollisionData
 
-The backbone of DamageStudio is a group of calculated parameters, collectively referred to as CollisionData. CollisionData are calculated at each integration timestep during the simulation (see `Physics/Source/LibHve/CollisionData.cpp`). The CollisionData include the following parameters for each colliding vehicle:
+The backbone of DamageStudio is a group of calculated parameters, collectively referred to as CollisionData. CollisionData are calculated at each integration timestep during the simulation. The CollisionData include the following parameters for each colliding vehicle:
 
 - **Impulse Number** — Sequential index used to track individual pulses
 - **Other Vehicle** — The ID for the vehicle sharing the pulse

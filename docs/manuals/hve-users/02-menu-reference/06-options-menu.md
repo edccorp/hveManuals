@@ -1,6 +1,6 @@
 # Chapter 6: Options Menu
 
-*HVE User's Manual — Section Two: Menu Reference. Updated edition, verified against current HVE source code (HVEINV-64). For a compact, code-verified summary of every current Options menu item, see [Options Menu](../../01-user-interface/OptionsMenu.md).*
+*HVE User's Manual — Section Two: Menu Reference. Updated edition, revised for the current HVE release. For a compact summary of every current Options menu item, see [Options Menu](../../01-user-interface/OptionsMenu.md).*
 
 The Options Menu includes the following options *(updated: list and order verified against the current menu; items marked "new" were added after the 2006 manual)*:
 
@@ -57,7 +57,7 @@ The checked/unchecked options are toggles allowing the user to choose which info
 
 **Purpose:** Display or remove Key Results windows for all displayed events
 
-**Description:** Choosing Show Key Results from the Options Menu displays a Key Results window for each object. Key Results windows display user-specified results during Event and Playback modes. Key Results are especially useful during Event mode to monitor the values of one or more variables at each timestep. Use the Variable Selection dialog to select which variables are displayed in the Key Results window. See also the code-verified dialog reference: [Key Results Dialog Box](../../01-user-interface/KeyResDlg.md).
+**Description:** Choosing Show Key Results from the Options Menu displays a Key Results window for each object. Key Results windows display user-specified results during Event and Playback modes. Key Results are especially useful during Event mode to monitor the values of one or more variables at each timestep. Use the Variable Selection dialog to select which variables are displayed in the Key Results window. See also the dialog reference: [Key Results Dialog Box](../../01-user-interface/KeyResDlg.md).
 
 ![Figure 6-1](../images/p265-figA6-1.png)
 *Figure 6-1: The Key Results window displays the current simulation results for the selected human or vehicle.*
@@ -275,7 +275,7 @@ AutoPosition is always used for 2-D reconstructions and simulations. Because the
 
 **Purpose:** Set a user-definable distance interval for display and data entry in the environment
 
-**Description:** Choosing Grid from the Options Menu displays markers at user-defined intervals. These markers are used for spatial cues to help determine distances while creating and editing 3-D models of humans, vehicles and environments. See also the code-verified dialog reference: [Set Grid Dialog Box](../../01-user-interface/SetGridDlg.md).
+**Description:** Choosing Grid from the Options Menu displays markers at user-defined intervals. These markers are used for spatial cues to help determine distances while creating and editing 3-D models of humans, vehicles and environments. See also the dialog reference: [Set Grid Dialog Box](../../01-user-interface/SetGridDlg.md).
 
 **Parameters:** The parameters assigned using this dialog are shown in Table 6-1.
 
@@ -300,7 +300,7 @@ AutoPosition is always used for 2-D reconstructions and simulations. Because the
 
 **Purpose:** Allow the user to switch between US, SI and user-defined systems of units
 
-**Description:** Choosing Units from the Options Menu displays the Units dialog, allowing the user to specify the current system of units. HVE maintains two basic sets of units: program units and user units. Program units are always pounds, inches and seconds (and derivatives of these basic quantities). These units are used for all the internal workings, and the user never sees them. Instead, the user sees the user units, which may be defined according to the user's needs through the use of the proper conversion factors. This conversion factor converts all the user's entries into program units so HVE can operate on them, and also converts all the program's results into user units. See also the code-verified dialog reference: [Units Dialog Box](../../01-user-interface/UnitsDlg.md).
+**Description:** Choosing Units from the Options Menu displays the Units dialog, allowing the user to specify the current system of units. HVE maintains two basic sets of units: program units and user units. Program units are always pounds, inches and seconds (and derivatives of these basic quantities). These units are used for all the internal workings, and the user never sees them. Instead, the user sees the user units, which may be defined according to the user's needs through the use of the proper conversion factors. This conversion factor converts all the user's entries into program units so HVE can operate on them, and also converts all the program's results into user units. See also the dialog reference: [Units Dialog Box](../../01-user-interface/UnitsDlg.md).
 
 ![Figure 6-12](../images/p276-figA6-12.png)
 *Figure 6-12: The Set Units dialog allows the user to change the current units.*
@@ -327,7 +327,7 @@ AutoPosition is always used for 2-D reconstructions and simulations. Because the
 
 **Purpose:** Set various options that affect the visual appearance of all 3-D objects
 
-**Description:** Choosing Render from the Options Menu displays the Render dialog. The Render dialog includes several user-definable options which affect the visual quality of the objects displayed by HVE. See also the code-verified dialog reference: [Render Options Dialog](../../01-user-interface/RendOptDlg.md).
+**Description:** Choosing Render from the Options Menu displays the Render dialog. The Render dialog includes several user-definable options which affect the visual quality of the objects displayed by HVE. See also the dialog reference: [Render Options Dialog](../../01-user-interface/RendOptDlg.md).
 
 ![Figure 6-13](../images/p277-figA6-13.png)
 *Figure 6-13: The Render Options dialog allows the user to set various rendering options which determine the image quality and rendering speed.*
@@ -403,7 +403,7 @@ Anti-aliasing Level is a user-definable range (1 to 10) which defines how smooth
 
 **Description:** Choose Playback from the Options Menu to display the Playback Controls dialog. The Playback Controls dialog allows the user to select the output interval during Playback Mode. This value is used for all outputs, including the Variable Output table and Trajectory Simulations. The value is also used for the Playback Window, which may be routed to video.
 
-> **NOTE:** Options → Playback opens this output-interval dialog. It is distinct from the toolbar transport controls (Reset/Rewind/Play) documented in the code-verified reference [Playback Controls](../../01-user-interface/PlayBackControls.md).
+> **NOTE:** Options → Playback opens this output-interval dialog. It is distinct from the toolbar transport controls (Reset/Rewind/Play) documented in the reference [Playback Controls](../../01-user-interface/PlayBackControls.md).
 
 > **NOTE:** For real-time recording to video, this value should be set to 0.0333 sec (1/30 second) for NTSC video or 0.0400 sec (1/25 second) for PAL video.
 
@@ -430,7 +430,7 @@ Anti-aliasing Level is a user-definable range (1 to 10) which defines how smooth
 
 **Purpose:** Display and allow editing of all simulation control data for the current event
 
-**Description:** Choosing Simulation Controls from the Options Menu displays the Simulation Controls dialog. See also the code-verified dialog reference: [Simulation Controls Dialog](../../09-events-driver-controls/SimuCtrlDlg.md).
+**Description:** Choosing Simulation Controls from the Options Menu displays the Simulation Controls dialog. See also the dialog reference: [Simulation Controls Dialog](../../09-events-driver-controls/SimuCtrlDlg.md).
 
 > **NOTE:** The Simulation Controls option is only available in Event Mode, and requires that a current event be selected.
 
@@ -673,7 +673,7 @@ To assign these options, perform the following steps:
 
 **Purpose:** Customize HVE according to various user-selectable preferences
 
-**Description:** Choosing Preferences from the Options Menu displays the Preferences dialog. See also the code-verified dialog reference: [User Preferences Dialog Box](../../01-user-interface/PrefDlg.md). The Preferences dialog allows the user to select the following preferences:
+**Description:** Choosing Preferences from the Options Menu displays the Preferences dialog. See also the dialog reference: [User Preferences Dialog Box](../../01-user-interface/PrefDlg.md). The Preferences dialog allows the user to select the following preferences:
 
 - Diagnostic Level
 - Auto Backup

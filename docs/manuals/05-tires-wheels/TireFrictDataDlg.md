@@ -67,7 +67,7 @@ Redraws the graph with the given data.
 OK validates the entries against their allowed ranges and stores the friction table for the tire. Cancel discards all changes.
 
 ---
-*Source topic: TireFrictDataDlg.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

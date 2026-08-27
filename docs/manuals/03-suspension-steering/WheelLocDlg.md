@@ -21,7 +21,7 @@ The vertical distance from the vehicle CG to the selected wheel (positive downwa
 Copies the current settings to the wheel on the other side of the same axle when you click OK. In HVE-2D this box is always checked and cannot be changed, so both wheels of the axle are always updated together.
 
 ---
-*Source topic: WheelLocDlg.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

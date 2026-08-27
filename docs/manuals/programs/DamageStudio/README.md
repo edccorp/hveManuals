@@ -2,7 +2,7 @@
 
 **Section Twelve of the HVE User's Manual — Version 8**
 
-Updated Markdown edition, converted from the legacy manual and verified against the current HVE source code (`HVEINV-64/DamageStudioReportDlg.cpp`, `HVEINV-64/DamageStudioOptionsDlg.cpp`, `HVEINV-64/DamageStudioDataSource.cpp`, `HVEINV-64/KITS/DamageStudio*Kit.*`, `HVEINV-64/CalcStructs.h`, `Physics/Source/LibHve/CollisionData.cpp`).
+Updated Markdown edition, converted from the legacy manual and revised to match the behavior of the current HVE release.
 
 DamageStudio is a graphical analysis tool that allows vehicle crash safety engineers to visualize collision data, and to correlate collision damage with the kinetics (force magnitude and direction), delta-V, acceleration and other important collision parameters. DamageStudio is a component in the HVE Playback Editor.
 

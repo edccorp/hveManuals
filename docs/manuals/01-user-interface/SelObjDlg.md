@@ -17,7 +17,7 @@ A label describing the object being opened or saved (its content depends on the 
 A sorted list box displaying the existing files of the appropriate type in the current folder.
 
 ---
-*Source topic: SelObjDlg.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

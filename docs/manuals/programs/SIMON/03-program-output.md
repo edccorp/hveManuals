@@ -123,7 +123,7 @@ A typical Messages Report is shown in Figure 3-7. For a complete listing of mess
 The Program Data Report includes the following information:
 
 - **Simulation Controls** — Integration parameters used for the current event (integration method, maximum simulation time, integration timestep, output interval, linear and angular termination velocities)
-- **Calculation Options** — GetSurfaceInfo option, Tire Model Method, Steer Degree of Freedom, Articulation Option, DyMESH Option
+- **Calculation Options** — Get Surface Information option, Tire Model Method, Steer Degree of Freedom, Articulation Option, DyMESH Option
 - **DyMESH Options** — When DyMESH is used, the report lists the DyMESH options in effect (e.g., Restitution Model, Search Option, Pushback Option, Inter-vehicle Friction, Crush Height For Stiffness)
 
 A typical Program Data Report is shown in Figure 3-8.
@@ -189,10 +189,12 @@ An example of a Variable Output table is shown in Figure 3-10. Detailed listings
 
 | Parameter | Description |
 |-----------|-------------|
-| Tire Data | X, Y, Z position of tire contact patch; $F'_x$, $F'_y$, $F'_z$; Tire radius, Tire Deflection; Longitudinal slip; Slip angle; Inclination angle; Skid flag; Friction multiplier; $u_x$, $u_y$, $u_z$ (unit vector for surface normal); Soil Constants N, Kphi, Kc (Soft Soil Tire-Terrain Model); $F_x'$, $F_y'$ Flow Force (Soft Soil Model); Fx Sidewall, Fy Sidewall, Fz Sidewall |
+| Tire Data | X, Y, Z position of tire contact patch; $F'_x$, $F'_y$, $F'_z$; Tire radius, Tire Deflection; Longitudinal slip; Slip angle; Inclination angle; Skid flag; Friction multiplier; $u_x$, $u_y$, $u_z$ (unit vector for surface normal); Soil Constants N, Kphi, Kc (Soft Soil Tire-Terrain Model); $F_x'$, $F_y'$ Flow Force (Soft Soil Model); Fx Sidewall, Fy Sidewall, Fz Sidewall; Water Depth, Macrotexture, Mu Mult (water) (hydroplaning models) |
 | Wheel Data | x, y, z location of each wheel center; Axle z deflection from equilibrium (solid axle); Axle roll (solid axle); Vehicle-fixed wheel camber; Wheel spin displacement; Steer angle ($\delta$) at each steerable wheel; Axle z-dot deflection rate (solid axle); Axle roll rate (solid axle); Vehicle-fixed wheel camber rate; Wheel spin velocity; Steer velocity at each steerable wheel; Axle z-dot-dot deflection acceleration (solid axle); Axle roll acceleration (solid axle); Wheel spin acceleration; Steer acceleration at each steerable wheel (steer DOF only); $F_x$, $F_y$, $F_z$ (wheel); Steer axis moment at each steerable wheel (steer DOF only); Spring deflection; Spring deflection rate; Total suspension force; Individual spring and damper suspension forces; Drive, brake torque; Auxiliary stiffness from sway bar; Brake stroke, pressure; Brake interface, drum, lining temperature |
 | Connection Data | $\Phi$, $\Theta$, $\Psi$ articulation; $F_x$, $F_y$, $F_z$; $M_x$, $M_y$, $M_z$ |
 | Drivetrain Data | Engine speed; Engine power; Engine torque; Transmission ratio; Differential ratio |
+
+*(updated: when a hydroplaning model is active, the Water Depth, Macrotexture and water friction-multiplier tire tracks are populated; the Rolling Resist Mult, Fx' (water) and Fy' (water) tracks are declared but not currently written. See [Chapter 4 — Hydroplaning Model](04-calculation-method.md#hydroplaning-model).)*
 
 **Table 3-3 Vehicle Driver Variable Output Table**
 

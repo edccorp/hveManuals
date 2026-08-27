@@ -9,7 +9,7 @@ This chapter defines the objects (vehicles and environment) and the event set-up
 
 The objects used by the EDSMAC4 model are:
 
-- **Vehicles** — One or more vehicles may be studied by EDSMAC4. The maximum number of vehicles in a single EDSMAC4 event is 20 (`MAXVEH` in `Physics/Source/Edsmac4/SMADEF.H`).
+- **Vehicles** — One or more vehicles may be studied by EDSMAC4. The maximum number of vehicles in a single EDSMAC4 event is 20.
 - **Environment** — Like the real world, EDSMAC4 has exactly one environment.
 
 > **NOTE:** The environment is used in any reconstruction or simulation model.
@@ -440,7 +440,7 @@ The Vehicle Mesh dialog allows the user to do the following:
 
 The **Tessellation** option allows the user to add additional detail to the 3-D Geometry File (also referred to as a mesh). The option is enabled by clicking on the Tessellate check box. The user then enters a value for the maximum length of a side for any triangle in the mesh. Each triangle is then evaluated, and any side longer than the specified value is cut in half until the resulting triangle has no sides longer than the specified value. The process of creating new and smaller triangles is called tessellation. This process is useful for vehicle meshes having extremely large triangles, especially for Generic Vehicles.
 
-The **Inter-vehicle** option allows the user to choose the value for the coefficient of sliding friction (internal variable `AMU`; default 0.55) between the exteriors of the selected pair of objects. *(updated: the original manual labeled this coefficient ZETAV. In the source code `amu` is the inter-vehicle friction coefficient and `zetav` is the minimum sliding velocity for full friction. The per-pair value is stored in `VehicleMesh.Mu` and read by the collision routine `Coll2.cpp`; it is no longer part of the Calculation Options dialog.)*
+The **Inter-vehicle** option allows the user to choose the value for the coefficient of sliding friction (default 0.55) between the exteriors of the selected pair of objects. *(updated: the original manual associated this coefficient with the **Minimum Velocity for Friction** calculation option; the two quantities were transposed. The inter-vehicle sliding friction coefficient is now set per vehicle pair here in the Vehicle Mesh dialog and is no longer part of the Calculation Options dialog.)*
 
 #### Payload
 
@@ -498,12 +498,12 @@ The output time interval is the interval at which output results (positions, vel
 ![Figure 2-4](images/p043-004.png)
 *Figure 2-4: EDSMAC4 Event Calculation Options, available from the Options menu.*
 
-EDSMAC4 has the following calculation option parameters. For the complete, code-verified dialog reference (internal variable names, defaults and all current options), see **[EDSMAC4 Calculation Options](../../10-calculation-options/CalcOptEDSMAC4.md)**.
+EDSMAC4 has the following calculation option parameters. For the complete dialog reference (defaults and all current options), see **[EDSMAC4 Calculation Options](../../10-calculation-options/CalcOptEDSMAC4.md)**.
 
-- **Vector Spacing** — This angle, `DELPSI`, determines the angular interval between RHO vectors (see [Calculation Method](04-calculation-method.md)). *(updated: the current program default is 2 degrees; the original manual recommended 1 degree.)*
-- **Vector Adjustment Increment** — This increment, `DELRHO`, determines the incremental adjustment for each RHO vector as the collision routine seeks to establish force equilibrium between vehicles. Default 0.20 in.
-- **Vector Force Tolerance** — This value, `ALAMB`, is the allowable difference in the force exerted by corresponding RHO vectors for each vehicle. A small value is obviously preferable. In general, it should not exceed 50 lb/in (about 100 N/cm). Default 15 lb/in.
-- **Minimum Velocity for Friction** — This value, `ZETAV`, represents the minimum relative surface velocity at which the full inter-vehicle friction is achieved. Default 5 in/sec. *(updated: the original manual attributed the name AMU to this option; in the source code `zetav` is the minimum velocity and `amu` is the inter-vehicle friction coefficient, which is now set per vehicle pair in the Vehicle Mesh dialog.)*
+- **Vector Spacing** — This angle determines the angular interval between RHO vectors (see [Calculation Method](04-calculation-method.md)). *(updated: the current program default is 2 degrees; the original manual recommended 1 degree.)*
+- **Vector Adjustment Increment** — This increment determines the incremental adjustment for each RHO vector as the collision routine seeks to establish force equilibrium between vehicles. Default 0.20 in.
+- **Vector Force Tolerance** — This value is the allowable difference in the force exerted by corresponding RHO vectors for each vehicle. A small value is obviously preferable. In general, it should not exceed 50 lb/in (about 100 N/cm). Default 15 lb/in.
+- **Minimum Velocity for Friction** — This value represents the minimum relative surface velocity at which the full inter-vehicle friction is achieved. Default 5 in/sec. *(updated: the original manual described this option as setting the inter-vehicle friction coefficient; the two quantities were transposed. This option sets the minimum velocity only — the inter-vehicle friction coefficient is now set per vehicle pair in the Vehicle Mesh dialog.)*
 - **Restitution Coefficients** — These three values, $C_0$, $C_1$ and $C_2$, are the constant, linear and quadratic terms used for the parametric restitution model used in EDSMAC4. Defaults 0.04606, 0.0017547 1/in and 0.000016711 1/in².
 - **Use Vehicle Geometry for Rho Vector Init** *(new)* — Initializes the RHO (crush perimeter) vectors from the vehicle's actual body mesh geometry rather than the idealized rectangle.
 - **Steer DOF** *(new)* — Off / Normal / Append / AutoStart; enables the dynamic steer degree of freedom.
@@ -515,9 +515,9 @@ EDSMAC4 has the following calculation option parameters. For the complete, code-
 
 ### Get Surface Information
 
-Both HVE-2D and HVE use a function called GetSurfaceInfo to determine on which environment polygon each tire is riding. This function searches below the X,Y coordinates of each tire contact patch, and uses a user-selectable algorithm to determine the friction and other characteristics of the surface beneath.
+Both HVE-2D and HVE use a surface-information search to determine on which environment polygon each tire is riding. This search looks below the X,Y coordinates of each tire contact patch, and uses a user-selectable method to determine the friction and other characteristics of the surface beneath.
 
-The default GetSurfaceInfo method is From Previous Polygon, Sorted (friction zones and water polygons are checked first, then the search spreads outward from the previous polygon). Refer to the User's Manual — and the [Terrain Search Options section of the Calculation Options reference](../../10-calculation-options/CalcOptEDSMAC4.md#terrain-search-options-get-surface-information) — for further information about how GetSurfaceInfo works. *(updated: the original manual named the plain "From Previous Polygon" method as the default.)*
+The default search method is From Previous Polygon, Sorted (friction zones and water polygons are checked first, then the search spreads outward from the previous polygon). Refer to the User's Manual — and the [Terrain Search Options section of the Calculation Options reference](../../10-calculation-options/CalcOptEDSMAC4.md#terrain-search-options-get-surface-information) — for further information about how the Get Surface Information options work. *(updated: the original manual named the plain "From Previous Polygon" method as the default.)*
 
 ### Executing An Event
 

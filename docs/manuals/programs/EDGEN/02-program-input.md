@@ -254,9 +254,9 @@ EDGEN has one calculation option, Path Model. The options are:
 - **Linear Interpolation** — EDGEN uses linear interpolation between user-entered path nodes to define the path position and orientation. This can result in discontinuities at the nodes; however, the result is somewhat more predictable. This is the default.
 - **3-D Spline Interpolation** — EDGEN uses spline interpolation between the path nodes to define the path position and orientation. The result is a smooth, continuous path that is guaranteed to be tangent at each node.
 
-*(Updated: verified against current source — internal physics variable `PathOption`, where 0 = `LINEAR` (default) and 1 = `SPLINE`; see `Physics/Source/Edgen/gendef.h`, `genlinear.cpp` and `genspline.cpp`.)*
+*(Updated: the choices are Linear Interpolation (the default) and 3-D Spline Interpolation; see [Chapter 4 — Path Interpolation Options](04-calculation-method.md#path-interpolation-options) for what each model does.)*
 
-For dialog details, see the code-verified page [Calculation Options for EDGEN](../../10-calculation-options/CalcOptEDGENDlg.md).
+For dialog details, see [Calculation Options for EDGEN](../../10-calculation-options/CalcOptEDGENDlg.md).
 
 ![Figure 2-5](images/p030-005.png)
 

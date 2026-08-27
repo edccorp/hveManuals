@@ -607,7 +607,7 @@ The Restraints data are not used by SIMON.
 
 ### Event Calculation Options
 
-*(updated: this section is verified against the current SIMON Calculation Options dialog source, `HVEINV-64/SimonCalcOptionsDlg.cpp`. The dialog has grown considerably since the Fifth Edition manual, which described only three options — Tire Model Method, Steer DOF and Collision Acceleration Threshold.)*
+*(updated: the SIMON Calculation Options dialog has grown considerably since the Fifth Edition manual, which described only three options — Tire Model Method, Steer DOF and Collision Acceleration Threshold.)*
 
 ![Figure 2-5](images/p049-006.png)
 *Figure 2-5: SIMON Calculation Options Dialog (legacy version).*
@@ -621,17 +621,18 @@ SIMON's Calculation Options include:
 
   > **NOTE:** Using the Append option provides a powerful tool for simulating post-collision vehicle behavior during which the driver's hands come off the steering wheel.
 
-- **Hydroplaning Model** (Off/NASA/NASA-TTI/Gallaway) — Selects the model used to compute tire hydroplaning on wet road surfaces (see `Physics/Source/Simon/Hydroplane.cpp`). The default is Off. *(updated: option added since the Fifth Edition manual. A Blythe-Day label also exists in the resource file but is not currently presented in the dialog.)*
+- **Hydroplaning Model** (Off / NASA / NASA-TTI / Gallaway) — Selects the model used to compute tire hydroplaning on flooded road surfaces. The default is Off. Hydroplaning is evaluated only for tires in contact with an environment polygon whose object type is **Water**, and it requires the tire's *Nominal Pressure*, *Tread Width* and *Tread Depth* (Tire Physical Data); the Gallaway model additionally uses the water depth and the pavement macrotexture. Above the model's threshold speed the tire's friction switches to the water polygon's friction value. Hydroplaning cannot be combined with the Soft Soil tire-terrain model. See [Chapter 4 — Hydroplaning Model](04-calculation-method.md#hydroplaning-model) for the threshold equations and reporting. *(updated: option added since the Fifth Edition manual. A Blythe-Day label also exists in the resource file, but that model is not implemented — it is not offered in the dialog and is rejected by the engine.)*
+
 - **Connection Model** (Use Both Vehicles / Use Heavier Vehicle / Use Tow Veh Properties) — Selects which vehicle's properties govern the stiffness of an inter-vehicle connection (e.g., tractor-trailer articulation). The default is Use Heavier Vehicle. *(updated: option added since the Fifth Edition manual.)*
 - **Connection Failure Start Time** — The earliest simulation time (sec) at which an inter-vehicle connection is permitted to fail. *(updated: option added since the Fifth Edition manual.)*
 - **Solid Axle Inertia** (Use Axle Only / Use Axle + Wheels) — Selects whether solid-axle roll inertia is computed from the axle alone or from the combined axle and wheel inertias. The default is Use Axle + Wheels. *(updated: option added since the Fifth Edition manual.)*
-- **Accident History Basis** (Force/Acceleration) — Selects the basis used by SIMON to detect the impact and separation times reported in the Accident History report. With *Force* (the default), the collision phase is bounded by the presence of collision (DyMESH) contact force; with *Acceleration*, the collision phase begins and ends when the vehicles' total acceleration crosses the Collision Acceleration Threshold. *(updated: option added since the Fifth Edition manual; see `USE_IMPACT_FORCE`/`USE_TOTAL_ACCEL` in `Physics/Source/Simon/PHYDEF.H`.)*
+- **Accident History Basis** (Force/Acceleration) — Selects the basis used by SIMON to detect the impact and separation times reported in the Accident History report. With *Force* (the default), the collision phase is bounded by the presence of collision (DyMESH) contact force; with *Acceleration*, the collision phase begins and ends when the vehicles' total acceleration crosses the Collision Acceleration Threshold. *(updated: option added since the Fifth Edition manual.)*
 - **Collision Acceleration Threshold** — The minimum acceleration required to initiate the collision phase of a crash. Delta-V integration begins at this point. *(updated: in the current dialog this field is active only when the Accident History Basis is set to Acceleration; its default value is initialized to the environment's gravity constant, i.e., 1 g.)*
-- **Include Free Space** — A checkbox controlling how crush depth is reported in the Damage Data report. When unchecked (the default), the crush tables report crush depth excluding free space (*Crush Depth, Excl. Free Space*); when checked, the reported crush depth includes the free space between the exterior surface and the underlying crushable structure (*Crush Depth, Incl. Free Space*). *(updated: option added since the Fifth Edition manual; see `CrushDepthDisplay`/`SHOW_TOTAL_CRUSH` in `Physics/Source/Simon/PHYINPUT.CPP`.)*
+- **Include Free Space** — A checkbox controlling how crush depth is reported in the Damage Data report. When unchecked (the default), the crush tables report crush depth excluding free space (*Crush Depth, Excl. Free Space*); when checked, the reported crush depth includes the free space between the exterior surface and the underlying crushable structure (*Crush Depth, Incl. Free Space*). *(updated: option added since the Fifth Edition manual.)*
 
 ### DyMESH Options
 
-*(updated: this section is new. In the current version of HVE, SIMON events include a separate DyMESH Options dialog — see `HVEINV-64/DyMeshOptionsDlg.cpp` — which controls the DyMESH 3-D collision algorithm. SIMON is the HVE simulation model that uses DyMESH.)*
+*(updated: this section is new. In the current version of HVE, SIMON events include a separate DyMESH Options dialog, which controls the DyMESH 3-D collision algorithm. SIMON is the HVE simulation model that uses DyMESH.)*
 
 The DyMESH Options dialog contains the following options:
 
@@ -667,9 +668,9 @@ SIMON uses the current simulation control parameters in the Simulation Controls 
 
 ### Get Surface Information Options
 
-SIMON uses a function called GetSurfaceInfo to determine on which environment polygon each tire is riding. This function searches below the X, Y coordinates of each tire contact patch (in the case of the Point Contact Tire-Terrain Model) or in the direction of the radial and sidewall springs (in the case of the Radial Spring and Sidewall Impact Tire-Terrain Models) to determine the friction and other characteristics of the terrain in the vicinity of the tire.
+SIMON uses a surface-information search to determine on which environment polygon each tire is riding. This search looks below the X, Y coordinates of each tire contact patch (in the case of the Point Contact Tire-Terrain Model) or in the direction of the radial and sidewall springs (in the case of the Radial Spring and Sidewall Impact Tire-Terrain Models) to determine the friction and other characteristics of the terrain in the vicinity of the tire.
 
-The default value of GetSurfaceInfo is *From Previous Polygon*. This results in fastest execution, but does not work for all environments. Refer to the User's Manual for further information about how GetSurfaceInfo works.
+The default search method is *From Previous Polygon*. This results in fastest execution, but does not work for all environments. Refer to the User's Manual for further information about how the Get Surface Information options work.
 
 When the Sidewall Impact Tire-Terrain Model is used, the Search Direction Z component may need to be set to a small, positive value, say 0.001, to account for small rounding errors in the curb geometry.
 

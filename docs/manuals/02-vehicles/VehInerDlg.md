@@ -36,7 +36,7 @@ Applies the current values to the vehicle without closing the dialog. OK applies
 **Note for HVE-2D users:** In HVE-2D the Roll, Pitch and XZ Product fields are read-only, the Total column and the Basic/Complex button are hidden, and only the Yaw inertia may be edited.
 
 ---
-*Source topic: VehInerDlg.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

@@ -77,7 +77,7 @@ Minimum vertical tire force required in order to cause a visible tire mark on th
 OK validates each entry against its allowed range and stores the physical data for the tire. Cancel discards all changes.
 
 ---
-*Source topic: TirePhyDataDlg.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

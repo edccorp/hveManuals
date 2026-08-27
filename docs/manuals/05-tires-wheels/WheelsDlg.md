@@ -50,7 +50,7 @@ Multiplier applied to the tire stiffness parameters (cornering, camber and radia
 Multiplier for the tire rolling resistance of the blown tire. This field is enabled only when the event's driver controls use pedal-force braking (the rolling resistance effect requires that brake option).
 
 ---
-*Source topic: WheelsDlg.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

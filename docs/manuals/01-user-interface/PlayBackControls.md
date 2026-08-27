@@ -51,7 +51,7 @@ Displays the number of the frame currently being displayed.
 A slider used to set the current simulation/playback time directly; drag it to move to any point in the event.
 
 ---
-*Source topic: PlayBackControls.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

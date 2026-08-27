@@ -1,6 +1,6 @@
 # Chapter 2: How To Use HVE — Part B
 
-*Updated edition, verified against current HVE source code (HVEINV-64, Physics).
+*Updated edition, revised for the current HVE release.
 Original: HVE User's Manual, Seventh Edition (Jan 2006), printed pages 2-40
 through 2-69.*
 

@@ -1,8 +1,8 @@
 # Chapter 26 — Video Basics
 
 *Updated Markdown edition of the HVE User's Manual (HVE Version 5, Seventh
-Edition, January 2006), Chapter 26, pages 26-1 through 26-14. Verified against the current HVE application source
-(`HVEINV-64/`).*
+Edition, January 2006), Chapter 26, pages 26-1 through 26-14, revised to describe the current HVE
+software.*
 
 This chapter provides a general overview of the process of producing video
 output from HVE (many sections of this chapter apply to any video device).

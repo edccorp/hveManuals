@@ -1,9 +1,8 @@
 # Chapter 27 — Using The HVE Video Interface
 
 *Updated Markdown edition of the HVE User's Manual (HVE Version 5, Seventh
-Edition, January 2006), Chapter 27, pages 27-1 through 27-12. Verified against the current HVE application source
-(`HVEINV-64/VideoDlg.cpp`, `VideoOptionsDlg.cpp`, `AviWrite.cpp`,
-`CVideoWndPlay.cpp`, `PlayBackDlg.cpp`, `hversntview.cpp`).*
+Edition, January 2006), Chapter 27, pages 27-1 through 27-12, revised to describe the current HVE
+video interface.*
 
 This chapter describes the process of producing high-quality video directly
 from simulation output using the HVE video interface.
@@ -38,8 +37,8 @@ movie file is written.
 
 *Figure 27-1 — Video Set-up dialog.*
 
-*(updated: the current Video Options dialog — resource `IDD_VIDEO_2011_UPDATE`
-in `VideoOptionsDlg.cpp` — contains the following options:)*
+*(updated: the current Video Options dialog contains the following
+options:)*
 
 - **Video Format** — Two check boxes select the output format(s):
   - **Movie** — Records the playback to a movie file (AVI). An *Overwrite*
@@ -76,10 +75,10 @@ The original procedure installed a video output device as follows:
    video output display, sized to match the video format.
 4. Press OK to activate the selected video device.
 
-*(updated: the legacy Video Setup dialog (`VideoDlg.cpp`) still exists in the
-source, but its Device Name, Connect To (Serial 1/Serial 2/Video Out), Test
-Medium and Time Codes controls are permanently disabled — external video
-devices are no longer supported. Video output is always written to a file.)*
+*(updated: the legacy Video Setup dialog is still present, but its Device
+Name, Connect To (Serial 1/Serial 2/Video Out), Test Medium and Time Codes
+controls are permanently disabled — external video devices are no longer
+supported. Video output is always written to a file.)*
 
 ### Video Compressor
 
@@ -146,7 +145,7 @@ destinations are:
 *(updated: the original manual listed a third destination, **Video Device
 Name** (e.g., a VTR), for routing output to a video recorder. External video
 devices are no longer supported; the corresponding "S-Video / Composite
-Video" destination entry is disabled in the current code.)*
+Video" destination entry is no longer available in the current version.)*
 
 ## Recording A Movie
 

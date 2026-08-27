@@ -1,8 +1,8 @@
 # HVE User's Manual — Section Two: Menu Reference
 
-Updated Markdown edition of Section Two of the legacy *HVE User's Manual* (HVE Version 5, Seventh Edition, January 2006). Content has been verified against the current HVE source code (`HVEINV-64/HVERSNT.rc`, `hversntview.cpp`); differences from the printed edition are marked with italic *(updated: ...)* notes.
+Updated Markdown edition of Section Two of the legacy *HVE User's Manual* (HVE Version 5, Seventh Edition, January 2006). Content has been revised for the current HVE release; differences from the printed edition are marked with italic *(updated: ...)* notes.
 
-Menu items covered here that have detailed, code-verified dialog pages elsewhere in `docs/manuals/` are cross-linked rather than duplicated (see in particular [01-user-interface](../../01-user-interface/README.md) and [09-events-driver-controls](../../09-events-driver-controls/README.md)).
+Menu items covered here that have detailed dialog pages elsewhere in this manual set are cross-linked rather than duplicated (see in particular [01-user-interface](../../01-user-interface/README.md) and [09-events-driver-controls](../../09-events-driver-controls/README.md)).
 
 ## Contents
 

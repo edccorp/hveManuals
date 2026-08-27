@@ -11,7 +11,7 @@ Enter the B-stiffness coefficient for the zone. Only the zones defined in the cu
 Assigns the B-stiffness coefficient of the first zone to all the zones.
 
 ---
-*Source topic: BStiffDlg.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

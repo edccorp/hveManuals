@@ -21,7 +21,7 @@ The Common Reports window is used to display the following report types:
 Graphic reports (Site Drawing, Damage Profiles, Momentum Diagrams) are displayed in the Common Scene Reports window instead, and the Variable Output and Trajectory Simulation reports have their own dedicated windows.
 
 ---
-*Source topic: CommRepDlg.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

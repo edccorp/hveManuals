@@ -2,11 +2,11 @@
 
 **Collision Engineering Associates, Inc. — for the HVE (Human Vehicle Environment) simulation environment**
 
-Updated Markdown edition, converted from the legacy ReadDataFile manual (manual printed August 17, 2004) and verified against the current HVE source code (`Physics/Source/ReadDataFile/`, `Physics/Include/Hvedef.h`, `HVEINV-64/`).
+Updated Markdown edition, converted from the legacy ReadDataFile manual (manual printed August 17, 2004) and revised to match the behavior of the current HVE release.
 
-*(updated: the 2004 manual documents data-file format version 3.500. The current ReadDataFile physics module reports program version 19.03 — `READDATA_VERSION` in `ReadDataFiledef.h` and `VersionNumber[] = "19.03"` in `ReadDataFileinput.cpp` — but still reads the version 3.200/3.500 data-file formats described in this manual. Within HVE, this manual is installed as `ReadDataFile.pdf` and opened from the Help > User Manuals menu.)*
+*(updated: the 2004 manual documents data-file format version 3.500. The current ReadDataFile calculation method reports program version 19.03, but still reads the version 3.200 and 3.500 data-file formats described in this manual. Within HVE, this manual is installed as `ReadDataFile.pdf` and opened from the Help > User Manuals menu.)*
 
-*HVE is a trademark of Engineering Dynamics Corporation. ReadDataFile was written by Collision Engineering Associates, Inc. (source-code credits: Daniel J. Kuhn). Portions copyright Engineering Dynamics Corporation.*
+*HVE is a trademark of Engineering Dynamics Corporation. ReadDataFile was written by Collision Engineering Associates, Inc. (Daniel J. Kuhn). Portions copyright Engineering Dynamics Corporation.*
 
 ## What is ReadDataFile?
 

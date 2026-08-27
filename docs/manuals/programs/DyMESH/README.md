@@ -28,10 +28,9 @@ This manual was organized from three 2026 HVE Forum presentations by
 - **DyMESH — Important Notes / Facts of Life** (EDC, 2026 HVE Forum) — practical
   guidance, caveats, and limitations for users.
 
-The technical content has been verified against the current HVE source code
-(`Physics/Include/DYMESH.H`, `Physics/Source/LibHve/Dymesh.cpp`,
-`Physics/Source/Simon/PHYMODEL.CPP`, and the `CDyMeshOptionsDlg` dialog in
-`HVEINV-64`). Where the current code differs from the slide decks, the
+The technical content has been brought up to date with the current version of
+HVE, covering the DyMESH collision model, its use by SIMON, and the DyMESH
+Options dialog. Where the current program differs from the slide decks, the
 discrepancy is called out with an italic *(updated: ...)* note.
 
 ## Contents
@@ -46,25 +45,18 @@ discrepancy is called out with an italic *(updated: ...)* note.
    Version 3 capabilities.
 4. [Facts of Life](04-facts-of-life.md) — practical notes, caveats, and
    limitations.
-5. [Wheel vs. Environment](05-wheel-environment.md) — the DyMESH wheel vs.
-   environment contact model: the wheel and terrain as DyMESH objects, the
-   simulation loop, and the handoff between the point-contact tire model and
-   DyMESH.
 
 ## Related documentation
 
-- **SIMON manual** — [`../SIMON/`](../SIMON/) — the primary vehicle dynamics
-  model that hosts DyMESH.
-- **Calculation options (EDSMAC4)** —
-  [`../../10-calculation-options/CalcOptEDSMAC4.md`](../../10-calculation-options/CalcOptEDSMAC4.md).
-- **Options menu (DyMESH Options dialog)** —
-  [`../../hve-users/02-menu-reference/06-options-menu.md`](../../hve-users/02-menu-reference/06-options-menu.md).
-- **Wheel damage / displacement** —
-  [`../../05-tires-wheels/WheelsDlg1.md`](../../05-tires-wheels/WheelsDlg1.md) —
-  the wheel-data inputs used by the DyMESH Wheels model.
+- **[SIMON manual](../SIMON/README.md)** — the primary vehicle dynamics model
+  that hosts DyMESH.
+- **[EDSMAC4 Calculation Options](../../10-calculation-options/CalcOptEDSMAC4.md)**.
+- **[Options menu (DyMESH Options dialog)](../../hve-users/02-menu-reference/06-options-menu.md)**.
+- **[Wheel damage / displacement](../../05-tires-wheels/WheelsDlg1.md)** — the
+  wheel-data inputs used by the DyMESH Wheels model.
 
 ---
-*Source: DyMESH Collision Simulation, DyMESH Version 3, and DyMESH Important Notes (2026 HVE Forum) — organized and verified against DYMESH.H / Dymesh.cpp, 2026-07-05.*
+*Source: DyMESH Collision Simulation, DyMESH Version 3, and DyMESH Important Notes (2026 HVE Forum). Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

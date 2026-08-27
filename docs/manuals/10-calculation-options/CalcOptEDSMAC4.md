@@ -16,136 +16,140 @@ An extremely useful feature of EDSMAC4 is the ability to quickly and easily revi
 
 Another useful feature of the program is the ability to display the results in 3-D viewers. These trajectory simulators display the vehicles at user-specified time intervals during the sequence. Using HVE's video interface, it is simple and easy to route the trajectory simulation to video tape.
 
-EDSMAC4 has the following parameter options (dialog order; storage locations refer to the event's `CalcOptions` structure, read by `Physics/Source/Edsmac4/Smainput.cpp`):
+EDSMAC4 has the following parameter options, listed in dialog order. Each is stored with the event and read by the physics engine when the event is executed.
 
 ## Vector Spacing (deg)
 
-Internal variable: `delpsi` (EDLPSI/DELPSI), `calcFloat[0]`. Default: 2.0 degrees.
+Default: 2.0 degrees.
 
 This angle determines the angular interval between the RHO vectors that define each vehicle's crush perimeter. (The old help recommended a value of 1 degree; the current program default is 2 degrees.)
 
 ## Vector Adjustment Increment (in)
 
-Internal variable: `delrho` (DELRHO), `calcFloat[1]`. Default: 0.20 in.
+Default: 0.20 in.
 
 This increment determines the incremental adjustment for each RHO vector as the collision routine seeks to establish force equilibrium between vehicles.
 
 ## Vector Force Tolerance (lb/in)
 
-Internal variable: `alamb` (ALAMB), `calcFloat[2]`. Default: 15.0 lb/in.
+Default: 15.0 lb/in.
 
 This value is the allowable difference in the force computed along corresponding RHO vectors for each vehicle. A small value is obviously preferable. In general, it should not exceed 50 lb/in (about 100 N/cm).
 
 ## Min Velocity for Friction (in/sec)
 
-Internal variable: `zetav` (ZETAV), `calcFloat[4]`. Default: 5.0 in/sec.
+Default: 5.0 in/sec.
 
-The minimum relative tangential surface velocity at which the full inter-vehicle friction is achieved. Below this velocity the friction force scales linearly with sliding velocity (`frict = amu*(vtmvt/zetav)` in `Coll2.cpp`).
+The minimum relative tangential surface velocity at which the full inter-vehicle friction is achieved. Below this velocity the friction force scales linearly with sliding velocity: the effective friction coefficient becomes $\mu\,(v_t / v_{min})$, where $\mu$ is the Inter-Vehicle Friction value, $v_t$ the relative tangential velocity and $v_{min}$ this minimum velocity.
 
-*Note:* the old help attributed the variable name AMU to this option and ZETAV to inter-vehicle friction; in the source code the names are the other way around (`zetav` = minimum velocity, `amu` = friction coefficient).
+*Note:* the old on-line help interchanged the descriptions of this option and inter-vehicle friction. The description given here is correct: this field is the minimum velocity, not the friction coefficient.
 
 ## Restitution Constant
 
-Internal variable: `c0`, `calcFloat[5]`. Default: 0.04606.
+Default: 0.04606.
 
 This value is the constant term used for the parametric restitution model used in EDSMAC4.
 
 ## Restitution Linear Coef (1/in)
 
-Internal variable: `c1`, `calcFloat[6]`. Default: 0.0017547 1/in.
+Default: 0.0017547 1/in.
 
 This value is the linear term used for the parametric restitution model used in EDSMAC4.
 
 ## Restitution Quadratic Coef (1/in^2)
 
-Internal variable: `c2`, `calcFloat[7]`. Default: 0.000016711 1/in².
+Default: 0.000016711 1/in².
 
 This value is the quadratic term used for the parametric restitution model used in EDSMAC4.
 
 ## Inter-Vehicle Friction (removed from this dialog)
 
-The Inter-Vehicle Friction coefficient (internal variable `amu`, formerly `calcFloat[3]`, default 0.55) is **no longer set in the EDSMAC4 Calculation Options dialog**. It is now assigned per vehicle pair in the Vehicle Mesh dialog (Inter-Vehicle Options group), and the physics engine reads it from `EventVehicle[i].VehicleMesh.Mu[j]` (see the comment "Now part of Veh Mesh" in `Smainput.cpp` and its use in `Coll2.cpp`).
+The Inter-Vehicle Friction coefficient (default 0.55) is **no longer set in the EDSMAC4 Calculation Options dialog**. It is now assigned per vehicle pair in the Vehicle Mesh dialog (Inter-Vehicle Options group), and the physics engine takes the collision friction coefficient from that setting.
 
 ## Use Vehicle Geometry for Rho Vector Init
 
-Internal variable: `UseGeometry`, `calcBoolean[1]`. Default: unchecked (off).
+Default: unchecked (off).
 
 When checked, the initial lengths of the RHO (crush perimeter) vectors are computed from the vehicle's actual body mesh geometry rather than from the idealized rectangular vehicle outline. This improves collision detection and damage profiles for vehicles whose plan-view shape departs significantly from a rectangle.
 
 ## Steer DOF
 
-Internal variable: `SteerDOF[VehNum]`, `calcInt[0]`. Default: Off. Choices:
+Default: Off. Choices:
 
-- **Off** (0) — The steer degree of freedom is not simulated; wheel steer angles follow the driver steer tables directly.
-- **Normal** (1) — The dynamic steer degree of freedom is active for the entire event; steer angles are computed from the torques acting on the steering system (wheel friction, steering stops, gyroscopic precession, column friction) and the driver steer tables are ignored.
-- **Append** (2) — The steer tables are followed to their end; the final table entry then becomes the initial condition for the steer degree of freedom, which controls the steering for the remainder of the run.
-- **AutoStart** (3) — The steer tables are followed until the first collision contact; at impact (`SetImpact()`/`AutoStart()` in `Scompute.cpp`) the steer degree of freedom starts automatically with the current steer angle and zero steer velocity. Useful for modeling a driver's loss of steering control at impact.
+- **Off** (default) — The steer degree of freedom is not simulated; wheel steer angles follow the driver steer tables directly.
+- **Normal** — The dynamic steer degree of freedom is active for the entire event; steer angles are computed from the torques acting on the steering system (wheel friction, steering stops, gyroscopic precession, column friction) and the driver steer tables are ignored.
+- **Append** — The steer tables are followed to their end; the final table entry then becomes the initial condition for the steer degree of freedom, which controls the steering for the remainder of the run.
+- **AutoStart** — The steer tables are followed until the first collision contact; at impact the steer degree of freedom starts automatically with the current steer angle and zero steer velocity. Useful for modeling a driver's loss of steering control at impact.
 
 ## Inter-Vehicle Connection
 
-Internal variable: `AutoConnect`, `calcInt[1]`. Default: Adjust Both Equally. When a tow vehicle and trailer are connected, the heights of their user-entered hitch points may not match. If the height mismatch exceeds 0.1 in (`MAX_CONNECTION_Z_ERROR`), this option selects how the gap is closed at event initialization — by adjusting the connection points' z-coordinates on the vehicles, not by moving the vehicles themselves (`CheckConnections()` in `LibHve/connections.cpp`):
+Default: Adjust Both Equally. When a tow vehicle and trailer are connected, the heights of their user-entered hitch points may not match. If the height mismatch exceeds 0.1 in, this option selects how the gap is closed at event initialization — by adjusting the connection points' z-coordinates on the vehicles, not by moving the vehicles themselves:
 
-- **Manual (User-Adjusted)** (0) — No automatic adjustment; the user must enter connection heights that match.
-- **Adjust Tow Vehicle** (1) — The tow vehicle's rear connection height is adjusted to meet the trailer's.
-- **Adjust Trailer** (2) — The trailer's front connection height is adjusted to meet the tow vehicle's.
-- **Adjust Both Equally** (3) — Each connection height is adjusted by half of the mismatch.
+- **Manual (User-Adjusted)** — No automatic adjustment; the user must enter connection heights that match.
+- **Adjust Tow Vehicle** — The tow vehicle's rear connection height is adjusted to meet the trailer's.
+- **Adjust Trailer** — The trailer's front connection height is adjusted to meet the tow vehicle's.
+- **Adjust Both Equally** (default) — Each connection height is adjusted by half of the mismatch.
 
 ## Connection Model
 
-Internal variable: `ConstraintOption`, `calcInt[4]`. Default: Use Heavier Vehicle. Selects how the connection (hitch) constraint stiffness and damping are derived when computing the forces between connected vehicles (`Connect.cpp`):
+Default: Use Heavier Vehicle. Selects how the connection (hitch) constraint stiffness and damping are derived when computing the forces between connected vehicles:
 
-- **Use Both Vehicles** (`USE_BOTH_VEHS`, 0) — Spring rate and damping are derived from the *lighter* of the two vehicles' weights (`min(mass_i, mass_j) * g`).
-- **Use Heavier Vehicle** (`USE_HEAVY_VEH`, 1) — Spring rate and damping are derived from the heavier vehicle's weight.
-- **Use Tow Veh Properties** (`USE_TOW_VEH_PROPS`, 2) — The tow vehicle's user-entered hitch stiffness and damping values are used directly.
+- **Use Both Vehicles** — Spring rate and damping are derived from the *lighter* of the two vehicles' weights.
+- **Use Heavier Vehicle** (default) — Spring rate and damping are derived from the heavier vehicle's weight.
+- **Use Tow Veh Properties** — The tow vehicle's user-entered hitch stiffness and damping values are used directly.
 
 ## Hydroplane Model
 
-Internal variable: `HydroplaneMethod`, `calcInt[2]`. Default: Off. Choices:
+Default: Off. Choices:
 
-- **Off** (`HYDROPLANE_OFF`, 0) — No hydroplaning effects.
-- **NASA** (`HYDROPLANE_NASA`, 1) — The NASA hydroplaning model (`HydroplaneModel()` in `Hydroplane.cpp`) is applied at each tire travelling over a water surface. Using the water depth from the terrain's water polygons and the tire's inflation pressure, the model computes friction and rolling-resistance multipliers that reduce the available tire forces as the tire approaches and exceeds its hydroplaning speed.
+- **Off** (default) — No hydroplaning effects.
+- **NASA** — The NASA (Horne/Borne) hydroplaning model is applied at each tire travelling over a water polygon. The model predicts the hydroplaning (spin-down) speed from the tire's inflation pressure alone: a tire hydroplanes when its forward ground-plane speed exceeds $182.16\sqrt{P}$ in/sec, with $P$ in lb/in² (equivalently $10.35\sqrt{P}$ mph). Above that speed the tire's friction multiplier switches from the surface friction to the friction assigned to the water polygon, sharply reducing the available longitudinal and lateral tire forces.
 
-(The physics library also contains NASA-TTI, Gallaway and Blythe/Day hydroplane models, but EDSMAC4 currently rejects any selection beyond NASA with `ERROR_HYDROPLANE_MODEL_NOT_SUPPORTED`; only Off and NASA appear in the dialog.)
+  The friction multiplier is applied to both the peak and sliding friction coefficients taken from the tire's friction tables, so hydroplaning reduces the tire force available longitudinally *and* laterally — braking, drive traction and cornering capability are all lost together.
+
+  > **NOTE:** The model also returns a rolling-resistance multiplier, but all of the implemented hydroplaning models currently return a value of 1.0, so the extra drag of displacing water is not modeled. The friction reduction described above is the model's actual effect.
+
+(HVE also provides NASA-TTI and Gallaway hydroplaning models — both offered by SIMON, see [SIMON — Hydroplaning Model](../programs/SIMON/04-calculation-method.md#hydroplaning-model) — and a Blythe-Day model that is not implemented in any program. Only Off and NASA appear in the EDSMAC4 dialog; any other selection is rejected with a fatal error and the event will not run.)
 
 ## Accident History Basis
 
-Internal variable: `AccidentHistoryMethod`, stored inverted in `calcInt[5]` (the physics reads `AccidentHistoryMethod = !calcInt[5]` in `Smainput.cpp`, so `calcInt[5]` holds the logical negation of the internal flag: `calcInt[5] = 1` → Impact Force, `calcInt[5] = 0` → Acceleration). Default: Impact Force (`calcInt[5] = 1`). Selects the criterion used to detect the beginning and end of each collision phase reported in the Accident History (damage ranges, delta-V, peak acceleration):
+Default: Impact Force. Selects the criterion used to detect the beginning and end of each collision phase reported in the Accident History (damage ranges, delta-V, peak acceleration):
 
-- **Impact Force** (`USE_IMPACT_FORCE`) — A collision phase is bounded by the presence of inter-vehicle collision force.
-- **Acceleration** (`USE_TOTAL_ACCEL`) — A collision phase is bounded by the vehicle's total acceleration exceeding the **Threshold (g)** value. The threshold edit field (`calcFloat[8]`; default 1 g, initialized from the environment's gravity) is enabled only when this basis is selected.
+- **Impact Force** (default) — A collision phase is bounded by the presence of inter-vehicle collision force.
+- **Acceleration** — A collision phase is bounded by the vehicle's total acceleration exceeding the **Threshold (g)** value. The threshold edit field (default 1 g, initialized from the environment's gravity) is enabled only when this basis is selected.
 
 ## Damage Data Format
 
-Internal variables: `DamageDataFormat` (`calcInt[3]`) and `CrushDepthDisplay` (`calcBoolean[0]`). Default: Collision Data. Choices:
+Default: Collision Data. Choices:
 
-- **Traditional** (0) — Damage is reported in the traditional EDSMAC-style damage-profile format.
-- **Collision Data** (1, default) — Damage is reported using the extended Collision Data format produced by the LibHVE damage-data module.
+- **Traditional** — Damage is reported in the traditional EDSMAC-style damage-profile format.
+- **Collision Data** (default) — Damage is reported using HVE's extended Collision Data format.
 
 - **Include Free Space** — When checked, the reported crush measurements include free-space (induced) deformation in addition to direct-contact crush. In the current release this checkbox is permanently checked and disabled; free space is always included.
 
 ## Terrain Search Options (Get Surface Information)
 
-The old help ended with three undocumented entries — *From First Polygon*, *From Previous Polygon* and *By Elevation*. These options select how HVE's `GetSurfaceInfo()` function searches the terrain polygon (triangle) database beneath each tire at every timestep. They are no longer part of the EDSMAC4 Calculation Options dialog; they are set in the separate **Get Surface Information Options** dialog (Options menu) and stored per event in `GetSurfaceInfo` (`Method`, `Direction`, `NormalZ`). The behavior, per `LibHve/Surface.cpp`:
+The old help ended with three undocumented entries — *From First Polygon*, *From Previous Polygon* and *By Elevation*. These options select how HVE searches the terrain polygon (triangle) database beneath each tire at every timestep. They are no longer part of the EDSMAC4 Calculation Options dialog; they are set in the separate **Get Surface Information Options** dialog (Options menu), and the Search Method, Search Direction and z-component settings made there are stored with each event. The behavior is:
 
-**Search Method** (`GetSurfaceInfo.Method`; default: From Previous Polygon, Sorted):
+**Search Method** (default: From Previous Polygon, Sorted):
 
-- **From First Polygon** (`USE_ALL_TRIANGLES`, 0) — The entire terrain database is searched in order starting from the first polygon; the first polygon containing the search point is used. Simple but slowest for large terrains.
-- **From Previous Polygon** (`USE_PREVIOUS_WITHOUT_FRICT_ZONES`, 1) — The search starts at the polygon found on the previous timestep and spreads outward (forward and backward) through the database, returning on the first hit. Fast, but friction-zone precedence is not enforced (water polygons are still checked first).
-- **From Previous Polygon, Sorted** (`USE_PREVIOUS_WITH_FRICT_ZONES`, 2 — default) — Water, curb and friction-zone polygons are checked first (so friction zones take precedence over the underlying road surface), then the search proceeds from the previous polygon, spreading outward. This is the recommended method.
-- **By Elevation** (`USE_ELEVATION`, 3) — Intended to search the entire database and return the polygon with the highest elevation beneath the wheel center (for overlapping surfaces such as bridges). **Not currently implemented:** the radio button is disabled in the dialog, and the physics engines reject the option (`ERROR_BAD_EVENT_GETSURFACE_OPT3_NOT_SUPPORTED`).
+- **From First Polygon** — The entire terrain database is searched in order starting from the first polygon; the first polygon containing the search point is used. Simple but slowest for large terrains.
+- **From Previous Polygon** — The search starts at the polygon found on the previous timestep and spreads outward (forward and backward) through the database, returning on the first hit. Fast, but friction-zone precedence is not enforced (water polygons are still checked first).
+- **From Previous Polygon, Sorted** (default) — Water, curb and friction-zone polygons are checked first (so friction zones take precedence over the underlying road surface), then the search proceeds from the previous polygon, spreading outward. This is the recommended method.
+- **By Elevation** — Intended to search the entire database and return the polygon with the highest elevation beneath the wheel center (for overlapping surfaces such as bridges). **Not currently implemented:** the radio button is disabled in the dialog, and if the option is ever selected the physics engines report a fatal error and the event will not run.
 
-**Search Direction** (`GetSurfaceInfo.Direction`; default: Upward Facing Only) — Controls which terrain triangles are considered usable when the terrain database is built:
+**Search Direction** (default: Upward Facing Only) — Controls which terrain triangles are considered usable when the terrain database is built:
 
-- **All Directions** (0) — All triangles are used regardless of the direction of their surface normal.
-- **Upward Facing Only** (1, default) — Only triangles whose surface normal has an upward component are used (downward-facing and vertical triangles are discarded). Curb polygons are exempt from the normal test.
-- **Z Component, Greater Than** (2) — Only triangles whose unit surface normal has a z-component greater than the user-entered value (`GetSurfaceInfo.NormalZ`, default 0.0) are used. The edit field is enabled only for this choice.
+- **All Directions** — All triangles are used regardless of the direction of their surface normal.
+- **Upward Facing Only** (default) — Only triangles whose surface normal has an upward component are used (downward-facing and vertical triangles are discarded). Curb polygons are exempt from the normal test.
+- **Z Component, Greater Than** — Only triangles whose unit surface normal has a z-component greater than the user-entered value (default 0.0) are used. The edit field is enabled only for this choice.
 
 ## DyMESH
 
-EDSMAC4 does not use the DyMESH 3-D collision algorithm (`DyMeshIsUsed = FALSE` in the EDSMAC4 physics header); the DyMESH Options dialog applies to SIMON events only.
+EDSMAC4 does not use the DyMESH 3-D collision algorithm; the DyMESH Options dialog applies to SIMON events only.
 
 ---
-*Source topic: CalcOptEDSMAC4.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

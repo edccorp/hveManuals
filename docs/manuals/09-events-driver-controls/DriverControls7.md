@@ -44,7 +44,7 @@ Speed follower parameters. See [Driver Controls Speed Follower](DriverControls8.
 Neuro-muscular filter parameters. See [Driver Controls Filter](DriverControls6.md).
 
 ---
-*Source topic: DriverControls7.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

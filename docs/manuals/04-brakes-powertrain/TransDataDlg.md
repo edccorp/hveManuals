@@ -35,7 +35,7 @@ Graphical display of the shift schedule: throttle position vs engine speed, show
 Validates the entered values and redraws the shift graph.
 
 ---
-*Source topic: TransDataDlg.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

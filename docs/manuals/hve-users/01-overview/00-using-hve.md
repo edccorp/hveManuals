@@ -1,6 +1,6 @@
 # Using HVE — High-Level Overview
 
-*Updated Markdown edition of the HVE User's Manual (HVE Version 5, Seventh Edition, January 2006), "USING HVE — High-level Overview" (pages Overview-1 through Overview-10). Verified against the current HVE application source (`HVEINV-64/`).*
+*Updated Markdown edition of the HVE User's Manual (HVE Version 5, Seventh Edition, January 2006), "USING HVE — High-level Overview" (pages Overview-1 through Overview-10). Revised for the current HVE release.*
 
 ## Assumptions
 
@@ -35,8 +35,7 @@ teach the subject of human and vehicle dynamics, or explain how to reconstruct
 motor vehicle crashes. Further, this manual does not attempt to explain how
 specific reconstruction and simulation models work. For these details, consult
 the Technical Reference or Physics Manual for the particular reconstruction or
-simulation model (see the program manuals in
-[`docs/manuals/programs/`](../../programs/README.md)).
+simulation model (see the [program manuals](../../programs/README.md)).
 
 Every new user should read the following chapters:
 

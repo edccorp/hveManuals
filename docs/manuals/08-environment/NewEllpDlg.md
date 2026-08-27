@@ -15,7 +15,7 @@ Accepts the name and creates the new ellipsoid, provided the name is valid and t
 Closes the dialog without adding an ellipsoid.
 
 ---
-*Source topic: NewEllpDlg.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

@@ -8,7 +8,7 @@ The mathematical model for EDVDS was developed from a program, called Phase 4, d
 
 - The equations of motion were rewritten and extended to allow complete 3-dimensional motion. The small angle assumption was eliminated.
 - The equations of motion were generalized to allow the vehicle positions to be at any location (the original Phase 4 code required the tow vehicle to start in equilibrium at the earth-fixed origin) at the start of the simulation.
-- The Phase 4 user-written ROAD subroutine was replaced by HVE's `GetSurfaceInfo()` function, allowing the vehicles to drive on an arbitrary 3-D surface.
+- The Phase 4 user-written ROAD subroutine was replaced by HVE's terrain surface information lookup, allowing the vehicles to drive on an arbitrary 3-D surface.
 - The in-line solution of the equations of motion was replaced by a simultaneous solutions procedure.
 
 For successful use of EDVDS, a good understanding of vehicle and tire dynamics is extremely useful and is recommended. However, the following discussion is limited to the general analytical approach. For a detailed treatise on the subject of vehicle dynamics and simulation programs, the user is referred to the references listed at the end of this Program Manual as well as those listed in HVE Appendix VI, References.
@@ -107,6 +107,9 @@ Longitudinal tire force, $F_x$, and lateral tire force, $F_y$, are strongly depe
 These tire modeling options are described below.
 
 > **NOTE:** The desired tire model is selected by choosing Calculation Options during Event Set-up. See [Chapter 2](02-program-input.md) (Program Input) and [Chapter 5](05-tutorial.md) (EDVDS Tutorial) for further details, and the [EDVDS Calculation Options reference](../../10-calculation-options/CalcOptEDVDS.md).
+
+
+*(updated: hydroplaning is **not** modeled by EDVDS. Hydroplaning models (NASA, NASA-TTI, Gallaway) are available in HVE, but only through SIMON and EDSMAC4; EDVDS offers no Hydroplaning Model calculation option, and any water-related tire output variables it reports are unused placeholders. See [SIMON — Hydroplaning Model](../SIMON/04-calculation-method.md#hydroplaning-model).)*
 
 #### Linear Tire Model
 
@@ -223,7 +226,7 @@ $$\text{if} \begin{Bmatrix} F_z > F_{z,min} \\ \text{and} \\ X_s/L < \tau \end{B
 
 #### Table Look-up Tire Model
 
-The table look-up tire model is not implemented in EDVDS. *(This remains true in the current code: `Vdsinput2.cpp` returns `ERROR_TIRE_MODEL_NOT_SUPPORTED` if the Table Look-Up option is selected, and the option is greyed out in the Calculation Options dialog.)*
+The table look-up tire model is not implemented in EDVDS. *(This remains true in the current version: the **Table Look-Up** option is greyed out in the Calculation Options dialog, and if it is selected the event terminates with a fatal error.)*
 
 ### Connection Forces
 

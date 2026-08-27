@@ -63,7 +63,7 @@ The Program Data Report includes the following information:
 
 - **Simulation Controls** — Integration parameters used for the current event (Max Simulation Time, Trajectory Phase dt, Output Interval, Linear Termination Velocity)
 
-*(updated: In the current version the Program Data report also includes a General Program Information section — HVE Version, EDVTS Version, Date and Time of Execution, Dimension Basis — and General Environment Data / 3-D Environment Terrain Data sections reporting the environment name, gravity constant, 3-D geometry filename, number of polygons, GetSurfaceInfo mode and terrain elevation limits.)*
+*(updated: In the current version the Program Data report also includes a General Program Information section — HVE Version, EDVTS Version, Date and Time of Execution, Dimension Basis — and General Environment Data / 3-D Environment Terrain Data sections reporting the environment name, gravity constant, 3-D geometry filename, number of polygons, the Get Surface Information method in use, and terrain elevation limits.)*
 
 A typical Program Data Report is shown in Figure 3-3.
 

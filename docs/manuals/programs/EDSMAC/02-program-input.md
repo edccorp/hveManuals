@@ -401,20 +401,20 @@ The output time interval is the interval at which output results (positions, vel
 
 *Figure 2-4: EDSMAC Event Calculation Options dialog, available from the Options menu.*
 
-EDSMAC has the following parameter options (see the code-verified reference page [EDSMAC Calculation Options](../../10-calculation-options/CalcOptEDSMAC.md) for internal variable names, defaults and allowed ranges):
+EDSMAC has the following parameter options (see the reference page [EDSMAC Calculation Options](../../10-calculation-options/CalcOptEDSMAC.md) for defaults and allowed ranges):
 
-- **Vector Spacing** — This angle, *DELPSI*, determines the angular interval between RHO vectors (see Calculation Method). The default value is 2 degrees (range 1 to 5 degrees). *(updated: the original manual recommended 1 degree; the current default in the code and dialog is 2.0 degrees.)*
-- **Vector Adjustment Increment** — This increment, *DELRHO*, determines the incremental adjustment for each RHO vector as the collision routine seeks to establish force equilibrium between vehicles. Default 0.20 in (range 0.01 to 0.5 in).
-- **Max Pressure Error** (Vector Force Tolerance) — This value, *ALAMB*, is the allowable difference in the force per unit width exerted by RHO vectors for each vehicle. A small value is obviously preferable. In general, it should not exceed 50 lb/in (about 100 N/cm). Default 15 lb/in.
-- **Inter-vehicle Friction** — This value, *AMU*, represents the coefficient of sliding friction between the vehicle exteriors. Default 0.55.
-- **Minimum Velocity for Friction** — This value, *ZETAV*, represents the minimum relative surface velocity at which the full inter-vehicle friction is achieved. Default 5 in/sec. *(updated: the original manual swapped the variable names AMU and ZETAV for these two options; per the source code, AMU is the friction coefficient and ZETAV is the minimum velocity.)*
+- **Vector Spacing** — This angle, $\Delta\psi$, determines the angular interval between RHO vectors (see Calculation Method). The default value is 2 degrees (range 1 to 5 degrees). *(updated: the original manual recommended 1 degree; the current default in the dialog is 2.0 degrees.)*
+- **Vector Adjustment Increment** — This increment, $\Delta\rho$, determines the incremental adjustment for each RHO vector as the collision routine seeks to establish force equilibrium between vehicles. Default 0.20 in (range 0.01 to 0.5 in).
+- **Max Pressure Error** (Vector Force Tolerance) — This value, $\lambda$, is the allowable difference in the force per unit width exerted by RHO vectors for each vehicle. A small value is obviously preferable. In general, it should not exceed 50 lb/in (about 100 N/cm). Default 15 lb/in.
+- **Inter-vehicle Friction** — This value, $\mu$, represents the coefficient of sliding friction between the vehicle exteriors. Default 0.55.
+- **Minimum Velocity for Friction** — This value, $\zeta_v$, represents the minimum relative surface velocity at which the full inter-vehicle friction is achieved. Default 5 in/sec. *(updated: the original manual swapped the descriptions of these two options; Inter-vehicle Friction is the friction coefficient and Minimum Velocity for Friction is the minimum velocity.)*
 - **Restitution Coefficients** — These three values, $C_0$, $C_1$, and $C_2$, are the constant, linear and quadratic terms used for the parametric restitution model used in EDSMAC ($e = C_0 - C_1\delta + C_2\delta^2$, with defaults 0.04606, 0.0017547 /in and 1.6711×10⁻⁵ /in²).
 
 ### Get Surface Information
 
-Both HVE and HVE-2D use a function called GetSurfaceInfo to determine on which environment polygon the tire is riding. This function searches below the X,Y coordinates of each tire contact patch, and uses a user-editable algorithm to determine the friction and other characteristics of the surface beneath.
+Both HVE and HVE-2D use a terrain search, called Get Surface Information, to determine on which environment polygon the tire is riding. It searches below the X,Y coordinates of each tire contact patch, and uses a user-editable algorithm to determine the friction and other characteristics of the surface beneath.
 
-The default method for GetSurfaceInfo is *From Previous Polygon, Sorted*. This results in fast execution while enforcing friction-zone precedence. Refer to the User's Manual and to the [Get Surface Information Options](../../10-calculation-options/CalcOptEDSMAC.md#terrain-search-options-moved-to-the-get-surface-information-dialog) notes for further information about how GetSurfaceInfo works. *(updated: these terrain search options are now set in the separate Get Surface Information Options dialog rather than in the EDSMAC Calculation Options; the "By Elevation" method is not supported.)*
+The default method for Get Surface Information is *From Previous Polygon, Sorted*. This results in fast execution while enforcing friction-zone precedence. Refer to the User's Manual and to the [Get Surface Information Options](../../10-calculation-options/CalcOptEDSMAC.md#terrain-search-options-moved-to-the-get-surface-information-dialog) notes for further information about how the terrain search works. *(updated: these terrain search options are now set in the separate Get Surface Information Options dialog rather than in the EDSMAC Calculation Options; the "By Elevation" method is not supported.)*
 
 ### Executing An Event
 

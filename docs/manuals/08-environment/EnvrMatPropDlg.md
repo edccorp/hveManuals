@@ -71,7 +71,7 @@ Saves the current material settings to an HVE Material file (\*.matl) for later 
 OK validates and accepts the material; Cancel discards the changes.
 
 ---
-*Source topic: EnvrMatPropDlg.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

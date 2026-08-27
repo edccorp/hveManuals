@@ -47,9 +47,9 @@ hill; if it has a ditch, the vehicle may roll into it; if it has a cliff,
 the vehicle may drive off it.
 
 > **NOTE:** This capability of HVE must be taken advantage of by the human
-> or vehicle simulation model using the `GetSurfaceInfo` function. Refer to
-> the individual calculation model's documentation to determine if this
-> feature is included in the model.
+> or vehicle simulation model, which queries HVE for the surface beneath
+> each contact point. Refer to the individual calculation model's
+> documentation to determine if this feature is included in the model.
 
 #### How It Works
 
@@ -96,11 +96,11 @@ environment (see Figure 13-1, Figure 13-2 and Table 13-1):
 - **Macrotexture** — The surface macrotexture depth of the terrain at X,Y,
   used by tire-road friction (e.g., wet-road) calculations. *(updated: the
   current material model carries Macrotexture in place of the Clay Content
-  parameter listed in earlier editions; see `envMaterial` in the current
-  source and the [Environment Material Properties dialog](../../08-environment/EnvrMatPropDlg.md).)*
+  parameter listed in earlier editions; see the [Environment Material
+  Properties dialog](../../08-environment/EnvrMatPropDlg.md).)*
 
 ![Figure 13-2](../images/p462-249.png)
-*Figure 13-2: Environment Terrain Material Properties dialog. For the current, code-verified field list — including sliders, valid ranges and defaults — see [Environment Material Properties](../../08-environment/EnvrMatPropDlg.md).*
+*Figure 13-2: Environment Terrain Material Properties dialog. For the current field list — including sliders, valid ranges and defaults — see [Environment Material Properties](../../08-environment/EnvrMatPropDlg.md).*
 
 > **NOTE:** The Bekker Soil Exponent, Frictional Soil Modulus and Cohesive
 > Soil Modulus are used by the Soft Soil Tire-Terrain Model. See the
@@ -153,10 +153,9 @@ types of objects. The following object types are available:
 - **Friction Zone** — User-assignable object type for environment polygons
 - **Other** — User-assignable object type for environment polygons
 
-*(updated: the current environment data structures also carry* Curb *and*
-Water *polygon types — water polygons include water depth, depth method and
-water friction multiplier attributes used by water-related tire models; see
-`RoadPoly` in `Physics/Include/ENVIRON.H`.)*
+*(updated: the current environment model also supports* Curb *and* Water
+*polygon types — water polygons include water depth, depth method and water
+friction multiplier attributes used by water-related tire models.)*
 
 Polygons of type Human are tested only for human vs. vehicle/road/friction
 zone interaction. Polygons of type Vehicle are tested only for
@@ -192,11 +191,11 @@ questions:
 To answer these and similar questions, a strict definition is required. HVE
 uses two different methods to determine which polygon gets used:
 
-- **GetSurfaceInfo()** — Used by the Point Contact and Soft Soil
+- **Surface search** — Used by the Point Contact and Soft Soil
   Tire-Terrain Models (see the Event Set-up Wheels option; Chapter 4). This
   method searches in the direction of the earth-fixed gravity vector (i.e.,
   straight down) to determine the desired terrain polygon.
-- **GetTerrainInfo()** — Used by the Radial Spring and Sidewall Impact
+- **Terrain search** — Used by the Radial Spring and Sidewall Impact
   Tire-Terrain Models (again, see the Event Set-up Wheels option; Chapter
   4). This method searches in a programmatically defined direction (i.e.,
   in the direction of a tire radial or sidewall spring) to determine the
@@ -211,8 +210,8 @@ legacy edition and is now the default)*:
 - Use Previous Polygon, Sorted *(updated: current default)*
 - Use Elevation
 
-The following rules are used by `GetSurfaceInfo()` or `GetTerrainInfo()`,
-according to the selected option:
+The following rules are used by either the surface search or the terrain
+search, according to the selected option:
 
 **From First Polygon**
 
@@ -248,8 +247,7 @@ according to the selected option:
 - Works like From Previous Polygon, but the polygon database is first
   sorted so that physically adjacent polygons are stored adjacently,
   making the previous-polygon search still more effective. This is the
-  default search method in the current version (`CaGetSurfaceInfo`
-  default `nMethod = PrevPolySorted`).
+  default search method in the current version.
 
 **By Elevation**
 
@@ -353,8 +351,8 @@ attributes, perform the following steps:
 
 > **NOTE:** While creating a 3-D environment, it is quite possible to
 > (accidentally) create two surfaces sharing the same space. Although the
-> visual appearance will be unaffected, the `GetSurfaceInfo()` function may
-> use the wrong surface. Be careful!
+> visual appearance will be unaffected, the surface search may use the
+> wrong surface. Be careful!
 
 ### Gravitational Constant
 
@@ -562,7 +560,7 @@ Longitude and GMT, as shown in Figure 13-8.
 
 ---
 
-*See also (code-verified dialog references):*
+*See also (dialog references):*
 [Environment Information Dialog](../../08-environment/EnvtInfoDlg.md) ·
 [Environment Material Properties](../../08-environment/EnvrMatPropDlg.md) ·
 [Linear Friction Zone Properties](../../08-environment/LinFriPropDlg.md) ·

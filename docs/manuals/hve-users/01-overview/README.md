@@ -2,7 +2,7 @@
 
 *Updated Markdown edition of the legacy HVE User's Manual (HVE Version 5,
 Seventh Edition, January 2006), "USING HVE" overview and Section One,
-verified against the current HVE source code (`HVEINV-64/`, `Physics/`).*
+revised for the current HVE release.*
 
 ## Contents
 
@@ -16,7 +16,7 @@ verified against the current HVE source code (`HVEINV-64/`, `Physics/`).*
 
 ## Related references
 
-Dialog-level field descriptions are maintained in the code-verified dialog
+Dialog-level field descriptions are maintained in the dialog
 reference:
 
 - [User Interface (menus, viewers, playback controls)](../../01-user-interface/README.md)

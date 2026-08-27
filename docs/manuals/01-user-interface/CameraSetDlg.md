@@ -61,7 +61,7 @@ Deletes the currently selected saved camera.
 **Apply** applies the current settings to the viewer without closing the dialog; **OK** applies the settings and closes the dialog; **Cancel** closes the dialog without applying changes.
 
 ---
-*Source topic: CameraSetDlg.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

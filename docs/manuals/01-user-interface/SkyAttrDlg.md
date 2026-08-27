@@ -30,7 +30,7 @@ A user-editable field defining the distance (from the camera) at which objects a
 Displays the Color dialog box, used to set the color of the fog/haze/smoke.
 
 ---
-*Source topic: SkyAttrDlg.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

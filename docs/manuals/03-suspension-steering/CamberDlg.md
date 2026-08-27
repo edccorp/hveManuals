@@ -31,7 +31,7 @@ Validates the grid data and redraws both graphs with the given data.
 Prints the displayed graphs.
 
 ---
-*Source topic: CamberDlg.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

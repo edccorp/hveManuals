@@ -2,18 +2,15 @@
 
 # HVE Software Manual (Markdown Edition)
 
-This directory contains the HVE (Human Vehicle Environment) user manual in
-Markdown form. It was produced by reviewing the legacy on-line help topics in
-`HTMLHelp/HTMLFiles/` (the source of the compiled
-`HVE.chm` manual) and updating each topic against the current source code:
+This is the HVE (Human Vehicle Environment) manual. It brings together the
+HVE on-line help, the HVE User's Manual and the individual physics program
+manuals in a single, searchable set, revised throughout to describe the
+current version of the software.
 
-- **`HVEINV-64/`** — the HVE application (dialogs, editors, reports)
-- **`Physics/`** — the simulation engines (EDCRASH, EDGEN, EDHIS, EDSMAC,
-  EDSMAC4, EDSVS, EDVDS, EDVSM, EDVTS, SIMON, DyMesh)
-
-Each page notes the legacy help topic it was derived from. Options that were
-missing or undocumented in the old help have been documented from the current
-code; options that no longer exist in the code have been removed or flagged.
+Where a dialog, option or default has changed since the printed manuals were
+published, the page describes the current behavior and marks the change with
+an *(updated: …)* note. Options that no longer exist have been removed or
+flagged, and options that were previously undocumented are now described.
 
 ## Contents
 

@@ -56,7 +56,7 @@ Opens an existing human material file (HVE Material Files, *.matl) and loads its
 Saves the current settings in a human material file (*.matl).
 
 ---
-*Source topic: HumMatProp.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

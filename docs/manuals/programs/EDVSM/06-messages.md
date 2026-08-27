@@ -12,7 +12,7 @@ Errors issued by EDVSM appear in the EDVSM output and may be one of three types:
 
 All messages issued by EDVSM are listed below. Each message includes a description or nature of the cause, the level of the message (Informative, Diagnostic or Fatal), and the recommended action to eliminate the problem. If you receive an error message not listed below, first check to see if it is an HVE or operating system message by referring to the HVE Appendix or your computer's operating system manual. If the message is not listed in either place, please contact EDC immediately with the offending error.
 
-*(updated: This catalog has been verified against the current EDVSM message resources in `Physics/Source/Edvsm/EDVSM.rsc` (messages Msg1–Msg15). All messages from the original manual are still present. One message has been added since the Fifth Edition — the second Integration Error, concerning the Velocity Convergence Criterion — and the GetSurfaceInfo() Error text has been shortened; both are noted below.)*
+*(updated: This catalog has been brought into line with the messages issued by the current version of EDVSM. All messages from the original manual are still present. One message has been added since the Fifth Edition — the second Integration Error, concerning the Velocity Convergence Criterion — and the GetSurfaceInfo() Error text has been shortened; both are noted below.)*
 
 ---
 

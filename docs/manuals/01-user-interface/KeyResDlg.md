@@ -1,6 +1,6 @@
 # Key Results Dialog Box
 
-This dialog box (whose title bar reads *Key Results-\<object name\>*; the internal resource is IDD_KEY_VARIABLES) displays user-specified results during Event and Playback modes. Key Results are especially useful during Event mode to monitor the values of one or more variables at each time step. Use the Variable Selection dialog to select which variables are displayed in the Key Results window. A separate Key Results window is displayed for each human and vehicle in the event.
+This dialog box, whose title bar reads *Key Results-\<object name\>*, displays user-specified results during Event and Playback modes. Key Results are especially useful during Event mode to monitor the values of one or more variables at each time step. Use the Variable Selection dialog to select which variables are displayed in the Key Results window. A separate Key Results window is displayed for each human and vehicle in the event.
 
 The window is resizable, and its contents differ slightly between reconstruction events (which display a single set of results) and simulation events (which display values updated at each output time interval).
 
@@ -18,7 +18,7 @@ A two-column grid showing the selected variables:
 See also: Event Mode, Playback Mode, Variable Selection Dialog Box, and the *Key Results* preference in the [User Preferences Dialog Box](PrefDlg.md), which controls the initial variable selection for new events.
 
 ---
-*Source topic: KeyResDlg.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

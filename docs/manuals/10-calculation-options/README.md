@@ -1,6 +1,6 @@
 # Calculation Options
 
-Dialog and feature reference for the HVE **Calculation Options** area, converted from the on-line help and verified against the current source code. Part of the [HVE Manual](../README.md).
+Dialog and feature reference for the HVE **Calculation Options** area, converted from the on-line help. Part of the [HVE Manual](../README.md).
 
 ## Pages
 

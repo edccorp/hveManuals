@@ -29,7 +29,7 @@
 26. Blythe, W., Day, T.D., Grimes, W.D., "3-Dimensional Simulation of Vehicle Response to Tire Blow-outs," SAE Paper No. 980221, Society of Automotive Engineers, Warrendale, PA, 1998.
 27. Day, T.D. and Metz, L.D., "The Simulation of Driver Inputs Using a Vehicle Driver Model," SAE Paper No. 2000-01-1313, Society of Automotive Engineers, Warrendale, PA, 2000.
 
-*(Additional references cited by the current program's Program Data report — see the `Ref0`–`Ref12` entries in `Physics/Source/Edsmac4/EDSMAC4.rsc` — include Day, T.D., Hargens, R.L., "Further Validation of EDSMAC Using the RICSAC Staged Collisions," SAE Paper No. 900102, February 1990, and the "EDC Simulations Training Manual," Engineering Dynamics Corporation, Beaverton, OR, 1989.)*
+*(Additional references cited by the current program's Program Data report include Day, T.D., Hargens, R.L., "Further Validation of EDSMAC Using the RICSAC Staged Collisions," SAE Paper No. 900102, February 1990, and the "EDC Simulations Training Manual," Engineering Dynamics Corporation, Beaverton, OR, 1989.)*
 
 ---
 *Previous: [Chapter 6 — Messages](06-messages.md) — Back to [Contents](README.md)*

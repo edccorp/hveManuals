@@ -237,7 +237,7 @@ Of course, it is also possible that the struck vehicle's separation velocity is 
 1. Inspection of the equation above reveals that its denominator can never be negative (a negative denominator would imply the vehicles never collided). Thus, if $r$ is less than 0.0, the problem must lie in the numerator. Note the numerator includes only the separation velocities. These velocities are calculated from scene data (path length, tire-road friction) and wheel lock-ups. So, focus on the scene data and the wheel lock-ups.
 2. The classic coefficient of restitution is derived from particle kinematics in which the colliding objects have a point mass and zero size. This is not true for vehicles, which are basically large rectangles. Thus, the equation cited earlier uses the components of the impact and separation velocities along a line drawn between the vehicle centers of gravity at their impact positions. These velocity components change as the vehicle impact positions are moved relative to each other. Therefore, confirm the relative impact positions.
 
-*(updated: the current physics engine also issues an intermediate "restitution too high" warning (`PHYS_MSG_RESTITUTION_TOO_HIGH`) when the computed restitution exceeds the normally expected range without exceeding 1.0, and a "negative approach velocity" message when the impact geometry implies the vehicles were separating at impact. The guidance above applies to these variants as well.)*
+*(updated: the current release also issues an intermediate "restitution too high" warning when the computed restitution exceeds the normally expected range without exceeding 1.0, and a "negative approach velocity" message when the impact geometry implies the vehicles were separating at impact. The guidance above applies to these variants as well.)*
 
 ---
 
@@ -405,7 +405,7 @@ If the Trajectory Simulation option is chosen (see EDCRASH Calculation Options),
 
 *(updated: added — not in the original manual)*
 
-If the Separation Velocity Basis in the Calculation Options dialog is set to *Iterate on Sideslip*, the event terminates with an error before any calculations are performed, because the iterative sideslip solution is not supported by the current EDCRASH physics engine (see `Crainput.cpp`, which returns `ERROR_TIRE_MODEL_NOT_SUPPORTED`).
+If the Separation Velocity Basis in the Calculation Options dialog is set to *Iterate on Sideslip*, the event terminates with a "tire model not supported" error before any calculations are performed, because the iterative sideslip solution is not supported by the current EDCRASH physics engine.
 
 **What To Do:**
 

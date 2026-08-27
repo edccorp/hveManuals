@@ -20,13 +20,13 @@ The resulting motion is recorded as EDGEN human or vehicle output tracks; the mo
 
 ## Path Model
 
-This radio button group selects how EDGEN interpolates the path between the user-entered positions (internal physics variable `PathOption`, where 0 = `LINEAR` and 1 = `SPLINE`; see `Geninput.cpp` and `genspline.cpp`). The default is *Linear Interpolation*.
+This radio button group selects how EDGEN interpolates the path between the user-entered positions. The default is *Linear Interpolation*.
 
-- **Linear Interpolation** — EDGEN interpolates position and velocity along straight-line segments between successive user-entered positions (implemented by `ComputeLinearData()` in `genlinear.cpp`).
-- **3-D Spline Interpolation** — EDGEN fits a 3-D spline through the user-entered positions and interpolates position and velocity along the resulting smooth, curved path (implemented by `ComputeSplineData()` in `genspline.cpp`).
+- **Linear Interpolation** — EDGEN interpolates position and velocity along straight-line segments between successive user-entered positions.
+- **3-D Spline Interpolation** — EDGEN fits a 3-D spline through the user-entered positions and interpolates position and velocity along the resulting smooth, curved path.
 
 ---
-*Source topic: CalcOptEDGENDlg.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

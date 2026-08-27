@@ -2,7 +2,7 @@
 
 **Engineering Dynamics Corporation Vehicle-Trailer Simulator, Version 7**
 
-Updated Markdown edition, converted from the Sixth Edition (January 2006) printed manual and verified against the current HVE source code (July 2026).
+Updated Markdown edition, converted from the Sixth Edition (January 2006) printed manual and brought into line with the current HVE software (July 2026).
 
 ## How to Use This Manual
 

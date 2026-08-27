@@ -31,7 +31,7 @@ Specify version information for the vehicle. This text is stored with the vehicl
 The current vehicle may be visualized using a simplified vehicle shape or an actual 3-D geometry file created by digitizing the vehicle. If a 3-D geometry file is available for the current vehicle, its file name may be entered here and is stored with the saved vehicle.
 
 ---
-*Source topic: VehSaveAs.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

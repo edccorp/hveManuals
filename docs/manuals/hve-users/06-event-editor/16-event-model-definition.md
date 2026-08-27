@@ -235,7 +235,7 @@ available driver controls are:
 
 The Driver Controls dialog is a tabbed property sheet; the pages that
 appear depend on the capabilities of the current event's calculation method
-and on the selected vehicle. For the current, code-verified page-by-page
+and on the selected vehicle. For the current page-by-page
 reference, see [Driver Controls](../../09-events-driver-controls/DriverControls.md).
 The Driver Controls options are described below.
 
@@ -252,7 +252,7 @@ The Throttle Table Event Set-up parameters are defined in Table 16-2.
 
 Throttle controls are available for simulations, and are used to accelerate
 the vehicle. Three methods of throttle control tables are available (see
-also the code-verified [Throttle page](../../09-events-driver-controls/DriverControls4.md)):
+also the [Throttle page](../../09-events-driver-controls/DriverControls4.md)):
 
 - **Wide-open Throttle (Percent WOT)** — This method allows the user to
   enter a table of throttle position versus time. The resulting table
@@ -297,7 +297,7 @@ The Brake Table Event Set-up parameters are defined in Table 16-3.
 | Brake Input | UtVehForce or UtVehPercent | Current value for brake input |
 
 Brake controls are available for simulations. Three methods are available
-(see also the code-verified [Brake page](../../09-events-driver-controls/DriverControls3.md)):
+(see also the [Brake page](../../09-events-driver-controls/DriverControls3.md)):
 
 - **Pedal Force** *(called "At Pedal" in the legacy edition)* — This method
   allows the user to enter a table of brake pedal force versus time. The
@@ -351,7 +351,7 @@ Steering controls are available for simulations. Two methods are available:
 *(updated: the current Steer page also provides a* Use Ackermann Steering
 *check box — when checked, the simulation applies Ackermann geometry to the
 steer angles, so that the inside and outside tires of a steerable axle are
-steered through slightly different angles. See the code-verified
+steered through slightly different angles. See the
 [Steer page](../../09-events-driver-controls/DriverControls.md).)*
 
 #### Gear Selection
@@ -388,7 +388,7 @@ The HVE Path Follower Event Set-up parameters are defined in Table 16-6.
 *(updated: the current HVE Driver page offers two driver-model versions,*
 Ver. 1 *and* Ver. 2*, selected by radio buttons enabled when* Use Path
 Follower *is checked, and a Path Source selector — Position/Velocity dialog
-positions, or a path table (reserved). See the code-verified
+positions, or a path table (reserved). See the
 [HVE Driver page](../../09-events-driver-controls/DriverControls7.md).)*
 
 The HVE Path Follower includes several features, some required and some
@@ -423,7 +423,7 @@ Acceleration acceptable to the driver. *(updated: the current Driver tab
 specifies the preview point by a* Driver Preview Time *(sec) together with
 a* Driver Minimum Preview Distance *(ft) used at low speeds, plus a* Path
 Error Null Distance*, a* Max Speed Error *and a* Driver Comfort Level *(g);
-see the code-verified [HVE Driver page](../../09-events-driver-controls/DriverControls7.md).)*
+see the [HVE Driver page](../../09-events-driver-controls/DriverControls7.md).)*
 
 ##### Method
 
@@ -484,7 +484,7 @@ Force.
 > current version: user-entered velocities at each path position define an
 > attempted speed at each point on the path, and the driver model applies
 > throttle and brake pedal inputs to achieve those speeds. See the
-> code-verified [Speed Follower page](../../09-events-driver-controls/DriverControls8.md).
+> [Speed Follower page](../../09-events-driver-controls/DriverControls8.md).
 
 ##### Neuro-muscular Filter
 
@@ -493,7 +493,7 @@ included in the HVE Path Follower. Originally developed for NASA, the
 neuro-muscular filter represents a simplified model of the physiological
 operator which incorporates a Time Delay, Lead Time and Lag Time. These
 parameters correspond to the first-order effects of the neurological and
-muscular systems of a human driver. *(See the code-verified
+muscular systems of a human driver. *(See the
 [Filter page](../../09-events-driver-controls/DriverControls6.md).)*
 
 To use the HVE Path Follower, first you must assign at least two path
@@ -929,7 +929,7 @@ Properties dialog is used to assign these properties. The material
 properties for an ellipsoid/surface pair are defined by first selecting the
 pair, and then choosing *Combined Material* in the Contacts dialog. A
 standard materials dialog is displayed for the selected pair. *(See the
-code-verified [Contacts dialog page](../../09-events-driver-controls/ContactsDlg.md).)*
+[Contacts dialog page](../../09-events-driver-controls/ContactsDlg.md).)*
 
 ### Restraints
 
@@ -1429,7 +1429,7 @@ run.
 
 ---
 
-*See also (code-verified dialog references):*
+*See also (dialog references):*
 [Event Information](../../09-events-driver-controls/EventInfo.md) ·
 [Event Setup](../../09-events-driver-controls/EventSetup.md) ·
 [Position/Velocity](../../09-events-driver-controls/PosVelDlg.md) ·

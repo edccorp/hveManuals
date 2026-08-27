@@ -57,7 +57,7 @@ Displays the 3-D Editor Viewer Options dialog. Use the *Show Viewer(s)* drop-dow
 Closes the 3-D Editor and returns to the Environment Editor. Changes made to the current object are automatically applied to that object.
 
 ---
-*Source topic: 3dEditor.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

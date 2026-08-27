@@ -81,7 +81,7 @@ Removes the tire from the user database (User.DB) after confirmation, then rebui
 OK validates the entries (dual tire spacing range, unique tire name, valid tire size string), stores the tire at the selected wheel position and applies any Copy to Other Side / Copy to Other Axles requests. Cancel discards all changes.
 
 ---
-*Source topic: TireInfoDlg.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

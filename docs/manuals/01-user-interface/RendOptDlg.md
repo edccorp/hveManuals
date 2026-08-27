@@ -56,7 +56,7 @@ A user-definable range that controls the resolution at which surface textures ar
 A user-definable range (1 to 10) which defines how smoothly objects are rendered. The default value is 1. If a value greater than 1 is selected, objects are re-rendered up to 10 times (depending on the selected value), resulting in a significant improvement in image quality. However, rendering time is increased significantly.
 
 ---
-*Source topic: RendOptDlg.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

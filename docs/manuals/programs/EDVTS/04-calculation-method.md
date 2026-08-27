@@ -54,18 +54,18 @@ Historically, two methods have been used to compute tire forces. Either formulas
 | $\mu_p$ | peak coefficient of friction |
 | $\mu_s$ | slide coefficient of friction |
 | $\mu_{slip}$ | % slip at $\mu_p$ |
-| $IsDual$ | flag (1 if dual tires; 0 otherwise) |
-| $sign.fsx$ | determines direction of wheel force relative to vehicle |
+| $\delta_{dual}$ | dual-tire factor (1 for dual tires, 0 for a single tire) |
+| $s_{fx}$ | determines direction of wheel force relative to vehicle |
 
 At the current simulation time, the force is computed for each tire, one tire at a time. If the percent wheel lock-up method was used to supply wheel forces when entering the Brake and/or Throttle Table, the percent lock-up must be converted into the actual wheel force,
 
-$$\text{if } |F_{sx}| < 1.0 \text{ then } F_{sx} = F_{sx}\,\mu_p F_z (1 + IsDual)$$
+$$\text{if } |F_{sx}| < 1.0 \text{ then } F_{sx} = F_{sx}\,\mu_p F_z (1 + \delta_{dual})$$
 
 The attempted wheel force is assigned as the longitudinal wheel force (lb),
 
-$$F_x = F_{sx} \cdot sign.fsx$$
+$$F_x = F_{sx} \cdot s_{fx}$$
 
-where *sign.fsx* determines the direction of the wheel force relative to the vehicle-fixed coordinate system.
+where $s_{fx}$ determines the direction of the wheel force relative to the vehicle-fixed coordinate system.
 
 Next, the non-dimensional sideslip parameter, $\bar{\alpha}$, is determined as
 
@@ -73,13 +73,13 @@ $$\bar{\alpha} = C_\alpha \sin(\alpha) / (\mu_p F_z)$$
 
 If $|\bar{\alpha}|$ is equal to or greater than 3, the tire's ability to produce a cornering force, $F_y$ (lb), is saturated. In this case,
 
-$$F_y = -\mu_p F_z (1 + IsDual)\,\text{sign}(\bar{\alpha})$$
+$$F_y = -\mu_p F_z (1 + \delta_{dual})\,\text{sign}(\bar{\alpha})$$
 
 Since the tire is saturated, it is assumed to be generating a scuff mark due to the excessive lateral forces, and the skid flag is turned on.
 
 Otherwise, $|\bar{\alpha}|$ is less than 3, and the Fiala tire model computes the lateral force, $F_y$, using a 3rd-order polynomial in $\bar{\alpha}$:
 
-$$F_y = -\mu_p F_z \left(\bar{\alpha} - \frac{\bar{\alpha}\,|\bar{\alpha}|}{3} + \frac{\bar{\alpha}^3}{27}\right)(1 + IsDual)$$
+$$F_y = -\mu_p F_z \left(\bar{\alpha} - \frac{\bar{\alpha}\,|\bar{\alpha}|}{3} + \frac{\bar{\alpha}^3}{27}\right)(1 + \delta_{dual})$$
 
 In this case, the tire is operating within its traction limits, and the skid flag is turned off.
 
@@ -95,11 +95,11 @@ $$\mu_{mod} = |\mu_s \cos(\alpha)|$$
 
 The attempted longitudinal wheel force, $F_x$ (see above), is compared to available force at the current slip angle, $\alpha$. This available force, $F_{max}$ (lb), is
 
-$$F_{max} = \mu_{mod} F_z (1 + IsDual)$$
+$$F_{max} = \mu_{mod} F_z (1 + \delta_{dual})$$
 
 If the attempted force, $F_x$, is less than $F_{max}$, the skid flag is turned off and the amount of longitudinal tire slip, $S$, is computed:
 
-$$\mu_x = \left| F_x / (F_z\,(1 + IsDual)) \right|$$
+$$\mu_x = \left| F_x / (F_z\,(1 + \delta_{dual})) \right|$$
 
 $$S = (\mu_x / \mu_p)\,\mu_{slip}$$
 
@@ -119,9 +119,12 @@ $$F_y = F_y \cdot Rolloff$$
 
 If the attempted longitudinal wheel force, $F_x$, is greater than $F_{max}$, the longitudinal slip exceeds the slip at $\mu_p$ and the tire is either locked (braking) or spinning (accelerating). The skid flag is turned on and the forward and lateral tire forces are:
 
-$$F_x = \mu_s \cos(\alpha) F_z (1 + IsDual)\,sign.fsx$$
+$$F_x = \mu_s \cos(\alpha) F_z (1 + \delta_{dual})\,s_{fx}$$
 
-$$F_y = -\mu_s \sin(\alpha) F_z (1 + IsDual)$$
+$$F_y = -\mu_s \sin(\alpha) F_z (1 + \delta_{dual})$$
+
+
+*(updated: hydroplaning is **not** modeled by EDVTS. Hydroplaning models (NASA, NASA-TTI, Gallaway) are available in HVE, but only through SIMON and EDSMAC4; EDVTS offers no Hydroplaning Model calculation option, and any water-related tire output variables it reports are unused placeholders. See [SIMON — Hydroplaning Model](../SIMON/04-calculation-method.md#hydroplaning-model).)*
 
 ### Antilock Model
 
@@ -131,15 +134,15 @@ The Vehicle Brake Model includes an antilock effectiveness coefficient, $\eta_a$
 
 The antilock model is only applicable if the attempted brake force, $F_x$, is greater than $F_{max}$ (see above). Under this condition, an additional amount of force, $\Delta F$, is generated because of the difference between $\mu_p$ and $\mu_s$. For longitudinal tire force:
 
-$$\Delta F_x = (\mu_p - \mu_s)\cos(\alpha)\,F_z\,sign.fsx\,(1 + IsDual)\,\eta_a$$
+$$\Delta F_x = (\mu_p - \mu_s)\cos(\alpha)\,F_z\,s_{fx}\,(1 + \delta_{dual})\,\eta_a$$
 
-$$F_x = (\mu_s F_z (1 + IsDual)\cos(\alpha)\,sign.fsx) + \Delta F_x$$
+$$F_x = (\mu_s F_z (1 + \delta_{dual})\cos(\alpha)\,s_{fx}) + \Delta F_x$$
 
 For lateral tire force:
 
-$$\Delta F_y = (F_y + \mu_s F_z (1 + IsDual)\sin(\alpha))\,\eta_a$$
+$$\Delta F_y = (F_y + \mu_s F_z (1 + \delta_{dual})\sin(\alpha))\,\eta_a$$
 
-$$F_y = -\mu_s F_z (1 + IsDual)\sin(\alpha) + \Delta F_y$$
+$$F_y = -\mu_s F_z (1 + \delta_{dual})\sin(\alpha) + \Delta F_y$$
 
 ## Assumptions
 

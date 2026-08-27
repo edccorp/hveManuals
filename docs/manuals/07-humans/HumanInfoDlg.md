@@ -53,7 +53,7 @@ A slider and edit field specifying the subject's standing height. The Options ra
 Intended to display the name of the GEBOD data file used to create a User-defined subject. Because User-defined subjects are not yet supported in the current build, these controls are inactive: the Filename field and Select button are disabled on all code paths, and the Select button performs no action.
 
 ---
-*Source topic: HumanInfoDlg.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

@@ -28,7 +28,7 @@ The printed Sixth Edition ended with a page-number index. Page numbers are meani
 ## C
 
 - Calculation Methods — [Ch. 4](04-calculation-method.md)
-- Calculation Options — [Ch. 2](02-program-input.md); code-verified reference: [CalcOptEDSVS](../../10-calculation-options/CalcOptEDSVS.md)
+- Calculation Options — [Ch. 2](02-program-input.md); current reference: [EDSVS Calculation Options](../../10-calculation-options/CalcOptEDSVS.md)
 - Calspan — [Ch. 4](04-calculation-method.md)
 - Case — [Ch. 5](05-tutorial.md); Saving the Case File — [Ch. 5](05-tutorial.md); Title — [Ch. 5](05-tutorial.md)
 - Center of Gravity (CG) — [Ch. 2](02-program-input.md). *See also* Vehicle Parameters, Move CG
@@ -72,7 +72,7 @@ The printed Sixth Edition ended with a page-number index. Page numbers are meani
 ## G
 
 - Geometry File — [Ch. 2](02-program-input.md), [Ch. 5](05-tutorial.md). *See also* Environment, Vehicle, Sprung Mass
-- GetSurfaceInfo — [Ch. 2](02-program-input.md), [Ch. 6](06-messages.md); options now in the [Get Surface Information Options dialog](../../10-calculation-options/CalcOptEDSVS.md)
+- Get Surface Information — [Ch. 2](02-program-input.md), [Ch. 6](06-messages.md); options now in the [Get Surface Information Options dialog](../../10-calculation-options/CalcOptEDSVS.md)
 - Graphic Reports — [Ch. 3](03-program-output.md), [Ch. 5](05-tutorial.md). *See also* Output Reports
 - Gravitational Constant — [Ch. 2](02-program-input.md), [Ch. 5](05-tutorial.md)
 

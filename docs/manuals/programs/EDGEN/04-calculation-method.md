@@ -26,7 +26,7 @@ The time, $dt$, from $s_i$ to $s_{i+1}$ (and from $v_i$ to $v_{i+1}$) is:
 
 $$dt = \frac{dv}{a} = \frac{v_{i+1} - v_i}{a_i}$$
 
-*(Updated: in the current code the segment time is computed equivalently and more robustly as $\Delta t = 2\,\Delta s_{total} / (v_{0,total} + v_{1,total})$ — see `ComputeLinearData()` in `Physics/Source/Edgen/genlinear.cpp` and `ComputeSplineData()` in `genspline.cpp`.)*
+*(Updated: the current release computes the segment time equivalently, and more robustly, as $\Delta t = 2\,\Delta s_{total} / (v_{0,total} + v_{1,total})$. This applies to both the Linear Interpolation and 3-D Spline Interpolation path models.)*
 
 In general, given constant $a$, during time interval $dt$, the current velocity, $v$, and position, $s$, are:
 
@@ -48,7 +48,7 @@ The time interval between positions is defined by the change in linear velocitie
 - The system is over-determined. Angular acceleration between two user-entered angular velocities cannot be calculated because the time increment is fixed.
 - To solve the dilemma posed by the first two observations, the assumption is made that the angular acceleration between positions $i$ and $i+1$ is zero, and the angular velocity between positions $i$ and $i+1$ is constant.
 
-*(Updated: the code computes the constant angular velocity for each segment directly from the entered angular positions, $\dot{s}_{ang} = (s_{ang,i+1} - s_{ang,i})/(t_{i+1} - t_i)$; any user-entered angular velocities are overwritten. See `genlinear.cpp`.)*
+*(Updated: the current release computes the constant angular velocity for each segment directly from the entered angular positions, $\dot{s}_{ang} = (s_{ang,i+1} - s_{ang,i})/(t_{i+1} - t_i)$; any user-entered angular velocities are overwritten.)*
 
 Finally, the angular position of an object relative to the earth-fixed coordinate system is defined by two angles, $\nu$ and $\alpha$, such that:
 
@@ -82,15 +82,15 @@ $$s_z(t) = s_{z,i-1} + v_{total,i-1}\sin\alpha\,(t - t_{i-1}) + \tfrac{a_{total}
 
 ## Path Interpolation Options
 
-*(Updated: this section reflects the current source code. The equations above describe the default **Linear Interpolation** path model, `PathOption = 0` (`LINEAR`), implemented in `ComputeLinearData()` in `Physics/Source/Edgen/genlinear.cpp`.)*
+*(Updated: this section reflects the current release. The equations above describe the default **Linear Interpolation** path model.)*
 
-When the **3-D Spline Interpolation** path model is selected (`PathOption = 1`, `SPLINE`, implemented in `InitializeSpline()` and `ComputeSplineData()` in `Physics/Source/Edgen/genspline.cpp`), EDGEN instead:
+When the **3-D Spline Interpolation** path model is selected instead, EDGEN:
 
-- Fits a 3-D spline through the user-entered positions (`Spline3D()`), producing a smooth, continuous path that is tangent-continuous at each node.
-- Computes each segment's path length along the curve, `PathLength[i-1]`, and uses it (instead of the straight-line distance) to determine the segment time: $t_i = 2\,\Delta s / (v_{0,total} + v_{1,total}) + t_{i-1}$ and constant total acceleration $a_{total}$.
-- At each timestep, evaluates the current distance travelled along the curve, then walks along the spline (using de Casteljau evaluation, `deCast()`, at up to 2000 sample points per segment in 1-inch increments) to locate the current position $X, Y, Z$ directly on the curve.
+- Fits a 3-D spline through the user-entered positions, producing a smooth, continuous path that is tangent-continuous at each node.
+- Computes each segment's path length along the curve and uses it (instead of the straight-line distance) to determine the segment time: $t_i = 2\,\Delta s / (v_{0,total} + v_{1,total}) + t_{i-1}$ and constant total acceleration $a_{total}$.
+- At each timestep, evaluates the current distance travelled along the curve, then walks along the spline (using de Casteljau evaluation at up to 2000 sample points per segment, in 1-inch increments) to locate the current position $X, Y, Z$ directly on the curve.
 - Computes the course and zenith angles from the local path tangent vector, $\nu = \mathrm{atan2}(T_y, T_x)$ and $\alpha = \mathrm{atan2}(T_z, \sqrt{T_x^2 + T_y^2})$, rather than from the straight chord between positions.
-- Applies the same velocity/acceleration resolutions ($v_x, v_y, v_z, a_x, a_y, a_z$ via $\beta$ and $\alpha$) and the same constant-angular-velocity treatment as the linear model, with one difference: in spline mode the user-entered sideslip angle is folded into the node's yaw orientation before interpolation (`s[...][5] += SlipAngle`, `Geninput.cpp:162-163` for vehicles, `251-252` for humans). The linear model does not apply this offset.
+- Applies the same velocity/acceleration resolutions ($v_x, v_y, v_z, a_x, a_y, a_z$ via $\beta$ and $\alpha$) and the same constant-angular-velocity treatment as the linear model, with one difference: in spline mode the user-entered sideslip angle is added to each node's yaw orientation before interpolation, for both vehicles and humans. The linear model does not apply this offset.
 
 See [Calculation Options](02-program-input.md#calculation-options) and the dialog reference [Calculation Options for EDGEN](../../10-calculation-options/CalcOptEDGENDlg.md).
 

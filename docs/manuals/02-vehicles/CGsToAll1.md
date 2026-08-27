@@ -20,7 +20,7 @@ Displays the stiffness dialog for the back surface. In 3-D mode this is the Vehi
 Applies the entered dimension to the vehicle without closing the dialog. OK applies the value and closes the dialog; Cancel reverts the vehicle to its original dimensions and stiffness.
 
 ---
-*Source topic: CGsToAll1.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

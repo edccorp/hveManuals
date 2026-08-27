@@ -12,7 +12,7 @@ Errors issued by EDVTS appear in the EDVTS output and may be one of three types:
 
 All messages issued by EDVTS are listed below. Each message includes a description or nature of the cause, the level of the message (Informative, Diagnostic or Fatal), and the recommended action to eliminate the problem. If you receive an error message not listed below, first check to see if it is an HVE-2D or operating system message by referring to the User's Manual Appendix or your computer's operating system manual. If the message is not listed in either place, please contact EDC with the offending error.
 
-*(updated: The message catalog below was verified against the current EDVTS message resources in `Physics/Source/Edvts/EDVTS.rsc`. The six messages from the printed manual — Msg1 through Msg6 — are unchanged. One message, Msg7, has been added since the printed edition; it is documented at the end of this chapter.)*
+*(updated: the six messages from the printed manual are unchanged in the current version. One additional message has been added since the printed edition; it is documented at the end of this chapter.)*
 
 ---
 
@@ -28,15 +28,15 @@ This message occurs when EDVTS calculates a negative vertical tire load, Fz. EDV
 
 **(Level 1 - Fatal)**
 
-This message occurs when the vehicle travels over a surface with a significant slope. At each timestep, EDVTS uses GetSurfaceInfo() to determine the current roll and pitch angles. If either of these angles exceeds the allowable value, the run terminates. The termination reflects the fact that the small angle assumption is used, and the error may become significant.
+This message occurs when the vehicle travels over a surface with a significant slope. At each timestep, EDVTS uses the Get Surface Information search to determine the current roll and pitch angles. If either of these angles exceeds the allowable value, the run terminates. The termination reflects the fact that the small angle assumption is used, and the error may become significant.
 
 ---
 
-*The simulation was terminated because GetSurfaceInfo() failed.*
+*The simulation was terminated because GetSurfaceInfo() failed*
 
 **(Level 1 - Fatal)**
 
-This message occurs if GetSurfaceInfo() failed to return a valid surface elevation. EDVTS should not return this condition; contact EDC if it occurs.
+This message occurs if the Get Surface Information search failed to return a valid surface elevation. EDVTS should not return this condition; contact EDC if it occurs.
 
 ---
 

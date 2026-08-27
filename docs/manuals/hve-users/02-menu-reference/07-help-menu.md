@@ -1,6 +1,6 @@
 # Chapter 7: Help Menu
 
-*HVE User's Manual — Section Two: Menu Reference. Updated edition, verified against current HVE source code (HVEINV-64).*
+*HVE User's Manual — Section Two: Menu Reference. Updated edition, revised for the current HVE release.*
 
 The Help Menu contains the following options:
 

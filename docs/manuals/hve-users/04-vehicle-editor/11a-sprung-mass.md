@@ -68,40 +68,40 @@ updates the rotational inertias when the weight is changed.
 ![Figure 11-2 (Complex)](../images/p345-199.png)
 *Figure 11-2: Vehicle Inertias dialog, Basic and Complex versions.*
 
-See also the code-verified reference page,
+See also the reference page,
 [Vehicle Inertia dialog](../../02-vehicles/VehInerDlg.md).
 
 The Inertial Properties dialog performs a number of calculations, depending
 on which values the user edits.
 
-If the sprung weight, `W_S`, is edited, the total weight, `W_T`, is updated:
+If the sprung weight, $W_{S}$, is edited, the total weight, $W_{T}$, is updated:
 
-    W_T = W_S + Σ(n=1..NumAxles) W_U
+$$W_T = W_S + \sum_{n=1}^{NumAxles} W_U$$
 
-where `W_U` = unsprung weight of each wheel (plus axle for solid axle
+where $W_{U}$ = unsprung weight of each wheel (plus axle for solid axle
 suspensions).
 
-If the total weight, `W_T`, is edited, the sprung weight, `W_S`, is updated:
+If the total weight, $W_{T}$, is edited, the sprung weight, $W_{S}$, is updated:
 
-    W_S = W_T − Σ(n=1..NumAxles) W_U
+$$W_S = W_T - \sum_{n=1}^{NumAxles} W_U$$
 
-If the sprung rotational inertia, `I_Sx`, `I_Sy` or `I_Sz` (roll, pitch or
-yaw, respectively), is edited, the total rotational inertia, `I_Tx`, `I_Ty`
-or `I_Tz`, is updated using the parallel axis theorem:
+If the sprung rotational inertia, $I_{Sx}$, $I_{Sy}$ or $I_{Sz}$ (roll, pitch or
+yaw, respectively), is edited, the total rotational inertia, $I_{Tx}$, $I_{Ty}$
+or $I_{Tz}$, is updated using the parallel axis theorem:
 
     I_T = I_S + Σ(n=1..NumAxles) (I_U + m_U * r_U²)
 
 where
 
-- `I_U` = rotational inertia of each wheel (and axle for solid axle
+- $I_{U}$ = rotational inertia of each wheel (and axle for solid axle
   suspensions) about its own x, y or z axis
 - `m_U` = mass of each wheel (plus axle for solid axle suspensions)
 - `r_U` = orthogonal distance from vehicle sprung mass CG to unsprung mass
   CG.
 
-Similarly, if the total rotational inertia, `I_Tx`, `I_Ty` or `I_Tz` (roll,
+Similarly, if the total rotational inertia, $I_{Tx}$, $I_{Ty}$ or $I_{Tz}$ (roll,
 pitch or yaw, respectively), is edited, the sprung rotational inertia,
-`I_Sx`, `I_Sy` or `I_Sz`, is updated using the parallel axis theorem:
+$I_{Sx}$, $I_{Sy}$ or $I_{Sz}$, is updated using the parallel axis theorem:
 
     I_S = I_T − Σ(n=1..NumAxles) (I_U + m_U * r_U²)
 
@@ -115,17 +115,17 @@ are:
 
 where
 
-- `I_S0` = sprung rotational inertia before editing sprung weight
-- `W_S0` = sprung weight before editing
+- $I_{S0}$ = sprung rotational inertia before editing sprung weight
+- $W_{S0}$ = sprung weight before editing
 
-The total rotational inertias, `I_T`, are then calculated using the parallel
+The total rotational inertias, $I_{T}$, are then calculated using the parallel
 axis theorem, as shown above.
 
 b) If the total weight is edited, the updated total rotational inertias are:
 
     I_T = I_T0 * (W_T / W_T0)
 
-The sprung rotational inertias, `I_S`, are then calculated using the
+The sprung rotational inertias, $I_{S}$, are then calculated using the
 parallel axis theorem, as shown above.
 
 To display or edit the current vehicle's inertial properties, perform the
@@ -184,7 +184,7 @@ inertia may be edited.)*
 The default CG (center of gravity) location of the vehicle sprung mass is
 determined from raw data (e.g., measured or table values). The user may
 choose to edit the CG location using the Move CG dialog. See also the
-code-verified reference page, [Move CG dialog](../../02-vehicles/MoveCGDlg.md).
+reference page, [Move CG dialog](../../02-vehicles/MoveCGDlg.md).
 
 > **NOTE:** The default location of the CG is determined by the wheel
 > locations (which are defined relative to the CG). Refer to the Wheel
@@ -824,7 +824,7 @@ The Inter-vehicle Connection Properties are described below.
 
 The vehicle drag associated with aerodynamic pressure. The Aerodynamic Drag
 dialog allows the user to view or edit these properties. See also the
-code-verified reference page,
+reference page,
 [Aerodynamic Drag dialog](../../02-vehicles/VehDragDlg.md).
 
 ![Figure 11-17](../images/p375-210.png)
@@ -880,7 +880,7 @@ of the body. By default, the body is assumed to be rigid. However, the user
 may wish to edit these default parameters, if the actual torsional stiffness
 of the body is known, to study the effect of torsional distortion on vehicle
 handling. The Body Torsion dialog is used to edit these properties. See also
-the code-verified reference page,
+the reference page,
 [Body Torsion dialog](../../02-vehicles/BodyTorDlg.md).
 
 ![Figure 11-18](../images/p377-211.png)
@@ -906,8 +906,8 @@ steps:
 
 ---
 *Source: HVE User's Manual (Version 5, Seventh Edition, Jan 2006), Chapter
-11, pages 11-1..11-35 — updated against source code (HVEINV-64, Physics)
-2026-07-05.*
+11, pages 11-1..11-35 — revised for the current HVE
+release, 2026-07-05.*
 
 <!-- NAV -->
 

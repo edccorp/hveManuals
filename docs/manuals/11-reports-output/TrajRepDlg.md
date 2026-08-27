@@ -7,7 +7,7 @@ The window consists of a single 3-D render area showing the animated event; it h
 The motion in the Trajectory Simulation window is controlled using the Playback Controller (play, stop, step and the time slider on the toolbar). When more than one Trajectory Simulation window is open, the playback controls act on the currently active window. Only one Trajectory Simulation window may be opened per event.
 
 ---
-*Source topic: TrajRepDlg.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

@@ -15,7 +15,7 @@ When checked, the driver model's steering output is passed through a neuro-muscu
 Each parameter is entered with a slider or by typing directly into the associated edit field.
 
 ---
-*Source topic: DriverControls6.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

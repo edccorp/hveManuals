@@ -31,7 +31,7 @@ The gear selected at each shift time. For the transmission table the available c
 For the differential table the choices are the ratios (ranges) defined for the vehicle's differential.
 
 ---
-*Source topic: DriverControls5.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

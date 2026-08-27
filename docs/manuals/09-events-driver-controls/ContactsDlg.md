@@ -30,7 +30,7 @@ Some simulation models define the human ellipsoid and vehicle contact surface ma
 **OK** saves the contact selections to the current event; **Cancel** discards all changes.
 
 ---
-*Source topic: ContactsDlg.htm — updated from source code (HVEINV-64, Physics) 2026-07-05.*
+*Updated to match the current version of HVE.*
 
 <!-- NAV -->
 

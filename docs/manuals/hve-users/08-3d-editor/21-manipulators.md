@@ -15,7 +15,7 @@ The types of handles and resulting object modifications depend on the current ma
 - **Rotation** — The entire object is rotated, normally about a single axis of rotation. The specific rotation axis depends on the manipulator.
 - **Scale** — The object is scaled (stretched or shortened) in a selected direction.
 
-The specific manipulators available in the 3-D Editor are as follows (see also the code-verified [3-D Editor Menu](../../01-user-interface/3dEditor.md) reference):
+The specific manipulators available in the 3-D Editor are as follows (see also the [3-D Editor Menu](../../01-user-interface/3dEditor.md) reference):
 
 - **Direct** — No manipulator is used. Instead, the user clicks directly on the object and moves it.
 - **Trackball** — 3-D rotation of the selected object; no translation.
@@ -153,7 +153,7 @@ To use the TabBox manipulator, perform the following steps:
 The object position and scale are updated.
 
 ---
-*Converted and updated from the legacy HVE User's Manual (Seventh Edition, Jan 2006), Chapter 21; verified against current source code (HVEINV-64, SceneViewer) and the code-verified 3-D Editor menu reference 2026-07-05.*
+*Converted and updated from the legacy HVE User's Manual (Seventh Edition, Jan 2006), Chapter 21; revised to match the current version of HVE, 2026-07-05.*
 
 <!-- NAV -->
 

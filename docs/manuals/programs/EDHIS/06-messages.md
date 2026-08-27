@@ -12,7 +12,7 @@ Errors issued by EDHIS appear in the EDHIS output and may be one of three types:
 
 All messages issued by EDHIS are listed below. Each message includes a description or nature of the cause, the level of the message (Informative, Diagnostic or Fatal), and the recommended action to eliminate the problem. If you receive an error message not listed below, first check to see if it is an HVE or operating system message by referring to the HVE Appendix or your computer's operating system manual. If the message is not listed in either place, please contact EDC immediately with the offending error message and the input file that caused the error.
 
-*(updated: this list has been verified against, and extended from, the current message resources in `Physics/Source/Edhis/EDHIS.rsc`. Messages 10 and 14–19 below exist in the current code but were not listed in the original manual.)*
+*(updated: this list has been checked against, and extended from, the messages issued by the current release. Messages 10 and 14–19 below are issued by the current release but were not listed in the original manual.)*
 
 ---
 
@@ -76,9 +76,9 @@ No messages were produced; no action is necessary.
 
 ---
 
-*The simulation was terminated because GetSurfaceInfo() failed.*
+*The simulation was terminated because the Get Surface Information terrain search failed.*
 
-(Level 1 - Fatal) *(updated: present in current code; not listed in original manual)*
+(Level 1 - Fatal) *(updated: issued by the current release; not listed in the original manual)*
 
 ---
 

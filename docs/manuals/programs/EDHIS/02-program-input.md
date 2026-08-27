@@ -123,7 +123,7 @@ The Human Injury Tolerance Data used by EDHIS are shown in Table 2-2. These valu
 | Maximum Torso Belt Force (Left, Right) | Injury tolerance for torso belt force, entered separately for the left and right torso belt sections |
 | Maximum Lap Belt Force (Left, Right) | Injury tolerance for lap belt force, entered separately for the left and right lap belt sections |
 
-*(updated: in the current HVE human model (`Physics/Include/HUMAN.H`, `HumanTolerance`), the belt injury tolerances are stored as four separate values — `LeftLap`, `LeftTorso`, `RightLap`, `RightTorso` — rather than the single combined torso and lap values described in the original manual.)*
+*(updated: in the current HVE human model the belt injury tolerances are entered as four separate values — left lap, left torso, right lap and right torso — rather than the single combined torso and lap values described in the original manual.)*
 
 ## Vehicles
 
@@ -497,7 +497,7 @@ EDHIS uses the current simulation control parameters in the Simulation Controls 
 
 #### EDHIS Calculation Options
 
-EDHIS has the following user-selectable simulation model options (see the code-verified page [Calculation Options for EDHIS](../../10-calculation-options/CalcOptionsEDHIS.md) for full details and internal variable names):
+EDHIS has the following user-selectable simulation model options (see [Calculation Options for EDHIS](../../10-calculation-options/CalcOptionsEDHIS.md) for full details, defaults and allowed ranges):
 
 - **Integration Method (Start)** — A radio button providing three types of numerical integration methods used to start the solution: *Euler*, *Modified Runge-Kutta* (default) and *Runge-Kutta*.
 - **Predictor-Corrector Method** — A radio button providing two types of predictor-corrector methods: *Adams-Moulton* and *Milne-Hamming* (default).
@@ -507,7 +507,7 @@ EDHIS has the following user-selectable simulation model options (see the code-v
 - **Minimum Acceleration** — Setting a non-zero value acts like a filter to remove tiny, non-zero values resulting from roundoff or loss of numerical precision. Default: 0.0000001 (1.0e-7).
 - **Minimum Time Criterion (sec)** — The minimum time precision (time epsilon) used by the integration and output control logic. If entered as 0.0 (the default), EDHIS computes the value automatically.
 
-*(updated: the original manual listed an "Integration Weights" option; the current dialog instead provides the Minimum Time Criterion entry described above. Note also that in the current physics source (`Hisinput.cpp`) the two numeric entries are read in swapped order and the internal time epsilon `dtmin` is then hard-coded to 1.0e-7 — see the discrepancy note in [Calculation Options for EDHIS](../../10-calculation-options/CalcOptionsEDHIS.md).)*
+*(updated: the original manual listed an "Integration Weights" option; the current dialog instead provides the Minimum Time Criterion entry described above. Note also that the two numeric entries are read in swapped order, and the minimum time criterion actually used is then fixed internally at 1×10⁻⁷ sec regardless of the value entered — see the discrepancy note in [Calculation Options for EDHIS](../../10-calculation-options/CalcOptionsEDHIS.md).)*
 
 To view and edit these options, click on the menu bar *Options* option and choose *Calculation Options*.
 

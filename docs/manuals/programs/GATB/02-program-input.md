@@ -92,13 +92,13 @@ The Human Inertial Data used by GATB are shown in Table 2-3. This data is obtain
 
 **Table 2-3: List of Inertial Data used in GATB**
 
-*(updated: the table body was blank in the printed manual; the parameters above are the per-segment inertial data defined in `Physics/Include/HUMAN.H` — `SegmentInertia { Mass; RotInertia[3]; }` — and shown in the GATB Human Data output report.)*
+*(updated: the table body was blank in the printed manual; the parameters above are the per-segment inertial data carried by the HVE human — the segment mass together with its three principal rotational inertias — and shown in the GATB Human Data output report.)*
 
 ### Ellipsoids
 
 Ellipsoids are used for predicting contact forces between the human and vehicle. Penetration of an ellipsoid into a vehicle contact surface results in the calculation of force on the human.
 
-The Human Ellipsoid Data used by GATB are shown in Table 2-4. HVE allows up to 3 ellipsoids per HVE segment. *(updated: the original manual marked this "Not Implemented Yet"; the current human structure in `HUMAN.H` implements up to 3 contact ellipsoids per segment — `MAXELLIPSOIDSPERSEGMENT` = 3.)*
+The Human Ellipsoid Data used by GATB are shown in Table 2-4. HVE allows up to 3 ellipsoids per HVE segment. *(updated: the original manual marked this "Not Implemented Yet"; the current HVE human implements up to 3 contact ellipsoids per segment.)*
 
 > **NOTE:** If principal axes are rotated and you choose to show contact surfaces, you will not be looking at a true picture of the human-vehicle interaction. However, the forces will be correctly calculated according to the inputs being considered.
 
@@ -111,7 +111,7 @@ The Human Ellipsoid Data used by GATB are shown in Table 2-4. HVE allows up to 3
 
 **Table 2-4: List of Ellipsoid Data used in GATB**
 
-*(updated: the printed table listed only the Ellipsoid Name row; the center coordinates, semiaxes and principal-axis rows above are the ellipsoid data actually carried in `HUMAN.H` — `SegmentEllipsoid { EllipsoidName; Coord[3]; Length[3]; PrincipalAxes[3]; Material; }` — and echoed in the GATB Human Data report.)*
+*(updated: the printed table listed only the Ellipsoid Name row; the center coordinates, semiaxes and principal-axis rows above are the ellipsoid data actually carried by the HVE human — the ellipsoid name, its center coordinates, its three semi-axis lengths, its principal-axis orientation and its contact material — and echoed in the GATB Human Data report.)*
 
 ### Joints
 
@@ -126,7 +126,7 @@ Joints are used to connect together each of the 15 segments. The Human Joint Dat
 
 **Table 2-5: Human Joint Parameters used in GATB**
 
-*(Cross-reference: the full set of joint properties available in HVE — joint type, stop angles and elasticities in both directions, energy dissipation, linear/quadratic/cubic elastic coefficients, damping, and injury tolerance angles — is described in [Human Joint Properties Dialog](../../07-humans/HumJntPropDlg.md). Each segment may carry up to 4 joints — `MAXJOINTSPERSEGMENT` = 4 in `HUMAN.H`.)*
+*(Cross-reference: the full set of joint properties available in HVE — joint type, stop angles and elasticities in both directions, energy dissipation, linear/quadratic/cubic elastic coefficients, damping, and injury tolerance angles — is described in [Human Joint Properties Dialog](../../07-humans/HumJntPropDlg.md). Each segment may carry up to 4 joints.)*
 
 ## Vehicle
 
@@ -227,7 +227,7 @@ A belt restraint system may be supplied for up to nine seat positions. Although 
 
 **Table 2-7: HVE belt restraint data used in GATB**
 
-*(Code note: each belt system has separate left and right lap and torso sections; the human's belt injury tolerances are likewise stored as separate Left/Right Lap and Torso values — `HumanTolerance { ... LeftLap; LeftTorso; RightLap; RightTorso; }` in `HUMAN.H`.)*
+*(Note: each belt system has separate left and right lap and torso sections; the human's belt injury tolerances are likewise carried as separate left lap, left torso, right lap and right torso values.)*
 
 ### Airbag Restraints
 
