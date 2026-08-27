@@ -107,7 +107,7 @@ Default: Off. Choices:
 
   The friction multiplier is applied to both the peak and sliding friction coefficients taken from the tire's friction tables, so hydroplaning reduces the tire force available longitudinally *and* laterally — braking, drive traction and cornering capability are all lost together.
 
-  > **NOTE:** The model also returns a rolling-resistance multiplier, but all of the implemented hydroplaning models currently return a value of 1.0, so the extra drag of displacing water is not modeled. The friction reduction described above is the model's actual effect.
+  > **NOTE:** The friction reduction described above is the whole of the model's effect. The extra drag of displacing water is not modeled.
 
 (HVE also provides NASA-TTI and Gallaway hydroplaning models — both offered by SIMON, see [SIMON — Hydroplaning Model](../programs/SIMON/04-calculation-method.md#hydroplaning-model) — and a Blythe-Day model that is not implemented in any program. Only Off and NASA appear in the EDSMAC4 dialog; any other selection is rejected with a fatal error and the event will not run.)
 

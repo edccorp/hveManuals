@@ -34,8 +34,7 @@ following are true:
 Notes:
 
 - If *Include Environment* is off, or the environment has no tessellated mesh,
-  the environment start time is internally set to $1.0\times10^{8}$ s, so
-  environment contact never occurs.
+  wheel-environment contact never occurs.
 - With **Auto Start** checked on the Damage tab, the wheel participates
   immediately; with an explicit start time the wheel joins the collision model
   only after that time.

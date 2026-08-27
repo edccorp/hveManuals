@@ -194,7 +194,7 @@ An example of a Variable Output table is shown in Figure 3-10. Detailed listings
 | Connection Data | $\Phi$, $\Theta$, $\Psi$ articulation; $F_x$, $F_y$, $F_z$; $M_x$, $M_y$, $M_z$ |
 | Drivetrain Data | Engine speed; Engine power; Engine torque; Transmission ratio; Differential ratio |
 
-*(updated: when a hydroplaning model is active, the Water Depth, Macrotexture and water friction-multiplier tire tracks are populated; the Rolling Resist Mult, Fx' (water) and Fy' (water) tracks are declared but not currently written. See [Chapter 4 — Hydroplaning Model](04-calculation-method.md#hydroplaning-model).)*
+*(updated: when a hydroplaning model is active, the Water Depth, Macrotexture and water friction-multiplier tire tracks are populated. The Rolling Resist Mult, Fx' (water) and Fy' (water) tracks are not used. See [Chapter 4 — Hydroplaning Model](04-calculation-method.md#hydroplaning-model).)*
 
 **Table 3-3 Vehicle Driver Variable Output Table**
 

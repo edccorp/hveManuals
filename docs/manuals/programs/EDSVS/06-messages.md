@@ -12,7 +12,7 @@ Errors issued by EDSVS appear in the EDSVS output and may be one of three types:
 
 All messages issued by EDSVS are listed below. Each message includes a description or nature of the cause, the level of the message (Informative, Diagnostic or Fatal), and the recommended action to eliminate the problem. If you receive an error message not listed below, first check to see if it is an HVE-2D, HVE or operating system message by referring to the User's Manual Appendix or your computer's operating system manual. If the message is not listed in either place, please contact EDC with the offending error.
 
-*(updated: the current EDSVS message catalog contains exactly the four messages listed below; none have been added or removed since the Sixth Edition, and all four are Level 1 (Fatal) run-termination messages — the Diagnostic and Informative levels are defined but presently unused by EDSVS.)*
+*(updated: the current EDSVS message catalog contains exactly the four messages listed below; none have been added or removed since the Sixth Edition, and all four are Level 1 (Fatal) run-termination messages.)*
 
 ## Message Catalog
 

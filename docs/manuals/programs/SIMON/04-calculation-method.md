@@ -1941,7 +1941,7 @@ following ways:
 The original EDC semi-empirical tire model has also been extended to include a circumferential tire moment from rolling resistance. The rolling resistance moment, $M_{Rolling}$, is given by
 
 $$
-M_{Rolling} = r\left(\sigma_0 F_R + \sigma_v \left|u_{GP}\right|\right)\cdot\left(-\mathrm{sgn}(\Omega)\right)\cdot R_{rMult}
+M_{Rolling} = r\left(\sigma_0 F_R + \sigma_v \left|u_{GP}\right|\right)\cdot\left(-\mathrm{sgn}(\Omega)\right)
 \qquad (\text{Eq. 114})
 $$
 
@@ -1955,9 +1955,8 @@ where
 | $F_R$ | Radial tire force |
 | $u_{GP}$ | Forward component of tire velocity in ground plane |
 | $\Omega$ | Wheel spin angular velocity |
-| $R_{rMult}$ | Rolling-resistance multiplier applied by the hydroplaning model (unity when no hydroplaning is active) |
 
-The $-\mathrm{sgn}(\Omega)$ factor makes the moment resist wheel rotation, and the $R_{rMult}$ factor scales rolling resistance according to the selected hydroplaning model. (For $\left|\Omega\right| < $ a minimum spin threshold the moment is linearly ramped toward zero to avoid chatter.)
+The $-\mathrm{sgn}(\Omega)$ factor makes the moment resist wheel rotation. For $\left|\Omega\right|$ below a minimum spin threshold the moment is linearly ramped toward zero to avoid chatter.
 
 The rolling resistance moment contributes to the equations of motion for the wheel spin degree of freedom (see Eqs. 27 through 32).
 
@@ -1980,7 +1979,7 @@ The hydroplaning model is chosen in the SIMON Calculation Options dialog
 
 | Option | Notes |
 | --- | --- |
-| Off | Default. Friction is the dry-surface value and $R_{rMult} = 1$. |
+| Off | Default. Friction is the dry-surface value. |
 | NASA | NASA (Horne/Borne) spin-down model. |
 | NASA-TTI | Modified NASA model including contact-patch aspect ratio. |
 | Gallaway | Gallaway/TTI model including water depth and pavement macrotexture. |
@@ -2069,8 +2068,8 @@ V = SD^{0.04}\,P^{0.3}\,(TD + 1)^{0.06}\,A
 $$
 
 where $TD$ is the tread depth expressed in 32nds of an inch
-($TD = 32\,d_t$), $SD$ is the tire spin-down percentage, and $A$ is the larger
-of two water-depth/texture terms:
+($TD = 32\,d_t$), $SD$ is the tire spin-down percentage, which is 10 percent,
+and $A$ is the larger of two water-depth/texture terms:
 
 $$
 A = \max\left(A_1,\; A_2\right)
@@ -2092,16 +2091,16 @@ $$
 
 (the factor 17.6 converts $V$ from mph to in/sec).
 
-> **NOTE:** The spin-down percentage $SD$ is currently **fixed at 10 percent**.
-> The Gallaway threshold therefore does not presently vary with the tire's
-> actual longitudinal slip.
-
 ### Effect on the tire forces
 
-Each model returns a friction multiplier and a rolling-resistance multiplier
-for the tire:
-
-- **Friction multiplier ($F_{Mult}$).** This is the terrain friction multiplier that scales the tire's friction coefficients. The surface-information search returns two values for every tire: a multiplier for the Road, Friction Zone or Curb polygon under the tire, and a second multiplier taken from the material friction of the **Water** polygon under the tire. Below the threshold speed the hydroplaning model returns the first (dry-surface) value; at or above the threshold it returns the water value. The returned multiplier is applied directly to *both* the peak and sliding friction coefficients interpolated from the tire's friction tables:
+Each model returns the friction multiplier, $F_{Mult}$, that scales the tire's
+friction coefficients. Two multipliers are available for every tire: one for
+the Road, Friction Zone or Curb polygon under the tire, and a second taken from
+the material friction of the **Water** polygon under the tire. Below the
+threshold speed the hydroplaning model returns the first (dry-surface) value;
+at or above the threshold it returns the water value. The returned multiplier
+is applied to *both* the peak and sliding friction coefficients interpolated
+from the tire's friction tables:
 
 $$
 \mu_{peak} = F_{Mult}\,\mu_p(F_z, u)
@@ -2109,11 +2108,12 @@ $$
 \mu_{slide} = F_{Mult}\,\mu_s(F_z, u)
 $$
 
-  Because $\mu_{peak}$ and $\mu_{slide}$ set the ceiling on the shear force the contact patch can develop, substituting the (much lower) water friction for the pavement friction reduces the tire force available in *every* direction. Longitudinal force is lost, so braking and drive traction fall away; lateral force is lost, so the tire can no longer generate the side force needed to hold a curve or resist yaw. This is the entire mechanism by which hydroplaning affects the simulated vehicle.
+Because $\mu_{peak}$ and $\mu_{slide}$ set the ceiling on the shear force the contact patch can develop, substituting the (much lower) water friction for the pavement friction reduces the tire force available in *every* direction. Longitudinal force is lost, so braking and drive traction fall away; lateral force is lost, so the tire can no longer generate the side force needed to hold a curve or resist yaw. This loss of available friction is the entire mechanism by which hydroplaning affects the simulated vehicle; the extra drag of displacing water is not modeled.
 
-  > **NOTE:** If no water polygon lies under the tire, the water multiplier is set equal to the dry-surface multiplier. The hydroplaning branch is then numerically identical to the non-hydroplaning branch, which is why hydroplaning has no effect unless the environment actually contains water polygons beneath the tire path.
-
-- **Rolling-resistance multiplier ($R_{rMult}$).** This value appears in the rolling-resistance moment (see Eq. 114). *All three models currently return $R_{rMult} = 1.0$*, so the additional drag of displacing water is not presently modeled; the multiplier exists so that a future model can add it. Note that this is a separate, secondary effect — the loss of available friction described above is unaffected by it.
+> **NOTE:** If no water polygon lies under the tire, the water multiplier is
+> the same as the dry-surface multiplier, so selecting a hydroplaning model has
+> no effect unless the environment actually contains water polygons beneath the
+> tire path.
 
 Because the transition is a threshold test evaluated per tire per timestep, an
 individual tire may enter and leave hydroplaning repeatedly during an event —
@@ -2139,8 +2139,7 @@ When a hydroplaning model is active, SIMON also fills the water-related tire
 output tracks — *Water Depth*, *Macrotexture* and the water friction multiplier
 — which can be plotted or tabulated in a Variable Output report (see
 [Chapter 3](03-program-output.md)). The *Rolling Resist Mult*, *Fx' (water)* and
-*Fy' (water)* tracks are declared but are not currently populated, consistent
-with $R_{rMult}$ being held at unity.
+*Fy' (water)* tracks are not used.
 
 ## Suspension Force
 

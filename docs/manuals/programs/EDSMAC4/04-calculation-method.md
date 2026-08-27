@@ -61,7 +61,7 @@ EDSMAC4 models quasi-static longitudinal and lateral load transfers. This is acc
 
 EDSMAC4's vehicle model allows the user to study vehicles with tandem axles and dual tires.
 
-*(updated: when the **Hydroplane Model** calculation option is set to NASA, the available tire friction is further modified at each tire travelling over a water polygon. The NASA model predicts the hydroplaning speed from the tire's inflation pressure ($182.16\sqrt{P}$ in/sec, $P$ in lb/in²); above that speed the tire's friction switches to the water polygon's friction value. A rolling-resistance multiplier is also applied but is currently always unity. See [EDSMAC4 Calculation Options](../../10-calculation-options/CalcOptEDSMAC4.md#hydroplane-model).)*
+*(updated: when the **Hydroplane Model** calculation option is set to NASA, the available tire friction is further modified at each tire travelling over a water polygon. The NASA model predicts the hydroplaning speed from the tire's inflation pressure ($182.16\sqrt{P}$ in/sec, $P$ in lb/in²); above that speed the tire's friction switches to the water polygon's friction value. The extra drag of displacing water is not modeled. See [EDSMAC4 Calculation Options](../../10-calculation-options/CalcOptEDSMAC4.md#hydroplane-model).)*
 
 ## Assumptions
 
