@@ -1863,42 +1863,79 @@ $$
 \qquad (\text{Eq. 139})
 $$
 
-SIMON uses HVE's aerodynamics model, which allows up to eight individual surfaces to produce aerodynamic forces and moments on the sprung mass. The aerodynamic force on each surface is
+SIMON uses HVE's aerodynamics model, which allows up to eight individual surfaces to produce aerodynamic forces and moments on the sprung mass: the six vehicle surfaces (front, right, back, left, top and bottom) plus two user-defined devices.
+
+*(updated: the aerodynamics model has been extended since the Fifth Edition manual. The printed manual described a single drag coefficient per surface, producing one force component along each vehicle axis. Each surface now carries three independent coefficients — **Drag**, **Lift** and **Side** — entered in the Aerodynamic Drag dialog, and each surface develops force in all three vehicle-fixed directions. In addition, a surface now generates force only while the relative wind is actually striking it.)*
+
+Each surface in use has three aerodynamic constants, formed from its coefficients and projected area:
 
 $$
-\vec F_{Aero} = \begin{bmatrix}f_{x_{Aero}}\\ f_{y_{Aero}}\\ f_{z_{Aero}}\end{bmatrix} = C_A\begin{bmatrix}V_{x_{Wind}}\cdot\mathrm{sgn}\!\left(V_{x_{Wind}}^2\right)\\ V_{y_{Wind}}\cdot\mathrm{sgn}\!\left(V_{y_{Wind}}^2\right)\\ V_{z_{Wind}}\cdot\mathrm{sgn}\!\left(V_{z_{Wind}}^2\right)\end{bmatrix}
+C_D = \frac{C_d A\rho}{2g}
+\qquad
+C_L = \frac{C_l A\rho}{2g}
+\qquad
+C_S = \frac{C_s A\rho}{2g}
 \qquad (\text{Eq. 140})
-$$
-
-where $C_A$ = aerodynamic constant for each surface:
-
-$$
-C_A = \frac{C_d A\rho}{2g}
 $$
 
 where
 
 | Symbol | Definition |
 |---|---|
-| $C_d$ | Aerodynamic drag coefficient |
+| $C_d$, $C_l$, $C_s$ | Drag, Lift and Side coefficients for the surface |
 | $A$ | Projected surface area |
 | $\rho$ | Air density $= \dfrac{P_{Barometric}}{GasConst\cdot T_{Absolute}}$ |
+| $g$ | Gravitational constant |
 
-> **NOTE:** By default, the front surface is normally assigned aerodynamic properties. Assignment of aerodynamic properties for other surfaces is left up to the user.
+### Directional loading
+
+A surface is loaded only when the relative wind strikes its outward face. For each surface, the driving term is the signed square of the relevant relative-wind component, which is zero whenever the wind is blowing on the opposite face:
+
+$$
+q^{-} = \begin{cases} -V^2 & V < 0\\ 0 & V \ge 0\end{cases}
+\qquad
+q^{+} = \begin{cases} +V^2 & V > 0\\ 0 & V \le 0\end{cases}
+\qquad (\text{Eq. 141})
+$$
+
+The front, right, bottom and front-device surfaces use $q^{-}$; the back, left, top and back-device surfaces use $q^{+}$. Each uses the relative-wind component along its own normal axis — $V_{x_{Wind}}$ for the front, back and both devices, $V_{y_{Wind}}$ for the right and left, and $V_{z_{Wind}}$ for the top and bottom.
+
+This means, for example, that a vehicle travelling forward loads its front surface but not its back surface, and a cross-wind from the right loads the right surface only.
+
+### Force on each surface
+
+The drag constant always acts along the surface's own normal axis; the lift and side constants produce the cross-axis components:
+
+| Surface | $f_{x}$ | $f_{y}$ | $f_{z}$ | Driving term |
+|---|---|---|---|---|
+| Front | $C_D\,q$ | $-C_S\,q$ | $-C_L\,q$ | $q^{-}$ on $V_{x_{Wind}}$ |
+| Right | $-C_S\,q$ | $C_D\,q$ | $-C_L\,q$ | $q^{-}$ on $V_{y_{Wind}}$ |
+| Back | $C_D\,q$ | $C_S\,q$ | $C_L\,q$ | $q^{+}$ on $V_{x_{Wind}}$ |
+| Left | $C_S\,q$ | $C_D\,q$ | $C_L\,q$ | $q^{+}$ on $V_{y_{Wind}}$ |
+| Top | $C_L\,q$ | $C_S\,q$ | $C_D\,q$ | $q^{+}$ on $V_{z_{Wind}}$ |
+| Bottom | $-C_L\,q$ | $-C_S\,q$ | $C_D\,q$ | $q^{-}$ on $V_{z_{Wind}}$ |
+| Front device | $C_D\,q$ | $-C_S\,q$ | $-C_L\,q$ | $q^{-}$ on $V_{x_{Wind}}$ |
+| Back device | $C_D\,q$ | $C_S\,q$ | $C_L\,q$ | $q^{+}$ on $V_{x_{Wind}}$ |
+
+Because the force varies with the square of the relative wind speed, aerodynamic effects grow rapidly with speed and become significant in high-speed handling, cross-wind and downforce studies.
+
+> **NOTE:** By default, the front surface is normally assigned aerodynamic properties. Assignment of aerodynamic properties for other surfaces is left up to the user. A surface takes part in the calculation only if it has been given aerodynamic data.
 
 Finally, the sum of the vehicle-fixed aerodynamic forces and moments is computed,
 
 $$
 \vec F_{Aero} = \begin{bmatrix}F_{x_{Aero}}\\ F_{y_{Aero}}\\ F_{z_{Aero}}\end{bmatrix} = \begin{bmatrix}\sum_{i=1}^{N} f_{x_{Aero}}\\ \sum_{i=1}^{N} f_{y_{Aero}}\\ \sum_{i=1}^{N} f_{z_{Aero}}\end{bmatrix}
-\qquad (\text{Eq. 141})
+\qquad (\text{Eq. 142})
 $$
 
 and
 
 $$
-\vec M_{Aero} = \begin{bmatrix}M_{x_{Aero}}\\ M_{y_{Aero}}\\ M_{z_{Aero}}\end{bmatrix} = \begin{bmatrix}\sum_{i=1}^{N}\left(-f_{y_{Aero}}r_{z_{CP}} + f_{z_{Aero}}r_{y_{CP}}\right)\\ \sum_{i=1}^{N}\left(-f_{z_{Aero}}r_{x_{CP}} + f_{x_{Aero}}r_{z_{CP}}\right)\\ \sum_{i=1}^{N}\left(-f_{x_{Aero}}r_{y_{CP}} + f_{y_{Aero}}r_{z_{CP}}\right)\end{bmatrix}
-\qquad (\text{Eq. 142})
+\vec M_{Aero} = \begin{bmatrix}M_{x_{Aero}}\\ M_{y_{Aero}}\\ M_{z_{Aero}}\end{bmatrix} = \begin{bmatrix}\sum_{i=1}^{N}\left(f_{z_{Aero}}r_{y_{CP}} - f_{y_{Aero}}r_{z_{CP}}\right)\\ \sum_{i=1}^{N}\left(f_{x_{Aero}}r_{z_{CP}} - f_{z_{Aero}}r_{x_{CP}}\right)\\ \sum_{i=1}^{N}\left(f_{y_{Aero}}r_{x_{CP}} - f_{x_{Aero}}r_{y_{CP}}\right)\end{bmatrix}
+\qquad (\text{Eq. 143})
 $$
+
+*(updated: the printed manual's third row of this moment equation contained a typographical error, using the z-coordinate of the center of pressure in place of the x-coordinate. The yaw moment is the standard cross product of the center-of-pressure position with the surface force, as shown above.)*
 
 where
 
