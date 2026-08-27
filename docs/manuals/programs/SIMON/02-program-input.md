@@ -211,7 +211,7 @@ The Tire Physical Data used by SIMON are shown in Table 2-3. The tire's unloaded
 
 ##### Friction Table
 
-The Friction Data used by SIMON are shown in Table 2-3. If there is no slippage in the contact patch, SIMON uses the *Longitudinal Stiffness* value. Otherwise, SIMON interpolates between the data in the Friction vs. Longitudinal slip table to calculate friction for the current load and speed at each time-step.
+The Friction Data used by SIMON are shown in Table 2-3. At each time-step SIMON interpolates between the data in the Friction vs. Longitudinal Slip table to obtain the peak friction, slide friction, slip at peak friction and *Longitudinal Stiffness* for the tire's current load and speed. The interpolated peak and slide friction values are then multiplied by the friction multiplier of the terrain beneath the tire; the longitudinal stiffness is not. *(updated: earlier editions stated that the Longitudinal Stiffness value was used only when there was no slippage in the contact patch. It is interpolated and used at every time-step — see Chapter 4, Tire Model.)*
 
 The *In-use Factor* is a convenient way to reduce or increase the dependent friction values (peak and slide friction) for all loads and speeds by making just one adjustment.
 
@@ -614,7 +614,7 @@ The Restraints data are not used by SIMON.
 
 SIMON's Calculation Options include:
 
-- **Tire Model Method** — A radio button defining available tire models. The current dialog offers *Semi-Empirical, Vers 1*, *Semi-Empirical, Vers 2* (the default) and *Semi-Empirical, Vers 3*. *(updated: the Fifth Edition manual showed only "Semi-Empirical" and a disabled "Magic Formula" option; the current dialog instead offers three versions of the semi-empirical tire model.)*
+- **Tire Model Method** — A radio button defining the version of the EDC semi-empirical tire model used for the event. The current dialog offers *Semi-Empirical, Vers. 1*, *Semi-Empirical, Vers. 2* and *Semi-Empirical, Vers. 3*. **Vers. 3 is the default for a new event** and is the recommended choice; Vers. 1 and Vers. 2 are retained so that results from earlier releases can be reproduced. The three versions share the same structure and differ only in the treatment of the slip-angle function, the direction of the lateral force when a tire travels rearward, the limit placed on effective friction, and the handling of cornering and camber stiffness at very low wheel speeds — see Chapter 4, *Tire Model*, for the details. The selected version affects only the tire shear-force calculation; it does not change the radial force, rolling resistance or hydroplaning models. *(updated: the Fifth Edition manual showed only "Semi-Empirical" and a disabled "Magic Formula" option; the current dialog instead offers three versions of the semi-empirical tire model.)*
 - **Steer DOF** (Off/Normal/Append/AutoStart) — Selecting this option allows tire forces to affect wheel heading. This is equivalent to the driver taking their hands off the steering wheel. *(updated: the AutoStart option has been added since the Fifth Edition manual.)*
 
   > **NOTE:** If Normal Steer DOF is selected, any user-entered driver control inputs will be ignored. If Append Steer DOF is selected, SIMON switches from user-entered driver control input to the Steer DOF at the time of the last entry in the Driver Steering Table.

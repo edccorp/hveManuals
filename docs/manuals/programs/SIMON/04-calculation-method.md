@@ -1231,7 +1231,35 @@ Tire radial force, $F_R$, is an important fundamental property as one of the pri
 
 SIMON uses the EDC semi-empirical tire model developed for EDVDS [2]. The basis for the EDC semi-empirical tire model is the HSRI tire model, developed at the University of Michigan Transportation Research Institute [3]. The model was extended to allow large tire slip angles, drive torque (i.e., tire forces that accelerate the vehicle) and drive and/or brake torque when the vehicle is rolling backwards. The SIMON implementation for load- and speed-dependent tire properties has been extended by replacing the method of partial derivatives with a table look-up method. An overview of the extended model is provided below for purposes of comparison with the HSRI and EDVDS tire models.
 
-*(updated: the current Calculation Options dialog offers three versions of the semi-empirical tire model — Vers 1, Vers 2 (default) and Vers 3 — representing successive refinements of the model. A hydroplaning model (NASA, NASA-TTI or Gallaway) may also be selected, which reduces the available tire-road friction as a function of speed, water depth and tire parameters.)*
+### Tire model versions
+
+*(updated: this subsection describes behavior added since the Fifth Edition
+manual, which documented only a single semi-empirical tire model.)*
+
+The Calculation Options dialog offers three versions of the semi-empirical
+tire model. They share the structure described in the rest of this section
+and differ only in the specific respects listed below. **Vers. 3 is the
+default for a new event**, and is the recommended choice for new work; Vers. 1
+and Vers. 2 are retained so that results from earlier releases can be
+reproduced exactly.
+
+| | Vers. 1 | Vers. 2 | Vers. 3 |
+|---|---|---|---|
+| Slip-angle function | $\sin\alpha$ | $\tan\alpha$ | $\tan\alpha$ |
+| Lateral force reverses when the tire travels rearward | No | Yes | Yes |
+| Effective friction limited to the peak friction value | No | No | Yes |
+| Low-speed cornering and camber stiffness reduction | No | No | Yes |
+
+The three differences are described where they arise in the development
+below: the slip-angle function in Eq. 103a, the rearward-travel sign in
+Eqs. 106 and 112, the friction limit in Eq. 102b and the low-speed reduction
+in Eq. 104a.
+
+Selecting a version affects only the tire shear-force calculation. It does
+not change the radial force model, the rolling resistance model or the
+hydroplaning model, all of which are common to all three versions.
+
+### Model assumptions and inputs
 
 The semi-empirical tire model describes empirically what is occurring at the tire-road shear interface, according to the current tire-road conditions. It employs a simplified theory assuming an adhesion region and a sliding region. The major assumptions made by the tire model are:
 
@@ -1245,6 +1273,7 @@ The inputs required by the tire model are
 | $F_o$ | Vertical load for up to three test loads |
 | $V_o$ | Longitudinal velocity for up to three test speeds |
 | $\mu_p, \mu_s, S_{\mu_p}$ | Peak and slide tire-road friction and longitudinal slip at peak friction for each load and speed (these data generate a µ-slip curve for each test load and speed; see Figure 4-12) |
+| $C_s$ | Longitudinal stiffness for each test load and speed |
 | $C_\alpha$ | Cornering stiffness for up to three test loads and speeds (see Figure 4-13) |
 | $C_\gamma$ | Camber stiffness for up to three test loads and speeds (see Figure 4-14) |
 
@@ -1254,6 +1283,12 @@ $$
 S = 1 - \Omega\left(\frac{r_T}{u_{GP}}\right)
 \qquad (\text{Eq. 94})
 $$
+
+$S$ is limited to the range $-1 \le S \le 1$. When the tire is travelling too
+slowly for Eq. 94 to be meaningful (a forward ground-plane speed below
+approximately 1 in/sec), longitudinal slip is instead set to zero if the wheel
+is also not spinning, or to $\pm 1$ if the wheel is spinning while the vehicle
+slides sideways.
 
 ![Figure 4-12](images/p112-fig4-12.png)
 *Figure 4-12: Fx/Fz vs. longitudinal tire slip (mu-slip curve).*
@@ -1267,8 +1302,30 @@ $$
 Based on the above test tire parameters and the current tire load and velocity, the effective values are calculated using linear interpolation,
 
 $$
-\mu_p' = f(F_R, u_{GP}),\quad \mu_s' = f(F_R, u_{GP}),\quad S_{\mu_p}' = f(F_R, u_{GP}),\quad C_\alpha' = f(F_R, u_{GP}),\quad C_\gamma' = f(F_R, u_{GP})
+\mu_p' = f(F_R, u_{GP}),\quad \mu_s' = f(F_R, u_{GP}),\quad S_{\mu_p}' = f(F_R, u_{GP}),\quad C_s' = f(F_R, u_{GP}),\quad C_\alpha' = f(F_R, u_{GP}),\quad C_\gamma' = f(F_R, u_{GP})
 $$
+
+*(updated: the longitudinal stiffness, $C_s'$, is now interpolated from the
+tire's Longitudinal Stiffness data in the same way as the other load- and
+speed-dependent properties. Earlier editions of this manual gave a formula
+that derived $C_s$ from the µ-slip curve parameters; that formula is no longer
+used.)*
+
+The interpolated peak and slide friction values are then scaled by the
+friction multiplier of the terrain beneath the tire:
+
+$$
+\mu_p' \leftarrow \mu_p' \cdot f_{terrain},\qquad \mu_s' \leftarrow \mu_s' \cdot f_{terrain}
+\qquad (\text{Eq. 94a})
+$$
+
+where $f_{terrain}$ is the surface friction multiplier returned for the current
+tire position, further reduced by the hydroplaning model when one is selected
+(see *Hydroplaning Model*, below). Note that the terrain friction multiplier
+scales friction only; it does not scale longitudinal, cornering or camber
+stiffness.
+
+### Effective friction
 
 From these data, the following intermediate parameters are computed:
 
@@ -1278,7 +1335,7 @@ a = \left(1.0 + S_{\mu_p}'\right)\left(1.0 - S_{\mu_p}'\right)^2
 $$
 
 $$
-b = \left(1.0 - S_p'\right)\left(\mu_s'\left(S_p' + 2.0\right) - \mu_p'\left(2.0S_p' + 1.0\right)\right)
+b = \left(1.0 - S_{\mu_p}'\right)\left(\mu_s'\left(S_{\mu_p}' + 2.0\right) - \mu_p'\left(2.0S_{\mu_p}' + 1.0\right)\right)
 \qquad (\text{Eq. 96})
 $$
 
@@ -1302,94 +1359,348 @@ C = \mu_s' + B\left(1.0 - S_{\mu_p}'\right)
 \qquad (\text{Eq. 100})
 $$
 
-From the above values, the effective friction, $\mu$, and longitudinal slip stiffness, $C_s$, are then computed as follows:
+The effective friction, $\mu$, is then
 
 $$
-C_s = \frac{C^2 F_z\left(1.0 - S_p'\right)}{4.0S_p'\left(C - \mu_p'\right)}
-\qquad (\text{Eq. 101})
-$$
-
-$$
-\mu = A - BS
+\mu = A - B\left|S\right|
 \qquad (\text{Eq. 102})
 $$
+
+$\mu$ is subject to two limits. First, it is never allowed to fall below the
+value it would take at fully locked or fully spinning slip:
+
+$$
+\mu \ge A - B
+\qquad (\text{Eq. 102a})
+$$
+
+Second, in **Vers. 3** only, the effective friction is not allowed to exceed
+the interpolated peak friction:
+
+$$
+\mu \le \mu_p' \qquad (\text{Vers. 3 only})
+\qquad (\text{Eq. 102b})
+$$
+
+*(updated: Eqs. 102a and 102b describe limits not documented in earlier
+editions. Eq. 102b is one of the differences between Vers. 3 and the earlier
+versions; in Vers. 1 and Vers. 2 the effective friction may momentarily exceed
+the peak value returned by the friction table.)*
+
+### Cornering stiffness at large slip angles
+
+The interpolated cornering stiffness, $C_\alpha'$, describes the tire's
+response to small slip angles. Because the lateral force per degree of slip
+angle falls off as the slip angle grows, SIMON reduces the cornering stiffness
+used in the force calculation as a function of the magnitude of the current
+slip angle:
+
+$$
+C_\alpha =
+\begin{cases}
+C_\alpha' & \left|\alpha\right| \le 1^\circ \\[4pt]
+C_\alpha'\left(1.0 - \dfrac{1}{3}\cdot\dfrac{\left|\alpha\right| - 1^\circ}{4^\circ}\right) & 1^\circ < \left|\alpha\right| < 5^\circ \\[8pt]
+\dfrac{2}{3}C_\alpha' & \left|\alpha\right| \ge 5^\circ
+\end{cases}
+\qquad (\text{Eq. 100a})
+$$
+
+The reduction is symmetric about 180 degrees, so that a tire travelling
+rearward sees the same treatment as one travelling forward.
+
+*(updated: Eq. 100a describes behavior not documented in earlier editions of
+this manual.)*
+
+### Adhesion and sliding regions
 
 Based on the above parameters, the fraction of the adhesion region of the total contact patch, $X_s/L$ (where $L$ is the total length of the contact patch, and $X_s$ is the distance from the front of the contact patch to the point where sliding starts), is calculated as follows:
 
 $$
-D_t = \sqrt{(C_s S)^2 + (C_\alpha'\sin\alpha)^2}
+D_t = \sqrt{\left(C_s' S\right)^2 + \left(C_\alpha T(\alpha)\right)^2}
 \qquad (\text{Eq. 103})
 $$
 
 $$
-\frac{X_s}{L} = \frac{\mu F_z(1.0 - S)}{2.0D_t}
+\frac{X_s}{L} = \frac{\mu F_z\left(1.0 - \left|S\right|\right)}{2.0 D_t}
 \qquad (\text{Eq. 104})
 $$
 
-$X_s/L$ is limited to 1.0 (note that $X_s/L = 1.0$ means there is no sliding region). If $X_s/L = 1.0$, the longitudinal and lateral tire forces, $F_{x'}$ and $F_{y'}$, respectively, are
+where $T(\alpha)$ is the slip-angle function, which is the single largest
+difference between Vers. 1 and the later versions:
 
 $$
-F_{x'} = \frac{C_s S}{1.0 - S}
+T(\alpha) =
+\begin{cases}
+\sin\alpha & \text{Vers. 1} \\
+\tan\alpha & \text{Vers. 2 and Vers. 3}
+\end{cases}
+\qquad (\text{Eq. 103a})
+$$
+
+In Vers. 2 and Vers. 3 the tangent is guarded against overflow: within a
+quarter of a degree of $\pm 90^\circ$, $T(\alpha)$ is clamped to a large finite
+value carrying the sign of the tire's forward ground-plane velocity, so that
+the lateral force saturates instead of diverging.
+
+*(updated: earlier editions of this manual stated that the EDC model replaces
+the HSRI tangent function with the sine function. That is true of Vers. 1
+only. Vers. 2 and Vers. 3 restore the tangent function — which is the correct
+form for the underlying brush model — and handle the singularity at
+$\pm 90^\circ$ by clamping rather than by substituting the sine.)*
+
+$X_s/L$ is limited to 1.0 (note that $X_s/L = 1.0$ means there is no sliding region).
+
+### Low-speed refinement
+
+*(updated: this subsection describes behavior added since the Fifth Edition
+manual. It applies to **Vers. 3** only.)*
+
+At very low wheel speeds, the cornering and camber stiffnesses of the
+undisturbed model produce lateral forces that are unrealistically large for
+the amount of relative motion actually present at the contact patch, which can
+make a nearly stopped vehicle drift or jitter. Vers. 3 therefore fades the
+stiffnesses toward zero as the wheel comes to rest.
+
+When the tire's circumferential speed, $r_T\Omega$, falls below approximately
+2 ft/sec, the cornering and camber stiffnesses used in the force calculation
+are scaled by a blending factor:
+
+$$
+\Phi(v, v_{ref}) = \frac{2.0}{\dfrac{v_{ref}}{\left|v\right|} + \dfrac{\left|v\right|}{v_{ref}}}
+\qquad (\text{Eq. 104a})
+$$
+
+$$
+C_\alpha \leftarrow C_\alpha\,\Phi\!\left(r_T\Omega,\; v_{ref}\right),\qquad
+C_\gamma \leftarrow C_\gamma\,\Phi\!\left(r_T\Omega,\; v_{ref}\right)
+\qquad (\text{Eq. 104b})
+$$
+
+where $v_{ref} \approx 2$ ft/sec. $\Phi$ equals 1.0 when $\left|v\right| = v_{ref}$
+and approaches zero as $\left|v\right| \to 0$, so the reduction phases in
+smoothly rather than switching on at a threshold. If the wheel is exactly
+stopped, both stiffnesses are set to zero.
+
+While the wheel is below that speed, if the lateral component of the tire's
+ground-plane velocity also falls below approximately 1 in/sec, the slip-angle
+function is faded by the same blending factor:
+
+$$
+T(\alpha) \leftarrow T(\alpha)\,\Phi\!\left(v_{GP},\; 1\ \text{in/sec}\right)
+\qquad (\text{Eq. 104c})
+$$
+
+again with $T(\alpha)$ set to zero if the lateral velocity is exactly zero.
+
+### Tire forces
+
+If $X_s/L = 1.0$, there is no sliding region and the longitudinal and lateral tire forces, $F_{x'}$ and $F_{y'}$, respectively, are
+
+$$
+F_{x'} = s_u\,\frac{C_s' S}{1.0 - \left|S\right|}
 \qquad (\text{Eq. 105})
 $$
 
 and
 
 $$
-F_{y'} = \frac{-C_\alpha'\sin\alpha}{1.0 - S}
+F_{y'} = \frac{-C_\alpha T(\alpha)}{1.0 - \left|S\right|}\cdot k_u
 \qquad (\text{Eq. 106})
 $$
+
+where $s_u$ and $k_u$ account for the direction the tire is travelling:
+
+$$
+s_u = -\,\mathrm{sgn}\left(u_{GP}\right),\qquad
+k_u =
+\begin{cases}
+1 & \text{Vers. 1} \\
+-s_u & \text{Vers. 2 and Vers. 3}
+\end{cases}
+\qquad (\text{Eq. 106a})
+$$
+
+$s_u$ orients the longitudinal force so that it always opposes the direction
+of travel for a braking slip and drives the vehicle for a drive slip, whether
+the tire is rolling forward or backward. $k_u$ reverses the lateral force when
+the tire is travelling rearward, so that a slip angle measured relative to the
+wheel plane produces a lateral force in the correct direction in reverse.
+Vers. 1 omits this correction, and consequently returns a lateral force of the
+wrong sign for a tire travelling rearward.
+
+*(updated: the direction-of-travel factors in Eq. 106a were not documented in
+earlier editions. $k_u$ is one of the differences between Vers. 1 and the
+later versions.)*
+
+$F_{y'}$ is set to zero when both ground-plane velocity components of the tire
+are below approximately 1 in/sec, so that a stopped tire generates no lateral
+force.
 
 If $X_s/L < 1.0$, there is some sliding at the tire-road interface. For this condition, the tire forces in the adhesion region and sliding region are computed separately. $F_{x'}$ and $F_{y'}$ tire forces in the adhesion region are
 
 $$
-F_{x'_{Adhesion}} = C_s S\left(\frac{\mu F_z}{2.0D_t}\right)^2(1.0 - S)
+F_{x'_{Adhesion}} = C_s' S\left(\frac{\mu F_z}{2.0 D_t}\right)^2\left(1.0 - \left|S\right|\right)
 \qquad (\text{Eq. 107})
 $$
 
 and
 
 $$
-F_{y'_{Adhesion}} = -C_\alpha\sin\alpha\left(\frac{\mu F_z}{2.0D_t}\right)^2(1.0 - S)
+F_{y'_{Adhesion}} = -C_\alpha T(\alpha)\left(\frac{\mu F_z}{2.0 D_t}\right)^2\left(1.0 - \left|S\right|\right)
 \qquad (\text{Eq. 108})
 $$
 
 The tire force components in the sliding region are:
 
 $$
-F_{x'_{Sliding}} = \mu F_z\left(1.0 - \frac{X_s}{L}\right)\left(\frac{S}{\sqrt{S^2 + \sin^2\alpha}}\right)
+F_{x'_{Sliding}} = \mu F_z\left(1.0 - \frac{X_s}{L}\right)\left(\frac{S}{\sqrt{S^2 + T(\alpha)^2}}\right)
 \qquad (\text{Eq. 109})
 $$
 
 and
 
 $$
-F_{y'_{Sliding}} = -\mu F_z\left(1.0 - \frac{X_s}{L}\right)\left(\frac{\sin\alpha}{\sqrt{S^2 + \sin^2\alpha}}\right)
+F_{y'_{Sliding}} = -\mu F_z\left(1.0 - \frac{X_s}{L}\right)\left(\frac{T(\alpha)}{\sqrt{S^2 + T(\alpha)^2}}\right)
 \qquad (\text{Eq. 110})
 $$
 
-The total tire force is the sum of the force in the adhesion and sliding regions,
+The total tire force is the sum of the force in the adhesion and sliding regions, with the same direction-of-travel factors applied as in Eqs. 105 and 106,
 
 $$
-F_{x'} = F_{x'_{Adhesion}} + F_{x'_{Sliding}}
+F_{x'} = s_u\left(F_{x'_{Adhesion}} + F_{x'_{Sliding}}\right)
 \qquad (\text{Eq. 111})
 $$
 
 and
 
 $$
-F_{y'} = F_{y'_{Adhesion}} + F_{y'_{Sliding}}
+F_{y'} = \left(F_{y'_{Adhesion}} + F_{y'_{Sliding}}\right)k_u
 \qquad (\text{Eq. 112})
 $$
 
-The tire model uses the current vertical tire load, $F_z$, and the fraction of the sliding region at the tire-road interface to set the skid flag, $SF$:
+### Camber force
+
+The lateral force produced by the tire's inclination relative to the ground is
+added to the lateral force from Eq. 106 or Eq. 112:
 
 $$
-\text{if}\ \begin{Bmatrix}F_Z > F_{z,min}\\ \text{and}\\ \frac{X_s}{L} < \tau\end{Bmatrix},\quad SF = \text{TRUE}
+F_{y'} \leftarrow F_{y'} + C_\gamma\sin\gamma_G
+\qquad (\text{Eq. 112a})
+$$
+
+where $\gamma_G$ is the tire inclination angle relative to the ground plane
+(see *Tire-Ground Orientation*) and $C_\gamma$ is the camber stiffness — the
+value interpolated from the Camber Stiffness table, modified by the tire
+blow-out model if one is active and by the low-speed refinement of Eq. 104b.
+
+*(updated: the camber contribution to the lateral tire force was listed as a
+model input in earlier editions but the equation using it was not given.)*
+
+### Tire blow-out
+
+*(updated: this subsection describes how the HVE Tire Blow-out Model, which is
+set up on the Wheels dialog, enters the tire force calculation. Earlier
+editions of this manual documented the blow-out inputs but not their effect on
+the tire model.)*
+
+When a tire is flagged as blowing out and the simulation time has reached the
+blow-out start time, the cornering stiffness, camber stiffness and both
+rolling resistance coefficients are ramped linearly from their normal values
+to their blown values over the specified blow-out duration:
+
+$$
+X(t) =
+\begin{cases}
+X_0 & t \le t_{BO} \\[4pt]
+X_0 + \left(m_X X_0 - X_0\right)\dfrac{t - t_{BO}}{\Delta t_{BO}} & t_{BO} < t < t_{BO} + \Delta t_{BO} \\[8pt]
+m_X X_0 & t \ge t_{BO} + \Delta t_{BO}
+\end{cases}
+\qquad (\text{Eq. 112b})
+$$
+
+where $X$ is any of the affected parameters, $X_0$ is its unblown value,
+$t_{BO}$ is the blow-out start time, $\Delta t_{BO}$ is the blow-out duration,
+and $m_X$ is the *Stiffness Factor* (for cornering and camber stiffness) or the
+*Rolling Resistance Factor* (for the two rolling resistance coefficients).
+The reduced values are used for the remainder of the event.
+
+The blow-out model also changes the tire's radial stiffness; that effect is
+described under *Tire Radial Force*, above.
+
+### Steeply inclined tires
+
+*(updated: this subsection describes behavior not documented in earlier
+editions.)*
+
+The tire force calculation is valid only while the tire's contact plane is
+reasonably close to horizontal relative to the wheel. When the tire
+inclination angle relative to the ground exceeds approximately 80 degrees, the
+model can no longer resolve a meaningful contact patch. In that case:
+
+- If the wheel is being contacted by the 3-D mesh collision model, all tire
+  forces, ploughing forces, slip values and the rolling resistance moment are
+  faded smoothly toward zero using the blending factor of Eq. 104a, applied to
+  the cosine of the inclination angle. This avoids a discontinuity in the
+  forces during a wheel impact.
+- Otherwise, all of these quantities are set to zero for that tire.
+
+### Skidding
+
+The tire model uses the current vertical tire load, $F_z$, the current
+longitudinal slip and the fraction of the sliding region at the tire-road
+interface to set the skid flag, $SF$, which controls tiremark generation:
+
+$$
+\text{if}\ F_Z > F_{z,min}\ \text{and}\ \begin{Bmatrix}\left|S\right| > S_{\mu_p}'\\ \text{or}\\ \frac{X_s}{L} < \tau\end{Bmatrix},\quad SF = \text{TRUE}
 \qquad (\text{Eq. 113})
 $$
 
-In the above development, the original HSRI model has been modified in three ways: First, the tangent function used by the HSRI model has been replaced by the sine function. This change allows the EDC tire model to properly handle slip angles throughout the continuous range $-\pi \le \alpha \le \pi$. (Note that $\tan\alpha \to \infty$ as $\alpha \to 90$ degrees, resulting in an infinite lateral tire force and the resulting integration failure in the HSRI model.) Second, longitudinal slip, $S$, has been replaced by $|S|$ in the EDC model to allow for drive torque at the tire-road interface. Third, as was mentioned earlier, load- and speed-dependent tire parameters are now calculated from data tables, using linear interpolation, rather than using partial derivatives.
+where $F_{z,min}$ is the minimum tire load for tiremark generation and
+$\tau = 0.25$. In words, a tire is marked as skidding when it is carrying
+enough load to leave a mark and either its longitudinal slip has passed the
+slip at peak friction, or less than a quarter of its contact patch remains in
+adhesion.
+
+*(updated: earlier editions of this manual gave only the adhesion-region
+condition. The longitudinal slip condition is also present and either one is
+sufficient.)*
+
+The tire model additionally reports a normalized lateral saturation value,
+used in tiremark determination, which compares the lateral force the tire
+would develop from its cornering stiffness alone against the friction
+available:
+
+$$
+\bar{A} = \frac{1}{2}\min\left(\left|\frac{C_\alpha T(\alpha)}{\mu F_z}\right|,\; 2.0\right)
+\qquad (\text{Eq. 113a})
+$$
+
+$\bar{A}$ ranges from 0.0 (no lateral demand) to 1.0 (lateral demand at or
+beyond twice the available friction) and is reported as the tire's lateral
+slip output variable.
+
+### Summary of changes from the HSRI model
+
+In the above development, the original HSRI model has been modified in the
+following ways:
+
+1. Load- and speed-dependent tire parameters are calculated from data tables,
+   using linear interpolation, rather than using partial derivatives.
+2. Longitudinal slip, $S$, has been replaced by $\left|S\right|$ wherever it
+   appears as a magnitude, to allow for drive torque at the tire-road
+   interface and for a vehicle rolling backwards.
+3. The singularity in the HSRI lateral force at $\alpha = \pm 90^\circ$ is
+   removed. Vers. 1 does this by substituting the sine function for the
+   tangent, which allows the model to handle slip angles throughout the
+   continuous range $-\pi \le \alpha \le \pi$ but changes the small-angle
+   behavior. Vers. 2 and Vers. 3 retain the tangent function and instead clamp
+   it near $\pm 90^\circ$, preserving the correct small-angle response.
+4. Direction-of-travel factors are applied to the tire forces (Eq. 106a) so
+   that both longitudinal and lateral forces act in the correct direction when
+   the vehicle is travelling rearward.
+5. Cornering stiffness is reduced at large slip angles (Eq. 100a), and, in
+   Vers. 3, cornering and camber stiffness are faded at very low wheel speeds
+   (Eq. 104b).
 
 ### Rolling Resistance
 
