@@ -372,7 +372,7 @@ The steering system includes the steering gear ratio (steer angle at the steerin
 
 SIMON also incorporates a Steer Degree of Freedom model. The Steer Degree of Freedom model is activated by selecting the appropriate option in SIMON's Calculation Options dialog. *(updated: the current Calculation Options dialog offers four Steer DOF settings — Off, Normal, Append and AutoStart; see Chapter 2.)*
 
-The engineering model used by the Steer Degree of Freedom option is shown in Figure 4-5. The linkage is assumed to be rigid, thus the angular acceleration about the steering axis is the same for right-side and left-side wheels. External steer forces are generated at the tire-road interface, thus producing moments about the steering axis according to the tire pneumatic trail. The moments are resisted by steer system inertia and internal coulomb friction. Steering is limited by right and left steering stops at each wheel.
+The engineering model used by the Steer Degree of Freedom option is shown in Figure 4-5. The linkage is assumed to be rigid, thus the angular acceleration about the steering axis is the same for right-side and left-side wheels. External steer forces are generated at the tire-road interface, thus producing moments about the steering axis. The moments are resisted by steer system inertia and internal coulomb friction. Steering is limited by right and left steering stops at each wheel.
 
 ![Figure 4-5](images/p084-024.png)
 *Figure 4-5: Steering system model used for Steer Degree of Freedom option.*
@@ -380,7 +380,7 @@ The engineering model used by the Steer Degree of Freedom option is shown in Fig
 Application of Newton's 2nd law to the steering system, ignoring inertial coupling effects, results in
 
 $$
-\sum M_{Steering} = I_{Steering}\,\ddot\psi
+\sum M_{Steering} = I_{Steering}\,\ddot\delta_{Steer}
 \qquad (\text{Eq. 33})
 $$
 
@@ -390,12 +390,12 @@ where
 |---|---|
 | $\sum M_{Steering}$ | Sum of external moments acting on steering system components |
 | $I_{Steering}$ | Total rotational inertia of steering system components |
-| $\psi$ | Steer angle of each steerable wheel about its steering axis (thus, $\ddot\psi$ is the angular acceleration) |
+| $\delta_{Steer}$ | Steer angle of each steerable wheel about its steering axis (thus, $\ddot\delta_{Steer}$ is the angular acceleration) |
 
-The sum of external moments is
+The sum of external moments, taken over both wheels of the axle, is
 
 $$
-\sum M_{Steering} = M_{Stops} + M_{Steer\ Axis\ Friction} + M_{Steering\ Column\ Friction} + M_{Tires}
+\sum M_{Steering} = \sum_{Sides}\left(M_{Stops} + M_{Steer\ Axis\ Friction} + M_{Precession} + M_{Tires} + M_{Sidewall} + M_{Collision}\right) + M_{Steering\ Column\ Friction}
 \qquad (\text{Eq. 34})
 $$
 
@@ -405,8 +405,76 @@ where
 |---|---|
 | $M_{Stops}$ | Moments about wheel steer axis produced by contact with steering stops |
 | $M_{Steer\ Axis\ Friction}$ | Moments about wheel steer axis produced by coulomb friction in the steering ball joints or king pin |
-| $M_{Steering\ Column\ Friction}$ | Moment about the steering column axis produced by coulomb friction between the steering shaft and bushings or bearings |
-| $M_{Tires}$ | Moments about the wheel steer axis produced by the tire forces and pneumatic trail at the tire-ground shear interface (contact patch) |
+| $M_{Precession}$ | Gyroscopic precession moment produced by the spinning wheel |
+| $M_{Tires}$ | Moments about the wheel steer axis produced by the tire forces acting through the trail and scrub radius at the tire-ground shear interface (contact patch) |
+| $M_{Sidewall}$ | Moment about the wheel steer axis produced by tire sidewall contact, when the Sidewall Impact Tire-Terrain Model is in use |
+| $M_{Collision}$ | Moment about the wheel steer axis produced by the 3-D mesh collision model when the wheel is being contacted |
+| $M_{Steering\ Column\ Friction}$ | Moment produced by coulomb friction between the steering shaft and its bushings or bearings, applied once for the axle |
+
+*(updated: earlier editions listed only the stop, steer axis friction, steering
+column friction and tire terms. The gyroscopic precession, sidewall and
+collision moments are also part of the sum.)*
+
+### Steer angle from the driver
+
+While the Steer Degree of Freedom is not controlling the wheels, the steer
+angle at each wheel comes from the driver's steer table. For the At Axle
+option, each wheel takes its own table entry directly. For the At Steering
+Wheel option, the table entry is a steering wheel angle, and the wheel angle is
+
+$$
+\delta = \frac{\delta_{SW}}{\eta}
+\qquad (\text{Eq. 33a})
+$$
+
+where $\eta$ is the axle's steering gear ratio. Both wheels of the axle receive
+the same angle unless **Use Ackermann Steering** is selected in Driver
+Controls, in which case the front axle's wheel angles are spread so that the
+two wheels point at a common turn center:
+
+$$
+\delta_i = \arctan\left(\frac{\tan\delta}{1 - y_i\,\dfrac{\tan\delta}{L}}\right)
+\qquad (\text{Eq. 33b})
+$$
+
+where $y_i$ is the vehicle-fixed lateral coordinate of the wheel and $L$ is the
+wheelbase. For a three-axle vehicle the wheelbase is measured from the front
+axle to the midpoint of the rear tandem. If the denominator becomes too small
+to evaluate — which happens only at steer angles well beyond any physical
+steering stop — the wheel angles are left unchanged for that timestep.
+
+Ackermann steering applies to the front axle only, and only with the At
+Steering Wheel option.
+
+*(updated: Ackermann steering was not described in earlier editions.)*
+
+When the HVE Driver Model is following a path, it supplies the steer angle and
+steer velocity directly, overriding the steer table. Following a collision the
+driver model releases control and the steer table resumes.
+
+### Steer Degree of Freedom modes
+
+The Steer DOF setting determines when the wheels stop following the driver's
+steer table and begin responding to the tire forces:
+
+| Setting | Behavior |
+| --- | --- |
+| Off | The wheels follow the steer table for the whole event. |
+| Normal | The steer table is not used at all; the wheels respond to tire forces from the start of the event. |
+| Append | The wheels follow the steer table until the time of its last entry, then respond to tire forces for the remainder of the event. |
+| AutoStart | The wheels follow the steer table until the vehicle is involved in a collision, then respond to tire forces. |
+
+When AutoStart triggers, each steerable wheel's steer angle is set to the angle
+it had at that instant, its steer velocity is set to zero, and the numerical
+integration is reinitialized so the new state is carried forward smoothly. Both
+vehicles in the collision start together.
+
+While the Steer Degree of Freedom is controlling the wheels, the steering wheel
+angle and velocity reported in the output are the average of the two wheel
+values multiplied by the steering gear ratio.
+
+*(updated: this subsection describes behavior not documented in earlier
+editions.)*
 
 ### Steering Stop Torque
 
@@ -417,30 +485,39 @@ Steer angles are limited by steering stops at the right- and left-side wheels. E
 ![Figure 4-6](images/p086-025.png)
 *Figure 4-6: Steer axis friction and stop torque vs. steer angle.*
 
-The steering stop torque at each stop is
+A stop resists further travel only while the wheel is still turning deeper into
+it. The steering stop torque at each stop is therefore
 
 $$
 M_{Stop} =
 \begin{cases}
-0, & \text{for } \delta_{Steer} \le \delta_{Stop} \text{ or } \mathrm{sgn}\delta_{Steer} \ne \dot\delta_{Steer}\\[4pt]
-K_{Stop}\left(\delta_{Steer} - \delta_{Stop}\right), & \text{for } \delta_{Steer} > \delta_{Stop}
+-K_{Stop}\left(\delta_{Steer} - \delta_{Stop}\right), & \left|\delta_{Steer}\right| > \left|\delta_{Stop}\right| \text{ and } \mathrm{sgn}\,\dot\delta_{Steer} = \mathrm{sgn}\,\delta_{Steer}\\[6pt]
+0, & \text{otherwise}
 \end{cases}
 \qquad (\text{Eq. 35})
 $$
 
-where $K_{Stop}$ = steering stop mechanical stiffness for the specified steering stop.
+where $K_{Stop}$ is the mechanical stiffness and $\delta_{Stop}$ the travel
+limit of the stop being engaged. Each wheel has a stop for each steer
+direction, so four stop angles and four stiffnesses apply to a steerable axle;
+the stop selected is the one for the wheel and the direction of the current
+steer angle. The general characteristic for steer axis torque is shown in
+Figure 4-6.
 
-The above equations are for right steer; a steer to the left produces the same torque magnitude but opposite in direction. The general characteristic for steer axis torque is shown in Figure 4-6.
+*(updated: earlier editions gave the stop torque as a positive multiple of the
+overtravel. The torque opposes the overtravel, and it is released as soon as
+the wheel begins to turn back out of the stop, regardless of how far into the
+stop it still is.)*
 
 ### Steer Axis Torque
 
-Torque is also produced by steering rotation of the wheel about its steer axis. However, no torque is produced unless the steer velocity is non-zero. Thus, a minimum value of steer velocity is required to develop the assigned frictional torque. This minimum steer velocity is called a friction null band. The steer axis torque at each steer axis is
+Torque is also produced by steering rotation of the wheel about its steer axis. However, no torque is produced unless the steer velocity is non-zero. Thus, a minimum value of steer velocity is required to develop the assigned frictional torque. This minimum steer velocity is called a friction null band. The friction opposes the steer velocity:
 
 $$
 M_{Steer\ Axis} =
 \begin{cases}
-\mu_{Steer}\,\dfrac{\dot\delta_{Steer}}{\varepsilon}, & \text{for } \left|\dot\delta_{Steer}\right| \le \varepsilon\\[6pt]
-\mu_{Steer\ Axis}\mathrm{sgn}\dot\delta_{Steer}, & \text{for } \left|\dot\delta_{Steer}\right| > \varepsilon
+-\mu_{Steer\ Axis}\,\dfrac{\dot\delta_{Steer}}{\varepsilon_{Wheel}}, & \left|\dot\delta_{Steer}\right| < \varepsilon_{Wheel}\\[10pt]
+-\mu_{Steer\ Axis}\,\mathrm{sgn}\,\dot\delta_{Steer}, & \left|\dot\delta_{Steer}\right| \ge \varepsilon_{Wheel}
 \end{cases}
 \qquad (\text{Eq. 36})
 $$
@@ -449,18 +526,34 @@ where
 
 | Symbol | Definition |
 |---|---|
-| $\varepsilon$ | Steering friction null band |
 | $\mu_{Steer\ Axis}$ | Steer axis friction torque for each wheel |
+| $\varepsilon_{Wheel}$ | Steering friction null band, referred to the wheel (Eq. 36a) |
+
+The friction null band is entered as a steering column velocity, while the
+equations of motion work at the wheel, so it is converted before use:
+
+$$
+\varepsilon_{Wheel} = \frac{\varepsilon}{\eta}
+\qquad (\text{Eq. 36a})
+$$
+
+where $\varepsilon$ is the null band as entered and $\eta$ is the steering gear
+ratio. The right and left wheels may have different steer axis friction values,
+but they share the same steer velocity and therefore the same null band ratio.
+
+*(updated: earlier editions gave the steer axis friction with the sign of the
+steer velocity rather than opposing it, and did not describe the conversion of
+the null band from the steering column to the wheel.)*
 
 ### Steering Column Torque
 
-The steering column and steering gear introduce additional friction torque. Like steer axis torque, described above, there is no steering column frictional torque unless the steer velocity is non-zero. The steering column frictional torque is
+The steering column and steering gear introduce additional friction torque. Like steer axis torque, described above, there is no steering column frictional torque unless the steer velocity is non-zero. Because the column turns faster than the wheels by the steering gear ratio, the column friction torque is multiplied by that ratio when it is referred to the wheel steer axis:
 
 $$
 M_{Steering\ Column} =
 \begin{cases}
-\mu_{Steering\ Column}\times\dfrac{\dot\psi_{Steer}}{\varepsilon}\mathrm{sgn}(-\dot\delta_{Steer}), & \text{for } \left|\dot\delta_{Steer}\div\eta\right| \le \varepsilon\\[6pt]
-\mu_{Steering\ Column}\mathrm{sgn}(-\dot\delta_{Steer}), & \text{for } \left|\dot\delta_{Steer}\div\eta\right| > \varepsilon
+-\mu_{Steering\ Column}\,\eta\,\dfrac{\dot\delta_{Steer}}{\varepsilon_{Wheel}}, & \left|\dot\delta_{Steer}\right| < \varepsilon_{Wheel}\\[10pt]
+-\mu_{Steering\ Column}\,\eta\,\mathrm{sgn}\,\dot\delta_{Steer}, & \left|\dot\delta_{Steer}\right| \ge \varepsilon_{Wheel}
 \end{cases}
 \qquad (\text{Eq. 37})
 $$
@@ -472,6 +565,40 @@ where
 | $\mu_{Steering\ Column}$ | Steering column frictional torque |
 | $\eta$ | Steering gear ratio (column angle : wheel angle) |
 
+Unlike the steer axis friction, which acts at each wheel, the steering column
+friction is applied once for the axle.
+
+*(updated: earlier editions omitted the steering gear ratio that refers the
+column friction torque to the wheel steer axis, and gave the null band
+comparison in inconsistent units.)*
+
+### Gyroscopic Precession Torque
+
+A spinning wheel resists being tilted. When the vehicle rolls, or when the
+wheel's inclination angle changes as the suspension deflects, the wheel's spin
+momentum produces a moment about the steer axis:
+
+$$
+M_{Precession} = I_{Spin}\,\Omega\left(p + \dot\gamma\right)\cos\delta_{Steer}
+\qquad (\text{Eq. 37a})
+$$
+
+where
+
+| Symbol | Definition |
+|---|---|
+| $I_{Spin}$ | Wheel spin inertia |
+| $\Omega$ | Wheel spin velocity |
+| $p$ | Vehicle roll velocity |
+| $\dot\gamma$ | Rate of change of the wheel's vehicle-fixed inclination angle |
+
+The $\cos\delta_{Steer}$ term projects the moment onto the steer axis. This
+torque is what produces the steering disturbance felt when a wheel is loaded or
+unloaded during a rapid maneuver.
+
+*(updated: the gyroscopic precession torque was not documented in earlier
+editions.)*
+
 ### Tire-Ground Torque
 
 Forces at the tire-ground shear interface are the external input to the steering system. Because these forces do not act through the steer axis at its intersection with the ground plane (see Figure 4-7), an external moment is produced.
@@ -479,15 +606,46 @@ Forces at the tire-ground shear interface are the external input to the steering
 ![Figure 4-7](images/p088-026.png)
 *Figure 4-7: Close-up view of torque-producing mechanism at tire-ground shear interface.*
 
-Inspection of Figure 4-7 reveals the idealized point of application of the tire force, $F_x, F_y, F_z$, acts at a distance, $d_x$ and $d_y$, from the wheel steer axis at the ground plane.
-
-> **NOTE:** SIMON assumes the offset, $d_y$, and mechanical trail are zero.
-
-The external moment thus produced at each tire is
+The tire force acts at the contact patch, which is offset from the steer axis
+both fore-and-aft (by the trail) and laterally (by the scrub radius). The
+external moment produced at each tire is
 
 $$
-M_{Tire} = F_x\left(r_y + r_z\gamma\right) + F_y\left(r_x + (T_P + T_M)\cos\delta_G\cos\theta_x\right) + F_z\left(r_x\sin\gamma\right)
+M_{Tire} = F_y\,\ell_y - F_x\,\ell_x + F_z\,\ell_z
 \qquad (\text{Eq. 38})
+$$
+
+with moment arms
+
+$$
+\ell_x = r_y + T\sin\delta_G + R_S\cos\delta_G
+\qquad (\text{Eq. 38a})
+$$
+
+$$
+\ell_y = r_x + T\cos\delta_G + R_S\sin\delta_G\cos\theta_x
+\qquad (\text{Eq. 38b})
+$$
+
+$$
+\ell_z = \left(r_x + T\cos\delta_G + R_S\sin\delta_G\right)\sin\gamma
+\qquad (\text{Eq. 38c})
+$$
+
+The total trail, $T$, is the pneumatic trail less the mechanical trail, and the
+mechanical trail follows from the caster angle:
+
+$$
+T = T_P - T_M,\qquad T_M = r_z\sin\phi_C
+\qquad (\text{Eq. 38d})
+$$
+
+The scrub radius follows from the stub axle length and the kingpin
+inclination:
+
+$$
+R_S = L_{Stub}\cos\gamma - r_z\sin\left(\phi_K + \gamma\right)
+\qquad (\text{Eq. 38e})
 $$
 
 where
@@ -497,19 +655,37 @@ where
 | $F_x, F_y, F_z$ | Vehicle-fixed tire force components |
 | $r_x, r_y, r_z$ | Vehicle-fixed components of distance from wheel center to tire-ground contact point |
 | $T_P$ | Tire pneumatic trail |
-| $T_M$ | Mechanical trail (assumed ≈ 0) |
+| $T_M$ | Mechanical trail |
+| $R_S$ | Scrub radius |
+| $L_{Stub}$ | Stub axle length |
+| $\phi_C$ | Steer axis caster angle |
+| $\phi_K$ | Steer axis kingpin inclination |
 | $\gamma$ | Inclination angle (angle from tire z′ axis to ground surface normal) |
 | $\delta_G$ | Wheel vehicle-fixed steer angle relative to ground plane (see Eq. 84) |
 | $\theta_x$ | Angle from vehicle x-axis to ground plane (see Eq. 72) |
 
+The kingpin inclination and stub axle length are taken as positive on the
+right-side wheel and negative on the left, so that the scrub radius acts
+outboard on both sides.
+
+*(updated: earlier editions stated that the mechanical trail is assumed to be
+zero and gave no scrub radius term. Both are calculated from the vehicle's
+steer axis geometry, the mechanical trail subtracts from the pneumatic trail
+rather than adding to it, and the longitudinal force term is subtracted rather
+than added.)*
+
 > **NOTE:** Dual tires often have different tire force components, tire radii and tire-ground contact characteristics. Therefore, each dual tire must be handled separately.
+
+When the Sidewall Impact Tire-Terrain Model is in use, the moment produced about
+the steer axis by sidewall contact — a tire striking the vertical face of a
+curb, for example — is added to Eq. 38 for each tire.
 
 ### Steering System Rotational Inertia
 
 The rotational inertia of the entire steering system is
 
 $$
-I_{Steering} = I_{Steer,Rt} + I_{Steer,Lt} + I_{Column}\times\eta
+I_{Steering} = I_{Steer,Rt} + I_{Steer,Lt} + I_{Column}\,\eta^2
 \qquad (\text{Eq. 39})
 $$
 
@@ -521,6 +697,14 @@ where
 | $I_{Steer,Lt}$ | Total rotational inertia for left-side wheel |
 | $I_{Column}$ | Total rotational inertia of steering column, including steering gearbox |
 | $\eta$ | Steering gear ratio |
+
+The column inertia is referred to the wheel steer axis through the square of
+the steering gear ratio, as it is for any inertia reflected through a gear
+reduction. A high gear ratio therefore makes the steering system substantially
+harder to accelerate, which is the dominant contribution for most vehicles.
+
+*(updated: earlier editions multiplied the column inertia by the steering gear
+ratio rather than its square.)*
 
 ## Payloads
 
@@ -598,7 +782,7 @@ SIMON provides user-entered driver controls for steering, braking, throttle and 
 
 ### Steering
 
-Steering inputs may be provided for right and left side wheels at each steerable axle. At Steering Wheel and At Axle options are supported. If the At Steering Wheel option is selected, the right side and left side wheel steer angles are equal to the current table entry divided by the axle's steering gear ratio.
+Steering inputs may be provided for right and left side wheels at each steerable axle. At Steering Wheel and At Axle options are supported. If the At Steering Wheel option is selected, the right side and left side wheel steer angles are equal to the current table entry divided by the axle's steering gear ratio, unless Use Ackermann Steering is selected, in which case the two front wheels are given different angles so that they point at a common turn center. See *Steering System — Steer angle from the driver* (Eqs. 33a and 33b).
 
 ### HVE Driver Model
 
