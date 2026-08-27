@@ -297,19 +297,43 @@ $$
 ![Figure 4-4](images/p081-023.png)
 *Figure 4-4: Wheel spin degree of freedom moments and forces.*
 
-The solution of Eqs. 27 and 28 for $\dot\Omega$ yields the following:
+Collecting the applied moments at each wheel as
 
 $$
-\dot\Omega_{Wheel,Rt} = \xi_{Wheel,Rt}\left(T_d + T_b - F_{x'}r + M_{Rolling}\right)_{Wheel,Rt} - \xi_{Wheel,Lt}\left(T_d + T_b - F_{x'}r + M_{Rolling}\right)_{Wheel,Lt}
+M = T_d + T_b + M_{Collision} - F_{x'}r + M_{Rolling}
+\qquad (\text{Eq. 28a})
+$$
+
+Eqs. 27 and 28 form a pair of simultaneous equations in the two spin
+accelerations, whose exact solution is
+
+$$
+\dot\Omega_{Wheel,Rt} = \frac{M_{Rt}\,I_{Wheel,Lt} + \left(M_{Rt} - M_{Lt}\right)A}{I_{Wheel,Rt}I_{Wheel,Lt} + A\left(I_{Wheel,Rt} + I_{Wheel,Lt}\right)}
 \qquad (\text{Eq. 29})
 $$
 
 and
 
 $$
-\dot\Omega_{Wheel,Lt} = \xi_{Wheel,Rt}\left(T_d + T_b - F_{x'}r + M_{Rolling}\right)_{Wheel,Lt} - \xi_{Wheel,Lt}\left(T_d + T_b - F_{x'}r + M_{Rolling}\right)_{Wheel,Rt}
+\dot\Omega_{Wheel,Lt} = \frac{M_{Lt}\,I_{Wheel,Rt} + \left(M_{Lt} - M_{Rt}\right)A}{I_{Wheel,Rt}I_{Wheel,Lt} + A\left(I_{Wheel,Rt} + I_{Wheel,Lt}\right)}
 \qquad (\text{Eq. 30})
 $$
+
+where
+
+$$
+A = \frac{I_{Drivetrain}\,\eta_{Diff}^2}{4}
+$$
+
+For a non-driven axle, $I_{Drivetrain}$ is zero, $A$ vanishes, and Eqs. 29 and
+30 reduce to $\dot\Omega = M/I_{Wheel}$ at each wheel independently.
+
+*(updated: earlier editions solved Eqs. 27 and 28 using a pair of "wheel
+inertial factors", $\xi$. That method was replaced by the direct solution given
+above, and the factors are no longer used. The moment term also now includes
+the collision moment, $M_{Collision}$, which is the wheel spin moment produced
+by the 3-D mesh collision model when a wheel is being contacted; it is zero
+otherwise.)*
 
 Once $\dot\Omega$ is determined for each wheel, the wheel spin velocity is integrated directly:
 
@@ -334,17 +358,11 @@ In the preceding development,
 | $M_{Rolling}$ | Tire rolling resistance moment |
 | $I_{Wheel}$ | Total wheel spin inertia: tire + rim (×2 if dual tires) + axle + any spinning portion of brake |
 | $I_{Drivetrain}$ | Total rotational inertia of drivetrain components: engine + transmission + driveline |
-| $\xi$ | Wheel inertial factor |
+| $M_{Collision}$ | Wheel spin moment from the 3-D mesh collision model (zero unless the wheel is being contacted) |
+| $T_b$ | Applied brake torque at wheel (see *Brake Torque*) |
 
-$$
-\xi = \frac{B}{B - A}\ \text{for the right-side wheel};\qquad \xi = \frac{A}{C - A}\ \text{for the left-side wheel}
-$$
-
-where
-
-$$
-A = \frac{I_{Drivetrain}\,\eta_{Diff}^2}{4},\qquad B = I_{Wheel,Rt} + A,\qquad C = I_{Wheel,Lt} + A
-$$
+The spin velocity of Eq. 31 is advanced with a first-order update at each tire
+force timestep rather than by the vehicle's main integrator.
 
 > **NOTE:** In the calculation of wheel drive torque, $T_d$ (above), $\zeta$ is the "torque function" that determines how the drive torque is distributed between the drive wheels. By default, SIMON assumes the drive torque is split equally between all drive wheels.
 
@@ -624,12 +642,34 @@ SIMON uses three optional methods for computing the current level of attempted b
 
 These methods are described in the following section.
 
+Whichever method is used, SIMON distinguishes between the **attempted** brake
+torque — what the brake system is trying to apply — and the **applied** brake
+torque, which is what actually reaches the wheel spin equation after the
+low-speed limits of Eqs. 47e through 47h are applied.
+
 #### At Pedal Braking Option
 
-If the At Pedal brake table option is used, the attempted brake torque, $T_b$, at each wheel is calculated as follows:
+For the At Pedal option, the attempted brake torque at each wheel is produced
+by a sequence of steps applied at every timestep. In order, these are:
+
+1. Determine the brake system pressure at the source, from the driver's pedal
+   input or from the HVE Driver Model (Eq. 47a).
+2. Apply the brake time lag for the wheel (Eq. 47a).
+3. Apply proportioning, if a proportioning valve is present (Eq. 48).
+4. Apply brake failure, if the wheel's brake is failing (Eq. 47b).
+5. Apply the brake rise time (Eq. 47c).
+6. Apply yaw stability control modulation, if the vehicle is so equipped.
+7. Apply ABS modulation, if the vehicle is so equipped.
+8. Update the brake temperatures and calculate the attempted brake torque from
+   the resulting wheel pressure (Eq. 47).
+
+A wheel damaged during a collision bypasses this sequence entirely; see
+*Wheel damage lockup*, below.
+
+The attempted brake torque, $T_b$, at each wheel is calculated as follows:
 
 $$
-T_b = T_{Ratio}(p - p_0)
+T_b = T_{Ratio}\max\left(0,\; p - p_0\right)
 \qquad (\text{Eq. 47})
 $$
 
@@ -644,11 +684,49 @@ where
 
 Torque ratio for generic brake types is entered directly by the user for each wheel. For brakes created using the HVE Brake Designer, the torque ratio is calculated from the brake's mechanical design and material parameters and current operational characteristics (lining temperature and sliding speed).
 
+Note that the brake produces no torque until the wheel pressure exceeds the
+pushout pressure, and none at all when the wheel pressure is zero.
+
+*(updated: earlier editions gave Eq. 47 without the limit at zero. A wheel
+pressure below the pushout pressure produces no brake torque; it does not
+produce a negative torque.)*
+
 If the HVE ABS Model is invoked, wheel brake pressures are modulated according to the selected ABS algorithm (see HVE User's Manual, Chapter 31).
+
+#### Source pressure and brake time lag
+
+The brake system pressure at the source is the product of the current pedal
+force and the vehicle brake pedal ratio. Each wheel has its own brake time lag,
+which delays the arrival of that pressure at the wheel:
+
+$$
+p_{Table} =
+\begin{cases}
+0, & t < t_{Lag}\\[4pt]
+F_{Table}\!\left(t - t_{Lag}\right) \times R, & t \ge t_{Lag}
+\end{cases}
+\qquad (\text{Eq. 47a})
+$$
+
+where $t_{Lag}$ is the wheel's brake time lag, $F_{Table}$ is the At Pedal
+brake table interpolated at the lagged time, and $R$ is the vehicle brake pedal
+ratio. Note that the table is evaluated at the lagged time, so the entire pedal
+force history is shifted later by the lag rather than merely being suppressed
+during it.
+
+When the HVE Driver Model's speed follower is controlling the vehicle, the
+pedal force is supplied by the driver model instead of the brake table, and the
+brake time lag is not applied. A trailer whose tow vehicle is under speed
+follower control uses the tow vehicle's pedal force and pedal ratio. Following
+a collision, speed follower control is released and the brake table resumes,
+with the time lag applied.
+
+*(updated: the brake time lag and the speed follower interaction were not
+documented in earlier editions.)*
 
 #### Brake Pressure Proportioning
 
-The pressure at the wheel cylinder or air chamber is the product of the current pedal force (interpolated from the Driver Controls, Pedal Force table) and the vehicle brake pedal ratio. The presence of a proportioning valve will reduce the pressure at the wheel as follows:
+The presence of a proportioning valve will reduce the pressure at the wheel as follows:
 
 $$
 p =
@@ -664,11 +742,91 @@ where
 | Symbol | Definition |
 |---|---|
 | $p$ | Brake system pressure effective at wheel |
-| $p_{Table}$ | Brake system pressure effective at source (master cylinder or storage reservoir) $= F_{Table}\times R$ |
-| $F_{Table}$ | Current brake pedal force interpolated from At Pedal brake table |
-| $R$ | Vehicle brake pedal ratio |
+| $p_{Table}$ | Brake system pressure effective at source (master cylinder or storage reservoir), Eq. 47a |
 | $p_{Proportion}$ | System pressure at which proportioning begins |
 | $\eta$ | Proportioning ratio (wheel pressure : source pressure) |
+
+#### Brake failure
+
+A wheel brake may be set to fail during the event. The extent of the failure
+ramps linearly from none at the failure start time to the user-specified extent
+at the end of the failure duration, and the wheel pressure is reduced by that
+fraction:
+
+$$
+p \leftarrow p\left(1 - \varepsilon(t)\right),\qquad
+\varepsilon(t) =
+\begin{cases}
+0, & t \le t_{Fail}\\[4pt]
+\varepsilon_{Fail}\dfrac{t - t_{Fail}}{\Delta t_{Fail}}, & t_{Fail} < t < t_{Fail} + \Delta t_{Fail}\\[8pt]
+\varepsilon_{Fail}, & t \ge t_{Fail} + \Delta t_{Fail}
+\end{cases}
+\qquad (\text{Eq. 47b})
+$$
+
+where $\varepsilon_{Fail}$ is the fraction of total brake failure, $t_{Fail}$
+the failure start time and $\Delta t_{Fail}$ the failure duration. A failure
+extent of 1.0 removes the wheel's braking entirely.
+
+*(updated: the brake failure model was not documented in earlier editions.)*
+
+#### Brake rise time
+
+The wheel pressure does not reach its commanded value instantaneously. If a
+brake rise time is specified for the wheel, the pressure approaches the
+commanded value exponentially:
+
+$$
+p \leftarrow p_{Prev}\,e^{-\Delta t/\tau} + p\left(1 - e^{-\Delta t/\tau}\right)
+\qquad (\text{Eq. 47c})
+$$
+
+where $p_{Prev}$ is the wheel pressure at the previous brake calculation,
+$\tau$ is the brake rise time and $\Delta t$ is the interval since the previous
+brake calculation. A rise time of zero applies the commanded pressure directly.
+
+*(updated: the brake rise time was not documented in earlier editions.)*
+
+#### Brake temperature and fade
+
+Before the torque of Eq. 47 is calculated, SIMON updates the brake
+temperatures at each wheel from the work done by the brake during the previous
+step, the wheel's rotational speed, the vehicle's total velocity and the
+ambient air temperature. Temperatures are tracked at five locations through the
+lining and drum cross-section. The lining temperature and the sliding speed
+then determine the current lining friction, and therefore the brake torque
+ratio of Eq. 47 — this is how brake fade is produced. Fade is available only
+for brakes created with the HVE Brake Designer, since a generic brake's torque
+ratio is a fixed user entry.
+
+*(updated: earlier editions noted that fade can be simulated but did not
+describe where the temperature calculation occurs in the sequence.)*
+
+#### Wheel damage lockup
+
+If a wheel is damaged during the event and the Wheel Damage option specifies a
+lockup torque for it, the entire brake system calculation above is bypassed and
+the attempted brake torque is set directly from the damage:
+
+$$
+T_b = \lambda(t)\,T_{Nominal},\qquad
+T_{Nominal} = \mu_{p,max}\,r_{Tire,max}\,F_{z,Static}
+\qquad (\text{Eq. 47d})
+$$
+
+where $\lambda(t)$ is the wheel's damage lockup fraction, interpolated over the
+wheel damage start time and duration in the same way as the other wheel damage
+parameters, and $T_{Nominal}$ is a nominal wheel lockup torque formed from the
+largest peak friction value and the largest tire radius among the vehicle's
+tires, multiplied by the wheel's static vertical load. A lockup fraction of 1.0
+therefore corresponds to approximately the torque needed to lock the wheel under
+its static load.
+
+The bypass takes effect only when the lockup fraction is meaningfully greater
+than zero; below that, the normal brake system calculation applies.
+
+*(updated: the wheel damage lockup torque was not documented in earlier
+editions.)*
 
 #### Brake Force and Percent Available Friction Options
 
@@ -691,12 +849,88 @@ where
 | $r_{Tire}$ | Current tire radius |
 | $\theta_{Wheel}$ | Attempted brake input from % Available Friction table |
 | $N$ | Number of tires at wheel location |
-| $\mu_P$ | Peak coefficient of friction for tire |
+| $\mu_P$ | Current peak coefficient of friction for the tire — the value interpolated from the friction table for the tire's current load and speed, scaled by the terrain friction multiplier and by the hydroplaning model if one is selected |
 | $F_R$ | Current radial tire force (normal to the terrain) |
 
-> **NOTE:** If the Brake Force method is used and the wheel location uses dual tires, $T_b$ is based on the largest tire radius.
+> **NOTE:** If the Brake Force method is used and the wheel location uses dual tires, $T_b$ is based on the largest tire radius. The % Available Friction method sums the contribution of each tire at the wheel location.
 
 > **NOTE:** Use of the Wheel Brake Force and Percent Available Friction options is discouraged because they bypass SIMON's brake system model and ignore the effects of the wheel spin degree of freedom. In addition, ABS simulation is not possible.
+
+*(updated: the % Available Friction method sums over the tires at a dual-tire
+wheel location; earlier versions used a single tire radius.)*
+
+#### Applied brake torque at low wheel speed
+
+The attempted brake torque calculated above cannot always be applied. A brake
+can command more torque than the tire is able to react against the road, and
+near zero wheel speed a torque larger than the tire can support would drive the
+wheel spin solution unstable — it would spin the wheel backwards. SIMON
+therefore limits the attempted torque to the torque actually available at the
+tire before applying it to the wheel spin equation.
+
+The torque available at a wheel is the moment its tire forces produce about the
+spin axis:
+
+$$
+T_{Avail} = \sum_{i=0}^{N} F_{x'_i}\,r_{Tire_i}
+\qquad (\text{Eq. 47e})
+$$
+
+The limit is applied per axle, because the two wheels of a driven axle are
+coupled through the differential. Let $\Omega_{min}$ be the minimum wheel spin
+velocity, 0.1 rad/sec. Then:
+
+- **Both wheels turning** ($\left|\Omega\right| > \Omega_{min}$ on both sides).
+  The full attempted torque is applied at each wheel, directed opposite to that
+  wheel's spin:
+
+  $$
+  T_{b,Applied} = -\left|T_b\right|\mathrm{sgn}\left(\Omega\right)
+  \qquad (\text{Eq. 47f})
+  $$
+
+- **Both wheels at or below the threshold, and the available torque does not
+  exceed the attempted torque on either side.** Both wheels are locked, and
+  each wheel's applied torque is limited to its own available torque:
+
+  $$
+  T_{b,Applied} = -\left|T_{Avail}\right|\mathrm{sgn}\left(\Omega\right)
+  \qquad (\text{Eq. 47g})
+  $$
+
+- **One wheel turning and one at or below the threshold, or one wheel locked
+  and the other not.** The two wheels are treated separately. The turning (or
+  unlocked) wheel receives its attempted torque as in Eq. 47f, except that if
+  its partner is locked and its own available torque acts in the same direction
+  as its spin, its brake is released and no torque is applied. The remaining
+  wheel is limited by the torque available to it after the differential has
+  transferred torque from the other side:
+
+  $$
+  T_{Diff} = T_{Avail,2} - \rho\left(T_{Avail,1} - T_{b,Applied,1}\right),\qquad
+  \rho = \frac{A}{I_{Wheel,1} + A}
+  \qquad (\text{Eq. 47h})
+  $$
+
+  where subscript 1 denotes the turning or unlocked wheel, subscript 2 the
+  other wheel, $I_{Wheel}$ is the wheel spin inertia and $A$ is the drivetrain
+  inertia term of Eq. 29. If $T_{Diff}$ does not act to slow the wheel, the
+  brake is released; if $\left|T_{Diff}\right|$ equals or exceeds the attempted
+  brake torque, the attempted torque is applied; otherwise $T_{Diff}$ is
+  applied.
+
+$\rho$ is zero on a non-driven axle, so the two wheels of a non-driven axle are
+limited independently.
+
+The result of this limiting is that the brake torque reported in the variable
+output can be smaller than the torque the brake system is attempting to produce
+whenever a wheel is near or at rest, and can momentarily fall to zero when a
+wheel is released. This is expected behavior at low speed and does not indicate
+a problem with the brake data.
+
+*(updated: this subsection describes behavior not documented in earlier
+editions. It applies to the At Pedal, Brake Force and % Available Friction
+methods alike.)*
 
 ### Drive Torque
 
