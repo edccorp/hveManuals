@@ -364,7 +364,7 @@ In the preceding development,
 The spin velocity of Eq. 31 is advanced with a first-order update at each tire
 force timestep rather than by the vehicle's main integrator.
 
-> **NOTE:** In the calculation of wheel drive torque, $T_d$ (above), $\zeta$ is the "torque function" that determines how the drive torque is distributed between the drive wheels. By default, SIMON assumes the drive torque is split equally between all drive wheels.
+> **NOTE:** In the calculation of wheel drive torque, $T_d$ (above), $\zeta$ is the "torque function" that determines how the drive torque is distributed between the drive wheels. By default, SIMON splits the drive torque equally between all drive wheels; if the vehicle is equipped with traction control the split is redistributed between the wheels. See *Drive Torque — Torque split* (Eq. 51g).
 
 ## Steering System
 
@@ -1124,16 +1124,37 @@ SIMON uses three optional methods for computing the current level of attempted d
 - Tractive Effort
 - Percent Available Friction
 
-These methods are described in the following section.
+These methods are described in the following section. Drive torque is applied
+only at drive axles; a non-driven axle receives no drive torque by any method.
 
 #### Percent Wide-Open Throttle Option
 
-If the Percent Wide-open Throttle table option is used, the attempted drive torque, $T_d$, at each wheel is calculated as follows:
+If the Percent Wide-open Throttle table option is used, the drivetrain model is
+used in full: the current engine speed is derived from the drive wheel speeds
+through the transmission and differential, the engine torque is interpolated
+from the engine tables at that speed and the current throttle position, and the
+result is distributed to the drive wheels.
+
+The engine speed implied by the current road speed is
 
 $$
-\dot\theta_e = \eta_{Differential}\times\eta_{Transmission}\times\frac{\displaystyle\sum_{i=1}^{N}\Omega_{Wheel}}{N}
+\dot\theta_{e,Road} = \eta_{Differential}\times\eta_{Transmission}\times\frac{\displaystyle\sum_{i=1}^{N}\Omega_{Wheel}}{N}
 \qquad (\text{Eq. 50})
 $$
+
+The engine cannot turn more slowly than its idle speed, so the speed used to
+look up engine torque is
+
+$$
+\dot\theta_e = \max\left(\dot\theta_{e,Road},\; \dot\theta_{Idle}\right)
+\qquad (\text{Eq. 50a})
+$$
+
+If $\dot\theta_{e,Road}$ exceeds the highest speed in either engine table, the
+event terminates with an excessive engine speed message (see
+[Chapter 6](06-messages.md)).
+
+The engine torque is then
 
 $$
 T_e = T_{CT} + \lambda\left(T_{WOT} - T_{CT}\right)
@@ -1145,8 +1166,10 @@ where
 | Symbol | Definition |
 |---|---|
 | $\eta_{Differential}$ | Current numerical ratio of differential from driver controls, differential gear table |
-| $\eta_{Transmission}$ | Current numerical ratio of transmission from driver controls, transmission gear table |
-| $\dot\theta_e$ | Current engine speed |
+| $\eta_{Transmission}$ | Current numerical ratio of transmission (Eq. 51b or 51c) |
+| $\dot\theta_{e,Road}$ | Engine speed implied by the current drive wheel speeds |
+| $\dot\theta_e$ | Engine speed used for the engine table look-up |
+| $\dot\theta_{Idle}$ | Engine idle speed |
 | $\Omega_{Wheel}$ | Current wheel spin velocity (see Eq. 31) |
 | $N$ | Number of drive wheels |
 | $T_e$ | Current engine torque (this result is used in Eq. 32) |
@@ -1154,20 +1177,152 @@ where
 | $T_{WOT}$ | Wide-open-throttle engine torque at $\dot\theta_e$ from engine torque vs. engine speed table |
 | $\lambda$ | Current throttle position, interpolated from driver controls, throttle table |
 
+Below idle speed the engine is not allowed to retard the vehicle: if Eq. 51
+returns a negative torque while the road speed implies an engine speed below
+idle, the engine torque is set to zero.
+
+$$
+T_e = 0 \quad\text{when}\quad T_e < 0 \ \text{and}\ \dot\theta_{e,Road} < \dot\theta_{Idle}
+\qquad (\text{Eq. 51a})
+$$
+
+*(updated: the idle speed floor of Eq. 50a and the engine braking limit of
+Eq. 51a were not described in earlier editions.)*
+
+#### Gear selection
+
+The differential ratio always comes from the driver's differential gear table.
+The transmission ratio comes from the driver's gear table for a manual
+transmission, or from the automatic shift logic for an automatic transmission.
+
+A gear table is a step function of time, not an interpolation: the gear in
+effect is the one from the most recent table entry at or before the current
+time. Before the first table entry the transmission is in neutral and the ratio
+is zero, which is why a vehicle with no gear table entries will not accelerate
+no matter how much throttle is applied.
+
+$$
+\eta_{Transmission} = \eta\left(g\right),\qquad g = \text{gear number from the most recent table entry}
+\qquad (\text{Eq. 51b})
+$$
+
+Gear numbers are ordered with neutral first, reverse second, and the forward
+gears after that. The transmission may have up to 12 forward ratios, plus
+reverse and neutral; the differential may have up to three ratios.
+
+For an **automatic transmission**, the gear is selected from the current engine
+speed and throttle position rather than from a time table. If a gear table
+entry selects neutral or reverse, or the transmission is currently in neutral
+or reverse, that selection is used directly and no speed-dependent shift is
+made. Otherwise the transmission upshift and downshift points — expressed as
+throttle positions — are interpolated against engine speed from the vehicle's
+automatic shift data, and
+
+$$
+\text{Upshift when}\quad \dot\theta_e > \dot\theta_{Max}\quad\text{or}\quad
+\left(\lambda < \lambda_{Up}\ \text{and}\ \dot\theta_e\frac{\eta\left(g+1\right)}{\eta\left(g\right)} > \dot\theta_{Min}\right)
+\qquad (\text{Eq. 51c})
+$$
+
+$$
+\text{Downshift when}\quad \dot\theta_e < \dot\theta_{Min}\quad\text{or}\quad
+\left(\lambda > \lambda_{Down}\ \text{and}\ \dot\theta_e\frac{\eta\left(g-1\right)}{\eta\left(g\right)} < \dot\theta_{Min} + 0.75\left(\dot\theta_{Max} - \dot\theta_{Min}\right)\right)
+\qquad (\text{Eq. 51d})
+$$
+
+where
+
+| Symbol | Definition |
+|---|---|
+| $g$ | Current gear number |
+| $\eta(g)$ | Transmission ratio for gear $g$ |
+| $\dot\theta_{Min}, \dot\theta_{Max}$ | Minimum and maximum engine speeds for shifting |
+| $\lambda_{Up}, \lambda_{Down}$ | Upshift and downshift throttle positions, interpolated against engine speed |
+
+The second condition in each case tests where the engine would land after the
+shift, so that a shift is not made if it would leave the engine outside its
+usable speed range. At most one shift is made per timestep, and the engine
+speed of Eq. 50 is recomputed with the new ratio. Downshifts are permitted only
+out of the second forward gear or higher.
+
+*(updated: automatic transmission gear selection was not described in earlier
+editions, which described only the driver's gear table.)*
+
+#### Clutch
+
+If **Use Clutch/Torque Converter** is selected in Driver Controls and the
+transmission is in reverse or first gear, the engine is allowed to turn faster
+than the road speed would imply, as it does when a driver slips the clutch to
+pull away. The target
+engine speed rises with throttle position from idle to the speed at which the
+engine develops its peak wide-open-throttle torque:
+
+$$
+\dot\theta_{e,Clutch} = \dot\theta_{Idle} + \lambda\left(\dot\theta_{Peak} - \dot\theta_{Idle}\right)
+\qquad (\text{Eq. 51e})
+$$
+
+and the clutch slip is the fraction by which the engine is outrunning the
+driveline:
+
+$$
+s_{Clutch} = 1 - \frac{\dot\theta_{e,Road}}{\dot\theta_{e,Clutch}},\qquad 0 \le s_{Clutch} \le 1
+\qquad (\text{Eq. 51f})
+$$
+
+While the clutch is slipping, the engine torque of Eq. 51 is looked up at
+$\dot\theta_{e,Clutch}$ instead of $\dot\theta_e$. Once the driveline catches
+up, the slip falls to zero and the engine speed reverts to Eq. 50a. Clutch slip
+is reported in the variable output.
+
+The clutch is active only in reverse and first gear; in any higher gear the
+engine speed follows the road speed directly. The transmission type — manual
+or automatic — is part of the vehicle's Drivetrain data, while the clutch
+setting belongs to the event's Driver Controls.
+
+*(updated: the clutch model was not described in earlier editions.)*
+
+#### Torque split
+
+The engine torque, multiplied by the transmission and differential ratios, is
+divided among the drive wheels by the torque split, $\zeta$. By default the
+split is equal across every drive wheel:
+
+$$
+\zeta = \frac{0.5}{N_{Drive\ Axles}}\quad\text{at each wheel of a drive axle};\qquad
+\zeta = 0\quad\text{at a non-driven axle}
+\qquad (\text{Eq. 51g})
+$$
+
+If the vehicle is equipped with traction control, the traction control model
+redistributes the split between the wheels according to the total drive torque
+and the vehicle's yaw velocity error, and the split is then no longer equal.
+Traction control activity is reported in the variable output.
+
+*(updated: the redistribution of the torque split by traction control was not
+described in earlier editions.)*
+
 #### Tractive Effort and Percent Available Friction Options
 
-If the Tractive Effort or Percent Available Friction throttle table options are used, the attempted drive torque, $T_d$, is calculated directly:
+If the Tractive Effort or Percent Available Friction throttle table options are used, the attempted drive torque, $T_d$, is calculated directly, bypassing the drivetrain model:
 
 $$
 T_d =
 \begin{cases}
 F_{Wheel}\times\max\left(r_{Tire,Inner}, r_{Tire,Outer}\right), & \text{for the Tractive Effort method}\\[6pt]
-\theta_{Wheel}\times\displaystyle\sum_{i=1}^{N}\mu_P F_R\,r_{Tire}, & \text{for the \% Available Friction method}
+\theta_{Wheel}\times\displaystyle\max_{i=1}^{N}\left(\mu_p F_R\,r_{Tire}\right), & \text{for the \% Available Friction method}
 \end{cases}
 \qquad (\text{Eq. 52})
 $$
 
 (Definitions are the same as for the Braking Tables; see above.)
+
+> **NOTE:** At a wheel location with dual tires, both drive torque methods use the largest single tire value rather than the sum over the tires. This differs from the % Available Friction brake method, which sums over the tires at the wheel location.
+
+*(updated: earlier editions gave the % Available Friction drive torque as a sum
+over the tires at the wheel location. It is the largest value among them.)*
+
+> **NOTE:** Use of the Tractive Effort and Percent Available Friction options is discouraged because they bypass SIMON's drivetrain model and ignore the effects of the wheel spin degree of freedom.
 
 ## Wheel Position
 

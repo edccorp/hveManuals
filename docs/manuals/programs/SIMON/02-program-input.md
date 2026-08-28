@@ -380,6 +380,12 @@ The user-entered Power vs. Engine Speed Table defines the valid range of engine 
 
 The transmission may have up to 12 forward ratios, plus reverse and neutral. The differential may have up to three ratios.
 
+The transmission may be either manual or automatic. A manual transmission takes its gear from the driver's Gear table. An automatic transmission selects its own gear from the current engine speed and throttle position, using the vehicle's shift data — a minimum and maximum engine speed for shifting, and the upshift and downshift throttle positions at each. See Chapter 4, *Drive Torque — Gear selection*.
+
+*(updated: automatic transmission support was not described in the Fifth Edition manual.)*
+
+> **NOTE:** The *Use Clutch/Torque Converter* option is part of the event's Driver Controls rather than the vehicle's Drivetrain data. When it is selected, the engine is allowed to turn faster than the road speed implies while the transmission is in reverse or first gear. See Chapter 4, *Drive Torque — Clutch*.
+
 ## Environment
 
 SIMON uses the environment created by the HVE Environment Editor (Figure 2-3). The environment is created by defining the following groups of attributes:
