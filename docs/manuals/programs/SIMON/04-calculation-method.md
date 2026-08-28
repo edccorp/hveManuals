@@ -76,7 +76,7 @@ $$
 In the derivation that follows, the Euler equations of motion include the inertial coupling effects of the unsprung masses. When combined with the other applied external forces acting on the sprung mass,
 
 $$
-\sum \vec F_{Total} = \sum \vec F_{Suspension} + \sum \vec F_{Connection} + \sum \vec F_{Collision} + \sum \vec F_{Aerodynamic} + \sum \vec F_{Unsprung\,Mass}
+\sum \vec F_{Total} = \sum \vec F_{Suspension} + \sum \vec F_{Connection} + \sum \vec F_{Collision} + \sum \vec F_{Aerodynamic} + \sum \vec F_{Pulse} + \sum \vec F_{Unsprung\,Mass}
 \qquad (\text{Eq. 3})
 $$
 
@@ -84,11 +84,15 @@ where
 
 | Term | Definition |
 |---|---|
-| $\sum \vec F_{Suspension}$ | Vehicle-fixed components of suspension forces |
+| $\sum \vec F_{Suspension}$ | Vehicle-fixed components of suspension forces. This term also carries the tire shear forces reaching the sprung mass through the suspension, the tire sidewall contact forces produced by the Sidewall Impact Tire-Terrain Model, and the collision forces acting on any wheel carrying its own collision mesh |
 | $\sum \vec F_{Connection}$ | Vehicle-fixed components of connection forces |
 | $\sum \vec F_{Collision}$ | Vehicle-fixed components of collision forces |
 | $\sum \vec F_{Aerodynamic}$ | Vehicle-fixed components of aerodynamic forces |
+| $\sum \vec F_{Pulse}$ | Vehicle-fixed components of forces from a user-entered collision pulse table (see *Collision Pulse Table*, below) |
 | $\sum \vec F_{Unsprung\,Mass}$ | Vehicle-fixed components of inertial forces from unsprung masses (described in the next section) |
+
+*(updated: earlier editions omitted the collision pulse table forces, and did
+not state what the suspension term contains.)*
 
 In the vehicle-fixed x-direction, each unsprung mass is assumed to act as a point mass. Thus, Newton's 2nd law yields
 
@@ -125,11 +129,15 @@ $$
 Rotational motion is handled in a similar manner. The external forces acting on the sprung mass are
 
 $$
-\sum \vec M_{Total} = \sum \vec M_{Suspension} + \sum \vec M_{Connection} + \sum \vec M_{Collision} + \sum \vec M_{Aerodynamic} + \sum \vec M_{Unsprung\,Mass}
+\sum \vec M_{Total} = \sum \vec M_{Suspension} + \sum \vec M_{Connection} + \sum \vec M_{Collision} + \sum \vec M_{Aerodynamic} + \sum \vec M_{Pulse} + \sum \vec M_{Unsprung\,Mass}
 \qquad (\text{Eq. 7})
 $$
 
-where the external moments from suspensions, connections, and so forth, are defined in the vehicle-fixed axis system.
+where the external moments from suspensions, connections, and so forth, are
+defined in the vehicle-fixed axis system, and each force term of Eq. 3
+contributes a moment about the sprung mass CG through its point of application.
+As in Eq. 3, the suspension moment term also carries the tire, tire sidewall and
+wheel collision contributions.
 
 The following equation defines roll motion about the vehicle-fixed x-axis:
 
@@ -708,7 +716,9 @@ ratio rather than its square.)*
 
 ## Payloads
 
-SIMON supports a payload on each unit vehicle. Note that this means the tow vehicle, trailer(s) and dolly(s) may each have an individual payload. The effect of the payload is simply to change the inertial properties and CG location of the vehicle's sprung mass.
+SIMON supports one payload on each unit vehicle. Note that this means the tow vehicle, trailer(s) and dolly(s) may each have an individual payload. The effect of the payload is simply to change the inertial properties and CG location of the vehicle's sprung mass.
+
+Human occupants are handled by the same procedure; see *Human Occupants*, below. The payload adjustment is applied first, then each occupant in turn.
 
 Given a payload with inertial properties $m, I_x, I_y, I_z$, placing the payload at a distance, $\vec r$, from the sprung mass center of gravity changes the sprung mass inertial properties as follows:
 
@@ -743,16 +753,26 @@ The adjustment in center of gravity location and the additional rotational inert
 Let
 
 $$
-dV_x = \Delta_y + \Delta_z,\qquad dV_y = \Delta_x + \Delta_z,\qquad dV_z = \Delta_x + \Delta_y
+dV_x = \sqrt{\Delta_y^2 + \Delta_z^2},\qquad
+dV_y = \sqrt{\Delta_x^2 + \Delta_z^2},\qquad
+dV_z = \sqrt{\Delta_x^2 + \Delta_y^2}
 \qquad (\text{Eq. 44})
 $$
 
 and
 
 $$
-dP_x = r_y + r_z - dV_x,\qquad dP_y = r_z + r_x - dV_y,\qquad dP_z = r_x + r_y - dV_z
+dP_x = \sqrt{r_y^2 + r_z^2} - dV_x,\qquad
+dP_y = \sqrt{r_x^2 + r_z^2} - dV_y,\qquad
+dP_z = \sqrt{r_x^2 + r_y^2} - dV_z
 \qquad (\text{Eq. 45})
 $$
+
+*(updated: earlier editions gave these moment arms as simple sums of the
+coordinate offsets. They are the perpendicular distances from each axis, so the
+two offsets combine as a root sum of squares. The simple sum overstates the
+inertia change substantially for any payload offset in more than one
+direction.)*
 
 The adjusted rotational inertias for the vehicle sprung mass are
 
@@ -1383,7 +1403,7 @@ For solid axle suspension types, the vehicle-fixed wheel center coordinates are 
 $$
 \begin{aligned}
 x_{Wheel} &= x_{Initial} + \Delta x_{Displ} & \text{(Eq. 58)}\\
-y_{Wheel} &= y_{Initial} + \phi_{Axle}\,\rho_{Axle} + \Delta y_{Displ} & \text{(Eq. 59)}\\
+y_{Wheel} &= y_{Initial} - \phi_{Axle}\,\rho_{Axle} + \Delta y_{Displ} & \text{(Eq. 59)}\\
 z_{Wheel} &= z_{Initial} + \delta_{Axle} + \phi_{Axle}\,y_{Initial} + \Delta z_{Displ} & \text{(Eq. 60)}
 \end{aligned}
 $$
@@ -1407,7 +1427,7 @@ x_{Wheel} = x_{Initial} + \Delta x_{Displ}
 $$
 
 $$
-y_{Wheel} = y_{Initial} + \Delta y_{Displ} + \frac{dy_w}{dz}
+y_{Wheel} = y_{Initial} + \Delta y_{Displ} + \Delta y_{Track}
 \qquad (\text{Eq. 61})
 $$
 
@@ -1420,10 +1440,34 @@ where
 
 | Symbol | Definition |
 |---|---|
-| $\dfrac{dy_w}{dz}$ | Change in wheel y-coordinate due to half-track change |
+| $\Delta y_{Track}$ | Half-track change at the current suspension deflection, interpolated from the vehicle's Half-track Change vs. Jounce/Rebound table and applied outboard on both sides |
 | $\delta_{Wheel}$ | Current wheel z-displacement from equilibrium position |
 
-*(updated: in the current code, when DyMESH wheel contact is enabled, wheel x-y displacement can also result dynamically from collision forces on the wheel mesh — see the Sprung Mass Impact Model section below.)*
+*(updated: in the current code, when DyMESH wheel contact is enabled, wheel x-y displacement can also result dynamically from collision forces on the wheel mesh — see the Sprung Mass Impact Model section below. Earlier editions wrote the half-track term in Eq. 61 as a rate of change; it is the interpolated half-track change itself. The axle roll term in Eq. 59 moves the wheel toward the inside of the roll.)*
+
+### Steer Axis Geometry
+
+At a steerable axle — of either suspension type — the wheel does not turn about
+a vertical axis through the wheel center. It turns about the steer axis, which
+is inclined by the caster and kingpin angles and offset from the wheel center by
+the stub axle length. SIMON accounts for this by rotating the wheel about its
+actual steer axis, which changes three things at once as the wheel steers:
+
+- the **wheel center position** moves, because the wheel center is offset from
+  the steer axis;
+- the **camber angle** changes, which is the camber gain a steered wheel
+  develops from kingpin inclination and caster;
+- the **steer angle at the road** differs slightly from the rotation applied
+  about the steer axis.
+
+The wheel center coordinates of Eqs. 58 through 62, the camber angle and the
+steer angle are all replaced by the values that result from this rotation before
+they are used elsewhere. The effect grows with steer angle and with the size of
+the caster and kingpin angles, and vanishes for an axle whose steer axis is
+vertical and passes through the wheel center.
+
+*(updated: the steer axis geometry treatment was not described in earlier
+editions, which placed the wheel center from the suspension deflection alone.)*
 
 ## Vehicle-fixed Wheel Orientation
 
@@ -1461,6 +1505,8 @@ where
 
 Note that the right-side and left-side wheels may have different roll steer values. This is, in fact, what happens when a single wheel drops into a pothole.
 
+> **NOTE:** Roll steer is applied only when the **At Steering Wheel** steering option is used. With the At Axle option, each wheel takes its steer angle from the driver table alone and no roll steer contribution is added. *(updated: this restriction was not stated in earlier editions.)*
+
 > **NOTE:** This is called "Bump Steer".
 
 ### Solid Axle Suspension
@@ -1477,7 +1523,7 @@ where
 | Symbol | Definition |
 |---|---|
 | $\phi_{Axle}$ | Vehicle-fixed axle roll angle (see Eq. 26) |
-| $d\gamma_w$ | User-entered axle camber set |
+| $d\gamma_w$ | User-entered axle camber set, applied outboard on both sides so that a positive camber set leans the tops of both wheels the same way relative to the axle |
 
 Wheel steer angle, $\delta_w$, for a solid axle suspension is determined in the same manner as for independent suspension, described earlier, except that roll steer is not a function of individual wheel jounce/rebound; rather it is a function of the axle roll, $\phi_{Axle}$, with respect to the sprung mass. Thus,
 
@@ -1486,7 +1532,7 @@ $$
 \qquad (\text{Eq. 65})
 $$
 
-where $\kappa_\phi$ = solid axle roll steer coefficient.
+where $\kappa_\phi$ = solid axle roll steer coefficient. As for an independent suspension, this term is applied only when the At Steering Wheel steering option is used.
 
 ## Tire Contact Patch Velocity
 
@@ -1768,8 +1814,8 @@ Tire radial force is calculated in the direction of the tire deflection accordin
 $$
 F_R =
 \begin{cases}
-\xi K_T\,\delta_r, & \text{for } \delta_r < \delta_2\\[4pt]
-\xi K_T\left(\overline K_T(\delta_r - \delta_2) + \delta_2\right), & \text{for } \delta_r \ge \delta_2
+K_T\,\delta_r, & \text{for } \delta_r < \delta_2\\[4pt]
+K_T\left(\overline K_T(\delta_r - \delta_2) + \delta_2\right), & \text{for } \delta_r \ge \delta_2
 \end{cases}
 \qquad (\text{Eq. 93})
 $$
@@ -1782,21 +1828,53 @@ where
 | $K_T$ | Tire initial radial stiffness |
 | $\overline K_T$ | Tire secondary stiffness multiplier |
 | $\delta_2$ | Tire radial deflection at which $\overline K_T$ begins |
-| $\xi$ | Tire restitution characteristic |
+
+*(updated: earlier editions included a restitution characteristic that reduced
+the radial force while the tire was rebounding. The radial force is loaded and
+unloaded along the same curve; the tire's rebound restitution value is not
+applied.)*
+
+### Radial stiffness during a tire blow-out
+
+While a tire is blowing out, its initial radial stiffness is ramped linearly
+from its normal value to its blown value over the blow-out duration:
 
 $$
-\xi =
+K_T(t) =
 \begin{cases}
-1.0, & \text{for } \delta_r > \delta_{r_{previous\ timestep}}\\
-\lambda, & \text{for } \delta_r \le \delta_{r_{previous\ timestep}}
+K_{T_0} & t \le t_{BO}\\[4pt]
+K_{T_0}\left(1 + \left(m_K - 1\right)\dfrac{t - t_{BO}}{\Delta t_{BO}}\right) & t_{BO} < t < t_{BO} + \Delta t_{BO}\\[10pt]
+m_K K_{T_0} & t \ge t_{BO} + \Delta t_{BO}
 \end{cases}
+\qquad (\text{Eq. 93a})
 $$
 
-and $\lambda$ = tire stiffness multiplier ($0 \le \lambda \le 1$) for rebound.
+where $m_K$ is the blow-out *Stiffness Factor*, $t_{BO}$ the blow-out start time
+and $\Delta t_{BO}$ the blow-out duration. The secondary stiffness multiplier is
+divided by the same factor, so that the second segment of the force-deflection
+curve keeps the slope it had before the blow-out. The blow-out treatment of
+cornering stiffness, camber stiffness and rolling resistance is described under
+*Tire Model — Tire blow-out*.
 
-If the current tire deflection, $\delta_r$, exceeds the maximum allowable tire deflection, $\delta_{max}$, SIMON terminates and returns a message to HVE telling the user that the current tire deflection is excessive.
+*(updated: the effect of a tire blow-out on radial stiffness was not described
+in earlier editions.)*
+
+### Deflection limits
+
+If the current tire deflection, $\delta_r$, exceeds the maximum allowable tire deflection, $\delta_{max}$, by more than 20 percent, SIMON terminates and returns a message to HVE telling the user that the current tire deflection is excessive. The check is not applied to a wheel carrying its own collision mesh, because deflections during a wheel impact legitimately exceed it.
 
 > **NOTE:** $\delta_{max}$ is user-editable (see Tire, Physical Properties). By default, $\delta_{max}$ is set equal to the section height of the tire. Tire deflection beyond $\delta_{max}$ indicates wheel rim deformation — a condition beyond the scope of the tire model. (To properly model such behavior would require non-linear finite element analysis.)
+
+*(updated: earlier editions gave the termination threshold as $\delta_{max}$
+itself. A 20 percent margin is allowed before the run is stopped.)*
+
+Separately, while a tire is inclined more than about 80 degrees to the ground —
+during a rollover, for example — the deflection used in Eq. 93 is clamped to
+$\delta_2$. Without this limit the geometry of a nearly horizontal wheel would
+produce a very large apparent deflection and an unrealistic radial force.
+
+*(updated: the rollover deflection limit was not described in earlier
+editions.)*
 
 Tire radial force, $F_R$, is an important fundamental property as one of the primary inputs to the tire model which is used to calculate braking and cornering force.
 
@@ -2769,7 +2847,7 @@ In a multi-vehicle train (e.g., a tractor-semitrailer), each sprung mass is allo
 The constraint force is first calculated in the inertial (earth-fixed) reference system, then resolved according to each vehicle-fixed system. In the earth-fixed system,
 
 $$
-\vec F_C = \left(\vec R_n - \vec R_{n+1}\right)\cdot K_C + \left(\vec V_n - \vec V_{n+1}\right)\cdot C_C
+\vec F_C = \vec F_{C_0} + \left(\vec R_n - \vec R_{n+1}\right)\cdot K_C + \left(\vec V_n - \vec V_{n+1}\right)\cdot C_C
 \qquad (\text{Eq. 117})
 $$
 
@@ -2777,6 +2855,7 @@ where
 
 | Symbol | Definition |
 |---|---|
+| $\vec F_{C_0}$ | Static connection force, the load carried at the connection with the vehicles at rest in their initial positions |
 | $\vec R_n - \vec R_{n+1}$ | Earth-fixed distance between connection points on vehicles $n$ and $n+1$ |
 | $K_C$ | Constraint spring rate for vehicle pair. For the default Connection Model (Use Heavier Vehicle) $K_C = \max\left(m_{n_{Sprung}}, m_{n+1_{Sprung}}\right)\cdot g$ |
 | $\vec V_n - \vec V_{n+1}$ | Earth-fixed relative velocity between connection points on vehicles $n$ and $n+1$ |
@@ -2818,6 +2897,13 @@ $$
 
 for the trailing vehicle.
 
+A **pintle eye, hinged** connection cannot carry vertical load: for that
+connection type the vehicle-fixed z-component of the connection force is set to
+zero on both vehicles, leaving only the longitudinal and lateral constraint.
+
+*(updated: the vertical force exception for hinged pintle connections was not
+described in earlier editions.)*
+
 The total force sums from each connection (front and rear) are
 
 $$
@@ -2846,7 +2932,25 @@ These earth-fixed velocity components are used in Eq. 117.
 
 ### Connection Moments
 
-SIMON models roll and yaw moment transfers between connected vehicles. The roll moment is the result of a difference in roll angle between connected vehicles and the yaw moment results from friction in the connection.
+SIMON models roll, pitch and yaw moment transfers between connected vehicles.
+The roll and pitch moments are the result of a difference in roll or pitch angle
+between connected vehicles, and the yaw moment results from friction in the
+connection.
+
+Which transfers occur depends on the connection type:
+
+| Transfer | Applies to |
+| --- | --- |
+| Roll moment (Eq. 127) | Fifth wheel connections only |
+| Pitch moment (Eq. 127a) | Dollies with a hinged drawbar only |
+| Yaw friction moment (Eq. 128) | All connection types |
+
+A pintle eye or other hinged connection transfers no roll moment, because the
+joint is free in roll.
+
+*(updated: earlier editions gave the roll moment transfer without stating that
+it applies only to fifth wheel connections, and did not describe the pitch
+moment transfer at all.)*
 
 The roll moment is calculated as follows:
 
@@ -2868,16 +2972,39 @@ where
 | $K_{Frame_n}$ | Frame torsional stiffness for vehicle $n$ (user-entered) |
 | $C_{Frame_n}$ | Frame torsional damping for vehicle $n$ |
 
+For a dolly with a hinged drawbar the same treatment is applied about the pitch
+axis:
+
+$$
+M_{y_n} = \left(\theta_{n+1}\cos\gamma - \theta_n\right)K_{Frame_n} + \left(\dot\theta_{n+1}\cos\gamma - \dot\theta_n\right)C_{Frame_n}
+\qquad (\text{Eq. 127a})
+$$
+
+where $\theta$ is the vehicle pitch angle. The resulting moment is distributed
+to the trailing vehicle's front connection as a roll component
+$-M_{y_n}\sin\gamma$ and a pitch component $-M_{y_n}\cos\gamma$, mirroring the
+distribution of the roll transfer in Eqs. 132 and 133.
+
+*(updated: the pitch moment transfer was not described in earlier editions.)*
+
 The friction moment is
 
 $$
 M_{Friction_n} =
 \begin{cases}
-\mu_{Conn}F_{z_{Conn}}r_{Conn}, & \text{for } \dot\gamma \ge \omega\\[6pt]
-\left(\dfrac{\dot\gamma}{\omega}\right)\mu_{Conn}F_{z_{Conn}}, & \text{for } \dot\gamma < \omega
+-\mathrm{sgn}\left(\dot\gamma\right)\mu_{Conn}F_{z_{Conn}}r_{Conn}, & \text{for } \left|\dot\gamma\right| > \omega\\[8pt]
+-\left(\dfrac{\dot\gamma}{\omega}\right)\mu_{Conn}F_{z_{Conn}}r_{Conn}, & \text{for } \left|\dot\gamma\right| \le \omega
 \end{cases}
 \qquad (\text{Eq. 128})
 $$
+
+The friction moment opposes the articulation rate, and below the null band it is
+blended linearly through zero so that it does not chatter as the articulation
+reverses.
+
+*(updated: earlier editions omitted the moment radius from the low-rate branch
+and gave the moment without the sign that makes it oppose the articulation
+rate.)*
 
 where
 
@@ -2914,6 +3041,47 @@ $$
 \sum \vec M_C = \vec M_{n_{Rear}} + \vec M_{n_{Front}}
 \qquad (\text{Eq. 135})
 $$
+
+### Articulation Angle Limit
+
+Each rear connection carries a *Maximum Articulation Angle*. If the yaw
+articulation angle between the two vehicles exceeds it, the event terminates
+with a message. This limit is a data check rather than a mechanical stop: the
+connection does not resist reaching it, and the run ends rather than the
+articulation being restrained.
+
+*(updated: the articulation angle limit was not described in earlier editions.)*
+
+### Connection Failure
+
+A connection may fail during the event if it is overloaded. Failure is tested
+against both the connection force and the connection moments:
+
+$$
+\left|\vec f_C\right| > F_{C,Max}\quad\text{on either vehicle}
+\qquad (\text{Eq. 135a})
+$$
+
+$$
+\left|M_{x}\right| > M_{C,Max}\ \text{ or }\ \left|M_{y}\right| > M_{C,Max}\ \text{ or }\ \left|M_{z}\right| > M_{C,Max}\quad\text{on either vehicle}
+\qquad (\text{Eq. 135b})
+$$
+
+Two qualifications apply:
+
+- Neither test is made before the **Connection Failure Start Time** set in the
+  Calculation Options dialog. This prevents a connection from failing on the
+  transient of the first few timesteps, before the vehicles have settled.
+- A **king pin** connection cannot fail in compression. When the vertical
+  connection force on a king pin is compressive it is excluded from the force
+  magnitude of Eq. 135a, so only tension and shear can pull the connection apart.
+
+When a connection fails, its forces and moments are set to zero and remain zero
+for the rest of the event; the connection does not re-engage. The moments the
+connection had already contributed during the failing timestep are also backed
+out, so the failure does not leave a spurious moment on either sprung mass.
+
+*(updated: the connection failure model was not described in earlier editions.)*
 
 ## Dollys
 
@@ -3057,6 +3225,61 @@ where
 
 These forces and moments are included in the dynamics engine (see Eqs. 3 and 7).
 
+## Collision Pulse Table
+
+SIMON allows a vehicle's motion during part of an event to be prescribed from a
+user-entered table rather than computed from the physics. This is used to study
+the effect of forces the model does not itself produce, or to drive a vehicle
+along a measured trajectory. The table is entered from Set-up, Collision Pulse
+for the selected vehicle, and one of three table types may be chosen.
+
+### Force and moment table
+
+The table gives the vehicle-fixed force and moment components as a function of
+time. They are interpolated at the current time and added to the sprung mass
+force and moment sums of Eqs. 3 and 7. The forces act at a user-specified
+vehicle-fixed location, so they also produce a moment about the CG:
+
+$$
+\vec M_{Pulse} = \vec M_{Table} + \vec r_{Pulse} \times \vec F_{Table}
+\qquad (\text{Eq. 11a})
+$$
+
+where $\vec r_{Pulse}$ is the vehicle-fixed location at which the pulse force is
+applied. This is the table type described in earlier editions of this manual,
+and it is the only one that leaves the vehicle's equations of motion intact —
+the prescribed force is simply one more external force.
+
+### Velocity table
+
+The table gives the vehicle's six velocity components as a function of time.
+Rather than being added as a force, the interpolated values are written directly
+into the vehicle's velocity states and their accelerations are taken from the
+slope of the table. The vehicle therefore follows the tabulated velocities
+exactly, whatever forces are acting on it.
+
+A value is only applied if it is within range: a linear velocity component
+larger than 3500 in/sec, or an angular velocity component larger than
+12.56 rad/sec, is ignored and the corresponding state is left to the physics.
+
+### Position table
+
+The table gives the vehicle's earth-fixed position and orientation as a function
+of time. The interpolated values are written directly into the vehicle's
+position and Euler angle states, and its velocity states are taken from the
+slope of the table. The vehicle follows the tabulated path exactly.
+
+> **NOTE:** The velocity and position table types override the vehicle's
+> equations of motion for as long as the table runs. The forces the vehicle
+> would have needed to follow the prescribed motion are not calculated, so
+> quantities that depend on them — tire forces, suspension deflections and the
+> Accident History delta-V — should not be interpreted as physical results while
+> a prescribed table is in effect.
+
+*(updated: earlier editions described only the force and moment table type. The
+velocity and position table types were added since.)*
+
+
 ## Sprung Mass Impact Model
 
 SIMON uses HVE's DyMESH collision model to compute 3-dimensional forces and moments resulting from inter-vehicle collision. Simultaneous collision forces between any number of vehicles are allowed. The DyMESH collision model is described in references 7 and 8. In general, vehicle-fixed force components are calculated for each vertex. These forces are summed and the resulting summed forces and moments acting on the sprung mass are supplied to the dynamics engine (see Eqs. 3 and 7).
@@ -3195,6 +3418,10 @@ residual contact.
 The above physics model and component modules are implemented in a single HVE-compatible physics model, named SIMON.
 
 SIMON is programmed using the C programming language. It is a modular program and includes several C functions to perform specific tasks. A general flow chart for SIMON is shown in Figure 4-20.
+
+The equations of motion are advanced with a fixed-step Runge-Kutta integrator. The step size is the Vehicle Trajectory Integration Timestep, or the Collision Integration Timestep while any pair of objects is in contact (see *Sprung Mass Impact Model — Collision integration timestep*). The wheel spin and steer degrees of freedom are advanced separately at the tire force timestep.
+
+*(updated: the integration method was not stated in earlier editions.)*
 
 ![Figure 4-20](images/p127-037.png)
 *Figure 4-20: Flowchart for SIMON main calculation procedures.*

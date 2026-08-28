@@ -529,7 +529,7 @@ The specific Event Set-up data used by SIMON are defined in Table 2-7.
 | Driver Controls, Throttle Table | Throttle Table Option: Percent Wide-open Throttle vs. time, or Tractive Force vs. time, or Percent Available Friction vs. time |
 | Driver Controls, Gear Table | Gear Table Option: Transmission Gear vs. time, or Differential vs. time |
 | Driver Controls, HVE Driver Model | Variable Steering control parameters, Neuro-muscular Filter |
-| Collision Pulse | Pulse Table Type: Vehicle-fixed Force and Moment vs. time |
+| Collision Pulse | Pulse Table Type: vehicle-fixed force and moment vs. time, velocity vs. time, or position vs. time |
 | Vehicle Mesh (DyMESH Only) | Weld Distance, Tessellation Length, Water-tight Status, Inter-vehicle Friction, Restitution |
 | Payload | Location, Weight and roll, pitch and yaw moments of inertia of payload |
 | Accelerometers | Vehicle-fixed x, y, z coordinates for up to five accelerometers |
@@ -585,7 +585,15 @@ The Damage Profiles data are not used by SIMON.
 
 #### Collision Pulse
 
-SIMON supports a user-entered impulse table (forces and moments vs. time). The impulse table is available by selecting Set-up, Collision Pulse for the selected vehicle. The effect of non-modeled external forces (e.g., wind) may be studied using this option.
+SIMON supports a user-entered collision pulse table, available by selecting Set-up, Collision Pulse for the selected vehicle. Three table types are available:
+
+- **Force and moment vs. time** — vehicle-fixed force and moment components are applied at a user-specified vehicle-fixed location and added to the forces and moments acting on the sprung mass. The effect of non-modeled external forces (e.g., wind) may be studied using this option.
+- **Velocity vs. time** — the vehicle's six velocity components are prescribed directly from the table.
+- **Position vs. time** — the vehicle's earth-fixed position and orientation are prescribed directly from the table.
+
+*(updated: the Fifth Edition manual described only the force and moment table type.)*
+
+> **NOTE:** The velocity and position table types override the vehicle's equations of motion while the table runs, so results that depend on the computed forces should not be read as physical during that interval. See Chapter 4, *Collision Pulse Table*.
 
 #### Vehicle Mesh
 
