@@ -53,9 +53,14 @@ The steering stop torque at each stop is
 
 $$M_{Stop} =
 \begin{cases}
-0, & \text{for } \delta_{Steer} \le \delta_{Stop} \text{ or } \mathrm{sgn}\delta_{Steer} \ne \mathrm{sgn}\dot{\delta}_{Steer} \\
-K_{Stop}\left(\delta_{Steer} - \delta_{Stop}\right), & \text{for } \delta_{Steer} > \delta_{Stop}
+-K_{Stop}\left(\left|\delta_{Steer}\right| - \delta_{Stop}\right)\mathrm{sgn}\,\delta_{Steer}, & \left|\delta_{Steer}\right| > \delta_{Stop} \text{ and } \mathrm{sgn}\,\dot{\delta}_{Steer} = \mathrm{sgn}\,\delta_{Steer} \\[6pt]
+0, & \text{otherwise}
 \end{cases}$$
+
+*(updated: earlier editions gave the stop torque as a positive multiple of the
+overtravel. The torque opposes the overtravel, and it is released as soon as the
+wheel begins to turn back out of the stop, however far into the stop it still
+is.)*
 
 where
 
@@ -77,9 +82,18 @@ Friction torque is also produced by rotation of the wheel about its steer axis a
 
 $$M_{SteerAxis + SteeringColumn} =
 \begin{cases}
-0, & \text{for } \left|\dot{\delta}_{Steer}\right| \le \varepsilon \\
-\left(\mu_{SteerAxis} + 0.5\,\mu_{Steering\ Column}\right), & \text{for } \left|\dot{\delta}_{Steer}\right| > \varepsilon
+0, & \text{for } \left|\dot{\delta}_{Steer}\right| \le \varepsilon \\[6pt]
+-\left(\mu_{SteerAxis} + 0.5\,\mu_{Steering\ Column}\right)\mathrm{sgn}\,\dot{\delta}_{Steer}, & \text{for } \left|\dot{\delta}_{Steer}\right| > \varepsilon
 \end{cases}$$
+
+*(updated: earlier editions gave the friction torque without the sign that makes
+it oppose the steer velocity. Note also that the torque switches on abruptly at
+the null band rather than being blended through zero, so the null band should
+not be set larger than necessary.)*
+
+The steering column friction torque is referred to the wheel steer axis through
+the steering gear ratio before the half is taken, and half of the result is
+applied at each of the two wheels.
 
 where
 
@@ -117,6 +131,13 @@ where
 | $\delta_G$ | Wheel vehicle-fixed steer angle relative to ground plane |
 | $\theta_x$ | Angle from vehicle x-axis to ground plane |
 
+> **NOTE:** Unlike SIMON, EDVSM does not include a gyroscopic precession moment
+> about the steer axis from the spinning wheels, and it does not include a scrub
+> radius term. The mechanical trail really is treated as zero.
+
+*(updated: this note describes the scope of the EDVSM steering model relative to
+the more detailed treatment in SIMON.)*
+
 
 *(updated: hydroplaning is **not** modeled by EDVSM. The HVE physics library provides hydroplaning models (NASA, NASA-TTI, Gallaway), but only SIMON and EDSMAC4 invoke them; EDVSM offers no Hydroplaning Model calculation option, and any water-related tire output variables it reports are unused placeholders. See [SIMON — Hydroplaning Model](../SIMON/04-calculation-method.md#hydroplaning-model).)*
 
@@ -134,6 +155,8 @@ where
 | $I_{Steer,Lt}$ | Total rotational inertia for left-side wheel |
 | $I_{Column}$ | Total rotational inertia of steering column, including steering gearbox |
 | $\eta$ | Steering gear ratio |
+
+The steering column friction torque is scaled by the same ratio.
 
 <!-- NAV -->
 

@@ -170,7 +170,7 @@ $$b = (1.0 - S'_p)\left(\mu'_s (S'_p + 2.0) - \mu'_p (2.0 S'_p + 1.0)\right)$$
 
 $$c = (\mu'_s - \mu'_p)\,\mu'_s$$
 
-$$B = -\frac{b + \sqrt{b^2 - 4ac}}{2a}$$
+$$B = \frac{-b + \sqrt{b^2 - 4ac}}{2a}$$
 
 $$A = \mu'_s + B$$
 
@@ -180,41 +180,61 @@ $\mu$ and $C_s$ are then computed as follows:
 
 $$C_s = \frac{C^2 F_{z_0} (1.0 - S'_p)}{4.0\, S'_p (C - \mu'_p)}$$
 
-$$\mu = A - BS$$
+$$\mu = A - B\left|S\right|$$
 
-Based on these parameters $X_s/L$, the fraction of the sliding region of the total contact patch ($L$ is the total length of the contact patch, and $X_s$ is the length of the sliding region), is calculated as follows:
+$\mu$ is not allowed to fall below the value it takes at fully locked or fully spinning slip, $\mu \ge A - B$.
 
-$$D_i = \sqrt{(C_s S)^2 + (C'_\alpha \tan\alpha)^2}$$
+Based on these parameters $X_s/L$, the fraction of the total contact patch in the **adhesion** region ($L$ is the total length of the contact patch, and $X_s$ is the distance from the front of the contact patch to the point where sliding starts), is calculated as follows:
 
-$$\frac{X_s}{L} = \frac{\mu F_z (1.0 - S)}{2.0\, D_i}$$
+$$D_i = \sqrt{(C_s S)^2 + (C'_\alpha \sin\alpha)^2}$$
+
+$$\frac{X_s}{L} = \frac{\mu F_z \left(1.0 - \left|S\right|\right)}{2.0\, D_i}$$
 
 If $X_s/L > 1.0$ it is limited to 1.0 (note that $X_s/L = 1.0$ means there is no sliding region). If $X_s/L \geq 1.0$, the longitudinal and lateral tire forces, $F_x$ and $F_y$, respectively, are:
 
-$$F_x = \frac{C_s S}{1.0 - S}$$
+$$F_x = s_u\,\frac{C_s S}{1.0 - \left|S\right|}$$
 
-$$F_y = \frac{-C'_\alpha \tan\alpha}{1.0 - S}$$
+$$F_y = \frac{-C'_\alpha \sin\alpha}{1.0 - \left|S\right|}$$
+
+where $s_u = -\,\mathrm{sgn}(u)$ orients the longitudinal force against the tire's direction of travel, so that a braking slip always retards the vehicle whether it is rolling forward or backward.
 
 If $X_s/L < 1.0$, there is some sliding at the tire-road interface. For this condition, the tire forces in the adhesion region and sliding region are computed separately. The $F_x$ and $F_y$ tire forces in the adhesion region are:
 
-$$F_{x_a} = C_s S \left(\frac{\mu F_z}{2.0 D_i}\right)^2 (1.0 - S)$$
+$$F_{x_a} = C_s S \left(\frac{\mu F_z}{2.0 D_i}\right)^2 \left(1.0 - \left|S\right|\right)$$
 
 and
 
-$$F_{y_a} = -C'_\alpha \tan\alpha \left(\frac{\mu F_z}{2.0 D_i}\right)^2 (1.0 - S)$$
+$$F_{y_a} = -C'_\alpha \sin\alpha \left(\frac{\mu F_z}{2.0 D_i}\right)^2 \left(1.0 - \left|S\right|\right)$$
 
 The tire force components in the sliding region are:
 
-$$F_{x_s} = \mu F_z (1.0 - X_s/L)\left(\frac{S}{\sqrt{S^2 + \tan^2\alpha}}\right)$$
+$$F_{x_s} = \mu F_z (1.0 - X_s/L)\left(\frac{S}{\sqrt{S^2 + \sin^2\alpha}}\right)$$
 
-$$F_{y_s} = -\mu F_z (1.0 - X_s/L)\left(\frac{\tan\alpha}{\sqrt{S^2 + \tan^2\alpha}}\right)$$
+$$F_{y_s} = -\mu F_z (1.0 - X_s/L)\left(\frac{\sin\alpha}{\sqrt{S^2 + \sin^2\alpha}}\right)$$
 
 The total tire force is the sum of the force in the adhesion and sliding regions,
 
-$$F_x = F_{x_a} + F_{x_s}$$
+$$F_x = s_u\left(F_{x_a} + F_{x_s}\right)$$
 
 and
 
 $$F_y = F_{y_a} + F_{y_s}$$
+
+*(updated: several corrections to the equations above, which were transcribed
+from the published UMTRI development rather than from the EDC implementation:*
+
+- *The slip angle enters through $\sin\alpha$, not $\tan\alpha$. Replacing the
+  tangent with the sine is the EDC modification that lets the model handle slip
+  angles through the full range $-\pi \le \alpha \le \pi$ without the lateral
+  force diverging at 90 degrees.*
+- *Longitudinal slip appears as $\left|S\right|$ wherever it appears as a
+  magnitude, which is what allows drive torque and rearward travel.*
+- *The quadratic root $B$ negates only $b$, not the whole numerator.*
+- *A lower limit is placed on the effective friction.*
+- *A direction-of-travel factor is applied to the longitudinal force.*
+- *$X_s/L$ is the fraction of the contact patch in the adhesion region, not the
+  sliding region; the earlier description contradicted the statement that
+  $X_s/L = 1.0$ means there is no sliding region.)*
 
 The aligning torque, $A_t$, is approximated as follows:
 
@@ -278,7 +298,7 @@ EDVDS also uses the following wheel brake options:
 
 The current brake torque, $TQ_{Brake}$, at each wheel is calculated as follows:
 
-$$TQ_{Brake} = BTQ \times P_{Brake}$$
+$$TQ_{Brake} = BTQ \times \max\left(0,\; P_{Brake} - P_0\right)$$
 
 where:
 
@@ -286,10 +306,43 @@ where:
 |---|---|
 | $BTQ$ | Brake torque ratio for the wheel |
 | $P_{Brake}$ | Current brake pressure at the wheel, including time lag and time rise |
+| $P_0$ | Pushout pressure for the wheel |
+
+EDVDS uses the HVE Brake Designer to obtain $BTQ$. Before the torque is
+calculated, the brake temperatures at the wheel are updated from the work done
+during the previous step, the wheel's rotational speed, the vehicle's total
+velocity and the ambient air temperature; the resulting lining temperature and
+sliding speed then determine the current lining friction and therefore $BTQ$.
+Brake fade is produced this way.
+
+*(updated: earlier editions gave the brake torque as a fixed torque ratio times
+the wheel pressure. The wheel produces no torque until the pressure exceeds the
+pushout pressure, and the torque ratio is not fixed — it comes from the brake
+design and varies with lining temperature and sliding speed.)*
+
+#### Brake hysteresis
+
+If a hysteresis multiplier is entered for a wheel, the brake torque follows a
+different curve on release than on application. While the wheel pressure is
+above the pushout pressure the torque is not allowed to fall below its value at
+the previous timestep, and once the pressure drops back below pushout the torque
+is scaled by the hysteresis multiplier. A separate multiplier is used once the
+wheel has locked.
+
+*(updated: the brake hysteresis model was not described in earlier editions.)*
+
+#### Wheel torque limit
+
+The net torque applied about the wheel spin axis is the brake torque less the
+engine torque. Once a wheel is fully locked, that net torque is limited to the
+torque the tire's longitudinal force can react against the road, so that a
+locked wheel cannot be driven backwards by excess brake torque.
+
+*(updated: this limit was not described in earlier editions.)*
 
 ### Antilock Model
 
-The EDVDS anti-lock model is not implemented.
+The EDVDS anti-lock model is not implemented. The antilock branch of the brake calculation is present but permanently disabled, so a wheel's antilock settings have no effect on an EDVDS event. Use EDSVS, EDVSM or SIMON for studies that require antilock braking.
 
 ## Steering System
 
@@ -298,7 +351,17 @@ The steer angle at each steerable wheel is determined from the current user-ente
 If the current angle is determined from the HVE Steer Table, the user has two options for entering steer angles:
 
 - **At Axle** — The angle at each wheel is derived directly from the steer table for each wheel. Left and right wheels need not have the same steer angle.
-- **At Steering Wheel** — The angle at each wheel is the product of the user-entered steering wheel angle and the vehicle's steering gear ratio. The steer angles at both wheels are equal.
+- **At Steering Wheel** — The angle at each wheel is the user-entered steering wheel angle divided by the vehicle's steering gear ratio, plus a compliance term. The steer angles at the two wheels differ only through that compliance term.
+
+*(updated: earlier editions gave the wheel angle as the product of the steering wheel angle and the gear ratio. It is the quotient.)*
+
+The compliance term accounts for the steering system twisting under the aligning moments fed back from the tires:
+
+$$\delta_{Wheel} = \frac{\delta_{SW}}{\eta} + \frac{M_{Left} + M_{Right}}{K_{Steering}}$$
+
+where $\eta$ is the steering gear ratio, $M_{Left}$ and $M_{Right}$ are the steer axis moments at the two front wheels, and $K_{Steering}$ is the steering system stiffness. A separate tie rod stiffness allows the two wheels to deflect relative to one another.
+
+*(updated: the steering system compliance was not described in earlier editions.)*
 
 If the HVE Driver Model has been used, the HVE Driver Model is a closed-loop driver control model that uses driver control attributes and the EDVDS vehicle dynamics model to attempt to follow a user-specified path.
 

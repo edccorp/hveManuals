@@ -55,7 +55,20 @@ Historically, two methods have been used to compute tire forces. Either formulas
 
 At the current simulation time, the force is computed for each tire, one tire at a time. If the percent wheel lock-up method was used to supply wheel forces when entering the Brake and/or Throttle Table, the percent lock-up must be converted into the actual wheel force:
 
-$$\text{if } |F_{sx}| < 1.0 \text{ then } F_{sx} = F_{sx}\,\mu_p F_z (1 + \delta_{dual})$$
+$$F_{sx} = F_{sx}\,\mu_p F_z (1 + \delta_{dual})$$
+
+*(updated: earlier editions applied this conversion whenever the tabulated
+value was less than 1.0. It is applied according to the table method
+selected, not the magnitude of the entry. The Brake table offers three
+methods and the Throttle table two:*
+
+| Table method | Attempted wheel force |
+| --- | --- |
+| *Wheel Force* | *Used directly as entered* |
+| *Percent Available Friction* | *Converted as shown above* |
+| *Pedal Force* (brake only) | *Converted through the vehicle's brake pressure ratio and the wheel's brake torque ratio, divided by the tire radius* |
+
+*The Pedal Force brake method was not described in earlier editions.)*
 
 The attempted wheel force is assigned as the longitudinal wheel force (lb),
 
@@ -93,7 +106,7 @@ The attempted longitudinal wheel force, $F_x$ (see above), is compared to availa
 
 $$F_{max} = \mu_{mod} F_z (1 + \delta_{dual})$$
 
-If the attempted force, $F_x$, is less than $F_{max}$, the skid flag is turned off and the amount of longitudinal tire slip, $S$, is computed:
+If the attempted force, $F_x$, is less than $F_{max}$, the amount of longitudinal tire slip, $S$, is computed:
 
 $$\mu_x = \left| F_x / (F_z\,(1 + \delta_{dual})) \right|$$
 
@@ -113,14 +126,34 @@ Linear interpolation is used to determine the amount of rolloff for values of sl
 
 $$F_y = F_y \cdot Rolloff$$
 
+The skid flag is set for this tire if the longitudinal slip has reached the
+slip at peak friction, $S \ge \mu_{slip}$, which is wheel lock-up.
+
+*(updated: earlier editions stated that the skid flag is turned off in this
+branch. The flag is cleared at the start of each tire's calculation and may
+be set here by the lock-up test above, or earlier by tire saturation.)*
+
 If the attempted longitudinal wheel force, $F_x$, is greater than $F_{max}$, the longitudinal slip exceeds the slip at $\mu_p$ and the tire is either locked (braking) or spinning (accelerating). The skid flag is turned on and the forward and lateral tire forces are:
 
-$$F_x = \mu_s \cos(\alpha) F_z (1 + \delta_{dual})\,s_{fx}$$
+$$F_x = \mu_s \left|\cos(\alpha)\right| F_z (1 + \delta_{dual})\,s_{fx}$$
+
+*(updated: the magnitude of $\cos\alpha$ is used here, so that the longitudinal
+force keeps the direction given by $s_{fx}$ at slip angles beyond 90 degrees.)*
 
 $$F_y = -\mu_s \sin(\alpha) F_z (1 + \delta_{dual})$$
 
 
 *(updated: hydroplaning is **not** modeled by EDSVS. Hydroplaning models (NASA, NASA-TTI, Gallaway) are available in HVE, but only through SIMON and EDSMAC4; EDSVS offers no Hydroplaning Model calculation option, and any water-related tire output variables it reports are unused placeholders. See [SIMON — Hydroplaning Model](../SIMON/04-calculation-method.md#hydroplaning-model).)*
+
+### Run termination from the tire forces
+
+After all tire forces are computed, EDSVS checks whether the vehicle has come to
+rest: if the forward and lateral velocities are both below the minimum linear
+velocity and the sum of the attempted longitudinal wheel forces is zero or
+negative, the run terminates normally. A vehicle that is stopped but still has
+net forward drive force applied continues to run.
+
+*(updated: this termination condition was not described in earlier editions.)*
 
 ## Antilock Model
 
@@ -139,6 +172,11 @@ For lateral tire force:
 $$\Delta F_y = \left(F_y + \mu_s F_z (1 + \delta_{dual})\sin(\alpha)\right)\eta_a$$
 
 $$F_y = -\mu_s F_z (1 + \delta_{dual})\sin(\alpha) + \Delta F_y$$
+
+*(updated: in the antilock branch the longitudinal force takes the sign of the
+attempted wheel force directly, rather than the vehicle-fixed direction
+$s_{fx}$ used in the non-antilock branch. The two differ only when the tire is
+travelling rearward.)*
 
 ## Assumptions
 

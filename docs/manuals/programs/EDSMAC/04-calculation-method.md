@@ -59,11 +59,18 @@ Because the adjustments are finite increments of crush displacement, the forces 
 
 Tangential forces are developed due to inter-vehicle sliding friction and intermingling between individual vehicle components. This effect is accounted for by the user-entered inter-vehicle friction coefficient, the **Inter-vehicle Friction** option, $\mu$. A friction force is transmitted whenever there is relative motion between the vehicles. The user-entered **Minimum Velocity for Friction**, $\zeta_v$, is the minimum relative velocity at which full inter-vehicle friction is developed; below it the friction force is scaled linearly with the sliding velocity.
 
-EDSMAC allows for the effect of restitution after impact, thus giving the vehicle exterior some elasticity. This elasticity is modeled by allowing the length of each spring to increase slightly after it reaches its deflected length. The restitution varies non-linearly with the degree of deformation. Three values, $C_0$, $C_1$ and $C_2$, provide a 2nd-order polynomial fit that describes the relaxation of the RHO vectors at the end of each timestep:
+EDSMAC allows for the effect of restitution after impact, thus giving the vehicle exterior some elasticity. This elasticity is modeled by allowing the length of each spring to increase slightly after it reaches its deflected length. The restitution varies non-linearly with the degree of deformation. Three values, $C_0$, $C_1$ and $C_2$, provide a 2nd-order polynomial fit that gives a restitution fraction between zero and one, used at the end of each timestep to blend each RHO vector between its crushed length and its original undeformed length:
 
 $$e(\delta) = C_0 - C_1\,\delta + C_2\,\delta^2$$
 
-where $\delta$ is the change in length (crush depth) of the RHO vector. *(Note: restitution is applied only while $\delta < C_1/(2C_2)$, the vertex of the parabola; see the [EDSMAC Calculation Options](../../10-calculation-options/CalcOptEDSMAC.md) reference.)*
+where $\delta$ is the change in length (crush depth) of the RHO vector. The restored vector length is
+
+$$\rho_{Restored} = e(\delta)\,\rho_{Original} + \left(1 - e(\delta)\right)\rho_{Crushed}$$
+
+so $e = 0$ leaves the vector fully crushed and $e = 1$ restores it completely.
+
+*(updated: earlier editions gave the polynomial without saying how its value is
+used. It is a blend fraction, not a length.)* *(Note: restitution is applied only while $\delta < C_1/(2C_2)$, the vertex of the parabola; see the [EDSMAC Calculation Options](../../10-calculation-options/CalcOptEDSMAC.md) reference.)*
 
 ### Trajectory Phase
 
@@ -78,6 +85,63 @@ In order to calculate tire forces, EDSMAC uses the Fiala tire model [10]. This m
 EDSMAC allows the vehicle to accelerate, brake and steer. The attempted acceleration, braking and steering are supplied by the user in tabular form using the Event Editor. It is important to understand these driver controls result in *attempted* forces; the Fiala tire model determines if these forces are sustainable at the tire-road interface and accounts for the condition if the available force is exceeded.
 
 EDSMAC's vehicle model allows the user to study vehicles with dual tires.
+
+#### Tire force calculation
+
+At each wheel, the force available at the tire-road interface is
+
+$$F_{Avail} = \mu\,F_z\,n_z$$
+
+where $\mu$ is the tire-road friction coefficient, $F_z$ the wheel load and
+$n_z$ the vertical component of the surface normal, which reduces the available
+force on a sloped surface.
+
+The attempted longitudinal force is the sum of the throttle and brake table
+entries at the current time. For the Percent Available Friction table method,
+those entries are fractions and are multiplied by $F_{Avail}$. The longitudinal
+force actually developed, $F_c$, is the attempted force limited by what the tire
+can supply:
+
+$$F_c = \mathrm{sgn}(u)\min\left(\left|F_{Attempt}\right|,\; F_{Avail}\cos\alpha\right)$$
+
+for braking, and limited to $F_{Avail}$ for acceleration. At forward speeds
+below 1 in/sec the braking force is scaled down in proportion to speed, so that
+a nearly stopped wheel does not develop full braking force.
+
+Whatever longitudinal force is used is unavailable laterally. The remaining
+lateral capacity follows the friction circle:
+
+$$F_{s,max} = \sqrt{F_{Avail}^2 - F_c^2}$$
+
+The Fiala model is then applied to that remaining capacity through the
+non-dimensional sideslip parameter
+
+$$\bar\beta = \frac{C_\alpha\,\alpha}{F_{s,max}}$$
+
+giving the lateral force
+
+$$F_s =
+\begin{cases}
+F_{s,max}\left(\bar\beta - \dfrac{\bar\beta\left|\bar\beta\right|}{3} + \dfrac{\bar\beta^3}{27}\right), & \left|\bar\beta\right| < 3\\[10pt]
+F_{s,max}\,\mathrm{sgn}\,\bar\beta, & \left|\bar\beta\right| \ge 3
+\end{cases}$$
+
+The lateral force is set to zero, and the wheel is flagged as skidding, when
+either the longitudinal force has consumed essentially all of the available
+friction or the wheel's speed components are both below half an inch per second.
+A wheel is also flagged as skidding when the Fiala model saturates.
+
+Finally the two components are resolved through the wheel's steer angle,
+$\delta$, into vehicle-fixed components:
+
+$$F_y = F_s\cos\delta + F_c\sin\delta,\qquad F_x = -F_s\sin\delta + F_c\cos\delta$$
+
+*(updated: earlier editions described the tire model in prose only. The
+equations above are given for comparison with the other EDC programs. Note that
+EDSMAC applies the Fiala polynomial to the slip angle directly, and normalizes
+by the friction-circle remainder rather than by the peak friction force, so its
+lateral force differs from the EDSVS and EDVTS form even for identical tire
+data.)*
 
 ## Assumptions
 

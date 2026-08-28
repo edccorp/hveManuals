@@ -61,6 +61,57 @@ EDSMAC4 models quasi-static longitudinal and lateral load transfers. This is acc
 
 EDSMAC4's vehicle model allows the user to study vehicles with tandem axles and dual tires.
 
+#### Tire force calculation
+
+At each wheel, the friction coefficient is the tire's slide friction scaled by
+the friction multiplier of the surface beneath it — which the hydroplaning
+model further reduces when one is selected — and then adjusted for speed:
+
+$$\mu = \mu_{Slide}\,f_{Surface}\left(1 + C_\mu\,s\right)$$
+
+where $s$ is the wheel's total slip speed and $C_\mu$ the speed reduction
+factor. A zero speed reduction factor leaves the friction speed-independent.
+The force available at the tire-road interface is then
+
+$$F_{Avail} = \mu\,F_z$$
+
+The attempted longitudinal force is the sum of the throttle and brake table
+entries at the current time; for the Percent Available Friction table method
+those entries are fractions and are multiplied by $F_{Avail}$. The longitudinal
+force developed, $F_c$, is the attempted force limited to what the tire can
+supply, and is scaled down in proportion to speed at forward speeds below
+1 in/sec.
+
+Whatever longitudinal force is used is unavailable laterally. The remaining
+lateral capacity follows the friction circle:
+
+$$F_{s,max} = \sqrt{F_{Avail}^2 - F_c^2}$$
+
+The Fiala model is applied to that remaining capacity through the
+non-dimensional sideslip parameter
+
+$$\bar\beta = \frac{\left(1 + \delta_{dual}\right)C_\alpha\,\alpha}{F_{s,max}}$$
+
+where $\delta_{dual}$ is 1 at a dual-tire wheel location and 0 otherwise, giving
+
+$$F_s =
+\begin{cases}
+F_{s,max}\left(\bar\beta - \dfrac{\bar\beta\left|\bar\beta\right|}{3} + \dfrac{\bar\beta^3}{27}\right), & \left|\bar\beta\right| < 3\\[10pt]
+F_{s,max}\,\mathrm{sgn}\,\bar\beta, & \left|\bar\beta\right| \ge 3
+\end{cases}$$
+
+The two components are then resolved through the wheel's steer angle, $\delta$,
+into vehicle-fixed components:
+
+$$F_y = F_s\cos\delta + F_c\sin\delta,\qquad F_x = -F_s\sin\delta + F_c\cos\delta$$
+
+*(updated: earlier editions described the tire model in prose only. Note that
+the dual-tire factor is applied to the cornering stiffness rather than to the
+available force, which differs from EDSVS and EDVTS, where the factor multiplies
+the force; and that the friction circle is built on the slide friction rather
+than a peak friction value, so EDSMAC4 has no distinct peak-versus-slide
+behavior.)*
+
 *(updated: when the **Hydroplane Model** calculation option is set to NASA, the available tire friction is further modified at each tire travelling over a water polygon. The NASA model predicts the hydroplaning speed from the tire's inflation pressure ($182.16\sqrt{P}$ in/sec, $P$ in lb/in²); above that speed the tire's friction switches to the water polygon's friction value. The extra drag of displacing water is not modeled. See [EDSMAC4 Calculation Options](../../10-calculation-options/CalcOptEDSMAC4.md#hydroplane-model).)*
 
 ## Assumptions

@@ -66,7 +66,11 @@ The spring rate, $k$, is defined by two empirical coefficients, A and B. These c
 
 Damage-based results are generally improved when the default coefficients are replaced by actual A and B coefficients derived from a crash test. Reference 25 contains A and B coefficients from crash tests for approximately 1500 vehicles.
 
-Two modifications are incorporated into the above analysis to make it generally applicable to motor vehicle collisions. For the case of non-perpendicular crush, the energy stored in the spring ($k\delta^2/2$) is increased by the value of $1 + \tan^2(\alpha)$, where $\alpha$ is the angle between the PDOF and a line perpendicular to the surface (see Figure 4-1). This *energy magnification factor* accounts for the increased distance, $C'$, through which the crush force acts when compared with the measured crush, $C$. The factor is not allowed to increase beyond a value of 2.0 (note the tangent increases to infinity as the angle approaches 90 degrees).
+Two modifications are incorporated into the above analysis to make it generally applicable to motor vehicle collisions. For the case of non-perpendicular crush, the energy stored in the spring ($k\delta^2/2$) is increased by the value of $1 + \tan^2(\alpha)$, where $\alpha$ is the angle between the PDOF and a line perpendicular to the surface (see Figure 4-1). This *energy magnification factor* accounts for the increased distance, $C'$, through which the crush force acts when compared with the measured crush, $C$. The factor is not allowed to increase beyond a value of 2.0 (note the tangent increases to infinity as the angle approaches 90 degrees), so the cap takes effect at $\alpha = 45$ degrees and the factor is 2.0 for every PDOF beyond that.
+
+The magnitude of principal force is corrected for the same non-perpendicular geometry, by dividing it by $\left|\cos\alpha\right|$.
+
+*(updated: earlier editions gave the energy magnification factor but did not state the angle at which the cap takes effect, and did not describe the corresponding correction applied to the force.)*
 
 ![Figure 4-1](images/p066-fig4-1.png)
 
