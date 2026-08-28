@@ -106,7 +106,7 @@ The Damage Profile group is disabled when the viewer option is *From File*.
 > **NOTE:** This viewer option is **not available**. *Photograph(s)* is not
 > offered in the Damage dropdown, so the view described below cannot be
 > selected. The description is retained because the original manual documents
-> the feature and because case files still carry the photograph data.
+> the feature.
 
 As described in the original manual, the *Photograph(s)* option displayed one or
 more user-supplied vehicle photographs in the 3-D viewer, up to seven per
@@ -115,10 +115,6 @@ Undercarriage and Oblique — suggestions only, with the actual views up to the
 user — and each view had a text box, reached through an *Info...* button, for
 descriptive information such as camera position and focal length. The intended
 use was comparison against the simulated vehicle damage.
-
-Photograph file names, view descriptions and per-view camera settings are still
-saved to and read from case files, so a case set up in an earlier release keeps
-its photograph data. There is currently no way to display it in Damage Studio.
 
 ## Multiple Views
 
