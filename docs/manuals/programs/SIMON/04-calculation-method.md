@@ -3069,6 +3069,127 @@ SIMON uses HVE's DyMESH collision model to compute 3-dimensional forces and mome
 - *DyMESH wheel contact and wheel damage. Each wheel can carry its own collision mesh. Collision forces acting on a wheel mesh are added to the sprung mass, and forces exceeding the wheel's user-entered damage thresholds (Max No-Damage Force/Moment, Deformation Rate and Max Force/Moment — see the Event Editor's Vehicle Wheels dialog) produce permanent wheel displacement and reorientation, which in turn affect the wheel kinematics of Eqs. 58–62.*
 - *Wheel displacement capping. The collision-induced x-y displacement of a wheel during a timestep is tracked against the maximum contact movement of the wheel mesh vertices for that timestep; the computed force-based displacement is capped so it can never exceed the actual contact motion, and no displacement is produced when there is no mesh contact movement. This prevents overprediction of wheel set-back or track-width change in severe impacts.*
 
+### Master and slave vehicles
+
+DyMESH evaluates a collision between a pair of objects, treating one as the
+master and the other as the slave. The two roles are not symmetric, so SIMON
+alternates them from timestep to timestep, and averages the resulting forces
+and moments over successive timesteps so that both treatments contribute to
+every step:
+
+$$
+\vec F_{Collision} = \frac{1}{2}\left(\vec F_{Current} + \vec F_{Previous}\right),\qquad
+\vec M_{Collision} = \frac{1}{2}\left(\vec M_{Current} + \vec M_{Previous}\right)
+\qquad (\text{Eq. 144})
+$$
+
+The averaging history is kept separately for each pair of colliding objects, so
+a vehicle involved in two simultaneous collisions does not mix the two.
+Wheel collision forces and moments are averaged in the same way.
+
+Alternation is suspended where the roles are not interchangeable: a fixed
+barrier or the environment is always the master, because neither deforms.
+
+*(updated: master/slave alternation and collision force smoothing were not
+described in earlier editions. The smoothing model is selectable in the DyMESH
+Options dialog; see Chapter 2.)*
+
+### Collision integration timestep
+
+Collision forces rise and fall far more quickly than the forces governing
+ordinary trajectory motion, so SIMON integrates the collision phase with a
+separate, shorter timestep. At each step the model tests whether any pair of
+objects is in contact; if so, the *Collision Integration Timestep* is used for
+that step, and otherwise the *Vehicle Trajectory Integration Timestep* is used.
+Both are set in the Simulation Controls dialog.
+
+The switch is made for the whole event, not per vehicle: if any pair anywhere
+in the event is in contact, every vehicle is integrated at the collision
+timestep for that step.
+
+*(updated: the separate collision integration timestep was not described in
+earlier editions.)*
+
+### Impact and separation
+
+The Accident History report records the position and velocity of each vehicle
+at impact and at separation. Impact is detected when the collision model first
+reports contact between the pair. Separation is detected when contact between
+the pair is lost.
+
+If the **Accident History Basis** calculation option is set to *Use Impact
+Acceleration*, separation is additionally detected when the total acceleration
+of both vehicles falls below the *Collision Acceleration Threshold*, whichever
+occurs first:
+
+$$
+\sqrt{a_x^2 + a_y^2 + a_z^2} < a_{Threshold}\quad\text{for both vehicles}
+\qquad (\text{Eq. 145})
+$$
+
+*(updated: earlier descriptions of this option stated that the choice governs
+both impact and separation. Impact is detected from collision contact
+regardless of the setting; the acceleration threshold applies only to
+separation, and only as an additional condition alongside loss of contact.)*
+
+### Velocity change
+
+Two different velocity changes are reported, computed in different ways.
+
+The **Accident History delta-V** is the magnitude of the vehicle's change in
+earth-fixed velocity between the impact and separation states:
+
+$$
+\Delta V = \sqrt{\left(V_{X,Sep} - V_{X,Imp}\right)^2 + \left(V_{Y,Sep} - V_{Y,Imp}\right)^2}
+\qquad (\text{Eq. 146})
+$$
+
+where each earth-fixed velocity component is formed from the vehicle's forward
+and lateral velocity and its heading at that instant. This is a planar
+quantity: the vertical velocity change is not included.
+
+The **collision pulse delta-V**, reported for each impulse in the Damage Data
+report, is instead obtained by integrating the vehicle's acceleration over the
+pulse using the trapezoidal rule:
+
+$$
+\Delta\vec V_{Pulse} \mathrel{+}= \frac{1}{2}\left(\vec a + \vec a_{Prev}\right)\Delta t
+\qquad (\text{Eq. 147})
+$$
+
+with the reported value being the largest magnitude reached before separation.
+This one is a full 3-D quantity.
+
+*(updated: neither velocity change calculation was described in earlier
+editions. The two are not interchangeable, and they will not agree exactly.)*
+
+### Collision pulses
+
+A vehicle may experience several distinct impulses during an event — a
+sideswipe followed by a secondary contact, for example. SIMON identifies each
+as a separate collision pulse, up to a maximum of ten per vehicle. Exceeding
+that limit terminates the event.
+
+A pulse begins at the first timestep at which the collision model reports force
+on the vehicle, and ends once the force has returned to zero and remained there.
+While a pulse is in progress SIMON records:
+
+- the peak total collision force and the time it occurred;
+- the peak total acceleration;
+- the principal direction of force, computed from the direction of the peak
+  collision force as an azimuth and a zenith angle, together with the
+  equivalent clock direction;
+- the impulse center, the force-weighted average position of every mesh vertex
+  carrying force during the pulse;
+- the collision deformation classification surface, taken from the surface in
+  contact at the start of the pulse.
+
+The principal direction of force is not updated after separation, so a pulse
+reports the direction associated with its peak force rather than any later
+residual contact.
+
+*(updated: the collision pulse data were not described in earlier editions.)*
+
 ## Software Implementation
 
 The above physics model and component modules are implemented in a single HVE-compatible physics model, named SIMON.
