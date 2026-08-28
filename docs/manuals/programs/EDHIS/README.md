@@ -14,15 +14,13 @@ Engineering Dynamics Corporation provides technical assistance for supported use
 
 ## Contents
 
-| Chapter | File |
-|---|---|
-| 1 — EDHIS Program Description | [01-program-description.md](01-program-description.md) |
-| 2 — EDHIS Program Input | [02-program-input.md](02-program-input.md) |
-| 3 — EDHIS Program Output | [03-program-output.md](03-program-output.md) |
-| 4 — Calculation Method | [04-calculation-method.md](04-calculation-method.md) |
-| 5 — EDHIS Tutorial | [05-tutorial.md](05-tutorial.md) |
-| 6 — Messages | [06-messages.md](06-messages.md) |
-| 7 — References | [07-references.md](07-references.md) |
+- [1 — EDHIS Program Description](01-program-description.md)
+- [2 — EDHIS Program Input](02-program-input.md)
+- [3 — EDHIS Program Output](03-program-output.md)
+- [4 — Calculation Method](04-calculation-method.md)
+- [5 — EDHIS Tutorial](05-tutorial.md)
+- [6 — Messages](06-messages.md)
+- [7 — References](07-references.md)
 
 *The original manual's Chapter 8 (Index) is omitted; use text search in this Markdown edition instead.*
 

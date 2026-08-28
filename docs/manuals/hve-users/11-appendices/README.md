@@ -7,17 +7,17 @@ applicable.*
 
 ## Contents
 
-| Item | Original location | File |
-| --- | --- | --- |
-| HVE Tutorial (Lessons 1–4: Navigating, Running a Simulation, Combining Multiple Events, Creating a Video) | Tutorial section, pages 32-1 to 32-60 | [32-tutorial.md](32-tutorial.md) |
-| Appendix I — Installation & Setup (system requirements, installation, licensing, HVE file system) | I-1 to I-10 | [appendix-01-installation.md](appendix-01-installation.md) |
-| Appendix II — Messages (input validation, event verify, execution and output report messages) | II-1 to II-14 | [appendix-02-messages.md](appendix-02-messages.md) |
-| Appendix III — Coordinate Systems (earth-, vehicle-, tire- and human-fixed) | III-1 to III-8 | [appendix-03-coordinate-systems.md](appendix-03-coordinate-systems.md) |
-| Appendix IV — Units (units files, unit names and program units by group) | IV-1 to IV-14 | [appendix-04-units.md](appendix-04-units.md) |
-| Appendix V — Collision Deformation Classification (CDC) | V-1 to V-8 | [appendix-05-cdc.md](appendix-05-cdc.md) |
-| Appendix VI — References | VI-1 to VI-10 | [appendix-06-references.md](appendix-06-references.md) |
-| Appendices VII–IX — Developer's Toolkit Overview, Databases, Quick Reference (reserved in the original) | VII-1 to IX-2 | [appendix-07-09-reserved.md](appendix-07-09-reserved.md) |
-| Appendix X — Index (replaced by a topic-to-chapter locator table) | X-1 to X-6 | [appendix-10-index.md](appendix-10-index.md) |
+| Item | Original location |
+|---|---|
+| [HVE Tutorial (Lessons 1–4: Navigating, Running a Simulation, Combining Multiple Events, Creating a Video)](32-tutorial.md) | Tutorial section, pages 32-1 to 32-60 |
+| [Appendix I — Installation & Setup (system requirements, installation, licensing, HVE file system)](appendix-01-installation.md) | I-1 to I-10 |
+| [Appendix II — Messages (input validation, event verify, execution and output report messages)](appendix-02-messages.md) | II-1 to II-14 |
+| [Appendix III — Coordinate Systems (earth-, vehicle-, tire- and human-fixed)](appendix-03-coordinate-systems.md) | III-1 to III-8 |
+| [Appendix IV — Units (units files, unit names and program units by group)](appendix-04-units.md) | IV-1 to IV-14 |
+| [Appendix V — Collision Deformation Classification (CDC)](appendix-05-cdc.md) | V-1 to V-8 |
+| [Appendix VI — References](appendix-06-references.md) | VI-1 to VI-10 |
+| [Appendices VII–IX — Developer's Toolkit Overview, Databases, Quick Reference (reserved in the original)](appendix-07-09-reserved.md) | VII-1 to IX-2 |
+| [Appendix X — Index (replaced by a topic-to-chapter locator table)](appendix-10-index.md) | X-1 to X-6 |
 
 ## Notes on this edition
 

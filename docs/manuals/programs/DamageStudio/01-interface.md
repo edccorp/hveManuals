@@ -37,17 +37,17 @@ The window also includes a *Vehicle Name* field with *Prev* and *Next* buttons f
 
 ## Viewer Options
 
-The Viewer Options group determines what is displayed in the 3-D viewer. The five viewer (damage display) options are:
+The Viewer Options group determines what is displayed in the 3-D viewer. Four viewer (damage display) options are available; a fifth, Damage Photograph, is described in the original manual but cannot be selected in the current release:
 
 | Original manual name | Current dropdown name | Status |
 |---|---|---|
 | Geometry, Simulated Damage | *Simulated* | Available (simulation events only) |
 | Geometry, Undamaged | *None* | Available |
 | Geometry, From File | *From File* | Available |
-| Damage Photograph | *Photograph(s)* | Not available in the current release (removed from the dropdown, not selectable) |
+| Damage Photograph | *Photograph(s)* | **Not available.** The entry is not present in the dropdown and the view cannot be selected |
 | Damage, User-entered | *User-entered* | Available |
 
-*(updated: the current Damage dropdown uses the short names shown in the middle column — the list describes the source of the damage shown for the vehicle geometry. "Simulated" is only offered for simulation events. The "Photograph(s)" entry has been removed from the dropdown, so the Damage Photograph view cannot currently be selected, although the feature it describes — seven photo views with descriptions and an Info... button — is otherwise unchanged.)*
+*(updated: the current Damage dropdown uses the short names shown in the middle column — the list describes the source of the damage shown for the vehicle geometry. "Simulated" is only offered for simulation events. The "Photograph(s)" entry is no longer present in the dropdown.)*
 
 The current Viewer Option is selected from the *Damage* dropdown list. The view is activated by clicking the *Show* checkbox. Clicking *Show* for more than one viewer option causes the selected views to be super-imposed (see Multiple Views, later in this chapter) for purposes of comparison.
 
@@ -103,17 +103,22 @@ The Damage Profile group is disabled when the viewer option is *From File*.
 
 ### Damage Photograph ("Photograph(s)")
 
-When the *Photograph(s)* viewer option is selected, the 3-D viewer displays one or more user-supplied vehicle photographs. Seven photographs are allowed for each vehicle.
+> **NOTE:** This viewer option is **not available**. *Photograph(s)* is not
+> offered in the Damage dropdown, so the view described below cannot be
+> selected. The description is retained because the original manual documents
+> the feature and because case files still carry the photograph data.
 
-A dropdown list is provided that suggests the photographic views are Front, Right, Back, Left, Top, Undercarriage and Oblique. However, these are only suggestions; the actual views are up to the user. The views may be used for comparison with the simulated vehicle damage.
+As described in the original manual, the *Photograph(s)* option displayed one or
+more user-supplied vehicle photographs in the 3-D viewer, up to seven per
+vehicle. A dropdown list suggested the views Front, Right, Back, Left, Top,
+Undercarriage and Oblique — suggestions only, with the actual views up to the
+user — and each view had a text box, reached through an *Info...* button, for
+descriptive information such as camera position and focal length. The intended
+use was comparison against the simulated vehicle damage.
 
-A text box (displayed with the *Info...* button) is provided for each view that may contain user-supplied information that is descriptive of the view (e.g., camera position, focal length, etc.).
-
-*(updated: the Damage Photograph option remains unavailable in the current release — the entry has been removed from the viewer dropdown, although the seven photo views, each with its file name, description and per-view camera settings, are otherwise still supported.)*
-
-#### Damage Profile
-
-The Damage Profile group is disabled when the viewer option is *Photograph(s)*.
+Photograph file names, view descriptions and per-view camera settings are still
+saved to and read from case files, so a case set up in an earlier release keeps
+its photograph data. There is currently no way to display it in Damage Studio.
 
 ## Multiple Views
 

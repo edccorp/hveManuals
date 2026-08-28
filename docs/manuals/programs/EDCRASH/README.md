@@ -12,15 +12,15 @@ This manual describes the EDCRASH model features and use. Input parameters and o
 
 ## Contents
 
-| Chapter | File | Description |
-|---|---|---|
-| 1 — Program Description | [01-program-description.md](01-program-description.md) | Overview, model inputs/outputs, validation, HVE-2D and HVE, basic procedure |
-| 2 — Program Input | [02-program-input.md](02-program-input.md) | Vehicles, environment, event set-up, calculation options, executing an event |
-| 3 — Program Output | [03-program-output.md](03-program-output.md) | Alpha-numeric reports (Accident History, Damage Data, Event Data, Messages, Program Data, Vehicle Data) and graphic reports (Damage Profiles, Momentum Diagrams, Site Drawing) |
-| 4 — Calculation Method | [04-calculation-method.md](04-calculation-method.md) | Impact phase (collinear and oblique), impact-to-rest phase, trajectory simulation, assumptions |
-| 5 — EDCRASH Tutorial | [05-tutorial.md](05-tutorial.md) | Complete worked example: intersection collision between a Ford Escort and a Nissan Sentra |
-| 6 — Messages | [06-messages.md](06-messages.md) | All Fatal, Diagnostic and Informative messages issued by EDCRASH, with recommended actions |
-| 7 — Technical References | [07-technical-references.md](07-technical-references.md) | Bibliography |
+| Chapter | Description |
+|---|---|
+| [1 — Program Description](01-program-description.md) | Overview, model inputs/outputs, validation, HVE-2D and HVE, basic procedure |
+| [2 — Program Input](02-program-input.md) | Vehicles, environment, event set-up, calculation options, executing an event |
+| [3 — Program Output](03-program-output.md) | Alpha-numeric reports (Accident History, Damage Data, Event Data, Messages, Program Data, Vehicle Data) and graphic reports (Damage Profiles, Momentum Diagrams, Site Drawing) |
+| [4 — Calculation Method](04-calculation-method.md) | Impact phase (collinear and oblique), impact-to-rest phase, trajectory simulation, assumptions |
+| [5 — EDCRASH Tutorial](05-tutorial.md) | Complete worked example: intersection collision between a Ford Escort and a Nissan Sentra |
+| [6 — Messages](06-messages.md) | All Fatal, Diagnostic and Informative messages issued by EDCRASH, with recommended actions |
+| [7 — Technical References](07-technical-references.md) | Bibliography |
 
 ## Related Documentation
 

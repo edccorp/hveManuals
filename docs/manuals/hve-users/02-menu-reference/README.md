@@ -6,14 +6,14 @@ Menu items covered here that have detailed dialog pages elsewhere in this manual
 
 ## Contents
 
-| Chapter | File | Menu | Manual pages |
-|---|---|---|---|
-| 3 | [03-files-menu.md](03-files-menu.md) | File Menu — New, Open, Save, Save As, Export Preview Case, Print, Print All, Video Creator, Export, FBX Export, Recent Files, Exit | 3-1 … 3-14 |
-| 4 (Part A) | [04a-setup-menu.md](04a-setup-menu.md) | Set-up Menu — Position/Velocity, Driver Controls (Throttle, Brake, Steering, Gear, Path Follower, Wheel Data) | 4-1 … 4-31 |
-| 4 (Part B) | [04b-setup-menu.md](04b-setup-menu.md) | Set-up Menu — Damage Profiles, Collision Pulse, Vehicle Mesh, Payload, Wheels, Accelerometers, Contacts, Restraints, Signals, Notes | 4-32 … 4-79 |
-| 5 | [05-view-menu.md](05-view-menu.md) | View Menu — Toolbar, Status Bar, Set Camera, Overlays | 5-1 … 5-10 |
-| 6 | [06-options-menu.md](06-options-menu.md) | Options Menu — display toggles, Grid, Units, Shadows, Render, Playback, Simulation Controls, Calculation Options, DyMESH, Get Surface Info, Preferences | 6-1 … 6-38 |
-| 7 | [07-help-menu.md](07-help-menu.md) | Help Menu — Help Topics, User Manuals, Tech Support, About, Online Licensing | 7-1 … 7-6 |
+| Chapter | Menu | Manual pages |
+|---|---|---|
+| [3](03-files-menu.md) | File Menu — New, Open, Save, Save As, Export Preview Case, Print, Print All, Video Creator, Export, FBX Export, Recent Files, Exit | 3-1 … 3-14 |
+| [4 (Part A)](04a-setup-menu.md) | Set-up Menu — Position/Velocity, Driver Controls (Throttle, Brake, Steering, Gear, Path Follower, Wheel Data) | 4-1 … 4-31 |
+| [4 (Part B)](04b-setup-menu.md) | Set-up Menu — Damage Profiles, Collision Pulse, Vehicle Mesh, Payload, Wheels, Accelerometers, Contacts, Restraints, Signals, Notes | 4-32 … 4-79 |
+| [5](05-view-menu.md) | View Menu — Toolbar, Status Bar, Set Camera, Overlays | 5-1 … 5-10 |
+| [6](06-options-menu.md) | Options Menu — display toggles, Grid, Units, Shadows, Render, Playback, Simulation Controls, Calculation Options, DyMESH, Get Surface Info, Preferences | 6-1 … 6-38 |
+| [7](07-help-menu.md) | Help Menu — Help Topics, User Manuals, Tech Support, About, Online Licensing | 7-1 … 7-6 |
 
 ## Notable updates relative to the 2006 printed edition
 

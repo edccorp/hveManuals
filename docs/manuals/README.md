@@ -33,22 +33,20 @@ flagged, and options that were previously undocumented are now described.
 Updated Markdown editions of the HVE program manuals, each reviewed against the
 current physics engine and application code:
 
-| Manual |
-| --- |
-| [EDCRASH](programs/EDCRASH/README.md) |
-| [EDGEN](programs/EDGEN/README.md) |
-| [EDHIS](programs/EDHIS/README.md) |
-| [EDSMAC](programs/EDSMAC/README.md) |
-| [EDSMAC4](programs/EDSMAC4/README.md) |
-| [EDSVS](programs/EDSVS/README.md) |
-| [EDVDS](programs/EDVDS/README.md) |
-| [EDVSM](programs/EDVSM/README.md) |
-| [EDVTS](programs/EDVTS/README.md) |
-| [SIMON](programs/SIMON/README.md) |
-| [DyMESH](programs/DyMESH/README.md) |
-| [GATB](programs/GATB/README.md) |
-| [RDF](programs/RDF/README.md) |
-| [Damage Studio](programs/DamageStudio/README.md) |
+- [EDCRASH](programs/EDCRASH/README.md)
+- [EDGEN](programs/EDGEN/README.md)
+- [EDHIS](programs/EDHIS/README.md)
+- [EDSMAC](programs/EDSMAC/README.md)
+- [EDSMAC4](programs/EDSMAC4/README.md)
+- [EDSVS](programs/EDSVS/README.md)
+- [EDVDS](programs/EDVDS/README.md)
+- [EDVSM](programs/EDVSM/README.md)
+- [EDVTS](programs/EDVTS/README.md)
+- [SIMON](programs/SIMON/README.md)
+- [DyMESH](programs/DyMESH/README.md)
+- [GATB](programs/GATB/README.md)
+- [RDF](programs/RDF/README.md)
+- [Damage Studio](programs/DamageStudio/README.md)
 
 ## HVE User's Manual
 

@@ -72,7 +72,9 @@ Select *From File* in the Damage dropdown, check *Show*, and use the *Filename* 
 
 ## Damage Photograph ("Photograph(s)")
 
-*(Not currently available: the Photograph(s) option has been removed from the viewer dropdown in the current release.)*
+> **NOTE:** This viewer option is **not available**. *Photograph(s)* is not
+> offered in the Damage dropdown and cannot be selected. See
+> [Chapter 1 — Damage Photograph](01-interface.md#damage-photograph-photographs).
 
 ## Some Notes About Damage Profiles
 

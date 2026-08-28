@@ -32,16 +32,14 @@ Collision Engineering Associates, Inc. provides technical assistance for support
 
 ## Contents
 
-| Chapter | File |
-|---|---|
-| 1 — Program Description | [01-program-description.md](01-program-description.md) |
-| 2 — Program Input | [02-program-input.md](02-program-input.md) |
-| 3 — Program Output | [03-program-output.md](03-program-output.md) |
-| 4 — Calculation Method | [04-calculation-method.md](04-calculation-method.md) |
-| 5 — Tutorial | [05-tutorial.md](05-tutorial.md) |
-| 6 — Messages | [06-messages.md](06-messages.md) |
-| 7 — Technical References | [07-references.md](07-references.md) |
-| GEBOD Data Pages | [08-gebod-data-pages.md](08-gebod-data-pages.md) |
+- [1 — Program Description](01-program-description.md)
+- [2 — Program Input](02-program-input.md)
+- [3 — Program Output](03-program-output.md)
+- [4 — Calculation Method](04-calculation-method.md)
+- [5 — Tutorial](05-tutorial.md)
+- [6 — Messages](06-messages.md)
+- [7 — Technical References](07-references.md)
+- [GEBOD Data Pages](08-gebod-data-pages.md)
 
 *(The original Chapter 8, Index, is omitted from this edition — Markdown files are text-searchable.)*
 

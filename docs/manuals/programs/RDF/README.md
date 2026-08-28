@@ -14,11 +14,9 @@ ReadDataFile is an HVE-compatible physics program (calculation method) that impo
 
 ## Contents
 
-| Chapter | File |
-|---|---|
-| 1 — Program Description and 2 — Program Input | [01-program-description-and-input.md](01-program-description-and-input.md) |
-| 3 — Calculation Method | [02-calculation-method.md](02-calculation-method.md) |
-| 4 — Data File Format (with examples) | [03-data-file-format.md](03-data-file-format.md) |
+- [1 — Program Description and 2 — Program Input](01-program-description-and-input.md)
+- [3 — Calculation Method](02-calculation-method.md)
+- [4 — Data File Format (with examples)](03-data-file-format.md)
 
 <!-- NAV -->
 

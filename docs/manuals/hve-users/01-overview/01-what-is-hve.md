@@ -57,7 +57,7 @@ may be deleted using the Delete Human pushbutton.
 
 *See also the dialog reference:
 [Humans](../../07-humans/README.md), in particular
-[HumanInfoDlg.md](../../07-humans/HumanInfoDlg.md).*
+[Human Information Dialog](../../07-humans/HumanInfoDlg.md).*
 
 ## Vehicle Editor
 
@@ -75,7 +75,7 @@ These components work for vehicles exactly like their Human Editor
 counterparts.
 
 *See also: [Vehicles](../../02-vehicles/README.md), in particular
-[VehicleInfoDlg.md](../../02-vehicles/VehicleInfoDlg.md).*
+[Vehicle Information Dialog](../../02-vehicles/VehicleInfoDlg.md).*
 
 ## Environment Editor
 
@@ -92,7 +92,7 @@ These components work for environments exactly like the previously described
 editors.
 
 *See also: [Environment](../../08-environment/README.md), in particular
-[EnvtInfoDlg.md](../../08-environment/EnvtInfoDlg.md), and the
+[Environment Information Dialog](../../08-environment/EnvtInfoDlg.md), and the
 [3-D Editor reference](../../01-user-interface/3dEditor.md).*
 
 ## Event Editor
@@ -118,8 +118,8 @@ Editor also has an Event Controller that allows the user to execute, pause
 and review the current event.
 
 *See also: [Events & Driver Controls](../../09-events-driver-controls/README.md), in
-particular [EventInfo.md](../../09-events-driver-controls/EventInfo.md) and
-[EventSetup.md](../../09-events-driver-controls/EventSetup.md).*
+particular [Event Information Dialog](../../09-events-driver-controls/EventInfo.md) and
+[Event Set-up Dialog](../../09-events-driver-controls/EventSetup.md).*
 
 ## Playback Editor
 

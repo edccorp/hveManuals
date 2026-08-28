@@ -38,10 +38,8 @@ This section describes the background and use of DamageStudio.
 
 ## Contents
 
-| Chapter | File |
-|---|---|
-| 32 (part 1) — The DamageStudio Interface | [01-interface.md](01-interface.md) |
-| 32 (part 2) — Using DamageStudio | [02-using-damagestudio.md](02-using-damagestudio.md) |
+- [32 (part 1) — The DamageStudio Interface](01-interface.md)
+- [32 (part 2) — Using DamageStudio](02-using-damagestudio.md)
 
 ## Related Pages
 
