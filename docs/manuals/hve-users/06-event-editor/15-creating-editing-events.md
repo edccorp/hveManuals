@@ -25,7 +25,7 @@ puts HVE into Event Mode and displays the Event Editor's components:
   dialog and includes a VCR-like panel of buttons allowing the user to
   start, stop, reset and play events forwards and backwards.
 
-![Figure 15-1](../images/p482-figB15-1.png)
+![Figure 15-1](../images/figure-15-1.jpg)
 *Figure 15-1: Event Editor, Viewer, Position/Velocity dialog and Event Controller.*
 
 ### Event Editor Dialog
@@ -66,7 +66,7 @@ orientation of the selected human or vehicle. It includes the following
 components (for the current field reference see the
 [Position/Velocity dialog page](../../09-events-driver-controls/PosVelDlg.md)):
 
-![Figure 15-2](../images/p484-figB15-2.png)
+![Figure 15-2](../images/figure-15-2.jpg)
 *Figure 15-2: Position/Velocity dialog, used for assigning positions and velocities to humans and vehicles in the current event.*
 
 - **Path Location Listbox** — Allows the user to choose a path location at
@@ -131,7 +131,7 @@ components (for the current field reference see the
 Key Results windows (see Figure 15-3) display the current value of one or
 more user-specified variables during execution.
 
-![Figure 15-3](../images/p485-figB15-3.png)
+![Figure 15-3](../images/figure-15-3.jpg)
 *Figure 15-3: Key Results Window, used for displaying important, real-time results during events. Simulation models display a Simulation Key Results window; reconstruction models have a similar window.*
 
 > **NOTE:** The Kinematics variables are displayed by default.
@@ -190,7 +190,7 @@ add a new event, perform the following steps:
    > which you have no license, HVE will issue a message and your selection
    > will be ignored.
 
-   ![Figure 15-5](../images/p487-figB15-5.png)
+   ![Figure 15-5](../images/figure-15-5.jpg)
    *Figure 15-5: Event Information dialog.*
 
 2. Enter a name for the current event.
@@ -380,7 +380,7 @@ To copy an event, perform the following steps:
    the new event (the default name is "Copy Of " + the selected event
    name).
 
-   ![Figure 15-6](../images/p492-259.png)
+   ![Figure 15-6](../images/figure-15-6.jpg)
    *Figure 15-6: Copy Event dialog.*
 
 3. Edit the event name as desired.

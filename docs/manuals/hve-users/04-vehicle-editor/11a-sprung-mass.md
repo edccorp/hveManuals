@@ -36,7 +36,7 @@ Vehicle Model. The general categories for these parameters are:
 These categories and their associated parameters are described in this
 chapter.
 
-![Figure 11-1](../images/p344-197.png)
+![Figure 11-1](../images/figure-11-1.jpg)
 *Figure 11-1: Vehicle Editor, Sprung Mass Data pop-up menu.*
 
 ## Inertial Properties
@@ -193,7 +193,7 @@ reference page, [Move CG dialog](../../02-vehicles/MoveCGDlg.md).
 > **NOTE:** Changing wheel z coordinates or tire radii for any wheel
 > location will change the calculated CG height.
 
-![Figure 11-3](../images/p348-200.png)
+![Figure 11-3](../images/figure-11-3.jpg)
 *Figure 11-3: Move CG dialog.*
 
 To display or edit the current vehicle's CG location (relative to the
@@ -230,7 +230,7 @@ The Move CG parameters are described below.
 The color of the vehicle is obvious from looking at it. The color may be
 edited using the Color dialog.
 
-![Figure 11-4](../images/p350-201.png)
+![Figure 11-4](../images/figure-11-4.jpg)
 *Figure 11-4: Color Editor dialog.*
 
 To display or edit the current vehicle's color properties, perform the
@@ -265,7 +265,7 @@ actual 3-D geometry file created by digitizing the vehicle. If a 3-D
 geometry file is available for the current vehicle, it may be selected using
 the Geometry File dialog.
 
-![Figure 11-5](../images/p351-202.png)
+![Figure 11-5](../images/figure-11-5.jpg)
 *Figure 11-5: Geometry File dialog.*
 
 ### Mechanical Properties
@@ -294,7 +294,7 @@ properties are:
 - **Unloading Slope** — Linear force-deflection relationship during
   unloading.
 
-![Figure 11-6](../images/p352-203.png)
+![Figure 11-6](../images/figure-11-6.jpg)
 *Figure 11-6: View of 3-D geometry file (mesh). The mesh provides visual properties, as well as mechanical properties that may be used by collision algorithms.*
 
 These material properties are available for collision algorithms to
@@ -397,10 +397,10 @@ Contact Surfaces are planes defined by 3 corners (the fourth corner is
 automatically assigned by assuming a parallelogram). Contact surfaces are
 created using the Contact Surfaces dialog.
 
-![Figure 11-7](../images/p355-204.png)
+![Figure 11-7](../images/figure-11-7.jpg)
 *Figure 11-7: Vehicle contact surfaces — both interior and exterior contact surfaces are permissible.*
 
-![Figure 11-8](../images/p356-205.png)
+![Figure 11-8](../images/figure-11-8.jpg)
 *Figure 11-8: Contact Surfaces dialog.*
 
 To display or edit the current vehicle's contact surfaces properties,
@@ -511,7 +511,7 @@ The Contact Surface parameters are described below.
 
 > **NOTE:** The unloading slope should be steeper than the loading slope!
 
-![Figure 11-10](../images/p360-206.png)
+![Figure 11-10](../images/figure-11-10.jpg)
 *Figure 11-10: Contact Surfaces Materials dialog.*
 
 ![Figure 11-11](../images/p361-figB11-11.png)
@@ -540,7 +540,7 @@ The Contact Surface parameters are described below.
 The belt restraint systems of the vehicle are displayed and edited using the
 Belt Restraints dialog.
 
-![Figure 11-12](../images/p363-207.png)
+![Figure 11-12](../images/figure-11-12.jpg)
 *Figure 11-12: Belt Restraints dialog.*
 
 To display or edit the current vehicle's belt properties, perform the
@@ -619,7 +619,7 @@ left and right belt sections:
 The airbag restraint systems of the vehicle are displayed and edited using
 the Airbag Restraints dialog.
 
-![Figure 11-13](../images/p366-208.png)
+![Figure 11-13](../images/figure-11-13.jpg)
 *Figure 11-13: Airbag Restraints dialog.*
 
 ![Figure 11-14](../images/p367-figB11-14.png)
@@ -827,7 +827,7 @@ dialog allows the user to view or edit these properties. See also the
 reference page,
 [Aerodynamic Drag dialog](../../02-vehicles/VehDragDlg.md).
 
-![Figure 11-17](../images/p375-210.png)
+![Figure 11-17](../images/figure-11-17.jpg)
 *Figure 11-17: Vehicle Aerodynamic Drag dialog.*
 
 To display or edit the current vehicle's drag factors, perform the following
@@ -883,7 +883,7 @@ handling. The Body Torsion dialog is used to edit these properties. See also
 the reference page,
 [Body Torsion dialog](../../02-vehicles/BodyTorDlg.md).
 
-![Figure 11-18](../images/p377-211.png)
+![Figure 11-18](../images/figure-11-18.jpg)
 *Figure 11-18: Body Torsion dialog.*
 
 To display or edit the vehicle's torsional data, perform the following

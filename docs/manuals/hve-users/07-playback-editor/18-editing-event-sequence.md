@@ -34,7 +34,7 @@ The Playback Window will include all the humans and vehicles used in each of the
 
 After the events are selected, they normally must be edited so each event occurs at the proper time and sequence. In addition, certain non-calculated information may be edited. While performing these operations, the user assumes a role much like a movie editor: the Output Tracks produced by each event are the film, and each event's Active Trajectory Simulations listing becomes the cutter and splicer. These editing operations are described below.
 
-![Figure 18-2](../images/p565-276.png)
+![Figure 18-2](../images/figure-18-2.jpg)
 *Figure 18-2 — Active Trajectory Simulations table found in the lower portion of the Playback Information dialog. The editing parameters, Tdelay, Tstart and Tend, are located in this table.*
 
 ### Timing The Sequence
@@ -81,7 +81,7 @@ The above rules are used to create an internal table, called the Playback Object
 
 Refer to the Tutorial section of this manual for examples of editing an accident sequence.
 
-![Figure 18-3](../images/p557-272.png)
+![Figure 18-3](../images/figure-18-3.jpg)
 *Figure 18-3 — Audit Trail.*
 
 ## Editing Non-calculated Results

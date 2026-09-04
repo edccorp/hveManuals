@@ -39,7 +39,7 @@ program icon, just as you would start any other program on your computer.
 After starting HVE, the current Editor will be displayed, along with the menu
 bar.
 
-![Figure 2-1](../images/p054-014.png)
+![Figure 2-1](../images/figure-2-1.jpg)
 *Figure 2-1: HVE, ready to begin. The HVE Menu Bar and current editor (in this case, the Vehicle Editor) are displayed. The Mode pushbuttons on the toolbar allow the user to select the current editor.*
 
 ## HVE Menu Bar
@@ -103,7 +103,7 @@ double-click on the desired filename and the case file will be loaded.
 
 If you choose not to open a case file, you will begin a new case.
 
-![Figure 2-2](../images/p055-015.png)
+![Figure 2-2](../images/figure-2-2.jpg)
 *Figure 2-2: The Open Case File Selection dialog allows the user to open previously saved cases (`*.hve` files).*
 
 ## Creating Humans, Vehicles and Environments
@@ -131,7 +131,7 @@ section of this manual for details; see also the
 [Human Information dialog reference](../../07-humans/HumanInfoDlg.md)). The
 above steps are repeated for each human to be included in the study.
 
-![Figure 2-3](../images/p056-figA2-3.png)
+![Figure 2-3](../images/figure-2-3.jpg)
 *Figure 2-3: The HVE Human Editor and Human Information dialog (Human Name, Location, Sex, Age, Weight Percentile, Height Percentile).*
 
 ### Creating Vehicles
@@ -158,7 +158,7 @@ Repeat the above steps for each vehicle to be included in the study.
 > creating its individual vehicle units, one at a time, using the Vehicle
 > Editor.
 
-![Figure 2-4](../images/p057-figA2-4.png)
+![Figure 2-4](../images/figure-2-4.jpg)
 *Figure 2-4: The HVE Vehicle Editor and Vehicle Information dialog (Vehicle Name, Vehicle Type, Make, Model, Year, Body Style, Source Database, Number of Axles, Driver Location, Engine Location, Drive Axle(s)).*
 
 ### Creating Environments
@@ -197,7 +197,7 @@ To create the environment:
 
 The environment is now displayed in the Environment Viewer.
 
-![Figure 2-5](../images/p059-018.png)
+![Figure 2-5](../images/figure-2-5.jpg)
 *Figure 2-5: The Environment Information dialog (Current Location, Latitude, Longitude, GMT offset, Environment Name, Date and Time of accident, Angle of X Axis, Wind Speed and Direction, Barometric Pressure, Temperature, Gravity, Environment 3-D Geometry File, Environment Scanned Image File, Sky Attributes).*
 
 *See also: [Environment Information dialog
@@ -206,7 +206,7 @@ reference](../../08-environment/EnvtInfoDlg.md) and
 
 ### 3-D Editor
 
-![Figure 2-6](../images/p060-019.png)
+![Figure 2-6](../images/figure-2-6.jpg)
 *Figure 2-6: HVE 3-D Editor, used for creating and editing 3-D geometry data used to visualize the humans, vehicles and environment for the current case. The 3-D Editor has four viewers (Perspective plus X-Y, Y-Z and X-Z).*
 
 The 3-D Editor is a 3-D modeling tool which may be used to create and edit
@@ -244,7 +244,7 @@ To create an HVE event:
 4. Choose *Calculation Options* to display and edit any program options.
 5. Choose *OK*.
 
-![Figure 2-7](../images/p061-020.png)
+![Figure 2-7](../images/figure-2-7.jpg)
 *Figure 2-7: The Event Information dialog — Event Name, Humans List, Vehicles List, Event Humans and Vehicles, Calculation Method.*
 
 *See also: [Event Information](../../09-events-driver-controls/EventInfo.md)
@@ -337,7 +337,7 @@ and simulation models.
 
 ## Setting Up Events
 
-![Figure 2-8](../images/p064-021.png)
+![Figure 2-8](../images/figure-2-8.jpg)
 *Figure 2-8: The Set-up Menu allows the user to choose from the available Event Set-up options.*
 
 Events are *set up* after the objects (humans and vehicles) and calculation
@@ -388,10 +388,10 @@ If the actual coordinates and orientation of the selected human or vehicle
 are known, it is easiest to simply enter them directly in the
 Position/Velocity dialog.
 
-![Figure 2-9](../images/p065-022.png)
+![Figure 2-9](../images/figure-2-9.jpg)
 *Figure 2-9: Vehicles are positioned using the translation and rotation manipulators, or by entering data directly into the Position/Velocity dialog.*
 
-![Figure 2-10](../images/p066-023.png)
+![Figure 2-10](../images/figure-2-10.jpg)
 *Figure 2-10: Humans are positioned, like vehicles, using the translation and rotation manipulators, or by entering data directly into the Position/Velocity dialog.*
 
 > **NOTE:** For occupant simulations, the human is positioned relative to the
@@ -476,7 +476,7 @@ Three options are available:
 - *Percent Available Friction* vs time
 - *Tractive Effort* vs time
 
-![Figure 2-11](../images/p068-024.png)
+![Figure 2-11](../images/figure-2-11.jpg)
 *Figure 2-11: The Throttle Table allows the user to enter a table of tractive effort vs time. The Percent Wide-Open-Throttle option is shown.*
 
 The availability of these options is dependent upon the selected calculation
@@ -492,7 +492,7 @@ Three options are available:
 - *Percent Available Friction* vs time
 - *Braking Force* vs time
 
-![Figure 2-12](../images/p069-025.png)
+![Figure 2-12](../images/figure-2-12.jpg)
 *Figure 2-12: The Brake Table allows the user to enter a table of braking force vs time. The Pedal Force option is shown.*
 
 Again, the availability of these options is dependent upon the selected
@@ -506,7 +506,7 @@ options are available:
 - *Steering Wheel Angle* vs time
 - *Tire Angle* vs time
 
-![Figure 2-13](../images/p070-026.png)
+![Figure 2-13](../images/figure-2-13.jpg)
 *Figure 2-13: The Steer Table allows the user to enter a table of steer angles vs time for each steerable axle. The At Steering Wheel option is shown.*
 
 **Gear Table** — The Gear Table allows the user to provide the current gear
@@ -521,7 +521,7 @@ current simulation model can use the gear information (some simulation models
 do not allow tractive effort in reverse). Thus, use of the Gear Table also
 requires that the simulation uses the HVE Engine Model.
 
-![Figure 2-14](../images/p071-027.png)
+![Figure 2-14](../images/figure-2-14.jpg)
 *Figure 2-14: The Gear Table allows the user to enter a table of gear selections vs time. This table is only available for simulations which include an engine model, and requires that the current Throttle Table uses the Percent Wide-open Throttle method.*
 
 **HVE Path Follower** — The HVE Path Follower dialog allows the user to
@@ -542,7 +542,7 @@ of the HVE Path Follower is provided in Chapter 4 (Event Set-up) and Chapter
 > **NOTE:** The Torque Method and Speed Follower options were not enabled as
 > of the 2006 manual.
 
-![Figure 2-15](../images/p072-028.png)
+![Figure 2-15](../images/figure-2-15.jpg)
 *Figure 2-15: The HVE Path Follower dialog — Driver Data page (Driver Start Time, Driver Sample Interval, Driver Preview Time, Path Error Null Distance, Driver Comfort Level).*
 
 **Wheel Data** — The Wheel Data dialog is used for reconstruction models. It
@@ -557,7 +557,7 @@ braking, and click on a check box to select a different calculation method
 for handling rotating and spinning vehicles between impact and rest
 (*Rot/Lat Skidding*). A typical Wheel Data dialog is shown in Figure 2-16.
 
-![Figure 2-16](../images/p074-031.png)
+![Figure 2-16](../images/figure-2-16.jpg)
 *Figure 2-16: The Wheel Data dialog is used by reconstruction models that use constant wheel forces and steer angles.*
 
 ### Assigning a Vehicle Damage Profile
@@ -606,7 +606,7 @@ calculate the following results:
 > then apportions the delta-V according to the total damage energy and
 > respective vehicle masses.
 
-![Figure 2-17](../images/p076-032.png)
+![Figure 2-17](../images/figure-2-17.jpg)
 *Figure 2-17: The Damage Data dialog — CDC, PDOF, Use Newton's 3rd Law, Impulse Center, EES/Damage Profile basis, Damage Profile zones, Width, Offset, crush locations and depths, Delta-V Total/Long./Lat., Damage Energy, Peak Force, A Stiff... and B Stiff... buttons.*
 
 *See also: [Damage Data reference](../../11-reports-output/DamageData.md).*
@@ -642,7 +642,7 @@ motion inputs (e.g., accelerations) at specified times (see Figure 2-19).
 Because the collision pulse normally lasts 100 to 200 milliseconds, the
 timestep is usually very small, on the order of 0.001 to 0.01 seconds.
 
-![Figure 2-19](../images/p078-035.png)
+![Figure 2-19](../images/figure-2-19.jpg)
 *Figure 2-19: The Collision Pulse dialog — Total Acceleration vs. Time graph, Pulse Data Source and Pulse Type option lists, table of Forward/Lateral/Vertical/Roll/Pitch/Yaw accelerations vs time, with Apply, Print, Factors, New, Open, Save As and Options buttons.*
 
 #### Pulse Data Source
@@ -695,7 +695,7 @@ Collision Pulse Factors provide a convenient way to assess changes in the
 vehicle and/or occupant response due to an increase or decrease in collision
 force components.
 
-![Figure 2-20](../images/p079-036.png)
+![Figure 2-20](../images/figure-2-20.jpg)
 *Figure 2-20: The Collision Pulse In-use Factors dialog — Forward, Lateral, Vertical, Roll, Pitch and Yaw amplification factors.*
 
 #### Collision Pulse Options
@@ -712,7 +712,7 @@ If the current pulse type is *Force/Moment*, the user can specify the
 vehicle-fixed coordinates for the point of application of the force on the
 vehicle.
 
-![Figure 2-21](../images/p080-037.png)
+![Figure 2-21](../images/figure-2-21.jpg)
 *Figure 2-21: The Collision Pulse Options dialog — Threshold Accel, Tstart, Impulse Center coordinates.*
 
 *See also: [Collision Pulse](../../11-reports-output/ColPulse.md),
@@ -738,7 +738,7 @@ the Set-up menu (this option is unavailable if the current reconstruction or
 simulation model does not use the Mesh Options dialog). The Mesh dialog will
 be displayed as shown in Figure 2-22.
 
-![Figure 2-22](../images/p081-038.png)
+![Figure 2-22](../images/figure-2-22.jpg)
 *Figure 2-22: The Vehicle Mesh Options dialog — Vertex Weld Distance, Tessellate/Max Side Length, Is Mesh Water Tight? (Yes/No/Unknown), Mesh Groups included in damage (Body, Glass, Chrome, Trim, Lights, Interior, Other), and Inter-Vehicle friction/relaxation length vs each other object.*
 
 ### Assigning Payloads
@@ -755,7 +755,7 @@ selected vehicle.
 
 > **NOTE:** This behavior is physics model-dependent.
 
-![Figure 2-23](../images/p082-039.png)
+![Figure 2-23](../images/figure-2-23.jpg)
 *Figure 2-23: The Payload Data dialog — Payload Exists, CG Coordinates (x,y,z), Weight, Mass, Rotational Inertia (Roll, Pitch, Yaw).*
 
 *See also: [Payload dialog reference](../../02-vehicles/PayLoadDlg.md).*
@@ -779,7 +779,7 @@ simulations can determine when the blow-out is to occur; this feature is
 activated by clicking the *AutoStart* check box. This option replaces the
 user-entered *Start Time*.
 
-![Figure 2-24](../images/p083-040.png)
+![Figure 2-24](../images/figure-2-24.jpg)
 *Figure 2-24: The Tire Blow-out dialog — Axle No, Side, Location (Inner/Outer), Tire is Blown, Auto Start, Start Time, Duration, Stiffness Factor, Rolling Resistance Factor.*
 
 #### Wheel Damage Option
@@ -798,7 +798,7 @@ can determine when the damage is to occur; this feature is activated by
 clicking the *AutoStart* check box. This option replaces the user-entered
 *Start Time*.
 
-![Figure 2-25](../images/p084-041.png)
+![Figure 2-25](../images/figure-2-25.jpg)
 *Figure 2-25: The Wheel Damage dialog — Axle No, Side, Displacement (change in coordinates x, y, z), Change in Camber, Wheel is Damaged, Auto Start, Start Time, Duration, Peak Lock-up Torque, Max No-Damage Force, Deformation Rate, Max Force.*
 
 #### Wheel Brake Option
@@ -818,7 +818,7 @@ check box. This option replaces the user-entered *Start Time*.
 The Wheel Brake dialog is particularly useful for studying the degradation in
 braking on long, down-hill grades.
 
-![Figure 2-26](../images/p085-042.png)
+![Figure 2-26](../images/figure-2-26.jpg)
 *Figure 2-26: The Wheel Brakes dialog — Axle No, Side, Brake Designer (Initial Lining Temp, Initial Drum Temp, Initial Stroke), Brake Failure (Brake Is Failed, AutoStart, Start Time, Duration, Failure Extent).*
 
 #### Wheel Tire-Terrain Option
@@ -839,7 +839,7 @@ the models. Note that different wheels may use different models. For example,
 the right front tire might use the Sidewall Impact model, while the left
 front tire uses the Radial Spring model.
 
-![Figure 2-27](../images/p086-043.png)
+![Figure 2-27](../images/figure-2-27.jpg)
 *Figure 2-27: The Wheel Tire-Terrain dialog — Axle No, Side, Location, Tire-Terrain Model (Point Contact / Soft Soil / Radial Spring, with Sidewall Impact check box), Radial Spring parameters (Radial Adjustment Increment, Angular Span, Angular Increment, Sidewall Slide Friction Coefficient, Number of Sidewall Springs, per-spring distances and stiffness ratios).*
 
 ### Accelerometers
@@ -852,7 +852,7 @@ collision severity experienced by occupants seated in various positions
 within the vehicle. Accelerometers are also useful for determining the
 threshold for airbag deployment for specific airbag sensor locations.
 
-![Figure 2-28](../images/p087-044.png)
+![Figure 2-28](../images/figure-2-28.jpg)
 *Figure 2-28: The Accelerometer Data dialog — Location (1-5), Device In Use, Coordinates (x, y, z).*
 
 *See also: [Accelerometers dialog
@@ -878,7 +878,7 @@ supply appropriate parameters (see Figure 2-29). An individual system (lap
 belt, shoulder belt or airbag) is available only if the selected vehicle has
 that system installed at the occupant's seat position.
 
-![Figure 2-29](../images/p088-045.png)
+![Figure 2-29](../images/figure-2-29.jpg)
 *Figure 2-29: The Belt Restraint System Data dialog — Belt Restraints For (occupant), Belt Segment, Device In Use, Belt Attached To, left/right segment coordinates (i, j, k), Belt Slack.*
 
 *See also: [Belt Restraint Systems](../../06-safety-systems/BeltResSysDlg.md)
@@ -911,8 +911,8 @@ wish to allow by either selecting or deselecting from the list of contacts
 vehicle interior surfaces are initially selected; if the current event is a
 pedestrian simulation, all the exterior surfaces are selected.
 
-![Figure 2-30](../images/p089-046.png)
-![Figure 2-30](../images/p089-046.png)
+![Figure 2-30](../images/figure-2-30.jpg)
+![Figure 2-30](../images/figure-2-30.jpg)
 *Figure 2-30: The Contact Interactions dialog — Object, Source(s), Target(s), Combined Material Properties, Current Material and Edit... button.*
 
 *See also: [Contacts dialog reference](../../09-events-driver-controls/ContactsDlg.md).*

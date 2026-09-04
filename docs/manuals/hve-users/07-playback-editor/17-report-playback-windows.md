@@ -86,7 +86,7 @@ The HVE Playback Window has an internal table to determine which objects are dri
 
 The Audit Trail is a convenient way to document the simulation models that control the motion of each object in the Playback Window.
 
-![Figure 17-6](../images/p557-272.png)
+![Figure 17-6](../images/figure-17-6.jpg)
 *Figure 17-6 — The Audit Trail displays a table of each event included in the current Playback Window, including the objects and the starting and ending times for each object.*
 
 ### Playback Controller

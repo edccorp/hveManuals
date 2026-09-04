@@ -79,7 +79,7 @@ To edit an existing surface, perform the following steps:
 
 The Cone Object Tool allows the user to create and edit 3-D cones. Cones are useful for creating highway delineator cones and simple trees. The Cone Editor dialog, shown in Figure 20-3, displays information about the current cone object.
 
-![Figure 20-3](../images/p595-290.png)
+![Figure 20-3](../images/figure-20-3.jpg)
 *Figure 20-3 — The Cone Editor dialog allows the user to edit the geometric properties of the current cone.*
 
 ### Cone Editor Dialog
@@ -178,7 +178,7 @@ To edit an existing box object, perform the following steps:
 
 The Cylinder Object Tool allows the user to create and edit 3-D cylinders. Cylinders are useful for creating telephone poles, sign posts and numerous other objects. The Cylinder Editor dialog, shown in Figure 20-7, displays information about the current cylinder object.
 
-![Figure 20-7](../images/p601-292.png)
+![Figure 20-7](../images/figure-20-7.jpg)
 *Figure 20-7 — The Cylinder Editor dialog allows the user to edit the geometric properties of the current cylinder.*
 
 ### Cylinder Editor Dialog
@@ -227,7 +227,7 @@ To edit an existing cylinder object, perform the following steps:
 
 The Sphere Object Tool allows the user to create and edit 3-D spheres. Spheres are useful for creating spherical- or ellipsoidal-shaped objects. The Sphere Editor dialog, shown in Figure 20-9, displays information about the current sphere object.
 
-![Figure 20-9](../images/p604-293.png)
+![Figure 20-9](../images/figure-20-9.jpg)
 *Figure 20-9 — The Sphere Editor dialog allows the user to edit the geometric properties of the current sphere.*
 
 ### Sphere Editor Dialog
@@ -277,7 +277,7 @@ To edit an existing sphere object, perform the following steps:
 
 The Text Object Tool allows the user to create and edit 3-D text. Text may be used to label signs, buildings and other objects. The Text Editor dialog, shown in Figure 20-11, displays information about the current text object.
 
-![Figure 20-11](../images/p607-294.png)
+![Figure 20-11](../images/figure-20-11.jpg)
 *Figure 20-11 — The Text Editor dialog allows the user to create and place text strings in the scene.*
 
 ### Text Editor Dialog
@@ -339,10 +339,10 @@ HVE supports three types of lights:
 - **Point** — The light source is located at user-specified coordinates and radiates light in all directions. An example is a light bulb.
 - **Spot** — The light source is located at user-specified coordinates and radiates a beam of light. An example is a headlight on a car.
 
-![Figure 20-13](../images/p610-295.png)
+![Figure 20-13](../images/figure-20-13.jpg)
 *Figure 20-13 — An example of a light source; in this case, a street light illuminating a vehicle traveling beneath the light.*
 
-![Figure 20-14](../images/p611-296.png)
+![Figure 20-14](../images/figure-20-14.jpg)
 *Figure 20-14 — The Light Editor dialog allows the user to create light sources and place them in the scene.*
 
 ### Light Editor Dialog

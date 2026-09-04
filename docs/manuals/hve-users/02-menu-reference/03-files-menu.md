@@ -50,7 +50,7 @@ These options allow the user to perform basic case file operations, as well as i
 
 The selected case will be loaded and ready for further work.
 
-![Figure 3-1](../images/p161-figA3-1.png)
+![Figure 3-1](../images/figure-3-1.jpg)
 *Figure 3-1: Use the Case File Selection dialog to open existing cases.*
 
 **See Also:** Case Files, Save, Save As
@@ -83,7 +83,7 @@ Choosing Save As also allows the user to enter or edit the Title of the current 
 
 > **NOTE:** The Title is displayed as a heading on all HVE output reports.
 
-![Figure 3-2](../images/p163-figA3-2.png)
+![Figure 3-2](../images/figure-3-2.jpg)
 *Figure 3-2: Save As Case Files dialog.*
 
 **To Save an Existing Case by a User-specified Filename:**
@@ -122,10 +122,10 @@ The case will be saved. In addition, the Case Title and filename will be display
 
 Selecting the check box for Print to file causes a File Selection Dialog to be displayed (see Figure 3-4), prompting the user for a filename. The File Selection dialog also includes a Save as type option list. Choose the desired format, enter a filename and press Save. The selected results are routed to a file according to the selected format and filename.
 
-![Figure 3-3](../images/p165-figA3-3.png)
+![Figure 3-3](../images/figure-3-3.jpg)
 *Figure 3-3: Use the Print Dialog to select the printer you wish to use. The Print Dialog also allows you to route output to a file. Routing selected Variable Output results to a file allows you to export the simulation results to other programs.*
 
-![Figure 3-4](../images/p166-figA3-4.png)
+![Figure 3-4](../images/figure-3-4.jpg)
 *Figure 3-4: Print to File Selection dialog.*
 
 The following Playback windows may be printed:
@@ -227,14 +227,14 @@ The selected results are printed to the selected filename.
 - Video Recorder (pre-set to S-Video/Composite Video)
 - Video Compressor
 
-![Figure 3-5](../images/p170-figA3-5.png)
+![Figure 3-5](../images/figure-3-5.jpg)
 *Figure 3-5: Use the Video Set-up Dialog to install video devices and compressors. The Video Set-up dialog is also used for loading and saving compressed video files.*
 
 ### Installing a Video Compressor
 
 To install a video compressor, choose the appropriate compressor from the Compressor option list. This list will be different for every computer, depending on the codecs (COmpressor-DECompressor) provided with the Windows operating system and/or other video-related optional software programs.
 
-![Figure 3-6](../images/p171-102.png)
+![Figure 3-6](../images/figure-3-6.jpg)
 *Figure 3-6: Compressed Video File Selection dialog allows the user to open and save video files using the video compression system.*
 
 The typical choice when creating a Video for Windows (AVI) movie is the Full Frame (Uncompressed) or the Cinepak codec.

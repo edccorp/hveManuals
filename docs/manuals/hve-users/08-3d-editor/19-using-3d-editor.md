@@ -68,7 +68,7 @@ The Object Dialog (see Figure 19-4) displays 3-D geometry data for the current o
 
 > **NOTE:** See the next chapter, [Object Tools](20-object-tools.md), for a complete description of each object dialog.
 
-![Figure 19-4](../images/p577-282.png)
+![Figure 19-4](../images/figure-19-4.jpg)
 *Figure 19-4 — The Current Object Dialog allows the user to edit the geometric properties of the current object. Each Object Tool has a special Object Dialog to meet the needs of the object; the Surface Object dialog is shown.*
 
 ## Object Attributes Tool
@@ -188,7 +188,7 @@ To modify an object's color and appearance, perform the following steps:
 ![Figure 19-6](../images/p583-286.png)
 *Figure 19-6 — The Materials Editor allows the user to assign color and other material attributes for the current object.*
 
-![Figure 19-7](../images/p583-284.png)
+![Figure 19-7](../images/figure-19-7.jpg)
 *Figure 19-7 — The HVE Texture Editor is used for applying textures to objects.*
 
 ### Texture Editor
@@ -274,7 +274,7 @@ To disassemble an existing group, perform the following steps:
 
 The grouped object will be disassembled into its individual objects.
 
-![Figure 19-9](../images/p588-288.png)
+![Figure 19-9](../images/figure-19-9.jpg)
 *Figure 19-9 — The Group Object File Selection dialog allows the user to load and save grouped objects.*
 
 ### Open

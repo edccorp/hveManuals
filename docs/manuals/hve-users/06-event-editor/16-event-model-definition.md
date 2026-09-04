@@ -476,7 +476,7 @@ issued and the method will abort). In addition, the user supplies an
 Allowable Speed Error, Maximum Throttle Application and Maximum Brake Pedal
 Force.
 
-![Figure 16-3](../images/p509-figB16-3.png)
+![Figure 16-3](../images/figure-16-3.jpg)
 *Figure 16-3: The HVE Path Follower uses up to eight user-assigned positions to define a 3-D path. Intermediate path positions are determined using a 3-D spline.*
 
 > **NOTE:** *(updated)* The legacy edition stated that the Speed Follower

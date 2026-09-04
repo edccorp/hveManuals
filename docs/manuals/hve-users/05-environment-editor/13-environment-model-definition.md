@@ -99,7 +99,7 @@ environment (see Figure 13-1, Figure 13-2 and Table 13-1):
   parameter listed in earlier editions; see the [Environment Material
   Properties dialog](../../08-environment/EnvrMatPropDlg.md).)*
 
-![Figure 13-2](../images/p462-249.png)
+![Figure 13-2](../images/figure-13-2.jpg)
 *Figure 13-2: Environment Terrain Material Properties dialog. For the current field list — including sliders, valid ranges and defaults — see [Environment Material Properties](../../08-environment/EnvrMatPropDlg.md).*
 
 > **NOTE:** The Bekker Soil Exponent, Frictional Soil Modulus and Cohesive
@@ -185,7 +185,7 @@ questions:
 
 #### Get Surface Information
 
-![Figure 13-3](../images/p465-figB13-3.png)
+![Figure 13-3](../images/figure-13-3.jpg)
 *Figure 13-3: Get Surface Information dialog.*
 
 To answer these and similar questions, a strict definition is required. HVE
@@ -287,7 +287,7 @@ Object Type is an attribute assigned using the 3-D Editor (see Figure
 13-4). The default type for all human 3-D geometry is Human; for all
 vehicle 3-D geometry, Vehicle; for all environment 3-D geometry, Road.
 
-![Figure 13-4](../images/p467-251.png)
+![Figure 13-4](../images/figure-13-4.jpg)
 *Figure 13-4: Assigning the Object Attributes using the 3-D Editor.*
 
 By default, all environment surfaces will be used by the calculation model.
@@ -309,7 +309,7 @@ type, default values (Friction Factor = 1.0, Type = Road) will be assigned
 and used. The default Friction Factor and Type of objects in imported files
 may be edited using HVE's 3-D Editor.
 
-![Figure 13-5](../images/p468-figB13-5.png)
+![Figure 13-5](../images/figure-13-5.jpg)
 *Figure 13-5: Environment File Selection dialog used for opening and saving 3-D Geometry and image files. See Table 12-1 for supported formats.*
 
 To load 3-D files from other modeling programs and edit the default surface
@@ -537,7 +537,7 @@ The HVE Environment Editor includes a user-extendible database of
 environment locations, stored according to the Location Name, Latitude,
 Longitude and GMT, as shown in Figure 13-8.
 
-![Figure 13-8](../images/p474-253.png)
+![Figure 13-8](../images/figure-13-8.jpg)
 *Figure 13-8: The Location Database allows the user to store Latitude, Longitude and GMT for any location, normally entered as City/State/Country.*
 
 **Table 13-3: Environment Model Parameters**

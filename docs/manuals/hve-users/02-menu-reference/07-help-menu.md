@@ -93,7 +93,7 @@ To access the HVE Technical Support Help Information, perform the following step
 3. Press Print to print a hard copy of the License information. You may then fax this information to the EDC Technical Support staff.
 4. Press OK when you are finished.
 
-![Figure 7-3](../images/p305-figA7-3.png)
+![Figure 7-3](../images/figure-7-3.jpg)
 *Figure 7-3: The Help Technical Support dialog explains how to contact EDC for Technical Support.*
 
 **See Also:** (none)
@@ -115,7 +115,7 @@ To access the HVE Technical Support Help Information, perform the following step
 
 > **NOTE:** You should have this information available when you call for Technical Support.
 
-![Figure 7-4](../images/p306-figA7-4.png)
+![Figure 7-4](../images/figure-7-4.jpg)
 *Figure 7-4: The About HVE Dialog contains useful release information.*
 
 **See Also:** (none)

@@ -124,7 +124,7 @@ The inputs to the lumped mass model are:
   convection coefficient to account for the effect of vehicle velocity on
   convective heat transfer.
 
-![Figure 30-2](../images/p743-355.png)
+![Figure 30-2](../images/figure-30-2.jpg)
 *Figure 30-2 — Brake Material Properties dialog. Default material properties
 are assigned for cast iron drums and rotors, and common lining friction
 materials. (See the [dialog reference page](../../04-brakes-powertrain/BrkMatPropDlg.md).)*

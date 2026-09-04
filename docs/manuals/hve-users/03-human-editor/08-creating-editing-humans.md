@@ -25,7 +25,7 @@ HVE in Human Mode and allows access to the Human Editor's components:
 These components are shown in Figure 8-1 and are described later in this
 chapter.
 
-![Figure 8-1](../images/p310-figB8-1.png)
+![Figure 8-1](../images/figure-8-1.jpg)
 *Figure 8-1: Human Editor, Human Information Dialog and Viewer.*
 
 ### Human Editor Dialog
@@ -105,7 +105,7 @@ To add a new human using the classic dialog, perform the following steps:
    > pedestrians differently. Refer to your simulation program manual for
    > more information.
 
-   ![Figure 8-2](../images/p312-figB8-2.png)
+   ![Figure 8-2](../images/figure-8-2.jpg)
    *Figure 8-2: Human Information dialog, used for adding a new human from the Human Database.*
 
    - **Sex** — An option list. The user may select either Male or Female.
@@ -228,7 +228,7 @@ the following steps:
 The selected human will be added to the Active Humans List and become the
 current human.
 
-![Figure 8-3](../images/p314-185.png)
+![Figure 8-3](../images/figure-8-3.jpg)
 *Figure 8-3: Add Humans, Previous dialog.*
 
 ## Selecting and Editing Humans

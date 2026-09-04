@@ -24,7 +24,7 @@ used to prepare output reports, view trajectory simulations and combine
 multiple simulation events into a single, coherent sequence. Playback Mode
 is also used to route these results to your printer or video recording device.
 
-![Figure 2-32](../images/p092-figA2-32.png)
+![Figure 2-32](../images/figure-2-32.jpg)
 *Figure 2-32: The HVE Playback Editor combining the results of multiple simulations into a single coherent sequence.*
 
 In Playback Mode, the user creates two types of windows:
@@ -65,7 +65,7 @@ categorized into the following types:
 - Trajectory Simulations
 - Variable Output Table
 
-![Figure 2-33](../images/p093-049.png)
+![Figure 2-33](../images/figure-2-33.jpg)
 *Figure 2-33: The Report Window Information dialog.*
 
 ### Numeric Outputs
@@ -124,7 +124,7 @@ parameters actually used by the reconstruction or simulation model.
 > **NOTE:** Although the HVE Vehicle Model contains several hundred
 > parameters, the reconstruction or simulation model may not use them all.
 
-![Figure 2-34](../images/p094-050.png)
+![Figure 2-34](../images/figure-2-34.jpg)
 *Figure 2-34: A typical Accident History numeric output window.*
 
 ### Graphic Outputs
@@ -159,7 +159,7 @@ data.
 > sufficient data be entered to establish impact and separation positions
 > and velocities.
 
-![Figure 2-35](../images/p096-051.png)
+![Figure 2-35](../images/figure-2-35.jpg)
 *Figure 2-35: A Site Drawing graphic output from EDCRASH.*
 
 ### Variable Output Table
@@ -170,7 +170,7 @@ Output Table can show a tremendous amount of data and is scrollable both
 horizontally and vertically (see the [Variable Output reference
 ](../../11-reports-output/VarOutRepDlg.md)).
 
-![Figure 2-36](../images/p097-052.png)
+![Figure 2-36](../images/figure-2-36.jpg)
 *Figure 2-36: The Variable Output Table.*
 
 The Variable Output Table includes the following features:
@@ -203,10 +203,10 @@ Graphing reference](../../11-reports-output/VarOutGraphDlg.md)).
 ![Figure 2-37](../images/p098-figA2-37.png)
 *Figure 2-37: The Variable Selection dialogs for humans and vehicles.*
 
-![Figure 2-38](../images/p099-056.png)
+![Figure 2-38](../images/figure-2-38.jpg)
 *Figure 2-38: The Variable Edit dialog.*
 
-![Figure 2-39](../images/p099-055.png)
+![Figure 2-39](../images/figure-2-39.jpg)
 *Figure 2-39: The Variable Graphing window.*
 
 ### Trajectory Simulation
@@ -218,7 +218,7 @@ simulation. Like other output reports, Trajectory Simulations are also
 displayed in Report Windows (see the [Trajectory Report
 reference](../../11-reports-output/TrajRepDlg.md)).
 
-![Figure 2-40](../images/p100-057.png)
+![Figure 2-40](../images/figure-2-40.jpg)
 *Figure 2-40: The Trajectory Simulation window.*
 
 The motion in the Trajectory Simulation window is controlled using the
@@ -273,7 +273,7 @@ Events... and Audit Trail... buttons.)*
 > [Video Interface](02c-how-to-use-hve.md#video-interface), later in this
 > chapter, and Section Nine, Video Output.
 
-![Figure 2-41](../images/p102-058.png)
+![Figure 2-41](../images/figure-2-41.jpg)
 *Figure 2-41: The Playback Window dialog.*
 
 ### Playback Controller
@@ -368,7 +368,7 @@ the Playback Window:
 - The starting and ending times during which the object's motion is
   controlled by that event
 
-![Figure 2-43](../images/p105-060.png)
+![Figure 2-43](../images/figure-2-43.jpg)
 *Figure 2-43: The Audit Trail.*
 
 The Audit Trail is a convenient way to document the simulation models which
@@ -401,7 +401,7 @@ To open an existing case, choose *Open* from the File menu (Ctrl+O), as
 shown in Figure 2-44. If another case is open, HVE will ask the user to save
 the current case before opening a different one.
 
-![Figure 2-44](../images/p106-figA2-44.png)
+![Figure 2-44](../images/figure-2-44.jpg)
 *Figure 2-44: The Open Case File Selection dialog.*
 
 ### Saving Cases
@@ -418,7 +418,7 @@ in Figure 2-45. Every case should have a case title, because the title
 appears in the HVE main menu bar, as well as in the heading on printed
 output reports.
 
-![Figure 2-45](../images/p107-062.png)
+![Figure 2-45](../images/figure-2-45.jpg)
 *Figure 2-45: The Save Case File Selection dialog.*
 
 ### Starting New Cases
@@ -462,7 +462,7 @@ edited by the user. *(updated: the current dialog is titled "GEBOD Human
 Information"; see the [Human Information
 reference](../../07-humans/HumanInfoDlg.md).)*
 
-![Figure 2-46](../images/p056-016.png)
+![Figure 2-46](../images/figure-2-46.jpg)
 *Figure 2-46: The Human Editor's Human Information dialog.*
 
 ### Vehicle Database
@@ -503,7 +503,7 @@ use in the current case. *(updated: the current version also provides a
 Vehicle Information search dialog with a Vehicle Search text field for
 finding vehicles by name.)*
 
-![Figure 2-47](../images/p057-017.png)
+![Figure 2-47](../images/figure-2-47.jpg)
 *Figure 2-47: The Vehicle Editor's Vehicle Information dialog.*
 
 ### Tire Database
@@ -533,7 +533,7 @@ reference](../../05-tires-wheels/TireInfoDlg.md)). After choosing the desired
 tire, HVE assigns it to the current vehicle at the selected wheel location
 (e.g., Axle 1, Right Side).
 
-![Figure 2-48](../images/p111-065.png)
+![Figure 2-48](../images/figure-2-48.jpg)
 *Figure 2-48: The Vehicle Editor's Tire Information dialog.*
 
 ### Generic Databases
@@ -580,7 +580,7 @@ steps:
 3. Update these fields by entering the desired data.
 4. Press *OK* to save the new vehicle in the User Database.
 
-![Figure 2-49](../images/p112-066.png)
+![Figure 2-49](../images/figure-2-49.jpg)
 *Figure 2-49: The Vehicle Save-As dialog.*
 
 > **NOTE:** It is possible to have the same vehicle in two different
@@ -647,7 +647,7 @@ cases. For example, you may remember creating a pickup with a camper. Rather
 than recreating that vehicle, you can select it directly from the previous
 case in which it was created and used.
 
-![Figure 2-50](../images/p114-067.png)
+![Figure 2-50](../images/figure-2-50.jpg)
 *Figure 2-50: The Case Database selection dialog.*
 
 ---
@@ -683,7 +683,7 @@ To print an output window, perform the following steps:
 *(updated: the current File menu also provides a "Print All..." item for
 printing all open report windows at once.)*
 
-![Figure 2-51](../images/p116-068.png)
+![Figure 2-51](../images/figure-2-51.jpg)
 *Figure 2-51: The Print dialog.*
 
 ### Printing From Modal Dialogs
@@ -734,7 +734,7 @@ To print the current results to file, perform the following steps:
 Export..." items for exporting data and 3-D geometry directly, which is
 often more convenient than printing to a file.)*
 
-![Figure 2-52](../images/p117-069.png)
+![Figure 2-52](../images/figure-2-52.jpg)
 *Figure 2-52: The Print To File selection dialog.*
 
 ---
@@ -800,10 +800,10 @@ steps:
 > **NOTE:** Setting the view using Manipulate mode takes a little practice.
 > Once you get the hang of it, however, this technique works extremely well!
 
-![Figure 2-53](../images/p118-070.png)
+![Figure 2-53](../images/figure-2-53.jpg)
 *Figure 2-53: HVE viewer thumb wheels.*
 
-![Figure 2-54](../images/p119-071.png)
+![Figure 2-54](../images/figure-2-54.jpg)
 *Figure 2-54: The Set Camera dialog.*
 
 ### Overlays
@@ -824,7 +824,7 @@ overlays.
 > **NOTE:** If you use another editor to create your environment, you can
 > still use HVE's 3-D Editor to create overlays.
 
-![Figure 2-55](../images/p120-072.png)
+![Figure 2-55](../images/figure-2-55.jpg)
 *Figure 2-55: The Overlays dialog.*
 
 ### Scanned Image Overlay
@@ -855,7 +855,7 @@ Two excellent uses for scanned background images are:
 > **NOTE:** The sky remains fixed, even if the camera is attached to a
 > moving human or vehicle. This may reduce the realism.
 
-![Figure 2-56](../images/p121-073.png)
+![Figure 2-56](../images/figure-2-56.jpg)
 *Figure 2-56: A scanned background image.*
 
 The individual overlays and scanned background image are displayed or hidden

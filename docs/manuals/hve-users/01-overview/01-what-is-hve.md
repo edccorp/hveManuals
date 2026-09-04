@@ -35,7 +35,7 @@ the individual editor's section in this manual.
 The HVE Human Editor, like each of the five editors, has an information dialog
 and a viewer.
 
-![Figure 1-1](../images/p046-009.png)
+![Figure 1-1](../images/figure-1-1.jpg)
 *Figure 1-1: HVE Human Editor.*
 
 The HVE Human Editor contains several components common to the other four
@@ -61,7 +61,7 @@ may be deleted using the Delete Human pushbutton.
 
 ## Vehicle Editor
 
-![Figure 1-2](../images/p047-010.png)
+![Figure 1-2](../images/figure-1-2.jpg)
 *Figure 1-2: HVE Vehicle Editor.*
 
 This editor contains the following components:
@@ -79,7 +79,7 @@ counterparts.
 
 ## Environment Editor
 
-![Figure 1-3](../images/p048-011.png)
+![Figure 1-3](../images/figure-1-3.jpg)
 *Figure 1-3: HVE Environment Editor.*
 
 The Environment Editor contains the following components:
@@ -97,7 +97,7 @@ editors.
 
 ## Event Editor
 
-![Figure 1-4](../images/p049-012.png)
+![Figure 1-4](../images/figure-1-4.jpg)
 *Figure 1-4: HVE Event Editor.*
 
 The Event Editor is used to study (i.e., simulate or reconstruct) the
@@ -148,7 +148,7 @@ simulations into a single Playback Window. The Playback Window may display
 multiple humans and vehicles from any number of events. This window also
 provides a professional video output capability.
 
-![Figure 1-5](../images/p051-013.png)
+![Figure 1-5](../images/figure-1-5.jpg)
 *Figure 1-5: HVE Playback Editor, illustrating several types of windows and viewers.*
 
 For detailed information about each of these five HVE editors, refer to the

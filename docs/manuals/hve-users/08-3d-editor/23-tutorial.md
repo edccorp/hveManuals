@@ -38,7 +38,7 @@ To start the 3-D Editor, perform the following steps:
 2. Click on Add New Object. The Environment Information dialog is displayed (see Figure 23-1, and the [Environment Information reference](../../08-environment/EnvtInfoDlg.md)), allowing you to assign basic environment attributes. Because these attributes are not relevant to building our 3-D environment, let's accept the current values.
 3. Press OK. The default environment information is assigned and the Environment Viewer and Editor are displayed, as shown in Figure 23-2.
 
-![Figure 23-2](../images/p629-306.png)
+![Figure 23-2](../images/figure-23-2.jpg)
 *Figure 23-2 — Environment Editor and 3-D Viewer. No 3-D geometry has been created yet, so the 3-D viewer is empty.*
 
 At this point, the 3-D Viewer is empty because no geometry file was specified. In our first tutorial, we'll create one.
@@ -96,7 +96,7 @@ A vertex will appear in the viewer at the desired location of the second vertex.
 
 3. Enter 200.0 in the X coordinate field, followed by Enter.
 
-![Figure 23-6](../images/p634-310.png)
+![Figure 23-6](../images/figure-23-6.jpg)
 *Figure 23-6 — Creating the first surface, shown after entering the first three vertices.*
 
 The vertex is displayed for the third coordinate at 200, 12, 0.5. See Figure 23-6 for an in-progress view of our first surface.
@@ -109,7 +109,7 @@ All four vertices for the first surface have been entered. To create the surface
 
 > **NOTE:** The vertices were entered in counter-clockwise order. Thus, according to the right-hand rule, the positive side of the surface is facing up. This is important! The simulation's tire model will generally not recognize any surfaces with the positive side facing down.
 
-![Figure 23-7](../images/p635-311.png)
+![Figure 23-7](../images/figure-23-7.jpg)
 *Figure 23-7 — 3-D Editor Perspective viewer after creating the first surface.*
 
 Let's create a second surface next to the first surface:
@@ -121,7 +121,7 @@ Let's create a second surface next to the first surface:
 2. Enter -12.0 in the Y coordinate field, and 0.5 in the Z coordinate field, followed by Enter to accept and display the next vertex at 200,-12,0.5.
 3. Enter 0.0 in the X coordinate field, followed by Enter to accept and display the next vertex at 0,-12,0.5.
 
-![Figure 23-8](../images/p636-312.png)
+![Figure 23-8](../images/figure-23-8.jpg)
 *Figure 23-8 — 3-D Editor Perspective viewer after creating the second surface.*
 
 4. Enter 0.0 in the Y-coordinate field and 0.0 in the Z-coordinate field, followed by Enter, to display the fourth vertex at 0,0,0.
@@ -189,7 +189,7 @@ To change the material attributes, perform the following steps:
 
 Note the Material Editor includes sliders for the Material Appearance attributes and an example viewer demonstrating the present appearance of a selected object. To change the color of an object, click on the Color radio button for the attribute (typically Diffuse) and a color wheel dialog will be displayed. The present color is indicated by the small box located on the color wheel. The Texture Editor includes a list of available textures and also attributes that affect the texture's appearance.
 
-![Figure 23-11](../images/p640-316.png)
+![Figure 23-11](../images/figure-23-11.jpg)
 *Figure 23-11 — Road surface after applying a texture.*
 
 Let's add a texture to the surface:
@@ -234,10 +234,10 @@ In order to turn overlays on or off, we will need to first deselect the objects 
 
 2. Move the cursor to a location not over any objects and click the left mouse button. The red bounding box disappears.
 
-![Figure 23-12](../images/p642-318.png)
+![Figure 23-12](../images/figure-23-12.jpg)
 *Figure 23-12 — The 3-D Editor dialog after adding our new overlay, named Road. Clicking on the combo box's button displays all the overlays in the current environment.*
 
-![Figure 23-13](../images/p642-317.png)
+![Figure 23-13](../images/figure-23-13.jpg)
 *Figure 23-13 — Overlays dialog, showing all the overlays selected in our current case.*
 
 Because we assigned a unique overlay name, we can choose to render, or not render, the Road object we just created using the Overlays dialog, selectable from the View menu (see the [Overlays reference](../../01-user-interface/OverLayDlg.md)). Let's illustrate this point:
@@ -278,7 +278,7 @@ To save the object in the case file, perform the following steps:
 
 The case is now saved, and the 3-D geometry is part of the case.
 
-![Figure 23-14](../images/p644-319.png)
+![Figure 23-14](../images/figure-23-14.jpg)
 *Figure 23-14 — File Selection dialog, used for loading and saving 3-D geometry files.*
 
 #### Saving The Object As A Unique File
@@ -359,7 +359,7 @@ Let's begin editing the surface:
 2. Confirm the perspective viewer is in Pick mode (i.e., the crosshairs cursor is displayed when the mouse is in the perspective viewer).
 3. Click on the surface in the perspective viewer. A red bounding box surrounds the object, indicating it is now selected for editing.
 
-![Figure 23-15](../images/p647-320.png)
+![Figure 23-15](../images/figure-23-15.jpg)
 *Figure 23-15 — 3-D Editor, ready to edit our simple surface.*
 
 The Surface Editor dialog is displayed, showing the current coordinates for the surface object.
@@ -376,7 +376,7 @@ Now we're ready to edit vertices. Let's start by editing the vertex at the origi
 
    > **NOTE:** If you click outside the bounding box, you'll deselect the surface.
 
-![Figure 23-16](../images/p648-321.png)
+![Figure 23-16](../images/figure-23-16.jpg)
 *Figure 23-16 — Simple surface, after zooming in and selecting the vertex near the origin.*
 
 Let's edit the vertex coordinates:
@@ -395,7 +395,7 @@ Edit the remaining vertices using the same procedures:
 4. Click the vertex near 200,12,0.5 and change its X coordinate to 1000 and its Y coordinate to 26 (remember to press Enter).
 5. Click the vertex near 200,0,0 and change its X coordinate to 1000.
 
-![Figure 23-17](../images/p649-322.png)
+![Figure 23-17](../images/figure-23-17.jpg)
 *Figure 23-17 — Simple surface after moving the first vertex from 0,0,0 to -1000,0,0.*
 
 Half the surface has been edited. Let's repeat the steps to edit the other side. If necessary, adjust the view so it appears somewhat like Figure 23-18. Then edit as follows:
@@ -412,13 +412,13 @@ Half the surface has been edited. Let's repeat the steps to edit the other side.
 
 The resulting surface is displayed in Figure 23-20.
 
-![Figure 23-18](../images/p650-323.png)
+![Figure 23-18](../images/figure-23-18.jpg)
 *Figure 23-18 — Simple surface after editing half the surface; the view has been adjusted to get better access to the remaining surface.*
 
-![Figure 23-19](../images/p651-325.png)
+![Figure 23-19](../images/figure-23-19.jpg)
 *Figure 23-19 — Simple surface with vertex at 200,0,0 selected, ready to move to 1000,0,0.*
 
-![Figure 23-20](../images/p651-324.png)
+![Figure 23-20](../images/figure-23-20.jpg)
 *Figure 23-20 — Simple surface after editing is complete.*
 
 ### Reversing Surface Normals
@@ -449,7 +449,7 @@ Where is our surface? It's right in front of us — it's just upside down, so we
 
 *Figure 23-21 — Surface normal. The example shows a single surface object composed of a single face set containing five triangles, created by clicking points 1 through 5 in counter-clockwise order. The normal is perpendicular to the triangle composed of points 2, 3 and the computed center point.*
 
-![Figure 23-22](../images/p653-326.png)
+![Figure 23-22](../images/figure-23-22.jpg)
 *Figure 23-22 — Upside-down surface, revealed by turning the view over and finding the texture attached to the under side.*
 
 The Surface Editor's Pick Mode is currently set to Object. To edit a face, we need to pick a face:
@@ -460,10 +460,10 @@ The Surface Editor's Pick Mode is currently set to Object. To edit a face, we ne
 
 > **NOTE:** In some imported DXF files, you may have thousands of polygon faces that need to be edited. In addition, the DXF file information has the vector reversed, so it always shows the NEGATIVE direction! EDC has some advanced tricks that will solve these problems, so please contact EDC Technical Support if you need assistance.
 
-![Figure 23-23](../images/p655-328.png)
+![Figure 23-23](../images/figure-23-23.jpg)
 *Figure 23-23 — Upside-down surface with normal vector displayed. Note the vector is pointing down (in the wrong direction).*
 
-![Figure 23-24](../images/p655-327.png)
+![Figure 23-24](../images/figure-23-24.jpg)
 *Figure 23-24 — Surface after reversing the direction of the surface normal.*
 
 ### Changing Object Hierarchy
@@ -504,13 +504,13 @@ Now the tire will respond to the median.
 
 > **NOTE:** When the simulation is executed, it loads all Friction Zone objects before loading Road objects. Therefore, HVE's surface lookup returns the information about the median.
 
-![Figure 23-25](../images/p657-330.png)
+![Figure 23-25](../images/figure-23-25.jpg)
 *Figure 23-25 — Creating a raised median using the Box Tool.*
 
-![Figure 23-26](../images/p657-329.png)
+![Figure 23-26](../images/figure-23-26.jpg)
 *Figure 23-26 — Environment after adding a raised median and assigning yellow concrete material attributes.*
 
-![Figure 23-27](../images/p658-331.png)
+![Figure 23-27](../images/figure-23-27.jpg)
 *Figure 23-27 — 3-D Editor dialog with Object Type option list displayed.*
 
 Let's save our work for use in Lesson 3. Using the method described in Lesson 1 (refer back to Lesson 1 if you need a quick refresher), save your 3-D geometry file as a unique file named TutorEnvLesson2.
@@ -576,10 +576,10 @@ Now, let's put the concrete end caps on both ends:
 3. Edit the cylinder's position by changing its X coordinate to 248 ft. The cylinder is displayed at one end of the median, but its orientation is incorrect.
 4. Change the default roll angle, 0 degrees (about the X axis), to 90 degrees.
 
-![Figure 23-28](../images/p661-332.png)
+![Figure 23-28](../images/figure-23-28.jpg)
 *Figure 23-28 — Environment from Lesson 2.*
 
-![Figure 23-29](../images/p661-333.png)
+![Figure 23-29](../images/figure-23-29.jpg)
 *Figure 23-29 — Cylinder at end of median, before changing the material to Concrete.*
 
 If the cylinder does not have Concrete material attributes, perform the following steps:
@@ -619,7 +619,7 @@ Now, let's make it grass:
 4. Press Accept. The texture is applied to the grass median. The median now has a grass strip down the middle. However, the median looks slightly yellow.
 5. Using the Material Editor's Diffuse color wheel as discussed in previous steps, click in the green area. The color is updated to the selected color, as shown in Figure 23-30.
 
-![Figure 23-30](../images/p663-334.png)
+![Figure 23-30](../images/figure-23-30.jpg)
 *Figure 23-30 — Concrete median with grass.*
 
 We now have a good looking grass median, but it's in the wrong place; we want two medians on either side of the intersection. We have two options: we could move each individual part of the median to the desired location, or (much better) we could make these individual parts into a group, and then move the whole thing at once.
@@ -653,7 +653,7 @@ The bounding box disappears, indicating the object has been deselected. In fact,
 1. Hold down the Shift key and click on the grass, concrete median, and both end caps. As you click on each part, a bounding box is displayed around it, indicating it has been selected.
 2. Click on the Group icon (see Figure 23-32). The individual bounding boxes are removed and a single bounding box is displayed around the entire object, indicating it is now a group.
 
-![Figure 23-31](../images/p665-335.png)
+![Figure 23-31](../images/figure-23-31.jpg)
 *Figure 23-31 — Selection of the individual objects making up the concrete median. Note a red bounding box surrounds each individual object (the view is zoomed in on the end of the median).*
 
 *Figure 23-32 — 3-D Editor Group Tools (Group, Ungroup, Open and Save).*
@@ -681,10 +681,10 @@ Let's finally place the median at the desired location:
 2. The Editor dialog displays the coordinates of its local origin relative to the earth-fixed origin. Its current coordinates are still 0,0,0 (where we created it). Let's move it:
 3. Change the current X coordinate to -270. After pressing Enter, the median moves to the desired location (see Figure 23-34).
 
-![Figure 23-33](../images/p667-338.png)
+![Figure 23-33](../images/figure-23-33.jpg)
 *Figure 23-33 — Object Selection dialog, used for saving and opening objects in the Highway Furnishings Library.*
 
-![Figure 23-34](../images/p667-337.png)
+![Figure 23-34](../images/figure-23-34.jpg)
 *Figure 23-34 — Our environment after positioning the first median section.*
 
 ### Using Library Objects
@@ -699,7 +699,7 @@ Now we need an additional copy of the median for the other end of our environmen
 3. Select Median.h3d from the file selection list.
 4. Press OK.
 
-![Figure 23-35](../images/p668-339.png)
+![Figure 23-35](../images/figure-23-35.jpg)
 *Figure 23-35 — Our environment after positioning the second median section.*
 
 The median is displayed at the earth-fixed origin.

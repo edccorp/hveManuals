@@ -39,7 +39,7 @@ To enter Vehicle Damage Data for the current vehicle, use the following steps:
 
 The specific damage profile parameters are defined in this section.
 
-![Figure 4-18](../images/p205-124.png)
+![Figure 4-18](../images/figure-4-18.jpg)
 *Figure 4-18: The Vehicle Damage Profile dialog is used to assign damage data for the current vehicle.*
 
 ![Figure 4-19](../images/p206-figA4-19.png)
@@ -141,7 +141,7 @@ Obviously, the actual stiffness of a vehicle varies according to the structure a
 
 **Description:** The Collision Pulse dialog allows the user to assign a collision pulse to the selected vehicle. A collision pulse is a vehicle's position, velocity, acceleration or force/moment vs time history, and is used by occupant simulation models to define the vehicle's motion during impact. The Collision Pulse dialog is shown in Figure 4-23.
 
-![Figure 4-23](../images/p212-figA4-23.png)
+![Figure 4-23](../images/figure-4-23.jpg)
 *Figure 4-23: The Collision Pulse dialog allows the user to assign a collision pulse for the current vehicle. A collision pulse is used by occupant simulation models and by some vehicle dynamics models that include an impulse.*
 
 ### Collision Pulse Table
@@ -202,7 +202,7 @@ To save the current collision pulse for use in a future case, perform the follow
 
 It may be useful to study the sensitivity of the occupant motion to changes in the magnitude of the collision pulse. The Pulse Factors dialog (see Figure 4-24) allows the user to quickly assign multipliers to each degree of freedom (forward, lateral, vertical, roll, pitch and yaw).
 
-![Figure 4-24](../images/p215-figA4-24.png)
+![Figure 4-24](../images/figure-4-24.jpg)
 *Figure 4-24: The Collision Pulse Factors dialog allows the user to modify the time-dependent pulse data by a user-specified amount for each degree of freedom.*
 
 To assign collision pulse factors to the selected vehicle, perform the following steps:
@@ -219,7 +219,7 @@ The selected multipliers are applied to each degree of freedom.
 
 The user may need to select a portion of the total pulse for use in a simulation. For example, an entire left turn may last 3 seconds, while the resulting collision with an oncoming vehicle lasts perhaps only 125 milliseconds. Thus, the user would like to extract that portion of the total pulse during which the collision occurs. This task can be performed using the Pulse Options dialog (see Figure 4-25). The Pulse Options dialog is also used for assigning the impulse center for a 3-dimensional impulse when the Force Pulse Type is used.
 
-![Figure 4-25](../images/p216-figA4-25.png)
+![Figure 4-25](../images/figure-4-25.jpg)
 *Figure 4-25: The Collision Pulse Options dialog allows the user to trim the unwanted portion of the collision pulse and assign an impulse center for Force/Moment pulse tables.*
 
 To use the Collision Pulse Options dialog for the selected vehicle, perform the following steps:
@@ -269,7 +269,7 @@ To use the Collision Pulse Options dialog for the selected vehicle, perform the 
 
 These options (see Figure 4-26) are described in the following sections.
 
-![Figure 4-26](../images/p218-figA4-26.png)
+![Figure 4-26](../images/figure-4-26.jpg)
 *Figure 4-26: The Mesh dialog allows the user to tessellate the geometry file and edit inter-vehicle friction and restitution.*
 
 ![Figure 4-27](../images/p219-figA4-27.png)
@@ -351,7 +351,7 @@ To edit the Vehicle Mesh properties (weld distance, tessellate, water-tight stat
 
 **Description:** The Payload dialog allows the user to add a payload to the selected vehicle. The payload may be any object adding inertia to a vehicle that is not accounted for in the vehicle's inertial properties. Examples include cargo and occupants. The Payload dialog is shown in Figure 4-32.
 
-![Figure 4-32](../images/p223-figA4-32.png)
+![Figure 4-32](../images/figure-4-32.jpg)
 *Figure 4-32: The Payload dialog allows the user to assign a payload to the current vehicle.*
 
 The payload is defined by the following information:
@@ -442,7 +442,7 @@ When the simulation is executed, the selected blow-out parameters will be incorp
 
 > **NOTE:** The HVE Tire Blow-out Model is further described in Chapter 16, Event Model. See also Reference 4.30.
 
-![Figure 4-33](../images/p227-figA4-33.png)
+![Figure 4-33](../images/figure-4-33.jpg)
 *Figure 4-33: The Tire Blow-out dialog allows the user to assign tire blow-out parameters to one or more tires.*
 
 ### Wheel Damage Option
@@ -473,7 +473,7 @@ The current damage options for the selected wheel position are displayed. By def
 
    > **NOTE:** The Camber Change is a vehicle-fixed angle. A positive value moves the top of the wheel outward; a negative value moves the top of the wheel inward.
 
-![Figure 4-34](../images/p229-figA4-34.png)
+![Figure 4-34](../images/figure-4-34.jpg)
 *Figure 4-34: The Wheel Damage dialog allows the user to assign a dynamic change in wheel position and orientation during the simulation.*
 
 To simulate wheel lock-up, perform the following steps:
@@ -516,7 +516,7 @@ Brake failure may also be simulated. To simulate a brake failure at the selected
    > **NOTE:** Brake parameters may be assigned to any number of wheel positions.
 6. Press OK to accept the wheel brake parameters.
 
-![Figure 4-35](../images/p231-figA4-35.png)
+![Figure 4-35](../images/figure-4-35.jpg)
 *Figure 4-35: The Wheel Brakes dialog allows the user to assign initial brake slack adjuster adjustment and lining and drum temperatures for air brake systems. The Wheel Brakes dialog is also used for simulating brake failure at one or more wheel locations.*
 
 When the simulation is executed, the selected wheel brake parameters will be incorporated into the simulation.
@@ -613,7 +613,7 @@ The Point Contact Tire-Terrain Model is the default selection. To choose a diffe
    > **NOTE:** Different Tire-Terrain models may be assigned to each tire location.
 5. Press OK to accept the tire-terrain parameters.
 
-![Figure 4-40](../images/p237-figA4-40.png)
+![Figure 4-40](../images/figure-4-40.jpg)
 *Figure 4-40: The Tire-Terrain dialog allows the user to select from several available tire-terrain models useful for simulating tire interaction with potholes, curbs and soft soils.*
 
 **See Also:** Vehicle Editor, Brake Information dialog, Vehicle Output Tracks
@@ -663,7 +663,7 @@ The Point Contact Tire-Terrain Model is the default selection. To choose a diffe
 
 **Description:** The Accelerometers dialog allows the user to assign the vehicle-fixed x,y,z coordinates for up to five accelerometers. The simulation model can then return the velocity and acceleration at each selected location. Accelerometers are assigned using the Accelerometers dialog, as shown in Figure 4-41.
 
-![Figure 4-41](../images/p240-147.png)
+![Figure 4-41](../images/figure-4-41.jpg)
 *Figure 4-41: Vehicle Accelerometers dialog.*
 
 To assign one or more accelerometers to the current vehicle, perform the following steps:
@@ -700,7 +700,7 @@ The simulation reports the velocity and acceleration for the current timestep in
 
 **Description:** The Contacts dialog allows the user to select the allowable interactions between human ellipsoids and vehicle contact surfaces. For example, there is little chance of a human pedestrian's pelvis interacting with the vehicle's interior contact surfaces (e.g., the seat) during the simulation. Therefore, it makes little sense to perform force calculations for this ellipsoid/contact surface pair. By selecting only those contact surfaces having a chance of interaction, far fewer calculations need to be performed. As a result, the calculation time can be reduced significantly. The Contacts dialog is shown in Figure 4-44.
 
-![Figure 4-44](../images/p247-figA4-44.png)
+![Figure 4-44](../images/figure-4-44.jpg)
 *Figure 4-44: The Contacts dialog allows the user to select the allowable interactions between human ellipsoids and vehicle contact surfaces during an occupant or pedestrian simulation.*
 
 The Contacts dialog has three list boxes:
@@ -723,7 +723,7 @@ Some simulation models define the human ellipsoid and vehicle contact surface ma
 
 The combined material attributes for the selected Source and Target Segments are assigned using Combined Material Properties. By selecting a source and target segment, the Combined Materials Edit pushbutton is enabled. Pressing this button causes the Combined Materials dialog to be displayed (see Figure 4-45).
 
-![Figure 4-45](../images/p249-151.png)
+![Figure 4-45](../images/figure-4-45.jpg)
 *Figure 4-45: The Combined Materials dialog allows the user to review and edit the material physical parameters associated with interaction between the selected source and target segments. The dialog also includes a graph of the force-deflection relationship for the selected segments.*
 
 To select the allowable interactions for the current event, use the following steps:
@@ -751,7 +751,7 @@ If the simulation model requires combined material properties, the Combined Mate
 
    > **NOTE:** The user also enters a Maximum Force. An error message is displayed if the maximum force cannot be achieved using the entered material constants.
 
-![Figure 4-46](../images/p251-152.png)
+![Figure 4-46](../images/figure-4-46.jpg)
 *Figure 4-46: The Combined Materials File Selection dialog allows the user to open and save combined material files.*
 
 ### Opening and Saving Material Files
@@ -820,7 +820,7 @@ The Airbag set-up option allows the user to assign an airbag restraint system an
 4. Click on the Device In Use check box. The airbag restraints parameters become enabled for the selected occupant.
 5. Using the Allowed Contacts list box, select the contact ellipsoids with which airbag contact is allowed.
 
-![Figure 4-42](../images/p243-148.png)
+![Figure 4-42](../images/figure-4-42.jpg)
 *Figure 4-42: Vehicle Airbag Restraint Systems dialog.*
 
 6. Click on the AutoStart checkbox if you wish to have the airbag automatically deployed. Deployment is normally triggered when the vehicle's acceleration exceeds a threshold.
@@ -846,7 +846,7 @@ The Belt Restraints set-up option allows the user to assign torso and lap belt r
 5. Click the Device In Use check box. The belt restraints parameters become enabled for the selected occupant.
 6. Click on the Attached To option list and select a segment to attach the end of the belt section (the other end is attached to the anchor point on the vehicle; see Vehicle Editor).
 
-![Figure 4-43](../images/p245-figA4-43.png)
+![Figure 4-43](../images/figure-4-43.jpg)
 *Figure 4-43: Vehicle Belt Restraint System dialog.*
 
 7. Enter the segment attachment coordinates for the left and right belt endpoints according to the human segment's coordinate system.

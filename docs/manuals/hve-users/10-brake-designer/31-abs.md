@@ -144,7 +144,7 @@ may be supported. The interface is divided into two sections:
 
 The interface, dialogs and associated variables are described below.
 
-![Figure 31-2](../images/p758-356.png)
+![Figure 31-2](../images/figure-31-2.jpg)
 *Figure 31-2 — ABS System Data dialog. These parameters affect the entire
 vehicle (compare with the ABS Wheel Data dialog).*
 

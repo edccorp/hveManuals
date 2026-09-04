@@ -12,7 +12,7 @@ overall width. The user may choose to edit these dimensions using the
 Vehicle Dimensions dialogs (CG to Front, Right Side, Back, Left Side, Top,
 Bottom).
 
-![Figure 11-19](../images/p378-212.png)
+![Figure 11-19](../images/figure-11-19.jpg)
 *Figure 11-19: Vehicle Exterior Dimensions dialogs allow the user to view and edit the dimensions from the CG to the front, right side, back, left side, top and bottom.*
 
 > **NOTE:** The dialog also calculates and displays the overall vehicle
