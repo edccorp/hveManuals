@@ -40,6 +40,31 @@ manual's wording for a dialog while the window title uses the application's:
 Worth knowing that the manual and the application disagree on these names, but
 the screenshots are correct.
 
+## 1a. Figures supplied under a number the manual does not use
+
+Comparing the window title read out of each supplied-but-unused image against
+the title in each figure still on a legacy image found one genuine case of a
+replacement filed under the wrong number:
+
+| Supplied as | Used for | Window |
+|---|---|---|
+| Figure 20-4 | Figure 20-5 | `Box Editor` |
+
+Applied: the manual has no Figure 20-4, and the two images are the same dialog
+with the same values, so the supplied file now serves Figure 20-5.
+
+A second apparent case was **not** applied. Supplied `Figure 10-3` and the
+manual's Figure 12-3 are both the `Select Object` dialog, but the supplied one
+lists the **Active Vehicle List** while the manual's shows the **Active
+Environment List**, and Figure 12-3 is captioned "Adding Environments from
+previous cases". The supplied image belongs to chapter 10, which has a section
+"Adding Vehicles from Previous Cases" and no figure for it. It is a dropped
+figure, not a misnumbered replacement — see section 3.
+
+The same dialog appearing in several chapters makes a title match on its own
+unreliable. `Environment Information Dialog`, for instance, was supplied under
+eight different figure numbers.
+
 ## 2. One figure supplied as several sub-figures
 
 The manual has a single figure where the new set has lettered parts. Adding

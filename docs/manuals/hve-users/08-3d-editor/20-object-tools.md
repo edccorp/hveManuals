@@ -128,7 +128,7 @@ To edit an existing cone object, perform the following steps:
 
 The Box Object Tool allows the user to create and edit 3-D boxes. Boxes are useful for creating buildings, sidewalks, curbs and other box-shaped objects. The Box Editor dialog, shown in Figure 20-5, displays information about the current Box object.
 
-![Figure 20-5](../images/p598-291.png)
+![Figure 20-5](../images/figure-20-5.jpg)
 *Figure 20-5 — The Box Editor dialog allows the user to edit the geometric properties of the current box.*
 
 ### Box Editor Dialog
