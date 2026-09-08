@@ -368,6 +368,7 @@ nav:
       - "Chapter 6 — Messages": programs/SIMON/06-messages.md
       - "Chapter 7 — Technical References": programs/SIMON/07-technical-references.md
       - "Chapter 8 — Index": programs/SIMON/08-index.md
+      - "Electronic Stability Systems": programs/SIMON/09-electronic-stability-systems.md
     - DyMESH:
       - Overview: programs/DyMESH/README.md
       - "DyMESH Overview": programs/DyMESH/01-overview.md

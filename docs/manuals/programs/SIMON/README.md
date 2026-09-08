@@ -36,6 +36,8 @@ Engineering Dynamics Corporation provides technical assistance for supported use
    Published references for the SIMON, DyMESH, tire, brake and driver models
 8. **[Chapter 8 — Index](08-index.md)**
    Topic index adapted for this Markdown edition
+9. **[Electronic Stability Systems (TCS and YSC)](09-electronic-stability-systems.md)**
+   Supplementary reference for the Traction Control and Yaw Stability Control models: sensor models, control laws, user parameters, outputs, and limitations
 
 ## Notable Differences from the Fifth Edition (2006)
 

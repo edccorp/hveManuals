@@ -72,6 +72,6 @@
 
 ---
 
-← Previous: [Chapter 7 — Technical References](07-technical-references.md)  |  [Index](README.md)
+← Previous: [Chapter 7 — Technical References](07-technical-references.md)  |  [Index](README.md)  |  Next: [Electronic Stability Systems](09-electronic-stability-systems.md) →
 
 <!-- /NAV -->
