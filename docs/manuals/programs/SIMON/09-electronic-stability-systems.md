@@ -81,11 +81,12 @@ $$
 
 2. **Side-to-side.** If the left and right wheel speeds on a drive axle differ
    by at least the **Side Difference** threshold, the axle's torque is
-   re-split between the sides by the same proportional rule (the right-side
-   share is adjusted by $R_{Tq}\,\Delta\omega_{side}$ and the left side
-   receives the remainder), clamped so neither side goes below zero or above
-   the axle's total. This mimics a brake- or clutch-based limited-slip
-   intervention.
+   re-split between the sides. The right-side share is adjusted by
+   $R_{Tq}\,S_{axle}\,\Delta\omega_{side}$ — proportional to both the axle's
+   current torque fraction $S_{axle}$ and the right-minus-left wheel speed
+   difference — and the left side receives the remainder, clamped so neither
+   side goes below zero or above the axle's total. This mimics a brake- or
+   clutch-based limited-slip intervention.
 
 When either correction fires, the **TCS active** flag is set — the equivalent
 of the TCS indicator lamp — and reported in the Variable Output.
@@ -106,9 +107,11 @@ Once active, YSC makes two interventions:
 1. **Drive-torque side shift.** If drive torque is at or above the **Minimum
    Drive Torque** threshold and the axle's side-to-side wheel speed difference
    reaches the **Side Difference** threshold, the wheel's share of the axle
-   torque is adjusted by $R_{Tq}\,\Delta\omega_{side}$, clamped to the axle
-   total — the same style of correction as TCS, applied within the braking
-   context.
+   torque is adjusted by $R_{Tq}\,S_{axle}\,\Delta\omega_{side}$ (proportional
+   to the axle's torque fraction, as in TCS), clamped to the axle total. Note
+   that the signed side difference of the **right-hand wheel** is used when
+   adjusting either side of the axle, so the left- and right-side corrections
+   are not exact mirror images of one another.
 
 2. **Brake modulation.** If the driver's brake system pressure is at or above
    the **Minimum Brake Pressure** threshold and the wheel's spin-velocity
