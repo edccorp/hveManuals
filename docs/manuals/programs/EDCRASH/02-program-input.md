@@ -463,7 +463,7 @@ If all of the above options are turned off, EDCRASH performs a simplistic analys
 EDCRASH has the following user-selectable trajectory model options:
 
 - **Normal** — Choosing Normal causes EDCRASH to perform its standard, energy-based calculations to provide an estimate for separation forward, lateral and angular velocities and departure angle.
-- **Trajectory Simulation** — Choosing Trajectory Simulation causes EDCRASH to perform its standard, energy-based calculations (same as choosing Normal, above), and then use these separation velocities and departure angles as the initial conditions for a trajectory simulation.
+- **Trajectory Simulation** — Choosing Trajectory Simulation causes EDCRASH to perform its standard, energy-based calculations (same as choosing Normal, above), and then use these separation velocities and departure angles as the initial conditions for a trajectory simulation. *(updated: this option does not support vehicles with dual tires — a dual tire at any wheel position is rejected with a fatal error at event initialization. The other three choices are unaffected.)*
 - **Sustained Contact** — Choosing Sustained Contact causes EDCRASH to use a weighted drag factor based on the wheel lock-ups and weights of the individual vehicles.
 - **Iterate on Sideslip** — *(updated: the current dialog offers a fourth radio button, Iterate on Sideslip, which requests an iterative solution on vehicle sideslip angle. This option is not supported by the current EDCRASH physics engine; selecting it causes the event to terminate with an error.)*
 

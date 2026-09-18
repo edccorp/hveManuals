@@ -66,6 +66,35 @@ The spring rate, $k$, is defined by two empirical coefficients, A and B. These c
 
 Damage-based results are generally improved when the default coefficients are replaced by actual A and B coefficients derived from a crash test. Reference 25 contains A and B coefficients from crash tests for approximately 1500 vehicles.
 
+##### Computing the damage energy from the crush measurements
+
+The crush profile is entered as a set of equally spaced crush depths
+$C_1 \dots C_{n+1}$ measured across a damage width $W$, dividing the damage into
+$n$ zones. Within a zone the force per unit of damage width rises linearly with
+crush depth as $A + B\,C$, so the crush force and the energy absorbed are
+
+$$F = \frac{W}{n}\sum_{i=1}^{n}\left[A_i + \frac{B_i}{2}\left(C_i + C_{i+1}\right)\right]$$
+
+$$E = \frac{W}{n}\sum_{i=1}^{n}\left[\frac{A_i\left(C_i + C_{i+1}\right)}{2}
+      + \frac{B_i}{6}\left(C_i^2 + C_i\,C_{i+1} + C_{i+1}^2\right) + G_i\right]$$
+
+where
+
+$$G = \frac{A^2}{2B}$$
+
+is the energy absorbed in reaching the damage threshold — the energy that went
+into the structure without producing measurable residual crush. Because the
+coefficients are carried separately for each zone, the damaged surface need not
+have uniform stiffness.
+
+The energy obtained here, after the magnification for non-perpendicular crush
+described below, is the quantity $E_1$ or $E_2$ used in the impulse equation
+above; the force is the Magnitude of Principal Force reported for the vehicle.
+
+*(updated: earlier editions described the spring model and the impulse equation
+but never stated how the A and B coefficients and the measured crush depths
+produce the damage energy.)*
+
 Two modifications are incorporated into the above analysis to make it generally applicable to motor vehicle collisions. For the case of non-perpendicular crush, the energy stored in the spring ($k\delta^2/2$) is increased by the value of $1 + \tan^2(\alpha)$, where $\alpha$ is the angle between the PDOF and a line perpendicular to the surface (see Figure 4-1). This *energy magnification factor* accounts for the increased distance, $C'$, through which the crush force acts when compared with the measured crush, $C$. The factor is not allowed to increase beyond a value of 2.0 (note the tangent increases to infinity as the angle approaches 90 degrees), so the cap takes effect at $\alpha = 45$ degrees and the factor is 2.0 for every PDOF beyond that.
 
 The magnitude of principal force is corrected for the same non-perpendicular geometry, by dividing it by $\left|\cos\alpha\right|$.
@@ -140,7 +169,13 @@ The above procedures describe how EDCRASH calculates linear and angular separati
 
 At the user's request (see Input, Calculation Options), the trajectory simulation will perform this confirming analysis. The analysis is a simplified 3-degree-of-freedom simulation which models the forces and resulting motion of the vehicle throughout the separation-to-rest phase. The simulation assumes all forces are applied to the vehicle as shear forces generated at the tire-road interface (i.e., aerodynamic forces are neglected). Cornering stiffness tire data are used in these calculations. Since wheel spin degrees of freedom are neglected, the simulation requires that the braking force at each wheel be constant throughout the impact-to-rest phase. Steer angles are allowed, but must be held constant.
 
-The simulation is performed up to five times for each vehicle (the maximum number of runs is user-editable; see Calculation Options, Simulation Convergence Criteria). After each run, the simulated path is compared to the user-entered point on curve, end of rotation, and rest positions. Individual error values are computed for each path location (rest, end of rotation, and point on curve). If any of the errors is greater than the allowable error (see Input, Calculation Options), the simulation has failed to converge (i.e., the simulated path is not suitably close to the actual path). The initial velocities and separation angle are then modified in a manner intended to improve the results (i.e., to reduce the previous errors), and another simulation is attempted. After the allowed number of attempts, if the errors are not acceptably small the simulation is terminated.
+> **NOTE:** The trajectory simulation does not support vehicles with dual tires.
+> A dual tire at any wheel position is rejected at event initialization with a
+> fatal error and the event will not run. The restriction applies **only** to
+> this Separation Velocity Basis — the same vehicle runs normally under Normal
+> or Sustained Contact, where no tire forces are integrated.
+
+The simulation is performed up to five times for each vehicle (the maximum number of runs is user-editable; see Calculation Options, Simulation Convergence Criteria). After each run, the simulated path is compared to the user-entered point on curve, end of rotation, and rest positions. **Five** error values are computed — the position *and* heading errors at rest, the position *and* heading errors at the end of rotation, and the position error at the point on curve — and each is tested against its own separate tolerance (see [Calculation Options for EDCRASH](../../10-calculation-options/CalcOptEDCRASHDlg.md#simulation-convergence-criteria)). If any one of the five exceeds its tolerance, the simulation has failed to converge (i.e., the simulated path is not suitably close to the actual path). The initial velocities and separation angle are then modified in a manner intended to improve the results (i.e., to reduce the previous errors), and another simulation is attempted. After the allowed number of attempts, if the errors are not acceptably small the simulation is terminated.
 
 EDCRASH will use the velocities which produced the smallest total weighted error sum during the simulation (if the simulation converged, the velocities which produced convergence are used). The convergence criteria associated with each path location are displayed in the Program Data output report.
 
@@ -180,7 +215,7 @@ The common velocity check is a procedure which compares the separation condition
 
 The default location for the impulse is defined by the point in the damage profile where the summation of forces and moments is equal to zero (i.e., the forces in each crush zone are balanced).
 
-> **NOTE:** For a homogeneous damage region, this location is the centroid of the damage area.
+> **NOTE:** The balance point is found by weighting each crush zone by the share of the total crush force it carries. Where the crush is uniform and the stiffness homogeneous, every zone carries the same force and the result is simply the centroid of the damage area.
 
 The impulse center may be relocated using the Event Editor, Damage Profile dialog.
 
