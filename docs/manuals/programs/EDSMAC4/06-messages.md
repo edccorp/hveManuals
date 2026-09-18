@@ -164,7 +164,7 @@ If you encounter this error, please document the error code and send the offendi
 
 *(Level 2 — Diagnostic)*
 
-During the collision phase, a clock direction of the PDOF is computed for each damage range. The angle at the midpoint of each damage range is also computed. If the angle of the PDOF is more than 60 degrees different from the associated damage midpoint, the above warning is issued.
+During the collision phase, a clock direction of the PDOF is computed for each damage range. The angle at the midpoint of each damage range is also computed. If the angle of the PDOF is more than 60 degrees different from the associated damage midpoint, the above warning is issued and the range is matched to the largest acceleration peak instead.
 
 This condition suggests a sideswipe collision occurred. It does not indicate any error in the results.
 
@@ -192,7 +192,7 @@ Rapid rotation during the collision may result in subsequent inter-vehicle conta
 
 *(Level 2 — Diagnostic)*
 
-During the collision phase, inter-vehicle force balance between impacting vehicles is achieved through an incremental adjustment of each RHO vector. The amount of the adjustment is DelRho, a value assigned in the EDSMAC4 Calculation Options dialog. Because the adjustment is discrete, an exact balance of forces between RHO vectors will never be achieved. Therefore, a test is performed after each adjustment to determine if the force balance is within an allowable tolerance, Alamb, the value of which is also assigned in the EDSMAC4 Calculation Options dialog. If Alamb is too small, it is possible that a force balance between RHO vectors will never be achieved and the solution for collision force will fail to converge, resulting in a fatal error. To ensure solution stability, the value of Alamb is automatically assigned.
+During the collision phase, inter-vehicle force balance between impacting vehicles is achieved through an incremental adjustment of each RHO vector. The amount of the adjustment is the **Vector Adjustment Increment** (called DelRho in the message), assigned in the EDSMAC4 Calculation Options dialog. Because the adjustment is discrete, an exact balance of forces between RHO vectors will never be achieved. Therefore, a test is performed after each adjustment to determine if the force balance is within an allowable tolerance, the **Vector Force Tolerance** (called Alamb in the message), also assigned in that dialog. If the tolerance is too small, it is possible that a force balance between RHO vectors will never be achieved and the solution for collision force will fail to converge, resulting in a fatal error. To ensure solution stability, the tolerance is automatically increased to the product of the largest B stiffness coefficient and the Vector Adjustment Increment, and the new value is shown in the Program Data report.
 
 ---
 
@@ -200,7 +200,7 @@ During the collision phase, inter-vehicle force balance between impacting vehicl
 
 *(Level 3 — Informative)*
 
-As part of its post-processing routine, EDSMAC4 attempts to match a CDC with each vehicle damage range. The procedure for accomplishing this task is based on the assumption that the PDOF for each damage range will be approximately equal to the PSIM for that damage range. This is not normally the case for sideswipes and some collisions involving secondary impact. It is important to note that this message has no reflection on the integrity of the simulation.
+As part of its post-processing routine, EDSMAC4 attempts to match a CDC with each vehicle damage range. The procedure for accomplishing this task is based on the assumption that the PDOF for each damage range will be approximately equal to the angle at the midpoint of that damage range (the quantity the message calls PSIM). This is not normally the case for sideswipes and some collisions involving secondary impact. It is important to note that this message has no reflection on the integrity of the simulation.
 
 ---
 

@@ -115,15 +115,25 @@ Default: Off. Choices:
 
 Default: Impact Force. Selects the criterion used to detect the beginning and end of each collision phase reported in the Accident History (damage ranges, delta-V, peak acceleration):
 
-- **Impact Force** (default) — A collision phase is bounded by the presence of inter-vehicle collision force.
-- **Acceleration** — A collision phase is bounded by the vehicle's total acceleration exceeding the **Threshold (g)** value. The threshold edit field (default 1 g, initialized from the environment's gravity) is enabled only when this basis is selected.
+- **Impact Force** (default) — A collision phase is bounded by the presence of inter-vehicle collision force. Impact is declared on the first timestep on which collision force acts; separation is declared one timestep after it ceases.
+- **Acceleration** — A collision phase is bounded by the vehicle's total acceleration exceeding the **Threshold (g)** value. The threshold edit field (default 1 g, initialized from the environment's gravity) is enabled only when this basis is selected. Impact is declared when either vehicle's total acceleration exceeds the threshold; separation is declared after both vehicles have remained below it for six consecutive timesteps.
+
+In both cases the vehicles' perimeters must also overlap before impact can be declared — the acceleration test is an additional condition, not a substitute for contact.
+
+> **NOTE:** The acceleration used by the Acceleration basis is the vehicle's *total* acceleration, which includes tire forces. A threshold low enough that hard braking or cornering exceeds it on its own can prevent separation from ever being declared, leaving the event in the collision phase — and at the collision timestep — for the remainder of the run.
+
+> **NOTE:** The Threshold value is used by the Traditional Damage Data Format regardless of which basis is selected. Although the field is disabled when the basis is Impact Force, the stored value (1 g by default) still sets the minimum acceleration at which an acceleration peak is recognized and delta-V accumulated in that report.
+
+See [EDSMAC4 — Impact and Separation Times](../programs/EDSMAC4/04-calculation-method.md#impact-and-separation-times) for the full description.
 
 ## Damage Data Format
 
 Default: Collision Data. Choices:
 
-- **Traditional** — Damage is reported in the traditional EDSMAC-style damage-profile format.
-- **Collision Data** (default) — Damage is reported using HVE's extended Collision Data format.
+- **Traditional** — Damage is reported in the traditional EDSMAC-style damage-profile format: damage ranges along the crush perimeter, each with a CDC, PDOF, total delta-V, time of peak acceleration and peak acceleration. The severity figures are derived from peaks in the vehicle's acceleration history.
+- **Collision Data** (default) — Damage is reported using HVE's extended Collision Data format: one row per collision pulse, with the vehicle struck, the pulse start and end times and duration, peak acceleration, peak collision force, delta-V and PDOF, followed by separate damage-profile and crush tables. The severity figures are derived from the inter-vehicle collision force and the accumulated velocity change.
+
+This option selects the calculation as well as the layout. The two methods are independent and will not give identical PDOF, delta-V or peak acceleration values; see [EDSMAC4 — Collision Severity Results](../programs/EDSMAC4/04-calculation-method.md#collision-severity-results-pdof-delta-v-and-peak-acceleration). The Traditional format is retained for comparison with results from earlier releases, and is only available for events with more than one vehicle.
 
 - **Include Free Space** — When checked, the reported crush measurements include free-space (induced) deformation in addition to direct-contact crush. In the current release this checkbox is permanently checked and disabled; free space is always included.
 

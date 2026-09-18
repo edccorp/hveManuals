@@ -29,7 +29,7 @@ To view any of these reports, perform the following steps:
 EDSMAC4 produces the following alpha-numeric reports:
 
 - **Accident History** — A table of initial, impact, separation and final positions and velocities for each vehicle in the current event
-- **Damage Data** — A table containing the vehicle collision ("RHO") vectors in both cylindrical and Cartesian coordinates, and a table containing the beginning and end of each damage range, its CDC, PDOF, total delta-V and peak acceleration
+- **Damage Data** — Tables describing the damage sustained by each vehicle: the collision pulses with their start and end times, peak acceleration, peak force, delta-V and PDOF, and the resulting CDC and crush measurements. The layout depends on the Damage Data Format calculation option (see below)
 - **Driver Data** — Individual Driver Control tables for steering, braking and throttle used by each vehicle in the current event
 - **Environment Data** — Information describing the environment data used by the current EDSMAC4 event
 - **Event Data** — A table containing event-related parameters for the current event
@@ -44,7 +44,9 @@ The Accident History Report displays a table of initial, impact, separation and 
 ![Figure 3-1](images/p049-006.png)
 *Figure 3-1: Typical Accident History Output Report issued by EDSMAC4.*
 
-*(updated: the criterion used to detect the beginning and end of each collision phase reported here is selectable via the **Accident History Basis** calculation option — Impact Force (default) or Acceleration with a threshold in g; see [EDSMAC4 Calculation Options](../../10-calculation-options/CalcOptEDSMAC4.md#accident-history-basis).)*
+*(updated: the criterion used to detect the beginning and end of each collision phase reported here is selectable via the **Accident History Basis** calculation option — Impact Force (default) or Acceleration with a threshold in g; see [EDSMAC4 Calculation Options](../../10-calculation-options/CalcOptEDSMAC4.md#accident-history-basis) and, for how the impact and separation times are found, [Chapter 4 — Impact and Separation Times](04-calculation-method.md#impact-and-separation-times).)*
+
+> **NOTE:** Impact and separation are tracked for each *pair* of vehicles, so an event involving three or more vehicles produces one impact and one separation entry for each colliding pair. The impact conditions are those of the pair's **first** contact and are not updated by subsequent contacts between the same pair.
 
 ### Damage Data
 
@@ -59,7 +61,13 @@ The Damage Data Report includes the following information:
 ![Figure 3-2](images/p050-007.png)
 *Figure 3-2: Typical Damage Data Output Report issued by EDSMAC4.*
 
-*(updated: the report layout is selectable via the **Damage Data Format** calculation option — Traditional or Collision Data (default); see [EDSMAC4 Calculation Options](../../10-calculation-options/CalcOptEDSMAC4.md#damage-data-format).)*
+*(updated: the report layout is selectable via the **Damage Data Format** calculation option — Traditional or Collision Data (default); see [EDSMAC4 Calculation Options](../../10-calculation-options/CalcOptEDSMAC4.md#damage-data-format). The description above is the Traditional layout. With the default Collision Data layout the report instead contains:*
+
+- *a **Collision Summary** table listing, for each collision pulse, the vehicle or environment struck, the start and end times and duration of the pulse, the peak acceleration, the peak collision force, the delta-V and the PDOF;*
+- *a **Damage Profile** table giving the CDC, damage width and offset, and maximum crush for each pulse;*
+- *a **Crush** table giving the crush depths across the damaged surface.*
+
+*The two layouts are produced by entirely separate calculations and do not give identical numbers. See [Chapter 4 — Collision Severity Results](04-calculation-method.md#collision-severity-results-pdof-delta-v-and-peak-acceleration) for how the PDOF, delta-V and peak acceleration are determined under each.)*
 
 ### Driver Data
 

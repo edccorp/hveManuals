@@ -510,8 +510,8 @@ EDSMAC4 has the following calculation option parameters. For the complete dialog
 - **Inter-Vehicle Connection** *(new)* — Selects how mismatched hitch heights between connected vehicles are reconciled at event initialization (hitch z-coordinates are adjusted, not vehicle positions).
 - **Connection Model** *(new)* — Selects how connection (hitch) constraint stiffness and damping are derived: Use Both Vehicles (derives them from the *lighter* vehicle's weight), Use Heavier Vehicle (default), or Use Tow Veh Properties.
 - **Hydroplane Model** *(new)* — Off or NASA; applies the NASA hydroplaning model at tires travelling over water polygons.
-- **Accident History Basis** *(new)* — Impact Force or Acceleration; the criterion used to bound each collision phase in the Accident History report. With the Acceleration basis, the **Threshold (g)** value is the minimum total acceleration required to initiate the collision phase of a crash; delta-V integration begins at this point.
-- **Damage Data Format** *(new)* — Traditional or Collision Data (default), plus the Include Free Space setting.
+- **Accident History Basis** *(new)* — Impact Force (default) or Acceleration; the criterion used to bound each collision phase in the Accident History report. With the Acceleration basis, the **Threshold (g)** value (default 1 g) is the total acceleration either vehicle must exceed — in addition to the vehicles' perimeters overlapping — for the collision phase to begin, and below which both vehicles must fall for it to end. See [Chapter 4 — Impact and Separation Times](04-calculation-method.md#impact-and-separation-times).
+- **Damage Data Format** *(new)* — Traditional or Collision Data (default), plus the Include Free Space setting. This selects not only the layout of the Damage Data report but the calculation behind it: the PDOF, delta-V and peak acceleration are determined by two different methods and will not agree exactly. See [Chapter 4 — Collision Severity Results](04-calculation-method.md#collision-severity-results-pdof-delta-v-and-peak-acceleration).
 
 ### Get Surface Information
 

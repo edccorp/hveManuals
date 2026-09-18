@@ -114,6 +114,172 @@ behavior.)*
 
 *(updated: when the **Hydroplane Model** calculation option is set to NASA, the available tire friction is further modified at each tire travelling over a water polygon. The NASA model predicts the hydroplaning speed from the tire's inflation pressure ($182.16\sqrt{P}$ in/sec, $P$ in lb/in²); above that speed the tire's friction switches to the water polygon's friction value. The extra drag of displacing water is not modeled. See [EDSMAC4 Calculation Options](../../10-calculation-options/CalcOptEDSMAC4.md#hydroplane-model).)*
 
+### Impact and Separation Times
+
+The impact and separation times reported in the Accident History bound the
+collision phase. They are found by testing two conditions at every timestep.
+
+The first condition is geometric: the original (undamaged) perimeter of one
+vehicle must overlap the other, which is tested by checking whether any corner
+of either vehicle lies inside the other. The second condition is selected by
+the **Accident History Basis** calculation option:
+
+- **Impact Force** (default) — inter-vehicle collision force is acting at one
+  or more points on the two vehicles.
+- **Acceleration** — the total acceleration of either vehicle exceeds the
+  **Threshold** value (default 1 g).
+
+The impact time is the first time at which *both* conditions hold. Note that
+both are required: with the Acceleration basis, the collision phase still
+cannot begin before the perimeters overlap. At this time the integration
+timestep changes to the Vehicle Collision Integration Timestep.
+
+The impact conditions stored for the Accident History — time, position,
+heading, total speed, forward and lateral components and yaw rate for both
+vehicles — are latched at that first detection and are never updated by later
+contact between the same pair. In a multiple-impact event the impact row
+therefore always describes the *first* contact between that pair. Impact and
+separation are tracked separately for each pair of vehicles, so a three-vehicle
+event produces one impact and one separation entry for each colliding pair.
+
+The end of the collision phase uses the reverse test:
+
+- **Impact Force** — no collision force is acting between the two vehicles.
+- **Acceleration** — the total acceleration of *both* vehicles is below the
+  Threshold.
+
+The separation condition must be satisfied on consecutive timesteps before
+separation is declared: **one** timestep with the Impact Force basis, **six**
+with the Acceleration basis. Separation is then declared at the next time
+falling on a Vehicle Separation Integration Timestep boundary, at which point
+the timestep changes and the separation conditions are recorded. The reported
+separation time consequently lags the true end of contact slightly — by about
+one timestep with the Impact Force basis, and by up to six collision timesteps
+plus one separation timestep with the Acceleration basis.
+
+> **NOTE:** The acceleration used by the Acceleration basis is the vehicle's
+> *total* acceleration, which includes tire forces. If the Threshold is set
+> low enough that hard braking or cornering alone exceeds it, separation can
+> never be declared and the event will remain in the collision phase — and at
+> the collision timestep — for the rest of the run. The 1 g default is above
+> what tires normally produce, but a reduced threshold on a high-friction
+> surface can reach this condition.
+
+### Collision Severity Results: PDOF, Delta-V and Peak Acceleration
+
+The PDOF, delta-V and peak acceleration reported in the Damage Data report are
+computed by one of two entirely separate methods, selected by the **Damage Data
+Format** calculation option. The two methods do not produce identical numbers;
+the Traditional format is retained for comparison with results from earlier
+releases.
+
+In both cases the PDOF is reported in the conventional CDC sense (see
+reference 8) — a 12 o'clock PDOF is a force directed from front to rear, so the
+reported angle is 180 degrees opposite the direction in which the force acts on
+the vehicle. Angles are measured in the vehicle-fixed frame with zero forward
+and positive toward the right side, and are reported in the range ±180 degrees.
+
+#### Collision Data format (default)
+
+Each period of continuous contact between a given pair is treated as a single
+**collision pulse**. A pulse begins at the first timestep on which the vehicle
+carries collision force from that partner, and ends at the last timestep before
+separation is declared. Contact must be lost for at least 0.025 seconds before a
+new pulse is started, so brief interruptions of contact do not split a pulse in
+two. Up to ten pulses are tracked for each vehicle; exceeding that limit
+produces a message.
+
+For each pulse the report gives the pulse number, the vehicle or environment
+struck, the start and end times and the duration, the peak acceleration, the
+peak collision force, the delta-V and the PDOF, followed by the CDC, damage
+width and offset, maximum crush and the crush profile measurements.
+
+**PDOF.** The inter-vehicle collision forces acting on the vehicle are
+accumulated over the pulse, giving the total collision impulse in vehicle-fixed
+coordinates. The PDOF is the direction of that impulse:
+
+$$\mathrm{PDOF} = \mathrm{atan2}\left(J_y,\,J_x\right) + 180^\circ$$
+
+where $J_x$ and $J_y$ are the forward and lateral components of the accumulated
+collision impulse. A zenith angle, the elevation of the impulse out of the
+horizontal plane, is also stored, but since EDSMAC4 computes no vertical
+collision force it is always zero. The clock direction used for the first two
+characters of the CDC is this same angle rounded to the nearest hour. Both are
+frozen once separation is declared.
+
+> **NOTE:** The PDOF is derived from the collision force alone. Tire forces do
+> not affect it.
+
+**Delta-V.** The vehicle's acceleration components are integrated through the
+pulse using the trapezoidal rule, accumulating a velocity-change vector in
+vehicle-fixed coordinates. The reported delta-V is the largest magnitude that
+vector reaches at any point during the pulse:
+
+$$\Delta V = \max_{t_{Impact}\,\le\, t\,\le\, t_{Separation}}\;
+            \left|\int_{t_{Impact}}^{t}\mathbf{a}\;dt\right|$$
+
+Two properties of this calculation are worth understanding:
+
+- The acceleration integrated is the vehicle's **total** acceleration, not the
+  collision acceleration alone. Tire forces acting during contact therefore
+  contribute to the reported delta-V. In a severe impact the contribution is
+  negligible — a fraction of a g against tens of g — but in a low-severity
+  sideswipe with heavy braking it is not.
+- The components are integrated in the vehicle-fixed frame while the vehicle is
+  yawing. For the short durations typical of a collision the yaw change is
+  small and the result is very close to the change in the earth-fixed velocity
+  vector, but a long, rotating sideswipe will accumulate a delta-V that differs
+  from the vector difference between the velocities at impact and separation.
+
+**Peak acceleration** is the largest total acceleration reached at any timestep
+on which collision force was acting; **peak force** is the largest total
+collision force, and the time at which it occurred is stored with it. As with
+delta-V, the peak acceleration includes the tire contribution.
+
+#### Traditional format
+
+The Traditional format reproduces the original SMAC reporting, which works from
+the acceleration history rather than from the contact force. It is available
+only for events with more than one vehicle.
+
+**Acceleration peaks.** A peak is recorded each time the vehicle's total
+acceleration rises above the Threshold value and falls back below it. The peak
+magnitude, its forward and lateral components and its time are stored. Up to
+ten peaks are kept, after which a message is issued; the peaks are then sorted
+into descending order of magnitude.
+
+**Delta-V of a peak** is the integral of the acceleration **magnitude** over
+the peak, again by the trapezoidal rule:
+
+$$\Delta V = \int \left|\mathbf{a}\right|\,dt$$
+
+Because this is a scalar integral rather than a vector one, a peak whose
+direction rotates produces a larger delta-V than the corresponding change in
+velocity. To limit this, the direction of the acceleration is tracked in
+sectors, and the contribution of an acceleration that has changed sector is
+suppressed.
+
+**PDOF of a peak** is the direction of the acceleration at the instant of the
+peak, converted to the conventional sense as described above.
+
+**Matching peaks to damage.** Each damage range found on the crush profile is
+matched to the acceleration peak whose clock direction is closest to the
+mid-point of that range. If no peak lies within 60 degrees of the mid-point,
+the largest peak is used instead and a message is issued — a common and
+harmless outcome for sideswipes and secondary impacts.
+
+**Total delta-V of a damage range** is the sum of the delta-Vs of *all*
+acceleration peaks whose clock direction lies within one hour either side of
+the matched peak's clock direction. Delta-V arising from separate impacts in
+the same general direction is therefore combined into a single figure for that
+damage range. If only one peak was found, all delta-V is assigned to it.
+
+> **NOTE:** The Threshold value is used by the Traditional format regardless of
+> the Accident History Basis. The dialog disables the Threshold field when the
+> basis is Impact Force, but the stored value — 1 g by default — still sets the
+> minimum acceleration at which an acceleration peak is recognized and delta-V
+> is accumulated.
+
 ## Assumptions
 
 In order to provide a useful analysis without becoming burdensome and overly complex, EDSMAC4 makes several simplifying assumptions. If the user is to use EDSMAC4 properly, it is important these assumptions and their consequences be understood. In some cases, data which violate these assumptions will cause a fatal error, along with a message indicating the reason for the error. In other cases, the error is not with the data but with the use of the program under conditions which violate the assumptions inherent to the computations. EDSMAC4 will issue results which may not be valid for the circumstances of the accident. Before using EDSMAC4, be sure your accident is within the scope of EDSMAC4's original design.
