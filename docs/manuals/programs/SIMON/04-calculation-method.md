@@ -3394,24 +3394,42 @@ as a separate collision pulse, up to a maximum of ten per vehicle. Exceeding
 that limit terminates the event.
 
 A pulse begins at the first timestep at which the collision model reports force
-on the vehicle, and ends once the force has returned to zero and remained there.
+on the vehicle. It is closed only once contact has been absent continuously for
+0.025 seconds: on every timestep that contact persists, a provisional closing
+deadline is set that far ahead, so the deadline rolls forward and the pulse
+survives any interruption shorter than that. Contact that resumes before the
+deadline rejoins the pulse already in progress against that partner rather than
+opening a new one. The intent is that the intermittent contact typical of two
+vehicles disengaging is reported as one collision rather than a string of small
+ones.
+
+> **NOTE:** A distinct secondary contact separated from the previous one by less
+> than 0.025 seconds is absorbed into the earlier pulse — its impulse
+> contributes to that pulse's PDOF, its acceleration to the pulse's delta-V, and
+> the vertices it touches to the pulse's CDC — with nothing in the report to
+> indicate that a separate contact occurred. Where a secondary contact is
+> suspected, examine the collision force in the Variable Output, Kinetics group
+> rather than relying on the number of pulses reported.
+
 While a pulse is in progress SIMON records:
 
 - the peak total collision force and the time it occurred;
 - the peak total acceleration;
-- the principal direction of force, computed from the direction of the peak
-  collision force as an azimuth and a zenith angle, together with the
-  equivalent clock direction;
+- the principal direction of force, computed from the direction of the
+  accumulated collision impulse as an azimuth and a zenith angle, together with
+  the equivalent clock direction;
 - the impulse center, the force-weighted average position of every mesh vertex
   carrying force during the pulse;
 - the collision deformation classification surface, taken from the surface in
   contact at the start of the pulse.
 
-The principal direction of force is not updated after separation, so a pulse
-reports the direction associated with its peak force rather than any later
-residual contact.
+The principal direction of force and the delta-V are both frozen once separation
+is declared, so neither is affected by residual contact afterwards.
 
-*(updated: the collision pulse data were not described in earlier editions.)*
+*(updated: the collision pulse data were not described in earlier editions. Note
+in particular that the PDOF reported for a pulse is the direction of the impulse
+accumulated over the whole pulse, **not** the direction of the peak collision
+force; an earlier edition of this section stated the latter.)*
 
 ## Software Implementation
 

@@ -39,7 +39,7 @@ There are no degrees of freedom (and hence, no equations of motion) for vertical
 
 ### Collision Phase
 
-The collision phase occurs when interference is detected between the vehicles. This condition is confirmed using simple geometry. Given interference exists, the maximum possible damage range is defined between azimuth vectors, *PSIBPB* and *PSIBPF*. The inter-vehicle force is then computed. The resulting acceleration of each vehicle is computed using Newton's second law (force equals the product of mass and acceleration), and is integrated twice in order to compute the changes in velocity and position.
+The collision phase occurs when interference is detected between the vehicles. This condition is confirmed using simple geometry. Given interference exists, the widest damage range that is geometrically possible is bracketed between a beginning and a final azimuth angle measured from the vehicle CG, and the search for contact is confined to that range. The inter-vehicle force is then computed. The resulting acceleration of each vehicle is computed using Newton's second law (force equals the product of mass and acceleration), and is integrated twice in order to compute the changes in velocity and position.
 
 The procedure for computing the inter-vehicle force is based on the concept of a linear spring. The exterior of each vehicle is surrounded by such springs with the user-entered spring constant, or stiffness.
 
@@ -51,11 +51,21 @@ The vehicle exterior is described by its crush stiffness, $K_v$. This parameter 
 
 Default values for $K_v$ are assigned to each vehicle and may be edited using the HVE-2D Vehicle Editor. Values for $K_v$ may also be computed from crash test data. The method is described in the literature [14].
 
+*(updated: EDSMAC takes the vehicle's **frontal** stiffness and applies it to the
+entire perimeter — the side and rear stiffness values stored with the vehicle are
+not read. A vehicle struck in the side or rear is therefore modeled with its
+frontal stiffness. A fixed barrier is given a stiffness of 500 lb/in².)*
+
 > NOTE: When computing $K_v$ from crash test data, remember EDSMAC assumes the force vs deflection curve goes through the origin (i.e., $b_0 = 0$).
 
 Three simulation control parameters are required for the collision model. The **Vector Spacing**, $\Delta\psi$, is the incremental angular spacing of each of the springs distributed about the vehicle exterior. The crush displacement of each spring is produced along radial vectors from the vehicle center of gravity to the locations on the original (before damage) vehicle exterior defined by the incremental spring spacing. The force on each vehicle is proportional to the crush displacement. Since the forces on each vehicle must be equal (Newton's third law — for every action there is an equal and opposite reaction), the current crush displacement is adjusted between both vehicles along each of the radial vectors. The user-entered increment of each radial vector adjustment, the **Vector Adjustment Increment**, $\Delta\rho$, is subtracted from one vehicle and added to the other until the forces on the vehicles are approximately equal.
 
-Because the adjustments are finite increments of crush displacement, the forces on the two vehicles will not be exactly equal. EDSMAC will continue to adjust the length of each radial vector until the difference in the forces is less than the user-entered **Max Pressure Error** (also labelled Vector Force Tolerance), $\lambda$. For solution stability, there must be a RHO vector length tested for which the difference in inter-vehicle forces is less than the Max Pressure Error. This requires you to select a Max Pressure Error such that $\lambda > K_v\,\Delta\rho$ — that is, greater than the crush stiffness times the Vector Adjustment Increment — for the stiffnesses of both vehicles. Failure to meet this criterion may result in an error message (see Messages).
+Because the adjustments are finite increments of crush displacement, the forces on the two vehicles will not be exactly equal. EDSMAC will continue to adjust the length of each radial vector until the difference in the forces is less than the user-entered **Max Pressure Error** (also labelled Vector Force Tolerance), $\lambda$. For solution stability, there must be a RHO vector length tested for which the difference in inter-vehicle forces is less than the Max Pressure Error. This requires you to select a Max Pressure Error such that $\lambda > K_v\,\Delta\rho$ — that is, greater than the crush stiffness times the Vector Adjustment Increment — for the stiffnesses of both vehicles. Failure to meet this criterion may result in an error message (see [Chapter 6 — Messages](06-messages.md)).
+
+> **NOTE:** EDSMAC does not adjust the Max Pressure Error for you. (EDSMAC4 does
+> raise it automatically when it is too small for the stiffnesses in use.) If the
+> value is too small, the iterative adjustment simply fails to converge and the
+> run stops with a fatal message after 200 attempts.
 
 Tangential forces are developed due to inter-vehicle sliding friction and intermingling between individual vehicle components. This effect is accounted for by the user-entered inter-vehicle friction coefficient, the **Inter-vehicle Friction** option, $\mu$. A friction force is transmitted whenever there is relative motion between the vehicles. The user-entered **Minimum Velocity for Friction**, $\zeta_v$, is the minimum relative velocity at which full inter-vehicle friction is developed; below it the friction force is scaled linearly with the sliding velocity.
 
@@ -68,6 +78,11 @@ where $\delta$ is the change in length (crush depth) of the RHO vector. The rest
 $$\rho_{Restored} = e(\delta)\,\rho_{Original} + \left(1 - e(\delta)\right)\rho_{Crushed}$$
 
 so $e = 0$ leaves the vector fully crushed and $e = 1$ restores it completely.
+
+Restitution is not computed for **J-points** — points on the damage profile that
+could not be established from the vehicle's own radial vector and had to be
+constructed from the other vehicle's CG instead. These points are marked with a
+double asterisk in the Vehicle Damage Summary table of the Damage Data report.
 
 *(updated: earlier editions gave the polynomial without saying how its value is
 used. It is a blend fraction, not a length.)* *(Note: restitution is applied only while $\delta < C_1/(2C_2)$, the vertex of the parabola; see the [EDSMAC Calculation Options](../../10-calculation-options/CalcOptEDSMAC.md) reference.)*
@@ -84,17 +99,29 @@ In order to calculate tire forces, EDSMAC uses the Fiala tire model [10]. This m
 
 EDSMAC allows the vehicle to accelerate, brake and steer. The attempted acceleration, braking and steering are supplied by the user in tabular form using the Event Editor. It is important to understand these driver controls result in *attempted* forces; the Fiala tire model determines if these forces are sustainable at the tire-road interface and accounts for the condition if the available force is exceeded.
 
-EDSMAC's vehicle model allows the user to study vehicles with dual tires.
+*(updated: earlier editions stated that EDSMAC's vehicle model allows the user to
+study vehicles with dual tires. It does not. A vehicle with dual tires at any
+wheel position is rejected at event initialization with a fatal error and the
+event will not run. Use EDSMAC4, which does support dual tires, for such a
+vehicle.)*
 
 #### Tire force calculation
 
-At each wheel, the force available at the tire-road interface is
+At each wheel, the friction coefficient is the tire's slide friction scaled by
+the friction multiplier of the surface beneath that wheel, then adjusted for
+speed:
+
+$$\mu = \mu_{Slide}\,f_{Surface}\left(1 + C_\mu\,s\right)$$
+
+where $s$ is the wheel's total speed and $C_\mu$ the speed reduction factor. A
+zero speed reduction factor leaves the friction speed-independent. The surface
+beneath each wheel is looked up separately, so the vehicle can straddle a
+friction change. The force available at the tire-road interface is then
 
 $$F_{Avail} = \mu\,F_z\,n_z$$
 
-where $\mu$ is the tire-road friction coefficient, $F_z$ the wheel load and
-$n_z$ the vertical component of the surface normal, which reduces the available
-force on a sloped surface.
+where $F_z$ is the wheel load and $n_z$ the vertical component of the surface
+normal, which reduces the available force on a sloped surface.
 
 The attempted longitudinal force is the sum of the throttle and brake table
 entries at the current time. For the Percent Available Friction table method,
@@ -105,8 +132,9 @@ can supply:
 $$F_c = \mathrm{sgn}(u)\min\left(\left|F_{Attempt}\right|,\; F_{Avail}\cos\alpha\right)$$
 
 for braking, and limited to $F_{Avail}$ for acceleration. At forward speeds
-below 1 in/sec the braking force is scaled down in proportion to speed, so that
-a nearly stopped wheel does not develop full braking force.
+below 2 in/sec the braking force is scaled by $\left|u\right|/2$, so that a
+nearly stopped wheel does not develop full braking force. The scaling applies to
+braking only; drive force is not reduced at low speed.
 
 Whatever longitudinal force is used is unavailable laterally. The remaining
 lateral capacity follows the friction circle:
@@ -143,6 +171,102 @@ by the friction-circle remainder rather than by the peak friction force, so its
 lateral force differs from the EDSVS and EDVTS form even for identical tire
 data.)*
 
+### Impact and Separation Times
+
+The impact and separation times reported in the Accident History bound the
+collision phase.
+
+**Impact** is declared on the first timestep at which the two vehicle
+perimeters interfere, which is tested geometrically by checking whether any
+corner of either vehicle lies inside the other. At that moment the time,
+position, heading, forward and lateral velocities and yaw rate of both vehicles
+are recorded for the Accident History, and the integration timestep changes to
+the Vehicle Collision Integration Timestep. These impact conditions are recorded
+only once; a later contact between the vehicles does not update them, so in a
+multiple-impact event the impact row always describes the first contact.
+
+> **NOTE:** Unlike EDSMAC4, EDSMAC offers no choice of criterion. The
+> acceleration threshold used below is fixed at 1 g and cannot be changed.
+
+**Separation** is declared by either of two routes:
+
+- **The vehicles are no longer interfering.** Separation follows at the next
+  time falling on a Vehicle Separation Integration Timestep boundary.
+- **The vehicles are still interfering, but neither is accelerating.** If the
+  total acceleration of *both* vehicles is 1 g or less, a counter is advanced.
+  Once that counter reaches six, separation is declared at the next separation
+  timestep boundary. The delay exists because numerical integration can produce
+  a single quiet timestep in the middle of a collision, and the program should
+  not mistake it for the end of contact.
+
+In both cases the separation time, positions and velocities are recorded, the
+timestep changes to the separation timestep, and the trajectory timestep resumes
+100 timesteps later.
+
+Because the acceleration test uses the vehicle's *total* acceleration, tire
+forces count toward it. This matters only at the 1 g threshold, which hard
+braking on a high-friction surface can approach.
+
+**A second impact** after separation requires both that the perimeters
+interfere again and that at least one vehicle's total acceleration exceed 1 g.
+The collision phase therefore restarts slightly after renewed contact, once the
+contact has built up enough force to register.
+
+> **NOTE:** The counter described above is not reset when the acceleration rises
+> back above the threshold, so the six timesteps need not be consecutive. In a
+> long collision whose acceleration crosses 1 g repeatedly, separation is
+> declared after six sub-threshold timesteps in total.
+
+### Collision Severity Results: PDOF, Delta-V and Peak Acceleration
+
+The PDOF, delta-V and peak acceleration reported for each damage range are
+derived from the vehicle's acceleration history, not from the inter-vehicle
+contact force.
+
+The PDOF is reported in the conventional CDC sense (see reference 8) — a
+12 o'clock PDOF is a force directed from front to rear, so the reported angle is
+180 degrees opposite the direction in which the force acts on the vehicle.
+Angles are measured in the vehicle-fixed frame with zero forward and positive
+toward the right side.
+
+**Acceleration peaks.** A peak is recorded each time a vehicle's total
+acceleration rises above 1 g and falls back below it. The peak magnitude, its
+forward and lateral components and its time are stored. Up to ten peaks are
+kept, after which a message is issued; the peaks are then sorted into descending
+order of magnitude.
+
+**Delta-V of a peak** is the integral of the acceleration **magnitude** over the
+peak, computed by the trapezoidal rule:
+
+$$\Delta V = \int \left|\mathbf{a}\right|\,dt$$
+
+Because this is a scalar integral rather than a vector one, a peak whose
+direction rotates produces a larger delta-V than the corresponding change in
+velocity. To limit this, the direction of the acceleration is tracked in
+sectors, and the contribution of an acceleration that has changed sector is
+suppressed.
+
+**PDOF of a peak** is the direction of the acceleration at the instant of the
+peak, converted to the conventional sense described above.
+
+**Matching peaks to damage.** Each damage range found on the crush profile is
+matched to the acceleration peak whose clock direction is closest to the
+mid-point of that range. The search widens in 15-degree steps; if no peak lies
+within 60 degrees of the mid-point, the largest peak is used instead and a
+message is issued. This is a common and harmless outcome for sideswipes and
+secondary impacts.
+
+**Total delta-V of a damage range** is the sum of the delta-Vs of *all*
+acceleration peaks whose clock direction lies within one hour either side of the
+matched peak's clock direction, so delta-V arising from separate impacts in the
+same general direction is combined into a single figure for that range. If only
+one peak was found, all delta-V is assigned to it.
+
+**Peak acceleration** reported for a range is the magnitude of the matched
+acceleration peak, and the reported time is the time at which it occurred. As
+with delta-V, it is the vehicle's total acceleration and so includes the tire
+contribution.
+
 ## Assumptions
 
 In order to provide a useful analysis without becoming burdensome and overly complex, EDSMAC makes several simplifying assumptions. If the user is to use EDSMAC properly, it is important these assumptions and their consequences be understood. In some cases, data which violate these assumptions will cause a fatal error, along with a message indicating the reason for the error. In other cases, the error is not with the data but with the use of the program under conditions which violate the assumptions inherent to the computations. EDSMAC will issue results which may not be valid for the circumstances of the accident. Before using EDSMAC, be sure your accident is within the scope of EDSMAC's original design.
@@ -159,7 +283,7 @@ Other than during the collision, all forces which affect vehicle motion are appl
 
 ### Homogeneous Vehicle Exterior
 
-The collision phase analysis assumes the same linear force vs crush relationship for all vehicle surfaces (front, sides or rear). The stiffness is assumed to be uniform for the entire surface. This means, for example, that the side stiffness is the same at the front fender, wheels, bumpers, doors and quarterpanel.
+The collision phase analysis assumes the same linear force vs crush relationship for all vehicle surfaces (front, sides or rear) — specifically, the vehicle's frontal stiffness, applied everywhere. The stiffness is assumed to be uniform for the entire surface. This means, for example, that the side stiffness is the same at the front fender, wheels, bumpers, doors and quarterpanel.
 
 ---
 

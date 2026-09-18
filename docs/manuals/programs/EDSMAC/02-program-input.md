@@ -93,7 +93,7 @@ Inter-vehicle connections are not used by EDSMAC.
 | Parameter | Description |
 |---|---|
 | Wheel Location | The vehicle-fixed x,y wheel center coordinates |
-| Dual Tire | Flag indicating position has dual tires |
+| Dual Tire | Flag indicating position has dual tires. **Not supported by EDSMAC** — a vehicle with dual tires at any wheel position is rejected at event initialization with a fatal error. Use EDSMAC4 for such a vehicle. |
 | Tire Slide Friction | The slide coefficient of friction for each tire |
 | Tire Cornering Stiffness | Tire lateral force per unit of tire lateral slip for small amounts of lateral slip |
 

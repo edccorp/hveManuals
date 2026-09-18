@@ -124,7 +124,7 @@ No response by the user is necessary.
 
 **(Level 3 — Informative)**
 
-Rapid rotation during the collision may result in subsequent inter-vehicle contact. EDSMAC allows up to ten individual ranges of impact damage. If more than ten individual damage regions are detected, the analysis is beyond the scope of EDSMAC and the above error message is issued.
+Rapid rotation during the collision may result in subsequent inter-vehicle contact. EDSMAC allows up to ten individual ranges of impact damage. If more than ten individual damage regions are detected, only the first ten are stored and the additional acceleration peaks are ignored; the above message is issued. Execution continues, and the simulation results in Variable Output are unaffected.
 
 ---
 

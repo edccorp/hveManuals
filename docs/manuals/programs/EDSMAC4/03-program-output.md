@@ -63,7 +63,7 @@ The Damage Data Report includes the following information:
 
 *(updated: the report layout is selectable via the **Damage Data Format** calculation option — Traditional or Collision Data (default); see [EDSMAC4 Calculation Options](../../10-calculation-options/CalcOptEDSMAC4.md#damage-data-format). The description above is the Traditional layout. With the default Collision Data layout the report instead contains:*
 
-- *a **Collision Summary** table listing, for each collision pulse, the vehicle or environment struck, the start and end times and duration of the pulse, the peak acceleration, the peak collision force, the delta-V and the PDOF;*
+- *a **Collision Summary** table listing, for each collision pulse, the vehicle or environment struck, the start and end times and duration of the pulse, the peak acceleration, the peak collision force, the delta-V and the PDOF (for what counts as one pulse, and why intermittent contact is not split into several, see [Chapter 4 — How a pulse is delimited](04-calculation-method.md#how-a-pulse-is-delimited));*
 - *a **Damage Profile** table giving the CDC, damage width and offset, and maximum crush for each pulse;*
 - *a **Crush** table giving the crush depths across the damaged surface.*
 

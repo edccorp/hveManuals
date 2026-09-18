@@ -40,6 +40,8 @@ An example of each of these numeric output reports from EDSMAC is described belo
 
 The Accident History Report displays a table of initial, impact, separation and final positions and velocities for each vehicle. For each of the phases SIM START, IMPACT, SEPARATION and FINAL/REST, the report lists the time, the position (X, Y in ft, and heading angle PSI in deg) and the velocity (forward u and lateral v in mph, and angular velocity in deg/sec) of each vehicle.
 
+For how the impact and separation times are detected, see [Chapter 4 — Impact and Separation Times](04-calculation-method.md#impact-and-separation-times).
+
 ![Figure 3-1](images/p041-006.png)
 
 *Figure 3-1: Typical Accident History Output Report issued by EDSMAC.*
@@ -52,7 +54,9 @@ The Damage Data Report includes the following information:
 
   > NOTE: This table is used to define the damage profile.
 
-- **Vehicle Damage Ranges** — A table containing the starting and ending points for each damage range, along with its CDC, PDOF, total delta-V and peak acceleration.
+- **Vehicle Damage Ranges** — A table containing the starting and ending points for each damage range, along with its CDC, PDOF, total delta-V and peak acceleration. For how these are determined, see [Chapter 4 — Collision Severity Results](04-calculation-method.md#collision-severity-results-pdof-delta-v-and-peak-acceleration).
+
+> NOTE: A **J-point**, marked with a double asterisk in the damage summary, is a point on the damage profile that could not be established from the vehicle's own radial vector and was constructed from the other vehicle's CG instead. Restitution is not computed at these points.
 
 ![Figure 3-2](images/p042-007.png)
 

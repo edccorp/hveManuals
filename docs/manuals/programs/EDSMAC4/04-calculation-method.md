@@ -79,8 +79,9 @@ The attempted longitudinal force is the sum of the throttle and brake table
 entries at the current time; for the Percent Available Friction table method
 those entries are fractions and are multiplied by $F_{Avail}$. The longitudinal
 force developed, $F_c$, is the attempted force limited to what the tire can
-supply, and is scaled down in proportion to speed at forward speeds below
-1 in/sec.
+supply. At forward speeds below 2 in/sec the braking force is scaled by
+$\left|u\right|/2$, so that a nearly stopped wheel does not develop full braking
+force; drive force is not reduced at low speed.
 
 Whatever longitudinal force is used is unavailable laterally. The remaining
 lateral capacity follows the friction circle:
@@ -165,6 +166,23 @@ plus one separation timestep with the Acceleration basis.
 > what tires normally produce, but a reduced threshold on a high-friction
 > surface can reach this condition.
 
+#### Repeated impact and separation
+
+Nothing restricts the collision phase to a single occurrence. If the vehicle
+perimeters are still overlapping when contact resumes after separation has been
+declared, the collision phase simply restarts: the integration timestep returns
+to the Vehicle Collision Integration Timestep and the separation test begins
+again. With the Impact Force basis, where one force-free timestep is enough to
+declare separation, a disengagement in which contact flickers on and off can
+cycle through this several times within a few tens of milliseconds.
+
+Only the first and the last of these appear in the Accident History. The impact
+conditions are recorded once, at first contact, and are never updated; the
+separation conditions are re-recorded at every separation, so the values shown
+are those of the **final** one. The report therefore spans the event as a whole —
+first contact to last separation — and gives no indication of intermittent
+contact in between.
+
 ### Collision Severity Results: PDOF, Delta-V and Peak Acceleration
 
 The PDOF, delta-V and peak acceleration reported in the Damage Data report are
@@ -181,18 +199,63 @@ and positive toward the right side, and are reported in the range ±180 degrees.
 
 #### Collision Data format (default)
 
-Each period of continuous contact between a given pair is treated as a single
-**collision pulse**. A pulse begins at the first timestep on which the vehicle
-carries collision force from that partner, and ends at the last timestep before
-separation is declared. Contact must be lost for at least 0.025 seconds before a
-new pulse is started, so brief interruptions of contact do not split a pulse in
-two. Up to ten pulses are tracked for each vehicle; exceeding that limit
-produces a message.
+Each row of the Collision Summary table is one **collision pulse** — one period
+of sustained contact between that vehicle and one collision partner. For each
+pulse the report gives the pulse number, the vehicle or environment struck, the
+start and end times and the duration, the peak acceleration, the peak collision
+force, the delta-V and the PDOF, followed by the CDC, damage width and offset,
+maximum crush and the crush profile measurements.
 
-For each pulse the report gives the pulse number, the vehicle or environment
-struck, the start and end times and the duration, the peak acceleration, the
-peak collision force, the delta-V and the PDOF, followed by the CDC, damage
-width and offset, maximum crush and the crush profile measurements.
+##### How a pulse is delimited
+
+The rule that decides where one pulse ends and the next begins is separate from
+the one that fixes the impact and separation times in the Accident History, and
+it is far less sensitive. The two reports can therefore describe the same
+contact differently.
+
+**Start.** A pulse opens on the first timestep at which any point on the vehicle
+carries collision force from that partner. There is no force threshold — any
+non-zero contact force opens the pulse.
+
+**Continuation.** On every timestep that contact persists, a provisional closing
+deadline is set 0.025 seconds ahead. The pulse is closed only once contact has
+been absent continuously until that deadline passes. Because the deadline is
+re-set on each contact timestep it is a rolling one: the pulse survives until a
+full 0.025 seconds have elapsed with no contact at all, however many times
+contact has come and gone before that. If contact resumes before the deadline,
+the vehicle rejoins the pulse already in progress against that partner instead
+of opening a new one.
+
+The intent is that the intermittent contact typical of two vehicles disengaging
+is reported as one collision rather than a string of small ones. The
+consequence is that any contact separated from the previous one by less than
+0.025 seconds is absorbed into it: its impulse contributes to that pulse's PDOF,
+its acceleration to the pulse's delta-V, and the vertices it touches to the
+pulse's CDC, with nothing in the report to show that a distinct contact
+occurred.
+
+> **NOTE:** This matters when the later contact is severe. A secondary strike
+> reaching a third of the peak collision force, occurring twenty milliseconds
+> after contact was lost, is merged into the preceding pulse and appears nowhere
+> as an event of its own. If the trajectory suggests a separate secondary
+> contact, examine the collision force in the Variable Output, Kinetics group
+> rather than relying on the pulse count.
+
+A gap longer than 0.025 seconds does close the pulse, and the next contact opens
+a new one, producing a second row.
+
+**End.** The time in the End column is **not** the time the pulse was closed. It
+is the last timestep at which the vehicle had not been declared separated from
+that partner, using the Accident History criterion described
+[above](#impact-and-separation-times); Length is simply End minus Start. Because
+the collision phase may be entered more than once, the End time follows the last
+contact episode rather than the first separation. The pulse's own closure — 0.025
+seconds after the final contact — governs only whether a later contact starts a
+new row, and is never reported.
+
+**Limits.** Up to ten pulses are tracked for each vehicle; an eleventh ends the
+run with a message. A pulse still open when the run ends is counted as complete
+and a diagnostic message is issued.
 
 **PDOF.** The inter-vehicle collision forces acting on the vehicle are
 accumulated over the pulse, giving the total collision impulse in vehicle-fixed
