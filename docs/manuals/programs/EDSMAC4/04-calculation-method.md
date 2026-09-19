@@ -68,6 +68,48 @@ region, where a vector engages both a side and an end, the two are blended so
 that the crush varies smoothly around the corner rather than switching abruptly
 from one face to the other.
 
+#### Resolving the collision force onto each vehicle
+
+Once a vector pair is in equilibrium, the force carried along it is resolved
+into each vehicle's own frame. The normal force acts along the crush surface,
+and a friction force acts tangentially to it, so in the struck vehicle's frame
+
+$$F_x = F_n\left(\sin\psi_s + \mu_t\cos\psi_s\right),
+  \qquad
+  F_y = F_n\left(\mu_t\sin\psi_s - \cos\psi_s\right)$$
+
+where $F_n$ is the normal force, $\psi_s$ the orientation of the crush surface
+and $\mu_t$ the effective inter-vehicle friction coefficient (the entered value,
+reduced in proportion to sliding speed below the **Minimum Velocity for
+Friction**). The moment about that vehicle's CG follows from the mid-point of
+the vector pair:
+
+$$M_z = -F_x\,\bar{y} + F_y\,\bar{x}$$
+
+The force on the other vehicle is the same force rotated through the relative
+heading of the two vehicles and reversed, so that Newton's third law holds
+exactly at every vector pair rather than only in the sum. Its moment is then
+taken about its own CG using its own vector mid-point — which is why two
+vehicles in the same collision generally see different moments from the same
+force.
+
+#### Restitution
+
+At the end of each timestep every crushed vector is allowed to rebound toward
+its undamaged length. The restitution is a fraction computed from that vector's
+crush depth,
+
+$$e(\delta) = C_0 - C_1\,\delta + C_2\,\delta^2$$
+
+using the three restitution coefficients from the calculation options, and the
+restored length is a blend between the crushed and original lengths:
+
+$$\rho_{Restored} = e\,\rho_{Original} + \left(1 - e\right)\rho_{Crushed}$$
+
+so $e = 0$ leaves the vector fully crushed and $e = 1$ restores it completely.
+Restitution is applied only while the crush depth is below the vertex of the
+parabola, $C_1/2C_2$; beyond that depth the vector does not rebound.
+
 #### Reaching force equilibrium
 
 The forces along a pair of corresponding RHO vectors must be equal and opposite.
@@ -116,6 +158,37 @@ In order to calculate tire forces, EDSMAC4 uses the Fiala tire model [10]. This 
 EDSMAC4 allows the vehicle to accelerate, brake and steer. The attempted acceleration, braking and steering are supplied by the user in tabular form using the Event Editor. It is important to understand these driver controls result in *attempted* forces; the Fiala tire model determines if these forces are sustainable at the tire-road interface and accounts for the condition if the available force is exceeded.
 
 EDSMAC4 models quasi-static longitudinal and lateral load transfers. This is accomplished by applying the current inertial longitudinal and lateral forces at the vehicle's CG elevation, thus producing a pitch and/or roll moment. Lateral load transfer is apportioned to the front and rear axles using the vehicle's roll couple distribution. Roll couple distribution is primarily a function of the front-to-rear lateral stiffness ratio of the front and rear suspensions.
+
+The transfers are computed as follows. Longitudinal transfer is taken about the
+wheelbase and is equal and opposite front to rear:
+
+$$\Delta F_{z,Long} = \frac{h\,m}{L}\left(a_x + g\sin\theta_{Road}\right)$$
+
+where $h$ is the CG height, $L$ the wheelbase and $a_x = \dot u - v r$ the
+vehicle-fixed longitudinal acceleration. Lateral transfer is formed at each axle
+using that axle's share of the roll couple:
+
+$$\Delta F_{z,Lat} = \frac{\gamma\,h\,m}{T}\left(a_y - g\sin\phi_{Road}\right)$$
+
+with $\gamma$ the roll couple distribution at that axle — the entered value at
+the front, its complement at the rear — and $T$ that axle's track width. The
+road pitch and roll terms hold a vehicle statically correct on a grade or a
+superelevated surface.
+
+The axle loads are then split between the two wheels, and divided again where an
+axle is a tandem:
+
+$$F_{z,Left} = \frac{\tfrac{1}{2}F_{z,Axle} - \Delta F_{z,Lat}}{n_{Axles}},
+  \qquad
+  F_{z,Right} = \frac{\tfrac{1}{2}F_{z,Axle} + \Delta F_{z,Lat}}{n_{Axles}}$$
+
+> **NOTE:** A towed unit's lateral transfer is computed differently, and does not use roll couple distribution. A trailer's roll moment is applied through the hitch rather than through its own suspension geometry, so its lateral transfer is formed from the connection force acting at the hitch height together with the inertial term taken about that height. Roll couple distribution entered for a trailer therefore has no effect.
+
+> **NOTE:** The tire forces used in the transfer are those of the **previous** timestep. A load transfer is a consequence of the tire forces, and those forces in turn depend on the transferred load, so the circularity is broken by lagging one of them by a step.
+
+*(updated: earlier editions described the load transfer in prose without giving
+the relationships, and did not mention that towed units are treated
+differently.)*
 
 EDSMAC4's vehicle model allows the user to study vehicles with tandem axles and dual tires.
 

@@ -119,6 +119,21 @@ speed of 1 in/sec, so that a stationary vehicle is not pushed backwards.
 
 > **NOTE:** No aerodynamic side force, lift or moment is computed. The resistance acts along the vehicle's forward axis only.
 
+### Numerical integration
+
+The equations of motion are advanced with a fixed-step method: a fourth-order
+Runge-Kutta start followed by a fixed-step Adams-Moulton predictor-corrector.
+
+> **NOTE:** Unlike EDVDS, EDSVS and EDVTS, which halve the timestep when the predictor and corrector disagree, EDVSM's step is fixed — there is no automatic bisection and no convergence criterion to exceed. A manoeuvre that would cause those programs to subdivide will instead be integrated at the entered timestep, so the Vehicle Trajectory Integration Timestep matters more here. Reduce it and confirm the result is unchanged before relying on a run with rapid transients, curb strikes or large suspension excursions.
+
+### Driver inputs
+
+Steering, braking and throttle come from the driver control tables, or — when
+the **Path Follower** is selected in Driver Controls — from HVE's closed-loop
+driver model, which computes the steering needed to follow the desired path.
+That model is shared across the HVE programs and is described in the HVE User's
+Manual and in reference 9 of this manual, not here.
+
 ### Tire forces
 
 EDVSM carries two separate tire models. A **radial spring model** produces the
