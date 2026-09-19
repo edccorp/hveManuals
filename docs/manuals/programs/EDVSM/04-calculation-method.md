@@ -4,6 +4,194 @@
 
 The vehicle model used by EDVSM was originally developed for the HVOSM. The reader is referred to original program documentation [1-3] for a detailed description of the model. Validation of EDVSM is published in [4].
 
+### Degrees of freedom
+
+EDVSM carries eleven degrees of freedom:
+
+| Group | Count | Description |
+|---|---:|---|
+| Sprung mass | 6 | Three translations and three rotations of the vehicle body |
+| Suspension | 4 | A vertical displacement and a roll rotation at each of the front and rear axles |
+| Steering | 1 | The steer degree of freedom described later in this chapter |
+
+Each wheel additionally carries a spin degree of freedom, advanced separately
+from the main solution.
+
+For a solid axle, the axle's vertical displacement and roll angle combine to
+give the displacement at each wheel:
+
+$$\delta_{Left} = \delta_{Axle} + \frac{T}{2}\,\phi_{Axle},
+  \qquad
+  \delta_{Right} = \delta_{Axle} - \frac{T}{2}\,\phi_{Axle}$$
+
+where $T$ is the track width. For an independent suspension the two wheels are
+uncoupled and each carries its own displacement directly.
+
+### Equations of motion
+
+The six sprung-mass equations and the four suspension equations are coupled
+through the inertia of the vehicle, so they are assembled into a single
+ten-by-ten system and solved together at each timestep:
+
+$$\mathbf{M}\,\ddot{\mathbf{q}} = \mathbf{F}$$
+
+where $\mathbf{M}$ is the generalized mass matrix, rebuilt each timestep because
+it depends on the current suspension displacements and vehicle orientation, and
+$\mathbf{F}$ collects the tire, suspension, aerodynamic and gravitational
+contributions together with the Coriolis and centrifugal terms. The system is
+solved by Gaussian elimination; a singular matrix terminates the run.
+
+The remaining states follow by kinematics rather than by solving equations of
+motion. The vehicle's orientation rates come from the body-fixed angular
+velocities through the standard Euler relations,
+
+$$\dot{\phi} = p + \left(q\sin\phi + r\cos\phi\right)\tan\theta$$
+
+$$\dot{\theta} = q\cos\phi - r\sin\phi$$
+
+$$\dot{\psi} = \left(q\sin\phi + r\cos\phi\right)\sec\theta$$
+
+and the earth-fixed position rates come from resolving the body-fixed velocity
+through the vehicle's direction cosine matrix:
+
+$$\dot{\mathbf{X}} = \mathbf{A}\,\mathbf{u}$$
+
+> **NOTE:** The $\sec\theta$ in the yaw rate is singular at a pitch angle of 90 degrees. This is inherent to the Euler angle sequence and is the reason the model is not suited to extreme pitch attitudes.
+
+*(updated: earlier editions covered only the steering system and referred the
+reader to the HVOSM documentation for everything else.)*
+
+### Suspension forces
+
+The force at each wheel station is the sum of a spring force and a friction
+force. The spring is linear within its free travel and stiffens sharply beyond
+it:
+
+$$F_{Spring} =
+\begin{cases}
+k\,\delta + \lambda\left[k_{e}\left(\delta - \omega_{e}\right) + k'_{e}\left(\delta - \omega_{e}\right)^3\right],
+   & \delta > \omega_{e}\\[6pt]
+k\,\delta,
+   & \omega_{c} \le \delta \le \omega_{e}\\[6pt]
+k\,\delta + \lambda\left[k_{c}\left(\delta - \omega_{c}\right) + k'_{c}\left(\delta - \omega_{c}\right)^3\right],
+   & \delta < \omega_{c}
+\end{cases}$$
+
+where $k$ is the suspension rate, $\omega_{e}$ and $\omega_{c}$ are the
+extension and compression stop displacements, and $k$ and $k'$ with subscripts
+$e$ and $c$ are the linear and cubic rates of the extension and compression
+stops. The cubic term is what gives a stop its progressive feel rather than a
+hard step in rate.
+
+The factor $\lambda$ applies **only to the stop term**, and only while the stop
+is unloading — that is, while the displacement and its rate have opposite signs.
+It is the suspension's stop energy-dissipation factor. Setting it to 1 makes the
+stop perfectly elastic; a value below 1 makes the stop absorb energy, which is
+what a real bump stop does.
+
+Damping is Coulomb rather than viscous:
+
+$$F_{Friction} =
+\begin{cases}
+\dfrac{C_f}{\varepsilon}\,\dot{\delta}, & \left|\dot{\delta}\right| < \varepsilon\\[10pt]
+C_f\,\mathrm{sgn}\,\dot{\delta}, & \left|\dot{\delta}\right| \ge \varepsilon
+\end{cases}$$
+
+where $C_f$ is the Coulomb friction force and $\varepsilon$ the friction
+velocity band. The band exists purely to avoid a discontinuity at zero velocity:
+without it a vehicle standing still would never settle, because the friction
+force would chatter between $\pm C_f$.
+
+> **NOTE:** There is no viscous damper rate in the EDVSM suspension model. All suspension damping comes from the Coulomb friction force and from the stop dissipation factor. A shock absorber's rate must therefore be represented through the Coulomb friction value, which is an approximation — it produces a force independent of velocity rather than proportional to it.
+
+### Aerodynamic and road-load force
+
+A single longitudinal resistance force is applied to the sprung mass, opposing
+forward motion:
+
+$$F_{x} = -\left(C_1\,u\left|u\right| + C_2\,u + C_3\,\mathrm{sgn}\,u\right)$$
+
+where $u$ is the vehicle's forward velocity. The three terms are the
+conventional road-load breakdown: $C_1$ is the aerodynamic drag term, which
+grows with the square of speed; $C_2$ is a velocity-proportional term; and
+$C_3$ is a constant rolling term. The force is applied only above a forward
+speed of 1 in/sec, so that a stationary vehicle is not pushed backwards.
+
+> **NOTE:** No aerodynamic side force, lift or moment is computed. The resistance acts along the vehicle's forward axis only.
+
+### Tire forces
+
+EDVSM carries two separate tire models. A **radial spring model** produces the
+vertical force, and is what allows the vehicle to climb a curb or drop into a
+pothole: the tire is represented as a ring of radial springs, and the vertical
+force is the assembled reaction of every spring in contact with the terrain, so
+the force depends on the shape of the ground beneath the tire and not merely on
+the height of the wheel centre. The spring rate increases beyond a user-entered
+deflection to represent the tire bottoming on its rim.
+
+The **shear forces** — longitudinal and lateral — are computed from the friction
+available at the contact patch.
+
+The longitudinal friction coefficient varies with longitudinal slip, $s$. Below
+the slip at which friction peaks, $s_p$, it rises to the peak value. Above it,
+the coefficient falls along a parabola from the peak value to the sliding value
+at full lock:
+
+$$\mu_x(s) = \mu_{Slide} + \left(\mu_{Peak} - \mu_{Slide}\right)
+             \left(\frac{s - 1}{s_p - 1}\right)^2,
+             \qquad s_p \le s \le 1$$
+
+The parabola is constructed with its vertex at $s = 1$, so the friction curve
+flattens as the wheel approaches full lock rather than continuing to fall.
+
+The longitudinal force is then
+
+$$F_x = -\mu_x\,F_z\,\mathrm{sgn}\,u_{Ground}$$
+
+and the lateral force available is what is left of the friction envelope:
+
+$$F_{s,max} = \sqrt{\left(\mu_y F_z\right)^2 - \varepsilon\,F_x^2},
+  \qquad
+  \varepsilon = \left(\frac{\mu_y}{\mu_x}\right)^2$$
+
+> **NOTE:** This is an *ellipse*, not the friction circle used by EDSMAC, EDSVS and EDVTS. The factor $\varepsilon$ is the squared ratio of the lateral to the longitudinal friction coefficient, so the envelope is circular only where the two coefficients are equal. Where a tire's longitudinal and lateral friction differ — which is the normal case — EDVSM will not give the same combined-slip behaviour as the friction-circle programs for otherwise identical tire data.
+
+The Fiala model is then applied to that remaining capacity through the
+non-dimensional sideslip parameter $\bar\beta$, formed from the tire's cornering
+stiffness, the slip angle and the available lateral force:
+
+$$F_s =
+\begin{cases}
+F_{s,max}\left(\bar\beta - \dfrac{\bar\beta\left|\bar\beta\right|}{3}
+   + \dfrac{\bar\beta^3}{27}\right), & \left|\bar\beta\right| < 3\\[10pt]
+F_{s,max}\,\mathrm{sgn}\,\bar\beta, & \left|\bar\beta\right| \ge 3
+\end{cases}$$
+
+A wheel is flagged as skidding when the Fiala model saturates, or when the
+longitudinal slip passes the peak — in either case only if the vertical load
+exceeds the minimum load for a skidmark, so that a lightly loaded wheel does not
+draw a mark.
+
+A rolling resistance moment opposes wheel rotation once the spin rate exceeds a
+small threshold:
+
+$$M_{Roll} = -C_{RR}\,F_z\,r\,\mathrm{sgn}\,\omega$$
+
+### Wheel spin
+
+Each wheel carries a spin degree of freedom, advanced separately from the main
+ten-by-ten solution. The torque balance at a wheel is
+
+$$I_{Spin}\,\dot\omega = T_{Drive} + T_{Brake} - F_x\,r + M_{Roll}$$
+
+where $T_{Drive}$ is that wheel's share of the axle torque and $r$ is the
+wheel's rolling radius.
+
+> **NOTE:** The two wheels of a driven axle are not independent. The differential couples them, so each wheel's spin acceleration depends on the brake torque, tire force and rolling resistance at **both** wheels of the axle. A wheel that loses traction therefore affects the spin of its partner, which is what allows the model to reproduce one-wheel spin on a split-friction surface.
+
+Brake torques are limited at low wheel speed, so that a nearly stopped wheel
+cannot be driven backwards by its own brake.
+
 ## Steering System
 
 The steering system in EDVSM includes the steering gear ratio (steer angle at the steering wheel divided by the steer angle at the axle). This ratio is used when the *At Steering Wheel* steer table option is selected.
