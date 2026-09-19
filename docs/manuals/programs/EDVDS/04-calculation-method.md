@@ -31,11 +31,11 @@ $$\Sigma F_y = m(\dot{v} + ur - wp)$$
 
 $$\Sigma F_z = m(\dot{w} + uq - vp)$$
 
-$$\Sigma M_x = I_x \dot{p} + qr(I_z - I_y)$$
+$$\Sigma M_x = I_x \dot{p} - I_{xz}\dot{r} + qr(I_z - I_y) - I_{xz}\,pq$$
 
-$$\Sigma M_y = I_y \dot{q} + pr(I_x - I_z)$$
+$$\Sigma M_y = I_y \dot{q} + pr(I_x - I_z) + I_{xz}\left(p^2 - r^2\right)$$
 
-$$\Sigma M_z = I_z \dot{r} + pq(I_y - I_x)$$
+$$\Sigma M_z = I_z \dot{r} - I_{xz}\dot{p} + pq(I_y - I_x) + I_{xz}\,qr$$
 
 where:
 
@@ -46,13 +46,18 @@ where:
 | $u, v, w$ | forward, lateral and vertical velocities (vehicle-fixed components) |
 | $p, q, r$ | roll, pitch and yaw angular velocities (about vehicle-fixed x, y and z axes, respectively) |
 | $\Sigma F_x, \Sigma F_y, \Sigma F_z$ | summation of external forces in the vehicle-fixed x, y and z directions, respectively |
+| $I_{xz}$ | roll-yaw product of inertia |
 | $\Sigma M_x, \Sigma M_y, \Sigma M_z$ | summation of external moments about the vehicle-fixed x, y and z axes, respectively |
+
+> **NOTE:** The roll-yaw product of inertia, $I_{xz}$, is entered in the Vehicle Editor and *is* used. It appears twice in each moment equation — once coupling the roll and yaw accelerations, and once among the gyroscopic terms. For a tractor-semitrailer this is not a refinement that can be ignored: it is the inertial coupling that ties roll motion to yaw motion, and therefore part of what governs rollover and trailer sway. Earlier editions of this chapter gave the moment equations in their principal-axes form, with $I_{xz}$ absent.
+
+*(updated: the moment equations above previously omitted all product-of-inertia terms.)*
 
 The equations of motion for each axle are
 
-$$\Sigma F_u = m_u \ddot{z}_{axle}$$
+$$\Sigma F_{z,u} = m_u \ddot{z}_{axle}$$
 
-$$\Sigma M_u = I_{x,u} \ddot{\phi}$$
+$$\Sigma M_{x,u} = I_{x,u} \ddot{\phi}$$
 
 where:
 
@@ -76,6 +81,37 @@ where:
 | $I_w$ | wheel total spin inertia (including tire, rim and rotating brake components) |
 | $\Omega$ | wheel rotational displacement about spin axis |
 | $\Sigma M_w$ | summation of moments acting about the vehicle-fixed wheel spin axis |
+
+### How the equations are actually solved
+
+The equations above are written one group at a time for clarity, but they are
+not solved that way. The sprung-mass degrees of freedom and every axle degree
+of freedom are assembled into a **single coupled system** and solved
+simultaneously at each timestep:
+
+$$\mathbf{M}\,\ddot{\mathbf{q}} = \mathbf{Q}$$
+
+Two properties of that system are worth understanding, because neither is
+visible in the equations as written above.
+
+**The mass matrix is not diagonal.** Besides the roll-yaw coupling through
+$I_{xz}$, each axle's vertical and roll acceleration is inertially coupled to
+the sprung mass's lateral, roll and yaw accelerations, through the axle's mass
+and its position relative to the vehicle CG. Moving an axle vertically therefore
+produces a moment on the sprung mass directly, independently of any suspension
+force.
+
+**The inertia terms are rebuilt every timestep.** The total mass carried in the
+translational equations is the sprung mass **plus** every unsprung mass, and the
+rotational inertias carry each unsprung mass's parallel-axis contribution
+evaluated at that axle's *current* displacement. Because the axles move, the
+vehicle's effective inertia changes during the run. The axles also generate a
+roll-yaw product of inertia of their own, from being both fore or aft of the CG
+and above or below it, which adds to the vehicle's entered $I_{xz}$.
+
+*(updated: earlier editions presented the sprung mass, axle and wheel spin
+equations as three independent sets and did not state that they are solved as
+one coupled system, nor that the inertia terms vary with axle position.)*
 
 EDVDS solves these equations of motion at discrete time intervals (specified by the vehicle trajectory integration timestep, see HVE User's Manual, Simulation Controls). The current accelerations are integrated, using numerical integration, to predict velocity and position at the start of the next timestep. EDVDS uses *Hamming's Modified Predictor-Corrector* integration method [22]. Use of a predictor-corrector method helps to ensure stable results. A predictor-corrector method estimates the future position and velocity based on the current acceleration history, and then, once they are calculated, compares the predicted results with the calculated results. If the error is too large (as defined by the user-entered Velocity Convergence Criterion; see Simulation Controls), the integration timestep is halved and the equations of motion are re-executed until a stable solution is found (or until the number of re-executions exceeds the user-entered value for Maximum Bisections, causing the run to terminate; see Simulation Controls).
 
