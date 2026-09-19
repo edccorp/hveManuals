@@ -20,3 +20,13 @@
   max-width: 420px;
   margin: 0.5rem auto 1.5rem;
 }
+
+/* MathJax SVG output.
+   Material's display-equation rules assume CHTML output and set
+   width:min-content on the container; with SVG output that collapses the
+   <svg> to zero width, leaving a correctly sized but empty gap. Inline math
+   is unaffected because those rules are scoped to div.arithmatex. */
+.md-typeset div.arithmatex > mjx-container {
+  width: auto !important;
+  min-width: 0;
+}
