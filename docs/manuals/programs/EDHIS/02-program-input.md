@@ -187,7 +187,7 @@ Inertial parameters are not used by EDHIS. The vehicle's motion is supplied by a
 | Contact Surface Cubic Stiffness | Third-order stiffness of the ellipsoid vs contact surface pair |
 | Contact Surface Damping Constant | Velocity-dependent damping properties between the ellipsoid and contact surface |
 | Contact Surface Maximum Penetration | Determines if the ellipsoid is approaching the surface from the back side (see Corner Coordinates, above). If the ellipsoid surface is initially behind the contact surface and the distance is greater than this value, it is assumed the ellipsoid is not contacting the surface and no force calculations are performed |
-| Contact Surface Maximum Force | If the current force exceeds this value, the surface begins to unload |
+| Contact Surface Maximum Force | The force is not allowed to exceed this value. Once it is reached the surface is saturated, and when the penetration begins to reverse the force falls along the unloading slope rather than back down the loading curve, leaving a permanent deformation. Leave this and the unloading slope unentered for a fully elastic surface |
 | Contact Surface Edge Constant | Determines the fraction of contact force if a portion of the ellipsoid lies outside the boundary of the contact plane |
 | Contact Surface Unloading Slope | The linear elastic property during unloading |
 
@@ -227,7 +227,7 @@ A belt restraint system may be supplied for up to nine seat positions. Although 
 | Belt Quadratic Stretch Rate | Second-order stretch rate of the belt material |
 | Belt Cubic Stretch Rate | Third-order stretch rate of the belt material |
 | Belt Damping Constant | Velocity-dependent contribution |
-| Belt Breaking Strength | Maximum strength of the belt material. If the current force exceeds this value, it is set to zero |
+| Belt Breaking Strength | Maximum strength of the belt material. The tension is held at this value once reached; when the belt then begins to shorten it unloads along the entered unloading slope, so the belt is left permanently stretched. *(updated: the original manual said the force is set to zero at this point; the current release holds it at the entered value and unloads along the slope.)* |
 | Belt Unloading Slope | Linear elastic property during unloading (should be greater than the loading rate) |
 
 #### Airbag Restraints
@@ -252,7 +252,7 @@ An airbag restraint system may be supplied for up to nine seat positions. Like b
 | Bag Vent Discharge Coef | Thermodynamic discharge coefficient of vent |
 | Bag Discharge Vent Area | Area of the vent |
 | Bag Vent Opening Pressure | Pressure required to open the vent |
-| Bag Penetration For Force | Minimum deflection of an ellipsoid into the airbag required to produce a force |
+| Bag Penetration For Force | Depth of penetration into the airbag over which the bag force is faded in. At shallower depths the force is reduced in proportion to the depth, reaching full value at this penetration *(updated: the original manual described this as a minimum depth below which no force is produced)* |
 | Force Convergence Criterion | Allowable difference between force on airbag and force on human |
 | Bag Elastic Modulus | Elastic modulus of the airbag membrane during force application |
 | Bag Elastic Modulus on Rebound | Elastic modulus of the airbag during unloading |
@@ -492,8 +492,10 @@ EDHIS uses the current simulation control parameters in the Simulation Controls 
 | Maximum Simulation Time | The length of the run |
 | Maximum Bisections | The number of times the normal integration timestep may be halved in order to achieve velocity convergence, typically between 8 and 12 |
 | Velocity Convergence | The maximum error allowed between the predicted and actual velocity values |
-| Velocity Change Limit | The maximum velocity change during one integration timestep (if set to zero, this test is ignored) |
-| Acceleration Change Limit | The maximum acceleration change during one integration timestep (if set to zero, this test is ignored) |
+| Velocity Change Limit | An additional stability test on the integration; if it is exceeded, the timestep is halved and the step retried rather than the run being stopped (if set to zero, this test is ignored). See the note below |
+| Acceleration Change Limit | A second stability test of the same kind, also acting by halving the timestep (if set to zero, this test is ignored). See the note below |
+
+> **NOTE:** The two change limits are described in [Chapter 4](04-calculation-method.md#the-two-change-limits), where the quantity each one is actually compared against is given. They do not behave as their names imply: the quantity tested against the *Acceleration Change Limit* is a velocity change over the step, and the quantity tested against the *Velocity Change Limit* is a measure of how far the acceleration is departing from a smooth extrapolation. Treat both as stability tolerances to be tightened or loosened by trial, not as physical limits in the units their names suggest. Both default to being tested; entering zero for either turns that test off.
 
 #### EDHIS Calculation Options
 

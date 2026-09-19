@@ -12,7 +12,7 @@ Errors issued by EDHIS appear in the EDHIS output and may be one of three types:
 
 All messages issued by EDHIS are listed below. Each message includes a description or nature of the cause, the level of the message (Informative, Diagnostic or Fatal), and the recommended action to eliminate the problem. If you receive an error message not listed below, first check to see if it is an HVE or operating system message by referring to the HVE Appendix or your computer's operating system manual. If the message is not listed in either place, please contact EDC immediately with the offending error message and the input file that caused the error.
 
-*(updated: this list has been checked against, and extended from, the messages issued by the current release. Messages 10 and 14–19 below are issued by the current release but were not listed in the original manual.)*
+*(updated: this list has been checked against, and extended from, the messages carried by the current release. Messages 14–19 below are carried by the current release but were not listed in the original manual. Several entries are marked **not issued by the current release** — the text is still present in the program, but no condition in the current engine produces it. They are kept here so that a message seen in an older run can still be looked up.)*
 
 ---
 
@@ -66,19 +66,19 @@ No messages were produced; no action is necessary.
 
 *The simulation was terminated because a problem was encountered calculating an airbag force.*
 
-(Level 1 - Fatal)
+(Level 1 - Fatal) *(updated: **not issued by the current release.** An airbag problem now produces one of the two airbag shut-off messages at the end of this chapter instead, and the run continues without the bag.)*
 
 ---
 
 *The simulation was terminated because the selected integration timestep was too large. Reduce the value to 0.001 sec or less (Simulation Controls dialog, Human Collision Integration Timestep).*
 
-(Level 1 - Fatal)
+(Level 1 - Fatal) *(updated: **not issued by the current release.** A timestep that is too large is now handled by the automatic halving described in [Chapter 4](04-calculation-method.md#numerical-integration); if it cannot be made to converge the run ends with an Integration Error instead.)*
 
 ---
 
 *The simulation was terminated because the Get Surface Information terrain search failed.*
 
-(Level 1 - Fatal) *(updated: issued by the current release; not listed in the original manual)*
+(Level 1 - Fatal) *(updated: **not issued by the current release**; not listed in the original manual either.)*
 
 ---
 
@@ -90,13 +90,13 @@ No messages were produced; no action is necessary.
 
 ***Integration Error*** *The velocity change for one integration timestep was greater than the user-entered maximum (see Simulation Controls dialog, Max Velocity Change). NOTE: This check may be turned off by setting Max Velocity Change equal to 0.0.*
 
-(Level 1 - Fatal)
+(Level 1 - Fatal) *(updated: **not issued by the current release.** The Velocity Change Limit is still tested, but exceeding it halves the timestep and retries the step rather than terminating the run — see [Chapter 4](04-calculation-method.md#the-two-change-limits).)*
 
 ---
 
 ***Integration Error*** *The acceleration change for one integration timestep was greater than the user-entered maximum (see Simulation Controls dialog, Max Acceleration Change). NOTE: This check may be turned off by setting Max Acceleration Change equal to 0.0.*
 
-(Level 1 - Fatal)
+(Level 1 - Fatal) *(updated: **not issued by the current release**, for the same reason as the message above — the limit halves the timestep rather than stopping the run.)*
 
 ---
 
@@ -108,19 +108,19 @@ No messages were produced; no action is necessary.
 
 *Torso Restraint System Failure!*
 
-(Informative — the torso belt force exceeded the belt breaking strength and the belt failed) *(updated: present in current code; not listed in original manual)*
+(Informative — the torso belt force exceeded the belt breaking strength and the belt failed) *(updated: **not issued by the current release.** The text is present but no condition produces it. Exceeding the breaking strength now holds the tension at that value and unloads along the entered slope; the belt does not break. Check the belt tension in the Variable Output against the entered breaking strength to see whether the belt would have failed.)*
 
 ---
 
 *Lap Restraint System Failure!*
 
-(Informative — the lap belt force exceeded the belt breaking strength and the belt failed) *(updated: present in current code; not listed in original manual)*
+(Informative — the lap belt force exceeded the belt breaking strength and the belt failed) *(updated: **not issued by the current release**, for the same reason as the message above.)*
 
 ---
 
 *An Ellipsoid vs Contact Surface force exceeded the maximum allowable force.*
 
-(Informative — the contact surface begins to unload; see Contact Surface Maximum Force in Table 2-3) *(updated: present in current code; not listed in original manual)*
+(Informative — the contact surface saturates and then unloads along the entered slope; see Contact Surface Maximum Force in Table 2-3) *(updated: **not issued by the current release.** The saturation and unloading still occur; only the message is silent, so compare the contact forces in the Variable Output against the entered maximum force to see which surfaces saturated.)*
 
 ---
 
