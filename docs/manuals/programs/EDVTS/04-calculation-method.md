@@ -35,9 +35,55 @@ where:
 | $\Sigma M_z$ | summation of external moments about the z-axis |
 | $\Sigma M_{z,conn}$ | summation of external moments about the connection z-axis |
 
-EDVTS solves these equations of motion at discrete time intervals (specified by the vehicle trajectory integration timestep, see User's Manual, Simulation Controls). The current accelerations are integrated, using numerical integration, to predict velocity and position at the start of the next timestep. EDVTS uses a *predictor-corrector* integration method that helps to ensure stable results. A predictor-corrector method estimates the future position and velocity based on the current acceleration history, and then, once they are calculated, compares the predicted results with the calculated results.
+EDVTS solves these equations of motion at discrete time intervals (specified by the vehicle trajectory integration timestep, see User's Manual, Simulation Controls). The current accelerations are integrated, using numerical integration, to predict velocity and position at the start of the next timestep. EDVTS uses **Hamming's modified predictor-corrector** method, which helps to ensure stable results. Where the predicted and corrected values disagree by more than the Velocity Convergence Criterion, the integration timestep is halved and the step retried; exceeding the Maximum Bisections terminates the run (see Simulation Controls). A predictor-corrector method estimates the future position and velocity based on the current acceleration history, and then, once they are calculated, compares the predicted results with the calculated results.
 
 There are no degrees of freedom (and hence no equations of motion) for vertical motion, or pitch or roll rotation. Therefore, suspension dynamics cannot be studied directly. However, EDVTS considers the suspension as it affects tire forces by calculating the *roll couple distribution* (the ratio of lateral load transferred at the front and rear suspensions during cornering). The CG elevation above ground is used in conjunction with longitudinal and lateral accelerations to compute quasi-static load transfers due to pitch and roll, respectively.
+
+
+### Load transfer
+
+EDVTS has no vertical, pitch or roll degree of freedom, so load transfer is
+computed quasi-statically from the current accelerations and applied as a change
+in vertical force at each wheel. The transfers sum to zero — load is moved
+between wheels, never added.
+
+**Lateral** transfer is apportioned between the axles by the roll couple
+distribution:
+
+$$\Delta F_{z,Lat} = \frac{\gamma\,h\,m}{T}\left(a_y - g\sin\phi_{Road}\right)$$
+
+where $\gamma$ is the fraction of the roll couple carried by that axle, $h$ the
+CG height, $T$ the track width at that axle, and $a_y = \dot v + u r$ the
+vehicle-fixed lateral acceleration. The road roll angle term removes the
+component of gravity acting across a superelevated surface, so a vehicle
+standing on a banked road carries the correct static crossfall load without any
+lateral acceleration.
+
+**Longitudinal** transfer is taken about the wheelbase:
+
+$$\Delta F_{z,Long} = \frac{-m\left(a_x + g\sin\theta_{Road}\right)h
+   + \gamma_{T}\,\ell_{T}\sum F_{x,Rear}}{2\left(a + b\right)}$$
+
+where $a_x = \dot u - v r$, $a$ and $b$ are the CG distances to the front and
+rear axles, and the final term is the inter-tandem transfer: $\gamma_T$ is the
+inter-tandem load transfer coefficient entered with the suspension, $\ell_T$ the
+spacing between the tandem axles, and the sum is the longitudinal force at the
+rear wheels. For a vehicle without tandem axles the coefficient is zero and the
+term vanishes.
+
+Where tandem axles are present, the rear-axle share of both transfers is split
+equally between the two tandem axles before the inter-tandem term is applied.
+
+> **NOTE:** The accelerations used are those from the **previous** timestep, not the current one. This is inherent to a quasi-static treatment computed alongside the tire forces that produce it — the load transfer at any instant reflects the acceleration that has just occurred. At normal timesteps the difference is immaterial, but it is one reason a very coarse timestep degrades results in hard transient manoeuvres.
+
+Because EDVTS simulates a tow vehicle and trailer, both transfers additionally
+carry the forces at the hitch. The lateral transfer on each tow-vehicle axle
+includes a term in the lateral connection force acting at the hitch height, and
+the longitudinal transfer includes both the longitudinal connection force and a
+**vertical** load transfer through the hitch, which moves load between the tow
+vehicle and the trailer as the combination accelerates, brakes or rolls. The
+trailer axle transfers are formed the same way from the connection forces
+resolved into the trailer's own frame.
 
 ### Tire Forces
 
