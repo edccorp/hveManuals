@@ -389,9 +389,9 @@ contact and relaxes again afterwards, without the output interval drifting.
 
 ### The two change limits
 
-Before the corrector is even evaluated, two further tests are applied. Either
-one, if failed, halves the timestep and retries the step in exactly the same way
-as a convergence failure; neither one stops the run.
+Before the corrector is evaluated, two further stability tests are applied.
+Either one, if failed, halves the timestep and retries the step in exactly the
+same way as a convergence failure; neither one stops the run.
 
 The first compares the velocity change implied by the current accelerations
 over the current step against the **Acceleration Change Limit**:
@@ -412,7 +412,7 @@ that is, both the absolute departure and its size relative to the accelerations
 themselves must exceed the **Velocity Change Limit**. Entering zero for either
 limit turns that test off.
 
-> **NOTE:** As the equations above show, the two limits are attached to the opposite quantities from the ones their names suggest — the *Acceleration Change Limit* is tested against a velocity change and the *Velocity Change Limit* against an acceleration departure. This has been so since the original implementation and is preserved for consistency of results. In practice both are stability tolerances: tighten them if a run shows a sudden unphysical jump, loosen them if the timestep is being driven down without benefit, and do not attempt to read either as a physical limit in the units its name implies.
+> **NOTE:** Both parameters are stability tolerances rather than physical limits, and the quantity each is compared against — given by the equations above — is not the one its name would suggest. Use the equations, not the names, when choosing values: tighten a limit if a run shows a sudden unphysical jump, and loosen it if the timestep is being driven down without benefit.
 
 ## Injury Measures
 

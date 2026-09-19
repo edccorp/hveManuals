@@ -227,7 +227,7 @@ A belt restraint system may be supplied for up to nine seat positions. Although 
 | Belt Quadratic Stretch Rate | Second-order stretch rate of the belt material |
 | Belt Cubic Stretch Rate | Third-order stretch rate of the belt material |
 | Belt Damping Constant | Velocity-dependent contribution |
-| Belt Breaking Strength | Maximum strength of the belt material. The tension is held at this value once reached; when the belt then begins to shorten it unloads along the entered unloading slope, so the belt is left permanently stretched. *(updated: the original manual said the force is set to zero at this point; the current release holds it at the entered value and unloads along the slope.)* |
+| Belt Breaking Strength | Maximum strength of the belt material, acting as a limit on the tension. Once reached, the tension is held at this value; when the belt then begins to shorten it unloads along the entered unloading slope, leaving it permanently stretched. *(updated: belt rupture is not modelled — compare the belt tension in the Variable Output against this value to judge whether a belt would have failed)* |
 | Belt Unloading Slope | Linear elastic property during unloading (should be greater than the loading rate) |
 
 #### Airbag Restraints
@@ -252,7 +252,7 @@ An airbag restraint system may be supplied for up to nine seat positions. Like b
 | Bag Vent Discharge Coef | Thermodynamic discharge coefficient of vent |
 | Bag Discharge Vent Area | Area of the vent |
 | Bag Vent Opening Pressure | Pressure required to open the vent |
-| Bag Penetration For Force | Depth of penetration into the airbag over which the bag force is faded in. At shallower depths the force is reduced in proportion to the depth, reaching full value at this penetration *(updated: the original manual described this as a minimum depth below which no force is produced)* |
+| Bag Penetration For Force | Depth of penetration into the airbag over which the bag force is faded in. At shallower depths the force is reduced in proportion to the depth, reaching its full value at this penetration |
 | Force Convergence Criterion | Allowable difference between force on airbag and force on human |
 | Bag Elastic Modulus | Elastic modulus of the airbag membrane during force application |
 | Bag Elastic Modulus on Rebound | Elastic modulus of the airbag during unloading |
@@ -495,7 +495,7 @@ EDHIS uses the current simulation control parameters in the Simulation Controls 
 | Velocity Change Limit | An additional stability test on the integration; if it is exceeded, the timestep is halved and the step retried rather than the run being stopped (if set to zero, this test is ignored). See the note below |
 | Acceleration Change Limit | A second stability test of the same kind, also acting by halving the timestep (if set to zero, this test is ignored). See the note below |
 
-> **NOTE:** The two change limits are described in [Chapter 4](04-calculation-method.md#the-two-change-limits), where the quantity each one is actually compared against is given. They do not behave as their names imply: the quantity tested against the *Acceleration Change Limit* is a velocity change over the step, and the quantity tested against the *Velocity Change Limit* is a measure of how far the acceleration is departing from a smooth extrapolation. Treat both as stability tolerances to be tightened or loosened by trial, not as physical limits in the units their names suggest. Both default to being tested; entering zero for either turns that test off.
+> **NOTE:** Both are stability tolerances rather than physical limits, and the quantity each is compared against is not the one its name would suggest — [Chapter 4](04-calculation-method.md#the-two-change-limits) gives both. Choose values from those relationships rather than from the parameter names, by trial on the case at hand. Entering zero for either turns that test off.
 
 #### EDHIS Calculation Options
 
