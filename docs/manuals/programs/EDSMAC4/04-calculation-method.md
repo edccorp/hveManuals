@@ -45,6 +45,64 @@ The EDSMAC4 collision model is described in detail in reference 23.
 
 During the collision phase, each vehicle's crush perimeter is described by a set of radial RHO vectors extending from the CG to the vehicle exterior, spaced at the user-entered **Vector Spacing** angle (default 2 degrees). When the perimeters of two vehicles overlap, the collision calculation iteratively adjusts the lengths of corresponding RHO vectors, in steps of the **Vector Adjustment Increment**, until force equilibrium between the two vehicles is achieved within the **Vector Force Tolerance**. Collision forces are computed from the A and B stiffness coefficients of the crushed surfaces; friction forces tangent to the crush surface are computed using the inter-vehicle friction coefficient (set per vehicle pair in the Vehicle Mesh dialog), reduced linearly below the **Minimum Velocity for Friction**. Restitution is applied using the parametric model with coefficients $C_0$, $C_1$ and $C_2$. *(See references 21–23 for the full derivation.)*
 
+#### The crush-force relationship
+
+Along each RHO vector the crush force per unit width — the *pressure*, in the
+sense used by the collision model — follows the vehicle's A and B stiffness
+coefficients for the surface engaged:
+
+$$p =
+\begin{cases}
+A + B\left(C - C_0\right), & C > C_0\\[6pt]
+A\,\dfrac{C}{C_0}, & C \le C_0
+\end{cases}$$
+
+where $C$ is the crush depth along that vector and $C_0$ is a small
+initial-crush threshold of 0.5 in.
+
+> **NOTE:** The second branch matters more than its size suggests. The A coefficient is the force needed to *begin* producing damage, so the unmodified relationship would jump from zero to A the instant contact occurred. Ramping linearly up to A over the first half inch removes that step, which would otherwise appear as a spike in the collision force at first contact.
+
+Crush is taken along the vector's deformation components. Where the vector
+engages a single face it is the deformation normal to that face; in the corner
+region, where a vector engages both a side and an end, the two are blended so
+that the crush varies smoothly around the corner rather than switching abruptly
+from one face to the other.
+
+#### Reaching force equilibrium
+
+The forces along a pair of corresponding RHO vectors must be equal and opposite.
+They are made so by iteration. At each pair, the two pressures are compared, and
+while
+
+$$p_j - p_i > \lambda$$
+
+— where $\lambda$ is the **Vector Force Tolerance** — both vectors are shortened
+and the pressures recomputed. The iteration stops as soon as the difference
+falls within the tolerance.
+
+The amount by which the vectors are shortened depends on how well matched the
+two vehicles are:
+
+- **Comparable stiffnesses** — a single **Vector Adjustment Increment**,
+  $\Delta\rho$, per pass.
+- **Stiffnesses differing by more than a factor of two** — a single increment
+  would converge far too slowly, so the program estimates how many increments
+  are needed from the combined stiffness of the pair and jumps most of the way
+  in one step:
+
+$$\Delta = \left(\left\lfloor
+   \frac{p_j - p_i}{\left(B_i + B_j\right)\Delta\rho}
+   \right\rfloor + \tfrac{1}{2}\right)\Delta\rho$$
+
+- **Either vehicle still below the initial-crush threshold** — the increment is
+  reduced to 5% of $\Delta\rho$, because the pressure is changing rapidly along
+  the ramp described above and a full increment would overshoot. The same
+  estimate is used where the A coefficients differ by more than a factor of two.
+
+Up to 3200 adjustments are allowed at a vector pair. Exceeding that is a fatal
+error, and it means the tolerance is too tight for the stiffnesses and increment
+in use — see the guidance under [Chapter 6](06-messages.md).
+
 ### Trajectory Phase
 
 All of the external forces applied to the vehicle which direct its motion during the pre- and post-impact phases are applied at the tires.

@@ -79,6 +79,41 @@ $$\rho_{Restored} = e(\delta)\,\rho_{Original} + \left(1 - e(\delta)\right)\rho_
 
 so $e = 0$ leaves the vector fully crushed and $e = 1$ restores it completely.
 
+#### The crush-force relationship and force equilibrium
+
+Along each RHO vector the crush force per unit width — the *pressure*, in the
+sense used by the collision model — is simply the crush stiffness times the
+crush depth:
+
+$$p = K_v\,C$$
+
+which is the linear spring described above, passing through the origin. Where a
+vector engages a single face, $C$ is the deformation normal to that face; in the
+corner region, where a vector engages both a side and an end, the two components
+are blended so that the crush varies smoothly around the corner.
+
+The forces along a pair of corresponding vectors must be equal and opposite, and
+they are made so by iteration. While the difference between the two pressures
+exceeds the **Max Pressure Error**, $\lambda$, both vectors are shortened and
+the pressures recomputed. The amount by which they are shortened is normally a
+single **Vector Adjustment Increment**, $\Delta\rho$. Where the two vehicles'
+crush stiffnesses differ by more than a factor of two, a single increment would
+converge far too slowly, so the program instead estimates how many increments
+are needed from the combined stiffness of the pair and jumps most of the way in
+one step:
+
+$$\Delta = \left(\left\lfloor
+   \frac{p_j - p_i}{\left(K_{v,i} + K_{v,j}\right)\Delta\rho}
+   \right\rfloor + \tfrac{1}{2}\right)\Delta\rho$$
+
+Up to 200 adjustments are allowed at a vector pair; exceeding that is a fatal
+error. This is the mechanism behind the requirement stated above that
+$\lambda > K_v\,\Delta\rho$: if the tolerance is smaller than the pressure change
+one increment produces, no vector length exists at which the test can succeed,
+and the iteration runs to its limit no matter how many passes are allowed.
+
+> **NOTE:** EDSMAC4 allows 3200 adjustments at a vector pair and raises the tolerance automatically when it is too small. EDSMAC does neither, which is why the choice of Max Pressure Error matters more here.
+
 Restitution is not computed for **J-points** — points on the damage profile that
 could not be established from the vehicle's own radial vector and had to be
 constructed from the other vehicle's CG instead. These points are marked with a
