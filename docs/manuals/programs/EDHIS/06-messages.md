@@ -102,7 +102,7 @@ No messages were produced; no action is necessary.
 
 *NOTE: The number of peaks exceeded the available number of peaks in the Injury Tolerance.*
 
-(Informative) *(updated: present in current code; not listed in original manual)*
+(Informative) *(updated: issued by the current release; not listed in the original manual)*
 
 ---
 
@@ -126,13 +126,13 @@ No messages were produced; no action is necessary.
 
 *The airbag model was turned off because pressure became negative. Check the Vehicle Data Report (see Airbag) for more information.*
 
-(Informative) *(updated: present in current code; not listed in original manual)*
+(Informative) *(updated: issued by the current release; not listed in the original manual)*
 
 ---
 
 *The airbag model was turned off because it became unstable. Check the Vehicle Data Report (see Airbag) for more information.*
 
-(Informative) *(updated: present in current code; not listed in original manual)*
+(Informative) *(updated: issued by the current release; not listed in the original manual)*
 
 ---
 *Previous: [Chapter 5 — EDHIS Tutorial](05-tutorial.md) | Next: [Chapter 7 — References](07-references.md)*

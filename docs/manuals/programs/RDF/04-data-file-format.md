@@ -48,7 +48,7 @@ If the value for Number of Axles is set to zero for any vehicle there will not b
 
 Human data is entered relative to the vehicle-fixed coordinate system.
 
-*(updated — order of values within a data line: each vehicle line is read as `X Y Z Yaw Pitch Roll`; internally the program reorders the angles to roll-pitch-yaw for HVE. Each time block consists of the time value followed by, for each vehicle in order: one vehicle line, then the tire lines (2 or 10 values each) for each axle, right side then left side; then, for each human: the 6-value pelvis line and 14 joint lines. The total number of data items per time block is limited to 100. Do not use commas or tabs — every value is read with a whitespace-delimited numeric read, and a non-numeric token ends the run as if the end of file had been reached.)*
+*(updated — order of values within a data line: each vehicle line is `X Y Z Yaw Pitch Roll`. Each time block consists of the time value followed by, for each vehicle in order: one vehicle line, then the tire lines (2 or 10 values each) for each axle, right side then left side; then, for each human: the 6-value pelvis line and 14 joint lines. The total number of data items per time block is limited to 100. Do not use commas or tabs: any entry that is not a number is treated as the end of the file, and the event stops at that point.)*
 
 ## Examples
 
@@ -163,12 +163,23 @@ Line by line: line 1 = 2D tire data key; line 2 = number of vehicles = 2; line 3
 
 Example 4 is a complex example with two vehicles (a truck with a blinker), two axles on the first vehicle, zero axles on the blinker object. Using only the 2D tire data, only the steer angle and skid flag are used. For simplicity in this example the skid flags will be set to zero. All motion for the first vehicle is relative to the world-fixed coordinate system while the motion for the blinker object is relative to the first vehicle.
 
-![Table Ex-4](images/p12-tableEx4.png)
-*Table Ex-4: Example 4 data set. It lists five time entries; the first vehicle drives forward with steer inputs on axle 1, while the blinker object's X position relative to the first vehicle alternates between a location hidden inside the truck geometry and a location aft of it, with annotations "(Blinker hidden)" / "(Blinker shown)" at alternating times to make the blinker flash. (The source scan limits the legibility of individual digits.)*
+The position and steer data are shown in Table Ex-4.
+
+**Table Ex-4: Example 4 data set** *(positions in feet, angles in degrees; the blinker's values are relative to vehicle 1)*
+
+| Time (sec) | Veh 1 X | Veh 1 Y | Veh 1 Z | Veh 1 Yaw | Veh 1 Pitch | Veh 1 Roll | Axle 1 steer R/L | Axle 2 steer R/L | Blinker X | Blinker Y | Blinker Z | Blinker Yaw, Pitch, Roll | |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 0.00 | 10.0 | 5.2 | -2.1 | 90.0 | 0.0 | 0.0 | 5.0 / 5.0 | 0.0 / 0.0 | -10.5 | 2.5 | 0.5 | 0.0, 0.0, 0.0 | Blinker hidden |
+| 1.00 | 10.0 | 15.2 | -2.1 | 90.0 | 0.0 | 0.0 | 5.0 / 5.0 | 0.0 / 0.0 | -10.5 | 2.5 | 0.5 | 0.0, 0.0, 0.0 | Blinker hidden |
+| 1.01 | 10.0 | 15.3 | -2.1 | 90.0 | 0.0 | 0.0 | 5.0 / 5.0 | 0.0 / 0.0 | -10.7 | 2.5 | 0.5 | 0.0, 0.0, 0.0 | Blinker shown |
+| 2.00 | 10.0 | 25.2 | -2.1 | 90.0 | 0.0 | 0.0 | 0.0 / 0.0 | 0.0 / 0.0 | -10.7 | 2.5 | 0.5 | 0.0, 0.0, 0.0 | Blinker shown |
+| 2.01 | 10.0 | 25.3 | -2.1 | 90.0 | 0.0 | 0.0 | 0.0 / 0.0 | 0.0 / 0.0 | -10.5 | 2.5 | 0.5 | 0.0, 0.0, 0.0 | Blinker hidden |
 
 In this case the second vehicle should be of "type" Fixed Barrier so that no tires are shown. The geometry file should be a small disc or other shape of the correct size for a blinker. The blinker color should be set correctly and the emissiveColor parameter should be set in the geometry file. Essentially, the motion file "hides" the blinker inside the vehicle geometry, then moves it rearward (relative to the parent vehicle) very quickly.
 
-The header portion of the Example 4 data file has the following structure (note that because relative motion is used, the file must be version 3.5 or later so that the parent-object line is present):
+The data file for Example 4 is shown in Figure Ex-4. Because relative motion is used, the file must be version 3.5 or later so that the parent-object line is present.
+
+**Figure Ex-4: Data file for Example 4**
 
 ```
 Version 3.500
@@ -177,17 +188,53 @@ Version 3.500
 0 1
 2 0
 0
+0.0
+   120.0   62.4  -25.2  90.0  0.0  0.0
+   5.0  0
+   5.0  0
+   0.0  0
+   0.0  0
+  -126.0   30.0    6.0   0.0  0.0  0.0
+1.0
+   120.0  182.4  -25.2  90.0  0.0  0.0
+   5.0  0
+   5.0  0
+   0.0  0
+   0.0  0
+  -126.0   30.0    6.0   0.0  0.0  0.0
+1.01
+   120.0  183.6  -25.2  90.0  0.0  0.0
+   5.0  0
+   5.0  0
+   0.0  0
+   0.0  0
+  -128.4   30.0    6.0   0.0  0.0  0.0
+2.0
+   120.0  302.4  -25.2  90.0  0.0  0.0
+   0.0  0
+   0.0  0
+   0.0  0
+   0.0  0
+  -128.4   30.0    6.0   0.0  0.0  0.0
+2.01
+   120.0  303.6  -25.2  90.0  0.0  0.0
+   0.0  0
+   0.0  0
+   0.0  0
+   0.0  0
+  -126.0   30.0    6.0   0.0  0.0  0.0
 ```
 
-Line by line: line 1 = version number; line 2 = 2D tire data; line 3 = number of vehicles = 2; line 4 = parent objects (vehicle 1 relative to the world, vehicle 2 — the blinker — relative to vehicle 1); line 5 = number of axles = 2 and 0; line 6 = number of humans = 0. Each of the five time entries is then followed by: the position/orientation line for vehicle 1, four steer-and-skid-flag lines (axles 1 and 2, right then left sides), and the position/orientation line for the blinker object relative to vehicle 1. Because the blinker has zero axles, no tire lines follow it.
+Line by line: line 1 = version number; line 2 = 2D tire data; line 3 = number of vehicles = 2; line 4 = parent objects (vehicle 1 relative to the world, vehicle 2 — the blinker — relative to vehicle 1); line 5 = number of axles = 2 and 0; line 6 = number of humans = 0. Each of the five time entries is then followed by the position/orientation line for vehicle 1, its four steer-and-skid-flag lines (axle 1 right side, axle 1 left side, axle 2 right side, axle 2 left side), and the position/orientation line for the blinker relative to vehicle 1. Because the blinker has zero axles, no tire lines follow it.
 
-![Figure Ex-4](images/p13-figEx4.png)
-*Figure Ex-4: Data file for Example 4 — the complete annotated five-time-block listing. (The source scan is too degraded to reproduce the individual data values reliably as text.)*
+The flash comes from the two closely spaced time pairs: between 1.0 and 1.01 seconds the blinker moves 2.4 inches rearward, out of the truck body and into view, and between 2.0 and 2.01 seconds it moves back inside. Shorten or repeat these pairs to change the flash rate.
+
+*(Table Ex-4 and Figure Ex-4 have been reconstructed from a degraded scan in the original manual. The structure, units and the motion they describe are as in the original; a few individual digits were illegible and have been chosen to be consistent with the legible values.)*
 
 <!-- NAV -->
 
 ---
 
-← Previous: [Chapter 3 — Calculation Method](02-calculation-method.md)  |  [Index](README.md)
+← Previous: [Chapter 3 — Calculation Method](03-calculation-method.md)  |  [Index](README.md)
 
 <!-- /NAV -->

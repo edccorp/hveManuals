@@ -551,7 +551,7 @@ To view the Program Data report for the *EDVDS, Controllability on Grade* event,
 - Click on the *Selected Output* option list and choose *Program Data*.
 - Press *OK*.
 
-The Program Data report is displayed for the *EDVDS, Controllability on Grade* event, as shown in Figure 5-26. The report includes the EDVDS version number and the tire model method under General Information, and the Maximum Simulation Time, Integration Time Step, Output Interval, Linear Termination Velocity, Velocity Convergence Criterion and Maximum Bisections under Simulation Controls. *(updated: the version number shown in the legacy figure reflects the release current at the time of printing; the current source reports version 18.00, and the Tire Model Method line reads either "Linear" or "Semi-empirical".)*
+The Program Data report is displayed for the *EDVDS, Controllability on Grade* event, as shown in Figure 5-26. The report includes the EDVDS version number and the tire model method under General Information, and the Maximum Simulation Time, Integration Time Step, Output Interval, Linear Termination Velocity, Velocity Convergence Criterion and Maximum Bisections under Simulation Controls. *(updated: the version number shown in the legacy figure reflects the release current at the time of printing; the current release reports version 18.00, and the Tire Model Method line reads either "Linear" or "Semi-empirical".)*
 
 ![Figure 5-26](images/p118-052.png)
 *Figure 5-26: Program Data Report for EDVDS, Controllability on Grade.*

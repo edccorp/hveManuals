@@ -282,7 +282,7 @@ This compatibility check can be performed whether the impact phase was based on 
 
 This message is the angular-momentum counterpart of the PDOF Compatibility Warning (above). When the collision is oblique and the PDOF does not act through the vehicle's center of gravity, the angle of the impulse can also be computed from an angular momentum analysis, providing an additional check on the user's estimate for PDOFs. If the user's PDOFs differ from the angular-momentum-derived values by more than the allowed range, the above message is issued.
 
-> **NOTE:** The Angular Momentum solution has not been implemented in this release of EDCRASH; this message will not occur. *(updated: this remains true in the current version — the message is set only inside currently commented-out code, and the Include Angular Momentum Solution check box in the Calculation Options dialog is disabled.)*
+> **NOTE:** The Angular Momentum solution has not been implemented in this release of EDCRASH; this message will not occur. *(updated: this remains true in the current version — the current version does not issue this message, and the Include Angular Momentum Solution check box in the Calculation Options dialog is disabled.)*
 
 ---
 

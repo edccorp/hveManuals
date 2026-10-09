@@ -20,6 +20,6 @@ GREAT CARE MUST BE USED WITH THE ORIENTATION DATA. In other words, in HVE +180 d
 
 ---
 
-← Previous: [Chapter 1 — Program Description](01-program-description-and-input.md)  |  [Index](README.md)  |  Next: [Chapter 4 — Data File Format](03-data-file-format.md) →
+← Previous: [Chapter 2 — Program Input](02-program-input.md)  |  [Index](README.md)  |  Next: [Chapter 4 — Data File Format](04-data-file-format.md) →
 
 <!-- /NAV -->

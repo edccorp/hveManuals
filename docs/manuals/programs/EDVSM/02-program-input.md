@@ -543,7 +543,7 @@ EDVSM provides three tire model options. These are described below.
 - **Radial Spring** - This method (not implemented) allows multiple contact points about the tire's circumferential perimeter. It allows for improved modeling of tire interaction with extremely non-uniform surfaces (e.g., potholes, curbs).
 - **Sidewall Impact** - This method (not implemented) also uses the radial spring model, but in addition, allows forces to act on the side of the tire. This method is most applicable to sidewall vs curb impact, and similar interactions.
 
-*(updated: In the current code the Radial Spring and Sidewall Impact options remain unimplemented — they are disabled in the Calculation Options dialog, and the physics model rejects them if selected. Normal is the only usable Tire Model Method.)*
+*(updated: In the current version the Radial Spring and Sidewall Impact options remain unimplemented — they are disabled in the Calculation Options dialog, and the physics model rejects them if selected. Normal is the only usable Tire Model Method.)*
 
 #### Steer Degree of Freedom
 

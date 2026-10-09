@@ -38,9 +38,9 @@ No response by the user is necessary.
 
 *(Level 1 — Fatal)*
 
-During the collision phase, crush occurs along the vector, RHO, from the vehicle exterior towards the CG (refer to [Chapter 4 — Calculation Method](04-calculation-method.md)). RHOBIT refers to the adjusted length of RHOBI (the length of the current RHO vector) which accounts for restitution. This message indicates that, while seeking equilibrium of the RHO vector lengths for both vehicles, one of their lengths became negative. PSIB is the clock angle of the defective vector.
+During the collision phase, crush occurs along the vector, RHO, from the vehicle exterior towards the CG (refer to [Chapter 4 — Calculation Method](04-calculation-method.md)). The quantity named in the message is the adjusted length of the current RHO vector, after restitution has been accounted for. This message indicates that, while seeking equilibrium of the RHO vector lengths for both vehicles, one of their lengths became negative. The angle reported with the message is the clock angle of the defective vector.
 
-Since this error occurs during the iterative adjustment phase, reducing the value of DELRHO (see Calculation Options) may eliminate the problem. If you continue to experience the problem, send the offending input file to EDC for evaluation. *(The current version issues a related message when RHOBIC becomes negative after restitution calculations.)*
+Since this error occurs during the iterative adjustment phase, reducing the Vector Adjustment Increment (the quantity the message text calls DELRHO; see Calculation Options) may eliminate the problem. If you continue to experience the problem, send the offending input file to EDC for evaluation. *(The current version issues a related message when the vector length becomes negative after the restitution calculation.)*
 
 ---
 
@@ -78,9 +78,9 @@ Check to ensure the vehicles are not overlapping at impact; if necessary, separa
 
 *(Level 1 — Fatal)*
 
-EDSMAC4 divides the damage region into a number of small, discrete angular intervals. The width of each interval is the user-entered value, DELPSI (see Calculation Options). If the value of DELPSI is too small, the number of intervals required to span the entire damage width becomes too large and the above error message is issued.
+EDSMAC4 divides the damage region into a number of small, discrete angular intervals. The width of each interval is the user-entered Vector Spacing (the quantity the message text calls DELPSI; see Calculation Options). If the Vector Spacing is too small, the number of intervals required to span the entire damage width becomes too large and the above error message is issued.
 
-Increase the value of DELPSI (see Calculation Options). *(updated: the original manual stated a limit of 360 discrete intervals per damage region; the current message reads "the damage region required more than 100 collision vectors to span its width. To correct the error, try doubling the value of DELPSI.")*
+Increase the Vector Spacing (see Calculation Options). *(updated: the original manual stated a limit of 360 discrete intervals per damage region; the current message reads "the damage region required more than 100 collision vectors to span its width. To correct the error, try doubling the value of DELPSI.")*
 
 ---
 
@@ -88,9 +88,9 @@ Increase the value of DELPSI (see Calculation Options). *(updated: the original 
 
 *(Level 1 — Fatal)*
 
-During the collision phase, force equilibrium is sought between each of the vehicle crush vectors using an iterative adjustment of the vector lengths, RHO. If, after the maximum number of adjustments (200 bisections in the current code), the force equilibrium is not reached (i.e., the difference in the inter-vehicle contact force is greater than the user-entered acceptable limit, ALAMB), the above error is issued.
+During the collision phase, force equilibrium is sought between each of the vehicle crush vectors using an iterative adjustment of the vector lengths, RHO. If, after the maximum number of adjustments (200 in the current version), the force equilibrium is not reached (i.e., the difference in the inter-vehicle contact force is greater than the user-entered acceptable limit, the Vector Force Tolerance, which the message text calls ALAMB), the above error is issued.
 
-Increase the value of ALAMB or decrease the value of DELRHO (see Calculation Options). *(updated: the original manual said "after 3200 bisections"; the current message resource says 200 and suggests "try halving the value of DELRHO or doubling the value of ALAMB.")*
+Increase the Vector Force Tolerance or decrease the Vector Adjustment Increment (see Calculation Options). *(updated: the original manual said "after 3200 bisections"; the current message says 200 and suggests "try halving the value of DELRHO or doubling the value of ALAMB.")*
 
 ---
 

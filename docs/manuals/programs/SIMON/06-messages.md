@@ -42,7 +42,7 @@ A tire hit a tall curb or other significant elevation change (an elevation chang
 
 The first step in calculating tire forces is to calculate the radial tire force from the current tire deflection (the change in the tire rolling radius compared to an unloaded tire). If the deflection of a tire exceeds the user-specified Maximum Tire Deflection assigned for that tire, the radial force could be substantial, leading to dynamic instability in the simulation. To prevent this from occurring, the run terminates.
 
-This problem can sometimes be solved by increasing slightly the Maximum Tire Deflection (see Tire Physical Data parameters) and/or reducing the Vehicle Trajectory Integration Timestep (see Simulation Controls). *(updated: in the current resource file this message text is prefixed "WARNING:".)*
+This problem can sometimes be solved by increasing slightly the Maximum Tire Deflection (see Tire Physical Data parameters) and/or reducing the Vehicle Trajectory Integration Timestep (see Simulation Controls). *(updated: in the current version this message is prefixed "WARNING:".)*
 
 ---
 
@@ -54,7 +54,7 @@ This message is issued when the wheel spin acceleration is so high that it cause
 
 **The simulation was terminated because the current roll or pitch angle exceeded the allowable limit.** *(Fatal; added)*
 
-*(updated: this message is present in the current resource file but was not listed in the Fifth Edition manual. It indicates the vehicle attitude exceeded the model's allowable roll/pitch range.)*
+*(updated: this message is issued by the current version but was not listed in the Fifth Edition manual. It indicates the vehicle attitude exceeded the model's allowable roll/pitch range.)*
 
 ---
 

@@ -32,7 +32,7 @@ This group of radio buttons selects the method EDCRASH uses to compute the vehic
 
 EDCRASH performs several tests that compare independently computed results and issues warning messages when they disagree by more than a user-specified tolerance. The tolerances are:
 
-- **PDOF Range, +/- (deg)** — Warning range for compatibility of the principal directions of force of the two vehicles (stored internally in radians). Default: 10 degrees.
+- **PDOF Range, +/- (deg)** — Warning range for compatibility of the principal directions of force of the two vehicles. Default: 10 degrees.
 - **Delta-V Range, +/- (%/100)** — Warning range for compatibility between the damage-based and momentum-based delta-V results. Default: 0.10.
 - **K.E. Range, +/- (%/100)** — Warning range for the kinetic energy compatibility test. Default: 0.50.
 - **Newton's 3rd Law Range, +/- (%/100)** — Warning range for the test comparing the collision force magnitudes on the two vehicles, which should be equal and opposite per Newton's third law. Default: 1.00.

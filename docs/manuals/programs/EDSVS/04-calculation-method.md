@@ -166,9 +166,9 @@ $$F_y = F_y \cdot Rolloff$$
 The skid flag is set for this tire if the longitudinal slip has reached the
 slip at peak friction, $S \ge \mu_{slip}$, which is wheel lock-up.
 
-*(updated: earlier editions stated that the skid flag is turned off in this
-branch. The flag is cleared at the start of each tire's calculation and may
-be set here by the lock-up test above, or earlier by tire saturation.)*
+*(updated: earlier editions stated that the tire is reported as not skidding in
+this case. It is reported as skidding if either the lock-up test above or
+the saturation test applies.)*
 
 If the attempted longitudinal wheel force, $F_x$, is greater than $F_{max}$, the longitudinal slip exceeds the slip at $\mu_p$ and the tire is either locked (braking) or spinning (accelerating). The skid flag is turned on and the forward and lateral tire forces are:
 
@@ -210,9 +210,9 @@ $$\Delta F_y = \left(F_y + \mu_s F_z (1 + \delta_{dual})\sin(\alpha)\right)\eta_
 
 $$F_y = -\mu_s F_z (1 + \delta_{dual})\sin(\alpha) + \Delta F_y$$
 
-*(updated: in the antilock branch the longitudinal force takes the sign of the
+*(updated: with antilock active, the longitudinal force takes the sign of the
 attempted wheel force directly, rather than the vehicle-fixed direction
-$s_{fx}$ used in the non-antilock branch. The two differ only when the tire is
+$s_{fx}$ used without antilock. The two differ only when the tire is
 travelling rearward.)*
 
 ## Assumptions

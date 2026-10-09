@@ -1443,7 +1443,7 @@ where
 | $\Delta y_{Track}$ | Half-track change at the current suspension deflection, interpolated from the vehicle's Half-track Change vs. Jounce/Rebound table and applied outboard on both sides |
 | $\delta_{Wheel}$ | Current wheel z-displacement from equilibrium position |
 
-*(updated: in the current code, when DyMESH wheel contact is enabled, wheel x-y displacement can also result dynamically from collision forces on the wheel mesh — see the Sprung Mass Impact Model section below. Earlier editions wrote the half-track term in Eq. 61 as a rate of change; it is the interpolated half-track change itself. The axle roll term in Eq. 59 moves the wheel toward the inside of the roll.)*
+*(updated: in the current version, when DyMESH wheel contact is enabled, wheel x-y displacement can also result dynamically from collision forces on the wheel mesh — see the Sprung Mass Impact Model section below. Earlier editions wrote the half-track term in Eq. 61 as a rate of change; it is the interpolated half-track change itself. The axle roll term in Eq. 59 moves the wheel toward the inside of the roll.)*
 
 ### Steer Axis Geometry
 
@@ -3443,8 +3443,6 @@ The equations of motion are advanced with a fixed-step Runge-Kutta integrator. T
 
 ![Figure 4-20](images/p127-037.png)
 *Figure 4-20: Flowchart for SIMON main calculation procedures.*
-
-*(updated: the current SIMON engine is organized into modules covering the main calculation loop, the dynamics model and DyMESH interface, input processing and reports, the tire model, wheel torque, wheel position, suspension, sprung mass, axles, aerodynamics, inter-vehicle connections, the driver model, hydroplaning, the collision pulse, road and terrain handling, output, and numerical integration.)*
 
 <!-- NAV -->
 

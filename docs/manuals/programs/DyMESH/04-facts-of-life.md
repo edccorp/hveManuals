@@ -55,7 +55,7 @@ The quality of the vehicle mesh directly affects the result:
   the vehicle.
 - **Use the *Tessellation* option** to improve a mesh before running DyMESH.
 
-*(updated: The Tessellation / "Vehicle Mesh Options" controls in the current code
+*(updated: The Tessellation / "Vehicle Mesh Options" controls in the current version
 include a *Tessellate* toggle, a *Vertex Weld Distance*, and a *Max Side Length*
 — these are the levers referred to here for cleaning up a mesh.)*
 

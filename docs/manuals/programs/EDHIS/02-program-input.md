@@ -509,7 +509,7 @@ EDHIS has the following user-selectable simulation model options (see [Calculati
 - **Minimum Acceleration** — Setting a non-zero value acts like a filter to remove tiny, non-zero values resulting from roundoff or loss of numerical precision. Default: 0.0000001 (1.0e-7).
 - **Minimum Time Criterion (sec)** — The minimum time precision (time epsilon) used by the integration and output control logic. If entered as 0.0 (the default), EDHIS computes the value automatically.
 
-*(updated: the original manual listed an "Integration Weights" option; the current dialog instead provides the Minimum Time Criterion entry described above. Note also that the two numeric entries are read in swapped order, and the minimum time criterion actually used is then fixed internally at 1×10⁻⁷ sec regardless of the value entered — see the discrepancy note in [Calculation Options for EDHIS](../../10-calculation-options/CalcOptionsEDHIS.md).)*
+*(updated: the original manual listed an "Integration Weights" option; the current dialog instead provides the Minimum Time Criterion entry described above. Note also that in the current release the two numeric entries behave as though they were interchanged, and the minimum time criterion used is always 1×10⁻⁷ sec regardless of the value entered — see the discrepancy note in [Calculation Options for EDHIS](../../10-calculation-options/CalcOptionsEDHIS.md).)*
 
 To view and edit these options, click on the menu bar *Options* option and choose *Calculation Options*.
 

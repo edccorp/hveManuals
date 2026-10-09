@@ -378,7 +378,7 @@ locked wheel cannot be driven backwards by excess brake torque.
 
 ### Antilock Model
 
-The EDVDS anti-lock model is not implemented. The antilock branch of the brake calculation is present but permanently disabled, so a wheel's antilock settings have no effect on an EDVDS event. Use EDSVS, EDVSM or SIMON for studies that require antilock braking.
+The EDVDS anti-lock model is not implemented. The antilock option is present but permanently disabled, so a wheel's antilock settings have no effect on an EDVDS event. Use EDSVS, EDVSM or SIMON for studies that require antilock braking.
 
 ## Steering System
 

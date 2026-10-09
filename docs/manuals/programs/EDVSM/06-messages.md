@@ -34,7 +34,7 @@ This error occurs due to an error in the wheel spin equations of motion. The err
 
 *(Level 1 - Fatal)*
 
-*(updated: This message was added after the Fifth Edition of the manual; it is present in the current message resources.)* It is issued when the integrator's velocity-convergence check cannot satisfy the user-assigned Velocity Convergence Criterion within the assigned Maximum Number of Bisections. (Note that EDVSM runs the Fixed Runge-Kutta integrator; the velocity-convergence bisection path applies only to the variable-timestep Adams-Moulton integrator.) Restore these Simulation Controls parameters to values near their defaults (Velocity Convergence approximately 0.1, Maximum Bisections approximately 10).
+*(updated: This message was added after the Fifth Edition of the manual; it is issued by the current version.)* It is issued when the integrator's velocity-convergence check cannot satisfy the user-assigned Velocity Convergence Criterion within the assigned Maximum Number of Bisections. (Note that EDVSM runs the Fixed Runge-Kutta integrator; the velocity-convergence bisection path applies only to the variable-timestep Adams-Moulton integrator.) Restore these Simulation Controls parameters to values near their defaults (Velocity Convergence approximately 0.1, Maximum Bisections approximately 10).
 
 ---
 
@@ -106,7 +106,7 @@ This is a debugging message and is not enabled in the production release of EDVS
 
 *(Level 1 - Fatal)*
 
-This is a debugging message and is not enabled in the production release of EDVSM. *(updated: the original manual quoted this message as "...because GetSurfaceInfo() failed to return a valid surface description."; the current resource text is shortened to "...because GetSurfaceInfo() failed.")*
+This is a debugging message and is not enabled in the production release of EDVSM. *(updated: the original manual quoted this message as "...because GetSurfaceInfo() failed to return a valid surface description."; the current message text is shortened to "...because GetSurfaceInfo() failed.")*
 
 ---
 

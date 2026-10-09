@@ -200,7 +200,7 @@ The blend then works case by case:
 | Tire force ≥ DyMESH force, DyMESH force < static load (and > 0) | $F_\mathrm{DyMESH} + \min(W_\mathrm{static}, F_\mathrm{tire})$ |
 | Deflection > 15% of tire radius while DyMESH is carrying load | $\min(F_\mathrm{tire}, F_\mathrm{DyMESH})$, or 0 if the DyMESH force ≤ 0 |
 
-The intent in every branch is the same: **the DyMESH force is authoritative,
+The intent in every case is the same: **the DyMESH force is authoritative,
 and the point-contact tire model contributes at most its static share on top of
 it.** In quiet rolling (DyMESH force ≈ 0) the ladder reduces to the ordinary
 tire force; in a hard strike the DyMESH force dominates and the tire spring is

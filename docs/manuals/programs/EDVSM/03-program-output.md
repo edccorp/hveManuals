@@ -96,7 +96,7 @@ A portion of a typical Vehicle Data Report is shown in Figures 3-5a, b, and c (a
 The Program Data Report includes the following information:
 
 - **Simulation Controls** - Integration parameters used for the current event
-- **General Information** - EDVSM version number and internally assigned constants used for the current event
+- **General Information** - EDVSM version number and the built-in constants used for the current event
 
 A typical Program Data Report is shown in Figure 3-6. The Simulation Controls section reports the integration method (Fixed Runge-Kutta), maximum simulation time, normal integration timestep, output interval, and the linear and angular termination velocities. The General Information section reports the EDVSM version number, wheel spin integration constant, terminal wheel spin velocity, pitch index angle and driveline inertia.
 

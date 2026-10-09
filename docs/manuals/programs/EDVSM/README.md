@@ -32,7 +32,7 @@ When you call, you should have the following information available:
 5. [Chapter 5 — EDVSM Tutorial](05-tutorial.md)
    - Curb-tripped rollover validation event and tire blow-out parameter study; viewing and printing all output reports
 6. [Chapter 6 — Messages](06-messages.md)
-   - Complete EDVSM message catalog, verified against the current message resources
+   - Complete EDVSM message catalog, verified against the current release
 7. [Chapter 7 — References](07-references.md)
 8. [Chapter 8 — Index](08-index.md)
 
@@ -40,7 +40,7 @@ See also: [EDVSM Calculation Options reference](../../10-calculation-options/Cal
 
 ## Notes on this Edition
 
-This Markdown edition preserves the substance of the Fifth Edition (January 2006) printed manual and updates it where the current source code differs. Notable updates:
+This Markdown edition preserves the substance of the Fifth Edition (January 2006) printed manual and updates it where the current release differs. Notable updates:
 
 - **Calculation Options:** the Tire Model Method options *Radial Spring* and *Sidewall Impact* are disabled in the current dialog and rejected by the physics (only *Normal* is available); the Steer Degree of Freedom *Append* option is likewise disabled and rejected (Off and Normal remain); *Vehicle Body vs. Environment Contact* (rollover model) is off by default.
 - **Messages:** one message was added after the Fifth Edition (a second Integration Error concerning the Velocity Convergence Criterion and Maximum Bisections), and the GetSurfaceInfo() Error text was shortened. See [Chapter 6](06-messages.md).

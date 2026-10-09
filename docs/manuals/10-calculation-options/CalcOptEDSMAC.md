@@ -6,7 +6,7 @@ The collision algorithm models each vehicle's periphery as a set of radial RHO v
 
 ## Vector Spacing (deg)
 
-Default: 2.0 degrees. Range: 1.0 to 5.0 degrees (stored internally in radians, 0.0174 to 0.08727 rad).
+Default: 2.0 degrees. Range: 1.0 to 5.0 degrees.
 
 This angle determines the angular interval between the RHO vectors that define each vehicle's crush perimeter. Smaller values give a finer damage profile at the cost of computation time (the number of RHO vectors per vehicle is 360°/spacing — 181 vectors at the 2-degree default).
 

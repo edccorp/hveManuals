@@ -60,7 +60,7 @@ where
 The system is solved for $\ddot{\mathbf{q}}$ each timestep by Gaussian
 elimination. A singular mass matrix is a fatal error and terminates the run.
 
-> **NOTE:** Where the **Minimum Acceleration** calculation option is non-zero, any generalized acceleration whose magnitude falls below it is set to zero before integration. This suppresses numerical noise in a body at rest; setting it too high will suppress real response.
+> **NOTE:** Where the **Minimum Acceleration** calculation option is non-zero, any generalized acceleration whose magnitude falls below it is set to zero before integration. This suppresses numerical noise in a body at rest; setting it too high will suppress real response. In the current release the threshold is taken from the value entered as *Minimum Time Criterion* — see [Calculation Options for EDHIS](../../10-calculation-options/CalcOptionsEDHIS.md).
 
 ## Contact Forces
 

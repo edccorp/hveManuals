@@ -76,34 +76,34 @@ on which values the user edits.
 
 If the sprung weight, $W_{S}$, is edited, the total weight, $W_{T}$, is updated:
 
-$$W_T = W_S + \sum_{n=1}^{NumAxles} W_U$$
+$$W_T = W_S + \sum_{n=1}^{N_{Axles}} W_U$$
 
-where $W_{U}$ = unsprung weight of each wheel (plus axle for solid axle
+where $N_{Axles}$ = number of axles and $W_{U}$ = unsprung weight of each wheel (plus axle for solid axle
 suspensions).
 
 If the total weight, $W_{T}$, is edited, the sprung weight, $W_{S}$, is updated:
 
-$$W_S = W_T - \sum_{n=1}^{NumAxles} W_U$$
+$$W_S = W_T - \sum_{n=1}^{N_{Axles}} W_U$$
 
 If the sprung rotational inertia, $I_{Sx}$, $I_{Sy}$ or $I_{Sz}$ (roll, pitch or
 yaw, respectively), is edited, the total rotational inertia, $I_{Tx}$, $I_{Ty}$
 or $I_{Tz}$, is updated using the parallel axis theorem:
 
-    I_T = I_S + Σ(n=1..NumAxles) (I_U + m_U * r_U²)
+$$I_T = I_S + \sum_{n=1}^{N_{Axles}} \left(I_U + m_U\,r_U^2\right)$$
 
 where
 
 - $I_{U}$ = rotational inertia of each wheel (and axle for solid axle
   suspensions) about its own x, y or z axis
-- `m_U` = mass of each wheel (plus axle for solid axle suspensions)
-- `r_U` = orthogonal distance from vehicle sprung mass CG to unsprung mass
+- $m_U$ = mass of each wheel (plus axle for solid axle suspensions)
+- $r_U$ = orthogonal distance from vehicle sprung mass CG to unsprung mass
   CG.
 
 Similarly, if the total rotational inertia, $I_{Tx}$, $I_{Ty}$ or $I_{Tz}$ (roll,
 pitch or yaw, respectively), is edited, the sprung rotational inertia,
 $I_{Sx}$, $I_{Sy}$ or $I_{Sz}$, is updated using the parallel axis theorem:
 
-    I_S = I_T − Σ(n=1..NumAxles) (I_U + m_U * r_U²)
+$$I_S = I_T - \sum_{n=1}^{N_{Axles}} \left(I_U + m_U\,r_U^2\right)$$
 
 If the *Auto Update When Weight Changes* checkbox is checked, the rotational
 inertias are updated as follows:
