@@ -75,6 +75,7 @@ The Ford Escort is added to the case. Next, let's add the Nissan Sentra.
 
 ![Figure 5-1](images/p070-018.png)
 ![Figure 5-1](images/p070-019.png)
+
 *Figure 5-1: Ford Escort (above) and Nissan Sentra (below).*
 
 1. Click Add New Object. The Vehicle Information dialog is displayed.
@@ -100,6 +101,7 @@ Start by changing the color of the Ford Escort:
 2. Click on the CG and choose Color. The Vehicle Color dialog is displayed, showing the vehicle's current color (the small black square, or hot spot, in the color wheel) and intensity (the arrow in the intensity slider). Click on the hot spot and drag it to the center of the circle. To lighten the vehicle, click on the intensity slider and drag it to the far right end.
 
    ![Figure 5-2](images/p071-020.png)
+
    *Figure 5-2: Vehicle Color dialog, used for assigning the vehicle color.*
 
    > **NOTE:** The color chip on the left shows the current color.
@@ -113,6 +115,7 @@ Next, let's change the Escort's weight. Perform the following steps:
 1. Click on the CG and choose Inertias. The Inertias dialog is displayed, and we're ready to change the vehicle's weight.
 
    ![Figure 5-3](images/p072-021.png)
+
    *Figure 5-3: Vehicle Inertias dialog, used for editing the current weight and yaw inertia (roll and pitch inertias are not used by EDSMAC4).*
 
    > **NOTE:** The vehicle's roll, pitch and yaw moments of inertia and xz product of inertia are also displayed in the Inertias dialog; however, only the yaw inertia is used by the 3-DOF EDSMAC4 calculations.
@@ -152,6 +155,7 @@ Finally, let's change the stiffness of the vehicle. From a previous reconstructi
 2. Click Stiffness. The Stiffness Coefficients dialog for the right side surface is displayed.
 
    ![Figure 5-4](images/p074-022.png)
+
    *Figure 5-4: Vehicle Stiffness dialog, used for editing the current A, B and KL stiffness coefficients for the current surface. Note that EDSMAC4 uses the A and B stiffness for the selected surface; earlier programs used a single value of KL for the entire vehicle.*
 
 To edit the current A and B stiffness values:
@@ -210,6 +214,7 @@ The selected environment is added to our case and displayed in the Environment V
 
 ![Figure 5-5](images/p077-023.png)
 ![Figure 5-5](images/p077-024.png)
+
 *Figure 5-5: Environment used for the EDSMAC4 tutorial: HVE-2D (above) and HVE (below).*
 
 ## Creating Events
@@ -235,6 +240,7 @@ Now, we're ready to set up the event. This step involves placing the vehicles in
 3. Click on the vehicle's X-Y manipulator, wait for it to turn bright yellow (indicating it has been selected), and drag it to its initial position, X = 35 m, Y = 15 m. Click the Yaw field in the Position/Velocity dialog to replace the existing value with the heading angle, 180 degrees.
 
    ![Figure 5-6](images/p079-025.png)
+
    *Figure 5-6: Positioning the Ford Escort using the Event Editor. The manipulators can be used to drag and drop the vehicle into position. Click on the cross-bars to drag the vehicle on the road surface; click on the circular yellow ribbon to rotate the vehicle about its yaw axis.*
 
    > **NOTE:** To select the X-Y manipulator, the viewer must be in Pick mode, as indicated by the highlighted arrow in the upper right corner of the viewer.
@@ -290,6 +296,7 @@ Event set-up for the Ford Escort is now complete. Let's set up the Nissan Sentra
 3. Click on the vehicle's X-Y manipulator, wait for it to turn bright yellow, and drag it to its initial position, X = 3.5 m, Y = 39 m. In the Yaw field in the Position/Velocity dialog, replace the existing value with the heading angle, −90 degrees.
 
    ![Figure 5-7](images/p081-026.png)
+
    *Figure 5-7: Positioning the Nissan Sentra using the Event Editor. The manipulators can be used to drag and drop the vehicle into position.*
 
 4. Click the Velocity Is Assigned check box and enter the initial velocity, 35 km/h, followed by Enter.
@@ -323,6 +330,7 @@ Now, we're ready to set the camera view for the event. Let's first view the sequ
 - Use the viewer controls (thumb wheels, zoom slider and direct hand-in-viewer manipulator) to set the view similar to that shown in Figure 5-8. (In HVE-2D, set the view to an overhead view that contains both vehicles at their initial positions.)
 
 ![Figure 5-8](images/p083-027.png)
+
 *Figure 5-8: Overall view of the scene after event set-up is complete.*
 
 Next, let's set up the Key Results windows:
@@ -357,6 +365,7 @@ Let's attach the camera to the Ford:
 1. Choose Set Camera from the View menu. The Camera dialog is displayed.
 
    ![Figure 5-9](images/p084-028.png)
+
    *Figure 5-9: HVE Set Camera dialog, used for attaching the camera to the vehicle.*
 
 2. Click on the View From This Object option list. The list displays each object in the event (Blind Intersection, Ford Escort and Nissan Sentra).
@@ -374,6 +383,7 @@ Let's attach the camera to the Ford:
    > **NOTE:** These coordinates are also relative to the Ford Escort, and define a view angle looking forward and to the left, as shown in Figure 5-10.
 
    ![Figure 5-10](images/p085-fig5-10.png)
+
    *Figure 5-10: Relationship between the camera position and picture center coordinates.*
 
    > In HVE-2D, the view is restricted to the straight-down "helicopter" view, so there is no Look At This Object list available on the HVE-2D Camera Setup dialog.
@@ -387,6 +397,7 @@ The viewer now shows the scene as viewed from the Ford Escort. Now we're ready t
 Watch as the Nissan becomes visible at t = 1.2 seconds. Noting from the steer table that the Ford's driver began steering at t = 1.5 seconds and began braking at t = 2.25 seconds, we can draw some conclusions regarding the driver's perception/reaction time.
 
 ![Figure 5-11](images/p087-029.png)
+
 *Figure 5-11: Accident sequence as viewed from the driver's position in the Ford Escort at t = 1.2 seconds; the Nissan is just becoming visible.*
 
 Allow the event to run to completion.
@@ -410,6 +421,7 @@ Now we're ready to see how the accident occurred from the Nissan driver's perspe
 Watch as the Ford becomes visible at t = 1.3 seconds. Because there was no pre-impact skidding of the Nissan, we cannot draw any conclusions regarding the Nissan driver's perception/reaction time (other than there was a lack of driver response).
 
 ![Figure 5-12](images/p087-030.png)
+
 *Figure 5-12: Accident sequence as viewed from the driver's position in the Nissan Sentra at t = 1.3 seconds; the Ford is just becoming visible.*
 
 - Allow the event to run to completion.
@@ -423,6 +435,7 @@ We have now completed the event.
 Now that we have produced our EDSMAC4 simulations, let's take a detailed look at the results. The Playback Editor is used for reviewing and printing reports for each event in the current case, as well as for producing video output.
 
 ![Figure 5-13](images/p089-031.png)
+
 *Figure 5-13: Report Window Information dialog, showing the name of the event(s) in the current case.*
 
 EDSMAC4 produces the following reports:
@@ -466,6 +479,7 @@ The Accident History report displays the positions and velocities for each vehic
 To view the Accident History report: click Add New Object, select EDSMAC4, Visibility Study from the Active Events list, choose Accident History from the Select Output option list, and press OK.
 
 ![Figure 5-14](images/p091-032.png)
+
 *Figure 5-14: Accident History Report for EDSMAC4, Visibility Study.*
 
 ### Damage Data
@@ -476,6 +490,7 @@ Following the table of collision vectors, the Damage Ranges are displayed. The D
 
 ![Figure 5-15](images/p092-033.png)
 ![Figure 5-15](images/p092-034.png)
+
 *Figure 5-15: Damage Data Report for EDSMAC4, Visibility Study.*
 
 To view the Damage Data report: click Add New Object, select EDSMAC4, Visibility Study, choose Damage Data from the Select Output option list, and press OK.
@@ -485,6 +500,7 @@ To view the Damage Data report: click Add New Object, select EDSMAC4, Visibility
 The Damage Profiles report provides a 3-D visual representation of the damage to each vehicle. This report is linked to the Playback Controller through the Trajectory Simulation. Therefore, in order to see any damage in the Damage Profiles report window, you must first open a Trajectory Simulation for the event.
 
 ![Figure 5-16](images/p094-035.png)
+
 *Figure 5-16: Damage Profile Report for Nissan Sentra in EDSMAC4, Visibility Study.*
 
 To view the Damage Profiles report: click Add New Object, select EDSMAC4, Visibility Study, choose Damage Profiles from the Select Output option list, and press OK. With a Trajectory Simulation also open, use the Playback Controller to view the damage to each vehicle dynamically.
@@ -494,6 +510,7 @@ To view the Damage Profiles report: click Add New Object, select EDSMAC4, Visibi
 All driver input that was entered in the Event Editor is reported in the Driver Data output report.
 
 ![Figure 5-17](images/p095-036.png)
+
 *Figure 5-17: Driver Data Report for EDSMAC4, Visibility Study.*
 
 To view the Driver Data report: click Add New Object, select EDSMAC4, Visibility Study, choose Driver Data from the Select Output option list, and press OK.
@@ -503,6 +520,7 @@ To view the Driver Data report: click Add New Object, select EDSMAC4, Visibility
 The Environment Data output report gives the values of the physical environment variables used by the simulation.
 
 ![Figure 5-18](images/p096-037.png)
+
 *Figure 5-18: Environment Report for EDSMAC4, Visibility Study.*
 
 To view the Environment Data report: click Add New Object, select EDSMAC4, Visibility Study, choose Environment Data from the Select Output option list, and press OK.
@@ -512,6 +530,7 @@ To view the Environment Data report: click Add New Object, select EDSMAC4, Visib
 Event-related activities such as wheel displacements or tire blowouts are reported in the Event Data report.
 
 ![Figure 5-19](images/p097-038.png)
+
 *Figure 5-19: Event Data Report for EDSMAC4, Visibility Study.*
 
 To view the Event Data report: click Add New Object, select EDSMAC4, Visibility Study, choose Event Data from the Select Output option list, and press OK.
@@ -521,6 +540,7 @@ To view the Event Data report: click Add New Object, select EDSMAC4, Visibility 
 EDSMAC4 produces several messages, depending on the outcome of the run. For a complete list and explanation of these messages, refer to [Chapter 6](06-messages.md).
 
 ![Figure 5-20](images/p098-039.png)
+
 *Figure 5-20: Messages Report for EDSMAC4, Visibility Study.*
 
 To view the Messages report: click Add New Object, select EDSMAC4, Visibility Study, choose Messages from the Select Output option list, and press OK.
@@ -530,6 +550,7 @@ To view the Messages report: click Add New Object, select EDSMAC4, Visibility St
 The Program Data report displays the simulation controls (integration time steps and termination conditions), collision parameters used by the EDSMAC4 collision algorithm and the fixed values (RHOB Tests), which cannot be changed by the user, that determine if a vector passes through the end (front or back) or side (left or right).
 
 ![Figure 5-21](images/p099-040.png)
+
 *Figure 5-21: Program Data Report for EDSMAC4, Visibility Study.*
 
 To view the Program Data report: click Add New Object, select EDSMAC4, Visibility Study, choose Program Data from the Select Output option list, and press OK.
@@ -560,6 +581,7 @@ The view is now looking down the street. To visualize the motion, perform the fo
 
 ![Figure 5-22](images/p101-041.png)
 ![Figure 5-22](images/p101-042.png)
+
 *Figure 5-22: Trajectory Simulation for EDSMAC4, Visibility Study, displaying the crash sequence at the end of the event (HVE-2D above, HVE below). In the lower figure, the Nissan has come to rest on the sidewalk after mounting the curb.*
 
 ### Variable Output
@@ -575,6 +597,7 @@ The purpose of our EDSMAC4 study is to evaluate the avoidability of the accident
 1. Click on Select Variables in the Variable Output window. The Variable Selection dialog is displayed.
 
    ![Figure 5-23](images/p103-043.png)
+
    *Figure 5-23: Variable Selection dialog.*
 
 The Object Name option list displays the first vehicle, Ford Escort. The Kinematics output group is the default selection and the Kinematics Variables list is displayed. Let's add X, Y, Yaw, Vtotal and Accel total:
@@ -593,6 +616,7 @@ Next, let's add the same parameters for the Nissan Sentra:
 The Variable Output report for the EDSMAC4, Visibility Study event now includes position, velocity and acceleration for both vehicles, plus any other variables you may have added.
 
 ![Figure 5-24](images/p104-044.png)
+
 *Figure 5-24: Variable Output report for EDSMAC4, Visibility Study.*
 
 ### Vehicle Data
@@ -600,6 +624,7 @@ The Variable Output report for the EDSMAC4, Visibility Study event now includes 
 The Vehicle Data report displays the vehicle data, tire data and driver tables for each vehicle in the event.
 
 ![Figure 5-25](images/p105-045.png)
+
 *Figure 5-25: Vehicle Data Report for EDSMAC4, Visibility Study.*
 
 To view the Vehicle Data report: click Add New Object, select EDSMAC4, Visibility Study, choose Vehicle Data from the Select Output option list, and press OK.

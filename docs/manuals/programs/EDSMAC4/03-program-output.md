@@ -42,6 +42,7 @@ EDSMAC4 produces the following alpha-numeric reports:
 The Accident History Report displays a table of initial, impact, separation and final positions and velocities for each vehicle.
 
 ![Figure 3-1](images/p049-006.png)
+
 *Figure 3-1: Typical Accident History Output Report issued by EDSMAC4.*
 
 *(updated: the criterion used to detect the beginning and end of each collision phase reported here is selectable via the **Accident History Basis** calculation option — Impact Force (default) or Acceleration with a threshold in g; see [EDSMAC4 Calculation Options](../../10-calculation-options/CalcOptEDSMAC4.md#accident-history-basis) and, for how the impact and separation times are found, [Chapter 4 — Impact and Separation Times](04-calculation-method.md#impact-and-separation-times).)*
@@ -59,6 +60,7 @@ The Damage Data Report includes the following information:
 - **Vehicle Damage Ranges** — A table containing the starting and ending points for each damage range, along with its CDC, PDOF, total delta-V and peak acceleration.
 
 ![Figure 3-2](images/p050-007.png)
+
 *Figure 3-2: Typical Damage Data Output Report issued by EDSMAC4.*
 
 *(updated: the report layout is selectable via the **Damage Data Format** calculation option — Traditional or Collision Data (default); see [EDSMAC4 Calculation Options](../../10-calculation-options/CalcOptEDSMAC4.md#damage-data-format). The description above is the Traditional layout. With the default Collision Data layout the report instead contains:*
@@ -74,6 +76,7 @@ The Damage Data Report includes the following information:
 The Driver Data report displays a table of user-entered driver control tables for steering, braking and throttle for each vehicle in the event.
 
 ![Figure 3-3](images/p051-008.png)
+
 *Figure 3-3: Typical Driver Data Output Report issued by EDSMAC4.*
 
 ### Environment Data
@@ -84,6 +87,7 @@ The Environment Data report displays the physical and visual information describ
 - **3-D Environment Terrain Data** — Geometric parameters describing the terrain.
 
 ![Figure 3-4](images/p052-009.png)
+
 *Figure 3-4: Typical Environment Data Output Report issued by EDSMAC4.*
 
 > **NOTE:** A detailed description of the terrain vertex information is not practical owing to its potentially large size (a terrain is often composed of several thousand vertices). However, it is possible to view the terrain information (friction multiplier, slope, elevation, and so forth) beneath each tire at each timestep during the simulation by selecting the tire terrain outputs in the Variable Output, Tires output group (see Variable Output later in this chapter).
@@ -97,6 +101,7 @@ The Event Data report displays event-specific information for each vehicle:
 - **Tire Blow-out** — User-defined time and tire blow-out parameters for each blown tire.
 
 ![Figure 3-5](images/p053-010.png)
+
 *Figure 3-5: Typical Event Data Output Report issued by EDSMAC4.*
 
 ### Messages
@@ -104,6 +109,7 @@ The Event Data report displays event-specific information for each vehicle:
 The Messages report lists the messages produced during execution of the current event. For a complete listing of messages issued by EDSMAC4, see [Chapter 6](06-messages.md).
 
 ![Figure 3-6](images/p054-011.png)
+
 *Figure 3-6: Typical Messages Output Report issued by EDSMAC4.*
 
 ### Program Data
@@ -115,6 +121,7 @@ The Program Data Report includes the following information:
 - **Collision Criteria** — Parameters used to determine which side (front, back, right or left) a RHO vector intersects; used to determine the RHO vector's initial length.
 
 ![Figure 3-7](images/p055-012.png)
+
 *Figure 3-7: Typical Program Data Output Report issued by EDSMAC4.*
 
 ### Vehicle Data
@@ -128,6 +135,7 @@ The Vehicle Data Report includes the following information:
 - **Tire Properties** — The tire parameters used by each vehicle in the current event.
 
 ![Figure 3-8](images/p056-013.png)
+
 *Figure 3-8: Typical Vehicle Data Output Report issued by EDSMAC4.*
 
 ## Graphic Reports
@@ -165,6 +173,7 @@ EDSMAC4 produces a Variable Output table containing the time-based simulation re
 (*) If Driver Control option was At Driver
 
 ![Figure 3-9](images/p060-014.png)
+
 *Figure 3-9: Typical Variable Output table from EDSMAC4.*
 
 ## Trajectory Simulation
@@ -172,6 +181,7 @@ EDSMAC4 produces a Variable Output table containing the time-based simulation re
 EDSMAC4 produces a trajectory simulation of the current event. The trajectory simulation is a 3-D visualization of the vehicle position data displayed in the Variable Output table (see previous section).
 
 ![Figure 3-10](images/p061-015.png)
+
 *Figure 3-10: Typical EDSMAC4 Trajectory Simulation.*
 
 ### Displaying a Trajectory Simulation
@@ -186,6 +196,7 @@ The Trajectory Simulation is controlled using the Playback Controller. The Playb
 - **Advance to End** — Advance to the end of the simulation
 
 ![Figure 3-11](images/p062-fig3-11.png)
+
 *Figure 3-11: Playback Controller, used for controlling Trajectory and Damage Profile Simulations.*
 
 ### Displaying a Damage Profile Simulation
@@ -195,6 +206,7 @@ EDSMAC4 produces a dynamic simulation of the vehicle damage profile. The simulat
 > **NOTE:** A Trajectory Simulation window must be open in order to enable the Playback Controller.
 
 ![Figure 3-12](images/p062-017.png)
+
 *Figure 3-12: Typical EDSMAC4 Damage Profile Simulation.*
 
 ---

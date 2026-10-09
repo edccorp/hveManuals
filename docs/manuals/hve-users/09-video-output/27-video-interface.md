@@ -113,6 +113,7 @@ allows the user to choose the current video source and destination from two
 option lists.
 
 ![Figure 27-2](../images/figure-27-2.jpg)
+
 *Figure 27-2 — Close-up of the portion of the Playback Window used for
 selecting the video source and destination.*
 

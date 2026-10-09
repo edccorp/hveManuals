@@ -32,6 +32,7 @@ of the HVE execution environment.
 ## General Overview
 
 ![Figure 16-1](../images/p496-260.png)
+
 *Figure 16-1: HVE system environment, showing the Human, Vehicle, Environment, Event and Playback Editors.*
 
 A block diagram for the HVE execution environment is shown in Figure 16-1.
@@ -216,6 +217,7 @@ rotations as well as yaw (heading angle) rotations.
 > of rotation is not entered directly; it is determined as shown above.
 
 ![Figure 16-2](../images/p502-figB16-2.png)
+
 *Figure 16-2: Examples of rotation direction for various position sequences.*
 
 ### Driver Controls
@@ -477,6 +479,7 @@ Allowable Speed Error, Maximum Throttle Application and Maximum Brake Pedal
 Force.
 
 ![Figure 16-3](../images/figure-16-3.jpg)
+
 *Figure 16-3: The HVE Path Follower uses up to eight user-assigned positions to define a 3-D path. Intermediate path positions are determined using a 3-D spline.*
 
 > **NOTE:** *(updated)* The legacy edition stated that the Speed Follower
@@ -675,6 +678,7 @@ equally spaced crush depths may be provided along the total damage width,
 as shown in Figure 16-4.
 
 ![Figure 16-4](../images/p515-figB16-4.png)
+
 *Figure 16-4: Damage Profile examples.*
 
 #### Stiffness Coefficients
@@ -716,9 +720,11 @@ of A and B coefficients may be assigned to each crush zone.
 > stiffness coefficients.
 
 ![Figure 16-5](../images/p517-figB16-5.png)
+
 *Figure 16-5: The default PDOF is assigned by its clock direction (12, 01, 02, etc.) in the first two characters of the CDC.*
 
 ![Figure 16-6](../images/p517-figB16-6.png)
+
 *Figure 16-6: Force vs. Crush characteristics.*
 
 ### Mesh

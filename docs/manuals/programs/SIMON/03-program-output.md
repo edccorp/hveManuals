@@ -57,6 +57,7 @@ An example of each of these numeric output reports from SIMON is shown on the fo
 The Accident History Report displays a table of initial, impact, separation and final positions and velocities for the vehicle. A typical Accident History Report is shown in Figure 3-1.
 
 ![Figure 3-1](images/p055-008.png)
+
 *Figure 3-1: Typical Accident History Output Report issued by SIMON.*
 
 *(updated: the current SIMON Calculation Options dialog includes an **Accident History Basis** option. Impact and separation rows in the Accident History report may be detected either from **Impact Force** or from vehicle **Acceleration** exceeding a user-set threshold; see Chapter 2, Event Calculation Options.)*
@@ -66,6 +67,7 @@ The Accident History Report displays a table of initial, impact, separation and 
 The Damage Data Report displays a table containing vehicle collision information, such as delta-V. A typical Damage Data Report is shown in Figure 3-2.
 
 ![Figure 3-2](images/p056-009.png)
+
 *Figure 3-2: Typical Damage Data Report issued by SIMON.*
 
 *(updated: the current Damage Data report also includes CDC(s), collision impulse data — up to 10 impulses per vehicle — and crush depth tables. When the **Include Free Space** calculation option is changed, the crush tables switch between "Excl. Free Space" and "Incl. Free Space" measurements; see Chapter 2, Event Calculation Options.)*
@@ -75,6 +77,7 @@ The Damage Data Report displays a table containing vehicle collision information
 Individual Driver Control tables for steering, braking, throttle and gear selection used by SIMON in the current event. A typical Driver Controls Output Report is shown in Figure 3-3.
 
 ![Figure 3-3](images/p056-009.png)
+
 *Figure 3-3: Typical Driver Controls Output Report issued by SIMON.*
 
 ### Environment Data
@@ -87,6 +90,7 @@ The Environment Data Output Report consists of two sections of data:
 A typical Environment Data Output Report is shown in Figure 3-4.
 
 ![Figure 3-4](images/p057-011.png)
+
 *Figure 3-4: Typical Environment Data Output Report issued by SIMON.*
 
 ### Event Data
@@ -100,6 +104,7 @@ The Event Data Output Report lists event-specific data for each vehicle. These d
 A typical Event Data Output Report is shown in Figure 3-5.
 
 ![Figure 3-5](images/p058-012.png)
+
 *Figure 3-5: A portion of a typical Event Data Output Report issued by SIMON.*
 
 ### Human Data
@@ -109,6 +114,7 @@ A typical Human Data Output Report is shown in Figure 3-6. Human data includes t
 > **NOTE:** Coordinates are for the pelvis CG.
 
 ![Figure 3-6](images/p059-013.png)
+
 *Figure 3-6: Typical Human Data Output Report issued by SIMON.*
 
 ### Messages
@@ -116,6 +122,7 @@ A typical Human Data Output Report is shown in Figure 3-6. Human data includes t
 A typical Messages Report is shown in Figure 3-7. For a complete listing of messages issued by SIMON, see Chapter 6.
 
 ![Figure 3-7](images/p059-014.png)
+
 *Figure 3-7: Typical Messages Output Report issued by SIMON.*
 
 ### Program Data
@@ -129,6 +136,7 @@ The Program Data Report includes the following information:
 A typical Program Data Report is shown in Figure 3-8.
 
 ![Figure 3-8](images/p060-015.png)
+
 *Figure 3-8: Typical Program Data Output Report issued by SIMON.*
 
 ### Vehicle Data
@@ -146,6 +154,7 @@ The Vehicle Data Report includes the following information:
 A portion of a typical Vehicle Data Output Report is shown in Figure 3-9.
 
 ![Figure 3-9](images/p061-016.png)
+
 *Figure 3-9: A portion of a typical Vehicle Data Output Report issued by SIMON.*
 
 ## Graphic Reports
@@ -172,6 +181,7 @@ SIMON produces a Variable Output table containing the time-based simulation resu
 An example of a Variable Output table is shown in Figure 3-10. Detailed listings of each Variable Output parameter produced by SIMON are found in Tables 3-1, 3-2, and 3-3. For more information about HVE Variable Output parameters, refer to the HVE User's Manual, Chapter 16, Event Model.
 
 ![Figure 3-10](images/p064-017.png)
+
 *Figure 3-10: Typical Variable Output Table from SIMON.*
 
 **Table 3-1 General Vehicle Variable Output Table**
@@ -208,6 +218,7 @@ An example of a Variable Output table is shown in Figure 3-10. Detailed listings
 SIMON produces a trajectory simulation and a damage profile (if a vehicle collision has been simulated using DyMESH) of the current event. The trajectory simulation is a 3-D visualization of the data displayed in the Variable Output table (see previous section). An example of a trajectory simulation is shown in Figure 3-11. The damage profile is a time-domain 3-D visualization of the deformation of the vehicle mesh calculated by DyMESH during the vehicle collision.
 
 ![Figure 3-11](images/p068-018.png)
+
 *Figure 3-11: Typical Trajectory Simulation Report issued by SIMON.*
 
 ### Displaying a Trajectory Simulation
@@ -215,6 +226,7 @@ SIMON produces a trajectory simulation and a damage profile (if a vehicle collis
 The Trajectory Simulation is controlled using the Playback Controller (Figure 3-12).
 
 ![Figure 3-12](images/p069-fig3-12.png)
+
 *Figure 3-12: Playback Controller.*
 
 The Playback Controller's buttons have the following functions:

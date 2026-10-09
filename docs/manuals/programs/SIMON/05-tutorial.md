@@ -72,6 +72,7 @@ First let's add the vehicle to our case. The vehicle is a 2001 Cadillac Catera 4
 The Cadillac Catera is displayed in the viewer, as shown in Figure 5-1.
 
 ![Figure 5-1](images/p132-038.png)
+
 *Figure 5-1: 2001 Cadillac Catera used in the ISO 3888 Lane-Change Maneuver.*
 
 ## Editing the Vehicle
@@ -89,6 +90,7 @@ To check to see if the ABS system is enabled, perform the following steps:
 The Cadillac Catera is now ready for our ISO lane-change maneuver.
 
 ![Figure 5-2](images/p132-039.png)
+
 *Figure 5-2: Brake System Data dialog, with the ABS Installed checkbox marked. Note that the Edit button becomes enabled after clicking the checkbox.*
 
 ## Creating the Environment
@@ -111,6 +113,7 @@ Now, let's add the environment:
 The selected environment is added to our case and displayed in the Environment Viewer (see Figure 5-3). Manipulate the viewer to view the scene.
 
 ![Figure 5-3](images/p134-040.png)
+
 *Figure 5-3: Environment for ISO 3888 Lane-Change Maneuver.*
 
 ### Saving the Case
@@ -161,6 +164,7 @@ Now we're ready to set up the first event:
    > **NOTE:** Remember to press Apply or \<Enter\> after entering a value; otherwise the value is not assigned!
 
 ![Figure 5-4](images/p137-041.png)
+
 *Figure 5-4: Event Editor, setting up our first SIMON event. The Position/Velocity dialog is used for assigning the Cadillac's initial position and velocity.*
 
 #### Steering Input
@@ -202,6 +206,7 @@ To assign these target positions, perform the following steps:
 After assigning all the target positions, the Event Editor should appear as shown in Figure 5-5.
 
 ![Figure 5-5](images/p139-042.png)
+
 *Figure 5-5: Event Editor, after assigning the target positions used by the HVE Driver Model.*
 
 #### Brake Input
@@ -237,6 +242,7 @@ Now, we're ready to execute the event.
 Note that the vehicle successfully negotiates the lane change maneuver, even with a heavy brake application. The vehicle comes to a stop after travelling approximately 120 ft. The average deceleration is 0.80 g. Figure 5-6 shows the vehicle at its rest position. Note also the faint tire marks caused by tire scuffing.
 
 ![Figure 5-6](images/p140-043.png)
+
 *Figure 5-6: ISO Lane-Change Maneuver, w/ABS.*
 
 > **NOTE:** If you remove the pavement texture, you can see a faint tire mark!
@@ -255,6 +261,7 @@ To create the next event, perform the following steps:
 1. Choose Event Mode. The Event Editor is displayed.
 
 ![Figure 5-7](images/p141-044.png)
+
 *Figure 5-7: Making a copy of the ISO Lane-Change, w/ABS event.*
 
 We have a choice now. One way to create our next event is to duplicate the steps used while setting up the first event. But there is a much better way!
@@ -274,6 +281,7 @@ A duplicate of the first event has been created and set up, and we're ready to e
 Note that the vehicle's brakes lock and it does not successfully negotiate the lane change maneuver. The vehicle skids straight, running over the cones, and coming to a stop after travelling approximately 140 ft. The average deceleration is 0.66 g. Figure 5-8 shows the vehicle at its rest position. Note also the dark skidmarks caused by locked-wheel braking.
 
 ![Figure 5-8](images/p142-045.png)
+
 *Figure 5-8: ISO Lane-Change, w/o ABS.*
 
 ## Viewing Results
@@ -306,6 +314,7 @@ To view the output reports, we need to be in Playback mode:
 The reports listed above are displayed by selecting Report Windows. Each Report Window contains an individual report.
 
 ![Figure 5-9](images/p144-046.png)
+
 *Figure 5-9: Report Window Information dialog, displaying the name of each event in the current case.*
 
 To view the reports produced by the SIMON, ISO Lane-Change, w/ABS event, perform the following steps:
@@ -322,6 +331,7 @@ The selected report will be displayed in a resizable window. The following secti
 SIMON produces a number of messages, depending on the outcome of the event. For a complete listing and explanation of the messages, refer to Chapter 6.
 
 ![Figure 5-10](images/p145-047.png)
+
 *Figure 5-10: Messages Report for SIMON, ISO Lane-Change, w/ABS.*
 
 To view the Messages report: Add a new Report Window, select the event, choose **Messages** from the Selected Output option list and press OK. The Messages report is displayed as shown in Figure 5-10.
@@ -331,6 +341,7 @@ To view the Messages report: Add a new Report Window, select the event, choose *
 The Accident History report displays the time and total distance traveled, as well as the position and velocity at the start and end of the run.
 
 ![Figure 5-11](images/p146-048.png)
+
 *Figure 5-11: Accident History Report for SIMON, ISO Lane-Change, w/ABS.*
 
 To view the Accident History report: Add a new Report Window, select the event, choose **Accident History** and press OK. The Accident History report is displayed as shown in Figure 5-11.
@@ -340,6 +351,7 @@ To view the Accident History report: Add a new Report Window, select the event, 
 The Driver Data report displays the parameters used by the HVE Driver Model and the Braking and Throttle (open-loop) driver tables.
 
 ![Figure 5-12](images/p147-049.png)
+
 *Figure 5-12: Driver Data Report for SIMON, ISO Lane-Change, w/ABS.*
 
 To view the Driver Data report: Add a new Report Window, select the event, choose **Driver Data** and press OK. The Driver Data report is displayed as shown in Figure 5-12.
@@ -349,6 +361,7 @@ To view the Driver Data report: Add a new Report Window, select the event, choos
 The Environment Data report displays the physical and visual parameters describing the environment.
 
 ![Figure 5-13](images/p148-050.png)
+
 *Figure 5-13: Environment Data Report for SIMON, ISO Lane-Change, w/ABS.*
 
 To view the Environment Data report: Add a new Report Window, select the event, choose **Environment Data** and press OK. The Environment Data report is displayed as shown in Figure 5-13.
@@ -358,6 +371,7 @@ To view the Environment Data report: Add a new Report Window, select the event, 
 The Event Data report displays the event-related parameters (payload, accelerometer, wheel displacement, brake and tire blow-out).
 
 ![Figure 5-14](images/p148-050.png)
+
 *Figure 5-14: Event Data Report for SIMON, ISO Lane-Change, w/ABS.*
 
 To view the Event Data report: Add a new Report Window, select the event, choose **Event Data** and press OK. The Event Data report is displayed as shown in Figure 5-14.
@@ -371,6 +385,7 @@ To view the Vehicle Data report: Add a new Report Window, select the event, choo
 > **NOTE:** The SIMON Vehicle Data report is too large to fit in the viewer. Use the scroll bars to view the entire report.
 
 ![Figure 5-15](images/p151-052.png)
+
 *Figure 5-15: Vehicle Data Report for SIMON, ISO Lane-Change, w/ABS (only a portion of the total report is shown).*
 
 ### Program Data
@@ -378,6 +393,7 @@ To view the Vehicle Data report: Add a new Report Window, select the event, choo
 The Program Data report includes the simulation control parameters and other run-time information.
 
 ![Figure 5-16](images/p152-053.png)
+
 *Figure 5-16: Program Data Report for SIMON, ISO Lane-Change Maneuver.*
 
 To view the Program Data report: Add a new Report Window, select the event, choose **Program Data** and press OK. The Program Data report is displayed as shown in Figure 5-16.
@@ -395,6 +411,7 @@ The purpose of our SIMON study is to simulate the effects of the ABS brake syste
 - Click on Select Variables in the SIMON, ISO Lane-Change, w/ABS Variable Output window. The Variable Selection dialog for Cadillac Catera 4-Dr is displayed, as shown in Figure 5-17.
 
 ![Figure 5-17](images/p154-054.png)
+
 *Figure 5-17: Variable Selection dialog for the Cadillac Catera 4-Dr.*
 
 The Kinematics Output group is the default selection and the Kinematics variable list is displayed. Let's add the System Brake Pressure and the Right Front and Right Rear Wheel Brake Pressures to the Key Results window:
@@ -407,6 +424,7 @@ The Kinematics Output group is the default selection and the Kinematics variable
 The Variable Output report for the SIMON, ISO Lane-Change, w/ABS event now includes the selected results (see Figure 5-18).
 
 ![Figure 5-18](images/p155-055.png)
+
 *Figure 5-18: Variable Output Report for SIMON, ISO Lane-Change, w/ABS.*
 
 #### Graphing Results
@@ -414,6 +432,7 @@ The Variable Output report for the SIMON, ISO Lane-Change, w/ABS event now inclu
 It is easy to graph the results displayed in the Variable Output table: press **Graph**. The selected results are displayed vs. Time, as shown in Figure 5-19.
 
 ![Figure 5-19](images/p156-056.png)
+
 *Figure 5-19: Graph of master cylinder pressure and right front and right rear wheel brake pressures.*
 
 > **NOTE:** The variables selected for graphing must have the same units.
@@ -438,6 +457,7 @@ To visualize the motion, perform the following steps:
 6. Click Advance to End (right arrow with bar). The simulation advances to the end of the run.
 
 ![Figure 5-20](images/p158-057.png)
+
 *Figure 5-20: Trajectory Simulation Report for SIMON, ISO Lane-Change Maneuver.*
 
 ### Printing

@@ -50,6 +50,7 @@ The remaining options will automatically initialize to their default conditions.
 Our goal is to use EDSVS to drive a 1997 Ford Explorer along the path described in Figure 5-1. This tutorial shows us how to perform this simulation.
 
 ![Figure 5-1](images/p061-fig5-1.png)
+
 *Figure 5-1: Path for EDSVS Simulation Tutorial. The path starts at (-30,-10,0), passes (-10,-10,0), follows a circle of radius 50 ft through (40,40,90) and (-10,90,180), reverses curvature through (-60,-40,270), then continues through (-90,-10,180) to (-150,-10,180). Coordinates are (X, Y, heading in degrees).*
 
 ## Creating the Vehicle
@@ -74,6 +75,7 @@ Now let's add the vehicle to our case. The vehicle is a dark green 1997 Ford Exp
 The Ford Explorer is displayed in the viewer, as shown in Figure 5-2.
 
 ![Figure 5-2](images/p063-013.png)
+
 *Figure 5-2: Ford Explorer before editing.*
 
 ### Editing the Vehicle
@@ -89,6 +91,7 @@ Next, we will edit the vehicle to change its color and weight. To edit the color
    > NOTE: The vehicle's apparent color may be slightly misleading because the vehicle is translucent when displayed in the Vehicle Editor. The actual color will be used whenever the vehicle is displayed during Event and Playback mode.
 
 ![Figure 5-3](images/p064-014.png)
+
 *Figure 5-3: Vehicle Color dialog, used for assigning the vehicle color.*
 
 Next, let's change the weight. Perform the following steps:
@@ -105,6 +108,7 @@ Next, let's change the weight. Perform the following steps:
 4. Press *OK* to accept the weight value and update the Total Yaw Inertia of the vehicle.
 
 ![Figure 5-4](images/p065-015.png)
+
 *Figure 5-4: Vehicle Inertias dialog, used for editing the current weight and yaw inertia. The values in this dialog are customized for this simulation.*
 
 ## Creating the Environment
@@ -126,6 +130,7 @@ Now, let's add the environment:
 The selected environment is added to our case and displayed in the Environment Viewer (see Figure 5-5). Use the viewer thumb wheels and/or manipulators to view the scene.
 
 ![Figure 5-5](images/p067-016.png)
+
 *Figure 5-5: Environment used for our EDSVS tutorial.*
 
 ## Saving the Case
@@ -175,6 +180,7 @@ Now, we're ready to set up the event.
 3. Click the *Velocity Is Assigned* checkbox. Enter the initial velocity, `20` mph, then click *Apply*.
 
 ![Figure 5-6](images/p069-017.png)
+
 *Figure 5-6: Vehicle positioning using the HVE-2D Event Editor. The manipulators can be used to drag and drop the vehicle into position.*
 
 > NOTE: When entering coordinates and velocities using the Position/Velocity dialog, remember to press \<Enter\>; otherwise, the values will not be assigned.
@@ -230,6 +236,7 @@ Let's add *Wheel Fx, Fy, Fz* and *Steer Angle* to the Key Results window:
 3. Press *OK* to add the selected variables to the list.
 
 ![Figure 5-7](images/p071-018.png)
+
 *Figure 5-7: Key Results Variable Selection dialog, used for selecting variables to be displayed in the Key Results window.*
 
 Now, we're ready to execute the event.
@@ -243,6 +250,7 @@ The EDSVS event is shown at time t = 3.10 seconds in Figure 5-8. Note the vehicl
 We have now completed the event.
 
 ![Figure 5-8](images/p073-019.png)
+
 *Figure 5-8: HVE-2D Event Editor executing the EDSVS Event.*
 
 ## Viewing Results
@@ -267,6 +275,7 @@ To view the output reports, we need to be in Playback mode:
 The reports listed above are displayed by selecting Report Windows. Each Report Window contains an individual report.
 
 ![Figure 5-9](images/p074-020.png)
+
 *Figure 5-9: Report Window Information dialog, showing the name of the event(s) in the current case.*
 
 To view the reports produced by the *EDSVS, Steering Maneuver* event, perform the following steps:
@@ -283,6 +292,7 @@ The selected report will be displayed in a resizable window. The following pages
 The Accident History report displays the time and total distance traveled, as well as position and velocity information for the start and end of the run.
 
 ![Figure 5-10](images/p075-021.png)
+
 *Figure 5-10: Accident History Report for EDSVS, Steering Maneuver. Total distance travelled 478.31 ft in 20.0 sec; Initial: X = -30.00, Y = -10.00, PSI = 0.00, V-tot = 20.00 mph; Final: X = -259.93, Y = -9.24, PSI = 179.88, V-tot = 15.00 mph.*
 
 To view the Accident History report for the *EDSVS, Steering Maneuver* event, perform the following steps:
@@ -301,6 +311,7 @@ The Accident History report is displayed for the *EDSVS, Steering Maneuver* even
 EDSVS produces a number of messages, depending on the outcome of the event. For a complete list and explanation of the messages produced by EDSVS, see [Chapter 6](06-messages.md).
 
 ![Figure 5-11](images/p076-022.png)
+
 *Figure 5-11: Messages Report for EDSVS, Steering Maneuver (showing "No Messages").*
 
 To view the Messages report produced by the *EDSVS, Steering Maneuver* event, perform the following steps:
@@ -317,6 +328,7 @@ The Messages report is displayed for the *EDSVS, Steering Maneuver* event, as sh
 The Program Data report for EDSVS displays the simulation controls used for the current event.
 
 ![Figure 5-12](images/p077-023.png)
+
 *Figure 5-12: Program Data Report for EDSVS, Steering Maneuver. Shows General Program Information (EDSVS Version No: 7.31 in the original) and Simulation Controls (Max Simulation Time 20.0 sec, Trajectory Phase dt 0.0200 sec, Output Interval 0.1000 sec, Linear Term Vel 2.00 mph).*
 
 To view the Program Data report for the *EDSVS, Steering Maneuver* event, perform the following steps:
@@ -333,6 +345,7 @@ The Program Data report is displayed for the *EDSVS, Steering Maneuver* event, a
 The Vehicle Data report displays the vehicle data, tire data and driver control tables for the EDSVS vehicle.
 
 ![Figure 5-13](images/p078-024.png)
+
 *Figure 5-13: Vehicle Data Report for EDSVS, Steering Maneuver. Shows dimensional data (Overall Length 186.75 in, Wheelbase 112.00 in, CG Height Above Ground 28.28 in, Lateral Load Xfer 0.55, Weight 4405.00 lb, Total Yaw Inertia 37428.51 lb-sec²-in, Sprung Yaw Inertia 33905.68 lb-sec²-in) and Tire Data (Peak Friction 0.85, Slide Friction 0.60, Slip @ Peak Mu 0.10).*
 
 To view the Vehicle Data report for the *EDSVS, Steering Maneuver* event, perform the following steps:
@@ -375,11 +388,13 @@ Next, let's add the right front tire forces and steer angle:
 5. Press *OK* to add the selected variables to the Variable Output window.
 
 ![Figure 5-14](images/p080-025.png)
+
 *Figure 5-14: Variable Selection dialog, used for selecting the results displayed in the Output Report. The variable list is displayed after selecting the Wheels group and selecting Axle 1, Right Side.*
 
 The Variable Output report for the *EDSVS, Steering Maneuver* event now includes X,Y path coordinates and heading angle, path radius, and right front Fx, Fy, Fz tire forces, steer angle, plus any other variables you may have added (see Figure 5-15).
 
 ![Figure 5-15](images/p081-026.png)
+
 *Figure 5-15: Variable Output report for EDSVS, Steering Maneuver, displaying the selected results.*
 
 ### Trajectory Simulation
@@ -402,6 +417,7 @@ To visualize the motion, use the Playback Controller to perform the following st
 5. Click *Advance to End* (right arrow with bar). The simulation advances to the end of the run.
 
 ![Figure 5-16](images/p083-027.png)
+
 *Figure 5-16: Trajectory Simulation for EDSVS, Steering Maneuver, displaying the selected results.*
 
 ### Printing

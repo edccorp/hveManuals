@@ -46,6 +46,7 @@ An example of each of these numeric output reports from EDSVS is shown on the fo
 The Accident History Report displays a table of initial and final positions and velocities for the vehicle. A typical Accident History Report is shown in Figure 3-1.
 
 ![Figure 3-1](images/p041-006.png)
+
 *Figure 3-1: Typical Accident History Output Report issued by EDSVS.*
 
 The report shows the Total Distance Travelled and Time, along with Initial and Final rows containing Position (X, Y, PSI) and Velocity (V-tot, u-vel, v-vel, Yaw Vel) values. *(updated: the current report layout also supports a "Rest" row.)*
@@ -55,6 +56,7 @@ The report shows the Total Distance Travelled and Time, along with Initial and F
 A typical Messages Report is shown in Figure 3-2. For a complete listing of messages issued by EDSVS, see [Chapter 6](06-messages.md).
 
 ![Figure 3-2](images/p042-007.png)
+
 *Figure 3-2: Typical Messages Output Report issued by EDSVS.*
 
 ### Program Data
@@ -68,6 +70,7 @@ The Program Data Report includes the following information:
 A typical Program Data Report is shown in Figure 3-3.
 
 ![Figure 3-3](images/p043-008.png)
+
 *Figure 3-3: Typical Program Data Output Report issued by EDSVS.*
 
 ### Vehicle Data
@@ -84,6 +87,7 @@ The Vehicle Data Report includes the following information:
 A portion of a typical Vehicle Data Report is shown in Figure 3-4.
 
 ![Figure 3-4](images/p044-009.png)
+
 *Figure 3-4: Typical Vehicle Data Output Report issued by EDSVS (only a portion of the total report is shown).*
 
 ## Graphic Reports
@@ -117,6 +121,7 @@ An example of a Variable Output table is shown in Figure 3-5. A detailed listing
 (*) If Driver Control option was *At Steering Wheel*.
 
 ![Figure 3-5](images/p047-010.png)
+
 *Figure 3-5: Typical Variable Output report.*
 
 ## Trajectory Simulations
@@ -124,6 +129,7 @@ An example of a Variable Output table is shown in Figure 3-5. A detailed listing
 EDSVS produces a trajectory simulation of the current event. The trajectory simulation is a visualization of the data displayed in the Variable Output table (see previous section). An example of a trajectory simulation is shown in Figure 3-6.
 
 ![Figure 3-6](images/p048-011.png)
+
 *Figure 3-6: Typical EDSVS Trajectory Simulation.*
 
 ### Displaying a Trajectory Simulation
@@ -140,6 +146,7 @@ The Playback Controller's buttons have the following functions:
 - **Advance to End** — Advance to the end of the simulation
 
 ![Figure 3-7](images/p049-fig3-7.png)
+
 *Figure 3-7: Playback Controller.*
 
 > NOTE: The Playback Controller is also used for controlling the Playback Window. This window is used for combining events and for making movie files. Refer to the User's Manual for more information on the Playback Window and making movie files.

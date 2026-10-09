@@ -9,6 +9,7 @@ EDHIS computes human kinematics (position, velocity and acceleration vs time), j
 The EDHIS human model includes 12 degrees of freedom. The human is represented by three inertial segments (head, torso and lower extremities) and 2 joints (neck and hip). The body is visualized using the HVE 15-segment, 14-joint model by combining the head and neck into a single segment called the head; the HVE pelvis, abdomen and chest are combined to form the EDHIS torso; and the right and left upper legs, lower legs and feet are combined to form the lower extremities. 3-dimensional ellipsoids may be attached to any of these three segments to sense force-producing interactions with the vehicle interior or exterior.
 
 ![Figure 1-1](images/p018-000.png)
+
 *Figure 1-1: EDHIS Event.*
 
 The motion of the vehicle is defined by a 6 degree-of-freedom collision pulse (acceleration vs time history). The vehicle has attached to it a number of planar contact surfaces that may be arranged to form interior surfaces, such as seats, dashboards and windshields, and exterior surfaces, such as bumper, grill, hood and windshield. Forces are applied to the human whenever interaction is sensed between the human ellipsoids and the vehicle contact surfaces.

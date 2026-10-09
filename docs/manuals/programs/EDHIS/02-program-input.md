@@ -46,6 +46,7 @@ To add a human to the current HVE case, perform the following steps:
 6. Click *OK* to add the human to the current case.
 
 ![Figure 2-1](images/p023-001.png)
+
 *Figure 2-1: HVE Human Editor.*
 
 The following Human Parameter groups are used by EDHIS:
@@ -59,7 +60,7 @@ The EDHIS human is modeled by 3 mass segments (Head, Torso and Legs) connected b
 
 The specific data in each of the above parameter groups that are actually used by EDHIS are defined in Tables 2-1 and 2-2.
 
-> **NOTE:** For information about using the Human Editor to create and edit humans, refer to the HVE User's Manual, Human Editor section (see `docs/manuals/07-humans/`).
+> **NOTE:** For information about using the Human Editor to create and edit humans, refer to the HVE User's Manual, Human Editor section (see the [Humans dialog reference](../../07-humans/README.md)).
 
 ### Inertias
 
@@ -155,6 +156,7 @@ To add a vehicle to the current HVE case, perform the following steps:
 6. Click OK to add the vehicle to the current case.
 
 ![Figure 2-2](images/p028-002.png)
+
 *Figure 2-2: HVE Vehicle Editor.*
 
 The following Vehicle Parameter groups are used by EDHIS:
@@ -305,6 +307,7 @@ The visual data are not used by the event; they are provided for studies related
 > **NOTE:** The visual data (Location, Time, Date and Angle of earth-fixed X axis) affect the lighting of the event! Depending on your view (Camera Position) the scene may be shaded and difficult to see. If the time is after sundown, the view will be dark.
 
 ![Figure 2-3](images/p035-003.png)
+
 *Figure 2-3: Environment Editor.*
 
 To add an environment to the current HVE case, perform the following steps:
@@ -391,6 +394,7 @@ EDHIS uses the following *event set-up* options:
 The specific Event Set-up data used by EDHIS are defined in Table 2-6.
 
 ![Figure 2-4](images/p038-004.png)
+
 *Figure 2-4: HVE Event Editor, setting up and executing an EDHIS event.*
 
 #### Position/Velocity
@@ -514,6 +518,7 @@ EDHIS has the following user-selectable simulation model options (see [Calculati
 To view and edit these options, click on the menu bar *Options* option and choose *Calculation Options*.
 
 ![Figure 2-5](images/p043-005.png)
+
 *Figure 2-5: EDHIS Calculation Options dialog.*
 
 ### Executing An Event
@@ -528,6 +533,7 @@ To execute an EDHIS event, use the Event Controller, a component of the Event Ed
 - **Advance to End** — Advance to the end of the simulation
 
 ![Figure 2-6](images/p044-fig2-6.png)
+
 *Figure 2-6: Event Controller.*
 
 > **NOTE:** If you make changes to any of the event set-up options (see previous section), those changes will have no effect unless you press Reset before pressing Play.

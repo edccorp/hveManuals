@@ -90,9 +90,11 @@ The default vehicle name is *Class 4 Trailer*. Let's change it:
 - The 44 foot semi-trailer is displayed in the viewer, as shown in Figure 5-2.
 
 ![Figure 5-1](images/p065-014.png)
+
 *Figure 5-1: Mack Truck Tractor, created from a generic Class 3 short wheelbase truck.*
 
 ![Figure 5-2](images/p065-015.png)
+
 *Figure 5-2: 44 Ft Semi-trailer, created from a generic Class 4 Trailer.*
 
 ### Editing the Vehicles
@@ -107,6 +109,7 @@ This tutorial includes more vehicle editing than other tutorials, mainly because
 - When the color is to your liking, close the dialog by clicking the close button on the upper right corner of the dialog.
 
 ![Figure 5-3](images/p066-016.png)
+
 *Figure 5-3: Vehicle Color dialog, used for assigning the vehicle color.*
 
 > NOTE: The vehicle's apparent color may be slightly misleading because the vehicle is translucent when displayed in the Vehicle Editor. The actual color will be used whenever the vehicle is displayed during Event and Playback mode.
@@ -138,9 +141,11 @@ Next, let's add the 3-D geometry file for the Mack truck. The geometry file was 
 The new geometry file is applied to the Mack Truck Tractor (see Figure 5-5).
 
 ![Figure 5-4](images/p067-017.png)
+
 *Figure 5-4: Vehicle Geometry File Selection dialog, used for adding a 3-D geometry file to the Mack tractor.*
 
 ![Figure 5-5](images/p068-018.png)
+
 *Figure 5-5: Mack Tractor after adding its geometry file.*
 
 Next, let's edit the trailer by changing its color and adding a geometry file.
@@ -161,9 +166,11 @@ The new geometry file is applied to the generic trailer (see Figure 5-7).
 The tractor and trailer are now ready for our EDVTS simulation analysis.
 
 ![Figure 5-6](images/p069-019.png)
+
 *Figure 5-6: Vehicle Geometry File Selection dialog, used for adding a 3-D geometry file to the 44 foot van trailer.*
 
 ![Figure 5-7](images/p069-020.png)
+
 *Figure 5-7: 44 Ft Semi-trailer after adding its geometry file.*
 
 ## Creating the Environment
@@ -190,9 +197,11 @@ Now, let's add the environment:
 The selected environment is added to our case and displayed in the Environment Viewer (see Figures 5-8 and 5-9). Use the viewer thumb wheels to view the scene.
 
 ![Figure 5-8](images/p071-021.png)
+
 *Figure 5-8: HVE-2D environment used for the EDVTS tutorial.*
 
 ![Figure 5-9](images/p071-022.png)
+
 *Figure 5-9: HVE environment used for the EDVTS tutorial.*
 
 ## Saving the Case
@@ -235,6 +244,7 @@ Now, we're ready to set up the event.
 - Click on the Mack truck's X-Y manipulator (see Figure 5-10), wait for it to turn bright yellow (indicating it has been selected), and drag it to its initial position, X=`250.0` ft, Y=`-48.0` ft (for HVE, X=`150.0` ft, Y=`-48.0` ft). In the Position/Velocity dialog, enter a heading (yaw) angle of `180.0` degrees.
 
 ![Figure 5-10](images/p074-023.png)
+
 *Figure 5-10: Vehicle positioning using the Event Editor. The manipulators can be used to drag and drop the vehicle into position.*
 
 > NOTE: To select the X-Y manipulator, the viewer must be in Pick mode, as indicated by the highlighted arrow in the upper right corner of the viewer (see Figure 5-10).
@@ -300,6 +310,7 @@ Next, we need to enter the driver controls for the trailer. To perform this oper
 > NOTE: We can't select the trailer from the Event Humans & Vehicle list because the trailer is not an independent vehicle; it is a "child" of the Mack Tractor. Therefore, the trailer is not displayed in this list.
 
 ![Figure 5-11](images/p077-024.png)
+
 *Figure 5-11: Trailer positioning using the Event Editor. The manipulators are displayed at the connection between the tractor and trailer. The manipulators can be used to drag and drop the vehicle into position.*
 
 Now, we're ready to enter the driver controls for the trailer. To enter the brake table, perform the following steps:
@@ -360,6 +371,7 @@ Since our goal for this event is to see if the vehicle rolls over, let's look at
 - Click on *Select Variables* in the *Mack Truck Tractor* Key Results window. The Variable Selection dialog for *Mack Truck Tractor* is displayed.
 
 ![Figure 5-12](images/p079-025.png)
+
 *Figure 5-12: Key Results Variable Selection dialog, used for selecting variables to be displayed in the Key Results window.*
 
 Let's add *Tire Fz'* to the Mack's Key Results window:
@@ -387,6 +399,7 @@ Now, we're ready to execute the event.
 > NOTE: While the event is executing, watch the current results (especially the Velocity, Acceleration and Fz values) in the Key Results windows.
 
 ![Figure 5-13](images/p081-026.png)
+
 *Figure 5-13: Event Editor executing the EDVTS event.*
 
 The EDVTS event terminates at time t = 7.56 seconds, when the event terminates due to the trailer's right front wheel lifting.
@@ -419,6 +432,7 @@ To view the output reports, we need to be in Playback mode:
 The reports listed above are displayed by selecting Report Windows. Each Report Window contains an individual report.
 
 ![Figure 5-14](images/p083-027.png)
+
 *Figure 5-14: Report Window Information dialog, showing the name of the event(s) in the current case.*
 
 To view the reports produced by the *EDVTS, Offramp Rollover* event, perform the following steps:
@@ -435,6 +449,7 @@ The selected report will be displayed in a resizable window. The following pages
 The Accident History report displays the time and total distance traveled, as well as position and velocity at the start and end of the run.
 
 ![Figure 5-15](images/p084-028.png)
+
 *Figure 5-15: Accident History Report for EDVTS, Offramp Rollover.*
 
 To view the Accident History report for the *EDVTS, Offramp Rollover* event, perform the following steps:
@@ -451,6 +466,7 @@ The Accident History report is displayed for the *EDVTS, Offramp Rollover* event
 EDVTS produces a number of messages, depending on the outcome of the event. For a complete list and explanation of these messages, see [Chapter 6](06-messages.md).
 
 ![Figure 5-16](images/p085-029.png)
+
 *Figure 5-16: Messages Report for EDVTS, Offramp Rollover.*
 
 To view the Messages report produced by the *EDVTS, Offramp Rollover* event, perform the following steps:
@@ -467,6 +483,7 @@ The Messages report is displayed for the *EDVTS, Offramp Rollover* event, as sho
 The Program Data report contains the EDVTS version number and the simulation controls used by the EDVTS event.
 
 ![Figure 5-17](images/p086-030.png)
+
 *Figure 5-17: Program Data Report for EDVTS, Offramp Rollover.*
 
 To view the Program Data report for the *EDVTS, Offramp Rollover* event, perform the following steps:
@@ -483,6 +500,7 @@ The Program Data report is displayed for the *EDVTS, Offramp Rollover* event, as
 The Vehicle Data report for EDVTS displays vehicle data, tire data and driver control tables for each vehicle in the event.
 
 ![Figure 5-18](images/p087-031.png)
+
 *Figure 5-18: Vehicle Data Report for EDVTS, Offramp Rollover.*
 
 To view the Vehicle Data report for the *EDVTS, Offramp Rollover* event, perform the following steps:
@@ -536,9 +554,11 @@ Next, let's add the vertical tire forces for the semi-trailer:
 The Variable Output report for the *EDVTS, Offramp Rollover* event now includes tow vehicle velocity and acceleration and vertical tire loads for each wheel location, as shown in Figure 5-20.
 
 ![Figure 5-19](images/p090-fig5-19.png)
+
 *Figure 5-19: Variable Selection dialog, used for selecting the results displayed in the Output Report.*
 
 ![Figure 5-20](images/p091-033.png)
+
 *Figure 5-20: Variable Output Report for EDVTS, Offramp Rollover, displaying the selected results.*
 
 ### Trajectory Simulation
@@ -562,6 +582,7 @@ To visualize the motion as the tractor-trailer attempts to negotiate the off-ram
 - Click *Advance to End* (right arrow with bar). The simulation advances to the end of the run.
 
 ![Figure 5-21](images/p093-034.png)
+
 *Figure 5-21: Trajectory Simulation for EDVTS, Offramp Rollover, showing the tractor-trailer near the end of the run, before the inside trailer wheels lift off the ground.*
 
 ### Printing

@@ -22,6 +22,7 @@ The vehicle model includes the following basic components for each vehicle unit:
 The basic vehicle model is shown in Figure 4-1.
 
 ![Figure 4-1](images/p072-020.png)
+
 *Figure 4-1: SIMON Vehicle Model.*
 
 ## Equations of Motion
@@ -206,6 +207,7 @@ x_{Wheel} = x_{Initial} + \Delta x_{Payload} + \Delta x_{Occupants} + \Delta x_{
 $$
 
 ![Figure 4-2](images/p078-021.png)
+
 *Figure 4-2: Degrees of freedom for an independent suspension. Dynamic motion of each wheel is defined in the vehicle-fixed z-direction (spin and steer angular dynamic motion may also be defined as an option; see Wheel Spin and Steering System sections).*
 
 The wheel y-coordinate is defined by the user-assigned wheel y-coordinate, possibly modified by occupants and payloads and event-related wheel displacement. In addition, the wheel lateral location changes for an independent suspension due to the effects of the half-track change during wheel jounce and rebound. Thus,
@@ -240,6 +242,7 @@ A solid axle suspension also includes two degrees of freedom inertially coupled 
 Unlike independent suspensions, for solid axle suspensions the equations of motion describe the motion of the solid axle roll center, not the individual wheels.
 
 ![Figure 4-3](images/p079-022.png)
+
 *Figure 4-3: Degrees of freedom for a solid axle suspension.*
 
 The vehicle-fixed x-coordinate of the unsprung mass is equal to the average of the current wheel x-coordinates (see Eq. 15).
@@ -303,6 +306,7 @@ $$
 $$
 
 ![Figure 4-4](images/p081-023.png)
+
 *Figure 4-4: Wheel spin degree of freedom moments and forces.*
 
 Collecting the applied moments at each wheel as
@@ -383,6 +387,7 @@ SIMON also incorporates a Steer Degree of Freedom model. The Steer Degree of Fre
 The engineering model used by the Steer Degree of Freedom option is shown in Figure 4-5. The linkage is assumed to be rigid, thus the angular acceleration about the steering axis is the same for right-side and left-side wheels. External steer forces are generated at the tire-road interface, thus producing moments about the steering axis. The moments are resisted by steer system inertia and internal coulomb friction. Steering is limited by right and left steering stops at each wheel.
 
 ![Figure 4-5](images/p084-024.png)
+
 *Figure 4-5: Steering system model used for Steer Degree of Freedom option.*
 
 Application of Newton's 2nd law to the steering system, ignoring inertial coupling effects, results in
@@ -491,6 +496,7 @@ Steer angles are limited by steering stops at the right- and left-side wheels. E
 > **NOTE:** For example, it is possible during a left turn for the stop at the left-side wheel to engage before the stop for the right-side wheel.
 
 ![Figure 4-6](images/p086-025.png)
+
 *Figure 4-6: Steer axis friction and stop torque vs. steer angle.*
 
 A stop resists further travel only while the wheel is still turning deeper into
@@ -612,6 +618,7 @@ editions.)*
 Forces at the tire-ground shear interface are the external input to the steering system. Because these forces do not act through the steer axis at its intersection with the ground plane (see Figure 4-7), an external moment is produced.
 
 ![Figure 4-7](images/p088-026.png)
+
 *Figure 4-7: Close-up view of torque-producing mechanism at tire-ground shear interface.*
 
 The tire force acts at the contact patch, which is offset from the steer axis
@@ -1478,6 +1485,7 @@ Wheel orientation with respect to the vehicle-fixed axis system is defined by th
 - **Wheel Spin,** $\omega_M$ — Wheel rotation about an axis parallel to the vehicle-fixed y (pitch) axis
 
 ![Figure 4-8](images/p099-027.png)
+
 *Figure 4-8: Vehicle-fixed wheel orientation.*
 
 Wheel spin is calculated by the equations of motion for each wheel (see Eqs. 27 through 32). If the steer degree of freedom option is selected, wheel steer is calculated by the equations of motion for the steering system (see Eqs. 33 through 39). Otherwise, wheel steer and wheel camber are determined from user-defined suspension properties, look-up tables and driver control tables. The manner in which the wheel orientations are calculated is dependent upon suspension type.
@@ -1677,6 +1685,7 @@ Tire force calculations require that the tire-road interface be defined in terms
 The first step is to define the terrain (contact patch coordinates, friction multiplier and surface normal) beneath the tire. This step is performed using HVE's surface-information search, controlled by the **Get Surface Information Options**. Given the current earth-fixed coordinates, $X_t, Y_t$, of the tire's center of rotation, the search examines the environment polygon database until it finds the polygon beneath the tire (see Figure 4-10). For this polygon, the search returns the earth-fixed elevation, $Z_t$, beneath the tire center, as well as the friction multiplier, $f$, and unit vector, $\vec U_{Terrain}$, representing the surface normal for the polygon directly beneath each tire.
 
 ![Figure 4-9](images/p105-028.png)
+
 *Figure 4-9: Wheel-terrain geometry.*
 
 ## Tire-Ground Orientation
@@ -1697,6 +1706,7 @@ where
 | $\delta_w$ | Vehicle-fixed steer angle |
 
 ![Figure 4-10](images/p106-fig4-10.png)
+
 *Figure 4-10: The surface-information search returns the terrain surface elevation, Z, friction multiplier, f, and surface normal, U, for the earth-fixed X,Y coordinates beneath the tire.*
 
 Defining the surface normal returned by the surface-information search as
@@ -1805,6 +1815,7 @@ $$
 $$
 
 ![Figure 4-11](images/p109-031.png)
+
 *Figure 4-11: 2-step radial tire stiffness used for calculating the current tire radial force.*
 
 ## Tire Radial Force
@@ -1942,12 +1953,15 @@ is also not spinning, or to $\pm 1$ if the wheel is spinning while the vehicle
 slides sideways.
 
 ![Figure 4-12](images/p112-fig4-12.png)
+
 *Figure 4-12: Fx/Fz vs. longitudinal tire slip (mu-slip curve).*
 
 ![Figure 4-13](images/p112-fig4-13.png)
+
 *Figure 4-13: Fy/Fz vs. tire slip angle, α.*
 
 ![Figure 4-14](images/p112-fig4-14.png)
+
 *Figure 4-14: Fy/Fz vs. tire inclination angle, γ.*
 
 Based on the above test tire parameters and the current tire load and velocity, the effective values are calculated using linear interpolation,
@@ -2830,9 +2844,11 @@ terrain feature that is far outside the range the model was built for.
 editions.)*
 
 ![Figure 4-15](images/p117-032.png)
+
 *Figure 4-15: Suspension force model.*
 
 ![Figure 4-16](images/p117-033.png)
+
 *Figure 4-16: Force produced by suspension stops.*
 
 ## Inter-Vehicle Connection Model
@@ -2840,6 +2856,7 @@ editions.)*
 In a multi-vehicle train (e.g., a tractor-semitrailer), each sprung mass is allowed six degrees of freedom. The sprung masses are connected by constraint forces and moments acting at the inter-vehicle connection points, as shown in Figure 4-17.
 
 ![Figure 4-17](images/p118-034.png)
+
 *Figure 4-17: Inter-vehicle connection force.*
 
 ### Connection Force
@@ -3098,6 +3115,7 @@ Two types of dollys are supported by SIMON:
 The two dolly types are shown in Figure 4-18.
 
 ![Figure 4-18](images/p122-035.png)
+
 *Figure 4-18: Converter (above) and Fixed (below) dollys.*
 
 ## Aerodynamics Model
@@ -3119,6 +3137,7 @@ where
 | $\psi_{Wind}$ | User-entered wind direction relative to earth-fixed X-axis |
 
 ![Figure 4-19](images/p123-036.png)
+
 *Figure 4-19: Aerodynamic forces and moments.*
 
 The earth-fixed components of the vehicle velocity vector are
@@ -3442,6 +3461,7 @@ The equations of motion are advanced with a fixed-step Runge-Kutta integrator. T
 *(updated: the integration method was not stated in earlier editions.)*
 
 ![Figure 4-20](images/p127-037.png)
+
 *Figure 4-20: Flowchart for SIMON main calculation procedures.*
 
 <!-- NAV -->

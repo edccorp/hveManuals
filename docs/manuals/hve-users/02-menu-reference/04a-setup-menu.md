@@ -73,6 +73,7 @@ If ΔΨ is positive, the direction is clockwise; if ΔΨ is negative, the direct
 > **NOTE:** This definition is especially important to EDVAP/EDCRASH users. In that earlier program, the direction of rotation was entered directly by the user as 'Clockwise' or 'Counter-clockwise' or 'None'. In HVE, the direction of rotation is not entered directly; it is determined as shown above.
 
 ![Figure 4-1](../images/p176-103.png)
+
 *Figure 4-1: Examples of rotation direction for various position sequences.*
 
 To supply an object's position and velocity, perform the following steps:
@@ -90,6 +91,7 @@ To supply an object's position and velocity, perform the following steps:
 Perform the above steps for the selected vehicle at each desired position instance. Each of these steps is described in detail in the next section.
 
 ![Figure 4-2](../images/figure-4-2.jpg)
+
 *Figure 4-2: The Position/Velocity dialog is used for assigning positions and velocities for humans and vehicles.*
 
 ### Position/Velocity Dialog
@@ -113,9 +115,11 @@ When a human or vehicle is selected for positioning, a set of manipulators is at
 > **NOTE:** This action is referred to as "drag-and-drop."
 
 ![Figure 4-3](../images/figure-4-3.jpg)
+
 *Figure 4-3: The Position Manipulator for humans has a set of controls (a) that move the human in the x-y plane, a vertical manipulator (b) for moving the human vertically, and a set of roll, pitch and yaw manipulators (c, d and e, respectively) for orienting the human.*
 
 ![Figure 4-4](../images/figure-4-4.jpg)
+
 *Figure 4-4: The Position Manipulator for vehicles has a set of controls (a) that move the vehicle in the X-Y plane and a set of roll, pitch and yaw manipulators (b, c and d, respectively) for orienting the vehicle. Vehicle elevation (Z) is assigned using the Position/Velocity dialog.*
 
 The object has separate manipulators for translation and rotation. The translation manipulator is a set of cross-bars which lie in the X-Y plane. This manipulator may be used to drag the human or vehicle to the desired X,Y coordinates. The Z coordinate is entered using the Position/Velocity dialog.
@@ -137,6 +141,7 @@ In general, simulation-type models require only initial positions and velocities
 Target positions are also used to define the path for the HVE Path Follower (see Driver Controls, Path Follower, for more information).
 
 ![Figure 4-5](../images/figure-4-5.jpg)
+
 *Figure 4-5: Positioning humans inside of vehicles.*
 
 ### Positioning Humans in Vehicles
@@ -203,6 +208,7 @@ Throttle controls are available for simulations, and are used to accelerate the 
 This method allows the user to enter a table of throttle position versus time, as shown in Figure 4-6. The resulting table determines how much engine power is applied. An entry of 100 percent applies a drive torque associated with 100 percent of the current vehicle's engine power at the current engine speed.
 
 ![Figure 4-6](../images/figure-4-6.jpg)
+
 *Figure 4-6: The Throttle Table, Percent Wide-open Throttle option, allows the user to enter a table of throttle position vs time for the selected vehicle.*
 
 > **NOTE:** The Percent Wide-open Throttle method is available only if the current simulation includes an engine model with the ability to calculate drive torque according to the current engine speed and throttle position.
@@ -221,6 +227,7 @@ To enter a Throttle table for the current vehicle using the Percent Wide-open Th
 This method allows the user to enter a table of tractive effort (total force accelerating the vehicle) versus time, as shown in Figure 4-7. The resulting table determines how much accelerating force is applied at each drive wheel.
 
 ![Figure 4-7](../images/figure-4-7.jpg)
+
 *Figure 4-7: Vehicle Throttle Table dialog, Tractive Effort option.*
 
 > **NOTE:** The Tractive Effort Table allows entries only at the vehicle's drive wheels, as specified by the Vehicle Information dialog.
@@ -239,6 +246,7 @@ To enter a Throttle table for the current vehicle using the Tractive Effort meth
 This method allows the user to enter a table of available friction force (percentage of the total available frictional force accelerating the vehicle) versus time, as shown in Figure 4-8. The resulting table determines how much accelerating force is applied at each drive wheel. The calculations are performed by the simulation model, which multiplies the entered value by the currently available tire friction and vertical tire load.
 
 ![Figure 4-8](../images/figure-4-8.jpg)
+
 *Figure 4-8: Vehicle Throttle Table dialog, Percent of Available Friction option.*
 
 > **NOTE:** The Percent Available Friction Table only allows entries at drive wheels, as specified by the Vehicle Information dialog.
@@ -276,6 +284,7 @@ This method allows the user to enter a table of brake pedal force versus time, a
 > **NOTE:** This method is available only if the current simulation includes a brake model with the ability to calculate brake torque according to the brake system parameters and brake pedal force.
 
 ![Figure 4-9](../images/figure-4-9.jpg)
+
 *Figure 4-9: The Brake Table, Pedal Force option, allows the user to enter a table of brake pedal force vs time for the selected vehicle.*
 
 To enter a brake table for the current vehicle using the Pedal Force option, use the following steps:
@@ -292,6 +301,7 @@ To enter a brake table for the current vehicle using the Pedal Force option, use
 This method allows the user to enter a table of brake force (attempted longitudinal force decelerating the vehicle) versus time, as shown in Figure 4-10. The resulting table determines how much decelerating force is applied at each wheel.
 
 ![Figure 4-10](../images/figure-4-10.jpg)
+
 *Figure 4-10: Vehicle Brake Table dialog, Wheel Force option.*
 
 To enter a Brake table for the current vehicle using the Wheel Force option, use the following steps:
@@ -308,6 +318,7 @@ To enter a Brake table for the current vehicle using the Wheel Force option, use
 This method allows the user to enter a table of available frictional braking force (percentage of total available frictional force braking the vehicle) versus time, as shown in Figure 4-11. The resulting table determines how much brake force is applied at each wheel. The calculations are performed by the simulation model, which multiplies the entered value by the currently available tire friction and vertical tire load.
 
 ![Figure 4-11](../images/figure-4-11.jpg)
+
 *Figure 4-11: Vehicle Brake Table dialog, Percent of Available Friction option.*
 
 To enter a Brake table for the current vehicle using the Percent of Available Friction option, use the following steps:
@@ -342,6 +353,7 @@ This method allows the user to enter a table of steering wheel angle versus time
 > **NOTE:** The actual steer angle for an individual tire may be affected by Ackerman angle, roll steer and/or toe-in. The inclusion of these parameters is simulation-dependent.
 
 ![Figure 4-12](../images/figure-4-12.jpg)
+
 *Figure 4-12: The Steer Table, At Steering Wheel option, allows the user to enter a table of steering wheel angle vs time for the selected vehicle.*
 
 To enter a Steer table for the current vehicle using the At Steering Wheel option, use the following steps:
@@ -358,6 +370,7 @@ To enter a Steer table for the current vehicle using the At Steering Wheel optio
 This method allows the user to enter a table of steer angle at each tire of a steerable axle, as shown in Figure 4-13. The entered value is applied directly to the tire, and is unaffected by any roll steer or toe-in.
 
 ![Figure 4-13](../images/figure-4-13.jpg)
+
 *Figure 4-13: The Vehicle Steer Table dialog, At Axle option, allows the user to directly enter steer angles for the left and right wheels on each steerable axle.*
 
 To enter a Steer Table for the current vehicle using the At Axle option, use the following steps:
@@ -383,6 +396,7 @@ To enter a Steer Table for the current vehicle using the At Axle option, use the
 The Gear Selection dialog is available for simulations. This dialog allows the user to enter a table of gear selection versus time, as shown in Figure 4-14. Separate tables may be entered for the transmission and differential.
 
 ![Figure 4-14](../images/figure-4-14.jpg)
+
 *Figure 4-14: The Gear Selection Table allows the user to enter a table of gear selections vs time for the selected vehicle. Separate tables are available for the transmission and differential.*
 
 > **NOTE:** This option is available only if the current Throttle Method is Percent Wide-Open Throttle.
@@ -418,6 +432,7 @@ To enter a Gear Table for the current vehicle, use the following steps:
 The HVE Path Follower allows the user to define a 3-D path using target positions. Using this path, the simulation model determines the steering, throttle and braking inputs required to make the vehicle follow the path. The HVE Path Follower dialog is shown in Figure 4-15. *(updated: in the current version this feature is labeled "HVE Driver" in the Driver Controls dialog — see [Driver Controls Path Follower](../../09-events-driver-controls/DriverControls7.md))*
 
 ![Figure 4-15](../images/p197-figA4-15.png)
+
 *Figure 4-15: HVE Path Follower dialog is used to simulate the driver inputs required to follow a user-defined path.*
 
 The HVE Path Follower includes several features, some required and some optional. These features are:
@@ -429,6 +444,7 @@ The HVE Path Follower includes several features, some required and some optional
 - **Neuro-muscular Filter** (optional) — user-entered parameters that define driver physiological capabilities [3.17]
 
 ![Figure 4-16](../images/figure-4-16.jpg)
+
 *Figure 4-16: The HVE Path Follower uses up to eight user-assigned positions to define a 3-D path. Intermediate path positions are determined using a 3-D spline.*
 
 #### Path Generator
@@ -500,6 +516,7 @@ The Wheel Data dialog is available for reconstruction models. This dialog, shown
 These parameters are described below.
 
 ![Figure 4-17](../images/figure-4-17.jpg)
+
 *Figure 4-17: Vehicle Wheel Data dialog.*
 
 #### Pre-impact Total Wheel Lock-up

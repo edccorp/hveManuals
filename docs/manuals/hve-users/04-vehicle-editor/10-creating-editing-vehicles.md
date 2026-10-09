@@ -20,6 +20,7 @@ puts HVE in Vehicle Mode and displays the Vehicle Editor's components:
   vehicle and editing its parameters.
 
 ![Figure 10-1](../images/figure-10-1.jpg)
+
 *Figure 10-1: Vehicle Editor, Vehicle Information dialog and Viewer.*
 
 ### Vehicle Editor Dialog
@@ -82,6 +83,7 @@ components:
 > that the Buick weighs 2970 pounds and has other properties of our choosing.
 
 ![Figure 10-2](../images/figure-10-2.jpg)
+
 *Figure 10-2: Vehicle Information dialog.*
 
 ## Adding New Vehicles

@@ -19,6 +19,7 @@ reference page,
 [Drivetrain dialog](../../04-brakes-powertrain/DriveTraDlg.md).
 
 ![Figure 11-50](../images/figure-11-50.jpg)
+
 *Figure 11-50: The Vehicle Drivetrain dialog, including the Engine, Transmission and Differential.*
 
 ### Engine
@@ -87,6 +88,7 @@ dialog. See also the reference page,
 [Transmission Data dialog](../../04-brakes-powertrain/TransDataDlg.md).
 
 ![Figure 11-51](../images/figure-11-51.jpg)
+
 *Figure 11-51: The Transmission Data dialog allows the user to edit the transmission ratios.*
 
 To display or edit the current vehicle's transmission parameters, perform
@@ -136,6 +138,7 @@ reference page,
 [Differential Data dialog](../../04-brakes-powertrain/DiffDataDlg.md).
 
 ![Figure 11-52](../images/figure-11-52.jpg)
+
 *Figure 11-52: The Differential Data dialog allows the user to edit the differential ratios.*
 
 To display or edit the current vehicle's differential parameters, perform
@@ -178,6 +181,7 @@ reference page,
 [Steering System dialog](../../03-suspension-steering/SteerSysDlg.md).
 
 ![Figure 11-53](../images/figure-11-53.jpg)
+
 *Figure 11-53: The Steering System dialog allows the user to choose which axles are steerable and to assign gear ratio(s) and mechanical properties for the selected steering linkage system.*
 
 To display or edit the current vehicle's steerable axles and associated
@@ -242,6 +246,7 @@ Force). See also the reference page,
 [Brake System Pressure vs Pedal Force dialog](../../04-brakes-powertrain/BrkSysVsPedFrcDlg.md).
 
 ![Figure 11-54](../images/figure-11-54.jpg)
+
 *Figure 11-54: The Brake System dialog allows the user to assign the master cylinder pedal ratio (master cylinder pressure per unit of brake pedal force application) and ABS System status.*
 
 To display or edit the current vehicle's brake master cylinder pressure

@@ -54,9 +54,11 @@ The sequence over a contact is:
    accelerations that separate the bodies.
 
 ![Figure: contact-algorithm three-panel example](images/D1-p11-figcontact.png)
+
 *Figure: three-panel contact-algorithm example — (1) bodies approach, (2) Location phase overlap box, (3) Restoration phase adjustment.*
 
 ![Figure: force application and body separation](images/D1-p12-figforces.png)
+
 *Figure: force application and separation — deformation forces at overlapping nodes drive the bodies apart.*
 
 ### Locating the master surface for a slave node
@@ -115,6 +117,7 @@ F_\mathrm{sat} \;=\; \Big[\, A + B\,(\delta_\mathrm{sat}-\delta_0) + C\,(\delta_
 $$
 
 ![Figure: Force vs. Deflection curve with saturation](images/D1-p13-figfd.png)
+
 *Figure: Force vs. Deflection curve rising then flattening at the saturation deflection $\delta_\mathrm{sat}$.*
 
 The stiffnesses are assigned per body **surface** — front, right, back, left,
@@ -140,6 +143,7 @@ default conversion height is 30 in, matching the **Crush Height For Stiffness**
 dialog default.
 
 ![Figure: force-per-width and force-per-area crush plots](images/D1-p15-figfd2.png)
+
 *Figure: two force-deflection plots — Force per Width (lb/in) vs. Permanent Crush with intercept $A$ and slope $B$; and Force per Area (lb/in²) vs. Permanent Crush with $\tilde{A}$, $\tilde{B}$ and unloading slope $K_u$.*
 
 ### 3-D stiffness dialog
@@ -153,6 +157,7 @@ Quadratic $C$ (lb/in⁴), Cubic $D$ (lb/in⁵), Saturation Crush (in), Maximum C
 third-order curve fit.
 
 ![Figure: Vehicle Exterior Stiffness dialog](images/D1-p16-24.png)
+
 *Figure: "Vehicle Exterior Stiffness" dialog showing the Force-per-area vs. Crush plot (A,B,C,D curve vs. $K_v$ line) and the coefficient sliders.*
 
 ### Note on occupant response
@@ -165,6 +170,7 @@ representative stiffness/saturation values therefore matters beyond matching the
 gross $\Delta v$.
 
 ![Figure: triangular vs. rectangular acceleration pulses](images/D1-p17-figpulse.png)
+
 *Figure: Acceleration vs. Time — a triangular pulse and a rectangular pulse with equal area (equal $\Delta v$).*
 
 ## 5. Vertex displacement (crush depth) — sharing crush between bodies

@@ -69,6 +69,7 @@ where
 | $T_A$ | Ambient temperature |
 
 ![Figure 30-1](../images/p741-fig30-1.png)
+
 *Figure 30-1 — Representation of the 13-node lumped parameter brake
 temperature model [4.2]: ambient air — lining exterior surface node T₁₃ —
 lining node T₁₂ — lining/drum interface T_L/D — drum/rotor nodes T₁ … T₁₀ —
@@ -125,6 +126,7 @@ The inputs to the lumped mass model are:
   convective heat transfer.
 
 ![Figure 30-2](../images/figure-30-2.jpg)
+
 *Figure 30-2 — Brake Material Properties dialog. Default material properties
 are assigned for cast iron drums and rotors, and common lining friction
 materials. (See the [dialog reference page](../../04-brakes-powertrain/BrkMatPropDlg.md).)*

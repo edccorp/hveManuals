@@ -57,6 +57,7 @@ To use the HVE Brake Designer, perform the following steps:
    torque ratio are displayed.
 
 ![Figure 29-2](../images/figure-29-2.jpg)
+
 *Figure 29-2 — HVE Brake Designer for an S-cam brake.
 Each Brake Designer dialog includes an embedded schematic preview drawing of
 the selected brake, updated to reflect the current dimensions.*
@@ -124,6 +125,7 @@ determine the correct value of lining friction as a function of brake
 temperature and sliding velocity.
 
 ![Figure 29-3](../images/figure-29-3.jpg)
+
 *Figure 29-3 — Lining Friction dialog, used for entering lining friction vs
 temperature (left) and lining friction factor vs sliding speed (right) data
 tables. (The original caption is misnumbered "Figure
@@ -184,6 +186,7 @@ shoe. These influences are seen in the following calculations for pinned and
 abutted shoes.
 
 ![Figure 29-4](../images/p715-fig29-4.png)
+
 *Figure 29-4 — Analysis of a pinned brake shoe [4.31].*
 
 #### Pinned Shoe
@@ -220,6 +223,7 @@ brake factor and represents the *self-energizing* effect of the brake
 leading shoe.
 
 ![Figure 29-5](../images/p716-fig29-5.png)
+
 *Figure 29-5 — Analysis of an abutted brake shoe [4.31].*
 
 #### Abutted Shoe
@@ -357,10 +361,12 @@ the system is out of adjustment (see Actuation Factor, later in this
 chapter).
 
 ![Figure 29-6](../images/p720-fig29-6.png)
+
 *Figure 29-6 — Components of an S-cam brake assembly (brake chamber, slack
 adjuster, S-cam).*
 
 ![Figure 29-7](../images/p720-fig29-7.png)
+
 *Figure 29-7 — Brake actuators: S-cam (left) and wedge (right).*
 
 The actuation force for an S-cam air brake is:
@@ -415,11 +421,13 @@ air chambers is 2.5 inches, although some "long stroke" chambers have a
 produced at or beyond maximum stroke.
 
 ![Figure 29-8](../images/p722-fig29-8.png)
+
 *Figure 29-8 — Actuation Factor vs stroke relationship for a typical Type 30
 S-cam brake, showing the knee at (S₁, AF₁), the expansion coefficient KT₁
 and the maximum stroke Smax.*
 
 ![Figure 29-9](../images/p723-346.png)
+
 *Figure 29-9 — Effect of temperature on brake stroke for a Type 30 cast iron
 drum S-cam brake [4.32].*
 
@@ -538,6 +546,7 @@ $AF$, is calculated using equation 29-8. *(The original text cited equations
 The HVE Brake Designer dialog for disc brakes is shown in Figure 29-10.
 
 ![Figure 29-10](../images/figure-29-10.jpg)
+
 *Figure 29-10 — HVE Brake Designer for disc brake types.*
 
 The lining friction and material attributes are selectable from the dialog's
@@ -581,6 +590,7 @@ $$BrakeTorque = BF \times TR \times AF$$
 The HVE Brake Designer dialog for duo-servo brakes is shown in Figure 29-11.
 
 ![Figure 29-11](../images/figure-29-11.jpg)
+
 *Figure 29-11 — HVE Brake Designer for duo-servo drum brake types.*
 
 See also the detailed dialog reference:
@@ -611,6 +621,7 @@ The HVE Brake Designer dialog for duplex drum brakes is shown in Figure
 29-12.
 
 ![Figure 29-12](../images/figure-29-12.jpg)
+
 *Figure 29-12 — HVE Brake Designer for duplex drum brake types.*
 
 See also the detailed dialog reference:
@@ -655,6 +666,7 @@ The HVE Brake Designer dialog for single piston drum brakes is shown in
 Figure 29-13.
 
 ![Figure 29-13](../images/figure-29-13.jpg)
+
 *Figure 29-13 — HVE Brake Designer for single piston drum brake types.*
 
 See also the detailed dialog reference:
@@ -688,6 +700,7 @@ The HVE Brake Designer dialog for dual piston drum brakes is shown in Figure
 29-14.
 
 ![Figure 29-14](../images/figure-29-14.jpg)
+
 *Figure 29-14 — HVE Brake Designer for dual piston drum brake types.*
 
 See also the detailed dialog reference:
@@ -727,6 +740,7 @@ The HVE Brake Designer dialog for S-cam drum brakes is shown in Figure
 29-15.
 
 ![Figure 29-15](../images/figure-29-15.jpg)
+
 *Figure 29-15 — HVE Brake Designer for S-cam drum brake types.*
 
 ## Single Wedge Drum Brake
@@ -750,6 +764,7 @@ The HVE Brake Designer dialog for single wedge drum brakes is shown in
 Figure 29-16.
 
 ![Figure 29-16](../images/figure-29-16.jpg)
+
 *Figure 29-16 — HVE Brake Designer for single wedge drum brake types.*
 
 ## Dual Wedge Drum Brake
@@ -769,6 +784,7 @@ The HVE Brake Designer dialog for dual wedge drum brakes is shown in Figure
 29-17.
 
 ![Figure 29-17](../images/figure-29-17.jpg)
+
 *Figure 29-17 — HVE Brake Designer for dual wedge drum brake types.*
 
 See also the detailed dialog reference:

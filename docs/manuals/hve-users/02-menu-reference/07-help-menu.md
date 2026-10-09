@@ -25,11 +25,13 @@ This chapter describes these help systems.
 The **Contents** tab provides four basic categories of program information.
 
 ![Figure 7-1](../images/p302-figA7-1.png)
+
 *Figure 7-1: Typical Help Topics — Contents tab.*
 
 The **Index** tab provides a detailed glossary of terms, including SAE J670e (Vehicle Dynamics Terminology; reference 6.2), SAE J885 (Human Tolerance to Impact Conditions As Relates To Motor Vehicle Design; reference 6.1), and SAE J1675 (Accident Reconstruction Terminology, ref. 6.4).
 
 ![Figure 7-2](../images/p303-figA7-2.png)
+
 *Figure 7-2: The Help Topics — Index tab provides definitions of many human and vehicle dynamics terms and terms related to accident reconstruction and motor vehicle safety.*
 
 ---
@@ -94,6 +96,7 @@ To access the HVE Technical Support Help Information, perform the following step
 4. Press OK when you are finished.
 
 ![Figure 7-3](../images/figure-7-3.jpg)
+
 *Figure 7-3: The Help Technical Support dialog explains how to contact EDC for Technical Support.*
 
 **See Also:** (none)
@@ -116,6 +119,7 @@ To access the HVE Technical Support Help Information, perform the following step
 > **NOTE:** You should have this information available when you call for Technical Support.
 
 ![Figure 7-4](../images/figure-7-4.jpg)
+
 *Figure 7-4: The About HVE Dialog contains useful release information.*
 
 **See Also:** (none)

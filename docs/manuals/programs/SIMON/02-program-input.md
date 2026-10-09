@@ -39,6 +39,7 @@ To add a human to the current HVE case, perform the following steps:
 5. Click *OK* to add the human to the current case.
 
 ![Figure 2-1](images/p025-001.png)
+
 *Figure 2-1: HVE Human Editor.*
 
 > **NOTE:** SIMON is not a human simulator. During simulation, the human occupants do not move relative to the vehicle.
@@ -85,6 +86,7 @@ To add a vehicle to the current HVE case, perform the following steps:
 
 ![Figure 2-2](images/p027-002.png)
 ![Figure 2-2](images/p027-003.png)
+
 *Figure 2-2: HVE Vehicle Editor showing a passenger car and a truck.*
 
 The following Vehicle Parameter groups are used by SIMON:
@@ -409,6 +411,7 @@ To add an environment to the current HVE case, perform the following steps:
 The Visual and Physical attribute groups are defined below.
 
 ![Figure 2-3](images/p040-004.png)
+
 *Figure 2-3: HVE Environment Editor.*
 
 ### Visual Data
@@ -499,6 +502,7 @@ To create a SIMON event:
    > **NOTE:** If you choose a vehicle that is not compatible with SIMON, a message will be displayed describing the problem. You will not be allowed to proceed until SIMON-compatible objects are selected.
 
 ![Figure 2-4](images/p044-fig2-4.png)
+
 *Figure 2-4: HVE Event Editor setting up and executing a SIMON event.*
 
 ### Setting Up an Event
@@ -624,6 +628,7 @@ The Restraints data are not used by SIMON.
 *(updated: the SIMON Calculation Options dialog has grown considerably since the Fifth Edition manual, which described only three options — Tire Model Method, Steer DOF and Collision Acceleration Threshold.)*
 
 ![Figure 2-5](images/p049-006.png)
+
 *Figure 2-5: SIMON Calculation Options Dialog (legacy version).*
 
 SIMON's Calculation Options include:
@@ -701,6 +706,7 @@ To execute a SIMON event, use the Event Controller, shown in Figure 2-4 as a com
 - **Advance to End** — Advance to the end of the simulation
 
 ![Figure 2-6](images/p051-fig2-6.png)
+
 *Figure 2-6: Event Controller.*
 
 > **NOTE:** If you make any changes to an event (humans, vehicles, environments, or event set-up options), those changes will have no effect unless you press Reset before pressing Play.

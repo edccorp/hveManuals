@@ -12,6 +12,7 @@ reference page,
 [Brake Assembly dialog](../../04-brakes-powertrain/BrkAsmblyDlg.md).
 
 ![Figure 11-36](../images/figure-11-36.jpg)
+
 *Figure 11-36: Brake Assembly dialog for editing the properties of the brake system at the selected wheel.*
 
 To display or edit the current vehicle's brake assembly parameters at a
@@ -25,9 +26,11 @@ selected wheel, perform the following steps:
 4. Press *OK* to accept the changes.
 
 ![Figure 11-37](../images/p405-figB11-37.png)
+
 *Figure 11-37: Brake System Proportioning.*
 
 ![Figure 11-38](../images/p405-figB11-38.png)
+
 *Figure 11-38: Simple Antilock Model.*
 
 The Brake properties at each wheel are described below.
@@ -132,6 +135,7 @@ the Tire Information dialog. See also the reference page,
 [Tire Information dialog](../../05-tires-wheels/TireInfoDlg.md).
 
 ![Figure 11-39](../images/figure-11-39.jpg)
+
 *Figure 11-39: The Tire Information dialog is used for selecting and editing tires, as well as for maintaining the Tire Database.*
 
 The Tire Information dialog includes a user-extendible database that allows
@@ -190,6 +194,7 @@ reference page,
 [Tire Physical Data dialog](../../05-tires-wheels/TirePhyDataDlg.md).
 
 ![Figure 11-40](../images/figure-11-40.jpg)
+
 *Figure 11-40: The Tire Physical Data dialog is used for editing the tire's physical parameters.*
 
 To display or edit the current vehicle's physical tire properties at a
@@ -258,6 +263,7 @@ The Tire Physical Data parameters are described below.
   tire load is less than this value, no tire mark is displayed.
 
 ![Figure 11-41](../images/p412-figB11-41.png)
+
 *Figure 11-41: Tire Physical Parameters.*
 
 **Table 11-20: Tire Physical Data Parameters**
@@ -290,6 +296,7 @@ reference page,
 [Tire Friction Data dialog](../../05-tires-wheels/TireFrictDataDlg.md).
 
 ![Figure 11-42](../images/figure-11-42.jpg)
+
 *Figure 11-42: The Tire Friction Data dialog is used for editing the tire's frictional properties.*
 
 To display or edit the current vehicle's tire frictional properties at a
@@ -368,6 +375,7 @@ position are displayed and edited using the Tire Fy vs Slip Angle Data
 dialog.
 
 ![Figure 11-43](../images/figure-11-43.jpg)
+
 *Figure 11-43: The Tire Fy vs Slip Angle Data dialog is used for editing the selected tire's lateral force producing properties.*
 
 To display or edit the current vehicle's cornering parameters at a selected
@@ -451,6 +459,7 @@ reference page,
 [Fy vs Inclination Angle dialog](../../05-tires-wheels/FyVsInclAngDlg.md).
 
 ![Figure 11-44](../images/figure-11-44.jpg)
+
 *Figure 11-44: The Tire Fy vs Camber Angle dialog is used for editing the tire's camber stiffness properties.*
 
 > **NOTE:** As a rough estimate, camber stiffness is normally about 1/10 of
@@ -537,6 +546,7 @@ Rolloff Tables dialog. See also the reference page,
 [Slip vs Rolloff dialog](../../05-tires-wheels/SlipVsRollOffDlg.md).
 
 ![Figure 11-45](../images/figure-11-45.jpg)
+
 *Figure 11-45: The Tire Longitudinal and Lateral Slip vs Rolloff Tables dialog is used for editing the tire's slip vs rolloff properties.*
 
 To display or edit the current vehicle's Slip vs Rolloff parameters at a
@@ -594,6 +604,7 @@ the reference page,
 [Wheel Location dialog](../../03-suspension-steering/WheelLocDlg.md).
 
 ![Figure 11-46](../images/figure-11-46.jpg)
+
 *Figure 11-46: The Wheel Location dialog allows the user to view and edit the wheel's x,y,z vehicle-fixed coordinates.*
 
 To display and possibly change the wheel location coordinates, perform the
@@ -620,6 +631,7 @@ following steps:
 > [Part A](11a-sprung-mass.md)).
 
 ![Figure 11-47](../images/p426-figB11-47.png)
+
 *Figure 11-47: Wheel locations relative to the vehicle-fixed coordinate system.*
 
 The Wheel Location parameters are described below (see Figure 11-47).
@@ -645,6 +657,7 @@ taken and used to provide a very realistic representation of the vehicle's
 wheels.
 
 ![Figure 11-48](../images/figure-11-48.jpg)
+
 *Figure 11-48: Typical wheel image.*
 
 When *Wheel Image* is selected from the Wheel option list, HVE displays a
@@ -678,6 +691,7 @@ The *Open* option displays the Wheel Image File Selection dialog and allows
 the user to assign a photographic image (texture map) of the wheel.
 
 ![Figure 11-49](../images/figure-11-49.jpg)
+
 *Figure 11-49: Image File Selection dialog, used for selecting wheel texture images.*
 
 To open a new wheel image and assign it to the current wheel, perform the

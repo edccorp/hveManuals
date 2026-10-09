@@ -6,7 +6,7 @@ Updated Markdown edition, converted from the Fifth Edition manual (January 2006)
 
 ## How to Use This Manual
 
-This manual is the user's manual for the EDHIS simulation model. It describes the model's features and use. Input parameters and output reports are described at a high level. It is intended to be used in conjunction with the HVE User's Manual, which provides in-depth coverage of the human, vehicle and environment models, as well as the HVE Event Editor and Playback Editor. For specific model definitions, the user is referred to the HVE User's Manual (see `docs/manuals/`).
+This manual is the user's manual for the EDHIS simulation model. It describes the model's features and use. Input parameters and output reports are described at a high level. It is intended to be used in conjunction with the HVE User's Manual, which provides in-depth coverage of the human, vehicle and environment models, as well as the HVE Event Editor and Playback Editor. For specific model definitions, the user is referred to the [HVE User's Manual](../../hve-users/README.md).
 
 ## If You Have Questions
 

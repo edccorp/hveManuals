@@ -61,6 +61,7 @@ loop.
 7. Separation Test.
 
 ![Figure: Sprung Mass loop flow chart](images/D3-p10-figsprung.png)
+
 *Figure: Sprung Mass flow chart.*
 
 **Wheel loop** — for each wheel:
@@ -74,6 +75,7 @@ loop.
 7. Calculate Wheel Displacement.
 
 ![Figure: Wheel loop flow chart](images/D3-p11-figwheels.png)
+
 *Figure: Wheels flow chart.*
 
 *(updated: in the current version of HVE these steps are carried out by SIMON,
@@ -103,6 +105,7 @@ The DyMESH Options dialog (Options menu) as shown in the deck contains:
   0.0010 s) and Output Time Interval (e.g. 0.0200 s).
 
 ![Figure: DyMESH Options dialog](images/D3-p14-24.png)
+
 *Figure: "DyMESH Options" dialog.*
 
 *(updated: The current DyMESH Options dialog differs from the deck screenshot.
@@ -134,6 +137,7 @@ wheel force-deflection and moment-deflection parameters:
 | Max Moment | 30000 ft-lb | Saturation moment |
 
 ![Figure: Wheel Data dialog, Damage tab](images/D3-p15-26.png)
+
 *Figure: "Wheel Data" dialog, Damage tab, with the Use DyMESH force/moment fields highlighted.*
 
 See also the wheel-data / wheel-displacement inputs documented in the
@@ -148,6 +152,7 @@ addition to the usual kinematics and kinetics — e.g. for "Axle 1, Right":
 of the collision load each wheel carried.
 
 ![Figure: Key Results output table with per-wheel impulses](images/D3-p16-28.png)
+
 *Figure: "Key Results" output table highlighting the per-wheel impulse rows.*
 
 ## Wheel displacement capping *(updated)*
@@ -187,12 +192,15 @@ pickup vs. Explorer on a graded road, and the RICSAC 1 (20 mph) and RICSAC 2
 (32 mph) staged tests — as sample DyMESH validations.
 
 ![Figure: Ford pickup vs. Explorer angled collision](images/D1-p22-31.png)
+
 *Figure: Angled collision, Ford pickup vs. Explorer.*
 
 ![Figure: RICSAC 1 angled collision](images/D1-p23-33.png)
+
 *Figure: RICSAC 1 (20 mph) angled collision.*
 
 ![Figure: RICSAC 2 angled collision](images/D1-p24-35.png)
+
 *Figure: RICSAC 2 (32 mph) angled collision.*
 
 ## Summary

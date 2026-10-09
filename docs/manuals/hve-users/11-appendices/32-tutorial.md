@@ -60,6 +60,7 @@ After starting HVE, the HVE Menu Bar and current HVE Editor dialog are
 displayed.
 
 ![Figure 32-1](../images/figure-32-1.jpg)
+
 *Figure 32-1 — The Desktop after starting HVE: main program window with Menu
 Bar, Tool Bar, integrated Event and Playback Controller, Viewer Manipulators
 and Zoom Slider.*
@@ -114,6 +115,7 @@ click on the Object Info button (a pointing hand) immediately to the left of
 the list.
 
 ![Figure 32-3](../images/figure-32-3.jpg)
+
 *Figure 32-3 — Active Objects List drop-down shown in Vehicle Mode.*
 
 The **Event (and Playback) Controller** is integrated directly into the Menu
@@ -260,6 +262,7 @@ of dialogs:
   buttons.
 
 ![Figure 32-16](../images/figure-32-16.jpg)
+
 *Figure 32-16 — HVE Event Editor's Position/Velocity dialog.*
 
 > **NOTE:** Nothing happens in a modeless dialog until you press the
@@ -287,6 +290,7 @@ may be resized, dialogs normally cannot. In general, make your viewers nice
 and BIG!
 
 ![Figure 32-17](../images/figure-32-17.jpg)
+
 *Figure 32-17 — Using HVE 3-D viewers.*
 
 **Panning.** Panning moves the scene horizontally and vertically within the
@@ -295,6 +299,7 @@ the mouse cursor in the middle of the viewer, then press the middle mouse
 button and drag (or press the left mouse button while holding `<Shift>`).
 
 ![Figure 32-18](../images/figure-32-18.jpg)
+
 *Figure 32-18 — Panning the camera in a 3-D viewer.*
 
 **Zooming In and Out.** Zooming changes the lens of the virtual camera. The
@@ -310,6 +315,7 @@ Pressing `<Escape>` with the cursor in the viewer toggles between Pick and
 Manipulate modes — equivalent to clicking the viewer mode icons.
 
 ![Figure 32-19](../images/figure-32-19.jpg)
+
 *Figure 32-19 — Dollying the camera in a 3-D viewer.*
 
 > **NOTE:** The thumbwheel's range of motion is not limited by its visible
@@ -325,6 +331,7 @@ button and drag horizontally: the object spins about the viewer's vertical
 axis; drag vertically and it spins about the viewer's horizontal axis.
 
 ![Figure 32-20](../images/figure-32-20.jpg)
+
 *Figure 32-20 — Moving the camera in a 3-D viewer.*
 
 > **NOTE:** This is an important concept: while using direct manipulation,
@@ -637,6 +644,7 @@ The HVE video interface has three simple components:
   receive the simulation displayed in the Playback Window
 
 ![Figure 32-45](../images/figure-32-45.jpg)
+
 *Figure 32-45 — Close-up of part of the Playback Window dialog, used for
 playing and recording simulations.*
 

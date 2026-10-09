@@ -173,9 +173,11 @@ where:
 These relationships are shown in Figures 4-1 and 4-2. Note that tire forces in the linear tire model are not assumed to be limited by friction because, as mentioned above, the simulation terminates before a friction-limiting condition exists.
 
 ![Figure 4-1](images/p072-022.png)
+
 *Figure 4-1: Typical longitudinal tire force vs slip relationship. A linear tire model would use slope b, while a robust tire model would follow the slope from a to d. $\mu_p$ and $\mu_s$ are peak and slide friction, respectively; $C_s$ is the longitudinal stiffness.*
 
 ![Figure 4-2](images/p072-023.png)
+
 *Figure 4-2: Typical lateral tire force vs slip angle relationship. $C_\alpha$ is the cornering stiffness and $\mu_y$ is the lateral friction coefficient.*
 
 #### Semi-empirical Tire Model
@@ -416,6 +418,7 @@ Two types of dollys are supported by EDVDS:
 These two dolly types are shown in Figure 4-3.
 
 ![Figure 4-3](images/p079-fig4-3-dollys.png)
+
 *Figure 4-3: Converter (above, hinged fifth wheel) and Fixed (below, hinged drawbar) dollys.*
 
 ## Assumptions

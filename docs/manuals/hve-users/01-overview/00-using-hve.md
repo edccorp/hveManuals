@@ -181,6 +181,7 @@ HVE includes the following components:
   - Click on the Maximize button to cause the window to fill the screen.
 
 ![Figure 1](../images/p039-000.png)
+
 *Figure 1: HVE's Menu Bar, with File, Edit, View, Mode, Set-up, 3-D Edit, Options and Help menu options.*
 
 - **Viewers** — Viewers are used to display and manipulate 3-D objects
@@ -188,6 +189,7 @@ HVE includes the following components:
   and understanding their use is important.
 
 ![Figure 2](../images/p040-001.png)
+
 *Figure 2: Typical Viewer. RotX and RotY thumb wheels rotate the object in the viewer about the viewer's X and Y axes, respectively. The Dolly thumb wheel increases or decreases the size of the object by moving the camera away from or towards the object. The Zoom slider increases or decreases the size of the object by reducing or increasing the viewer's included angle. Pick Mode or Manipulate Mode is selected by choosing the arrow or hand, respectively, near the upper right edge of the viewer.*
 
 All Viewers have at least two modes: *Pick Mode* and *Manipulate Mode*. The
@@ -210,6 +212,7 @@ rotate and pan the object in the viewer.
 ### Mouse
 
 ![Figure 3](../images/p041-figA3.png)
+
 *Figure 3: Mouse Pointer Tools (Pick, Rotate, Pan, Resize, Text, Crosshairs).*
 
 If you've never used a window-based application before, you'll need to know
@@ -245,6 +248,7 @@ action it performs:
 ### Dialogs and Other Interface Components
 
 ![Figure 4](../images/p042-008.png)
+
 *Figure 4: Modal Dialog (Set Units) and common dialog components.*
 
 Other components found in the HVE user interface include:

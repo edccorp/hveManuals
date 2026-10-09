@@ -19,6 +19,7 @@ acting on each vehicle and the equations of motion are then solved. In short:
 > with other external forces to solve for the motion of the vehicle or object.
 
 ![Figure: DyMESH collision-force block diagram](images/D1-p07-figblock.png)
+
 *Figure: block diagram — Master Mesh + Slave Mesh feed "DyMesh", which is summed with "External Forces (tires, drag, etc.)" into the Vehicle Dynamics Engine.*
 
 DyMESH is integrated into a **six degree-of-freedom vehicle dynamics model**

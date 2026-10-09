@@ -20,6 +20,7 @@ DamageStudio provides the following information about a collision:
 *(These limits are fixed: 10 collision pulses (impulses) per vehicle, 10 crush depths along the damage width, and 5 crush elevations along the damage height.)*
 
 ![Figure 32-1](images/p004-000.png)
+
 *Figure 32-1: Typical DamageStudio window.*
 
 A typical DamageStudio window is displayed in Figure 32-1.
@@ -159,6 +160,7 @@ The above data are then used to produce the Damage Data output report, an exampl
 - Crush Tables
 
 ![Figure 32-2](images/p010-001.png)
+
 *Figure 32-2: Typical Damage Data output report produced from the CollisionData.*
 
 ### Collision Kinetics Table

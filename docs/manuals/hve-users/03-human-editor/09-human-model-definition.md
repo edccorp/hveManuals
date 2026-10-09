@@ -30,9 +30,11 @@ These categories, and their associated parameters, are described in the
 following sections.
 
 ![Figure 9-1](../images/figure-9-1.jpg)
+
 *Figure 9-1: Human Editor, Viewer and Segment Data pop-up menu.*
 
 ![Figure 9-2](../images/figure-9-2.jpg)
+
 *Figure 9-2: HVE Human Model with 15 segments and 14 joints. The HVE Human Model [3.9] is based on GEBOD [3.10].*
 
 The 15 segments are: Pelvis, Abdomen, Chest, Neck, Head, right and left Upper
@@ -51,6 +53,7 @@ Table 9-1. See also the [Inertial Data Dialog reference
 page](../../07-humans/Human.md).
 
 ![Figure 9-3](../images/p320-187.png)
+
 *Figure 9-3: Human Segment Inertias dialog.*
 
 **Table 9-1: Inertial Parameters for each human segment**
@@ -77,6 +80,7 @@ slider to the left (darken) or right (lighten). Click on the Copy To All
 Segments checkbox to apply the selected color to all segments.
 
 ![Figure 9-4](../images/figure-9-4.jpg)
+
 *Figure 9-4: Human Color dialog.*
 
 **Table 9-2: Color Parameters for each human segment**
@@ -96,6 +100,7 @@ in Figure 9-5 and Table 9-3. See also the [Contact Ellipsoids Dialog reference
 page](../../07-humans/Human1.md).
 
 ![Figure 9-5](../images/figure-9-5.jpg)
+
 *Figure 9-5: Human Contact Ellipsoids dialog.*
 
 Up to three individual ellipsoids may be supplied for each segment. To create
@@ -114,9 +119,11 @@ the list of available ellipsoids, then select the desired ellipsoid.
 | Ellipsoid Material Name | UtNone | Name for material attached to current ellipsoid |
 
 ![Figure 9-6](../images/p323-figB9-6.png)
+
 *Figure 9-6: Human Segment Coordinate System.*
 
 ![Figure 9-7](../images/p324-figB9-7.png)
+
 *Figure 9-7: Human Contact Ellipsoids Coordinate System.*
 
 ### Contact Ellipsoid Material Properties
@@ -148,6 +155,7 @@ force-deflection graph display.
 | Unloading Slope | UtHumMatLinear | Linear unloading slope beginning at maximum deflection |
 
 ![Figure 9-8](../images/figure-9-8.jpg)
+
 *Figure 9-8: Human Materials Properties dialog displays the current material attributes for the selected ellipsoid. The dialog also allows the user to open and save human material files.*
 
 ## Injury Tolerances
@@ -165,6 +173,7 @@ Table 9-5. See also the [Injury Tolerance Data Dialog reference
 page](../../07-humans/Human2.md).
 
 ![Figure 9-9](../images/figure-9-9.jpg)
+
 *Figure 9-9: Human Injury Tolerance dialog.*
 
 **Table 9-5: Injury Tolerance Parameters for the current human**
@@ -206,6 +215,7 @@ joint. See also the [Joint Data
 Dialog reference page](../../07-humans/Human3.md).
 
 ![Figure 9-10](../images/figure-9-10.jpg)
+
 *Figure 9-10: Human Joint Coordinates dialog.*
 
 **Table 9-6: Joint Parameters for each human segment**
@@ -215,6 +225,7 @@ Dialog reference page](../../07-humans/Human3.md).
 | Joint Coordinates | UtHumDispLength | i, j and k coordinates of selected joint, defined relative to the segment principal axis system |
 
 ![Figure 9-11](../images/p330-figB9-11.png)
+
 *Figure 9-11: Human Joint Coordinate System.*
 
 ### Joint Properties
@@ -228,6 +239,7 @@ rotation about the joint's i, j and k axes. See also the [Joint Properties
 Dialog reference page](../../07-humans/HumJntPropDlg.md).
 
 ![Figure 9-12](../images/figure-9-12.jpg)
+
 *Figure 9-12: Human Joint Properties dialog.*
 
 **Table 9-7: Joint Properties for each joint**

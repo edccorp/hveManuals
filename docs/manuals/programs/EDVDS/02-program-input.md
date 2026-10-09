@@ -48,12 +48,15 @@ To add a vehicle to the current HVE case, perform the following steps:
 
 ![Figure 2-1 (part 1)](images/p023-001.png)
 ![Figure 2-1 (part 2)](images/p023-002.png)
+
 *Figure 2-1: Typical Truck (above) and Tow Vehicle (below).*
 
 ![Figure 2-2](images/p024-003.png)
+
 *Figure 2-2: EDVDS Trailer — a Class 4 trailer from the HVE Generic Vehicle library.*
 
 ![Figure 2-3](images/p024-004.png)
+
 *Figure 2-3: EDVDS Dolly — a Class 4 Converter Dolly from the HVE Generic Vehicle library.*
 
 The following Vehicle Parameter groups are used by EDVDS:
@@ -376,6 +379,7 @@ To add an environment to the current HVE case, perform the following steps:
 8. Click *OK* to add the environment to the current case.
 
 ![Figure 2-4](images/p037-005.png)
+
 *Figure 2-4: HVE Environment Editor.*
 
 ### Visual Data
@@ -437,6 +441,7 @@ The 3-D Surface Geometry is used by the tire model in EDVDS to calculate the ele
 EDVDS uses the HVE Event Editor (see Figure 2-5) to create, set up and execute an event. Each of these topics is described below.
 
 ![Figure 2-5](images/p039-006.png)
+
 *Figure 2-5: HVE Event Editor.*
 
 ### Creating An Event
@@ -565,6 +570,7 @@ EDVDS has one calculation option (see Figure 2-6); for full details see [EDVDS C
 > **NOTE:** EDVDS will terminate with an error message if you select the Linear tire model method for an event that results in tire longitudinal or lateral slip beyond the linear range.
 
 ![Figure 2-6](images/p044-008.png)
+
 *Figure 2-6: EDVDS Calculation Options dialog.*
 
 #### Get Surface Information
@@ -585,6 +591,7 @@ To execute an EDVDS event, use the Event Controller, shown in Figure 2-7. The Ev
 - **Advance to End** — Advance to the end of the simulation
 
 ![Figure 2-7](images/p044-fig2-7-event-controller.png)
+
 *Figure 2-7: Event Controller, used for starting and stopping event execution. The Event Controller can also be used for replaying previously executed events, both forward and backward.*
 
 > **NOTE:** If you make changes to any of the event set-up options (see previous section), those changes will have no effect unless you press Reset before pressing Play.

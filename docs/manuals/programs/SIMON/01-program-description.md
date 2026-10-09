@@ -15,6 +15,7 @@ Each SIMON vehicle may have up to three axles (six axles for full trailers) and 
 - **Safety Research** — Safety researchers may use SIMON for reconstructing most crashes involving single or multiple vehicles. Human, vehicle and environment factors may be simulated and evaluated to assist in performing detailed crash studies.
 
 ![Figure 1-1](images/p018-000.png)
+
 *Figure 1-1: SIMON Event.*
 
 ## Model Inputs

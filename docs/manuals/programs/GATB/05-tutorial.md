@@ -17,7 +17,7 @@ The basic procedure for creating GATB events is described in detail in this tuto
 
 > **NOTE:** Environments are not required in the creation of a GATB event and are not discussed here. Review the HVE Operations Manual if you have questions regarding the creation of environments.
 
-*(Updated: the dialogs referenced below — Human Information, Vehicle Information, Contact Surfaces, Position/Velocity, Collision Pulse, Contact Interactions, Simulation Controls — are the current HVE dialogs. The human-creation dialog is now the GEBOD-based **Human Information** dialog documented under [`docs/manuals/07-humans/`](../../07-humans/README.md). The workflow below matches the current release; only cosmetic dialog details may differ from the Fifth Edition screenshots.)*
+*(Updated: the dialogs referenced below — Human Information, Vehicle Information, Contact Surfaces, Position/Velocity, Collision Pulse, Contact Interactions, Simulation Controls — are the current HVE dialogs. The human-creation dialog is now the GEBOD-based **Human Information** dialog documented under [Humans dialog reference](../../07-humans/README.md). The workflow below matches the current release; only cosmetic dialog details may differ from the Fifth Edition screenshots.)*
 
 ## Getting Started
 
@@ -74,13 +74,14 @@ Use the option buttons to choose the following human attributes (Figure 5-1):
 - Height Percentile = 5
 
 ![Figure 5-1](images/p059-028.png)
+
 *Figure 5-1: Human Information dialog.*
 
 > **NOTE:** The passenger's position is assumed to be on the right side of the vehicle.
 
 > **NOTE:** Notice the human comes into the editor in a seated position. If Pedestrian had been selected as the Location for the human, then the human would appear in a standing position.
 
-> *(Updated: in the current release the human is created through the GEBOD Human Information dialog. Subject Type may be Child, Female, Male or User, and the Basis of the anthropometry may be set to Age, Weight, Height or All. The Location/Sex/Age/Weight-Percentile/Height-Percentile choices used in this tutorial map onto that dialog. See the human-creation documentation under [`docs/manuals/07-humans/`](../../07-humans/README.md) for the full set of current controls.)*
+> *(Updated: in the current release the human is created through the GEBOD Human Information dialog. Subject Type may be Child, Female, Male or User, and the Basis of the anthropometry may be set to Age, Weight, Height or All. The Location/Sex/Age/Weight-Percentile/Height-Percentile choices used in this tutorial map onto that dialog. See the human-creation documentation under [Humans dialog reference](../../07-humans/README.md) for the full set of current controls.)*
 
 > **NOTE:** If you are having difficulty in completing this portion of the tutorial, the file `GATBcreateHuman` in your `/HVE/supportFiles/case` directory contains all necessary information up to this point.
 
@@ -105,6 +106,7 @@ Using the Option buttons, click each button to choose the following vehicle from
 - Manipulate the view in the 3D viewing window to appear similar to that in Figure 5-2.
 
 ![Figure 5-2](images/p061-030.png)
+
 *Figure 5-2: View of Buick Skylark.*
 
 > **NOTE:** This view is in the 2 o'clock position (the camera is at the right front corner of the vehicle, approximately 10-15 degrees above the XY plane), making the vehicle clearly visible. Now, let's add the second vehicle involved in our collision for this tutorial.
@@ -123,16 +125,19 @@ Using the Option buttons, click each button to choose the following vehicle from
 - Manipulate the view in the 3D viewing window to appear similar to that in Figure 5-3.
 
 ![Figure 5-3](images/p062-031.png)
+
 *Figure 5-3: View of Chevrolet Caprice.*
 
 - Next, with the hand manipulator selected from the right toolbar, move the camera position closer to the vehicle by pushing the left and middle mouse buttons at the same time. Alternatively, use the dolly thumb wheel located on the right lower portion of the viewer to slowly move closer to the vehicle until you are just inside the outer shell or mesh of the vehicle. Your view will look similar to Figure 5-4.
 
 ![Figure 5-4](images/p063-032.png)
+
 *Figure 5-4: Close-up view of vehicle interior.*
 
 - Adjust the zoom slider located on the bottom right portion of the viewing window, or enter a number of approximately 100, to generate a wide angle view inside the vehicle similar to Figure 5-5.
 
 ![Figure 5-5](images/p064-033.png)
+
 *Figure 5-5: Close-up, wide-angle view of vehicle interior.*
 
 > **NOTE:** If you are having difficulty in completing this portion of the tutorial, the file `GATBcreateVehicles` in your `/HVE/supportFiles/case` directory contains all necessary information up to this point.
@@ -150,9 +155,11 @@ The contact panels will be entered for the right front seat position in this Che
 > **NOTE:** One of the options available on the Contact Surfaces dialog box is the Material properties button. For the purposes of this tutorial, the default material will be used for all surfaces (Figure 5-7).
 
 ![Figure 5-6](images/p065-034.png)
+
 *Figure 5-6: Contact Surfaces dialog in Vehicle Editor.*
 
 ![Figure 5-7](images/p065-035.png)
+
 *Figure 5-7: Material Properties dialog in Vehicle Editor.*
 
 > **NOTE:** The material values may not be exactly the same, but choose the default material.
@@ -170,9 +177,11 @@ See Figures 5-8 and 5-9.
 - Click OK to accept the coordinates for this contact surface.
 
 ![Figure 5-8](images/p066-036.png)
+
 *Figure 5-8: Setting up RF Seat Cushion contact surface.*
 
 ![Figure 5-9](images/p067-037.png)
+
 *Figure 5-9: Contact Surface corners and selection order.*
 
 > **NOTE:** Figure 5-9 depicts the proper order for entering the corner coordinates. These corners must be entered in a counter-clockwise order in order to create the positive side of the surface facing upward. The positive side of the surface is the side of the surface that will be pushing the object.
@@ -184,6 +193,7 @@ See Figures 5-10 through 5-12 for differing views of the contact panel just crea
 ![Figure 5-10](images/p068-038.png)
 ![Figure 5-11](images/p068-039.png)
 ![Figure 5-12](images/p069-040.png)
+
 *Figures 5-10 through 5-12: Views of RF Seat Cushion contact surface.*
 
 It is obvious that this first attempt at making the Right Front Seat Cushion contact panel creates a surface that is too narrow and does not extend rearward enough. This panel is also slightly above the seat cushion. By modifying one of the corner positions at a time, the correct seat panel can be determined visually.
@@ -200,11 +210,13 @@ Adjust the following corner coordinates to make the panel appear similar to Figu
 
 ![Figure 5-13](images/p070-041.png)
 ![Figure 5-14](images/p070-042.png)
+
 *Figures 5-13 and 5-14: Editing RF Seat Cushion contact surface and corner points.*
 
 The visualization of the contact panel is shown in Figure 5-15. You can see that the flat contact panel does an adequate job of approximating the complex surface geometry of the seat cushion.
 
 ![Figure 5-15](images/p071-043.png)
+
 *Figure 5-15: Revised RF Seat Cushion contact surface.*
 
 Create the remaining contact panels in the same manner as the Right Front Seat Cushion panel. The names and coordinates for the remaining panels are given in Table 5-1.
@@ -231,12 +243,14 @@ Create the remaining contact panels in the same manner as the Right Front Seat C
 > **NOTE:** The GATB program will not calculate a force if the contact occurs in the areas of no contact demonstrated in Figure 5-16.
 
 ![Figure 5-16](images/p073-044.png)
+
 *Figure 5-16: Parallelogram contact surface.*
 
 For purposes of illustrating the contact panels we have set the vehicle geometry to `NoBody.h3d`. Two different views of these completed contact panels are shown in Figures 5-17 and 5-18. If you choose to view the contact panels using the `NoBody.h3d` geometry file, you may return to the original geometry file by selecting the `PCChevroletImpala954-Dr.h3d` geometry file.
 
 ![Figure 5-17](images/p074-045.png)
 ![Figure 5-18](images/p074-046.png)
+
 *Figures 5-17 and 5-18: Oblique and side views of contact surfaces.*
 
 > **NOTE:** If you are having difficulty in completing this portion of the tutorial, the file `GATBcreateContactPanels` in your `/HVE/supportFiles/case` directory contains all necessary information up to this point.
@@ -257,6 +271,7 @@ We will now create the simulations necessary for a head-on collision. The collis
 > **NOTE:** HVE will append the name of the calculation method to the event name, thus the complete event name will become "EDSMAC4, Frontal Impact".
 
 ![Figure 5-19](images/p075-048.png)
+
 *Figure 5-19: Setting up EDSMAC4 event.*
 
 Now we're ready to set up the event.
@@ -319,6 +334,7 @@ The EDSMAC4 event has provided us with the collision pulse. Now, let's use GATB 
 - Press OK to display the event editor.
 
 ![Figure 5-20](images/p079-051.png)
+
 *Figure 5-20: Setting up the GATB event.*
 
 Now, let's set up and execute the occupant simulation event using GATB.
@@ -350,6 +366,7 @@ In the Set Initial Position/Velocity dialog for the human, enter:
 - Click Apply. You will now see the human has moved from the center of mass of the vehicle to a position approximately in the right front seat of the vehicle (Figure 5-21).
 
 ![Figure 5-21](images/p080-fig521.png)
+
 *Figure 5-21: Setting up Initial Human Position.*
 
 > **NOTE:** The legs are embedded in the floor and the human is not in a normal seated position where the torso is in an approximately parallel position with the seat back.
@@ -363,6 +380,7 @@ In the Set Initial Position/Velocity dialog for the human, enter:
 This will produce an initial positioning similar to Figure 5-22.
 
 ![Figure 5-22](images/p081-053.png)
+
 *Figure 5-22: Initial Position of RF Occupant.*
 
 Notice that the pelvis is embedded in the seat cushion and that it needs to be moved upward. To correct this problem:
@@ -397,6 +415,7 @@ Enter the following coordinates in the available fields:
 The new view of the vehicle and occupant for the vehicle-affixed camera is shown in Figure 5-23.
 
 ![Figure 5-23](images/p083-054.png)
+
 *Figure 5-23: View of occupant from specified camera position.*
 
 Choose Simulation Controls from the Options menu and change:
@@ -449,6 +468,7 @@ The Report Window dialog will then appear with the active events shown.
 - Highlight GATB, RF Passenger event (Figure 5-24).
 
 ![Figure 5-24](images/p085-057.png)
+
 *Figure 5-24: Setting up a Report Window.*
 
 Once the GATB event is highlighted, the available output reports are listed by clicking on the button next to the selected output. For this tutorial, we want to generate a Results Output Report.
@@ -467,6 +487,7 @@ In this example, our initial human position has the pelvis accelerating downward
 - Return to the Playback Editor by clicking on the Playback Editor button on the tool bar and view the Results window again (Figure 5-26).
 
 ![Figure 5-25](images/p086-064.png)
+
 *Figure 5-25: Results Output Report in the Playback Editor.*
 
 Notice the small differences between the two results windows (Figures 5-25 and 5-26). The linear acceleration for the pelvis in the Z direction has lowered. However, in examining the linear acceleration in the X direction for the pelvis, the value has increased from 0.145555 g's to 0.161370 g's.
@@ -483,6 +504,7 @@ To further confirm this, click on the Event Editor button on the toolbar.
 Return to the Playback Editor and view the Output Results window. It should look like Figure 5-27.
 
 ![Figure 5-26](images/p087-068.png)
+
 *Figure 5-26: Results report, after changes to Human Position.*
 
 By reviewing this figure compared to the previous two figures, you can see the angular accelerations for the legs and feet have become quite large, and the linear accelerations particularly for the feet have become very large. Effectively, what we have done by moving the pelvis downward is position the feet into the floor so the floor will push back very hard.
@@ -495,6 +517,7 @@ By reviewing this figure compared to the previous two figures, you can see the a
 - Confirm that the Output Results window appears the same as Figure 5-25.
 
 ![Figure 5-27](images/p088-069.png)
+
 *Figure 5-27: Results report, after additional changes.*
 
 For this example, we will not spend any additional effort in attempting to produce smaller linear accelerations.
@@ -508,6 +531,7 @@ Once the initial equilibrium has been established, the vehicle can then be posit
 The next step is to apply a crash pulse to the vehicle. This involves two parts.
 
 ![Figure 5-28](images/p089-071.png)
+
 *Figure 5-28: Collision Pulse dialog, without a pulse.*
 
 The first part is to set up the initial speed of the vehicle to match that of the crash being simulated. In this example, recall from the EDSMAC4 run that the initial speed is 30 mph.
@@ -529,6 +553,7 @@ The Collision Pulse dialog will appear like Figure 5-28.
 > If you are having difficulty in completing this portion of the tutorial, the file `GATBcreateGATBpassenger` in the `/HVE/supportFiles/case` directory contains all necessary information up to this point.
 
 ![Figure 5-29](images/p090-072.png)
+
 *Figure 5-29: Collision Pulse dialog, with EDSMAC4 pulse.*
 
 At this point, you may be prompted that warnings exist. If you choose to look at those warnings, they may indicate that the yaw acceleration is higher than normal. Accept these as possible warnings, and when HVE asks you to see them again, just click Cancel. You will return to the Event Editor where you can now execute the event, which demonstrates occupant motion in a frontal car crash.
@@ -588,6 +613,7 @@ To create the human pedestrian in this example, perform the following steps:
 - Click the (+) sign on the tool bar to add a human. The Human Information dialog is displayed. The Human Information dialog includes option buttons allowing the user to select a seat position within the vehicle (alternatively, Pedestrian could be selected), and assign the human's attributes according to Sex, Age, Weight Percentile and Height Percentile.
 
 ![Figure 5-30](images/p093-077.png)
+
 *Figure 5-30: Pedestrian Human in the Human Editor.*
 
 Using these option buttons, click each one to choose the following human attributes:
@@ -640,6 +666,7 @@ The completed contact panels are shown in Figures 5-31 and 5-32.
 
 ![Figure 5-31](images/p096-079.png)
 ![Figure 5-32](images/p096-080.png)
+
 *Figures 5-31 and 5-32: Contact Surfaces on pickup.*
 
 ### Creating the Event
@@ -657,6 +684,7 @@ Select Options from the menu bar and then Simulation Controls from the drop-down
 - Simulation Maximum Time (sec) = 1.0
 
 ![Figure 5-33](images/p097-082.png)
+
 *Figure 5-33: Creating the Pedestrian impact event in the HVE Event Editor.*
 
 Using the Event Editor dialog, select the Dodge Dakota 4x4 from the Event Humans & Vehicles list, then select Edit from the menu bar, choose Position/Velocity and click Initial. The vehicle is displayed at the earth-fixed origin.
@@ -674,6 +702,7 @@ Enter the following values in the appropriate boxes of the Position/Velocity, In
 - Assigned Velocity (mph) = 15.0
 
 ![Figure 5-34](images/p098-083.png)
+
 *Figure 5-34: Setting Initial Position / Velocity of Dodge Pickup.*
 
 - Using the Event Editor dialog, select the Human from the Event Humans & Vehicles list, then select Set-up from the menu bar, choose Position/Velocity and click Initial. The human is displayed at the vehicle's origin (notice the human is half-buried in the vehicle geometry; this occurs because AutoPosition does not apply to humans). See Figure 5-35.
@@ -696,9 +725,11 @@ The effects of these changes are displayed in Figure 5-36.
 - Click OK to close the Collision Pulse window.
 
 ![Figure 5-35](images/p099-084.png)
+
 *Figure 5-35: Setting up pedestrian position.*
 
 ![Figure 5-36](images/p100-085.png)
+
 *Figure 5-36: Positioning the human in front of pickup.*
 
 - Choose Set-up from the menu bar and select Contacts. The Contact Interactions dialog box will be shown (Figure 5-37).
@@ -709,6 +740,7 @@ The effects of these changes are displayed in Figure 5-36.
 > **NOTE:** In order to reduce processing time for GATB events, it may be helpful to only designate contact interactions between specific contact surfaces. For example, if we were only examining the ground-feet interaction, we would only need to specify the left and right foot ellipsoids of the human and the GROUND object attached to the Dodge Dakota pickup truck.
 
 ![Figure 5-37](images/p101-086.png)
+
 *Figure 5-37: Contact Interactions dialog box.*
 
 In order to examine the interaction between the pedestrian and the GROUND contact panel, we need to set up the Key Results window to show the total force on each of the pedestrian's feet ellipsoids.
@@ -727,6 +759,7 @@ Your Key Results Window should look like Figure 5-38.
 > **NOTE:** Total weight of the pedestrian (173.5 lbs in this example) should be approximately equal to total force of both feet interacting with the ground.
 
 ![Figure 5-38](images/p102-087.png)
+
 *Figure 5-38: Key Results window.*
 
 Figure 5-38 shows total force from feet-ground contacts to be approximately 834 lbs. We must move the pedestrian up slightly.
@@ -736,6 +769,7 @@ Figure 5-38 shows total force from feet-ground contacts to be approximately 834 
 > **NOTE:** You may find it helpful to edit the `language.rsc` in the `/HVE/supportFiles/sys` directory in order to show 3 decimal digits.
 
 ![Figure 5-39](images/p103-088.png)
+
 *Figure 5-39: Key Results window.*
 
 We will use the collision pulse to approximate the vehicle braking.
@@ -761,6 +795,7 @@ Examine Figures 5-40 through 5-43 for views of the pedestrian interaction with t
 ![Figure 5-41](images/p105-090.png)
 ![Figure 5-42](images/p105-091.png)
 ![Figure 5-43](images/p106-092.png)
+
 *Figures 5-40 through 5-43: Pedestrian interaction at Time = 0.05, 0.10, 0.50 and 1.00 sec.*
 
 This completes the examples of the pedestrian simulation.

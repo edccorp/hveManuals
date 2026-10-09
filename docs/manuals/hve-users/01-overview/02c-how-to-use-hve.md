@@ -43,9 +43,11 @@ See the [Key Results window
 reference](../../01-user-interface/KeyResDlg.md) for details.
 
 ![Figure 2-57](../images/figure-2-57.jpg)
+
 *Figure 2-57: Key Results window for reconstructions.*
 
 ![Figure 2-58](../images/figure-2-58.jpg)
+
 *Figure 2-58: Key Results window for simulations.*
 
 #### Selecting Key Results
@@ -109,6 +111,7 @@ The selected variables will be added to the existing list of variables in
 the Key Results window.
 
 ![Figure 2-59](../images/figure-2-59.jpg)
+
 *Figure 2-59: The Variable Selection dialog.*
 
 ### Coordinate Axes
@@ -126,6 +129,7 @@ reduce the level of detail.
 > **NOTE:** The Axes option is a toggle.
 
 ![Figure 2-60](../images/figure-2-60.jpg)
+
 *Figure 2-60: The Show Axes option.*
 
 ### Contact Surfaces
@@ -156,6 +160,7 @@ from the display, uncheck *Show Contacts*.
 > **NOTE:** The Contacts option is a toggle.
 
 ![Figure 2-61](../images/figure-2-61.jpg)
+
 *Figure 2-61: The Show Contacts option.*
 
 ### Velocity Vectors
@@ -177,6 +182,7 @@ Velocity Vectors*.
 > **NOTE:** The Velocity Vectors option is a toggle.
 
 ![Figure 2-62](../images/figure-2-62.jpg)
+
 *Figure 2-62: The Show Velocity Vectors option.*
 
 ### Skidmarks
@@ -208,6 +214,7 @@ toggle that displays the path of each tire, and "Show CG Paths" /
 accelerometers.)*
 
 ![Figure 2-63](../images/figure-2-63.jpg)
+
 *Figure 2-63: The Show Skidmarks option.*
 
 ### Target Positions
@@ -252,6 +259,7 @@ uncheck *Show Targets*.
 > **NOTE:** The Targets option is a toggle.
 
 ![Figure 2-64](../images/figure-2-64.jpg)
+
 *Figure 2-64: The Show Targets option.*
 
 ### Grid
@@ -275,6 +283,7 @@ To display the grid and set the grid spacing, perform the following steps:
 > **NOTE:** The grid is displayed in the 3-D Editor viewers only.
 
 ![Figure 2-65](../images/figure-2-65.jpg)
+
 *Figure 2-65: The Grid dialog.*
 
 ### Selecting Units
@@ -329,6 +338,7 @@ The selected units will be displayed.
 > changed will not be updated until the window is removed and redisplayed.
 
 ![Figure 2-66](../images/figure-2-66.jpg)
+
 *Figure 2-66: The Units dialog.*
 
 ### Render Options
@@ -345,6 +355,7 @@ final rendering of a Playback sequence to video). The various Render options
 are briefly described below.
 
 ![Figure 2-67](../images/figure-2-67.jpg)
+
 *Figure 2-67: The Rendering Options dialog.*
 
 #### Show As
@@ -449,6 +460,7 @@ options may be divided into two basic categories: Integration Timesteps and
 Termination Conditions.
 
 ![Figure 2-68](../images/figure-2-68.jpg)
+
 *Figure 2-68: The Simulation Controls dialog.*
 
 #### Integration Timesteps
@@ -572,6 +584,7 @@ To change the current Playback Control options, perform the following steps:
 3. Choose *OK* to update the current Playback Controls.
 
 ![Figure 2-69](../images/figure-2-69.jpg)
+
 *Figure 2-69: The Playback Options dialog.*
 
 ### Calculation Options
@@ -589,6 +602,7 @@ descriptions of each model's Calculation Options dialog
 SIMON).
 
 ![Figure 2-70](../images/figure-2-70.jpg)
+
 *Figure 2-70: A Calculation Options dialog.*
 
 To view or edit the current Calculation Options, perform the following
@@ -628,6 +642,7 @@ After creating an event, the DyMESH Options dialog is selected by choosing
 *DyMESH...* from the Options menu.
 
 ![Figure 2-71](../images/figure-2-71.jpg)
+
 *Figure 2-71: The DyMESH Options dialog.*
 
 ### Get Surface Information
@@ -682,6 +697,7 @@ Information dialog includes two options that affect this search:
     > possible that a vertical face may have a small Z component.
 
 ![Figure 2-72](../images/figure-2-72.jpg)
+
 *Figure 2-72: The Get Surface Information Options dialog.*
 
 To assign these options, perform the following steps:
@@ -703,6 +719,7 @@ reference](../../01-user-interface/PrefDlg.md) for the current,
 option list).
 
 ![Figure 2-73](../images/figure-2-73.jpg)
+
 *Figure 2-73: The User Preferences dialog.*
 
 The User Preferences dialog allows the user to set the following
@@ -769,6 +786,7 @@ general information about human and vehicle dynamics and accident
 reconstruction. HVE's Help System is described below.
 
 ![Figure 2-74](../images/figure-2-74.jpg)
+
 *Figure 2-74: The Help Contents/Index.*
 
 ### Help Topics
@@ -819,6 +837,7 @@ A sample Technical Support dialog is shown in Figure 2-75.
 > staff.
 
 ![Figure 2-75](../images/figure-2-75.jpg)
+
 *Figure 2-75: The Technical Support Help dialog.*
 
 ### About
@@ -835,6 +854,7 @@ For more information about getting Help, refer to the Help Menu in the Menu
 Reference section of this manual.
 
 ![Figure 2-76](../images/figure-2-76.jpg)
+
 *Figure 2-76: The About HVE dialog.*
 
 ---
@@ -877,6 +897,7 @@ These tools are made available in the Video Set-up dialog (see Figure 2-77).
 The following sections describe how to set up and use these tools.
 
 ![Figure 2-77](../images/figure-2-77.jpg)
+
 *Figure 2-77: The Video Set-up dialog.*
 
 ### Video Device Set-up
@@ -931,6 +952,7 @@ video compressor, perform the following steps:
 The compressor is now ready for use.
 
 ![Figure 2-78](../images/p153-figA2-78.png)
+
 *Figure 2-78: The Playback Controller with video source and destination.*
 
 ### Recording A Video

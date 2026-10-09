@@ -11,6 +11,7 @@ Vehicle design engineers can use EDVDS to assess how various changes to suspensi
 Accident investigators can use EDVDS to determine how a driver may have lost vehicular control. By repeated adjustments of the throttle, braking and steering input tables, the researcher will converge on those driver inputs which match accident site evidence. Thus, the user learns how a driver's inputs may have affected the cause and/or outcome of an accident.
 
 ![Figure 1-1](images/p018-000.png)
+
 *Figure 1-1: EDVDS Event illustrating a commercial vehicle loss of control on a downhill grade.*
 
 EDVDS employs full 3-dimensional engineering models with up to 23 degrees of freedom for each vehicle. The program supports up to 4 axles per vehicle, solid axle suspension types with inter-tandem load transfer, and single and dual tires. Combination vehicles are connected using fixed and converter dollys with rigid or hinged drawbars. EDVDS also employs a comprehensive drivetrain model with engine performance parameters and multi-gear transmissions and differentials.

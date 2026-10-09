@@ -58,6 +58,7 @@ vehicle). In addition, the available braking force is larger than for a
 locked tire and, therefore, braking distance can be reduced.
 
 ![Figure 31-1](../images/p756-fig31-1.png)
+
 *Figure 31-1 — Typical graph of normalized braking force vs longitudinal
 tire slip, also called a mu-slip curve.*
 
@@ -145,6 +146,7 @@ may be supported. The interface is divided into two sections:
 The interface, dialogs and associated variables are described below.
 
 ![Figure 31-2](../images/figure-31-2.jpg)
+
 *Figure 31-2 — ABS System Data dialog. These parameters affect the entire
 vehicle (compare with the ABS Wheel Data dialog).*
 
@@ -253,6 +255,7 @@ Table 31-1. A detailed description of each variable follows.
   > Delays are set separately for each wheel (see ABS Wheel Data).
 
 ![Figure 31-4](../images/p762-fig31-4.png)
+
 *Figure 31-4 — Flow chart showing integration of the HVE ABS model into a
 vehicle simulation.*
 
@@ -381,6 +384,7 @@ incorporates switching logic depending on the current tire slip:
   according to the Release Rate.
 
 ![Figure 31-5](../images/p763-fig31-5.png)
+
 *Figure 31-5 — Typical control cycles for the Tire Slip algorithm (wheel
 pressure vs time during a hard brake application).*
 
@@ -414,11 +418,13 @@ algorithm is based on wheel spin acceleration and a critical tire slip
 threshold.
 
 ![Figure 31-6](../images/p764-359.png)
+
 *Figure 31-6 — Idealized control sequence for the Bosch algorithm (reprinted
 from reference 4.42). Compare the lower portion with the pressure cycle
 displayed in Figure 31-7.*
 
 ![Figure 31-7](../images/p764-fig31-7.png)
+
 *Figure 31-7 — Simulated control cycle for the HVE Bosch Version 1
 algorithm. Compare with the lower portion of Figure 31-6.*
 

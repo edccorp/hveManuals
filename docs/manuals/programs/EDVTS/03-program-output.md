@@ -48,6 +48,7 @@ The Accident History Report displays a table of initial and final positions and 
 The report includes the Total Distance Travelled and Time, followed by Position (X, Y, PSI — and, for the trailer, GAMMA) and Velocity (V-tot, u-vel, v-vel, Yaw Vel — and, for the trailer, Gam Vel) at the Initial and Final positions.
 
 ![Figure 3-1](images/p043-007.png)
+
 *Figure 3-1: Typical Accident History Output Report issued by EDVTS.*
 
 ### Messages
@@ -55,6 +56,7 @@ The report includes the Total Distance Travelled and Time, followed by Position 
 A typical Messages Report is shown in Figure 3-2. For a complete listing of messages issued by EDVTS, see [Chapter 6 — Messages](06-messages.md).
 
 ![Figure 3-2](images/p044-008.png)
+
 *Figure 3-2: Typical Messages Output Report issued by EDVTS.*
 
 ### Program Data
@@ -68,6 +70,7 @@ The Program Data Report includes the following information:
 A typical Program Data Report is shown in Figure 3-3.
 
 ![Figure 3-3](images/p045-009.png)
+
 *Figure 3-3: Typical Program Data Output Report issued by EDVTS.*
 
 ### Vehicle Data
@@ -84,6 +87,7 @@ The Vehicle Data Report includes the following information:
 A portion of a typical Vehicle Data Report is shown in Figure 3-4. Dimensional entries include Overall Length and Width, CG to Front/Rear End, Wheelbase, Front/Rear Overhang, CG to Front/Rear Axle, Front/Rear Trackwidth, Inter-tandem Distance and Load Transfer, CG Height Above Ground, Connection Height Above Ground, Lateral Load Transfer, Mass, Weight and Yaw Inertia.
 
 ![Figure 3-4](images/p046-010.png)
+
 *Figure 3-4: Typical Vehicle Data Output Report issued by EDVTS (only a portion of the total report is shown).*
 
 ## Graphic Reports
@@ -121,6 +125,7 @@ An example of a Variable Output table is shown in Figure 3-5. A detailed listing
 (*) If Driver Control option was 'At Steering Wheel'
 
 ![Figure 3-5](images/p049-011.png)
+
 *Figure 3-5: Typical Variable Output Table from EDVTS.*
 
 ## Trajectory Simulations
@@ -128,6 +133,7 @@ An example of a Variable Output table is shown in Figure 3-5. A detailed listing
 EDVTS produces a trajectory simulation of the current event. The trajectory simulation is a visualization of the data displayed in the Variable Output table (see previous section). An example of a trajectory simulation is shown in Figure 3-6.
 
 ![Figure 3-6](images/p050-012.png)
+
 *Figure 3-6: Typical EDVTS Trajectory Simulation.*
 
 ### Displaying a Trajectory Simulation
@@ -144,6 +150,7 @@ The Playback Controller's buttons have the following functions:
 - **Advance to End** — Advance to the end of the simulation
 
 ![Figure 3-7](images/p051-fig3-7.png)
+
 *Figure 3-7: Playback Controller.*
 
 > NOTE: The Playback Controller is also used for controlling the Playback Window. This window is used for combining events and for making movie files. Refer to the User's Manual for more information on the Playback Window and making movie files.

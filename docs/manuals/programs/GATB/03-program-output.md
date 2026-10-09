@@ -52,6 +52,7 @@ An example of each of these numeric output reports from GATB is shown on the fol
 The Accident History Report displays a table of initial and final positions and velocities for the human and vehicle. A typical Accident History Report is shown in Figure 3-1.
 
 ![Figure 3-1](images/p045-012.png)
+
 *Figure 3-1: Example of GATB Accident History output report.*
 
 ### Human Data
@@ -65,6 +66,7 @@ The Human Data Report includes the following information:
 A typical Human Data Report is shown in Figure 3-2. The report echoes the ATB "Crash Victim" input cards (Cards B.1–B.3): for each of the 15 segments it lists the weight, principal moments of inertia, contact ellipsoid semiaxes and center offsets, and principal-axis yaw/pitch/roll; for each of the 14 joints it lists the joint pin locations in both connected segments and the joint axis orientations.
 
 ![Figure 3-2](images/p046-013.png)
+
 *Figure 3-2: Typical GATB Human Data output report.*
 
 ### Injury Data
@@ -74,6 +76,7 @@ The Injury Data Report includes the HIC (Head Injury Criterion), HSI (Head Sever
 A typical Injury Data Report is shown in Figure 3-3.
 
 ![Figure 3-3](images/p047-014.png)
+
 *Figure 3-3: Typical GATB Injury Data output report.*
 
 ### Message
@@ -91,6 +94,7 @@ The Program Data Report includes the following information:
 A typical Program Data Report is shown in Figure 3-4. The report also lists the GATB program version, unit system, gravity vector, integration parameters (NDINT, NSTEPS, DT, H0, HMAX, HMIN), the NPRT print-control array, the working file names (gatb.ain input file, gatb.aou standard output, .sal structured output for VIEW, and tape 8 output), and a table of elapsed CPU time by subroutine.
 
 ![Figure 3-4](images/p048-015.png)
+
 *Figure 3-4: Typical GATB Program Data output report.*
 
 ### Results
@@ -98,6 +102,7 @@ A typical Program Data Report is shown in Figure 3-4. The report also lists the 
 The Results Data Report includes tables containing human segment linear and angular positions, velocities, and accelerations, along with joint forces and torques. These tables are produced every 5 to 10 printout time intervals (i.e., output time interval = 0.002 sec; a table is produced every 10 to 20 msec, depending on maximum termination time selected). See Figure 3-5 for an example of a Results window.
 
 ![Figure 3-5](images/p049-016.png)
+
 *Figure 3-5: Example of GATB Results output report.*
 
 ### Vehicle Data
@@ -112,6 +117,7 @@ The Vehicle Data Report includes the following information:
 A typical Vehicle Data report is shown in Figure 3-6.
 
 ![Figure 3-6](images/p050-017.png)
+
 *Figure 3-6: Typical GATB Vehicle Data output report.*
 
 ## Variable Output Table
@@ -155,6 +161,7 @@ GATB produces a Variable Output table containing the time-based simulation resul
 An example of a Variable Output table is shown in Figure 3-7. A detailed listing of each Variable Output parameter produced by GATB is found in Tables 3-2 and 3-3.
 
 ![Figure 3-7](images/p053-018.png)
+
 *Figure 3-7: Example of Variable Output report.*
 
 ## Trajectory Simulations
@@ -162,6 +169,7 @@ An example of a Variable Output table is shown in Figure 3-7. A detailed listing
 GATB produces a trajectory simulation of the current event. The trajectory simulation is a 3-D visualization of the data displayed in the Variable Output table (see previous section).
 
 ![Figure 3-8](images/p054-019.png)
+
 *Figure 3-8: Example of Trajectory Simulation graphical view.*
 
 ### Displaying a Trajectory Simulation
@@ -169,6 +177,7 @@ GATB produces a trajectory simulation of the current event. The trajectory simul
 The Trajectory Simulation is controlled using the Playback Controller (see Figure 3-9). The Playback Controller's buttons have the following functions:
 
 ![Figure 3-9](images/p055-fig39.png)
+
 *Figure 3-9: Playback controller buttons.*
 
 - **Reset** — Returns to the start of the simulation and reinitializes the video output device (this applies a hardware reset and is otherwise the same as the Rewind to Start button, below).

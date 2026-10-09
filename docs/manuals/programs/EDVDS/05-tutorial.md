@@ -69,6 +69,7 @@ The Freightliner tractor is displayed in the 3-D viewer, as shown in Figure 5-1.
 
 ![Figure 5-1 (part 1)](images/p084-024.png)
 ![Figure 5-1 (part 2)](images/p084-025.png)
+
 *Figure 5-1: 1994 Freightliner FLD-120 Conventional Tractor, front view (top) and rear view (bottom)*
 
 Next, let's add the first semi-trailer. We don't have the exact vehicle, so we'll create it from the Generic Vehicle database:
@@ -89,6 +90,7 @@ The default vehicle name is *Class 4 Trailer*. Let's change it:
 The 45-ft semi-trailer is displayed in the viewer, as shown in Figure 5-2.
 
 ![Figure 5-2](images/p085-026.png)
+
 *Figure 5-2: Trailer 1, a 45-ft semi-trailer.*
 
 Now let's add the second semi-trailer. Again, we don't have the exact vehicle, so we'll create it from the Generic Vehicle database:
@@ -109,6 +111,7 @@ The default vehicle name is *Class 4 Trailer*. Let's change it:
 The second semi-trailer is displayed in the viewer, as shown in Figure 5-3.
 
 ![Figure 5-3](images/p086-027.png)
+
 *Figure 5-3: Trailer 2, also a 45-ft semi-trailer. The front of this trailer is supported by the converter dolly displayed in Figure 5-4.*
 
 Finally, let's add the converter dolly that supports the front of the second semi-trailer. Again, we don't have the exact vehicle, so we'll create it from the Generic Vehicle database:
@@ -129,6 +132,7 @@ The default vehicle name is *Class 4 Hinged Drawbar Dolly*. Let's change it:
 The dolly is displayed in the viewer, as shown in Figure 5-4.
 
 ![Figure 5-4](images/p087-028.png)
+
 *Figure 5-4: Trailer 2 Dolly, a Generic Class 4 dolly from the HVE Generic Vehicle Database. It has a hinged fifth wheel and fixed drawbar.*
 
 ### Editing the Vehicles
@@ -145,6 +149,7 @@ Our Freightliner is ready to go, with the exception of changing its color. Howev
 > **NOTE:** The vehicle's apparent color may be slightly misleading because the vehicle is translucent when displayed in the Vehicle Editor. The actual color will be used whenever the vehicle is displayed during Event and Playback mode.
 
 ![Figure 5-5](images/p088-029.png)
+
 *Figure 5-5: Vehicle Color dialog, used for assigning the vehicle color.*
 
 Next, let's edit the first semi-trailer by adding a geometry file, changing the weight and changing the connection height. Let's begin by adding the 3-D geometry file. A 45 foot van trailer geometry file, appropriately named *TLVdsTutorTrlr45Van.h3d*, was prepared by EDC and placed in the `../images/vehicles` subdirectory. To attach the geometry file to the trailer, perform the following steps:
@@ -155,11 +160,13 @@ Next, let's edit the first semi-trailer by adding a geometry file, changing the 
 - Scroll down the list and double-click on *TLVdsTutorTrlr45Van.h3d*.
 
 ![Figure 5-6](images/p089-030.png)
+
 *Figure 5-6: Vehicle Geometry File selection dialog, used for adding or changing the vehicle 3-D geometry file for the current vehicle.*
 
 The new geometry file is applied to the generic trailer (see Figure 5-7).
 
 ![Figure 5-7](images/p090-031.png)
+
 *Figure 5-7: Trailer 1 after adding its geometry file. Note the geometry file includes texture maps to create its realistic appearance.*
 
 Next, let's change the trailer's weight:
@@ -181,6 +188,7 @@ Finally let's change the connection height:
 The first semi-trailer is ready for our EDVDS simulation analysis.
 
 ![Figure 5-8](images/p091-032.png)
+
 *Figure 5-8: Vehicle Inertias dialog, used for editing the current weight and roll, pitch and yaw rotational inertias.*
 
 Let's change the parameters for the second trailer, starting with the geometry file:
@@ -206,6 +214,7 @@ Finally, let's increase the default lag time in the left rear trailer brake:
 The second semi-trailer is now ready for our EDVDS simulation analysis.
 
 ![Figure 5-9](images/p092-033.png)
+
 *Figure 5-9: Vehicle Wheel Brake dialog, used for editing the brake attributes for the selected wheel.*
 
 Finally, let's increase the dolly's drawbar length:
@@ -220,6 +229,7 @@ The dolly is redisplayed with its new drawbar length.
 > **NOTE:** The default geometry file is automatically modified to include the increased drawbar length. This would not be true if we had used a custom 3-D geometry file; we'd have to explicitly edit the geometry file if we wished to visualize the increased length.
 
 ![Figure 5-10](images/p093-034.png)
+
 *Figure 5-10: Vehicle Connections dialog, used for editing the current front and rear inter-vehicle connections.*
 
 All the vehicle units are now ready for our simulation study. Using the viewer controls (thumb wheels and manipulators), rotate and look at each of the vehicles we've created.
@@ -250,6 +260,7 @@ Now, let's add the environment:
 The selected environment is added to our case and displayed in the Environment Viewer (see Figure 5-11). Use the viewer thumb wheels to view the scene.
 
 ![Figure 5-11](images/p095-035.png)
+
 *Figure 5-11: 3-D Environment for our EDVDS tutorial. The original 3-D geometry for this environment was obtained using a total station. Textures were created from photos taken at the scene.*
 
 ## Saving the Case
@@ -318,12 +329,15 @@ Fortunately, HVE's AutoPosition feature greatly simplifies the task of positioni
 - Click the *Velocity Is Assigned* checkbox. Enter the initial velocity, `55` mph.
 
 ![Figure 5-12](images/p099-036.png)
+
 *Figure 5-12: Positioning the combination vehicles in the environment. The vehicle is initially placed at the earth-fixed origin. AutoPosition is a big help for complex, 3-dimensional environments such as this one because it places the entire trailer-train on the earth's surface. Without AutoPosition, we'd first have to find the vehicles, and then spend a lot of time positioning the individual vehicles so each tire was on the surface.*
 
 ![Figure 5-13](images/p100-037.png)
+
 *Figure 5-13: Positioning the Freightliner FLD-120 tractor at its initial position.*
 
 ![Figure 5-14](images/p100-038.png)
+
 *Figure 5-14: Positioning Trailer 1 at its initial position.*
 
 After the Freightliner tractor is positioned (see Figure 5-13), we need to position the trailers and dolly:
@@ -342,9 +356,11 @@ Trailer 1's position is acceptable, so let's position the dolly and second trail
 - Click and drag the yellow yaw manipulator until *Trailer 2*'s initial yaw articulation angle is about `-2` degrees, as shown in Figure 5-16.
 
 ![Figure 5-15](images/p101-039.png)
+
 *Figure 5-15: Positioning Trailer 2 Dolly at its initial position.*
 
 ![Figure 5-16](images/p101-040.png)
+
 *Figure 5-16: Positioning Trailer 2 at its initial position.*
 
 The vehicles' initial conditions are now established. Let's enter a payload for each trailer:
@@ -359,6 +375,7 @@ The vehicles' initial conditions are now established. Let's enter a payload for 
 - Press *OK* to accept the payload data for *Trailer 1*.
 
 ![Figure 5-17](images/p103-041.png)
+
 *Figure 5-17: Payload dialog, used for assigning a payload to each trailer.*
 
 Next, let's add a payload to the second trailer:
@@ -406,9 +423,11 @@ Next, let's assign the Brake Table for the Freightliner:
 | 3.60 | 65.00 |
 
 ![Figure 5-18](images/p105-042.png)
+
 *Figure 5-18: Driver Controls, Steer Table dialog. Our tutorial uses the At Steering Wheel option.*
 
 ![Figure 5-19](images/p105-043.png)
+
 *Figure 5-19: Driver Controls, Brake Table dialog. Our tutorial uses the Pedal Force option. (NOTE: For trucks with air brake systems, the vehicle's Brake Pedal Ratio is set equal to 1.0; thus, the entered pedal force value equals the treadle valve pressure.)*
 
 Since our goal for this event is to see what causes the vehicle to roll over, let's look at some Key Results during execution:
@@ -426,6 +445,7 @@ Let's add *Tire Fz'* to the Freightliner's Key Results window:
 - Press *OK* to include the new variables in the Key Results dialog.
 
 ![Figure 5-20](images/p106-044.png)
+
 *Figure 5-20: Key Results Variable Selection dialog, used for selecting variables to be displayed in the Key Results window.*
 
 Next, let's add the vertical tire forces for the trailers:
@@ -453,6 +473,7 @@ The EDVDS event is shown at time, t = 3.5 seconds in Figure 5-21, just as the ve
 We have now completed the event.
 
 ![Figure 5-21](images/p109-fig5-21-controllability-event.png)
+
 *Figure 5-21: EDVDS Controllability on Grade Event at t = 3.5 seconds.*
 
 ## Viewing Results
@@ -477,6 +498,7 @@ To view the output reports, we need to be in Playback mode:
 The reports listed above are displayed by selecting Report Windows. Each Report Window contains an individual report.
 
 ![Figure 5-22](images/p111-046.png)
+
 *Figure 5-22: Report Window Information dialog, showing the name of each event in the current case.*
 
 To view the reports produced by the *EDVDS, Controllability on Grade* event, perform the following steps:
@@ -502,6 +524,7 @@ To view the Messages report produced by the *EDVDS, Controllability on Grade* ev
 The Messages report is displayed for the *EDVDS, Controllability on Grade* event, as shown in Figure 5-23.
 
 ![Figure 5-23](images/p112-047.png)
+
 *Figure 5-23: Messages Report for EDVDS, Controllability on Grade.*
 
 ### Accident History
@@ -518,6 +541,7 @@ To view the Accident History report for the *EDVDS, Controllability on Grade* ev
 The Accident History report is displayed for the *EDVDS, Controllability on Grade* event, as shown in Figure 5-24.
 
 ![Figure 5-24](images/p113-048.png)
+
 *Figure 5-24: Accident History Report for EDVDS, Controllability on Grade.*
 
 ### Vehicle Data
@@ -538,6 +562,7 @@ A portion of the Vehicle Data report displayed for *EDVDS, Controllability on Gr
 ![Figure 5-25 (part 1)](images/p115-049.png)
 ![Figure 5-25 (part 2)](images/p116-050.png)
 ![Figure 5-25 (part 3)](images/p117-051.png)
+
 *Figure 5-25 (3 parts): Vehicle Data Report for EDVDS, Controllability on Grade — sprung mass parameters, drivetrain parameters, suspension and tire parameters for the Freightliner.*
 
 ### Program Data
@@ -554,6 +579,7 @@ To view the Program Data report for the *EDVDS, Controllability on Grade* event,
 The Program Data report is displayed for the *EDVDS, Controllability on Grade* event, as shown in Figure 5-26. The report includes the EDVDS version number and the tire model method under General Information, and the Maximum Simulation Time, Integration Time Step, Output Interval, Linear Termination Velocity, Velocity Convergence Criterion and Maximum Bisections under Simulation Controls. *(updated: the version number shown in the legacy figure reflects the release current at the time of printing; the current release reports version 18.00, and the Tire Model Method line reads either "Linear" or "Semi-empirical".)*
 
 ![Figure 5-26](images/p118-052.png)
+
 *Figure 5-26: Program Data Report for EDVDS, Controllability on Grade.*
 
 ### Variable Output
@@ -585,6 +611,7 @@ Next, let's add the vertical wheel loads:
 - Repeat the above steps for the Freightliner's rear tandem axles, choosing *Fz'* for *Axle 2* and *Axle 3*.
 
 ![Figure 5-27](images/p120-fig5-27-variable-selection.png)
+
 *Figure 5-27: Variable Selection Dialog.*
 
 Next, let's add the vertical tire forces for the semi-trailer:
@@ -597,6 +624,7 @@ Next, let's add the vertical tire forces for the semi-trailer:
 The Variable Output report for the *EDVDS, Controllability on Grade* event now includes tow vehicle velocity and acceleration and vertical tire loads for each wheel location, as shown in Figure 5-28.
 
 ![Figure 5-28](images/p121-054.png)
+
 *Figure 5-28: Variable Output Table for EDVDS, Controllability on Grade, showing the selected variables.*
 
 ### Trajectory Simulation
@@ -620,6 +648,7 @@ To visualize the motion as the tractor-trailer attempts to negotiate the down-hi
 - Click *Advance to End* (right arrow with bar). The simulation advances to the end of the run.
 
 ![Figure 5-29](images/p123-fig5-29-trajectory-sim.png)
+
 *Figure 5-29: Trajectory Simulation for EDVDS, Controllability on Grade.*
 
 ### Printing

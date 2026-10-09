@@ -37,6 +37,7 @@ These categories and their associated parameters are described in this
 chapter.
 
 ![Figure 11-1](../images/figure-11-1.jpg)
+
 *Figure 11-1: Vehicle Editor, Sprung Mass Data pop-up menu.*
 
 ## Inertial Properties
@@ -66,6 +67,7 @@ updates the rotational inertias when the weight is changed.
 
 ![Figure 11-2 (Basic)](../images/p345-198.png)
 ![Figure 11-2 (Complex)](../images/p345-199.png)
+
 *Figure 11-2: Vehicle Inertias dialog, Basic and Complex versions.*
 
 See also the reference page,
@@ -194,6 +196,7 @@ reference page, [Move CG dialog](../../02-vehicles/MoveCGDlg.md).
 > location will change the calculated CG height.
 
 ![Figure 11-3](../images/figure-11-3.jpg)
+
 *Figure 11-3: Move CG dialog.*
 
 To display or edit the current vehicle's CG location (relative to the
@@ -231,6 +234,7 @@ The color of the vehicle is obvious from looking at it. The color may be
 edited using the Color dialog.
 
 ![Figure 11-4](../images/figure-11-4.jpg)
+
 *Figure 11-4: Color Editor dialog.*
 
 To display or edit the current vehicle's color properties, perform the
@@ -266,6 +270,7 @@ geometry file is available for the current vehicle, it may be selected using
 the Geometry File dialog.
 
 ![Figure 11-5](../images/figure-11-5.jpg)
+
 *Figure 11-5: Geometry File dialog.*
 
 ### Mechanical Properties
@@ -295,6 +300,7 @@ properties are:
   unloading.
 
 ![Figure 11-6](../images/figure-11-6.jpg)
+
 *Figure 11-6: View of 3-D geometry file (mesh). The mesh provides visual properties, as well as mechanical properties that may be used by collision algorithms.*
 
 These material properties are available for collision algorithms to
@@ -398,9 +404,11 @@ automatically assigned by assuming a parallelogram). Contact surfaces are
 created using the Contact Surfaces dialog.
 
 ![Figure 11-7](../images/figure-11-7.jpg)
+
 *Figure 11-7: Vehicle contact surfaces — both interior and exterior contact surfaces are permissible.*
 
 ![Figure 11-8](../images/figure-11-8.jpg)
+
 *Figure 11-8: Contact Surfaces dialog.*
 
 To display or edit the current vehicle's contact surfaces properties,
@@ -441,6 +449,7 @@ perform the following steps:
    > parallelogram.
 
    ![Figure 11-9](../images/p357-figB11-9.png)
+
    *Figure 11-9: Convention for contact surfaces — three consecutive corners are selected; the right hand rule determines the positive side.*
 
 7. Choose *Material* to display the Contact Surface Properties dialog.
@@ -512,9 +521,11 @@ The Contact Surface parameters are described below.
 > **NOTE:** The unloading slope should be steeper than the loading slope!
 
 ![Figure 11-10](../images/figure-11-10.jpg)
+
 *Figure 11-10: Contact Surfaces Materials dialog.*
 
 ![Figure 11-11](../images/p361-figB11-11.png)
+
 *Figure 11-11: Typical force vs deflection curve for a contact surface. The loading slope (which occurs during penetration) may be defined by a 3rd-order polynomial: F = ad + bd² + cd³, where a = Linear Stiffness, b = Quadratic Stiffness, c = Cubic Stiffness. During unloading the slope is assumed linear: F = u(d_max − d), where u = Unloading Slope.*
 
 **Table 11-4: Vehicle Contact Surface Parameters**
@@ -541,6 +552,7 @@ The belt restraint systems of the vehicle are displayed and edited using the
 Belt Restraints dialog.
 
 ![Figure 11-12](../images/figure-11-12.jpg)
+
 *Figure 11-12: Belt Restraints dialog.*
 
 To display or edit the current vehicle's belt properties, perform the
@@ -620,9 +632,11 @@ The airbag restraint systems of the vehicle are displayed and edited using
 the Airbag Restraints dialog.
 
 ![Figure 11-13](../images/figure-11-13.jpg)
+
 *Figure 11-13: Airbag Restraints dialog.*
 
 ![Figure 11-14](../images/p367-figB11-14.png)
+
 *Figure 11-14: Airbag x,y,z deployment coordinates and deployment (column) angle.*
 
 To display or edit the current vehicle's airbag properties, perform the
@@ -749,9 +763,11 @@ The available inter-vehicle connections are:
 - Pintle Hook/Eye (drawbars may be *Fixed* or *Hinged*)
 
 ![Figure 11-15](../images/p371-209.png)
+
 *Figure 11-15: Inter-vehicle Connections dialog.*
 
 ![Figure 11-16](../images/p372-figB11-16.png)
+
 *Figure 11-16: Converter (hinged fifth wheel) and Fixed (hinged drawbar) dollies.*
 
 To display or edit the current vehicle's connection properties, perform the
@@ -828,6 +844,7 @@ reference page,
 [Aerodynamic Drag dialog](../../02-vehicles/VehDragDlg.md).
 
 ![Figure 11-17](../images/figure-11-17.jpg)
+
 *Figure 11-17: Vehicle Aerodynamic Drag dialog.*
 
 To display or edit the current vehicle's drag factors, perform the following
@@ -884,6 +901,7 @@ the reference page,
 [Body Torsion dialog](../../02-vehicles/BodyTorDlg.md).
 
 ![Figure 11-18](../images/figure-11-18.jpg)
+
 *Figure 11-18: Body Torsion dialog.*
 
 To display or edit the vehicle's torsional data, perform the following

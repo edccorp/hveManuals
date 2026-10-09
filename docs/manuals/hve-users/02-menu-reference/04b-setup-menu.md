@@ -40,9 +40,11 @@ To enter Vehicle Damage Data for the current vehicle, use the following steps:
 The specific damage profile parameters are defined in this section.
 
 ![Figure 4-18](../images/figure-4-18.jpg)
+
 *Figure 4-18: The Vehicle Damage Profile dialog is used to assign damage data for the current vehicle.*
 
 ![Figure 4-19](../images/p206-figA4-19.png)
+
 *Figure 4-19: The default PDOF is assigned by its clock direction (12, 01, 02, etc.) in the first two characters in the CDC.*
 
 ### PDOF
@@ -82,6 +84,7 @@ A table of Crush Depths defines the shape of the damage profile. Up to 10 equall
 The Damage Midpoint Offset is simply the longitudinal or lateral distance from the CG to the midpoint of the damage profile, as shown in Figures 4-18 and 4-20.
 
 ![Figure 4-20](../images/p208-figA4-20.png)
+
 *Figure 4-20: Examples of damage profiles for front, back and side impacts.*
 
 ### Stiffness Coefficients
@@ -89,6 +92,7 @@ The Damage Midpoint Offset is simply the longitudinal or lateral distance from t
 The damage analysis requires empirical coefficients determined by crash tests. These coefficients are called stiffness coefficients, because they define the structural stiffness of the vehicle.
 
 ![Figure 4-21](../images/p209-figA4-21.png)
+
 *Figure 4-21: Force vs Crush characteristics.*
 
 The HVE Vehicle Damage dialog includes two user-assigned stiffness coefficients:
@@ -103,6 +107,7 @@ A and B stiffness coefficients may be calculated from barrier crash test data. M
 > **NOTE:** Before using any of these methods, ensure the type of crash test is known! Crash tests involving a deformable barrier are not useful, because the fraction of energy absorbed by each vehicle is unknown. In addition, moving barrier crash tests require a more complete equation (for fixed barrier tests, several parameters drop out of the equation).
 
 ![Figure 4-22](../images/p210-figA4-22.png)
+
 *Figure 4-22: The A and B Stiffness dialogs allow the user to supply stiffness coefficients for each crush zone.*
 
 ### Crush Zones
@@ -142,6 +147,7 @@ Obviously, the actual stiffness of a vehicle varies according to the structure a
 **Description:** The Collision Pulse dialog allows the user to assign a collision pulse to the selected vehicle. A collision pulse is a vehicle's position, velocity, acceleration or force/moment vs time history, and is used by occupant simulation models to define the vehicle's motion during impact. The Collision Pulse dialog is shown in Figure 4-23.
 
 ![Figure 4-23](../images/figure-4-23.jpg)
+
 *Figure 4-23: The Collision Pulse dialog allows the user to assign a collision pulse for the current vehicle. A collision pulse is used by occupant simulation models and by some vehicle dynamics models that include an impulse.*
 
 ### Collision Pulse Table
@@ -203,6 +209,7 @@ To save the current collision pulse for use in a future case, perform the follow
 It may be useful to study the sensitivity of the occupant motion to changes in the magnitude of the collision pulse. The Pulse Factors dialog (see Figure 4-24) allows the user to quickly assign multipliers to each degree of freedom (forward, lateral, vertical, roll, pitch and yaw).
 
 ![Figure 4-24](../images/figure-4-24.jpg)
+
 *Figure 4-24: The Collision Pulse Factors dialog allows the user to modify the time-dependent pulse data by a user-specified amount for each degree of freedom.*
 
 To assign collision pulse factors to the selected vehicle, perform the following steps:
@@ -220,6 +227,7 @@ The selected multipliers are applied to each degree of freedom.
 The user may need to select a portion of the total pulse for use in a simulation. For example, an entire left turn may last 3 seconds, while the resulting collision with an oncoming vehicle lasts perhaps only 125 milliseconds. Thus, the user would like to extract that portion of the total pulse during which the collision occurs. This task can be performed using the Pulse Options dialog (see Figure 4-25). The Pulse Options dialog is also used for assigning the impulse center for a 3-dimensional impulse when the Force Pulse Type is used.
 
 ![Figure 4-25](../images/figure-4-25.jpg)
+
 *Figure 4-25: The Collision Pulse Options dialog allows the user to trim the unwanted portion of the collision pulse and assign an impulse center for Force/Moment pulse tables.*
 
 To use the Collision Pulse Options dialog for the selected vehicle, perform the following steps:
@@ -270,9 +278,11 @@ To use the Collision Pulse Options dialog for the selected vehicle, perform the 
 These options (see Figure 4-26) are described in the following sections.
 
 ![Figure 4-26](../images/figure-4-26.jpg)
+
 *Figure 4-26: The Mesh dialog allows the user to tessellate the geometry file and edit inter-vehicle friction and restitution.*
 
 ![Figure 4-27](../images/p219-figA4-27.png)
+
 *Figure 4-27: Generic Vehicle with 30 inch tessellation (above) and 10 inch tessellation (below).*
 
 ### Geometry
@@ -288,6 +298,7 @@ The Geometry group parameters provide various options that affect how the vehicl
 > **NOTE:** Two vertices a small distance from each other are usually the result of an error during the measuring or building of the mesh.
 
 ![Figure 4-28](../images/p220-133.png)
+
 *Figure 4-28: Region of vehicle with triangles having a large aspect ratio.*
 
 **Tessellation** — The Tessellation parameter establishes a maximum length for the side of any polygon in the mesh. Setting this value has two important effects: First, it establishes the maximum size of triangles in the mesh. Obviously a mesh with 10 inch polygons will provide more detail than a mesh with 30 inch polygons (see Figure 4-27). Second, it prevents a mesh from having triangles with large aspect ratios (i.e., triangles that are long and skinny; these triangles can be problematic for DyMESH); see Figure 4-28.
@@ -303,12 +314,15 @@ Although increased tessellation (i.e., smaller triangles) increases resolution, 
 - Unknown (it may or may not be water-tight)
 
 ![Figure 4-29](../images/p221-figA4-29.png)
+
 *Figure 4-29: Water-tight mesh (left) and non-water-tight mesh (right).*
 
 ![Figure 4-30](../images/p221-136.png)
+
 *Figure 4-30: Displacing the vertex in a non-water-tight mesh opens a hole in the mesh.*
 
 ![Figure 4-31](../images/p221-137.png)
+
 *Figure 4-31: Rogue vertex resulting from collision with a barrier having a non-water-tight mesh.*
 
 If the mesh is water-tight, DyMESH can use an optimized procedure, thus speeding up processing. If the mesh is not water-tight, DyMESH can use a different procedure that prevents rogue vertices, but requires longer processing times. If the state of the mesh is unknown, DyMESH can determine its status at the start of the run, again taking longer to execute.
@@ -352,6 +366,7 @@ To edit the Vehicle Mesh properties (weld distance, tessellate, water-tight stat
 **Description:** The Payload dialog allows the user to add a payload to the selected vehicle. The payload may be any object adding inertia to a vehicle that is not accounted for in the vehicle's inertial properties. Examples include cargo and occupants. The Payload dialog is shown in Figure 4-32.
 
 ![Figure 4-32](../images/figure-4-32.jpg)
+
 *Figure 4-32: The Payload dialog allows the user to assign a payload to the current vehicle.*
 
 The payload is defined by the following information:
@@ -443,6 +458,7 @@ When the simulation is executed, the selected blow-out parameters will be incorp
 > **NOTE:** The HVE Tire Blow-out Model is further described in Chapter 16, Event Model. See also Reference 4.30.
 
 ![Figure 4-33](../images/figure-4-33.jpg)
+
 *Figure 4-33: The Tire Blow-out dialog allows the user to assign tire blow-out parameters to one or more tires.*
 
 ### Wheel Damage Option
@@ -474,6 +490,7 @@ The current damage options for the selected wheel position are displayed. By def
    > **NOTE:** The Camber Change is a vehicle-fixed angle. A positive value moves the top of the wheel outward; a negative value moves the top of the wheel inward.
 
 ![Figure 4-34](../images/figure-4-34.jpg)
+
 *Figure 4-34: The Wheel Damage dialog allows the user to assign a dynamic change in wheel position and orientation during the simulation.*
 
 To simulate wheel lock-up, perform the following steps:
@@ -517,6 +534,7 @@ Brake failure may also be simulated. To simulate a brake failure at the selected
 6. Press OK to accept the wheel brake parameters.
 
 ![Figure 4-35](../images/figure-4-35.jpg)
+
 *Figure 4-35: The Wheel Brakes dialog allows the user to assign initial brake slack adjuster adjustment and lining and drum temperatures for air brake systems. The Wheel Brakes dialog is also used for simulating brake failure at one or more wheel locations.*
 
 When the simulation is executed, the selected wheel brake parameters will be incorporated into the simulation.
@@ -536,6 +554,7 @@ Each of these tire-terrain models is described below.
 The Point Contact Tire-Terrain model assumes that the tire force, Fx', Fy', is a shear force acting at the ground contact plane at a single point directly beneath the wheel center (see Figure 4-36). This is a good assumption for a majority of conditions. In particular, the Point Contact model assumes a flat (not necessarily horizontal), rigid terrain. The Point Contact model is the default Tire-Terrain option.
 
 ![Figure 4-36](../images/p232-142.png)
+
 *Figure 4-36: The Point Contact Tire-Terrain Model (default) assumes the tire force acts at a single point directly below the wheel center.*
 
 #### Radial Spring Tire-Terrain Model
@@ -549,6 +568,7 @@ The radial springs are defined by the following parameters:
 **Angular Span, Ω** — It would be computationally unnecessary (and wasteful) to calculate radial spring forces about the entire perimeter of the tire, since only a small portion at the bottom of the tire is normally in contact with the ground. Starting at the ground, the Angular Span is an angle that defines how much of the tire's perimeter is modeled by radial springs (see Figure 4-37). The default value is +/-90 degrees, meaning that the entire lower half of the tire is modeled. For normal contact with relatively flat terrain, this value may be reduced to +/-30 degrees. A logical test produces a message if the Angular Span needs to be increased.
 
 ![Figure 4-37](../images/p233-143.png)
+
 *Figure 4-37: The Radial Spring Tire-Terrain Model uses evenly spaced springs, rather than a single spring, to model the radial tire force.*
 
 **Angular Increment, ΔΩ** — The radial springs are placed at discrete angular intervals about the tire. This angle defines the increment between radial springs (see Figure 4-37).
@@ -566,6 +586,7 @@ The lateral springs are defined by:
 **Number of Sidewall Springs, n** — This parameter defines the number of lateral springs for each radial spring. The user may specify two, four or six lateral springs.
 
 ![Figure 4-38](../images/p234-144.png)
+
 *Figure 4-38: The Sidewall Impact Tire-Terrain Model is an extension of the Radial Spring Model, and simulates forces applied to the tire sidewall.*
 
 **Radial Distance from Wheel Center, rsn** — The springs are evenly spaced at this radial distance from the wheel center. By default, the springs are located along the section height of the tire (the spacing differs according to the tire section height and the number of sidewall springs, above).
@@ -591,6 +612,7 @@ The Soft Soil Tire Model is based on research performed by M.G. Bekker [5.3] at 
 The reference includes a table of these soil descriptors for approximately 40 different soils of varying clay and moisture content. Many of these soils are included in the HVE Terrain Soils Database. Each terrain polygon includes a material attribute having these descriptors. The Soft Soil Tire Model uses these descriptors and current vertical tire load and size (unloaded radius and current rolling radius, and section width) to calculate the current soil sinkage beneath the tire. Sinkage also affects the earth-fixed elevation of the tire contact patch. Based on the calculated sinkage, the projected frontal and sidewall areas of the tire sinkage are calculated. These areas are then used in conjunction with the three soil descriptors (above) to calculate the Fx' and Fy' tire forces.
 
 ![Figure 4-39](../images/p236-145.png)
+
 *Figure 4-39: The Soft Soil Tire-Terrain Model calculates the forces on a tire that is sinking into the terrain.*
 
 #### Assigning Tire-Terrain Model Attributes
@@ -614,6 +636,7 @@ The Point Contact Tire-Terrain Model is the default selection. To choose a diffe
 5. Press OK to accept the tire-terrain parameters.
 
 ![Figure 4-40](../images/figure-4-40.jpg)
+
 *Figure 4-40: The Tire-Terrain dialog allows the user to select from several available tire-terrain models useful for simulating tire interaction with potholes, curbs and soft soils.*
 
 **See Also:** Vehicle Editor, Brake Information dialog, Vehicle Output Tracks
@@ -664,6 +687,7 @@ The Point Contact Tire-Terrain Model is the default selection. To choose a diffe
 **Description:** The Accelerometers dialog allows the user to assign the vehicle-fixed x,y,z coordinates for up to five accelerometers. The simulation model can then return the velocity and acceleration at each selected location. Accelerometers are assigned using the Accelerometers dialog, as shown in Figure 4-41.
 
 ![Figure 4-41](../images/figure-4-41.jpg)
+
 *Figure 4-41: Vehicle Accelerometers dialog.*
 
 To assign one or more accelerometers to the current vehicle, perform the following steps:
@@ -701,6 +725,7 @@ The simulation reports the velocity and acceleration for the current timestep in
 **Description:** The Contacts dialog allows the user to select the allowable interactions between human ellipsoids and vehicle contact surfaces. For example, there is little chance of a human pedestrian's pelvis interacting with the vehicle's interior contact surfaces (e.g., the seat) during the simulation. Therefore, it makes little sense to perform force calculations for this ellipsoid/contact surface pair. By selecting only those contact surfaces having a chance of interaction, far fewer calculations need to be performed. As a result, the calculation time can be reduced significantly. The Contacts dialog is shown in Figure 4-44.
 
 ![Figure 4-44](../images/figure-4-44.jpg)
+
 *Figure 4-44: The Contacts dialog allows the user to select the allowable interactions between human ellipsoids and vehicle contact surfaces during an occupant or pedestrian simulation.*
 
 The Contacts dialog has three list boxes:
@@ -724,6 +749,7 @@ Some simulation models define the human ellipsoid and vehicle contact surface ma
 The combined material attributes for the selected Source and Target Segments are assigned using Combined Material Properties. By selecting a source and target segment, the Combined Materials Edit pushbutton is enabled. Pressing this button causes the Combined Materials dialog to be displayed (see Figure 4-45).
 
 ![Figure 4-45](../images/figure-4-45.jpg)
+
 *Figure 4-45: The Combined Materials dialog allows the user to review and edit the material physical parameters associated with interaction between the selected source and target segments. The dialog also includes a graph of the force-deflection relationship for the selected segments.*
 
 To select the allowable interactions for the current event, use the following steps:
@@ -752,6 +778,7 @@ If the simulation model requires combined material properties, the Combined Mate
    > **NOTE:** The user also enters a Maximum Force. An error message is displayed if the maximum force cannot be achieved using the entered material constants.
 
 ![Figure 4-46](../images/figure-4-46.jpg)
+
 *Figure 4-46: The Combined Materials File Selection dialog allows the user to open and save combined material files.*
 
 ### Opening and Saving Material Files
@@ -821,6 +848,7 @@ The Airbag set-up option allows the user to assign an airbag restraint system an
 5. Using the Allowed Contacts list box, select the contact ellipsoids with which airbag contact is allowed.
 
 ![Figure 4-42](../images/figure-4-42.jpg)
+
 *Figure 4-42: Vehicle Airbag Restraint Systems dialog.*
 
 6. Click on the AutoStart checkbox if you wish to have the airbag automatically deployed. Deployment is normally triggered when the vehicle's acceleration exceeds a threshold.
@@ -847,6 +875,7 @@ The Belt Restraints set-up option allows the user to assign torso and lap belt r
 6. Click on the Attached To option list and select a segment to attach the end of the belt section (the other end is attached to the anchor point on the vehicle; see Vehicle Editor).
 
 ![Figure 4-43](../images/figure-4-43.jpg)
+
 *Figure 4-43: Vehicle Belt Restraint System dialog.*
 
 7. Enter the segment attachment coordinates for the left and right belt endpoints according to the human segment's coordinate system.

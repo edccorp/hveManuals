@@ -46,6 +46,7 @@ To add a vehicle to the current case, perform the following steps:
 6. Click OK to add the vehicle to the current case.
 
 ![Figure 2-1](images/p023-001.png)
+
 *Figure 2-1: Vehicle Editor.*
 
 The following Vehicle Parameter groups are assigned using the Vehicle Editor:
@@ -232,6 +233,7 @@ EDSMAC4 uses the environment created by the Environment Editor. The environment 
 - Physical Data
 
 ![Figure 2-2](images/p031-002.png)
+
 *Figure 2-2: Environment Editor.*
 
 ### Creating an Environment
@@ -310,6 +312,7 @@ If the elevation changes result in a vehicle roll or pitch angle that exceeds th
 EDSMAC4 uses the Event Editor to create, set up and execute an event. Each of these topics is described below.
 
 ![Figure 2-3](images/p035-003.png)
+
 *Figure 2-3: Event Editor, setting up and executing an EDSMAC4 event.*
 
 ### Creating An Event
@@ -496,6 +499,7 @@ The output time interval is the interval at which output results (positions, vel
 ### Calculation Options
 
 ![Figure 2-4](images/p043-004.png)
+
 *Figure 2-4: EDSMAC4 Event Calculation Options, available from the Options menu.*
 
 EDSMAC4 has the following calculation option parameters. For the complete dialog reference (defaults and all current options), see **[EDSMAC4 Calculation Options](../../10-calculation-options/CalcOptEDSMAC4.md)**.
@@ -531,6 +535,7 @@ To execute an EDSMAC4 event, use the Event Controller, a component of the Event 
 - **Advance to End** — Advance to the end of the simulation
 
 ![Figure 2-5](images/p044-fig2-5.png)
+
 *Figure 2-5: Event Controller, used for starting and stopping event execution. The Event Controller can also be used for replaying previously executed events, both forward and backward.*
 
 > **NOTE:** If you make changes to any of the vehicle or environment parameters or event set-up options (see previous sections), those changes will have no effect unless you press Reset before pressing Play.

@@ -46,6 +46,7 @@ To add a vehicle to the current case, perform the following steps:
 6. Click *OK* to add the vehicle to the current case.
 
 ![Figure 2-1](images/p021-001.png)
+
 *Figure 2-1: HVE-2D Vehicle Editor.*
 
 The following Vehicle Parameter groups are used by EDSVS:
@@ -219,6 +220,7 @@ EDSVS uses the environment created by the Environment Editor (see Figure 2-2). T
 - Physical Data
 
 ![Figure 2-2](images/p028-002.png)
+
 *Figure 2-2: Environment Editor.*
 
 ### Creating an Environment
@@ -325,6 +327,7 @@ EDSVS uses the following *event set-up* options:
 The specific Event Set-up data used by EDSVS are defined in Table 2-5.
 
 ![Figure 2-3](images/p033-003.png)
+
 *Figure 2-3: HVE-2D Event Editor, setting up and executing an EDSVS event.*
 
 **Table 2-5: Event Set-up Parameters Used By EDSVS**
@@ -425,6 +428,7 @@ EDSVS uses the current simulation control parameters in the Simulation Controls 
 ### Calculation Options
 
 ![Figure 2-4](images/p037-004.png)
+
 *Figure 2-4: Calculation Options dialog for EDSVS.*
 
 The historically documented calculation option was:
@@ -448,6 +452,7 @@ The default surface-search method is *From Previous Polygon*. This results in fa
 ### Executing An Event
 
 ![Figure 2-5](images/p038-fig2-5.png)
+
 *Figure 2-5: Event Controller, used for starting and stopping event execution. The Event Controller can also be used for replaying previously executed events, both forward and backward.*
 
 To execute an EDSVS event, use the Event Controller, shown in Figure 2-5. The Event Controller's buttons have the following functions:

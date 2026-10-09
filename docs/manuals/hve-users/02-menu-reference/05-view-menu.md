@@ -22,6 +22,7 @@ These options allow you to set up the HVE user interface and to determine how th
 **Description:** Choosing Toolbar from the View Menu displays the HVE Toolbar. The Toolbar (see Figure 5-1) provides a set of button choices for performing common tasks, such as changing modes, adding objects, opening and saving case files and executing events. All of these options are also available using HVE's pull-down menus. The Toolbar is simply quicker.
 
 ![Figure 5-1](../images/figure-5-1.jpg)
+
 *Figure 5-1: The HVE Toolbar (near the top of the HVE window) provides a set of button choices for performing common tasks. The HVE Status Bar (near the bottom of the HVE window) displays a brief description of user actions and selections.*
 
 ---
@@ -49,6 +50,7 @@ These options allow you to set up the HVE user interface and to determine how th
 The Set Camera dialog is shown in Figure 5-2.
 
 ![Figure 5-2](../images/figure-5-2.jpg)
+
 *Figure 5-2: The Set Camera dialog is used to determine how the scene is viewed.*
 
 Setting the camera allows the user to perform the following functions:
@@ -124,6 +126,7 @@ The Focal Length is the traditional focal length of a virtual 35 mm camera used 
 *(updated: this button is labeled Save... in the current build.)* Pressing Save... saves the current camera settings as a named view. The named view is added to the View Name list so it can be recalled later. This lets the user quickly change between previously created views. Up to ten views may be stored.
 
 ![Figure 5-3](../images/p260-155.png)
+
 *Figure 5-3: The New Camera View dialog is used to assign and store up to ten views for later retrieval.*
 
 > **NOTE:** A separate Rename View control existed in earlier versions but is hidden and non-functional in the current build.
@@ -162,6 +165,7 @@ Pressing Delete View removes the current view from the list of views. The previo
 The Scanned Image check box is used to display or remove a scanned image from the environment. A scanned image may be used for the entire environment, or just the sky.
 
 ![Figure 5-4](../images/figure-5-4.jpg)
+
 *Figure 5-4: Set Overlays Dialog, used for turning on and off various layers of geometry.*
 
 > **NOTE:** If a scanned image is used for the entire environment, the user must enter the X,Y,Z coordinates from which the picture was taken, the X,Y,Z coordinates for the center of the picture, and the focal length of the camera lens used to take the picture. This information is required for registration between the scanned image and the moving humans and vehicles.

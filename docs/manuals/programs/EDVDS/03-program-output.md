@@ -48,6 +48,7 @@ An example of each of these numeric output reports from EDVDS is shown on the fo
 A typical Messages Report is shown in Figure 3-1. For a complete listing of messages issued by EDVDS, see [Chapter 6](06-messages.md).
 
 ![Figure 3-1](images/p049-009.png)
+
 *Figure 3-1: An Example of a Message Output Report issued by EDVDS.*
 
 ### Accident History
@@ -55,6 +56,7 @@ A typical Messages Report is shown in Figure 3-1. For a complete listing of mess
 The Accident History Report displays a table of initial and final positions and velocities for each vehicle (tow vehicle and trailers). A typical Accident History Report is shown in Figure 3-2.
 
 ![Figure 3-2](images/p050-010.png)
+
 *Figure 3-2: An Example of an Accident History Output Report issued by EDVDS.*
 
 ### Driver Controls
@@ -62,6 +64,7 @@ The Accident History Report displays a table of initial and final positions and 
 The Driver Controls report displays a table of user-entered driver control tables for steering, braking and throttle for each vehicle in the event. A portion of a typical Driver Data report is displayed in Figure 3-3.
 
 ![Figure 3-3](images/p051-011.png)
+
 *Figure 3-3: An Example of a Driver Controls Output Report issued by EDVDS.*
 
 ### Environment Data
@@ -74,6 +77,7 @@ The Environment Data report displays the physical and visual information describ
 A typical Environment Data report is displayed in Figure 3-4.
 
 ![Figure 3-4](images/p052-012.png)
+
 *Figure 3-4: An Example of an Environment Data Output Report issued by EDVDS.*
 
 > **NOTE:** A detailed description of the terrain vertex information is not practical owing to its large size (a terrain is often composed of several thousand vertices). However, it is possible to view the terrain information (friction multiplier, slope, elevation, and so forth) beneath each tire at each timestep during the simulation by selecting the tire terrain outputs in the Variable Output, Tires output group (see Variable Output later in this chapter).
@@ -88,6 +92,7 @@ The Program Data Report includes the following information:
 A typical Program Data Report is shown in Figure 3-5.
 
 ![Figure 3-5](images/p053-013.png)
+
 *Figure 3-5: An Example of a Program Data Output Report issued by EDVDS.*
 
 ### Vehicle Data
@@ -111,6 +116,7 @@ A portion of a typical Vehicle Data Report is shown in Figure 3-6 (Parts 1-5).
 ![Figure 3-6 (part 3)](images/p057-016.png)
 ![Figure 3-6 (part 4)](images/p058-017.png)
 ![Figure 3-6 (part 5)](images/p059-018.png)
+
 *Figure 3-6 (parts 1-5): An Example of a Vehicle Data Output Report issued by EDVDS, showing Tractor Sprung Mass, Suspension and Axle, Tire/Wheel/Brake, Trailer and Payload parameter sections.*
 
 ## Graphic Reports
@@ -151,6 +157,7 @@ An example of a Variable Output table is shown in Figure 3-7. A detailed listing
 (*) If Driver Control option was 'At Driver'
 
 ![Figure 3-7](images/p063-019.png)
+
 *Figure 3-7: Typical Variable Output Table for an EDVDS event.*
 
 ## Trajectory Simulations
@@ -158,6 +165,7 @@ An example of a Variable Output table is shown in Figure 3-7. A detailed listing
 EDVDS produces a trajectory simulation of the current event. The trajectory simulation is a 3-D visualization of the data displayed in the Variable Output table (see previous section). An example of a trajectory simulation is shown in Figure 3-8.
 
 ![Figure 3-8](images/p064-020.png)
+
 *Figure 3-8: Typical EDVDS Trajectory Simulation.*
 
 ### Displaying a Trajectory Simulation
@@ -172,6 +180,7 @@ The Trajectory Simulation is controlled using the Playback Controller (Figure 3-
 - **Advance to End** — Advance to the end of the simulation
 
 ![Figure 3-9](images/p065-fig3-9-playback-controller.png)
+
 *Figure 3-9: Playback Controller.*
 
 <!-- NAV -->

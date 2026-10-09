@@ -9,6 +9,7 @@ Accident investigators can use EDSVS to determine how a driver may have lost veh
 An extremely useful feature of EDSVS is the ability to quickly and accurately review the results generated from different input scenarios. Termed *what if* analysis, changes can be made to an isolated variable or set of variables and the effects are displayed immediately. For example, the sensitivity of the trajectory to various front/rear tire combinations can be studied simply by changing the tire data; the sensitivity to CG location can be studied by moving its position. However, the major purpose of EDSVS can be realized by changing the driver input tables (throttle, braking and steering) until the resulting trajectory matches the actual trajectory produced by the vehicle during a particular maneuver. Thus, the user learns how a driver's inputs may have affected the outcome of an accident.
 
 ![Figure 1-1](images/p016-000.png)
+
 *Figure 1-1: EDSVS Event.*
 
 ## Model Inputs

@@ -44,6 +44,7 @@ An example of each of these numeric output reports from EDHIS is shown below.
 A typical Messages Report simply lists any messages produced by the run (often "No Messages"). For a complete listing of messages issued by EDHIS, see [Chapter 6](06-messages.md).
 
 ![Figure 3-1](images/p047-007.png)
+
 *Figure 3-1: Typical Messages Report issued by EDHIS.*
 
 ### Accident History
@@ -51,6 +52,7 @@ A typical Messages Report simply lists any messages produced by the run (often "
 The Accident History Report displays a table of initial and final positions and velocities for the human and vehicle. The table includes linear position (x, y, z, in) and velocity (mph) columns and angular position (deg: yaw, pitch, roll) and velocity (deg/sec) rows for the Vehicle and for the human Torso, Head and Legs segments.
 
 ![Figure 3-2](images/p048-008.png)
+
 *Figure 3-2: Typical Accident History Report issued by EDHIS.*
 
 ### Human Data
@@ -62,6 +64,7 @@ The Human Data Report includes the following information:
 - **Ellipsoid Properties** — Name, Segment, center coordinates and semi-axis lengths for each human ellipsoid
 
 ![Figure 3-3](images/p049-009.png)
+
 *Figure 3-3: Typical Human Data Report issued by EDHIS.*
 
 ### Event Data
@@ -72,6 +75,7 @@ The Human Data Report includes the following information:
 - **Belt Event History** — Belt attachment points, slack, and contacts
 
 ![Figure 3-4](images/p050-010.png)
+
 *Figure 3-4: Typical Event Data Report issued by EDHIS.*
 
 ### Injury Data
@@ -87,6 +91,7 @@ The tolerances listed include Head Injury Criterion (HIC), Head Pitch Concussion
 > **NOTE:** Three of these headings are narrower than their names suggest, and [Chapter 4](04-calculation-method.md#injury-measures) gives the quantity behind each one. In summary: *Head Injury Criterion* is a Gadd severity index accumulated over the whole run from the fore-aft component of head acceleration, not the FMVSS 208 sliding-window HIC; *Chest Severity Index* is the superior-inferior (vertical) chest acceleration, not a severity index; and *Axial Femur Load* is the largest contact force on the knee ellipsoid, not a load computed within the femur. Compare each reported value against the tolerance carried by the human, which is expressed on the same basis. The Joint Injury table lists maximum range of motion (flexion and extension, in degrees) for yaw, pitch and roll of the Neck and Hip joints. The Predicted Injuries table lists each exceeded quantity, its peak value, and the start time, end time and duration of the interval during which the tolerance was exceeded.
 
 ![Figure 3-5](images/p051-011.png)
+
 *Figure 3-5: Typical Injury Data Report issued by EDHIS.*
 
 ### Vehicle Data
@@ -99,6 +104,7 @@ The Vehicle Data Report includes the following information:
 - **Airbag Restraints** — If in use, this section displays the location, mechanical and thermodynamic properties of the airbag, as well as its deployment time and fill duration.
 
 ![Figure 3-6](images/p053-012.png)
+
 *Figure 3-6: Typical Vehicle Data Report issued by EDHIS.*
 
 ### Program Data
@@ -112,6 +118,7 @@ The Program Data Report includes the following information:
 The General Information section reports the EDHIS Version Number. The Simulation Controls section reports Max Simulation Time, Max Timestep, Output Interval, Starting Method, Predictor-Corrector Method, Velocity Change Limit, Acceleration Change Limit, Min Acceleration, Velocity Convergence Criterion, Maximum Bisections and Time Epsilon.
 
 ![Figure 3-7](images/p054-013.png)
+
 *Figure 3-7: Typical Program Data Report issued by EDHIS.*
 
 ## Graphic Reports
@@ -143,6 +150,7 @@ EDHIS produces a Variable Output table containing the time-based simulation resu
 > **NOTE:** The Contacts, Belts and Airbag results for Human and Vehicle output groups are identical (Newton's 3rd law at work!)
 
 ![Figure 3-8](images/p057-014.png)
+
 *Figure 3-8: Variable Output dialog.*
 
 A detailed listing of each Variable Output parameter produced by EDHIS is found in Tables 3-1 and 3-2.
@@ -174,6 +182,7 @@ A detailed listing of each Variable Output parameter produced by EDHIS is found 
 EDHIS produces a trajectory simulation of the current event. The trajectory simulation is a 3-D visualization of the data displayed in the Variable Output table (see previous section).
 
 ![Figure 3-9](images/p060-015.png)
+
 *Figure 3-9: EDHIS Trajectory simulation.*
 
 ### Displaying a Trajectory Simulation
@@ -181,6 +190,7 @@ EDHIS produces a trajectory simulation of the current event. The trajectory simu
 The Trajectory Simulation is controlled using the Playback Controller.
 
 ![Figure 3-10](images/p061-fig3-10.png)
+
 *Figure 3-10: Playback Controller.*
 
 The Playback Controller's buttons have the following functions:

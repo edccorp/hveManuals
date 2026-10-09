@@ -33,6 +33,7 @@ GATB uses humans created using the HVE Human Editor (see Figure 2-1). Humans are
 *(updated: As of HVE Version 10, new humans are added to the case using the GEBOD Human Information dialog rather than the classic database-driven dialog described above. In the GEBOD dialog the user selects a **Subject Type** (Child, Female, Male or User-defined) and a **Basis** for the body generation (Age, Weight, Height, or All — i.e. age, weight and height together); the GEBOD body generator then produces the full 15-segment data set for the requested subject. The classic dialog is still shown when editing humans created from the pre-Version 10 human database. See [Human Information Dialog](../../07-humans/HumanInfoDlg.md) for full dialog details.)*
 
 ![Figure 2-1](images/p015-002.png)
+
 *Figure 2-1: Scene Image of HVE Human Editor.*
 
 | Child Ages | Standing Height (inches) | Weight (lbs) |
@@ -54,6 +55,7 @@ GATB uses humans created using the HVE Human Editor (see Figure 2-1). Humans are
 To add a human to the current HVE case, perform the following steps:
 
 ![Figure 2-2](images/p016-003.png)
+
 *Figure 2-2: Human Information dialog box.*
 
 - Choose Human Mode. The Human Editor is displayed.
@@ -157,11 +159,13 @@ Enter a name for the current vehicle. A default name is supplied for each select
 > **NOTE:** Duplicate vehicle names are not allowed in the same case.
 
 ![Figure 2-3](images/p021-004.png)
+
 *Figure 2-3: Using the Vehicle Editor.*
 
 - Click OK to add the vehicle to the current case.
 
 ![Figure 2-4](images/p022-005.png)
+
 *Figure 2-4: Vehicle Information dialog.*
 
 The following Vehicle Parameter groups are used by GATB:
@@ -298,6 +302,7 @@ The following visual parameters may be edited:
 The visual data are not used by the event; they are provided for studies related to visibility at the time of an event (e.g., avoidability of an accident).
 
 ![Figure 2-5](images/p029-006.png)
+
 *Figure 2-5: HVE Environment Editor.*
 
 > **NOTE:** The visual data (Location, Time, Date and Angle of Earth-fixed X axis) affect the lighting of the event! Depending on your view (Camera Position) the scene may be shaded and difficult to see. If the time is after sundown, the view will be dark.
@@ -312,6 +317,7 @@ The Physical Data groups are:
 - 3-D Surface Geometry
 
 ![Figure 2-6](images/p030-007.png)
+
 *Figure 2-6: Environment Information dialog.*
 
 To add an environment to the current HVE case, perform the following steps:
@@ -369,6 +375,7 @@ A GATB event is created using the Event Information dialog. To create a GATB eve
 - Enter an event name. A default name is supplied for the selected event. The name is user-editable, and does not affect calculations.
 
 ![Figure 2-7](images/p033-008.png)
+
 *Figure 2-7: Event Editor in HVE.*
 
 > **NOTE:** Duplicate event names are not allowed.
@@ -388,6 +395,7 @@ GATB uses the following *event set-up* options:
 - Calculation Options
 
 ![Figure 2-8](images/p034-009.png)
+
 *Figure 2-8: Adding a new event.*
 
 The specific Event Set-up data used by GATB are defined in Table 2-9.
@@ -507,6 +515,7 @@ There are several calculation options available in GATB. Each of these options a
 To execute a GATB event, use the Event Controller, shown in Figure 2-7 as a component of the Event Editor, and again in Figure 2-9, below. The Event Controller's buttons have the following functions:
 
 ![Figure 2-9](images/p041-010.png)
+
 *Figure 2-9: Simulation control buttons.*
 
 - **Reset** — Reinitialize the calculation model for re-execution.

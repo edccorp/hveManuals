@@ -53,6 +53,7 @@ Report Windows are used for displaying the results of each event. The results ar
 *Figure 17-2 — Report Window with Numeric Results.*
 
 ![Figure 17-3](../images/p554-268.png)
+
 *Figure 17-3 — Report Window with a Graphic Output; an example of a Damage Profile report from a simulation.*
 
 - **Graphic Output Windows** — Allow the user to view graphic reports produced by an event (see Figure 17-3 for an example). The following Graphic Output reports are available:
@@ -87,6 +88,7 @@ The HVE Playback Window has an internal table to determine which objects are dri
 The Audit Trail is a convenient way to document the simulation models that control the motion of each object in the Playback Window.
 
 ![Figure 17-6](../images/figure-17-6.jpg)
+
 *Figure 17-6 — The Audit Trail displays a table of each event included in the current Playback Window, including the objects and the starting and ending times for each object.*
 
 ### Playback Controller

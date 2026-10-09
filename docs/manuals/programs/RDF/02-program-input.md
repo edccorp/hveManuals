@@ -47,8 +47,9 @@ To create a ReadDataFile event:
 5. Set the Calculation Method type to *ReadDataFile* (shown as READDATAFILE in the method list).
 6. Click OK to create the event.
 
-![Figure 2](images/p04-fig2.png)
-*Figure 2: Event Information dialog window, showing an event named "File:CarMotion.dat" with a Buick Skylark 4 Dr selected and Calculation Method READDATAFILE.*
+![Figure 2](images/p04-fig2-redrawn.png){ width="424" }
+
+*Figure 2: Event Information dialog window, showing an event named "File:CarMotion.dat" with a Buick Skylark 4 Dr selected and Calculation Method READDATAFILE. (Redrawn from the original manual, whose screenshot is too low-resolution to read.)*
 
 If an error message is printed, such as the one shown in Figure 3 ("Bad or Incompatible Event Data"), there could be a problem with the format of the data in your motion data file, or the data file may not be in the HVE directory. Verify that the proper number of objects are selected and that the motion data file describes the motion of the same number of objects. Another option when troubleshooting an error message when executing a ReadDataFile event is to view the debug file in the HVE program directory using a text viewer. This file contains information regarding the operation of ReadDataFile when trying to access your data file and may indicate where the error lies.
 
@@ -59,6 +60,7 @@ Once the event is created without any error messages, set the initial position f
 Click on the execute button to execute the ReadDataFile event.
 
 ![Figure 3](images/p04-fig3.png)
+
 *Figure 3: Error Message returned by ReadDataFile — an HVE alert dialog reading "Bad or Incompatible Event Data".*
 
 <!-- NAV -->

@@ -43,6 +43,7 @@ Each manipulator performs a specific function or set of functions (translation, 
 The Direct manipulator provides 2-dimensional translation in the viewer plane. The Direct manipulator is shown in Figure 21-1.
 
 ![Figure 21-1](../images/figure-21-1.jpg)
+
 *Figure 21-1 — Direct Manipulator.*
 
 To use the Direct manipulator, perform the following steps:
@@ -61,6 +62,7 @@ The object position is updated.
 The Trackball manipulator provides 3-dimensional rotation of the selected object. The Trackball manipulator is shown in Figure 21-2.
 
 ![Figure 21-2](../images/figure-21-2.jpg)
+
 *Figure 21-2 — Trackball Manipulator.*
 
 To use the Trackball manipulator, perform the following steps:
@@ -78,6 +80,7 @@ The object orientation is updated.
 The HandleBox manipulator provides 3-dimensional translation and scaling of the selected object. The HandleBox manipulator is shown in Figure 21-3.
 
 ![Figure 21-3](../images/figure-21-3.jpg)
+
 *Figure 21-3 — HandleBox Manipulator.*
 
 To use the HandleBox manipulator, perform the following steps:
@@ -92,6 +95,7 @@ The object dimensions are updated.
 The Jack manipulator provides scaling of the selected object, along with translation and rotation using its axes. The Jack manipulator is shown in Figure 21-4.
 
 ![Figure 21-4](../images/figure-21-4.jpg)
+
 *Figure 21-4 — Jack Manipulator.*
 
 To use the Jack manipulator, perform the following steps:
@@ -108,6 +112,7 @@ The object position and scale are updated.
 The Centerball manipulator provides 3-dimensional rotation of the selected object about a user-defined origin. The Centerball manipulator is shown in Figure 21-5.
 
 ![Figure 21-5](../images/figure-21-5.jpg)
+
 *Figure 21-5 — Centerball Manipulator.*
 
 To use the Centerball manipulator, perform the following steps:
@@ -123,6 +128,7 @@ The object position and orientation are updated.
 The TransformBox manipulator provides 3-dimensional translation, rotation and scaling of the selected object. The TransformBox manipulator is shown in Figure 21-6.
 
 ![Figure 21-6](../images/figure-21-6.jpg)
+
 *Figure 21-6 — TransformBox Manipulator.*
 
 To use the TransformBox manipulator, perform the following steps:
@@ -139,6 +145,7 @@ The object position, orientation and scale are updated.
 The TabBox manipulator provides 3-dimensional translation and scaling in the selected plane. The TabBox manipulator is shown in Figure 21-7.
 
 ![Figure 21-7](../images/figure-21-7.jpg)
+
 *Figure 21-7 — TabBox Manipulator.*
 
 To use the TabBox manipulator, perform the following steps:

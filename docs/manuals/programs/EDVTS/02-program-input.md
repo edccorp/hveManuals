@@ -46,9 +46,11 @@ To add a vehicle to the current HVE case, perform the following steps:
 - Click *OK* to add the vehicle to the current case.
 
 ![Figure 2-1](images/p021-001.png)
+
 *Figure 2-1: HVE-2D Vehicle Editor, adding a tow vehicle to the current case.*
 
 ![Figure 2-2](images/p021-002.png)
+
 *Figure 2-2: HVE-2D Vehicle Editor, adding a trailer to the current case.*
 
 The following Vehicle Parameter groups are used by EDVTS:
@@ -242,6 +244,7 @@ EDVTS uses the environment created by the Environment Editor (see Figure 2-3). T
 - Physical Data
 
 ![Figure 2-3](images/p029-003.png)
+
 *Figure 2-3: Environment Editor.*
 
 ### Creating an Environment
@@ -352,6 +355,7 @@ EDVTS uses the following *event set-up* options:
 The specific Event Set-up data used by EDVTS are defined in Table 2-5.
 
 ![Figure 2-4](images/p034-004.png)
+
 *Figure 2-4: HVE-2D Event Editor, setting up and executing an EDVTS event.*
 
 **Table 2-5: Event Set-up Parameters Used by EDVTS**
@@ -460,6 +464,7 @@ EDVTS uses the current simulation control parameters in the Simulation Controls 
 *(updated: The printed manual described two calculation options — Roll-Couple Distribution and Get Surface Information — set through an EDVTS Calculation Options dialog. In the current version, **EDVTS does not present a Calculation Options dialog**. The Roll Couple Distribution value is taken directly from the tow vehicle's **Roll Couple Distribution** suspension value (Vehicle Editor → Suspension Parameters; default 0.55), not from a per-event option. The terrain surface-search method is selected in the separate **Get Surface Information Options** dialog on the Options menu.)*
 
 ![Figure 2-5](images/p038-005.png)
+
 *Figure 2-5: The Calculation Options dialog shown in the original printed manual. This dialog is no longer presented for EDVTS; the roll-couple value now comes from the vehicle's suspension data.*
 
 **Roll Couple Distribution** describes the ratio of lateral load transferred between the front and rear suspensions during cornering. This distribution depends directly on the characteristics of the front and rear suspension systems and chassis stiffness. As EDVTS is a limited-degree-of-freedom analysis, the effects of the suspension system and chassis are included in this one parameter. A good approximation for the fraction of the total load transfer borne by the front axle can be obtained by dividing the roll moment produced at the front suspension by the total roll moment (i.e., the total produced by both front and rear suspensions together) during a steady turn. Note that a neutral vehicle will tend to have a lateral load transfer coefficient equal to the percentage of load on the front axle; an understeering vehicle will tend to have a greater value and an oversteering vehicle will have a lesser value. The default value is 0.55 (55 percent of the roll couple carried by the front axle).
@@ -486,6 +491,7 @@ To execute an EDVTS event, use the Event Controller, shown in Figure 2-6. The Ev
 - **Advance to End** — Advance to the end of the simulation
 
 ![Figure 2-6](images/p039-fig2-6.png)
+
 *Figure 2-6: Event Controller, used for starting and stopping event execution. The Event Controller can also be used for replaying previously executed events, both forward and backward.*
 
 > NOTE: If you make changes to any of the event set-up options (see previous section), those changes will have no effect unless you press Reset before pressing Play.

@@ -58,6 +58,7 @@ following information for any earth-fixed X,Y coordinates of the HVE
 environment (see Figure 13-1, Figure 13-2 and Table 13-1):
 
 ![Figure 13-1](../images/p461-figB13-1.png)
+
 *Figure 13-1: 3-D Surface Model Definition.*
 
 - **Elevation** — The Z-coordinate of the environment surface at X,Y.
@@ -100,6 +101,7 @@ environment (see Figure 13-1, Figure 13-2 and Table 13-1):
   Properties dialog](../../08-environment/EnvrMatPropDlg.md).)*
 
 ![Figure 13-2](../images/figure-13-2.jpg)
+
 *Figure 13-2: Environment Terrain Material Properties dialog. For the current field list — including sliders, valid ranges and defaults — see [Environment Material Properties](../../08-environment/EnvrMatPropDlg.md).*
 
 > **NOTE:** The Bekker Soil Exponent, Frictional Soil Modulus and Cohesive
@@ -186,6 +188,7 @@ questions:
 #### Get Surface Information
 
 ![Figure 13-3](../images/figure-13-3.jpg)
+
 *Figure 13-3: Get Surface Information dialog.*
 
 To answer these and similar questions, a strict definition is required. HVE
@@ -288,6 +291,7 @@ Object Type is an attribute assigned using the 3-D Editor (see Figure
 vehicle 3-D geometry, Vehicle; for all environment 3-D geometry, Road.
 
 ![Figure 13-4](../images/figure-13-4.jpg)
+
 *Figure 13-4: Assigning the Object Attributes using the 3-D Editor.*
 
 By default, all environment surfaces will be used by the calculation model.
@@ -310,6 +314,7 @@ and used. The default Friction Factor and Type of objects in imported files
 may be edited using HVE's 3-D Editor.
 
 ![Figure 13-5](../images/figure-13-5.jpg)
+
 *Figure 13-5: Environment File Selection dialog used for opening and saving 3-D Geometry and image files. See Table 12-1 for supported formats.*
 
 To load 3-D files from other modeling programs and edit the default surface
@@ -473,6 +478,7 @@ These atmospheric effects determine how sight distance is attenuated.
 Visual attenuation is determined algorithmically.
 
 ![Figure 13-6](../images/p472-figB13-6.png)
+
 *Figure 13-6: Visibility vs. Distance for Fog, Smoke and Haze.*
 
 #### Maximum Sight Distance
@@ -526,6 +532,7 @@ for displaying the sun in the environment. Figure 13-7 illustrates the sun
 position calculations.
 
 ![Figure 13-7](../images/p474-figB13-7.png)
+
 *Figure 13-7: Sun Azimuth and Zenith calculations.*
 
 > **NOTE:** By displaying the sun, you might stumble onto the notion that a
@@ -538,6 +545,7 @@ environment locations, stored according to the Location Name, Latitude,
 Longitude and GMT, as shown in Figure 13-8.
 
 ![Figure 13-8](../images/figure-13-8.jpg)
+
 *Figure 13-8: The Location Database allows the user to store Latitude, Longitude and GMT for any location, normally entered as City/State/Country.*
 
 **Table 13-3: Environment Model Parameters**

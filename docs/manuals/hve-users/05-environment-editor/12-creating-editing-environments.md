@@ -25,6 +25,7 @@ Environment Editor's components:
   the current environment.
 
 ![Figure 12-1](../images/figure-12-1.jpg)
+
 *Figure 12-1: Environment Editor dialog and Viewer, showing the Blind Intersection environment model used in the EDSMAC4 Tutorial.*
 
 ### Environment Editor Dialog
@@ -94,6 +95,7 @@ dialog. To add a new environment, perform the following steps:
    > [Chapter 13, Environment Model Definition](13-environment-model-definition.md).
 
    ![Figure 12-2](../images/p446-figB12-2.png)
+
    *Figure 12-2: Environment Information dialog. See the field reference: [Environment Information Dialog](../../08-environment/EnvtInfoDlg.md).*
 
    - **Name** *(top-level field)* — A user-editable field allowing the user
@@ -169,6 +171,7 @@ case. This option is useful when another case includes a study at the same
 or similar location (intersection, highway, etc.).
 
 ![Figure 12-3](../images/p448-242.png)
+
 *Figure 12-3: Adding Environments from previous cases.*
 
 To choose an environment from another case, perform the following steps:
@@ -191,6 +194,7 @@ in 3-D run modes or with a 3-D camera viewer.)* The following attributes are
 available:
 
 ![Figure 12-4](../images/figure-12-4.jpg)
+
 *Figure 12-4: Environment Sky Attributes dialog.*
 
 - **Ambient Intensity** — Allows the user to determine the ambient lighting
@@ -220,6 +224,7 @@ available:
 > for visibility studies!
 
 ![Figure 12-5](../images/figure-12-5.jpg)
+
 *Figure 12-5: Sky Color tool for assigning the color of the sky.*
 
 To set the sky attributes, perform the following steps:
@@ -266,6 +271,7 @@ beneath each tire.
 > Editor for details regarding the tire's frictional properties).
 
 ![Figure 12-6](../images/figure-12-6.jpg)
+
 *Figure 12-6: Environment File Selection dialog used for opening and saving 3-D Geometry and image files. See Table 12-1 for supported formats.*
 
 3-D Geometry information for the current case is supplied using the *Files*
@@ -367,6 +373,7 @@ length. In HVE, program units for length are always inches (user units,
 however, may be anything the user desires).
 
 ![Figure 12-7](../images/figure-12-7.jpg)
+
 *Figure 12-7: Geometry File Options dialog, used for flipping over the environment (HVE requires the Z-axis to point down) and for scaling the environment (HVE requires internal units of inches).*
 
 The Geometry File Options dialog allows the user to perform these simple
@@ -408,6 +415,7 @@ the Sky Image/backdrop use.)*
 > camera.
 
 ![Figure 12-8](../images/figure-12-8.jpg)
+
 *Figure 12-8: Example of a 3-D Geometry file used as the foreground and a scanned image used as the background and sky.*
 
 Scanned photographs differ in an important and fundamental way from 3-D
@@ -481,6 +489,7 @@ deselecting an overlay name, the user can decide whether an object is
 displayed in the viewer.
 
 ![Figure 12-9](../images/figure-12-9.jpg)
+
 *Figure 12-9: The Display Overlays dialog allows the user to select and deselect overlays.*
 
 > **NOTE:** If you deselect an overlay, its 3-D surface data (elevation,

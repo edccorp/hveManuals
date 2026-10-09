@@ -13,6 +13,7 @@ Vehicle Dimensions dialogs (CG to Front, Right Side, Back, Left Side, Top,
 Bottom).
 
 ![Figure 11-19](../images/figure-11-19.jpg)
+
 *Figure 11-19: Vehicle Exterior Dimensions dialogs allow the user to view and edit the dimensions from the CG to the front, right side, back, left side, top and bottom.*
 
 > **NOTE:** The dialog also calculates and displays the overall vehicle
@@ -76,6 +77,7 @@ coefficients. The user may choose to edit these coefficients for the front,
 back or sides of the vehicle using the Vehicle Stiffness dialogs.
 
 ![Figure 11-20](../images/p380-213.png)
+
 *Figure 11-20: Vehicle Exterior Stiffness Coefficients dialogs allow the user to view and edit the A, B and Kv stiffness coefficients for the selected surface.*
 
 *(updated: the A/B/Kv Stiffness Coefficients dialog is used when HVE is
@@ -109,6 +111,7 @@ The Exterior Stiffness parameters are described below.
   assumes the force vs deflection graph goes through zero (i.e., A = 0).
 
 ![Figure 11-21](../images/p381-figB11-21.png)
+
 *Figure 11-21: Force vs Deflection characteristics of a vehicle, and their relationship to the A, B and Kv stiffness coefficients (see also references 2.8–2.14, 4.20, 4.29).*
 
 **Table 11-11: Vehicle Exterior Stiffness Coefficients Parameters**

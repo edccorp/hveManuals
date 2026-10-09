@@ -9,6 +9,7 @@ Data" and identifies the current vehicle, axle number and side, e.g.,
 "Suspension Data: ... (Axle No. 1, Left Side)")*.
 
 ![Figure 11-22](../images/figure-11-22.jpg)
+
 *Figure 11-22: The Suspension Data dialog allows the user to choose specific suspension properties for viewing and editing.*
 
 The Suspension Data dialog includes pushbuttons allowing the user to
@@ -57,6 +58,7 @@ To choose the suspension type for any axle, perform the following steps:
 > **NOTE:** Inertial properties are disabled for independent suspensions.
 
 ![Figure 11-23](../images/figure-11-23.jpg)
+
 *Figure 11-23: Suspension Types: Independent (a), Solid Axle (b), Tandem Axle, 4-Spring (c) and Tandem Axle, Walking Beam (d).*
 
 ### Roll Couple Distribution
@@ -92,6 +94,7 @@ reference page,
 [Springs and Shocks dialog](../../03-suspension-steering/SprindShocksDlg.md).
 
 ![Figure 11-24](../images/p385-215.png)
+
 *Figure 11-24: Springs and Shocks dialog for selected wheel location.*
 
 To display or edit the spring and shock parameters for the selected wheel
@@ -111,6 +114,7 @@ position, perform the following steps:
    position(s).
 
 ![Figure 11-25](../images/p386-figB11-25.png)
+
 *Figure 11-25: Suspension parameters used in the HVE Vehicle Model. Ks, Cv and Cf are spring rate, damping rate and coulomb friction, respectively, for each wheel position. Kroll is the additional roll stiffness contribution due to an anti-sway bar.*
 
 The Springs and Shocks properties are described below.
@@ -148,6 +152,7 @@ The Suspension Inertial properties for the selected wheel location are
 displayed and edited using the Axle Inertia dialog.
 
 ![Figure 11-26](../images/figure-11-26.jpg)
+
 *Figure 11-26: Suspension Inertia dialog for selected axle — the selected wheel shares these parameters with the wheel on the other side of the vehicle.*
 
 To display or edit the suspension inertial parameters for the selected
@@ -209,9 +214,11 @@ reference page,
 [Jounce and Rebound dialog](../../03-suspension-steering/JouAndRebDlg.md).
 
 ![Figure 11-27](../images/figure-11-27.jpg)
+
 *Figure 11-27: Jounce and Rebound dialog for selected wheel.*
 
 ![Figure 11-28](../images/p391-figB11-28.png)
+
 *Figure 11-28: Suspension Jounce and Rebound parameters.*
 
 To display or edit the suspension stop parameters for the selected wheel,
@@ -264,12 +271,15 @@ reference page,
 [Spindle Axis dialog](../../03-suspension-steering/SpndleAxisDlg.md).
 
 ![Figure 11-29](../images/figure-11-29.jpg)
+
 *Figure 11-29: Spindle Axis dialog for selected wheel.*
 
 ![Figure 11-30](../images/p393-219.png)
+
 *Figure 11-30: Suspension Spindle Axis geometry parameters.*
 
 ![Figure 11-31](../images/figure-11-31.jpg)
+
 *Figure 11-31: Effect of suspension alignment (in particular, caster, kingpin inclination and stub axle length) on the geometry of a steered wheel — note left front wheel.*
 
 #### Alignment
@@ -397,6 +407,7 @@ the reference page,
 [Camber dialog](../../03-suspension-steering/CamberDlg.md).
 
 ![Figure 11-32](../images/figure-11-32.jpg)
+
 *Figure 11-32: Camber and Half-track Table dialog for selected wheel.*
 
 To display or edit the camber and half-track tables for the selected wheel
@@ -452,6 +463,7 @@ edited using the Anti-Pitch dialog. See also the reference
 page, [Anti-Pitch dialog](../../03-suspension-steering/AntiPitchDlg.md).
 
 ![Figure 11-33](../images/figure-11-33.jpg)
+
 *Figure 11-33: The Vehicle Anti-Pitch dialog allows the user to enter suspension anti-pitch characteristics.*
 
 To display or edit the anti-pitch table for the selected wheel position,
@@ -498,9 +510,11 @@ and
 [Roll Steer Properties (solid/tandem axle)](../../03-suspension-steering/RollSteerNewDlg.md).
 
 ![Figure 11-34](../images/figure-11-34.jpg)
+
 *Figure 11-34: Roll Steer dialog for independent suspensions.*
 
 ![Figure 11-35](../images/figure-11-35.jpg)
+
 *Figure 11-35: Roll Steer dialog for solid axle suspensions.*
 
 To display or edit the roll steer parameters, perform the following steps:

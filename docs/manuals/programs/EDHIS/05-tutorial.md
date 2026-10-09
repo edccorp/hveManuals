@@ -81,6 +81,7 @@ After the above steps are performed, both humans have been added to the case and
 
 ![Figure 5-1](images/p068-017.png)
 ![Figure 5-1](images/p068-018.png)
+
 *Figure 5-1: Male Adult Driver and Female Adult Pedestrian, ready for analysis.*
 
 ## Creating the Vehicles
@@ -130,6 +131,7 @@ Now, we have all the vehicles required for our case.
 ![Figure 5-2](images/p070-020.png)
 ![Figure 5-2](images/p070-019.png)
 ![Figure 5-2](images/p071-021.png)
+
 *Figure 5-2: Buick Skylark 4-Dr, Ford F-150 Fleetside and Plymouth Voyager Van.*
 
 ### Editing the Vehicles
@@ -154,11 +156,13 @@ Let's remove a portion of the vehicle exterior so we can see inside the vehicle 
   > **NOTE:** The vehicle's apparent color may be slightly misleading because the vehicle is translucent when displayed in the Vehicle Editor. The actual color will be used whenever the vehicle is displayed during Event and Playback mode.
 
 ![Figure 5-3](images/p073-022.png)
+
 *Figure 5-3: Vehicle Color dialog.*
 
 Next, let's add the contact surfaces for the Buick. We'll need a minimum of three surfaces for our simulation: a seat bottom, a seat back and a head rest.
 
 ![Figure 5-4](images/p073-fig5-4.png)
+
 *Figure 5-4: Seat Bottom, Seat Back and Head Rest contact surfaces.*
 
 To add the contact surfaces, perform the following steps:
@@ -177,6 +181,7 @@ To add the contact surfaces, perform the following steps:
 | z | 1.0 | -2.0 | -2.0 |
 
 ![Figure 5-5](images/p074-023.png)
+
 *Figure 5-5: Contact Surface dialog.*
 
 > **NOTE:** Remember to enter three consecutive corners in counter-clockwise order to establish the positive side of the surface.
@@ -214,6 +219,7 @@ Finally, let's create a contact surface for the head rest:
 The Buick is displayed with its surfaces.
 
 ![Figure 5-6](images/p076-024.png)
+
 *Figure 5-6: Buick Skylark after adding contact surfaces for the seat and headrest.*
 
 > **NOTE:** If the contact surfaces are not displayed, choose Options in the main menu bar and click on Show Contacts.
@@ -229,6 +235,7 @@ To change the vehicle's color from red to blue, perform the following steps:
 - When the color is to your liking, close the dialog by clicking on the close button in the upper right-hand corner of the dialog.
 
 ![Figure 5-7](images/p077-fig5-7.png)
+
 *Figure 5-7: Bumper, Grille, Hood and Windshield contact surfaces.*
 
 To create the contact surfaces for the van, perform the following steps:
@@ -285,6 +292,7 @@ The last contact surface for the *Plymouth Van* is the Windshield:
 The vehicle is displayed with its surfaces.
 
 ![Figure 5-8](images/p079-025.png)
+
 *Figure 5-8: Plymouth Van after adding the Bumper, Grille, Hood and Windshield contact surfaces.*
 
 Again, use the viewer thumb wheels to rotate the vehicle and look at each side of the surfaces. Note the contact side is light colored (i.e., the positive side), while the other side is dark.
@@ -320,6 +328,7 @@ Let's use one of the sample environments shipped with HVE.
 The selected environment is added to our case and displayed in the Environment Viewer. Use the viewer thumb wheels to view the scene.
 
 ![Figure 5-9](images/p082-026.png)
+
 *Figure 5-9: 3-D Environment used for our tutorial.*
 
 ## Saving the Case
@@ -367,6 +376,7 @@ Now, we're ready to set up the first event.
   > **NOTE:** Be sure to keep the mouse button depressed while you drag the manipulators.
 
 ![Figure 5-10](images/p084-027.png)
+
 *Figure 5-10: Positioning the Buick Skylark using the manipulators.*
 
 > **NOTE:** Adjust the viewer by dollying back (using the Dolly thumb wheel) until you can see the entire intersection.
@@ -387,6 +397,7 @@ Event set-up for the Buick is now complete. Let's set up the Ford pickup.
 - Using the Event Controller, click *Play* to execute the event. Allow the event to run until just after the vehicles separate, t = `0.25` sec. Then press *Pause/Stop* to end the event.
 
 ![Figure 5-11](images/p085-028.png)
+
 *Figure 5-11: HVE Event Editor executing the EDSMAC4 Event.*
 
 > **NOTE:** While the event is executing, watch the current results (especially acceleration) in Key Results windows.
@@ -413,6 +424,7 @@ Now, let's set up and execute the occupant simulation event using EDHIS:
 - Press *OK* to accept the collision pulse.
 
 ![Figure 5-12](images/p087-029.png)
+
 *Figure 5-12: Collision Pulse dialog for Buick Skylark.*
 
 Before we position the human, we'll attach the camera to the vehicle.
@@ -429,6 +441,7 @@ To attach the camera to the vehicle, perform the following steps:
 The viewer displays the vehicle as viewed from the vehicle-fixed coordinates, 0, -20, 0.
 
 ![Figure 5-13](images/p088-031.png)
+
 *Figure 5-13: Set Camera dialog.*
 
 Now we're ready to position the driver in the Buick.
@@ -438,6 +451,7 @@ Now we're ready to position the driver in the Buick.
   > **NOTE:** The Position/Velocity dialog displays the current position and orientation of the human relative to the vehicle-fixed coordinate system.
 
 ![Figure 5-14](images/p088-030.png)
+
 *Figure 5-14: Human manipulators used for positioning the human.*
 
 To position the occupant, let's first use the x-y plane manipulator to position the human over the middle of the seat at x = -17 in, y = -13 in.
@@ -483,6 +497,7 @@ The final step in the event set-up is to set up contacts and assign combined mat
 - Below, in the Combined Material Properties section, click *Select All*.
 
 ![Figure 5-15](images/p090-032.png)
+
 *Figure 5-15: Combined Material Properties dialog.*
 
 - Click *Edit* to edit the combined material properties.
@@ -513,6 +528,7 @@ Next, let's add the *Head* vs *Head Rest* contact force:
   > **NOTE:** The first time Head is displayed, it refers to the Head segment; the second time refers to the contact ellipsoid named Head that is attached to the Head segment.
 
 ![Figure 5-16](images/p092-033.png)
+
 *Figure 5-16: Key Results Variable Selection dialog.*
 
 - Select *Force* from the list.
@@ -550,6 +566,7 @@ Next, position the pedestrian.
   > **NOTE:** Be sure to press \<Enter\>, otherwise, the entered values do not take effect.
 
 ![Figure 5-17](images/p094-034.png)
+
 *Figure 5-17: Setting up the EDHIS Pedestrian Impact simulation.*
 
 Now, let's enter the initial velocity of the pedestrian:
@@ -621,6 +638,7 @@ To view the output reports, we need to be in Playback mode:
 The reports listed above are displayed by selecting Report Windows. Each Report Window contains an individual report.
 
 ![Figure 5-18](images/p097-035.png)
+
 *Figure 5-18: Report Window Information dialog.*
 
 To view the reports produced by the *EDHIS Tutorial* Case, perform the following steps:
@@ -639,6 +657,7 @@ EDHIS produces several messages, depending on the outcome of the event. For a co
 To view the Messages report: click *Add New Object*, select *EDHIS, Buick Occupant* from the Active Events list, choose *Messages* from the *Selected Output* option list, and press *OK*.
 
 ![Figure 5-19](images/p098-036.png)
+
 *Figure 5-19: Messages Report for EDHIS, Buick Occupant.*
 
 ### Accident History
@@ -650,6 +669,7 @@ To view it: click *Add New Object*, select *EDHIS, Buick Occupant*, choose *Acci
 > **NOTE:** The Accident History report and several other reports contain more information than fits into the default window size. Use the scroll bars or resize the dialog to view the entire report.
 
 ![Figure 5-20](images/p099-037.png)
+
 *Figure 5-20: Accident History Report for EDHIS Buick Occupant.*
 
 ### Event Data
@@ -659,6 +679,7 @@ The Event Data report displays the acceleration pulse used in the EDHIS event.
 To view it: click *Add New Object*, select *EDHIS, Buick Occupant*, choose *Event Data* from the *Selected Output* option list, and press *OK*.
 
 ![Figure 5-21](images/p100-038.png)
+
 *Figure 5-21: Event Data Report for EDHIS Buick Occupant.*
 
 ### Human Data
@@ -668,6 +689,7 @@ The Human Data report displays the human segment and joint properties, as well a
 To view it: click *Add New Object*, select *EDHIS, Buick Occupant*, choose *Human Data* from the *Selected Output* option list, and press *OK*.
 
 ![Figure 5-22](images/p101-039.png)
+
 *Figure 5-22: Human Data Report for EDHIS, Buick Occupant.*
 
 ### Injury Data
@@ -677,6 +699,7 @@ The Injury Data report displays the results of injury calculations that compare 
 To view it: click *Add New Object*, select *EDHIS, Buick Occupant*, choose *Injury Data* from the *Selected Output* option list, and press *OK*.
 
 ![Figure 5-23](images/p102-040.png)
+
 *Figure 5-23: Injury Data Report for EDHIS, Buick Occupant.*
 
 ### Vehicle Data
@@ -686,6 +709,7 @@ The Vehicle Data report displays the contact properties (location and physical p
 To view it: click *Add New Object*, select *EDHIS, Buick Occupant*, choose *Vehicle Data* from the *Selected Output* option list, and press *OK*.
 
 ![Figure 5-24](images/p103-041.png)
+
 *Figure 5-24: Vehicle Data Report for EDHIS, Buick Occupant.*
 
 ### Program Data
@@ -695,6 +719,7 @@ The Program Data report displays the simulation controls and other program contr
 To view it: click *Add New Object*, select *EDHIS, Buick Occupant*, choose *Program Data* from the *Selected Output* option list, and press *OK*.
 
 ![Figure 5-25](images/p104-042.png)
+
 *Figure 5-25: Program Data Report for EDHIS, Buick Occupant.*
 
 ### Variable Output
@@ -727,8 +752,10 @@ Next, let's add the Head vs Head Rest contact force:
 The Variable Output report for the *EDHIS, Buick Occupant* now includes Forward and Pitch Head Accelerations and the contact force between the headrest and head, as shown in Figure 5-27. Feel free to use the above steps to add additional parameters to the variable output table and view the results.
 
 ![Figure 5-26](images/p106-043.png)
+
 *Figure 5-26: Variable Selection dialog.*
 ![Figure 5-27](images/p107-044.png)
+
 *Figure 5-27: Variable Output report for EDHIS, Buick Occupant.*
 
 ### Trajectory Simulation
@@ -740,6 +767,7 @@ To view it: click *Add New Object*, select *EDHIS, Buick Occupant*, choose *Traj
 The Trajectory Simulation viewer is displayed for the *EDHIS, Buick Occupant* event. The human and vehicle are shown at their initial positions.
 
 ![Figure 5-28](images/p108-045.png)
+
 *Figure 5-28: Trajectory Simulation for EDHIS, Buick Occupant.*
 
 To visualize the motion, perform the following steps:
