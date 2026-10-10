@@ -307,7 +307,7 @@ Although increased tessellation (i.e., smaller triangles) increases resolution, 
 
 > **NOTE:** Using a 10 inch Maximum Side Length for a 45-ft semi-trailer will bring your computer to its knees.
 
-**Water-tightness** — A mesh is water-tight if each neighboring polygon shares its vertices. For example, the mesh at the left in Figure 4-29 is water-tight, while the mesh on the right is not. Note what happens when the vertex in the center of the mesh on the right is displaced: it opens up, resulting in a hole, as shown in Figure 4-30. This hole represents a region through which a slave vertex on the other vehicle may pass. If that occurs, the slave vertex will not find contact with any surface on the master vehicle mesh, so the vertex will remain undeformed, resulting in what is called a rogue vertex (see Figure 4-31). The Water-tight test has three options:
+**Water-tightness** — A mesh is water-tight if each neighboring polygon shares its vertices. For example, the mesh at the left in Figure 4-29 is water-tight, while the mesh on the right is not. Note what happens when the vertex in the center of the mesh on the right is displaced: it opens up, resulting in a hole, as shown in Figure 4-30. This hole represents a region through which a secondary vertex on the other vehicle may pass. If that occurs, the secondary vertex will not find contact with any surface on the primary vehicle mesh, so the vertex will remain undeformed, resulting in what is called a rogue vertex (see Figure 4-31). The Water-tight test has three options:
 
 - Yes (the mesh is water-tight)
 - No (the mesh is known not to be water-tight)

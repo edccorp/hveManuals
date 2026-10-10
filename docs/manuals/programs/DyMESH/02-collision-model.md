@@ -19,14 +19,16 @@ display: an array of vertices and an array of triangular polygons.
   accumulated maximum deformation, the force acting on it, and a per-vertex
   **stiffness** set and **saturation crush**.
 
-During a run, one body is designated the **Master** (M) and the other the
-**Slave** (S). Master *surfaces* (polygons) are tested against Slave *nodes*
-(vertices): the algorithm finds, for each slave node, the master surface it has
+During a run, one body is designated the **Primary** (P) and the other the
+**Secondary** (S). Primary *surfaces* (polygons) are tested against Secondary *nodes*
+(vertices): the algorithm finds, for each secondary node, the primary surface it has
 penetrated. The roles can be swapped every time step, or multiple times per time
 step, so that both bodies accumulate damage.
 
+> **NOTE:** Older DyMESH material, and four options in the DyMESH Options dialog (**By Master**, **By Slave Normal**, **By Slave and Damage** and **Use Master Normal**), use *master* for the primary role and *slave* for the secondary role.
+
 Because the search over all polygons would be expensive, DyMESH restricts each
-test to a **search box** around each slave vertex, and to precomputed lists of
+test to a **search box** around each secondary vertex, and to precomputed lists of
 neighboring surfaces. The neighbor lists are only recomputed every few time
 steps, for efficiency. The box size is either computed automatically from the
 vehicle extents or set by the user (**Search Option**: Automatic or Set Box
@@ -38,8 +40,8 @@ DyMESH uses a contact algorithm similar to that used in explicit, dynamic
 finite-element simulation codes. The contact algorithm has **two main
 functions**:
 
-1. **Location** — determining mesh inter-penetration (which slave nodes are
-   inside which master surfaces).
+1. **Location** — determining mesh inter-penetration (which secondary nodes are
+   inside which primary surfaces).
 2. **Restoration** — altering the positions of the nodes of the mesh to enforce
    the no-penetration condition.
 
@@ -53,7 +55,7 @@ The sequence over a contact is:
 4. Forces are applied due to the deformations; these forces produce
    accelerations that separate the bodies.
 
-![Figure: contact-algorithm three-panel example](images/D1-p11-figcontact.png)
+![Figure: contact-algorithm three-panel example](images/D1-p11-figcontact-v2.png)
 
 *Figure: three-panel contact-algorithm example — (1) bodies approach, (2) Location phase overlap box, (3) Restoration phase adjustment.*
 
@@ -61,11 +63,11 @@ The sequence over a contact is:
 
 *Figure: force application and separation — deformation forces at overlapping nodes drive the bodies apart.*
 
-### Locating the master surface for a slave node
+### Locating the primary surface for a secondary node
 
-A slave node is matched to the master surface it has penetrated. A candidate
-contact point is the intersection of a search ray from the slave node with the
-master triangle; an **inside-polygon test**, using the cross-product method,
+A secondary node is matched to the primary surface it has penetrated. A candidate
+contact point is the intersection of a search ray from the secondary node with the
+primary triangle; an **inside-polygon test**, using the cross-product method,
 confirms the intersection lies within the triangle. The direction of the search
 ray can be chosen among several methods — the local average normal, the velocity
 direction, the polygon normal, or a specified direction (a vertex-normal method
@@ -75,8 +77,8 @@ tab of the DyMESH Options dialog.
 
 ### Restoration (pushback)
 
-Once a slave node is found interior to a master surface, its penetration depth
-is the distance from the node to the master surface along the restoration
+Once a secondary node is found interior to a primary surface, its penetration depth
+is the distance from the node to the primary surface along the restoration
 direction. The node is restored (pushed back) toward the surface; the amount of
 that pushback, accumulated over time, is the node's permanent deformation. To
 prevent numerical instabilities, the pushback can be reduced by a limited
@@ -179,42 +181,42 @@ The 1/18 "Crush Depth" update refined how the total penetration is *partitioned*
 between the two vehicles so that the **forces on the two bodies are equal and
 opposite** (Newton's third law) even when their stiffnesses differ.
 
-Given the master vehicle stiffness $A_\mathrm{master}, B_\mathrm{master}$, the
-slave vehicle stiffness $A_\mathrm{slave}, B_\mathrm{slave}$, and the total slave
+Given the primary vehicle stiffness $A_\mathrm{primary}, B_\mathrm{primary}$, the
+secondary vehicle stiffness $A_\mathrm{secondary}, B_\mathrm{secondary}$, and the total secondary
 vertex displacement $\delta_\mathrm{total}$ (the total penetration — **always
-computed using the slave vehicle**), the force each vehicle *would* carry at the
+computed using the secondary vehicle**), the force each vehicle *would* carry at the
 full penetration is:
 
 $$
-F_\mathrm{master} = A_\mathrm{master} + B_\mathrm{master}\,\delta_\mathrm{total}
+F_\mathrm{primary} = A_\mathrm{primary} + B_\mathrm{primary}\,\delta_\mathrm{total}
 \qquad (\text{Eq. 4})
 $$
 
 $$
-F_\mathrm{slave} = A_\mathrm{slave} + B_\mathrm{slave}\,\delta_\mathrm{total}
+F_\mathrm{secondary} = A_\mathrm{secondary} + B_\mathrm{secondary}\,\delta_\mathrm{total}
 \qquad (\text{Eq. 5})
 $$
 
 To equalize the forces, define the sharing fraction
 
 $$
-\theta = \frac{F_\mathrm{master}}{F_\mathrm{master} + F_\mathrm{slave}}
+\theta = \frac{F_\mathrm{primary}}{F_\mathrm{primary} + F_\mathrm{secondary}}
 \qquad (\text{Eq. 6})
 $$
 
-and assign the slave vehicle its share of the crush:
+and assign the secondary vehicle its share of the crush:
 
 $$
-\delta_\mathrm{slave} = \delta_\mathrm{total}\,\theta
+\delta_\mathrm{secondary} = \delta_\mathrm{total}\,\theta
 \qquad (\text{Eq. 7})
 $$
 
-There is no need to compute $\delta_\mathrm{master}$ separately — the master's
+There is no need to compute $\delta_\mathrm{primary}$ separately — the primary's
 share is the remainder, $\delta_\mathrm{total}(1-\theta)$. The softer body
 receives the larger share of crush, and the contact force is consistent for both
 bodies.
 
-*(updated: the master triangle's effective stiffness used at a contact is the
+*(updated: the primary triangle's effective stiffness used at a contact is the
 average of the $A$ and $B$ stiffnesses of its three corner vertices, consistent
 with this force-equalization approach.)*
 

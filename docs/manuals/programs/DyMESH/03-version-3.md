@@ -53,14 +53,14 @@ loop.
 **Sprung Mass loop** — for each pair of vehicles:
 
 1. Collision Test → if no collision, skip.
-2. Swap Vehicles (assign Master / Slave).
+2. Swap Vehicles (assign Primary / Secondary).
 3. Get Vehicle Matrices.
-4. **DyMESH (Master, Slave)** — the body-to-body collision.
-5. **DyMESH Wheels (Master, Slave)** — the wheel collisions.
+4. **DyMESH (Primary, Secondary)** — the body-to-body collision.
+5. **DyMESH Wheels (Primary, Secondary)** — the wheel collisions.
 6. Smooth Collision Pulse.
 7. Separation Test.
 
-![Figure: Sprung Mass loop flow chart](images/D3-p10-figsprung.png)
+![Figure: Sprung Mass loop flow chart](images/D3-p10-figsprung-v2.png)
 
 *Figure: Sprung Mass flow chart.*
 
@@ -69,12 +69,12 @@ loop.
 1. Collision? → if no, skip.
 2. Get Wheel Matrices.
 3. Update Wheel Mesh (apply location/steer/camber/spin transform).
-4. **DyMESH (Master, Slave)** — run the contact algorithm on the wheel mesh.
+4. **DyMESH (Primary, Secondary)** — run the contact algorithm on the wheel mesh.
 5. Add Wheel Force to Sprung Mass.
 6. Update Wheel Mesh Damage.
 7. Calculate Wheel Displacement.
 
-![Figure: Wheel loop flow chart](images/D3-p11-figwheels.png)
+![Figure: Wheel loop flow chart](images/D3-p11-figwheels-v2.png)
 
 *Figure: Wheels flow chart.*
 
@@ -92,7 +92,7 @@ Options**, the per-wheel **Set-up**, and the **Output vs. Time** results.
 
 The DyMESH Options dialog (Options menu) as shown in the deck contains:
 
-- **Use DyMESH** (master enable).
+- **Use DyMESH** (turns DyMESH on or off).
 - **Include Environment** — also run DyMESH contact against the environment
   (see [Wheel vs. Environment](05-wheel-environment.md) for the wheel side of
   this feature and the tire-model handoff).
@@ -116,7 +116,7 @@ checkbox, and separate **DyMESH start time** and
 renamed to "**Version 1 and 2**" and "**Version 3 and Later**". The stand-alone
 **Timesteps** group shown in the deck is no longer present in the current
 dialog. An **Advanced** tab exposes the low-level search controls — Stop After
-one/two/all vertices, inside-vehicle test (master normal vs. CG), inside-polygon
+one/two/all vertices, inside-vehicle test (Use Master Normal vs. Use CG), inside-polygon
 test (sub-areas vs. cross product), pushback method, "don't deform a single
 vertex", and "don't restore a large distance".)*
 

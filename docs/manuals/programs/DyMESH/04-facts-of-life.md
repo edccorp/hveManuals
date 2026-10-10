@@ -43,7 +43,7 @@ behavior of structure not captured in all cases; no induced damage.")
 
 *(updated: this is consistent with how the damage profile is built — a vertex
 only enters the damage profile once it has been marked as damaged, which happens
-only after it has penetrated a master surface and been restored.)*
+only after it has penetrated a primary surface and been restored.)*
 
 ## 6. Mesh quality is a factor
 

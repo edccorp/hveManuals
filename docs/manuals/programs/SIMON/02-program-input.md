@@ -657,7 +657,7 @@ The DyMESH Options dialog contains the following options:
 
 **General:**
 
-- **Use DyMESH** — Master checkbox enabling the DyMESH 3-D collision algorithm for the event. This option requires a DyMESH license; all remaining options are available only when Use DyMESH is checked.
+- **Use DyMESH** — Main checkbox enabling the DyMESH 3-D collision algorithm for the event. This option requires a DyMESH license; all remaining options are available only when Use DyMESH is checked.
 - **Include Environment** — Extends DyMESH collision detection to include vehicle-environment mesh contact (e.g., striking a rigid barrier or terrain feature), in addition to vehicle-vehicle contact.
 - **Force To x-y Plane** — Constrains the DyMESH collision force to act in the horizontal (x-y) plane.
 - **Tow Vehicle / Trailer Contact** — Enables DyMESH mesh contact between vehicles joined by an inter-vehicle connection (e.g., jackknife contact between a tractor and its trailer).

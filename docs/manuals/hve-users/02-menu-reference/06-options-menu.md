@@ -531,6 +531,8 @@ A sample Calculation Options dialog is shown in Figure 6-16.
 
 The DyMESH Options is a tabbed dialog, divided into General and Advanced options (see Figures 6-17 and 6-18). DyMESH is enabled by clicking on the Use DyMESH check box. The DyMESH Version No. is selectable from a drop-down list.
 
+> **NOTE:** DyMESH treats the two colliding bodies in two roles, called **primary** and **secondary** in this manual. Four options in the DyMESH Options dialog still use the older names for these roles — *master* for primary and *slave* for secondary: **By Master**, **By Slave Normal**, **By Slave and Damage** and **Use Master Normal**. They are listed below under the names shown on screen.
+
 > **NOTE:** The Version No. is available for compatibility with simulations performed using previous versions.
 
 ![Figure 6-18](../images/p287-175.png)
@@ -545,34 +547,34 @@ The General Options page provides the basic settings for DyMESH. These settings 
 
 Search determines how DyMESH decides if a vertex of one vehicle is inside the other vehicle mesh. The user-definable groups are Option and Direction.
 
-**Option** — For each vertex on the slave vehicle, DyMESH must find the candidates for potential contact with polygons on the master vehicle. Three possibilities are:
+**Option** — For each vertex on the secondary vehicle, DyMESH must find the candidates for potential contact with polygons on the primary vehicle. Three possibilities are:
 
 - **Automatic** — This method locates all polygons that are directly attached to the polygon through which the vertex has penetrated. The process is automatic in that DyMESH finds the candidates by searching at each timestep the penetrated polygon's neighbors. Potentially the fastest method.
-- **Set Box Size** (default) — This method finds all polygons on the master vehicle within the specified distance from the slave vertex.
+- **Set Box Size** (default) — This method finds all polygons on the primary vehicle within the specified distance from the secondary vertex.
 - **All Vertices** — The sledgehammer approach. This method simply assumes every polygon on the vehicle is a candidate. Fool-proof, but slow.
 
-**Direction** — To determine which master polygon candidate(s) a slave vertex may have penetrated, it is necessary to determine a direction in which to search for polygons. Four possibilities:
+**Direction** — To determine which primary polygon candidate(s) a secondary vertex may have penetrated, it is necessary to determine a direction in which to search for polygons. Four possibilities:
 
-- **Average Local Normals** (default) — This method uses the average direction of the surface normal vectors for all penetrating slave vertices (see Search Option, above).
-- **Velocity** — This method uses the direction of the velocity vector between slave vertex and candidate polygons.
-- **Vertex Normal** — This method uses the direction of the slave vertex normal vector.
-- **Polygon Normal** — This method uses the direction of the master surface polygon normal vector.
+- **Average Local Normals** (default) — This method uses the average direction of the surface normal vectors for all penetrating secondary vertices (see Search Option, above).
+- **Velocity** — This method uses the direction of the velocity vector between secondary vertex and candidate polygons.
+- **Vertex Normal** — This method uses the direction of the secondary vertex normal vector.
+- **Polygon Normal** — This method uses the direction of the primary surface polygon normal vector.
 
 #### Pushback
 
-Pushback determines how each slave vertex is displaced back to the master surface polygon.
+Pushback determines how each secondary vertex is displaced back to the primary surface polygon.
 
 **Method** — If the Search Direction (see above) is Average Local Normals, it is necessary to decide which method is used. Four possibilities:
 
-- **By Master** (default) — uses surface normals of nearby polygons on the master vehicle (weighted by nearness)
-- **By Slave Normal** — uses average normals of the penetrating slave vertices
-- **By Relative Velocity** — uses the average velocity vector of the penetrating slave vertices (the vectors will be different if there is relative rotation of the vehicles)
-- **By Slave and Damage** — uses the average normals of the penetrating slave vertices when first damaged (assumes subsequent damage will be in the same direction)
+- **By Master** (default) — uses surface normals of nearby polygons on the primary vehicle (weighted by nearness)
+- **By Slave Normal** — uses average normals of the penetrating secondary vertices
+- **By Relative Velocity** — uses the average velocity vector of the penetrating secondary vertices (the vectors will be different if there is relative rotation of the vehicles)
+- **By Slave and Damage** — uses the average normals of the penetrating secondary vertices when first damaged (assumes subsequent damage will be in the same direction)
 
 **Options** — Additional Pushback options are available as checkboxes (by default, none are set):
 
-- **Don't Restore Toward Other CG** — This logical flag (TRUE or FALSE) prevents pushback if the pushback direction is toward the master vehicle's CG. Choosing this option helps prevent errant vertex calculations for non-water-tight meshes.
-- **Don't Restore Away From This CG** — This logical flag (TRUE or FALSE) prevents pushback if the pushback direction is away from the slave vehicle's CG. Choosing this option helps prevent errant vertex calculations for non-water-tight meshes.
+- **Don't Restore Toward Other CG** — This logical flag (TRUE or FALSE) prevents pushback if the pushback direction is toward the primary vehicle's CG. Choosing this option helps prevent errant vertex calculations for non-water-tight meshes.
+- **Don't Restore Away From This CG** — This logical flag (TRUE or FALSE) prevents pushback if the pushback direction is away from the secondary vehicle's CG. Choosing this option helps prevent errant vertex calculations for non-water-tight meshes.
 - **Force To x-y Plane** — This option sets the pushback z direction to zero. In collisions with an extremely high closing velocity (say 80 mph+), DyMESH sometimes predicts a severe over-ride (aka ski jump). The issue is exacerbated by significant size mismatch; mesh characteristics also play a role. Choosing this option improves the resulting simulation.
 
 #### Restitution
@@ -604,26 +606,26 @@ These options should not normally be exercised without consultation with EDC Tec
 
 These options further define how the search for polygon candidates is conducted.
 
-**Stop After** — This setting determines how DyMESH decides that the correct master surface polygon has been found. Three options are available:
+**Stop After** — This setting determines how DyMESH decides that the correct primary surface polygon has been found. Three options are available:
 
-- **One Vertex** — Stop searching as soon as a master surface polygon has been found.
+- **One Vertex** — Stop searching as soon as a primary surface polygon has been found.
 - **Two Vertices** — Stop searching after two polygons have been found. Choose the one with the smaller pushback distance.
 - **All Vertices** — Search all polygons as defined by the Search Option (see General DyMESH Options, above). Choose the one with the smallest pushback distance.
 
-**Method** — To select master surface polygons for searching, it is necessary to decide how to include a polygon in the list of candidates. Two options are available:
+**Method** — To select primary surface polygons for searching, it is necessary to decide how to include a polygon in the list of candidates. Two options are available:
 
 - **Use Polygon Vertices** (default) — If all three vertices are found in the search, the polygon is included in the list of candidates.
 - **Use Polygon Center** — If a polygon's center is found in the search, the polygon is included in the list of candidates. This method is faster, but may omit some polygons.
 
-**Inside Vehicle Test** — Before performing any search, it is necessary to determine if a slave vertex is inside the master vehicle mesh (otherwise, there is no contact, so don't bother any more with this vertex). Two methods are available:
+**Inside Vehicle Test** — Before performing any search, it is necessary to determine if a secondary vertex is inside the primary vehicle mesh (otherwise, there is no contact, so don't bother any more with this vertex). Two methods are available:
 
-- **Use Master Normal** (default) — If the direction of the master vehicle polygon normal is in the same direction as the direction from the master surface to the slave vertex, the vertex must lie outside the vehicle, so it is ignored.
-- **Use CG** — If the direction from the surface to the CG is different from the direction from the surface to the slave vertex, the vertex must lie outside the vehicle, so it is ignored.
+- **Use Master Normal** (default) — If the direction of the primary vehicle polygon normal is in the same direction as the direction from the primary surface to the secondary vertex, the vertex must lie outside the vehicle, so it is ignored.
+- **Use CG** — If the direction from the surface to the CG is different from the direction from the surface to the secondary vertex, the vertex must lie outside the vehicle, so it is ignored.
 
-**Inside Polygon Test** — To decide if a slave vertex has penetrated a specific polygon, it is necessary to determine if the projection of the slave vertex onto the plane of the polygon lies within the perimeter of the three sides defining the polygon. Two methods are available:
+**Inside Polygon Test** — To decide if a secondary vertex has penetrated a specific polygon, it is necessary to determine if the projection of the secondary vertex onto the plane of the polygon lies within the perimeter of the three sides defining the polygon. Two methods are available:
 
-- **Use Sub-Areas** — Create three triangles using as the apex the projection of the slave vertex onto the master surface plane. Sum the areas of the three triangles thus formed. If the sum is equal to the area of the master surface polygon, it is assumed to be the desired polygon.
-- **Use Cross-Product** (default) — Compute vectors formed by the sides of the polygon and the vectors formed by the polygon's vertices and the slave vertex. If the resulting cross product for any pair of vectors is negative, the vertex lies outside the master surface polygon.
+- **Use Sub-Areas** — Create three triangles using as the apex the projection of the secondary vertex onto the primary surface plane. Sum the areas of the three triangles thus formed. If the sum is equal to the area of the primary surface polygon, it is assumed to be the desired polygon.
+- **Use Cross-Product** (default) — Compute vectors formed by the sides of the polygon and the vectors formed by the polygon's vertices and the secondary vertex. If the resulting cross product for any pair of vectors is negative, the vertex lies outside the primary surface polygon.
 
 #### Pushback
 
@@ -631,13 +633,13 @@ These options further assist in calculating the correct pushback direction.
 
 - **Don't Deform A Single Vertex** — This logical flag (TRUE or FALSE) prevents pushback if only one vertex is found.
 - **Don't Restore A Large Distance** — This logical flag (TRUE or FALSE) prevents pushback if the resulting pushback displacement distance exceeds a user-specified distance.
-- **Use Projected Area For Force Calc** — This option uses the component of the pushback distance that is normal to the projected area on the master surface for calculating the force on a vertex. This option has not been validated and is not recommended at the current time.
+- **Use Projected Area For Force Calc** — This option uses the component of the pushback distance that is normal to the projected area on the primary surface for calculating the force on a vertex. This option has not been validated and is not recommended at the current time.
 
 #### Debug Output
 
 DyMESH allows the user to export results for debugging.
 
-- **Save To TecPlot File** — This option allows the user to produce a TecPlot-compatible file showing the resulting mesh surface normals and slave vertex displacements (currently disabled).
+- **Save To TecPlot File** — This option allows the user to produce a TecPlot-compatible file showing the resulting mesh surface normals and secondary vertex displacements (currently disabled).
 - **Filename** — This is the path and filename for the TecPlot file.
 
 **See Also:** Event Model, User's Manual for the specific calculation model
