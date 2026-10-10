@@ -108,7 +108,7 @@ The DyMESH Options dialog (Options menu) contains:
 
 ![Figure: DyMESH Options dialog](images/dymesh-options-current.png){ width="385" }
 
-*Figure: "DyMESH Options" dialog. (Drawn from the current release's dialog layout.)*
+*Figure: "DyMESH Options" dialog.*
 
 *(updated: the deck shows an earlier version of this dialog, with Force
 Smoothing labelled Version 1 / Version 2 and a Timesteps group, and without

@@ -641,7 +641,7 @@ After creating an event, the DyMESH Options dialog is selected by choosing
 
 ![Figure 2-71](../images/dymesh-options-current.png){ width="385" }
 
-*Figure 2-71: The DyMESH Options dialog. (Drawn from the current release's dialog layout.)*
+*Figure 2-71: The DyMESH Options dialog.*
 
 ### Get Surface Information
 

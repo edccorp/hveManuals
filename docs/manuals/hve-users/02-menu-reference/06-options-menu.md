@@ -527,7 +527,7 @@ A sample Calculation Options dialog is shown in Figure 6-16.
 
 ![Figure 6-17](../images/dymesh-options-current.png){ width="385" }
 
-*Figure 6-17: The DyMESH Options dialog. (Drawn from the current release's dialog layout.)*
+*Figure 6-17: The DyMESH Options dialog.*
 
 DyMESH is enabled by clicking on the Use DyMESH check box; all other options are available only when it is checked. Using DyMESH requires a DyMESH license.
 
