@@ -525,121 +525,58 @@ A sample Calculation Options dialog is shown in Figure 6-16.
 
 **Description:** DyMESH is a 3-dimensional collision model used for simulating the collision phase of a collision between two or more vehicles (or a vehicle and the environment). Choosing DyMESH from the Options Menu displays the DyMESH Options dialog.
 
-![Figure 6-17](../images/figure-6-17.jpg)
+![Figure 6-17](../images/dymesh-options-current.png){ width="385" }
 
-*Figure 6-17: The DyMESH Options dialog allows the user to assign various DyMESH Options. The General Options are shown.*
+*Figure 6-17: The DyMESH Options dialog. (Drawn from the current release's dialog layout.)*
 
-The DyMESH Options is a tabbed dialog, divided into General and Advanced options (see Figures 6-17 and 6-18). DyMESH is enabled by clicking on the Use DyMESH check box. The DyMESH Version No. is selectable from a drop-down list.
+DyMESH is enabled by clicking on the Use DyMESH check box; all other options are available only when it is checked. Using DyMESH requires a DyMESH license.
 
+*(updated: earlier releases presented this as a tabbed dialog with General and Advanced pages, including search, pushback, restitution, timestep and debug options. The current dialog is a single page containing only the options described below. The settings that were removed are fixed in the current release — see [Fixed settings](#fixed-settings) below.)*
 
-> **NOTE:** The Version No. is available for compatibility with simulations performed using previous versions.
+### Options
 
-![Figure 6-18](../images/p287-175-v2.png)
-
-*Figure 6-18: The Advanced DyMESH Options dialog allows the user to assign additional DyMESH options.*
-
-### General Options
-
-The General Options page provides the basic settings for DyMESH. These settings are described below.
-
-#### Search
-
-Search determines how DyMESH decides if a vertex of one vehicle is inside the other vehicle mesh. The user-definable groups are Option and Direction.
-
-**Option** — For each vertex on the secondary vehicle, DyMESH must find the candidates for potential contact with polygons on the primary vehicle. Three possibilities are:
-
-- **Automatic** — This method locates all polygons that are directly attached to the polygon through which the vertex has penetrated. The process is automatic in that DyMESH finds the candidates by searching at each timestep the penetrated polygon's neighbors. Potentially the fastest method.
-- **Set Box Size** (default) — This method finds all polygons on the primary vehicle within the specified distance from the secondary vertex.
-- **All Vertices** — The sledgehammer approach. This method simply assumes every polygon on the vehicle is a candidate. Fool-proof, but slow.
-
-**Direction** — To determine which primary polygon candidate(s) a secondary vertex may have penetrated, it is necessary to determine a direction in which to search for polygons. Four possibilities:
-
-- **Average Local Normals** (default) — This method uses the average direction of the surface normal vectors for all penetrating secondary vertices (see Search Option, above).
-- **Velocity** — This method uses the direction of the velocity vector between secondary vertex and candidate polygons.
-- **Vertex Normal** — This method uses the direction of the secondary vertex normal vector.
-- **Polygon Normal** — This method uses the direction of the primary surface polygon normal vector.
-
-#### Pushback
-
-Pushback determines how each secondary vertex is displaced back to the primary surface polygon.
-
-**Method** — If the Search Direction (see above) is Average Local Normals, it is necessary to decide which method is used. Four possibilities:
-
-- **By Primary** (default) — uses surface normals of nearby polygons on the primary vehicle (weighted by nearness)
-- **By Secondary Normal** — uses average normals of the penetrating secondary vertices
-- **By Relative Velocity** — uses the average velocity vector of the penetrating secondary vertices (the vectors will be different if there is relative rotation of the vehicles)
-- **By Secondary and Damage** — uses the average normals of the penetrating secondary vertices when first damaged (assumes subsequent damage will be in the same direction)
-
-**Options** — Additional Pushback options are available as checkboxes (by default, none are set):
-
-- **Don't Restore Toward Other CG** — This logical flag (TRUE or FALSE) prevents pushback if the pushback direction is toward the primary vehicle's CG. Choosing this option helps prevent errant vertex calculations for non-water-tight meshes.
-- **Don't Restore Away From This CG** — This logical flag (TRUE or FALSE) prevents pushback if the pushback direction is away from the secondary vehicle's CG. Choosing this option helps prevent errant vertex calculations for non-water-tight meshes.
-- **Force To x-y Plane** — This option sets the pushback z direction to zero. In collisions with an extremely high closing velocity (say 80 mph+), DyMESH sometimes predicts a severe over-ride (aka ski jump). The issue is exacerbated by significant size mismatch; mesh characteristics also play a role. Choosing this option improves the resulting simulation.
-
-#### Restitution
-
-Classic restitution is defined as the ratio of the rebound (separation) velocity to approach (impact) velocity. In a simulation, restitution cannot be assigned directly because, while the collision phase is in progress, the separation velocity is not yet known. Therefore, restitution is always modeled indirectly, through the use of some technique that results in the effect of restitution.
-
-**Model** — Restitution may be modeled three different ways:
-
-- **Unloading Slope** — This method uses a user-defined unloading slope during rebound (not implemented)
-- **Restitution Energy** — This method uses a user-defined restitution energy during rebound (not implemented)
-- **Relaxation Length** (default) — This method uses a user-defined percentage of vector displacement during rebound. The value is set for each pair of colliding vehicles (see Set-up, Vehicle Mesh dialog).
-
-#### Timesteps
-
-These options provide a shortcut to the Trajectory Timestep and Output Time Interval Simulation Controls parameters.
-
-> **NOTE:** Collision simulation using DyMESH typically requires smaller integration timesteps. In addition, because the total collision phase is typically rather short, it is often helpful to select a smaller output time interval as well.
-
-The Timesteps parameters are:
-
-- **Vehicle Trajectory** — Integration timestep (same value that is found in the Simulation Controls dialog; see Figure 6-15).
-- **Output Interval** — Simulation output interval (same value that is found in the Simulation Controls dialog; see Figure 6-15).
-
-### Advanced Options
-
-These options should not normally be exercised without consultation with EDC Technical Support staff. They can sometimes help in trouble-shooting.
+- **Use DyMESH** — Turns the DyMESH 3-D collision model on for the event.
+- **Include Environment** — Extends DyMESH contact to the environment (for example a barrier or terrain feature), in addition to vehicle-to-vehicle contact.
+- **Force To x-y Plane** — Keeps the DyMESH deformation (pushback) direction horizontal. In collisions with an extremely high closing velocity (say 80 mph and above), DyMESH sometimes predicts a severe over-ride ("ski jump"); the effect is worse with a large size mismatch, and mesh characteristics also play a role. Choosing this option improves the resulting simulation. It is not applied to contact with the environment.
+- **Tow Vehicle / Trailer Contact** — Enables DyMESH contact between vehicles joined by an inter-vehicle connection, such as a tractor and trailer in a jackknife.
+- **DyMESH Version No** (Version 3 / Version 4) — Selects the DyMESH algorithm. Version 4 (the default for new events) adds a refinement to the restoration step that reduces pushback; Version 3 reproduces results from cases created with earlier releases.
+- **DyMESH Start Time** (sec) — Simulation time at which DyMESH vehicle-to-vehicle contact detection begins.
+- **DyMESH Environment Start Time** (sec) — Simulation time at which DyMESH vehicle-to-environment contact detection begins.
 
 #### Search
 
-These options further define how the search for polygon candidates is conducted.
+For each vertex on the secondary vehicle, DyMESH must find the candidate polygons on the primary vehicle that it may have penetrated.
 
-**Stop After** — This setting determines how DyMESH decides that the correct primary surface polygon has been found. Three options are available:
+**Option** — Two methods are available:
 
-- **One Vertex** — Stop searching as soon as a primary surface polygon has been found.
-- **Two Vertices** — Stop searching after two polygons have been found. Choose the one with the smaller pushback distance.
-- **All Vertices** — Search all polygons as defined by the Search Option (see General DyMESH Options, above). Choose the one with the smallest pushback distance.
+- **Automatic** — Locates the polygons directly attached to the polygon through which the vertex has penetrated, by searching that polygon's neighbors at each timestep. Potentially the fastest method.
+- **Set Box Size** (default) — Finds all polygons on the primary vehicle within the entered distance (in) of the secondary vertex.
 
-**Method** — To select primary surface polygons for searching, it is necessary to decide how to include a polygon in the list of candidates. Two options are available:
+#### Force Smoothing
 
-- **Use Polygon Vertices** (default) — If all three vertices are found in the search, the polygon is included in the list of candidates.
-- **Use Polygon Center** — If a polygon's center is found in the search, the polygon is included in the list of candidates. This method is faster, but may omit some polygons.
+**Option** — Selects how the collision forces are averaged from one timestep to the next as DyMESH alternates the primary and secondary roles (see the SIMON manual, Chapter 4, Primary and secondary vehicles):
 
-**Inside Vehicle Test** — Before performing any search, it is necessary to determine if a secondary vertex is inside the primary vehicle mesh (otherwise, there is no contact, so don't bother any more with this vertex). Two methods are available:
+- **Version 1 and 2** — The smoothing used by earlier releases, kept so that older cases reproduce their original results.
+- **Version 3 and Later** (default) — The current smoothing model.
 
-- **Use Primary Normal** (default) — If the direction of the primary vehicle polygon normal is in the same direction as the direction from the primary surface to the secondary vertex, the vertex must lie outside the vehicle, so it is ignored.
-- **Use CG** — If the direction from the surface to the CG is different from the direction from the surface to the secondary vertex, the vertex must lie outside the vehicle, so it is ignored.
+#### Fixed settings
 
-**Inside Polygon Test** — To decide if a secondary vertex has penetrated a specific polygon, it is necessary to determine if the projection of the secondary vertex onto the plane of the polygon lies within the perimeter of the three sides defining the polygon. Two methods are available:
+The following settings were adjustable in earlier releases but are fixed in the current release. Every new event uses the values shown.
 
-- **Use Sub-Areas** — Create three triangles using as the apex the projection of the secondary vertex onto the primary surface plane. Sum the areas of the three triangles thus formed. If the sum is equal to the area of the primary surface polygon, it is assumed to be the desired polygon.
-- **Use Cross-Product** (default) — Compute vectors formed by the sides of the polygon and the vectors formed by the polygon's vertices and the secondary vertex. If the resulting cross product for any pair of vectors is negative, the vertex lies outside the primary surface polygon.
+| Setting | Value used |
+|---|---|
+| Pushback Method | By Primary — surface normals of nearby polygons on the primary vehicle, weighted by nearness |
+| Don't Restore Toward Other CG / Don't Restore Away From This CG | Off |
+| Restitution Model | Relaxation Length — the percentage of vector displacement recovered during rebound, set for each pair of colliding vehicles in the Vehicle Mesh dialog (Set-up menu) |
+| Stop After | All Vertices — every candidate polygon is examined and the one needing the smallest pushback is used |
+| Search Method | Use Polygon Vertices — a polygon is a candidate if its vertices are found in the search |
+| Inside Vehicle Test | Primary normal — a vertex lying on the outward side of the primary polygon's normal is outside the vehicle and is ignored |
+| Inside Polygon Test | Cross product |
+| Don't Deform A Single Vertex / Don't Restore A Large Distance | Off |
 
-#### Pushback
+> **NOTE:** A case created in an earlier release keeps whatever values were chosen for these settings at the time, and the simulation still uses them, although the current dialog does not display them.
 
-These options further assist in calculating the correct pushback direction.
-
-- **Don't Deform A Single Vertex** — This logical flag (TRUE or FALSE) prevents pushback if only one vertex is found.
-- **Don't Restore A Large Distance** — This logical flag (TRUE or FALSE) prevents pushback if the resulting pushback displacement distance exceeds a user-specified distance.
-- **Use Projected Area For Force Calc** — This option uses the component of the pushback distance that is normal to the projected area on the primary surface for calculating the force on a vertex. This option has not been validated and is not recommended at the current time.
-
-#### Debug Output
-
-DyMESH allows the user to export results for debugging.
-
-- **Save To TecPlot File** — This option allows the user to produce a TecPlot-compatible file showing the resulting mesh surface normals and secondary vertex displacements (currently disabled).
-- **Filename** — This is the path and filename for the TecPlot file.
+The DyMESH timesteps are set in the Simulation Controls dialog (see Figure 6-15). Collision simulation using DyMESH typically requires smaller integration timesteps, and because the collision phase is short it is often helpful to use a smaller output time interval as well.
 
 **See Also:** Event Model, User's Manual for the specific calculation model
 

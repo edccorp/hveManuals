@@ -90,35 +90,32 @@ Options**, the per-wheel **Set-up**, and the **Output vs. Time** results.
 
 ### DyMESH Options dialog
 
-The DyMESH Options dialog (Options menu) as shown in the deck contains:
+The DyMESH Options dialog (Options menu) contains:
 
 - **Use DyMESH** (turns DyMESH on or off).
 - **Include Environment** — also run DyMESH contact against the environment
   (see [Wheel vs. Environment](05-wheel-environment.md) for the wheel side of
   this feature and the tire-model handoff).
-- **Force To x-y Plane** — constrain the collision deformation/force to the
-  horizontal plane.
-- **Search** — *Automatic* (use the calculated box size) or *Set Box Size* (use
-  a user-entered box size, e.g. 20.00 in).
-- **Force Smoothing** — *Version 1* or *Version 2*.
-- **Timesteps** — *Use DyMESH Time Intervals*, with Vehicle Trajectory (e.g.
-  0.0010 s) and Output Time Interval (e.g. 0.0200 s).
+- **Force To x-y Plane** — keep the DyMESH deformation direction horizontal
+  (not applied to contact with the environment).
+- **Tow Vehicle / Trailer Contact** — allow contact between connected vehicles.
+- **DyMESH Version No** — *Version 3* or *Version 4*.
+- **DyMESH Start Time** and **DyMESH Environment Start Time** — when
+  vehicle-to-vehicle and vehicle-to-environment contact detection begin.
+- **Search** — *Automatic* or *Set Box Size* (a user-entered box size, e.g.
+  20.00 in).
+- **Force Smoothing** — *Version 1 and 2* or *Version 3 and Later*.
 
-![Figure: DyMESH Options dialog](images/D3-p14-24.png)
+![Figure: DyMESH Options dialog](images/dymesh-options-current.png){ width="385" }
 
-*Figure: "DyMESH Options" dialog.*
+*Figure: "DyMESH Options" dialog. (Drawn from the current release's dialog layout.)*
 
-*(updated: The current DyMESH Options dialog differs from the deck screenshot.
-The General area now also carries a **DyMESH Version No** selector — radio
-buttons **Version 3** and **Version 4** — a **Tow Vehicle / Trailer Contact**
-checkbox, and separate **DyMESH start time** and
-**Environment start time** fields. The **Force Smoothing** radio labels have been
-renamed to "**Version 1 and 2**" and "**Version 3 and Later**". The stand-alone
-**Timesteps** group shown in the deck is no longer present in the current
-dialog. An **Advanced** tab exposes the low-level search controls — Stop After
-one/two/all vertices, inside-vehicle test (Use Primary Normal vs. Use CG), inside-polygon
-test (sub-areas vs. cross product), pushback method, "don't deform a single
-vertex", and "don't restore a large distance".)*
+*(updated: the deck shows an earlier version of this dialog, with Force
+Smoothing labelled Version 1 / Version 2 and a Timesteps group, and without
+the version, connection and start-time controls. Timesteps are now set in the
+Simulation Controls dialog. The low-level search and pushback settings offered
+on an Advanced tab in some earlier releases are fixed in the current release;
+see the HVE User's Manual, Options Menu, DyMESH, Fixed settings.)*
 
 ### Set-up (Wheels)
 

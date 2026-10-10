@@ -624,26 +624,24 @@ steps:
 
 ### DyMESH Options
 
-The DyMESH Options dialog (see Figure 2-71) provides access to various
-options that help DyMESH under certain conditions. These conditions
-generally arise when one mesh has extremely complex geometry (for example,
-the inside of a front grill) and the mesh folds back on itself as it
-crushes. In this and similar cases, the direction of vertex displacement
-needs close scrutiny; the DyMESH Options provide that scrutiny.
+The DyMESH Options dialog (see Figure 2-71) turns the DyMESH collision
+model on for the event and sets how it is applied: whether contact with the
+environment and between connected vehicles is included, which DyMESH version
+and force-smoothing model are used, when contact detection begins, and how
+the contact search is sized.
 
 > **NOTE:** See the Menu Reference, Options Menu, DyMESH Options for a
 > detailed description of the DyMESH user options.
 
 DyMESH simulations typically require a smaller integration timestep and
-output interval. The DyMESH Options dialog includes convenient access to
-those Simulation Options variables.
+output interval; set these in the Simulation Controls dialog.
 
 After creating an event, the DyMESH Options dialog is selected by choosing
 *DyMESH...* from the Options menu.
 
-![Figure 2-71](../images/figure-2-71.jpg)
+![Figure 2-71](../images/dymesh-options-current.png){ width="385" }
 
-*Figure 2-71: The DyMESH Options dialog.*
+*Figure 2-71: The DyMESH Options dialog. (Drawn from the current release's dialog layout.)*
 
 ### Get Surface Information
 

@@ -655,20 +655,17 @@ SIMON's Calculation Options include:
 
 The DyMESH Options dialog contains the following options:
 
-**General:**
-
 - **Use DyMESH** — Main checkbox enabling the DyMESH 3-D collision algorithm for the event. This option requires a DyMESH license; all remaining options are available only when Use DyMESH is checked.
 - **Include Environment** — Extends DyMESH collision detection to include vehicle-environment mesh contact (e.g., striking a rigid barrier or terrain feature), in addition to vehicle-vehicle contact.
-- **Force To x-y Plane** — Constrains the DyMESH collision force to act in the horizontal (x-y) plane.
+- **Force To x-y Plane** — Keeps the DyMESH deformation (pushback) direction horizontal, which helps prevent a severe over-ride in very high-speed collisions. It is not applied to contact with the environment.
 - **Tow Vehicle / Trailer Contact** — Enables DyMESH mesh contact between vehicles joined by an inter-vehicle connection (e.g., jackknife contact between a tractor and its trailer).
-- **DyMESH Version No** (Version 3 / Version 4) — Selects the version of the DyMESH collision algorithm.
+- **DyMESH Version No** (Version 3 / Version 4) — Selects the version of the DyMESH collision algorithm. Version 4 is the default for new events.
 - **DyMESH Start Time** (sec) — Simulation time at which DyMESH vehicle-vehicle collision detection begins.
 - **DyMESH Environment Start Time** (sec) — Simulation time at which DyMESH vehicle-environment collision detection begins.
+- **Search Option** (Automatic / Set Box Size) — Selects the contact search method. Automatic searches the neighbors of the penetrated polygon; Set Box Size uses the user-entered box size (in) to define the search region around each vertex.
+- **Force Smoothing** (Version 1 and 2 / Version 3 and Later) — Selects how collision forces are averaged between timesteps as DyMESH alternates the primary and secondary roles (see [Chapter 4 — Primary and secondary vehicles](04-calculation-method.md#primary-and-secondary-vehicles)). Version 3 and Later is the default; Version 1 and 2 reproduces results from earlier releases.
 
-**Advanced:**
-
-- **Search Option** (Automatic / Set Box Size) — Selects the contact search method. Automatic sizes the collision search region automatically; Set Box Size uses the user-entered box size (in) to define the search region surrounding each vehicle.
-- **Smoothing Model** (Version 1 / Version 2) — Selects the mesh smoothing algorithm applied to the damaged vehicle mesh.
+*(updated: earlier descriptions of this dialog listed General and Advanced pages and described Force Smoothing as a mesh smoothing model. The current dialog is a single page, and the setting smooths the collision force, not the mesh. Settings that earlier releases offered on an Advanced page are fixed in the current release; see the HVE User's Manual, Options Menu, DyMESH.)*
 
 ### Simulation Controls
 
