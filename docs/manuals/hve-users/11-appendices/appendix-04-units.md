@@ -40,9 +40,9 @@ file named `language.rsc` contains the associated program unit (e.g.,
 
 To assign a unit to any parameter, perform the following steps:
 
-1. Identify the unit name. The unit names are identified in the Human
-   Model, Vehicle Model, Environment Model and Event Model sections of this
-   manual.
+1. Identify the unit name. The parameter tables elsewhere in this manual
+   give each parameter's units; the unit names used in the units files are
+   listed by group in Tables IV-1 through IV-11 of this appendix.
 2. Identify the Program Units for the selected parameter. The Program Units
    for each parameter group are listed in this appendix (see Tables IV-1
    through IV-11).

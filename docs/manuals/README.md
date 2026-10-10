@@ -7,6 +7,9 @@ HVE on-line help, the HVE User's Manual and the individual physics program
 manuals in a single, searchable set, revised throughout to describe the
 current version of the software.
 
+Each manual is also available as a PDF for printing or offline reading —
+see [PDF Downloads](downloads.md).
+
 Where a dialog, option or default has changed since the printed manuals were
 published, the page describes the current behavior and marks the change with
 an *(updated: …)* note. Options that no longer exist have been removed or

@@ -291,11 +291,11 @@ AutoPosition is always used for 2-D reconstructions and simulations. Because the
 
 **Table 6-1: Grid Parameters**
 
-| Parameter | Unit Name | Description |
+| Parameter | Units (US / SI) | Description |
 |---|---|---|
-| Grid Space | Ut\*DispLength | Distance between grid lines or markers in the 3-D Editor viewers |
+| Grid Space | in / cm or ft / m \* | Distance between grid lines or markers in the 3-D Editor viewers |
 
-\* Either UtHumDispLength, UtVehDispLength or UtEnvDispLength, depending on the object loaded in the 3-D Editor.
+\* in / cm for humans and vehicles; ft / m for environments, depending on the object loaded in the 3-D Editor.
 
 ![Figure 6-11](../images/figure-6-11.jpg)
 
@@ -428,9 +428,9 @@ Anti-aliasing Level is a user-definable range (1 to 10) which defines how smooth
 
 **Table 6-2: Playback Parameters**
 
-| Parameter | Unit Name | Description |
+| Parameter | Units (US / SI) | Description |
 |---|---|---|
-| Playback Interval | UtTime | Time interval used during Playback Mode. Affects Variable Output and Trajectory Simulation windows. |
+| Playback Interval | sec | Time interval used during Playback Mode. Affects Variable Output and Trajectory Simulation windows. |
 
 > **NOTE:** For slow-motion recording to video, the Playback Interval may be set to a value less than 1/30th second. For example, setting the value to 0.0033 will result in slow-motion video output at 1/10th real time.
 
@@ -473,23 +473,23 @@ The Simulation Controls dialog is shown in Figure 6-15.
 
 **Table 6-3: Simulation Parameters**
 
-| Parameter | Unit Name | Description |
+| Parameter | Units (US / SI) | Description |
 |---|---|---|
-| Dt, Human Collision | UtHumTime | Integration timestep used during the collision phase for occupant and pedestrian simulations |
-| Dt, Vehicle Collision | UtVehTime | Integration timestep used during the collision phase for vehicle simulations |
-| Dt, Curb Impact | UtVehTime | Integration timestep used during curb impact for vehicle simulations |
-| Dt, Vehicle Separation | UtVehTime | Integration timestep used during the initial portion of the post-impact phase for vehicle simulations |
-| Dt, Vehicle Trajectory | UtVehTime | Integration timestep used for vehicle trajectory simulations |
-| Dt, Output | UtTime | Event output time interval |
-| Maximum Time | UtTime | Maximum simulation time |
-| Linear Termination Velocity | Ut\*VelLinear | Minimum linear velocity. Event termination may result if current linear velocity is less than this value. |
-| Angular Termination Velocity | Ut\*VelAngular | Minimum angular velocity. Event termination may result if current angular velocity is less than this value. |
-| Max. Bisections | UtNone | Maximum number of times the integration timestep may be halved |
-| Velocity Convergence | UtNone | Allowable error between predicted and actual integration results |
-| Velocity Change Limit | UtNone | Maximum allowable change in velocity during one timestep |
-| Acceleration Change Limit | UtNone | Maximum allowable change in acceleration during one timestep |
+| Dt, Human Collision | sec | Integration timestep used during the collision phase for occupant and pedestrian simulations |
+| Dt, Vehicle Collision | sec | Integration timestep used during the collision phase for vehicle simulations |
+| Dt, Curb Impact | sec | Integration timestep used during curb impact for vehicle simulations |
+| Dt, Vehicle Separation | sec | Integration timestep used during the initial portion of the post-impact phase for vehicle simulations |
+| Dt, Vehicle Trajectory | sec | Integration timestep used for vehicle trajectory simulations |
+| Dt, Output | sec | Event output time interval |
+| Maximum Time | sec | Maximum simulation time |
+| Linear Termination Velocity | in/sec, mph / km/h \* | Minimum linear velocity. Event termination may result if current linear velocity is less than this value. |
+| Angular Termination Velocity | deg/sec | Minimum angular velocity. Event termination may result if current angular velocity is less than this value. |
+| Max. Bisections | — | Maximum number of times the integration timestep may be halved |
+| Velocity Convergence | — | Allowable error between predicted and actual integration results |
+| Velocity Change Limit | — | Maximum allowable change in velocity during one timestep |
+| Acceleration Change Limit | — | Maximum allowable change in acceleration during one timestep |
 
-\* Either UtHum or UtVeh, depending on the current objects.
+\* in/sec (US) for humans or mph (US) for vehicles; km/h in SI units, depending on the current objects.
 
 **See Also:** Event Model, Simulation Model, User's Manual for calculation method
 

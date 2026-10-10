@@ -118,23 +118,23 @@ vehicle's 3-D geometry; these data are used for rollover simulation.
 
 **Table 13-1: Environment Terrain Material Parameters**
 
-| Parameter | Unit Name | Description |
+| Parameter | Units (US / SI) | Description |
 |---|---|---|
-| Z-coord | UtEnvDispLength | Elevation at X,Y |
-| u<sub>x</sub>, u<sub>y</sub>, u<sub>z</sub> | UtNone | Unit normal vector defining the slope at X,Y |
-| Material Name | UtNone | User-editable material name for terrain at X,Y |
-| Constant | UtEnvForce | Force required to initiate deflection at X,Y |
-| Linear Stiffness | UtEnvMatLinear | Linear material deformation coefficient at X,Y |
-| Quadratic Stiffness | UtEnvMatQuad | Quadratic material deformation coefficient at X,Y |
-| Cubic Stiffness | UtEnvMatCubic | Cubic material deformation coefficient at X,Y |
-| Damping Constant | UtEnvMatDamp | Material velocity-dependent deformation constant at X,Y |
-| Friction Constant | UtNone | Friction multiplier at X,Y |
-| Unloading Slope | UtEnvMatForce | Linear unloading slope beginning at maximum deflection |
-| Bekker Soil Exponent | UtNone | Soil deformation exponent for sinkage calculations |
-| Frictional Soil Modulus | UtEnvKphi | Frictional soil constant for sinkage calculations |
-| Cohesive Soil Modulus | UtEnvKc | Cohesive soil constant for sinkage calculations |
-| Moisture Content | UtEnvPercent | Percentage of moisture in the soil |
-| Macrotexture | UtEnvDispLength | Surface macrotexture depth at X,Y *(updated: replaces the Clay Content (UtEnvPercent) row in earlier editions)* |
+| Z-coord | ft / m | Elevation at X,Y |
+| u<sub>x</sub>, u<sub>y</sub>, u<sub>z</sub> | — | Unit normal vector defining the slope at X,Y |
+| Material Name | — | User-editable material name for terrain at X,Y |
+| Constant | lb / N | Force required to initiate deflection at X,Y |
+| Linear Stiffness | lb/in / N/cm | Linear material deformation coefficient at X,Y |
+| Quadratic Stiffness | lb/in² / N/cm² | Quadratic material deformation coefficient at X,Y |
+| Cubic Stiffness | lb/in³ / N/cm³ | Cubic material deformation coefficient at X,Y |
+| Damping Constant | lb-sec/in / N-sec/cm | Material velocity-dependent deformation constant at X,Y |
+| Friction Constant | — | Friction multiplier at X,Y |
+| Unloading Slope | lb / N | Linear unloading slope beginning at maximum deflection |
+| Bekker Soil Exponent | — | Soil deformation exponent for sinkage calculations |
+| Frictional Soil Modulus | lb/in^N+1 / N/cm^N+1 | Frictional soil constant for sinkage calculations |
+| Cohesive Soil Modulus | lb/in^N+2 / N/cm^N+2 | Cohesive soil constant for sinkage calculations |
+| Moisture Content | %/100 | Percentage of moisture in the soil |
+| Macrotexture | ft / m | Surface macrotexture depth at X,Y |
 
 #### How to Define Surface Characteristics
 
@@ -550,21 +550,21 @@ Longitude and GMT, as shown in Figure 13-8.
 
 **Table 13-3: Environment Model Parameters**
 
-| Parameter | Unit Name | Description |
+| Parameter | Units (US / SI) | Description |
 |---|---|---|
 | Current Location | 30-character text string | City, State (or Province), Country (Location Database) |
-| Latitude | UtEnvDispAngle | Latitude for the current location. The user-specified value is stored in the location database for future use. |
-| Longitude | UtEnvDispAngle | Longitude for the current location. The user-specified value is stored in the location database for future use. |
-| GMT | UtTime | The number of hours from Greenwich, England, to the specified location (conventionally +/- 24 hours; west of Greenwich is negative) |
+| Latitude | deg | Latitude for the current location. The user-specified value is stored in the location database for future use. |
+| Longitude | deg | Longitude for the current location. The user-specified value is stored in the location database for future use. |
+| GMT | sec | The number of hours from Greenwich, England, to the specified location (conventionally +/- 24 hours; west of Greenwich is negative) |
 | Environment Name | 30-character text string | User-entered name for the current environment |
 | Date of Crash | Text string | Entered value is parsed according to month/day/year (or day/month/year, per the user's date-style preference) to determine the date relative to the solar calendar. |
 | Time of Crash | Text string | Entered value is parsed according to a 24-hour clock (i.e., 2230 is 10:30 PM) to determine the time relative to midnight (standard time is used; daylight saving time is not considered). |
-| Angle of X-Axis | UtEnvDispAngle | Angle of the user-specified earth-fixed X-axis relative to true north. The user must make any adjustments from magnetic north if a compass was used to identify direction. |
-| Wind Speed | UtEnvVelLinear | Wind velocity |
-| Wind Direction | UtEnvDispAngle | Wind direction relative to true north. The user must make any adjustments from magnetic north if a compass was used to identify direction. |
-| Barometric Pressure | UtEnvPressure | Ambient barometric pressure |
-| Temperature | UtEnvTemp | Ambient temperature |
-| Gravitational Constant | UtEnvAccelLinear | Local gravitational constant |
+| Angle of X-Axis | deg | Angle of the user-specified earth-fixed X-axis relative to true north. The user must make any adjustments from magnetic north if a compass was used to identify direction. |
+| Wind Speed | mph / km/h | Wind velocity |
+| Wind Direction | deg | Wind direction relative to true north. The user must make any adjustments from magnetic north if a compass was used to identify direction. |
+| Barometric Pressure | in-Hg / kPa | Ambient barometric pressure |
+| Temperature | deg F / deg C | Ambient temperature |
+| Gravitational Constant | in/sec² / m/sec² | Local gravitational constant |
 
 ---
 

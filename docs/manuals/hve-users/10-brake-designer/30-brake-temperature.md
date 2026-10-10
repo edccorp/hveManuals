@@ -151,18 +151,18 @@ assigned by the user during event set-up:
 
 **Table 30-1 — Brake Material Properties**
 
-| Parameter | Unit Name | Description |
+| Parameter | Units (US / SI) | Description |
 | --- | --- | --- |
-| Rotor/Drum Material Density | UtVehDensity | Density of rotor or drum material (used for calculating the mass of the rotor or drum) |
-| Rotor/Drum Specific Heat | UtVehSpecificHeat | Change in enthalpy of the brake rotor or drum material with respect to temperature at constant pressure |
-| Rotor/Drum Conduction Coefficient | UtVehConduction | Energy transfer coefficient through the brake rotor or drum material |
-| Rotor/Drum Convection Coefficient | UtVehConvection | Static convective energy transfer coefficient between the brake rotor or drum surface and adjacent air |
-| Rotor/Drum Velocity-Dependent Convection Coefficient | UtVehConvectionVel | Velocity-dependent energy transfer coefficient between the brake rotor or drum surface and adjacent air (i.e., this coefficient is multiplied by vehicle linear velocity to determine the convection rate) |
-| Lining Material Density | UtVehDensity | Density of lining material (used for calculating the mass of the pads or shoe linings) |
-| Lining Specific Heat | UtVehSpecificHeat | Change in enthalpy of the brake lining material with respect to temperature at constant pressure |
-| Lining Conduction Coefficient | UtVehConduction | Energy transfer coefficient through the brake lining material |
-| Lining Convection Coefficient | UtVehConvection | Static convective energy transfer coefficient between the brake lining surface and adjacent air |
-| Lining Velocity-Dependent Convection Coefficient | UtVehConvectionVel | Velocity-dependent energy transfer coefficient between the brake lining surface and adjacent air (i.e., this coefficient is multiplied by vehicle linear velocity to determine the convection rate) |
+| Rotor/Drum Material Density | lb/ft³ / kg/m³ | Density of rotor or drum material (used for calculating the mass of the rotor or drum) |
+| Rotor/Drum Specific Heat | BTU/lb-deg F / kJ/kg | Change in enthalpy of the brake rotor or drum material with respect to temperature at constant pressure |
+| Rotor/Drum Conduction Coefficient | BTU/ft-hr-deg F / Joule/cm-sec-DegR | Energy transfer coefficient through the brake rotor or drum material |
+| Rotor/Drum Convection Coefficient | BTU/ft²-hr-deg F / Joule/cm²-sec-DegR | Static convective energy transfer coefficient between the brake rotor or drum surface and adjacent air |
+| Rotor/Drum Velocity-Dependent Convection Coefficient | BTU/ft²-hr-deg F-mph / Joule-sec/cm³-sec-DegR | Velocity-dependent energy transfer coefficient between the brake rotor or drum surface and adjacent air (i.e., this coefficient is multiplied by vehicle linear velocity to determine the convection rate) |
+| Lining Material Density | lb/ft³ / kg/m³ | Density of lining material (used for calculating the mass of the pads or shoe linings) |
+| Lining Specific Heat | BTU/lb-deg F / kJ/kg | Change in enthalpy of the brake lining material with respect to temperature at constant pressure |
+| Lining Conduction Coefficient | BTU/ft-hr-deg F / Joule/cm-sec-DegR | Energy transfer coefficient through the brake lining material |
+| Lining Convection Coefficient | BTU/ft²-hr-deg F / Joule/cm²-sec-DegR | Static convective energy transfer coefficient between the brake lining surface and adjacent air |
+| Lining Velocity-Dependent Convection Coefficient | BTU/ft²-hr-deg F-mph / Joule-sec/cm³-sec-DegR | Velocity-dependent energy transfer coefficient between the brake lining surface and adjacent air (i.e., this coefficient is multiplied by vehicle linear velocity to determine the convection rate) |
 
 > **NOTE:** Drum Diameter, Rotor Inner and Outer Diameter, Lining Width and
 > Included Angle are defined in [Chapter 29, HVE Brake

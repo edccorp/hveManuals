@@ -147,14 +147,14 @@ Pressing Delete removes the current view from the list of views. The previous vi
 
 **Table 5-1: Parameters assigned using the Set Camera dialog**
 
-| Parameter | Unit Name | Description |
+| Parameter | Units (US / SI) | Description |
 |---|---|---|
-| View From Object Coordinates | Ut\*DispLength | Components of the X,Y,Z (or x,y,z) distances from the selected object origin to the camera |
-| Look At Object Coordinates | Ut\*DispLength | Components of the X,Y,Z (or x,y,z) distances from the selected object origin to the center of the viewer |
-| Near, Far Depth of Field (Clipping Planes) | Ut\*DispLength | Distance from the camera to the closest (Near) and farthest (Far) objects which can be viewed |
-| Focal Length | Ut\*Camera | Focal length of the virtual camera lens |
+| View From Object Coordinates | in / cm or ft / m \* | Components of the X,Y,Z (or x,y,z) distances from the selected object origin to the camera |
+| Look At Object Coordinates | in / cm or ft / m \* | Components of the X,Y,Z (or x,y,z) distances from the selected object origin to the center of the viewer |
+| Near, Far Depth of Field (Clipping Planes) | in / cm or ft / m \* | Distance from the camera to the closest (Near) and farthest (Far) objects which can be viewed |
+| Focal Length | mm | Focal length of the virtual camera lens |
 
-\* UtHum for humans, UtVeh for vehicles and UtEnv for environments.
+\* in / cm when the camera is attached to a human or vehicle; ft / m when attached to the environment.
 
 **See Also:** Viewers, Using HVE
 

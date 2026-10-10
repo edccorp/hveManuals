@@ -160,14 +160,14 @@ Any of the eight position instances (i.e., Initial, Begin Braking, Impact, etc.)
 
 **Table 4-1: Parameters assigned using the Position/Velocity dialog**
 
-| Parameter | Unit Name | Description |
+| Parameter | Units (US / SI) | Description |
 |---|---|---|
-| X,Y,Z or x,y,z | Ut\*DispLength | Linear distance from earth-fixed origin (vehicles and human pedestrians) or vehicle-fixed origin (human occupants) |
-| Roll, Pitch, Yaw | Ut\*DispAngle | Angular displacement about the vehicle-fixed z, y and x axes (in that order) or human segment-fixed z, y and x axes (again, the order is important). For trailers and human segments other than the pelvis, these angles are articulation angles relative to the upstream vehicle or human segment. |
-| Fwd, Lat, Vert velocity | Ut\*VelLinear | Linear velocity components in the vehicle-fixed or human segment-fixed forward, lateral and vertical directions |
-| Roll, Pitch, Yaw velocity | Ut\*VelAngular | Angular velocities about the vehicle-fixed z, y and x axes or human segment-fixed z, y and x axes. For trailers and human segments other than the pelvis, these are relative to the upstream segment. |
+| X,Y,Z or x,y,z | in / cm or ft / m \* | Linear distance from earth-fixed origin (vehicles and human pedestrians) or vehicle-fixed origin (human occupants) |
+| Roll, Pitch, Yaw | deg | Angular displacement about the vehicle-fixed z, y and x axes (in that order) or human segment-fixed z, y and x axes (again, the order is important). For trailers and human segments other than the pelvis, these angles are articulation angles relative to the upstream vehicle or human segment. |
+| Fwd, Lat, Vert velocity | in/sec, mph / km/h \* | Linear velocity components in the vehicle-fixed or human segment-fixed forward, lateral and vertical directions |
+| Roll, Pitch, Yaw velocity | deg/sec | Angular velocities about the vehicle-fixed z, y and x axes or human segment-fixed z, y and x axes. For trailers and human segments other than the pelvis, these are relative to the upstream segment. |
 
-\* UtVeh for human occupants, UtEnv for human pedestrians and vehicles.
+\* Vehicle units (in / cm; mph / km/h) for human occupants; environment units (ft / m; mph / km/h) for human pedestrians and vehicles.
 
 **See Also:** Event Set-up, Targets, User's Manual for selected reconstruction or simulation model
 
@@ -264,10 +264,10 @@ To enter a Throttle table for the current vehicle using the Percent Available Fr
 
 **Table 4-2: Throttle Table Parameters**
 
-| Parameter | Unit Name | Description |
+| Parameter | Units (US / SI) | Description |
 |---|---|---|
-| Time | UtVehTime | Time associated with the current level of throttle input |
-| Throttle Input | UtVehPercent or UtVehForce | Current value for throttle input |
+| Time | sec | Time associated with the current level of throttle input |
+| Throttle Input | %/100 or lb / N | Current value for throttle input |
 
 ### Brake Table
 
@@ -334,10 +334,10 @@ To enter a Brake table for the current vehicle using the Percent of Available Fr
 
 **Table 4-3: Brake Table Parameters**
 
-| Parameter | Unit Name | Description |
+| Parameter | Units (US / SI) | Description |
 |---|---|---|
-| Time | UtVehTime | Time associated with the current level of brake input |
-| Brake Input | UtVehForce or UtVehPercent | Current value for brake input |
+| Time | sec | Time associated with the current level of brake input |
+| Brake Input | lb / N or %/100 | Current value for brake input |
 
 ### Steering Table
 
@@ -386,10 +386,10 @@ To enter a Steer Table for the current vehicle using the At Axle option, use the
 
 **Table 4-4: Steer Table Parameters**
 
-| Parameter | Unit Name | Description |
+| Parameter | Units (US / SI) | Description |
 |---|---|---|
-| Time | UtVehTime | Time associated with the current level of steer input |
-| Steer Input | UtVehDispAngle | Current value for steer input |
+| Time | sec | Time associated with the current level of steer input |
+| Steer Input | deg | Current value for steer input |
 
 ### Gear Selection
 
@@ -422,10 +422,10 @@ To enter a Gear Table for the current vehicle, use the following steps:
 
 **Table 4-5: Gear Selection Table Parameters**
 
-| Parameter | Unit Name | Description |
+| Parameter | Units (US / SI) | Description |
 |---|---|---|
-| Time | UtVehTime | Time associated with the current gear shift |
-| Gear Selection | UtNone | Current gear number for transmission or differential |
+| Time | sec | Time associated with the current gear shift |
+| Gear Selection | — | Current gear number for transmission or differential |
 
 ### HVE Path Follower
 
@@ -481,28 +481,28 @@ To use the HVE Path Follower, first you must assign at least two path positions 
 
 **Table 4-6: HVE Path Follower Parameters**
 
-| Parameter | Unit Name | Description |
+| Parameter | Units (US / SI) | Description |
 |---|---|---|
-| Start Time | UtVehTime | Simulation time for start of path follower |
-| Sample Time | UtVehTime | Time increment for path sampling |
-| Driver Preview Distance | UtEnvDispLength | Distance ahead of vehicle where driver is looking |
-| Max Path Error | UtEnvDispLength | Allowable distance from desired path to point projected ahead of vehicle at the Driver Preview Distance |
-| Max Lat Accel | UtVehAccelLinear | Driver's limit for comfortable lateral acceleration |
-| Path Follower Method | UtNone | Method used to accomplish path following (Variable Steer or Torque) |
-| Initial Steer Angle | UtSteDispAngle | Steering wheel angle at Driver Start Time |
-| Max Steer Velocity | UtSteVel | Limit on steering wheel angular velocity |
-| Steer Correction Factor | UtSteVelRate | Amount of steering correction per unit of path error |
-| Steer Correction Damping | UtSteVelDamp | Damping, used to limit steering activity |
-| Initial Steering Torque | UtSteTorque | Steering wheel torque at Driver Start Time |
-| Max Steering Torque | UtSteTorque | Limit on steering wheel torque |
-| Torque Correction Factor | UtSteTorqueRate | Amount of steering torque correction per unit of path error |
-| Torque Damping | UtSteTorqueDamp | Damping, used to limit steering activity |
-| Max Speed Error | UtVehVelLinear | Allowable difference between current speed and desired speed |
-| Max Throttle Pedal | UtVehPercent | Maximum allowable pedal position |
-| Max Brake Pedal | UtVehForce | Maximum allowable pedal force |
-| Driver Lag Time | UtHumTime | Neuro-muscular filter lag time |
-| Driver Lead Time | UtHumTime | Neuro-muscular filter lead time |
-| Driver Time Delay | UtHumTime | Neuro-muscular filter time delay |
+| Start Time | sec | Simulation time for start of path follower |
+| Sample Time | sec | Time increment for path sampling |
+| Driver Preview Distance | ft / m | Distance ahead of vehicle where driver is looking |
+| Max Path Error | ft / m | Allowable distance from desired path to point projected ahead of vehicle at the Driver Preview Distance |
+| Max Lat Accel | g | Driver's limit for comfortable lateral acceleration |
+| Path Follower Method | — | Method used to accomplish path following (Variable Steer or Torque) |
+| Initial Steer Angle | deg | Steering wheel angle at Driver Start Time |
+| Max Steer Velocity | deg/sec | Limit on steering wheel angular velocity |
+| Steer Correction Factor | deg/ft / deg/m | Amount of steering correction per unit of path error |
+| Steer Correction Damping | deg-sec/ft / deg-sec/m | Damping, used to limit steering activity |
+| Initial Steering Torque | in-lb / N-m | Steering wheel torque at Driver Start Time |
+| Max Steering Torque | in-lb / N-m | Limit on steering wheel torque |
+| Torque Correction Factor | in-lb/ft / N-m/m | Amount of steering torque correction per unit of path error |
+| Torque Damping | in-lb-sec/ft / N-m-sec/m | Damping, used to limit steering activity |
+| Max Speed Error | mph / km/h | Allowable difference between current speed and desired speed |
+| Max Throttle Pedal | %/100 | Maximum allowable pedal position |
+| Max Brake Pedal | lb / N | Maximum allowable pedal force |
+| Driver Lag Time | sec | Neuro-muscular filter lag time |
+| Driver Lead Time | sec | Neuro-muscular filter lead time |
+| Driver Time Delay | sec | Neuro-muscular filter time delay |
 
 ### Wheel Data
 
@@ -553,11 +553,11 @@ To enter Wheel Data for the current vehicle, use the following steps:
 
 **Table 4-7: Wheel Data Dialog Parameters**
 
-| Parameter | Unit Name | Description |
+| Parameter | Units (US / SI) | Description |
 |---|---|---|
-| Total Wheel Lock-up | UtBraPercent | Average wheel lock-up for all wheels, used to determine the pre-impact deceleration rate |
-| Wheel Lock-up | UtBraPercent | Constant percent of available friction at each wheel used to decelerate vehicle between impact and rest |
-| Steer Angle | UtVehDispAngle | Constant steer angle at each wheel |
+| Total Wheel Lock-up | %/100 | Average wheel lock-up for all wheels, used to determine the pre-impact deceleration rate |
+| Wheel Lock-up | %/100 | Constant percent of available friction at each wheel used to decelerate vehicle between impact and rest |
+| Steer Angle | deg | Constant steer angle at each wheel |
 
 **See Also:** Wheels Menu Option, Vehicle Model, Event Model
 

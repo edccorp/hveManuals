@@ -88,6 +88,8 @@ A typical (legacy) video system layout included the computer, video hardware,
 video interface software, simulation software, animation controller, video
 recorder, VHS deck and television monitor.
 
+![Figure 26-1](../images/p679-fig26-1.png)
+
 *Figure 26-1 — Typical System Layout. The control signal from the serial port
 is used for single-frame recorders and is not required for systems using a
 video compressor.*
@@ -353,9 +355,6 @@ The following were the available analog videotape formats:
 - **Betacam SP** — Broadcast quality format using YUV, YIQ or composite
   signal
 - **MII** — Broadcast quality format using YUV, YIQ or composite signal
-
-*Figure 26-2 — Video Panel (Analog Video Input Source), used on legacy
-systems when the video communication was set up.*
 
 ### Digital Formats
 

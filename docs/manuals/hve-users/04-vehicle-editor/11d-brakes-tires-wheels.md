@@ -97,17 +97,17 @@ The Brake properties at each wheel are described below.
 
 **Table 11-19: Wheel Brake Assembly Parameters**
 
-| Parameter | Unit Name | Description |
+| Parameter | Units (US / SI) | Description |
 | --- | --- | --- |
-| Time Lag | UtBraTime | Time required for brake system pressure to reach the wheel |
-| Time Rise | UtBraTime | Time required for the brake pressure at the wheel brake actuator to reach approximately 90 percent of full system pressure |
-| Push-out Pressure | UtBraPress | Pressure required to begin braking |
-| Brake Torque Ratio | UtBraRatio | Brake torque per unit of system pressure at the wheel |
+| Time Lag | sec | Time required for brake system pressure to reach the wheel |
+| Time Rise | sec | Time required for the brake pressure at the wheel brake actuator to reach approximately 90 percent of full system pressure |
+| Push-out Pressure | psi / kPa | Pressure required to begin braking |
+| Brake Torque Ratio | — | Brake torque per unit of system pressure at the wheel |
 | Proportioning | boolean (TRUE or FALSE) | Flag; if TRUE the wheel pressure is reduced by a proportioning valve |
-| Pstart | UtBraPress | Brake system pressure at which proportioning begins for the selected wheel location |
-| Proportioning Ratio | UtNone | Ratio of pressure at the wheel to pressure at the master cylinder |
+| Pstart | psi / kPa | Brake system pressure at which proportioning begins for the selected wheel location |
+| Proportioning Ratio | — | Ratio of pressure at the wheel to pressure at the master cylinder |
 | Antilock | boolean (TRUE or FALSE) | Flag; TRUE if the wheel has an antilock device |
-| Anti-lock Efficiency | UtBraPercent | Efficiency of the antilock system at the selected wheel |
+| Anti-lock Efficiency | %/100 | Efficiency of the antilock system at the selected wheel |
 
 ### HVE Brake Designer
 
@@ -268,25 +268,25 @@ The Tire Physical Data parameters are described below.
 
 **Table 11-20: Tire Physical Data Parameters**
 
-| Parameter | Unit Name | Description |
+| Parameter | Units (US / SI) | Description |
 | --- | --- | --- |
-| Unloaded Radius | UtTirDispLength | Tire radius in unloaded condition |
-| Maximum Width | UtTirDispLength | Maximum section width (computed from size designation) *(updated: Version 7)* |
-| Tread Width | UtTirDispLength | Width of the tread contact patch *(updated: Version 7)* |
-| Tread Depth | UtTirDispLength | Depth of the tire tread *(updated: Version 7)* |
-| Nominal Pressure | UtTirPress | Nominal inflation pressure *(updated: Version 7)* |
-| Initial Deflection Rate | UtTirRateLinear | Deflection rate from zero deflection to secondary deflection |
-| Secondary Deflection Rate | UtTirRateLinear | Deflection rate after preliminary deflection |
-| Deflection At Secondary Rate | UtTirDispLength | Deflection at start of secondary deflection rate |
-| Maximum Deflection | UtTirDispLength | Maximum allowable tire deflection |
-| Pneumatic Trail | UtTirDispLength | Distance from center of the contact patch to the center of pressure |
-| Aligning Torque Stiffness | UtTirAlignTorque | Steering torque produced by tire slip angle |
-| Weight | UtTirForce | Total weight of wheel (tire + rim) |
-| Spin Inertia | UtTirInertia | Rotational inertia about spin axis |
-| Steering Inertia | UtTirInertia | Rotational inertia about steering axis |
-| Rolling Constant | UtNone | Ratio of rolling resistance force to total vertical force on tire |
-| Rolling Linear Coef | UtTireVelDependence | Velocity-dependent tire rolling resistance force coefficient |
-| Min Fz for Skidmark | UtTirForce | Minimum vertical tire force required for a tire to leave a skidmark |
+| Unloaded Radius | in / cm | Tire radius in unloaded condition |
+| Maximum Width | in / cm | Maximum section width (computed from size designation) *(updated: Version 7)* |
+| Tread Width | in / cm | Width of the tread contact patch *(updated: Version 7)* |
+| Tread Depth | in / cm | Depth of the tire tread *(updated: Version 7)* |
+| Nominal Pressure | psi / bar | Nominal inflation pressure *(updated: Version 7)* |
+| Initial Deflection Rate | lb/in / N/cm | Deflection rate from zero deflection to secondary deflection |
+| Secondary Deflection Rate | lb/in / N/cm | Deflection rate after preliminary deflection |
+| Deflection At Secondary Rate | in / cm | Deflection at start of secondary deflection rate |
+| Maximum Deflection | in / cm | Maximum allowable tire deflection |
+| Pneumatic Trail | in / cm | Distance from center of the contact patch to the center of pressure |
+| Aligning Torque Stiffness | in-lb/deg / N-m/deg | Steering torque produced by tire slip angle |
+| Weight | lb / N | Total weight of wheel (tire + rim) |
+| Spin Inertia | lb-sec²-in / kg-m² | Rotational inertia about spin axis |
+| Steering Inertia | lb-sec²-in / kg-m² | Rotational inertia about steering axis |
+| Rolling Constant | — | Ratio of rolling resistance force to total vertical force on tire |
+| Rolling Linear Coef | sec/in / sec/m | Velocity-dependent tire rolling resistance force coefficient |
+| Min Fz for Skidmark | lb / N | Minimum vertical tire force required for a tire to leave a skidmark |
 
 ### Tire Friction Data
 
@@ -357,16 +357,16 @@ The Tire Friction Data parameters are described below.
 
 **Table 11-21: Tire Friction Parameters**
 
-| Parameter | Unit Name | Description |
+| Parameter | Units (US / SI) | Description |
 | --- | --- | --- |
-| Load | UtTirForce | Vertical tire load, Fz, during test |
-| Speed | UtTirVelLinear | Speed during test |
-| Peak Longitudinal Friction | UtNone | Maximum value of Fx/Fz achieved at given load and speed |
-| Peak Lateral Friction | UtNone | Maximum value of Fy/Fz achieved at given load and speed |
-| Slide Friction | UtNone | Value of Fx/Fz achieved at 100% slip |
-| Slip at Peak Long. Friction | UtTirPercent | Longitudinal slip at which Peak Longitudinal Friction was measured |
-| Longitudinal Stiffness | UtTirLongStiff | Slope of Friction vs Slip graph at zero slip |
-| In-use Factor | UtTirPercent | Multiplier for Peak and Slide Friction and Longitudinal Stiffness |
+| Load | lb / N | Vertical tire load, Fz, during test |
+| Speed | in/sec / m/sec | Speed during test |
+| Peak Longitudinal Friction | — | Maximum value of Fx/Fz achieved at given load and speed |
+| Peak Lateral Friction | — | Maximum value of Fy/Fz achieved at given load and speed |
+| Slide Friction | — | Value of Fx/Fz achieved at 100% slip |
+| Slip at Peak Long. Friction | %/100 | Longitudinal slip at which Peak Longitudinal Friction was measured |
+| Longitudinal Stiffness | lb/slip / N/slip | Slope of Friction vs Slip graph at zero slip |
+| In-use Factor | %/100 | Multiplier for Peak and Slide Friction and Longitudinal Stiffness |
 
 ### Tire Fy vs Slip Angle Table
 
@@ -441,14 +441,14 @@ The Tire Fy vs Slip Angle Data parameters are described below.
 
 **Table 11-22: Tire Fy vs Slip Angle Parameters**
 
-| Parameter | Unit Name | Description |
+| Parameter | Units (US / SI) | Description |
 | --- | --- | --- |
-| Load | UtTirForce | Vertical tire load, Fz, during test |
-| Speed | UtTirVelLinear | Speed during test |
-| Slip Angle | UtTirDispAngle | Angle (relative to the tire axis system; see Appendix III) from the tire's forward axis to its local velocity vector |
-| Fy | UtTirForce | Lateral tire force (relative to the tire axis system) produced at the current slip angle for the given load and speed |
-| Cornering Stiffness | UtTirCalfa | Slope of Fy vs Slip Angle graph at zero slip angle |
-| In-use Factor | UtTirPercent | Multiplier for Fy and Cornering Stiffness |
+| Load | lb / N | Vertical tire load, Fz, during test |
+| Speed | in/sec / m/sec | Speed during test |
+| Slip Angle | deg | Angle (relative to the tire axis system; see Appendix III) from the tire's forward axis to its local velocity vector |
+| Fy | lb / N | Lateral tire force (relative to the tire axis system) produced at the current slip angle for the given load and speed |
+| Cornering Stiffness | lb/deg / N/deg | Slope of Fy vs Slip Angle graph at zero slip angle |
+| In-use Factor | %/100 | Multiplier for Fy and Cornering Stiffness |
 
 ### Tire Fy vs Inclination Angle Table
 
@@ -529,14 +529,14 @@ The Tire Fy vs Inclination Angle Data parameters are described below.
 
 **Table 11-23: Tire Fy vs Inclination Angle Parameters**
 
-| Parameter | Unit Name | Description |
+| Parameter | Units (US / SI) | Description |
 | --- | --- | --- |
-| Load | UtTirForce | Vertical tire load, Fz, during test |
-| Speed | UtTirVelLinear | Speed during test |
-| Inclination Angle | UtTirDispAngle | Angle (relative to the tire axis system; see Appendix III) from the vertical axis of the tire plane to a vector normal to the road plane |
-| Fy | UtTirForce | Lateral tire force (relative to the tire axis system) produced at the current inclination angle for the given load and speed |
-| Camber Stiffness | UtTirCgamma | Slope of Fy vs Inclination Angle graph at zero inclination angle |
-| In-use Factor | UtTirPercent | Multiplier for Fy and Camber Stiffness |
+| Load | lb / N | Vertical tire load, Fz, during test |
+| Speed | in/sec / m/sec | Speed during test |
+| Inclination Angle | deg | Angle (relative to the tire axis system; see Appendix III) from the vertical axis of the tire plane to a vector normal to the road plane |
+| Fy | lb / N | Lateral tire force (relative to the tire axis system) produced at the current inclination angle for the given load and speed |
+| Camber Stiffness | lb/deg / N/deg | Slope of Fy vs Inclination Angle graph at zero inclination angle |
+| In-use Factor | %/100 | Multiplier for Fy and Camber Stiffness |
 
 ### Tire Slip vs Rolloff Tables
 
@@ -589,12 +589,12 @@ The Tire Slip vs Rolloff Data parameters are described below.
 
 **Table 11-24: Tire Slip vs Rolloff Parameters**
 
-| Parameter | Unit Name | Description |
+| Parameter | Units (US / SI) | Description |
 | --- | --- | --- |
-| Longitudinal Slip | UtTirPercent | Longitudinal tire slip at which the lateral roll-off values were obtained |
-| Slip Angle | UtTirDispAngle | Lateral tire slip (slip angle) at which the longitudinal roll-off values were obtained |
-| Longitudinal Rolloff | UtTirPercent | Reduction in lateral tire force (relative to the tire axis system; see Appendix III) at the specified longitudinal slip |
-| Lateral Rolloff | UtTirPercent | Reduction in longitudinal tire force (relative to the tire axis system) at the specified lateral slip (slip angle) |
+| Longitudinal Slip | %/100 | Longitudinal tire slip at which the lateral roll-off values were obtained |
+| Slip Angle | deg | Lateral tire slip (slip angle) at which the longitudinal roll-off values were obtained |
+| Longitudinal Rolloff | %/100 | Reduction in lateral tire force (relative to the tire axis system; see Appendix III) at the specified longitudinal slip |
+| Lateral Rolloff | %/100 | Reduction in longitudinal tire force (relative to the tire axis system) at the specified lateral slip (slip angle) |
 
 ## Wheel Location
 
@@ -645,9 +645,9 @@ The Wheel Location parameters are described below (see Figure 11-47).
 
 **Table 11-25: Wheel x,y,z Location Parameters**
 
-| Parameter | Unit Name | Description |
+| Parameter | Units (US / SI) | Description |
 | --- | --- | --- |
-| x, y, z coordinates | UtVehDispLength | Vehicle-fixed x,y,z coordinates of the selected wheel relative to the sprung mass CG |
+| x, y, z coordinates | in / cm | Vehicle-fixed x,y,z coordinates of the selected wheel relative to the sprung mass CG |
 
 ## Wheel Image
 

@@ -136,15 +136,15 @@ The Springs and Shocks properties are described below.
 
 **Table 11-12: Suspension Spring and Shock Parameters**
 
-| Parameter | Unit Name | Description |
+| Parameter | Units (US / SI) | Description |
 | --- | --- | --- |
-| Ride Rate | UtSusForce | Linear force vs deflection characteristic effective at the wheel |
-| Auxiliary Roll Stiffness | UtSusRollStiff | Moment per unit of body roll produced by an anti-sway bar |
-| Roll Center Height | UtSusDispLength | Height of the roll axis measured at the suspension |
-| Lateral Spring Spacing | UtSusDispLength | Lateral distance between left and right springs for solid axle suspensions |
-| Damping at Wheel | UtSusDamp | Damping rate effective at the wheel |
-| Coulomb Friction | UtSusForce | Force required to initiate suspension travel |
-| Friction Null Band | UtSusVelLinear | Suspension velocity required for full coulomb friction |
+| Ride Rate | lb / N | Linear force vs deflection characteristic effective at the wheel |
+| Auxiliary Roll Stiffness | in-lb/deg / N-m/deg | Moment per unit of body roll produced by an anti-sway bar |
+| Roll Center Height | in / cm | Height of the roll axis measured at the suspension |
+| Lateral Spring Spacing | in / cm | Lateral distance between left and right springs for solid axle suspensions |
+| Damping at Wheel | lb-sec/in / N-sec/m | Damping rate effective at the wheel |
+| Coulomb Friction | lb / N | Force required to initiate suspension travel |
+| Friction Null Band | in/sec / cm/sec | Suspension velocity required for full coulomb friction |
 
 ### Axle Inertia
 
@@ -200,10 +200,10 @@ The Suspension Inertial properties are described below.
 
 **Table 11-13: Suspension Inertial Parameters**
 
-| Parameter | Unit Name | Description |
+| Parameter | Units (US / SI) | Description |
 | --- | --- | --- |
-| Weight | UtSusForce | Weight of the suspension, excluding wheels and brakes |
-| Roll/Yaw Inertia | UtSusInertia | Roll and yaw rotational inertias of axle, excluding wheels and brakes |
+| Weight | lb / N | Weight of the suspension, excluding wheels and brakes |
+| Roll/Yaw Inertia | lb-sec²-in / kg-m² | Roll and yaw rotational inertias of axle, excluding wheels and brakes |
 
 ### Jounce/Rebound
 
@@ -255,13 +255,13 @@ The Jounce/Rebound properties are described below.
 
 **Table 11-14: Suspension Jounce/Rebound Parameters**
 
-| Parameter | Unit Name | Description |
+| Parameter | Units (US / SI) | Description |
 | --- | --- | --- |
 | Stop Type | n/a | Location of stop (Jounce or Rebound) |
-| Maximum Deflection | UtSusDispLength | Suspension travel from equilibrium to jounce or rebound stop |
-| Linear Stop Rate | UtSusRateLinear | Spring linear constant (force per unit of wheel travel) of the selected suspension stop *(the legacy table said "cubic" here — a typo)* |
-| Cubic Stop Rate | UtSusRateCubic | Spring cubic constant (force per unit of wheel travel) of the selected suspension stop |
-| Energy Ratio | UtSusPercent | Ratio of conserved to total energy (restitution) of the selected suspension stop |
+| Maximum Deflection | in / cm | Suspension travel from equilibrium to jounce or rebound stop |
+| Linear Stop Rate | lb/in / N/cm | Spring linear constant (force per unit of wheel travel) of the selected suspension stop *(the legacy table said "cubic" here — a typo)* |
+| Cubic Stop Rate | lb/in³ / N/cm³ | Spring cubic constant (force per unit of wheel travel) of the selected suspension stop |
+| Energy Ratio | %/100 | Ratio of conserved to total energy (restitution) of the selected suspension stop |
 
 ### Spindle Axis
 
@@ -387,17 +387,17 @@ The Steer Axis Steering Stop parameters are described below.
 
 **Table 11-15: Spindle Axis Parameters**
 
-| Parameter | Unit Name | Description |
+| Parameter | Units (US / SI) | Description |
 | --- | --- | --- |
-| Caster | UtSusDispAngle | Fore-aft angle of spindle axis |
-| Kingpin Inclination | UtSusDispAngle | Lateral angle of spindle axis |
-| Steering Offset (Scrub Radius) | UtSusDispLength | Lateral distance from the steering axis to the center of the tire contact patch, measured at the road plane |
-| Stub Axle Length | UtSusDispLength | Distance from the steering axis to the center of the wheel |
-| Toe-in | UtSusDispLength | Difference in the lateral distance between the tire centerline, measured at the front and rear of the tire |
+| Caster | deg | Fore-aft angle of spindle axis |
+| Kingpin Inclination | deg | Lateral angle of spindle axis |
+| Steering Offset (Scrub Radius) | in / cm | Lateral distance from the steering axis to the center of the tire contact patch, measured at the road plane |
+| Stub Axle Length | in / cm | Distance from the steering axis to the center of the wheel |
+| Toe-in | in / cm | Difference in the lateral distance between the tire centerline, measured at the front and rear of the tire |
 | Steering Stop | n/a | Stop selector for right or left steering stop |
-| Stop Angle | UtSusDispAngle | Steering angle at which the stop is reached |
-| Stop Linear Stiffness | UtVehSteeringStiffness | Mechanical stiffness of the steering stop |
-| Stop Energy Ratio | UtNone | Ratio of conserved to total energy in the steering stop |
+| Stop Angle | deg | Steering angle at which the stop is reached |
+| Stop Linear Stiffness | ft-lb/deg / N-m/deg | Mechanical stiffness of the steering stop |
+| Stop Energy Ratio | — | Ratio of conserved to total energy in the steering stop |
 
 ### Camber & Half-track Table
 
@@ -450,11 +450,11 @@ The Camber and Half-track Table properties are described below.
 
 **Table 11-16: Camber and Half-track Table Parameters**
 
-| Parameter | Unit Name | Description |
+| Parameter | Units (US / SI) | Description |
 | --- | --- | --- |
-| Jounce/Rebound | UtVehDispLength | Suspension travel from equilibrium to Jounce (−) or Rebound (+) stop |
-| Camber | UtVehDispAngle | Camber angle of wheel at specified suspension deflection |
-| Half-track Change | UtVehDispLength | Change in lateral wheel position due to suspension jounce or rebound |
+| Jounce/Rebound | in / cm | Suspension travel from equilibrium to Jounce (−) or Rebound (+) stop |
+| Camber | deg | Camber angle of wheel at specified suspension deflection |
+| Half-track Change | in / cm | Change in lateral wheel position due to suspension jounce or rebound |
 
 ### Anti-Pitch
 
@@ -492,10 +492,10 @@ The Anti-pitch Table properties are described below.
 
 **Table 11-17: Anti-pitch Table Parameters**
 
-| Parameter | Unit Name | Description |
+| Parameter | Units (US / SI) | Description |
 | --- | --- | --- |
-| Jounce/Rebound | UtSusDispLength | Suspension travel from equilibrium to Jounce (−) or Rebound (+) stop |
-| Anti-pitch | UtSusAntiPitch | Anti-pitch force at given suspension jounce or rebound |
+| Jounce/Rebound | in / cm | Suspension travel from equilibrium to Jounce (−) or Rebound (+) stop |
+| Anti-pitch | lb/ft-lb / N/N-m | Anti-pitch force at given suspension jounce or rebound |
 
 ### Roll Steer
 
@@ -547,14 +547,14 @@ The Roll Steer parameters are described below.
 
 **Table 11-18: Roll Steer Parameters**
 
-| Parameter | Unit Name | Description |
+| Parameter | Units (US / SI) | Description |
 | --- | --- | --- |
-| Jounce/Rebound | UtSusDispLength | Suspension travel from equilibrium to Jounce (−) or Rebound (+) stop |
-| Constant | UtSusDispAngle | Initial steer angle at zero roll |
-| Linear Coef | UtSusLinearRollSteer | Linear roll steer vs jounce/rebound |
-| Quadratic Coef | UtSusQuadRollSteer | Quadratic roll steer vs jounce/rebound |
-| Cubic Coef | UtSusCubicRollSteer | Cubic roll steer vs jounce/rebound |
-| Coefficient (Solid) | UtNone | Ratio of wheel steer to body roll |
+| Jounce/Rebound | in / cm | Suspension travel from equilibrium to Jounce (−) or Rebound (+) stop |
+| Constant | deg | Initial steer angle at zero roll |
+| Linear Coef | deg/in / deg/cm | Linear roll steer vs jounce/rebound |
+| Quadratic Coef | deg/in² / deg/cm² | Quadratic roll steer vs jounce/rebound |
+| Cubic Coef | deg/in³ / deg/cm³ | Cubic roll steer vs jounce/rebound |
+| Coefficient (Solid) | — | Ratio of wheel steer to body roll |
 
 ---
 *Source: HVE User's Manual (Version 5, Seventh Edition, Jan 2006), Chapter

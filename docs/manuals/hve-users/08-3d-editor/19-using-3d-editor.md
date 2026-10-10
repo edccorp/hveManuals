@@ -12,6 +12,8 @@ The 3-D Editor consists of the following basic components (see Figure 19-1):
 
 This chapter provides detailed descriptions for each of these components.
 
+![Figure 19-1](../images/p574-fig19-1.png)
+
 *Figure 19-1 — 3-D Editor, including four viewers, Object Attributes dialog and current object (in this case, Surface) dialog.*
 
 ## Viewers
@@ -34,6 +36,8 @@ The 3-D Editor dialog is the heart of the 3-D Editor. As shown in Figure 19-2, t
 - **Object Attributes Tool** — Allows the user to assign the Object Type, Overlay Name and Friction Factor attributes for the current object. The Object Name is assigned when the object is created (according to the tool used to create it; see Current Object Tool, below), and the Material Name is assigned according to the current object's material attributes.
 - **Group Tool** — Allows the user to combine and disassemble previously created objects, as well as to load and save previously created objects for future use in other 3-D geometry files.
 
+![Figure 19-2](../images/object-attributes-current.png)
+
 *Figure 19-2 — The 3-D Editor dialog includes the Current Object Tool, Object Attributes Tool and Group Tool.*
 
 ## Current Object Tool
@@ -49,6 +53,8 @@ An object, such as a surface or sphere, is always created by first selecting an 
 - **Light** — Used for adding light sources (such as street lights).
 - **Signal** — Used for creating traffic signal lights in the environment. *(updated: new tool, not present in the legacy manual.)*
 - **Edit** — Used for selecting objects for editing.
+
+![Figure 19-3](../images/p576-fig19-3.png)
 
 *Figure 19-3 — The Current Object Tool allows the user to create and edit objects.*
 
@@ -84,6 +90,8 @@ Every object created using the 3-D Editor has the following attributes (see also
 - **Material Pushbutton** — A button that allows the user to select or edit material attributes for the current object.
 
 The current attributes for the selected object are displayed and edited using the Object Attributes Tool (see Figure 19-5).
+
+![Figure 19-5](../images/object-attributes-current.png)
 
 *Figure 19-5 — The Object Attributes Tool allows the user to view and edit the attributes for the current object.*
 
@@ -252,6 +260,8 @@ HVE's 3-D Editor includes the following group tools (see Figure 19-8):
 - **Ungroup** — Decomposes the selected group into its individual objects or groups.
 - **Load (Open)** — Displays a file selection dialog allowing the user to add a previously created group to the current human, vehicle or environment.
 - **Save** — Displays a file selection dialog allowing the user to save the currently selected group for use in other cases.
+
+![Figure 19-8](../images/p587-fig19-8.png)
 
 *Figure 19-8 — The Group Tool allows the user to create and disassemble grouped objects, to save grouped objects and to insert grouped objects into other scenes.*
 

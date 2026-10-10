@@ -307,8 +307,8 @@ These are called User Units.
 For every unit name, HVE has a conversion factor between its program units
 and user units, as well as a human-readable label.
 
-For example, a vehicle's forward velocity component has the unit name
-`UtVehVelLinear` and its program units are in/sec. Although HVE includes
+For example, a vehicle's forward velocity component has program units of
+in/sec. Although HVE includes
 several sets of user units, two possible options are miles per hour (having
 the user unit name "mph" and factor 17.6000, which converts from mph to
 in/sec), and meters per second (having the user unit name "m/s" and factor

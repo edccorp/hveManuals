@@ -10,6 +10,8 @@ Principal Direction of Force (PDOF) in clock direction, the impacted surface
 extent of maximum penetration. If a more accurate direction than the clock
 direction is known, the PDOF may be entered in degrees after the CDC.
 
+![Figure V-1](../images/p887-figV-1.png)
+
 *Figure V-1 — Description of each column within the seven-character CDC
 code.*
 
@@ -25,6 +27,10 @@ referred to as the *clock direction*. 12-o'clock indicates a head-on impact,
 06-o'clock refers to a rear-end impact, 03- and 09-o'clock refer to
 perpendicular impacts to the right and left sides, respectively. Angles in
 between are noted accordingly.
+
+![Figure V-2](../images/p888-figV-2.png)
+
+![Figure V-3](../images/p888-figV-3.png)
 
 *Figure V-2 — Columns 1 and 2, Clock Direction of PDOF. Figure V-3 —
 Relationship between hour angles and PDOF (degrees).*
@@ -42,6 +48,8 @@ vehicle may also be damaged; however, due to the 2-dimensional restrictions
 imposed by analysis in 3 degrees of freedom, T and U are not valid CDC
 entries for HVE.
 
+![Figure V-4](../images/p889-figV-4.png)
+
 *Figure V-4 — Column 3, Deformation Location Code.*
 
 ## Column 4 — Specific Longitudinal or Lateral Location of Deformation
@@ -53,6 +61,8 @@ area of damage (front, right, back or left) entered in column 3. Letters
 shown on the front and rear may be applied to either the front or rear;
 letters shown on the sides may be used for either side.
 
+![Figure V-5](../images/p890-figV-5.png)
+
 *Figure V-5 — Column 4, Longitudinal or Lateral Location Code.*
 
 ## Column 5 — Specific Vertical Location of Deformation
@@ -61,6 +71,8 @@ This entry is also a suffix to column three and refers to vertical damage
 characteristics. An entry (A, H, E, G, M, L, or W) is necessary for a valid
 CDC. However, again due to the 2-dimensional analysis, column 5 is not used
 for any calculations.
+
+![Figure V-6](../images/p891-figV-6.png)
 
 *Figure V-6 — Column 5, Vertical Location Code.*
 
@@ -76,6 +88,8 @@ If Narrow impact is specified, the width of the damage profile is set to 16
 inches; otherwise, Wide impact is assumed, and the width of damage is set
 based on tabular data in conjunction with the Specific Longitudinal or
 Lateral Location of Deformation entered in column 4 of the CDC.
+
+![Figure V-7](../images/p892-figV-7.png)
 
 *Figure V-7 — Column 6, Type of Damage Distribution.*
 
@@ -95,6 +109,8 @@ no CDC.
 For damage extents between 0 and 9, the extents are divided into zones
 normally having equal width. The exception to this rule occurs in the areas
 which include the windshield and windows.
+
+![Figure V-8](../images/p893-figV-8.png)
 
 *Figure V-8 — Column 7, Maximum Extent of Penetration.*
 

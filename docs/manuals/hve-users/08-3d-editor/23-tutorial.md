@@ -60,9 +60,15 @@ Typically, you will want to arrange these components to suit your personal needs
 
 We're now ready to begin working on our single-surface environment.
 
+![Figure 23-3a](../images/p631-fig23-3a.png)
+
 *Figure 23-3a — 3-D Editor, including 4 viewers (X-Y, X-Z, Y-Z and Perspective).*
 
+![Figure 23-3b](../images/surface-editor-current.png)
+
 *Figure 23-3b — 3-D Editor, Current Object Editor.*
+
+![Figure 23-4](../images/p632-fig23-4.png)
 
 *Figure 23-4 — Line drawing showing the crowned road surface we wish to create using the 3-D Editor. Each lane drops 0.5 feet over its 12-foot width. Vertex coordinates: (0,0,0), (0,12,0.5), (200,12,0.5), (200,0,0) for one lane, and (0,-12,0.5), (200,-12,0.5) for the other.*
 
@@ -145,6 +151,8 @@ The Surface Tool is closed and the object is selected (as indicated by the red b
 
 Let's edit the surface by assigning friction characteristics and material attributes.
 
+![Figure 23-9](../images/object-attributes-current.png)
+
 *Figure 23-9 — The Object Attributes dialog is used for assigning surface friction properties.*
 
 ### Surface Friction
@@ -183,6 +191,8 @@ The surface friction is now reduced to 95 percent of the original tire's peak an
 |---|---|---|
 | Normal (Factor = 1.0) | 0.930 | 0.732 |
 | Modified (Factor = 0.95) | 0.884 | 0.695 |
+
+![Figure 23-10](../images/p639-fig23-10.png)
 
 *Figure 23-10 — Material Color Editor (left) and Texture Editor (right).*
 
@@ -465,6 +475,8 @@ Where is our surface? It's right in front of us — it's just upside down, so we
 
 1. Choose Edit mode by clicking the Edit Tool button on the toolbar. A red bounding box is displayed around the object, indicating it is selected.
 
+![Figure 23-21](../images/p653-fig23-21.png)
+
 *Figure 23-21 — Surface normal. The example shows a single surface object composed of a single face set containing five triangles, created by clicking points 1 through 5 in counter-clockwise order. The normal is perpendicular to the triangle composed of points 2, 3 and the computed center point.*
 
 ![Figure 23-22](../images/figure-23-22.jpg)
@@ -683,6 +695,8 @@ The bounding box disappears, indicating the object has been deselected. In fact,
 ![Figure 23-31](../images/figure-23-31.jpg)
 
 *Figure 23-31 — Selection of the individual objects making up the concrete median. Note a red bounding box surrounds each individual object (the view is zoomed in on the end of the median).*
+
+![Figure 23-32](../images/p665-fig23-32.png)
 
 *Figure 23-32 — 3-D Editor Group Tools (Group, Ungroup, Open and Save).*
 

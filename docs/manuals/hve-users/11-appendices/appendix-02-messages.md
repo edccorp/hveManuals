@@ -30,6 +30,10 @@ is displayed in the dialog.
 > **NOTE:** These ranges are assigned in the `language.rsc` file and are
 > user-editable.
 
+![Figure II-1](../images/p852-figII-1.png)
+
+![Figure II-2](../images/p852-figII-2.png)
+
 *Figure II-1 — Warning/Error range checking for all inputs. Figure II-2 —
 Warning Range dialog. Figure II-3 — Error Range dialog.*
 

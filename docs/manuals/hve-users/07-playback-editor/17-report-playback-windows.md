@@ -19,6 +19,8 @@ To use the Playback Editor, choose Playback Mode using the mode selector *(Mode 
 - **Playback Window** — The Playback Window displays one or more trajectory simulations and is used for visualizing sequences involving multiple events. The Playback Window is also used for recording output to the current video destination (movie file). It also includes video input (source) and output (destination) selection options.
 - **Playback Controller** — The Playback Controller displays a VCR-like panel of buttons allowing the user to start, stop, reset and play events forwards and backwards. *(updated: the Playback Controller is implemented as the playback controls on the main toolbar; see [Playback Controls (Toolbar)](../../01-user-interface/PlayBackControls.md).)*
 
+![Figure 17-1](../images/p552-fig17-1.png)
+
 *Figure 17-1 — Playback Editor, Report Windows and Playback Controller.*
 
 ### Playback Editor Dialog
@@ -50,6 +52,8 @@ Report Windows are used for displaying the results of each event. The results ar
 
   Numeric reports are displayed in a scrollable Common Reports window (see [Common Reports Dialog](../../11-reports-output/CommRepDlg.md)).
 
+![Figure 17-2](../images/p553-fig17-2.png)
+
 *Figure 17-2 — Report Window with Numeric Results.*
 
 ![Figure 17-3](../images/p554-268.png)
@@ -63,7 +67,11 @@ Report Windows are used for displaying the results of each event. The results ar
 - **Variable Output Table** — A table of simulation results as a function of time, reported at the current Playback time increment (see Figure 17-4 for an example, and [Variable Output Report](../../11-reports-output/VarOutRepDlg.md)). Refer to Chapter 16, Event Model Definition, for information about the available output parameters.
 - **Trajectory Simulation Viewers** — Allow the user to visualize the selected event (see Figure 17-5 for an example, and [Trajectory Simulation Report](../../11-reports-output/TrajRepDlg.md)). Trajectory simulation viewers use the same viewer controls (Pan, Zoom and Pick Mode) as other HVE viewers.
 
+![Figure 17-4](../images/p555-fig17-4.png)
+
 *Figure 17-4 — Report Window with a Variable Output Table.*
+
+![Figure 17-5](../images/p555-fig17-5.png)
 
 *Figure 17-5 — Report Window with the Trajectory Simulation results from a single event.*
 
@@ -103,6 +111,8 @@ The Playback Controller (see Figure 17-7) is used for controlling the motion in 
 - **Advance To End** — Advance to the end of the simulation.
 
 > **NOTE:** The only difference between Pause and Stop has to do with video recording devices: Pause leaves the recording engaged, while Stop disengages the recording mechanism.
+
+![Figure 17-7](../images/p557-fig17-7.png)
 
 *Figure 17-7 — Playback Controller, used for displaying trajectory simulations and playback windows.*
 
@@ -164,6 +174,8 @@ A Playback Window is added to the current case using the Playback Editor. To add
 The selected Trajectory Simulations will be displayed in the Playback Window.
 
 > **NOTE:** There is only one Playback Window.
+
+![Figure 17-9](../images/p560-fig17-9.png)
 
 *Figure 17-9 — Playback Information dialog.*
 

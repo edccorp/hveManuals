@@ -87,14 +87,14 @@ The Position/Velocity Event Set-up parameters are defined in Table 16-1.
 
 **Table 16-1: Position/Velocity Event Set-up Parameters**
 
-| Parameter | Unit Name | Description |
+| Parameter | Units (US / SI) | Description |
 |---|---|---|
-| X or x, Y or y, Z or z | Ut\*DispLength | Linear distance from earth-fixed origin (vehicles and human pedestrians) or vehicle-fixed origin (human occupants) |
-| Roll, Pitch, Yaw | Ut\*DispAngle | Angular displacement about the vehicle-fixed z, y and x axes (in that order) or human segment-fixed z, y and x axes (again, the order is important). For trailers and human segments other than the pelvis, these angles are articulation angles relative to the upstream vehicle or human segment. |
-| Fwd, Lat, Vert velocity | Ut\*VelLinear | Linear velocity components in the vehicle-fixed or human segment-fixed forward, lateral and vertical directions |
-| Roll, Pitch, Yaw velocity | Ut\*VelAngular | Angular velocities about the vehicle-fixed z, y and x axes or human segment-fixed z, y and x axes. For trailers and human segments other than the pelvis, these are articulation velocities relative to the upstream segment. |
+| X or x, Y or y, Z or z | in / cm or ft / m \* | Linear distance from earth-fixed origin (vehicles and human pedestrians) or vehicle-fixed origin (human occupants) |
+| Roll, Pitch, Yaw | deg | Angular displacement about the vehicle-fixed z, y and x axes (in that order) or human segment-fixed z, y and x axes (again, the order is important). For trailers and human segments other than the pelvis, these angles are articulation angles relative to the upstream vehicle or human segment. |
+| Fwd, Lat, Vert velocity | in/sec, mph / km/h \* | Linear velocity components in the vehicle-fixed or human segment-fixed forward, lateral and vertical directions |
+| Roll, Pitch, Yaw velocity | deg/sec | Angular velocities about the vehicle-fixed z, y and x axes or human segment-fixed z, y and x axes. For trailers and human segments other than the pelvis, these are articulation velocities relative to the upstream segment. |
 
-\* UtVeh for human occupants, UtEnv for human pedestrians and vehicles.
+\* Vehicle units (in / cm; mph / km/h) for human occupants; environment units (ft / m; mph / km/h) for human pedestrians and vehicles.
 
 Position and velocity may be assigned for the current human or vehicle. The
 following positions and velocities may be assigned:
@@ -247,10 +247,10 @@ The Throttle Table Event Set-up parameters are defined in Table 16-2.
 
 **Table 16-2: Throttle Table Event Set-up Parameters**
 
-| Parameter | Unit Name | Description |
+| Parameter | Units (US / SI) | Description |
 |---|---|---|
-| Time | UtVehTime | Time associated with the current level of throttle input |
-| Throttle Input | UtVehPercent, UtVehForce or UtVehPercent | Current value for throttle input |
+| Time | sec | Time associated with the current level of throttle input |
+| Throttle Input | %/100, lb / N or %/100 | Current value for throttle input |
 
 Throttle controls are available for simulations, and are used to accelerate
 the vehicle. Three methods of throttle control tables are available (see
@@ -293,10 +293,10 @@ The Brake Table Event Set-up parameters are defined in Table 16-3.
 
 **Table 16-3: Brake Table Event Set-up Parameters**
 
-| Parameter | Unit Name | Description |
+| Parameter | Units (US / SI) | Description |
 |---|---|---|
-| Time | UtVehTime | Time associated with the current level of brake input |
-| Brake Input | UtVehForce or UtVehPercent | Current value for brake input |
+| Time | sec | Time associated with the current level of brake input |
+| Brake Input | lb / N or %/100 | Current value for brake input |
 
 Brake controls are available for simulations. Three methods are available
 (see also the [Brake page](../../09-events-driver-controls/DriverControls3.md)):
@@ -330,10 +330,10 @@ The Steer Table Event Set-up parameters are defined in Table 16-4.
 
 **Table 16-4: Steer Table Parameters**
 
-| Parameter | Unit Name | Description |
+| Parameter | Units (US / SI) | Description |
 |---|---|---|
-| Time | UtVehTime | Time associated with the current level of steer input |
-| Steer Input | UtVehDispAngle | Current value for steer input |
+| Time | sec | Time associated with the current level of steer input |
+| Steer Input | deg | Current value for steer input |
 
 Steering controls are available for simulations. Two methods are available:
 
@@ -362,9 +362,9 @@ The Gear Selection Table Event Set-up parameters are defined in Table 16-5.
 
 **Table 16-5: Gear Selection Table Event Set-up Parameters**
 
-| Parameter | Unit Name | Description |
+| Parameter | Units (US / SI) | Description |
 |---|---|---|
-| Time | UtVehTime | Time associated with the current gear shift |
+| Time | sec | Time associated with the current gear shift |
 | Gear Selection | n/a | Current gear number for transmission or differential |
 
 The Gear Selection dialog is available for simulations. This dialog allows
@@ -446,28 +446,28 @@ Two methods are available in the HVE Path Follower. These are:
 
 **Table 16-6: HVE Path Follower Parameters**
 
-| Parameter | Unit Name | Description |
+| Parameter | Units (US / SI) | Description |
 |---|---|---|
-| Start Time | UtVehTime | Simulation time for start of path follower |
-| Sample Time | UtVehTime | Time increment for path sampling |
-| Driver Preview Distance | UtEnvDispLength | Distance ahead of vehicle where driver is looking *(updated: entered via Driver Preview Time and Minimum Preview Distance in the current dialog)* |
-| Max Path Error | UtEnvDispLength | Allowable distance from desired path to point projected ahead of vehicle at the Driver Preview Distance |
-| Max Lat Accel | UtVehAccelLinear | Driver's limit for comfortable lateral acceleration |
-| Path Follower Method | UtNone | Method used to accomplish path following (Variable Steer or Torque) |
-| Initial Steer Angle | UtSteDispAngle | Steering wheel angle at Driver Start Time |
-| Max Steer Velocity | UtSteVel | Limit on steering wheel angular velocity |
-| Steer Correction Factor | UtSteVelRate | Amount of steering correction per unit of path error |
-| Steer Correction Damping | UtSteVelDamp | Damping, used to limit steering activity |
-| Initial Steering Torque | UtSteTorque | Steering wheel torque at Driver Start Time |
-| Max Steering Torque | UtSteTorque | Limit on steering wheel torque |
-| Torque Correction Factor | UtSteTorqueRate | Amount of steering torque correction per unit of path error |
-| Torque Damping | UtSteTorqueDamp | Damping, used to limit steering activity |
-| Max Speed Error | UtVehVelLinear | Allowable difference between current speed and desired speed |
-| Max Throttle Pedal | UtVehPercent | Maximum allowable pedal position |
-| Max Brake Pedal | UtVehForce | Maximum allowable pedal force |
-| Driver Lag Time | UtHumTime | Neuro-muscular filter lag time |
-| Driver Lead Time | UtHumTime | Neuro-muscular filter lead time |
-| Driver Time Delay | UtHumTime | Neuro-muscular filter time delay |
+| Start Time | sec | Simulation time for start of path follower |
+| Sample Time | sec | Time increment for path sampling |
+| Driver Preview Distance | ft / m | Distance ahead of vehicle where driver is looking *(updated: entered via Driver Preview Time and Minimum Preview Distance in the current dialog)* |
+| Max Path Error | ft / m | Allowable distance from desired path to point projected ahead of vehicle at the Driver Preview Distance |
+| Max Lat Accel | g | Driver's limit for comfortable lateral acceleration |
+| Path Follower Method | — | Method used to accomplish path following (Variable Steer or Torque) |
+| Initial Steer Angle | deg | Steering wheel angle at Driver Start Time |
+| Max Steer Velocity | deg/sec | Limit on steering wheel angular velocity |
+| Steer Correction Factor | deg/ft / deg/m | Amount of steering correction per unit of path error |
+| Steer Correction Damping | deg-sec/ft / deg-sec/m | Damping, used to limit steering activity |
+| Initial Steering Torque | in-lb / N-m | Steering wheel torque at Driver Start Time |
+| Max Steering Torque | in-lb / N-m | Limit on steering wheel torque |
+| Torque Correction Factor | in-lb/ft / N-m/m | Amount of steering torque correction per unit of path error |
+| Torque Damping | in-lb-sec/ft / N-m-sec/m | Damping, used to limit steering activity |
+| Max Speed Error | mph / km/h | Allowable difference between current speed and desired speed |
+| Max Throttle Pedal | %/100 | Maximum allowable pedal position |
+| Max Brake Pedal | lb / N | Maximum allowable pedal force |
+| Driver Lag Time | sec | Neuro-muscular filter lag time |
+| Driver Lead Time | sec | Neuro-muscular filter lead time |
+| Driver Time Delay | sec | Neuro-muscular filter time delay |
 
 ##### Speed Follower
 
@@ -514,11 +514,11 @@ The Wheel Data Event Set-up parameters are defined in Table 16-7.
 
 **Table 16-7: Wheel Data Event Set-up Parameters**
 
-| Parameter | Unit Name | Description |
+| Parameter | Units (US / SI) | Description |
 |---|---|---|
-| Pre-impact Drag Factor | UtBraPercent | Linear deceleration rate from Begin Braking to Impact |
-| Percent Friction | UtBraPercent | Constant percent of available friction at each wheel used to decelerate the vehicle between impact and rest |
-| Steer Angle | UtSteDispAngle | Constant steer angle at each wheel |
+| Pre-impact Drag Factor | %/100 | Linear deceleration rate from Begin Braking to Impact |
+| Percent Friction | %/100 | Constant percent of available friction at each wheel used to decelerate the vehicle between impact and rest |
+| Steer Angle | deg | Constant steer angle at each wheel |
 
 The Wheel Data dialog is available for reconstruction models. This dialog
 allows the user to enter the following information:
@@ -548,17 +548,17 @@ The Damage Profile Event Set-up parameters are defined in Table 16-8.
 
 **Table 16-8: Damage Profile Event Set-up Parameters**
 
-| Parameter | Unit Name | Description |
+| Parameter | Units (US / SI) | Description |
 |---|---|---|
 | CDC | (none) | Collision Deformation Classification, 7-character damage code describing location and character of damage |
-| PDOF | UtVehDispAngle | Principal Direction Of Force, the direction of the collision impulse (same as direction of delta-V) |
-| Impulse Center | UtVehDispLength | Vehicle-fixed x,y coordinates of the impulse center |
-| EES | UtVehVelLinear | Equivalent Energy Speed, the barrier impact speed required to cause the observed vehicle damage |
-| Width | UtVehDispLength | Total width of damage |
-| Offset | UtVehDispLength | Longitudinal or lateral distance from the CG to the center of the damage profile |
-| Crush Depth | UtVehDispLength | Measured depth of crush at up to 10 points along the damage profile |
-| A Stiffness | UtVehAStiff | Force per unit of damage width required to initiate measurable damage (for each crush zone) |
-| B Stiffness | UtVehBStiff | Force per unit of crush depth per unit of damage width required to cause the measured damage (for each crush zone) |
+| PDOF | deg | Principal Direction Of Force, the direction of the collision impulse (same as direction of delta-V) |
+| Impulse Center | in / cm | Vehicle-fixed x,y coordinates of the impulse center |
+| EES | mph / km/h | Equivalent Energy Speed, the barrier impact speed required to cause the observed vehicle damage |
+| Width | in / cm | Total width of damage |
+| Offset | in / cm | Longitudinal or lateral distance from the CG to the center of the damage profile |
+| Crush Depth | in / cm | Measured depth of crush at up to 10 points along the damage profile |
+| A Stiffness | lb/in / N/cm | Force per unit of damage width required to initiate measurable damage (for each crush zone) |
+| B Stiffness | lb/in² / N/cm² | Force per unit of crush depth per unit of damage width required to cause the measured damage (for each crush zone) |
 
 The Damage Profile dialog allows the user to enter a damage profile for the
 selected vehicle. The damage profile is obtained by post-crash inspection
@@ -733,11 +733,11 @@ The Vehicle Mesh Event Set-up parameters are defined in Table 16-9.
 
 **Table 16-9: Mesh Event Set-up Parameters**
 
-| Parameter | Unit Name | Description |
+| Parameter | Units (US / SI) | Description |
 |---|---|---|
-| Maximum Side Length | UtVehDispLength | Determines the longest side of a polygon |
-| Inter-vehicle Friction | UtNone | Inter-vehicle friction coefficient for the selected pair of vehicles |
-| Relaxation Length | UtVehPercent | Determines the amount of reduction in displacement vector |
+| Maximum Side Length | in / cm | Determines the longest side of a polygon |
+| Inter-vehicle Friction | — | Inter-vehicle friction coefficient for the selected pair of vehicles |
+| Relaxation Length | %/100 | Determines the amount of reduction in displacement vector |
 
 The Vehicle Mesh Event Set-up options are:
 
@@ -758,11 +758,11 @@ The Payload Event Set-up parameters are defined in Table 16-10.
 
 **Table 16-10: Payload Event Set-up Parameters**
 
-| Parameter | Unit Name | Description |
+| Parameter | Units (US / SI) | Description |
 |---|---|---|
-| x, y, z coordinates | UtVehDispLength | x, y and z distances from the vehicle CG to the Payload CG |
-| Weight | UtVehForce | Payload weight |
-| Rotational Inertia | UtVehRotInertia | Payload rotational inertia about its x, y and z axes |
+| x, y, z coordinates | in / cm | x, y and z distances from the vehicle CG to the Payload CG |
+| Weight | lb / N | Payload weight |
+| Rotational Inertia | lb-sec²-in / kg-m² | Payload rotational inertia about its x, y and z axes |
 
 The Payload dialog allows the user to assign a payload to the selected
 vehicle. The payload may be any object which adds inertia to a vehicle that
@@ -788,15 +788,15 @@ The Collision Pulse Event Set-up parameters are defined in Table 16-11.
 
 **Table 16-11: Collision Pulse Event Set-up Parameters**
 
-| Parameter | Unit Name | Description |
+| Parameter | Units (US / SI) | Description |
 |---|---|---|
-| Pulse Type | UtNone | Type of collision pulse (Position, Velocity, Acceleration, or Force/Moment) |
-| Longitudinal, Lateral and Vertical linear motion | UtVehDispLinear, UtVehVelLinear, UtVehAccelLinear or UtVehForce | Vehicle-fixed components of the linear motion |
-| Roll, Pitch, Yaw angular motion | UtVehDispAngular, UtVehVelAngular, UtVehAccelAngular or UtVehTorque | Angular motion about the vehicle's roll, pitch and yaw axes |
-| Pulse Factors | UtVehPercent | Multipliers for individual directions |
-| Threshold Acceleration | UtVehAccel | Minimum total linear acceleration required for inclusion in the collision pulse |
-| Tstart | UtVehTime | Event time at which the collision pulse begins |
-| Impulse Center x, y, z | UtVehDispLength | Vehicle-fixed coordinates of the impulse center (Force/Moment pulse type only) |
+| Pulse Type | — | Type of collision pulse (Position, Velocity, Acceleration, or Force/Moment) |
+| Longitudinal, Lateral and Vertical linear motion | in / cm, mph / km/h, g or lb / N | Vehicle-fixed components of the linear motion |
+| Roll, Pitch, Yaw angular motion | deg, deg/sec, deg/sec² or ft-lb / N-m | Angular motion about the vehicle's roll, pitch and yaw axes |
+| Pulse Factors | %/100 | Multipliers for individual directions |
+| Threshold Acceleration | g | Minimum total linear acceleration required for inclusion in the collision pulse |
+| Tstart | sec | Event time at which the collision pulse begins |
+| Impulse Center x, y, z | in / cm | Vehicle-fixed coordinates of the impulse center (Force/Moment pulse type only) |
 
 The Collision Pulse parameters define the acceleration vs. time response of
 a vehicle. The collision pulse is used for occupant simulations.
@@ -832,44 +832,44 @@ The Wheel Event Set-up parameters are defined in Table 16-12.
 
 **Table 16-12: Wheel Editing Event Set-up Parameters**
 
-| Parameter | Unit Name | Description |
+| Parameter | Units (US / SI) | Description |
 |---|---|---|
-| Axle Number | UtNone | Axle index (1, 2 or 3) |
-| Side | UtNone | Side index (Right or Left) |
-| Location | UtNone | Tire location index (Inner or Outer) |
-| Tire Is Blown | UtNone | Flag indicating the tire is blown |
-| AutoStart | UtNone | Flag indicating the start time is set by the simulation |
-| Start Time | UtVehTime | Simulation time at which blow-out or wheel displacement starts |
-| Duration | UtVehTime | Duration over which air loss or wheel displacement occurs |
-| Stiffness Factor | UtNone | Multiplier for tire stiffness parameters |
-| Rolling Resistance Factor | UtNone | Multiplier for tire rolling resistance |
-| Change in Coordinates | UtVehDispLength | Vehicle-fixed wheel displacement distance |
-| Change in Camber | UtVehDispAngle | Vehicle-fixed wheel camber change angle |
-| Percent Peak Lock-up Torque | UtBraPercent | Percentage of nominal torque required to lock the wheel |
-| Initial Lining Temp | UtEnvTemp | Temperature of the brake lining at the start of the simulation |
-| Initial Drum Temp | UtEnvTemp | Temperature of the brake drum at the start of the simulation |
-| Adjuster Slack | UtVehDispLength | Slack adjuster stroke before brake torque begins |
+| Axle Number | — | Axle index (1, 2 or 3) |
+| Side | — | Side index (Right or Left) |
+| Location | — | Tire location index (Inner or Outer) |
+| Tire Is Blown | — | Flag indicating the tire is blown |
+| AutoStart | — | Flag indicating the start time is set by the simulation |
+| Start Time | sec | Simulation time at which blow-out or wheel displacement starts |
+| Duration | sec | Duration over which air loss or wheel displacement occurs |
+| Stiffness Factor | — | Multiplier for tire stiffness parameters |
+| Rolling Resistance Factor | — | Multiplier for tire rolling resistance |
+| Change in Coordinates | in / cm | Vehicle-fixed wheel displacement distance |
+| Change in Camber | deg | Vehicle-fixed wheel camber change angle |
+| Percent Peak Lock-up Torque | %/100 | Percentage of nominal torque required to lock the wheel |
+| Initial Lining Temp | deg F / deg C | Temperature of the brake lining at the start of the simulation |
+| Initial Drum Temp | deg F / deg C | Temperature of the brake drum at the start of the simulation |
+| Adjuster Slack | in / cm | Slack adjuster stroke before brake torque begins |
 
 **Table 16-12: Wheel Editing Event Set-up Parameters (continued —
 Tire-Terrain)**
 
-| Parameter | Unit Name | Description |
+| Parameter | Units (US / SI) | Description |
 |---|---|---|
-| Axle Number | UtNone | Axle index (1, 2 or 3) |
-| Side | UtNone | Side index (Right or Left) |
-| Location | UtNone | Tire location index (Inner or Outer) |
-| Tire-Terrain Model | UtNone | Tire-Terrain Model option |
-| Sidewall Impact | UtNone | Flag indicating the Sidewall Impact option is to be used |
-| Radial Adjustment Increment | UtTirDispLength | Incremental change in radial spring length used in the spring force calculation |
-| Angular Span | UtTirDispAngle | Sweep angle for radial springs |
-| Angular Increment | UtTirDispAngle | Angular increment between radial springs |
-| Sidewall Slide Friction Coefficient | UtNone | Tire sidewall slide friction coefficient |
-| Number of Sidewall Springs | UtNone | Number of sidewall springs attached to each radial spring |
-| Spring Number | UtNone | Spring index |
-| Spring Radial Dist from Wheel Center | UtTirDispLength | Radial distance from the wheel center to the current lateral spring |
-| Spring Lateral Dist to Wheel Center | UtTirDispLength | Distance from the tire centerline plane to the tire sidewall for the current spring |
-| Sidewall Spring Stiffness Ratio | UtNone | Ratio of sidewall spring stiffness to radial spring stiffness |
-| Spring Saturation Deflection | UtTirDispLength | Maximum allowable deflection for the current sidewall spring |
+| Axle Number | — | Axle index (1, 2 or 3) |
+| Side | — | Side index (Right or Left) |
+| Location | — | Tire location index (Inner or Outer) |
+| Tire-Terrain Model | — | Tire-Terrain Model option |
+| Sidewall Impact | — | Flag indicating the Sidewall Impact option is to be used |
+| Radial Adjustment Increment | in / cm | Incremental change in radial spring length used in the spring force calculation |
+| Angular Span | deg | Sweep angle for radial springs |
+| Angular Increment | deg | Angular increment between radial springs |
+| Sidewall Slide Friction Coefficient | — | Tire sidewall slide friction coefficient |
+| Number of Sidewall Springs | — | Number of sidewall springs attached to each radial spring |
+| Spring Number | — | Spring index |
+| Spring Radial Dist from Wheel Center | in / cm | Radial distance from the wheel center to the current lateral spring |
+| Spring Lateral Dist to Wheel Center | in / cm | Distance from the tire centerline plane to the tire sidewall for the current spring |
+| Sidewall Spring Stiffness Ratio | — | Ratio of sidewall spring stiffness to radial spring stiffness |
+| Spring Saturation Deflection | in / cm | Maximum allowable deflection for the current sidewall spring |
 
 ### Accelerometers
 
@@ -877,11 +877,11 @@ The Accelerometers Event Set-up parameters are defined in Table 16-13.
 
 **Table 16-13: Accelerometers Event Set-up Parameters**
 
-| Parameter | Unit Name | Description |
+| Parameter | Units (US / SI) | Description |
 |---|---|---|
-| Device Number | UtNone | Device selector number |
-| Device Is Used | UtNone | Flag indicating the selected device is in use |
-| x-coord, y-coord, z-coord | UtVehDispLinear | Vehicle-fixed coordinates of the accelerometer |
+| Device Number | — | Device selector number |
+| Device Is Used | — | Flag indicating the selected device is in use |
+| x-coord, y-coord, z-coord | in / cm | Vehicle-fixed coordinates of the accelerometer |
 
 Simulations can report the local velocity and acceleration for each of up
 to five vehicle-fixed accelerometer locations.
@@ -898,22 +898,22 @@ The Contacts Event Set-up parameters are defined in Table 16-14.
 
 **Table 16-14: Contact Event Set-up Parameters**
 
-| Parameter | Unit Name | Description |
+| Parameter | Units (US / SI) | Description |
 |---|---|---|
 | Source Segment | n/a | Name of the source segment (may be either a human ellipsoid or a vehicle contact surface) |
 | Target Segment | n/a | Name of the target segment (may be either a human ellipsoid or a vehicle contact surface) |
-| Material Name | UtNone | User-editable material name |
-| Constant | UtVehForce | Force required to initiate deflection |
-| Linear Stiffness | UtVehMatStiffLinear | Linear material deformation coefficient |
-| Quadratic Stiffness | UtVehMatStiffQuad | Quadratic material deformation coefficient |
-| Cubic Stiffness | UtVehMatStiffCubic | Cubic material deformation coefficient |
-| Damping Constant | UtVehMatDamp | Material velocity-dependent deformation constant |
-| Friction Constant | UtNone | Inter-segment friction coefficient |
-| Maximum Force | UtVehForce | Force at which the 3rd-order force-deflection relationship is abandoned |
-| Maximum Deflection | UtVehDispLinear | Deflection at which the 3rd-order force-deflection relationship is abandoned |
-| Unloading Slope | UtVehMatStiffLinear | Linear unloading slope beginning at maximum deflection |
-| Max Defl/Timestep | UtVehDispLinear | Logical distance defining the amount of deformation allowed during one timestep (used to define front/back) |
-| Edge Constant | UtNone | Force reduction coefficient for edges |
+| Material Name | — | User-editable material name |
+| Constant | lb / N | Force required to initiate deflection |
+| Linear Stiffness | lb/in / N/cm | Linear material deformation coefficient |
+| Quadratic Stiffness | lb/in² / N/cm² | Quadratic material deformation coefficient |
+| Cubic Stiffness | lb/in³ / N/cm³ | Cubic material deformation coefficient |
+| Damping Constant | lb-sec/in / N-sec/m | Material velocity-dependent deformation constant |
+| Friction Constant | — | Inter-segment friction coefficient |
+| Maximum Force | lb / N | Force at which the 3rd-order force-deflection relationship is abandoned |
+| Maximum Deflection | in / cm | Deflection at which the 3rd-order force-deflection relationship is abandoned |
+| Unloading Slope | lb/in / N/cm | Linear unloading slope beginning at maximum deflection |
+| Max Defl/Timestep | in / cm | Logical distance defining the amount of deformation allowed during one timestep (used to define front/back) |
+| Edge Constant | — | Force reduction coefficient for edges |
 
 The Contacts parameters are used by occupant and pedestrian simulations.
 The Contacts dialog allows the user to display all human ellipsoid vs.
@@ -943,12 +943,12 @@ The Restraints Event Set-up parameters are defined in Table 16-15.
 
 **Table 16-15: Restraint Event Set-up Parameters**
 
-| Parameter | Unit Name | Description |
+| Parameter | Units (US / SI) | Description |
 |---|---|---|
-| x, y and z Attachment Coordinates | UtHumDispLength | Segment-based x, y, z coordinates for the attachment point of the ends of the right and left belt segments |
-| Belt Slack | UtVehDispLength | Belt slack. The amount of displacement between the ends of the belt allowed before creating belt tension (a negative value implies pre-load) |
-| Airbag Begin Fill Time | UtVehTime | Simulation time at which the airbag is deployed and begins to fill |
-| Airbag Fill Duration | UtVehTime | Length of time during which airbag filling occurs |
+| x, y and z Attachment Coordinates | in / cm | Segment-based x, y, z coordinates for the attachment point of the ends of the right and left belt segments |
+| Belt Slack | in / cm | Belt slack. The amount of displacement between the ends of the belt allowed before creating belt tension (a negative value implies pre-load) |
+| Airbag Begin Fill Time | sec | Simulation time at which the airbag is deployed and begins to fill |
+| Airbag Fill Duration | sec | Length of time during which airbag filling occurs |
 
 The Restraints parameters allow the user to provide in-use restraint system
 parameters for occupant events. For Belt Restraint systems, this means
@@ -1000,13 +1000,13 @@ The Human Segment Kinematics output groups are defined in Table 16-16.
 
 **Table 16-16: Human Segment Kinematics Output Track Group Parameters**
 
-| Parameter | Unit Name | Description |
+| Parameter | Units (US / SI) | Description |
 |---|---|---|
-| x or X, y or Y, z or Z | UtVehDispLength for occupants, UtEnvDispLength for pedestrians | Coordinates for the center of gravity of each segment, relative to the vehicle-fixed coordinate system (occupants) or earth-fixed coordinate system (pedestrians) |
-| Roll, Pitch, Yaw | UtVehDispAngle for occupants, UtEnvDispAngle for pedestrians | Orientation of each segment, relative to the vehicle-fixed coordinate system (occupants) or earth-fixed coordinate system (pedestrians) |
-| Vtotal, i vel, j vel, k vel | UtHumVelLinear | Total, i, j and k velocity of each segment, relative to the vehicle-fixed coordinate system (occupants) or earth-fixed coordinate system (pedestrians) |
-| Roll Vel, Pitch Vel, Yaw Vel | UtHumVelAngular | Roll, pitch and yaw velocities of each segment relative to the segment's axis system |
-| Atotal, i acc, j acc, k acc | UtHumAccelAngular | Roll, pitch and yaw acceleration of each segment relative to the segment's axis system |
+| x or X, y or Y, z or Z | in / cm for occupants, ft / m for pedestrians | Coordinates for the center of gravity of each segment, relative to the vehicle-fixed coordinate system (occupants) or earth-fixed coordinate system (pedestrians) |
+| Roll, Pitch, Yaw | deg for occupants, deg for pedestrians | Orientation of each segment, relative to the vehicle-fixed coordinate system (occupants) or earth-fixed coordinate system (pedestrians) |
+| Vtotal, i vel, j vel, k vel | in/sec / km/h | Total, i, j and k velocity of each segment, relative to the vehicle-fixed coordinate system (occupants) or earth-fixed coordinate system (pedestrians) |
+| Roll Vel, Pitch Vel, Yaw Vel | deg/sec | Roll, pitch and yaw velocities of each segment relative to the segment's axis system |
+| Atotal, i acc, j acc, k acc | deg/sec² | Roll, pitch and yaw acceleration of each segment relative to the segment's axis system |
 
 The Human Segment Kinematics output tracks define the current position,
 velocity and acceleration for each human segment.
@@ -1017,15 +1017,15 @@ The Human Joints output groups are defined in Table 16-17.
 
 **Table 16-17: Human Inter-segment Joint Output Track Group Parameters**
 
-| Parameter | Unit Name | Description |
+| Parameter | Units (US / SI) | Description |
 |---|---|---|
-| Roll, Pitch, Yaw | UtHumDispAngle | Angular orientation of segment relative to the upstream segment's coordinate axis system |
-| FxElastic, FyElastic, FzElastic | UtHumForce | Segment-fixed joint force components from elasticity |
-| FxDamping, FyDamping, FzDamping | UtHumForce | Segment-fixed joint force components from damping |
-| FxTotal, FyTotal, FzTotal | UtHumForce | Segment-fixed total joint force components |
-| MxElastic, MyElastic, MzElastic | UtHumTorque | Moment about the upstream joint's i, j, k axis system from joint elasticity |
-| MxDamping, MyDamping, MzDamping | UtHumTorque | Moment about the upstream joint's i, j, k axis system from joint damping |
-| MxTotal, MyTotal, MzTotal | UtHumTorque | Total moment about the upstream joint's i, j, k axis system from joint torques |
+| Roll, Pitch, Yaw | deg | Angular orientation of segment relative to the upstream segment's coordinate axis system |
+| FxElastic, FyElastic, FzElastic | lb / N | Segment-fixed joint force components from elasticity |
+| FxDamping, FyDamping, FzDamping | lb / N | Segment-fixed joint force components from damping |
+| FxTotal, FyTotal, FzTotal | lb / N | Segment-fixed total joint force components |
+| MxElastic, MyElastic, MzElastic | in-lb / N-m | Moment about the upstream joint's i, j, k axis system from joint elasticity |
+| MxDamping, MyDamping, MzDamping | in-lb / N-m | Moment about the upstream joint's i, j, k axis system from joint damping |
+| MxTotal, MyTotal, MzTotal | in-lb / N-m | Total moment about the upstream joint's i, j, k axis system from joint torques |
 
 The Human Joint output tracks define the current conditions at each joint.
 
@@ -1035,13 +1035,13 @@ The Human Contacts output groups are defined in Table 16-18.
 
 **Table 16-18: Human Contacts Output Track Group Parameters**
 
-| Parameter | Unit Name | Description |
+| Parameter | Units (US / SI) | Description |
 |---|---|---|
-| x, y, z | UtVehDispLength | Contact surface contact coordinates |
-| Deflection | UtVehDispLength | Contact surface deflection at x, y, z |
-| F (total) | UtVehForce | Total contact force |
-| F (normal) | UtVehForce | Contact surface normal force |
-| F (friction) | UtVehForce | Contact surface frictional force |
+| x, y, z | in / cm | Contact surface contact coordinates |
+| Deflection | in / cm | Contact surface deflection at x, y, z |
+| F (total) | lb / N | Total contact force |
+| F (normal) | lb / N | Contact surface normal force |
+| F (friction) | lb / N | Contact surface frictional force |
 
 The Human Contacts output tracks define the current interaction between
 each selected human ellipsoid and vehicle contact surface.
@@ -1055,12 +1055,12 @@ The Human Belt Restraints output groups are defined in Table 16-19.
 
 **Table 16-19: Human Belt Restraints Output Track Group Parameters**
 
-| Parameter | Unit Name | Description |
+| Parameter | Units (US / SI) | Description |
 |---|---|---|
-| Belt Attachment i-coord, j-coord, k-coord | UtHumDispLength | The i, j, k segment-fixed coordinates for the belt attachment point |
-| Belt Strain | UtVehPercent | Simulated belt strain |
-| Belt Tension | UtVehForce | Simulated belt tension |
-| Belt Pressure | UtVehForce | Simulated belt force against the segment |
+| Belt Attachment i-coord, j-coord, k-coord | in / cm | The i, j, k segment-fixed coordinates for the belt attachment point |
+| Belt Strain | %/100 | Simulated belt strain |
+| Belt Tension | lb / N | Simulated belt tension |
+| Belt Pressure | lb / N | Simulated belt force against the segment |
 
 The Human Belt output tracks define the current belt outputs.
 
@@ -1070,13 +1070,13 @@ The Human Airbag Restraints output groups are defined in Table 16-20.
 
 **Table 16-20: Human Airbag Restraints Output Track Group Parameters**
 
-| Parameter | Unit Name | Description |
+| Parameter | Units (US / SI) | Description |
 |---|---|---|
-| Pressure | UtVehPress | Airbag internal pressure |
-| Radius | UtVehDispLinear | Airbag radius |
-| Bag Fn | UtHumForce | Normal contact force between human and airbag |
-| Bag Fmu | UtHumForce | Friction contact force between airbag and vehicle |
-| Bag x, Bag y, Bag z | UtHumDispLength | Human contact point with airbag |
+| Pressure | psi / kPa | Airbag internal pressure |
+| Radius | in / cm | Airbag radius |
+| Bag Fn | lb / N | Normal contact force between human and airbag |
+| Bag Fmu | lb / N | Friction contact force between airbag and vehicle |
+| Bag x, Bag y, Bag z | in / cm | Human contact point with airbag |
 
 The Human Airbag Restraints output tracks define the current interaction
 between the human occupant and the airbag.
@@ -1114,18 +1114,18 @@ The Vehicle Sprung Mass Kinematics output groups are defined in Table
 **Table 16-21: Vehicle Sprung Mass Kinematics Output Track Group
 Parameters**
 
-| Parameter | Unit Name | Description |
+| Parameter | Units (US / SI) | Description |
 |---|---|---|
-| X, Y, Z | UtEnvDispLength | Coordinates of the vehicle center of gravity relative to the earth-fixed coordinate system |
-| Roll, Pitch, Yaw | UtEnvDispAngle | Orientation of the vehicle-fixed coordinate system relative to the earth-fixed coordinate system (order of rotations is Yaw, Pitch, Roll) |
-| Radius | UtEnvDispLength | Path radius of the vehicle CG |
-| Nu (Course Angle) | UtEnvDispAngle | Angle of the total velocity vector relative to the earth-fixed coordinate system |
-| Vtotal, u vel, v vel, w vel | UtVehVelLinear | Total, u (longitudinal), v (side) and w (normal) velocity of the vehicle (see SAE J670e for definitions) |
-| Beta (Sideslip Angle) | UtVehDispAngle | arctan(v vel / u vel), angle from the vehicle heading vector to the velocity vector |
-| Roll Velocity, Pitch Velocity, Yaw Velocity | UtVehVelAngular | p (roll), q (pitch) and r (yaw) velocity about the vehicle's x, y, z axis system |
-| Atotal, u dot, v dot, w dot, Long Acc, Lat Acc, Vert Acc | UtVehAccelLinear | Total, u, v and w accelerations, and Longitudinal, Lateral and Vertical accelerations (see SAE J670e for definitions) |
-| Roll Acc, Pitch Acc, Yaw Acc | UtVehAccelAngular | Roll, pitch and yaw accelerations about the vehicle's x, y, z axis system |
-| Translation KE, Rotation KE, Total KE | UtVehEnergy | Kinetic energy associated with translation, rotation and their sum |
+| X, Y, Z | ft / m | Coordinates of the vehicle center of gravity relative to the earth-fixed coordinate system |
+| Roll, Pitch, Yaw | deg | Orientation of the vehicle-fixed coordinate system relative to the earth-fixed coordinate system (order of rotations is Yaw, Pitch, Roll) |
+| Radius | ft / m | Path radius of the vehicle CG |
+| Nu (Course Angle) | deg | Angle of the total velocity vector relative to the earth-fixed coordinate system |
+| Vtotal, u vel, v vel, w vel | mph / km/h | Total, u (longitudinal), v (side) and w (normal) velocity of the vehicle (see SAE J670e for definitions) |
+| Beta (Sideslip Angle) | deg | arctan(v vel / u vel), angle from the vehicle heading vector to the velocity vector |
+| Roll Velocity, Pitch Velocity, Yaw Velocity | deg/sec | p (roll), q (pitch) and r (yaw) velocity about the vehicle's x, y, z axis system |
+| Atotal, u dot, v dot, w dot, Long Acc, Lat Acc, Vert Acc | g | Total, u, v and w accelerations, and Longitudinal, Lateral and Vertical accelerations (see SAE J670e for definitions) |
+| Roll Acc, Pitch Acc, Yaw Acc | deg/sec² | Roll, pitch and yaw accelerations about the vehicle's x, y, z axis system |
+| Translation KE, Rotation KE, Total KE | ft-lb / Joule | Kinetic energy associated with translation, rotation and their sum |
 
 The Vehicle Kinematics output tracks define the current position, velocity
 and acceleration, and other related parameters, at the current timestep.
@@ -1136,16 +1136,16 @@ The Vehicle Sprung Mass Kinetics output groups are defined in Table 16-22.
 
 **Table 16-22: Vehicle Sprung Mass Kinetics Output Track Group Parameters**
 
-| Parameter | Unit Name | Description |
+| Parameter | Units (US / SI) | Description |
 |---|---|---|
-| FxSusp, FySusp, FzSusp | UtVehForce | Summation of suspension forces at the vehicle CG relative to the vehicle-fixed axis system |
-| MxSusp, MySusp, MzSusp | UtVehTorque | Summation of suspension moments about the vehicle CG relative to the vehicle-fixed axis system |
-| FxColl, FyColl, FzColl | UtVehForce | Summation of collision forces at the vehicle CG relative to the vehicle-fixed axis system |
-| MxColl, MyColl, MzColl | UtVehTorque | Summation of collision moments about the vehicle CG relative to the vehicle-fixed axis system |
-| FxAero, FyAero, FzAero | UtVehForce | Summation of aerodynamic forces at the vehicle CG relative to the vehicle-fixed axis system |
-| MxAero, MyAero, MzAero | UtVehTorque | Summation of aerodynamic moments about the vehicle CG relative to the vehicle-fixed axis system |
-| FxConn, FyConn, FzConn | UtVehForce | Summation of inter-vehicle connection forces at the vehicle CG relative to the vehicle-fixed axis system |
-| MxConn, MyConn, MzConn | UtVehTorque | Summation of connection moments about the vehicle CG relative to the vehicle-fixed axis system |
+| FxSusp, FySusp, FzSusp | lb / N | Summation of suspension forces at the vehicle CG relative to the vehicle-fixed axis system |
+| MxSusp, MySusp, MzSusp | ft-lb / N-m | Summation of suspension moments about the vehicle CG relative to the vehicle-fixed axis system |
+| FxColl, FyColl, FzColl | lb / N | Summation of collision forces at the vehicle CG relative to the vehicle-fixed axis system |
+| MxColl, MyColl, MzColl | ft-lb / N-m | Summation of collision moments about the vehicle CG relative to the vehicle-fixed axis system |
+| FxAero, FyAero, FzAero | lb / N | Summation of aerodynamic forces at the vehicle CG relative to the vehicle-fixed axis system |
+| MxAero, MyAero, MzAero | ft-lb / N-m | Summation of aerodynamic moments about the vehicle CG relative to the vehicle-fixed axis system |
+| FxConn, FyConn, FzConn | lb / N | Summation of inter-vehicle connection forces at the vehicle CG relative to the vehicle-fixed axis system |
+| MxConn, MyConn, MzConn | ft-lb / N-m | Summation of connection moments about the vehicle CG relative to the vehicle-fixed axis system |
 
 The Vehicle Sprung Mass Kinetics output tracks define the forces and
 moments at the sprung mass CG due to the various sources listed above.
@@ -1156,13 +1156,13 @@ The Accelerometers Output Group parameters are defined in Table 16-23.
 
 **Table 16-23: Vehicle Accelerometers Output Track Group Parameters**
 
-| Parameter | Unit Name | Description |
+| Parameter | Units (US / SI) | Description |
 |---|---|---|
-| x, y, z | UtVehDispLength | Vehicle-fixed accelerometer coordinates |
-| V-tot, u-vel, v-vel, w-vel | UtVehVelLinear | Accelerometer velocity at x, y, z, resolved according to the vehicle-fixed coordinate system |
-| X-dot, Y-dot, Z-dot | UtVehVelLinear | Accelerometer velocity at x, y, z, resolved according to the earth-fixed coordinate system |
-| Acc-tot, Long Acc, Lat Acc, Vert Acc | UtVehAccLinear | Accelerometer acceleration at x, y, z |
-| u-dot, v-dot, w-dot | UtVehAccLinear | Accelerometer acceleration at x, y, z; time derivative of u-vel, v-vel, w-vel |
+| x, y, z | in / cm | Vehicle-fixed accelerometer coordinates |
+| V-tot, u-vel, v-vel, w-vel | mph / km/h | Accelerometer velocity at x, y, z, resolved according to the vehicle-fixed coordinate system |
+| X-dot, Y-dot, Z-dot | mph / km/h | Accelerometer velocity at x, y, z, resolved according to the earth-fixed coordinate system |
+| Acc-tot, Long Acc, Lat Acc, Vert Acc | g | Accelerometer acceleration at x, y, z |
+| u-dot, v-dot, w-dot | g | Accelerometer acceleration at x, y, z; time derivative of u-vel, v-vel, w-vel |
 
 The Accelerometers output tracks define the position, velocity (earth-fixed
 and vehicle-fixed) and acceleration (earth-fixed and vehicle-fixed) for
@@ -1175,16 +1175,16 @@ The Damage Output Group parameters are defined in Table 16-24.
 
 **Table 16-24: Vehicle Damage Output Track Group Parameters**
 
-| Parameter | Unit Name | Description |
+| Parameter | Units (US / SI) | Description |
 |---|---|---|
-| Is Damaged | UtNone | Flag indicating the vertex sustained damage since the previous timestep |
-| Vertex ID | UtNone | Vertex number, used for indexing |
-| x, y, z | UtVehDispLength | Vertex vehicle-fixed coordinates |
-| Fx, Fy, Fz | UtVehForce | Vehicle-fixed force components at x, y, z |
-| F0 (surf), F1 (surf), F2 (surf), F3 (surf) | UtVehForce, UtVehMatStiffLinear, UtVehMatStiffQuad, UtVehMatStiffCubic | Force-deflection characteristics of the vertex |
-| Mu (surf) | UtNone | Vertex friction multiplier |
-| Fmax (surf) | UtVehForce | Vertex maximum force characteristic |
-| Fu (surf) | UtVehMatStiffLinear | Vertex unloading linear stiffness |
+| Is Damaged | — | Flag indicating the vertex sustained damage since the previous timestep |
+| Vertex ID | — | Vertex number, used for indexing |
+| x, y, z | in / cm | Vertex vehicle-fixed coordinates |
+| Fx, Fy, Fz | lb / N | Vehicle-fixed force components at x, y, z |
+| F0 (surf), F1 (surf), F2 (surf), F3 (surf) | lb / N, lb/in / N/cm, lb/in² / N/cm², lb/in³ / N/cm³ | Force-deflection characteristics of the vertex |
+| Mu (surf) | — | Vertex friction multiplier |
+| Fmax (surf) | lb / N | Vertex maximum force characteristic |
+| Fu (surf) | lb/in / N/cm | Vertex unloading linear stiffness |
 
 Each vehicle vertex has associated with it the above data. These data are
 currently not available to the user through the variable output interface.
@@ -1198,30 +1198,30 @@ The Vehicle Tires output groups are defined in Table 16-25.
 
 **Table 16-25: Vehicle Tires Output Track Group Parameters**
 
-| Parameter | Unit Name | Description |
+| Parameter | Units (US / SI) | Description |
 |---|---|---|
-| x, y, z | UtVehDispLength | Coordinates of the tire contact patch relative to the vehicle-fixed coordinate system (see SAE J670e) |
-| X, Y, Z | UtEnvDispLength | Coordinates of the tire contact patch relative to the earth-fixed coordinate system (used for drawing tire marks) |
-| Fx', Fy', Fz' | UtTirForce | Longitudinal, lateral and normal force at the tire contact patch relative to the tire's coordinate axis system |
-| Mx', My', Mz' | UtTirTorque | Rolling resistance moment, overturning moment and aligning torque relative to the tire's coordinate axis system |
-| Trad | UtTirDispLength | Tire loaded radius |
-| LongSlip | UtTirPercent | Longitudinal tire slip |
-| LatSlip | UtTirDispAngle | Tire slip angle |
-| Inclination Angle | UtTirDispAngle | Angle from the tire z-axis to the surface normal |
-| SkidMark | UtNone | Opacity of skidmark (0 = clear; 1 = opaque) |
-| Mu (surf) | UtNone | Friction multiplier of the surface |
-| Nx, Ny, Nz | UtNone | Earth-fixed unit normal of the terrain at X,Y |
-| F0 (surf), F1 (surf), F2 (surf), F3 (surf) | UtEnvForce, UtEnvMatLinear, UtEnvMatQuad, UtEnvMatCubic | Force-deflection characteristics of the terrain at X,Y |
-| N, Kphi, Kc | UtNone, UtEnvKphi, UtEnvKc | Bekker soil constants for the terrain at X,Y |
-| Moisture | UtEnvPercent | Moisture content of the terrain at X,Y |
-| Clay | UtEnvPercent | Clay content of the terrain at X,Y *(updated: the Clay track is retained; the terrain Macrotexture parameter was added as an additional track, not as a replacement — see Chapter 13)* |
-| Sinkage | UtEnvDispLength | Soil deformation at X,Y |
-| Fx' plow, Fy' plow | UtTirForce | Wheel-fixed tire plow force at X,Y |
-| Fx Sidewall, Fy Sidewall, Fz Sidewall | UtTirForce | Longitudinal, lateral and normal tire sidewall force (sidewall-impact model) |
-| Water Depth | UtTirDispLength | Depth of water on the terrain at X,Y |
-| Macrotexture | UtTirDispLength | Terrain macrotexture depth at X,Y |
-| Water Mu Mult | UtNone | Friction multiplier applied for the water depth at X,Y |
-| Water RR | UtNone | Rolling-resistance contribution from the water depth at X,Y |
+| x, y, z | in / cm | Coordinates of the tire contact patch relative to the vehicle-fixed coordinate system (see SAE J670e) |
+| X, Y, Z | ft / m | Coordinates of the tire contact patch relative to the earth-fixed coordinate system (used for drawing tire marks) |
+| Fx', Fy', Fz' | lb / N | Longitudinal, lateral and normal force at the tire contact patch relative to the tire's coordinate axis system |
+| Mx', My', Mz' | in-lb / N-m | Rolling resistance moment, overturning moment and aligning torque relative to the tire's coordinate axis system |
+| Trad | in / cm | Tire loaded radius |
+| LongSlip | %/100 | Longitudinal tire slip |
+| LatSlip | deg | Tire slip angle |
+| Inclination Angle | deg | Angle from the tire z-axis to the surface normal |
+| SkidMark | — | Opacity of skidmark (0 = clear; 1 = opaque) |
+| Mu (surf) | — | Friction multiplier of the surface |
+| Nx, Ny, Nz | — | Earth-fixed unit normal of the terrain at X,Y |
+| F0 (surf), F1 (surf), F2 (surf), F3 (surf) | lb / N, lb/in / N/cm, lb/in² / N/cm², lb/in³ / N/cm³ | Force-deflection characteristics of the terrain at X,Y |
+| N, Kphi, Kc | none, lb/in^N+1 / N/cm^N+1, lb/in^N+2 / N/cm^N+2 | Bekker soil constants for the terrain at X,Y |
+| Moisture | %/100 | Moisture content of the terrain at X,Y |
+| Clay | %/100 | Clay content of the terrain at X,Y *(updated: the Clay track is retained; the terrain Macrotexture parameter was added as an additional track, not as a replacement — see Chapter 13)* |
+| Sinkage | ft / m | Soil deformation at X,Y |
+| Fx' plow, Fy' plow | lb / N | Wheel-fixed tire plow force at X,Y |
+| Fx Sidewall, Fy Sidewall, Fz Sidewall | lb / N | Longitudinal, lateral and normal tire sidewall force (sidewall-impact model) |
+| Water Depth | in / cm | Depth of water on the terrain at X,Y |
+| Macrotexture | in / cm | Terrain macrotexture depth at X,Y |
+| Water Mu Mult | — | Friction multiplier applied for the water depth at X,Y |
+| Water RR | — | Rolling-resistance contribution from the water depth at X,Y |
 
 Tire-related vehicle output tracks define the conditions at the tire
 contact patch for each tire.
@@ -1232,50 +1232,50 @@ The Vehicle Wheels output groups are defined in Table 16-26.
 
 **Table 16-26: Vehicle Wheel Output Track Group Parameters**
 
-| Parameter | Unit Name | Description |
+| Parameter | Units (US / SI) | Description |
 |---|---|---|
-| x (wheel), y (wheel), z (wheel) | UtVehDispLinear | Coordinates of the wheel center with respect to the vehicle-fixed axis system |
-| dz (axle) | UtVehDispLength | Vertical axle displacement (solid axles) |
-| phi (axle) | UtVehDispAngle | Solid axle vehicle-fixed roll angle |
-| gamma (wheel) | UtVehDispAngle | Wheel camber relative to the vehicle-fixed axis system (+ clockwise about an axis parallel to, and in the direction of, the x-axis) |
-| spin (wheel) | UtVehDispAngle | Wheel rotation angle about the spin axis |
-| delta (wheel) | UtVehDispAngle | Vehicle-fixed wheel steer angle |
-| Vtot (wheel) | UtVehVelLinear | Total earth-fixed velocity at the wheel center |
-| Xvel (wheel) | UtVehVelLinear | Earth-fixed X velocity at the wheel center |
-| Yvel (wheel) | UtVehVelLinear | Earth-fixed Y velocity at the wheel center |
-| Zvel (wheel) | UtVehVelLinear | Earth-fixed Z velocity at the wheel center |
-| vtot (wheel) | UtVehVelLinear | Vehicle-fixed total velocity at the wheel center |
-| u-vel (wheel) | UtVehVelLinear | Vehicle-fixed forward velocity at the wheel center |
-| v-vel (wheel) | UtVehVelLinear | Vehicle-fixed lateral velocity at the wheel center |
-| w-vel (wheel) | UtVehVelLinear | Vehicle-fixed vertical velocity at the wheel center |
-| zdot (axle) | UtVehVelLinear | Solid axle vehicle-fixed vertical velocity |
-| phid (axle) | UtVehVelAngular | Solid axle roll velocity |
-| gamma-dot | UtVehVelAngular | Wheel camber change rate |
-| Spin Vel (wheel) | UtVehVelAngular | Wheel rotational speed about the spin axis |
-| Delta-dot | UtVehVelAngular | Wheel steer velocity |
-| A tot, X acc, Y acc, Z acc | UtVehAccLinear | Wheel center acceleration relative to the earth-fixed coordinate system |
-| Along, Alat, Avert | UtVehAccLinear | Wheel center acceleration relative to the vehicle-fixed coordinate system |
-| zddot (axle) | UtVehAccLinear | Solid axle vehicle-fixed vertical acceleration |
-| phidd (axle) | UtVehAccAngular | Solid axle vehicle-fixed angular acceleration |
-| gamma-ddot | UtVehAccAngular | Wheel camber acceleration |
-| Spin Acc | UtVehAccAngular | Wheel spin angular acceleration |
-| Delta-ddot | UtVehAccAngular | Wheel steer angular acceleration |
-| zddot | UtVehAccelLinear | Wheel jounce/rebound acceleration |
-| Fx, Fy, Fz | UtVehForce | Force at the wheel center with respect to the vehicle-fixed axis system |
-| Mx, Mz | UtVehTorque | Wheel moments about the camber and steer axes (see axle Drive/Brake Torque) |
-| dz (susp) | UtVehDispLinear | Suspension vertical displacement (+ down) |
-| zvel (susp) | UtVehVelLinear | Suspension vertical velocity (+ down) |
-| Fz Susp, Fz Damp, Fz A-P | UtVehForce | Suspension force components from suspension spring, damping (i.e., shock absorber) and anti-pitch |
-| RollStf | UtVehTorque | Auxiliary roll stiffness from anti-sway bar |
-| WheelBrkPress | UtBraPress | Brake pressure at the wheel cylinder |
-| Drive Tq, Brake Tq | UtVehTorque | Torque applied about the wheel spin axis |
-| FxDrv (Att), FxBrk (Att) | UtVehForce | Attempted drive or brake force (from throttle and/or braking inputs) |
-| Brk Stroke | UtVehDispLength | Stroke of the wheel cylinder or slack adjuster before brake torque is applied |
-| Brk Press | UtBraPress | Brake fluid pressure (air or hydraulic) at the wheel cylinder or brake chamber |
-| F Piston | UtBraForce | Force from the piston or slack adjuster on the braking mechanism |
-| T Interface | UtEnvTemp | Temperature at the interface between the brake lining and drum |
-| T Drum | UtEnvTemp | Brake drum temperature |
-| T Lining | UtEnvTemp | Brake lining temperature |
+| x (wheel), y (wheel), z (wheel) | in / cm | Coordinates of the wheel center with respect to the vehicle-fixed axis system |
+| dz (axle) | in / cm | Vertical axle displacement (solid axles) |
+| phi (axle) | deg | Solid axle vehicle-fixed roll angle |
+| gamma (wheel) | deg | Wheel camber relative to the vehicle-fixed axis system (+ clockwise about an axis parallel to, and in the direction of, the x-axis) |
+| spin (wheel) | deg | Wheel rotation angle about the spin axis |
+| delta (wheel) | deg | Vehicle-fixed wheel steer angle |
+| Vtot (wheel) | mph / km/h | Total earth-fixed velocity at the wheel center |
+| Xvel (wheel) | mph / km/h | Earth-fixed X velocity at the wheel center |
+| Yvel (wheel) | mph / km/h | Earth-fixed Y velocity at the wheel center |
+| Zvel (wheel) | mph / km/h | Earth-fixed Z velocity at the wheel center |
+| vtot (wheel) | mph / km/h | Vehicle-fixed total velocity at the wheel center |
+| u-vel (wheel) | mph / km/h | Vehicle-fixed forward velocity at the wheel center |
+| v-vel (wheel) | mph / km/h | Vehicle-fixed lateral velocity at the wheel center |
+| w-vel (wheel) | mph / km/h | Vehicle-fixed vertical velocity at the wheel center |
+| zdot (axle) | mph / km/h | Solid axle vehicle-fixed vertical velocity |
+| phid (axle) | deg/sec | Solid axle roll velocity |
+| gamma-dot | deg/sec | Wheel camber change rate |
+| Spin Vel (wheel) | deg/sec | Wheel rotational speed about the spin axis |
+| Delta-dot | deg/sec | Wheel steer velocity |
+| A tot, X acc, Y acc, Z acc | g | Wheel center acceleration relative to the earth-fixed coordinate system |
+| Along, Alat, Avert | g | Wheel center acceleration relative to the vehicle-fixed coordinate system |
+| zddot (axle) | g | Solid axle vehicle-fixed vertical acceleration |
+| phidd (axle) | deg/sec² | Solid axle vehicle-fixed angular acceleration |
+| gamma-ddot | deg/sec² | Wheel camber acceleration |
+| Spin Acc | deg/sec² | Wheel spin angular acceleration |
+| Delta-ddot | deg/sec² | Wheel steer angular acceleration |
+| zddot | g | Wheel jounce/rebound acceleration |
+| Fx, Fy, Fz | lb / N | Force at the wheel center with respect to the vehicle-fixed axis system |
+| Mx, Mz | ft-lb / N-m | Wheel moments about the camber and steer axes (see axle Drive/Brake Torque) |
+| dz (susp) | in / cm | Suspension vertical displacement (+ down) |
+| zvel (susp) | mph / km/h | Suspension vertical velocity (+ down) |
+| Fz Susp, Fz Damp, Fz A-P | lb / N | Suspension force components from suspension spring, damping (i.e., shock absorber) and anti-pitch |
+| RollStf | ft-lb / N-m | Auxiliary roll stiffness from anti-sway bar |
+| WheelBrkPress | psi / kPa | Brake pressure at the wheel cylinder |
+| Drive Tq, Brake Tq | ft-lb / N-m | Torque applied about the wheel spin axis |
+| FxDrv (Att), FxBrk (Att) | lb / N | Attempted drive or brake force (from throttle and/or braking inputs) |
+| Brk Stroke | in / cm | Stroke of the wheel cylinder or slack adjuster before brake torque is applied |
+| Brk Press | psi / kPa | Brake fluid pressure (air or hydraulic) at the wheel cylinder or brake chamber |
+| F Piston | lb / N | Force from the piston or slack adjuster on the braking mechanism |
+| T Interface | deg F / deg C | Temperature at the interface between the brake lining and drum |
+| T Drum | deg F / deg C | Brake drum temperature |
+| T Lining | deg F / deg C | Brake lining temperature |
 
 The above table defines output tracks for each wheel location. Some are
 axle-related (choosing the right or left side for these parameters will
@@ -1289,13 +1289,13 @@ The Vehicle Inter-vehicle Connections output groups are defined in Table
 
 **Table 16-27: Vehicle Connections Output Track Group Parameters**
 
-| Parameter | Unit Name | Description |
+| Parameter | Units (US / SI) | Description |
 |---|---|---|
-| Roll, Pitch, Yaw | UtVehDispAngle | Roll, pitch and yaw orientation relative to the towing vehicle's coordinate system |
-| Roll Vel, Pitch Vel, Yaw Vel | UtVehVelAngular | Roll, pitch and yaw articulation velocities relative to the towing vehicle's coordinate system |
-| Rollddot, Pitchddot, Yawddot | UtVehAccelAngular | Roll, pitch and yaw articulation accelerations relative to the towing vehicle's coordinate system |
-| Fx, Fy, Fz | UtVehForce | Connection forces in the vehicle-fixed coordinate system |
-| Mx, My, Mz | UtVehTorque | Connection moments in the vehicle-fixed coordinate system |
+| Roll, Pitch, Yaw | deg | Roll, pitch and yaw orientation relative to the towing vehicle's coordinate system |
+| Roll Vel, Pitch Vel, Yaw Vel | deg/sec | Roll, pitch and yaw articulation velocities relative to the towing vehicle's coordinate system |
+| Rollddot, Pitchddot, Yawddot | deg/sec² | Roll, pitch and yaw articulation accelerations relative to the towing vehicle's coordinate system |
+| Fx, Fy, Fz | lb / N | Connection forces in the vehicle-fixed coordinate system |
+| Mx, My, Mz | ft-lb / N-m | Connection moments in the vehicle-fixed coordinate system |
 
 The Inter-vehicle Connections output tracks define the conditions at the
 connection point between the towing and towed vehicle.
@@ -1306,13 +1306,13 @@ The Vehicle Drivetrain output groups are defined in Table 16-28.
 
 **Table 16-28: Vehicle Drivetrain Output Track Group Parameters**
 
-| Parameter | Unit Name | Description |
+| Parameter | Units (US / SI) | Description |
 |---|---|---|
-| Engine speed | UtEngVelAngular | Engine rotational velocity (i.e., RPM) |
-| Power | UtEngPower | Engine power |
-| Torque | UtEngTorque | Engine torque |
-| Transmission Ratio | UtNone | The current numeric ratio for the transmission |
-| Differential Ratio | UtNone | The current numeric ratio for the differential |
+| Engine speed | RPM | Engine rotational velocity (i.e., RPM) |
+| Power | HP / kW | Engine power |
+| Torque | ft-lb / N-m | Engine torque |
+| Transmission Ratio | — | The current numeric ratio for the transmission |
+| Differential Ratio | — | The current numeric ratio for the differential |
 
 The Vehicle Drivetrain output tracks define the current drivetrain
 conditions.
@@ -1323,21 +1323,21 @@ The Vehicle Driver Controls output groups are defined in Table 16-29.
 
 **Table 16-29: Vehicle Driver Controls Output Track Group Parameters**
 
-| Parameter | Unit Name | Description |
+| Parameter | Units (US / SI) | Description |
 |---|---|---|
-| % WOT | UtEngPercent | Throttle position, percent of WOT |
-| Brake Force | UtBraForce | Brake pedal force |
-| Brake Press | UtBraPress | Brake system master cylinder pressure |
-| Trans Gear | UtNone | Transmission gear selection |
-| Diff Gear | UtNone | Differential gear selection |
-| Steer Angle | UtVehDispAngle | Steering wheel angle |
-| Steer Ang Vel | UtVehVelAngular | Steering wheel angular velocity |
-| Steer Ang Acc | UtVehAccAngular | Steering wheel angular acceleration |
-| Steer Tq | UtSteTorque | Steering wheel torque |
-| Path X, Path Y | UtEnvDispLength | Earth-fixed X,Y coordinates of the path used by the HVE Path Follower |
-| Path X Att, Path Y Att | UtEnvDispLength | Earth-fixed X,Y coordinates of the path at the preview distance |
-| Path Err | UtEnvDispLength | Distance from the attempted path to the desired path |
-| DX Preview, DY Preview | UtEnvDispLength | Earth-fixed coordinates of the preview point |
+| % WOT | %/100 | Throttle position, percent of WOT |
+| Brake Force | lb / N | Brake pedal force |
+| Brake Press | psi / kPa | Brake system master cylinder pressure |
+| Trans Gear | — | Transmission gear selection |
+| Diff Gear | — | Differential gear selection |
+| Steer Angle | deg | Steering wheel angle |
+| Steer Ang Vel | deg/sec | Steering wheel angular velocity |
+| Steer Ang Acc | deg/sec² | Steering wheel angular acceleration |
+| Steer Tq | in-lb / N-m | Steering wheel torque |
+| Path X, Path Y | ft / m | Earth-fixed X,Y coordinates of the path used by the HVE Path Follower |
+| Path X Att, Path Y Att | ft / m | Earth-fixed X,Y coordinates of the path at the preview distance |
+| Path Err | ft / m | Distance from the attempted path to the desired path |
+| DX Preview, DY Preview | ft / m | Earth-fixed coordinates of the preview point |
 
 The Vehicle Driver Controls output tracks define the current driver inputs.
 Results from the steer degree of freedom and HVE Path Follower are also
@@ -1349,13 +1349,13 @@ The Vehicle Contacts output groups are defined in Table 16-30.
 
 **Table 16-30: Vehicle Contacts Output Track Group Parameters**
 
-| Parameter | Unit Name | Description |
+| Parameter | Units (US / SI) | Description |
 |---|---|---|
-| x, y, z | UtVehDispLength | Contact surface contact coordinates |
-| Deflection | UtVehDispLength | Contact surface deflection at x, y, z |
-| Ftotal | UtVehForce | Total contact force |
-| Fnormal | UtVehForce | Contact surface normal force |
-| Ffriction | UtVehForce | Contact surface frictional force |
+| x, y, z | in / cm | Contact surface contact coordinates |
+| Deflection | in / cm | Contact surface deflection at x, y, z |
+| Ftotal | lb / N | Total contact force |
+| Fnormal | lb / N | Contact surface normal force |
+| Ffriction | lb / N | Contact surface frictional force |
 
 The Vehicle Contacts output tracks define the current interaction between
 each selected human ellipsoid and vehicle contact surface.
@@ -1369,14 +1369,14 @@ The Vehicle Belt Restraints output groups are defined in Table 16-31.
 
 **Table 16-31: Vehicle Belt Restraints Output Track Group Parameters**
 
-| Parameter | Unit Name | Description |
+| Parameter | Units (US / SI) | Description |
 |---|---|---|
-| Belt x, Belt y, Belt z | UtVehDispLength | Vehicle-fixed belt anchor point coordinates |
-| Belt Azimuth | UtVehDispAngle | The angle of the belt in the vehicle-fixed x-y plane |
-| Belt Zenith | UtVehDispAngle | The elevation angle of the belt in the vehicle-fixed coordinate system |
-| Belt Strain | UtVehPercent | Simulated belt strain |
-| Belt Stretch | UtVehDispLength | Simulated belt stretch |
-| Belt Tension | UtVehForce | Simulated belt tension |
+| Belt x, Belt y, Belt z | in / cm | Vehicle-fixed belt anchor point coordinates |
+| Belt Azimuth | deg | The angle of the belt in the vehicle-fixed x-y plane |
+| Belt Zenith | deg | The elevation angle of the belt in the vehicle-fixed coordinate system |
+| Belt Strain | %/100 | Simulated belt strain |
+| Belt Stretch | in / cm | Simulated belt stretch |
+| Belt Tension | lb / N | Simulated belt tension |
 
 The Vehicle Belt output tracks define the current belt forces and stretch.
 
@@ -1386,14 +1386,14 @@ The Vehicle Airbag Restraints output groups are defined in Table 16-32.
 
 **Table 16-32: Vehicle Airbag Restraints Output Track Group Parameters**
 
-| Parameter | Unit Name | Description |
+| Parameter | Units (US / SI) | Description |
 |---|---|---|
-| Pressure | UtVehPress | Airbag internal pressure |
-| Radius | UtVehDispLength | Airbag radius |
-| Bag Defl | UtVehDispLength | Airbag deflection caused by the back-side contact surface |
-| Bag Fn | UtVehForce | Airbag normal force from the back-side contact surface |
-| Bag Fmu | UtVehForce | Frictional force between the back-side contact surface and the airbag |
-| Deploy x, Deploy y, Deploy z | UtVehDispLength | Airbag vehicle-fixed deployment coordinates |
+| Pressure | psi / kPa | Airbag internal pressure |
+| Radius | in / cm | Airbag radius |
+| Bag Defl | in / cm | Airbag deflection caused by the back-side contact surface |
+| Bag Fn | lb / N | Airbag normal force from the back-side contact surface |
+| Bag Fmu | lb / N | Frictional force between the back-side contact surface and the airbag |
+| Deploy x, Deploy y, Deploy z | in / cm | Airbag vehicle-fixed deployment coordinates |
 
 The Vehicle Airbag Restraints output tracks define the current interaction
 between the human occupant and the airbag.

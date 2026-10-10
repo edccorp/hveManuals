@@ -32,6 +32,8 @@ All angles are defined relative to the X, Y, Z axes. The heading angle
 ($\Psi$) is defined about the Z axis; roll ($\Phi$) and pitch ($\Theta$) are
 about the X and Y axes, respectively.
 
+![Figure III-1](../images/p866-figIII-1.png)
+
 *Figure III-1 — Earth-fixed coordinate system. Z is in the direction of
 gravity (down); X and Y are orthogonal to each other, as well as to Z.*
 
@@ -44,6 +46,8 @@ The vehicle-fixed coordinate system may be thought of as a smaller
 coordinate system attached firmly to the vehicle; it never moves with
 respect to the vehicle, but moves along with the vehicle with respect to the
 earth-fixed coordinate system.
+
+![Figure III-2](../images/p867-figIII-2.png)
 
 *Figure III-2 — Vehicle-fixed coordinate system.*
 
@@ -64,6 +68,8 @@ angles, are defined relative to the vehicle-fixed coordinate system.
 
 ### Articulated Vehicles
 
+![Figure III-3](../images/p868-figIII-3.png)
+
 *Figure III-3 — Articulated vehicles. Roll, pitch and yaw articulation
 angles are defined about the vehicle-fixed x, y and z axes, respectively.*
 
@@ -83,6 +89,8 @@ to the X' axis with the positive direction downward, normal to the road
 surface plane. The Y' axis is in the road surface plane, its direction
 chosen to be orthogonal to X' and Z'.
 
+![Figure III-4](../images/p869-figIII-4.png)
+
 *Figure III-4 — Tire Coordinate Axis System [6.2].*
 
 ## Human-fixed
@@ -97,6 +105,8 @@ an i, j, k coordinate axis system with its origin at the segment CG. Joints
 and contact ellipsoids are positioned relative to the i, j, k coordinate
 axis system. Roll, pitch and yaw rotations are defined about the i, j and k
 segment axes, respectively.
+
+![Figure III-5](../images/p870-figIII-5.png)
 
 *Figure III-5 — Human-fixed coordinate system.*
 

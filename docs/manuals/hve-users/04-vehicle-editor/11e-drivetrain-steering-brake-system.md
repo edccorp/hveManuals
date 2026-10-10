@@ -71,14 +71,14 @@ The Engine parameters are described below.
 
 **Table 11-26: Engine Parameters**
 
-| Parameter | Unit Name | Description |
+| Parameter | Units (US / SI) | Description |
 | --- | --- | --- |
-| Engine Name | UtNone | Description of drivetrain components |
-| Throttle Position | UtNone | Switch for Wide-Open-Throttle (WOT) and Closed Throttle engine tables |
-| Engine Speed | UtEngVelAngular | Engine rotational velocity |
-| Engine Power | UtEngPower | Engine power |
-| Engine Torque | UtEngTorque | Engine torque (calculated; not editable) |
-| Drivetrain Inertia | UtVehInertia | Rotational inertia of drivetrain components |
+| Engine Name | — | Description of drivetrain components |
+| Throttle Position | — | Switch for Wide-Open-Throttle (WOT) and Closed Throttle engine tables |
+| Engine Speed | RPM | Engine rotational velocity |
+| Engine Power | HP / kW | Engine power |
+| Engine Torque | ft-lb / N-m | Engine torque (calculated; not editable) |
+| Drivetrain Inertia | lb-sec²-in / kg-m² | Rotational inertia of drivetrain components |
 
 ### Transmission
 
@@ -125,10 +125,10 @@ The Transmission parameters are described below.
 
 **Table 11-27: Transmission Parameters**
 
-| Parameter | Unit Name | Description |
+| Parameter | Units (US / SI) | Description |
 | --- | --- | --- |
-| Forward Speeds | UtNone | Number of forward speeds in the current transmission |
-| Transmission Gear | UtNone | Ratio for each gear |
+| Forward Speeds | — | Number of forward speeds in the current transmission |
+| Transmission Gear | — | Ratio for each gear |
 
 ### Differential
 
@@ -168,10 +168,10 @@ The Differential parameters are described below.
 
 **Table 11-28: Differential Parameters**
 
-| Parameter | Unit Name | Description |
+| Parameter | Units (US / SI) | Description |
 | --- | --- | --- |
-| Forward Speeds | UtNone | Number of forward speeds in the current differential |
-| Differential Gear | UtNone | Ratio for each gear |
+| Forward Speeds | — | Number of forward speeds in the current differential |
+| Differential Gear | — | Ratio for each gear |
 
 ## Steering System Parameters
 
@@ -225,18 +225,18 @@ The Steering System parameters are described below.
 
 **Table 11-29: Steering System Parameters**
 
-| Parameter | Unit Name | Description |
+| Parameter | Units (US / SI) | Description |
 | --- | --- | --- |
 | Axle Selector | n/a | Current axle number |
 | Is Steerable | boolean (TRUE or FALSE) | Check box; if TRUE, the current axle is steerable |
-| Gear Ratio | UtVehSteeringRatio | Ratio of the steering wheel angle to the wheel angle |
-| Steering Column Friction | UtSteTorque | Frictional torque in steering column |
-| Steering Column Inertia | UtVehInertia | Rotational inertia of steering wheel and column |
-| Column Stiffness | UtVehSteeringStiffness | Torsional stiffness of the steering system between the steering wheel and the wheel on the driver's side |
-| Linkage Mass | UtVehMass | Total mass of all translating linkage components |
-| Linkage Stiffness | UtVehSteeringStiffness | Torsional stiffness of the steering system between the driver's side wheel and the opposite-side wheel |
-| Steering Linkage Damping | UtVehDamp | Linear damping of linkage |
-| Steering Friction Lag | UtVehVelAngular | Friction null band for full column friction |
+| Gear Ratio | deg/deg | Ratio of the steering wheel angle to the wheel angle |
+| Steering Column Friction | in-lb / N-m | Frictional torque in steering column |
+| Steering Column Inertia | lb-sec²-in / kg-m² | Rotational inertia of steering wheel and column |
+| Column Stiffness | ft-lb/deg / N-m/deg | Torsional stiffness of the steering system between the steering wheel and the wheel on the driver's side |
+| Linkage Mass | lb-sec²/in / kg | Total mass of all translating linkage components |
+| Linkage Stiffness | ft-lb/deg / N-m/deg | Torsional stiffness of the steering system between the driver's side wheel and the opposite-side wheel |
+| Steering Linkage Damping | lb-sec/in / N-sec/m | Linear damping of linkage |
+| Steering Friction Lag | deg/sec | Friction null band for full column friction |
 
 ## Brake System Parameters
 
@@ -299,10 +299,10 @@ The Brake System parameters are described below.
 
 **Table 11-30: Brake System Parameters**
 
-| Parameter | Unit Name | Description |
+| Parameter | Units (US / SI) | Description |
 | --- | --- | --- |
-| Pedal Ratio | UtBraPedalRatio | Brake system pressure per unit of pedal force |
-| ABS Installed | UtNone | Flag indicating an ABS system is installed on the vehicle |
+| Pedal Ratio | psi/lb / kPa/N | Brake system pressure per unit of pedal force |
+| ABS Installed | — | Flag indicating an ABS system is installed on the vehicle |
 
 ## HVE Brake Designer
 

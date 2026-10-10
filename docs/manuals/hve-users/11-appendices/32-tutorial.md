@@ -70,6 +70,8 @@ and Zoom Slider.*
 
 ### Learning About the Menu Bar
 
+![Figure 32-2](../images/p782-fig32-2.png)
+
 *Figure 32-2 — Menu Bar. HVE's menu bar is very traditional, with File,
 Edit, View, Mode, Set-up, 3D-Edit, Options and Help menus. It also includes
 the Dialog Control button, the Title Bar, the Active Objects List, the Event
@@ -135,6 +137,8 @@ The Event Controller Slider can be used to move forward or backward through
 each simulation frame — an easy means to locate a specific point in a
 simulation without having to Play and Stop.
 
+![Figure 32-4](../images/p784-fig32-4.png)
+
 *Figure 32-4 — Event Controller.*
 
 The Menu Bar also includes **Minimize** and **Maximize** buttons and a
@@ -149,6 +153,8 @@ dialog to the top of the display.
 ### Viewers
 
 Viewers are used to display 3-D objects.
+
+![Figure 32-5](../images/p786-fig32-5.png)
 
 *Figure 32-5 — Typical Viewer. Pick Mode or Manipulate Mode is selected by
 choosing the arrow or hand icon near the upper right edge of the viewer.
@@ -165,6 +171,8 @@ Viewers have the same window manager components as the Menu Bar, plus:
   thumbwheel, and Zoom slider.
 
 ### HVE Mode Selector
+
+![Figure 32-6](../images/p787-fig32-6.png)
 
 *Figure 32-6 — HVE Mode Selector, located at the left side of the toolbar.*
 
@@ -237,6 +245,10 @@ assigning physical event information (sun position; wind direction and
 velocity for aerodynamics calculations; air temperature and pressure for use
 in air density calculations; and gravity constant), for assigning a 3-D
 geometry file to drive on, and for sky color and fog for visibility studies.
+
+![Figure 32-14](../images/p794-fig32-14.png)
+
+![Figure 32-15](../images/p795-fig32-15.png)
 
 *Figure 32-14 — Vehicle Information dialog. Figure 32-15 — Environment
 Information dialog.*

@@ -150,41 +150,43 @@ The interface, dialogs and associated variables are described below.
 *Figure 31-2 — ABS System Data dialog. These parameters affect the entire
 vehicle (compare with the ABS Wheel Data dialog).*
 
+![Figure 31-3](../images/p760-fig31-3.png)
+
 *Figure 31-3 — ABS Wheel Data dialog. These parameters affect the selected
 wheel (compare with the ABS System Data dialog).*
 
 **Table 31-1 — HVE ABS System variables. These variables apply to the entire
 vehicle (compare with Wheel Variables in Table 31-2).**
 
-| Parameter | Unit Name | Description |
+| Parameter | Units (US / SI) | Description |
 | --- | --- | --- |
-| Control Source | UtNone | Location of ABS controller (This Vehicle or Tow Vehicle) |
-| Algorithm | UtNone | ABS algorithm selected from a list of available algorithms |
-| Control Method | UtNone | ABS control method (Vehicle-Based, Axle-Based or Wheel-Based) |
-| Cycle Rate | UtFrequency | Determines the time required for a complete ABS cycle |
-| Threshold Brake System Pressure | UtBraPress | Minimum system pressure for ABS activation |
-| Threshold Vehicle Velocity | UtVehVelLinear | Minimum vehicle velocity for ABS activation |
-| Low Friction Threshold | UtNone | Tire-terrain surface friction threshold |
-| Delay Method | UtNone | ABS delay method (Vehicle-Based, Axle-Based or Wheel-Based) |
-| Apply Delay | UtBraTime | Time delay for start of controlled output pressure increase |
-| Release Delay | UtBraTime | Time delay for start of controlled output pressure decrease |
+| Control Source | — | Location of ABS controller (This Vehicle or Tow Vehicle) |
+| Algorithm | — | ABS algorithm selected from a list of available algorithms |
+| Control Method | — | ABS control method (Vehicle-Based, Axle-Based or Wheel-Based) |
+| Cycle Rate | cps | Determines the time required for a complete ABS cycle |
+| Threshold Brake System Pressure | psi / kPa | Minimum system pressure for ABS activation |
+| Threshold Vehicle Velocity | mph / km/h | Minimum vehicle velocity for ABS activation |
+| Low Friction Threshold | — | Tire-terrain surface friction threshold |
+| Delay Method | — | ABS delay method (Vehicle-Based, Axle-Based or Wheel-Based) |
+| Apply Delay | sec | Time delay for start of controlled output pressure increase |
+| Release Delay | sec | Time delay for start of controlled output pressure decrease |
 
 **Table 31-2 — HVE ABS Wheel variables. These variables apply to the
 selected axle or wheel (compare with System Variables in Table 31-1).**
 
-| Parameter | Unit Name | Description |
+| Parameter | Units (US / SI) | Description |
 | --- | --- | --- |
-| Wheel Minimum Velocity | UtVehVelLinear | Minimum wheel forward velocity for ABS control |
-| Tire Slip, Minimum | UtBraPercent | Minimum tire longitudinal slip for pressure modulation |
-| Tire Slip, Maximum | UtBraPercent | Maximum tire longitudinal slip for pressure modulation |
-| Spin Accel, Minimum | UtVehAccelAngular | Minimum wheel angular acceleration for pressure modulation |
-| Spin Accel, Maximum | UtVehAccelAngular | Maximum wheel angular acceleration for pressure modulation |
-| Cycle Rate | UtFrequency | Determines the time required for one complete ABS cycle |
-| Apply Delay | UtBraTime | Time delay for start of controlled wheel output pressure increase |
-| Apply Rate, Primary | UtBraPressRate | Primary rate of controlled wheel output pressure increase |
-| Apply Rate, Secondary | UtBraPressRate | Secondary rate of controlled wheel output pressure increase |
-| Release Delay | UtBraTime | Time delay for start of controlled output pressure decrease |
-| Release Rate | UtBraPressRate | Rate of controlled wheel output pressure decrease |
+| Wheel Minimum Velocity | mph / km/h | Minimum wheel forward velocity for ABS control |
+| Tire Slip, Minimum | %/100 | Minimum tire longitudinal slip for pressure modulation |
+| Tire Slip, Maximum | %/100 | Maximum tire longitudinal slip for pressure modulation |
+| Spin Accel, Minimum | deg/sec² | Minimum wheel angular acceleration for pressure modulation |
+| Spin Accel, Maximum | deg/sec² | Maximum wheel angular acceleration for pressure modulation |
+| Cycle Rate | cps | Determines the time required for one complete ABS cycle |
+| Apply Delay | sec | Time delay for start of controlled wheel output pressure increase |
+| Apply Rate, Primary | psi/sec / kPa/sec | Primary rate of controlled wheel output pressure increase |
+| Apply Rate, Secondary | psi/sec / kPa/sec | Secondary rate of controlled wheel output pressure increase |
+| Release Delay | sec | Time delay for start of controlled output pressure decrease |
+| Release Rate | psi/sec / kPa/sec | Rate of controlled wheel output pressure decrease |
 
 ### System Variables
 
@@ -533,6 +535,8 @@ The steps for using the HVE ABS model are:
 4. Optionally, edit the vehicle's ABS Wheel parameters for each wheel.
 
 These steps are described below.
+
+![Figure 31-8](../images/figure-11-54.jpg)
 
 *Figure 31-8 — Vehicle Brake System Information dialog. Click on ABS
 Installed to invoke the ABS model. Click on Edit to display the ABS System

@@ -175,11 +175,11 @@ inertia may be edited.)*
 
 **Table 11-1: Inertial Properties**
 
-| Parameter | Unit Name | Description |
+| Parameter | Units (US / SI) | Description |
 | --- | --- | --- |
-| Weight | UtVehForce | Vehicle total and sprung weight (HVE calculates and stores the mass by dividing the entered weight by the current acceleration of gravity) |
-| Rotational Inertias | UtVehInertia | Vehicle total and sprung rotational inertias about the vehicle x, y and z (roll, pitch and yaw) axes |
-| x-z Product of Inertia | UtVehInertia | Inertial product about the y axis |
+| Weight | lb / N | Vehicle total and sprung weight (HVE calculates and stores the mass by dividing the entered weight by the current acceleration of gravity) |
+| Rotational Inertias | lb-sec²-in / kg-m² | Vehicle total and sprung rotational inertias about the vehicle x, y and z (roll, pitch and yaw) axes |
+| x-z Product of Inertia | lb-sec²-in / kg-m² | Inertial product about the y axis |
 
 ## Move CG
 
@@ -223,10 +223,10 @@ The Move CG parameters are described below.
 
 **Table 11-2: Move CG Parameters**
 
-| Parameter | Unit Name | Description |
+| Parameter | Units (US / SI) | Description |
 | --- | --- | --- |
-| dx, dy, dz | UtVehDispLength | Adjustment of the default CG (center of gravity) location relative to the vehicle-fixed coordinate system |
-| CG Height | UtVehDispLength | Approximate CG height, calculated from vehicle wheel positions and tire radius. Tire deflection is ignored. |
+| dx, dy, dz | in / cm | Adjustment of the default CG (center of gravity) location relative to the vehicle-fixed coordinate system |
+| CG Height | in / cm | Approximate CG height, calculated from vehicle wheel positions and tire radius. Tire deflection is ignored. |
 
 ## Color
 
@@ -313,19 +313,19 @@ deformation to the vehicle exterior.
 
 **Table 11-3: Vehicle 3-D Geometry Mechanical Parameters**
 
-| Parameter | Unit Name | Description |
+| Parameter | Units (US / SI) | Description |
 | --- | --- | --- |
-| x,y,z coords | UtVehDispLength | Vehicle-fixed vertex coordinates |
-| Material Name | UtNone | Material name |
-| Constant | UtVehForce | Force required to initiate deflection |
-| Linear Stiffness | UtVehMatLinear | Linear material deformation coefficient |
-| Quadratic Stiffness | UtVehMatQuad | Quadratic material deformation coefficient |
-| Cubic Stiffness | UtVehMatCubic | Cubic material deformation coefficient |
-| Damping Constant | UtVehMatDamp | Material velocity-dependent deformation constant |
-| Friction Constant | UtNone | Friction coefficient |
-| Maximum Force | UtVehForce | Force at which 3rd-order force-deflection relationship is abandoned |
-| Maximum Deflection | UtVehDispLinear | Deflection at which 3rd-order force-deflection relationship is abandoned |
-| Unloading Slope | UtVehMatLinear | Linear unloading slope beginning at max deflection |
+| x,y,z coords | in / cm | Vehicle-fixed vertex coordinates |
+| Material Name | — | Material name |
+| Constant | lb / N | Force required to initiate deflection |
+| Linear Stiffness | lb/in / N/cm | Linear material deformation coefficient |
+| Quadratic Stiffness | lb/in² / N/cm² | Quadratic material deformation coefficient |
+| Cubic Stiffness | lb/in³ / N/cm³ | Cubic material deformation coefficient |
+| Damping Constant | lb-sec/in / N-sec/m | Material velocity-dependent deformation constant |
+| Friction Constant | — | Friction coefficient |
+| Maximum Force | lb / N | Force at which 3rd-order force-deflection relationship is abandoned |
+| Maximum Deflection | in / cm | Deflection at which 3rd-order force-deflection relationship is abandoned |
+| Unloading Slope | lb/in / N/cm | Linear unloading slope beginning at max deflection |
 
 ### Geometry File Options
 
@@ -530,21 +530,21 @@ The Contact Surface parameters are described below.
 
 **Table 11-4: Vehicle Contact Surface Parameters**
 
-| Parameter | Unit Name | Description |
+| Parameter | Units (US / SI) | Description |
 | --- | --- | --- |
-| Bind To | UtNone | Flag indicating whether material attributes are attached to each vertex or each face |
-| Location | UtNone | Flag indicating whether the surface is an interior or exterior surface |
-| x,y,z coords | UtVehDispLength | Vehicle-fixed vertex coordinates for each of 3 corners |
-| Material Name | UtNone | Material name |
-| Constant | UtVehForce | Force required to initiate deflection |
-| Linear Stiffness | UtVehMatLinear | Linear material deformation coefficient |
-| Quadratic Stiffness | UtVehMatQuad | Quadratic material deformation coefficient |
-| Cubic Stiffness | UtVehMatCubic | Cubic material deformation coefficient |
-| Damping Constant | UtVehMatDamp | Material velocity-dependent deformation constant |
-| Friction Constant | UtNone | Friction coefficient |
-| Maximum Force | UtVehForce | Force at which 3rd-order force-deflection relationship is abandoned |
-| Maximum Deflection | UtVehDispLinear | Deflection at which 3rd-order force-deflection relationship is abandoned |
-| Unloading Slope | UtVehMatLinear | Linear unloading slope beginning at max deflection |
+| Bind To | — | Flag indicating whether material attributes are attached to each vertex or each face |
+| Location | — | Flag indicating whether the surface is an interior or exterior surface |
+| x,y,z coords | in / cm | Vehicle-fixed vertex coordinates for each of 3 corners |
+| Material Name | — | Material name |
+| Constant | lb / N | Force required to initiate deflection |
+| Linear Stiffness | lb/in / N/cm | Linear material deformation coefficient |
+| Quadratic Stiffness | lb/in² / N/cm² | Quadratic material deformation coefficient |
+| Cubic Stiffness | lb/in³ / N/cm³ | Cubic material deformation coefficient |
+| Damping Constant | lb-sec/in / N-sec/m | Material velocity-dependent deformation constant |
+| Friction Constant | — | Friction coefficient |
+| Maximum Force | lb / N | Force at which 3rd-order force-deflection relationship is abandoned |
+| Maximum Deflection | in / cm | Deflection at which 3rd-order force-deflection relationship is abandoned |
+| Unloading Slope | lb/in / N/cm | Linear unloading slope beginning at max deflection |
 
 ## Belt Restraints
 
@@ -613,18 +613,18 @@ left and right belt sections:
 
 **Table 11-5: Belt Restraint System Parameters**
 
-| Parameter | Unit Name | Description |
+| Parameter | Units (US / SI) | Description |
 | --- | --- | --- |
 | Location | n/a | Location index (Right Front, Left Front, ..., Left Back) used to assign the location of the current belt section |
 | Section | n/a | Torso or Lap belt section |
 | Device Installed | BOOLEAN (True or False) | Switch that determines that a restraint is installed at the selected location and section |
-| x,y,z | UtVehDispLength | Vehicle-fixed x,y,z coordinates for the anchor point of the belt |
-| Linear Stiffness | UtVehMatStiffLinear | First-order force vs deflection constant |
-| Quadratic Stiffness | UtVehMatStiffQuad | Second-order force vs deflection constant |
-| Cubic Stiffness | UtVehMatStiffCubic | Third-order force vs deflection constant |
-| Damping Constant | UtVehMatDamp | Velocity-dependent force contribution |
-| Max Force | UtVehForce | Maximum allowable force |
-| Unloading Slope | UtVehMatStiffLinear | Force vs deflection constant during unloading |
+| x,y,z | in / cm | Vehicle-fixed x,y,z coordinates for the anchor point of the belt |
+| Linear Stiffness | lb/in / N/cm | First-order force vs deflection constant |
+| Quadratic Stiffness | lb/in² / N/cm² | Second-order force vs deflection constant |
+| Cubic Stiffness | lb/in³ / N/cm³ | Third-order force vs deflection constant |
+| Damping Constant | lb-sec/in / N-sec/m | Velocity-dependent force contribution |
+| Max Force | lb / N | Maximum allowable force |
+| Unloading Slope | lb/in / N/cm | Force vs deflection constant during unloading |
 
 ## Airbag Restraints
 
@@ -633,7 +633,7 @@ the Airbag Restraints dialog.
 
 ![Figure 11-13](../images/figure-11-13.jpg)
 
-*Figure 11-13: Airbag Restraints dialog.*
+*Figure 11-13: Air Bag dialog (Airbag Restraints).*
 
 ![Figure 11-14](../images/p367-figB11-14.png)
 
@@ -724,32 +724,29 @@ The Airbag Restraint Properties are described below.
 
 **Table 11-6: Airbag Restraint System Parameters**
 
-| Parameter | Unit Name | Description |
+| Parameter | Units (US / SI) | Description |
 | --- | --- | --- |
 | Location | n/a | Location index (Right Front, Left Front, ..., Left Back) used to assign the location of the airbag |
 | Device Installed | BOOLEAN (True or False) | Switch that determines that an airbag restraint is installed at the selected location |
-| Deploy x,y,z | UtVehDispLength | Vehicle-fixed x,y,z coordinates for the airbag deployment location |
-| Initial Bag Radius | UtVehDispLength | Radius of the (spherical) airbag at the start of filling |
-| Passenger Bag Length | UtVehDispLength | Length of the (cylindrical) airbag used for passenger-side airbag systems |
-| Initial Bag Pressure | UtVehDispPress | Airbag pressure at the start of filling |
-| Membrane Thickness | UtVehDispLength | Thickness of the airbag material |
-| Full Inflation Vol | UtVehVolume | Volume of the airbag at full inflation |
-| Discharge Coef | UtNone | Thermodynamic discharge coefficient of the airbag vent |
-| Discharge Area | UtVehArea | Area of the airbag vent |
-| Vent Opening Pressure | UtVehPress | Pressure required to open the vent |
-| Bag Penetration for Force | UtVehDispLength | Minimum deflection of an ellipsoid into the airbag required to produce a force |
-| Force Convergence Criterion | UtVehForce | Allowable difference between force on the airbag and force on the human |
-| Bag Elastic Modulus | UtVehMatStiffQuad | Elastic modulus of the airbag membrane material during force application |
-| Bag Elastic Modulus on Rebound | UtVehMatStiffQuad | Elastic modulus of the airbag membrane material during unloading |
-| Bag Elastic Modulus When Bottomed Out | UtVehMatStiffQuad | Elastic modulus of the airbag membrane material at maximum penetration |
-| Gas Density | UtVehDensity | Density of the airbag filling agent |
-| Max Column Collapse | UtVehDispLength | Maximum column stroke before it bottoms out |
-| Column Collapse Load | UtVehForce | Force required to initiate column collapse |
-| Column Angle | UtVehDispAngle | Deployment (pitch) angle |
+| Deploy x,y,z | in / cm | Vehicle-fixed x,y,z coordinates for the airbag deployment location |
+| Initial Bag Radius | in / cm | Radius of the (spherical) airbag at the start of filling |
+| Passenger Bag Length | in / cm | Length of the (cylindrical) airbag used for passenger-side airbag systems |
+| Initial Bag Pressure | psi / kPa | Airbag pressure at the start of filling |
+| Membrane Thickness | in / cm | Thickness of the airbag material |
+| Full Inflation Vol | in³ / cm³ | Volume of the airbag at full inflation |
+| Discharge Coef | — | Thermodynamic discharge coefficient of the airbag vent |
+| Discharge Area | in² / cm² | Area of the airbag vent |
+| Vent Opening Pressure | psi / kPa | Pressure required to open the vent |
+| Bag Penetration for Force | in / cm | Minimum deflection of an ellipsoid into the airbag required to produce a force |
+| Force Convergence Criterion | lb / N | Allowable difference between force on the airbag and force on the human |
+| Bag Elastic Modulus | lb/in² / N/cm² | Elastic modulus of the airbag membrane material during force application |
+| Bag Elastic Modulus on Rebound | lb/in² / N/cm² | Elastic modulus of the airbag membrane material during unloading |
+| Bag Elastic Modulus When Bottomed Out | lb/in² / N/cm² | Elastic modulus of the airbag membrane material at maximum penetration |
+| Gas Density | lb/ft³ / kg/m³ | Density of the airbag filling agent |
+| Max Column Collapse | in / cm | Maximum column stroke before it bottoms out |
+| Column Collapse Load | lb / N | Force required to initiate column collapse |
+| Column Angle | deg | Deployment (pitch) angle |
 | Backside Contact | n/a | The name of the contact surface supporting the airbag (no force can exist between the human and airbag unless the airbag is supported on a contact surface that provides a reaction force) |
-
-*(Note: the legacy table listed the Full Inflation Vol unit as UtVehForce;
-this is a typo — the quantity is a volume.)*
 
 ## Inter-vehicle Connections
 
@@ -835,15 +832,15 @@ displayed by pressing *Properties...*:
 
 **Table 11-7: Inter-vehicle Connection Parameters**
 
-| Parameter | Unit Name | Description |
+| Parameter | Units (US / SI) | Description |
 | --- | --- | --- |
 | Front Connection Type | n/a | Type of front connection (None, Hitch, King Pin or Pintle Eye) |
-| Front Connection Coordinates | UtVehDispLength | Vehicle-fixed coordinates of the front connection |
+| Front Connection Coordinates | in / cm | Vehicle-fixed coordinates of the front connection |
 | Rear Connection Type | n/a | Type of rear connection (None, Ball, Fifth Wheel or Pintle Hook) |
-| Rear Connection Coordinates | UtVehDispLength | Vehicle-fixed coordinates of the rear connection |
+| Rear Connection Coordinates | in / cm | Vehicle-fixed coordinates of the rear connection |
 | Connection Friction | n/a | Friction coefficient at the connection |
-| Connection Friction Radius | UtVehDispLength | Frictional moment arm |
-| Maximum Articulation Angle | UtVehDispAngle | Maximum articulation angle between the tow vehicle and trailer |
+| Connection Friction Radius | in / cm | Frictional moment arm |
+| Maximum Articulation Angle | deg | Maximum articulation angle between the tow vehicle and trailer |
 
 ## Aerodynamic Drag
 
@@ -890,14 +887,14 @@ The Aerodynamic Drag parameters are described below.
 
 **Table 11-8: Vehicle Aerodynamic Drag Parameters**
 
-| Parameter | Unit Name | Description |
+| Parameter | Units (US / SI) | Description |
 | --- | --- | --- |
 | Surface Name | n/a | Name of selected aerodynamic surface |
 | Device Installed | n/a | Flag indicating device is installed and is capable of producing aerodynamic force on the vehicle |
-| Drag Coefficient | UtVehDragQuad | Coefficient of aerodynamic drag acting on surface |
-| Lift Coefficient | UtVehDragQuad | Coefficient of aerodynamic lift acting on surface |
-| Projected Surface Area | UtVehArea | Projected surface area parallel to selected surface |
-| Center of Pressure | UtVehDispLength | Vehicle-fixed coordinates where the aerodynamic force is applied |
+| Drag Coefficient | in² / m² | Coefficient of aerodynamic drag acting on surface |
+| Lift Coefficient | in² / m² | Coefficient of aerodynamic lift acting on surface |
+| Projected Surface Area | in² / cm² | Projected surface area parallel to selected surface |
+| Center of Pressure | in / cm | Vehicle-fixed coordinates where the aerodynamic force is applied |
 
 ## Body Torsion
 
@@ -926,10 +923,10 @@ steps:
 
 **Table 11-9: Vehicle Body Torsion Parameters**
 
-| Parameter | Unit Name | Description |
+| Parameter | Units (US / SI) | Description |
 | --- | --- | --- |
-| Axis Location | UtVehDispLength | Vehicle-fixed z-distance from the CG to the torsional roll axis |
-| Body Stiffness | UtVehTorque | Torsional stiffness of the body |
+| Axis Location | in / cm | Vehicle-fixed z-distance from the CG to the torsional roll axis |
+| Body Stiffness | ft-lb / N-m | Torsional stiffness of the body |
 
 ---
 *Source: HVE User's Manual (Version 5, Seventh Edition, Jan 2006), Chapter

@@ -189,6 +189,8 @@ The movie is displayed in the Playback Window in real time.
 The video recorder creates a file of the video sequence. These files may be
 saved and opened using a file selection dialog, similar to other files.
 
+![Figure 27-3](../images/p697-fig27-3.png)
+
 *Figure 27-3 — Video File Selection dialog, used for opening and saving
 compressed video output.*
 

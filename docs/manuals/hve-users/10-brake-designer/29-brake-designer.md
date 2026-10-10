@@ -35,6 +35,8 @@ sliding speed and temperature on lining friction. The model also includes the
 capability to study brake fade characteristics associated with reduced
 braking capacity of heavy trucks on long downhill grades.
 
+![Figure 29-1](../images/figure-11-36.jpg)
+
 *Figure 29-1 — Brake Information dialog.*
 
 To use the HVE Brake Designer, perform the following steps:
@@ -493,39 +495,39 @@ discussed earlier in this chapter (see Actuation Factor).
 
 **Table 29-2 — HVE Brake Model Parameters (see Figures 29-4 to 29-8)**
 
-| Parameter | Unit Name | Description |
+| Parameter | Units (US / SI) | Description |
 | --- | --- | --- |
-| BrakeType | UtNone | Brake assembly type (Generic, Disc, Duo-servo, Duplex, Single Piston, Dual Piston, S-Cam, Single Wedge, Dual Wedge, Air Disc) |
-| LiningAngle, $\alpha_0$ | UtVehDispAngle | Included angle spanned by brake shoe lining |
-| Alpha1, $\alpha_1$ | UtVehDispAngle | Angular dimension used in pinned brake shoes (see Figure 29-4) |
-| MuLining, $\mu_L$ | UtNone | Friction coefficient between the lining and drum or pad and rotor |
-| BrakeBlockWidth, $h$ | UtVehDispLength | Distance between supports for pinned brake shoes (see Figure 29-4) |
-| DrumRadius, $R$ | UtVehDispLength | 1/2 the diameter of the brake drum |
-| DiscOuterRadius, $R_o$ | UtVehDispLength | 1/2 the outer diameter of the brake rotor |
-| DiscInnerRadius, $R_i$ | UtVehDispLength | 1/2 the inner diameter of the brake rotor |
-| LiningWidth | UtVehDispLength | Width of lining material |
-| LiningThickness | UtVehDispLength | Thickness of lining material |
-| PadIncludedAngle | UtVehDispAngle | Included angle formed by pad |
-| ShoePinRadius, $a'$ | UtVehDispLength | Radial distance from the center of the brake shoe to the anchor pin for pinned brake shoes |
-| ActuationDist, $c$ | UtVehDispLength | Vertical distance from the center of the brake shoe to the actuation piston for abutted brake shoes |
-| AbutmentDist, $a$ | UtVehDispLength | Vertical distance from the center of the brake shoe to the lower abutment for abutted brake shoes |
-| AbutmentWidth, $o$ | UtVehDispLength | 1/2 the horizontal distance from the center of the brake shoe to the lower abutment for abutted brake shoes |
-| ArcCenterAngle, $\beta$ | UtVehDispAngle | Angle from the horizontal centerline to the midpoint of the span defined by $\alpha_0$ (shown positive in Figure 29-5) |
-| AbutmentAngle, $\Psi$ | UtVehDispAngle | Angle of abutment surface relative to brake shoe support surface |
-| AbutmentFriction, $\mu_s$ | UtNone | Coefficient of sliding friction between the abutment surface and the brake shoe support surface |
-| LinePress | UtBraPress | Current brake system pressure at the inlet to the piston or air chamber (after proportioning) |
-| PushoutPress | UtBraPress | Pressure required to overcome force associated with return springs and begin developing brake torque |
-| PistonArea | UtVehArea | Effective area for the wheel cylinder (hydraulic systems) or air chamber (air systems) |
-| NPistons | UtNone | Number of pistons in a disc brake caliper (applies only to disc brakes) |
-| $\eta_{Mech}$ | UtBraPercent | Mechanical efficiency of the actuation system (caliper, wheel cylinder, air chamber/slack adjuster/S-cam, wedge) |
-| LSlack | UtVehDispLength | Lever arm length of slack adjuster |
-| RS-cam | UtVehDispLength | Effective radius of the S-cam (normally 0.5 inches) |
-| WedgeAngle, $\alpha$ | UtVehDispAngle | Included angle of actuation wedge |
-| Initial Slack, $S_{100}$ | UtVehDispLength | Pushrod stroke at 100 psi, measured cold |
-| Stroke knee, $S_1$ | UtVehDispLength | Pushrod stroke at knee in force vs stroke relationship (see Figure 29-8) |
-| $AF_1$ | UtBraPercent | Actuation factor at $S_1$ |
-| $S_{max}$ | UtVehDispLength | Maximum pushrod stroke |
-| $KT_1$ | UtBraExpansionCoef | Empirical expansion coefficient defining the increase in stroke due to temperature-related brake expansion |
+| BrakeType | — | Brake assembly type (Generic, Disc, Duo-servo, Duplex, Single Piston, Dual Piston, S-Cam, Single Wedge, Dual Wedge, Air Disc) |
+| LiningAngle, $\alpha_0$ | deg | Included angle spanned by brake shoe lining |
+| Alpha1, $\alpha_1$ | deg | Angular dimension used in pinned brake shoes (see Figure 29-4) |
+| MuLining, $\mu_L$ | — | Friction coefficient between the lining and drum or pad and rotor |
+| BrakeBlockWidth, $h$ | in / cm | Distance between supports for pinned brake shoes (see Figure 29-4) |
+| DrumRadius, $R$ | in / cm | 1/2 the diameter of the brake drum |
+| DiscOuterRadius, $R_o$ | in / cm | 1/2 the outer diameter of the brake rotor |
+| DiscInnerRadius, $R_i$ | in / cm | 1/2 the inner diameter of the brake rotor |
+| LiningWidth | in / cm | Width of lining material |
+| LiningThickness | in / cm | Thickness of lining material |
+| PadIncludedAngle | deg | Included angle formed by pad |
+| ShoePinRadius, $a'$ | in / cm | Radial distance from the center of the brake shoe to the anchor pin for pinned brake shoes |
+| ActuationDist, $c$ | in / cm | Vertical distance from the center of the brake shoe to the actuation piston for abutted brake shoes |
+| AbutmentDist, $a$ | in / cm | Vertical distance from the center of the brake shoe to the lower abutment for abutted brake shoes |
+| AbutmentWidth, $o$ | in / cm | 1/2 the horizontal distance from the center of the brake shoe to the lower abutment for abutted brake shoes |
+| ArcCenterAngle, $\beta$ | deg | Angle from the horizontal centerline to the midpoint of the span defined by $\alpha_0$ (shown positive in Figure 29-5) |
+| AbutmentAngle, $\Psi$ | deg | Angle of abutment surface relative to brake shoe support surface |
+| AbutmentFriction, $\mu_s$ | — | Coefficient of sliding friction between the abutment surface and the brake shoe support surface |
+| LinePress | psi / kPa | Current brake system pressure at the inlet to the piston or air chamber (after proportioning) |
+| PushoutPress | psi / kPa | Pressure required to overcome force associated with return springs and begin developing brake torque |
+| PistonArea | in² / cm² | Effective area for the wheel cylinder (hydraulic systems) or air chamber (air systems) |
+| NPistons | — | Number of pistons in a disc brake caliper (applies only to disc brakes) |
+| $\eta_{Mech}$ | %/100 | Mechanical efficiency of the actuation system (caliper, wheel cylinder, air chamber/slack adjuster/S-cam, wedge) |
+| LSlack | in / cm | Lever arm length of slack adjuster |
+| RS-cam | in / cm | Effective radius of the S-cam (normally 0.5 inches) |
+| WedgeAngle, $\alpha$ | deg | Included angle of actuation wedge |
+| Initial Slack, $S_{100}$ | in / cm | Pushrod stroke at 100 psi, measured cold |
+| Stroke knee, $S_1$ | in / cm | Pushrod stroke at knee in force vs stroke relationship (see Figure 29-8) |
+| $AF_1$ | %/100 | Actuation factor at $S_1$ |
+| $S_{max}$ | in / cm | Maximum pushrod stroke |
+| $KT_1$ | in/deg F / cm/deg C | Empirical expansion coefficient defining the increase in stroke due to temperature-related brake expansion |
 
 *(updated: the original table also listed **NRotors** (number of rotors in a
 disc brake assembly). This parameter has been removed from the current Disc

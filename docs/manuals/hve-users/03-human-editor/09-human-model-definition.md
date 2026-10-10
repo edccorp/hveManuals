@@ -58,10 +58,10 @@ page](../../07-humans/Human.md).
 
 **Table 9-1: Inertial Parameters for each human segment**
 
-| Parameter | Unit Name | Description |
+| Parameter | Units (US / SI) | Description |
 |---|---|---|
-| Weight | UtHumForce | Weight of selected segment (HVE calculates and stores the segment mass by dividing the entered weight by the current acceleration of gravity) |
-| Rotational Inertias | UtHumInertia | Rotational inertias about the segment i, j and k (roll, pitch and yaw) axes |
+| Weight | lb / N | Weight of selected segment (HVE calculates and stores the segment mass by dividing the entered weight by the current acceleration of gravity) |
+| Rotational Inertias | lb-sec²-in / kg-m² | Rotational inertias about the segment i, j and k (roll, pitch and yaw) axes |
 
 *(updated: the current dialog also displays the read-only computed segment
 Mass and the read-only Total Weight of the entire human — the sum of all 15
@@ -85,10 +85,10 @@ Segments checkbox to apply the selected color to all segments.
 
 **Table 9-2: Color Parameters for each human segment**
 
-| Parameter | Unit Name | Description |
+| Parameter | Units (US / SI) | Description |
 |---|---|---|
-| RGB Color Values | UtNone | Red, green and blue color values for the selected segment |
-| Color Intensity | UtNone | Brightness (0 = dark, 1 = bright) |
+| RGB Color Values | — | Red, green and blue color values for the selected segment |
+| Color Intensity | — | Brightness (0 = dark, 1 = bright) |
 
 ## Contact Ellipsoid Properties
 
@@ -110,13 +110,13 @@ the list of available ellipsoids, then select the desired ellipsoid.
 
 **Table 9-3: Contact Ellipsoid Parameters for each human segment**
 
-| Parameter | Unit Name | Description |
+| Parameter | Units (US / SI) | Description |
 |---|---|---|
 | Ellipsoid Name | 30-character text string | User-supplied names for each contact ellipsoid |
-| Center Coordinates | UtHumDispLength | The coordinates of the center of the selected ellipsoid, defined relative to the segment principal axis system |
-| Semi-axis Length | UtHumDispLength | The semi-axis i, j and k lengths of the selected ellipsoid |
-| Principal Axes | UtHumDispAngle | The angles of the i, j and k ellipsoid axis system relative to the segment axis system (see Figure 9-6) |
-| Ellipsoid Material Name | UtNone | Name for material attached to current ellipsoid |
+| Center Coordinates | in / cm | The coordinates of the center of the selected ellipsoid, defined relative to the segment principal axis system |
+| Semi-axis Length | in / cm | The semi-axis i, j and k lengths of the selected ellipsoid |
+| Principal Axes | deg | The angles of the i, j and k ellipsoid axis system relative to the segment axis system (see Figure 9-6) |
+| Ellipsoid Material Name | — | Name for material attached to current ellipsoid |
 
 ![Figure 9-6](../images/p323-figB9-6.png)
 
@@ -141,18 +141,18 @@ force-deflection graph display.
 
 **Table 9-4: Human Contact Ellipsoid Material Parameters**
 
-| Parameter | Unit Name | Description |
+| Parameter | Units (US / SI) | Description |
 |---|---|---|
-| Material Name | UtNone | User-editable material name |
-| Constant | UtHumForce | Force required to initiate deflection |
-| Linear Stiffness | UtHumMatLinear | Linear material deformation coefficient |
-| Quadratic Stiffness | UtHumMatQuad | Quadratic material deformation coefficient |
-| Cubic Stiffness | UtHumMatCubic | Cubic material deformation coefficient |
-| Damping Constant | UtHumMatDamp | Material velocity-dependent deformation constant |
-| Friction Constant | UtNone | Inter-segment friction coefficient |
-| Maximum Force | UtHumForce | Force at which 3rd-order force-deflection relationship is abandoned |
-| Maximum Deflection | UtHumDispLength | Deflection at which 3rd-order force-deflection relationship is abandoned *(updated: unit name was listed as UtHumDispLinear in the original manual; HVE now uses UtHumDispLength)* |
-| Unloading Slope | UtHumMatLinear | Linear unloading slope beginning at maximum deflection |
+| Material Name | — | User-editable material name |
+| Constant | lb / N | Force required to initiate deflection |
+| Linear Stiffness | lb/in / N/cm | Linear material deformation coefficient |
+| Quadratic Stiffness | lb/in² / N/cm² | Quadratic material deformation coefficient |
+| Cubic Stiffness | lb/in³ / N/cm³ | Cubic material deformation coefficient |
+| Damping Constant | lb-sec/in / N-sec/cm | Material velocity-dependent deformation constant |
+| Friction Constant | — | Inter-segment friction coefficient |
+| Maximum Force | lb / N | Force at which 3rd-order force-deflection relationship is abandoned |
+| Maximum Deflection | in / cm | Deflection at which 3rd-order force-deflection relationship is abandoned |
+| Unloading Slope | lb/in / N/cm | Linear unloading slope beginning at maximum deflection |
 
 ![Figure 9-8](../images/figure-9-8.jpg)
 
@@ -178,28 +178,23 @@ page](../../07-humans/Human2.md).
 
 **Table 9-5: Injury Tolerance Parameters for the current human**
 
-| Parameter | Unit Name | Description |
+| Parameter | Units (US / SI) | Description |
 |---|---|---|
 | HIC | n/a | Head Injury Criterion, an empirically derived index [6.1] used to estimate the probability of a closed head injury |
-| Head Pitch Concussion | UtHumAccelAngular (deg/sec²) | Angular acceleration of the head about the pitch axis of the neck |
-| Head Side Acceleration | UtHumAccelLinear (g) | Linear acceleration of the head in the direction of the head-fixed j-axis |
-| Chest SI | UtHumChestSI (g) | Chest Severity Index, an injury index indicating the maximum chest acceleration |
-| Chest Force | UtHumForce | The tolerance for peak force against the chest in the direction of the chest-fixed i-axis |
-| Chest Forward Acceleration | UtHumAccelLinear (g) | The tolerance for peak chest acceleration in the direction of the chest-fixed i-axis |
-| Maximum Axial Femur Load (Max Knee Force) | UtHumForce | The tolerance for peak axial loading of the femur *(updated: labeled "Max Knee Force" in the current dialog)* |
-| Maximum Lap Belt Force — Left Belt / Right Belt | UtHumForce | The tolerance for lap belt tension, above which injury is expected to occur to the abdomen |
-| Maximum Torso Belt Force — Left Belt / Right Belt | UtHumForce | The tolerance for torso belt tension, above which injury is expected to occur to the torso |
+| Head Pitch Concussion | deg/sec² | Angular acceleration of the head about the pitch axis of the neck |
+| Head Side Acceleration | g | Linear acceleration of the head in the direction of the head-fixed j-axis |
+| Chest SI | g | Chest Severity Index, an injury index indicating the maximum chest acceleration |
+| Chest Force | lb / N | The tolerance for peak force against the chest in the direction of the chest-fixed i-axis |
+| Chest Forward Acceleration | g | The tolerance for peak chest acceleration in the direction of the chest-fixed i-axis |
+| Maximum Axial Femur Load (Max Knee Force) | lb / N | The tolerance for peak axial loading of the femur *(updated: labeled "Max Knee Force" in the current dialog)* |
+| Maximum Lap Belt Force — Left Belt / Right Belt | lb / N | The tolerance for lap belt tension, above which injury is expected to occur to the abdomen |
+| Maximum Torso Belt Force — Left Belt / Right Belt | lb / N | The tolerance for torso belt tension, above which injury is expected to occur to the torso |
 
 *(updated: the original manual listed a single Maximum Lap Belt Force and a
 single Maximum Torso Belt Force. The current human model uses four separate
 belt injury tolerances — left lap, right lap, left torso and right torso —
 and the current dialog provides separate left-belt and right-belt entries for
 both the lap and torso webbing.)*
-
-*(updated: the unit names for the head and chest acceleration tolerances were
-listed in the original manual as UtHumAccelAngle and UtHumAccelLength; HVE
-now uses UtHumAccelAngular and UtHumAccelLinear, and Chest SI has its own
-unit type, UtHumChestSI.)*
 
 ## Joint Parameters
 
@@ -220,9 +215,9 @@ Dialog reference page](../../07-humans/Human3.md).
 
 **Table 9-6: Joint Parameters for each human segment**
 
-| Parameter | Unit Name | Description |
+| Parameter | Units (US / SI) | Description |
 |---|---|---|
-| Joint Coordinates | UtHumDispLength | i, j and k coordinates of selected joint, defined relative to the segment principal axis system |
+| Joint Coordinates | in / cm | i, j and k coordinates of selected joint, defined relative to the segment principal axis system |
 
 ![Figure 9-11](../images/p330-figB9-11.png)
 
@@ -244,21 +239,21 @@ Dialog reference page](../../07-humans/HumJntPropDlg.md).
 
 **Table 9-7: Joint Properties for each joint**
 
-| Parameter | Unit Name | Description |
+| Parameter | Units (US / SI) | Description |
 |---|---|---|
 | Joint Type | n/a | Either Ball-and-Socket or Hinge |
-| Stop Angle, + Axis Rotation | UtHumDispAngle | The angle at which the joint stop is applied for positive i, j and k segment rotations |
-| Stop Angle, − Axis Rotation | UtHumDispAngle | The angle at which the joint stop is applied for negative i, j and k segment rotations |
-| Stop Elasticity, + Axis Rotation | UtHumElastLinear | Joint stop linear elastic property for positive rotations about the i, j and k axes |
-| Stop Elasticity, − Axis Rotation | UtHumElastLinear | Joint stop linear elastic property for negative rotations about the i, j and k axes |
-| Stop Energy Dissipation | UtNone | Ratio of dissipated to total energy at the joint stop |
-| Linear Elastic Constant | UtHumElastLinear | Joint linear elastic property during normal range of motion for rotations about the i, j and k axes |
-| Quadratic Elastic Constant | UtHumElastQuad | Joint quadratic elastic property during normal range of motion for rotations about the i, j and k axes |
-| Cubic Elastic Constant | UtHumElastCubic | Joint cubic elastic property during normal range of motion for rotations about the i, j and k axes |
-| Damping Constant | UtHumDamp | Joint damping property during normal range of motion for rotations about the i, j and k axes |
-| Full Damping Angular Velocity | UtHumVelAngular | Angular velocity required to achieve full joint damping |
-| Joint Injury Tolerance, Max + Rotation Angle | UtHumDispAngle | The positive joint angle which, if exceeded, is predicted to cause injury to the joint |
-| Joint Injury Tolerance, Max − Rotation Angle | UtHumDispAngle | The negative joint angle which, if exceeded, is predicted to cause injury to the joint |
+| Stop Angle, + Axis Rotation | deg | The angle at which the joint stop is applied for positive i, j and k segment rotations |
+| Stop Angle, − Axis Rotation | deg | The angle at which the joint stop is applied for negative i, j and k segment rotations |
+| Stop Elasticity, + Axis Rotation | in-lb/deg / N-m/deg | Joint stop linear elastic property for positive rotations about the i, j and k axes |
+| Stop Elasticity, − Axis Rotation | in-lb/deg / N-m/deg | Joint stop linear elastic property for negative rotations about the i, j and k axes |
+| Stop Energy Dissipation | — | Ratio of dissipated to total energy at the joint stop |
+| Linear Elastic Constant | in-lb/deg / N-m/deg | Joint linear elastic property during normal range of motion for rotations about the i, j and k axes |
+| Quadratic Elastic Constant | in-lb/deg² / N-m/deg² | Joint quadratic elastic property during normal range of motion for rotations about the i, j and k axes |
+| Cubic Elastic Constant | in-lb/deg³ / N-m/deg³ | Joint cubic elastic property during normal range of motion for rotations about the i, j and k axes |
+| Damping Constant | in-lb-sec/deg / N-m-sec/deg | Joint damping property during normal range of motion for rotations about the i, j and k axes |
+| Full Damping Angular Velocity | deg/sec | Angular velocity required to achieve full joint damping |
+| Joint Injury Tolerance, Max + Rotation Angle | deg | The positive joint angle which, if exceeded, is predicted to cause injury to the joint |
+| Joint Injury Tolerance, Max − Rotation Angle | deg | The negative joint angle which, if exceeded, is predicted to cause injury to the joint |
 
 <!-- NAV -->
 

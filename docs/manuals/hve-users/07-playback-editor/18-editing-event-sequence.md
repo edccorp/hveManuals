@@ -17,6 +17,8 @@ The first step in creating an accident sequence that includes multiple events is
 
 > **NOTE:** The following example assumes several Traj Sim Windows containing simulation events have already been created, as explained in [Chapter 17](17-report-playback-windows.md).
 
+![Figure 18-1](../images/p564-fig18-1.png)
+
 *Figure 18-1 — The Playback Window allows the user to combine multiple events.*
 
 To select the events, use the Playback Editor to perform the following steps:
@@ -113,6 +115,8 @@ The next step is to select the non-calculated results for each event:
 4. Press OK.
 
 The selected variables will be displayed in the Variable Output Window.
+
+![Figure 18-4](../images/p569-fig18-4.png)
 
 *Figure 18-4 — Edit Variables dialog.*
 

@@ -26,7 +26,7 @@ Environment Editor's components:
 
 ![Figure 12-1](../images/figure-12-1.jpg)
 
-*Figure 12-1: Environment Editor dialog and Viewer, showing the Blind Intersection environment model used in the EDSMAC4 Tutorial.*
+*Figure 12-1: Environment Editor dialog and Viewer, showing the Blind Intersection environment model used in the EDCRASH and EDSMAC4 tutorials (EDCRASH Tutorial case shown).*
 
 ### Environment Editor Dialog
 

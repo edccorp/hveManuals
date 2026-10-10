@@ -55,6 +55,7 @@ plugins:
 
 nav:
   - Home: README.md
+  - PDF Downloads: downloads.md
   - Dialog Reference:
     - User Interface:
       - Overview: 01-user-interface/README.md

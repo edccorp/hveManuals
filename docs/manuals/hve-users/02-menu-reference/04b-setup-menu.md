@@ -41,7 +41,7 @@ The specific damage profile parameters are defined in this section.
 
 ![Figure 4-18](../images/figure-4-18.jpg)
 
-*Figure 4-18: The Vehicle Damage Profile dialog is used to assign damage data for the current vehicle.*
+*Figure 4-18: The Damage Data dialog (Vehicle Damage Profile) is used to assign damage data for the current vehicle.*
 
 ![Figure 4-19](../images/p206-figA4-19.png)
 
@@ -122,17 +122,17 @@ Obviously, the actual stiffness of a vehicle varies according to the structure a
 
 **Table 4-8: Damage Profile Parameters**
 
-| Parameter | Unit Name | Description |
+| Parameter | Units (US / SI) | Description |
 |---|---|---|
 | CDC | (none) | Collision Deformation Classification, 7-character damage code describing location and character of damage |
-| PDOF | UtVehDispAngle | Principal Direction Of Force, the direction of the collision impulse (same as direction of delta-V) |
-| Impulse Center | UtVehDispLength | Vehicle-fixed x,y coordinates of the impulse center |
-| EES | UtVehVelLinear | Energy Equivalent Speed, the speed associated with the energy required to cause the observed damage if the vehicle had struck a fixed rigid barrier |
-| Width | UtVehDispLength | Total width of damage |
-| Offset | UtVehDispLength | Longitudinal or lateral distance from the CG to the center of the damage profile |
-| Crush Depth | UtVehDispLength | Measured depth of crush at up to 10 points along the damage profile |
-| A Stiffness | UtVehAStiff | Force per unit of damage width required to initiate measurable damage (for each crush zone) |
-| B Stiffness | UtVehBStiff | Force per unit of crush depth per unit of damage width required to cause the measured damage (for each crush zone) |
+| PDOF | deg | Principal Direction Of Force, the direction of the collision impulse (same as direction of delta-V) |
+| Impulse Center | in / cm | Vehicle-fixed x,y coordinates of the impulse center |
+| EES | mph / km/h | Energy Equivalent Speed, the speed associated with the energy required to cause the observed damage if the vehicle had struck a fixed rigid barrier |
+| Width | in / cm | Total width of damage |
+| Offset | in / cm | Longitudinal or lateral distance from the CG to the center of the damage profile |
+| Crush Depth | in / cm | Measured depth of crush at up to 10 points along the damage profile |
+| A Stiffness | lb/in / N/cm | Force per unit of damage width required to initiate measurable damage (for each crush zone) |
+| B Stiffness | lb/in² / N/cm² | Force per unit of crush depth per unit of damage width required to cause the measured damage (for each crush zone) |
 
 **See Also:** Event Editor, Vehicle-fixed Coordinate System, Reconstruction Models, References 2.23, 2.26, 4.28, 4.29
 
@@ -248,14 +248,14 @@ To use the Collision Pulse Options dialog for the selected vehicle, perform the 
 
 **Table 4-9: Collision Pulse Parameters**
 
-| Parameter | Unit Name | Description |
+| Parameter | Units (US / SI) | Description |
 |---|---|---|
 | Pulse Source | N/A | Available pulse sources |
 | Pulse Type | N/A | Available pulse types (Position, Velocity, Acceleration or Impulse) |
-| Fwd, Lat, Vert linear degrees of freedom for selected pulse type | UtVeh\*Linear | Forward, lateral and vertical components of the vehicle's linear motion |
-| Roll, Pitch, Yaw angular degrees of freedom for selected pulse type | UtVeh\*Angular | Angular motion about vehicle's roll, pitch and yaw axes |
-| Pulse Start | UtVehTime | Starting time for pulse |
-| Pulse Threshold | UtVehAccelLinear | Minimum total acceleration required to be considered part of the collision pulse (applies only to acceleration pulses) |
+| Fwd, Lat, Vert linear degrees of freedom for selected pulse type | length, velocity, acceleration or force units, depending on the variable | Forward, lateral and vertical components of the vehicle's linear motion |
+| Roll, Pitch, Yaw angular degrees of freedom for selected pulse type | angle, angular velocity, angular acceleration or torque units, depending on the variable | Angular motion about vehicle's roll, pitch and yaw axes |
+| Pulse Start | sec | Starting time for pulse |
+| Pulse Threshold | g | Minimum total acceleration required to be considered part of the collision pulse (applies only to acceleration pulses) |
 
 \* Unit Name is dependent on pulse type: Disp (Position), Vel (Velocity), Accel (Acceleration) or Force (Impulse).
 
@@ -347,11 +347,11 @@ To edit the Vehicle Mesh properties (weld distance, tessellate, water-tight stat
 
 **Table 4-10: Mesh Parameters**
 
-| Parameter | Unit Name | Description |
+| Parameter | Units (US / SI) | Description |
 |---|---|---|
-| Maximum Side Length | UtVehDispLength | Determines the longest side of a polygon |
-| Inter-vehicle Friction | UtNone | Inter-vehicle friction coefficient for selected pair of vehicles |
-| Relaxation Length | UtVehPercent | Determines the amount of reduction in displacement vector |
+| Maximum Side Length | in / cm | Determines the longest side of a polygon |
+| Inter-vehicle Friction | — | Inter-vehicle friction coefficient for selected pair of vehicles |
+| Relaxation Length | %/100 | Determines the amount of reduction in displacement vector |
 
 **See Also:** DyMESH Options, User's Manual for selected simulation model
 
@@ -392,11 +392,11 @@ To enter Payload Data for the current vehicle, use the following steps:
 
 **Table 4-11: Payload Parameters**
 
-| Parameter | Unit Name | Description |
+| Parameter | Units (US / SI) | Description |
 |---|---|---|
-| x,y,z coordinates | UtVehDispLength | x, y and z distances from the vehicle CG to the Payload CG |
-| Weight | UtVehForce | Payload weight |
-| Rotational Inertia | UtVehRotInertia | Payload rotational inertia about its x, y and z axes |
+| x,y,z coordinates | in / cm | x, y and z distances from the vehicle CG to the Payload CG |
+| Weight | lb / N | Payload weight |
+| Rotational Inertia | lb-sec²-in / kg-m² | Payload rotational inertia about its x, y and z axes |
 
 **See Also:** User's Manual for individual reconstruction or simulation model
 
@@ -645,36 +645,36 @@ The Point Contact Tire-Terrain Model is the default selection. To choose a diffe
 
 **Table 4-12: Wheel Editing Parameters**
 
-| Parameter | Unit Name | Description |
+| Parameter | Units (US / SI) | Description |
 |---|---|---|
-| Axle Number | UtNone | Axle index (1, 2 or 3) |
-| Side | UtNone | Side index (Right or Left) |
-| Location | UtNone | Tire location index (Inner or Outer) |
-| Tire Is Blown | UtNone | Flag indicating tire is blown |
-| AutoStart | UtNone | Flag indicating start time is set by simulation |
-| Start Time | UtVehTime | Simulation time at which blow-out or wheel displacement starts |
-| Duration | UtVehTime | Duration over which air loss or wheel displacement occurs |
-| Stiffness Factor | UtNone | Multiplier for tire stiffness parameters |
-| Rolling Resistance Factor | UtNone | Multiplier for tire rolling resistance |
-| Change in Coordinates | UtVehDispLength | Vehicle-fixed wheel displacement distance |
-| Change in Camber | UtVehDispAngle | Vehicle-fixed wheel camber change angle |
-| Percent Peak Lock-up Torque | UtBraPercent | Percentage of nominal torque required to lock wheel |
-| Initial Lining Temp | UtEnvTemp | Temperature of brake lining at the start of the simulation |
-| Initial Drum Temp | UtEnvTemp | Temperature of brake drum at the start of the simulation |
-| Adjuster Slack | UtVehDispLength | Slack adjuster stroke before brake torque begins |
-| Percent Brake Failure | UtBraPercent | Fraction of total brake failure at the selected wheel location (0 = no failure; 1 = total failure) |
-| Tire-Terrain Model | UtNone | Tire-Terrain Model option |
-| Sidewall Impact | UtNone | Flag indicating the Sidewall Impact option is to be used |
-| Radial Adjustment Increment | UtTirDispLength | Incremental change in radial spring length used in spring force calculation |
-| Angular Span | UtTirDispAngle | Sweep angle for radial springs |
-| Angular Increment | UtTirDispAngle | Angular increment between radial springs |
-| Sidewall Slide Friction Coefficient | UtNone | Tire sidewall slide friction coefficient |
-| Number of Sidewall Springs | UtNone | Number of sidewall springs attached to each radial spring |
-| Spring Number | UtNone | Spring index |
-| Spring Radial Dist from Wheel Center | UtTirDispLength | Radial distance from wheel center to current lateral spring |
-| Spring Lateral Dist from Wheel Center | UtTirDispLength | Distance from tire centerline plane to tire sidewall for current spring |
-| Sidewall Spring Stiffness Ratio | UtNone | Ratio of sidewall spring stiffness to radial spring stiffness |
-| Spring Saturation Deflection | UtTirDispLength | Maximum allowable deflection for current sidewall spring |
+| Axle Number | — | Axle index (1, 2 or 3) |
+| Side | — | Side index (Right or Left) |
+| Location | — | Tire location index (Inner or Outer) |
+| Tire Is Blown | — | Flag indicating tire is blown |
+| AutoStart | — | Flag indicating start time is set by simulation |
+| Start Time | sec | Simulation time at which blow-out or wheel displacement starts |
+| Duration | sec | Duration over which air loss or wheel displacement occurs |
+| Stiffness Factor | — | Multiplier for tire stiffness parameters |
+| Rolling Resistance Factor | — | Multiplier for tire rolling resistance |
+| Change in Coordinates | in / cm | Vehicle-fixed wheel displacement distance |
+| Change in Camber | deg | Vehicle-fixed wheel camber change angle |
+| Percent Peak Lock-up Torque | %/100 | Percentage of nominal torque required to lock wheel |
+| Initial Lining Temp | deg F / deg C | Temperature of brake lining at the start of the simulation |
+| Initial Drum Temp | deg F / deg C | Temperature of brake drum at the start of the simulation |
+| Adjuster Slack | in / cm | Slack adjuster stroke before brake torque begins |
+| Percent Brake Failure | %/100 | Fraction of total brake failure at the selected wheel location (0 = no failure; 1 = total failure) |
+| Tire-Terrain Model | — | Tire-Terrain Model option |
+| Sidewall Impact | — | Flag indicating the Sidewall Impact option is to be used |
+| Radial Adjustment Increment | in / cm | Incremental change in radial spring length used in spring force calculation |
+| Angular Span | deg | Sweep angle for radial springs |
+| Angular Increment | deg | Angular increment between radial springs |
+| Sidewall Slide Friction Coefficient | — | Tire sidewall slide friction coefficient |
+| Number of Sidewall Springs | — | Number of sidewall springs attached to each radial spring |
+| Spring Number | — | Spring index |
+| Spring Radial Dist from Wheel Center | in / cm | Radial distance from wheel center to current lateral spring |
+| Spring Lateral Dist from Wheel Center | in / cm | Distance from tire centerline plane to tire sidewall for current spring |
+| Sidewall Spring Stiffness Ratio | — | Ratio of sidewall spring stiffness to radial spring stiffness |
+| Spring Saturation Deflection | in / cm | Maximum allowable deflection for current sidewall spring |
 
 ---
 
@@ -688,7 +688,7 @@ The Point Contact Tire-Terrain Model is the default selection. To choose a diffe
 
 ![Figure 4-41](../images/figure-4-41.jpg)
 
-*Figure 4-41: Vehicle Accelerometers dialog.*
+*Figure 4-41: Accelerometer Data dialog (Vehicle Accelerometers).*
 
 To assign one or more accelerometers to the current vehicle, perform the following steps:
 
@@ -704,11 +704,11 @@ The simulation reports the velocity and acceleration for the current timestep in
 
 **Table 4-13: Accelerometer Parameters**
 
-| Parameter | Unit Name | Description |
+| Parameter | Units (US / SI) | Description |
 |---|---|---|
-| Device Number | UtNone | Device selector number |
-| DeviceIsUsed | UtNone | Flag indicating the selected device is in use |
-| x-coord, y-coord, z-coord | UtVehDispLinear | Vehicle-fixed coordinates of accelerometer |
+| Device Number | — | Device selector number |
+| DeviceIsUsed | — | Flag indicating the selected device is in use |
+| x-coord, y-coord, z-coord | in / cm | Vehicle-fixed coordinates of accelerometer |
 
 **See Also:** Event Model Definition, Output Tracks. *(updated: see also the Options menu items Show Accelerometers and Show Accelerometer Paths, which visualize these locations — [Options Menu](../../01-user-interface/OptionsMenu.md))*
 
@@ -797,22 +797,22 @@ Combined material properties may also be assigned from materials files. To assig
 
 **Table 4-15: Contact Interactions Dialog Parameters**
 
-| Parameter | Unit Name | Description |
+| Parameter | Units (US / SI) | Description |
 |---|---|---|
 | Source Segment | n/a | Name of the source segment (may be either a human ellipsoid or a vehicle contact surface) |
 | Target Segment | n/a | Name of the target segment (may be either a human ellipsoid or a vehicle contact surface) |
-| Material Name | UtNone | User-editable material name |
-| Constant | UtVehForce | Force required to initiate deflection |
-| Linear Stiffness | UtVehMatStiffLinear | Linear material deformation coefficient |
-| Quadratic Stiffness | UtVehMatStiffQuad | Quadratic material deformation coefficient |
-| Cubic Stiffness | UtVehMatStiffCubic | Cubic material deformation coefficient |
-| Damping Constant | UtVehMatDamp | Material velocity-dependent deformation constant |
-| Friction Constant | UtNone | Inter-segment friction coefficient |
-| Maximum Force | UtVehForce | Force at which 3rd-order force-deflection relationship is abandoned |
-| Maximum Deflection | UtVehDispLinear | Deflection at which 3rd-order force-deflection relationship is abandoned |
-| Unloading Slope | UtVehMatStiffLinear | Linear unloading slope beginning at max deflection |
-| Max Defl/Timestep | UtVehDispLinear | Logical distance defining the amount of deformation allowed during one timestep (used to define front/back) |
-| Edge Constant | UtNone | Force reduction coefficient for edges |
+| Material Name | — | User-editable material name |
+| Constant | lb / N | Force required to initiate deflection |
+| Linear Stiffness | lb/in / N/cm | Linear material deformation coefficient |
+| Quadratic Stiffness | lb/in² / N/cm² | Quadratic material deformation coefficient |
+| Cubic Stiffness | lb/in³ / N/cm³ | Cubic material deformation coefficient |
+| Damping Constant | lb-sec/in / N-sec/m | Material velocity-dependent deformation constant |
+| Friction Constant | — | Inter-segment friction coefficient |
+| Maximum Force | lb / N | Force at which 3rd-order force-deflection relationship is abandoned |
+| Maximum Deflection | in / cm | Deflection at which 3rd-order force-deflection relationship is abandoned |
+| Unloading Slope | lb/in / N/cm | Linear unloading slope beginning at max deflection |
+| Max Defl/Timestep | in / cm | Logical distance defining the amount of deformation allowed during one timestep (used to define front/back) |
+| Edge Constant | — | Force reduction coefficient for edges |
 
 **See Also:** Human Information dialog, Human Editor, Human Ellipsoids dialog, Vehicle Editor, Vehicle Contact Surfaces dialog, User's Manual for simulation model
 
@@ -893,12 +893,12 @@ When the simulation is executed, the belt restraint system parameters will be in
 
 **Table 4-14: Airbag and Belt Restraint System Parameters**
 
-| Parameter | Unit Name | Description |
+| Parameter | Units (US / SI) | Description |
 |---|---|---|
-| x, y and z Attachment Coordinates | UtHumDispLength | Segment-based x,y,z coordinates for the attachment point of the ends of the right and left belt segments |
-| Belt Slack | UtVehDispLength | Belt slack. The amount of displacement between the ends of the belt allowed before creating belt tension (a negative value implies pre-load) |
-| Airbag Begin Fill Time | UtVehTime | Simulation time at which the airbag is deployed and begins to fill |
-| Airbag Fill Duration | UtVehTime | Length of time during which airbag filling occurs |
+| x, y and z Attachment Coordinates | in / cm | Segment-based x,y,z coordinates for the attachment point of the ends of the right and left belt segments |
+| Belt Slack | in / cm | Belt slack. The amount of displacement between the ends of the belt allowed before creating belt tension (a negative value implies pre-load) |
+| Airbag Begin Fill Time | sec | Simulation time at which the airbag is deployed and begins to fill |
+| Airbag Fill Duration | sec | Length of time during which airbag filling occurs |
 
 **See Also:** Human Editor, Human Information dialog, Vehicle Editor, Vehicle Model (Restraint Systems), Occupant Simulation, Human Output Tracks, Vehicle Output Tracks, Vehicle Data Report, User's Manual for selected simulation model
 

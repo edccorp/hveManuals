@@ -58,9 +58,9 @@ The Exterior Dimension parameters are described below.
 
 **Table 11-10: Vehicle Exterior Dimension Parameters**
 
-| Parameter | Unit Name | Description |
+| Parameter | Units (US / SI) | Description |
 | --- | --- | --- |
-| CG to Front/Back/Side/Top/Bottom | UtVehDispLength | Vehicle-fixed distance from the CG to the front, right side, back, left side, top or bottom |
+| CG to Front/Back/Side/Top/Bottom | in / cm | Vehicle-fixed distance from the CG to the front, right side, back, left side, top or bottom |
 
 See also the reference pages:
 [CG to Front](../../02-vehicles/CGsToAll.md),
@@ -116,11 +116,11 @@ The Exterior Stiffness parameters are described below.
 
 **Table 11-11: Vehicle Exterior Stiffness Coefficients Parameters**
 
-| Parameter | Unit Name | Description |
+| Parameter | Units (US / SI) | Description |
 | --- | --- | --- |
-| A Stiffness | UtVehAStiff | Vehicle 'A' stiffness coefficient |
-| B Stiffness | UtVehBStiff | Vehicle 'B' stiffness coefficient |
-| Kv Stiffness | UtVehKStiff | Vehicle 'Kv' stiffness coefficient |
+| A Stiffness | lb/in / N/cm | Vehicle 'A' stiffness coefficient |
+| B Stiffness | lb/in² / N/cm² | Vehicle 'B' stiffness coefficient |
+| Kv Stiffness | lb/in² / N/cm² | Vehicle 'Kv' stiffness coefficient |
 
 See also the reference pages:
 [Stiffness Coefficients dialog (2-D)](../../02-vehicles/StiffCoeffDlg.md),

@@ -42,6 +42,8 @@ See the [Surface Editor Dialog](../../08-environment/SurfEdDlg.md) reference for
 
 *(updated: the "Bind To" radio buttons that appeared on this dialog in some earlier versions are no longer part of the Surface Editor; they remain in the Cone and Cylinder editors. Also, when the Surface tool is selected the editor now starts in Vertex mode so the vertices of a new surface can be entered immediately.)*
 
+![Figure 20-2](../images/p593-fig20-2.png)
+
 *Figure 20-2 — Surface geometrical properties. The example shows a single surface object composed of a single face set containing five triangles, created by clicking points 1 through 5 in counter-clockwise order.*
 
 ### Creating A New Surface
@@ -95,6 +97,8 @@ See the [Cone Editor Dialog](../../08-environment/ConeEdtDlg.md) reference. In s
 - **Base Radius** — Allows editing the cone's base radius.
 - **Height** — Allows editing the cone's height.
 
+![Figure 20-4](../images/p596-fig20-4.png)
+
 *Figure 20-4 — Cone geometrical properties.*
 
 ### Creating a New Cone
@@ -146,6 +150,8 @@ See the [Box Editor Dialog](../../08-environment/BoxEdDlg.md) reference. In summ
 - **Width** — Allows the user to edit the box's width in the local y' direction.
 - **Height** — Allows the user to edit the box's height in the local z' direction.
 
+![Figure 20-6](../images/p599-fig20-6.png)
+
 *Figure 20-6 — Box geometrical properties. Boxes are useful for creating a variety of objects, such as buildings and sidewalks.*
 
 ### Creating a New Box
@@ -195,6 +201,8 @@ See the [Cylinder Editor Dialog](../../08-environment/CylinEdDlg.md) reference. 
 - **Local/Global Option Switch** — Allows switching between local and global coordinates and angles.
 - **Radius** — Allows the user to edit the cylinder's radius.
 - **Length** — Allows the user to edit the cylinder's length.
+
+![Figure 20-8](../images/p602-fig20-8.png)
 
 *Figure 20-8 — Cylinder geometrical properties. Cylinders are useful for modeling poles, trees and a variety of other cylinder-shaped objects.*
 
@@ -247,6 +255,8 @@ See the [Sphere Editor Dialog](../../08-environment/SpereEdtDlg.md) reference. I
 
 > **NOTE:** The sphere can be elongated in each direction using a manipulator (see [Chapter 21, Manipulators](21-manipulators.md)).
 
+![Figure 20-10](../images/p605-fig20-10.png)
+
 *Figure 20-10 — Sphere geometrical properties.*
 
 ### Creating a New Sphere
@@ -296,6 +306,8 @@ See the [Text Editor Dialog](../../01-user-interface/TextEdDlg.md) reference. In
 - **Local/Global Option Switch** — Allows switching between local and global coordinates and angles.
 - **Height** — Allows editing the text height.
 - **Text** — Allows the user to enter or edit the desired text string.
+
+![Figure 20-12](../images/p608-fig20-12.png)
 
 *Figure 20-12 — Text properties. Text strings are used for road signs and other labels.*
 
@@ -367,6 +379,8 @@ See the [Light Editor Dialog](../../01-user-interface/LightEdDlg.md) reference. 
 - **Drop-off Rate** — For Spot lights only, the light attenuation rate from the center of the beam to its edge.
 - **Cone (deg)** — For Spot lights only, the included angle of the cone of light. *(updated: formerly labeled "Cut-off Angle".)*
 - **Light Is On** — Check box that activates and deactivates the light source.
+
+![Figure 20-15](../images/p612-fig20-15.png)
 
 *Figure 20-15 — Illustration of the light types: Directional Light (top), Point Light (middle) and Spot Light (bottom).*
 

@@ -1,0 +1,5 @@
+markdown
+latex2mathml
+pillow
+websocket-client
+pypdfium2

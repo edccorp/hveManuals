@@ -146,6 +146,8 @@ It is important that users of HVE know and understand its file system in
 order to perform system maintenance as well as to copy files between
 computer systems.
 
+![Figure I-1](../images/p846-figI-1.png)
+
 *Figure I-1 — HVE File System diagram.*
 
 **Table I-1 — Directory Names and Descriptions**
