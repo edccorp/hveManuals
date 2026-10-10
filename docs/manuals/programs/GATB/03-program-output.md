@@ -16,7 +16,7 @@ To view any of these reports, perform the following steps:
 
 - Choose Playback Mode by clicking the Playback button on the tool bar. The Playback Editor is displayed.
 - Click on the (+) sign on the tool bar to add a Playback Report. The Preview Window Information dialog is displayed, showing a list of all the current events in the case.
-- Select a GATB event from the list. Once an event is selected, the Selected Output option list is displayed containing all the available reports for the selected event. See Table 3-1.
+- Select a GATB event from the list. Once an event is selected, the Report Type list is displayed containing all the available reports for the selected event. See Table 3-1.
 
 | Available Output Options |
 |---|
@@ -26,7 +26,7 @@ To view any of these reports, perform the following steps:
 
 **Table 3-1: Available GATB Event Output Options**
 
-- Choose the desired report from the Selected Output list.
+- Select the desired report in the Report Type list. To open several reports at once, select more than one (*Select All* selects every report); each opens in its own Report Window.
 - Enter a Preview Window Name. A default name is supplied for the selected preview window. The name is user-editable, and does not affect calculations.
 
 > **NOTE:** Duplicate Preview Window names are not allowed. Because HVE truncates the name to 30 characters, you should ensure that two truncated names are not the same.

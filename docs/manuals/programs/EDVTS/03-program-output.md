@@ -16,15 +16,15 @@ To view any of these reports, perform the following steps:
 
 - Choose Playback Mode. The Playback Editor is displayed.
 - Choose *Add New Object*. The Report Window Information dialog is displayed, showing a list of all the current events in the case.
-- Select an EDVTS event from the list. Once an event is selected, the Selected Output option list is displayed, containing all the available reports for the selected event.
-- Choose the desired report from the Selected Output list. The available output reports are:
+- Select an EDVTS event from the list. Once an event is selected, the Report Type list is displayed, containing all the available reports for the selected event.
+- Select the desired report in the Report Type list. To open several reports at once, select more than one (*Select All* selects every report); each opens in its own Report Window. The available output reports are:
   - Messages
   - Accident History
   - Program Data
   - Vehicle Data
   - Trajectory Simulation
   - Variable Output
-- Enter a Report Window Name. A default name is supplied for the selected preview window. The name is user-editable, and does not affect calculations.
+- If desired, edit the Name. A default name is supplied for the report window. The name is user-editable, and does not affect calculations.
 
 > NOTE: Duplicate Report Window names are not allowed. Because HVE-2D and HVE truncate the name to 30 characters, you should ensure that two truncated names are not the same.
 

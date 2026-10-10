@@ -558,7 +558,7 @@ of the HVE Path Follower is provided in Chapter 4 (Event Set-up) and Chapter
 
 ![Figure 2-15](../images/figure-2-15.jpg)
 
-*Figure 2-15: The HVE Path Follower dialog — Driver Data page (Driver Start Time, Driver Sample Interval, Driver Preview Time, Path Error Null Distance, Driver Comfort Level).*
+*Figure 2-15: The HVE Driver tab of the Driver Controls dialog — Driver page (Driver Start Time, Driver Sample Interval, Driver Preview Time, Path Error Null Distance, Driver Comfort Level).*
 
 **Wheel Data** — The Wheel Data dialog is used for reconstruction models. It
 differs from the other driver control tables in that its values are fixed,

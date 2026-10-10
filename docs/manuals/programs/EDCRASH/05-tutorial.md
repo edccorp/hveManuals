@@ -549,15 +549,15 @@ To view the output reports, we need to be in Playback mode:
 
 The reports listed above are displayed by selecting Report Windows. Each Report Window contains an individual report.
 
-![Figure 5-14](images/p101-031.png)
+![Figure 5-14](images/p101-031.png){ width="298" }
 
 *Figure 5-14: Report Window Information dialog, showing the name of the event(s) in the current case.*
 
 To view the reports produced by the EDCRASH, Visibility Study event, perform the following steps:
 
-1. Click Add New Object. The Report Window Information dialog is displayed and includes a list of the active events (EDCRASH, Visibility Study is the only event in this tutorial). The Report Window Information dialog also includes the user-editable Report Window Name text field and Selected Output option list.
+1. Click Add New Object. The Report Window Information dialog is displayed and includes a list of the active events (EDCRASH, Visibility Study is the only event in this tutorial). The Report Window Information dialog also includes the user-editable Report Window Name text field and the Report Type list.
 2. Select EDCRASH, Visibility Study from the Active Events list.
-3. Click on the Selected Output option list and choose any of the available reports.
+3. In the Report Type list, select one or more of the available reports. *Select All* selects every report; each selected report opens in its own Report Window.
 4. Press OK to display the report.
 
 The selected report will be displayed in a resizable window. The reports produced for the EDCRASH, Visibility Study event are described below. Each is viewed by the same four steps above, choosing the appropriate report from the Selected Output list.
@@ -604,7 +604,7 @@ The Messages report produced by EDCRASH is one of its most important reports. Wh
 
 ### Momentum Diagrams
 
-To view the Momentum Diagram, Scene Data, report, choose Momentum Diagram, Scene from the Selected Output option list.
+To view the Momentum Diagram, Scene Data, report, choose Momentum Diagram, Scene from the Report Type list.
 
 ![Figure 5-20](images/p107-037.png)
 

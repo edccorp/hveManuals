@@ -16,9 +16,9 @@ To view any of these reports, perform the following steps:
 
 1. Choose Playback Mode. The Playback Editor is displayed.
 2. Choose Add New Object. The Report Window Information dialog is displayed, showing a list of all the current events in the case.
-3. Select an EDSMAC4 event from the list. Once an event is selected, the Selected Output option list is displayed, containing all the available reports for the selected event.
-4. Choose the desired report from the Selected Output list.
-5. Enter a Report Window Name. A default name is supplied for the selected report window. The name is user-editable, and does not affect calculations.
+3. Select an EDSMAC4 event from the list. Once an event is selected, the Report Type list is displayed, containing all the available reports for the selected event.
+4. Select the desired report in the Report Type list. To open several reports at once, select more than one (*Select All* selects every report); each opens in its own Report Window.
+5. If desired, edit the Name. A default name is supplied for the report window. The name is user-editable, and does not affect calculations.
 
    > **NOTE:** Duplicate Report Window names are not allowed. Because the name is truncated to 30 characters, you should ensure that two truncated names are not the same.
 

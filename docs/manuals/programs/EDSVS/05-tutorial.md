@@ -235,7 +235,7 @@ Let's add *Wheel Fx, Fy, Fz* and *Steer Angle* to the Key Results window:
 
 3. Press *OK* to add the selected variables to the list.
 
-![Figure 5-7](images/p071-018.png)
+![Figure 5-7](images/p071-018.png){ width="325" }
 
 *Figure 5-7: Key Results Variable Selection dialog, used for selecting variables to be displayed in the Key Results window.*
 
@@ -274,15 +274,15 @@ To view the output reports, we need to be in Playback mode:
 
 The reports listed above are displayed by selecting Report Windows. Each Report Window contains an individual report.
 
-![Figure 5-9](images/p074-020.png)
+![Figure 5-9](images/p074-020.png){ width="298" }
 
 *Figure 5-9: Report Window Information dialog, showing the name of the event(s) in the current case.*
 
 To view the reports produced by the *EDSVS, Steering Maneuver* event, perform the following steps:
 
-1. Click *Add New Object*. The Report Window Information dialog is displayed, as shown in Figure 5-9, and includes a list of the active events (*EDSVS, Steering Maneuver* is the only event in this tutorial). The Report Window Information dialog also includes the user-editable *Report Window Name* text field and *Selected Output* option list.
+1. Click *Add New Object*. The Report Window Information dialog is displayed, as shown in Figure 5-9, and includes a list of the active events (*EDSVS, Steering Maneuver* is the only event in this tutorial). The Report Window Information dialog also includes the user-editable *Report Window Name* text field and the *Report Type* list.
 2. Select *EDSVS, Steering Maneuver* from the Active Events list.
-3. Click on the *Selected Output* option list and choose any of the available reports.
+3. In the *Report Type* list, select one or more of the available reports. *Select All* selects every report; each selected report opens in its own Report Window.
 4. Press *OK* to display the report.
 
 The selected report will be displayed in a resizable window. The following pages illustrate the reports produced for the *EDSVS, Steering Maneuver* event.
@@ -299,7 +299,7 @@ To view the Accident History report for the *EDSVS, Steering Maneuver* event, pe
 
 1. Click *Add New Object*. The Report Window Information dialog is displayed.
 2. Select *EDSVS, Steering Maneuver* from the Active Events list.
-3. Click on the *Selected Output* option list and choose *Accident History*.
+3. In the *Report Type* list, select *Accident History*.
 4. Press *OK*.
 
 The Accident History report is displayed for the *EDSVS, Steering Maneuver* event, as shown in Figure 5-10.
@@ -318,7 +318,7 @@ To view the Messages report produced by the *EDSVS, Steering Maneuver* event, pe
 
 1. Click *Add New Object*. The Report Window Information dialog is displayed.
 2. Select *EDSVS, Steering Maneuver* from the Active Events list.
-3. Click on the *Selected Output* option list and choose *Messages*.
+3. In the *Report Type* list, select *Messages*.
 4. Press *OK*.
 
 The Messages report is displayed for the *EDSVS, Steering Maneuver* event, as shown in Figure 5-11.
@@ -335,7 +335,7 @@ To view the Program Data report for the *EDSVS, Steering Maneuver* event, perfor
 
 1. Click *Add New Object*. The Report Window Information dialog is displayed.
 2. Select *EDSVS, Steering Maneuver* from the Active Events list.
-3. Click on the *Selected Output* option list and choose *Program Data*.
+3. In the *Report Type* list, select *Program Data*.
 4. Press *OK*.
 
 The Program Data report is displayed for the *EDSVS, Steering Maneuver* event, as shown in Figure 5-12.
@@ -352,7 +352,7 @@ To view the Vehicle Data report for the *EDSVS, Steering Maneuver* event, perfor
 
 1. Click *Add New Object*. The Report Window Information dialog is displayed.
 2. Select *EDSVS, Steering Maneuver* from the Active Events list.
-3. Click on the *Selected Output* option list and choose *Vehicle Data*.
+3. In the *Report Type* list, select *Vehicle Data*.
 4. Press *OK*.
 
 A portion of the Vehicle Data report displayed for *EDSVS, Steering Maneuver* is shown in Figure 5-13.
@@ -363,7 +363,7 @@ To view the Variable Output report for the *EDSVS, Steering Maneuver* event, per
 
 1. Click *Add New Object*. The Report Window Information dialog is displayed.
 2. Select *EDSVS, Steering Maneuver* from the Active Events list.
-3. Click on the *Selected Output* option list and choose *Variable Output*.
+3. In the *Report Type* list, select *Variable Output*.
 4. Press *OK*.
 
 The Variable Output report is displayed for the *EDSVS, Steering Maneuver* event. The table is initially empty, so the next step is to select the time-dependent results we wish to display in the table.
@@ -387,7 +387,7 @@ Next, let's add the right front tire forces and steer angle:
 
 5. Press *OK* to add the selected variables to the Variable Output window.
 
-![Figure 5-14](images/p080-025.png)
+![Figure 5-14](images/p080-025.png){ width="325" }
 
 *Figure 5-14: Variable Selection dialog, used for selecting the results displayed in the Output Report. The variable list is displayed after selecting the Wheels group and selecting Axle 1, Right Side.*
 
@@ -403,7 +403,7 @@ Finally, let's display a trajectory simulation for this event. To view the Traje
 
 1. Click *Add New Object*. The Report Window Information dialog is displayed.
 2. Select *EDSVS, Steering Maneuver* from the Active Events list.
-3. Click on the *Selected Output* option list and choose *Trajectory Simulation*.
+3. In the *Report Type* list, select *Trajectory Simulation*.
 4. Press *OK*.
 
 The Trajectory Simulation viewer is displayed for the *EDSVS, Steering Maneuver* event (see Figure 5-16). The vehicle is shown at its initial position.

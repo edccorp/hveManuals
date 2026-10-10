@@ -434,13 +434,13 @@ Before we position the human, we'll attach the camera to the vehicle.
 To attach the camera to the vehicle, perform the following steps:
 
 - Choose *Set Camera* from the View menu. The Set Camera dialog is displayed (see Figure 5-13).
-- Click the *View From This Object* option list and choose *Buick Skylark 4-Dr*. Enter the Camera Position coordinates, x=`0`, y=`-20`, z=`0`.
-- Click the *Look At This Object* option list and choose *Buick Skylark 4-Dr*. Enter the coordinates, x=`0`, y=`0`, z=`0`.
+- Click the *Object Name* list in the View From group and choose *Buick Skylark 4-Dr*. Enter the Camera Position coordinates, x=`0`, y=`-20`, z=`0`.
+- Click the *Object Name* list in the Look At group and choose *Buick Skylark 4-Dr*. Enter the coordinates, x=`0`, y=`0`, z=`0`.
 - Press *OK*.
 
 The viewer displays the vehicle as viewed from the vehicle-fixed coordinates, 0, -20, 0.
 
-![Figure 5-13](images/p088-031.png)
+![Figure 5-13](images/p088-031.png){ width="328" }
 
 *Figure 5-13: Set Camera dialog.*
 
@@ -527,7 +527,7 @@ Next, let's add the *Head* vs *Head Rest* contact force:
 
   > **NOTE:** The first time Head is displayed, it refers to the Head segment; the second time refers to the contact ellipsoid named Head that is attached to the Head segment.
 
-![Figure 5-16](images/p092-033.png)
+![Figure 5-16](images/p092-033.png){ width="325" }
 
 *Figure 5-16: Key Results Variable Selection dialog.*
 
@@ -637,15 +637,15 @@ To view the output reports, we need to be in Playback mode:
 
 The reports listed above are displayed by selecting Report Windows. Each Report Window contains an individual report.
 
-![Figure 5-18](images/p097-035.png)
+![Figure 5-18](images/p097-035.png){ width="298" }
 
 *Figure 5-18: Report Window Information dialog.*
 
 To view the reports produced by the *EDHIS Tutorial* Case, perform the following steps:
 
-- Click *Add New Object*. The Report Window Information dialog is displayed, and includes a list of the active events (*EDSMAC4, Buick vs Ford*, *EDHIS, Buick Occupant* and *EDHIS, Plymouth/Pedestrian Impact* are the events in this tutorial). The Report Window Information dialog also includes the user-editable *Report Window Name* text field and *Selected Output* option list.
+- Click *Add New Object*. The Report Window Information dialog is displayed, and includes a list of the active events (*EDSMAC4, Buick vs Ford*, *EDHIS, Buick Occupant* and *EDHIS, Plymouth/Pedestrian Impact* are the events in this tutorial). The Report Window Information dialog also includes the user-editable *Report Window Name* text field and the *Report Type* list.
 - Select the desired event name from the Active Events list.
-- Click on the *Selected Output* option list and choose any of the available reports.
+- In the *Report Type* list, select one or more of the available reports. *Select All* selects every report; each selected report opens in its own Report Window.
 - Press OK to display the report.
 
 The selected report is displayed in a resizable window. The following sections illustrate the reports produced for the *EDHIS, Buick Occupant* event.
@@ -654,7 +654,7 @@ The selected report is displayed in a resizable window. The following sections i
 
 EDHIS produces several messages, depending on the outcome of the event. For a complete listing and explanation of these messages, refer to [Chapter 6](06-messages.md).
 
-To view the Messages report: click *Add New Object*, select *EDHIS, Buick Occupant* from the Active Events list, choose *Messages* from the *Selected Output* option list, and press *OK*.
+To view the Messages report: click *Add New Object*, select *EDHIS, Buick Occupant* from the Active Events list, choose *Messages* from the *Report Type* list, and press *OK*.
 
 ![Figure 5-19](images/p098-036.png)
 
@@ -664,7 +664,7 @@ To view the Messages report: click *Add New Object*, select *EDHIS, Buick Occupa
 
 The Accident History report displays the earth-fixed positions and velocities for the three human segments and the vehicle at the start of the run.
 
-To view it: click *Add New Object*, select *EDHIS, Buick Occupant*, choose *Accident History* from the *Selected Output* option list, and press *OK*.
+To view it: click *Add New Object*, select *EDHIS, Buick Occupant*, choose *Accident History* from the *Report Type* list, and press *OK*.
 
 > **NOTE:** The Accident History report and several other reports contain more information than fits into the default window size. Use the scroll bars or resize the dialog to view the entire report.
 
@@ -676,7 +676,7 @@ To view it: click *Add New Object*, select *EDHIS, Buick Occupant*, choose *Acci
 
 The Event Data report displays the acceleration pulse used in the EDHIS event.
 
-To view it: click *Add New Object*, select *EDHIS, Buick Occupant*, choose *Event Data* from the *Selected Output* option list, and press *OK*.
+To view it: click *Add New Object*, select *EDHIS, Buick Occupant*, choose *Event Data* from the *Report Type* list, and press *OK*.
 
 ![Figure 5-21](images/p100-038.png)
 
@@ -686,7 +686,7 @@ To view it: click *Add New Object*, select *EDHIS, Buick Occupant*, choose *Even
 
 The Human Data report displays the human segment and joint properties, as well as the human contact ellipsoid information.
 
-To view it: click *Add New Object*, select *EDHIS, Buick Occupant*, choose *Human Data* from the *Selected Output* option list, and press *OK*.
+To view it: click *Add New Object*, select *EDHIS, Buick Occupant*, choose *Human Data* from the *Report Type* list, and press *OK*.
 
 ![Figure 5-22](images/p101-039.png)
 
@@ -696,7 +696,7 @@ To view it: click *Add New Object*, select *EDHIS, Buick Occupant*, choose *Huma
 
 The Injury Data report displays the results of injury calculations that compare simulated tolerance levels with those specified for the human.
 
-To view it: click *Add New Object*, select *EDHIS, Buick Occupant*, choose *Injury Data* from the *Selected Output* option list, and press *OK*.
+To view it: click *Add New Object*, select *EDHIS, Buick Occupant*, choose *Injury Data* from the *Report Type* list, and press *OK*.
 
 ![Figure 5-23](images/p102-040.png)
 
@@ -706,7 +706,7 @@ To view it: click *Add New Object*, select *EDHIS, Buick Occupant*, choose *Inju
 
 The Vehicle Data report displays the contact properties (location and physical properties), collision pulse and restraint systems parameters.
 
-To view it: click *Add New Object*, select *EDHIS, Buick Occupant*, choose *Vehicle Data* from the *Selected Output* option list, and press *OK*.
+To view it: click *Add New Object*, select *EDHIS, Buick Occupant*, choose *Vehicle Data* from the *Report Type* list, and press *OK*.
 
 ![Figure 5-24](images/p103-041.png)
 
@@ -716,7 +716,7 @@ To view it: click *Add New Object*, select *EDHIS, Buick Occupant*, choose *Vehi
 
 The Program Data report displays the simulation controls and other program control information.
 
-To view it: click *Add New Object*, select *EDHIS, Buick Occupant*, choose *Program Data* from the *Selected Output* option list, and press *OK*.
+To view it: click *Add New Object*, select *EDHIS, Buick Occupant*, choose *Program Data* from the *Report Type* list, and press *OK*.
 
 ![Figure 5-25](images/p104-042.png)
 
@@ -724,7 +724,7 @@ To view it: click *Add New Object*, select *EDHIS, Buick Occupant*, choose *Prog
 
 ### Variable Output
 
-To view the Variable Output report for the *EDHIS, Buick Occupant* event: click *Add New Object*, select *EDHIS, Buick Occupant*, choose *Variable Output* from the *Selected Output* option list, and press *OK*.
+To view the Variable Output report for the *EDHIS, Buick Occupant* event: click *Add New Object*, select *EDHIS, Buick Occupant*, choose *Variable Output* from the *Report Type* list, and press *OK*.
 
 The Variable Output report is displayed for the *EDHIS, Buick Occupant* event. The table is initially empty, so the next step is to select the time-dependent results we wish to display in the table.
 
@@ -751,7 +751,7 @@ Next, let's add the Head vs Head Rest contact force:
 
 The Variable Output report for the *EDHIS, Buick Occupant* now includes Forward and Pitch Head Accelerations and the contact force between the headrest and head, as shown in Figure 5-27. Feel free to use the above steps to add additional parameters to the variable output table and view the results.
 
-![Figure 5-26](images/p106-043.png)
+![Figure 5-26](images/p106-043.png){ width="325" }
 
 *Figure 5-26: Variable Selection dialog.*
 ![Figure 5-27](images/p107-044.png)
@@ -762,7 +762,7 @@ The Variable Output report for the *EDHIS, Buick Occupant* now includes Forward 
 
 The Trajectory Simulation provides a 3-dimensional visualization of the vehicle and occupant motion during the event.
 
-To view it: click *Add New Object*, select *EDHIS, Buick Occupant*, choose *Trajectory Simulation* from the *Selected Output* option list, and press *OK*.
+To view it: click *Add New Object*, select *EDHIS, Buick Occupant*, choose *Trajectory Simulation* from the *Report Type* list, and press *OK*.
 
 The Trajectory Simulation viewer is displayed for the *EDHIS, Buick Occupant* event. The human and vehicle are shown at their initial positions.
 

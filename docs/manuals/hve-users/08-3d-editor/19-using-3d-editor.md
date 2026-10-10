@@ -68,7 +68,7 @@ The Object Dialog (see Figure 19-4) displays 3-D geometry data for the current o
 
 > **NOTE:** See the next chapter, [Object Tools](20-object-tools.md), for a complete description of each object dialog.
 
-![Figure 19-4](../images/figure-19-4.jpg)
+![Figure 19-4](../images/surface-editor-current.png){ width="364" }
 
 *Figure 19-4 — The Current Object Dialog allows the user to edit the geometric properties of the current object. Each Object Tool has a special Object Dialog to meet the needs of the object; the Surface Object dialog is shown.*
 

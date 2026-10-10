@@ -373,14 +373,14 @@ The reports listed above are displayed by selecting Report Windows. Each Report 
 To view the reports produced by the *EDSMAC, Visibility Study* event, perform the following steps:
 
 1. Choose Playback Mode. The Playback Editor is displayed.
-2. Click *Add New Object*. The Report Window Information dialog is displayed, as shown in Figure 5-9, and includes a list of the active events (*EDSMAC, Visibility Study* is the only event in this tutorial). The Report Window Information dialog also includes the user-editable *Report Window Name* text field and *Selected Output* option list.
+2. Click *Add New Object*. The Report Window Information dialog is displayed, as shown in Figure 5-9, and includes a list of the active events (*EDSMAC, Visibility Study* is the only event in this tutorial). The Report Window Information dialog also includes the user-editable *Report Window Name* text field and the *Report Type* list.
 3. Select *EDSMAC, Visibility Study* from the Active Events list.
-4. Click on the *Select Output* option list and choose any of the available reports.
+4. In the *Report Type* list, select one or more of the available reports. *Select All* selects every report; each selected report opens in its own Report Window.
 5. Press *OK* to display the report.
 
 The selected report will be displayed in a resizable window. The following pages illustrate the reports produced for the *EDSMAC, Visibility Study* event.
 
-![Figure 5-9](images/p077-024.png)
+![Figure 5-9](images/p077-024.png){ width="298" }
 
 *Figure 5-9: Report Window Information dialog, showing the name of the event(s) in the current case.*
 
@@ -392,7 +392,7 @@ To view the Accident History report for the *EDSMAC Visibility Study* event, per
 
 1. Click *Add New Object*. The Report Window Information dialog is displayed.
 2. Select *EDSMAC, Visibility Study* from the Active Events list.
-3. Click on the *Select Output* option list and choose *Accident History*.
+3. In the *Report Type* list, select *Accident History*.
 4. Press *OK*.
 
 The Accident History report is displayed for the *EDSMAC, Visibility Study* event, as shown in Figure 5-10.
@@ -415,7 +415,7 @@ To view the Damage Data report for the *EDSMAC Visibility Study* event, perform 
 
 1. Click *Add New Object*. The Report Window Information dialog is displayed.
 2. Select *EDSMAC, Visibility Study* from the Active Events list.
-3. Click on the *Select Output* option list and choose *Damage Data*.
+3. In the *Report Type* list, select *Damage Data*.
 4. Press *OK*.
 
 The Damage Data report is displayed for the *EDSMAC, Visibility Study* event, as shown in Figure 5-11.
@@ -434,7 +434,7 @@ To view the Damage Profiles report produced by the *EDSMAC, Visibility Study* ev
 
 1. Click *Add New Object*. The Report Window Information dialog is displayed.
 2. Select *EDSMAC, Visibility Study* from the Active Events list.
-3. Click on the *Select Output* option list and choose *Damage Profiles*.
+3. In the *Report Type* list, select *Damage Profiles*.
 4. Press *OK*.
 
 With a Trajectory Simulation also open, use the Playback Controller to view the damage to each vehicle dynamically.
@@ -453,7 +453,7 @@ To view the Messages report produced by the *EDSMAC, Visibility Study* event, pe
 
 1. Click *Add New Object*. The Report Window Information dialog is displayed.
 2. Select *EDSMAC, Visibility Study* from the Active Events list.
-3. Click on the *Select Output* option list and choose *Messages*.
+3. In the *Report Type* list, select *Messages*.
 4. Press *OK*.
 
 The Messages report for the *EDSMAC, Visibility Study* event is shown in Figure 5-13.
@@ -470,7 +470,7 @@ To view the Program Data report for the *EDSMAC, Visibility Study* event, perfor
 
 1. Click *Add New Object*. The Report Window Information dialog is displayed.
 2. Select *EDSMAC, Visibility Study* from the Active Events list.
-3. Click on the *Select Output* option list and choose *Program Data*.
+3. In the *Report Type* list, select *Program Data*.
 4. Press *OK*.
 
 The Program Data report is displayed for the *EDSMAC, Visibility Study* event, as shown in Figure 5-14.
@@ -489,7 +489,7 @@ To view the Trajectory Simulation for the *EDSMAC, Visibility Study* event, perf
 
 1. Click *Add New Object*. The Report Window Information dialog is displayed.
 2. Select *EDSMAC, Visibility Study* from the Active Events list.
-3. Click on the *Select Output* option list and choose *Trajectory Simulation*.
+3. In the *Report Type* list, select *Trajectory Simulation*.
 4. Press *OK*.
 
 The Trajectory Simulation viewer is displayed for the *EDSMAC, Visibility Study* event. The vehicles are shown at their initial positions.
@@ -516,7 +516,7 @@ The Variable Output table displays all the time-dependent results computed by ED
 
 1. Click *Add New Object*. The Report Window Information dialog is displayed.
 2. Select *EDSMAC, Visibility Study* from the Active Events list.
-3. Click on the *Select Output* option list and choose *Variable Output*.
+3. In the *Report Type* list, select *Variable Output*.
 4. Press *OK*.
 
 The Variable Output report is displayed for the *EDSMAC, Visibility Study* event. The next step is to select the time-dependent results we wish to display in the table.
@@ -542,7 +542,7 @@ Next, let's add the same parameters for the Nissan Sentra:
 
 The Variable Output report for the *EDSMAC, Visibility Study* event now includes position, velocity and acceleration for both vehicles, plus any other variables you may have added (see Figure 5-17).
 
-![Figure 5-16](images/p087-032.png)
+![Figure 5-16](images/p087-032.png){ width="325" }
 
 *Figure 5-16: Variable Selection dialog, used for selecting the results displayed in the Output Report.*
 
@@ -558,7 +558,7 @@ To view the Vehicle Data report for the *EDSMAC, Visibility Study* event, perfor
 
 1. Click *Add New Object*. The Report Window Information dialog is displayed.
 2. Select *EDSMAC, Visibility Study* from the Active Events list.
-3. Click on the *Select Output* option list and choose *Vehicle Data*.
+3. In the *Report Type* list, select *Vehicle Data*.
 4. Press *OK*.
 
 A portion of the Vehicle Data report is displayed for *EDSMAC, Visibility Study* in Figure 5-18.

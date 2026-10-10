@@ -316,7 +316,7 @@ The Physical Data groups are:
 - Gravity Constant
 - 3-D Surface Geometry
 
-![Figure 2-6](images/p030-007.png)
+![Figure 2-6](images/p030-007.png){ width="487" }
 
 *Figure 2-6: Environment Information dialog.*
 
@@ -324,11 +324,11 @@ To add an environment to the current HVE case, perform the following steps:
 
 - Choose Environment Mode. The Environment Editor is displayed.
 - Click on the (+) sign on the toolbar to add a new environment. The Environment Information dialog is displayed, Figure 2-6.
-- Click on the *Location* combo box to select the desired city, state and country, and associated latitude, longitude and GMT.
-- Enter the *Time* and *Date* for the event.
-- Enter the *Angle of the X axis, Wind Speed* and *Direction, Barometric Pressure* and *Temperature* for the event.
-- Enter the *Gravity Constant* for the event.
-- Enter an environment name. A default name is supplied for the current environment. The name is user-editable, and does not affect calculations.
+- Enter an environment name at the top of the dialog. A default name is supplied for the current environment. The name is user-editable, and does not affect calculations.
+- Enter the *Date of Crash* and *Time of Crash* for the event, also at the top of the dialog.
+- Click the *Location* tab and select the desired *Current Location*; the associated latitude, longitude and GMT offset are filled in.
+- Click the *Physical* tab and enter the *Angle of X-Axis, Wind Speed, Wind Direction, Barometric Pressure* and *Temperature* for the event.
+- On the same tab, enter the *Gravity Constant* for the event.
 - Click OK to add the environment to the current case.
 
 Visual parameters are not used by GATB. The specific physical environment data used by GATB are described below.

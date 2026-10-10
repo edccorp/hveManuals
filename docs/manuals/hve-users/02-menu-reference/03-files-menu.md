@@ -231,9 +231,9 @@ The selected results are printed to the selected filename.
 - Video Recorder (pre-set to S-Video/Composite Video)
 - Video Compressor
 
-![Figure 3-5](../images/figure-3-5.jpg)
+![Figure 3-5](../images/video-setup-current.png){ width="427" }
 
-*Figure 3-5: Use the Video Set-up Dialog to install video devices and compressors. The Video Set-up dialog is also used for loading and saving compressed video files.*
+*Figure 3-5: The Video dialog sets the movie and single-frame output options, including the compressor, resolution and recording speed.*
 
 ### Installing a Video Compressor
 

@@ -762,7 +762,7 @@ The available inter-vehicle connections are:
 - Fifth Wheel/King Pin
 - Pintle Hook/Eye (drawbars may be *Fixed* or *Hinged*)
 
-![Figure 11-15](../images/p371-209.png)
+![Figure 11-15](../images/p371-209.png){ width="251" }
 
 *Figure 11-15: Inter-vehicle Connections dialog.*
 
@@ -779,20 +779,23 @@ following steps:
    Connections Properties dialog will be displayed.
 3. To put a connection on the front of a towed vehicle (e.g., a trailer),
    click on the *Front Connections* option button and select a connection
-   type (*None, Hitch, King Pin* or *Pintle Eye*). Then enter the
-   vehicle-fixed x,y,z coordinates for the connection.
+   type (*None, Hitch, King Pin, Fixed Drawbar* or *Hinged Drawbar*). Then
+   enter the vehicle-fixed x,y,z coordinates for the connection.
 4. To put a connection on the rear of a tow vehicle (e.g., a passenger car
    or truck tractor), click on the *Rear Connections* option button and
    select a connection type (*None, Ball, Fifth Wheel* or *Pintle Hook*).
-   Then enter the vehicle-fixed x,y,z coordinates for the connection,
-   friction and friction radius and maximum articulation angle.
-5. Press *OK* to accept the changes.
+   Then enter the vehicle-fixed x,y,z coordinates for the connection.
+5. Press *Properties...* to enter the connection's radius, friction and
+   other properties (see below). In HVE-2D there is no Properties...
+   button; the radius, friction and maximum articulation angle are entered
+   directly on the Inter-vehicle Connections dialog.
+6. Press *OK* to accept the changes.
 
 The Inter-vehicle Connection Properties are described below.
 
 - **Front Connection Type** — The type of connection on the front of the
-  current vehicle. The allowable types are *None, Hitch, King Pin* and
-  *Pintle Eye*.
+  current vehicle. The allowable types are *None, Hitch, King Pin, Fixed
+  Drawbar* and *Hinged Drawbar* (the two drawbar types are pintle eyes).
 - **Front Connection Coords** — The vehicle-fixed x,y,z coordinates of the
   front connection.
 - **Rear Connection Type** — The type of connection on the rear of the
@@ -817,12 +820,18 @@ The Inter-vehicle Connection Properties are described below.
   > some physics models to compute an acceleration. For this reason, the
   > physics model may terminate with an error message.
 
+The following properties are entered in the Connection Properties dialog,
+displayed by pressing *Properties...*:
+
 - **Friction** — The friction coefficient at the connection between the tow
   vehicle and trailer.
 - **Friction Radius** — The moment arm at which the frictional torque acts
   at the connection between the tow vehicle and trailer.
-- **Maximum Articulation Angle** — The maximum articulation angle allowable
-  between the tow vehicle and trailer.
+- **Maximum Articulation Angle** — The maximum articulation angles (roll,
+  pitch and yaw) allowable between the tow vehicle and trailer.
+- **Linear and angular stiffness, damping, free play and breakaway force
+  and torque** — Properties of the connection itself, also entered in the
+  Connection Properties dialog.
 
 **Table 11-7: Inter-vehicle Connection Parameters**
 

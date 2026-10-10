@@ -118,20 +118,22 @@ New Report Windows are added to the current case using the Playback Editor. To a
 
 1. Click on **Add New Object**. The Report Window dialog (see Figure 17-8, and [Report Window Dialog Box](../../01-user-interface/PrevWnd.md)) will be displayed, containing the following components:
    - **Active Events List** — A list box containing all the events in the current case.
-   - **Status** — A non-editable field describing the status of the selected event, Executed or Not Executed.
+   - **Event Status** — A non-editable field describing the status of the selected event, Executed or Not Executed.
 
    > **NOTE:** If the event status is Not Executed, no output reports will be available.
 
    - **Name** — A user-editable text box allowing the user to assign a name to the Report Window.
-   - **Report Type** — An option list containing all the available output types for the selected event. *(updated: this option list was labeled "Output Type"/"Select Output" in earlier versions; it is now labeled Report Type.)*
+   - **Report Type** — A list of all the available output types for the selected event. More than one may be selected; the *Select All* and *Clear All* buttons select or clear every entry.
 2. Select an event from the Active Events List. A default Report Window name will be assigned according to the selected event.
 3. If desired, edit the default Report Window Name.
-4. Click on the Report Type option list and choose the desired output report.
+4. In the Report Type list, select the desired output report(s). *Select All* selects every report; each selected report opens in its own Report Window.
 5. Press OK to display the selected Report Window.
 
 The selected output will be displayed in a Report Window.
 
-*Figure 17-8 — Report Window dialog.*
+![Figure 17-8](../images/report-window-current.png){ width="298" }
+
+*Figure 17-8 — Report Window Information dialog.*
 
 ## Adding Playback Windows
 

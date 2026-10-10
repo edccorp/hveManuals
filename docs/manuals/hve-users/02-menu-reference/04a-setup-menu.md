@@ -429,11 +429,11 @@ To enter a Gear Table for the current vehicle, use the following steps:
 
 ### HVE Path Follower
 
-The HVE Path Follower allows the user to define a 3-D path using target positions. Using this path, the simulation model determines the steering, throttle and braking inputs required to make the vehicle follow the path. The HVE Path Follower dialog is shown in Figure 4-15. *(updated: in the current version this feature is labeled "HVE Driver" in the Driver Controls dialog — see [Driver Controls Path Follower](../../09-events-driver-controls/DriverControls7.md))*
+The HVE Path Follower allows the user to define a 3-D path using target positions. Using this path, the simulation model determines the steering, throttle and braking inputs required to make the vehicle follow the path. The HVE Path Follower is set up on the **HVE Driver** tab of the Driver Controls dialog, shown in Figure 4-15 (see also [Driver Controls Path Follower](../../09-events-driver-controls/DriverControls7.md)). Its settings are arranged on the Path Source, Driver, Method, Speed and Filter tabs.
 
-![Figure 4-15](../images/p197-figA4-15.png)
+![Figure 4-15](../images/path-follower-current.png){ width="514" }
 
-*Figure 4-15: HVE Path Follower dialog is used to simulate the driver inputs required to follow a user-defined path.*
+*Figure 4-15: The HVE Driver tab of the Driver Controls dialog, showing the Driver (top) and Method (bottom) tabs. It is used to simulate the driver inputs required to follow a user-defined path.*
 
 The HVE Path Follower includes several features, some required and some optional. These features are:
 

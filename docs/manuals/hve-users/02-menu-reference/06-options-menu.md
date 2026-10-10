@@ -63,7 +63,7 @@ The checked/unchecked options are toggles allowing the user to choose which info
 
 *Figure 6-1: The Key Results window displays the current simulation results for the selected human or vehicle.*
 
-![Figure 6-2](../images/p266-figA6-2.png)
+![Figure 6-2](../images/variable-selection-human-vehicle.png){ width="662" }
 
 *Figure 6-2: The Variable Selection dialogs for humans (left) and vehicles (right) allow the user to select the variables displayed in the Key Results dialog as well as in the Variable Output window (see Playback Mode).*
 
@@ -505,11 +505,11 @@ The Simulation Controls dialog is shown in Figure 6-15.
 
 > **NOTE:** The Calculation Options option is available in Event Mode only, and requires that the current calculation model use a Calculation Options dialog.
 
-> **NOTE:** The Calculation Options dialog is different for each calculation model (e.g., EDCRASH, EDGEN, EDHIS, EDSMAC, EDSMAC4, EDSVS, EDVDS, EDVSM, EDVTS, SIMON).
+> **NOTE:** The Calculation Options dialog is different for each calculation model (e.g., EDCRASH, EDGEN, EDHIS, EDSMAC, EDSMAC4, EDVDS, EDVSM, SIMON). EDSVS and EDVTS do not have a Calculation Options dialog.
 
 A sample Calculation Options dialog is shown in Figure 6-16.
 
-![Figure 6-16](../images/figure-6-16.jpg)
+![Figure 6-16](../images/simon-calc-options-current.png){ width="334" }
 
 *Figure 6-16: The Calculation Options dialog allows the user to supply calculation-specific parameters.*
 
@@ -630,28 +630,26 @@ To assign these options, perform the following steps:
 
 **Purpose:** Customize HVE according to various user-selectable preferences
 
-**Description:** Choosing Preferences from the Options Menu displays the Preferences dialog. See also the dialog reference: [User Preferences Dialog Box](../../01-user-interface/PrefDlg.md). The Preferences dialog allows the user to select the following preferences:
+**Description:** Choosing Preferences from the Options Menu displays the User Preferences dialog. See also the dialog reference: [User Preferences Dialog Box](../../01-user-interface/PrefDlg.md). The Preferences dialog allows the user to select the following preferences:
 
-- Diagnostic Level
 - Auto Backup
 - Date Style
+- Hide Date/Time From Printed Reports
+- Key Results
+- Vehicle Dimensions Basis
 - Background Color
 - Skidmark Height
 - Font Size (for report windows)
+- Physical Monitor Width
+- Long Velocity Vectors
+- Cycle Vehicle Colors
+- Resolution Setting
+- Store Vehicle Geometries in case file
+- Reload language.rsc file on dialog exit
 
-![Figure 6-20](../images/figure-6-20.jpg)
+![Figure 6-20](../images/user-preferences-current.png){ width="323" }
 
 *Figure 6-20: The Preferences dialog allows the user to customize HVE according to various user-selectable preferences.*
-
-### Diagnostic Level
-
-Calculation models can use the Diagnostic Level to determine the severity of messages reported in the output reports. The options are:
-
-- **Level 1 (Fatal Only)** — Only Fatal messages are reported.
-- **Level 2 (+ Diagnostic)** — Fatal and Diagnostic messages are reported.
-- **Level 3 (+ Informative)** — Fatal, Diagnostic and Informative messages are reported.
-
-> **NOTE:** The Diagnostic Level is usually reported in the Program Data Report (see Playback Mode, Preview Windows).
 
 ### Auto Backup
 
@@ -678,7 +676,7 @@ Use the Background Color option to set the background color of the viewer in the
 
 If a skidmark and the road surface are both drawn at the same elevation (earth-fixed Z coordinate), the two objects will visually fight each other to determine which one is visible. Placing the skidmarks slightly above the road surface ensures that the skidmark is properly visualized. The Skidmark Height is the distance above the road surface at which skidmarks are positioned.
 
-By keeping the Skidmark Height small (the default value is 0.25 ft), it is not possible to see that the skidmark does not lie directly on the surface.
+By keeping the Skidmark Height small (the default value is 0.025 ft, or 0.3 in), it is not possible to see that the skidmark does not lie directly on the surface.
 
 > **NOTE:** If a skidmark occurs over a non-uniform surface (e.g., a curb) it may be necessary to increase the Skidmark Height.
 
@@ -689,6 +687,10 @@ By keeping the Skidmark Height small (the default value is 0.25 ft), it is not p
 ### Font Size
 
 Adjusting the size of the font changes the font used in both displayed and printed report windows in the Playback Editor.
+
+### Other Preferences
+
+Hide Date/Time From Printed Reports, Key Results, Vehicle Dimensions Basis, Physical Monitor Width, Long Velocity Vectors, Cycle Vehicle Colors, Resolution Setting, Store Vehicle Geometries in case file and Reload language.rsc file on dialog exit are described in the [User Preferences Dialog Box](../../01-user-interface/PrefDlg.md) reference.
 
 **See Also:** Playback Mode, Messages, Human Editor, Vehicle Editor, Environment Options
 

@@ -545,7 +545,7 @@ perspectives.
 2. Click Add New Object. The Report Window Information dialog is displayed
    (Figure 32-35), showing each event in the Active Events list.
 3. Select the first event, EDSMAC4, 3-Vehicle Crash; choose Traj Sim from
-   the Select Output option list; press OK. The Trajectory Simulation
+   the Report Type list; press OK. The Trajectory Simulation
    window for the first event is displayed (Figure 32-36).
 4. Repeat for the remaining four events. After adding the fifth window and
    arranging them, the desktop appears as in Figure 32-38.
@@ -733,10 +733,10 @@ to each vehicle and replay the simulation:
 
 1. Click on the View menu and choose Set Camera. The Set Camera dialog is
    displayed (Figure 32-47).
-2. Click the View From This Object option list and choose Honda Accord.
+2. Click the Object Name list in the View From group and choose Honda Accord.
 3. Replace the View From coordinates with a location above and behind the
    driver's head: x = −13.0 ft, y = −1.5 ft, z = −5.0 ft.
-4. Click the Look At This Object option list and choose Chevrolet Suburban,
+4. Click the Object Name list in the Look At group and choose Chevrolet Suburban,
    with Look At coordinates x = 0.0, y = 0.0, z = 0.0 ft (the Suburban's
    CG).
 5. Press OK. The scene is viewed from the Honda driver's perspective
@@ -745,8 +745,8 @@ to each vehicle and replay the simulation:
    by the driver of the Honda.
 
 Repeat, using the Set Camera dialog to watch the sequence from each driver's
-perspective — simply select the desired vehicles in the View From This
-Object and Look At This Object option lists; the coordinates don't require
+perspective — simply select the desired vehicles in the Object Name lists of the View From
+and Look At groups; the coordinates don't require
 adjusting.
 
 > **NOTE:** Even though you used the Set Camera dialog to set the view, you

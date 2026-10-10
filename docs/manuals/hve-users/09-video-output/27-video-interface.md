@@ -35,7 +35,9 @@ external recorder), much like installing a printer. In current HVE no device
 installation is required: the Video Options dialog simply configures how the
 movie file is written.
 
-*Figure 27-1 — Video Set-up dialog.*
+![Figure 27-1](../images/video-setup-current.png){ width="427" }
+
+*Figure 27-1 — Video dialog.*
 
 *(updated: the current Video Options dialog contains the following
 options:)*

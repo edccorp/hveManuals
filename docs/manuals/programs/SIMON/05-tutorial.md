@@ -313,15 +313,15 @@ To view the output reports, we need to be in Playback mode:
 
 The reports listed above are displayed by selecting Report Windows. Each Report Window contains an individual report.
 
-![Figure 5-9](images/p144-046.png)
+![Figure 5-9](images/p144-046.png){ width="298" }
 
 *Figure 5-9: Report Window Information dialog, displaying the name of each event in the current case.*
 
 To view the reports produced by the SIMON, ISO Lane-Change, w/ABS event, perform the following steps:
 
-1. Click Add New Object. The Report Window Information dialog is displayed, as shown in Figure 5-9, and includes a list of the active events. The Report Window Information dialog also includes the user-editable Report Window Name text field and Selected Output option list.
+1. Click Add New Object. The Report Window Information dialog is displayed, as shown in Figure 5-9, and includes a list of the active events. The Report Window Information dialog also includes the user-editable Report Window Name text field and the Report Type list.
 2. Select SIMON, ISO Lane-Change, w/ABS from the Active Events list.
-3. Click on the Selected Output option list and choose any of the available reports.
+3. In the Report Type list, select one or more of the available reports. *Select All* selects every report; each selected report opens in its own Report Window.
 4. Press OK to display the report.
 
 The selected report will be displayed in a resizable window. The following sections illustrate the reports produced for the SIMON, ISO Lane-Change, w/ABS event.
@@ -334,7 +334,7 @@ SIMON produces a number of messages, depending on the outcome of the event. For 
 
 *Figure 5-10: Messages Report for SIMON, ISO Lane-Change, w/ABS.*
 
-To view the Messages report: Add a new Report Window, select the event, choose **Messages** from the Selected Output option list and press OK. The Messages report is displayed as shown in Figure 5-10.
+To view the Messages report: Add a new Report Window, select the event, choose **Messages** from the Report Type list and press OK. The Messages report is displayed as shown in Figure 5-10.
 
 ### Accident History
 
@@ -410,7 +410,7 @@ The purpose of our SIMON study is to simulate the effects of the ABS brake syste
 
 - Click on Select Variables in the SIMON, ISO Lane-Change, w/ABS Variable Output window. The Variable Selection dialog for Cadillac Catera 4-Dr is displayed, as shown in Figure 5-17.
 
-![Figure 5-17](images/p154-054.png)
+![Figure 5-17](images/p154-054.png){ width="325" }
 
 *Figure 5-17: Variable Selection dialog for the Cadillac Catera 4-Dr.*
 

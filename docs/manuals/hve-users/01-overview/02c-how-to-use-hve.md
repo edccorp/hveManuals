@@ -110,7 +110,7 @@ steps:
 The selected variables will be added to the existing list of variables in
 the Key Results window.
 
-![Figure 2-59](../images/figure-2-59.jpg)
+![Figure 2-59](../images/variable-selection-current.png){ width="325" }
 
 *Figure 2-59: The Variable Selection dialog.*
 
@@ -598,10 +598,10 @@ accessed from the Options menu.
 
 See the [Calculation Options reference](../../10-calculation-options/README.md) for
 descriptions of each model's Calculation Options dialog
-(EDCRASH, EDGEN, EDHIS, EDSMAC, EDSMAC4, EDSVS, EDVDS, EDVSM, EDVTS and
-SIMON).
+(EDCRASH, EDGEN, EDHIS, EDSMAC, EDSMAC4, EDVDS, EDVSM and SIMON; EDSVS
+and EDVTS do not have a Calculation Options dialog).
 
-![Figure 2-70](../images/figure-2-70.jpg)
+![Figure 2-70](../images/simon-calc-options-current.png){ width="334" }
 
 *Figure 2-70: A Calculation Options dialog.*
 
@@ -713,29 +713,15 @@ HVE allows the user to set certain preferences to customize his/her HVE
 working environment. These preferences are saved when exiting HVE, so the
 next time HVE is used, the environment will be the same. The Preferences
 dialog is shown in Figure 2-73 (see the [User Preferences dialog
-reference](../../01-user-interface/PrefDlg.md) for the current,
+reference](../../01-user-interface/PrefDlg.md) for the complete
 option list).
 
-![Figure 2-73](../images/figure-2-73.jpg)
+![Figure 2-73](../images/user-preferences-current.png){ width="323" }
 
 *Figure 2-73: The User Preferences dialog.*
 
 The User Preferences dialog allows the user to set the following
 preferences:
-
-- **Warning Level** — The Warning Level radio button allows the user to set
-  the types of messages produced by an event and displayed in its Messages
-  output report. Three levels are provided:
-  - *Level 1*: Only Fatal Errors (i.e., those that halt execution) are
-    reported.
-  - *Level 2*: Fatal Errors + Diagnostics (i.e., those messages alerting the
-    user to a serious inconsistency, probably leading to erroneous results).
-  - *Level 3*: Fatal Errors + Diagnostics + Informative (i.e., those
-    messages alerting the user to a possible inconsistency which may or may
-    not affect the quality of the results).
-
-  *(updated: the Warning/Diagnostic Level selection has been removed from
-  the current Preferences dialog.)*
 
 - **Auto Backup** — The Auto Backup option allows the user to save his/her
   work at specified time intervals.
@@ -757,9 +743,12 @@ preferences:
 - **Font** — Allows the user to change the size of the font displayed in
   Numeric Report windows and also in printed output reports.
 
-*(updated: the current Preferences dialog also includes a "Hide Date/Time
-From Printed Reports" check box and Key Results display preferences; see the
-[reference page](../../01-user-interface/PrefDlg.md).)*
+- **Other options** — The dialog also includes Hide Date/Time From Printed
+  Reports, Key Results, Vehicle Dimensions Basis, Physical Monitor Width,
+  Long Velocity Vectors, Cycle Vehicle Colors, Resolution Setting, Store
+  Vehicle Geometries in case file and Reload language.rsc file on dialog
+  exit. Each is described in the [User Preferences dialog
+  reference](../../01-user-interface/PrefDlg.md).
 
 To change the current User Preferences, perform the following steps:
 
@@ -823,9 +812,9 @@ technical support. This includes:
 The Technical Support dialog also displays your system software and
 licensing information. This includes:
 
-- HVE Version
-- System hardware codes (Hard Drive, EDKEY and License)
-- License file information (Programs and Versions)
+- HVE Version and Release (service pack)
+- System codes (Machine Id and User ID Code)
+- License file information (Options and Versions)
 
 A sample Technical Support dialog is shown in Figure 2-75.
 
@@ -834,7 +823,7 @@ A sample Technical Support dialog is shown in Figure 2-75.
 > the system clipboard and pasted into an email to EDC Technical Support
 > staff.
 
-![Figure 2-75](../images/figure-2-75.jpg)
+![Figure 2-75](../images/tech-support-current.png){ width="310" }
 
 *Figure 2-75: The Technical Support Help dialog.*
 
@@ -843,15 +832,15 @@ A sample Technical Support dialog is shown in Figure 2-75.
 *About...* displays a dialog containing the current release information.
 This information includes the following:
 
-- Version Number
-- Release Date and Time
+- Program name, Service Pack and Version Number
+- Build Date and Time
 
 The About HVE dialog is shown in Figure 2-76.
 
 For more information about getting Help, refer to the Help Menu in the Menu
 Reference section of this manual.
 
-![Figure 2-76](../images/figure-2-76.jpg)
+![Figure 2-76](../images/about-hve-current.png){ width="368" }
 
 *Figure 2-76: The About HVE dialog.*
 
@@ -872,11 +861,11 @@ One of HVE's most powerful features is its integrated video interface.
 > - **Movie** output — an AVI movie file, with a user-selected name and
 >   output directory, an *Overwrite Existing Movie* option, a *Compressor*
 >   selection (e.g., Cinepak Codec, Full Frames/uncompressed, or MPEG
->   compression with a selectable compression ratio), a *Recording Size*
+>   compression with a selectable compression ratio), a *Resolution*
 >   selection (e.g., HDTV 1080p 1920x1080) and a *Recording Speed* slider
 >   with a frames-per-second field (e.g., 30 frames/sec normal, or slow
 >   motion rates).
-> - **Frames** output — a sequence of individual image frames, with an
+> - **Single Frames** output — a sequence of individual image frames, with an
 >   *Overwrite Existing Frames* option.
 >
 > The Playback Information window shows the current Format, Compressor,
@@ -894,9 +883,9 @@ The interface includes two important tools:
 These tools are made available in the Video Set-up dialog (see Figure 2-77).
 The following sections describe how to set up and use these tools.
 
-![Figure 2-77](../images/figure-2-77.jpg)
+![Figure 2-77](../images/video-setup-current.png){ width="427" }
 
-*Figure 2-77: The Video Set-up dialog.*
+*Figure 2-77: The Video dialog.*
 
 ### Video Device Set-up
 

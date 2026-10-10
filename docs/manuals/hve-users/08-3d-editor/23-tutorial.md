@@ -28,6 +28,8 @@ This lesson is designed to make you generally familiar with how the 3-D Editor w
 
 > **NOTE:** We assume HVE is already running and you're ready to begin a new case. If necessary, refer to Chapter 2, Using HVE, for information about starting HVE. Also, check out Chapter 32, HVE Tutorial.
 
+![Figure 23-1](../images/figure-2-5.jpg)
+
 *Figure 23-1 — Environment Information dialog, used to assign physical environment parameters.*
 
 ### Starting the 3-D Editor
@@ -75,6 +77,8 @@ To create the surface, perform the following steps:
 1. Click on the Surface Tool icon on the toolbar. The Surface Editor is now enabled (see Figure 23-5), ready to begin creating a surface.
 
 The Surface Tool dialog includes X,Y,Z coordinate fields and Roll, Pitch, Yaw orientation fields. Beneath these on the left side is the Local/Global option switch. On the right side, the Surface Tool dialog includes the Pick Mode radio buttons and the Add, End, Rev Nrml and Dec/Tes buttons. See [Chapter 20](20-object-tools.md) and the [Surface Editor reference](../../08-environment/SurfEdDlg.md) for a detailed description of each of these features. *(updated: the "Bind To" radio buttons mentioned in the legacy manual are no longer part of the Surface Editor; a Subdivide pick mode and a Dec/Tes (Decimate/Tessellate) button have been added. The editor starts in Vertex mode, ready for vertex entry.)*
+
+![Figure 23-5](../images/surface-editor-current.png){ width="364" }
 
 *Figure 23-5 — Surface Tool dialog, used for entering and editing 3-D surfaces.*
 

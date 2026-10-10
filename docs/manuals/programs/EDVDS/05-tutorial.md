@@ -213,7 +213,7 @@ Finally, let's increase the default lag time in the left rear trailer brake:
 
 The second semi-trailer is now ready for our EDVDS simulation analysis.
 
-![Figure 5-9](images/p092-033.png)
+![Figure 5-9](images/p092-033.png){ width="437" }
 
 *Figure 5-9: Vehicle Wheel Brake dialog, used for editing the brake attributes for the selected wheel.*
 
@@ -228,7 +228,7 @@ The dolly is redisplayed with its new drawbar length.
 
 > **NOTE:** The default geometry file is automatically modified to include the increased drawbar length. This would not be true if we had used a custom 3-D geometry file; we'd have to explicitly edit the geometry file if we wished to visualize the increased length.
 
-![Figure 5-10](images/p093-034.png)
+![Figure 5-10](images/p093-034.png){ width="251" }
 
 *Figure 5-10: Vehicle Connections dialog, used for editing the current front and rear inter-vehicle connections.*
 
@@ -444,7 +444,7 @@ Let's add *Tire Fz'* to the Freightliner's Key Results window:
 - Repeat the above steps for Freightliner's rear tandem axles, choosing *Fz'* for *Axle 2* and *Axle 3*.
 - Press *OK* to include the new variables in the Key Results dialog.
 
-![Figure 5-20](images/p106-044.png)
+![Figure 5-20](images/p106-044.png){ width="325" }
 
 *Figure 5-20: Key Results Variable Selection dialog, used for selecting variables to be displayed in the Key Results window.*
 
@@ -497,15 +497,15 @@ To view the output reports, we need to be in Playback mode:
 
 The reports listed above are displayed by selecting Report Windows. Each Report Window contains an individual report.
 
-![Figure 5-22](images/p111-046.png)
+![Figure 5-22](images/p111-046.png){ width="298" }
 
 *Figure 5-22: Report Window Information dialog, showing the name of each event in the current case.*
 
 To view the reports produced by the *EDVDS, Controllability on Grade* event, perform the following steps:
 
-- Click *Add New Object*. The Report Window Information dialog is displayed, as shown in Figure 5-22, and includes a list of the active events (*EDVDS, Controllability on Grade* is the only event in this tutorial). The Report Window Information dialog also includes the user-editable *Window Name* text field and *Selected Output* option list.
+- Click *Add New Object*. The Report Window Information dialog is displayed, as shown in Figure 5-22, and includes a list of the active events (*EDVDS, Controllability on Grade* is the only event in this tutorial). The Report Window Information dialog also includes the user-editable *Window Name* text field and the *Report Type* list.
 - Select *EDVDS, Controllability on Grade* from the Active Events list.
-- Click on the *Selected Output* option list and choose any of the available reports.
+- In the *Report Type* list, select one or more of the available reports. *Select All* selects every report; each selected report opens in its own Report Window.
 - Press *OK* to display the report.
 
 The selected report will be displayed in a resizable window. The following pages illustrate the reports produced for the *EDVDS, Controllability on Grade* event.
@@ -518,7 +518,7 @@ To view the Messages report produced by the *EDVDS, Controllability on Grade* ev
 
 - Click *Add New Object*. The Report Window Information dialog is displayed.
 - Select *EDVDS, Controllability on Grade* from the Active Events list.
-- Click on the *Selected Output* option list and choose *Messages*.
+- In the *Report Type* list, select *Messages*.
 - Press *OK*.
 
 The Messages report is displayed for the *EDVDS, Controllability on Grade* event, as shown in Figure 5-23.
@@ -535,7 +535,7 @@ To view the Accident History report for the *EDVDS, Controllability on Grade* ev
 
 - Click *Add New Object*. The Report Window Information dialog is displayed.
 - Select *EDVDS, Controllability on Grade* from the Active Events list.
-- Click on the *Selected Output* option list and choose *Accident History*.
+- In the *Report Type* list, select *Accident History*.
 - Press *OK*.
 
 The Accident History report is displayed for the *EDVDS, Controllability on Grade* event, as shown in Figure 5-24.
@@ -554,7 +554,7 @@ To view the Vehicle Data report for the *EDVDS, Controllability on Grade* event,
 
 - Click *Add New Object*. The Report Window Information dialog is displayed.
 - Select *EDVDS, Controllability on Grade* from the Active Events list.
-- Click on the *Selected Output* option list and choose *Vehicle Data*.
+- In the *Report Type* list, select *Vehicle Data*.
 - Press *OK*.
 
 A portion of the Vehicle Data report displayed for *EDVDS, Controllability on Grade* is shown in Figure 5-25.
@@ -573,7 +573,7 @@ To view the Program Data report for the *EDVDS, Controllability on Grade* event,
 
 - Click *Add New Object*. The Report Window Information dialog is displayed.
 - Select *EDVDS, Controllability on Grade* from the Active Events list.
-- Click on the *Selected Output* option list and choose *Program Data*.
+- In the *Report Type* list, select *Program Data*.
 - Press *OK*.
 
 The Program Data report is displayed for the *EDVDS, Controllability on Grade* event, as shown in Figure 5-26. The report includes the EDVDS version number and the tire model method under General Information, and the Maximum Simulation Time, Integration Time Step, Output Interval, Linear Termination Velocity, Velocity Convergence Criterion and Maximum Bisections under Simulation Controls. *(updated: the version number shown in the legacy figure reflects the release current at the time of printing; the current release reports version 18.00, and the Tire Model Method line reads either "Linear" or "Semi-empirical".)*
@@ -588,7 +588,7 @@ To view the Variable Output report for the *EDVDS, Controllability on Grade* eve
 
 - Click *Add New Object*. The Report Window Information dialog is displayed.
 - Select *EDVDS, Controllability on Grade* from the Active Events list.
-- Click on the *Selected Output* option list and choose *Variable Output*.
+- In the *Report Type* list, select *Variable Output*.
 - Press *OK*.
 
 The Variable Output report is displayed for the *EDVDS, Controllability on Grade* event. The table is initially empty, so the next step is to select the time-dependent results we wish to display in the table.
@@ -610,7 +610,7 @@ Next, let's add the vertical wheel loads:
 - Click *Tires* and choose *Axle 1, Left, Outer* from the cascade menus. The Variable Selection list for the left front tire is displayed; select *Fz'* from the list.
 - Repeat the above steps for the Freightliner's rear tandem axles, choosing *Fz'* for *Axle 2* and *Axle 3*.
 
-![Figure 5-27](images/p120-fig5-27-variable-selection.png)
+![Figure 5-27](images/p120-fig5-27-variable-selection.png){ width="325" }
 
 *Figure 5-27: Variable Selection Dialog.*
 
@@ -633,7 +633,7 @@ Finally, let's display a trajectory simulation for this event. To view the Traje
 
 - Click *Add New Object*. The Report Window Information dialog is displayed.
 - Select *EDVDS, Controllability on Grade* from the Active Events list.
-- Click on the *Selected Output* option list and choose *Trajectory Simulation*.
+- In the *Report Type* list, select *Trajectory Simulation*.
 - Press *OK*.
 
 The Trajectory Simulation viewer is displayed for the *EDVDS, Controllability on Grade* event (see Figure 5-29). The tractor and trailer are shown at their initial positions.

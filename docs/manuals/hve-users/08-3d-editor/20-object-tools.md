@@ -22,6 +22,8 @@ Each of these object tools is described in this chapter. The field-by-field dial
 
 The Surface Object Tool allows the user to create and edit 3-D surfaces, such as roads, medians and any other object which may be defined by a series of polygons. The Surface Editor dialog, shown in Figure 20-1, displays information about the current surface object.
 
+![Figure 20-1](../images/surface-editor-current.png){ width="364" }
+
 *Figure 20-1 — The Surface Editor dialog allows the user to edit the geometric properties of the current surface.*
 
 ### Surface Editor Dialog

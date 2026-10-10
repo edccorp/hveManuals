@@ -138,7 +138,7 @@ Finally, let's disable the left front brake by setting its brake torque ratio to
 
 *Figure 5-5: Springs and Shocks dialog, used for editing the current auxiliary roll stiffness due to the anti-sway bar.*
 
-![Figure 5-6](images/p078-026.png)
+![Figure 5-6](images/p078-026.png){ width="437" }
 
 *Figure 5-6: Wheel Brake dialog, used for editing the brake parameters for the left front wheel.*
 
@@ -336,7 +336,7 @@ The vehicle kinematics are already selected. Let's add *Tire Fx', Fy', Fz'* and 
 
 - Select *Fx', Fy', and Fz'* tire forces from the list.
 
-![Figure 5-9](images/p088-029.png)
+![Figure 5-9](images/p088-029.png){ width="325" }
 
 *Figure 5-9: Key Results Variable Selection dialog, used for selecting variables to be displayed in the Key Results window.*
 
@@ -600,15 +600,15 @@ To view the output reports, we need to be in Playback mode:
 
 The reports listed above are displayed by selecting Preview Windows. Each Report Window contains an individual report.
 
-![Figure 5-16](images/p100-036.png)
+![Figure 5-16](images/p100-036.png){ width="298" }
 
 *Figure 5-16: Report Window Information dialog, showing the name of each event in the current case.*
 
 To view the reports produced by the *EDVSM, Curb-tripped Rollover* event, perform the following steps:
 
-- Click *Add New Object*. The Report Window Information dialog is displayed, as shown in Figure 5-16, and includes a list of the active events (*EDVSM, Curb-tripped Rollover* is the event whose output we'll review in this tutorial). The Report Window Information dialog also includes the user-editable *Report Window Name* text field and *Selected Output* option list.
+- Click *Add New Object*. The Report Window Information dialog is displayed, as shown in Figure 5-16, and includes a list of the active events (*EDVSM, Curb-tripped Rollover* is the event whose output we'll review in this tutorial). The Report Window Information dialog also includes the user-editable *Report Window Name* text field and the *Report Type* list.
 - Select *EDVSM, Curb-tripped Rollover* from the Active Events list.
-- Click on the *Selected Output* option list and choose any of the available reports.
+- In the *Report Type* list, select one or more of the available reports. *Select All* selects every report; each selected report opens in its own Report Window.
 - Press *OK* to display the report.
 
 The selected report will be displayed in a resizable window. The following pages illustrate the reports produced for the *EDVSM, Curb-tripped Rollover* event.
@@ -625,7 +625,7 @@ To view the Messages report produced by the *EDVSM, Curb-tripped Rollover* event
 
 - Click *Add New Object*. The Report Window Information dialog is displayed, and includes a list of the active events.
 - Select *EDVSM, Curb-tripped Rollover* from the Active Events list.
-- Click on the *Selected Output* option list and choose *Messages*.
+- In the *Report Type* list, select *Messages*.
 - Press *OK*.
 
 The Messages report is displayed for the *EDVSM, Curb-tripped Rollover* event, as shown in Figure 5-17.
@@ -642,7 +642,7 @@ To view the Accident History report for the *EDVSM, Curb-tripped Rollover* event
 
 - Click *Add New Object*. The Report Window Information dialog is displayed.
 - Select *EDVSM, Curb-tripped Rollover* from the Active Events list.
-- Click on the *Selected Output* option list and choose *Accident History*.
+- In the *Report Type* list, select *Accident History*.
 - Press *OK*.
 
 The Accident History report is displayed for the *EDVSM, Curb-tripped Rollover* event, as shown in Figure 5-18.
@@ -659,7 +659,7 @@ To view the Environment Data report for the *EDVSM, Curb-tripped Rollover* event
 
 - Click *Add New Object*. The Report Window Information dialog is displayed.
 - Select *EDVSM, Curb-tripped Rollover* from the Active Events list.
-- Click on the *Selected Output* option list and choose *Environment Data*.
+- In the *Report Type* list, select *Environment Data*.
 - Press *OK*.
 
 The Environment Data report is displayed for the *EDVSM, Curb-tripped Rollover* event, as shown in Figure 5-19.
@@ -676,7 +676,7 @@ To view the Vehicle Data report for the *EDVSM, Curb-tripped Rollover* event, pe
 
 - Click *Add New Object*. The Report Window Information dialog is displayed.
 - Select *EDVSM, Curb-tripped Rollover* from the Active Events list.
-- Click on the *Selected Output* option list and choose *Vehicle Data*.
+- In the *Report Type* list, select *Vehicle Data*.
 - Press *OK*.
 
 A portion of the Vehicle Data report displayed for *EDVSM, Curb-tripped Rollover* is shown in Figure 5-20.
@@ -695,7 +695,7 @@ To view the Program Data report for the *EDVSM, Curb-tripped Rollover* event, pe
 
 - Click *Add New Object*. The Report Window Information dialog is displayed.
 - Select *EDVSM, Curb-tripped Rollover* from the Active Events list.
-- Click on the *Selected Output* option list and choose *Program Data*.
+- In the *Report Type* list, select *Program Data*.
 - Press *OK*.
 
 The Program Data report is displayed for the *EDVSM, Curb-tripped Rollover* event, as shown in Figure 5-21.
@@ -706,7 +706,7 @@ The Variable Output report is a table of user-selectable, time-dependent simulat
 
 - Click *Add New Object*. The Report Window Information dialog is displayed.
 - Select *EDVSM, Curb-tripped Rollover* from the Active Events list.
-- Click on the *Selected Output* option list and choose *Variable Output*.
+- In the *Report Type* list, select *Variable Output*.
 - Press *OK*.
 
 The Variable Output report is displayed for the *EDVSM, Curb-tripped Rollover* event. The table is initially empty, so the next step is to select the time-dependent results we wish to display in the table.
@@ -717,7 +717,7 @@ The purpose of our EDVSM study is to illustrate a rollover sequence. To document
 
 - Click on *Select Variables* in the *Ford Bronco II, Loaded* Variable Output window. The Variable Selection dialog for *Ford Bronco II, Loaded* is displayed, as shown in Figure 5-22.
 
-![Figure 5-22](images/p107-042.png)
+![Figure 5-22](images/p107-042.png){ width="325" }
 
 *Figure 5-22: Variable Selection dialog, used for selecting results displayed in the Variable Output table.*
 
@@ -741,7 +741,7 @@ Let's display a trajectory simulation for this event. To view the Trajectory Sim
 
 - Click *Add New Object*. The Report Window Information dialog is displayed.
 - Select *EDVSM, Curb-tripped Rollover* from the Active Events list.
-- Click on the *Selected Output* option list and choose *Trajectory Simulation*.
+- In the *Report Type* list, select *Trajectory Simulation*.
 - Press *OK*.
 
 The Trajectory Simulation viewer is displayed for the *EDVSM, Curb-tripped Rollover* event (see Figure 5-24). The viewer shows the vehicle at its initial position.
@@ -765,7 +765,7 @@ Finally, let's display the damage profile simulation for the event. To view the 
 
 - Click *Add New Object*. The Report Window Information dialog is displayed.
 - Select *EDVSM, Curb-tripped Rollover* from the Active Events list.
-- Click on the *Selected Output* option list and choose *Damage Profiles*.
+- In the *Report Type* list, select *Damage Profiles*.
 - Press *OK*.
 
 The Damage Profiles simulation viewer is displayed for the *EDVSM, Curb-tripped Rollover* event (see Figure 5-25). The vehicle is displayed in its initial condition. To visualize the damage to the vehicle, use the Event Controller in the same manner as for the Trajectory Simulation.

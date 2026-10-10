@@ -66,7 +66,7 @@ categorized into the following types:
 - Trajectory Simulations
 - Variable Output Table
 
-![Figure 2-33](../images/figure-2-33.jpg)
+![Figure 2-33](../images/report-window-current.png){ width="298" }
 
 *Figure 2-33: The Report Window Information dialog.*
 
@@ -205,7 +205,7 @@ reference](../../11-reports-output/VarOutEdDlg.md)).
 first six selected variables in the Variable Output Table (see the [Variable
 Graphing reference](../../11-reports-output/VarOutGraphDlg.md)).
 
-![Figure 2-37](../images/p098-figA2-37.png)
+![Figure 2-37](../images/variable-selection-human-vehicle.png){ width="662" }
 
 *Figure 2-37: The Variable Selection dialogs for humans and vehicles.*
 
@@ -825,7 +825,7 @@ steps:
 
 *Figure 2-53: HVE viewer thumb wheels.*
 
-![Figure 2-54](../images/figure-2-54.jpg)
+![Figure 2-54](../images/camera-setup-current.png){ width="328" }
 
 *Figure 2-54: The Set Camera dialog.*
 

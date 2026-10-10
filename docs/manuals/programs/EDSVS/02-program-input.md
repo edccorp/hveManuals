@@ -427,15 +427,7 @@ EDSVS uses the current simulation control parameters in the Simulation Controls 
 
 ### Calculation Options
 
-![Figure 2-4](images/p037-004.png)
-
-*Figure 2-4: Calculation Options dialog for EDSVS.*
-
-The historically documented calculation option was:
-
-- Roll Couple Distribution
-
-*(updated: the original manual listed two calculation options — Roll-Couple Distribution and Get Surface Information. In the current software EDSVS does not present or use a Calculation Options dialog, and no calculation-option value is read by the simulation. The Roll Couple Distribution used by the simulation is taken from the vehicle's suspension data (see below), and the terrain surface-search method is selected in the separate **Get Surface Information Options** dialog on the Options menu. Figure 2-4 above is retained for historical reference only; the dialog it shows is not active for EDSVS.)*
+EDSVS does not have a Calculation Options dialog. The Roll Couple Distribution used by the simulation is taken from the vehicle's suspension data (see below), and the terrain surface-search method is selected in the separate **Get Surface Information Options** dialog on the Options menu.
 
 **Roll Couple Distribution** describes the ratio of lateral load transferred between the front and rear suspensions during cornering. This distribution depends directly on the characteristics of the front and rear suspension systems and chassis stiffness. As EDSVS is a 3-degree of freedom analysis, the effects of the suspension system and chassis are included in this one parameter. A good approximation for the fraction of the total load transfer borne by the front axle can be obtained by dividing the roll moment produced at the front suspension by the total roll moment (i.e., the total produced by both front and rear suspensions together) during a steady turn. Note that a neutral vehicle will tend to have a lateral load transfer coefficient equal to the percentage of load on the front axle; an understeering vehicle will tend to have a greater value and an oversteering vehicle will have a lesser value.
 
@@ -451,11 +443,11 @@ The default surface-search method is *From Previous Polygon*. This results in fa
 
 ### Executing An Event
 
-![Figure 2-5](images/p038-fig2-5.png)
+![Figure 2-4](images/p038-fig2-5.png)
 
-*Figure 2-5: Event Controller, used for starting and stopping event execution. The Event Controller can also be used for replaying previously executed events, both forward and backward.*
+*Figure 2-4: Event Controller, used for starting and stopping event execution. The Event Controller can also be used for replaying previously executed events, both forward and backward.*
 
-To execute an EDSVS event, use the Event Controller, shown in Figure 2-5. The Event Controller's buttons have the following functions:
+To execute an EDSVS event, use the Event Controller, shown in Figure 2-4. The Event Controller's buttons have the following functions:
 
 - **Reset** — Reinitialize the calculation model for re-execution
 - **Rewind to Start** — Return to the start of the simulation

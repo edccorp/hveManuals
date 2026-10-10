@@ -364,20 +364,20 @@ Let's attach the camera to the Ford:
 
 1. Choose Set Camera from the View menu. The Camera dialog is displayed.
 
-   ![Figure 5-9](images/p084-028.png)
+   ![Figure 5-9](images/p084-028.png){ width="328" }
 
    *Figure 5-9: HVE Set Camera dialog, used for attaching the camera to the vehicle.*
 
-2. Click on the View From This Object option list. The list displays each object in the event (Blind Intersection, Ford Escort and Nissan Sentra).
-3. Choose Ford Escort from the View From This Object option list.
+2. Click on the Object Name list in the View From group. The list displays each object in the event (Blind Intersection, Ford Escort and Nissan Sentra).
+3. Choose Ford Escort from the Object Name list in the View From group.
 4. Enter the Camera coordinates, x = 0.0 m, y = 0.5 m, z = −0.6 m.
 
    > **NOTE:** These coordinates are vehicle-fixed, relative to the Ford Escort's coordinate system.
 
    > **NOTE:** These coordinates define the driver's seat location just above the roof. We placed the camera outside the car because the windshield is tinted and difficult to see through.
 
-5. Click on the Look At This Object option list. The list displays each object in the event.
-6. Choose Ford Escort from the Look At This Object option list.
+5. Click on the Object Name list in the Look At group. The list displays each object in the event.
+6. Choose Ford Escort from the Object Name list in the Look At group.
 7. Enter the coordinates, x = 10.0 m, y = −2.5 m, z = −0.6 m.
 
    > **NOTE:** These coordinates are also relative to the Ford Escort, and define a view angle looking forward and to the left, as shown in Figure 5-10.
@@ -386,7 +386,7 @@ Let's attach the camera to the Ford:
 
    *Figure 5-10: Relationship between the camera position and picture center coordinates.*
 
-   > In HVE-2D, the view is restricted to the straight-down "helicopter" view, so there is no Look At This Object list available on the HVE-2D Camera Setup dialog.
+   > In HVE-2D, the view is restricted to the straight-down "helicopter" view, so there is no Look At group available on the HVE-2D Camera Setup dialog.
 
 8. Press OK to assign the new camera position.
 
@@ -405,9 +405,9 @@ Allow the event to run to completion.
 Next, we can repeat the above steps for the driver of the Nissan Sentra:
 
 1. Choose Set Camera from the View menu. The Camera dialog is displayed.
-2. Click on the View From This Object option list and choose Nissan Sentra.
+2. Click on the Object Name list in the View From group and choose Nissan Sentra.
 3. The Camera coordinates for the Ford Escort are acceptable for the Nissan as well.
-4. Click on the Look At This Object option list and choose Nissan Sentra.
+4. Click on the Object Name list in the Look At group and choose Nissan Sentra.
 5. Enter the coordinates, x = 10.0 m, y = 10.0 m, z = −0.6 m.
 
    > **NOTE:** These coordinates are also vehicle-fixed, this time relative to the Nissan Sentra, and define a view angle looking forward and to the right.
@@ -426,7 +426,7 @@ Watch as the Ford becomes visible at t = 1.3 seconds. Because there was no pre-i
 
 - Allow the event to run to completion.
 
-You may wish to view the sequence from other perspectives or to assign the View From This Object option list to one vehicle and assign the Look At This Object option list to the other vehicle. Doing so allows the view to follow the other vehicle throughout the simulation. Use the viewer controls or the Set Camera dialog to adjust the view as necessary.
+You may wish to view the sequence from other perspectives or to assign the Object Name list in the View From group to one vehicle and assign the Object Name list in the Look At group to the other vehicle. Doing so allows the view to follow the other vehicle throughout the simulation. Use the viewer controls or the Set Camera dialog to adjust the view as necessary.
 
 We have now completed the event.
 
@@ -434,7 +434,7 @@ We have now completed the event.
 
 Now that we have produced our EDSMAC4 simulations, let's take a detailed look at the results. The Playback Editor is used for reviewing and printing reports for each event in the current case, as well as for producing video output.
 
-![Figure 5-13](images/p089-031.png)
+![Figure 5-13](images/p089-031.png){ width="298" }
 
 *Figure 5-13: Report Window Information dialog, showing the name of the event(s) in the current case.*
 
@@ -463,9 +463,9 @@ The reports listed above are displayed by selecting Report Windows. Each Report 
 To view the reports produced by the EDSMAC4, Visibility Study event, perform the following steps:
 
 1. Choose Playback Mode. The Playback Editor is displayed.
-2. Click Add New Object. The Report Window Information dialog is displayed and includes a list of the active events (EDSMAC4, Visibility Study is the only event in this tutorial). The Report Window Information dialog also includes the user-editable Report Window Name text field and Selected Output option list.
+2. Click Add New Object. The Report Window Information dialog is displayed and includes a list of the active events (EDSMAC4, Visibility Study is the only event in this tutorial). The Report Window Information dialog also includes the user-editable Report Window Name text field and the Report Type list.
 3. Select EDSMAC4, Visibility Study from the Active Events list.
-4. Click on the Select Output option list and choose any of the available reports.
+4. In the Report Type list, select one or more of the available reports. *Select All* selects every report; each selected report opens in its own Report Window.
 5. Press OK to display the report.
 
 The selected report will be displayed in a resizable window. The following sections illustrate the reports produced for the EDSMAC4, Visibility Study event.
@@ -476,7 +476,7 @@ The selected report will be displayed in a resizable window. The following secti
 
 The Accident History report displays the positions and velocities for each vehicle at key times (Start of Run, Impact, Separation and Final/Rest) during the run.
 
-To view the Accident History report: click Add New Object, select EDSMAC4, Visibility Study from the Active Events list, choose Accident History from the Select Output option list, and press OK.
+To view the Accident History report: click Add New Object, select EDSMAC4, Visibility Study from the Active Events list, choose Accident History from the Report Type list, and press OK.
 
 ![Figure 5-14](images/p091-032.png)
 
@@ -493,7 +493,7 @@ Following the table of collision vectors, the Damage Ranges are displayed. The D
 
 *Figure 5-15: Damage Data Report for EDSMAC4, Visibility Study.*
 
-To view the Damage Data report: click Add New Object, select EDSMAC4, Visibility Study, choose Damage Data from the Select Output option list, and press OK.
+To view the Damage Data report: click Add New Object, select EDSMAC4, Visibility Study, choose Damage Data from the Report Type list, and press OK.
 
 ### Damage Profiles
 
@@ -503,7 +503,7 @@ The Damage Profiles report provides a 3-D visual representation of the damage to
 
 *Figure 5-16: Damage Profile Report for Nissan Sentra in EDSMAC4, Visibility Study.*
 
-To view the Damage Profiles report: click Add New Object, select EDSMAC4, Visibility Study, choose Damage Profiles from the Select Output option list, and press OK. With a Trajectory Simulation also open, use the Playback Controller to view the damage to each vehicle dynamically.
+To view the Damage Profiles report: click Add New Object, select EDSMAC4, Visibility Study, choose Damage Profiles from the Report Type list, and press OK. With a Trajectory Simulation also open, use the Playback Controller to view the damage to each vehicle dynamically.
 
 ### Driver Data
 
@@ -513,7 +513,7 @@ All driver input that was entered in the Event Editor is reported in the Driver 
 
 *Figure 5-17: Driver Data Report for EDSMAC4, Visibility Study.*
 
-To view the Driver Data report: click Add New Object, select EDSMAC4, Visibility Study, choose Driver Data from the Select Output option list, and press OK.
+To view the Driver Data report: click Add New Object, select EDSMAC4, Visibility Study, choose Driver Data from the Report Type list, and press OK.
 
 ### Environment Data
 
@@ -523,7 +523,7 @@ The Environment Data output report gives the values of the physical environment 
 
 *Figure 5-18: Environment Report for EDSMAC4, Visibility Study.*
 
-To view the Environment Data report: click Add New Object, select EDSMAC4, Visibility Study, choose Environment Data from the Select Output option list, and press OK.
+To view the Environment Data report: click Add New Object, select EDSMAC4, Visibility Study, choose Environment Data from the Report Type list, and press OK.
 
 ### Event Data
 
@@ -533,7 +533,7 @@ Event-related activities such as wheel displacements or tire blowouts are report
 
 *Figure 5-19: Event Data Report for EDSMAC4, Visibility Study.*
 
-To view the Event Data report: click Add New Object, select EDSMAC4, Visibility Study, choose Event Data from the Select Output option list, and press OK.
+To view the Event Data report: click Add New Object, select EDSMAC4, Visibility Study, choose Event Data from the Report Type list, and press OK.
 
 ### Messages
 
@@ -543,7 +543,7 @@ EDSMAC4 produces several messages, depending on the outcome of the run. For a co
 
 *Figure 5-20: Messages Report for EDSMAC4, Visibility Study.*
 
-To view the Messages report: click Add New Object, select EDSMAC4, Visibility Study, choose Messages from the Select Output option list, and press OK.
+To view the Messages report: click Add New Object, select EDSMAC4, Visibility Study, choose Messages from the Report Type list, and press OK.
 
 ### Program Data
 
@@ -553,7 +553,7 @@ The Program Data report displays the simulation controls (integration time steps
 
 *Figure 5-21: Program Data Report for EDSMAC4, Visibility Study.*
 
-To view the Program Data report: click Add New Object, select EDSMAC4, Visibility Study, choose Program Data from the Select Output option list, and press OK.
+To view the Program Data report: click Add New Object, select EDSMAC4, Visibility Study, choose Program Data from the Report Type list, and press OK.
 
 ### Trajectory Simulation
 
@@ -561,13 +561,13 @@ The Trajectory Simulation report is a dynamic visualization, much like the Event
 
 > **NOTE:** A significant difference between the simulation in the Event Editor and the Playback Editor is that no calculations take place in Playback mode.
 
-To view the Trajectory Simulation: click Add New Object, select EDSMAC4, Visibility Study, choose Traj Sim from the Select Output option list, and press OK. The Trajectory Simulation viewer is displayed with the vehicles shown at their initial positions.
+To view the Trajectory Simulation: click Add New Object, select EDSMAC4, Visibility Study, choose Traj Sim from the Report Type list, and press OK. The Trajectory Simulation viewer is displayed with the vehicles shown at their initial positions.
 
-During Event mode, HVE users changed the camera's View From This Object position to the Nissan. The Playback Editor inherits the camera position from Event mode, so it's still attached to the Nissan. Before we view the trajectory simulation, we will change the view back to the environment:
+During Event mode, HVE users changed the camera's View From object to the Nissan. The Playback Editor inherits the camera position from Event mode, so it's still attached to the Nissan. Before we view the trajectory simulation, we will change the view back to the environment:
 
 1. Choose Set Camera from the View menu. The Camera dialog is displayed.
-2. Click on the View From This Object option list and choose Blind Intersection. Enter the desired camera coordinates, X = 50.0 m, Y = 10.0 m, Z = −3.5 m.
-3. Click on the Look At This Object option list and choose Blind Intersection. Enter the desired picture center coordinates, X = 0.0 m, Y = 8.0 m, Z = 0.0 m.
+2. Click on the Object Name list in the View From group and choose Blind Intersection. Enter the desired camera coordinates, X = 50.0 m, Y = 10.0 m, Z = −3.5 m.
+3. Click on the Object Name list in the Look At group and choose Blind Intersection. Enter the desired picture center coordinates, X = 0.0 m, Y = 8.0 m, Z = 0.0 m.
 4. Press OK to update the camera position.
 
 The view is now looking down the street. To visualize the motion, perform the following steps:
@@ -586,7 +586,7 @@ The view is now looking down the street. To visualize the motion, perform the fo
 
 ### Variable Output
 
-The Variable Output table displays all the time-dependent results computed by EDSMAC4. To view the Variable Output report: click Add New Object, select EDSMAC4, Visibility Study, choose Variable Output from the Select Output option list, and press OK.
+The Variable Output table displays all the time-dependent results computed by EDSMAC4. To view the Variable Output report: click Add New Object, select EDSMAC4, Visibility Study, choose Variable Output from the Report Type list, and press OK.
 
 The Variable Output report is displayed for the EDSMAC4, Visibility Study event. The next step is to select the time-dependent results we wish to display in the table.
 
@@ -596,7 +596,7 @@ The purpose of our EDSMAC4 study is to evaluate the avoidability of the accident
 
 1. Click on Select Variables in the Variable Output window. The Variable Selection dialog is displayed.
 
-   ![Figure 5-23](images/p103-043.png)
+   ![Figure 5-23](images/p103-043.png){ width="325" }
 
    *Figure 5-23: Variable Selection dialog.*
 
@@ -627,7 +627,7 @@ The Vehicle Data report displays the vehicle data, tire data and driver tables f
 
 *Figure 5-25: Vehicle Data Report for EDSMAC4, Visibility Study.*
 
-To view the Vehicle Data report: click Add New Object, select EDSMAC4, Visibility Study, choose Vehicle Data from the Select Output option list, and press OK.
+To view the Vehicle Data report: click Add New Object, select EDSMAC4, Visibility Study, choose Vehicle Data from the Report Type list, and press OK.
 
 > **NOTE:** The Vehicle Data, Damage Data and several other reports contain more information than fits into the default window size. Use the scroll bars, resize the dialog, or adjust the font size to view the entire report.
 

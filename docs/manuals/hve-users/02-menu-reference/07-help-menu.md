@@ -69,10 +69,9 @@ The **Index** tab provides a detailed glossary of terms, including SAE J670e (Ve
 
 **Purpose:** Display EDC Technical Support contact details and user information
 
-**Description:** Choosing Tech Support displays the Technical Support Information dialog. The Technical Support Information dialog includes the following information about the installed version of HVE:
+**Description:** Choosing Tech Support displays the EDC Technical Support dialog. The EDC Technical Support dialog includes the following information about the installed version of HVE:
 
 - EDC Telephone Number
-- EDC Fax Number
 - EDC Email Address
 - Licensed User Name
 - Company Name
@@ -80,22 +79,24 @@ The **Index** tab provides a detailed glossary of terms, including SAE J670e (Ve
 
 The Technical Support dialog also displays your system software and licensing information. This includes:
 
-- Your HVE Version
-- Your System Hardware codes (Hard Drive, EDKEY and License)
-- Your License File Information (Programs and Versions)
+- Your HVE Version and Release (service pack)
+- Your System Codes (Machine Id and User ID Code)
+- Your License File Information (Options and Versions)
 
 A sample Technical Support dialog is shown in Figure 7-3.
 
-> **NOTE:** This information is required for assistance when contacting EDC Technical Support regarding licensing issues. The report may be copied to the system clipboard and pasted into an email or printed and faxed directly to EDC Technical Support staff.
+> **NOTE:** This information is required for assistance when contacting EDC Technical Support regarding licensing issues. The report may be copied to the system clipboard and pasted into an email, or printed.
 
 To access the HVE Technical Support Help Information, perform the following steps:
 
 1. Choose Tech Support from the Help Menu. The Help Technical Support dialog will be displayed (see Figure 7-3).
 2. Press Clipboard to copy the License information to your system clipboard (you may then paste this in an email message to the EDC Technical Support staff).
-3. Press Print to print a hard copy of the License information. You may then fax this information to the EDC Technical Support staff.
-4. Press OK when you are finished.
+3. Press Print to print a hard copy of the License information.
+4. Close the dialog when you are finished.
 
-![Figure 7-3](../images/figure-7-3.jpg)
+The *Reset Defaults* button returns the Key Results windows to their default screen positions.
+
+![Figure 7-3](../images/tech-support-current.png){ width="310" }
 
 *Figure 7-3: The Help Technical Support dialog explains how to contact EDC for Technical Support.*
 
@@ -109,16 +110,16 @@ To access the HVE Technical Support Help Information, perform the following step
 
 **Purpose:** Display release information about the user's version of HVE
 
-**Description:** Choosing About displays the Version Information dialog. The Version Information dialog includes the following information about the installed version of HVE:
+**Description:** Choosing About displays the About HVE dialog. The About HVE dialog includes the following information about the installed version of HVE:
 
-- HVE System ID Number
-- HVE Version Number
-- HVE Release Date
-- HVE Release Time
+- Program name (e.g., HVE 2025)
+- Service Pack
+- Version Number
+- Build Date and Build Time
 
 > **NOTE:** You should have this information available when you call for Technical Support.
 
-![Figure 7-4](../images/figure-7-4.jpg)
+![Figure 7-4](../images/about-hve-current.png){ width="368" }
 
 *Figure 7-4: The About HVE Dialog contains useful release information.*
 

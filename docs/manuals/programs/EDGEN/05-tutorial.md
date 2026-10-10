@@ -461,15 +461,15 @@ To view the output reports, we need to be in Playback mode:
 
 The reports listed above are displayed by selecting Report Windows. Each Report Window contains an individual report.
 
-![Figure 5-8](images/p068-021.png)
+![Figure 5-8](images/p068-021.png){ width="298" }
 
 *Figure 5-8: Report Window Information dialog, showing the name of the event(s) in the current case.*
 
 To view the reports produced by any of the three EDGEN events, perform the following steps:
 
-1. Click *Add New Object*. The Report Window Information dialog is displayed and includes a list of the active events (*'EDGEN, School Bus', 'EDGEN, Child'* and *'EDGEN, Taurus'* are the events we created for this tutorial). The Report Window Information dialog also includes the user-editable *Report Window Name* text field and *Selected Output* option list.
+1. Click *Add New Object*. The Report Window Information dialog is displayed and includes a list of the active events (*'EDGEN, School Bus', 'EDGEN, Child'* and *'EDGEN, Taurus'* are the events we created for this tutorial). The Report Window Information dialog also includes the user-editable *Report Window Name* text field and the *Report Type* list.
 2. Select the desired event from the Active Events list.
-3. Click on the *Selected Output* option list and select any of the available reports for the event.
+3. In the *Report Type* list, select one or more of the available reports. *Select All* selects every report; each selected report opens in its own Report Window.
 4. Press *OK* to display the report.
 
 The selected report will be displayed in a resizable window.
@@ -486,7 +486,7 @@ To view the Messages report produced by the *EDGEN, Taurus* event, perform the f
 
 1. Click *Add New Object*. The Report Window Information dialog is displayed.
 2. Select *EDGEN, Taurus* from the Active Events list.
-3. Click on the *Selected Output* option list and choose *Messages*.
+3. In the *Report Type* list, select *Messages*.
 4. Press *OK*.
 
 The Messages report is displayed for the *EDGEN, Taurus* event.
@@ -503,7 +503,7 @@ To view the Accident History report for the *EDGEN, School Bus* event, perform t
 
 1. Click *Add New Object*. The Report Window Information dialog is displayed.
 2. Select *EDGEN, School Bus* from the Active Events list.
-3. Click on the *Selected Output* option list and choose *Accident History*.
+3. In the *Report Type* list, select *Accident History*.
 4. Press *OK*.
 
 The Accident History report is displayed for the *EDGEN, School Bus* event.
@@ -524,7 +524,7 @@ To view the Program Data report for the *EDGEN, Taurus* event, perform the follo
 
 1. Click *Add New Object*. The Report Window Information dialog is displayed.
 2. Select *EDGEN, Taurus* from the Active Events list.
-3. Click on the *Selected Output* option list and choose *Program Data*.
+3. In the *Report Type* list, select *Program Data*.
 4. Press *OK*.
 
 The Program Data report is displayed for the *EDGEN, Taurus* event.
@@ -539,7 +539,7 @@ The Variable Output table displays all the time-dependent results computed by ED
 
 1. Click *Add New Object*. The Report Window Information dialog is displayed.
 2. Select *EDGEN, Taurus* from the Active Events list.
-3. Click on the *Selected Output* option list and choose *Variable Output*.
+3. In the *Report Type* list, select *Variable Output*.
 4. Press *OK*.
 
 The Variable Output report is displayed for the *EDGEN, Taurus* event. The table initially contains all of the variables that were displayed in the Key Results window. You may, however, wish to select additional variables or change the order in which the variables are listed (important for graphing).
@@ -558,7 +558,7 @@ The Object Name option list displays the vehicle name, *Ford Taurus 4-Dr*. The *
 
 The Variable Output report for the *EDGEN, Visibility Study* event now includes position, velocity and acceleration for the Ford Taurus, plus any other variables you may have added.
 
-![Figure 5-12](images/p073-025.png)
+![Figure 5-12](images/p073-025.png){ width="325" }
 
 *Figure 5-12: Variable Selection dialog, used for selecting the results displayed in the Output Report.*
 
@@ -576,7 +576,7 @@ To view the Trajectory Simulation for the *EDGEN, School Bus* event, perform the
 
 1. Click *Add New Object*. The Report Window Information dialog is displayed.
 2. Select *EDGEN, School Bus* from the Active Events list.
-3. Click on the *Selected Output* option list and choose *Trajectory Simulation*.
+3. In the *Report Type* list, select *Trajectory Simulation*.
 4. Press *OK*.
 
 The Trajectory Simulation viewer is displayed for the *EDGEN, School Bus* event. The vehicle is shown at its initial position. To visualize the motion, perform the following steps:
@@ -627,9 +627,9 @@ Just as the Trajectory Simulation Windows inherit the camera position from Event
 To assign the camera for our Playback Window, perform the following steps:
 
 1. Choose *Set Camera* from the View menu. The Camera dialog is displayed.
-2. Click on the *View From This Object* option list and choose *Ford Taurus*.
+2. Click on the *Object Name* list in the View From group and choose *Ford Taurus*.
 3. Enter the desired camera coordinates, X = `-2.0` ft, Y = `-2.0` ft, Z = `-2.0` ft.
-4. Click on the *Look At This Object* option list and choose *Ford Taurus*. Enter the desired picture center coordinates, X = `100.0` ft, Y = `-2.0` ft, Z = `-2.0` ft.
+4. Click on the *Object Name* list in the Look At group and choose *Ford Taurus*. Enter the desired picture center coordinates, X = `100.0` ft, Y = `-2.0` ft, Z = `-2.0` ft.
 
    > **NOTE:** The above Camera and Picture Center coordinates result in a view axis pointing straight ahead in the vehicle-fixed x direction.
 

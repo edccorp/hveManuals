@@ -49,7 +49,7 @@ These options allow you to set up the HVE user interface and to determine how th
 
 The Set Camera dialog is shown in Figure 5-2.
 
-![Figure 5-2](../images/figure-5-2.jpg)
+![Figure 5-2](../images/camera-setup-current.png){ width="328" }
 
 *Figure 5-2: The Set Camera dialog is used to determine how the scene is viewed.*
 
@@ -89,17 +89,21 @@ Each of these steps is described more fully in the following paragraphs.
 
 The View Name option list displays and allows the user to select from a list of previously created views. The default View Name is Default Camera. Selecting a different view causes the Set Camera parameters (described below) to be updated to those assigned for the selected view. See also Save/Delete View below.
 
-### View From This Object
+### View From: Object Name
 
-The View From This Object option list allows the user to select the object from which the scene is viewed. This option list contains all the objects (humans, vehicles and environment) in the event (see Figure 5-1). Attaching the camera to a human or vehicle causes the camera to move with the human or vehicle.
+The Object Name option list in the View From group allows the user to select the object from which the scene is viewed. This option list contains all the objects (humans, vehicles and environment) in the event (see Figure 5-1). Attaching the camera to a human or vehicle causes the camera to move with the human or vehicle.
 
 ### View From Coordinates
 
 Next, the camera Coordinates are entered. These coordinates are relative to the selected View From object. For example, if the View From object is a vehicle, setting the View From coordinates at 0,0,0 means the scene will be viewed from the vehicle's CG, regardless of the vehicle's location in the environment.
 
-### Look At This Object
+### Use Vehicle's Vertical and Make Glass Clear
 
-The Look At This Object option list allows the user to select the object being viewed. This option list contains all the objects (humans, vehicles and environment) in the event (see Figure 5-1). Attaching the camera to a human or vehicle causes the view to remain fixed on that human or vehicle.
+When the camera is attached to a vehicle, *Use Vehicle's Vertical* makes the camera's "up" direction follow the vehicle, so the view rolls and pitches with it; when unchecked, the camera stays level with the earth. *Make Glass Clear* renders the vehicle's glass transparent, which is useful when viewing from inside the vehicle (for example, a driver's-eye view).
+
+### Look At: Object Name
+
+The Object Name option list in the Look At group allows the user to select the object being viewed. This option list contains all the objects (humans, vehicles and environment) in the event (see Figure 5-1). Attaching the camera to a human or vehicle causes the view to remain fixed on that human or vehicle.
 
 > **NOTE:** This is a very useful feature! For example, if the View From object is Vehicle A and the Look At is Vehicle B, the camera will automatically pan as required to keep viewing Vehicle B from Vehicle A.
 
@@ -121,6 +125,10 @@ The Focal Length is the traditional focal length of a virtual 35 mm camera used 
 
 > **NOTE:** You can also set the focal length using the Zoom slider in the viewer. The number reported by the Zoom slider is the included angle of the viewer.
 
+### Camera Tilt Angle
+
+The Camera Tilt Angle rotates the camera about its viewing direction (the View Axis). A value of 0 keeps the camera level.
+
 ### Save...
 
 *(updated: this button is labeled Save... in the current build.)* Pressing Save... saves the current camera settings as a named view. The named view is added to the View Name list so it can be recalled later. This lets the user quickly change between previously created views. Up to ten views may be stored.
@@ -131,9 +139,9 @@ The Focal Length is the traditional focal length of a virtual 35 mm camera used 
 
 > **NOTE:** A separate Rename View control existed in earlier versions but is hidden and non-functional in the current build.
 
-### Delete View
+### Delete
 
-Pressing Delete View removes the current view from the list of views. The previous view in the View Name list box becomes the current view.
+Pressing Delete removes the current view from the list of views. The previous view in the View Name list box becomes the current view.
 
 **Parameters:** The parameters assigned using this dialog are shown in Table 5-1.
 

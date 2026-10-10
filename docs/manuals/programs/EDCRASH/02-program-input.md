@@ -434,7 +434,7 @@ EDCRASH has the following calculation options:
 
 These options control the basic execution of an EDCRASH event. The current EDCRASH calculation options are displayed in the EDCRASH Program Data output report (refer to the following chapter). Each of these options is described below. For a complete description of every control in the dialog, see [Calculation Options for EDCRASH](../../10-calculation-options/CalcOptEDCRASHDlg.md).
 
-![Figure 2-5](images/p041-005.png)
+![Figure 2-5](images/p041-005.png){ width="305" }
 
 *Figure 2-5: EDCRASH Event Calculation Options dialog.*
 

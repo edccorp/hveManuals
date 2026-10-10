@@ -545,7 +545,7 @@ $AF$, is calculated using equation 29-8. *(The original text cited equations
 
 The HVE Brake Designer dialog for disc brakes is shown in Figure 29-10.
 
-![Figure 29-10](../images/figure-29-10.jpg)
+![Figure 29-10](../images/disc-brake-current.png){ width="694" }
 
 *Figure 29-10 — HVE Brake Designer for disc brake types.*
 

@@ -370,7 +370,7 @@ Since our goal for this event is to see if the vehicle rolls over, let's look at
 - Drag the Key Results windows to a convenient location, where they do not block the view but still allow us access to the viewer thumb wheel controls (in case we want to change the view).
 - Click on *Select Variables* in the *Mack Truck Tractor* Key Results window. The Variable Selection dialog for *Mack Truck Tractor* is displayed.
 
-![Figure 5-12](images/p079-025.png)
+![Figure 5-12](images/p079-025.png){ width="325" }
 
 *Figure 5-12: Key Results Variable Selection dialog, used for selecting variables to be displayed in the Key Results window.*
 
@@ -431,15 +431,15 @@ To view the output reports, we need to be in Playback mode:
 
 The reports listed above are displayed by selecting Report Windows. Each Report Window contains an individual report.
 
-![Figure 5-14](images/p083-027.png)
+![Figure 5-14](images/p083-027.png){ width="298" }
 
 *Figure 5-14: Report Window Information dialog, showing the name of the event(s) in the current case.*
 
 To view the reports produced by the *EDVTS, Offramp Rollover* event, perform the following steps:
 
-- Click *Add New Object*. The Report Window Information dialog is displayed, as shown in Figure 5-14, and includes a list of the active events (*EDVTS, Offramp Rollover* is the only event in this file). The Report Window Information dialog also includes the user-editable *Report Window Name* text field and *Select Output* option list.
+- Click *Add New Object*. The Report Window Information dialog is displayed, as shown in Figure 5-14, and includes a list of the active events (*EDVTS, Offramp Rollover* is the only event in this file). The Report Window Information dialog also includes the user-editable *Report Window Name* text field and the *Report Type* list.
 - Select *EDVTS, Offramp Rollover* from the Active Events list.
-- Click on the *Select Output* option list and choose any of the available reports.
+- In the *Report Type* list, select one or more of the available reports. *Select All* selects every report; each selected report opens in its own Report Window.
 - Press *OK* to display the report.
 
 The selected report will be displayed in a resizable window. The following pages illustrate the reports produced for the *EDVTS, Offramp Rollover* event.
@@ -456,7 +456,7 @@ To view the Accident History report for the *EDVTS, Offramp Rollover* event, per
 
 - Click *Add New Object*. The Report Window Information dialog is displayed.
 - Select *EDVTS, Offramp Rollover* from the Active Events list.
-- Click on the *Select Output* option list and choose *Accident History*.
+- In the *Report Type* list, select *Accident History*.
 - Press *OK*.
 
 The Accident History report is displayed for the *EDVTS, Offramp Rollover* event, as shown in Figure 5-15.
@@ -473,7 +473,7 @@ To view the Messages report produced by the *EDVTS, Offramp Rollover* event, per
 
 - Click *Add New Object*. The Report Window Information dialog is displayed.
 - Select *EDVTS, Offramp Rollover* from the Active Events list.
-- Click on the *Select Output* option list and choose *Messages*.
+- In the *Report Type* list, select *Messages*.
 - Press *OK*.
 
 The Messages report is displayed for the *EDVTS, Offramp Rollover* event, as shown in Figure 5-16. (In this tutorial the report shows: "The simulation was terminated because a wheel lifted off the ground. For more information, check the Variable Output Table to see where Fz(WheelNumber) became negative.")
@@ -490,7 +490,7 @@ To view the Program Data report for the *EDVTS, Offramp Rollover* event, perform
 
 - Click *Add New Object*. The Report Window Information dialog is displayed.
 - Select *EDVTS, Offramp Rollover* from the Active Events list.
-- Click on the *Select Output* option list and choose *Program Data*.
+- In the *Report Type* list, select *Program Data*.
 - Press *OK*.
 
 The Program Data report is displayed for the *EDVTS, Offramp Rollover* event, as shown in Figure 5-17.
@@ -507,7 +507,7 @@ To view the Vehicle Data report for the *EDVTS, Offramp Rollover* event, perform
 
 - Click *Add New Object*. The Report Window Information dialog is displayed.
 - Select *EDVTS, Offramp Rollover* from the Active Events list.
-- Click on the *Select Output* option list and choose *Vehicle Data*.
+- In the *Report Type* list, select *Vehicle Data*.
 - Press *OK*.
 
 A portion of the Vehicle Data report displayed for *EDVTS, Offramp Rollover* is shown in Figure 5-18.
@@ -522,7 +522,7 @@ To view the Variable Output report for the *EDVTS, Offramp Rollover* event, perf
 
 - Click *Add New Object*. The Report Window Information dialog is displayed.
 - Select *EDVTS, Offramp Rollover* from the Active Events list.
-- Click on the *Select Output* option list and choose *Variable Output*.
+- In the *Report Type* list, select *Variable Output*.
 - Press *OK*.
 
 The Variable Output report is displayed for the *EDVTS, Offramp Rollover* event. The table is initially empty, so the next step is to select the time-dependent results we wish to display in the table.
@@ -553,7 +553,7 @@ Next, let's add the vertical tire forces for the semi-trailer:
 
 The Variable Output report for the *EDVTS, Offramp Rollover* event now includes tow vehicle velocity and acceleration and vertical tire loads for each wheel location, as shown in Figure 5-20.
 
-![Figure 5-19](images/p090-fig5-19.png)
+![Figure 5-19](images/p090-fig5-19.png){ width="325" }
 
 *Figure 5-19: Variable Selection dialog, used for selecting the results displayed in the Output Report.*
 
@@ -567,7 +567,7 @@ Finally, let's display a trajectory simulation for this event. To view the Traje
 
 - Click *Add New Object*. The Report Window Information dialog is displayed.
 - Select *EDVTS, Offramp Rollover* from the Active Events list.
-- Click on the *Select Output* option list and choose *Trajectory Simulation*.
+- In the *Report Type* list, select *Trajectory Simulation*.
 - Press *OK*.
 
 The Trajectory Simulation viewer is displayed for the *EDVTS, Offramp Rollover* event (see Figure 5-21). The tractor and trailer are shown at their initial positions.
