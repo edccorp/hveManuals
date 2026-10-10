@@ -183,7 +183,7 @@ SIMON allows for the definition of x, y, z coordinates for each wheel center wit
 
 #### Brake
 
-SIMON uses Time Lag and Time Rise in controlling brake torque application. Each wheel's brake assembly optionally can be described using the HVE Brake Designer (see HVE User's Manual, Section Eleven, Chapters 29 and 30, and reference 1). SIMON does not use the wheel brake system Antilock Effectiveness. Instead, SIMON uses the HVE ABS Model to simulate ABS. This is a robust, algorithm-driven ABS simulation model. See also Brake System (later in this chapter), HVE User's Manual, Chapter 31, *Anti-lock Braking Systems*, and references 10 and 11.
+SIMON uses Time Lag and Time Rise in controlling brake torque application. Each wheel's brake assembly optionally can be described using the HVE Brake Designer (see HVE User's Manual, Section Eleven, Chapters 29 and 30, and reference 1). SIMON does not use the wheel brake system Antilock Effectiveness. Instead, SIMON uses the HVE ABS Model to simulate ABS. This is a robust, algorithm-driven ABS simulation model. See also Brake System (later in this chapter), HVE User's Manual, Chapter 31, *Anti-lock Braking Systems*, and reference 10.
 
 **Table 2-2 Vehicle Unsprung Mass, Wheel and Brake Parameters Used By SIMON.**
 
@@ -609,7 +609,7 @@ The Payload Data used by SIMON include the payload x, y, z coordinates relative 
 
 #### Vehicle Wheels
 
-SIMON supports the Tire Blow-out Model [10], Wheel Damage option, HVE Brake Designer (HVE User's Manual, See Section Eleven and References 1 and 11) and the Tire-Terrain Model options. These options allow the user to study event-related phenomena at each wheel. The individual parameters are shown in Table 2-7. Also, refer to the HVE User's Manual, Menu Reference, Edit Menu, for detailed information regarding these options.
+SIMON supports the Tire Blow-out Model, Wheel Damage option, HVE Brake Designer (HVE User's Manual, See Section Eleven and References 1 and 10) and the Tire-Terrain Model options. These options allow the user to study event-related phenomena at each wheel. The individual parameters are shown in Table 2-7. Also, refer to the HVE User's Manual, Menu Reference, Edit Menu, for detailed information regarding these options.
 
 #### Accelerometers
 

@@ -12,9 +12,8 @@
 
 5. ATB Version V.1 obtained from Wright-Patterson Air Force Base, Dayton, OH.
 
-6. Grimes, W. D., "Using ATB Under the HVE Environment", SAE Paper 970967, Society of Automotive Engineers, Detroit, Michigan, February 1997.
 
-7. Cheng, H., Obergefell, L.A., Rizer, A.L., "Generator of Body (GEBOD) Manual", Report No. AL/CF-TR-1994-0051, Armstrong Laboratory, Dayton, Ohio.
+6. Cheng, H., Obergefell, L.A., Rizer, A.L., "Generator of Body (GEBOD) Manual", Report No. AL/CF-TR-1994-0051, Armstrong Laboratory, Dayton, Ohio.
 
 <!-- NAV -->
 

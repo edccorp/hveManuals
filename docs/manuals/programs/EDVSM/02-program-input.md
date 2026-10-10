@@ -459,7 +459,7 @@ EDVSM uses the following Driver Controls:
 - **Braking** - A table of braking inputs as a function of time. The *At Pedal* option is supported.
 - **Throttle** - A table of throttle inputs as a function of time. The *Percent Wide-open Throttle* option is supported.
 - **Gear Selection** - A table of gear changes as a function of time for the transmission (multi-speed differentials are not supported).
-- **HVE Driver Model** - A closed-loop model that determines the driver steering inputs required to cause the vehicle to follow a desired path. The HVE Driver Model is described in the HVE User's Manual and in reference 9.
+- **HVE Driver Model** - A closed-loop model that determines the driver steering inputs required to cause the vehicle to follow a desired path. The HVE Driver Model is described in the HVE User's Manual and in reference 8.
 
 The Driver Controls Data used by EDVSM are shown in Table 2-7.
 
@@ -491,7 +491,7 @@ The Collision Pulse data are not used by EDVSM.
 
 #### Wheels
 
-EDVSM supports the HVE Tire Blow-out Model. The inputs are the tire and duration for the blowout and stiffness and rolling resistance multipliers for the blown tire. The HVE Tire Blow-out Model is described in the HVE User's Manual (see Event Set-up options) and in reference 9.
+EDVSM supports the HVE Tire Blow-out Model. The inputs are the tire and duration for the blowout and stiffness and rolling resistance multipliers for the blown tire. The HVE Tire Blow-out Model is described in the HVE User's Manual (see Event Set-up options) and in reference 8.
 
 EDVSM also supports the HVE Brake Designer. When the Brake Designer is used, the user can specify initial temperatures for the brake linings and drum. Refer to the HVE Brake Designer Manual for more information.
 

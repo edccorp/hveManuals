@@ -384,7 +384,7 @@ EDSMAC4 uses the following Driver Controls:
 - **Steering** — A table of steering inputs as a function of time. The At Driver and At Axle options are supported.
 - **Braking** — A table of braking inputs as a function of time. The Wheel Force and Percent Available Friction options are supported.
 - **Throttle** — A table of throttle inputs as a function of time. The Wheel Force and Percent Available Friction options are supported.
-- **HVE Driver** — The HVE Driver Model is a closed-loop driver control model that uses driver control attributes to attempt to follow a user-specified path. The path is constructed of Path/Location positions set up by the user. This model is described in detail in Reference [27].
+- **HVE Driver** — The HVE Driver Model is a closed-loop driver control model that uses driver control attributes to attempt to follow a user-specified path. The path is constructed of Path/Location positions set up by the user. This model is described in detail in Reference [25].
 
 ##### Brake
 
@@ -459,7 +459,7 @@ The Collision Pulse data are not used by EDSMAC4.
 
 #### Wheels
 
-EDSMAC4 supports the Tire Blowout Model [26] and Wheel Displacement option. These options allow the user to study event-related phenomena at each wheel.
+EDSMAC4 supports the Tire Blowout Model and Wheel Displacement option. These options allow the user to study event-related phenomena at each wheel.
 
 - **Tire Blowout** — The start time, deflation duration, deflated stiffness factor, and deflated rolling resistance factor for a blown tire.
 - **Wheel Displacement** — The start time, displacement duration, change in x,y,z coordinates (z is available only in HVE) of the wheel center, and change in camber due to a wheel displacement.
@@ -546,7 +546,7 @@ To execute an EDSMAC4 event, use the Event Controller, a component of the Event 
 
 The original SMAC collision algorithm was not designed to accommodate barrier collisions (barrier being defined as an infinitely rigid object that absorbs no energy when struck). The reason is clear upon close inspection of the collision algorithm: it requires that both colliding objects be deformable (see references 3, 4, 6 and 7 for a detailed description of the original SMAC collision algorithm).
 
-The collision algorithm developed for EDSMAC4 has been improved significantly. These changes, along with other improvements, allow EDSMAC4 to be used for many barrier and pole impacts. For a complete description of the new algorithm, see references 21 and 22.
+The collision algorithm developed for EDSMAC4 has been improved significantly. These changes, along with other improvements, allow EDSMAC4 to be used for many barrier and pole impacts. For a complete description of the new algorithm, see reference 21.
 
 > **NOTE:** The use of smaller than normal integration timesteps is sometimes required for impacts with small objects, such as poles. Otherwise, the pole may be completely engulfed by the vehicle before a collision is detected, resulting in a fatal error during the collision phase.
 

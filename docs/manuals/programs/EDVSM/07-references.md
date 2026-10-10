@@ -14,9 +14,8 @@
 
 7. Day, T., "Applications and Limitations of 3-Dimensional Vehicle Rollover Simulation," SAE Paper number 2000-01-0852, presented at the Society of Automotive Engineers International Congress and Exposition, March, 2000, Detroit.
 
-8. Blythe, W., Day, T., Grimes, W., "3-Dimensional Simulation of Vehicle Response to Tire Blow-outs," SAE Paper number 980221, presented at the Society of Automotive Engineers International Congress and Exposition, February, 1998, Detroit.
 
-9. Day, T., Metz, L., "The Simulation of Driver Inputs using a Vehicle Driver Model," SAE Paper number 2000-01-1313, presented at the Society of Automotive Engineers International Congress and Exposition, March, 2000, Detroit.
+8. Day, T., Metz, L., "The Simulation of Driver Inputs using a Vehicle Driver Model," SAE Paper number 2000-01-1313, presented at the Society of Automotive Engineers International Congress and Exposition, March, 2000, Detroit.
 
 <!-- NAV -->
 

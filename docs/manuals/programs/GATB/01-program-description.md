@@ -52,7 +52,7 @@ GATB output reports include Accident History, Human Data, Injury Data, Messages,
 
 ## Validation
 
-GATB was validated against several ATB runs [6]. The GATB program basically extracts all the data from HVE, creates an ATB program input file, and then executes a version of the ATB program. The basic validation consisted of checking that the correct data was being extracted from HVE and that the data being returned to HVE was being correctly identified. The validation effort confirmed that GATB produces the same results as the ATB program. The ATB program has been previously validated to produce reasonable predictions of human response to motor vehicle collisions [1, 4, 5].
+GATB was validated against several ATB runs. The GATB program basically extracts all the data from HVE, creates an ATB program input file, and then executes a version of the ATB program. The basic validation consisted of checking that the correct data was being extracted from HVE and that the data being returned to HVE was being correctly identified. The validation effort confirmed that GATB produces the same results as the ATB program. The ATB program has been previously validated to produce reasonable predictions of human response to motor vehicle collisions [1, 4, 5].
 
 ## Basic Operation
 

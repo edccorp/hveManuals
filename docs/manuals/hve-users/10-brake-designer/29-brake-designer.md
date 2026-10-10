@@ -103,7 +103,7 @@ Thus, it can be seen that to calculate brake torque under any given set of
 conditions, one must be able to calculate the brake factor, brake torque
 radius, actuation force and actuation factor. These calculations are
 described in detail below. For an excellent treatise on brake design, see
-Limpert [4.31], as well as references 4.2 and 4.32 through 4.38.
+Limpert [4.30], as well as references 4.2 and 4.31 through 4.37.
 
 ## Brake Factor
 
@@ -155,7 +155,7 @@ Brake Linings [6.5] (see Table 29-1), and are user-editable.
 
 Lining friction is then modified using linear interpolation of the friction
 factor vs sliding speed table (see Figure 29-3). The default values are
-derived from brake dynamometer test data in references 4.37 and 4.38. Values
+derived from brake dynamometer test data in references 4.36 and 4.37. Values
 are user-editable.
 
 The calculation of brake factor lies at the heart of a brake design. Each
@@ -187,7 +187,7 @@ abutted shoes.
 
 ![Figure 29-4](../images/p715-fig29-4.png)
 
-*Figure 29-4 — Analysis of a pinned brake shoe [4.31].*
+*Figure 29-4 — Analysis of a pinned brake shoe [4.30].*
 
 #### Pinned Shoe
 
@@ -224,7 +224,7 @@ leading shoe.
 
 ![Figure 29-5](../images/p716-fig29-5.png)
 
-*Figure 29-5 — Analysis of an abutted brake shoe [4.31].*
+*Figure 29-5 — Analysis of an abutted brake shoe [4.30].*
 
 #### Abutted Shoe
 
@@ -378,7 +378,7 @@ where
 | Symbol | Description |
 | --- | --- |
 | $P_{Line}$ | Air pressure entering the air chamber (psi), after proportioning |
-| $P_{Pushout}$ | Air pressure required to cause the brake linings to contact the drum (psi), normally about 5 psi for air drum brake systems [4.38] |
+| $P_{Pushout}$ | Air pressure required to cause the brake linings to contact the drum (psi), normally about 5 psi for air drum brake systems [4.37] |
 | $A_{AirChamber}$ | Surface area of one air chamber (in²) |
 | $L_{Slack}$ | Slack adjuster lever arm (in) |
 | $R_{S\text{-}cam}$ | Effective radius of S-cam (in), normally 0.50 in |
@@ -398,7 +398,7 @@ where
 | Symbol | Description |
 | --- | --- |
 | $P_{Line}$ | Air pressure entering the air chamber (psi), after proportioning |
-| $P_{Pushout}$ | Air pressure required to cause the brake linings to contact the drum (psi), normally about 5 psi for air drum brake systems [4.38] |
+| $P_{Pushout}$ | Air pressure required to cause the brake linings to contact the drum (psi), normally about 5 psi for air drum brake systems [4.37] |
 | $A_{AirChamber}$ | Surface area of one air chamber (in²) |
 | $\alpha$ | Included wedge angle (rad) |
 | $\eta_{Mech}$ | Mechanical efficiency of the wedge assembly (%/100), normally between 0.80 and 0.88 for properly maintained air brake systems [4.2] |
@@ -429,10 +429,10 @@ and the maximum stroke Smax.*
 ![Figure 29-9](../images/p723-346.png)
 
 *Figure 29-9 — Effect of temperature on brake stroke for a Type 30 cast iron
-drum S-cam brake [4.32].*
+drum S-cam brake [4.31].*
 
 Increased piston stroke due to increased brake temperature is also
-empirically derived. Testing [4.2, 4.32] has revealed that stroke increases
+empirically derived. Testing [4.2, 4.31] has revealed that stroke increases
 approximately linearly with brake temperature. Figure 29-9 illustrates this
 relationship. Values of 0.0004 to 0.0008 in/deg F are commonly found in the
 literature; 0.0006 in/deg F is used as the default in the HVE Brake

@@ -599,7 +599,7 @@ default damage profile. The user can then over-ride the default values by
 replacing the assigned data (see Figure 2-17).
 
 HVE uses the damage profile to calculate and display the Equivalent Energy
-Speed, or EES [2.26, 6.4]. The default value is set equal to the Total
+Speed, or EES [2.25, 6.4]. The default value is set equal to the Total
 Delta-V (see below). The user may over-ride the default EES by clicking on
 the *EES* radio button and entering the desired value.
 

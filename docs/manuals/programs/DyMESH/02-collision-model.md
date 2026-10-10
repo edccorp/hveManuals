@@ -25,7 +25,6 @@ During a run, one body is designated the **Primary** (P) and the other the
 penetrated. The roles can be swapped every time step, or multiple times per time
 step, so that both bodies accumulate damage.
 
-> **NOTE:** Older DyMESH material, and four options in the DyMESH Options dialog (**By Master**, **By Slave Normal**, **By Slave and Damage** and **Use Master Normal**), use *master* for the primary role and *slave* for the secondary role.
 
 Because the search over all polygons would be expensive, DyMESH restricts each
 test to a **search box** around each secondary vertex, and to precomputed lists of

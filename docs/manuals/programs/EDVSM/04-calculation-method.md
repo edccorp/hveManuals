@@ -132,7 +132,7 @@ Steering, braking and throttle come from the driver control tables, or — when
 the **Path Follower** is selected in Driver Controls — from HVE's closed-loop
 driver model, which computes the steering needed to follow the desired path.
 That model is shared across the HVE programs and is described in the HVE User's
-Manual and in reference 9 of this manual, not here.
+Manual and in reference 8 of this manual, not here.
 
 ### Tire forces
 

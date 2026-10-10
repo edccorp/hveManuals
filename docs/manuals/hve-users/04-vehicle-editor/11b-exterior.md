@@ -112,7 +112,7 @@ The Exterior Stiffness parameters are described below.
 
 ![Figure 11-21](../images/p381-figB11-21.png)
 
-*Figure 11-21: Force vs Deflection characteristics of a vehicle, and their relationship to the A, B and Kv stiffness coefficients (see also references 2.8–2.14, 4.20, 4.29).*
+*Figure 11-21: Force vs Deflection characteristics of a vehicle, and their relationship to the A, B and Kv stiffness coefficients (see also references 2.7–2.13, 4.20, 4.29).*
 
 **Table 11-11: Vehicle Exterior Stiffness Coefficients Parameters**
 

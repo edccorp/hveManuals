@@ -22,12 +22,10 @@
 20. Day, T.D., Siddall, D.E., "Validation of Several Reconstruction and Simulation Models in the HVE 3-D Environment," SAE Paper No. 960891, Society of Automotive Engineers, February 1996.
 21. Hull, W.C., Newton, B.C., "Estimating Crush Stiffness When Reconstructing Vehicle Accidents," SAE Paper No. 930898, Society of Automotive Engineers, February 1993.
 21a. Neptune, J.A., Flynn, J.E., "A Method for Determining Accident Specific Crush Stiffness Coefficients," SAE Paper No. 940913, Society of Automotive Engineers, February 1994. *(The original manual numbered both this and the previous entry "21.")*
-22. Grimes, W.D., Heusser, R., Hunter, J., Neptune, J.A., "Developing a Crush Profile By Balancing Impact Forces," SAE Paper No. 970942, Society of Automotive Engineers, February 1997.
-23. EDC Technical Newsletter, Technical Session, Engineering Dynamics Corporation, Beaverton, OR, December 1997.
-24. Day, T., "An Overview of the EDSMAC4 Collision Simulation Model," SAE Paper No. 1999-01-0102, Society of Automotive Engineers, Warrendale, PA, 1999.
-25. Day, T., "An Overview of the HVE Developer's Toolkit," SAE Paper No. 940923, Society of Automotive Engineers, February 1994.
-26. Blythe, W., Day, T.D., Grimes, W.D., "3-Dimensional Simulation of Vehicle Response to Tire Blow-outs," SAE Paper No. 980221, Society of Automotive Engineers, Warrendale, PA, 1998.
-27. Day, T.D. and Metz, L.D., "The Simulation of Driver Inputs Using a Vehicle Driver Model," SAE Paper No. 2000-01-1313, Society of Automotive Engineers, Warrendale, PA, 2000.
+22. EDC Technical Newsletter, Technical Session, Engineering Dynamics Corporation, Beaverton, OR, December 1997.
+23. Day, T., "An Overview of the EDSMAC4 Collision Simulation Model," SAE Paper No. 1999-01-0102, Society of Automotive Engineers, Warrendale, PA, 1999.
+24. Day, T., "An Overview of the HVE Developer's Toolkit," SAE Paper No. 940923, Society of Automotive Engineers, February 1994.
+25. Day, T.D. and Metz, L.D., "The Simulation of Driver Inputs Using a Vehicle Driver Model," SAE Paper No. 2000-01-1313, Society of Automotive Engineers, Warrendale, PA, 2000.
 
 *(Additional references cited by the current program's Program Data report include Day, T.D., Hargens, R.L., "Further Validation of EDSMAC Using the RICSAC Staged Collisions," SAE Paper No. 900102, February 1990, and the "EDC Simulations Training Manual," Engineering Dynamics Corporation, Beaverton, OR, 1989.)*
 

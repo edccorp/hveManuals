@@ -531,11 +531,10 @@ A sample Calculation Options dialog is shown in Figure 6-16.
 
 The DyMESH Options is a tabbed dialog, divided into General and Advanced options (see Figures 6-17 and 6-18). DyMESH is enabled by clicking on the Use DyMESH check box. The DyMESH Version No. is selectable from a drop-down list.
 
-> **NOTE:** DyMESH treats the two colliding bodies in two roles, called **primary** and **secondary** in this manual. Four options in the DyMESH Options dialog still use the older names for these roles — *master* for primary and *slave* for secondary: **By Master**, **By Slave Normal**, **By Slave and Damage** and **Use Master Normal**. They are listed below under the names shown on screen.
 
 > **NOTE:** The Version No. is available for compatibility with simulations performed using previous versions.
 
-![Figure 6-18](../images/p287-175.png)
+![Figure 6-18](../images/p287-175-v2.png)
 
 *Figure 6-18: The Advanced DyMESH Options dialog allows the user to assign additional DyMESH options.*
 
@@ -566,10 +565,10 @@ Pushback determines how each secondary vertex is displaced back to the primary s
 
 **Method** — If the Search Direction (see above) is Average Local Normals, it is necessary to decide which method is used. Four possibilities:
 
-- **By Master** (default) — uses surface normals of nearby polygons on the primary vehicle (weighted by nearness)
-- **By Slave Normal** — uses average normals of the penetrating secondary vertices
+- **By Primary** (default) — uses surface normals of nearby polygons on the primary vehicle (weighted by nearness)
+- **By Secondary Normal** — uses average normals of the penetrating secondary vertices
 - **By Relative Velocity** — uses the average velocity vector of the penetrating secondary vertices (the vectors will be different if there is relative rotation of the vehicles)
-- **By Slave and Damage** — uses the average normals of the penetrating secondary vertices when first damaged (assumes subsequent damage will be in the same direction)
+- **By Secondary and Damage** — uses the average normals of the penetrating secondary vertices when first damaged (assumes subsequent damage will be in the same direction)
 
 **Options** — Additional Pushback options are available as checkboxes (by default, none are set):
 
@@ -619,7 +618,7 @@ These options further define how the search for polygon candidates is conducted.
 
 **Inside Vehicle Test** — Before performing any search, it is necessary to determine if a secondary vertex is inside the primary vehicle mesh (otherwise, there is no contact, so don't bother any more with this vertex). Two methods are available:
 
-- **Use Master Normal** (default) — If the direction of the primary vehicle polygon normal is in the same direction as the direction from the primary surface to the secondary vertex, the vertex must lie outside the vehicle, so it is ignored.
+- **Use Primary Normal** (default) — If the direction of the primary vehicle polygon normal is in the same direction as the direction from the primary surface to the secondary vertex, the vertex must lie outside the vehicle, so it is ignored.
 - **Use CG** — If the direction from the surface to the CG is different from the direction from the surface to the secondary vertex, the vertex must lie outside the vehicle, so it is ignored.
 
 **Inside Polygon Test** — To decide if a secondary vertex has penetrated a specific polygon, it is necessary to determine if the projection of the secondary vertex onto the plane of the polygon lies within the perimeter of the three sides defining the polygon. Two methods are available:

@@ -73,7 +73,7 @@ All ABS methodologies work by controlling tire longitudinal slip. This is
 accomplished through the use of wheel sensors that compare the tire
 circumferential velocity to the current reference velocity, $V_r$, normally
 calculated using the current spin velocities of two or more wheels (see
-reference 4.42 for a detailed discussion of the calculation of reference
+reference 4.41 for a detailed discussion of the calculation of reference
 velocity). On a vehicle, the longitudinal tire slip cannot be measured
 directly. Instead, slip is calculated:
 
@@ -128,7 +128,7 @@ includes the following hardware components:
   pressure.
 
 The basic hardware requirements are generally the same for all vehicle
-types, ranging from passenger cars to on-highway trucks. Reference 4.42
+types, ranging from passenger cars to on-highway trucks. Reference 4.41
 provides a detailed description of these required components.
 
 ## ABS User Interface
@@ -343,7 +343,7 @@ the simulation have the following features:
 - A spin degree of freedom for each wheel
 
 A flowchart showing the integration of the ABS model into an existing
-vehicle simulation is shown in Figure 31-4. See also reference 4.43.
+vehicle simulation is shown in Figure 31-4. See also reference 4.42.
 
 ## Current Algorithms
 
@@ -392,7 +392,7 @@ Figure 31-5 shows a typical pressure vs time history for a few cycles of a
 hard brake pedal application (i.e., enough system pressure to lock the
 wheel). The parameters used by the Tire Slip algorithm are shown in Table
 31-3. Additional details for the Tire Slip algorithm, including a flow
-chart, are provided in reference 4.43.
+chart, are provided in reference 4.42.
 
 **Table 31-3 — Variables used by the Tire Slip ABS algorithm**
 
@@ -413,14 +413,14 @@ chart, are provided in reference 4.43.
 ### HVE Bosch Version 1 Algorithm
 
 The HVE Bosch Version 1 ABS algorithm is based on the algorithm described in
-reference 4.42. The Bosch ABS system is used on many passenger cars. The
+reference 4.41. The Bosch ABS system is used on many passenger cars. The
 algorithm is based on wheel spin acceleration and a critical tire slip
 threshold.
 
 ![Figure 31-6](../images/p764-359.png)
 
 *Figure 31-6 — Idealized control sequence for the Bosch algorithm (reprinted
-from reference 4.42). Compare the lower portion with the pressure cycle
+from reference 4.41). Compare the lower portion with the pressure cycle
 displayed in Figure 31-7.*
 
 ![Figure 31-7](../images/p764-fig31-7.png)
@@ -470,7 +470,7 @@ phases (see Figure 31-6):
   complete, the process returns to Phase 3 and a new control cycle begins.
 
 As stated, some minor differences exist between the HVE implementation and
-the Bosch description provided in reference 4.42. These differences reflect
+the Bosch description provided in reference 4.41. These differences reflect
 some inconsistencies between the acceleration and pressure profiles shown in
 Figure 31-6. For example, unless the throttle is applied, it is physically
 inconsistent that the wheel spin acceleration would be positive, let alone
@@ -487,14 +487,14 @@ travels onto surfaces with differing friction characteristics, the ABS model
 is able to maximize its performance accordingly.
 
 Default parameters used by the HVE Bosch Version 1 algorithm were developed
-through the evaluation of numerous simulation runs. See reference 4.43 for
+through the evaluation of numerous simulation runs. See reference 4.42 for
 typical parameters applicable to a P195/75R14 passenger car tire.
 
 Figure 31-7 shows a typical pressure vs time history for a single cycle of a
 hard brake pedal application (i.e., enough system pressure to lock the
 wheel). The parameters used by the HVE Bosch Version 1 algorithm are shown
 in Table 31-4. Additional details for the HVE Bosch Version 1 algorithm,
-including a flow chart, are provided in reference 4.43.
+including a flow chart, are provided in reference 4.42.
 
 **Table 31-4 — Variables used by the HVE Bosch Version 1 ABS algorithm**
 

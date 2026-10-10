@@ -571,11 +571,9 @@ It is quite instructive to look carefully at all tire forces ($F_{x'}$, $F_{y'}$
 
 > **NOTE:** Look carefully; you'll see a lot of interesting phenomena taking place.
 
-You might also find it interesting to change the amount and timing of the steering and introduce braking to observe the effect on vehicle behavior for the various blown-tire locations. The blow-out model is extremely powerful! For additional information about vehicle response to tire blow-out, see reference [8].
+You might also find it interesting to change the amount and timing of the steering and introduce braking to observe the effect on vehicle behavior for the various blown-tire locations. The blow-out model is extremely powerful!
 
 One final, but very important point: This tutorial involves a Ford Bronco II. This particular vehicle was selected because it was included in a rigorous validation study involving vehicle rollover [6]. In this study, the vehicle was subjected to extremely violent experimental conditions (i.e., curb-tripped impact) in an effort to induce a rollover response. The Ford Bronco II's response to these conditions, as well as to the tire blow-out simulations included in this tutorial, is substantially the same as the response of other multi-purpose vehicles.
-
-*(updated: The original manual cited reference [7] for tire blow-out response; the correct citation in the Chapter 7 reference list is [8], Blythe, Day, Grimes, "3-Dimensional Simulation of Vehicle Response to Tire Blow-outs," SAE 980221.)*
 
 ## Viewing Results
 

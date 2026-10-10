@@ -27,7 +27,6 @@
 25. Crush Stiffness Coefficients for Model Years 1960–1994, Neptune Engineering, Clovis, CA, 1994.
 26. Hull, W.C., Newton, B.C., "Estimating Crush Stiffness When Reconstructing Vehicle Accidents," SAE Paper No. 930898, Society of Automotive Engineers, February, 1993.
 27. Neptune, J.A., Flynn, J.E., "A Method for Determining Accident Specific Crush Stiffness Coefficients," SAE Paper No. 940913, Society of Automotive Engineers, February, 1994.
-28. Grimes, W.D., Heusser, R., Hunter, J., Neptune, J.A., "Developing a Crush Profile By Balancing Impact Forces," SAE Paper No. 970942, Society of Automotive Engineers, February, 1997.
 
 ---
 

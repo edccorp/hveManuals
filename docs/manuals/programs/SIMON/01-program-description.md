@@ -45,7 +45,7 @@ SIMON output reports include the following HVE Output Reports:
 
 ## Validation
 
-The validation of SIMON for unit vehicle (UV), articulated vehicle (AV) and vehicle collision (VC) simulation has been completed and is available in Reference 17. A summary of the validation test matrix is shown in Table 1-1.
+The validation of SIMON for unit vehicle (UV), articulated vehicle (AV) and vehicle collision (VC) simulation has been completed and is available in Reference 16. A summary of the validation test matrix is shown in Table 1-1.
 
 This test matrix represents a cross-section of the types of events for which SIMON was intended. It is anticipated that additional validations will be published as they are performed.
 
@@ -53,17 +53,17 @@ This test matrix represents a cross-section of the types of events for which SIM
 
 | Test | Description | Validation By |
 |------|-------------|---------------|
-| UV-1 | Passenger Car Combined Steering and Braking [12] | Experiment, EDVSM |
-| UV-2 | Passenger Car Alternate Ramp Traversal [12] | Experiment, EDVSM |
-| UV-3 | Light Truck Rollover [13] | Experiment, EDVSM |
-| UV-4 | Straight 3-Axle Truck (30 mph), Combined Braking and Steering [14] | Experiment, EDVDS |
+| UV-1 | Passenger Car Combined Steering and Braking [11] | Experiment, EDVSM |
+| UV-2 | Passenger Car Alternate Ramp Traversal [11] | Experiment, EDVSM |
+| UV-3 | Light Truck Rollover [12] | Experiment, EDVSM |
+| UV-4 | Straight 3-Axle Truck (30 mph), Combined Braking and Steering [13] | Experiment, EDVDS |
 | AV-1 | Chevrolet Pickup (55 mph) towing Open-wheel Utility Trailer, ISO Lane-change with braking | EDSMAC4 |
-| AV-2 | Tractor-trailer (27 mph), Combined Braking and Steering (U of M) [14] | Experiment, EDVDS |
-| VC-1 | 1992 Ford Explorer (45.9 mph) vs. 1984 Ford F-150 Pickup (46.1 mph), 55 Degree Angled Impact [15] | Experiment, EDSMAC4 |
-| VC-3 | 1974 Ford Torino (21.23 mph) vs. 1974 Ford Pinto (0 mph), 10 Degree Offset Rear-end Impact (Calspan, RICSAC 3) [16] | Experiment, EDSMAC4 |
-| VC-7 | 1974 Chev Chevelle Malibu (31.53 mph) vs. 1974 Ford Pinto (31.53 mph), 60 degree Angled Impact (Calspan, RICSAC 2) [16] | Experiment, EDSMAC4 |
-| VC-8 | 1974 Chev Chevelle Malibu (21.47 mph) vs. 1975 Volkswagen Rabbit (21.47 mph), 60 degree Angled Impact (Calspan, RICSAC 6) [16] | Experiment, EDSMAC4 |
-| VC-11 | 1974 Honda Civic CVCC (31.35 mph) vs. 1974 Ford Torino (31.35 mph), 90 Degree Angled Impact (Calspan, RICSAC 10) [16] | Experiment, EDSMAC4 |
+| AV-2 | Tractor-trailer (27 mph), Combined Braking and Steering (U of M) [13] | Experiment, EDVDS |
+| VC-1 | 1992 Ford Explorer (45.9 mph) vs. 1984 Ford F-150 Pickup (46.1 mph), 55 Degree Angled Impact [14] | Experiment, EDSMAC4 |
+| VC-3 | 1974 Ford Torino (21.23 mph) vs. 1974 Ford Pinto (0 mph), 10 Degree Offset Rear-end Impact (Calspan, RICSAC 3) [15] | Experiment, EDSMAC4 |
+| VC-7 | 1974 Chev Chevelle Malibu (31.53 mph) vs. 1974 Ford Pinto (31.53 mph), 60 degree Angled Impact (Calspan, RICSAC 2) [15] | Experiment, EDSMAC4 |
+| VC-8 | 1974 Chev Chevelle Malibu (21.47 mph) vs. 1975 Volkswagen Rabbit (21.47 mph), 60 degree Angled Impact (Calspan, RICSAC 6) [15] | Experiment, EDSMAC4 |
+| VC-11 | 1974 Honda Civic CVCC (31.35 mph) vs. 1974 Ford Torino (31.35 mph), 90 Degree Angled Impact (Calspan, RICSAC 10) [15] | Experiment, EDSMAC4 |
 
 ## Basic Procedure
 

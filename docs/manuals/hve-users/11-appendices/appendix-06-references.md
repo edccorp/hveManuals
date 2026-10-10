@@ -36,7 +36,6 @@ following sections:
 - 1.7 Day, T.D., "The Scientific Visualization of Motor Vehicle Accidents," SAE Paper No. 940922, Society of Automotive Engineers, Warrendale, PA, 1994.
 - 1.8 Day, T.D., "Validation of Several Reconstruction and Simulation Models in the HVE Scientific Visualization Environment," SAE Paper No. 960891, Society of Automotive Engineers, Warrendale, PA, 1996.
 - 1.9 Day, T.D., "Reconstruction and Simulation in the HVE 3-Dimensional Environment," SAE Paper No. 960890, Society of Automotive Engineers, Warrendale, PA, 1996.
-- 1.10 Grimes, W.D., "Programming FORTRAN Applications for HVE," SAE Paper No. 960889, Society of Automotive Engineers, Warrendale, PA, 1996.
 
 ## Motor Vehicle Safety
 
@@ -45,28 +44,27 @@ following sections:
 - 2.3 Vehicle Analysis Package — EDCRASH Program Manual, Engineering Dynamics Corporation, Beaverton, Oregon, 1996.
 - 2.4 Vehicle Analysis Package — EDSMAC Program Manual, Engineering Dynamics Corporation, Beaverton, Oregon, 1996.
 - 2.5 EDC Simulations Training Manual, Version 4, Engineering Dynamics Corporation, Beaverton, Oregon, 1989.
-- 2.6 Grimes, W.D., "Classifying the Elements in a Scientific Animation," SAE Paper No. 940919, March, 1994.
-- 2.7 Kenefect, M., "Crash Safety in Racing Cars," SAE Paper No. 930999, Society of Automotive Engineers, Warrendale, PA, 1993.
-- 2.8 Crush Stiffness Coefficients for Vehicle Model Years 1960–1994, Neptune Engineering, Clovis, CA, 1994.
-- 2.9 Prasad, A.K., "CRASH3 Damage Algorithm Reformulation for Front and Rear Collisions," SAE Paper No. 900098, Society of Automotive Engineers, Warrendale, PA, 1990.
-- 2.10 Strother, C.E., Woolley, R.L., James, M.B., "A Comparison Between NHTSA Crash Test Data and CRASH3 Frontal Stiffness Coefficients," SAE Paper No. 900101, Society of Automotive Engineers, Warrendale, PA, 1990.
-- 2.11 Woolley, R.L., Strother, C.E., James, M.B., "Rear Stiffness Coefficients Derived From Barrier Crash Data," SAE Paper No. 910120, Society of Automotive Engineers, Warrendale, PA, 1991.
-- 2.12 EDCRASH Version 4 Source Code Listing, EDC Library Ref. No. 2003, Engineering Dynamics Corporation, February, 1989.
-- 2.13 EDSMAC Version 2 Source Code Listing, EDC Library Ref. No. 2006, Engineering Dynamics Corporation, May, 1989.
-- 2.14 Vehicle Crush Stiffness Coefficients With Damage Profile Supplement for Model Years 1970–1984, EDC Library Ref. No. 1042, Engineering Dynamics Corporation, August, 1987.
-- 2.15 Day, T. and Hargens, R., "Differences Between EDCRASH and CRASH3," SAE Paper No. 850253, February, 1985.
-- 2.16 Day, T. and Hargens, R., "An Overview of the Way EDCRASH Computes Delta-V," SAE Paper No. 870045, February, 1987.
-- 2.17 Day, T. and Hargens, R., "A Personal Computer Program for Drawing Accident Sites," SAE Paper No. 880068, February, 1988.
-- 2.18 Day, T. and Hargens, R., "An Overview of the Way EDSMAC Computes Delta-V," SAE Paper No. 880069, February, 1988.
-- 2.19 Hargens, R. and Day, T., "Vehicle Data Sources for Accident Reconstruction," SAE Paper No. 880070, February, 1988.
-- 2.20 Day, T. and Hargens, R., "Application and Misapplication of Computer Programs for Accident Reconstruction," SAE Paper No. 890738, February, 1989.
-- 2.21 Day, T. and Hargens, R., "Further Validation of EDCRASH Using the RICSAC Staged Collisions," SAE Paper No. 890740, February, 1989.
-- 2.22 McHenry, R.R., Segal, D.J., Lynch, J.P., Henderson, P.M., "Mathematical Reconstruction of Highway Accidents," NTIS PB-220 150, January, 1973.
-- 2.23 Robbins, D.H., Melvin, J.W., Huelke, D.F., Sherman, H.W., "Biological Accident Investigation Methodology," NTIS PB83-184 366, February, 1983.
-- 2.24 Campbell, K.L., "Energy Basis of Collision Severity," SAE Paper No. 740565, Society of Automotive Engineers, Warrendale, PA, July, 1974.
-- 2.25 Emori, R.I., "Mechanics of Automobile Collisions," First International Conference on Vehicle Mechanics, Wayne State Univ., July, 1968.
-- 2.26 Zeidler, F., Schreier, H.H., Stadelmann, R., "Accident Research and Accident Reconstruction by the EES-Accident Reconstruction Method," SAE Paper No. 850256, Society of Automotive Engineers, Warrendale, PA, February, 1985.
-- 2.27 Tumbas, N.S., Smith, R.A., "Measurement Protocol for Quantifying Vehicle Damage from an Energy Basis Point of View," SAE Paper No. 880072, Society of Automotive Engineers, Warrendale, PA, February, 1988.
+- 2.6 Kenefect, M., "Crash Safety in Racing Cars," SAE Paper No. 930999, Society of Automotive Engineers, Warrendale, PA, 1993.
+- 2.7 Crush Stiffness Coefficients for Vehicle Model Years 1960–1994, Neptune Engineering, Clovis, CA, 1994.
+- 2.8 Prasad, A.K., "CRASH3 Damage Algorithm Reformulation for Front and Rear Collisions," SAE Paper No. 900098, Society of Automotive Engineers, Warrendale, PA, 1990.
+- 2.9 Strother, C.E., Woolley, R.L., James, M.B., "A Comparison Between NHTSA Crash Test Data and CRASH3 Frontal Stiffness Coefficients," SAE Paper No. 900101, Society of Automotive Engineers, Warrendale, PA, 1990.
+- 2.10 Woolley, R.L., Strother, C.E., James, M.B., "Rear Stiffness Coefficients Derived From Barrier Crash Data," SAE Paper No. 910120, Society of Automotive Engineers, Warrendale, PA, 1991.
+- 2.11 EDCRASH Version 4 Source Code Listing, EDC Library Ref. No. 2003, Engineering Dynamics Corporation, February, 1989.
+- 2.12 EDSMAC Version 2 Source Code Listing, EDC Library Ref. No. 2006, Engineering Dynamics Corporation, May, 1989.
+- 2.13 Vehicle Crush Stiffness Coefficients With Damage Profile Supplement for Model Years 1970–1984, EDC Library Ref. No. 1042, Engineering Dynamics Corporation, August, 1987.
+- 2.14 Day, T. and Hargens, R., "Differences Between EDCRASH and CRASH3," SAE Paper No. 850253, February, 1985.
+- 2.15 Day, T. and Hargens, R., "An Overview of the Way EDCRASH Computes Delta-V," SAE Paper No. 870045, February, 1987.
+- 2.16 Day, T. and Hargens, R., "A Personal Computer Program for Drawing Accident Sites," SAE Paper No. 880068, February, 1988.
+- 2.17 Day, T. and Hargens, R., "An Overview of the Way EDSMAC Computes Delta-V," SAE Paper No. 880069, February, 1988.
+- 2.18 Hargens, R. and Day, T., "Vehicle Data Sources for Accident Reconstruction," SAE Paper No. 880070, February, 1988.
+- 2.19 Day, T. and Hargens, R., "Application and Misapplication of Computer Programs for Accident Reconstruction," SAE Paper No. 890738, February, 1989.
+- 2.20 Day, T. and Hargens, R., "Further Validation of EDCRASH Using the RICSAC Staged Collisions," SAE Paper No. 890740, February, 1989.
+- 2.21 McHenry, R.R., Segal, D.J., Lynch, J.P., Henderson, P.M., "Mathematical Reconstruction of Highway Accidents," NTIS PB-220 150, January, 1973.
+- 2.22 Robbins, D.H., Melvin, J.W., Huelke, D.F., Sherman, H.W., "Biological Accident Investigation Methodology," NTIS PB83-184 366, February, 1983.
+- 2.23 Campbell, K.L., "Energy Basis of Collision Severity," SAE Paper No. 740565, Society of Automotive Engineers, Warrendale, PA, July, 1974.
+- 2.24 Emori, R.I., "Mechanics of Automobile Collisions," First International Conference on Vehicle Mechanics, Wayne State Univ., July, 1968.
+- 2.25 Zeidler, F., Schreier, H.H., Stadelmann, R., "Accident Research and Accident Reconstruction by the EES-Accident Reconstruction Method," SAE Paper No. 850256, Society of Automotive Engineers, Warrendale, PA, February, 1985.
+- 2.26 Tumbas, N.S., Smith, R.A., "Measurement Protocol for Quantifying Vehicle Damage from an Energy Basis Point of View," SAE Paper No. 880072, Society of Automotive Engineers, Warrendale, PA, February, 1988.
 
 ## Humans
 
@@ -119,21 +117,20 @@ following sections:
 - 4.27 Neptune, J.A., "Overview of an HVE Vehicle Database," SAE Paper No. 960896, Society of Automotive Engineers, Warrendale, PA, February, 1996.
 - 4.28 Neptune, J.A., Blair, G.Y., Flynn, J.E., "A Method for Quantifying Vehicle Crush Stiffness Coefficients," SAE Paper No. 920607, Society of Automotive Engineers, Warrendale, PA, February, 1992.
 - 4.29 Neptune, J.A., Flynn, J.E., "A Method for Determining Accident Specific Crush Stiffness Coefficients," SAE Paper No. 940913, Society of Automotive Engineers, Warrendale, PA, February, 1994.
-- 4.30 Blythe, W., Day, T., Grimes, W., "3-Dimensional Simulation of Vehicle Response to Tire Blow-outs," SAE Paper No. 980221, Society of Automotive Engineers, Warrendale, PA, February, 1998.
-- 4.31 Limpert, R., Brake Design and Safety, Society of Automotive Engineers, Inc., Warrendale, PA, 1992.
-- 4.32 Flick, M.A., "The Effect of Brake Adjustment on Braking Performance," National Highway Traffic Safety Administration, U.S. Dept. of Transportation, Report No. DOT HS 807-287, Washington, DC, 1988.
-- 4.33 Stroh, G.B., Lawrence, M.H., Deibel, W.T., "Effects of Shoe Force Geometry on Heavy Duty Internal Shoe Brake Performance," SAE Paper No. 680432, Society of Automotive Engineers, Warrendale, PA, February, 1968.
-- 4.34 Gurney, J.W., Bernard, J.E., "The Utilization of a Computer Simulation as an Aid to Predict Compliance with MVSS 121," SAE Paper No. 740137, Society of Automotive Engineers, Warrendale, PA, February, 1974.
-- 4.35 Bowman, B.L., "Grade Severity Rating System (GSRS) — Users Manual," Goodell-Grivas, Inc., FHWA Report No. IP-88-015, Washington, DC, 1989.
-- 4.36 Radlinski, R.W., Williams, S.F., "NHTSA Heavy Duty Vehicle Brake Research Program, Report No. 1 — Stopping Capability of Air Braked Vehicles, Volume 1 — Technical Report," National Highway Traffic Safety Administration, U.S. Department of Transportation, Report No. DOT HS 806-738, Washington, DC, 1985.
-- 4.37 Post, T.M., Fancher, P.S., Bernard, J.E., "Torque Characteristics of Commercial Vehicle Brakes," SAE Paper No. 750210, Society of Automotive Engineers, Warrendale, PA, February, 1975.
-- 4.38 Johnson, L.K., Fancher, P.S., Gillespie, T.D., "An Empirical Model for the Prediction of the Torque Output of Commercial Vehicle Air Brakes," Highway Safety Research Institute, Report No. UM-HSRI-78-53, University of Michigan, Ann Arbor, 1978.
-- 4.39 Day, T.D., "An Overview of the EDSMAC4 Collision Simulation Model," SAE Paper No. 1999-01-0102, Society of Automotive Engineers, Warrendale, PA, March, 1999.
-- 4.40 Day, T.D., "Differences Between EDVDS and Phase 4," SAE Paper No. 1999-01-0103, Society of Automotive Engineers, Warrendale, PA, March, 1999.
-- 4.41 York, A.R., Day, T.D., "The DyMESH Multi-Vehicle Collision Simulation Model," SAE Paper No. 1999-01-0104, Society of Automotive Engineers, Warrendale, PA, March, 1999.
-- 4.42 Bosch Driving-Safety Systems, 2nd Edition, Robert Bosch GmbH, ISBN 0-7680-0511-6, Society of Automotive Engineers, Warrendale, PA, 1999.
-- 4.43 Day, T.D., Roberts, S.G., "A Simulation Model for Vehicle Braking Systems Fitted with ABS," SAE Paper No. 2002-01-0559, Society of Automotive Engineers, Warrendale, PA, 2002.
-- 4.44 Day, T.D., "Validation of the SIMON Model for Vehicle Handling and Collision Simulation — Comparison of Results with Experiments and Other Models," SAE Paper No. 2004-01-1207, Society of Automotive Engineers, Warrendale, PA, 2004.
+- 4.30 Limpert, R., Brake Design and Safety, Society of Automotive Engineers, Inc., Warrendale, PA, 1992.
+- 4.31 Flick, M.A., "The Effect of Brake Adjustment on Braking Performance," National Highway Traffic Safety Administration, U.S. Dept. of Transportation, Report No. DOT HS 807-287, Washington, DC, 1988.
+- 4.32 Stroh, G.B., Lawrence, M.H., Deibel, W.T., "Effects of Shoe Force Geometry on Heavy Duty Internal Shoe Brake Performance," SAE Paper No. 680432, Society of Automotive Engineers, Warrendale, PA, February, 1968.
+- 4.33 Gurney, J.W., Bernard, J.E., "The Utilization of a Computer Simulation as an Aid to Predict Compliance with MVSS 121," SAE Paper No. 740137, Society of Automotive Engineers, Warrendale, PA, February, 1974.
+- 4.34 Bowman, B.L., "Grade Severity Rating System (GSRS) — Users Manual," Goodell-Grivas, Inc., FHWA Report No. IP-88-015, Washington, DC, 1989.
+- 4.35 Radlinski, R.W., Williams, S.F., "NHTSA Heavy Duty Vehicle Brake Research Program, Report No. 1 — Stopping Capability of Air Braked Vehicles, Volume 1 — Technical Report," National Highway Traffic Safety Administration, U.S. Department of Transportation, Report No. DOT HS 806-738, Washington, DC, 1985.
+- 4.36 Post, T.M., Fancher, P.S., Bernard, J.E., "Torque Characteristics of Commercial Vehicle Brakes," SAE Paper No. 750210, Society of Automotive Engineers, Warrendale, PA, February, 1975.
+- 4.37 Johnson, L.K., Fancher, P.S., Gillespie, T.D., "An Empirical Model for the Prediction of the Torque Output of Commercial Vehicle Air Brakes," Highway Safety Research Institute, Report No. UM-HSRI-78-53, University of Michigan, Ann Arbor, 1978.
+- 4.38 Day, T.D., "An Overview of the EDSMAC4 Collision Simulation Model," SAE Paper No. 1999-01-0102, Society of Automotive Engineers, Warrendale, PA, March, 1999.
+- 4.39 Day, T.D., "Differences Between EDVDS and Phase 4," SAE Paper No. 1999-01-0103, Society of Automotive Engineers, Warrendale, PA, March, 1999.
+- 4.40 York, A.R., Day, T.D., "The DyMESH Multi-Vehicle Collision Simulation Model," SAE Paper No. 1999-01-0104, Society of Automotive Engineers, Warrendale, PA, March, 1999.
+- 4.41 Bosch Driving-Safety Systems, 2nd Edition, Robert Bosch GmbH, ISBN 0-7680-0511-6, Society of Automotive Engineers, Warrendale, PA, 1999.
+- 4.42 Day, T.D., Roberts, S.G., "A Simulation Model for Vehicle Braking Systems Fitted with ABS," SAE Paper No. 2002-01-0559, Society of Automotive Engineers, Warrendale, PA, 2002.
+- 4.43 Day, T.D., "Validation of the SIMON Model for Vehicle Handling and Collision Simulation — Comparison of Results with Experiments and Other Models," SAE Paper No. 2004-01-1207, Society of Automotive Engineers, Warrendale, PA, 2004.
 
 ## Environments
 

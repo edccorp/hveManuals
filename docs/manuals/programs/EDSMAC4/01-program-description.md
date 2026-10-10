@@ -32,7 +32,7 @@ EDSMAC4 output reports include Accident History, Damage Data, Driver Data, Envir
 
 ## Validation
 
-EDSMAC4 was validated first by direct comparison with earlier versions of EDSMAC to ensure the basic model was intact after porting the original codes to the C programming language and making the model HVE-compatible. Additional validation was performed comparing EDSMAC4 results to other models, as well as direct comparison with controlled collision experiments [24].
+EDSMAC4 was validated first by direct comparison with earlier versions of EDSMAC to ensure the basic model was intact after porting the original codes to the C programming language and making the model HVE-compatible. Additional validation was performed comparing EDSMAC4 results to other models, as well as direct comparison with controlled collision experiments [23].
 
 ## HVE-2D and HVE
 

@@ -116,7 +116,7 @@ checkbox, and separate **DyMESH start time** and
 renamed to "**Version 1 and 2**" and "**Version 3 and Later**". The stand-alone
 **Timesteps** group shown in the deck is no longer present in the current
 dialog. An **Advanced** tab exposes the low-level search controls — Stop After
-one/two/all vertices, inside-vehicle test (Use Master Normal vs. Use CG), inside-polygon
+one/two/all vertices, inside-vehicle test (Use Primary Normal vs. Use CG), inside-polygon
 test (sub-areas vs. cross product), pushback method, "don't deform a single
 vertex", and "don't restore a large distance".)*
 

@@ -25,7 +25,7 @@ HVE's Damage Profile dialog requests from the user a Collision Deformation Class
 
 The entered CDC is used to define a default PDOF and damage profile, which includes damage width, depth and location. The default data provided by the CDC are used to fill in the fields in the Damage Profile dialog. The resulting delta-V, damage energy and peak force are calculated and displayed in the dialog.
 
-HVE uses the damage profile to calculate and display the Equivalent Energy Speed, or EES [2.26, 6.4]. The default value is set equal to the total delta-V. The user may override the default EES by clicking on the EES radio button and entering the desired value.
+HVE uses the damage profile to calculate and display the Equivalent Energy Speed, or EES [2.25, 6.4]. The default value is set equal to the total delta-V. The user may override the default EES by clicking on the EES radio button and entering the desired value.
 
 > **NOTE:** The calculated results define what would happen if the current vehicle struck a rigid barrier, not another vehicle! To determine what would happen during a collision with another vehicle requires further analysis which includes information about the second vehicle.
 
@@ -73,7 +73,7 @@ These three parameters are described below.
 
 #### Damage Width
 
-The Damage Width is the width of the damaged region. The default value assigned by the CDC does not include induced damage (non-contact damage adjacent to the area of actual contact with another vehicle). In most cases, the user should include induced damage if the goal is to estimate delta-V [2.27].
+The Damage Width is the width of the damaged region. The default value assigned by the CDC does not include induced damage (non-contact damage adjacent to the area of actual contact with another vehicle). In most cases, the user should include induced damage if the goal is to estimate delta-V [2.26].
 
 #### Crush Depths
 
@@ -102,7 +102,7 @@ The HVE Vehicle Damage dialog includes two user-assigned stiffness coefficients:
 
 Given values for A and B, the crush force per unit of damage width is assumed to have a linear relationship with crush depth. Figure 4-21 shows this relationship. The A and B coefficients are provided in the A Stiffness and B Stiffness dialogs, respectively (see Figure 4-22). The A Stiffness and B Stiffness dialogs allow the user to assign equal coefficients for every zone or vary the coefficients from zone to zone.
 
-A and B stiffness coefficients may be calculated from barrier crash test data. Methods are outlined in references 2.14, 4.28 and 4.29.
+A and B stiffness coefficients may be calculated from barrier crash test data. Methods are outlined in references 2.13, 4.28 and 4.29.
 
 > **NOTE:** Before using any of these methods, ensure the type of crash test is known! Crash tests involving a deformable barrier are not useful, because the fraction of energy absorbed by each vehicle is unknown. In addition, moving barrier crash tests require a more complete equation (for fixed barrier tests, several parameters drop out of the equation).
 
@@ -134,7 +134,7 @@ Obviously, the actual stiffness of a vehicle varies according to the structure a
 | A Stiffness | UtVehAStiff | Force per unit of damage width required to initiate measurable damage (for each crush zone) |
 | B Stiffness | UtVehBStiff | Force per unit of crush depth per unit of damage width required to cause the measured damage (for each crush zone) |
 
-**See Also:** Event Editor, Vehicle-fixed Coordinate System, Reconstruction Models, References 2.24, 2.27, 4.28, 4.29
+**See Also:** Event Editor, Vehicle-fixed Coordinate System, Reconstruction Models, References 2.23, 2.26, 4.28, 4.29
 
 ---
 
@@ -423,7 +423,7 @@ Each of the Wheels options has an appropriate dialog; the use of these dialogs i
 
 ### Tire Blow-out Option
 
-The HVE Tire Blow-out Model is set up using the Tire Blow-out dialog, shown in Figure 4-33. The tire blow-out model allows the user to vary tire performance parameters (these parameters are cornering, camber and radial stiffness and rolling resistance; see reference 4.30 for additional information) while the simulation is running.
+The HVE Tire Blow-out Model is set up using the Tire Blow-out dialog, shown in Figure 4-33. The tire blow-out model allows the user to vary tire performance parameters (these parameters are cornering, camber and radial stiffness and rolling resistance) while the simulation is running.
 
 To assign tire blow-out parameters for one or more tire locations, perform the following steps:
 
@@ -455,7 +455,7 @@ The current blow-out options for the selected tire are displayed. By default, th
 
 When the simulation is executed, the selected blow-out parameters will be incorporated into the simulation.
 
-> **NOTE:** The HVE Tire Blow-out Model is further described in Chapter 16, Event Model. See also Reference 4.30.
+> **NOTE:** The HVE Tire Blow-out Model is further described in Chapter 16, Event Model.
 
 ![Figure 4-33](../images/figure-4-33.jpg)
 

@@ -9,14 +9,13 @@
 7. York II, A.R. and Day, T.D., "The DyMESH Method for 3-Dimensional Multi-Vehicle Collision Simulation," SAE Paper No. 1999-01-0104, Society of Automotive Engineers, Warrendale, PA, 1999.
 8. Day, T.D. and York II, A.R., "Validation of DyMESH for Vehicle vs. Barrier Collisions," SAE Paper No. 2000-01-0844, Society of Automotive Engineers, Warrendale, PA, 2000.
 9. Segal, D.J., *Highway-Vehicle-Object Simulation Model — Volume 3: Engineering Manual — Analysis*, US DOT, Federal Highway Administration Report No. FHWA-RD-76-164, Calspan Corporation, February 1976.
-10. Blythe, W., Day, T.D., and Grimes, W.D., "3-Dimensional Simulation of Vehicle Response to Tire Blow-outs," SAE Paper No. 980221, Society of Automotive Engineers, Warrendale, PA, 1998.
-11. Day, T.D., and Roberts, S.G., "A Simulation Model for Vehicle Braking Systems Fitted with ABS," SAE Paper No. 2002-01-0559, Society of Automotive Engineers, Warrendale, PA, 2002.
-12. Segal, D.J., *Highway-Vehicle-Object Simulation Model — Volume 2: Validation*, DOT Contract Number DOT-FH-11-8265, FHWA Report Number FHWA-RD-76-165, 1976.
-13. Nalecz, A.G., et al., *Sensitivity Analysis of Vehicle Tripped Rollover Model*, NHTSA — U.S. DOT Final Report No. DOT-HS 807 300, Washington D.C., July 1988.
-14. Bernard, J.E., Winkler, C.B., and Fancher, P.S., *A Computer-based Mathematical Method for Predicting the Directional Response of Trucks and Tractor-Trailers*, Phase II Technical Report, Motor Truck Braking and Handling Performance Study, NTIS PB-221-630, Highway Safety Research Institute, The University of Michigan, Ann Arbor, June 1973.
-15. *Two-Moving Vehicle Crash Test, 1984 Ford F-150 Pickup into a 1992 Ford Explorer*, June 23, 1999, Exponent Failure Analysis Test and Engineering Center, Report No. PH06015/C0F0/0699/R256, Phoenix, 1999.
-16. Shoemaker, N.E., *Research Input for Computer Simulation of Automobile Collisions — Volumes II and III — Staged Collision Reconstructions*, Calspan Corporation, DOT HS-805 037 and DOT HS-805 038, Buffalo, 1978.
-17. Day, T.D., "Validation of the SIMON Model for Vehicle Handling and Collision Simulation — Comparison of Results with Experiments and Other Models," SAE Paper No. 2004-01-1207, Society of Automotive Engineers, Warrendale, PA, 2004.
+10. Day, T.D., and Roberts, S.G., "A Simulation Model for Vehicle Braking Systems Fitted with ABS," SAE Paper No. 2002-01-0559, Society of Automotive Engineers, Warrendale, PA, 2002.
+11. Segal, D.J., *Highway-Vehicle-Object Simulation Model — Volume 2: Validation*, DOT Contract Number DOT-FH-11-8265, FHWA Report Number FHWA-RD-76-165, 1976.
+12. Nalecz, A.G., et al., *Sensitivity Analysis of Vehicle Tripped Rollover Model*, NHTSA — U.S. DOT Final Report No. DOT-HS 807 300, Washington D.C., July 1988.
+13. Bernard, J.E., Winkler, C.B., and Fancher, P.S., *A Computer-based Mathematical Method for Predicting the Directional Response of Trucks and Tractor-Trailers*, Phase II Technical Report, Motor Truck Braking and Handling Performance Study, NTIS PB-221-630, Highway Safety Research Institute, The University of Michigan, Ann Arbor, June 1973.
+14. *Two-Moving Vehicle Crash Test, 1984 Ford F-150 Pickup into a 1992 Ford Explorer*, June 23, 1999, Exponent Failure Analysis Test and Engineering Center, Report No. PH06015/C0F0/0699/R256, Phoenix, 1999.
+15. Shoemaker, N.E., *Research Input for Computer Simulation of Automobile Collisions — Volumes II and III — Staged Collision Reconstructions*, Calspan Corporation, DOT HS-805 037 and DOT HS-805 038, Buffalo, 1978.
+16. Day, T.D., "Validation of the SIMON Model for Vehicle Handling and Collision Simulation — Comparison of Results with Experiments and Other Models," SAE Paper No. 2004-01-1207, Society of Automotive Engineers, Warrendale, PA, 2004.
 
 ---
 

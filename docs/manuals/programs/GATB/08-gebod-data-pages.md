@@ -1,6 +1,6 @@
 # GEBOD Data Pages
 
-*(These pages reproduce the Generator of Body Data — GEBOD — anthropometry tables printed at the back of the GATB manual. They list the **selected/computed body dimensions** produced by the GEBOD regression equations for the standard humans that GATB/HVE can create. In the current release these same standard subjects are generated through the GEBOD-based Human Information dialog — Subject Type Child/Female/Male/User, with Basis Age/Weight/Height/All — documented under [Humans dialog reference](../../07-humans/README.md). Values are computed body dimensions in the units shown; the child tables also list a Weight Correction Factor. Reference 7 in [Chapter 7](07-references.md) is the GEBOD manual.)*
+*(These pages reproduce the Generator of Body Data — GEBOD — anthropometry tables printed at the back of the GATB manual. They list the **selected/computed body dimensions** produced by the GEBOD regression equations for the standard humans that GATB/HVE can create. In the current release these same standard subjects are generated through the GEBOD-based Human Information dialog — Subject Type Child/Female/Male/User, with Basis Age/Weight/Height/All — documented under [Humans dialog reference](../../07-humans/README.md). Values are computed body dimensions in the units shown; the child tables also list a Weight Correction Factor. Reference 6 in [Chapter 7](07-references.md) is the GEBOD manual.)*
 
 All linear dimensions are in inches (in); weight is in pounds (lb).
 

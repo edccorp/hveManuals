@@ -4,7 +4,7 @@
 
 EDSMAC4 is a dynamic analysis of a crash sequence involving one or more vehicles. The program uses a tire model to calculate forces acting on the vehicle at the tire-road interface. If contact between vehicles is detected, collision forces are also computed. Newton's laws of motion are solved at discrete, user-entered time steps for each vehicle. The resulting accelerations are integrated to update the position and velocity at the end of each time step.
 
-The mathematical model for EDSMAC4 was extended from EDC's EDSMAC model, which, in turn, was developed from the SMAC model originally developed and validated at Calspan [1-5, 11-13]. Extensions provided by EDC are explained in references 6, 7, 23 and 24.
+The mathematical model for EDSMAC4 was extended from EDC's EDSMAC model, which, in turn, was developed from the SMAC model originally developed and validated at Calspan [1-5, 11-13]. Extensions provided by EDC are explained in references 6, 7, 22 and 23.
 
 To use EDSMAC4 successfully, a good understanding of vehicle dynamics is extremely useful and is recommended. However, the following discussion is limited to the general analytical approach. The discussion describes the solution procedure while the vehicles are in contact during the collision phase and while they are separated (before and after impact) during the trajectory phases. For a detailed treatise on the subject of vehicle dynamics and simulation programs, the user is referred to the references listed at the end of this manual ([Chapter 7](07-references.md)) as well as those listed in the User's Manual, Appendix VI.
 
@@ -35,15 +35,15 @@ EDSMAC4 solves these equations of motion at discrete, user-entered time interval
 
 There are no degrees of freedom (and hence, no equations of motion) for vertical translation nor pitch or roll rotation. Thus, roll, pitch and vertical accelerations are ignored.
 
-In HVE, at each time step, the vehicle's roll, pitch and CG elevation are computed using HVE's surface-information search [25]. This approach allows the vehicle to sense when it is on a grade, and the equations of motion account for the grade. Surface slopes up to about 15 degrees are allowed (a message will be issued if this angle is exceeded). Thus, vehicle motion on hills, super-elevations, road crowns and even sloped shoulders may be modeled using EDSMAC4.
+In HVE, at each time step, the vehicle's roll, pitch and CG elevation are computed using HVE's surface-information search [24]. This approach allows the vehicle to sense when it is on a grade, and the equations of motion account for the grade. Surface slopes up to about 15 degrees are allowed (a message will be issued if this angle is exceeded). Thus, vehicle motion on hills, super-elevations, road crowns and even sloped shoulders may be modeled using EDSMAC4.
 
 *(updated: the current version also includes an optional dynamic **steer degree of freedom** — when enabled via the Steer DOF calculation option, wheel steer angles are computed from the torques acting on the steering system (tire friction, steering stops, gyroscopic precession, steering column friction) instead of being read directly from the driver steer tables; see [EDSMAC4 Calculation Options](../../10-calculation-options/CalcOptEDSMAC4.md#steer-dof).)*
 
 ### Collision Phase
 
-The EDSMAC4 collision model is described in detail in reference 23.
+The EDSMAC4 collision model is described in detail in reference 22.
 
-During the collision phase, each vehicle's crush perimeter is described by a set of radial RHO vectors extending from the CG to the vehicle exterior, spaced at the user-entered **Vector Spacing** angle (default 2 degrees). When the perimeters of two vehicles overlap, the collision calculation iteratively adjusts the lengths of corresponding RHO vectors, in steps of the **Vector Adjustment Increment**, until force equilibrium between the two vehicles is achieved within the **Vector Force Tolerance**. Collision forces are computed from the A and B stiffness coefficients of the crushed surfaces; friction forces tangent to the crush surface are computed using the inter-vehicle friction coefficient (set per vehicle pair in the Vehicle Mesh dialog), reduced linearly below the **Minimum Velocity for Friction**. Restitution is applied using the parametric model with coefficients $C_0$, $C_1$ and $C_2$. *(See references 21–23 for the full derivation.)*
+During the collision phase, each vehicle's crush perimeter is described by a set of radial RHO vectors extending from the CG to the vehicle exterior, spaced at the user-entered **Vector Spacing** angle (default 2 degrees). When the perimeters of two vehicles overlap, the collision calculation iteratively adjusts the lengths of corresponding RHO vectors, in steps of the **Vector Adjustment Increment**, until force equilibrium between the two vehicles is achieved within the **Vector Force Tolerance**. Collision forces are computed from the A and B stiffness coefficients of the crushed surfaces; friction forces tangent to the crush surface are computed using the inter-vehicle friction coefficient (set per vehicle pair in the Vehicle Mesh dialog), reduced linearly below the **Minimum Velocity for Friction**. Restitution is applied using the parametric model with coefficients $C_0$, $C_1$ and $C_2$. *(See references 21, 21a and 22 for the full derivation.)*
 
 #### The crush-force relationship
 

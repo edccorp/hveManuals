@@ -85,7 +85,7 @@ The specific data in each of the above parameter groups that are actually used b
 
 ### Inertias
 
-The Human Inertial Data used by GATB are shown in Table 2-3. This data is obtained from the GEBOD program [7]. See Tables 2-1, 2-2 and the GEBOD Data Pages for a complete list of humans.
+The Human Inertial Data used by GATB are shown in Table 2-3. This data is obtained from the GEBOD program [6]. See Tables 2-1, 2-2 and the GEBOD Data Pages for a complete list of humans.
 
 | Parameter | Description |
 |---|---|
@@ -453,7 +453,7 @@ The Payload Data are not used by GATB.
 
 The collision pulse provides the vehicle acceleration vs. time history for the event. The data are provided in the form of a table. The current value of forward, side and vertical linear accelerations, and roll, pitch and yaw angular accelerations is obtained from this table using linear interpolation. Once obtained, the accelerations are integrated during each time step to determine vehicle velocity and position.
 
-> **NOTE:** HVE allows you to supply a collision pulse directly from a previously run EDSMAC event, or any physics program that produces a collision pulse, as well as from a directory of user-saved collision pulses. See References 5 and 6 for additional information.
+> **NOTE:** HVE allows you to supply a collision pulse directly from a previously run EDSMAC event, or any physics program that produces a collision pulse, as well as from a directory of user-saved collision pulses. See Reference 5 for additional information.
 
 > **NOTE:** There are also options available to define the vehicle motion using a velocity-time data file or a position-time data file.
 
