@@ -2,7 +2,7 @@
 
 ## Basis For Analysis
 
-SIMON is a dynamic simulation analysis of one or more vehicles. SIMON is a simulation model incorporating a general purpose 3-D dynamics engine developed by Engineering Dynamics Corporation. SIMON includes a sprung mass with six degrees of freedom (x, y, z, roll, pitch, yaw) and unsprung masses with three degrees of freedom per axle (axle roll, z and steer for solid axle suspensions; axle steer and right and left wheel z for independent suspensions).
+SIMON is a dynamic simulation analysis of one or more vehicles. SIMON is a simulation model incorporating a general purpose 3-D dynamics engine developed by Engineering Dynamics Company, LLC. SIMON includes a sprung mass with six degrees of freedom (x, y, z, roll, pitch, yaw) and unsprung masses with three degrees of freedom per axle (axle roll, z and steer for solid axle suspensions; axle steer and right and left wheel z for independent suspensions).
 
 The vehicle model includes the following basic components for each vehicle unit:
 

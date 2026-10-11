@@ -1,6 +1,6 @@
 # EDSMAC Calculation Options
 
-EDSMAC (Engineering Dynamics Corporation Simulation Model of Automobile Collisions) is a simulation analysis of two-vehicle crashes, based on the SMAC program developed at Calspan for NHTSA. The Calculation Options dialog for an EDSMAC event exposes the collision-phase solution parameters described below. Each parameter is stored with the event and read by the physics engine when the event is executed.
+EDSMAC (Engineering Dynamics Company Simulation Model of Automobile Collisions) is a simulation analysis of two-vehicle crashes, based on the SMAC program developed at Calspan for NHTSA. The Calculation Options dialog for an EDSMAC event exposes the collision-phase solution parameters described below. Each parameter is stored with the event and read by the physics engine when the event is executed.
 
 The collision algorithm models each vehicle's periphery as a set of radial RHO vectors extending outward from the CG. During vehicle-to-vehicle contact the collision routine iteratively shortens the overlapping RHO vectors until the collision pressures acting between the two vehicles are in equilibrium; the shortened vectors define the crush profile.
 

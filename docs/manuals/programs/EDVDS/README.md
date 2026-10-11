@@ -1,6 +1,6 @@
 # EDVDS — Vehicle Dynamics Simulator
 
-**EDVDS** — Engineering Dynamics Corporation Vehicle Dynamics Simulator, Version 2
+**EDVDS** — Engineering Dynamics Company Vehicle Dynamics Simulator, Version 2
 
 *User's Manual, Fourth Edition (January 2006), converted to Markdown and updated to match the current HVE software.*
 
@@ -12,7 +12,7 @@ This manual is the user's manual for the EDVDS simulation model. The manual desc
 
 ## If You Have Questions
 
-Engineering Dynamics Corporation provides technical assistance for supported users. The questions may relate to general usage or to specific engineering applications. Please call — we're glad to help!
+Engineering Dynamics Company, LLC provides technical assistance for supported users. The questions may relate to general usage or to specific engineering applications. Please call — we're glad to help!
 
 When you call, you should have the following information available:
 

@@ -1,10 +1,10 @@
 # EDSMAC — Vehicle Collision Simulator
 
-**Engineering Dynamics Corporation Simulation Model of Automobile Collisions**
+**Engineering Dynamics Company Simulation Model of Automobile Collisions**
 
 *Version 4 — Fifth Edition (January 2006), converted to Markdown and updated to match the current HVE release (July 2026 edition).*
 
-EDSMAC is a simulation analysis of single- or two-vehicle crashes, based on the SMAC program developed at Calspan for NHTSA, with extensions by Engineering Dynamics Corporation. This manual describes the model features and use; input parameters and output reports are described at a high level. It is intended to be used in conjunction with the HVE-2D User's Manual, which provides in-depth coverage of the vehicle and environment models, as well as the Event Editor and Playback Editor.
+EDSMAC is a simulation analysis of single- or two-vehicle crashes, based on the SMAC program developed at Calspan for NHTSA, with extensions by Engineering Dynamics Company, LLC. This manual describes the model features and use; input parameters and output reports are described at a high level. It is intended to be used in conjunction with the HVE-2D User's Manual, which provides in-depth coverage of the vehicle and environment models, as well as the Event Editor and Playback Editor.
 
 ## Contents
 

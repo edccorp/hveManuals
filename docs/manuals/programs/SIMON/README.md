@@ -1,6 +1,6 @@
 # SIMON — Simulation Model Non-Linear
 
-**Engineering Dynamics Corporation**
+**Engineering Dynamics Company, LLC**
 **SIMON (SIMulation mOdel Non-linear), Version 2**
 
 Updated Markdown edition, converted from the Fifth Edition printed manual (January 2006) and brought up to date with the current version of HVE, covering the SIMON physics engine, the DyMESH collision model and the HVE user-interface dialogs. Passages that differ from the printed edition because the software has changed are marked with italic *(updated: ...)* notes. Figures from the printed manual are referenced by placeholder.
@@ -11,7 +11,7 @@ This manual is the user's manual for the SIMON simulation model. The manual desc
 
 ## If You Have Questions
 
-Engineering Dynamics Corporation provides technical assistance for supported users. The questions may relate to general usage or to specific engineering applications. When you call, you should have the following information available:
+Engineering Dynamics Company, LLC provides technical assistance for supported users. The questions may relate to general usage or to specific engineering applications. When you call, you should have the following information available:
 
 - Your User ID number
 - Your System Hardware Profile report (available from EDC)

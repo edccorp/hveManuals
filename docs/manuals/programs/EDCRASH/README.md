@@ -1,6 +1,6 @@
 # EDCRASH — Collision Reconstruction
 
-**Engineering Dynamics Corporation Reconstruction of Accident Speeds on the Highway**
+**Engineering Dynamics Company Reconstruction of Accident Speeds on the Highway**
 
 Version 7 — Updated Markdown edition, based on the Sixth Edition (January 2006) printed manual and revised to match the current HVE/EDCRASH release.
 

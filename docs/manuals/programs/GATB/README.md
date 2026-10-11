@@ -4,7 +4,7 @@
 
 Updated Markdown edition, converted from the Fifth Edition manual (December 2013; manual printed December 30, 2013) and revised to match the behavior of the current HVE release.
 
-*HVE is a trademark of Engineering Dynamics Corporation. The HVE 9-cell matrix cube is a trademark of Engineering Dynamics Corporation.*
+*HVE is a trademark of Engineering Dynamics Company, LLC. The HVE 9-cell matrix cube is a trademark of Engineering Dynamics Company, LLC.*
 
 ## How to Use This Manual
 
@@ -12,7 +12,7 @@ This manual is the user's manual for the GATB simulation model. The manual descr
 
 ## If You Have Questions
 
-Engineering Dynamics Corporation provides technical assistance for supported users. The questions may relate to general usage or to specific engineering applications. When you call, you should have the following information available:
+Engineering Dynamics Company, LLC provides technical assistance for supported users. The questions may relate to general usage or to specific engineering applications. When you call, you should have the following information available:
 
 - Your user ID number
 - HVE Version Information (available from the HVE Help System)

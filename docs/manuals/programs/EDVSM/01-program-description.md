@@ -2,7 +2,7 @@
 
 ## Overview
 
-EDVSM (**E**ngineering **D**ynamics Corporation **V**ehicle **S**imulation **M**odel) is a 3-dimensional analysis of the response of a unit vehicle to a driver's inputs (steering, throttle, brakes, gear selection). EDVSM is based on the HVOSM model developed at Calspan [1,2,3]. The original HVOSM model was developed in two versions: The Roadside Design version (RD2) was developed for studying vehicle interactions with the roadside environment, while the Vehicle Dynamics version (VD2) was developed for studying vehicle response to driver inputs. EDVSM was derived from the VD2 version of HVOSM, and includes several extensions and refinements provided by Engineering Dynamics Corporation [4].
+EDVSM (**E**ngineering **D**ynamics Company **V**ehicle **S**imulation **M**odel) is a 3-dimensional analysis of the response of a unit vehicle to a driver's inputs (steering, throttle, brakes, gear selection). EDVSM is based on the HVOSM model developed at Calspan [1,2,3]. The original HVOSM model was developed in two versions: The Roadside Design version (RD2) was developed for studying vehicle interactions with the roadside environment, while the Vehicle Dynamics version (VD2) was developed for studying vehicle response to driver inputs. EDVSM was derived from the VD2 version of HVOSM, and includes several extensions and refinements provided by Engineering Dynamics Company, LLC [4].
 
 EDVSM computes vehicle kinematics (position, velocity and acceleration vs time), from forces defined at the tire-road interface, as well as from aerodynamics. EDVSM is useful for predicting and visualizing a vehicle's response to driver's inputs, as well as to study the effects of various design parameters on vehicle behavior.
 
@@ -45,6 +45,6 @@ The procedure for using EDVSM is substantially the same as using any simulator i
 
 ---
 
-← Previous: [EDVSM — Engineering Dynamics Corporation Vehicle Simulation Model](README.md)  |  [Index](README.md)  |  Next: [Chapter 2 — EDVSM Program Input](02-program-input.md) →
+← Previous: [EDVSM — Engineering Dynamics Company Vehicle Simulation Model](README.md)  |  [Index](README.md)  |  Next: [Chapter 2 — EDVSM Program Input](02-program-input.md) →
 
 <!-- /NAV -->

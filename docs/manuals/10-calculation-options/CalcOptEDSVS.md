@@ -1,6 +1,6 @@
 # EDSVS Calculation Options
 
-EDSVS (Engineering Dynamics Corporation Single Vehicle Simulator) is a simulation analysis of the response of a motor vehicle (4-wheeled automobile, or truck having a tandem axle and dual tires) to driver inputs (accelerating, braking and steering). It is based on a program called TBST developed at the University of Michigan Transportation Research Institute. EDSVS determines how the vehicle responds to the inputs by generating the path, velocity, acceleration, tire force and other data as a function of time.
+EDSVS (Engineering Dynamics Company Single Vehicle Simulator) is a simulation analysis of the response of a motor vehicle (4-wheeled automobile, or truck having a tandem axle and dual tires) to driver inputs (accelerating, braking and steering). It is based on a program called TBST developed at the University of Michigan Transportation Research Institute. EDSVS determines how the vehicle responds to the inputs by generating the path, velocity, acceleration, tire force and other data as a function of time.
 
 Accident investigators can use EDSVS to determine how a driver may have lost vehicular control. By repeated adjustments of the throttle, braking and steering input tables, the user will converge on those driver inputs which match accident site evidence. EDSVS can also be used to study the handling effects due to changes in vehicle weight distribution, wheelbase, track width, CG height, tire friction, cornering stiffness and other parameters.
 

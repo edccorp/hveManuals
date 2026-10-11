@@ -121,7 +121,7 @@ The following typographical conventions are used in this manual:
 
 ## Problem Determination
 
-Engineering Dynamics Corporation has support services available to you in
+Engineering Dynamics Company, LLC has support services available to you in
 case you encounter a problem while using HVE. The following are the
 preliminary steps you should perform to confirm your problem and assist EDC's
 technicians in providing the most efficient support possible:

@@ -6,7 +6,7 @@ Updated Markdown edition, converted from the legacy ReadDataFile manual (manual 
 
 *(updated: the 2004 manual documents data-file format version 3.500. The current ReadDataFile calculation method reports program version 19.03, but still reads the version 3.200 and 3.500 data-file formats described in this manual. Within HVE, this manual is installed as `ReadDataFile.pdf` and opened from the Help > User Manuals menu.)*
 
-*HVE is a trademark of Engineering Dynamics Corporation.*
+*HVE is a trademark of Engineering Dynamics Company, LLC.*
 
 ## What is ReadDataFile?
 

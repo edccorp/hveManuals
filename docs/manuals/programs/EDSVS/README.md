@@ -1,6 +1,6 @@
 # EDSVS — Single Vehicle Simulator
 
-**Engineering Dynamics Corporation Single Vehicle Simulator**
+**Engineering Dynamics Company Single Vehicle Simulator**
 
 *Version 7 — Sixth Edition (January 2006), converted to Markdown and updated to match the current HVE software (July 2026 edition).*
 
@@ -10,7 +10,7 @@ EDSVS is a simulation analysis of the response of a motor vehicle (4-wheeled aut
 
 EDSVS is compatible with both HVE-2D and HVE. If you are using EDSVS within the HVE environment, the Human, Vehicle and Environment Editors will have additional features that are not available in HVE-2D. These features are described in great detail in the HVE User's Manual. While some dialogs do look different, the required input for EDSVS is found in both. Where there are differences related to the use of EDSVS, these differences are noted in this manual. Information specific to HVE was designated with a grey background in the original manual; in this edition it is marked with **HVE:** prefixed blockquotes.
 
-If you have questions, Engineering Dynamics Corporation provides technical assistance for supported users. When you call, have available: your user ID number (Help System), your System Hardware Profile report, HVE-2D or HVE Version Information (Help System), and EDSVS Version Information (from the EDSVS Program Data report).
+If you have questions, Engineering Dynamics Company, LLC provides technical assistance for supported users. When you call, have available: your user ID number (Help System), your System Hardware Profile report, HVE-2D or HVE Version Information (Help System), and EDSVS Version Information (from the EDSVS Program Data report).
 
 ## Contents
 

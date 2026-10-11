@@ -1,6 +1,6 @@
 # EDHIS — Human Impact Simulator
 
-**Engineering Dynamics Corporation Human Impact Simulator, Version 3**
+**Engineering Dynamics Company Human Impact Simulator, Version 3**
 
 Updated Markdown edition, converted from the Fifth Edition manual (January 2006) and revised to match the current HVE release.
 
@@ -10,7 +10,7 @@ This manual is the user's manual for the EDHIS simulation model. It describes th
 
 ## If You Have Questions
 
-Engineering Dynamics Corporation provides technical assistance for supported users. When you call, have available: your user ID number, your System Hardware Profile report, HVE Version Information (HVE Help System), and EDHIS Version Information (EDHIS Program Data report).
+Engineering Dynamics Company, LLC provides technical assistance for supported users. When you call, have available: your user ID number, your System Hardware Profile report, HVE Version Information (HVE Help System), and EDHIS Version Information (EDHIS Program Data report).
 
 ## Contents
 

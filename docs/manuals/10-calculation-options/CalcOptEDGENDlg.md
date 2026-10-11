@@ -1,6 +1,6 @@
 # Calculation Options for EDGEN
 
-EDGEN (**E**ngineering **D**ynamics Corporation **GEN**eral Analysis Tool) is a 3-dimensional kinematics spreadsheet developed by Engineering Dynamics Corporation. EDGEN uses positions and velocities supplied at up to eight user-specified locations (e.g., *Initial, Pre-braking, Impact,* etc.) to determine the time required to travel between each location, and then calculates the current velocity and position at each time step between the user-entered positions.
+EDGEN (**E**ngineering **D**ynamics Company **GEN**eral Analysis Tool) is a 3-dimensional kinematics spreadsheet developed by Engineering Dynamics Company, LLC. EDGEN uses positions and velocities supplied at up to eight user-specified locations (e.g., *Initial, Pre-braking, Impact,* etc.) to determine the time required to travel between each location, and then calculates the current velocity and position at each time step between the user-entered positions.
 
 EDGEN has several applications. For example:
 

@@ -1,4 +1,4 @@
-# EDVSM — Engineering Dynamics Corporation Vehicle Simulation Model
+# EDVSM — Engineering Dynamics Company Vehicle Simulation Model
 
 **Vehicle Simulator** — User's Manual, Version 3
 
@@ -10,7 +10,7 @@ This manual is the user's manual for the EDVSM simulation model. The manual desc
 
 ## If You Have Questions
 
-Engineering Dynamics Corporation provides technical assistance for supported users. The questions may relate to general usage or to specific engineering applications. Please call — we're glad to help!
+Engineering Dynamics Company, LLC provides technical assistance for supported users. The questions may relate to general usage or to specific engineering applications. Please call — we're glad to help!
 
 When you call, you should have the following information available:
 

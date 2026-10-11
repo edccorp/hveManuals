@@ -1,6 +1,6 @@
 # EDVTS — Vehicle-Trailer Simulator
 
-**Engineering Dynamics Corporation Vehicle-Trailer Simulator, Version 7**
+**Engineering Dynamics Company Vehicle-Trailer Simulator, Version 7**
 
 Updated Markdown edition, converted from the Sixth Edition (January 2006) printed manual and brought into line with the current HVE software (July 2026).
 
@@ -12,7 +12,7 @@ EDVTS is compatible with both HVE-2D and HVE. If you are using EDVTS within the 
 
 ## If You Have Questions
 
-Engineering Dynamics Corporation provides technical assistance for supported users. The questions may relate to general usage or to specific engineering applications. When you call, you should have the following information available:
+Engineering Dynamics Company, LLC provides technical assistance for supported users. The questions may relate to general usage or to specific engineering applications. When you call, you should have the following information available:
 
 - Your user ID number
 - Your System Hardware Profile report (available from EDC)

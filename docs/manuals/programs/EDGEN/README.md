@@ -1,6 +1,6 @@
 # EDGEN — General Analysis Tool
 
-**Engineering Dynamics Corporation General Analysis Tool, Version 2**
+**Engineering Dynamics Company General Analysis Tool, Version 2**
 
 Third Edition (January 2006) — converted to Markdown and updated to match the current HVE release (July 2026).
 

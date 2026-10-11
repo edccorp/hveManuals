@@ -1,6 +1,6 @@
 # EDSMAC4 — Multi-Vehicle Collision Simulator
 
-**Engineering Dynamics Corporation Simulation Model of Automobile Collisions, 4th Revision — Version 6**
+**Engineering Dynamics Company Simulation Model of Automobile Collisions, 4th Revision — Version 6**
 
 Updated Markdown edition, converted from the Sixth Edition manual (January 2006) and brought up to date with the current version of the EDSMAC4 program and the HVE user interface.
 
@@ -12,7 +12,7 @@ EDSMAC4 is compatible with both HVE-2D and HVE. If you are using EDSMAC4 within 
 
 ## If You Have Questions
 
-Engineering Dynamics Corporation provides technical assistance for supported users. When you call, have available: your User ID number, your System Hardware Profile report, HVE-2D or HVE Version Information (Help System), and EDSMAC4 Version Information (EDSMAC4 Program Data report).
+Engineering Dynamics Company, LLC provides technical assistance for supported users. When you call, have available: your User ID number, your System Hardware Profile report, HVE-2D or HVE Version Information (Help System), and EDSMAC4 Version Information (EDSMAC4 Program Data report).
 
 ## Contents
 

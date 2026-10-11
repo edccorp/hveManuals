@@ -12,7 +12,7 @@ evaluation of in-use service conditions. This section of the HVE User's
 Manual describes how to create and edit various brake system designs. It also
 provides an overview of the brake and ABS model parameters.
 
-The HVE Brake Designer was developed by Engineering Dynamics Corporation, and
+The HVE Brake Designer was developed by Engineering Dynamics Company, LLC, and
 was based, in part, on previous work by Limpert [4.30], MacAdam [4.2], Flick
 [4.31] and Robert Bosch [4.41].
 

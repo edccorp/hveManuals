@@ -2,7 +2,7 @@
 
 ## Overview
 
-SIMON (**SI**mulation **MO**del **N**on-linear) is a dynamic simulation of the response of one or more vehicles to driver inputs, inter-vehicle collision(s) and factors related to the environment (e.g., terrain, atmosphere). SIMON is a simulation model built on a general-purpose 3-D vehicle dynamics engine developed by Engineering Dynamics Corporation. The dynamics engine allows a sprung mass with six degrees of freedom and multiple axles with up to five degrees of freedom per axle. SIMON was specifically designed to take advantage of the rich feature set available in the HVE simulation environment, including the HVE Brake Designer, Driver Model and Tire Blow-out Model.
+SIMON (**SI**mulation **MO**del **N**on-linear) is a dynamic simulation of the response of one or more vehicles to driver inputs, inter-vehicle collision(s) and factors related to the environment (e.g., terrain, atmosphere). SIMON is a simulation model built on a general-purpose 3-D vehicle dynamics engine developed by Engineering Dynamics Company, LLC. The dynamics engine allows a sprung mass with six degrees of freedom and multiple axles with up to five degrees of freedom per axle. SIMON was specifically designed to take advantage of the rich feature set available in the HVE simulation environment, including the HVE Brake Designer, Driver Model and Tire Blow-out Model.
 
 ## General Features and Capabilities
 
