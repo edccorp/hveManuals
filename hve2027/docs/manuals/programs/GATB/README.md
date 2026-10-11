@@ -23,15 +23,15 @@ Copyright Collision Engineering Associates, Inc. 1999. All rights reserved.
 
 What else is different in HVE 2027:
 
-- **Running GATB.** Choose *GATB* as the event's **Calculation Method** in Event Information (Event editor, F5), then **Run** on the playback bar or **Output › Run Simulation**. There is no Playback Editor: the solved event plays back in the same viewport, and reports, graphs and tables are on the **Output** menu.
+- **Running GATB.** Choose *GATB* as the event's **Calculation Method** in Event Information (Event editor, F5), then **Run** on the playback bar or **Output › Run Simulation**. The solved event plays back in the same viewport, and reports, graphs and tables are on the **Output** menu.
 - **Where the inputs are.** The body is edited in the **Human (F2)** editor (**Occupant › Human Information** opens the *Occupants* panel, whose bodies are generated with GEBOD); belts, airbags and contact surfaces are vehicle equipment (**Vehicle (F3)** menu); which humans take part, where they sit, what they wear and how they are posed are set per event in **Event Information › Humans in Event**. [Chapter 2](02-program-input.md) gives the full map.
-- **The ATB time step is fixed at 0.002 s**, as in HVE: GATB writes it itself and does not read the Simulation panel's steps.
+- **The ATB time step is fixed at 0.002 s**, as in HVE: GATB sets it itself and reads only the Simulation panel's *Duration* and *Output Timestep*.
 - **Belt webbing**: GATB gives ATB its own fixed webbing stress/strain curve, as HVE's GATB does, so the belt *Stiffness*, *Damping* and *Break Strength* (which EDHIS reads) do not change a GATB run.
 - **"Use external ATB input file" is not available** (greyed in the GATB options, with the reason): ATB is fed from the assembled data in memory, so an external `GATB.ain` cannot reach the solver.
 - **Self contact**: only each segment's first ellipsoid takes part in segment-to-segment contact, exactly as in HVE's GATB; HVE 2027 reports any armed pair that names another ellipsoid.
 - **Restraint type and pose are per event**, and a **pedestrian's walking speed** reaches GATB.
 - **Airbag inflation defaults are HVE's own**: Begin Fill Time 0.001 s, Fill Duration 0.05 s.
-- **Contacts.** **Event › Contacts** chooses which body segments are armed against which vehicle surfaces, and the body-to-body (self contact) pairs. A case opened from an HVE `.hve` file keeps HVE's own lists, including contact blocks against other vehicles, which are shown read-only; a case built in HVE 2027 arms every body ellipsoid against every contact surface until you edit the list.
+- **Contacts.** **Event › Contacts** chooses which body segments are armed against which vehicle surfaces, and the body-to-body (self contact) pairs. A case opened from an HVE `.hve` file keeps HVE's own lists, including contact blocks against other vehicles, which are shown read-only; a case built in HVE 2027 arms every ellipsoid of the pelvis, abdomen, chest, neck, head and upper legs against every contact surface until you edit the list.
 - **Validation status.** On HVE's own saved GATB runs, the belted occupant of `ExpeditionTrip-WDG2.hve` and the unbelted driver of `GATB.hve` are reproduced on every segment; a pedestrian's late tumbling is chaotic in HVE and here alike, so it is compared only up to the first limb strike.
 
 ## License Summary

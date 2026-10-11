@@ -11,10 +11,9 @@ This chapter defines the objects (humans, vehicles and environment) and the even
     | Input | HVE 2027 |
     |---|---|
     | Human body (segments, joints, ellipsoids, injury tolerances) | **Human (F2)** editor › **Occupant › Human Information** (*Occupants* panel) and its *Body Segments…*, *Joint Properties…*, *Injury Tolerances…* buttons |
-    | Airbag properties (bag geometry, gas, vent, column, membrane) | *Occupants* panel › *Airbag Properties…* |
     | Contact surfaces | **Vehicle (F3)** › **Vehicle › Contact Surfaces** |
-    | Belt installed, anchors, slack, webbing | **Vehicle › Belt Restraint** |
-    | Airbag timing and deploy position | **Vehicle › Airbag Restraint** |
+    | Belt installed, anchors, attachment segment, slack, webbing | **Vehicle › Belt Restraint** |
+    | Airbag, per seat (installed, position, timing, reaction panel, bag geometry, gas, vent, column, membrane) | **Vehicle › Airbags** |
     | Which human, which vehicle, seat, restraint worn, pose, pedestrian velocity | **Event (F5)** › Event Information › *Humans in Event* (and its **Pose** button) |
     | Vehicle initial position and velocity | Event Information › *Vehicle Initial Conditions*, or **Event › Position / Velocity** |
     | Collision pulse | **Event › Collision Pulse** |
@@ -241,7 +240,7 @@ A belt restraint system may be supplied for up to nine seat positions. Although 
 > **NOTE:** At this point, you are saying the vehicle has a belt installed at a specific location. Whether or not the belt is used is event-dependent! See Event Set-up, Restraints, for more information.
 
 !!! note "HVE 2027"
-    Belts are edited in **Vehicle › Belt Restraint** (the *Belt Restraint System* dialog). Its **Occupant** list names the human each entry belongs to; for that human the dialog has *Torso Belt Installed* and *Lap Belt Installed*, a **Section** selector (Torso or Lap — each section has its own anchors, slack and webbing), the **Left Anchor** and **Right Anchor** (slack and the attachment point on the body, i/j/k), the **Vehicle Anchor** (the other end of the webbing, about the vehicle CG), and the webbing **Properties**: *Stiffness*, *Damping* and *Break Strength*. The torso section always attaches to the chest and the lap section to the pelvis; the *Segment* and *Restraint Force* selectors are stored with the belt and reach no engine.
+    Belts are edited in **Vehicle › Belt Restraint** (the *Belt Restraint System* dialog). Its **Occupant** list names the human each entry belongs to; for that human the dialog has *Torso Belt Installed* and *Lap Belt Installed*, a **Section** selector (Torso or Lap — each section has its own anchors, slack and webbing), the **Left Anchor** and **Right Anchor** (slack and the attachment point on the body, i/j/k), the **Vehicle Anchor** (the other end of the webbing, about the vehicle CG), and the webbing **Properties**: *Stiffness*, *Damping* and *Break Strength*. Each section's **Attached To** chooses the body segment it is fastened to; *Default* is the chest for the torso section and the pelvis for the lap section. EDHIS accepts the pelvis, abdomen or chest for a torso belt and the pelvis or abdomen for a lap belt, and refuses the run otherwise.
 
     The dialog also carries **Restraint In Use** for the active event (see [Restraints](#restraints)).
 
@@ -276,15 +275,9 @@ An airbag restraint system may be supplied for up to nine seat positions. Like b
 > **NOTE:** At this point, you are saying the vehicle has an airbag installed at a specific location. Whether or not the airbag deploys is event-dependent! See Event Set-up, Restraints, for more information.
 
 !!! note "HVE 2027"
-    HVE 2027 splits the airbag data between two dialogs:
+    The whole bag is edited in one dialog, **Vehicle › Airbags** (also **Event › Restraints › Airbags**), one bag per **Seat**, as HVE stores it: **Device Installed**; the **Position** (X, Y, Z from the vehicle CG — the bag position EDHIS uses); **Begin Fill Time** (default **0.001 s**) and **Fill Duration** (default **0.05 s**, limited to HVE's own range of 0.0001–0.20 s); the head/chest/arm **Contact Segments**; the **Reaction Panel** (the contact surface the bag deploys from — HVE's *Backside Contact Surface*) and up to three confining panels; the bag geometry (*Full Inflated Volume*, *Initial Radius*, *Passenger Bag Length*), gas (*Initial Pressure*, *Gas Density*, *Mass Flow Rate*, *Specific Heat Ratio*), vent (*Discharge Coef*, *Vent Area*, *Pressure Open Vent*), steering column (*Column Angle*, *Col. Load*, *Max Col. Disp*), *Max Penetration*, *Force Conv. Criterion* and the membrane's force-deflection law. The dialog says which of the seat's fields reach which engine; Position and Fill Duration are read by EDHIS.
 
-    - **Vehicle › Airbag Restraint** (*Airbag Restraint System*), one entry per occupant: *Device In Use*, *Auto Start*, **Begin Fill Time** (default **0.001 s**), **Fill Duration** (default **0.05 s**, limited to HVE's own range of 0.0001–0.20 s), the **Deploy Position** (X, Y, Z about the vehicle CG — the bag position EDHIS uses) and the head/chest/arm *Contact Segments*. Fill Duration and Deploy Position are read by EDHIS. The dialog lists which of its fields reach which engine; *Location*, *Restraint Force*, *Peak Pressure*, *Gas Mass* and *Vent Area* reach neither, because the bag is placed at the occupant's seat and its gas dynamics come from the occupant's own airbag data.
-    - The *Occupants* panel › **Airbag Properties…** (*Airbag Restraints*), the occupant's own bag: the **Reaction Panel** (the contact surface the bag deploys from — HVE's *Backside Contact Surface*), *Full Inflated Volume*, *Initial Radius*, *Passenger Bag Length*, *Initial Pressure*, *Gas Density*, *Mass Flow Rate*, *Specific Heat Ratio*, the vent (*Discharge Coef*, *Vent Area*, *Pressure Open Vent*), the steering column (*Column Angle*, *Col. Load*, *Max Col. Disp*), *Max Penetration*, *Force Conv. Criterion* and the membrane's force-deflection law.
-
-    The bag deploys only in an event where the occupant's restraint is **Airbag + Belt** (see [Restraints](#restraints)); the Airbag Properties dialog says so when it is not.
-
-![Figure 2-2b](images/hvn-airbag-restraint.png)
-*Figure 2-2b: Airbag Restraint System dialog in HVE 2027.*
+    The bag deploys only in an event where the occupant at that seat has the restraint **Airbag + Belt** (see [Restraints](#restraints)); the dialog says so when it does not, and a run with such an occupant at a seat with no bag installed is refused.
 
 **Table 2-5 — Vehicle Airbag Restraint System Parameters used by EDHIS.**
 
@@ -439,9 +432,9 @@ The specific Event Set-up data used by EDHIS are defined in Table 2-6.
     - **Human orientation and pedestrian velocity** — the **Pose** button beside the human (the *Body Pose* dialog).
     - **Restraint worn** — **Restraint (this event)** beside the human.
     - **Collision pulse** — **Event › Collision Pulse**.
-    - **Contacts** — not available; see [Contacts](#contacts).
+    - **Contacts** — **Event › Contacts...**; see [Contacts](#contacts).
 
-    **Driver Controls**, **Damage Profiles**, **Payload**, **Wheels**, **Accelerometers** and **Contacts** on the Event menu are greyed for an EDHIS event. **Restraints** is available: it opens the vehicle's belt and airbag restraints.
+    **Driver Controls**, **Damage Profiles**, **Payload**, **Wheels** and **Accelerometers** on the Event menu are greyed for an EDHIS event. **Contacts** and **Restraints** are available; Restraints opens the vehicle's belt and airbag restraints.
 
 ![Figure 2-4](images/hvn-edhis-event-info.png)
 *Figure 2-4: Event Information panel set up for an EDHIS occupant event (EDHIS tutorial, "Buick Occupant").*
@@ -481,7 +474,7 @@ The position of a human is defined by the center of gravity of its pelvis segmen
 EDHIS is a 3-mass, 2-joint model. Articulation angular positions and velocities may be entered by clicking on the neck segment (to set the initial conditions for the C7-T1, or Neck, joint), and by clicking on the Right and Left Upper Leg segments (to set the initial conditions for the Hip joint). These joints are modeled by EDHIS and their motion will be affected by subsequent human-vehicle interaction. Any of the other segment positions may be supplied as well (for example, the upper arms may be articulated so the human appears to be grasping the steering wheel). However, these joints will remain rigid during the simulation.
 
 !!! note "HVE 2027"
-    **Human position.** The pelvis X and Y are entered in Event Information › *Humans in Event*. HVE 2027 has no control for the human's initial **vertical** position or for dragging a human in the 3-D view: a case opened from HVE keeps the position it stores. The same is true of the vehicle's initial elevation (Z) for an EDHIS event; its roll, pitch, vertical velocity and angular rates are under *Advanced initial state*.
+    **Human position.** The pelvis X, Y and Z (SAE: + is down) are entered in Event Information › *Humans in Event*; a human can also be dragged across the ground in the 3-D view. HVE 2027 has no control for the vehicle's initial elevation (Z) for an EDHIS event: a case opened from HVE keeps the value it stores. The vehicle's roll, pitch, vertical velocity and angular rates are under *Advanced initial state*.
 
     **Human orientation (pose).** Click **Pose** beside the human. The *Body Pose* dialog edits **this event's** pose: tick *Pose this body*, then enter roll, pitch and yaw for each of the 15 segments, each relative to its parent segment. *Reset to default posture* returns to the posture an un-posed body is drawn and solved in (a seated occupant's upper legs pitched 90° forward; a pedestrian standing). With *Pose this body* off, the angles reach neither the 3-D view nor the engine.
 
@@ -559,7 +552,7 @@ By default, the Contacts dialog assumes interaction between every human ellipsoi
 The Restraints dialog determines if a belt or airbag restraint system is in use for the current event.
 
 !!! note "HVE 2027"
-    **Event › Restraints** opens the vehicle's Airbag and Belt Restraint dialogs (the same as **Vehicle › Airbag Restraint** and **Belt Restraint**). What the occupant wears in the event is one choice, **Restraint (this event)**, beside the human in Event Information › *Humans in Event* — the same value appears as *Restraint In Use* in **Vehicle › Belt Restraint** for the active event:
+    **Event › Restraints** opens the vehicle's Airbags and Belt Restraint dialogs (the same as **Vehicle › Airbags** and **Vehicle › Belt Restraint**). What the occupant wears in the event is one choice, **Restraint (this event)**, beside the human in Event Information › *Humans in Event* — the same value appears as *Restraint In Use* in **Vehicle › Belt Restraint** for the active event:
 
     | Restraint | Torso belt | Lap belt | Airbag |
     |---|---|---|---|
@@ -568,7 +561,7 @@ The Restraints dialog determines if a belt or airbag restraint system is in use 
     | 3-Point Belt | if installed | if installed | — |
     | Airbag + Belt | if installed | if installed | deploys |
 
-    A pedestrian wears nothing and is not offered the choice. The attachment segment, attachment coordinates and slack are part of the belt in **Vehicle › Belt Restraint**; Begin Fill Time and Fill Duration are part of the airbag in **Vehicle › Airbag Restraint** (defaults 0.001 s and 0.05 s, HVE's own).
+    A pedestrian wears nothing and is not offered the choice. The attachment segment, attachment coordinates and slack are part of the belt in **Vehicle › Belt Restraint**; Begin Fill Time and Fill Duration are part of the airbag in **Vehicle › Airbags** (defaults 0.001 s and 0.05 s, HVE's own).
 
 > **NOTE:** If the current vehicle does not have a restraint system installed at the position specified for the current human, no restraints will be available for selection. If necessary, use the Vehicle Editor to install a restraint system at the desired seat position.
 
@@ -593,9 +586,9 @@ For airbag restraint systems, the following in-use parameters may be supplied:
 EDHIS uses the current simulation control parameters in the Simulation Controls dialog (in HVE, Options Menu › Simulation Controls; in HVE 2027, the **Simulation** panel). The Simulation parameters used by EDHIS are shown in Table 2-7.
 
 !!! note "HVE 2027"
-    In HVE 2027 these are in the **Simulation** panel (**View › Simulation**): *Duration*, *Output Timestep*, *Maximum Bisections*, *Velocity Convergence*, *Velocity Change Limit* and *Acceleration Change Limit*. The panel shows the two change limits only for EDHIS, the only engine that reads them.
+    In HVE 2027 these are in the **Simulation** panel (**View › Simulation**): *Duration*, *Human Collision Timestep*, *Output Timestep*, *Maximum Bisections*, *Velocity Convergence*, *Velocity Change Limit* and *Acceleration Change Limit*. The panel shows the two change limits only for EDHIS, the only engine that reads them.
 
-    The **Human Collision Integration Timestep** has no control in HVE 2027. A case opened from HVE keeps the step it stores; a case without one uses the output timestep.
+    The **Human Collision Integration Timestep** is **Human Collision Timestep (s)**, shown for EDHIS and EDGEN events. A case opened from HVE carries the step it stores; 0 uses the output timestep.
 
 **Table 2-7 — Simulation Control Parameters used by EDHIS.**
 
@@ -629,7 +622,7 @@ EDHIS has the following user-selectable simulation model options (see [Calculati
     In HVE 2027 these options are in the *EDHIS Options* dialog: Event Information › *Calculation Method* › **Method Options…**. It has:
 
     - **Min Acceleration (g)** — the deadband. HVE 2027's default is **0 (off)**, which is what HVE's own saved tutorial run used; the engine takes in/s² and HVE 2027 converts from g.
-    - **Min Time Criterion (s)** — greyed, with the reason: EDHIS replaces whatever is entered with 1×10⁻⁷ s, in HVE as well, so no value can take effect.
+    - HVE's **Minimum Time Criterion** has no control: EDHIS replaces whatever is entered with 1×10⁻⁷ s, in HVE as well, so no value can take effect.
     - **Start Method** — *Euler*, *Runge-Kutta (Ralston)* or *Runge-Kutta*. HVE 2027's default is **Euler**, the setting stored in HVE's own saved tutorial run.
     - **Predictor-Corrector** — *Adams* or *Milne*. Default **Adams** (HVE's stored value 0). Below four starting points the engine uses Adams whatever this says.
 

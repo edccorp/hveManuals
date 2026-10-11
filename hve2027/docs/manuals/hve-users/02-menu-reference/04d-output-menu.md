@@ -208,10 +208,7 @@ are locked until **Reset**.
 
 **Description:** **Damage Studio Options** chooses how the PDOF and the crush
 vectors are displayed and which key results to show. **Damage Studio Report**
-shows the report; **Refresh** updates it.
-
-!!! note "HVE 2027"
-    The report's **Print...** button does nothing in HVE 2027 Preview.
+shows the report; **Save...** writes it to a text file.
 
 ---
 

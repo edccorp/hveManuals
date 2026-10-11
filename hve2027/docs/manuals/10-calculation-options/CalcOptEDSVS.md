@@ -10,7 +10,7 @@ An extremely useful feature of EDSVS is the ability to quickly and accurately re
 
 EDSVS has no calculation options window in HVE 2027 (as in current HVE, it reads
 no calculation-option values from the event). **Method Options...** in Event
-Information does nothing for an EDSVS event.
+Information is greyed for an EDSVS event.
 
 ## Roll Couple Distribution
 

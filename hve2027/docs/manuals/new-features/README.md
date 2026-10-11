@@ -1,9 +1,11 @@
 # HVE 2027 Features
 
 !!! tip "New in HVE 2027"
-    Everything in this section is a capability HVE does not have. HVE's own
-    manual set has no page for any of it, so these chapters are written from
-    scratch for HVE 2027.
+    This section describes capabilities HVE does not have, and three that go
+    beyond what HVE does: the sun (chapter 2), cameras (chapter 5) and the
+    Video Creator (chapter 7), which HVE has in simpler forms. Each chapter's
+    box says what is new. These chapters are written from scratch for
+    HVE 2027.
 
 HVE 2027 runs HVE's own physics programs. What it adds sits *around* the
 physics: how the scene looks, how it is filmed, how it leaves the program,

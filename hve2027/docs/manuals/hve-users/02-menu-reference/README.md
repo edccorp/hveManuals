@@ -16,7 +16,7 @@ different, and part of it changes with the editor you are in:
 | **Playback** | Playback editor (F6) | Playback Editor's Playback Window and Video Creator table, Options › Playback |
 | **Occupant** | Human editor (F2) | Human Editor's dialogs |
 | **View** | always | View, and the display toggles of the Options menu |
-| **Tools** | always | Options › Units, Options › Preferences, View › Set Camera, the Audit Trail |
+| **Tools** | always | Options › Units, Options › Preferences, View › Set Camera |
 | **Help** | always | Help |
 
 HVE's **Mode** menu has no menu in HVE 2027: the five editors are the tabs
@@ -53,7 +53,7 @@ appear only here; in the Vehicle editor the Vehicle menu takes their place.*
 | [3](03-files-menu.md) | File — New, Open, Open Recent, Save, Save As, Save As JSON, Embed the environment, Publish Bundle, Export Scene for Blender, Blender Live Link, Record Animation, Play Video, Exit | File Menu |
 | [3B](03b-edit-menu.md) | Edit — Undo, Redo, Undo History | *(new)* |
 | [4 (Part A)](04a-setup-menu.md) | Event — Event Information, Position / Velocity, Driver Controls, Path Follower | Set-up Menu (Part A) |
-| [4 (Part B)](04b-setup-menu.md) | Event — Damage Profiles, Collision Pulse, Vehicle Mesh, DyMESH Options, Payload, Wheels, Accelerometers, Contacts, Restraints, Signals, Notes, and the method-specific items | Set-up Menu (Part B) |
+| [4 (Part B)](04b-setup-menu.md) | Event — Damage Profiles, Collision Pulse, Vehicle Mesh, DyMESH Options, Payload, Wheels, Accelerometers, Contacts, Restraints, Lights, Notes, and the method-specific items | Set-up Menu (Part B) |
 | [4C](04c-vehicle-environment-occupant-menus.md) | Vehicle, Environment and Occupant menus | *(new; HVE's editor dialogs)* |
 | [4D](04d-output-menu.md) | Output — reports, graphs, tables, playback, Run Simulation, Damage Studio, Export Variables | *(new; HVE's Playback Editor)* |
 | [5](05-view-menu.md) | View — panels, paths, vectors, rendering, Outliner, Scene Ghosts | View Menu |
@@ -72,7 +72,7 @@ HVE in general, see [Differences from HVE](../../getting-started/05-differences-
 | File | **File** ([Chapter 3](03-files-menu.md)); File › Export became **Output › Export Variables**; printing is not in HVE 2027 |
 | Edit | **Edit** › Undo / Redo / Undo History ([Chapter 3B](03b-edit-menu.md)) |
 | View | **View** ([Chapter 5](05-view-menu.md)); Set Camera became **Tools › Cameras** |
-| Mode | the **editor tabs** Human (F2), Vehicle (F3), Environment (F4), Event (F5) |
+| Mode | the **editor tabs** Human (F2), Vehicle (F3), Environment (F4), Event (F5), Playback (F6) |
 | Set-up | **Event** ([Chapter 4](04a-setup-menu.md)) |
 | 3-D Edit | not in HVE 2027; scene objects are boxes made in **Environment › Scene Box Editor**, and objects are moved with the viewport gizmo |
 | Options | spread over **View**, **Tools**, **Output** and the **Event Information** panel ([Chapter 6](06-options-menu.md)) |

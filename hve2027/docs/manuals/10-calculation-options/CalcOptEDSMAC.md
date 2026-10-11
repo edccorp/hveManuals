@@ -8,10 +8,10 @@ The collision algorithm models each vehicle's periphery as a set of radial RHO v
 
 In Event Information, with an EDSMAC event active, press **Method Options...**
 under Calculation Method. The **EDSMAC Options** window opens. EDSMAC and EDSMAC4
-share this window; the groups below the restitution coefficients
-(*Inter-Vehicle Connection*, *Hydroplane Model*, *Accident History*,
-*Connection Model*, *Damage Data Format* and the rho-vector initialization) are
-read by EDSMAC4 only and are described in
+share this window; the *Rho Vector Initialization* group at the top and the
+groups below the restitution coefficients (*Inter-Vehicle Connection*,
+*Hydroplane Model*, *Accident History*, *Connection Model* and *Damage Data
+Format*) are read by EDSMAC4 only and are described in
 [EDSMAC4 Calculation Options](CalcOptEDSMAC4.md). Lengths, forces and speeds are
 shown in the units set in Preferences.
 

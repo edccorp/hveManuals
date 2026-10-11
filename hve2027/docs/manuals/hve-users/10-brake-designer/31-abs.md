@@ -194,7 +194,7 @@ ABS System Data dialog. The variables and a brief description are shown in
 Table 31-1. A detailed description of each variable follows.
 
 !!! note "HVE 2027"
-    The HVE 2027 **ABS System** dialog has: **Algorithm**; **Control Method** and **Cycle Rate (Hz)**; under *Thresholds*, **Min Pressure** and **Min Velocity**; under *Delays*, **Delay Method**, **Apply Delay (s)** and **Release Delay (s)**. Pressure and velocity follow the units set in Preferences.
+    The HVE 2027 **ABS System** dialog has: **ABS Installed**; **Algorithm**; **Control Method** and **Cycle Rate (Hz)**; under *Thresholds*, **Min Pressure** and **Min Velocity**; under *Delays*, **Delay Method**, **Apply Delay (s)** and **Release Delay (s)**. Pressure and velocity follow the units set in Preferences.
 
     - **Control Source**, **Low Surface Friction Threshold** — not offered. Every vehicle is its own ABS source.
     - **Control Method** (Vehicle-Based, Axle-Based or Wheel-Based) is printed in SIMON's report and is not otherwise used by any engine; the dialog says so.
@@ -276,7 +276,7 @@ The ABS Wheel variables are shown in Table 31-2. A brief description of each
 variable follows.
 
 !!! note "HVE 2027"
-    The HVE 2027 **ABS Designer** has, per wheel: *Velocity* — **Min Velocity**; *Tire Slip* — **Slip Min**, **Slip Max**; *Spin Accel (rad/s²)* — **Accel Min**, **Accel Max**; *Modulation* — **Cycle Rate (Hz)**, **Apply Rate** and **Release Rate**. There are no **Apply Delay**, **Release Delay** or **Secondary Application Rate** fields: the delays come from the ABS System dialog (see the note under System Variables), and the secondary rate equals the primary rate unless a case imported from HVE states its own. The spin accelerations are in rad/s² whatever the unit system.
+    The HVE 2027 **ABS Designer** has, per wheel: *Velocity* — **Min Velocity**; *Tire Slip* — **Slip Min**, **Slip Max**; *Spin Accel (rad/s²)* — **Accel Min**, **Accel Max**; *Modulation* — **Cycle Rate (Hz)**, **Apply Rate**, **Apply Rate, Secondary** and **Release Rate**. There are no **Apply Delay** or **Release Delay** fields: the delays come from the ABS System dialog (see the note under System Variables). **Apply Rate, Secondary** is read only by Algorithm 4; 0 uses the Apply Rate. The spin accelerations are in rad/s² whatever the unit system.
 
 - **Minimum Wheel Velocity** — This parameter specifies a minimum wheel
   velocity threshold for ABS actuation. ABS is bypassed when the wheel
@@ -546,13 +546,13 @@ ABS systems.
 ## Procedures
 
 !!! note "HVE 2027"
-    In HVE 2027, ABS is switched on per wheel and edited from the Vehicle menu. The steps are:
+    In HVE 2027, ABS is switched on for the vehicle and per wheel, and edited from the Vehicle menu. The steps are:
 
-    1. Turn the ABS model on for the wheels that have it.
+    1. Turn the ABS model on: **ABS Installed** for the vehicle, and **Antilock (ABS)** for the wheels that have it.
     2. Optionally, edit the vehicle's ABS System parameters.
     3. Optionally, edit the ABS wheel parameters.
 
-    HVE's Brake System Information dialog (Figure 31-8) has no single equivalent; its **ABS Installed** checkbox appears in **Vehicle › Brake System Pressure…**, where it is recorded with the case but does not switch ABS on or off.
+    HVE's Brake System Information dialog (Figure 31-8) has no single equivalent. Its **ABS Installed** checkbox is at the top of **Vehicle › ABS / Brake Design… › ABS System…**, with the system parameters its **Edit…** button opened.
 
 ### Invoking the ABS Model
 
@@ -562,10 +562,10 @@ Database (EDC.db) are currently created with the ABS model turned off.
 To model an ABS system in HVE 2027, perform the following steps:
 
 1. Select the **Vehicle (F3)** editor and the vehicle.
-2. Choose **Vehicle › Brake Assembly…**.
-3. Tick **Antilock (ABS)** for each wheel fitted with ABS (link groups copy the tick across the wheels in the same group), and set **ABS Efficiency** if required.
+2. Choose **Vehicle › ABS / Brake Design…**, press **ABS System…** and tick **ABS Installed**.
+3. Choose **Vehicle › Brake Assembly…** and tick **Antilock (ABS)** for each wheel fitted with ABS (link groups copy the tick across the wheels in the same group), and set **ABS Efficiency** if required.
 
-A vehicle read from an HVE case keeps HVE's own ABS setting. For one event only, **Event › Wheels…** has an **Antilock brakes** choice per vehicle: *Use the vehicle's setting*, *Force OFF for this event* or *Force ON for this event*.
+Which of the two switches an engine reads differs. SIMON regulates **every** wheel when ABS Installed, or any wheel's Antilock (ABS) box, is ticked; it does not read the per-wheel box itself. EDSVS and EDVTS read only the per-wheel boxes. EDVDS has no ABS model. A vehicle read from an HVE case keeps HVE's own ABS settings, both of them. For one event only, **Event › Wheels…** has an **Antilock brakes** choice per vehicle: *Use the vehicle's setting*, *Force OFF for this event* or *Force ON for this event*.
 
 ### Editing ABS System Parameters
 

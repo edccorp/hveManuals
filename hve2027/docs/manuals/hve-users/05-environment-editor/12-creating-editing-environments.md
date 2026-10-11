@@ -28,7 +28,7 @@ Environment Editor's components:
 
 - **Environment panel** — a docked panel (normally on the left) holding all
   the environment's parameters in collapsing sections: **Location**,
-  **Terrain**, **Sky**, **Physical** and **Signals**. It replaces HVE's
+  **Terrain**, **Sky**, **Physical** and **Friction Zones**. It replaces HVE's
   Environment Information property sheet. Terrain and Physical — the
   sections the engines read — are open by default.
 - **Viewport** — the 3-D view of the current environment, with the Top,
@@ -103,10 +103,6 @@ the sun, in the Shader Editor's **Sun & Sky** panel (see Sun and Sky, below).
 
 The **Physical** section holds the environment's physical properties:
 
-- **Tire-Road mu (single-track)** — an absolute tire-road friction
-  coefficient read only by the single-track (motorcycle) model, which has no
-  tire friction tables of its own. Every other engine uses the surface
-  material's friction multiplier instead.
 - **Rolling Resistance** — used only for tires that state no rolling
   resistance of their own; a tire's own value always wins.
 - **Ambient Temperature** and **Ambient Pressure** — the air temperature
@@ -128,9 +124,11 @@ The **Physical** section holds the environment's physical properties:
 > change the gravity!
 
 !!! note "HVE 2027"
-    The Road Surface preset (Dry / Wet / Snow / Ice) that sets a friction
-    multiplier is not on the Physical section: it is a **Condition preset**
-    on the selected surface material (see Road Surfaces and Their
+    There is no road friction on the Physical section. Every engine, the
+    single-track model included, uses each tire's own friction times the
+    surface material's friction multiplier. The Road Surface preset (Dry /
+    Wet / Snow / Ice) that sets a friction multiplier is a **Condition
+    preset** on the selected surface material (see Road Surfaces and Their
     Materials, below).
 
 ### Sky
@@ -181,25 +179,21 @@ Environment panel's Sky section or the Event panel's Lighting section). The
 !!! warning "Not in HVE 2027"
     HVE's **Fog Type** (None, Fog, Haze, Smoke) and **Maximum Visibility**
     are not available. A value imported from an HVE case is kept with the
-    case, but there is no control for it and the viewport does not fade
-    objects with distance, so HVE 2027 cannot be used for HVE's visibility
-    studies. (The Shader Editor's Sky Texture node has a *Haze* setting, but
+    case, but there is no control for it, and the viewport's **Distance
+    Haze** (View › Scene Display › Effects) is a fixed fade of far geometry,
+    not a visibility distance, so HVE 2027 cannot be used for HVE's
+    visibility studies. (The Shader Editor's Sky Texture node has a *Haze* setting, but
     it only veils the sky itself.) HVE's **Sky Color** dialog is replaced by the world material in
     the Shader Editor; see
     [Materials and the Shader Editor](../../new-features/01-materials-and-shader-editor.md).
 
 ## Traffic Signals
 
-The Environment panel's **Signals** section stores one traffic signal's
-timing: **Traffic Signal Active**, **Phase at Impact** (Green, Yellow or
-Red), **Cycle Time**, **Green Time** and **Yellow Time**. The same three
-times are on the Event menu's **Signals** dialog (EDGEN events).
-
 !!! warning "Not in HVE 2027"
     HVE's Traffic Signals tab edits signals placed in the site with the 3-D
     Editor's Signal Tool, each with its own type, layout and cycle. HVE 2027
-    has no signal objects: the Signals section holds a single timing record,
-    which is saved with the case but is not drawn and reaches no engine.
+    has no traffic signals — no signal objects and no signal timing — because
+    no engine here reads them.
 
 ## Site Geometry
 
@@ -219,12 +213,16 @@ panel's **Terrain** section:
   to metres (for example 0.3048 for a drawing in feet, 0.0254 for one in
   inches). For an `.h3d` file this is **Extra Scale**, applied on top of
   the file's own units.
-- **File is Y-up (swap Y/Z)** and **File is Z-down (flip Z)** — corrections
-  for a file whose vertical axis is not what the importer assumes (for an
-  `.h3d` file the second reads **Invert Z**).
+- **File is Y-up (rotate to Z-up)** and **File is Z-down (Flip About
+  X-Axis)** — corrections for a file whose vertical axis is not what the
+  importer assumes; both are rotations about the file's x axis, as HVE's
+  Flip About X-Axis is (for an `.h3d` file the second reads **Flip About
+  X-Axis (file's vertical sense is reversed)**).
 - **Use surfaces as terrain (physics)** — send the imported surfaces to the
   engines as the road. Unchecked, the geometry is drawn only.
-- **Import** and **Clear** — read the file, or remove the geometry.
+- **Import** and **Clear** — read the file, or remove the geometry. Both
+  also discard a site the case carries (see *Embedding the environment*), so
+  **Import** always reads the file.
 
 After an import, a summary line gives the number of surfaces and lines and
 the site's X, Y and Z extents.
@@ -277,17 +275,51 @@ names the file; there is no path to browse to and no scale to apply. Click
 
 ### Embedding the environment
 
-A geometry file or a source `.hve` is a reference: on another computer, the
-case opens with no ground under the vehicles. **File › Embed the
-environment in the case** saves the site's geometry and its photograph
-inside the case file on every save, so the case opens with its site
-anywhere. The menu tooltip gives the size of the current site; the
-photograph is the bulk of the cost.
+**File › Embed the environment in the case**, on by default, saves the
+site's geometry and its photograph inside the case file on every save, so
+the case opens with its site anywhere — as an HVE `.hve` carries its site.
+The menu tooltip gives the size of the current site; the photograph is the
+bulk of the cost. With it unchecked, a save names the geometry file or the
+source `.hve` instead: on another computer such a case opens with no ground
+under the vehicles.
 
-!!! tip "New in HVE 2027"
-    Embedding is a setting of the application, not of the case. While it is
-    checked, every case you save carries its site; unchecking it removes the
-    embedded site at the next save.
+!!! note "HVE 2027"
+    Embedding is a setting of the application, not of the case. Unchecking
+    it, which HVE has no equivalent for, removes the embedded site at the
+    next save.
+
+### Moving the site, or one of its surfaces
+
+**Site Placement**, under the geometry summary, moves the whole site — the
+ground the vehicles drive on and its picture together:
+
+- **Move X (forward)**, **Move Y (right)** and **Move Z (up)** — how far the
+  site is moved, in the length units of **Preferences**.
+- **Turn (deg)** — how far it is turned about the vertical through its
+  centre; a positive turn is to the right.
+- **Reset** — back to where the file put it.
+
+A selected surface has the same fields under **Placement** in the
+*Surface Materials* section. A surface turns about its own centre, and the
+site's placement then carries it with everything else.
+
+In the Viewport, **G** moves and **R** turns the selected surface, or the
+whole site when no surface is selected. **X**, **Y** or **Z** locks the
+motion to an axis, a typed number gives an exact distance (metres) or angle
+(degrees), **Enter** or a left click keeps it, and **Esc** or a right click
+puts it back. **Ctrl** steps by 0.5 m or 15 degrees.
+
+The placement is kept in the case; the geometry file is not changed.
+Vehicles, friction zones, scene boxes and the point cloud keep their own
+positions. Like every surface property the solver reads, the fields are
+locked while results are on screen.
+
+!!! note "HVE 2027"
+    On a site taken from an HVE case the road is kept twice — the polygons
+    the solver drives on and the picture drawn over them — so a road surface
+    moves only with the whole site. Its scenery (surfaces of type *Other*)
+    moves on its own. HVE's manipulators could also scale a surface; HVE 2027
+    does not.
 
 ### Shading
 

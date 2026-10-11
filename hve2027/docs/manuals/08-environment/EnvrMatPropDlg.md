@@ -24,9 +24,11 @@ law (for contact with the ground) and its soil properties (for sinkage).
 
 ## Surface Type
 
-**Road**, **Friction Zone**, **Curb**, **Water** or **Other**. The type reaches
-the solver: the road database is searched in type order, and a hit on a curb or
-friction zone ends the search where a road hit keeps searching.
+**Road**, **Friction Zone**, **Curb**, **Water** or **Other**. Friction Zone and
+Curb reach the solver: the road database is searched in type order, and a hit on
+a curb or friction zone ends the search where a road hit keeps searching. A
+Water or Other surface is run as Road; standing water comes from **Water Depth**
+below.
 
 !!! note "HVE 2027"
     In HVE the type is set as the Default Type of an imported geometry file.

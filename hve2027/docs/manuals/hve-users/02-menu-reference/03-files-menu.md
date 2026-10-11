@@ -149,17 +149,19 @@ is added to Open Recent.
 
 **Purpose:** Make a case self-contained.
 
-**Description:** A check item. When ticked, the next save stores the site's
-geometry and photograph inside the case file, so the case opens with its ground
-on a computer that has neither the original `.hve` nor the geometry file.
+**Description:** A check item, ticked by default. When ticked, each save stores
+the site's geometry and photograph inside the case file, so the case opens with
+its ground on a computer that has neither the original `.hve` nor the geometry
+file.
 Hovering shows how many triangles and image pixels the site has; the photograph
 is the larger part of the cost. When the case already carries a site, the menu
 shows its size. Untick it and save again to remove the embedded site.
 
 !!! note "HVE 2027"
-    An HVE `.hve` case carries its site inside the case already. An HVE 2027
-    case normally names its geometry file instead; this switch makes it carry
-    the site the way a `.hve` does.
+    An HVE `.hve` case always carries its site inside the case, and an HVE
+    2027 case does the same while this is ticked. Unticking it, which HVE has
+    no equivalent for, makes a save name the geometry file instead: a smaller
+    case for one that never leaves this computer.
 
 ---
 
@@ -235,8 +237,9 @@ running.
     HTML** for a page a browser can print or save as PDF, and **Export Run
     Report (HTML)** for HVE 2027's own printable run summary, and Key
     Results and the Timestep Data Table export CSV. See
-    [Chapter 4D](04d-output-menu.md). The **Print...** buttons in the Damage
-    Studio Report and the Audit Log do nothing in HVE 2027 Preview.
+    [Chapter 4D](04d-output-menu.md). The Damage Studio Report has **Save...**
+    (text). The **Print...** button in the Audit Log does nothing in HVE 2027
+    Preview.
 
 ---
 

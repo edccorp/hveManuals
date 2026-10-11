@@ -5,7 +5,7 @@ The anti-pitch properties of the wheels are displayed and edited in the **Anti-P
 HVE 2027 shows one table with a column per wheel (**A1 Right**, **A1 Left**, **A2 Right**, ...), where HVE edits one wheel at a time.
 
 !!! note "HVE 2027"
-    With **View › Show Guidance Text** on, an orange note at the top of the dialog says that the anti-pitch table is **recorded and reported, but not used**: no engine reads it, and its only use anywhere in the physics is a report page. This is HVE's own behavior; HVE offers the table anyway.
+    An orange note at the top of the dialog says which engines use the table: **EDVSM** reads it, in each wheel's suspension force; SIMON only prints it on a report page; no other engine reads it. This is HVE's own behavior.
 
 ## Link Group
 

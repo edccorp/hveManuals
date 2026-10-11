@@ -39,7 +39,7 @@ Each vehicle also has the following additional user-editable parameters:
 To add a vehicle to the current case:
 
 1. Choose the **Vehicle (F3)** editor tab (or press F3). The Vehicles panel and the viewport are displayed.
-2. Click **Add...** at the top of the Vehicles panel. The **Load Vehicle from Database** dialog is displayed.
+2. Click **Add...** at the top of the Vehicles panel. The **Add Vehicle** dialog is displayed.
 3. Search the loaded databases (open **Database folders** to add a folder holding HVE `.db` files), or choose one of HVE's built-in generic vehicles under **Built in (no database needed)**, and click **Add**.
 4. If desired, modify the *Driver Location, Engine Location, Number of Axles* and *Drive Axle(s)* in the **Information** section.
 5. Edit the vehicle's **Name**. The name does not affect calculations.
@@ -467,7 +467,7 @@ To execute an EDSMAC event, use the playback bar under the viewport (Figure 2-5)
 
 > NOTE: A solved event's inputs are locked while its results are on screen. To change any vehicle, environment or event set-up input, press **Reset** first, then **Run** again.
 
-> NOTE: Use the **View** menu to choose useful displays, such as **Key Results**, **Skidmarks** and **Vectors › Velocity Vectors**.
+> NOTE: Use the **View** menu to choose useful displays, such as **Key Results**, and **View › Scene Display** for **Skidmarks** and **Velocity Vectors**.
 
 ### Barrier Collisions
 

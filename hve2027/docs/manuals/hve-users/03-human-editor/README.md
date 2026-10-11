@@ -31,7 +31,7 @@ To use the Human Editor, perform the following steps:
 2. In the Occupants panel, press **Add Occupant**. HVE 2027 generates a body
    with GEBOD from the subject type, age group and weight and height
    percentiles (see Chapter 8). Humans also arrive with an HVE case file
-   (`.hve`) or an HVE 2027 case opened with **File › Open**.
+   (`.hve`) or an HVE 2027 case opened with **File › Open Case...**.
 3. If desired, modify the properties of the selected human to suit the
    needs of the current case. Properties which may be modified are:
    - Inertial Properties

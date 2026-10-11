@@ -2,9 +2,9 @@
 
 In HVE the Tire Information dialog selects a tire for one wheel position from
 the tire databases (Type, Manufacturer, Model, Size, Source Database) and opens
-the tire's physical-data and table dialogs. HVE 2027 has no tire database to
-pick from; every tire parameter of every wheel is edited directly in one table,
-the **Tire Properties** window.
+the tire's physical-data and table dialogs. In HVE 2027 every tire parameter of
+every wheel is edited directly in one table, the **Tire Properties** window,
+and a tire is picked from HVE's databases in its **Tire Database** section.
 
 !!! note "HVE 2027"
     Open it in the Vehicle editor (F3) with **Vehicle › Tire Data (Detailed)...**.
@@ -35,6 +35,18 @@ designation, is reported in the section and the button stays disabled.
 The section starts from the size and type already stored on the vehicle's
 first wheel.
 
+## Tire Database
+
+HVE 2027's counterpart of choosing a tire by Type, Manufacturer, Model, Size and
+Source Database. The collapsed **Tire Database** section lists the tires in the
+HVE vehicle databases HVE 2027 finds (the same folders the vehicle database
+picker reads), each as manufacturer, model and size with its source database in
+brackets. **Type** narrows the list and **Search** filters it by manufacturer,
+model or size. Selecting a tire shows its radius, ride rate and the size of its
+tables. **Apply Tire** replaces the tire data and all four tables of the wheels
+chosen in **Apply to** (All wheels, or one axle) with the database tire's; each
+wheel keeps its own dual setup.
+
 ## Link Group
 
 The row of **–  A  B  C** buttons at the top of every column. Columns in the same
@@ -49,8 +61,8 @@ group A.
 
 ## Size Designation and Tire Type
 
-Shown read-only in the Physical part of the table when **View › Show Guidance
-Text** is on. They are set by **Build from Tire Size**, not typed. The physics
+Shown read-only in the Physical part of the table. They are set by **Build
+from Tire Size** or the **Tire Database**, not typed. The physics
 re-parses the size itself: DyMESH builds a wheel's contact mesh from it, and
 the soft-soil and radial-spring tire–terrain models take the tire width from
 it. A wheel with no size is flagged "(none: P225/75R16)", the size the engine
@@ -63,9 +75,14 @@ Check box indicating that this wheel position uses dual tires.
 ## Dual Spacing
 
 Lateral distance between the centerlines of the two tires of a dual pair.
+Greyed for a wheel whose Dual Tires box is unchecked.
 
-!!! note "HVE 2027"
-    Dual Spacing is not greyed when Dual Tires is unchecked.
+## Tire Name, Manufacturer, Model
+
+Text rows of the table's **Identity (report only)** section, with **HVE
+Version**. They are filled when a vehicle is imported or a tire is applied from
+the Tire Database; every engine's tire report prints them, and nothing else
+reads them.
 
 ## Fields that moved
 
@@ -73,18 +90,18 @@ The remaining rows of the table — friction, cornering stiffness, pneumatic tra
 spring rates, inertias, rolling resistance and dimensions — are described on the
 [Tire Physical Data](TirePhyDataDlg.md) page.
 
-The HVE buttons **Physical Data...**, **Friction...**, **Fy vs Slip Angle...**,
-**Fy vs Inclination Angle...** and **Slip vs Roll-Off...** have no counterpart
-in this window: the physical data are in the same table, and the four tables are
-tabs of the **Tire Friction Data** window (Vehicle › Tire Tables...).
+The HVE buttons **Friction...**, **Fy vs Slip Angle...**, **Fy vs Inclination
+Angle...** and **Slip vs Roll-Off...** are the **Friction Table**, **Cornering
+Table**, **Camber Table** and **Fy Roll-off** rows of the table's **Load &
+Speed Dependence** section: each wheel's button shows the size of its table
+(hover it for the contents) and opens that table on its tab of the **Tire
+Friction Data** window (Vehicle › Tire Tables...). **Physical Data...** has no
+counterpart: the physical data are in the same table.
 
 !!! warning "Not in HVE 2027"
-    - **Name, Type, Manufacturer, Model, Size, Source Database, Mass**: there is
-      no tire database to select from, so there is nothing to choose a tire by.
-      A tire's data arrive with the vehicle when an HVE case (`.hve`) or HVE
-      vehicle database is opened, and are edited here.
-    - **Save As...** and **Delete**: there is no tire database to save a tire to
-      or delete it from (see [Tire Save As](TireSaveAsDlg.md)).
+    - **Mass**: the table shows the tire's **Tire Weight** instead.
+    - **Save As...** and **Delete**: a tire cannot be saved to, or deleted from,
+      a database on its own (see [Tire Save As](TireSaveAsDlg.md)).
     - **OK / Cancel**: edits apply as you make them; **Edit › Undo** (Ctrl+Z) or
       **Edit › Undo History...** takes one back.
 

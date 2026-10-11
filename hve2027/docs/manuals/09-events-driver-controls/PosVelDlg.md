@@ -9,7 +9,7 @@ the EDCRASH scene positions in the same panel.
 ## The Position / Velocity dialog
 
 Open it from **Event › Position / Velocity...**. It is enabled for every method
-except EDCRASH.
+except EDCRASH and READDATAFILE.
 
 ![Position / Velocity dialog](images/hvn-pos-velocity.png)
 
@@ -47,7 +47,8 @@ vehicle in the viewport (View › Scene Display › Scene Ghosts). What EDCRASH 
 - **Impact** and **Final/Rest** — the scene the impact speeds are solved from.
   Both are needed for every vehicle; without them the run is a damage-only
   reconstruction. They are edited in the *Impact* and *Rest* fields of the
-  same block (tick **Scene positions known**).
+  same block (tick **Scene positions known**), with the sideslip at impact and
+  the velocity at rest.
 - **Separation** — the position where the vehicles separated. Unset, EDCRASH
   assumes they separated where they met.
 - **Point On Curve** — makes the post-impact path a curve through this point
@@ -56,8 +57,9 @@ vehicle in the viewport (View › Scene Display › Scene Ghosts). What EDCRASH 
 - **End of Rotation** — ends the spinout at this position and treats the rest of
   the path to rest as a separate rollout.
 
-Each listed position has an **X**, **Y** and **Heading (deg)**; HVE's Z, roll,
-pitch and velocity fields are not offered for these positions.
+Each listed position has an **X**, **Y** and **Heading (deg)**; HVE's Z, roll
+and pitch fields are not offered for these positions, nor a velocity except the
+velocity at rest.
 
 !!! warning "Not in HVE 2027"
     - Path locations for the simulation methods (everything but EDCRASH) other
@@ -65,11 +67,9 @@ pitch and velocity fields are not offered for these positions.
       entered under *Measured rest position* in Event Information.) Other
       positions read from an imported HVE case are shown as ghosts but do not
       drive a simulation.
-    - Editing a **human's** positions and velocities. A pedestrian's path imported
-      from an HVE case (used by EDGEN) is shown read-only in Event Information,
-      *Humans in Event*.
-    - Editing the **sideslip at impact**. It is read from an imported HVE case and
-      used by EDCRASH, but has no field.
+    - Editing a **human's** positions and velocities, except for EDGEN: on an
+      EDGEN event the human's eight named positions (position, orientation,
+      sideslip and speed) are edited in Event Information, *Humans in Event*.
 
 <!-- NAV -->
 

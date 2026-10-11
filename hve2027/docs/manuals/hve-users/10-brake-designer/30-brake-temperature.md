@@ -131,7 +131,7 @@ Designer dialogs (see Figures 29-10 through 29-17) and the Brake Material
 Properties dialog (see Figure 30-2).
 
 !!! note "HVE 2027"
-    The material properties of Table 30-1 are entered in the **Material Properties** section of **Vehicle › Brake Designer…** (Drum / Rotor and Lining / Pad: Density, Specific Heat, Conduction, Convection and Convection Vel. Dep., in SI units). They are saved with the vehicle but, as stated above, not used.
+    HVE 2027 does not offer the material properties of Table 30-1: they feed only the brake temperature model, which does not run (see above).
 
     **Vehicle › Brake Material Props…** is a different dialog: a list of named lining materials (Standard Organic, Semi-Metallic, Ceramic Composite, Sintered Metal) with dry, wet and hot friction, heat capacity and wear rate. Its contents are not saved with the case and are not used by anything; HVE's Brake Material Properties dialog has no working counterpart in HVE 2027.
 

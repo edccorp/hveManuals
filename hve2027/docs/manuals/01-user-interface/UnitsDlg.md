@@ -15,7 +15,7 @@ The change takes effect at once in every dialog, panel, table and report that sh
 !!! note "HVE 2027"
     HVE 2027 stores the case in SI units; the engines still work in HVE's program units (pounds, inches, seconds), and the conversion between the two is made when an event is run. As in HVE, the display unit of each quantity follows the quantity: for example lengths on a vehicle are shown in inches and distances in the scene in feet, brake torque in in-lb and engine torque in ft-lb in US units.
 
-    A few fields are always shown in fixed units and say so in their labels (for example the 3-D node stiffness in N/m² and the brake material thermal properties in SI units).
+    A few fields are always shown in fixed units and say so in their labels (for example the airbag's **Bag Mass (kg)** and the brake material **Heat Capacity (J/kg·K)**).
 
 !!! warning "Not in HVE 2027"
     **Custom** units (a user-defined mix of unit choices).

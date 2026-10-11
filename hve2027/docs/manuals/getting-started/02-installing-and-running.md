@@ -215,7 +215,7 @@ What is different in a browser:
   orientation, and a tap acts as a mouse click (there are no pinch or
   two-finger gestures).
 
-!!! warning "Not in HVE 2027"
+!!! note "HVE 2027"
     Accounts, shared workspaces and cloud computing are not part of
     HVE 2027. Every edition computes on your own computer.
 

@@ -38,7 +38,7 @@ database files reside in the `supportFiles\db` directory (see
 
     | Keys | Action |
     |---|---|
-    | F2 / F3 / F4 / F5 | Human / Vehicle / Environment / Event editor |
+    | F2 / F3 / F4 / F5 / F6 | Human / Vehicle / Environment / Event / Playback editor |
     | Ctrl+N, Ctrl+O, Ctrl+S | New case, Open case, Save case |
     | Ctrl+R | Run Simulation (Event editor) |
     | Ctrl+P, Ctrl+D, Ctrl+M, Ctrl+U, Ctrl+W, Ctrl+T | Position / Velocity, Driver Controls, Damage Profiles, Collision Pulse, Wheels, Contacts (Event editor, when the item is offered for the method) |

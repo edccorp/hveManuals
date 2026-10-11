@@ -23,9 +23,9 @@ tire–terrain model.
     makes columns in the same group change together; **–** edits a wheel on its
     own.
 
-    Only SIMON and EDSMAC4 read tire blow-out and wheel damage; with
-    **View › Show Guidance Text** on, a note says when the event's calculation
-    method does not read a tab. While a solved
+    SIMON and EDSMAC4 read tire blow-out and wheel damage, and EDVSM reads the
+    blow-out; a note at the top says when the event's calculation method does
+    not read a tab. While a solved
     run is on screen the dialog is read-only.
 
 ![Wheels dialog, Tire Blowout tab](images/hvn-wheels.png)
@@ -66,7 +66,7 @@ tire is fully deflated.
 Multiplier for the tire rolling resistance of the blown tire.
 
 !!! note "HVE 2027"
-    - HVE enables this field only when the event's driver controls use
+    - HVE enables this field only for a calculation method that offers
       pedal-force braking; HVE 2027 enables it whenever the tire is blown.
     - EDSMAC4 **divides** by the rolling factor, so a value above 1 reduces
       rolling drag there; SIMON multiplies. HVE feeds both the same number, and

@@ -10,7 +10,7 @@ An extremely useful feature of EDVTS is the ability to quickly and accurately re
 
 EDVTS has no calculation options window in HVE 2027 (as in current HVE, it reads
 no calculation-option values from the event). **Method Options...** in Event
-Information does nothing for an EDVTS event.
+Information is greyed for an EDVTS event.
 
 ## Roll Couple Distribution
 

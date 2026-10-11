@@ -1,6 +1,6 @@
 # Render Dialog Box
 
-HVE's Render dialog sets various options that affect the visual appearance of all 3-D objects. HVE 2027 has no Render dialog; its rendering options are in the **View › Scene Display › Rendering** submenu, and the look of individual materials is set in the **Shader Editor** (**View › Shader Editor**).
+HVE's Render dialog sets various options that affect the visual appearance of all 3-D objects. HVE 2027 has no Render dialog; its rendering options are in the **Rendering** section of the **Scene Display** window (**View › Scene Display**), and the look of individual materials is set in the **Shader Editor** (**View › Shader Editor**).
 
 ## Render Method (View › Scene Display › Rendering)
 

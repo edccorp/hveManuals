@@ -6,10 +6,10 @@ HVE 2027 has **no Options menu**. HVE's Options menu mixes display switches, too
 |---|---|
 | Create DB | Not in HVE 2027. Vehicle databases are read as they are; **Save Vehicle As** writes a vehicle into a database file (see [Saving Vehicles](../02-vehicles/VehSaveAs.md)). |
 | Show Key Results | **View › Key Results** (or **Output › Key Results...** in the Event Editor) — see [Key Results Dialog Box](KeyResDlg.md). |
-| Show Axes | Not available as a switch. |
+| Show Axes | **View › Scene Display › Axes**: the case's X, Y and Z at the origin and each vehicle's own axes at its CG, turning and tilting with it (red X forward, green Y right, blue Z up; on by default). |
 | Show Contacts | **View › Scene Display › Occupant Equipment** draws the active vehicle's contact surfaces, airbags and belts; **View › Scene Display › Occupant Equipment Through Bodywork** draws them over the body. |
 | Show Belt Anchors | **View › Scene Display › Occupant Equipment** (as above). |
-| Show Velocity Vectors | **View › Scene Display › Vectors › Velocity Vectors**. The same submenu has **Collision Force (PDOF)**, **Tire Force Vectors** (optionally **...include vertical Fz'**) and **Draw Vectors Through Bodywork**. HVE's *Long Velocity Vectors* preference has no equivalent. |
+| Show Velocity Vectors | **View › Scene Display › Vectors › Velocity Vectors**. The same section of the Scene Display window has **Collision Force (PDOF)**, **Tire Force Vectors** (optionally **...include vertical Fz'**) and **Draw Vectors Through Bodywork**. HVE's *Long Velocity Vectors* preference has no equivalent. |
 | Show Skidmarks | **View › Scene Display › Skidmarks**: the contact-patch path drawn only where the tire was marking, faded by how hard. Skidmarks are drawn at the width of the tire that laid them. |
 | Show Tracks | **View › Scene Display › Tire Contact Patch Paths**: where each tire touched the ground, one path per wheel. |
 | Show CGs | Not available as a switch. |
@@ -33,7 +33,7 @@ HVE 2027 has **no Options menu**. HVE's Options menu mixes display switches, too
 | Preferences (Ctrl+F) | **Tools › Preferences...** — see [User Preferences Dialog Box](PrefDlg.md). |
 
 !!! tip "New in HVE 2027"
-    The Scene Display panel (**View › Scene Display**) also has **Axes** (the case's X, Y and Z at the origin, and, while it is on, each vehicle's own axes at its CG, turning and tilting with it; red X forward, green Y right, blue Z up; on by default), **North Arrow**, **Humans Through Bodywork**, **Vehicle Extents** (a translucent box at the vehicle's declared extents) and **DyMESH Wheel Mesh**. The View menu itself has **Show Guidance Text** (the long explanatory notes in the dialogs, off by default; messages about a problem with the open case are always shown), **Panels Outside the Main Window**, **Outliner**, **Shader Editor** and **Dope Sheet**.
+    The Scene Display panel (**View › Scene Display**) also has **North Arrow**, **Humans Through Bodywork**, **Vehicle Extents** (a translucent box at the vehicle's declared extents) and **DyMESH Wheel Mesh**. The View menu itself has **Show Guidance Text** (the long explanatory notes in the dialogs, off by default; messages about a problem with the open case are always shown), **Panels Outside the Main Window**, **Outliner**, **Shader Editor** and **Dope Sheet**.
 
 <!-- NAV -->
 

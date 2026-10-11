@@ -11,10 +11,10 @@ EDSVS produces three types of output reports:
 - **Trajectory Simulations** — Viewers containing dynamic, visual simulations
 
 !!! note "HVE 2027"
-    HVE 2027 has no Playback Editor and no report windows to create. Run the event, then:
+    HVE 2027 has no report windows to create, and the reports are not in the **Playback** editor (F6), which plays several events in sequence. Run the event, then:
 
     - **Output › HVE Reports** shows the alpha-numeric pages EDSVS writes itself, one tab per page: *ACCIDENT HISTORY*, *ENVIRON DATA*, *MESSAGES*, *PROGRAM DATA* and *VEHICLE DATA*. **Save This Page** and **Save All Pages** write them to a text file for printing.
-    - **Output › Timestep Data Table**, **Output › Output Graph**, **Output › Key Results** and **Output › Variable Report** show the time histories (the Variable Output of this chapter). **Output › Variable Selection** chooses the channels. **Output › Export Variables** writes them to a file.
+    - **Output › Key Results** shows the time histories (the Variable Output of this chapter) of the channels chosen with **Output › Variable Selection**, and **Output › Export Variables** writes them to a file. **Output › Output Graph** plots channels chosen with its own **Select Variables…** button. **Output › Timestep Data Table** lists the position, heading and speed at each output step, and **Output › Variable Report** their minimum, maximum and final values.
     - **Output › Accident History Report** opens HVE Reports on its *ACCIDENT HISTORY* tab — EDSVS's own Accident History page. **Save This Page** saves it as text and **Save Page as HTML** as an HTML page.
     - The trajectory plays back in the viewport with the playback bar.
 
@@ -103,7 +103,7 @@ EDSVS produces a Variable Output table containing the time-based simulation resu
 An example of a Variable Output table is shown in Figure 3-5. A detailed listing of each Variable Output parameter produced by EDSVS is found in Table 3-1. For more information about Variable Output parameters, refer to the User's Manual, Chapter 16, Event Model.
 
 !!! note "HVE 2027"
-    In HVE 2027 the table is **Output › Timestep Data Table**; choose its columns with **Output › Variable Selection** (the *Filter* box accepts HVE's own variable names, such as Delta or V-tot).
+    In HVE 2027 the table is **Output › Key Results** (its *Trajectory* section); choose its columns with **Output › Variable Selection** (the *Filter* box accepts HVE's own variable names, such as Delta or V-tot). **Output › Timestep Data Table** (Figure 3-5) is a fixed table of the position, heading and speed at each output step.
 
 **Table 3-1: Vehicle Variable Output Data**
 

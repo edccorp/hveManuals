@@ -60,8 +60,8 @@ through it the torque ratio the brake assembly carries to the physics.
 !!! note "Brake Material Properties"
     **Vehicle › Brake Material Props...** opens a separate **Brake Material
     Properties** window — a list of named lining materials with dry, wet and
-    hot friction, heat capacity and wear rate. It is a reference list for the
-    session: it is not saved with the case and no physics program reads it.
+    hot friction, heat capacity and wear rate. Its controls are greyed: the
+    list is not saved with the case and no physics program reads it.
 
 <!-- NAV -->
 

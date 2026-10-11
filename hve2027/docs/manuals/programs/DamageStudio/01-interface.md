@@ -193,7 +193,7 @@ For simulation events, the available key results are: Time; Impulse No; Total, L
     PDOF arrow and crush-vector display settings are not offered: HVE 2027 has
     no DamageStudio viewer for them to control. To show the collision force
     arrow use **View › Scene Display › Vectors › Collision Force (PDOF)**; for a crush map use
-    the HVE Damage node in the Shader Editor. The settings last for the
+    the *HVE Simulation* node's **Crush** output in the Shader Editor. The settings last for the
     session and are not saved with the case.
 
 ### Damage Studio Report (HVE 2027)

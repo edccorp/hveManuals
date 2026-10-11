@@ -13,7 +13,7 @@ HVE 2027 compiles HVE's own EDVTS source, so the model described in this manual 
 - **Trailer position.** The trailer's position is derived from the tow vehicle and the hitch; only its **Articulation** angle is entered.
 - **Payload.** **Event › Payload…** is not available for EDVTS events in this version; a payload stored in an imported HVE case is used.
 - **Connections.** Edited in the Vehicle editor (**Vehicles** panel › **Vehicle Properties** › **Connections…**). The hitch must be a matched pair at the same height above ground; HVE 2027 checks both before running.
-- **Output.** There is no Playback Editor. A solved event plays back in the same viewport, and **Output › HVE Reports** shows the report pages EDVTS itself builds.
+- **Output.** A solved event plays back in the Event editor's own viewport (the **Playback** editor, F6, plays several events in sequence), and **Output › HVE Reports** shows the report pages EDVTS itself builds.
 
 HVE-2D is not part of HVE 2027; read the **[HVE]** passages and ignore the HVE-2D ones. See also [Differences from HVE](../../getting-started/05-differences-from-hve.md).
 
@@ -25,15 +25,15 @@ EDVTS is compatible with both HVE-2D and HVE. If you are using EDVTS within the 
 
 ## If You Have Questions
 
-Engineering Dynamics Corporation provides technical assistance for supported users. The questions may relate to general usage or to specific engineering applications. !!! note "HVE 2027"
-    EDC supports HVE and its physics programs. HVE 2027 is a separate program built from HVE's physics source; EDC does not support it, and the version and hardware-profile items below refer to HVE.
-
-When you call, you should have the following information available:
+Engineering Dynamics Corporation provides technical assistance for supported users. The questions may relate to general usage or to specific engineering applications. When you call, you should have the following information available:
 
 - Your user ID number
 - Your System Hardware Profile report (available from EDC)
 - HVE-2D or HVE Version Information (available from the HVE Help System)
 - EDVTS Version Information (available from the EDVTS Program Data report)
+
+!!! note "HVE 2027"
+    EDC supports HVE and its physics programs. HVE 2027 is a separate program built from HVE's physics source; EDC does not support it, and the version and hardware-profile items above refer to HVE.
 
 ## Contents
 

@@ -11,7 +11,7 @@ Spring rate (force per unit of wheel travel) at the selected wheel due to the sp
 Roll stiffness (torque per unit of sprung mass roll) added by the addition of an anti-sway bar.
 
 **Roll Ctr Below CG** (HVE: Roll Center Height)
-Vertical distance from the sprung mass CG down (+) to the suspension roll center. Applies to solid axles. A value of 0 lets HVE 2027 estimate it, and the run says so.
+Vertical distance from the sprung mass CG down (+) to the suspension roll center. Applies to solid axles. A value of 0 lets HVE 2027 estimate it.
 
 **Lat. Spring Space** (HVE: Lateral Spring Spacing)
 Lateral distance between the left and right suspension springs of a solid axle; together with the ride rate it determines the axle's roll stiffness. A value of 0 lets HVE 2027 estimate it from the track width.

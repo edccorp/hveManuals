@@ -10,45 +10,48 @@ screen; press **Reset** to edit.
 
 | HVE Set-up item | HVE 2027 |
 |---|---|
-| Damage Profiles (Vehicle Damage) | Event › **Damage Profiles...** (stiffness) and Event Information › **Vehicle Impact Setup** (CDC, PDOF, crush) — EDCRASH |
+| Damage Profiles (Vehicle Damage) | Event › **Damage Profiles...**, which opens Event Information › **Vehicle Impact Setup** (CDC, PDOF, crush) — EDCRASH; the vehicle's crush stiffness is Vehicle › **Crush Stiffness...** |
 | Collision Pulse | Event › **Collision Pulse...** |
 | Vehicle Mesh | Event › **Vehicle Mesh...** (also Event › Advanced Mesh Options... and Vehicle › Vehicle Mesh...) |
 | — (Options › DyMESH in HVE) | Event › **DyMESH Options...** |
 | Payload | Event › **Payload...** |
 | Wheels | Event › **Wheels...** |
 | Accelerometers | Event › **Accelerometers...** |
-| Contacts | Event › **Contacts...** (EDSMAC4) — see [CONTACTS](#contacts) |
-| Restraints › Airbags, Belts | Event › **Restraints** › Airbag Restraint..., Belt Restraint... |
-| Signals | Event › **Signals** (EDGEN) |
+| Contacts | Event › **Contacts...** (EDSMAC4, EDHIS, GATB) — see [CONTACTS](#contacts) |
+| Restraints › Airbags, Belts | Event › **Restraints...** › Airbags..., Belt Restraint... |
+| Signals | Not in HVE 2027 — see [SIGNALS](#signals) |
+| Driver Controls › Lights page | Event › **Lights...** (SIMON, EDSMAC4) — see [LIGHTS](#lights) |
 | Notes | Event › **Notes** |
 
 ---
 
 ## DAMAGE PROFILES (VEHICLE DAMAGE)
 
-**Menu Option:** Event › Damage Profiles... (EDCRASH, EDSMAC, EDSMAC4, SIMON)
+**Menu Option:** Event › Damage Profiles... (Ctrl+M; EDCRASH)
 
-**Purpose:** Enter the crush stiffness of the selected vehicle's sides.
+**Purpose:** Enter the measured damage of the selected vehicle.
 
-**Description:** In HVE 2027 the damage *measurements* and the *stiffness* are
-in two places:
+**Description:** In HVE 2027 the damage *measurements* and the vehicle's
+*stiffness* are in two places:
 
 - The **measured damage** — impact speed, **CDC**, **PDOF** (or *Auto-calculate
-  PDOF from the other vehicle*), the EES or damage-profile **basis**, and
-  **Measured Crush**: damage width, damage offset, the crush depths and per-zone A
-  and B stiffness — is entered per vehicle in Event Information's **Vehicle
-  Impact Setup** section.
-- **Event › Damage Profiles...** holds the crush **stiffness** of each side —
-  Front, Rear, Left and Right, each with a distance and its A, B and Kv
-  stiffness — and the **3-D Node Stiffness** used by DyMESH (constant, linear,
-  quadratic and cubic terms per zone, conversion height, saturation and maximum
-  crush).
+  PDOF from the other vehicle*), the EES or damage-profile **basis**, the A and
+  B stiffness EDCRASH uses, and **Measured Crush**: damage width, damage offset,
+  the crush depths and per-zone A and B stiffness — is entered per vehicle in
+  Event Information's **Vehicle Impact Setup** section. **Event › Damage
+  Profiles...** opens that section.
+- **Vehicle › Crush Stiffness...** (Vehicle editor) holds the vehicle's own crush
+  **stiffness** for the simulations — Front, Rear, Left and Right, each with its
+  A, B and Kv stiffness — and the **3-D Node Stiffness** used by DyMESH
+  (constant, linear, quadratic and cubic terms per zone, conversion height,
+  saturation and maximum crush).
 
 The CDC must be a valid seven-character code. EDCRASH needs at least two crush
 depths to form a crush profile; with fewer, its Delta-V stays zero.
 
-![The Damage Profiles dialog](../images/hvn-01-damage-profiles.png)
-*The Damage Profiles dialog for an EDCRASH vehicle.*
+![The Crush Stiffness dialog](../images/hvn-01-damage-profiles.png)
+*The Crush Stiffness dialog (captured under its earlier title, Damage
+Profiles).*
 
 !!! note "HVE 2027"
     HVE's *Use Newton's 3rd Law* option corresponds to **Auto-calculate PDOF
@@ -106,8 +109,8 @@ same dialog)
 
 **Purpose:** Assign and prepare the selected vehicle's 3-D body mesh.
 
-**Description:** The Vehicle Mesh dialog assigns the mesh file (OBJ or Open
-Inventor) and its import options, moves, rotates and scales the model
+**Description:** The Vehicle Mesh dialog assigns the mesh file (OBJ, glTF, Open
+Inventor or `.h3d`) and its import options, moves, rotates and scales the model
 to the vehicle, sets its shading and how damage is displayed, and holds the
 **DyMESH Contact Mesh Preparation** options — HVE's tessellate, maximum side
 length and vertex weld distance. The same dialog is on the Vehicle menu.
@@ -143,13 +146,13 @@ Options dialog.
 
 ## PAYLOAD
 
-**Menu Option:** Event › Payload... (EDSMAC4, SIMON)
+**Menu Option:** Event › Payload... (SIMON, EDSMAC4, EDSVS, EDVDS, EDVTS)
 
 **Purpose:** Add a load to the selected vehicle for this event.
 
 **Description:** Tick **Payload Exists**, then enter the load's **Mass /
-Weight**, its CG, its rotational inertia (Roll Ixx, Pitch Iyy, Yaw Izz) about its
-own CG, and its **Orientation**. As in HVE the payload is stored per event per
+Weight**, its CG, and its rotational inertia (Roll Ixx, Pitch Iyy, Yaw Izz)
+about its own CG. As in HVE the payload is stored per event per
 vehicle: another event can load the same vehicle differently.
 
 ![The Payload dialog](../images/hvn-01-payload.png)
@@ -189,7 +192,7 @@ See the dialog reference: [Wheels](../../05-tires-wheels/WheelsDlg.md).
 
 ## ACCELEROMETERS
 
-**Menu Option:** Event › Accelerometers... (methods with driver controls) ·
+**Menu Option:** Event › Accelerometers... (SIMON, EDSMAC4, EDVDS, EDVSM) ·
 also Vehicle › Accelerometers...
 
 **Purpose:** Place accelerometers on the selected vehicle.
@@ -235,13 +238,13 @@ are edited in the Vehicle editor (Vehicle › Contact Surfaces...).
 
 ## RESTRAINTS
 
-**Menu Option:** Event › Restraints › Airbag Restraint..., Belt Restraint...
-(methods with driver controls) · also on the Vehicle menu
+**Menu Option:** Event › Restraints... › Airbags..., Belt Restraint...
+(EDHIS, GATB) · also on the Vehicle menu
 
 **Purpose:** Set up the airbags and belts of the selected vehicle for the
 occupants.
 
-**Description:** The Airbag Restraint System and Belt Restraint System dialogs.
+**Description:** The Airbags and Belt Restraint System dialogs.
 While either is open, the restraint equipment is drawn in the viewport; **View ›
 Scene Display ›
 Occupant Equipment** draws it at any time.
@@ -252,7 +255,7 @@ Occupant Equipment** draws it at any time.
 !!! note "HVE 2027"
     The Event menu's Restraints submenu is offered for the occupant methods,
     EDHIS and GATB. The same dialogs are on the Vehicle menu (Vehicle ›
-    Airbag Restraint..., Belt Restraint...).
+    Airbags..., Belt Restraint...).
 
 See the dialog reference: [Airbag](../../06-safety-systems/AirBagSysDlg.md) and
 [Belt Restraint System](../../06-safety-systems/BeltResSysDlg.md).
@@ -261,16 +264,31 @@ See the dialog reference: [Airbag](../../06-safety-systems/AirBagSysDlg.md) and
 
 ## SIGNALS
 
-**Menu Option:** Event › Signals (EDGEN)
+**HVE menu option:** Set-up › Signals
 
-**Purpose:** Traffic signal timing.
+!!! warning "Not in HVE 2027"
+    HVE's traffic signal timing (cycle, green and yellow time) is not in
+    HVE 2027: no engine reads it, so the Event menu has no Signals item.
 
-**Description:** **Cycle Time**, **Green Time** and **Yellow Time**, in seconds.
-The same values are on the Environment panel.
+---
+
+## LIGHTS
+
+**Menu Option:** Event › Lights... (SIMON, EDSMAC4)
+
+**Purpose:** Choose which of the selected vehicle's lamps the run switches on,
+and when.
+
+**Description:** One setup per lamp the vehicle's body file tags. Tick **Is
+Active**, then choose the **Activation**: **Use Driver Controls** (brake, backup
+and signal lamps) or **User-Entered**, a table of **Turn On** and **Turn Off**
+times (**Add Row**, **Remove Last Row**). Signal and flasher lamps also take an
+on/off cycle time. An event with nothing edited uses HVE's defaults: brake and
+backup lamps follow the driver controls, and every other lamp is off. The lamps
+themselves are defined in the Vehicle editor (Vehicle › Vehicle Lights...).
 
 !!! note "HVE 2027"
-    The signal timing is stored with the case, but no engine reads it in this
-    build.
+    In HVE this was the Lights page of the Driver Controls dialog.
 
 ---
 
@@ -319,13 +337,12 @@ stiffness of each side); under **Dynamics**, **Handling Properties...** and
 
 **Purpose:** The simplified handling properties used by the 2-D models.
 
-**Description:** The Handling Properties dialog: Total Understeer, Wheel
-Sensitivity, Roll Gradient, Roll Couple Distribution, Weight Distribution
-(front) and Static Weight Front / Rear.
+**Description:** The Handling Properties dialog: Total Understeer, Roll
+Gradient, Roll Couple Distribution and Weight Distribution (front).
 
 !!! note "HVE 2027"
-    Wheel Sensitivity and Static Weight Front / Rear are stored with the case
-    but no engine reads them in HVE 2027.
+    HVE's Wheel Sensitivity and Static Weight Front / Rear are not offered: no
+    engine reads them.
 
 ---
 

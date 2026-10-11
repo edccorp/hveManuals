@@ -1,6 +1,6 @@
 # Dual Wedge Brake Dialog Box
 
-HVE has one Brake Designer dialog per brake type. HVE 2027 has a single **Brake Designer** dialog: open it in the Vehicle Editor (**Vehicle (F3)**) with **Vehicle › Brake Designer...**, choose the wheel with **Axle** and **Side**, and choose **Dual-Wedge (Air)** in the **Brake Design** list. The wheel selection, the **Material Properties** and **Lining Friction Properties** sections, the **Results** (Brake Factor, Actuation Factor, Torque Ratio, recomputed continuously) and the **Apply to Wheel** / **Apply to All Wheels** buttons are the same for every type and are described on the [Disk Brake Dialog Box](DiskBreakDlg.md) page. Lengths, areas and pressures are shown in the units set in Preferences; angles are in degrees.
+HVE has one Brake Designer dialog per brake type. HVE 2027 has a single **Brake Designer** dialog: open it in the Vehicle Editor (**Vehicle (F3)**) with **Vehicle › Brake Designer...**, choose the wheel with **Axle** and **Side**, and choose **Dual-Wedge (Air)** in the **Brake Design** list. The wheel selection, the **Lining Friction Properties** section, the **Results** (Brake Factor, Actuation Factor, Torque Ratio, recomputed continuously) and the **Apply to Wheel** / **Apply to All Wheels** buttons are the same for every type and are described on the [Disk Brake Dialog Box](DiskBreakDlg.md) page. Lengths, areas and pressures are shown in the units set in Preferences; angles are in degrees.
 
 The **Dual-Wedge (Air)** design parameters are:
 
@@ -21,20 +21,11 @@ Included angle of the wedge actuating the primary and the secondary shoe.
 **Drum Diameter**
 Inside diameter of the brake drum.
 
-**Drum Lining Width**
-Width of the lining material (and drum friction surface).
-
-**Drum Thickness**
-Thickness of the drum wall (used for calculating the thermal mass of the drum).
-
 **Pri / Sec Lining Arc Length (Alpha0)**
 Length of the lining material along the arc of contact with the drum, entered as an angle.
 
 **Pri Lining Beta**, **Sec Lining Beta**
 Angle locating each lining relative to the shoe abutment. (HVE's dual wedge dialog enters *Lining Alph 1* instead.)
-
-**Lining Thickness Pri**, **Lining Thickness Sec**
-Thickness of the lining material.
 
 **Abutment Distance**, **Abutment Width**
 Distance from the brake center to the shoe abutment, and width of the shoe abutment. One value each, for both shoes.
@@ -49,6 +40,7 @@ Fraction of the actuation force actually delivered to the shoes after mechanical
 Pressure required to overcome force associated with return springs and begin developing brake torque.
 
 !!! warning "Not in HVE 2027"
+    - **Drum Lining Width**, **Drum Thickness**, **Lining Thickness** and the **Material ...** dialog (see [Brake Designer Material Properties](BrkMatPropDlg.md)): no engine reads them and the Brake Designer's results do not use them.
     - **Maximum Stroke**, **Stroke @ 2ndary Defl**, **2ndary Defl. Factor** and **Expansion Coef**: HVE 2027 shows its *Stroke Factor* section (2nd Deflection Factor, Stroke at 2nd Deflection, Maximum Stroke, Thermal Expansion Coef) for the S-Cam, Single-Wedge and Air Disc designs, but not for the Dual-Wedge design.
     - A separate mechanical efficiency for each shoe.
     - The schematic preview drawing.

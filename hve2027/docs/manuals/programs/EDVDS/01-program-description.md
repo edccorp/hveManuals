@@ -52,14 +52,14 @@ The procedure for using EDVDS is substantially the same as using any simulator:
 - Use the Playback Editor to view the various reports and trajectory simulations. If desired, produce a video output of the simulation.
 
 !!! note "HVE 2027"
-    The editors are the four tabs under the menu bar: **Vehicle (F3)**, **Environment (F4)** and **Event (F5)** (the **Human (F2)** editor is not used by EDVDS).
+    The editors are the tabs under the menu bar: **Vehicle (F3)**, **Environment (F4)** and **Event (F5)** (the **Human (F2)** editor is not used by EDVDS).
 
     - **Vehicles:** in the Vehicle editor, **Add…** on the **Vehicles** panel opens the vehicle database; HVE's Generic vehicles (including Trailer and Dolly types) are offered by type and class.
     - **Event:** in the Event editor, the **Event Information** panel holds the event list (**+** adds an event), the **Calculation Method**, the **Vehicles in Event** slots (**Add Vehicle**; the slot order V1, V2, … is the train order) and each vehicle's initial conditions.
     - **Driver controls** are on **Event › Driver Controls…** (Ctrl+D).
     - **Payloads:** **Event › Payload…** is not available for EDVDS events in this version. A payload stored in an imported HVE case is used by the run.
     - **Executing:** **Run** on the playback bar under the viewport, or **Output › Run Simulation…** (Ctrl+R).
-    - **Results:** there is no Playback Editor. The solved event plays back in the same viewport, and the reports are on the **Output** menu (see [Chapter 3](03-program-output.md)). **File › Record Animation…** writes a video.
+    - **Results:** the solved event plays back in the Event editor's own viewport, and the reports are on its **Output** menu (see [Chapter 3](03-program-output.md)); the **Playback (F6)** editor plays several events in sequence. **File › Record Animation…** writes a video.
 
 <!-- NAV -->
 

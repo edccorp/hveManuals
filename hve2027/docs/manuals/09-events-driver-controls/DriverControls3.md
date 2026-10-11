@@ -43,9 +43,9 @@ A note beside the method says what the values mean.
 
 See [Driver Controls](DriverControls.md#editing-a-table) for editing tables.
 
-**ABS Active** is shown greyed: no engine has a per-event ABS switch. Anti-lock
-is set per wheel in Brake Assembly and tuned in the ABS / Brake Design dialog
-(Vehicle menu).
+Anti-lock is set on the vehicle, per wheel in Brake Assembly and in the ABS /
+Brake Design dialog (Vehicle menu); the **Brake** tab of **Event › Wheels...**
+can force it on or off for one event.
 
 !!! warning "Not in HVE 2027"
     HVE's **Copy Cell** and **Copy Row** buttons.

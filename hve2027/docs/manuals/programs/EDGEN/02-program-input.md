@@ -182,8 +182,8 @@ To create an EDGEN event:
     *EDGEN complete*, with a note that only the main segment is driven. A
     human event that states no path is reported rather than run.
 
-    To build one: add a human whose **Location** is *Pedestrian* and seed its
-    body (**Seed GEBOD Body** in the Occupants panel), add an EDGEN event,
+    To build one: add a human whose **Location** is *Pedestrian* (**Add
+    Occupant** in the Occupants panel generates its body), add an EDGEN event,
     leave **Vehicles in Event** empty, and under **Humans in Event** click
     **Add Human**. The human's path is entered below it, in the Event
     Information panel (see *Entering a human's path* below). A human event
@@ -224,18 +224,22 @@ Position/Velocity data used by EDGEN are shown in Table 2-1.
       Information panel, or **Event › Position / Velocity...**. The
       vehicle can also be dragged in the viewport.
     - **Positions 2 to 8** are the waypoints in **Event › Path Follower**,
-      on the **Path** tab: one row per position with **X**, **Y**, **Yaw**
-      and **Speed**, in order (the **#** column numbers them 2 to 8). Tick
+      on the **Path** tab: one row per position with **X**, **Y**, **Z**,
+      **Yaw**, **Roll**, **Pitch**, **Speed** and **Slip**, in order (the
+      **#** column numbers them 2 to 8). Tick
       **Use** on each row you need; unticked rows are skipped. Waypoints
       can also be placed by clicking the ground in the viewport (**Add points
       by clicking the 3-D viewport**). The table is editable when **Use Path
       Follower** is ticked; EDGEN uses the waypoints either way and does not
       run the path-follower driver model, so the other tabs of that dialog
       do not apply.
-    - Every waypoint carries the elevation (Z), roll and pitch of the initial
-      position, and its speed is a forward speed: a waypoint has no sideslip,
-      vertical velocity or angular velocity of its own. A path that climbs,
-      or whose vehicle is sliding sideways at a position, cannot be stated.
+    - Each waypoint has its own elevation (**Z**), **Roll** and **Pitch**; a
+      row that states none takes the initial position's, and with Auto
+      Position on they are the vehicle settled on the ground at that point.
+      **Slip** is the sideslip at the waypoint, which EDGEN adds to the yaw
+      under *3-D Spline Interpolation* only (the column is greyed otherwise).
+      The speed is a forward speed: a waypoint has no vertical velocity or
+      angular velocity of its own.
     - Every position needs a speed. A speed of zero at the last position
       (coming to rest) is allowed.
 
@@ -302,7 +306,7 @@ The Simulation parameters used by EDGEN are shown in Table 2-2.
 
 | Parameter | Description |
 |---|---|
-| Human Integration Timestep | The calculation timestep used for events involving a human. *(HVE 2027 has no control for it: it uses the value stored in a case opened from HVE, or the Output Timestep if there is none.)* |
+| Human Integration Timestep | The calculation timestep used for events involving a human. *(HVE 2027: **Human Collision Timestep (s)** in the Simulation panel, shown for EDGEN and EDHIS events; 0 uses the Output Timestep.)* |
 | Vehicle Integration Timestep | The calculation timestep used for events involving a vehicle |
 | Output Interval | The timestep used to send output results back to HVE |
 | Maximum Simulation Time | Maximum length of the run |
@@ -323,10 +327,9 @@ For dialog details, see [Calculation Options for EDGEN](../../10-calculation-opt
     **Method Options...** in the Event Information panel, under
     **Interpolation Method**: **Linear Interpolation** or **3D Spline
     Interpolation**. The choice is passed to the engine and is read from a
-    case opened from HVE. For a vehicle it changes the path. For a human
-    subject it makes no difference in HVE 2027: on the human path the only
-    term the spline model changes is the sideslip offset (Chapter 4), and
-    the imported human path positions carry no sideslip angle.
+    case opened from HVE. It changes the path of a vehicle and of a human
+    alike, and under 3D Spline Interpolation each position's sideslip is
+    also added to its yaw (Chapter 4).
 
 ![Figure 2-5](images/hvn-edgen-options.png)
 

@@ -24,7 +24,7 @@ In Event mode (the **Event (F5)** tab), the following components take the place 
 - **Viewport** — displays the current event's motion, from any of its Top, Front, Side or 3D views, or as a **Momentum** diagram. It replaces HVE's Trajectory Simulation report windows.
 - **Playback bar** — along the bottom of the Viewport: it plays the results forward, steps through them and jumps to any time. It replaces the Playback Controller.
 - **Output panels** — the Key Results, Output Graph and Timestep Data panels, which dock beside the Viewport like any other panel; they replace HVE's Report Windows.
-- **Output menu** — opens the output panels and reports, the Playback Options and the Playback Sequence.
+- **Output menu** — opens the output panels and reports and the Playback Options. (The Playback Sequence is on the **Playback** menu, in Playback mode.)
 
 ![Figure 17-1](../images/hvn-07-solved-event.png)
 *Figure 17-1: A solved event played back in the HVE 2027 Viewport, 1.2 s into the run (CityBlockAccident-tbone, SIMON).*
@@ -48,7 +48,7 @@ HVE displays the results of each event in Report Windows of several kinds. In HV
     - **Output › Key Results...** shows the important results for each vehicle — for example impact and separation speeds, delta-V, PDOF, energy, and the final position, heading change and peak accelerations.
     - **View › Results HUD** draws chosen numbers — time, and each vehicle's speed, heading, Delta-V or any output channel — in boxes over the Viewport itself as the event plays, and into recorded videos (see [Results HUD](../../new-features/11-results-hud.md)).
 - **Graphic output**:
-    - **Damage** — the crushed vehicles are shown in the Viewport. **Output › Damage Studio Report...** gives a table of delta-V, damage energy, crush and PDOF per vehicle from the last run (see the note below).
+    - **Damage** — the crushed vehicles are shown in the Viewport. **Output › Damage Studio Report...** gives a table, per vehicle, of the key results chosen in **Output › Damage Studio Options...** (by default impact velocity, delta-V, PDOF, separation velocity and damage energy) and the **Max Crush** the program recorded on the vehicle's mesh (see the note below).
     - **Momentum Diagram** — the Viewport's **Momentum** view.
     - **Site Drawing** — the Viewport's **Top** view shows the vehicles at their positions; for EDCRASH, the surveyed scene positions are drawn as ghosts.
 - **Variable output** — the output tracks (see [Chapter 16](../06-event-editor/16-event-model-definition.md)):
@@ -59,15 +59,15 @@ HVE displays the results of each event in Report Windows of several kinds. In HV
     - **Output › Export Variables...** writes the selected channels of the event on screen to a file (CSV, tab-separated text or MATLAB), at a chosen interval and in SAE or Traditional signs.
 - **Trajectory simulation** — the Viewport itself.
 
-> **NOTE:** The Damage Studio Report's *Crush* column is an estimate
-> calculated from the delta-V and the B stiffness, not a crush depth
-> produced by the program. Read crush from the program's own report pages
-> (HVE Reports) or from the Viewport.
+> **NOTE:** The Damage Studio Report's *Max Crush* column is the largest
+> vertex displacement the program recorded on the vehicle's mesh; it shows
+> -- where the program recorded none.
 
 !!! warning "Not in HVE 2027"
-    **Output › Damage Studio Options...** (PDOF display, crush display, key
-    results to list) can be set, but nothing in this version uses the
-    settings.
+    **Output › Damage Studio Options...** chooses only the key results
+    listed in the Damage Studio Report. HVE's PDOF and crush vector display
+    settings are not available: Damage Studio does not draw a PDOF arrow or
+    crush vectors.
 
 !!! note "HVE 2027"
     HVE's Driver Data and Injury Data reports are not separate items: the
@@ -107,7 +107,7 @@ The playback bar along the bottom of the Viewport, in Event mode, replaces HVE's
 - **Speed** — the playback rate (0.1× to 10× real time).
 - **Frame Step** — how many output steps the step buttons move.
 - **Loop** — restart from the beginning at the end.
-- **CG Path** — draw each vehicle's CG path up to the current time (also on the View menu).
+- **CG Path** — draw each vehicle's CG path up to the current time (also in View › Scene Display).
 
 ![Figure 17-7](../images/hvn-07-playback-options.png)
 *Figure 17-7: Playback Options.*

@@ -53,7 +53,7 @@ sections are:
   tire (see [Chapter 13](../05-environment-editor/13-environment-model-definition.md)).
 - **Vehicles in Event** — the vehicles in the event, one per slot.
 - **Humans in Event** — the humans in the event (shown for the occupant
-  methods, EDHIS and GATB, and for SIMON).
+  methods, EDHIS and GATB, and for SIMON and EDGEN).
 - **Vehicle Initial Conditions** (simulations) or **Vehicle Impact Setup**
   (EDCRASH) — each vehicle's starting state or scene data.
 - **Lighting** — a summary of the sun and sky, with a button to edit them.
@@ -194,8 +194,9 @@ perform the following steps:
 *Figure 15-5: Event Information panel.*
 
 !!! note "HVE 2027"
-    There is no OK button and no licensing: every method HVE 2027 has an
-    engine for can be chosen, and a change takes effect at once.
+    There is no OK button: every method HVE 2027 has an engine for can be
+    chosen, and a change takes effect at once. Running the event needs a
+    license that covers its method (Help › License...).
 
 ### Event Verify
 
@@ -241,19 +242,19 @@ To set up the event, perform the following steps:
    | Event menu item | Available for |
    |---|---|
    | Event Information... | all methods |
-   | Position / Velocity... (Ctrl+P) | methods that start from initial conditions (all but EDCRASH) |
+   | Position / Velocity... (Ctrl+P) | methods that start from initial conditions (all but EDCRASH and READDATAFILE) |
    | Driver Controls... (Ctrl+D) | simulations with driver controls, and EDCRASH (its Wheel Data page) |
-   | Damage Profiles... (Ctrl+M) | EDCRASH, EDSMAC, EDSMAC4 and SIMON |
+   | Damage Profiles... (Ctrl+M) | EDCRASH |
    | Collision Pulse... (Ctrl+U) | EDCRASH, SIMON, EDHIS and GATB |
    | Vehicle Mesh... | all methods |
    | DyMESH Options... | all methods (read by SIMON) |
    | Path Follower... | all methods |
    | Payload... | SIMON, EDSMAC4, EDSVS, EDVDS and EDVTS |
+   | Lights... | SIMON and EDSMAC4 |
    | Wheels... (Ctrl+W) | simulations with driver controls |
    | Accelerometers... | SIMON, EDSMAC4, EDVDS and EDVSM |
-   | Contacts... (Ctrl+T) | EDSMAC4 |
-   | Restraints › Airbag Restraint..., Belt Restraint... | EDHIS and GATB |
-   | Signals | EDGEN |
+   | Contacts... (Ctrl+T) | EDSMAC4 (vehicle contacts), EDHIS and GATB (occupant contacts) |
+   | Restraints... › Airbags..., Belt Restraint... | EDHIS and GATB |
    | Notes | all methods |
    | Crush Profile... | EDCRASH, EDSMAC, EDSMAC4 |
    | Handling Parameters..., Move CG... | EDSMAC, EDSMAC4 |

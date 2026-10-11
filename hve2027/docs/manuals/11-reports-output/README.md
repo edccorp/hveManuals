@@ -5,9 +5,10 @@ solved event, and the collision pulse and damage data entered for one. Part of
 the [HVE Manual](../README.md).
 
 !!! note "HVE 2027"
-    HVE 2027 has no separate Playback Editor and no report-preview dialog. A
-    solved event plays back in the same 3-D viewport (playback bar under it),
-    and its reports, tables and graphs are opened from the **Output** menu,
+    HVE 2027 has no report-preview dialog, and a single solved event needs no
+    separate Playback Editor: it plays back in the Event editor's 3-D viewport
+    (playback bar under it), and its reports, tables and graphs are opened
+    from the **Output** menu,
     which appears in the menu bar in the Event editor (F5):
 
     | Output menu item | Opens |

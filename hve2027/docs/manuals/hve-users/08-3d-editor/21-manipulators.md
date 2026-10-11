@@ -63,8 +63,8 @@ The seven HVE manipulators and their HVE 2027 counterparts:
 | TransformBox | Translate, rotate and scale | Not available (no scaling) |
 | TabBox | Scale by tabs on the faces | Not available |
 
-!!! warning "Not in HVE 2027"
-    Environment objects cannot be moved, rotated or scaled in the view. Imported geometry is placed by its file (and the **Scale Factor** and axis options under **Scene Geometry**); scene boxes by the fields of the Scene Box Editor.
+!!! note "HVE 2027"
+    In the Environment Editor, **G** and **R** move and turn the whole **site**, or the selected **surface**, with the same axis keys and typed numbers; the Environment panel's **Site Placement** fields and the selected surface's **Placement** fields hold the numbers. The solver drives on the moved ground. A surface turns about its own centre and the site about its centre. On a site taken from an HVE case the road moves only with the whole site; its scenery moves on its own. Nothing is scaled in the view: imported geometry takes its scale and up axis from **Scene Geometry**, and scene boxes are placed by the fields of the Scene Box Editor.
 
 ## Cameras
 

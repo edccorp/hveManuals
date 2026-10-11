@@ -2421,7 +2421,7 @@ attempt to request it is rejected with a fatal error, so the event will not run.
 > model. Selecting both produces a fatal error and the event will not run.
 
 !!! note "HVE 2027"
-    HVE 2027 offers Blythe-Day, marked "(refuses the run)", so that a case stating it is shown as it is: the run stops at setup with stop code −5520. In HVE 2027 the water polygons are generated from the environment's **Water Depth** (Environment › Physical › Standing Water) rather than from environment objects of type Water. See [Chapter 2, Event Calculation Options](02-program-input.md#event-calculation-options).
+    HVE 2027 offers Blythe-Day, marked "(refuses the run)", so that a case stating it is shown as it is: the run stops at setup with stop code −5520. In HVE 2027 the water polygons are generated from each surface's **Water Depth** (the surface's HVE Surface node in the Shader Editor, or the **Default surface material** in Environment › Environment... › Terrain for ground with no surface of its own) rather than from environment objects of type Water. See [Chapter 2, Event Calculation Options](02-program-input.md#event-calculation-options).
 
 ### Required input data
 

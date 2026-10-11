@@ -9,8 +9,11 @@ The **Gear** tab of the [Driver Controls](DriverControls.md) dialog
 
 ## Gear table
 
-A table of *Time (s) → Gear*, one row per gear selection. The gear is entered as
-a number:
+A table of *Time (s) → Gear*, one row per gear selection. Each row's gear is
+chosen from the gears of the vehicle's transmission: **Neutral**, **Reverse**,
+then **1st**, **2nd**, … up to its number of forward gears. A stored gear the
+transmission does not have is shown as *(not in this transmission)*. The gears
+are numbered:
 
 | Value | Selection |
 |---|---|
@@ -20,8 +23,8 @@ a number:
 | 3 | 2nd gear |
 | ... | and so on |
 
-**Add** appends a row one second after the last (in 1st gear); **X** deletes a
-row (the last row cannot be deleted). Up to 32 rows.
+**Add** appends a row one second after the last, in the last row's gear (first gear on an empty table); choose its gear in the row.
+**X** deletes a row (the last row cannot be deleted). Up to 32 rows.
 
 ## Differential
 
@@ -38,9 +41,9 @@ A schedule whose first row is after 0 s leaves the differential ratio at
 schedule.
 
 !!! note "HVE 2027"
-    HVE 2027 shows the gear as a number rather than HVE's *Shift into ...*
-    names, and does not check the entry against the vehicle's transmission
-    type or number of gears. Rows are not sorted or checked for duplicate times
+    HVE 2027 names the gears *Neutral*, *Reverse*, *1st*, … rather than HVE's
+    *Shift into ...*, and offers numbered forward gears whatever the
+    transmission type. Rows are not sorted or checked for duplicate times
     automatically.
 
 !!! warning "Not in HVE 2027"

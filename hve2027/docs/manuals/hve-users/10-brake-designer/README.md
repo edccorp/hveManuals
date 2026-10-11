@@ -25,9 +25,7 @@ modeling tools. The results are useful for matching measured dynamometer
 data, extending existing designs, providing parametric comparisons and
 estimating the behavior of a proposed design.
 
-## General Procedure
-
-To use the HVE Brake Desi!!! warning "Not in HVE 2027"
+!!! warning "Not in HVE 2027"
     In HVE 2027 the Brake Designer is a design-time calculator: it computes a wheel's brake torque ratio and pushout pressure from the brake's geometry and lining friction, and writes them into the Brake Assembly. During a simulation every wheel brake runs as HVE's Generic brake (a constant torque ratio), and the brake temperature model does not run, so **brake fade is not simulated**. The ABS model runs as in HVE. See [Chapter 29](29-brake-designer.md) and [Chapter 30](30-brake-temperature.md).
 
 ## General Procedure
@@ -37,7 +35,7 @@ To use the Brake Designer in HVE 2027, perform the following steps:
 1. Select the **Vehicle (F3)** editor.
 2. Select the vehicle (in the vehicle list, or with the vehicle selector at the top of each brake dialog).
 3. Choose **Vehicle › Brake System Pressure…** and confirm or edit the **Pedal Ratio** and the pressure vs pedal force curve.
-4. If the vehicle is fitted with ABS, choose **Vehicle › Brake Assembly…** and tick **Antilock (ABS)** for the wheels that have it. Choose **Vehicle › ABS / Brake Design…** to edit the ABS System and ABS Designer (wheel) properties.
+4. If the vehicle is fitted with ABS, choose **Vehicle › ABS / Brake Design…**, press **ABS System…** and tick **ABS Installed**, then edit the ABS System and ABS Designer (wheel) properties. Tick **Antilock (ABS)** in **Vehicle › Brake Assembly…** for the wheels that have it.
 5. Choose **Vehicle › Brake Designer…**, select the **Axle** and **Side**, and choose the **Brake Design** (e.g., Disc, Duo-Servo Drum, S-Cam).
 6. Edit the design parameters; the brake factor, actuation factor and torque ratio are recalculated as you type.
 7. Press **Apply to Wheel** (or **Apply to All Wheels**) to write the torque ratio and pushout pressure into the Brake Assembly.
@@ -46,9 +44,11 @@ To use the Brake Designer in HVE 2027, perform the following steps:
 10. Edit the design as required to obtain optimum braking performance.
 
 !!! note "HVE 2027"
-    The **System Type**, **Assembly Type** and **ABS Installed** settings in Brake System Pressure are recorded with the case but are not read by any engine. Which brake type each wheel has, and whether its ABS is on, are set per wheel in the Brake Assembly dialog.
+    **ABS Installed** is in **Vehicle › ABS / Brake Design… › ABS System…**, not in Brake System Pressure. SIMON reads it: SIMON regulates **every** wheel when ABS Installed, or any wheel's **Antilock (ABS)** box in Brake Assembly, is ticked. EDSVS and EDVTS read only the per-wheel boxes, and EDVDS has no ABS model. Brake System Pressure's **System Type** reaches SIMON's input report only, and the disc/drum choice is each wheel's **Brake Type** in Brake Assembly.
 
-vides a detailed explanation of the modeling techniques used
+## Overview of Section Eleven
+
+This section provides a detailed explanation of the modeling techniques used
 by the HVE Brake Designer, and also presents an overview of the Brake
 Designer's interface.
 

@@ -64,10 +64,11 @@ The Engine parameters are described below.
   difference, axle-to-axle difference, drive torque and brake pressure) and
   activation rates (drive torque change and brake pressure change). In
   HVE 2027 this is the **Electronic Stability (ESS)** section of the
-  Drivetrain dialog: TCS Enabled, YSC Enabled, ESP Enabled, Min Speed, Drive
+  Drivetrain dialog: TCS Enabled, YSC Enabled, Min Speed, Drive
   Torque Threshold, Axle Spin Diff, Drive Torque Rate, Yaw Vel Error, Spin
   Vel Error, Side Spin Diff, Brake Press Threshold and Brake Press Rate. SIMON's TCS runs only when the event's Driver Controls
-  use the Pedal input method.
+  use the Pedal input method. HVE's ESP switch is not offered: HVE 2027
+  models TCS and YSC only.
 
 **Table 11-26: Engine Parameters**
 
@@ -191,7 +192,6 @@ axle, so there is no Current Axle selector:
   **Toe Angle**, **Kingpin Offset** (see [Spindle
   Axis](11c-suspension.md#spindle-axis)).
 - **Column Friction**, **Column Inertia**, **Friction Lag (rad/s)**.
-- **Front Track**, **Rear Track**.
 
 Below the table, **Steer-Axis Mechanics (per wheel)** has a column per wheel
 of a steerable axle: Stub Axle Length, Kingpin Friction, Stop Angle Right and
@@ -258,19 +258,19 @@ Force). See also the reference page,
 
 To display or edit the current vehicle's brake master cylinder pressure
 ratio, choose **Vehicle › Brake System Pressure**. The dialog contains an
-**Axle** selector, **System Type** (Hydraulic, Air (Pneumatic)), **Assembly
-Type** (Disc, Drum) for the selected axle, **Pedal Ratio** (per vehicle; 0
-derives the slope from the curve below), **Pressure Ratio**, **ABS
-Installed**, and a table of pedal force against pressure with **Add Point**.
+**Axle** selector, **System Type** (Hydraulic, Air (Pneumatic)), **Pedal
+Ratio** (per vehicle; 0 derives the slope from the curve below), **Pressure
+Ratio**, and a table of pedal force against pressure with **Add Point**.
 
 !!! note "HVE 2027"
-    **System Type**, the axle's **Assembly Type** and
-    **ABS Installed** are recorded with the case and read by no simulation.
-    The disc/drum choice that reaches the simulation is the per-wheel Brake
-    Type in the Brake Assembly dialog, and whether antilock acts is decided
-    by the per-wheel Antilock flag and the ABS System block (see below). The
-    ABS System and ABS Designer are reached from **Vehicle › ABS / Brake
-    Design**.
+    The Brake System Pressure dialog has **System Type**, which reaches
+    SIMON's input report only, and no Assembly Type or ABS Installed. The
+    disc/drum choice is the per-wheel Brake Type in the Brake Assembly
+    dialog. **ABS Installed** is in **Vehicle › ABS / Brake Design › ABS
+    System**, with the ABS System data; the ABS Designer is reached from the
+    same menu item. SIMON regulates every wheel when ABS Installed, or any
+    wheel's Antilock box in Brake Assembly, is ticked. EDSVS and EDVTS use the
+    per-wheel boxes, and EDVDS has no ABS model.
 
 The Brake System parameters are described below.
 
@@ -304,15 +304,17 @@ The Brake System parameters are described below.
 
   !!! note "HVE 2027"
       **Vehicle › ABS / Brake Design** opens a window with **ABS System…**
-      and **ABS Designer…**. The ABS System dialog has the Algorithm,
-      Control Method, the thresholds (Min Pressure, Min Velocity), the
+      and **ABS Designer…**. The ABS System dialog has **ABS Installed**,
+      the Algorithm, Control Method, the thresholds (Min Pressure, Min
+      Velocity), the
       cycle rate, and the Delay Method with Apply and Release Delay. Of
       HVE's six algorithms, the engine implements Tire Slip, Bosch Version
       1 and Algorithm 4; Algorithms 3, 5 and 6 are offered, marked "not
       implemented", and stop the run with an error when ABS first acts.
       HVE's Low Friction Threshold and Control Source have no control. The
       ABS Designer is a table per wheel: Min Velocity, Slip Min and Max,
-      Spin Accel Min and Max, Cycle Rate, Apply Rate and Release Rate.
+      Spin Accel Min and Max, Cycle Rate, Apply Rate, Apply Rate,
+      Secondary (Algorithm 4) and Release Rate.
 
   > **NOTE:** Clicking this checkbox also enables the ABS Designer option
   > and the antilock options in the Wheel Brake Assembly dialog (see
@@ -340,8 +342,8 @@ the Brake Type option list and Edit Brake pushbutton — see
 (per-wheel ABS data) and from the Brake System dialog's ABS Edit pushbutton
 (system-level ABS data). In HVE 2027 it is **Vehicle › Brake Designer** (see
 [Part D](11d-brakes-tires-wheels.md#hve-brake-designer)), with the ABS data
-under **Vehicle › ABS / Brake Design** and the brake material under
-**Vehicle › Brake Material Props**. The individual Brake Designer dialogs
+under **Vehicle › ABS / Brake Design** (**Vehicle › Brake Material Props** is
+a material library no engine reads). The individual Brake Designer dialogs
 are documented in the HVE reference pages in
 [Brakes and Powertrain](../../04-brakes-powertrain/README.md):
 [Disc Brake](../../04-brakes-powertrain/DiskBreakDlg.md),

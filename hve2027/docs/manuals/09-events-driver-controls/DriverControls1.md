@@ -15,9 +15,10 @@ The path correction is accomplished by means of a steering correction. On the
 - **Initial Steer (deg)** — initial steering-wheel angle at driver start time.
 - **Max Steer Vel (deg/s)** — limit on steering-wheel velocity (how fast the
   driver can turn the wheel).
-- **Steer Correction** — amount of steering correction per unit of path error.
-- **Steer Damping** — steering correction damping, used to limit steering
-  activity.
+- **Steering Correction Rate (deg/s)** — amount of steering correction per
+  unit of path error.
+- **Steering Correction Damping (deg)** — steering correction damping, used to
+  limit steering activity.
 
 ## Variable Torque
 
@@ -26,12 +27,13 @@ steering wheel. On the **Steering** tab:
 
 - **Initial Torque** — initial steering-wheel torque at driver start time.
 - **Max Steer Torque** — limit on steering-wheel torque.
-- **Torque Correction** — amount of steering torque correction per unit of path
-  error.
-- **Torque Damping** — torque correction damping, used to limit steering
-  activity.
+- **Torque Correction (in-lb/in)** — amount of steering torque correction per
+  unit of path error.
+- **Torque Damping (in-lb-sec/in)** — torque correction damping, used to limit
+  steering activity.
 
-Torques are shown in the units set in Preferences.
+Initial Torque and Max Steer Torque are shown in the units set in Preferences;
+the correction and damping are in the units their labels state.
 
 !!! note "HVE 2027"
     **Variable Torque** can be selected in HVE 2027 (HVE disabled it). Its

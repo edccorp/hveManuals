@@ -1,11 +1,12 @@
 # Cameras
 
 !!! tip "New in HVE 2027"
-    HVE 2027 keeps any number of named cameras in the case (up to 16), each of
-    which can stand still, follow or chase a vehicle, ride on one, or be
-    animated with keyframes. A camera is set up the way a Blender camera is —
-    the same lens, sensor and display settings — and travels to Blender and
-    glTF.
+    HVE saves named camera views, which can ride on a vehicle and be aimed at
+    one. HVE 2027 keeps up to 16 named cameras in the case, each of which can
+    stand still, follow or chase a vehicle, or ride on one, and adds what HVE
+    does not have: cameras animated with keyframes, set up the way a Blender
+    camera is — the same lens, sensor and display settings — and carried to
+    Blender and glTF.
 
 !!! warning "Display only"
     No engine reads a camera. Adding, moving or keying one never invalidates a

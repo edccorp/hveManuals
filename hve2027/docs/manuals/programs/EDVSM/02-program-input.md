@@ -196,7 +196,7 @@ The *In-use Factor* is a convenient way to reduce or increase the dependent fric
 The Cornering Stiffness data used by EDVSM are shown in Table 2-3. EDVSM does not use the $F_y$ vs Slip Angle table, but instead uses the cornering stiffness parameter directly. EDVSM requires that cornering stiffness data are provided for at least two loads and two speeds. Like the Friction Data described above, if fewer values are supplied, EDVSM will generate the additional required parameters.
 
 !!! note "HVE 2027"
-    EDVSM fits its cornering-stiffness (and camber-stiffness) curve to **three** test loads, and gives a meaningless, sometimes negative, stiffness when the table has fewer. Vehicles from HVE's databases always carry three load rows. When a tire in HVE 2027 states fewer (for example a single cornering stiffness typed in **Vehicle › Tire Data**), HVE 2027 expands it to three load rows about the vehicle's own nominal wheel load before the run, keeping the entered value at that load, and says so in the run status ("cornering/camber tables seeded to 3 load rows for EDVSM"). A vehicle with no usable mass cannot be expanded, and the event is refused with a message saying so.
+    EDVSM fits its cornering-stiffness (and camber-stiffness) curve to **three** test loads, and gives a meaningless, sometimes negative, stiffness when the table has fewer. Vehicles from HVE's databases always carry three load rows. When a tire in HVE 2027 states fewer (for example a single cornering stiffness typed in **Vehicle › Tire Data (Detailed)…**), HVE 2027 expands it to three load rows about the vehicle's own nominal wheel load before the run, keeping the entered value at that load, and says so in the run status ("cornering/camber tables seeded to 3 load rows for EDVSM"). A vehicle with no usable mass cannot be expanded, and the event is refused with a message saying so.
 
 The *In-use Factor* is a convenient way to reduce or increase the dependent cornering stiffness values for all speeds and loads by making just one adjustment.
 
@@ -338,7 +338,7 @@ EDVSM uses the environment created in the Environment editor (see Figure 2-2). T
 A case in HVE 2027 always has one environment; you edit it rather than add it. To set it up:
 
 1. Choose the **Environment** editor (the **Environment (F4)** tab under the menu bar).
-2. Open **Environment › Environment…**. The Environment window has the sections *Location*, *Terrain*, *Sky*, *Physical* and *Signals*.
+2. Open **Environment › Environment…**. The Environment window has the sections *Location*, *Terrain*, *Sky*, *Physical* and *Friction Zones*.
 3. Under *Location*, set the latitude, longitude, date and time of the event.
 4. Under *Terrain*, load the 3-D surface geometry (HVE `.h3d` files, DXF sites, `.iv`, OBJ and glTF are read).
 5. Under *Physical*, set the temperature, barometric pressure, wind and gravity constant.
@@ -621,7 +621,7 @@ To execute an EDVSM event, use the playback bar under the viewport (Figure 2-5).
 
 > **NOTE:** A solved event's inputs are locked while its results are on screen. Press **Reset** to edit them; the event must then be run again.
 
-> **NOTE:** Use the **View** menu to choose useful displays, such as Key Results, Skidmarks, Vectors and the CG path.
+> **NOTE:** Use the **View** menu to choose useful displays: Key Results, and in **View › Scene Display**, Skidmarks, Vectors and the CG Path.
 
 <!-- NAV -->
 

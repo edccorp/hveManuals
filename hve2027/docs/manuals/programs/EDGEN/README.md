@@ -23,16 +23,17 @@ messages are the ones this manual describes. The program around it differs:
   Path Follower**, **Path** tab. See [Chapter 2](02-program-input.md).
 - **A human subject.** An EDGEN event that selects one human and no vehicle
   moves that pedestrian along its path, as HVE's tutorial does with the
-  child. HVE 2027 reads the human's path from an HVE case; it has no editor
-  for a human's path yet, so such an event has to come from an HVE case.
+  child. The human's path is entered under the human in the Event
+  Information panel's **Humans in Event** section, and is read from an HVE
+  case.
 - **Path Model.** Linear or 3-D Spline Interpolation, under **Method
   Options...**, is passed to the engine.
 - **Running and reviewing.** **Run** on the playback bar executes the event
   and the viewport plays it back. Results are in **Key Results**, **Output ›
   Output Graph** and **Output › Timestep Data Table**; HVE's own report pages
   (Accident History, Messages, Program Data) are in **Output › HVE
-  Reports**. Several events are combined with **Output › Playback
-  Sequence**. There is no Playback Editor. See [Chapter 3](03-program-output.md).
+  Reports**. Several events are combined in the **Playback** editor (F6),
+  **Playback › Playback Sequence...**. See [Chapter 3](03-program-output.md).
 - **Opening HVE cases.** **File › Open Case** reads HVE's `.hve` files,
   including EDGEN events for a vehicle or a human.
 - **Validation status.** On HVE's EDGEN tutorial case every event reproduces

@@ -37,7 +37,7 @@ braking capacity of heavy trucks on long downhill grades.
 !!! warning "Not in HVE 2027"
     In HVE 2027 the Brake Designer is a **design-time calculator**. It evaluates the equations of this chapter at the design condition — lining at 20 °C ambient and zero sliding speed — and **Apply** writes the resulting **brake torque ratio** and **pushout pressure** into the wheel's Brake Assembly. During a simulation every wheel brake runs as HVE's **Generic** brake: a constant torque ratio times (line pressure − pushout pressure). The brake factor is not re-evaluated at the simulated lining temperature and sliding speed, the actuation factor does not change with stroke, and the brake temperature model does not run ([Chapter 30](30-brake-temperature.md)). **Brake fade is therefore not simulated.**
 
-    The reason is the engine's own recompute path: it needs shoe-geometry terms and lining-friction tables that HVE 2027 does not collect, and with them missing a run fails rather than producing a smaller torque. The S-Cam and Disc design tables reached from the Brake Assembly dialog say the same ("Reaches no engine") and keep their values only as a record of the hardware.
+    The reason is the engine's own recompute path: it needs shoe-geometry terms and lining-friction tables that HVE 2027 does not collect, and with them missing a run fails rather than producing a smaller torque. The Brake Designer's **Disc data slots** / **Drum data slots** section says the same ("reach no engine output") and keeps its values only as a record of the hardware.
 
 ![Figure 29-1](../images/hvn-10-brake-assembly.png)
 *Figure 29-1 — Vehicle › Brake Assembly. One column per wheel (A1 Right, A1 Left, …); the Torque Ratio and Pushout rows are what the simulation uses.*
@@ -46,7 +46,7 @@ To use the Brake Designer in HVE 2027, perform the following steps:
 
 1. Select the **Vehicle (F3)** editor and the vehicle (the vehicle selector at the top of each brake dialog).
 2. Choose **Vehicle › Brake Designer…**. Under **Wheel**, choose the **Axle** and **Side** (Right is listed first, as in the Brake Assembly table).
-3. Choose the **Brake Design**: Generic (torque ratio), Disc, Duo-Servo Drum, Duplex Drum, Single-Piston Drum, Dual-Piston Drum, S-Cam (Air Drum), Single-Wedge (Air), Dual-Wedge (Air) or Air Disc. The **Design Parameters** for that type are displayed (see the sections for each type, below), with collapsible **Material Properties** and **Lining Friction Properties** sections for every type except Generic.
+3. Choose the **Brake Design**: Generic (torque ratio), Disc, Duo-Servo Drum, Duplex Drum, Single-Piston Drum, Dual-Piston Drum, S-Cam (Air Drum), Single-Wedge (Air), Dual-Wedge (Air) or Air Disc. The **Design Parameters** for that type are displayed (see the sections for each type, below), with a collapsible **Lining Friction Properties** section for every type except Generic.
 4. Edit the parameters. The **Results** — Brake Factor, Actuation Factor and Torque Ratio — are recalculated as you type.
 5. Press **Apply to Wheel** to write the torque ratio and pushout pressure (and the matching brake type) into the selected wheel's Brake Assembly, or **Apply to All Wheels** to copy the design to every wheel and apply it to each.
 
@@ -54,9 +54,9 @@ To use the Brake Designer in HVE 2027, perform the following steps:
 *Figure 29-2 — The HVE 2027 Brake Designer for an S-cam brake.*
 
 !!! note "HVE 2027"
-    The calculated brake factor and torque ratio are based on a lining temperature of 20 °C and zero sliding velocity, not on the environment's ambient temperature. The Brake Designer can be used on up to three axles. There is no schematic preview drawing.
+    The calculated brake factor and torque ratio are based on a lining temperature of 20 °C and zero sliding velocity, not on the environment's ambient temperature. The Brake Designer can be used on every axle of the vehicle. There is no schematic preview drawing.
 
-> **NOTE:** The Brake Assembly's **Torque Ratio** stays editable after a design has been applied, and the value there is the one the simulation uses. Editing it directly, or choosing **Generic (torque ratio)** in the Brake Designer, is the way to enter a measured torque ratio.
+> **NOTE:** The Brake Assembly's **Torque Ratio** is the value the simulation uses. For a wheel with a design it is computed from the design and shown read-only; setting the wheel's **Brake Type** to **Generic** (or choosing **Generic (torque ratio)** in the Brake Designer) is the way to enter a measured torque ratio.
 
 ## Brake Torque
 
@@ -518,7 +518,7 @@ $AF$, is calculated using equation 29-8. *(The original text cited equations
 The HVE Brake Designer dialog for disc brakes is described below.
 
 !!! note "HVE 2027"
-    In HVE 2027, choose this type in **Brake Design**. Its design parameters are **Number of Pistons** (1–4), **Piston Diameter**, **Rotor Outer Diameter**, **Rotor Inner Diameter**, **Rotor Thickness**, **Inner Pad Thickness**, **Outer Pad Thickness**, **Mechanical Efficiency** and **Pushout Pressure**, followed by the **Material Properties** and **Lining Friction Properties** sections.
+    In HVE 2027, choose this type in **Brake Design**. Its design parameters are **Number of Pistons** (1–4), **Piston Diameter**, **Rotor Outer Diameter**, **Rotor Inner Diameter**, **Mechanical Efficiency** and **Pushout Pressure**, followed by the **Lining Friction Properties** section.
 
 The lining friction and material attributes are selectable from the dialog's
 pushbuttons. The lining friction attributes are shown earlier in this
@@ -561,7 +561,7 @@ $$BrakeTorque = BF \times TR \times AF$$
 The HVE Brake Designer dialog for duo-servo brakes is described below.
 
 !!! note "HVE 2027"
-    In HVE 2027, choose this type in **Brake Design**. Its design parameters are **Wheel Cyl. Piston Dia**, **Wheel Cylinder Distance**, **Drum Diameter**, **Drum Lining Width**, **Drum Thickness**, **Pri Lining Arc Length (Alpha0)**, **Pri Lining Beta**, **Sec Lining Arc Length (Alpha0)**, **Sec Lining Alpha1**, **Lining Thickness Pri** and **Sec**, **Shoe Pin Radius**, **Shoe Block Length**, **Abutment Distance**, **Abutment Width**, **Pri Abutment Angle**, **Pri Abutment Friction**, **Mechanical Efficiency** and **Pushout Pressure**, followed by the **Material Properties** and **Lining Friction Properties** sections.
+    In HVE 2027, choose this type in **Brake Design**. Its design parameters are **Wheel Cyl. Piston Dia**, **Wheel Cylinder Distance**, **Drum Diameter**, **Pri Lining Arc Length (Alpha0)**, **Pri Lining Beta**, **Sec Lining Arc Length (Alpha0)**, **Sec Lining Alpha1**, **Shoe Pin Radius**, **Shoe Block Length**, **Abutment Distance**, **Abutment Width**, **Pri Abutment Angle**, **Pri Abutment Friction**, **Mechanical Efficiency** and **Pushout Pressure**, followed by the **Lining Friction Properties** section.
 
 See also the detailed dialog reference:
 [Duo-Servo Drum Brake dialog](../../04-brakes-powertrain/DueServoBrkDlg.md).
@@ -590,7 +590,7 @@ $$BrakeTorque = BF \times TR \times AF$$
 The HVE Brake Designer dialog for duplex drum brakes is described below.
 
 !!! note "HVE 2027"
-    In HVE 2027, choose this type in **Brake Design**. Its design parameters are **Wheel Cyl. Piston Dia**, **Wheel Cylinder Distance**, **Drum Diameter**, **Drum Lining Width**, **Drum Thickness**, **Pri Lining Arc Length (Alpha0)**, **Pri Lining Beta**, **Sec Lining Arc Length (Alpha0)**, **Sec Lining Beta**, **Lining Thickness Pri** and **Sec**, **Abutment Distance**, **Abutment Width**, **Pri** and **Sec Abutment Angle**, **Pri** and **Sec Abutment Friction**, **Mechanical Efficiency** and **Pushout Pressure**, followed by the **Material Properties** and **Lining Friction Properties** sections.
+    In HVE 2027, choose this type in **Brake Design**. Its design parameters are **Wheel Cyl. Piston Dia**, **Wheel Cylinder Distance**, **Drum Diameter**, **Pri Lining Arc Length (Alpha0)**, **Pri Lining Beta**, **Sec Lining Arc Length (Alpha0)**, **Sec Lining Beta**, **Abutment Distance**, **Abutment Width**, **Pri** and **Sec Abutment Angle**, **Pri** and **Sec Abutment Friction**, **Mechanical Efficiency** and **Pushout Pressure**, followed by the **Lining Friction Properties** section.
 
 See also the detailed dialog reference:
 [Duplex Drum Brake dialog](../../04-brakes-powertrain/DuplexBrkDlg.md).
@@ -633,7 +633,7 @@ actuation force before summing.)*
 The HVE Brake Designer dialog for single piston drum brakes is described below.
 
 !!! note "HVE 2027"
-    In HVE 2027, choose this type in **Brake Design**. Its design parameters are **Primary Piston Size**, **Secondary Piston Size**, **Drum Diameter**, **Drum Lining Width**, **Drum Thickness**, **Pri Lining Arc Length (Alpha0)**, **Pri Lining Alpha1**, **Sec Lining Arc Length (Alpha0)**, **Sec Lining Alpha1**, **Lining Thickness Pri** and **Sec**, **Shoe Pin Radius**, **Shoe Block Length**, **Mechanical Efficiency** and **Pushout Pressure**, followed by the **Material Properties** and **Lining Friction Properties** sections.
+    In HVE 2027, choose this type in **Brake Design**. Its design parameters are **Primary Piston Size**, **Secondary Piston Size**, **Drum Diameter**, **Pri Lining Arc Length (Alpha0)**, **Pri Lining Alpha1**, **Sec Lining Arc Length (Alpha0)**, **Sec Lining Alpha1**, **Shoe Pin Radius**, **Shoe Block Length**, **Mechanical Efficiency** and **Pushout Pressure**, followed by the **Lining Friction Properties** section.
 
 See also the detailed dialog reference:
 [Single Piston Drum Brake dialog](../../04-brakes-powertrain/BrkSingPistDlg.md).
@@ -665,7 +665,7 @@ brake factor to its own actuation force.)*
 The HVE Brake Designer dialog for dual piston drum brakes is described below.
 
 !!! note "HVE 2027"
-    In HVE 2027, choose this type in **Brake Design**. Its design parameters are the same fields as the single piston drum brake, followed by the **Material Properties** and **Lining Friction Properties** sections.
+    In HVE 2027, choose this type in **Brake Design**. Its design parameters are the same fields as the single piston drum brake, followed by the **Lining Friction Properties** section.
 
 See also the detailed dialog reference:
 [Dual Piston Drum Brake dialog](../../04-brakes-powertrain/DualPistBrkDlg.md).
@@ -703,7 +703,7 @@ $$BrakeTorque = BF \times TR \times AF \times Factor$$
 The HVE Brake Designer dialog for S-cam drum brakes is described below.
 
 !!! note "HVE 2027"
-    In HVE 2027, choose this type in **Brake Design**. Its design parameters are **Air Chamber** (Type 9, 12, 18, 20, 24, 30 or 36, which sets **Chamber Area**), **Slack Adjuster Length**, **S-Cam Effective Radius**, **Drum Diameter**, **Drum Lining Width**, **Drum Thickness**, the pinned-shoe fields (**Pri/Sec Lining Arc Length (Alpha0)**, **Pri/Sec Lining Alpha1**, **Lining Thickness Pri/Sec**, **Shoe Pin Radius**, **Shoe Block Length**), the **Stroke Factor** section, **Mechanical Efficiency** and **Pushout Pressure** (Figure 29-2), followed by the **Material Properties** and **Lining Friction Properties** sections.
+    In HVE 2027, choose this type in **Brake Design**. Its design parameters are **Air Chamber** (Type 9, 12, 18, 20, 24, 30 or 36, which sets **Chamber Area**), **Slack Adjuster Length**, **S-Cam Effective Radius**, **Drum Diameter**, the pinned-shoe fields (**Pri/Sec Lining Arc Length (Alpha0)**, **Pri/Sec Lining Alpha1**, **Shoe Pin Radius**, **Shoe Block Length**), the **Stroke Factor** section, **Mechanical Efficiency** and **Pushout Pressure** (Figure 29-2), followed by the **Lining Friction Properties** section.
 
 ## Single Wedge Drum Brake
 
@@ -725,7 +725,7 @@ $$BrakeTorque = BF \times TR \times AF \times Factor$$
 The HVE Brake Designer dialog for single wedge drum brakes is described below.
 
 !!! note "HVE 2027"
-    In HVE 2027, choose this type in **Brake Design**. Its design parameters are **Air Chamber** and **Chamber Area**, **Wedge Angle**, the drum and pinned-shoe fields of the S-cam brake, the **Stroke Factor** section, **Mechanical Efficiency** and **Pushout Pressure**, followed by the **Material Properties** and **Lining Friction Properties** sections.
+    In HVE 2027, choose this type in **Brake Design**. Its design parameters are **Air Chamber** and **Chamber Area**, **Wedge Angle**, the drum and pinned-shoe fields of the S-cam brake, the **Stroke Factor** section, **Mechanical Efficiency** and **Pushout Pressure**, followed by the **Lining Friction Properties** section.
 
 ## Dual Wedge Drum Brake
 
@@ -743,7 +743,7 @@ $$BrakeTorque = BF \times TR \times AF \times Factor$$
 The HVE Brake Designer dialog for dual wedge drum brakes is described below.
 
 !!! note "HVE 2027"
-    In HVE 2027, choose this type in **Brake Design**. Its design parameters are **Air Chamber** and **Chamber Area**, **Wedge Location**, **Pri** and **Sec Wedge Angle**, the drum fields, **Pri/Sec Lining Arc Length (Alpha0)**, **Pri/Sec Lining Beta**, **Lining Thickness Pri/Sec**, the primary and secondary abutment fields, **Mechanical Efficiency** and **Pushout Pressure**, followed by the **Material Properties** and **Lining Friction Properties** sections.
+    In HVE 2027, choose this type in **Brake Design**. Its design parameters are **Air Chamber** and **Chamber Area**, **Wedge Location**, **Pri** and **Sec Wedge Angle**, the drum fields, **Pri/Sec Lining Arc Length (Alpha0)**, **Pri/Sec Lining Beta**, the primary and secondary abutment fields, **Mechanical Efficiency** and **Pushout Pressure**, followed by the **Lining Friction Properties** section.
 
 See also the detailed dialog reference:
 [Dual Wedge Drum Brake dialog](../../04-brakes-powertrain/DualWedgeBrkDlg.md).
@@ -777,9 +777,9 @@ $$BrakeTorque = BF \times TR \times AF \times Factor$$
 
 !!! note "HVE 2027"
     - The HVE 2027 Brake Designer is one window for all types; **Brake Design** selects the type. There is no schematic preview drawing.
-    - **Lining Friction Properties** (friction vs temperature and friction multiplier vs sliding speed) and **Material Properties** (drum/rotor and lining/pad **Density**, **Specific Heat**, **Conduction**, **Convection** and **Convection Vel. Dep.**, in SI units) are collapsible sections of the same window rather than separate dialogs. The material properties are stored with the vehicle; nothing uses them, since the brake temperature model does not run ([Chapter 30](30-brake-temperature.md)).
+    - **Lining Friction Properties** (friction vs temperature and friction multiplier vs sliding speed) is a collapsible section of the same window rather than a separate dialog. HVE's **Material Properties** (drum/rotor and lining/pad density, specific heat, conduction and convection) and the drum, lining and pad thicknesses are not offered: they feed only the brake temperature model, which does not run ([Chapter 30](30-brake-temperature.md)).
     - The **Results** are recalculated continuously; there is no Apply-to-recalculate button. **Apply to Wheel** and **Apply to All Wheels** write the result into the Brake Assembly.
-    - The **Brake Assembly** dialog's **Design…** row has **S-Cam** and **Disc** buttons that open separate per-wheel design tables. Those tables reach no engine and are kept only as a record of the hardware; the Brake Designer is the designer whose result the simulation uses.
+    - The **Brake Assembly** dialog's **Brake Type** row is each wheel's design type, and its **Design...** button opens the Brake Designer on that wheel (greyed for Generic). The Brake Designer is the designer whose result the simulation uses.
 
 <!-- NAV -->
 

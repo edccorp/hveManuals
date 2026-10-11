@@ -37,9 +37,6 @@ Rotational inertia of the steering wheel and column.
 ### Friction Lag (rad/s)
 Rotational velocity required to develop the full steering friction torque. HVE enters it in deg/sec.
 
-### Front Track, Rear Track
-Track widths stored with the steering data. They are not passed to the engines; the track widths the engines use are the **Track Width** values in the Vehicles panel (**Dimensions / Inertias › Overall**) and the wheel positions.
-
 Column Friction, Column Inertia and Friction Lag are used only when an axle's steer angle is free (see Steer DOF); a note under the table says so when no axle sets its own Steer DOF.
 
 !!! warning "Not in HVE 2027"

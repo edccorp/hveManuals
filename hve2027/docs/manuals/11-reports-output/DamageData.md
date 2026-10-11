@@ -89,10 +89,11 @@ zone unless per-zone values are entered.
     **Variable Report** and the engine's own pages in **Output › HVE Reports**.
 
 !!! note "HVE 2027"
-    **Event › Damage Profiles...** opens a different dialog: the vehicle's crush
-    **stiffness** per side (Distance, A, B and Kv for Front, Rear, Left and
-    Right) used by the simulation programs, and the 3-D node stiffness used by
-    DyMESH. It is not the measured damage.
+    **Event › Damage Profiles...** (**Ctrl+M**, EDCRASH events) opens these
+    inputs in Event Information. A vehicle's crush **stiffness** per side (A,
+    B and Kv for Front, Rear, Left and Right, and the 3-D node stiffness used by
+    DyMESH), which the simulation programs use, is a different dialog:
+    **Vehicle › Crush Stiffness...**. It is not the measured damage.
 
 <!-- NAV -->
 

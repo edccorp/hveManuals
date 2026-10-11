@@ -31,10 +31,10 @@ Each vehicle also has the following additional user-editable parameters:
 - **Driver Location** — The *Driver Location* is not used by EDVTS. However, *Driver Location* must not be *None*; otherwise, the Driver Controls (Steering, Throttle, Brakes) will not be available during Event mode.
 - **Engine Location** — The Engine Location is not used by EDVTS. However, Engine Location must not be *None*; otherwise, the Throttle Table will not be available during Event mode.
 - **Number of Axles** — EDVTS supports 2- and 3-axled tow vehicles and 1- and 2-axled trailers.
+- **Drive Axle(s)** — EDVTS supports all drive axles.
 
 !!! note "HVE 2027"
-    EDVTS checks the axle count by position in the event, not by vehicle type: the first vehicle (V1) must have 2 or 3 axles and the second (V2) 1 or 2. The first vehicle must not have a front connection. HVE 2027 reports a vehicle that breaks either rule in **Event Information** before running. The Driver Controls dialog is available for both vehicles whatever their Driver Location.
-- **Drive Axle(s)** — EDVTS supports all drive axles.
+    EDVTS checks the axle count by position in the event, not by vehicle type: the first vehicle (V1) must have 2 or 3 axles and the second (V2) 1 or 2. HVE 2027 reports a wrong axle count in **Event Information** before running. The first vehicle must not have a front connection; EDVTS refuses such an event when it runs. The Driver Controls dialog is available for both vehicles whatever their Driver Location.
 
 To add a vehicle to the current case in HVE 2027, perform the following steps:
 
@@ -154,7 +154,7 @@ Although HVE-2D provides values for the vehicle-fixed x,y,z coordinates of each 
 EDVTS uses the wheel brake system Antilock Effectiveness. The specific parameters used by EDVTS are shown in Table 2-2.
 
 !!! note "HVE 2027"
-    Antilock effectiveness is the **ABS Efficiency** row of **Vehicle › Brake Assembly…**, per wheel.
+    Antilock effectiveness is the **ABS Efficiency** row of **Vehicle › Brake Assembly…**, per wheel. EDVTS uses it only on a wheel whose **Antilock (ABS)** box, in the same dialog, is checked.
 
 #### Tire
 
@@ -349,7 +349,7 @@ To create an EDVTS event:
 
 > NOTE: The slot order is the order of the vehicle train. A vehicle in the wrong slot is corrected with its slot's drop-down list, which keeps that slot's inputs.
 
-- Enter the event name in **Event › Name**. The name does not affect calculations.
+- Enter the event name in the **Name** field of the panel's **Event** section. The name does not affect calculations.
 
 > NOTE: If you choose a vehicle that is not compatible with EDVTS, or if the tow vehicle connections are incompatible with the trailer, the panel shows **Cannot run:** and the reason, and the Method list marks EDVTS "N/A for these vehicles". The event can still be edited; it cannot be run until the problem is fixed.
 
@@ -529,7 +529,7 @@ There is no reverse-play button; use the time slider or the step buttons.
 
 > NOTE: After an event is executed, its inputs are locked while the results are on screen. Press **Reset** to edit the event and run it again.
 
-> NOTE: Display options such as Key Results, velocity vectors and skidmarks are on the **View** and **Output** menus.
+> NOTE: Key Results is on the **View** and **Output** menus; velocity vectors and skidmarks are in **View › Scene Display**.
 
 ---
 

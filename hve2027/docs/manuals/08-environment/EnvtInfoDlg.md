@@ -2,17 +2,18 @@
 
 The environment holds the scene a case runs in: its name, date and location, the
 terrain geometry the vehicles drive on, the sky, the physical constants of the
-site, and its traffic signal.
+site, and its friction zones.
 
 !!! note "HVE 2027"
     In the Environment editor (F4) choose **Environment › Environment...**. The
     **Environment** window has five collapsible sections in place of HVE's
-    tabs: **Location**, **Terrain**, **Sky**, **Physical** and **Signals**.
-    Terrain and Physical — what the solver reads — open by default. All five are
-    always present; there is no 2-D/3-D distinction. Lengths, speeds,
-    temperature and pressure follow the units set in Tools › Preferences. While
-    a solved run is on screen, Terrain and Physical are read-only; Location, Sky
-    and Signals are description and stay editable.
+    tabs: **Location**, **Terrain**, **Sky**, **Physical** and **Friction
+    Zones**. Terrain and Physical — what the solver reads — open by default,
+    and Friction Zones when the case has any. All five are always present;
+    there is no 2-D/3-D distinction. Lengths, speeds, temperature and pressure
+    follow the units set in Tools › Preferences. While a solved run is on
+    screen, Terrain, Physical and Friction Zones are read-only; Location and
+    Sky are description and stay editable.
 
 ![Environment window](images/hvn-environment.png)
 
@@ -82,10 +83,11 @@ The terrain geometry file, typed or chosen with **Browse...**: DXF, HVE geometry
 `.h3d` the field is **Extra Scale**, since an `.h3d` states its own units
 (inches) and frame, which are applied automatically.
 
-**File is Y-up (swap Y/Z)** — for a file whose vertical axis is Y.
+**File is Y-up (rotate to Z-up)** — for a file whose vertical axis is Y.
 
-**File is Z-down (flip Z)** — for a file whose vertical axis points down. For
-an `.h3d` it reads **Invert Z (file's vertical sense is reversed)** and only
+**File is Z-down (Flip About X-Axis)** — for a file whose vertical axis points
+down. For an `.h3d` it reads **Flip About X-Axis (file's vertical sense is
+reversed)** and only
 corrects a file that is not what it claims. For DXF, OBJ and glTF nothing in
 the geometry can tell a valley from a hill, so check the elevation range in the
 summary against the site.
@@ -102,8 +104,9 @@ error.
       set separately with **Environment › Aerial Image...** (the **Aerial Image
       Options** window: **Image File**, **Visible**, **Opacity** and the
       image's upper-left and lower-right world coordinates).
-    - **Save As...** of the environment geometry to `.h3d`. (To keep a site with
-      the case, use **File › Embed the environment in the case**.)
+    - **Save As...** of the environment geometry to `.h3d`. (A saved case keeps
+      its site inside it while **File › Embed the environment in the case** is
+      ticked, as it is by default.)
     - **Use As Default**, and the **Default Type** given to imported polygons:
       an imported polygon with no type is a road. Change a surface's type on its
       material (below).
@@ -158,9 +161,9 @@ sun and sky are set.
 
 ## Physical
 
-**Tire-Road mu (single-track)** — An absolute tire–road friction read only by
-the single-track (motorcycle) model, which has no tire friction tables. Every
-other engine uses the surface material's friction multiplier.
+There is no friction on this page: for every engine, the single-track model
+included, friction is each tire's own times the Friction Multiplier of the
+surface (Surface Materials) or friction zone it is on.
 
 **Rolling Resistance** — Used only for tires that state no rolling resistance of
 their own.
@@ -182,29 +185,46 @@ compute it; display only.
 
 ### Standing Water
 
-!!! tip "New in HVE 2027"
-    **Water Depth** puts a layer of standing water over the road, read only by
-    SIMON's hydroplaning models (Event Information › Method Options..., SIMON
-    Options, Hydroplaning). A depth of 0 adds no water. **Wet Friction** and
-    **Pavement Texture Depth** are enabled when the depth is above 0. HVE keeps
-    standing water as its own surface layer above the road; HVE 2027 builds
-    that layer from this depth.
+Standing water is set per surface, on each surface's HVE Surface node in the
+Shader Editor, and on the **Default surface material** for ground with no
+surface of its own — see [Environment Material Properties](EnvrMatPropDlg.md).
 
 !!! note "HVE 2027"
     The *Angle of X Axis* is in the Shader Editor's Sun & Sky panel as
     **North** (see Sky).
 
+## Friction Zones
+
+A friction zone is a patch of different grip — spilled oil, loose gravel, a wet
+strip — laid over the road in plan. The run cuts it out of the road beneath, so
+it lies on the terrain, and its **Friction Multiplier** replaces the road's
+there.
+
+The list shows each zone's **On** switch, name, **Friction Mult.** and status;
+**Add Zone**, **Duplicate** and **Delete** manage it. For the selected zone:
+**Name**, **Applied to the run**, **Friction Multiplier**, a **Rectangle**
+(**Centre X**, **Centre Y**, **Length**, **Width**, **Heading (deg)**, and **Set
+Outline to Rectangle**) and its **Corners** (up to 16): **Click corners in the
+3-D view**, **Clear Corners**, the corners' X and Y, and **Add Corner**. A zone
+the run cannot apply says why.
+
+Under HVE's default road surface search, which tracks each tire's previous
+polygon, a zone lying on the road is mostly stepped over. The section names
+each event that searches that way, with a button that switches it to
+friction zones first (see
+[Event Information](../09-events-driver-controls/EventInfo.md#road-surface-search)).
+
+!!! note "HVE 2027"
+    HVE draws a friction zone as a polygon of its own in its geometry editor;
+    HVE 2027 draws it here, in plan.
+
 ## Signals
 
-**Traffic Signal Active**, and, when it is active, **Phase at Impact** (Green,
-Yellow, Red), **Cycle Time (s)**, **Green Time (s)** and **Yellow Time (s)**.
-Signal timing is display information; no physics program models a traffic
-light.
-
 !!! warning "Not in HVE 2027"
-    HVE's list of individual signals in the environment, with their type,
-    layout, repeating cycle and Start Time / Follow / Overlap timing. HVE 2027
-    describes one signal.
+    HVE's traffic signals — its list of individual signals in the environment,
+    with their type, layout, repeating cycle and Start Time / Follow / Overlap
+    timing. HVE 2027 has no traffic signals; no physics program models a
+    traffic light.
 
 ## OK / Cancel
 

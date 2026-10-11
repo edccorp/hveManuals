@@ -194,25 +194,18 @@ third-order curve fit.
 
 !!! note "HVE 2027"
     HVE 2027 has no Vehicle Exterior Stiffness dialog or force-per-area plot.
-    The 3-D node stiffnesses are the **3-D Node Stiffness (SIMON / DyMESH)**
-    section of the **Damage Profiles** dialog (Event › Damage Profiles), one
+    The 3-D node stiffnesses are the **3-D Node Stiffness** section of the
+    **Crush Stiffness** dialog (Vehicle › Crush Stiffness...), one
     collapsible block per body zone — Front, Right, Back, Left, Top and
     Undercarriage — each with **Constant**, **Linear**, **Quadratic**,
     **Cubic**, **Conversion Height**, **Saturation Crush** and **Max Crush**.
     There is no $K_v$ field in this section (the four CRASH3 side blocks above
     it carry $A$, $B$ and $K_v$ for the 2-D engines, and DyMESH does not read
-    them). The four coefficients are entered in SI (N/m², N/m³, N/m⁴, N/m⁵)
-    whatever the Preferences units, with the constant echoed in psi; the
-    lengths follow Preferences. A zone whose four coefficients are all zero is
+    them). The four coefficients and the lengths are shown in the units set in
+    Preferences. A zone whose four coefficients are all zero is
     labelled *(no resistance)*: nodes there meet no contact force and the
     bodies pass through each other. The stiffnesses belong to the vehicle and
     are read from HVE vehicle and case files.
-
-    **Event › Damage Profiles** is offered for SIMON events, so the 3-D
-    stiffnesses are edited from the SIMON event itself.
-
-![Figure: HVE 2027 Damage Profiles dialog](images/hvn-damage-profiles-3d-stiffness.png)
-*Figure: the HVE 2027 Damage Profiles dialog (EDCRASH tutorial case). The four CRASH3 side blocks are followed by the six 3-D Node Stiffness zones that DyMESH reads.*
 
 ### Note on occupant response
 

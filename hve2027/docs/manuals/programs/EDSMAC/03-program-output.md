@@ -145,7 +145,7 @@ In HVE 2027 the trajectory simulation is the playback of the solved event in the
 - **>|** — Jump to the end of the simulation
 
 !!! note "HVE 2027"
-    HVE 2027 has no reverse play; step back with **<<**. The camera is chosen in the list on the playback bar (**Free view**, or a camera made in **Tools › Cameras...**). Paths, skidmarks and vectors are switched on in the **View** menu, and **File › Record Animation...** writes a video.
+    HVE 2027 has no reverse play; step back with **<<**. The camera is chosen in the list on the playback bar (**Free view**, or a camera made in **Tools › Cameras...**). Paths, skidmarks and vectors are switched on in **View › Scene Display**, and **File › Record Animation...** writes a video.
 
 ### Displaying a Damage Profile Simulation
 

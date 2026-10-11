@@ -59,7 +59,8 @@ results are on screen.
 *The Undo History panel.*
 
 !!! tip "New in HVE 2027"
-    Undo, Redo and the Undo History have no counterpart in HVE's menus.
+    HVE's Edit menu also has Undo (Ctrl+Z) and Redo (Ctrl+Y). The Undo History
+    panel has no counterpart in HVE.
 
 !!! warning "Not in HVE 2027"
     HVE's Edit menu provided the editing functions used in other parts of HVE,

@@ -59,7 +59,7 @@ The procedure for using EDVTS is substantially the same as using any simulator i
     - **Initial conditions:** in **Event Information › Vehicle Initial Conditions**. The trailer's position follows from the tow vehicle and the hitch; only its articulation angle is entered.
     - **Driver controls:** **Event › Driver Controls…** (Ctrl+D).
     - **Executing:** **Run** on the playback bar under the viewport, or **Output › Run Simulation…** (Ctrl+R).
-    - **Results:** there is no Playback Editor. The solved event plays back in the same viewport, and the reports are on the **Output** menu (see [Chapter 3](03-program-output.md)). **File › Record Animation…** writes a video.
+    - **Results:** the solved event plays back in the Event editor's own viewport, and the reports are on its **Output** menu (see [Chapter 3](03-program-output.md)); the **Playback (F6)** editor plays several events in sequence. **File › Record Animation…** writes a video.
 
 ---
 

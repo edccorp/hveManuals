@@ -24,8 +24,8 @@ Properties › Brakes…). See also the reference page,
 ![Figure 11-36](../images/hvn-04-brake-assembly.png)
 *Figure 11-36: Brake Assembly dialog (HVE 2027), one column per wheel.*
 
-The dialog's rows are: **Brake Type**; **Design…** (**S-Cam** and **Disc**
-buttons, which open the S-Cam Brake and Disc Brake design dialogs);
+The dialog's rows are: **Brake Type**; **Design…** (a button per wheel that
+opens the Brake Designer on that wheel; greyed for a Generic brake);
 Actuation — **Balance Ratio** (greyed, unused), **Time Lag (s)**, **Time Rise (s)**,
 **P-Start**, **Pushout** and **Torque Ratio**; Options — **Proportioning**,
 **Proportion Ratio**, **Antilock (ABS)** and **ABS Efficiency**.
@@ -51,9 +51,10 @@ The Brake properties at each wheel are described below.
 - **Brake Type** — An option list displaying the type of brake assembly
   used at the selected wheel location. In HVE the default is *Generic*, in
   which case the Brake Torque Ratio (see below) is defined directly by the
-  user. HVE 2027 lists the nine designs: *S-Cam Drum, Disc Brake, Air Disc,
-  Duo-Servo Drum, Duplex Drum, Dual-Piston, Single-Piston, Dual-Wedge* and
-  *Single-Wedge*.
+  user. HVE 2027 lists HVE's ten types: *Generic Brake, Disc Brake,
+  Duo-Servo Brake, Duplex Brake, Single Piston (Leading/Trailing Shoe), Dual
+  Piston (2 Leading Shoes), S-Cam, Single Wedge, Dual Wedge* and *Air Disc
+  Brake*.
 
   > **NOTE:** See the HVE Brake Designer documentation for details on the
   > use of this option. The Push-out Pressure and Brake Torque Ratio of a
@@ -61,10 +62,11 @@ The Brake properties at each wheel are described below.
 
   !!! note "HVE 2027"
       The simulations read the wheel's **Pushout** and **Torque Ratio**, as
-      HVE's own Generic brake does. A brake design reaches them only when
-      the Brake Designer's **Apply to Wheel** (or Apply to All Wheels)
-      writes its computed torque ratio and pushout pressure into the Brake
-      Assembly; editing a design parameter alone changes no result.
+      HVE's own Generic brake does. A brake design reaches them when its
+      computed torque ratio and pushout pressure are written into the Brake
+      Assembly — by choosing the design's Brake Type here, or with the Brake
+      Designer's **Apply to Wheel** (or Apply to All Wheels); editing a
+      design parameter alone changes no result.
 
 - **Push-out Pressure** — Brake system pressure required to begin causing
   brake torque (any system pressure below this point is simply taking out
@@ -100,10 +102,10 @@ The Brake properties at each wheel are described below.
 > [Part E](11e-drivetrain-steering-brake-system.md).
 
 !!! note "HVE 2027"
-    In HVE 2027 whether antilock acts is decided by each wheel's **Antilock
-    (ABS)** checkbox here and by the ABS System block (Vehicle › ABS /
-    Brake Design). The Brake System Pressure dialog's **ABS Installed** box
-    is recorded with the case and read by no simulation.
+    In HVE 2027 EDSVS and EDVTS apply antilock wheel by wheel, as each
+    wheel's **Antilock (ABS)** checkbox here says. SIMON regulates every wheel
+    once any of these boxes is ticked, or once the vehicle's **ABS Installed**
+    is (Vehicle › ABS / Brake Design › ABS System). EDVDS has no ABS model.
 
 **Table 11-19: Wheel Brake Assembly Parameters**
 
@@ -131,9 +133,10 @@ Brake Designer also includes a detailed tool for simulating ABS.
 In HVE 2027 the Brake Designer is **Vehicle › Brake Designer**: choose the
 wheel (**Axle**, **Side**) and the **Brake Design**, enter the Design
 Parameters, read the **Results**, and press **Apply to Wheel** or **Apply to
-All Wheels**. The S-Cam and Disc design dialogs are also reachable from the
-Brake Assembly dialog's Design… row, and **Vehicle › Brake Material Props**
-edits the brake material properties.
+All Wheels**. The Brake Designer also opens on a wheel from the Brake
+Assembly dialog's Design… row, and a design's lining friction is in its
+**Lining Friction Properties** section. **Vehicle › Brake Material Props** is
+a separate material library that no engine reads, shown greyed.
 
 The Brake Designer dialogs for the individual assembly types are documented
 in the HVE reference pages:
@@ -159,9 +162,12 @@ the Tire Information dialog in HVE. See also the reference page,
       wheel, a column per wheel: Friction (Peak Long. and Lat. Friction,
       Slide Friction, Slip at Peak, Velocity Dependence), Cornering
       Stiffness (Cornering Stiffness, Min Skid Fz, Pneumatic Trail, Align
-      Torque Coeff), Physical (Size Designation, Tire Type, Unloaded Radius,
-      the derived Static Deflection, Dual Tires, Dual Spacing), Spring / Deflection,
-      Rotational Properties, Rolling Resistance and Physical Dimensions.
+      Torque Coeff), Load & Speed Dependence (a summary of the friction
+      table), Identity (Tire Name, Manufacturer, Model, HVE Version — for
+      the reports only), Physical (Size Designation, Tire Type, Unloaded
+      Radius, the derived Static Deflection, Dual Tires, Dual Spacing),
+      Spring / Deflection, Rotational Properties, Rolling Resistance and
+      Physical Dimensions.
     - **Tire Friction Data** (**Vehicle › Tire Tables**) — the tables of one
       wheel at a time (choose **Axle** and **Side**), on four tabs:
       **Friction**, **Cornering**, **Camber** and **Fy Rolloff**.
@@ -169,14 +175,18 @@ the Tire Information dialog in HVE. See also the reference page,
 ![Figure 11-39](../images/hvn-04-tire-properties.png)
 *Figure 11-39: Tire Properties dialog (HVE 2027), with Build from Tire Size at the top.*
 
-!!! warning "Not in HVE 2027"
-    HVE 2027 has no tire database: tires are not selected by Tire Type,
-    Manufacturer, Model and Size keys, and the Name field is not offered.
-    Instead, **Build from Tire Size** at the top of the Tire Properties
-    dialog fills a wheel's physical data from a size designation: enter the
-    **Tire Size** (for example P215/65R15), choose the **Type** (Passenger
-    Car, Light Truck, Heavy Truck or Mobile Home) and **Apply to** (all
-    wheels or one axle), and press **Apply Tire Size**.
+!!! note "HVE 2027"
+    A tire is chosen from the tire tables of the loaded vehicle databases in
+    the **Tire Database** section at the top of the Tire Properties dialog:
+    narrow the list by **Type** (Passenger Car, Light Truck, Heavy Truck or
+    Mobile Home) and **Search** (manufacturer, model or size), select a
+    tire, choose **Apply to** (all wheels or one axle) and press **Apply
+    Tire**. This replaces the tire's data and all four of its tables; each
+    wheel keeps its own dual setup. **Build from Tire Size** fills only a
+    wheel's dimensions from a size designation: enter the **Tire Size** (for
+    example P215/65R15), choose the **Type** and **Apply to**, and press
+    **Apply Tire Size**; friction, cornering stiffness and spring rates are
+    left unchanged.
 
 For the selected tire, the Tire Information dialog also allows the user to
 edit the following specific tire properties:

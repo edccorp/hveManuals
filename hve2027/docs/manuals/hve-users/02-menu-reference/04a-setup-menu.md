@@ -22,17 +22,17 @@ part by method:
 | Item | Available for |
 |---|---|
 | Event Information... | every event |
-| Position / Velocity... | every method that starts from initial conditions — all except EDCRASH |
+| Position / Velocity... | every method that starts from initial conditions — all except EDCRASH and READDATAFILE |
 | Driver Controls... | EDSMAC, EDSMAC4, SIMON, EDSVS, EDVDS, EDVTS, EDVSM, SINGLETRACK; and EDCRASH, where it shows the Wheel Data page |
-| Damage Profiles... | EDCRASH, EDSMAC, EDSMAC4, SIMON |
+| Damage Profiles... | EDCRASH (it opens Event Information's Vehicle Impact Setup) |
 | Collision Pulse... | EDCRASH, SIMON, EDHIS, GATB |
 | Vehicle Mesh..., DyMESH Options..., Path Follower..., Notes, Advanced Mesh Options... | every event |
 | Payload... | SIMON, EDSMAC4, EDSVS, EDVDS, EDVTS |
-| Wheels... | the methods that use driver controls (not EDCRASH, EDGEN, EDHIS or GATB) |
+| Wheels... | the methods that use driver controls (not EDCRASH, EDGEN, EDHIS, GATB or READDATAFILE) |
 | Accelerometers... | SIMON, EDSMAC4, EDVDS, EDVSM (the methods that compute accelerometer output) |
 | Restraints › | EDHIS, GATB |
-| Contacts... | EDSMAC4 |
-| Signals | EDGEN |
+| Contacts... | EDSMAC4 (the contact surfaces); EDHIS, GATB (Occupant Contacts) |
+| Lights... | SIMON, EDSMAC4 |
 | Impact Plane / Barrier... | shown for EDCRASH, always greyed — not in HVE 2027 |
 | Crush Profile... | EDCRASH, EDSMAC, EDSMAC4 |
 | Handling Parameters..., Move CG... | EDSMAC, EDSMAC4 |
@@ -95,9 +95,9 @@ right-click a section header to move or hide it.
 The **Calculation Method** list shows every method HVE 2027 can run. A method
 whose output has not yet been checked against HVE is marked *(unvalidated)*; a
 method the event's vehicles cannot use is marked *N/A for these vehicles*, with
-the reason on hover; and an HVE event whose method HVE 2027 does not have (for
-example ReadDataFile) keeps its name and is marked *not ported* — it opens and
-displays but cannot be run.
+the reason on hover; and an HVE event whose method HVE 2027 does not recognise
+keeps its name and is marked *not ported* — it opens and displays but cannot be
+run.
 
 !!! note "HVE 2027"
     Method Options... opens an options dialog for EDCRASH, EDSMAC and EDSMAC4
@@ -237,7 +237,7 @@ time.
 | **Brake** | brake vs time | *Pedal Force* → **Pedal (AT_DRIVER)**; *Wheel Force* → **Wheel Force**; *Percent Available Friction* → **% of Friction** |
 | **Steer** | steering-wheel angle vs time | *At Steering Wheel* is the table here. A table *At Axle* (road-wheel angles) that came with an imported case is shown, and overrides the steering-wheel table |
 | **Gear** | gear vs time (0 = neutral, 1 = reverse, 2 = first, …) | as HVE |
-| **Lean** | lean angle vs time | motorcycles (single-track vehicles) only; new in HVE 2027 |
+| **Lean** | lean angle vs time | motorcycles (single-track vehicles) only; read by SIMON; new in HVE 2027 |
 
 For an **EDCRASH** event the dialog has a single **Wheel Data** page instead (see
 [Wheel Data](#wheel-data)).
@@ -246,14 +246,16 @@ For an **EDCRASH** event the dialog has a single **Wheel Data** page instead (se
 *The Driver Controls dialog for a SIMON vehicle.*
 
 !!! note "HVE 2027"
-    For a SINGLETRACK (motorcycle) event the Throttle and Gear pages are marked
-    *(not read)*: that engine has no drivetrain model. Its Steer page is a
-    steering-torque or commanded-lean table, chosen in Method Options.
+    For a SINGLETRACK (motorcycle) event the Throttle, Gear and Lean pages are
+    marked *(not read)*: that engine has no drivetrain model, and only SIMON
+    reads the Lean table. Its Steer page is a steering-torque or commanded-lean
+    table, chosen in Method Options.
 
 !!! note "HVE 2027"
-    HVE's Driver Controls dialog also had a **Lights** page. In HVE 2027 a
-    vehicle's lights are defined in the Vehicle editor (Vehicle › Vehicle
-    Lights).
+    HVE's Driver Controls dialog also had a **Lights** page. In HVE 2027 it is
+    its own Event menu item, **Event › Lights...** (SIMON and EDSMAC4); the
+    lamps themselves are defined in the Vehicle editor (Vehicle › Vehicle
+    Lights...).
 
 See the dialog reference: [Driver Controls](../../09-events-driver-controls/DriverControls.md).
 

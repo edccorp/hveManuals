@@ -12,8 +12,7 @@ Viewer.
 !!! note "HVE 2027"
     HVE 2027 has no exterior spheres. The dimensions are edited in the
     **Dimensions / Inertias** section of the Vehicles panel, and the
-    stiffness coefficients in the Event editor's **Crush Profile** and
-    **Damage Profiles** dialogs (see below).
+    stiffness coefficients with **Vehicle › Crush Stiffness...** (see below).
 
 ## Vehicle Exterior Dimensions
 
@@ -81,21 +80,21 @@ coefficients. The user may choose to edit these coefficients for the front,
 back or sides of the vehicle.
 
 !!! note "HVE 2027"
-    The stiffness coefficients are vehicle data, but in HVE 2027 their
-    dialogs are opened from the **Event** menu of the Event editor (F5), for
-    an event whose method uses them:
+    The stiffness coefficients are vehicle data, edited in the Vehicle editor
+    with **Vehicle › Crush Stiffness...**. The dialog shows the Front, Rear,
+    Left and Right sides, each with its **A**, **B** and **Kv** Stiffness, and
+    below them HVE's 3-D stiffness: **3-D Node Stiffness** — Constant, Linear,
+    Quadratic and Cubic for the Front, Right, Back, Left, Top and
+    Undercarriage zones — with the Conversion Height, Saturation Crush and Max
+    Crush. It says which engine reads each part: A and B are read by EDSMAC4,
+    Kv by EDSMAC (and by EDVSM for the body against the ground), and the 3-D
+    node stiffness by SIMON (DyMESH); EDCRASH takes its A and B from the
+    event's damage profile (Event Information › Vehicle Impact Setup).
+    **From crash tests...** computes CRASH3 A and B from staged barrier tests.
 
-    - **Event › Crush Profile** (EDCRASH, EDSMAC and EDSMAC4 events) opens
-      the **Crush & Geometry** window. Its **CG to Front…**, **CG to
-      Rear…**, **CG to Left…** and **CG to Right…** buttons open one dialog
-      per side with the side's distance and its **A**, **B** and **Kv**
-      Stiffness. The same window also opens Handling Properties, Body
-      Torsion, Move CG and Payload.
-    - **Event › Damage Profiles** (EDCRASH, EDSMAC, EDSMAC4 and SIMON events) shows the same four sides
-      (Distance, A, B, Kv) and, below them, HVE's 3-D stiffness: **3-D Node
-      Stiffness (SIMON / DyMESH)** — Constant, Linear, Quadratic and Cubic for
-      the Front, Right, Back, Left, Top and Undercarriage zones — with the
-      Conversion Height, Saturation Crush and Max Crush.
+    The four sides are also reached from **Event › Crush Profile** (EDCRASH,
+    EDSMAC and EDSMAC4 events), whose **Crush & Geometry** window has **CG to
+    Front…**, **CG to Rear…**, **CG to Left…** and **CG to Right…** buttons.
 
     There is no stiffness for the top and bottom in the A/B/Kv form, as in
     HVE. Coefficients are shown in the units set in Preferences (A in lb/in
@@ -104,14 +103,11 @@ back or sides of the vehicle.
 To display or edit the current vehicle's A, B and Kv stiffness
 coefficients, perform the following steps:
 
-1. In the Event editor, make active an event that uses the vehicle with an
-   EDCRASH, EDSMAC or EDSMAC4 calculation method.
-2. Choose **Event › Crush Profile**. The Crush & Geometry window is
+1. In the Vehicle editor (F3), select the vehicle.
+2. Choose **Vehicle › Crush Stiffness...**. The Crush Stiffness dialog is
    displayed.
-3. Press **CG to Front…**, **CG to Rear…**, **CG to Left…** or **CG to
-   Right…**. The dialog for that surface is displayed.
-4. View and/or edit the stiffness properties. Changes apply as they are
-   made.
+3. View and/or edit the stiffness properties of each side. Changes apply as
+   they are made.
 
 The Exterior Stiffness parameters are described below.
 

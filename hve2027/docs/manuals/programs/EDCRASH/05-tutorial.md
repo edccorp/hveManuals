@@ -34,7 +34,7 @@ As in other tutorials, before we get started, let's set the user options so we'r
 
    > **NOTE:** As we'll see when we look at the environment, our EDCRASH Tutorial studies a crash that took place in Australia; thus we use metric units.
 
-3. On the **View** menu, make sure **Key Results** is shown, and set **Scene Ghosts** to **Outline** so that every scene position is drawn.
+3. On the **View** menu, make sure **Key Results** is shown, and in **View › Scene Display** set **Scene Ghosts** to **Outline** so that every scene position is drawn.
 
 EDCRASH is a planar analysis, so HVE's AutoPosition option does not apply. The remaining options are at their defaults. We're now ready to proceed with the tutorial.
 
@@ -320,7 +320,7 @@ For this case HVE 2027's Key Results are:
 
 ## Viewing Results
 
-Now that we have produced our EDCRASH results, let's take a detailed look at them. In HVE 2027 there is no separate Playback Editor: the reports are on the **Output** menu of the Event editor.
+Now that we have produced our EDCRASH results, let's take a detailed look at them. In HVE 2027 the reports are on the **Output** menu of the Event editor.
 
 EDCRASH produces the following reports:
 
@@ -417,7 +417,7 @@ HVE 2027 does not print. To keep a report:
 1. In the HVE Reports window, click the report's tab.
 2. Enter a file name in the field at the bottom (default `hve_report.txt`) and click **Save This Page**, or click **Save All Pages** to write every page to that one file. It is saved beside the case file unless the name includes a folder; the line under the buttons shows where.
 
-The file is plain text and can be printed from any text editor. The Key Results table can be exported with **Export CSV...** or copied with **Copy CSV** at its top.
+The file is plain text and can be printed from any text editor. The table in the **Trajectory** section of the Key Results panel can be exported with **Export CSV...** or copied with **Copy CSV**.
 
 ---
 

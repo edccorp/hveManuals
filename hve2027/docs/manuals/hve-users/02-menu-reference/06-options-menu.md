@@ -11,7 +11,7 @@ what it affects. This chapter takes HVE's Options menu item by item.
 |---|---|
 | Create DB | **Vehicle › Save Vehicle As...** › Save to Database ([details](#create-db)) |
 | Show Key Results | **Output › Key Results...** or **View › Key Results** |
-| Show Axes | Not in HVE 2027 ([details](#show-axes)) |
+| Show Axes | **View › Scene Display › Axes** ([details](#show-axes)) |
 | Show Contacts | **View › Scene Display › Occupant Equipment** |
 | Show Belt Anchors | **View › Scene Display › Occupant Equipment** |
 | Show Velocity Vectors | **View › Scene Display › Vectors › Velocity Vectors** |
@@ -57,9 +57,14 @@ vehicle's make, model, year and body style to match a loaded database record.
 
 ## SHOW AXES
 
-!!! warning "Not in HVE 2027"
-    There is no switch for coordinate axes. The coordinate system is described
-    in [Appendix III](../11-appendices/appendix-03-coordinate-systems.md).
+**HVE:** Options › Show Axes · **HVE 2027:** View › Scene Display › Axes
+
+Draws the environment's axes at the origin and each vehicle's own axes at its
+CG, turning with the vehicle; on by default. The coordinate system is described
+in [Appendix III](../11-appendices/appendix-03-coordinate-systems.md).
+
+!!! note "HVE 2027"
+    Axes are not drawn on humans.
 
 ---
 
@@ -114,8 +119,9 @@ The **Simulation Controls** at the top of the Simulation panel belong to the
 active event:
 
 - **Duration (s)**, **Trajectory Timestep (s)**, **Collision Timestep (s)**,
-  **Separation Timestep (s)** and **Output Timestep (s)** — HVE's integration
-  timesteps. A timestep the active method does not use is not shown, and the
+  **Separation Timestep (s)**, **Curb Impact Timestep (s)** (EDVSM), **Human
+  Collision Timestep (s)** (EDHIS and EDGEN) and **Output Timestep (s)** —
+  HVE's integration timesteps. A timestep the active method does not use is not shown, and the
   panel says so.
 - **Termination** — linear and angular speed limits, each with an **On** switch;
   the run ends once every vehicle is below both armed limits. With both off the

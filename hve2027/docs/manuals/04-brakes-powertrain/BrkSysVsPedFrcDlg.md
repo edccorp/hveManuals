@@ -5,13 +5,10 @@ The brake system parameters for the current vehicle are displayed and edited usi
 This dialog contains the following items:
 
 ## Axle
-Selects the axle (Axle 1 up to the vehicle's number of axles) whose System Type and Assembly Type are displayed. Pedal Ratio is per vehicle and is shown only with Axle 1 selected.
+Selects the axle (Axle 1 up to the vehicle's number of axles) whose System Type is displayed. Pedal Ratio is per vehicle and is shown only with Axle 1 selected.
 
 ## System Type
 Radio buttons: **Hydraulic** or **Air (Pneumatic)**.
-
-## Assembly Type
-Radio buttons: **Disc** or **Drum**.
 
 ## Parameters
 
@@ -21,9 +18,6 @@ Ratio of master cylinder pressure per unit of brake pedal force (kPa/N in SI, ps
 ### Pressure Ratio
 A ratio from 0 to 2. It is used as the pedal ratio only when Pedal Ratio is 0 and the curve below has no usable last row.
 
-### ABS Installed
-Check box recording whether the vehicle is equipped with an anti-lock brake system.
-
 ## Pressure vs Pedal Force
 
 A table of **Pedal Force** against **Pressure**, with an **x** button to delete a row (at least two rows are kept) and **Add Point** to add one (up to 20). When Pedal Ratio is 0, only the **last** row is used: its pressure divided by its pedal force becomes the pedal ratio; the rows between are kept but not sampled. When Pedal Ratio is not 0, the curve is not used. If neither gives a ratio, 6.67 kPa/N is used.
@@ -31,16 +25,15 @@ A table of **Pedal Force** against **Pressure**, with an **x** button to delete 
 **Close** closes the dialog.
 
 !!! note "HVE 2027"
-    Three of these controls are recorded with the case but **no engine reads them** (with **View › Show Guidance Text** on, the dialog says so beside each):
+    **System Type** reaches SIMON's input report only (its *Brake System* row); no engine's physics reads it, and only Axle 1's entry is used, since HVE stores one per vehicle. The hydraulic/air distinction reaches the physics through the per-wheel brake type in the [Brake Assembly](BrkAsmblyDlg.md) dialog.
 
-    - **System Type**. The hydraulic/air distinction reaches the engines through the per-wheel brake type in the [Brake Assembly](BrkAsmblyDlg.md) dialog.
-    - **Assembly Type**. The disc/drum choice that reaches the engines is the per-wheel **Brake Type** in Brake Assembly; setting this one to Drum does not make the wheels drum-braked.
-    - **ABS Installed**. Whether ABS runs is decided by the per-wheel **Antilock (ABS)** flag in Brake Assembly and the ABS System data; this box changes neither, and it does not enable or disable the antilock controls.
+    HVE's Brake System dialog also has **Assembly Type** and **ABS Installed**. In HVE 2027 they are elsewhere:
 
-    The system-level ABS parameters (HVE's **Edit...** button) are in **Vehicle › ABS / Brake Design... › ABS System...**.
+    - **Assembly Type**: the disc/drum choice is the per-wheel **Brake Type** in Brake Assembly.
+    - **ABS Installed**: in **Vehicle › ABS / Brake Design... › ABS System...**, with the system-level ABS parameters (HVE's **Edit...** button). SIMON regulates every wheel when it, or any wheel's **Antilock (ABS)** box in Brake Assembly, is ticked. EDSVS and EDVTS use the per-wheel boxes, and EDVDS has no ABS model.
 
 !!! warning "Not in HVE 2027"
-    - HVE's rule that disables Pedal Ratio for a vehicle with no driver, and enables the ABS **Edit...** button only when ABS Installed is checked.
+    - HVE's rule that disables Pedal Ratio for a vehicle with no driver.
     - The warning HVE gives on opening when the right and left brake types on an axle differ.
 
 !!! tip "New in HVE 2027"

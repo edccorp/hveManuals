@@ -42,10 +42,13 @@ CSV...** and **Copy CSV** take the table out.
 
 ### Coordinate Axes
 
-!!! warning "Not in HVE 2027"
-    There is no switch to draw coordinate axis systems on humans, vehicles and
-    the environment. The coordinate systems are described in
-    [Appendix III](../11-appendices/appendix-03-coordinate-systems.md).
+**View › Scene Display › Axes** (on by default) draws the environment's axes at
+the origin and each vehicle's own axes at its CG, turning with the vehicle. The
+coordinate systems are described in
+[Appendix III](../11-appendices/appendix-03-coordinate-systems.md).
+
+!!! note "HVE 2027"
+    Axes are not drawn on humans.
 
 ### Contact Surfaces
 
@@ -59,7 +62,7 @@ the same for the occupant.
 
 **View › Scene Display › Vectors › Velocity Vectors** draws each vehicle's velocity vector. It is
 formed from the vehicle's forward and lateral velocity, so a vehicle in a
-sideslip shows an arrow off its heading. The Vectors menu also offers the
+sideslip shows an arrow off its heading. The Vectors group also offers the
 **Collision Force (PDOF)** while the vehicles are in contact and the **Tire Force
 Vectors** at each contact patch. Arrows are scaled to the run's own peak.
 
@@ -153,8 +156,9 @@ Simulation, docked beside Event Information), and belong to the active event.
 #### Integration Timesteps
 
 **Duration (s)**, **Trajectory Timestep (s)**, **Collision Timestep (s)**,
-**Separation Timestep (s)** and **Output Timestep (s)**. A timestep the active
-method does not use is not shown. **Integrator Convergence** holds **Maximum
+**Separation Timestep (s)**, **Curb Impact Timestep (s)** (EDVSM), **Human
+Collision Timestep (s)** (EDHIS and EDGEN) and **Output Timestep (s)**. A
+timestep the active method does not use is not shown. **Integrator Convergence** holds **Maximum
 Bisections** and **Velocity Convergence** (and, for EDHIS, the velocity and
 acceleration change limits) for the methods that read them.
 

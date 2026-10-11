@@ -16,7 +16,7 @@ This basic procedure is described in detail in this tutorial.
 > NOTE: It is assumed that HVE 2027 is up and running, and that the user is familiar with its basic features: the editor tabs under the menu bar, the docked panels and the viewport. The purpose of this tutorial is to illustrate those features while setting up and executing an EDVTS event.
 
 !!! note "HVE 2027"
-    This chapter has been rewritten for HVE 2027 around EDC's own finished tutorial case, `EdvtsTutorialEDC.hve`, which HVE 2027 opens directly. Two things in the original walkthrough cannot be repeated from scratch in HVE 2027: the off-ramp site geometry is stored only inside the case file, and a payload cannot be entered for an EDVTS event in this version (**Event › Payload…** is greyed). So the tutorial opens the finished case and goes through each step of the original — what it sets, and where that setting is in HVE 2027 — before running the event and reviewing the results. Where the printed walkthrough and the saved case disagree, the case is followed.
+    This chapter has been rewritten for HVE 2027 around EDC's own finished tutorial case, `EdvtsTutorialEDC.hve`, which HVE 2027 opens directly. One thing in the original walkthrough cannot be repeated from scratch in HVE 2027: the off-ramp site geometry is stored only inside the case file. So the tutorial opens the finished case and goes through each step of the original — what it sets, and where that setting is in HVE 2027 — before running the event and reviewing the results. Where the printed walkthrough and the saved case disagree, the case is followed.
 
 ## Getting Started
 
@@ -55,7 +55,7 @@ The original walkthrough makes the following edits. Each is already in the finis
 
 The environment is a freeway off-ramp (*Freeway Offramp, Exit 342*, Denver, Colorado). Choose the **Environment (F4)** editor tab to see it, and **Environment › Environment…** for its location, date, time and physical data.
 
-> NOTE: The off-ramp geometry is stored inside the tutorial case; there is no separate `FreewayOfframp.h3d` file to open. To carry a site with a case you save, use **File › Embed the environment in the case**.
+> NOTE: The off-ramp geometry is stored inside the tutorial case; there is no separate `FreewayOfframp.h3d` file to open. A case you save carries its site in the same way (**File › Embed the environment in the case**, on by default).
 
 *Figures 5-8 and 5-9 of the printed manual (the HVE-2D and HVE environments) are not reproduced.*
 
@@ -175,7 +175,7 @@ EDVTS produces the following reports:
 - **Variable Output** — A table containing time-dependent simulation results
 - **Vehicle Data** — A series of tables containing the vehicle data used by EDVTS
 
-In HVE 2027 there is no Playback mode and no Report Window Information dialog. The reports are on the **Output** menu as soon as the event has been run: **Output › HVE Reports…** shows the pages EDVTS builds (one tab each); **Output › Timestep Data Table…**, **Variable Report…** and **Output Graph…** show the Variable Output; and the viewport is the Trajectory Simulation.
+In HVE 2027 the reports are not in Playback mode (F6, which plays several events in sequence), and there is no Report Window Information dialog. The reports are on the Event editor's **Output** menu as soon as the event has been run: **Output › HVE Reports…** shows the pages EDVTS builds (one tab each); **Output › Key Results…** and **Output Graph…** show the Variable Output; and the viewport is the Trajectory Simulation.
 
 ### Accident History
 
@@ -242,7 +242,7 @@ The purpose of our event is to determine the vehicle's propensity for rollover, 
 - Choose **Output › Variable Selection…**. The **Select Output Variables** dialog is displayed.
 - Search for and tick *V-tot*, *Fwd Acc* and *Lat Acc* in the Kinematics group for the Mack tractor.
 - Tick *Fz'* for each of the tractor's tires (axles 1, 2 and 3), and then for the semi-trailer's tires.
-- Choose **Output › Timestep Data Table…** to see the values at each output time, or **Output › Output Graph…** to plot them.
+- Choose **Output › Key Results…** to see the values at each output time. To plot them, open **Output › Output Graph…** and tick them with its own **Select Variables…** button.
 
 **Output › Export Variables…** writes the selected variables to a file.
 

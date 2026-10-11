@@ -13,22 +13,24 @@ available.
 
 ## Parameters
 
-Forces and speeds are shown in the units set in Preferences; each value is
-typed or dragged.
+Max Velocity Error, Max Brake Pedal and Initial Brake are shown in the units
+set in Preferences; the correction and damping rows are in the units their
+labels state. Each value is typed or dragged.
 
 - **Max Velocity Error** — allowable difference between the current speed and
   the desired speed (HVE's *Max Speed Error*, which HVE kept on its Driver tab).
 - **Max Throttle (0-1)** — maximum allowable throttle pedal position.
 - **Max Brake Pedal** — maximum allowable brake pedal force.
 - **Initial Throttle** — throttle pedal position at driver start time (0–1).
-- **Throttle Correction** — amount of throttle correction per unit of speed
-  error.
-- **Throttle Damping** — throttle correction damping, used to limit throttle
-  activity.
+- **Throttle Correction Rate (%/100 per mph)** — amount of throttle
+  correction per unit of speed error.
+- **Throttle Correction Damping (%/100-s per mph)** — throttle correction
+  damping, used to limit throttle activity.
 - **Initial Brake** — brake pedal force at driver start time.
-- **Brake Correction** — amount of brake pedal force correction per unit of
-  speed error.
-- **Brake Damping** — brake correction damping, used to limit braking activity.
+- **Brake Correction Rate (lb/mph)** — amount of brake pedal force correction
+  per unit of speed error.
+- **Brake Correction Damping (lb-s/mph)** — brake correction damping, used to
+  limit braking activity.
 - **Pedal Delay (s)** — HVE's *Delay To Switch Pedals*: the time the driver needs
   to move between the throttle and the brake pedal.
 

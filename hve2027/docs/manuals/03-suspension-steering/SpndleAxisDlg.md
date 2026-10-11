@@ -44,7 +44,6 @@ These steer-axis values matter only when the wheel's steer angle is free: SIMON'
     - **Stop Energy Ratio**. HVE 2027 carries no restitution for the steering stops.
     - The **Steering: Right (+) / Left (−)** radio buttons (both stops are shown at once).
     - Separate left and right caster and kingpin inclination entry: each is entered once per axle (left/right values read from an HVE file are kept and reported).
-    - Kingpin X/Z coordinates are stored with the vehicle but not passed to the engines.
 
 <!-- NAV -->
 

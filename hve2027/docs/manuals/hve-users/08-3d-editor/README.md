@@ -15,10 +15,10 @@ HVE's 3-D Editor is a separate editing session in which the user builds and edit
 To edit a scene in HVE 2027, perform the following steps:
 
 1. Select the **Environment (F4)** editor tab.
-2. Open **Environment › Environment…**. In the **Terrain** section, under **Scene Geometry**, enter or browse for a geometry file and press **Import**. (A `.hve` case opened with **File › Open** already carries its site.)
+2. Open **Environment › Environment…**. In the **Terrain** section, under **Scene Geometry**, enter or browse for a geometry file and press **Import**. (A `.hve` case opened with **File › Open Case...** already carries its site.)
 3. Click a surface in the Viewport, or pick it in the **Surface Materials** list or the **Outliner**, and set its **Surface Type** and **Friction Multiplier**.
 4. Use the **Outliner** to show, hide and re-layer surfaces, and the **Shader Editor** to change how they look.
-5. Save the case (**File › Save Case**). The site's geometry file is referenced by the case; **File › Embed the environment in the case** stores it inside the case instead.
+5. Save the case (**File › Save Case**). The case carries the site's geometry inside it, as an HVE case does; unticking **File › Embed the environment in the case** makes it name the geometry file instead.
 
 ## Overview of Section Eight
 

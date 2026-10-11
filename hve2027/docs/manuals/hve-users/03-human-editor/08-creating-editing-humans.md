@@ -44,8 +44,8 @@ The Occupants panel manages all the humans in the current case. It contains:
 - **Anthropometry** — The GEBOD inputs: Subject Type, Age Group, Weight
   Percentile, Height Percentile, and the **Regenerate GEBOD Body** button.
 - **Anthropometric** — The human's total Weight and Mass.
-- **Injury Tolerances…, Airbag Properties…, Body Segments…, Joint
-  Properties…, Body Pose…** — Buttons that open the human's data dialogs.
+- **Injury Tolerances…, Body Segments…, Joint Properties…, Body Pose…** —
+  Buttons that open the human's data dialogs.
 
 > **NOTE:** Removing a human removes it only from the current case. Events
 > that used it are updated so that their remaining humans keep their
@@ -89,9 +89,9 @@ attributes in the panel:
   > selected, the human's motion is defined relative to the earth. Occupants
   > are drawn and solved seated, pedestrians standing.
 
-  > **NOTE:** The Location also selects which seat's airbag the Airbag
-  > Properties dialog edits for this human. A pedestrian has no seat and no
-  > airbag.
+  > **NOTE:** The Location also selects which seat's airbag the human uses:
+  > the bag at that seat of the event's vehicle, edited in the Vehicle editor
+  > (Vehicle › Airbags...). A pedestrian has no seat and no airbag.
 
 - **Subject Type** — Male or Female.
 - **Age Group** — Child (0-12), Teen (13-17), Adult (18-64) or Senior (65+).
@@ -180,7 +180,7 @@ the case; editing it does not affect any other case.
 
 !!! warning "Not in HVE 2027"
     HVE 2027 has no Previous Human Selection dialog (HVE's Add › Previous).
-    To reuse a human from another case, open that case with **File › Open**
+    To reuse a human from another case, open that case with **File › Open Case...**
     (an HVE `.hve` case or an HVE 2027 `.hvc`/`.json` case) and work from it.
 
 ## Selecting and Editing Humans
@@ -202,8 +202,6 @@ human:
    - **Joint Properties…** — The physical properties of each of the 14
      joints.
    - **Injury Tolerances…** — The injury tolerances of the current human.
-   - **Airbag Properties…** — The airbag at the human's seat (see
-     [Airbag Restraints](../04-vehicle-editor/11a-sprung-mass.md#airbag-restraints)).
    - **Body Pose…** — The human's pose in the active event: an angle for
      each segment, and the initial velocity (a pedestrian's walking speed).
 

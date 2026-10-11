@@ -26,9 +26,9 @@
    damage width and offset, damage height and offset, maximum crush) and the
    crush depth tables. These are the numbers DamageStudio's Damage Profile
    group displays for a selected impulse.
-5. For delta-V, PDOF and other results as time histories, use Key Results,
-   the Output Graph and the Timestep Data Table (Output menu); **Output ›
-   Variable Selection** picks the channels.
+5. For delta-V, PDOF and other results as time histories, use Key Results
+   and the Output Graph (Output menu); **Output › Variable Selection** picks
+   the channels.
 6. Optionally, color the crushed vehicle by its crush depth with a Shader
    Editor material that uses the *HVE Simulation* node's **Crush** output (see
    [The DamageStudio Interface](01-interface.md#geometry-simulated-damage-simulated)).

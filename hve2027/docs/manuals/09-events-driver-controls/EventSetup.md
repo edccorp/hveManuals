@@ -17,7 +17,7 @@ vehicles and humans in the event, initial conditions).
 
 **Position / Velocity...**
 Displays the [Position/Velocity](PosVelDlg.md) dialog. Enabled for the methods
-that read initial conditions (every method except EDCRASH).
+that read initial conditions (every method except EDCRASH and READDATAFILE).
 
 **Driver Controls...**
 Displays the [Driver Controls](DriverControls.md) dialog. Enabled for the
@@ -25,8 +25,10 @@ simulation methods that read driver tables, and for EDCRASH, whose dialog shows
 only the Wheel Data page.
 
 **Damage Profiles...**
-Displays the Damage Profiles dialog (crush stiffness per side, and the 3-D node
-stiffness used by DyMESH). Enabled for EDCRASH, EDSMAC, EDSMAC4 and SIMON.
+Opens EDCRASH's measured damage (CDC, PDOF, crush depths) in the Vehicle Impact
+Setup section of [Event Information](EventInfo.md#vehicle-impact-setup-edcrash).
+Enabled for EDCRASH only. A vehicle's crush stiffness (A, B, Kv and the 3-D node
+stiffness) is **Vehicle › Crush Stiffness...** in the Vehicle editor.
 
 **Collision Pulse...**
 Displays the [Collision Pulse](../11-reports-output/ColPulse.md) dialog.
@@ -51,6 +53,11 @@ Displays the [Path Follower](DriverControls7.md) dialog (HVE's HVE Driver page).
 **Payload...**
 Displays the Payload dialog. Enabled for the methods that read a payload: SIMON, EDSMAC4, EDSVS, EDVDS and EDVTS.
 
+**Lights...**
+Displays the event Lights window: which of each vehicle's lamps the run may
+switch on, and how (see [Driver Controls](DriverControls.md#lights)). Enabled
+for SIMON and EDSMAC4.
+
 **Wheels...**
 Displays the event Wheels dialog. Enabled for the simulation methods.
 
@@ -58,15 +65,13 @@ Displays the event Wheels dialog. Enabled for the simulation methods.
 Displays the Accelerometers dialog. Enabled for the methods that compute accelerometer output: SIMON, EDSMAC4, EDVDS and EDVSM. (EDSMAC, EDSVS, EDVTS and EDGEN produce no accelerometer output, as in HVE.)
 
 **Contacts...**
-Displays the [Contacts](ContactsDlg.md) dialog. Enabled for EDSMAC4 only.
+Displays the [Contacts](ContactsDlg.md) dialog: the Occupant Contacts dialog
+for an EDHIS or GATB event, the Contacts window for EDSMAC4. Enabled for those
+three methods.
 
 **Restraints...**
-A submenu with **Airbag Restraint...** and **Belt Restraint...**. Enabled for
-the simulation methods.
-
-**Signals**
-Displays the Signals dialog (traffic signal cycle, green and yellow times).
-Enabled for EDGEN only.
+A submenu with **Airbags...** and **Belt Restraint...**. Enabled for EDHIS and
+GATB, the methods that read belts and airbags.
 
 **Notes**
 Displays the Event Notes dialog: free-form notes kept with the event and saved

@@ -200,8 +200,9 @@ or used by the calculation model.
     declares no type for is shown and treated as Road. To take a surface out
     of the calculation, clear its **Drive** switch in the Environment
     panel's Surface Materials list (or in View › Outliner); clearing its
-    **Draw** switch only hides it. Standing water is entered as a depth in
-    the Environment panel's Physical section rather than as Water polygons
+    **Draw** switch only hides it. Standing water is a **Water Depth** (with
+    **Wet Friction** and **Texture Depth**) on each surface's HVE Surface
+    node, and on the Default material for ground with no surface of its own
     (see [Chapter 12](12-creating-editing-environments.md)).
 
 #### How Surfaces Are Tested for Physical Contact
@@ -501,8 +502,9 @@ parameters:
 
 !!! warning "Not in HVE 2027"
     HVE 2027 does not model visibility. Fog Type and Maximum Sight Distance
-    have no control and the viewport does not fade objects with distance; a
-    value imported from an HVE case is only kept with the case. The rest of this
+    have no control, and the viewport's **Distance Haze** (View › Scene
+    Display › Effects) is a fixed fade of far geometry, not a visibility
+    distance; a value imported from an HVE case is only kept with the case. The rest of this
     section describes HVE's model. The sky's colour is part of the world
     material in the Shader Editor
     ([Materials and the Shader Editor](../../new-features/01-materials-and-shader-editor.md)).

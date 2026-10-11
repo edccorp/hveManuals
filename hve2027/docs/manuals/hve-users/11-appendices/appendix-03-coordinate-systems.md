@@ -69,7 +69,7 @@ All vehicle-related data, such as wheel locations, steer angles and sideslip
 angles, are defined relative to the vehicle-fixed coordinate system.
 
 !!! note "HVE 2027"
-    The calculation models number the two wheels of an axle with the **right** wheel (+y) first. HVE 2027's per-wheel tables follow that order — columns read A1 Right, A1 Left, A2 Right, and so on — and per-wheel output channels are labelled the same way. (One exception at present: the Brake Designer's Side selector is labelled the other way round; see [Chapter 29](../10-brake-designer/29-brake-designer.md).)
+    The calculation models number the two wheels of an axle with the **right** wheel (+y) first. HVE 2027's per-wheel tables follow that order — columns read A1 Right, A1 Left, A2 Right, and so on — and per-wheel output channels are labelled the same way.
 
 ### Articulated Vehicles
 
@@ -132,7 +132,7 @@ on).
     | Case data, Event Information, Position / Velocity, all outputs and reports | Earth-fixed and vehicle-fixed SAE: x forward, y right, z **down** |
     | Scene Box Editor; Cameras (eye, target, onboard mount and aim point); Viewport View camera target | x forward, y right, z **up** (height above the ground) |
     | Environment geometry imported from DXF, OBJ or glTF | read as z **up** (or Y-up with **File is Y-up**) and converted |
-    | Environment `.h3d` | converted from the file's own frame (**Invert Z** corrects a file whose vertical sense is reversed) |
+    | Environment `.h3d` | converted from the file's own frame (**Flip About X-Axis** corrects a file whose vertical sense is reversed) |
     | Vehicle `.h3d` meshes | z **down**, as in HVE |
     | glTF export | glTF's +Y up: glTF (x, y, z) = (−Y, −Z, X) of the SAE coordinates — a proper rotation, not a mirror |
     | Blender live link | Blender's Z up: Blender (x, y, z) = (Y, X, −Z) of the SAE coordinates; rotations are sent as quaternions (W, X, Y, Z) |

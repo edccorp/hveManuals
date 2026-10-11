@@ -13,10 +13,10 @@ Like all EDVSM events, the procedure involves the following basic steps:
 
 This basic procedure is described in detail in this tutorial.
 
-> **NOTE:** It is assumed that HVE 2027 is running and that you are familiar with its editors (Human, Vehicle, Environment and Event, the tabs under the menu bar), its dialogs and the viewport. The purpose of this tutorial is to illustrate those features while setting up and executing an EDVSM event.
+> **NOTE:** It is assumed that HVE 2027 is running and that you are familiar with its editors (Human, Vehicle, Environment, Event and Playback, the tabs under the menu bar), its dialogs and the viewport. The purpose of this tutorial is to illustrate those features while setting up and executing an EDVSM event.
 
-!!! tip "New in HVE 2027: start from EDC's own tutorial case"
-    HVE 2027 opens HVE's case files directly. The finished case for this tutorial, `EdvsmTutorialEDC.hve`, is supplied with HVE in its `supportFiles/case` folder. **File › Open** it and the vehicle, the curb site and all five events arrive as EDC set them up, including every edit described below. This chapter follows the original tutorial step by step and shows where each input lives in HVE 2027, so you can either build the case yourself or open EDC's and check each value against the text.
+!!! note "HVE 2027: start from EDC's own tutorial case"
+    HVE 2027 opens HVE's case files directly. The finished case for this tutorial, `EdvsmTutorialEDC.hve`, is supplied with HVE in its `supportFiles/case` folder. Open it with **File › Open Case…** and the vehicle, the curb site and all five events arrive as EDC set them up, including every edit described below. This chapter follows the original tutorial step by step and shows where each input lives in HVE 2027, so you can either build the case yourself or open EDC's and check each value against the text.
 
     Run from that case, HVE 2027 reproduces the results HVE saved in it: for each of the five events the final position agrees within 1 mm (2 mm on one), the heading change within 0.01 degree and the speed within 0.01 km/h. The one difference in behaviour is described under [Rollover Validation Event](#rollover-validation-event).
 
@@ -28,7 +28,7 @@ Before starting, set the display options so that we're all starting on the same 
 
 - **Tools › Preferences**: set *Units* to **Imperial (ft/in, mph, lb, lbf)**, HVE's US units.
 - **View › Key Results**: on.
-- **View** menu: turn on *Skidmarks*; leave the vectors off.
+- **View › Scene Display**: turn on *Skidmarks*; leave the vectors off.
 
 The remaining options will keep their default settings. We're now ready to proceed with the tutorial.
 
@@ -118,9 +118,9 @@ The environment is displayed in the viewport (see Figure 5-4).
 
 Now that we've created all the objects (*vehicle* and *environment*) for our case, let's save the case file.
 
-- Click on the **File** menu and choose **Save As**. Enter the file name `EdvsmTutorial` and save.
+- Click on the **File** menu and choose **Save Case As…**. Enter the file name `EdvsmTutorial` and save.
 
-> **NOTE:** HVE 2027 saves a case as `.hvc` (or as `.json` with **File › Save As JSON**). It reads HVE's `.hve` case files but does not write them. A case saved after a run also keeps its results, in a separate file beside it.
+> **NOTE:** HVE 2027 saves a case as `.hvc` (or as `.json` with **File › Save Case As JSON…**). It reads HVE's `.hve` case files but does not write them. A case saved after a run also keeps its results, in a separate file beside it.
 
 > **NOTE:** Saving the file occasionally is a highly recommended practice.
 
@@ -373,7 +373,7 @@ One final, but very important point: This tutorial involves a Ford Bronco II. Th
 
 ## Viewing Results
 
-Now that we have produced our EDVSM simulations, let's take a detailed look at the results. In HVE 2027 the results of the event you last ran are shown in the viewport and through the **Output** menu; there is no separate Playback Editor.
+Now that we have produced our EDVSM simulations, let's take a detailed look at the results. In HVE 2027 the results of the event you last ran are shown in the Event editor's viewport and through its **Output** menu; the **Playback** editor (F6) is only for playing several events in sequence.
 
 EDVSM produces the following reports:
 
@@ -442,7 +442,7 @@ The Program Data report includes the simulation control parameters and other run
 
 ### Variable Output
 
-The Variable Output report is a table of user-selectable, time-dependent simulation results for the current event. In HVE 2027 it is **Output › Timestep Data Table**.
+The Variable Output report is a table of user-selectable, time-dependent simulation results for the current event. In HVE 2027 it is **Output › Key Results**.
 
 #### Variable Selection
 
@@ -453,7 +453,7 @@ The purpose of our EDVSM study is to illustrate a rollover sequence. To document
 
 > **NOTE:** Feel free to add additional variables. You might be especially interested in the tire forces.
 
-The Timestep Data Table for the *Curb-tripped Rollover* event now includes the selected results (see Figure 5-15). **Output › Output Graph** plots the same channels against time, and **Output › Export Variables** writes them to a file.
+Key Results for the *Curb-tripped Rollover* event now includes the selected results, and **Output › Export Variables** writes them to a file. **Output › Output Graph** plots channels against time; choose them with its own **Select Variables…** button. **Output › Timestep Data Table** (Figure 5-15) lists the CG position, heading and speed at each output step.
 
 ![Figure 5-15](images/hvn-edvsm-timestep-table.png)
 
@@ -483,7 +483,7 @@ The trajectory plays back in the Event editor's viewport (see Figure 5-16). To v
 HVE 2027 does not print directly. To print a report, save it to a file and print the file:
 
 - In the HVE Reports window, type a file name in the box at the bottom and click **Save This Page** (or **Save All Pages** for every page).
-- For the Variable Output, use **Export CSV…** in the Timestep Data window, or **Output › Export Variables**.
+- For the Variable Output, use **Export CSV…** in Key Results, or **Output › Export Variables**.
 
 > **NOTE:** A page saved as TEXT is laid out in spaces for a fixed-width font. Open it in a text editor with a monospaced font before printing it, or use **Save Page as HTML**, which lays the page out as tables.
 

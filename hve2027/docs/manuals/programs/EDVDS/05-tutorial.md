@@ -16,7 +16,7 @@ This basic procedure is described in detail in this tutorial.
 > **NOTE:** We assume that HVE 2027 is up and running, and that you are familiar with its basic features: the five editor tabs under the menu bar, the docked panels and the viewport. The purpose of this tutorial is to illustrate those features while setting up and executing an EDVDS event.
 
 !!! note "HVE 2027"
-    This chapter has been rewritten for HVE 2027 around EDC's own finished tutorial case, `EdvdsTutorialEDC.hve`, which HVE 2027 opens directly. Two things in HVE's original walkthrough cannot be repeated from scratch in HVE 2027: the Rowena Point site geometry is stored only inside the case file, and payloads cannot be entered for an EDVDS event in this version (**Event › Payload…** is greyed). So the tutorial opens the finished case and goes through each step of the original — what it sets, and where that setting is in HVE 2027 — before running the event and reviewing the results. Where HVE's walkthrough and the saved case disagree, the case is followed.
+    This chapter has been rewritten for HVE 2027 around EDC's own finished tutorial case, `EdvdsTutorialEDC.hve`, which HVE 2027 opens directly. One thing in HVE's original walkthrough cannot be repeated from scratch in HVE 2027: the Rowena Point site geometry is stored only inside the case file. So the tutorial opens the finished case and goes through each step of the original — what it sets, and where that setting is in HVE 2027 — before running the event and reviewing the results. Where HVE's walkthrough and the saved case disagree, the case is followed.
 
 ## Getting Started
 
@@ -66,7 +66,7 @@ The environment is HVE's *Rowena Point* site near Hood River, Oregon — a downh
 ![Figure 5-2](images/hvn-edvds-environment-editor.png)
 *Figure 5-2: The tutorial's environment in the HVE 2027 Environment editor. The original 3-D geometry was obtained with a total station; the textures are photos taken at the scene.*
 
-> **NOTE:** The Rowena Point geometry is stored inside the tutorial case; there is no separate `RowenaPoint.h3d` file to open. To carry a site with a case you save, use **File › Embed the environment in the case**.
+> **NOTE:** The Rowena Point geometry is stored inside the tutorial case; there is no separate `RowenaPoint.h3d` file to open. A case you save carries its site in the same way (**File › Embed the environment in the case**, on by default).
 
 > **NOTE:** The location, date, time and the angle of the X axis are used to position the sun in the scene.
 
@@ -165,10 +165,10 @@ EDVDS produces the following reports:
 - **Variable Output** — A table containing user-selected, time-dependent simulation results
 - **Trajectory Simulation** — A 3-D visualization of the event, displayed at a user-selectable time interval
 
-In HVE 2027 there is no Playback mode and no Report Window Information dialog. The reports are on the **Output** menu as soon as the event has been run:
+In HVE 2027 the reports are not in Playback mode (F6, which plays several events in sequence), and there is no Report Window Information dialog. The reports are on the Event editor's **Output** menu as soon as the event has been run:
 
 - **Output › HVE Reports…** — the pages EDVDS itself builds: Accident History, Driver Data, Environment Data, Messages, Program Data and Vehicle Data, one tab each.
-- **Output › Timestep Data Table…**, **Output › Variable Report…**, **Output › Output Graph…** — the Variable Output.
+- **Output › Key Results…** and **Output › Output Graph…** — the Variable Output.
 - The viewport — the Trajectory Simulation.
 
 ### Messages
@@ -246,7 +246,7 @@ The purpose of our event is to determine the vehicle's propensity for rollover, 
 - Choose **Output › Variable Selection…**. The **Select Output Variables** dialog is displayed.
 - Search for and tick *V-tot*, *Fwd Acc* and *Lat Acc* in the Kinematics group for the Freightliner.
 - Tick *Fz'* for each of the Freightliner's tires (axles 1, 2 and 3), and then for Trailer 1's tires.
-- Choose **Output › Timestep Data Table…** to see the values at each output time, or **Output › Output Graph…** to plot them.
+- Choose **Output › Key Results…** to see the values at each output time. To plot them, open **Output › Output Graph…** and tick them with its own **Select Variables…** button.
 
 **Output › Export Variables…** writes the selected variables to a file.
 

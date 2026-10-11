@@ -23,6 +23,7 @@ The menu bar always carries **File**, **Edit**, **View**, **Tools** and
 | Vehicle (F3) | **Vehicle** |
 | Environment (F4) | **Environment** |
 | Event (F5) | **Event** and **Output** |
+| Playback (F6) | **Playback** |
 
 The main entries:
 
@@ -37,20 +38,21 @@ The main entries:
   ABS / Brake Design, Accelerometers, Steering System, Suspension Data, Tire
   Data (Detailed), Tire Tables, Brake Assembly, Brake Designer, Brake System
   Pressure, Brake Material Props, Drivetrain, Aero Dynamic Drag, Body Torsion,
-  Vehicle Mesh, Advanced Mesh Options, Contact Surfaces, Airbag Restraint, Belt
-  Restraint.
+  Crush Stiffness, Vehicle Mesh, Advanced Mesh Options, Contact Surfaces,
+  Airbags, Belt Restraint.
 - **Environment** — Environment, Aerial Image, Scene Box Editor.
 - **Event** — Event Information, Position / Velocity, Driver Controls, Damage
   Profiles, Collision Pulse, Vehicle Mesh, DyMESH Options, Path Follower,
-  Payload, Wheels, Accelerometers, Contacts, Restraints (Airbag / Belt),
-  Signals, Notes, and items that appear only for the event's program
+  Payload, Lights, Wheels, Accelerometers, Contacts, Restraints (Airbags / Belt
+  Restraint), Notes, and items that appear only for the event's program
   (EDCRASH: Crush Profile; EDSMAC and EDSMAC4: Handling Parameters, Move CG,
   Crush Profile). An item the event's program does not use is greyed rather
   than hidden.
 - **Output** — Key Results, Output Graph, Timestep Data Table, Variable
   Selection, Variable Report, Accident History Report, HVE Reports, Playback
-  Options, Playback Sequence, Run Simulation, Damage Studio Options, Damage
-  Studio Report, Export Variables.
+  Options, Run Simulation, Damage Studio Options, Damage Studio Report, Export
+  Variables.
+- **Playback** — Playback Sequence, Playback Options, Run All Events.
 - **Occupant** — Human Information.
 - **View** — which panels are shown, in three groups: the scene (Viewport,
   **Outliner**, **Scene Display**, Shader Editor, Dope Sheet), the run and its
@@ -83,7 +85,7 @@ see the full path.
 
 ## Editor tabs
 
-The four buttons under the menu bar replace HVE's separate editors:
+The five buttons under the menu bar replace HVE's separate editors:
 
 | Tab | Key | Left-hand panel it opens | Works on |
 | --- | --- | --- | --- |
@@ -91,6 +93,7 @@ The four buttons under the menu bar replace HVE's separate editors:
 | Vehicle | **F3** | Vehicles | The vehicles in the case and all their data |
 | Environment | **F4** | Environment | The site: terrain, surfaces and materials, sky, physical data |
 | Event | **F5** | Event Information | The events: which vehicles and humans, the calculation method, positions, driver controls, running and playback |
+| Playback | **F6** | Playback Sequence | Several solved events on one timeline (see [Video and Playback Sequences](../new-features/07-video-and-playback-sequences.md)) |
 
 ![The Vehicle editor](images/hvn-main-window-vehicle.png)
 

@@ -1,10 +1,11 @@
 # Sun, Sky and World
 
 !!! tip "New in HVE 2027"
-    HVE 2027 places the sun from the scene's location, date and time — with
-    NOAA's solar position method or HVE's own — finds the location from an
-    address, and draws a sky with haze whose sun is the light that casts the
-    shadows.
+    HVE places the sun, and the shadows it casts, from the scene's location,
+    date and time, and HVE 2027 does too, with HVE's own method. New in
+    HVE 2027: NOAA's solar position method as an alternative, finding the
+    location from an address, and a world material — a sky with haze — whose
+    sun is the light that casts the shadows.
 
 !!! warning "Display only"
     The sun and sky light the picture. No engine reads them. Changing them never
@@ -185,7 +186,7 @@ The viewport draws shadows from the key light (the sun).
   - **Whole scene** — fitted to the site too, so everything that can cast a
     shadow does, with softer edges because the same detail covers more ground.
 
-  The menu shows the current resolution as *Now: N cm per shadow texel*.
+  The panel shows the current resolution as *Now: N cm per shadow texel*.
 - **At night** no shadow falls (above).
 
 ## In Blender and glTF

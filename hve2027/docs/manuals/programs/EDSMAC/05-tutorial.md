@@ -28,7 +28,7 @@ Before we start, let's set the display options so we're all starting on the same
 
     > NOTE: As we'll see when we look at the environment, our EDSMAC Tutorial takes place in Australia; thus, we use metric units. One field in this tutorial, the Kv stiffness, is checked in US units; see [Editing the Vehicles](#editing-the-vehicles).
 
-2. In the **View** menu, make sure **Key Results** and **Skidmarks** are checked.
+2. In the **View** menu, make sure **Key Results** is checked, and in **View › Scene Display** turn on **Skidmarks**.
 
 3. In **View › Scene Display › Rendering**, choose **Phong**.
 
@@ -56,7 +56,7 @@ The case contains the two vehicles of our study: a white 1996 Ford Escort 2-Door
 
 *Figure 5-1: The Vehicle Information window for the Ford Escort.*
 
-> NOTE: To build the case from scratch, click **Add...** at the top of the Vehicles panel. The **Load Vehicle from Database** dialog searches the vehicle databases in the folders listed under **Database folders**; add the folder holding HVE's `Tutorial.db`, choose the vehicle, and click **Add**. Then set **Driver Location** to **Right**.
+> NOTE: To build the case from scratch, click **Add...** at the top of the Vehicles panel. The **Add Vehicle** dialog searches the vehicle databases in the folders listed under **Database folders**; add the folder holding HVE's `Tutorial.db`, choose the vehicle, and click **Add Vehicle**. Then set **Driver Location** to **Right**.
 
 ### Editing the Vehicles
 

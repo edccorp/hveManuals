@@ -28,11 +28,11 @@ and they seed the table when one is created there.
 - **Slide Friction** — F<sub>x</sub>/F<sub>z</sub> at 100 percent longitudinal slip.
 - **Slip at Peak (frac)** — longitudinal slip at which the peak occurs.
 
-!!! tip "New in HVE 2027"
-    **Velocity Dependence (1/(m/s))** — the change in slide friction per unit
-    speed. HVE has no such field: EDSMAC and EDSMAC4 derive it from the speed
-    axis of the friction table. A non-zero value here is turned into a second
-    speed column of the friction table when the event is run.
+**Velocity Dependence** — the change in friction per unit speed (s/in or s/m).
+It is the field of HVE's 2-D Tire Data dialog, and as in HVE a non-zero value
+is turned into a second speed column of the friction table, moving peak and
+slide friction together; HVE 2027 does this when the event is run. It is
+greyed for a wheel whose friction table already has two or more speeds.
 
 ## Cornering Stiffness
 
@@ -64,7 +64,7 @@ Undeflected tire radius (no-load condition).
 
 ## Static Deflection
 
-Shown read-only when **View › Show Guidance Text** is on. It is not an input:
+Shown read-only. It is not an input:
 as in HVE, the static deflection is computed from the wheel's share of the
 vehicle weight and the initial deflection rate.
 

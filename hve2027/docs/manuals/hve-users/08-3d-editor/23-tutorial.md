@@ -20,14 +20,14 @@ If the site was built in HVE's 3-D Editor, open the case directly:
 
 1. Select the **Environment (F4)** tab and choose **Environment › Environment…**.
 2. Open the **Terrain** section. Under **Scene Geometry (DXF / .h3d / .iv / OBJ / glTF)**, type the file name in **Geometry File** or press **Browse…**.
-3. Set the **Scale Factor** (an **Extra Scale** for `.h3d`) and, if the file was modelled Y-up, tick **File is Y-up (swap Y/Z)**.
-4. Tick **Use surfaces as terrain (physics)** if vehicles are to drive on the site; leave it clear for geometry that is only a backdrop. (For DXF, OBJ and glTF files, check the elevation range in the summary against the site you expect: nothing in such a file says which way is up, and **File is Z-down (flip Z)** corrects one that is inverted.)
+3. Set the **Scale Factor** (an **Extra Scale** for `.h3d`) and, if the file was modelled Y-up, tick **File is Y-up (rotate to Z-up)**.
+4. Tick **Use surfaces as terrain (physics)** if vehicles are to drive on the site; leave it clear for geometry that is only a backdrop. (For DXF, OBJ and glTF files, check the elevation range in the summary against the site you expect: nothing in such a file says which way is up, and **File is Z-down (Flip About X-Axis)** corrects one that is inverted.)
 5. Press **Import**. The panel reports the number of surfaces and the extents of the site, and the site is drawn in the Viewport.
 
 ![Figure 23-1](../images/hvn-08-environment-terrain.png)
 *Figure 23-1 — The Environment panel's Terrain section, for a site read from an HVE case: Scene Geometry (here the site is embedded in the case, with **Use a geometry file instead** to replace it) and Surface Materials, which carries the same layer tree as the Outliner.*
 
-> **NOTE:** The case refers to the geometry file by name. To make the case self-contained, choose **File › Embed the environment in the case** before sending it to someone else.
+> **NOTE:** A saved case carries the site inside it, so it can be sent to someone else as it is. If **File › Embed the environment in the case** has been unticked, the case names the geometry file instead; tick it again before sending the case.
 
 ### Surface Friction
 

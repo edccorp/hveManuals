@@ -8,12 +8,11 @@ installed in the vehicle editor's Belt Restraints dialog.
 !!! note "HVE 2027"
     Open the **Belt Restraint System** window from **Vehicle › Belt
     Restraint...** in the Vehicle editor (F3), or **Event › Restraints... › Belt
-    Restraint...** in the Event editor (F5; available for the dynamic
-    calculation methods). HVE 2027 puts HVE's vehicle-side belt hardware and
-    event-side belt use in this one window. The belt geometry is stored with the
-    vehicle, one set per occupant, so it applies to every event the vehicle
-    appears in; the window warns when the vehicle shown is not in the active
-    event. What the occupant wears is stated per event. Lengths, stiffness,
+    Restraint...** in the Event editor (F5; EDHIS and GATB events). HVE 2027
+    puts HVE's vehicle-side belt hardware and event-side belt use in this one
+    window. The belt geometry is stored with the vehicle, one set per
+    occupant, so it applies to every event the vehicle appears in; the window
+    warns when the vehicle shown is not in the active event. What the occupant wears is stated per event. Lengths, stiffness,
     damping and force follow the units set in Tools › Preferences. While a
     solved run is on screen the window is read-only.
 
@@ -35,10 +34,12 @@ another vehicle. Selecting an occupant also selects them in the Occupants panel.
 What the selected occupant wears **in the active event**: **None**, **Lap Belt**,
 **3-Point Belt** or **Airbag + Belt**. This is what places the belts (and the
 airbag) in use for the run: a lap belt is used for any choice but None, the
-torso belt for 3-Point Belt and Airbag + Belt, and the airbag only for
-Airbag + Belt — each only if it is installed below. The event's name is shown
-beside the list. If the occupant is not in the active event the list is
-replaced by a note; add the occupant in Event Information first.
+torso belt for 3-Point Belt and Airbag + Belt — each only if it is installed
+below — and the airbag only for Airbag + Belt. An Airbag + Belt occupant needs a
+bag installed at their seat (**Vehicle › Airbags...**), or the run is refused.
+The event's name is shown beside the list. If the occupant is not in the active
+event the list is replaced by a note; add the occupant in Event Information
+first.
 
 !!! note "HVE 2027"
     This replaces HVE's per-belt **Device In Use** check boxes.
@@ -51,8 +52,16 @@ fitted at this occupant's seat.
 ## Belt Section
 
 Choose **Torso (shoulder)** or **Lap**; the anchor, slack and webbing fields
-below then apply to that section. HVE's *Belt Segment* list. The torso belt
-attaches to the chest and the lap belt to the pelvis.
+below then apply to that section. HVE's *Belt Segment* list.
+
+## Attached To
+
+The body segment the selected section's belt segments are attached to — HVE's
+*Belt Attached To*. **Default (Chest)** for the torso belt and **Default
+(Pelvis)** for the lap belt are HVE's own defaults; the list also offers every
+body segment. EDHIS accepts Pelvis, Abdomen or Chest for a torso belt and
+Pelvis or Abdomen for a lap belt; GATB accepts only Chest and Pelvis. For any
+other choice the run is refused with the engine's own message, as in HVE.
 
 ## Left Anchor / Right Anchor
 
@@ -78,12 +87,6 @@ The webbing force law of the selected section: **Stiffness**, **Damping** and
     EDHIS reads these. GATB does not: it uses ATB's own fixed webbing curve, as
     HVE's GATB does, so changing them leaves a GATB result unchanged. The window
     says so above the fields.
-
-!!! warning "Not in HVE 2027"
-    - **Belt Attached To** (Pelvis, Abdomen, Chest, Neck, Head): the torso belt
-      always attaches to the chest and the lap belt to the pelvis. The window's
-      **Segment** list (Shoulder, Chest, Lap) is stored but not used.
-    - **Restraint Force** (Vehicle Frame, Ground Frame) is stored but not used.
 
 <!-- NAV -->
 

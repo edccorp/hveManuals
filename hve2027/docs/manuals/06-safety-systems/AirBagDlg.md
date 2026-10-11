@@ -6,47 +6,61 @@ properties, membrane moduli, steering-column collapse and the backside contact
 surface.
 
 !!! note "HVE 2027"
-    In HVE 2027 the bag's properties belong to the **occupant** sitting in the
-    seat, not to the vehicle. Open them in the Human editor (F2): **Occupant ›
-    Human Information...** opens the **Occupants** panel; select the occupant and
-    press **Airbag Properties...**. The window is titled **Airbag Restraints**
-    and edits the bag at that occupant's seat (shown beside the name). A
-    pedestrian has no seat and no airbag.
-
-    When and where the bag deploys in an event, and which body segments it can
-    strike, are set in the [Airbag Restraint System](AirBagSysDlg.md) window.
-    Lengths, areas, volumes, pressures, density and force follow the units set
-    in Tools › Preferences; the unit is shown in each label.
+    Open the **Airbags** window from **Vehicle › Airbags...** in the Vehicle
+    editor (F3), or **Event › Restraints... › Airbags...** in the Event editor
+    (F5; EDHIS and GATB events). As in HVE, a bag belongs to the vehicle, one
+    per seat location. The same window also holds the deploy timing and
+    contact segments of HVE's event
+    [Airbag Restraint System](AirBagSysDlg.md) dialog. Lengths, areas,
+    volumes, pressures, density and force follow the units set in Tools ›
+    Preferences; the unit is shown in each label. While a solved run is on
+    screen the window is read-only.
 
 !!! warning "When the bag is used"
-    An airbag reaches EDHIS or GATB only when the occupant's restraint in the
+    An airbag reaches EDHIS or GATB only for an occupant whose restraint in the
     event is **Airbag + Belt** (the **Restraint In Use** list of the
     [Belt Restraint System](BeltResSysDlg.md) window, or Event Information).
-    The window says so in orange when the occupant is not in the active event or
-    the restraint is something else.
+    Such an occupant at a seat with no bag installed is refused at run time.
+    For the active event the window says when nobody sits at the seat, when
+    the occupant there is not Airbag + Belt, and when the run will be refused.
+
+## Seat
+
+HVE's *Seat Position*: the seat whose bag is edited, labelled with who sits
+there in the active event and whether a bag is installed. The window opens on
+the seat of the occupant selected in the Occupants panel, or of the vehicle's
+first occupant.
 
 ## Device Installed
 
-Check box enabling the fields below. It does not by itself put a bag into a run —
-the occupant's restraint type does (see above).
+Check box saying the vehicle has a bag at this seat; it enables the fields
+below. It does not by itself put a bag into a run — the occupant's restraint
+type does (see above).
+
+## Position (vehicle, from the CG)
+
+**X**, **Y**, **Z** — HVE's *Deploy Coords*: the vehicle-fixed point, relative
+to the CG, from which the bag deploys. Read by EDHIS.
+
+The **Timing** and **Contact Segments** fields are described on the
+[Airbag Restraint System](AirBagSysDlg.md) page.
 
 ## Reaction Panel
 
 The vehicle contact surface the bag reacts against. **Primary (deploys from)**
 is HVE's *Backside Contact Surface*. Up to three **Confining panel** 2–4 entries
 name further surfaces that confine the bag (GATB); a confining panel equal to
-the primary is ignored. The lists hold the contact surfaces of the occupant's
-vehicle; with none, the section warns that GATB will refuse the run.
+the primary is ignored. The lists hold the vehicle's contact surfaces; with
+none, the section warns that GATB will refuse the run.
 
-## Deploy Point
+## Offset on the Reaction Panel
 
 X, Y, Z of the deploy point **in the reaction panel's frame** (0 = the panel's
 centre). Used by GATB.
 
 !!! note "HVE 2027"
     HVE's vehicle-fixed *Deploy Coords* — the point EDHIS deploys the bag from —
-    are the **Deploy Position** fields of the
-    [Airbag Restraint System](AirBagSysDlg.md) window.
+    are the **Position (vehicle, from the CG)** fields above.
 
 ## Bag Geometry
 
@@ -101,9 +115,6 @@ HVE's typical ranges and defaults are listed under the fields.
     reproduce the values GATB used to have built in.
 
 !!! warning "Not in HVE 2027"
-    - **Seat Position** list: the window edits the bag at the selected
-      occupant's seat. Choose another occupant in the Occupants panel to edit
-      another seat.
     - **OK / Cancel**, and range warnings when a field is left: edits apply
       immediately; **Edit › Undo** (Ctrl+Z) takes one back.
 

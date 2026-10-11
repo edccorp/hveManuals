@@ -59,7 +59,7 @@ The four terms of the pressure polynomial, in the units set in Preferences: HVE'
 The conversion height HVE uses for the zone when relating its 2-D (A/B) stiffness to the 3-D form.
 
 ### Saturation Crush, Max Crush
-Saturation and maximum crush depths. 0 means none.
+Saturation Crush caps each node's crush depth in DyMESH; 0 means none. Max Crush is stored with the vehicle but no engine reads it, as in HVE's own source, and the dialog says so: it does not limit the crush.
 
 !!! note "HVE 2027"
     HVE 2027 does not switch between a 2-D and a 3-D stiffness dialog: the A/B/Kv side values and the 3-D node stiffness are both shown in Crush Stiffness. The **Top** and **Bottom** faces have no A/B/Kv entry, only their 3-D node stiffness (Top and Undercarriage).

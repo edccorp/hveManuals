@@ -14,7 +14,7 @@ In HVE, clicking the CG of the vehicle in the Vehicle Editor displays the Sprung
 | Transform Geometry... | **Vehicle › Vehicle Mesh...**, section **Move, Rotate and Scale the Model** (Translate, Rotate and per-axis Scale). |
 | Contact Surfaces... | **Vehicle › Contact Surfaces...** |
 | Belt Restraints... | **Vehicle › Belt Restraint...** |
-| Airbag Restraints... | **Vehicle › Airbag Restraint...** |
+| Airbag Restraints... | **Vehicle › Airbags...** |
 | Connections... | **Connections...** under Vehicle Properties. |
 | Aerodynamic Drag... | **Vehicle › Aero Dynamic Drag...** (or **Aerodynamic Drag...** under Vehicle Properties) — see [Vehicle Drag Dialog](VehDragDlg.md). |
 | Body Torsion... | **Vehicle › Body Torsion...** — see [Body Torsion Dialog](BodyTorDlg.md). |
@@ -23,7 +23,7 @@ In HVE, clicking the CG of the vehicle in the Vehicle Editor displays the Sprung
 | Lights... | **Vehicle › Vehicle Lights...** |
 
 !!! note "HVE 2027"
-    The **Handling Properties** values (total understeer, steering wheel sensitivity, roll gradient, roll couple distribution, front weight distribution and static front/rear weights) are **editable** in HVE 2027, where HVE shows them as a read-only summary. They are passed to the engine with the vehicle.
+    The **Handling Properties** values (total understeer, roll gradient, roll couple distribution and front weight distribution) are **editable** in HVE 2027, where HVE shows them as a read-only summary. No engine reads the values entered there.
 
 !!! warning "Not in HVE 2027"
     **Report Color**: HVE 2027 has no separate per-vehicle color for reports.

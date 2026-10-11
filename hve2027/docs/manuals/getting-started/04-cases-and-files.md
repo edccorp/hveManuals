@@ -67,7 +67,8 @@ EDC's tutorial and validation cases.
   suspension (springs, shocks, stops, steer-axis geometry, camber and roll
   steer), tires (physical data and the friction, cornering and camber tables),
   brakes (per wheel, including the Brake Designer data and the ABS
-  controllers), steering system, payload, ESP data, interior contact surfaces,
+  controllers), steering system, payload, traction control and yaw stability
+  control, interior contact surfaces,
   belt anchors and airbags, and the name of the vehicle's geometry file.
 - **Environment** — the site's terrain and drawn geometry, its surfaces,
   layers and aerial photograph, and the environment's location, date, time
@@ -89,9 +90,12 @@ EDC's tutorial and validation cases.
 - The brake-lining material block of HVE's thermal brake model (lining
   thickness, density, specific heat, conduction and convection coefficients) is
   not read. Drum and lining initial temperatures are.
-- An event whose method has no program in HVE 2027 (for example a Read Data
-  File event) opens under its own method name and is shown, but **Run** refuses
-  it. It is never run as a different program.
+- HVE's ESP switch is not kept: HVE 2027's programs model traction control and
+  yaw stability control only, and the import notes name any vehicle that has
+  ESP switched on.
+- An event whose method has no program in HVE 2027 opens under its own method
+  name and is shown, but **Run** refuses it. It is never run as a different
+  program. (A Read Data File event runs: it replays the event's data file.)
 - A case that states no events opens without an event, and says so.
 - Some values are read but deliberately not passed to the programs, because
   HVE does not pass them either; where that is so the dialog concerned says
@@ -118,11 +122,12 @@ Geometry Library** (Vehicle › Vehicle Mesh › **Library...**). Its **Rescan**
 button re-reads the folders.
 
 !!! note "HVE 2027"
-    For an imported `.hve`, HVE 2027 keeps a reference to the original `.hve`
-    and re-reads the site's terrain from it each time the case opens. If you
-    move the saved case to another machine without the `.hve`, the vehicles
-    open with no ground under them. To make the case self-contained, use
-    [Embed the environment](#embedding-the-environment).
+    For an imported `.hve`, HVE 2027 keeps a reference to the original `.hve`.
+    A case saved from it carries the site inside it (see
+    [Embedding the environment](#embedding-the-environment)). Saved with that
+    option off, the case re-reads the site's terrain from the `.hve` each time
+    it opens, and on another machine without the `.hve` its vehicles open with
+    no ground under them.
 
 ## Vehicle databases
 
@@ -136,10 +141,12 @@ HVE 2027 reads HVE's vehicle database files (`.db`), such as `EDC.db`,
   vehicle's data with a database record.
 - **Where databases are found.** A `db` folder beside the program, and any
   folders added under **Database folders** in the same dialog.
-- **Saving a vehicle.** **Vehicle › Save Vehicle As** sets the type, make,
-  model, year, body style and geometry file and writes the vehicle into a
-  `.db` file (**Save to Database**), or applies those fields to the vehicle
-  only (**Apply to Vehicle**).
+- **Saving a vehicle.** **Vehicle › Save Vehicle As** sets the name, type,
+  make, model, year and body style and either writes a copy of the database
+  record the vehicle was loaded from into a `.db` file under those keys
+  (**Save to Database**), or applies those fields to the vehicle only
+  (**Apply to Vehicle**). Other changes made to the vehicle are saved with the
+  case, not in the database (see [Saving Vehicles](../02-vehicles/VehSaveAs.md)).
 
 There are no human database files. A human is created in the Human editor
 (**Add Occupant** on the Occupants panel) with a GEBOD-generated body, or
@@ -159,11 +166,12 @@ An `.h3d` file is read in HVE's own frame (inches, Z down) automatically.
 
 ## Embedding the environment
 
-**File › Embed the environment in the case** is a tick-box remembered between
-sessions (off by default). When it is on, every save carries the site's
-geometry, surfaces, layers and photograph **inside the case file**, so the case
-opens with its ground on a machine that has neither the source `.hve` nor the
-geometry file. The photograph is stored losslessly (as PNG) and is most of the
+Like an HVE `.hve`, a saved case carries its site's geometry, surfaces, layers
+and photograph **inside the case file**, so it opens with its ground on a
+machine that has neither the source `.hve` nor the geometry file. **File ›
+Embed the environment in the case** is the switch, a tick-box remembered
+between sessions and **on** by default; untick it and a save names the site
+file instead. The photograph is stored losslessly (as PNG) and is most of the
 cost: a large city site adds about 1.7 MB to the case. Switching the option off
 again removes the embedded site at the next save. While the case carries a
 site, the File menu shows its size under the option.
@@ -210,7 +218,7 @@ discard them.
 
 ## Saving and unsaved changes
 
-There is no automatic saving.
+The case file itself is never saved automatically.
 
 !!! note "HVE 2027"
     HVE's auto-backup is **Tools › Preferences › Auto-Save**. **Enable Auto-Save** (on by default) and **Interval (min)** write a recovery copy of the case, `<case>.autosave.hvc` beside it, while there are unsaved changes; the case file itself is never written. Saving the case removes the copy, and opening a case whose recovery copy is newer offers to open the copy. **File › Exit**,

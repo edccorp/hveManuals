@@ -118,7 +118,9 @@ The DyMESH Options dialog (Options menu) as shown in the deck contains:
     - *Restoration*: **Force contact forces into the XY plane** and four
       restoration checkboxes.
     - *Inter-Vehicle Contact (fallback)* and the *Per-pair override* grid
-      (Friction, Restitution Energy, Relaxation Length for each ordered pair).
+      (Friction, Restitution Energy, Relaxation Length for each ordered pair,
+      then a *vehicle vs Environment* row for each vehicle: HVE's last slot,
+      the vehicle's body against the ground and site).
     - *Carried, not consumed by this engine revision* (collapsed): Stop Search
       After, Search Method, Inside-Vehicle Test, Inside-Polygon Test and the
       stored struct version.
@@ -206,7 +208,7 @@ of the collision load each wheel carried.
 !!! note "HVE 2027"
     HVE 2027 does not report per-wheel collision impulses. The per-wheel DyMESH
     forces and moments are output channels of each wheel, which Variable
-    Selection adds to Key Results, the Output Graph or the Timestep Data Table:
+    Selection adds to Key Results or the Output Graph:
     **Wheel
     Impact Fx / Wheel Ctr Fx**, **Wheel Impact Fy / Wheel Ctr Fy**, **Wheel
     Impact Fz / Wheel Ctr Fz**, **Wheel Impact Mx'**, **Wheel Impact My' /

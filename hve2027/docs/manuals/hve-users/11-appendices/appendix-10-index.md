@@ -108,7 +108,7 @@ refer to appendices. Chapter numbers are linked to the chapters of this edition;
 | Limits Editor (input ranges) | [Appendix II](appendix-02-messages.md#input-parameter-validation) |
 | Materials and textures (Shader Editor) | [Chapter 19](../08-3d-editor/19-using-3d-editor.md#materials-editor) |
 | Playback bar, Playback Options, Playback Sequence | [Chapter 27](../09-video-output/27-video-interface.md#playback-controller) |
-| Record Animation / Play Video (not functional) | [Chapter 27](../09-video-output/27-video-interface.md) |
+| Record Animation / Play Video | [Chapter 27](../09-video-output/27-video-interface.md) |
 | Run status, `[defaulted: …]` disclosures | [Appendix II](appendix-02-messages.md#run-status-and-disclosures) |
 | Scene Box Editor | [Chapter 20](../08-3d-editor/20-object-tools.md#box-tool) |
 | Scene ghosts, vectors, rendering modes | [Chapter 19](../08-3d-editor/19-using-3d-editor.md#viewing-options) |

@@ -1,6 +1,6 @@
 # SIMON Calculation Options
 
-!!! tip "New in HVE 2027"
+!!! note "HVE 2027"
     HVE's dialog reference has no page for SIMON's calculation options; this
     page documents HVE 2027's **SIMON Options** window. SIMON itself is
     described in the [SIMON program manual](../programs/SIMON/README.md).
@@ -13,7 +13,9 @@ effect immediately and are locked while the event's results are on screen.
 
 - **Duration (s)** and **Output Interval (s)** — the same values as *Duration*
   and *Output Timestep* in the [Simulation panel](../09-events-driver-controls/SimuCtrlDlg.md);
-  editing either place changes both.
+  editing either place changes both. An event that carries its own simulation
+  controls (an imported HVE case does) runs with the Simulation panel's values,
+  so edit them there.
 
 ## Integration
 
@@ -56,9 +58,10 @@ hydroplaning model's output every timestep; the models differ in the speed at
 which each tire is predicted to hydroplane. See
 [SIMON — Hydroplaning Model](../programs/SIMON/04-calculation-method.md#hydroplaning-model).
 
-The models need standing water: a water depth set in the Environment
-(*Physical › Water Depth*). The window warns when the water depth is zero or no
-terrain geometry is marked *use as terrain*.
+The models need standing water: a **Water Depth** stated on a surface (its
+HVE Surface node in the Shader Editor), or, for ground with no surface of its
+own, on the Environment panel's Default surface material. The window warns
+when no surface states any standing water.
 
 !!! warning "Refused by the engine"
     **Blythe-Day** is listed by HVE but not implemented by SIMON (in HVE either).
@@ -109,9 +112,11 @@ are in that state.
 
 With DyMESH enabled:
 
-- **Smoothing** — DyMESH detects contact only with smoothing 1. If a case stores
-  another value the window warns that the run will find no collision at all and
-  offers **Set smoothing to 1**. (HVE labels any non-zero value "Version 2".)
+- **Smoothing** — **Version 1** or **Version 2**, HVE's names; both detect
+  contact. Version 1 cannot be used with DyMESH wheel contact (**Event ›
+  Wheels**): such a run is refused. A case that stores a value HVE would also
+  print as Version 2 but at which DyMESH finds no contact is run as Version 2,
+  and the window and the run status say so.
 - **Search option** — **Automatic (size from the mesh)** or **Set box size**;
   **Search box** is the box size, read only with *Set box size*. A box that is
   too large for a detailed mesh makes the run refuse to start; Automatic

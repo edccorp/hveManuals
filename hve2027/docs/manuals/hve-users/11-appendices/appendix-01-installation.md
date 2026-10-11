@@ -19,14 +19,14 @@ HVE's original edition required a Windows PC with an OpenGL graphics card, a 3-b
 HVE was installed from CD-ROM with a setup program, followed by the license lock described below.
 
 !!! note "HVE 2027"
-    Follow [Installing and running HVE 2027](../../getting-started/02-installing-and-running.md). There is no CD-ROM and no license step.
+    Follow [Installing and running HVE 2027](../../getting-started/02-installing-and-running.md). There is no CD-ROM. An installed release is activated under **Help › License...** with your EDC Software secret.
 
 ## Software Security and Protection *(legacy)*
 
 HVE was protected by a license lock to the computer's hard disk or to an EDKEY hardware key on the parallel port.
 
 !!! warning "Not in HVE 2027"
-    HVE 2027 has no license lock, no EDKEY and no license tiers (for example, there is no separate HVE-CSI mode: the full editors are always available).
+    HVE 2027 has no EDKEY and no hard-disk lock. An installed release is licensed per computer under **Help › License...**, and a run is refused for a program (calculation method) the license does not cover. There is no separate HVE-CSI mode: the full editors are always available.
 
 ### Lock to Your Computer's Hard Disk
 
@@ -43,7 +43,7 @@ It is important that users of HVE know and understand its file system in order t
 !!! note "HVE 2027"
     HVE 2027 does not need HVE's directory tree, but reads HVE's own files where they are:
 
-    - **Cases** — **File › Open Case…** opens an HVE `.hve` case from any folder, as well as HVE 2027's own `.hvc` and `.json` cases. HVE 2027 does not write `.hve` files. A case refers to vehicle meshes and site geometry by file name; **File › Publish Bundle…** writes the case, the meshes it names and the solved results into one folder that opens on another computer, and **File › Embed the environment in the case** stores the site inside the case.
+    - **Cases** — **File › Open Case…** opens an HVE `.hve` case from any folder, as well as HVE 2027's own `.hvc` and `.json` cases. HVE 2027 does not write `.hve` files. A case refers to vehicle meshes by file name and carries its site geometry inside it (unless **File › Embed the environment in the case** is unticked); **File › Publish Bundle…** writes the case, the meshes it names and the solved results into one folder that opens on another computer.
     - **Vehicle databases** — HVE's vehicle databases (the `.db` files of `supportFiles\db`) are listed in the vehicle picker when HVE 2027 finds them: beside its executable, in folders added from the picker, and in a folder of the user's own for vehicles saved from HVE 2027 (see [Cases and Files](../../getting-started/04-cases-and-files.md#vehicle-databases)). There are no human database files: humans are generated in the Human editor or come with an imported case.
     - **Geometry** — vehicle `.h3d` and `.iv` meshes and environment geometry are read from wherever the case or vehicle record points.
     - **System files** — HVE 2027 does not use `language.rsc`, `units.us`, `units.si` or `hve.cfg`. The unit system and other preferences are set in **Tools › Preferences…** and kept in HVE 2027's own preferences file.

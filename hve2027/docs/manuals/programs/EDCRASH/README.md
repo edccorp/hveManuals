@@ -22,7 +22,7 @@ differs is the program around it:
   Simulation**) executes the reconstruction. Results appear in **Key
   Results**; HVE's own report pages (Accident History, Damage Data, Event
   Data, Messages, Program Data, Vehicle Data) are in **Output › HVE Reports**.
-  There is no Playback Editor. See [Chapter 3](03-program-output.md).
+  The run plays back in the Event editor's viewport. See [Chapter 3](03-program-output.md).
 - **Opening HVE cases.** **File › Open Case** reads an HVE `.hve` case directly,
   including every EDCRASH input this manual describes.
 - **Inputs that reach the result.** Besides Impact and Rest, the Begin

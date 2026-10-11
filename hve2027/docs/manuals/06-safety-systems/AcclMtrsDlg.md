@@ -6,7 +6,8 @@ velocity and acceleration. HVE assigns up to five per vehicle, in event mode.
 !!! note "HVE 2027"
     Open the **Accelerometers** window from **Vehicle › Accelerometers...** in the
     Vehicle editor (F3), or **Event › Accelerometers...** in the Event editor
-    (F5; available for the dynamic calculation methods). Both open the same
+    (F5; available for SIMON, EDSMAC4, EDVDS and EDVSM, the methods that
+    compute accelerometer output). Both open the same
     window. Accelerometers are mounted on the **vehicle**, so they apply to
     every event the vehicle appears in; the window warns when the vehicle shown
     is not in the active event. Coordinates follow the units set
@@ -42,14 +43,12 @@ Y right, **Z up**.
     **upward** from the CG and is converted to HVE's frame for the run. A point
     above the CG has a positive Z here.
 
-## Reference Frame, Recorded Channels, Filter
+## Reference Frame
 
 !!! tip "New in HVE 2027"
-    **Reference Frame** (Vehicle Body or Global (Inertial)), **Recorded
-    Channels** (X (Longitudinal), Y (Lateral), Z (Vertical)) and **Low-Pass (Hz,
-    0=none)** are stored with the accelerometer, but no physics program or
-    output reads them yet: every accelerometer is passed to the run with its
-    position only.
+    **Reference Frame** (Vehicle Body or Global (Inertial)) is stored with the
+    accelerometer, but no physics program or output reads it: every
+    accelerometer is passed to the run with its position only.
 
 !!! warning "Not in HVE 2027"
     - **Device In Use**: an accelerometer in the list is in use.

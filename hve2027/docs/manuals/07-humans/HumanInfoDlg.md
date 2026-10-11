@@ -66,19 +66,21 @@ segment masses, best set through the percentiles above (GEBOD recomputes it).
 
 ## Injury Output
 
-Placeholder for injury results; it shows "Run simulation for injury data"
-before a run. Use the Output menu for an occupant run's results.
+Placeholder for injury results; before a run it shows "Run simulation for
+injury data" (with **View › Show Guidance Text** on), and after one it shows
+"--". Use the Output menu for an occupant run's results.
 
 ## Buttons
 
 - **Injury Tolerances...** — [Injury Tolerance Data](Human2.md)
-- **Airbag Properties...** — the bag at this occupant's seat
-  ([Air Bag Restraints](../06-safety-systems/AirBagDlg.md))
 - **Body Segments...** — [Inertial Data](Human.md), [Contact
   Ellipsoids](Human1.md) and [Joint Data](Human3.md)
 - **Joint Properties...** — [Human Joint Properties](HumJntPropDlg.md)
 - **Body Pose...** — the human's initial posture and initial velocity in the
   active event (below)
+
+The airbag at an occupant's seat belongs to the vehicle: **Vehicle › Airbags...**
+in the Vehicle editor (see [Air Bag Restraints](../06-safety-systems/AirBagDlg.md)).
 
 ## Body Pose
 

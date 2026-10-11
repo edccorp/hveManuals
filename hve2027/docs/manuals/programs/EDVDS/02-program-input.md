@@ -478,7 +478,7 @@ To create an EDVDS event:
 
    > **NOTE:** The slot order is the order of the vehicle train. A vehicle in the wrong slot is corrected with its slot's drop-down list, which keeps that slot's inputs.
 
-5. Enter the event name in **Event › Name**. The name does not affect calculations.
+5. Enter the event name in the **Name** field of the panel's **Event** section. The name does not affect calculations.
 
    > **NOTE:** If you choose a vehicle that is not compatible with EDVDS, or if the tow vehicle connections are incompatible with the trailer, the panel shows **Cannot run:** and the reason, and the Method list marks EDVDS "N/A for these vehicles". The event can still be edited; it cannot be run until the problem is fixed.
 
@@ -632,7 +632,7 @@ While a run is in progress the bar shows **Cancel** (and, where available, **Pau
 
 > **NOTE:** After an event is executed, its inputs are locked while the results are on screen. Press **Reset** to edit the event and run it again.
 
-> **NOTE:** Display options such as Key Results, velocity vectors and skidmarks are on the **View** and **Output** menus.
+> **NOTE:** Key Results is on the **View** and **Output** menus; velocity vectors and skidmarks are in **View › Scene Display**.
 
 <!-- NAV -->
 

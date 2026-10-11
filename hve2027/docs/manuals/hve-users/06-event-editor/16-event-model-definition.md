@@ -277,8 +277,9 @@ The Driver Controls options are described below.
     tab for EDCRASH. The tables are the current event's own for the
     selected vehicle. For the single-track model the Throttle and Gear tabs
     are labelled *(not read)*, because that model has no drivetrain. The
-    HVE Driver is on its own **Path Follower** dialog. Vehicle lights are
-    set under Vehicle › Vehicle Lights, not in Driver Controls. Each table
+    HVE Driver is on its own **Path Follower** dialog. HVE's Lights page is
+    **Event › Lights...** (SIMON and EDSMAC4), not in Driver Controls; the
+    lamps themselves are defined under Vehicle › Vehicle Lights. Each table
     is a list of time/value rows; **Add** adds a row and **Sort by Time**
     puts them in order.
 
@@ -382,9 +383,11 @@ Brake controls are available for simulations. Three methods are available
 !!! note "HVE 2027"
     The Brake tab's **Input Method** offers **Pedal (AT_DRIVER)** (pedal
     force), **Wheel Force** (a brake force at each wheel, applied as
-    entered — HVE's Brake Force) and **% of Friction**. The tab also has an
-    **ABS Active** check box; the antilock system itself is set per wheel in
-    the vehicle's Brake Assembly and tuned in the ABS Designer. As with the
+    entered — HVE's Brake Force) and **% of Friction**. Antilock brakes
+    belong to the vehicle (**ABS Installed** under Vehicle › ABS / Brake
+    Design... › ABS System, and the Antilock row of Vehicle › Brake
+    Assembly...) and are tuned in the ABS Designer; an event can force them
+    on or off for itself on the **Brake** tab of Event › Wheels. As with the
     throttle, EDSMAC4 runs a Pedal brake table as % of Friction and the run
     status says so.
 
@@ -454,9 +457,10 @@ The dialog has a user-selectable option for transmission and differential.
 > vehicle has more than one differential ratio.
 
 !!! note "HVE 2027"
-    The Gear tab holds one table of transmission gear versus time (0 =
-    neutral, 1 = reverse, 2 = first, 3 = second, ...). There is no separate
-    differential table.
+    The Gear tab holds a table of transmission gear versus time (0 =
+    neutral, 1 = reverse, 2 = first, 3 = second, ...) and, under
+    **Differential**, a table of the differential's ratio (High, Medium,
+    Low) versus time for a vehicle with a multi-speed differential.
 
 #### HVE Driver (Path Follower)
 
@@ -637,7 +641,7 @@ allows the user to enter the following information:
     **Post-Impact** — **Rot / Lat Skidding** and, for each axle, the right
     and left **Lock-up (%/100)** and **Steer (deg)**. EDCRASH uses the
     pre-impact value only when a Begin Braking scene position is set for
-    the vehicle. When *Automatically Set Rot/Lat Skidding* is on in the
+    the vehicle. When **Auto-set Rot/Lat Skidding** is on in the
     EDCRASH Options, EDCRASH sets the Rot / Lat Skidding flag itself.
 
 
@@ -686,10 +690,12 @@ The Damage Profile Event Set-up parameters are defined in Table 16-8.
     profile** with **Impulse Center X** and **Y**, and the **Measured
     Crush** list — the number of crush depths (up to 10), the depths
     **C1**, **C2**, ..., **Damage width**, **Damage offset** and per-zone A
-    and B stiffness. The **Event › Damage Profiles...** dialog holds the
+    and B stiffness, with the **A Stiffness** and **B Stiffness** above it.
+    **Event › Damage Profiles...** (Ctrl+M) opens this section. The
     vehicle's crush stiffness for each side (Front, Rear, Left, Right:
-    **Distance**, **A Stiffness**, **B Stiffness**, **Kv Stiffness**) and
-    its 3-D node stiffness for DyMESH.
+    **A Stiffness**, **B Stiffness**, **Kv Stiffness**) and its 3-D node
+    stiffness for DyMESH, which the simulations use, are under **Vehicle ›
+    Crush Stiffness...**.
 
 The Damage Profile dialog allows the user to enter a damage profile for the
 selected vehicle. The damage profile is obtained by post-crash inspection
@@ -839,8 +845,9 @@ provided:
 
 Given values for A and B, the crush force per unit of damage width is
 assumed to have a linear relationship with crush depth. Figure 16-6 shows
-this relationship. In HVE 2027 the vehicle's A and B coefficients are in
-the Damage Profiles dialog; per-zone values are entered in the **Measured
+this relationship. In HVE 2027 EDCRASH's A and B coefficients are the
+**A Stiffness** and **B Stiffness** in the Vehicle Impact Setup section;
+per-zone values are entered in the **Measured
 Crush** list (**Per-zone A/B**, with **All same as zone 1**). With every
 per-zone value zero, the scalar A and B are used for every zone.
 
@@ -1059,10 +1066,9 @@ to five vehicle-fixed accelerometer locations.
 
 !!! note "HVE 2027"
     **Event › Accelerometers...** opens the selected vehicle's list of
-    accelerometers. Each has a **Name**, a **Reference Frame**, a **Mount
-    Position** (X, Y, Z), the **Recorded Channels** (X, Y, Z) and a
-    **Low-Pass** filter frequency (0 = none). The list belongs to the
-    vehicle rather than to the event.
+    accelerometers. Each has a **Name**, a **Reference Frame** and a
+    **Mount Position** (X, Y, Z). The list belongs to the vehicle rather
+    than to the event.
 
 - **Device Number** is the index for the specified accelerometer.
 - The **Device Is Used** check box is used to activate the specified
@@ -1164,12 +1170,12 @@ fill duration.
     Whether an occupant is restrained in an event — None, Lap Belt,
     3-Point Belt or Airbag + Belt — is chosen per event with **Restraint
     (this event)** in the Event Information panel's Humans in Event
-    section. The in-use parameters are on **Event › Restraints › Airbag
-    Restraint...** (Begin Fill Time, Fill Duration, Auto Start, Deploy
-    Position, ...) and **Belt Restraint...** (Slack L and R, anchors, ...).
-    On the Event menu these two items are enabled only for the simulation
-    methods that take driver controls; the same dialogs are also on the
-    Vehicle menu.
+    section. The restraint parameters are on **Event › Restraints... ›
+    Airbags...** (the bag at each seat of the vehicle: Device Installed,
+    Position, Begin Fill Time, Fill Duration, ...) and **Belt Restraint...**
+    (Slack L and R, anchors, ...). On the Event menu these two items are
+    enabled only for the occupant methods, EDHIS and GATB; the same dialogs
+    are also on the Vehicle menu.
 
 ## Output Track Parameters
 

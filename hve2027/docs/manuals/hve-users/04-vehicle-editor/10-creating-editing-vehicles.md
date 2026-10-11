@@ -219,7 +219,7 @@ dialog. The Save Vehicle As dialog (Figure 10-5) contains:
     Version Info and Security Key fields are not written either. Save to
     Database is available only when the vehicle's Make, Model, Year and Body
     Style match a loaded database record. To keep an edited vehicle, save the
-    case (File › Save).
+    case (File › Save Case).
 
 A vehicle in a writable user database can be removed from it with
 **Delete** in the Vehicle Information dialog.
@@ -229,7 +229,7 @@ A vehicle in a writable user database can be removed from it with
 !!! warning "Not in HVE 2027"
     HVE 2027 has no Previous Vehicle Selection dialog (HVE's Mode › Vehicle ›
     Add › Previous). To reuse a vehicle from another case, open that case
-    with File › Open (an HVE `.hve` case or an HVE 2027 case); to vary a
+    with File › Open Case... (an HVE `.hve` case or an HVE 2027 case); to vary a
     vehicle within a case, use **Dup**.
 
 ## Selecting and Editing Vehicles
@@ -254,7 +254,7 @@ reached in HVE 2027 as follows:
 | CG: Color | Vehicles panel Information › **Color**; Vehicle Information › **Vehicle Color** |
 | CG: Geometry File | Vehicles panel › **3D Geometry**; **Vehicle › Vehicle Mesh** |
 | CG: Contact Surfaces | **Vehicle › Contact Surfaces** |
-| CG: Belt / Airbag Restraints | **Vehicle › Belt Restraint**, **Vehicle › Airbag Restraint**; the bag's properties are on the occupant (Human editor, **Airbag Properties…**) |
+| CG: Belt / Airbag Restraints | **Vehicle › Belt Restraint**, **Vehicle › Airbags** (one bag per seat) |
 | CG: Connections | Vehicles panel › Vehicle Properties › **Connections…** |
 | CG: Aerodynamic Drag | **Vehicle › Aero Dynamic Drag** |
 | CG: Body Torsion | **Vehicle › Body Torsion** |
@@ -264,7 +264,7 @@ reached in HVE 2027 as follows:
 | Wheel: Brake | **Vehicle › Brake Assembly**, **Vehicle › Brake Designer** |
 | Wheel: Location | Vehicles panel › Dimensions / Inertias › **Wheel Positions (from CG)** |
 | Exterior: dimensions | Vehicles panel › Dimensions / Inertias |
-| Exterior: stiffness | **Event › Crush Profile** (Crush & Geometry), for EDCRASH, EDSMAC and EDSMAC4 events |
+| Exterior: stiffness | **Vehicle › Crush Stiffness**; also **Event › Crush Profile** (Crush & Geometry), for EDCRASH, EDSMAC and EDSMAC4 events |
 | Brake master cylinder | **Vehicle › Brake System Pressure**, **Vehicle › ABS / Brake Design** |
 | Steering wheel | **Vehicle › Steering System** |
 | Engine | **Vehicle › Drivetrain** |

@@ -16,7 +16,7 @@ HVE 2027 compiles HVE's own EDVDS source, so the model described in this manual 
 - **Tandem equalizer.** The 4-spring tandem suspension's load-equalizer is a documented HVE 2027 change; see [Chapter 4](04-calculation-method.md#tandem-axles).
 - **Payload.** **Event › Payload** is not available for EDVDS events in this version; a payload stored in an imported HVE case is used.
 - **Connections.** Edited in the Vehicle editor (**Vehicles** panel › **Vehicle Properties** › **Connections…**). Mating connections must be at the same height above ground; HVE 2027 checks this before running and names the vehicles.
-- **Output.** There is no Playback Editor. A solved event plays back in the same viewport, and **Output › HVE Reports** shows the report pages EDVDS itself builds.
+- **Output.** A solved event plays back in the Event editor's own viewport (the **Playback** editor, F6, plays several events in sequence), and **Output › HVE Reports** shows the report pages EDVDS itself builds.
 
 See also [Differences from HVE](../../getting-started/05-differences-from-hve.md).
 

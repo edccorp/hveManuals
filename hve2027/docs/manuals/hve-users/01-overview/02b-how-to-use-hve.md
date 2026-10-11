@@ -24,11 +24,11 @@ events into a single, coherent sequence, by creating **Report Windows** and
 **Playback Windows**.
 
 !!! note "HVE 2027"
-    HVE 2027 has no Playback Mode and no report or playback windows to create.
-    Results are shown in the **Event editor** as soon as an event has been run:
-    the event plays back in the viewport, and the reports are panels and dialogs
-    on the **Output** menu. Combining events is **Output › Playback
-    Sequence...**.
+    HVE 2027 has no report or playback windows to create. A single event's
+    results are shown in the **Event editor** as soon as it has been run: the
+    event plays back in the viewport, and the reports are panels and dialogs on
+    the **Output** menu. Combining events is the **Playback (F6)** editor (see
+    [Creating a Playback Window](#creating-a-playback-window)).
 
 ![A solved event in the Event editor](../images/hvn-01-playback.png)
 *Figure 2-32: A solved event playing back in the Event editor, with the Key
@@ -177,8 +177,9 @@ inputs have changed since.
 
 **File › Save Case As...** saves under a new name in HVE 2027's binary format;
 **File › Save Case As JSON...** saves as text. **File › Embed the environment in
-the case** makes the next save carry the site geometry and photograph inside the
-case. **File › Publish Bundle...** writes the case, its geometry and its results
+the case**, on by default, makes a save carry the site geometry and photograph
+inside the case, as an HVE `.hve` does; untick it and the save names the site
+file instead. **File › Publish Bundle...** writes the case, its geometry and its results
 into one folder for the viewer. See [Cases and files](../../getting-started/04-cases-and-files.md).
 
 ### Starting New Cases
@@ -216,10 +217,11 @@ selected vehicle from a database record.
 
 ### Tire Database
 
-!!! warning "Not in HVE 2027"
-    There is no separate tire database to load from. A vehicle's tires come with
-    its vehicle record and are edited in **Vehicle › Tire Data (Detailed)...**
-    and **Vehicle › Tire Tables...**.
+A vehicle's tires come with its vehicle record. To fit a different tire, open
+**Vehicle › Tire Data (Detailed)...**: its **Tire Database** section lists the
+tires in the loaded vehicle databases, and **Apply Tire** puts the chosen tire,
+with its tables, on all wheels or one axle. Tire data is edited there and in
+**Vehicle › Tire Tables...**.
 
 ### Generic Databases
 

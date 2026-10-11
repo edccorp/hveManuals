@@ -42,7 +42,7 @@ Each vehicle also has the following additional user-editable parameters:
 To add a vehicle to the current case:
 
 1. Choose the **Vehicle (F3)** editor tab (or press F3). The Vehicles panel and the viewport are displayed.
-2. Click **Add...** at the top of the Vehicles panel. The **Load Vehicle from Database** dialog is displayed.
+2. Click **Add...** at the top of the Vehicles panel. The **Add Vehicle** dialog is displayed.
 3. Search the loaded databases (open **Database folders** to add a folder holding HVE `.db` files), or choose one of HVE's built-in generic vehicles under **Built in (no database needed)**, and click **Add**.
 4. If desired, modify the Driver Location, Engine Location, Number of Axles and Drive Axle(s) in the **Information** section.
 5. Edit the vehicle's **Name**. The name does not affect calculations.
@@ -318,7 +318,7 @@ If the elevation changes result in a vehicle roll or pitch angle that exceeds th
 *(updated: the current version can also use water polygons in the terrain, together with the **Hydroplane Model** calculation option, to model reduced tire friction due to hydroplaning; see [EDSMAC4 Calculation Options](../../10-calculation-options/CalcOptEDSMAC4.md).)*
 
 !!! note "HVE 2027"
-    Surface friction and water are set per surface material in the **Surface Materials** section of the Environment panel, and the standing-water layer in the **Physical** section.
+    Surface friction and standing water are set per surface material: the **Surface Materials** section of the Environment panel lists the surfaces, and each is edited on its HVE Surface node in the Shader Editor (**Edit in Shader Editor**). The **Default surface material** covers ground with no surface of its own.
 
 ## Event
 
@@ -563,7 +563,7 @@ EDSMAC4 has the following calculation option parameters. For the dialog referenc
 - **Use Vehicle Geometry for Rho Vector Init** *(new)* (HVE 2027: **Initialize from the vehicle mesh**) — Initializes the RHO (crush perimeter) vectors from the vehicle's actual body mesh geometry rather than the idealized rectangle.
 
     !!! note "HVE 2027"
-        A vehicle with no geometry file is given a box mesh in HVE 2027, and EDSMAC4 rejects the resulting profile; use this option only with a real vehicle mesh.
+        A vehicle with no geometry file is given HVE's generic body. EDSMAC4 refuses the run if any RHO direction finds no mesh vertex near it, which a coarse body, generic or real, often does; tessellate the vehicle for this event (**Event › Vehicle Mesh**), and a refused run's status names the vehicle, the empty direction and a triangle leg that works.
 
 - **Steer DOF** *(new)* — Off / Normal / Append / AutoStart; enables the dynamic steer degree of freedom.
 
@@ -618,7 +618,7 @@ To execute an EDSMAC4 event, use the playback bar under the viewport. Its button
 
 > **NOTE:** A solved event's inputs are locked while its results are on screen. To change any vehicle, environment or event set-up input, press **Reset** first, then **Run** again.
 
-> **NOTE:** Use the **View** menu to choose useful displays, such as **Key Results**, **Skidmarks** and **Vectors › Velocity Vectors**.
+> **NOTE:** Use the **View** menu to choose useful displays, such as **Key Results**, and **View › Scene Display** for **Skidmarks** and **Velocity Vectors**.
 
 ### Barrier Collisions
 

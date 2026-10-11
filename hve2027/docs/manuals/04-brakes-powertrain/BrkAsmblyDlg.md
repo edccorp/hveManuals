@@ -15,7 +15,7 @@ Four small buttons per wheel: **-**, **A**, **B** and **C**. Wheels in the same 
 ## Brake Type & Design
 
 ### Brake Type
-HVE's brake type for each wheel: **Generic (torque ratio)**, **Disc**, **Duo-Servo Drum**, **Duplex Drum**, **Single-Piston Drum**, **Dual-Piston Drum**, **S-Cam (Air Drum)**, **Single-Wedge (Air)**, **Dual-Wedge (Air)** or **Air Disc** — the same list as the [Brake Designer](DiskBreakDlg.md)'s, because it is the same setting.
+HVE's brake type for each wheel, listed with HVE's own labels: **Generic Brake**, **Disc Brake**, **Duo-Servo Brake**, **Duplex Brake**, **Single Piston, Leading/Trailing Shoe**, **Dual Piston, 2 Leading Shoes**, **S-Cam**, **Single Wedge**, **Dual Wedge** or **Air Disc Brake** (shortened in the table cell, for example *1-Piston*). It is the same setting as the **Brake Design** list of the [Brake Designer](DiskBreakDlg.md).
 
 - **Generic**: the **Pushout** and **Torque Ratio** below are what the engine brakes with, as you enter them.
 - **A design**: choosing it computes the Pushout and Torque Ratio from the wheel's design (as HVE does on the same change), and they are shown read-only. Edit the design with **Design...**.
@@ -55,7 +55,7 @@ Check if the system pressure at the wheel is reduced by a proportioning value.
 At master cylinder pressure above P-Start, additional pressure is reduced by this ratio: the wheel sees P-Start + (P − P-Start) × ratio. A ratio of 1.0 reduces nothing, and a note says so when Proportioning is on at 1.0 (HVE's own cases use 0.16 to 0.33). A ratio of **0** is valid: it caps the wheel pressure at P-Start.
 
 ### Antilock (ABS)
-Check if the wheel has an anti-lock device. Checking it enables ABS Efficiency. Checking it on any wheel also turns the vehicle's ABS on for the engines.
+Check if the wheel has an anti-lock device. Checking it enables ABS Efficiency. EDSVS and EDVTS use it wheel by wheel. SIMON regulates **every** wheel once any wheel's box is checked, or once the vehicle's **ABS Installed** is (**Vehicle › ABS / Brake Design... › ABS System...**); the dialog says so under the table. EDVDS has no ABS model.
 
 ### ABS Efficiency
 The ability of the anti-lock system to achieve and hold the wheel at its peak frictional force, even if the driver braking input exceeds the available frictional force (0 to 1). A 100% effective anti-lock system maintains a longitudinal wheel force associated with the peak coefficient of friction. A 0% effective system maintains a longitudinal wheel force associated with the slide coefficient of friction. A 50% effective system would maintain a longitudinal force halfway between that associated with peak and slide friction.
@@ -63,7 +63,7 @@ The ability of the anti-lock system to achieve and hold the wheel at its peak fr
 The detailed per-wheel ABS data (HVE's **ABS Designer...** button) are in **Vehicle › ABS / Brake Design... › ABS Designer...**.
 
 !!! warning "Not in HVE 2027"
-    - The rule that enables the antilock controls only when **ABS Installed** is checked in the brake system dialog: they are always enabled (see [Brake System Pressure vs Pedal Force](BrkSysVsPedFrcDlg.md)).
+    - The rule that enables the antilock controls only when **ABS Installed** is checked: they are always enabled. ABS Installed is in **Vehicle › ABS / Brake Design... › ABS System...** (see [Brake System Pressure vs Pedal Force](BrkSysVsPedFrcDlg.md)).
 
 !!! tip "New in HVE 2027"
     All wheels in one table, Link Groups, the Temperature Model row, and the note on a proportioning ratio of 1.0.

@@ -322,7 +322,7 @@ Each vehicle is positioned relative to the earth-fixed coordinate system by supp
       Impact and Rest are listed there read-only (they are edited in the
       fields above); tick any other position to enter its X, Y and heading.
       Every position that is set is outlined in the viewport (View › Scene
-      Ghosts).
+      Display › Scene Ghosts).
     - X and Y are in the length unit set in Tools › Preferences; headings
       are in degrees.
 
@@ -380,7 +380,7 @@ EDCRASH uses the Driver Controls, Wheel Data option. In HVE 2027 choose **Event 
 
 *Wheel Data page in HVE 2027 (Ford Escort, EDCRASH Tutorial case). Lock-ups are entered as fractions (%/100); the right wheel of each axle is listed first.*
 
-**Pre-impact Wheel Lock-up** — The total combined wheel lock-up (percent of available friction used by all wheels) by the vehicle during its travel from the user-entered Begin Braking position to the Impact position. *(HVE 2027: the **Total Lock-up** field under Pre-Impact. It is used whenever a Begin Braking position is set. The orange note beside the field saying it is "not yet consumed" is out of date: HVE 2027 now passes the Begin Braking position, and the Accident History then reports a Begin Braking velocity.)*
+**Pre-impact Wheel Lock-up** — The total combined wheel lock-up (percent of available friction used by all wheels) by the vehicle during its travel from the user-entered Begin Braking position to the Impact position. *(HVE 2027: the **Total Lock-up** field under Pre-Impact. It is used whenever a Begin Braking position is set, and the Accident History then reports a Begin Braking velocity; the note under the field says whether this vehicle has one.)*
 
 Typical values for non-braking rolling resistance for passenger car tires are provided for reference in Table 2-6 [11]. These values should be entered in the Driver Controls – Brakes dialog using the Percent Available Friction option. Representative values for locked-wheel (slide) friction coefficients for passenger car tires on a variety of surfaces are also provided, in Table 2-7 [10]. While the table is very complete, EDC makes no claim as to the accuracy of the data. The user is urged to perform thorough research in order to supply EDCRASH with the best possible data.
 
@@ -537,7 +537,7 @@ During execution of an EDCRASH event, certain features may be turned on or off. 
 
   > **NOTE:** Modify Departure Angle is performed during a normal CRASH3 run.
 
-  *(HVE 2027: passed to the engine. On the reference cases checked so far, switching it off has not changed the result, and the reason has not yet been established. A Spiral curved path switches it off; see Curved Path below.)*
+  *(HVE 2027: passed to the engine, and it behaves as in HVE. While Common Velocity Check is on it has no effect, because the check recomputes the departure angle from the separation velocity right after this adjusts it. With the check off it changes the reported departure angle; delta-V then moves only on the Trajectory Simulation basis. A Spiral curved path switches it off; see Curved Path below.)*
 
 - **Auto-set Rot/Lat Skidding** (default = TRUE) — The Event Wheel Data dialog includes a check box, labeled Rot/Lat Skidding. That check box is used by EDCRASH to invoke the modified Marquard analysis [3, 15] for vehicles spinning after impact. Enabling this option causes EDCRASH to automatically assign the status for that program option. When enabled, EDCRASH sets the Rot/Lat Skidding flag to TRUE under the following circumstances: (a) the change in heading angle requires a tighter turn radius than the vehicle is capable of (as defined by its wheel base and maximum steer angle), or (b) the departure sideslip angle exceeds 10 degrees.
 

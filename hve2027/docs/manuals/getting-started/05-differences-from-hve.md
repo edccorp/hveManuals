@@ -9,10 +9,10 @@ HVE does.
 
 | In HVE | In HVE 2027 |
 | --- | --- |
-| Separate Human, Vehicle, Environment and Event editors | Four tabs under the menu bar: **Human (F2)**, **Vehicle (F3)**, **Environment (F4)**, **Event (F5)**. The menu bar shows the menus of the active tab. See [Interface Tour](03-interface-tour.md#editor-tabs) |
-| Playback Editor with report and playback windows | No separate editor. **Run** on the playback bar under the Event editor's viewport; the solved event plays back in the same viewport. Reports, graphs and tables are on the **Output** menu (Key Results, Output Graph, Timestep Data Table, Variable Report, Accident History Report, HVE Reports) |
+| Separate Human, Vehicle, Environment, Event and Playback editors | Five tabs under the menu bar: **Human (F2)**, **Vehicle (F3)**, **Environment (F4)**, **Event (F5)**, **Playback (F6)**. The menu bar shows the menus of the active tab. See [Interface Tour](03-interface-tour.md#editor-tabs) |
+| Playback Editor with report and playback windows | A single event needs no separate editor: **Run** on the playback bar under the Event editor's viewport, and the solved event plays back in the same viewport. Reports, graphs and tables are on the **Output** menu (Key Results, Output Graph, Timestep Data Table, Variable Report, Accident History Report, HVE Reports) |
 | Video Creator (several events on one timeline, written to video) | The **Playback (F6)** editor builds a timeline from several solved events; **File › Record Animation** writes the 3-D playback to a Motion-JPEG AVI — through any saved camera, between the start and end times you choose, in real time or slow motion, with the [Results HUD](../new-features/11-results-hud.md) burned in if you wish — and **File › Play Video** plays one; Record Animation can also **ray-trace** every frame (and add motion blur), and **File › Render Image (Ray Traced)** makes a still; for full control of a render, use Blender with the glTF export or the Blender Live Link (see [Video and Playback Sequences](../new-features/07-video-and-playback-sequences.md)) |
-| Options menu: show/hide velocity vectors, skidmarks, targets, paths… | **View** menu: Vectors (Velocity Vectors, Collision Force (PDOF), Tire Force Vectors), Skidmarks, CG Path, Accelerometer Path, Tire Contact Patch Paths, **Scene Ghosts** (HVE's targets, drawn as outlines, translucent vehicles or both), Axes (the origin's, and each vehicle's at its CG), North Arrow, Vehicle Extents |
+| Options menu: show/hide velocity vectors, skidmarks, targets, paths… | **View › Scene Display** panel: Vectors (Velocity Vectors, Collision Force (PDOF), Tire Force Vectors), Skidmarks, CG Path, Accelerometer Path, Tire Contact Patch Paths, **Scene Ghosts** (HVE's targets, drawn as outlines, translucent vehicles or both), Axes (the origin's, and each vehicle's at its CG), North Arrow, Vehicle Extents |
 | Render dialog (Phong, Flat, Wireframe, Hidden Line; light sources) | **View › Scene Display › Rendering**: Phong, Flat, Wireframe, Light Sources On. Hidden Line is not offered: in this renderer it would draw the same picture as Wireframe |
 | Camera Setup | **Tools › Cameras** — saved cameras and a Viewport View tab in one dialog; the **Cam** button and right-click menu in the viewport; **C** / **Shift+C** cycle cameras |
 | Units dialog (US, SI, Custom) | **Tools › Preferences › Units**: Imperial or Metric. No custom mix |
@@ -21,12 +21,12 @@ HVE does.
 | Body Torsion | **Vehicle › Body Torsion** (a property of the vehicle, whichever event is open) |
 | Transform Vehicle Geometry, Move CG of the geometry | **Vehicle › Vehicle Mesh** (also offered on the Event menu): scale, move and rotate the body, and its other mesh options |
 | Use Ackermann Steering, set per event in Driver Controls | Ackermann / parallel steer is chosen in the vehicle's **Steering System** |
-| Contact surfaces, airbags, belts | **Vehicle › Contact Surfaces**, **Airbag Restraint**, **Belt Restraint**; per event, **Event › Restraints** |
+| Contact surfaces, airbags, belts | **Vehicle › Contact Surfaces**, **Airbags**, **Belt Restraint**; per event, **Event › Restraints** |
 | GEBOD Human Information | **Occupant › Human Information** (the Occupants panel) |
 | Damage Studio | **Output › Damage Studio Options** and **Damage Studio Report**; crush is drawn on the vehicle's 3-D body as the run plays |
 | Impact Plane / Barrier (EDCRASH) | Greyed in the Event menu. Model a barrier as a vehicle of type **Fixed Barrier** in Vehicle Information |
 | An input a program does not use is greyed | The same, and in addition HVE 2027 says **why** where it matters (for example, which program reads a field). Inputs are locked while results are on screen; press **Reset** to edit |
-| `.hve` case files | `.hvc` or `.json`; `.hve` files open directly but are not written. See [Cases and Files](04-cases-and-files.md) |
+| `.hve` case files | `.hvc` or `.json`; `.hve` files open directly but are not written. Like a `.hve`, a saved case carries its site (geometry and aerial photograph) inside it; **File › Embed the environment in the case** turns that off for a case that should only name its site file. See [Cases and Files](04-cases-and-files.md) |
 
 Most of HVE's dialogs are ported field for field. Where a dialog page in this
 manual set describes a field HVE 2027 does not have, the page marks it
@@ -113,8 +113,7 @@ running something else:
 | Keyframes | **View › Dope Sheet**; **I** in the viewport | Animate material values and cameras over the playback time. Display only |
 | Blender | **File › Export Scene for Blender** (glTF), **File › Blender Live Link** | Take the solved scene into Blender; the live link updates the objects already in Blender after each re-run, keeping the materials and cameras set up there |
 | Publish Bundle, viewer and web builds | **File › Publish Bundle**; see [Installing and Running](02-installing-and-running.md) | Share a solved case as a folder or a link, viewable without an installation |
-| Embedded site | **File › Embed the environment in the case** | Carry the terrain and aerial photograph inside the case file |
-| Outliner, undo history | **View › Outliner**, **Edit › Undo History** | See [Interface Tour](03-interface-tour.md) |
+| Outliner, undo history list | **View › Outliner**, **Edit › Undo History** | HVE has Undo and Redo; the list of edits, any of which can be returned to, is new. See [Interface Tour](03-interface-tour.md) |
 
 ## Not available in HVE 2027
 
@@ -127,9 +126,12 @@ running something else:
       vehicle.
     - **HVE's Distance Tool.**
     - **Hidden Line rendering** and **custom units**.
-    - **A vehicle database creator.** Vehicles can be saved into a `.db` file
-      with Vehicle › Save Vehicle As, but there is no tool to create a database.
-    - **Accounts, shared workspaces and cloud computing.**
+    - **Traffic signals** (the environment's signals and their timing in an
+      event).
+    - **Saving an edited vehicle into a database.** Vehicle › Save Vehicle As
+      copies the database record the vehicle was loaded from, under new keys;
+      changes made to the vehicle in HVE 2027 are saved with the case, not in
+      the database. See [Saving Vehicles](../02-vehicles/VehSaveAs.md).
 
 For the physics behind every program, see the program manuals:
 [EDCRASH](../programs/EDCRASH/README.md), [EDSMAC](../programs/EDSMAC/README.md),

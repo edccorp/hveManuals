@@ -41,7 +41,7 @@ vehicle:
 | **Brake Assembly...** | Brake Assembly | [Brake Assembly](../../04-brakes-powertrain/BrkAsmblyDlg.md) |
 | **Brake Designer...** | Brake Designer | [Brake Designer](../10-brake-designer/29-brake-designer.md) |
 | **Brake System Pressure...** | Brake System Pressure | [Brake System vs Pedal Force](../../04-brakes-powertrain/BrkSysVsPedFrcDlg.md) |
-| **Brake Material Props...** | Brake Material Properties: friction coefficients and thermal properties | [Brake Material Properties](../../04-brakes-powertrain/BrkMatPropDlg.md) |
+| **Brake Material Props...** | Brake Material Properties: a library of friction coefficients and thermal properties, greyed because no engine reads it and it is not saved with the case | [Brake Material Properties](../../04-brakes-powertrain/BrkMatPropDlg.md) |
 | **Drivetrain...** | Drivetrain | [Drivetrain](../../04-brakes-powertrain/DriveTraDlg.md) |
 | **Aero Dynamic Drag...** | Aerodynamic Drag | [Vehicle Drag](../../02-vehicles/VehDragDlg.md) |
 | **Body Torsion...** | Body Torsion | [Body Torsion](../../02-vehicles/BodyTorDlg.md) |
@@ -69,7 +69,7 @@ vehicle:
 
 | Item | Opens |
 |---|---|
-| **Environment...** | The **Environment** panel (it opens by itself when you enter the Environment editor): **Location**, **Terrain** (the site geometry — DXF, `.h3d`, `.iv`, OBJ or glTF — a survey point cloud, and the surface materials), **Sky**, **Physical** (ambient conditions and wind, atmosphere and gravity, standing water) and **Signals** |
+| **Environment...** | The **Environment** panel (it opens by itself when you enter the Environment editor): **Location**, **Terrain** (the site geometry — DXF, `.h3d`, `.iv`, OBJ or glTF — a survey point cloud, and the surface materials), **Sky**, **Physical** (ambient conditions and wind, atmosphere and gravity, standing water) and **Friction Zones** |
 | **Aerial Image...** | Aerial Image Options: an image file laid over the site, with its world bounds (upper-left and lower-right corners) |
 | **Scene Box Editor...** | Scene Box Editor: named boxes with a position, size, rotation and colour (or wireframe), drawn in the scene |
 
@@ -110,8 +110,8 @@ The Occupants panel holds what HVE's Human Editor and Human Information dialog
 held: **Add Occupant** and **Remove**, the occupant list, **Identity**
 (Location), **Anthropometry** (subject type, age group, weight and height
 percentiles, and **Regenerate GEBOD Body**), and buttons for **Injury
-Tolerances...**, **Airbag Properties...**, **Body Segments...**, **Joint
-Properties...** and **Body Pose...**. Which vehicle an occupant rides in, and
+Tolerances...**, **Body Segments...**, **Joint Properties...** and **Body
+Pose...**. A seat's airbag belongs to the vehicle (Vehicle › Airbags...). Which vehicle an occupant rides in, and
 where, is set in the event (Event Information › Humans in Event).
 
 See the dialog reference: [Humans](../../07-humans/README.md),

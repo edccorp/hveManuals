@@ -281,7 +281,7 @@ tread/rim contact takes over the shear loads through its own friction model.
     forces and moments are wheel output channels (**Wheel Impact Fx / Wheel Ctr
     Fx** and the related channels, see the
     [Version 3 chapter](03-version-3.md#output-vs-time)), which Variable
-    Selection adds to Key Results, the Output Graph or the Timestep Data Table. The program-data tables are in **Output › HVE
+    Selection adds to Key Results or the Output Graph. The program-data tables are in **Output › HVE
     Reports**. **View › Scene Display › DyMESH Wheel Mesh** draws the wheel contact meshes after
     a run.
 

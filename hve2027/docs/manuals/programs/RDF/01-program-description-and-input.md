@@ -2,7 +2,7 @@
 
 !!! note "In HVE 2027"
     HVE 2027 runs ReadDataFile, but the data file is chosen in the event's
-    **Data file** box rather than through the event name, a bad file is
+    **Data file** box rather than through the event name, and a bad file is
     refused before the run. Humans in the file are replayed. See
     [ReadDataFile in HVE 2027](README.md#readdatafile-in-hve-2027).
 

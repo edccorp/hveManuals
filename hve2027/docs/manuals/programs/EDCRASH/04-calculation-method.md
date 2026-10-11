@@ -138,8 +138,9 @@ where:
 The direction of each vehicle's impact velocity is its heading at impact plus its sideslip angle at impact. Because the momentum equation couples the two vehicles, one vehicle's impact sideslip changes both vehicles' delta-V and PDOF.
 
 !!! note "HVE 2027"
-    HVE 2027 has no field for the impact sideslip angle. A value stored in
-    an HVE case is used; in a case built in HVE 2027 it is zero. See
+    The impact sideslip angle is the **Impact sideslip (deg)** field under
+    the impact position in Event Information, Vehicle Impact Setup. A value
+    stored in an HVE case is read into it. See
     [Chapter 2](02-program-input.md#positionvelocity).
 
 ### Impact-To-Rest Phase

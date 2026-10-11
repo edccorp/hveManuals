@@ -35,7 +35,7 @@ As in other tutorials, before we get started, let's set the user options so we'r
 2. Choose **Tools › Preferences...** and set **Units** to **Imperial (ft/in, mph, lb, lbf)**, the units this tutorial uses.
 3. On the **View** menu, make sure **Key Results** is shown.
 
-EDGEN takes each vehicle's elevation, roll and pitch from its initial position (see the First Event); HVE's AutoPosition option is not used. We're now ready to proceed with the tutorial.
+Each position of a vehicle's path carries its own elevation, roll and pitch (see the First Event). We're now ready to proceed with the tutorial.
 
 ## Creating the Humans
 
@@ -93,7 +93,7 @@ The bus's path has three positions. The first is its initial position and speed,
 1. X = −250 ft, Y = 25 ft, heading 0 degrees.
 2. Speed 25 mph.
 
-   > **NOTE:** EDGEN carries the elevation, roll and pitch of this first position along the whole path. In the opened case the bus's CG height comes from the HVE case.
+   > **NOTE:** A waypoint that states no elevation, roll and pitch of its own takes this first position's (with Auto Position on, each is the vehicle settled on the ground there). In the opened case the positions' CG heights come from the HVE case.
 
 The other two positions are waypoints, in **Event › Path Follower**, **Path** tab, with *V1 International School Bus* chosen in the **Vehicle** list:
 
@@ -265,7 +265,7 @@ We have now completed all three events for our EDGEN Tutorial.
 
 ## Viewing Results
 
-Now that we have produced our individual EDGEN events, let's take a detailed look at the results. In HVE 2027 there is no separate Playback Editor: each event's reports are on the **Output** menu while it is the active event, and its motion plays in the viewport.
+Now that we have produced our individual EDGEN events, let's take a detailed look at the results. In HVE 2027 each event's reports are on the Event editor's **Output** menu while it is the active event, and its motion plays in the viewport; the **Playback** editor (F6) combines the events (see Playback Window, below).
 
 EDGEN produces the following reports:
 

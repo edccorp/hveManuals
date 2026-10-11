@@ -32,11 +32,7 @@ The surface's name.
 The name of the material assigned to the surface. Its properties are in the
 **Material Properties** section (see [Material Properties](MatPropDlg.md)).
 
-## Classification
-
-**Class** — **Vertex**, **Face** or **Group**: HVE's *Bind Material To*. Stored
-with the surface; no physics program reads it (EDHIS treats every surface as a
-plane).
+## Side
 
 **Side** — **Interior** (occupant simulation) or **Exterior** (pedestrian
 simulation). HVE's *Location*.
@@ -91,6 +87,8 @@ selection.
       to a `.json` file and load them back.
 
 !!! warning "Not in HVE 2027"
+    - **Bind Material To** (Vertex, Face, Group): no physics program reads it
+      (EDHIS treats every surface as a plane).
     - The limit of 25 surfaces is not enforced when adding.
     - **OK / Cancel**: edits apply immediately.
 

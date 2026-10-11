@@ -109,7 +109,7 @@ The total weight is often entered because it is the value traditionally obtained
 
 #### Move CG
 
-Move CG is not directly used by SIMON, i.e., the current values do not show up in the SIMON results. However, in HVE the Move CG fields may be used in the Vehicle Editor to quickly move the vehicle's center of gravity; the x, y, z coordinates for the wheels and other vehicle-fixed components are updated to reflect the new CG location. (HVE 2027 offers its Move CG dialog only on the Event menu of EDSMAC and EDSMAC4 events.)
+Move CG is not directly used by SIMON, i.e., the current values do not show up in the SIMON results. However, in HVE the Move CG fields may be used in the Vehicle Editor to quickly move the vehicle's center of gravity; the x, y, z coordinates for the wheels and other vehicle-fixed components are updated to reflect the new CG location. (HVE 2027 offers its Move CG dialog on the Event menu of EDSMAC and EDSMAC4 events, and from the **Move CG...** button of the Crush Profile window of EDCRASH, EDSMAC and EDSMAC4 events.)
 
 #### Geometry File
 
@@ -379,8 +379,8 @@ SIMON uses the environment set up in HVE 2027's Environment editor (**Environmen
 - **Location** — the site's place, date and time (they position the sun).
 - **Terrain** — the scene geometry: a DXF, `.h3d`, `.iv`, OBJ or glTF file, or the site carried inside an opened `.hve` case. Without one, SIMON drives on a flat default ground plane.
 - **Sky** — display only.
-- **Physical** — ambient temperature and pressure, wind speed and direction, gravity, and standing water (water depth, wet friction and pavement texture depth, used by the hydroplaning models).
-- **Signals** — display only.
+- **Physical** — ambient temperature and pressure, wind speed and direction, and gravity. Standing water, used by the hydroplaning models, is set per surface (see [Event Calculation Options](#event-calculation-options)).
+- **Friction Zones** — patches of different grip drawn over the site.
 
 ### Creating an Environment
 
@@ -458,7 +458,7 @@ The 3-D Surface Geometry is used by the tire model in SIMON to calculate the ele
 Rapid changes in surface elevation, such as curbs, during one integration timestep may cause severe tire force causing the run to terminate. If this occurs, you should try reducing the integration timestep or smoothing, to the degree possible, the surface.
 
 !!! note "HVE 2027"
-    Each surface's friction multiplier comes from the friction assigned to the scene geometry's surface materials (**Environment › Environment... › Terrain**, *Surface Materials*). Whether the geometry is driven on is controlled by its "use as terrain" setting in the same section.
+    Each surface's friction multiplier comes from the friction assigned to the scene geometry's surface materials (**Environment › Environment... › Terrain**, *Surface Materials*). Whether the geometry is driven on is controlled by its **Use surfaces as terrain (physics)** setting in the same section.
 
 ## Event
 
@@ -490,7 +490,7 @@ If the event cannot be run as set up (for example, a vehicle with more axles tha
 SIMON uses the following event set-up options. In HVE 2027 each is on the **Event** menu of the Event editor and edits the vehicle selected in its *Vehicle* list (or the vehicle selected in the viewport):
 
 - Position/Velocity — Vehicles (*Vehicle Initial Conditions (SIMON)* in Event Information, or **Event › Position / Velocity...**)
-- Position/Velocity — Humans (the occupant's pose, in the Human editor)
+- Position/Velocity — Humans (the occupant's vehicle, position and **Pose**, under **Humans in Event** in Event Information)
 - Driver Controls (**Event › Driver Controls...** and **Event › Path Follower...**)
 - Collision Pulse (**Event › Collision Pulse...**)
 - Vehicle Mesh (**Event › Vehicle Mesh...** and **Event › DyMESH Options...**)
@@ -559,14 +559,14 @@ SIMON uses the following Driver Controls. In HVE 2027 the four tables are the ta
 
   > **NOTE:** The Pedal Force option is recommended (see Chapter 4, Calculation Method).
 
-  The **ABS Active** checkbox on the Brake tab is disabled: antilock is fitted per wheel in **Vehicle › Brake Assembly...** and can be overridden per event in **Event › Wheels... › Brake** (see [Vehicle Wheels](#vehicle-wheels)).
+  Antilock is not set on the Brake tab. SIMON regulates every wheel when the vehicle's **ABS Installed** (**Vehicle › ABS / Brake Design... › ABS System...**) or any wheel's **Antilock (ABS)** box (**Vehicle › Brake Assembly...**) is ticked, and an event can override it in **Event › Wheels... › Brake** (see [Vehicle Wheels](#vehicle-wheels)).
 
 - **Throttle** — A table of throttle inputs as a function of time. HVE 2027's **Input Method** list on the **Throttle** tab offers **Pedal (AT_DRIVER)** (percent wide-open throttle through the engine model) and **% of Friction**; the **Use Clutch / Torque Converter** checkbox is on the same tab.
 
   > **NOTE:** The %WOT (Pedal) option is recommended (see Chapter 4, Calculation Method).
 
 - **Gears** — A table of instructions for shifting gears as a function of time (0 = neutral, 1 = reverse, 2 = first gear, and so on).
-- **HVE Driver Model** — Options for using the Path Follower, Speed Follower, and Neuro-muscular Filter. The HVE Driver Model is a closed-loop driver simulator which calculates driver input as a function of time (see Chapter 4 and [4]). In HVE 2027 it is **Event › Path Follower...**: **Use Path Follower**, then the **Method**, **Steering**, **Path**, **Speed Follower** and **Filter** tabs. The target path is entered on the **Path** tab as a table of points (X, Y, heading and speed), or by clicking points in the 3-D viewport; the vehicle's initial position is the first point. HVE's *Driver Comfort Level* is **Max Lateral Accel (g)** on the Method tab.
+- **HVE Driver Model** — Options for using the Path Follower, Speed Follower, and Neuro-muscular Filter. The HVE Driver Model is a closed-loop driver simulator which calculates driver input as a function of time (see Chapter 4 and [4]). In HVE 2027 it is **Event › Path Follower...**: **Use Path Follower**, then the **Method**, **Steering**, **Path**, **Speed Follower** and **Filter** tabs. The target path is entered on the **Path** tab as a table of points (X, Y, heading and speed), or by clicking points in the 3-D viewport; the vehicle's initial position is the first point. HVE's *Driver Comfort Level* is **Driver Comfort Level (g)** on the Method tab.
 
 !!! note "HVE 2027"
     **The driver model stops per vehicle at an impact.** HVE's SIMON switches every vehicle's driver model off at the first collision anywhere in the event. HVE 2027 switches off only the driver model of a vehicle that is itself in the collision, so a following vehicle that is not involved keeps following its path. For a vehicle that is in the collision the result is the same as HVE's. (EDC's case library has no event where the two differ.)
@@ -584,7 +584,7 @@ The Driver Controls Data used by SIMON are shown in Table 2-7.
 The Damage Profiles data are not used by SIMON.
 
 !!! note "HVE 2027"
-    **Event › Damage Profiles...** is offered for a SIMON event because it also holds the vehicle's **3-D Node Stiffness**, the force law DyMESH collides with. The CRASH3 A/B/Kv sides in the same window are not read by SIMON.
+    **Event › Damage Profiles...** is EDCRASH's measured damage and is disabled for a SIMON event. The vehicle's **3-D Node Stiffness**, the force law DyMESH collides with, is in **Vehicle › Crush Stiffness...**; the CRASH3 A/B/Kv sides in the same window are not read by SIMON.
 
 #### Collision Pulse
 
@@ -627,7 +627,7 @@ In HVE 2027 these are the tabs of **Event › Wheels...**, one column per wheel 
 SIMON allows the user to place virtual accelerometers in the vehicle at up to five vehicle-fixed locations. These accelerometers can be used to track the total acceleration and acceleration components at various locations within the vehicle (e.g., specific seat locations). The accelerometer outputs are included in the Variable Output, Accelerometer group (see Chapter 3, Variable Output).
 
 !!! note "HVE 2027"
-    HVE 2027 stores accelerometers with the **vehicle**, not with the event: **Event › Accelerometers...** and **Vehicle › Accelerometers...** open the same list (**Add**, **Delete**, a name, the X, Y, Z mount position and the channels to record), and it applies to every event the vehicle is in.
+    HVE 2027 stores accelerometers with the **vehicle**, not with the event: **Event › Accelerometers...** and **Vehicle › Accelerometers...** open the same list (**Add**, **Delete**, a name, a reference frame and the X, Y, Z mount position), and it applies to every event the vehicle is in.
 
 #### Contacts
 
@@ -661,7 +661,7 @@ SIMON's Calculation Options include:
     **Blythe-Day refuses the run.** HVE names five hydroplaning models and SIMON implements four. HVE 2027's **Hydroplaning** list offers *Off*, *NASA*, *NASA-TTI*, *Gallaway* and *Blythe-Day (refuses the run)*: with Blythe-Day selected — which an imported case may state — SIMON stops at setup with stop code −5520 rather than running without hydroplaning. HVE's own SIMON refuses it the same way.
 
 !!! note "HVE 2027"
-    In HVE 2027 the standing water comes from the environment: **Environment › Environment... › Physical › Standing Water** (**Water Depth**, **Wet Friction**, **Pavement Texture Depth**). With a water depth of 0 there is no water surface and the run reports hydroplaning off. The four models differ only in each tire's threshold speed, so above every threshold they give the same answer.
+    In HVE 2027 the standing water is a property of each surface: **Water Depth**, **Wet Friction** and **Texture Depth** on the surface's HVE Surface node in the Shader Editor, or on the **Default surface material** (**Environment › Environment... › Terrain**, *Surface Materials*) for ground with no surface of its own. With a water depth of 0 there is no water surface and the run reports hydroplaning off. The four models differ only in each tire's threshold speed, so above every threshold they give the same answer.
 
 - **Connection Model** (Use Both Vehicles / Use Heavier Vehicle / Use Tow Veh Properties; HVE 2027: **Connection constraint**) — Selects which vehicle's properties govern the stiffness of an inter-vehicle connection (e.g., tractor-trailer articulation). The default is Use Heavier Vehicle. *(updated: option added since the Fifth Edition manual.)*
 - **Connection Failure Start Time** (HVE 2027: **Connection failure start (s)**) — The earliest simulation time (sec) at which an inter-vehicle connection is permitted to fail. *(updated: option added since the Fifth Edition manual.)*
@@ -689,7 +689,7 @@ The DyMESH Options dialog contains the following options:
 
 **General:**
 
-- **Use DyMESH** (HVE 2027: **Enable DyMESH (vehicle-to-vehicle)**) — Master checkbox enabling the DyMESH 3-D collision algorithm for the event. Every vehicle in the event should have a mesh file; HVE 2027 warns when one does not, because such a vehicle collides as an 8-corner box.
+- **Use DyMESH** (HVE 2027: **Enable DyMESH (vehicle-to-vehicle)**) — Master checkbox enabling the DyMESH 3-D collision algorithm for the event. Every vehicle in the event should have a mesh file; a vehicle without one collides as HVE's generic body (a shape profiled from its type and dimensions), and HVE 2027 warns when that happens.
 - **Include Environment** (HVE 2027: **Also collide against the ENVIRONMENT**) — Extends DyMESH collision detection to include vehicle-environment mesh contact (e.g., striking a rigid barrier or terrain feature), in addition to vehicle-vehicle contact.
 - **Force To x-y Plane** (HVE 2027: **Force contact forces into the XY plane**) — Constrains the DyMESH collision force to act in the horizontal (x-y) plane.
 - **Tow Vehicle / Trailer Contact** (HVE 2027: **Contact a vehicle's own trailer**, in the SIMON Options dialog) — Enables DyMESH mesh contact between vehicles joined by an inter-vehicle connection (e.g., jackknife contact between a tractor and its trailer).

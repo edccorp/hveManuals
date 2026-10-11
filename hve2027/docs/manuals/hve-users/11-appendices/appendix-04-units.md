@@ -39,7 +39,7 @@ This appendix describes how to assign units to any parameter.
 
     Within each system the display unit of each quantity is HVE's own choice for that kind of quantity, as `units.us` and `units.si` assign it — so, as in HVE, two adjacent quantities can be shown in different units (brake torque in in-lb and engine torque in ft-lb; scene positions in ft and vehicle dimensions in in). Engine speed is shown in RPM in both systems, as HVE shows it.
 
-    A few fields show a fixed unit in their label whatever the system — for example the Brake Designer's material properties (J/kg·K, W/m·K) and lining friction temperatures (°C), and the ABS wheel spin accelerations (rad/s²). The soil constants Kphi and Kc are shown in English units in both systems, because their dimensions depend on a per-wheel exponent and cannot be converted to a fixed metric unit.
+    A few fields show a fixed unit in their label whatever the system — for example the Brake Designer's lining friction temperatures (°C) and the ABS wheel spin accelerations (rad/s²). The soil constants Kphi and Kc are shown in English units in both systems, because their dimensions depend on a per-wheel exponent and cannot be converted to a fixed metric unit.
 
     The units files and `language.rsc` are not read, and the procedure below does not apply.
 

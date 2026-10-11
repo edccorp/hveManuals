@@ -22,8 +22,8 @@ from HVE's source code; what is new is the user interface around them (see
 [What is HVE 2027?](../../getting-started/01-what-is-hve-2027.md)).
 
 HVE is essentially five editors: the Human, Vehicle, Environment, Event and
-Playback Editors. HVE 2027 has the first four as **editor tabs** in one window,
-and plays results back in the Event editor itself:
+Playback Editors. HVE 2027 has all five as **editor tabs** in one window, and
+also plays a single event's results back in the Event editor itself:
 
 | HVE editor | HVE 2027 | Used for |
 |---|---|---|
@@ -31,7 +31,7 @@ and plays results back in the Event editor itself:
 | Vehicle Editor | **Vehicle (F3)** | creating and editing 3-D models of vehicles |
 | Environment Editor | **Environment (F4)** | creating and editing the environment |
 | Event Editor | **Event (F5)** | setting up and executing reconstruction and simulation models |
-| Playback Editor | the Event editor's viewport and the **Output** menu | reviewing and combining the results of events |
+| Playback Editor | **Playback (F6)**; a single event plays back in the Event editor's viewport, with the **Output** menu | reviewing and combining the results of events |
 
 Each editor is described briefly here. For a complete description, refer to the
 editor's section in this manual.
@@ -43,7 +43,7 @@ Occupant** and **Remove** — HVE's Add Human and Delete Human — and an occupa
 list that plays the part of HVE's Active Humans List and Current Human label.
 The selected human's identity and anthropometry (subject type, age group, weight
 and height percentiles) are edited in the panel; **Regenerate GEBOD Body** builds
-the body from them; and **Injury Tolerances...**, **Airbag Properties...**,
+the body from them; and **Injury Tolerances...**,
 **Body Segments...**, **Joint Properties...** and **Body Pose...** open the
 detailed dialogs. The human is shown in the viewport.
 
@@ -78,7 +78,7 @@ restraints. The vehicle is shown in the viewport.
 
 **Environment (F4).** The **Environment** panel holds the site's location, the
 terrain (the site geometry file, a survey point cloud and the surface
-materials), the sky, the physical properties and the signal timing. The
+materials), the sky, the physical properties and the friction zones. The
 **Environment** menu adds an aerial image and simple scene boxes.
 
 ![The Environment editor](../images/hvn-01-environment-editor.png)
@@ -140,18 +140,20 @@ methods HVE 2027 can run are HVE's, plus one new one:
 | EDHIS | occupant simulation |
 | GATB | articulated occupant and pedestrian simulation (ATB) |
 | SINGLETRACK | motorcycle simulation — new in HVE 2027 |
+| READDATAFILE | replays a trajectory data file (`.dat`); solves nothing |
 
 The Method list marks a method whose output has not yet been checked against HVE
 as *(unvalidated)*, and a method the event's vehicles cannot use as *N/A for
-these vehicles*. An HVE event that uses a program HVE 2027 does not have (for
-example ReadDataFile) opens and displays but cannot be run. The program manuals
+these vehicles*. An HVE event that uses a program HVE 2027 does not recognise
+opens and displays but cannot be run. The program manuals
 describe each method: see the [program manuals](../../programs/README.md).
 
 ## Playback Editor
 
 !!! note "HVE 2027"
-    There is no separate Playback Editor. Its jobs are done in the Event editor
-    and on the Output menu.
+    A single event's results play back in the Event editor, with its reports
+    on the Output menu. Combining events into one sequence is the
+    **Playback (F6)** editor.
 
 - **Trajectory simulations** — once an event has been run, it plays back in the
   Event editor's viewport. The playback bar has **|<** (start), **<<** and
@@ -162,8 +164,8 @@ describe each method: see the [program manuals](../../programs/README.md).
   panels and the report dialogs on the **Output** menu (Variable Report,
   Accident History Report, HVE Reports, Damage Studio).
 - **Playback windows** — combining several events into one sequence, with
-  multiple humans and vehicles from any number of events, is **Output › Playback
-  Sequence...**.
+  multiple humans and vehicles from any number of events, is the **Playback
+  (F6)** editor and its **Playback › Playback Sequence...** panel.
 
 ![A solved event playing back](../images/hvn-01-playback.png)
 *A solved SIMON event playing back in the Event editor, with Key Results below

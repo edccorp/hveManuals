@@ -28,7 +28,7 @@ To use the Vehicle Editor, perform the following steps:
 2. Add one or more vehicles with **Add…** in the Vehicles panel, from a
    vehicle database or HVE 2027's built-in generic vehicles. Vehicles also
    arrive with an HVE case file (`.hve`) or an HVE 2027 case opened with
-   **File › Open**.
+   **File › Open Case...**.
 3. If desired, modify the properties of the selected vehicle(s) to suit the
    needs of the current case (sprung mass, exterior, suspensions, brakes,
    tires, wheels, drivetrain, steering system and brake system).

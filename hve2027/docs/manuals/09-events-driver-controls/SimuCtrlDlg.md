@@ -29,14 +29,15 @@ them. Each value is typed or dragged; there are no sliders.
 - **Separation Timestep (s)** — integration timestep for the start of the
   post-impact phase (HVE's *Vehicle Separation*). 0 means use the collision
   timestep. Shown for EDSMAC and EDSMAC4.
+- **Curb Impact Timestep (s)** — EDVSM's curb-impact integration timestep
+  (HVE's *Curb Impact*); with EDVSM's steer degree of freedom on, the run
+  integrates at it. 0 means use the integration timestep. Shown for EDVSM.
+- **Human Collision Timestep (s)** — EDHIS's integration timestep, and EDGEN's
+  when the event moves a human (HVE's *Human Collisions*). HVE's tutorial
+  occupant events use 0.0002 s. 0 means use the output timestep. Shown for EDHIS
+  and EDGEN. (GATB ignores it, as in HVE: its ATB step is fixed.)
 - **Output Timestep (s)** — how often results are sampled for the trajectory,
   Key Results and playback (HVE's *Output Time Interval*).
-
-!!! warning "Not in HVE 2027"
-    - **Human Collisions** timestep: there is no field. EDHIS uses the value
-      stated by an imported HVE case, or derives one. (GATB ignores it in HVE as
-      well: its ATB step is fixed.)
-    - **Curb Impact** timestep: not offered.
 
 ## Termination
 

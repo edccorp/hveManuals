@@ -1,6 +1,6 @@
 # GATB Calculation Options
 
-!!! tip "New in HVE 2027"
+!!! note "HVE 2027"
     HVE's dialog reference has no page for GATB's calculation options; this
     page documents HVE 2027's **GATB Options** window. GATB is HVE's
     15-segment ATB occupant and pedestrian model.

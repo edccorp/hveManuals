@@ -48,10 +48,11 @@ assembly is an S-cam, dual-wedge or single-wedge brake.
 Check box indicating that the brake at this wheel fails during the event. The
 failure rows below are enabled only when it is checked.
 
-## Start at first contact
+## Auto start (report only)
 
-The failure starts automatically at the vehicle's first contact. When checked,
-Failure start is disabled. HVE's *Auto Start*.
+HVE's *Auto Start*. It reaches only the report: SIMON starts the failure at
+Failure start whether or not this is checked, so Failure start stays enabled.
+(HVE greys Start Time when Auto Start is checked, yet still uses it.)
 
 ## Failure start (s)
 

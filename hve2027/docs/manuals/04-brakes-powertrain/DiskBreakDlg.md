@@ -7,7 +7,7 @@ HVE has one Brake Designer dialog per brake type. HVE 2027 has a single **Brake 
 ## Wheel
 
 ### Axle, Side
-Select the wheel whose brake design is shown (axles 1 to 3). Each wheel keeps its own design.
+Select the wheel whose brake design is shown (any axle of the vehicle). Each wheel keeps its own design.
 
 ### Brake Design
 The brake type: **Generic (torque ratio)**, **Disc**, **Duo-Servo Drum**, **Duplex Drum**, **Single-Piston Drum**, **Dual-Piston Drum**, **S-Cam (Air Drum)**, **Single-Wedge (Air)**, **Dual-Wedge (Air)** or **Air Disc**. The **Design Parameters** below change with the type. **Generic** shows only a **Torque Ratio** and a **Pushout Pressure**, entered directly.
@@ -26,21 +26,11 @@ Outside diameter of the rotor.
 **Rotor Inner Diameter**
 Inside diameter of the rotor swept (friction) surface.
 
-**Rotor Thickness**
-Thickness of the rotor (used for calculating the thermal mass of the rotor).
-
-**Inner Pad Thickness**, **Outer Pad Thickness**
-Thickness of the inner and outer pad lining material.
-
 **Mechanical Efficiency**
 Fraction of the actuation force actually delivered to the pads after mechanical losses.
 
 **Pushout Pressure**
 Pressure required to overcome the caliper seal/return force and begin developing brake torque.
-
-## Material Properties
-
-A collapsible section (every type but Generic) with the rotor/drum and lining/pad thermal properties: see [Brake Designer Material Properties](BrkMatPropDlg.md).
 
 ## Lining Friction Properties
 
@@ -77,7 +67,8 @@ A collapsed section with the drum (S-cam) or disc hardware table for the selecte
 
 !!! warning "Not in HVE 2027"
     - The schematic preview drawing of the brake.
-    - Separate **Friction ...** and **Material ...** dialogs (they are collapsible sections here).
+    - A separate **Friction ...** dialog (it is a collapsible section here).
+    - **Rotor Thickness**, the pad thicknesses and the **Material ...** dialog (see [Brake Designer Material Properties](BrkMatPropDlg.md)): no engine reads them and the Brake Designer's results do not use them.
 
 <!-- NAV -->
 

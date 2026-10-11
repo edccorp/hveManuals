@@ -140,7 +140,8 @@ page](../../07-humans/HumMatProp.md).
     HVE 2027 has no per-ellipsoid material and no Human Materials dialog. The
     occupant–vehicle contact materials of an HVE case (the combined material
     of each contact pair) are imported with the `.hve` file and reach the
-    occupant engines, but cannot be edited. The vehicle side of a contact is
+    occupant engines; for an EDHIS or GATB event they are edited in Event
+    Information › **Combined Contact Materials**. The vehicle side of a contact is
     edited with the vehicle's [Contact
     Surfaces](../04-vehicle-editor/11a-sprung-mass.md#contact-surfaces).
 

@@ -53,7 +53,7 @@ shows the full path of the file written.
     the two engines store that option with opposite meanings, and each options
     window is labelled for its own engine.
 
-!!! tip "New in HVE 2027"
+!!! note "HVE 2027"
     Delta-V and the other results in the units set in Preferences are in
     **Key Results** and the **Variable Output Report**.
 

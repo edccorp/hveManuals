@@ -13,10 +13,10 @@ Like all EDSVS events, the procedures involve the following basic steps:
 
 These basic procedures are described in detail in this tutorial.
 
-> NOTE: It is assumed that HVE 2027 is running and that you are familiar with its editors (Human, Vehicle, Environment and Event, the tabs under the menu bar), its dialogs and the viewport. The purpose of this tutorial is to illustrate those features while setting up and executing an EDSVS event.
+> NOTE: It is assumed that HVE 2027 is running and that you are familiar with its editors (Human, Vehicle, Environment, Event and Playback, the tabs under the menu bar), its dialogs and the viewport. The purpose of this tutorial is to illustrate those features while setting up and executing an EDSVS event.
 
-!!! tip "New in HVE 2027: start from EDC's own tutorial case"
-    HVE 2027 opens HVE's case files directly. The finished case for this tutorial, `EdsvsTutorialEDC.hve`, is supplied with HVE in its `supportFiles/case` folder. **File › Open** it and the vehicle, the site and the event arrive as EDC set them up. This chapter follows the original tutorial step by step and shows where each input lives in HVE 2027, so you can either build the case yourself or open EDC's and check each value against the text.
+!!! note "HVE 2027: start from EDC's own tutorial case"
+    HVE 2027 opens HVE's case files directly. The finished case for this tutorial, `EdsvsTutorialEDC.hve`, is supplied with HVE in its `supportFiles/case` folder. Open it with **File › Open Case…** and the vehicle, the site and the event arrive as EDC set them up. This chapter follows the original tutorial step by step and shows where each input lives in HVE 2027, so you can either build the case yourself or open EDC's and check each value against the text.
 
     Run from that case, HVE 2027 reproduces the result HVE saved in it: at t = 20 s the final position agrees within 1 mm, the heading change within 0.01 degree and the speed within 0.01 km/h.
 
@@ -26,7 +26,7 @@ Before starting, set the display options so that we're all starting on the same 
 
 - **Tools › Preferences**: set *Units* to **Imperial (ft/in, mph, lb, lbf)**, HVE's US units.
 - **View › Key Results**: on.
-- **View** menu: turn on *Skidmarks*; leave the vectors off.
+- **View › Scene Display**: turn on *Skidmarks*; leave the vectors off.
 
 > NOTE: These options affect only the appearance of the viewport. EDSVS places the vehicle on the terrain itself, so there is no Auto Position setting for an EDSVS event.
 
@@ -97,9 +97,9 @@ The environment is displayed in the viewport (see Figure 5-3).
 
 Now that we've created all the objects (*vehicle* and *environment*) for our case, let's save the case file.
 
-1. Click on the **File** menu and choose **Save As**. Enter the file name `EdsvsTutorial` and save.
+1. Click on the **File** menu and choose **Save Case As…**. Enter the file name `EdsvsTutorial` and save.
 
-   > NOTE: HVE 2027 saves a case as `.hvc` (or as `.json` with **File › Save As JSON**). It reads HVE's `.hve` case files but does not write them. A case saved after a run also keeps its results, in a separate file beside it.
+   > NOTE: HVE 2027 saves a case as `.hvc` (or as `.json` with **File › Save Case As JSON…**). It reads HVE's `.hve` case files but does not write them. A case saved after a run also keeps its results, in a separate file beside it.
 
    > NOTE: Saving the file occasionally is a highly recommended practice.
 
@@ -189,7 +189,7 @@ We have now completed the event.
 
 ## Viewing Results
 
-Now that we have produced our EDSVS simulation, let's take a detailed look at the results. In HVE 2027 the results of the event you last ran are shown in the viewport and through the **Output** menu; there is no separate Playback Editor.
+Now that we have produced our EDSVS simulation, let's take a detailed look at the results. In HVE 2027 the results of the event you last ran are shown in the Event editor's viewport and through its **Output** menu; the **Playback** editor (F6) is only for playing several events in sequence.
 
 EDSVS produces the following reports:
 
@@ -245,7 +245,7 @@ The Vehicle Data report displays the vehicle data, tire data and driver control 
 
 ### Variable Output
 
-The Variable Output report is a table of time-dependent results. In HVE 2027 it is **Output › Timestep Data Table**.
+The Variable Output report is a table of time-dependent results. In HVE 2027 it is **Output › Key Results**.
 
 #### Variable Selection
 
@@ -257,7 +257,7 @@ The purpose of our EDSVS study is to make our vehicle follow a desired path. To 
 
    > NOTE: Feel free to add additional variables.
 
-The Timestep Data Table for the *Steering Maneuver* event now includes the selected results (see Figure 5-12). **Output › Output Graph** plots the same channels against time.
+Key Results for the *Steering Maneuver* event now includes the selected results. **Output › Output Graph** plots channels against time; choose them with its own **Select Variables…** button. **Output › Timestep Data Table** (Figure 5-12) lists the CG position, heading and speed at each output step.
 
 ![Figure 5-12](images/hvn-edsvs-timestep-table.png)
 *Figure 5-12: The Timestep Data Table for the Steering Maneuver event.*
@@ -277,7 +277,7 @@ The trajectory plays back in the Event editor's viewport. To visualize the motio
 HVE 2027 does not print directly. To print a report, save it to a file and print the file:
 
 1. In the HVE Reports window, type a file name in the box at the bottom and click **Save This Page** (or **Save All Pages** for every page).
-2. For the Variable Output, use **Export CSV…** in the Timestep Data window, or **Output › Export Variables**.
+2. For the Variable Output, use **Export CSV…** in Key Results, or **Output › Export Variables**.
 
 > NOTE: A page saved as TEXT is laid out in spaces for a fixed-width font. Open it in a text editor with a monospaced font before printing it, or use **Save Page as HTML**, which lays the page out as tables. For several reports it may be best to print in landscape rather than portrait mode.
 

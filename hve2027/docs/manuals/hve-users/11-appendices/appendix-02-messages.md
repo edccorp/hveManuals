@@ -81,7 +81,7 @@ user must correct the problem before continuing. The Event Verify error
 messages are listed below.
 
 !!! note "HVE 2027"
-    HVE 2027 checks the event when it is run (**Output › Run Simulation…** or **Run** on the playback bar), not when Event Information is closed. Before running, the playback bar shows the method and *Press Run to execute*, or, in red, why the event cannot run with its method. An incompatibility found by the calculation model is reported in the run status with the model's own message.
+    HVE 2027 checks the event whenever it is shown, not when Event Information is closed: the Event Information panel's Calculation Method section shows **Cannot run:** with the reason, and the run (**Output › Run Simulation…** or **Run** on the playback bar) is refused. Before running, the playback bar shows the method and *Press Run to execute*; after a refused run it shows, in red, why the event could not run. An incompatibility found by the calculation model is reported in the run status with the model's own message.
 
 #### General Incompatibility
 

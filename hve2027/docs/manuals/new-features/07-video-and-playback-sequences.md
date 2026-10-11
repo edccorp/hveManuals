@@ -130,9 +130,10 @@ In the Playback editor:
   editor, the active event.
 
 !!! note "HVE 2027"
-    The solved results of the other events are kept in memory only. When a case
-    is saved and reopened, the results of one event are restored, as always;
-    press **Run All Events** again before playing a sequence.
+    Saving the case saves the results of every solved event beside it, so a
+    reopened case plays its sequences without **Run All Events**. An event
+    edited after it was solved comes back unsolved; press **Run All Events** to
+    solve it again (see [Saved results](../getting-started/04-cases-and-files.md#saved-results-hvr)).
 
 ## Recording a video
 
@@ -173,7 +174,9 @@ can be drawn into every frame.
 6. Under **Rendering**, choose the **Renderer**. **Viewport (fast)** records the
    3-D view's own picture. **Ray traced** traces every frame with the built-in
    path tracer (see below) at the **Samples** given (default 64), which takes
-   seconds a frame instead of milliseconds. Tick **Motion blur** to make each
+   seconds a frame instead of milliseconds; **Denoise** (on by default) lets far
+   fewer samples give a clean frame. The app stays usable while frames are
+   traced, and **Cancel** answers at once. Tick **Motion blur** to make each
    frame the average of several instants (**Steps**, default 8) across the
    **Shutter** (default 0.50 of a frame): 0.5 of a frame is a film camera's
    look, where a spinning wheel blurs and an impact smears.
@@ -250,7 +253,14 @@ the run switched them. You get soft shadows from a sun disc of real size,
 reflections, and light bounced off the road. Set the **Width** (the height
 follows the view), the **Samples** (64–256 for a clean picture) and the
 **Bounces**, then press **Render**. The picture sharpens pass by pass; **Stop**
-at any point and **Save PNG**.
+at any point and **Save PNG**. **Denoise**, on by default, smooths the remaining
+noise out of the lighting while keeping paint, photographs and shadow edges
+sharp, so 16–32 samples already give a clean picture.
+
+A still can also be made without opening the app:
+`hve-next --render-traced case.hvc picture.png 128 1920` traces the case at the
+end of its run through its active camera (add a time after the width for
+another instant, and `--no-denoise` for the raw samples).
 
 | Control | Default | Range |
 | --- | --- | --- |

@@ -13,7 +13,11 @@ material files (`*.matl`).
     What the occupant programs use is the **combined** occupant–surface
     material carried with each occupant contact pair. When an HVE case
     (`.hve`) is opened, those pairs and their combined materials are imported
-    and passed to EDHIS and GATB unchanged; there is no editor for them.
+    and passed to EDHIS and GATB. The stated materials are edited under
+    **Combined Contact Materials** in the
+    [Event Information](../09-events-driver-controls/EventInfo.md#humans-in-event)
+    panel of an EDHIS or GATB event; a surface with none stated uses that
+    surface's own material with an edge constant of 0.5.
 
     The vehicle side of a contact — each interior or exterior contact surface's
     own force–deflection law — is edited in the vehicle's

@@ -34,8 +34,8 @@ are reached as follows:
   of the body was crushed, in meters.
 - **The collision force direction** is drawn by **View › Scene Display › Vectors › Collision
   Force (PDOF)** while the vehicles are in contact.
-- **The DyMESH wheel contact meshes** are drawn by **View › DyMESH Wheel
-  Mesh**.
+- **The DyMESH wheel contact meshes** are drawn by **View › Scene Display ›
+  DyMESH Wheel Mesh**.
 - **The Damage Data report** — collision kinetics, damage profiles with CDC,
   and crush depth tables, per impulse — is the *DAMAGE DATA* page of **Output ›
   HVE Reports**, built by the engine exactly as HVE builds it.

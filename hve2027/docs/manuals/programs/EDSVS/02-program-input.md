@@ -243,7 +243,7 @@ EDSVS uses the environment created in the Environment editor (see Figure 2-2). T
 A case in HVE 2027 always has one environment; you edit it rather than add it. To set it up:
 
 1. Choose the **Environment** editor (the **Environment (F4)** tab under the menu bar).
-2. Open **Environment › Environment…**. The Environment window has the sections *Location*, *Terrain*, *Sky*, *Physical* and *Signals*.
+2. Open **Environment › Environment…**. The Environment window has the sections *Location*, *Terrain*, *Sky*, *Physical* and *Friction Zones*.
 3. Under *Location*, set the name, latitude, longitude, date and time.
 4. Under *Terrain*, load the 3-D surface geometry (HVE `.h3d` files, DXF sites, `.iv`, OBJ and glTF are read).
 5. Under *Physical*, set the temperature, barometric pressure, wind and gravity constant.
@@ -490,7 +490,7 @@ To execute an EDSVS event, use the playback bar under the viewport, shown in Fig
 
 > NOTE: A solved event's inputs are locked while its results are on screen. Press **Reset** to edit them; the event must then be run again.
 
-> NOTE: Use the **View** menu to choose useful displays, such as Key Results, Skidmarks, Vectors and the CG path.
+> NOTE: Use the **View** menu to choose useful displays: Key Results, and in **View › Scene Display**, Skidmarks, Vectors and the CG Path.
 
 ---
 

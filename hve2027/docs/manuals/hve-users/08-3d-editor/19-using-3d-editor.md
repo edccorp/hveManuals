@@ -170,7 +170,7 @@ HVE's Group tool combines objects into a group, splits groups, and saves and loa
 ## Viewing Options
 
 !!! tip "New in HVE 2027"
-    The **View** menu controls what the 3-D view draws. All are view preferences, not case data:
+    **View › Scene Display** controls what the 3-D view draws. All are view preferences, not case data:
 
     - **Rendering** — **Phong** (smooth), **Flat** (one normal per face) or **Wireframe** shading, and **Light Sources On** (off, the sun stops contributing and the ambient light is raised so shape stays readable).
     - **Shadow Coverage** — fit the shadow to the **Vehicles (sharp)** or the **Whole scene**.
@@ -181,7 +181,7 @@ HVE's Group tool combines objects into a group, splits groups, and saves and loa
 ![Figure 19-3](../images/hvn-08-viewport-scene.png)
 *Figure 19-3 — The 3-D view of a site read from an HVE case, with scene ghosts in outline style marking measured scene positions.*
 
-Lighting comes from the sun and sky set in **Environment › Environment… › Sky**. **Vehicle › Vehicle Lights…** keeps a list of lights with each vehicle (type, intensity, direction, position, colour); the viewport does not draw them.
+Lighting comes from the sun and sky set in **Environment › Environment… › Sky**. **Vehicle › Vehicle Lights…** keeps a list of lights with each vehicle (type, intensity, direction, position, colour); the 3-D view uses them as the vehicle's lamps, which light the scene once the sky darkens. No engine reads them.
 
 ---
 *Converted and updated from the legacy HVE User's Manual (Seventh Edition, Jan 2006), Chapter 19; adapted for HVE 2027.*

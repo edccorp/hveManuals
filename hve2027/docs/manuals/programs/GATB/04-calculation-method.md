@@ -67,9 +67,7 @@ GATB always writes a fixed ATB integration timestep of 0.002 sec, and the number
 of steps is the maximum simulation time divided by it.
 
 !!! note "HVE 2027"
-    HVE 2027 keeps this exactly: the step is set inside GATB's own code, in HVE's source and in HVE 2027 alike, so the event's Human Collision Integration Timestep does not reach a GATB run. Within each step, ATB's
-own variable-step Runge-Kutta/predictor-corrector integrator controls the
-solution.
+    HVE 2027 keeps this exactly: the step is set inside GATB's own code, in HVE's source and in HVE 2027 alike, so the event's Human Collision Timestep does not reach a GATB run. Within each step, ATB's own variable-step Runge-Kutta/predictor-corrector integrator controls the solution.
 
 For the underlying theory of the ATB model — the equations of motion, joint models, contact force model and restraint (harness and airbag) models — see the four-volume CVS/ATB documentation and the ATB-V.1 documentation listed in [Chapter 7, Technical References](07-references.md).
 

@@ -22,7 +22,12 @@ A deadband: EDHIS sets to zero any segment acceleration whose magnitude is at or
 
 ## Min Time Criterion (s)
 
-The minimum time precision (time epsilon) used by the integration and output control logic. The field is **greyed**: EDHIS overwrites it with 1.0e-7 s unconditionally after reading it, so no entered value can take effect — in HVE either. The stored value is kept for file fidelity.
+The minimum time precision (time epsilon) used by the integration and output control logic.
+
+!!! warning "Not in HVE 2027"
+    This field is not offered. EDHIS overwrites it with 1.0e-7 s
+    unconditionally after reading it, so no entered value can take effect — in
+    HVE either.
 
 !!! note "HVE 2027"
     HVE's help described these two entries as interchanged in its release. In

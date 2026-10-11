@@ -320,12 +320,13 @@ Vehicle Mesh dialog contains:
 
 - **Mesh Assignment** — **Mesh File**: the 3-D model. **…** browses for a
   file; **Library…** searches the vehicle geometry library by name. HVE's
-  `.h3d` files, Open Inventor/VRML (`.iv`, `.wrl`) and `.obj` are read (the
-  Vehicles panel's 3D Geometry section lists the same formats).
+  `.h3d` files, Open Inventor/VRML (`.iv`, `.wrl`), `.obj` and glTF (`.gltf`,
+  `.glb`) are read (the Vehicles panel's 3D Geometry section lists the same
+  formats).
 - **Import Options** — Scale Factor, Smooth normals (use vn), Flip normals,
   Center on CG, Draw wheels (tire radius), Round shell (curved subdivision:
-  Off, 1 or 2 levels; needs Smooth normals), LOD Level (High, Medium, Low)
-  and Opacity, with **Load 3D File** and **Clear**.
+  Off, 1 or 2 levels; needs Smooth normals) and Opacity, with **Load 3D
+  File** and **Clear**.
 - **Move, Rotate and Scale the Model** — **Move CG** (where the CG sits in
   the model file's own coordinates, HVE's Move CG for the geometry) and
   HVE's Transform Vehicle Geometry: **Translate**, **Rotate** (degrees) and
@@ -433,7 +434,7 @@ and facing the right direction within the vehicle. Carefully view each
 surface to ensure its correct position and orientation.
 
 > **NOTE:** The surfaces are drawn while the Contact Surfaces, Belt
-> Restraint or Airbag Restraint dialog is open. **View › Occupant
+> Restraint or Airbags dialog is open. **View › Scene Display › Occupant
 > Equipment** draws them at any time.
 
 Changes take effect as they are made; Edit › Undo reverses them.
@@ -532,7 +533,8 @@ Belt Restraint System dialog (**Vehicle › Belt Restraint**, also Event ›
 Restraints › Belt Restraint).
 
 ![Figure 11-12](../images/hvn-04-belt-restraint.png)
-*Figure 11-12: Belt Restraint System dialog (HVE 2027).*
+*Figure 11-12: Belt Restraint System dialog (HVE 2027), captured before the
+Segment and Restraint Force fields were removed and Attached To was added.*
 
 !!! note "HVE 2027"
     In HVE 2027 a belt system is kept per OCCUPANT of the vehicle rather than
@@ -549,12 +551,11 @@ following steps:
 2. Choose the occupant in the **Occupant** list, and set **Restraint In
    Use** for the active event.
 3. Check **Torso Belt Installed** and/or **Lap Belt Installed** (HVE's
-   Device Installed, per section), and choose the **Segment** (Shoulder,
-   Chest, Lap) and the **Restraint Force** frame (Vehicle Frame, Ground
-   Frame).
+   Device Installed, per section).
 4. Choose the **Section** (Torso (shoulder) or Lap) to edit. Each section
-   has its own anchors, slack and webbing; the torso section attaches to the
-   chest and the lap section to the pelvis.
+   has its own anchors, slack and webbing, and **Attached To** names the
+   occupant segment it is attached to (by default the chest for the torso
+   section and the pelvis for the lap section).
 5. View and/or edit the section's properties.
 6. Repeat for the other section and each occupant.
 
@@ -602,58 +603,53 @@ of each section:
 
 ## Airbag Restraints
 
-The airbag restraint systems are displayed and edited using two dialogs in
-HVE 2027:
-
-- **Airbag Restraint System** (**Vehicle › Airbag Restraint**, also Event ›
-  Restraints › Airbag Restraint) — the vehicle side, per occupant: Device In
-  Use, Auto Start, Location, Restraint Force frame, Begin Fill Time, Fill
-  Duration, Peak Pressure, Gas Mass, Bag Volume, Vent Area, Deploy Position
-  (X, Y, Z) and the Contact Segments (Head, Chest, Arm).
-- **Airbag Restraints** (Human editor, **Airbag Properties…**) — the bag at
-  the occupant's seat, with HVE's gas and bag parameters: Device Installed,
-  the primary reaction (backside) panel and up to three confining panels, the deploy
-  point in the panel's frame, Full Inflated Volume, Initial Radius,
-  Passenger Bag Length, Initial Pressure, Gas Density, Mass Flow Rate,
-  Specific Heat Ratio, Discharge Coef, Vent Area, Pressure Open Vent, Column
-  Angle, Col. Load, Max Col. Disp, Max Penetration, Force Conv. Criterion,
-  Bag Membrane Thickness and the Elastic, Rebound and Bottom-out Moduli; and
-  an **ATB Gas Dynamics (GATB)** section.
-
-![Figure 11-13](../images/hvn-04-airbag-restraint.png)
-*Figure 11-13: Airbag Restraint System dialog (HVE 2027), the vehicle side.*
+The airbags are displayed and edited using the **Airbags** dialog
+(**Vehicle › Airbags**, also Event › Restraints › Airbags). As in HVE, a bag
+belongs to the vehicle, one per seat location: choose the **Seat** at the top
+of the dialog (each seat is listed with the occupants seated there in the
+active event, and whether it has a bag). For the selected seat the dialog
+holds **Device Installed**; the **Position** (vehicle-fixed, from the CG);
+**Timing** (Begin Fill Time, Fill Duration); the **Contact Segments** (Head,
+Chest, Arm); the **Reaction Panel** (the primary, backside panel the bag
+deploys from, and up to three confining panels) and the bag's offset on it;
+**Bag Geometry** (Full Inflated Volume, Initial Radius, Passenger Bag Length);
+**Gas Properties** (Initial Pressure, Gas Density, Mass Flow Rate, Specific
+Heat Ratio); **Vent** (Discharge Coef, Vent Area, Pressure Open Vent);
+**Contact** (Column Angle, Col. Load, Max Col. Disp, Max Penetration, Force
+Conv. Criterion); the **Membrane** (Bag Membrane Thickness and the Elastic,
+Rebound and Bottom-out Moduli); and an **ATB Gas Dynamics (GATB)** section.
 
 ![Figure 11-14](../images/p367-figB11-14.png)
 *Figure 11-14: Airbag x,y,z deployment coordinates and deployment (column) angle.*
 
 !!! note "HVE 2027"
-    The Airbag Restraint System dialog states which of its fields reach the
-    solver: Auto Start, Begin Fill Time, Fill Duration, Deploy Position and
-    the Contact Segments do (Fill Duration and Deploy Position are read by
-    EDHIS); Device In Use and Bag Volume are drawn only; Location, Restraint
-    Force, Peak Pressure, Gas Mass and Vent Area reach nothing — the gas
-    dynamics come from the occupant's Airbag Restraints dialog, and the bag
-    deploys at the occupant's seat. Whether the bag is used in a run is set
-    by the occupant's **Restraint In Use** (Airbag + Belt) in the event.
+    The dialog states which fields reach which engine: the Position and Fill
+    Duration are read by EDHIS, the Begin Fill Time by EDHIS and GATB, and
+    the Contact Segments and reaction panels by GATB. An occupant uses the bag
+    at their seat (the human's Location) in the event's vehicle, and only
+    when the occupant's **Restraint In Use** in the event is Airbag + Belt; an
+    Airbag + Belt occupant at a seat with no bag installed is refused by the
+    run.
 
-To display or edit an occupant's airbag, perform the following steps:
+To display or edit a seat's airbag, perform the following steps:
 
-1. Choose **Vehicle › Airbag Restraint**, choose the occupant in the
-   **Occupant** list, and edit the vehicle-side fields.
-2. In the Human editor (F2), select the occupant in the Occupants panel and
-   press **Airbag Properties…**. Check **Device Installed** and edit the gas
-   and bag properties. A pedestrian has no seat and no airbag.
+1. Choose **Vehicle › Airbags**. The dialog opens on the seat of the occupant
+   selected in the Occupants panel.
+2. Choose the **Seat**, check **Device Installed** and edit the bag's
+   properties. A pedestrian has no seat and no airbag.
+3. Set the occupant's **Restraint In Use** to Airbag + Belt for the event
+   (Vehicle › Belt Restraint, or Event Information).
 
 The Airbag Restraint Properties are described below, under HVE's names.
 
 - **Seat Location** — A position index used to determine the location of
-  the current airbag restraint system. In HVE 2027 the bag is the one at the
-  occupant's seat (the human's Location).
+  the current airbag restraint system. In HVE 2027 it is the dialog's **Seat**;
+  an occupant uses the bag at their seat (the human's Location).
 - **Device Installed** — A checkbox to indicate the vehicle has an airbag
   system at the current location.
 - **x,y,z Deployment Coordinates** — Assigns the vehicle-fixed x,y,z
-  coordinates where the airbag is installed and deployed (HVE 2027: Deploy
-  Position, vehicle side).
+  coordinates where the airbag is installed and deployed (HVE 2027:
+  **Position**).
 - **Initial Bag Radius** — Assigns the initial radius for the airbag.
 - **Passenger Airbag Length** — Assigns the length for non-driver-side
   airbags.

@@ -8,7 +8,7 @@ Updated Markdown edition, converted from the Fifth Edition manual (January 2006)
 
 HVE 2027 compiles EDC's own EDHIS source, so the model this manual describes — the three-segment, twelve-degree-of-freedom occupant, its contact, belt and airbag models and its integrator — is HVE's. What differs is the program around it:
 
-- **Running EDHIS.** Choose *EDHIS* as the event's **Calculation Method** in Event Information (Event editor, F5), then **Run** on the playback bar or **Output › Run Simulation**. There is no separate program to start and no Playback Editor: the solved event plays back in the same viewport, and reports, graphs and tables are on the **Output** menu.
+- **Running EDHIS.** Choose *EDHIS* as the event's **Calculation Method** in Event Information (Event editor, F5), then **Run** on the playback bar or **Output › Run Simulation**. There is no separate program to start: the solved event plays back in the same viewport, and reports, graphs and tables are on the **Output** menu.
 - **Where the inputs are.** The body is edited in the **Human (F2)** editor (**Occupant › Human Information** opens the *Occupants* panel); belts, airbags and contact surfaces are vehicle equipment (**Vehicle (F3)** menu); which humans take part, where they sit, what they wear and how they are posed are set per event in **Event Information › Humans in Event**. [Chapter 2](02-program-input.md) gives the full map.
 - **Restraint type and pose are per event.** The same occupant can be belted in one event and not in another, and posed differently in each.
 - **Airbag inflation defaults are HVE's own**: Begin Fill Time 0.001 s and Fill Duration 0.05 s.

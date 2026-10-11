@@ -48,6 +48,7 @@ The HVE 2027 menu bar has the following menus:
   (Vehicle, Environment and Human editors respectively)
 - **Event** — event set-up (HVE's Set-up menu), in the Event editor
 - **Output** — reports, graphs, tables, playback and running, in the Event editor
+- **Playback** — playback sequences, in the Playback editor
 - **View** — panels and what the viewport draws (most of HVE's Options menu
   display switches)
 - **Tools** — preferences and units, cameras, the audit log and other tools
@@ -63,15 +64,15 @@ Each menu is described in the [Menu Reference](../02-menu-reference/README.md).
 
 ## HVE Modes
 
-HVE's functional design is based on five modes. HVE 2027 has four **editors**,
+HVE's functional design is based on five modes. HVE 2027 has five **editors**,
 selected with the tabs under the menu bar or the function keys:
 
 - **Human (F2)** — the Human editor
 - **Vehicle (F3)** — the Vehicle editor
 - **Environment (F4)** — the Environment editor
 - **Event (F5)** — the Event editor, which also plays back results
-
-There is no Playback mode: see [Chapter 1](01-what-is-hve.md#playback-editor).
+- **Playback (F6)** — the Playback editor, which combines events into one
+  sequence (see [Chapter 1](01-what-is-hve.md#playback-editor))
 
 ## Starting A New Case
 
@@ -416,13 +417,16 @@ event is run (see [Part C](02c-how-to-use-hve.md#key-results-windows)).
 
 #### Stiffness Coefficients
 
-The crush stiffness of each side of the vehicle — A, B and Kv, per side, and per
-zone where the crush profile states zones — is entered in **Event › Damage
-Profiles...** (and, per zone, in Measured Crush). The same dialog holds the 3-D
-node stiffness DyMESH uses.
+For an EDCRASH event, the A and B stiffness are entered with the damage in
+Vehicle Impact Setup, and per zone in Measured Crush; **Event › Damage
+Profiles...** opens that section. The vehicle's own crush stiffness, used by the
+simulations — A, B and Kv for each side, and the 3-D node stiffness DyMESH
+uses — is a property of the vehicle, entered in **Vehicle › Crush
+Stiffness...** in the Vehicle editor.
 
 ![Figure 2-17](../images/hvn-01-damage-profiles.png)
-*Figure 2-17: The Damage Profiles dialog for an EDCRASH vehicle.*
+*Figure 2-17: The Crush Stiffness dialog (captured under its earlier title,
+Damage Profiles).*
 
 *See also: [Damage Data](../../11-reports-output/DamageData.md) and
 [Stiffness Coefficients](../../02-vehicles/StiffCoeffDlg.md).*
@@ -513,7 +517,7 @@ after a run.
 
 ### Assigning Restraint System Usage
 
-**Event › Restraints › Airbag Restraint...** and **Belt Restraint...** (or the
+**Event › Restraints... › Airbags...** and **Belt Restraint...** (or the
 same items on the Vehicle menu) set up the vehicle's airbags and belts for its
 occupants.
 
@@ -589,7 +593,7 @@ HVE provided a number of display options on its Options menu. In HVE 2027 they
 are switches on the **View** menu:
 
 - **Key Results** — View › Key Results (or Output › Key Results...)
-- **Coordinate Axes** — not in HVE 2027
+- **Coordinate Axes** — View › Scene Display › Axes
 - **Contacts** and **Belt Anchors** — View › Scene Display › Occupant Equipment
 - **Velocity Vectors** — View › Scene Display › Vectors › Velocity Vectors
 - **Skidmarks** — View › Scene Display › Skidmarks

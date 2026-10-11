@@ -42,8 +42,9 @@ selected objects; a new event is named *Event n*.
 ## Calculation Method
 
 **Method** — a drop-down list of the calculation methods: EDCRASH, EDSMAC, EDGEN,
-EDHIS, SIMON, EDSMAC4, GATB, EDSVS, EDVDS, EDVTS, SINGLETRACK and EDVSM. The
-calculation method selects the physics engine that runs the event.
+EDHIS, SIMON, EDSMAC4, GATB, EDSVS, EDVDS, EDVTS, SINGLETRACK, EDVSM and
+READDATAFILE. The calculation method selects the physics engine that runs the
+event.
 
 - A method whose output has not yet been validated end to end in HVE 2027 is
   marked *(unvalidated)*, and a line under the list says so for the active
@@ -53,14 +54,14 @@ calculation method selects the physics engine that runs the event.
   *— N/A for these vehicles*; hover it for the reason. If the active event's
   method cannot run, a red *Cannot run:* line gives the reason.
 - An event imported from an HVE case that uses a program HVE 2027 does not have
-  (for example a Read Data File event) shows that method greyed and marked
-  *— not ported*; it can be opened and saved but not run.
+  shows that method greyed and marked *— not ported*; it can be opened and
+  saved but not run.
 
 Unlike HVE, the method of an existing event can be changed at any time.
 
 **Method Options...** opens the active method's calculation options window
-(see [Calculation Options](../10-calculation-options/README.md)). EDSVS, EDVDS
-and EDVTS have no options window; the button does nothing for them.
+(see [Calculation Options](../10-calculation-options/README.md)). EDSVS, EDVDS,
+EDVTS and READDATAFILE have no options window; the button is greyed for them.
 
 !!! warning "Not in HVE 2027"
     HVE located the calculation-method programs in its calcMethods directory.
@@ -105,7 +106,7 @@ numbering the engine uses; for EDVTS and EDVDS slot V1 is the tow vehicle.
 
 ## Humans in Event
 
-Shown for EDHIS, GATB and SIMON events (for SIMON the occupants are
+Shown for EDHIS, GATB, EDGEN and SIMON events (for SIMON the occupants are
 bookkeeping only; SIMON does not solve occupant motion). One row per human
 slot (H1, H2, ...):
 
@@ -122,8 +123,12 @@ slot (H1, H2, ...):
   and the EDGEN path rows. Z is SAE (+ down).
 - **Restraint (this event)** — None, Lap Belt, 3-Point Belt or Airbag + Belt.
   Shown for occupants in EDHIS and GATB events.
-- Read-only notes list an imported scene path (used by EDGEN) and any armed
-  self-contact pairs.
+- On an EDGEN event, the human's **Scene path**: HVE's eight named positions,
+  each ticked to use it, with **X**, **Y**, **Z, + down**, **Yaw (deg)**,
+  **Pitch**, **Roll**, **Sideslip (deg)** (read only under EDGEN's 3-D Spline
+  path model) and **Speed stated** / **Speed**. EDGEN moves the human through
+  the ticked positions at the speed stated at each.
+- A read-only note lists any armed self-contact pairs.
 
 **Add Human** adds a case human. If no human is listed, the event takes every
 human that has a seeded body; a note names them.
@@ -191,8 +196,9 @@ and the scene positions from its Position/Velocity dialog:
   Final/Rest). Each one that is set is drawn as a ghost in the viewport. Impact
   and Final/Rest are edited in the fields below the list.
 - **Scene positions known (impact + rest)** — with it on, **Impact X / Y /
-  heading** and **Rest X / Y / heading**. With it off the run is a damage-only
-  reconstruction (delta-V from crush alone).
+  heading**, **Impact sideslip (deg)**, **Rest X / Y / heading** and **Velocity
+  at rest**. With it off the run is a damage-only reconstruction (delta-V from
+  crush alone).
 - **Measured Crush** — number of crush depths, **C1**...**Cn**, **Damage width**,
   **Damage offset**, and per-zone A/B stiffness.
 

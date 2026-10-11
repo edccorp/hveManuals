@@ -39,7 +39,7 @@ Spring rate (force per unit of wheel travel) at the wheel due to the spring. HVE
 Velocity-dependent suspension force due to shock absorbers. HVE's *Damping at Wheel*.
 
 ### Static Deflection, Natural Freq (Hz)
-Read-only rows, shown with **View › Show Guidance Text** on: the spring's static deflection and the ride natural frequency, estimated from the vehicle's mass shared equally over its wheels. They are a check on the entered spring rate, not inputs.
+Read-only rows: the spring's static deflection and the ride natural frequency, estimated from the vehicle's mass shared equally over its wheels. They are a check on the entered spring rate, not inputs.
 
 ### Aux Roll Stiffness
 Roll stiffness (torque per unit of sprung mass roll) added by an anti-sway bar.
@@ -53,13 +53,13 @@ Minimum suspension velocity required for full Coulomb friction force.
 ## Solid Axle
 
 ### Roll Ctr Below CG
-Vertical distance from the sprung mass CG down to the suspension roll center (solid axles). 0 lets HVE 2027 estimate it, and the run says so.
+Vertical distance from the sprung mass CG down to the suspension roll center (solid axles). 0 lets HVE 2027 estimate it.
 
 ### Lat. Spring Space
 Lateral distance between the left and right springs of a solid axle. 0 lets HVE 2027 estimate it from the track width.
 
 ### Tandem Axle Spacing
-For a tandem set, how far the tandem axle sits behind the axle ahead of it. 0 uses the **Axle Spacing** entered in the Vehicles panel under **Dimensions / Inertias › Overall**.
+For a tandem set, how far the tandem axle sits behind the axle ahead of it. It is the same value as the **Axle Spacing** rows (for example **A2 to A3**) in the Vehicles panel under **Dimensions / Inertias › Overall**; 0 uses a default spacing.
 
 ### Beam Mass, 0=default / Beam Inertia, 0=default
 The axle beam's weight and inertia (HVE's Axle Inertia dialog); see [Inertia Dialog Box](../02-vehicles/InertiasDlg.md).

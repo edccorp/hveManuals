@@ -148,7 +148,7 @@ they act per unit of error.
 | Brake Pressure Rate | YSC | Change in brake pressure per unit wheel-speed error |
 
 !!! note "HVE 2027"
-    In HVE 2027 the ESS parameters are in the **Electronic Stability (ESS)** section of **Vehicle › Drivetrain...**: **TCS Enabled** and **YSC Enabled**, then **Min Speed**, **Drive Torque Threshold**, **Axle Spin Diff (rad/s)**, **Drive Torque Rate**, **Yaw Vel Error (rad/s)**, **Spin Vel Error (rad/s)**, **Side Spin Diff (rad/s)**, **Brake Press Threshold** and **Brake Press Rate**. **ESP Enabled** is shown disabled, because no engine reads it (see *Notes and limitations*). TCS acts only under the *Pedal (AT_DRIVER)* throttle method and YSC only under the *Pedal (AT_DRIVER)* brake method (Event › Driver Controls), and both rates default to 0, in which case a system reports itself active and changes nothing.
+    In HVE 2027 the ESS parameters are in the **Electronic Stability (ESS)** section of **Vehicle › Drivetrain...**: **TCS Enabled** and **YSC Enabled**, then **Min Speed**, **Drive Torque Threshold**, **Axle Spin Diff (rad/s)**, **Drive Torque Rate**, **Yaw Vel Error (rad/s)**, **Spin Vel Error (rad/s)**, **Side Spin Diff (rad/s)**, **Brake Press Threshold** and **Brake Press Rate**. HVE's **ESP Enabled** flag is not offered, because no engine reads it (see *Notes and limitations*); a case opened from HVE with ESP switched on is told that ESP is not applied. TCS acts only under the *Pedal (AT_DRIVER)* throttle method and YSC only under the *Pedal (AT_DRIVER)* brake method (Event › Driver Controls), and both rates default to 0, in which case a system reports itself active and changes nothing.
 
 ## Outputs
 

@@ -13,7 +13,7 @@ Errors issued by EDHIS appear in the EDHIS output and may be one of three types:
 All messages issued by EDHIS are listed below. Each message includes a description or nature of the cause, the level of the message (Informative, Diagnostic or Fatal), and the recommended action to eliminate the problem. If you receive an error message not listed below, first check to see if it is an HVE or operating system message by referring to the HVE Appendix or your computer's operating system manual. If the message is not listed in either place, please contact EDC immediately with the offending error message and the input file that caused the error.
 
 !!! note "HVE 2027"
-    In HVE 2027 EDHIS's messages are on the *Messages* page of **Output › HVE Reports**, and a run that stops shows its reason in the run status (Simulation panel). Where a message below refers to a dialog, the HVE 2027 equivalent is: *Simulation Controls* → the **Simulation** panel (the Human Collision Integration Timestep has no control in HVE 2027; see [Chapter 2](02-program-input.md#simulation-controls)); *HVE Human Editor* joint stops → the *Occupants* panel's **Joint Properties…**; the *Vehicle Data Report* → the *Vehicle Data* page of HVE Reports. Where a message suggests reading a belt tension or contact force in the Variable Output, note that HVE 2027 does not yet offer EDHIS's human output groups as variables ([Chapter 3](03-program-output.md#variable-output-table)); the Vehicle Data and Injury Data pages are the place to look.
+    In HVE 2027 EDHIS's messages are on the *Messages* page of **Output › HVE Reports**, and a run that stops shows its reason in the run status (Simulation panel). Where a message below refers to a dialog, the HVE 2027 equivalent is: *Simulation Controls* → the **Simulation** panel (the Human Collision Integration Timestep is its *Human Collision Timestep*; see [Chapter 2](02-program-input.md#simulation-controls)); *HVE Human Editor* joint stops → the *Occupants* panel's **Joint Properties…**; the *Vehicle Data Report* → the *Vehicle Data* page of HVE Reports. Where a message suggests reading a belt tension or contact force in the Variable Output, those are the **Occupant** groups of **Output › Variable Selection** ([Chapter 3](03-program-output.md#variable-output-table)).
 
 *(updated: this list has been checked against, and extended from, the messages carried by the current release. Messages 14–19 below are carried by the current release but were not listed in the original manual. A few entries are marked as **not produced by the current release**; they are retained so that a message seen in an earlier version can still be looked up, and each carries a note on where to look instead.)*
 
@@ -132,7 +132,7 @@ No messages were produced; no action is necessary.
 (Informative) *(updated: present in current code; not listed in original manual)*
 
 !!! note "HVE 2027"
-    A Fill Duration of zero shuts the inflator off the instant it starts and produces this message on every run. HVE 2027's Fill Duration defaults to HVE's 0.05 s and cannot be set below 0.0001 s (**Vehicle › Airbag Restraint**).
+    A Fill Duration of zero shuts the inflator off the instant it starts and produces this message on every run. HVE 2027's Fill Duration defaults to HVE's 0.05 s and cannot be set below 0.0001 s (**Vehicle › Airbags**).
 
 ---
 

@@ -34,12 +34,6 @@ This radio button group selects how EDGEN interpolates the path between the user
     The group is titled *Interpolation Method* rather than HVE's *Path Model*.
     The value stored in an imported HVE case is kept.
 
-!!! warning "Not in HVE 2027"
-    For a **human** driven by EDGEN, *3D Spline Interpolation* currently gives
-    the same path as *Linear*: the spline uses a sideslip angle at each path
-    node that the imported human path does not carry. Vehicle paths are
-    affected as described above.
-
 <!-- NAV -->
 
 ---

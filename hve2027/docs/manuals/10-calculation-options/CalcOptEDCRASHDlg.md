@@ -26,10 +26,12 @@ Four check boxes enable or disable individual EDCRASH calculation procedures:
 - **Include Angular Momentum Solution** — Greyed, as in HVE. EDCRASH reads the flag only to print it in its report; the angular-momentum solution is not implemented. Default: unchecked.
 
 !!! note "HVE 2027"
-    On the reference cases checked so far, switching **Modify Departure Angle**
-    off has not changed the separation angle or delta-V, although the
-    calculation it controls appears to apply to them. Why is still being
-    investigated; treat the option as live.
+    **Modify Departure Angle** has no effect while **Common Velocity Check** is
+    on: the check recomputes the departure angle from the separation velocity
+    right after this option adjusts it. With the check off, the option changes
+    the reported departure angle; delta-V moves only on the *Trajectory
+    Simulation* basis, which starts from that angle. This is HVE's own
+    behaviour, and the window says which case applies.
 
 ## Separation Velocity Basis
 
@@ -69,7 +71,7 @@ These entries are read only on the *Trajectory Simulation* basis; they are greye
 
 ## Curved Path (through a Point On Curve)
 
-!!! tip "New in HVE 2027"
+!!! note "HVE 2027"
     HVE's *Show Curved Path* options are in this window. They are read only for
     a vehicle that has a **Point On Curve** scene position (Event Information),
     and are greyed, with a note, when no vehicle in the event has one.

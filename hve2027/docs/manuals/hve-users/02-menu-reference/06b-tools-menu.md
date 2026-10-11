@@ -21,7 +21,7 @@ The Tools menu is on the menu bar in every editor.
 | **Preferences...** | Units, date format, background colour, diagnostics, auto-save | Options › Units, Options › Preferences |
 | **Style Editor...** | The look of the interface: base theme and live style settings | *(new; Options › Preferences › Font Size)* |
 | **Cameras...** | The case's named cameras | View › Set Camera |
-| **Audit Log...** | A time-stamped record of what was done in this session | the Audit Trail |
+| **Audit Log...** | A time-stamped record of what was done in this session | *(new; HVE's Audit Trail is a different thing — see [Audit Trail](../01-overview/02b-how-to-use-hve.md#audit-trail))* |
 | **Limits Editor...** | The minimum and maximum accepted by input fields | *(new)* |
 
 Quick Case, Vehicle Package, Case Intake, Provenance, EDR Import, Monte Carlo
@@ -187,7 +187,7 @@ See [Chapter 5, Set Camera](05-view-menu.md#set-camera).
 
 ## AUDIT LOG
 
-**Menu Option:** Tools › Audit Log... · *HVE: the Audit Trail*
+**Menu Option:** Tools › Audit Log...
 
 **Description:** A table of the session's actions — for example cases opened
 and saved, undo and redo, and exports — each with its time and user. **Clear Log** empties it.

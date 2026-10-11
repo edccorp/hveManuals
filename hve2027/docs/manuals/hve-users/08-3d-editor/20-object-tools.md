@@ -8,7 +8,7 @@ HVE's 3-D Editor creates environment objects with nine Object Tools — Surface,
     HVE 2027 does not build environment geometry. There are no Surface, Cone, Cylinder, Sphere or Text tools, no object editor dialogs, and no vertex editing. A site is **imported**:
 
     - from a geometry file — DXF, `.h3d`, `.iv`, OBJ or glTF — under **Environment › Environment… › Terrain › Scene Geometry** (enter or browse for the file, set the scale and axis options, tick **Use surfaces as terrain (physics)** if vehicles are to drive on it, and press **Import**); or
-    - with an HVE case: **File › Open** reads a `.hve` case, including the site built for it in HVE's 3-D Editor, with its object types, overlays and friction factors.
+    - with an HVE case: **File › Open Case...** reads a `.hve` case, including the site built for it in HVE's 3-D Editor, with its object types, overlays and friction factors.
 
     Build or edit the site in HVE or in a modelling program and import the result. The tools that remain are described below.
 
@@ -20,7 +20,7 @@ The table maps each HVE tool to what HVE 2027 offers:
 | Cone, Cylinder, Sphere, Text | Not available |
 | Box | **Environment › Scene Box Editor** — display boxes only (below) |
 | Light | Not available as a scene object; see [Light Tool](#light-tool) |
-| Signal | Timing fields only; see [Signal Tool](#signal-tool) |
+| Signal | Not available; see [Signal Tool](#signal-tool) |
 | Edit | Click to select in the Viewport ([Chapter 19](19-using-3d-editor.md#object-attributes-tool)); vehicles are moved with the gizmo ([Chapter 21](21-manipulators.md)) |
 
 ## Surface Tool
@@ -93,14 +93,14 @@ The box appears in the 3-D view, and as an outline in the Environment editor's T
 HVE's Light tool adds point, directional and spot light sources (such as street lights) to the environment.
 
 !!! warning "Not in HVE 2027"
-    There are no environment light objects. The 3-D view is lit by the sun and sky (**Environment › Environment… › Sky**); **View › Scene Display › Rendering › Light Sources On** turns the sun's contribution off and on. **Vehicle › Vehicle Lights…** keeps a list of lights for each vehicle — name, enabled, type (Point, Directional, Spot), intensity, direction, spot cone angle and drop-off, position and colour — but the viewport does not draw them. Lamps modelled in a vehicle's mesh can be given an emissive material in the Shader Editor.
+    There are no environment light objects. The 3-D view is lit by the sun and sky (**Environment › Environment… › Sky**); **View › Scene Display › Rendering › Light Sources On** turns the sun's contribution off and on. **Vehicle › Vehicle Lights…** keeps a list of lights for each vehicle — name, enabled, type (Point, Directional, Spot), intensity, direction, spot cone angle and drop-off, position and colour — and the 3-D view uses them as the vehicle's lamps, which light the scene once the sky darkens. No engine reads them. Lamps modelled in a vehicle's mesh can be given an emissive material in the Shader Editor.
 
 ## Signal Tool
 
 HVE's Signal tool creates traffic signal lights in the environment.
 
 !!! warning "Not in HVE 2027"
-    No signal object is drawn. **Environment › Environment… › Signals** records one traffic signal's data with the case — **Traffic Signal Active**, **Phase at Impact**, **Cycle Time**, **Green Time** and **Yellow Time** — and **Event › Signals** edits the same three times. No engine models a traffic light, so these values do not affect any result.
+    There is no Signal tool, and no traffic signal is drawn or recorded with the case. No engine models a traffic light.
 
 ## Edit Tool
 

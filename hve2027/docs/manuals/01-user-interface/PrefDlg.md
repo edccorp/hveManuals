@@ -33,7 +33,7 @@ A switch and an interval in minutes (at least 1).
 !!! warning "Not in HVE 2027"
     - **Diagnostic Level** is greyed: it has nothing to control in HVE 2027, where what a run assumed or repaired is always in its run status.
     - **Hide Date/Time From Printed Reports**, **Key Results** (Use Default / Use Previous / Use Custom, Copy to Variable Output), **Vehicle Dimensions Basis** (the Vehicles panel and the Inertia / Mass dialog show the sprung and total bases side by side instead; in HVE it changes no result, because every engine that reads it overwrites it with the total-mass basis), **Skidmark Height**, **Font Size**, **Physical Monitor Width**, **Long Velocity Vectors**, **Cycle Vehicle Colors**, **Resolution Setting** and **Reload language.rsc file on dialog exit**.
-    - **Store Vehicle Geometries in case file**: there is no such option. **File › Embed the environment in the case** stores the site's geometry and photograph inside the case, and **File › Publish Bundle...** writes the case, the meshes it names and its results into one folder.
+    - **Store Vehicle Geometries in case file**: there is no such option. A saved case carries the site's geometry and photograph inside it (**File › Embed the environment in the case**, on by default), and **File › Publish Bundle...** writes the case, the meshes it names and its results into one folder.
 
 !!! tip "New in HVE 2027"
     Related settings live elsewhere: **Tools › Style Editor...** sets the look of the interface; **View › Show Guidance Text** shows or hides the long explanatory notes in the dialogs (off by default; a message about a problem with the open case is always shown); **View › Panels Outside the Main Window** lets panels float as separate windows.

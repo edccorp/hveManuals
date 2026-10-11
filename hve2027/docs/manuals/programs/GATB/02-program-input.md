@@ -11,10 +11,9 @@ This chapter defines the objects (humans, vehicles and environment) and the even
     | Input | HVE 2027 |
     |---|---|
     | Human body (segments, joints, ellipsoids) | **Human (F2)** editor › **Occupant › Human Information** (*Occupants* panel) and its *Body Segments…* and *Joint Properties…* buttons |
-    | Airbag properties (bag geometry, gas, vent, membrane, ATB gas dynamics) | *Occupants* panel › *Airbag Properties…* |
     | Contact surfaces | **Vehicle (F3)** › **Vehicle › Contact Surfaces** |
-    | Belt installed, anchors, slack | **Vehicle › Belt Restraint** |
-    | Airbag timing and contact segments | **Vehicle › Airbag Restraint** |
+    | Belt installed, anchors, attachment segment, slack | **Vehicle › Belt Restraint** |
+    | Airbag, per seat (installed, timing, contact segments, reaction panels, bag geometry, gas, vent, membrane, ATB gas dynamics) | **Vehicle › Airbags** |
     | Which humans, which vehicle, seat, restraint worn, pose, pedestrian velocity | **Event (F5)** › Event Information › *Humans in Event* (and its **Pose** button) |
     | Vehicle initial position and velocity | Event Information › *Vehicle Initial Conditions*, or **Event › Position / Velocity** |
     | Collision pulse | **Event › Collision Pulse** |
@@ -277,12 +276,9 @@ An airbag restraint system may be supplied for up to nine seat positions. Like b
 **Table 2-8: Airbag restraint data used in GATB**
 
 !!! note "HVE 2027"
-    HVE 2027 splits the airbag between two dialogs:
+    The whole bag is edited in one dialog, **Vehicle › Airbags** (also **Event › Restraints › Airbags**), one bag per **Seat**, as HVE stores it: **Device Installed**; the **Position** from the vehicle CG; **Begin Fill Time** (default **0.001 s**) and **Fill Duration** (default 0.05 s); the head/chest/arm **Contact Segments**; the **Reaction Panel** the bag deploys from and up to three **confining panels**, with the deployment **Offset on the Reaction Panel** in that panel's frame; the bag geometry, gas properties, vent, steering column and membrane; and an **ATB Gas Dynamics (GATB)** section (supply gas temperature and volume, sonic discharge coefficient and throat area, gas constant, bag mass, panel spring rate and friction, mass multiplier, bag yaw and roll), whose defaults reproduce the values GATB used to hardcode. The dialog says which of the seat's fields reach which engine: Begin Fill Time, the Contact Segments and the reaction panels reach GATB; Position and Fill Duration are read by EDHIS, not by GATB. A vehicle with no contact surfaces cannot support a bag, and GATB refuses the run.
 
-    - **Vehicle › Airbag Restraint** (*Airbag Restraint System*), one entry per occupant: *Auto Start*, **Begin Fill Time** (default **0.001 s**) and the head/chest/arm **Contact Segments** reach GATB. *Fill Duration* (default 0.05 s) and *Deploy Position* are read by EDHIS, not by GATB. *Location*, *Restraint Force*, *Peak Pressure*, *Gas Mass* and *Vent Area* reach neither engine. The dialog lists all of this.
-    - The *Occupants* panel › **Airbag Properties…**, the occupant's own bag: the **Reaction Panel** the bag deploys from and up to three **confining panels**, the **Deploy Point** in that panel's frame, the bag geometry, gas properties, vent, steering column, and membrane — and an **ATB Gas Dynamics (GATB)** section (supply gas temperature and volume, sonic discharge coefficient and throat area, gas constant, bag mass, panel spring rate and friction, mass multiplier, bag yaw and roll), whose defaults reproduce the values GATB used to hardcode. A vehicle with no contact surfaces cannot support a bag, and GATB refuses the run.
-
-    The bag deploys only in an event where the occupant's restraint is **Airbag + Belt**.
+    The bag deploys only in an event where the occupant at that seat has the restraint **Airbag + Belt**.
 
 *(Note: the printed manual labeled the vent-area row "Bag Penetration for Force"; the description — area of the vent — identifies it as the bag vent area.)*
 
@@ -411,7 +407,7 @@ GATB uses the following *event set-up* options:
 - Calculation Options
 
 !!! note "HVE 2027"
-    In HVE 2027: vehicle position and velocity are under Event Information › *Vehicle Initial Conditions* (or **Event › Position / Velocity**); each human's vehicle, seat X/Y and **Restraint (this event)** under *Humans in Event*, with its orientation and velocity in the **Pose** dialog; the collision pulse in **Event › Collision Pulse**; the calculation options under **Method Options…**. **Driver Controls**, **Damage Profiles**, **Payload**, **Wheels**, **Accelerometers**, **Contacts** and **Restraints** on the Event menu are greyed for a GATB event.
+    In HVE 2027: vehicle position and velocity are under Event Information › *Vehicle Initial Conditions* (or **Event › Position / Velocity**); each human's vehicle, seat X/Y and **Restraint (this event)** under *Humans in Event*, with its orientation and velocity in the **Pose** dialog; the collision pulse in **Event › Collision Pulse**; the calculation options under **Method Options…**. **Driver Controls**, **Damage Profiles**, **Payload**, **Wheels** and **Accelerometers** on the Event menu are greyed for a GATB event; **Contacts** and **Restraints** are available.
 
 The specific Event Set-up data used by GATB are defined in Table 2-9.
 
@@ -438,7 +434,7 @@ The vehicle is positioned relative to the earth-fixed coordinate system by suppl
 Human positions and velocities are assigned relative to the vehicle-fixed coordinate system.
 
 !!! note "HVE 2027"
-    **Human position.** In Event Information › *Humans in Event*, **Occupies** chooses the vehicle (or *Pedestrian (no vehicle)*) and the two fields below it give the pelvis X and Y. For an occupant they are *Seat X/Y from CG*; for a GATB **pedestrian** they are *X/Y from vehicle CG* — GATB measures a pedestrian from the first vehicle's CG and converts it to the scene itself (EDHIS, by contrast, places a pedestrian in scene coordinates). A third field gives Z (SAE, + down). All three are measured from a vehicle CG for a GATB event, so they are in the vehicle-dimension unit (in, or m in metric); a scene position (an EDHIS or EDGEN pedestrian) is in the site unit (ft, or m). There is no 3-D manipulator for humans; a case opened from HVE keeps the position it stores.
+    **Human position.** In Event Information › *Humans in Event*, **Occupies** chooses the vehicle (or *Pedestrian (no vehicle)*) and the two fields below it give the pelvis X and Y. For an occupant they are *Seat X/Y from CG*; for a GATB **pedestrian** they are *X/Y from vehicle CG* — GATB measures a pedestrian from the first vehicle's CG and converts it to the scene itself (EDHIS, by contrast, places a pedestrian in scene coordinates). A third field gives Z (SAE, + down). All three are measured from a vehicle CG for a GATB event, so they are in the vehicle-dimension unit (in, or m in metric); a scene position (an EDHIS or EDGEN pedestrian) is in the site unit (ft, or m). A human can also be dragged across the ground in the 3-D view.
 
     **Orientation.** Click **Pose** beside the human: the *Body Pose* dialog edits this event's pose — roll, pitch and yaw for each of the 15 segments, each relative to its parent segment — once *Pose this body* is ticked. *Reset to default posture* returns a seated occupant to upper legs pitched 90° forward, and a pedestrian to standing.
 
@@ -527,7 +523,7 @@ By default, the Contacts dialog assumes interaction between every human ellipsoi
 The Restraints dialog determines if a belt or airbag restraint system is in use for the current event.
 
 !!! note "HVE 2027"
-    **Event › Restraints** opens the vehicle's Airbag and Belt Restraint dialogs (the same as **Vehicle › Airbag Restraint** and **Belt Restraint**). What each occupant wears in the event is **Restraint (this event)** beside the human in Event Information › *Humans in Event* (also shown as *Restraint In Use* in **Vehicle › Belt Restraint** for the active event): *None*; *Lap Belt*; *3-Point Belt* (torso and lap); or *Airbag + Belt* (torso, lap and airbag) — each belt only where the vehicle has it installed. The attachment points and slack are part of the belt in **Vehicle › Belt Restraint**; the airbag's Begin Fill Time (default 0.001 s) and Fill Duration (default 0.05 s, read by EDHIS) are in **Vehicle › Airbag Restraint**.
+    **Event › Restraints** opens the vehicle's Airbags and Belt Restraint dialogs (the same as **Vehicle › Airbags** and **Vehicle › Belt Restraint**). What each occupant wears in the event is **Restraint (this event)** beside the human in Event Information › *Humans in Event* (also shown as *Restraint In Use* in **Vehicle › Belt Restraint** for the active event): *None*; *Lap Belt*; *3-Point Belt* (torso and lap); or *Airbag + Belt* (torso, lap and airbag) — each belt only where the vehicle has it installed. The attachment points and slack are part of the belt in **Vehicle › Belt Restraint**; the airbag's Begin Fill Time (default 0.001 s) and Fill Duration (default 0.05 s, read by EDHIS) are in **Vehicle › Airbags**.
 
 > **NOTE:** If the current vehicle does not have a restraint system installed at the position specified for the current human, no restraints will be available for selection. If necessary, use the Vehicle Editor to install a restraint system at the desired seat position.
 

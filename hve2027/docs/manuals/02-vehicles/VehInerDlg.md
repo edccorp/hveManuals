@@ -4,7 +4,7 @@
 
 The inertial properties of the vehicle are displayed and edited in the **Inertia / Mass** dialog. Open it from the Vehicle Editor with the **Inertia / Mass...** button under **Vehicle Properties** (in the Vehicles panel, or in the Tools section of the [Vehicle Information dialog](VehicleInfoDlg.md)). The same weight and inertias, and the XZ product, can also be edited directly in the Vehicles panel under **Dimensions / Inertias › Inertia**.
 
-The dialog displays two columns of values — **Total** (total vehicle) and **Sprung** (sprung mass only) — and keeps them consistent: editing a value in one column recalculates the other using the vehicle's unsprung (axle/wheel) masses and their locations. The unsprung masses come from the entered tire weights and, on an axle that is not independent, the axle beam; with **View › Show Guidance Text** on, a line under the Mass rows shows the unsprung mass total and its front/rear split. All values are shown in the units set in Preferences.
+The dialog displays two columns of values — **Total** (total vehicle) and **Sprung** (sprung mass only) — and keeps them consistent: editing a value in one column recalculates the other using the vehicle's unsprung (axle/wheel) masses and their locations. The unsprung masses come from the entered tire weights and, on an axle that is not independent, the axle beam; a line under the Mass rows shows the unsprung mass total and its front/rear split. All values are shown in the units set in Preferences.
 
 This dialog contains the following parameters:
 
@@ -32,7 +32,7 @@ Rotational inertia about the Y axis.
 ### Yaw (Total / Sprung)
 Rotational inertia about the Z axis.
 
-When a vehicle states no rotational inertia, HVE 2027 estimates it from the mass and the wheelbase and track, and (with **View › Show Guidance Text** on) a note under these rows names the estimated values. The solver uses the same estimate; type a measured value to replace it.
+When a vehicle states no rotational inertia, HVE 2027 estimates it from the mass and the wheelbase and track, and a note under these rows names the estimated values. The solver uses the same estimate; type a measured value to replace it.
 
 ## Product of Inertia
 

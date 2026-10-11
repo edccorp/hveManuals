@@ -397,7 +397,9 @@ force. See also the reference page,
 [Anti-Pitch dialog](../../03-suspension-steering/AntiPitchDlg.md).
 
 !!! note "HVE 2027"
-    The anti-pitch table is recorded and reported but not consumed: no simulation reads it (as in HVE).
+    EDVSM reads the anti-pitch table, as in HVE: the table of each axle's
+    right wheel adds an anti-pitch force to that axle's suspension force (and
+    to EDVSM's Fz Anti-pitch output). SIMON does not read it.
 
 The Anti-pitch Table properties are described below.
 

@@ -77,10 +77,14 @@ by the engines. **Discard per-wheel table** returns to the steering-wheel table.
 
 ## Lights
 
-!!! warning "Not in HVE 2027"
-    HVE's **Lights** page (turning a vehicle's lights on and off by driver
-    controls or a start/end table) is not available. Vehicle lights are defined
-    for display in **Vehicle › Lights**.
+!!! note "HVE 2027"
+    HVE's **Lights** page is a window of its own, **Event › Lights...**,
+    enabled for SIMON and EDSMAC4, the methods that switch a vehicle's lamps.
+    For each lamp the vehicle's body file defines it sets **Is Active** and the
+    activation — **Use Driver Controls** or a **User-Entered** table of **Turn
+    On (sec)** / **Turn Off (sec)** times — with **On/Off Cycle Time (sec)**
+    and **Min Steer Angle (deg)** where they apply. The lamps themselves are
+    defined in **Vehicle › Vehicle Lights...**.
 
 <!-- NAV -->
 

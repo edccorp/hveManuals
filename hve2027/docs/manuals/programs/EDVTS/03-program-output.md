@@ -3,12 +3,12 @@
 This chapter defines the outputs available from an EDVTS event. In HVE the reports produced by EDVTS are available in the Playback Editor.
 
 !!! note "HVE 2027"
-    HVE 2027 has no Playback Editor and no Report Window Information dialog. After an EDVTS event is run (**Run** on the playback bar, or **Output › Run Simulation…**), its outputs are on the **Output** menu of the Event editor:
+    HVE 2027 has no Report Window Information dialog, and the reports are not in the **Playback** editor (F6), which plays several events in sequence. After an EDVTS event is run (**Run** on the playback bar, or **Output › Run Simulation…**), its outputs are on the **Output** menu of the Event editor:
 
     | HVE output | HVE 2027 |
     |---|---|
     | Accident History, Messages, Program Data, Vehicle Data (and Environment Data) | **Output › HVE Reports…** — the pages EDVTS itself builds, one tab per page, with a field and button to save the page as a text file |
-    | Variable Output | **Output › Timestep Data Table…**, **Output › Variable Report…** and **Output › Output Graph…**; the variables are chosen in **Output › Variable Selection…**; **Output › Export Variables…** writes them to a file |
+    | Variable Output | **Output › Key Results…**, with the variables chosen in **Output › Variable Selection…**; **Output › Output Graph…** plots variables chosen with its own **Select Variables…** button; **Output › Export Variables…** writes the Key Results variables to a file |
     | Key Results | **Output › Key Results…** |
     | Trajectory Simulation | the Event editor's own viewport, driven by the playback bar |
 
@@ -114,7 +114,7 @@ A portion of a typical Vehicle Data Report is shown in Figure 3-4. Dimensional e
 In HVE 2027 this page is the **VEHICLE DATA** tab of **Output › HVE Reports**.
 
 !!! note "HVE 2027"
-    In the driver tables at the end of this page, the brake table's Time column prints the time of the table's second row on every row. This is how EDVTS's own report code prints it (HVE's source does the same); the table the simulation uses is correct. Check brake-table times in **Event › Driver Controls…**.
+    In HVE, the brake table's Time column in the driver tables at the end of this page prints the time of the table's second row on every row, a slip in EDVTS's report code (the table the simulation uses is correct). HVE 2027 prints each row's own time.
 
 ## Graphic Reports
 
@@ -138,7 +138,7 @@ EDVTS produces a Variable Output table containing the time-based simulation resu
 A detailed listing of each Variable Output parameter produced by EDVTS is found in Table 3-1. For more information about Variable Output parameters, refer to the User's Manual, Chapter 16, Event Model.
 
 !!! note "HVE 2027"
-    The same variables are chosen in **Output › Variable Selection…** (the **Select Output Variables** dialog, searchable by name or group), and shown in **Output › Timestep Data Table…**, **Output › Variable Report…** or **Output › Output Graph…**. Values follow the units set in **Tools › Preferences**. A channel that EDVTS does not compute carries "(not computed)" in its name.
+    The same variables are chosen in **Output › Variable Selection…** (the **Select Output Variables** dialog, searchable by name or group) and shown in **Output › Key Results…**; **Output › Output Graph…** plots variables chosen with its own **Select Variables…** button. Values follow the units set in **Tools › Preferences**. A channel that EDVTS does not compute carries "(not computed)" in its name.
 
 **Table 3-1: Vehicle Variable Output Data**
 

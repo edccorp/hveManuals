@@ -311,7 +311,7 @@ In HVE 2027:
   > **NOTE:** Because the human is defined as an occupant (as opposed to a pedestrian), the initial velocity is defined relative to the vehicle.
 
 !!! note "HVE 2027"
-    The tutorial case carries HVE's own seated position — **Seat X from CG** −16.94 in, **Seat Y from CG** −13.17 in, **Seat Z from CG** −5.04 in (SAE axes: + is down) — and pose. There is no 3-D manipulator for humans; type the values.
+    The tutorial case carries HVE's own seated position — **Seat X from CG** −16.94 in, **Seat Y from CG** −13.17 in, **Seat Z from CG** −5.04 in (SAE axes: + is down) — and pose. A human can be dragged across the ground in the 3-D view, but its height and pose are typed.
 
 - Set **Restraint (this event)** to *None*: the tutorial's driver is unbelted.
 
@@ -378,7 +378,7 @@ We have now completed the three events.
 
 ## Viewing Results
 
-Now that we have produced our EDHIS simulations, let's take a detailed look at the results. In HVE 2027 the results of the active event are on the **Output** menu and in the viewport; there is no separate Playback Editor. Make the event you want to review the *Active Event* in Event Information, and run it if it has not been run.
+Now that we have produced our EDHIS simulations, let's take a detailed look at the results. In HVE 2027 the results of the active event are on the Event editor's **Output** menu and in the viewport. Make the event you want to review the *Active Event* in Event Information, and run it if it has not been run.
 
 > **NOTE:** In this tutorial, we will only review the output reports produced by the EDHIS Buick Occupant event. Feel free to view the EDSMAC4 and EDHIS Pedestrian events as well.
 

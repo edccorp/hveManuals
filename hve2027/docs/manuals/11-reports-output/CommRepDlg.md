@@ -134,7 +134,7 @@ When there are no pages the window says why:
 - If an engine's report resource file is missing, the window names the folder
   it looked in.
 
-!!! tip "New in HVE 2027"
+!!! note "HVE 2027"
     HVE 2027's own views of the same results are the **Key Results**,
     **Variable Report** and **Timestep Data** windows (Output menu), and the
     [Results HUD](../new-features/11-results-hud.md) over the viewport. The HVE

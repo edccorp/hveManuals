@@ -94,11 +94,11 @@ When the **3-D Spline Interpolation** path model is selected instead, EDGEN:
 
 !!! note "HVE 2027"
     Both path models run in HVE 2027 (EDGEN Options, **Interpolation
-    Method**). The waypoints of a vehicle path entered in HVE 2027 carry no
-    sideslip angle of their own, so the sideslip offset described above is
-    not applied at them. The imported path of a human carries none either,
-    so for a human the spline option gives the same result as the linear
-    one.
+    Method**), for a vehicle and for a human. The sideslip added under the
+    spline model is the **Slip** column of a vehicle's waypoints (Event ›
+    Path Follower, Path tab) and the **Sideslip** field of each position of
+    a human's path (Event Information, Humans in Event); both are greyed
+    under Linear Interpolation.
 
 See [Calculation Options](02-program-input.md#calculation-options) and the dialog reference [Calculation Options for EDGEN](../../10-calculation-options/CalcOptEDGENDlg.md).
 

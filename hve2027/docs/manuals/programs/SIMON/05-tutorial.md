@@ -21,7 +21,7 @@ Like all SIMON events, the procedures used in the tutorial involve the following
 Before you start, set the display so that what you see matches this chapter:
 
 - **Tools › Preferences...**: set **Units** to **Imperial (ft/in, mph, lb, lbf)** (the values below are in US units).
-- **View** menu: show **Key Results** and **Skidmarks**; leave **View › Scene Display › Vectors › Velocity Vectors** off.
+- **View** menu: show **Key Results**; in **View › Scene Display**, turn on **Skidmarks** (*Paths & Overlays*) and leave **Velocity Vectors** (*Vectors*) off.
 - **Output › Playback Options...**: choose a playback speed you are comfortable with.
 
 > **NOTE:** These options affect only the display. The vehicle's initial position is set by the event's initial conditions; with **Auto Position** checked it is settled onto the terrain.
@@ -47,7 +47,7 @@ To add the same vehicle to a new case instead:
 
 ## Editing the Vehicle
 
-The one vehicle feature this tutorial is about is the ABS system. In HVE 2027 antilock is fitted per wheel:
+The one vehicle feature this tutorial is about is the ABS system. In HVE 2027 antilock is fitted per wheel, or for the whole vehicle with **ABS Installed** in **Vehicle › ABS / Brake Design... › ABS System...**; SIMON regulates every wheel when either is set:
 
 1. Choose **Vehicle › Brake Assembly...**. The *Brake Assembly* dialog is displayed, one column per wheel (Figure 5-2).
 2. The **Antilock (ABS)** row has a checkbox for each wheel. Wheels in the same link group change together.
@@ -96,7 +96,7 @@ Because the ISO lane-change maneuver has a pre-defined path, the tutorial uses t
 Open **Event › Path Follower...** (Figure 5-5):
 
 1. **Use Path Follower** is checked.
-2. On the **Method** tab, **Max Lateral Accel (g)** — HVE's *Driver Comfort Level* — is 1.00.
+2. On the **Method** tab, **Driver Comfort Level (g)** is 1.00.
 3. On the **Path** tab, the path is the table in Table 5-1. The vehicle's initial position is the first point; the others are the HVE case's Begin Perception, Begin Braking and Impact positions.
 
 **Table 5-1 Position and heading angle for each target position.**
@@ -109,7 +109,7 @@ Open **Event › Path Follower...** (Figure 5-5):
 | 4 | 325.0 | −11.5 | 0.0 |
 
 ![Figure 5-5](images/hvn-tut-path-follower.png)
-*Figure 5-5: The Path Follower dialog for the Cadillac in the first event (Method tab). Max Lateral Accel (g) is HVE's Driver Comfort Level; the target points are on the Path tab.*
+*Figure 5-5: The Path Follower dialog for the Cadillac in the first event (Method tab). The target points are on the Path tab.*
 
 > **NOTE:** In HVE 2027 the path follower's target points are entered on the Path tab (or by clicking **Add points by clicking the 3-D viewport**) rather than as named path positions in the Position/Velocity dialog.
 
@@ -209,14 +209,14 @@ The Program Data report includes the simulation control parameters and other run
 
 ### Variable Output
 
-The time-dependent results are shown in three places on the **Output** menu: **Key Results** (a summary, and the value of each selected variable at the current playback time; it docks under the viewport), **Variable Report** (minimum, maximum and final value of each selected variable) and **Timestep Data Table** (time, X, Y, heading and speed at every output step).
+The time-dependent results are shown in three places on the **Output** menu: **Key Results** (a summary, and each selected variable at every output step, with the row at the current playback time highlighted; it docks under the viewport), **Variable Report** (minimum, maximum and final value of each selected variable) and **Timestep Data Table** (time, X, Y, heading and speed at every output step).
 
 #### Variable Selection
 
 The purpose of our SIMON study is to simulate the effects of the ABS brake system on a lane-change maneuver during heavy braking. To see the brake pressures:
 
 1. Click **Select Variables...** in the *Key Results* panel (or choose **Output › Variable Selection...**). The variable picker is displayed, with the variables grouped as in Chapter 3 (Kinematics, Kinetics, Driver, Drivetrain, Connection, a Wheel and a Tire group per wheel, and the accelerometers).
-2. Add **Brake System** from the **Driver** group, and **Brake Press** from the **Wheel A1-R** (right front) and **Wheel A2-R** (right rear) groups.
+2. Add **Brake System Pressure** from the **Driver** group, and **Brake Pressure** from the **Wheel A1-R** (right front) and **Wheel A2-R** (right rear) groups.
 3. Close the picker. The selected results are added to the table.
 
 #### Graphing Results

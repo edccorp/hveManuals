@@ -33,12 +33,13 @@ Start HVE 2027 as you would any other program (see [Installing and running HVE 2
 
 ### Learning About the Menu Bar
 
-The menu bar holds **File**, **Edit**, the menus of the current editor (**Vehicle**, **Environment**, **Event**, **Output**, **Occupant** — which of them appear depends on the editor), **View**, **Tools** and **Help**:
+The menu bar holds **File**, **Edit**, the menus of the current editor (**Vehicle**, **Environment**, **Event**, **Output**, **Playback**, **Occupant** — which of them appear depends on the editor), **View**, **Tools** and **Help**:
 
 - **File** — New, Open and Save cases (Ctrl+N, Ctrl+O, Ctrl+S), Open Recent, Save Case As JSON, Embed the environment in the case, Publish Bundle, the Blender export and live link, and Exit.
 - **Edit** — Undo History (Ctrl+Z undoes and Ctrl+Y redoes, except while a run's results are on screen).
 - **Vehicle**, **Environment**, **Event**, **Occupant** — the dialogs for setting up vehicles, the environment, events and humans (HVE's Set-up menu and Object Info dialogs).
-- **Output** — Key Results, Output Graph, Timestep Data Table, Variable Selection, reports, Playback Options, Playback Sequence and Run Simulation (HVE's Playback Editor).
+- **Output** — Key Results, Output Graph, Timestep Data Table, Variable Selection, reports, Playback Options and Run Simulation (HVE's Playback Editor).
+- **Playback** — Playback Sequence, Playback Options and Run All Events, in the Playback editor.
 - **View** — the panels (Viewport, Shader Editor, Dope Sheet, Key Results, Output Graph, Timestep Table, Simulation, Outliner) and what the 3-D view draws.
 - **Tools** — Quick Case, Vehicle Package, Case Intake, Provenance, EDR Import, Monte Carlo Analysis, Motorcycle Analysis, Preferences, Style Editor, Cameras, Audit Log and Limits Editor (HVE's Options menu).
 - **Help** — License, About.
@@ -60,7 +61,7 @@ HVE shows 3-D objects in separate viewer windows with thumbwheels and a zoom sli
 HVE's Mode Selector has five buttons: Human, Vehicle, Environment, Event and Playback Editor.
 
 !!! note "HVE 2027"
-    The editor tabs under the menu bar are **Human (F2)**, **Vehicle (F3)**, **Environment (F4)** and **Event (F5)**. There is no separate Playback Editor: a solved event plays back in the Viewport, and the output reports, graphs and tables are on the **Output** menu.
+    The editor tabs under the menu bar are **Human (F2)**, **Vehicle (F3)**, **Environment (F4)**, **Event (F5)** and **Playback (F6)**. A solved event plays back in the Event editor's Viewport, and the output reports, graphs and tables are on the **Output** menu; the Playback editor combines several solved events (Lesson 3).
 
 ### Managing Dialogs and Viewers
 
@@ -165,7 +166,7 @@ To set up the event:
 ![Figure 32-27](../images/hvn-11-tutorial-event.png)
 *Figure 32-27 — The Lesson 2 event in Event Information: EDVSM, the Dodge Charger at X −70.0 ft, Y 37.5 ft and 25.0 mph, with the playback bar under the Viewport.*
 
-> **NOTE:** Only the set-up options the chosen calculation method uses are offered on the **Event** menu. For EDVSM, Event Information also notes that HVE 2027 runs its engine but that its output has not yet been validated against HVE.
+> **NOTE:** Only the set-up options the chosen calculation method uses are offered on the **Event** menu.
 
 Execute the event with the **playback bar** under the Viewport: **Run** solves the event; **Reset** discards the results so the inputs can be edited again; the transport buttons go to the start, step back, **Play**, step forward and go to the end, and the slider moves through the run. **Output › Run Simulation…** also runs the event, and the **Simulation** panel shows its progress, its status, and its **Duration** and timesteps.
 
@@ -233,7 +234,7 @@ The final task often includes creating a video of the crash sequence. Because it
 !!! note "HVE 2027"
     HVE 2027 has no Video Setup dialog, Source and Destination lists or videotape output ([Section Nine](../09-video-output/README.md)), so steps "Route to Video Recorder", "Replay in Real Time" and "Route to Videotape" of HVE's lesson have no counterpart. The sequence is set up with cameras and recorded to an AVI file with **File › Record Animation…** (below), or exported to **Blender** and rendered there.
 
-If you just finished Lesson 3, proceed directly. Otherwise open the prepared case `HVETutorialLesson4EDC.hve` and select the **Event (F5)** tab.
+If you just finished Lesson 3, proceed directly in the **Playback (F6)** editor. Otherwise open the prepared case `HVETutorialLesson4EDC.hve` and combine its events in the **Playback (F6)** editor as in Lesson 3: an HVE case opens without a playback sequence, and the Event editor plays one event at a time.
 
 ### Changing the View
 

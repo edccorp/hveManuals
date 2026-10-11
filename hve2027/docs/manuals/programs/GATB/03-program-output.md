@@ -1,6 +1,6 @@
 # Chapter 3 — Program Output
 
-This chapter defines the outputs available from a GATB event. In HVE 2027 the reports produced by GATB are on the **Output** menu once the event has been run; there is no separate Playback Editor.
+This chapter defines the outputs available from a GATB event. In HVE 2027 the reports produced by GATB are on the Event editor's **Output** menu once the event has been run.
 
 ## Overview
 

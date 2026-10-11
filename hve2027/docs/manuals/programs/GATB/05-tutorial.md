@@ -146,7 +146,7 @@ Create the remaining contact panels in the same manner as the Right Front Seat C
     The Contact Surfaces dialog can also build a set of interior panels for you — **Seed Standard Interior**, **Derive from Mesh**, and interior templates (**Use Template**) — and **Save Interior…** / **Load Interior…** keep a set for reuse.
 
 !!! note "HVE 2027"
-    HVE 2027 does not pre-screen surfaces by *Side* (Interior/Exterior) for an event built in HVE 2027: every body ellipsoid is tested against every surface of the vehicle. Give the vehicle only the panels the occupant should strike.
+    HVE 2027 does not pre-screen surfaces by *Side* (Interior/Exterior) for an event built in HVE 2027: until you edit the list in **Event › Contacts...**, every ellipsoid of the pelvis, abdomen, chest, neck, head and upper legs is tested against every surface of the vehicle. Give the vehicle only the panels the occupant should strike.
 
 ### Creating and executing the Events
 
@@ -216,7 +216,7 @@ Click **Pose** beside the human. In the *Body Pose* dialog, tick **Pose this bod
 HVE's tutorial then moves the pelvis up to z = -4.6 in and back to x = -16 in, so that it is not embedded in the seat cushion or in front of the seat back, and adjusts the upper legs to 75 degrees. In HVE 2027 set **Seat X from CG** to `-16`, **Seat Z from CG** to `-4.6` and the upper-leg pitches to `75` degrees.
 
 !!! note "HVE 2027"
-    The vertical position is **Seat Z from CG** in the human's row of the Event Information panel. HVE 2027 uses SAE axes, so +z is down: HVE's z = −4.6 in is entered as `-4.6`. There is no 3-D manipulator for humans.
+    The vertical position is **Seat Z from CG** in the human's row of the Event Information panel. HVE 2027 uses SAE axes, so +z is down: HVE's z = −4.6 in is entered as `-4.6`. A human can be dragged across the ground in the 3-D view, but its height is typed.
 
 - In the same dialog, leave the *Initial velocity* at 0.
 
@@ -279,7 +279,7 @@ In HVE's example, the initial human position has the pelvis accelerating downwar
 
 > **NOTE:** When you move the pelvis on a human, all of the other segments move also because they are all linked in a hierarchy where the pelvis is the dominating mass.
 
-In HVE 2027 the same procedure applies, with **Reset** on the playback bar before each re-run and the Results page read after it. Since the occupant's vertical position has no control (see the note above), make the vertical adjustments by moving the seat and floor panels instead.
+In HVE 2027 the same procedure applies, with **Reset** on the playback bar before each re-run and the Results page read after it; the vertical adjustments are made in **Seat Z from CG** (see the note above).
 
 For this example, we will not spend any additional effort in attempting to produce smaller linear accelerations.
 
@@ -399,7 +399,7 @@ HVE's tutorial enters the pedestrian at x = 7.15 ft, y = -1.5 ft, z = -1.0 ft, y
 - In the same dialog, under *Initial velocity (segment frame, u/v/w)*, enter u = `1.0` mph.
 
 !!! note "HVE 2027"
-    **The pedestrian's walking speed reaches GATB** — it is the pelvis velocity in the body's own frame. The pedestrian's vertical position has no control in HVE 2027; a case imported from HVE keeps its stored value.
+    **The pedestrian's walking speed reaches GATB** — it is the pelvis velocity in the body's own frame. The pedestrian's vertical position is **Z from vehicle CG** (SAE: + is down).
 
 ![Figure 5-36](images/hvn-gatb-pedestrian-start.png)
 *Figure 5-36: A GATB pedestrian in front of the striking vehicle at t = 0 (`GATB-PedImpact.hve` in HVE 2027).*

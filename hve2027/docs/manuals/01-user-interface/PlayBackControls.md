@@ -1,6 +1,6 @@
 # Playback Controls (Toolbar)
 
-In HVE the playback controls on the toolbar control execution of the current event during Event mode, and replay during Playback mode. HVE 2027 has no separate Playback mode: an event is run and played back in the same **Viewport**, with a **playback bar** along the bottom of the Viewport panel. The controls, from left to right:
+In HVE the playback controls on the toolbar control execution of the current event during Event mode, and replay during Playback mode. In HVE 2027 an event is run and played back in the Event Editor's **Viewport**, with a **playback bar** along the bottom of the Viewport panel; the **Playback** editor (**Playback (F6)**) plays a multi-event playback sequence with the same bar, with **Run All** (solve every event the sequence uses) in place of **Run** and **Reset**. The controls, from left to right:
 
 ## Run
 Runs the active event (also **Output › Run Simulation...** in the Event Editor, **Ctrl+R**). It is greyed when the event is already solved; press **Reset** to run it again. While a run is in progress, **Run** is replaced by **Pause** / **Resume** (when the engine allows pausing) and **Cancel**.

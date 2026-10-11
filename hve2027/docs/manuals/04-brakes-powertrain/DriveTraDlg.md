@@ -50,7 +50,7 @@ See [Transmission Data Dialog Box](TransDataDlg.md) and [Differential Data Dialo
 HVE's TCS/YSC dialog. SIMON implements traction control (TCS) and yaw stability control (YSC).
 
 ### TCS Enabled, YSC Enabled
-Whether traction control and yaw stability control are installed. **ESP Enabled** is shown greyed: no engine reads it.
+Whether traction control and yaw stability control are installed.
 
 ### Min Speed
 Below this speed the systems stay inactive (enabled when TCS or YSC is on).
@@ -61,7 +61,7 @@ TCS thresholds and rate (enabled when TCS is on): TCS engages above the drive to
 ### Yaw Vel Error (rad/s), Spin Vel Error (rad/s), Side Spin Diff (rad/s), Brake Press Threshold, Brake Press Rate
 YSC thresholds and rate (enabled when YSC is on); the rate is the brake pressure applied per unit of yaw error.
 
-With **View › Show Guidance Text** on, an orange note in the section states the conditions under which these systems act: they require **Driver Controls › Input Method = Pedal** (TCS runs only when the throttle is driven by the driver model and YSC only when the brake is); TCS rebalances torque between drive axles, so it needs more than one; and YSC's pressure branch acts only while the driver is already braking. Both rates default to 0: if TCS or YSC is enabled with its rate at 0, an orange warning says that the system will report itself active and change nothing.
+An orange note in the section states the conditions under which these systems act: they require **Driver Controls › Input Method = Pedal** (TCS runs only when the throttle is driven by the driver model and YSC only when the brake is); TCS rebalances torque between drive axles, so it needs more than one; and YSC's pressure branch acts only while the driver is already braking. Both rates default to 0: if TCS or YSC is enabled with its rate at 0, an orange warning says that the system will report itself active and change nothing.
 
 !!! warning "Not in HVE 2027"
     - The engine chart, **Apply** and **Print...**. (The engine tables themselves are edited in the grid above; the **Power** column cannot be edited, because no engine reads it.)

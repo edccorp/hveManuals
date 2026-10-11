@@ -49,16 +49,18 @@ and Throttle tables.
 
 **Timing / Limits** (HVE's Driver tab):
 
-- **Start Time (s)** — time at which the driver model begins acting.
-- **Sample Interval (s)** — interval at which the driver model samples the
-  vehicle's position relative to the path.
-- **Preview Time (s)** — how far ahead of the vehicle (in time) the driver
-  looks when computing the path correction.
-- **Min Preview Dist** — lower limit on the preview distance, used at low
+- **Driver Start Time (s)** — time at which the driver model begins acting.
+- **Driver Sample Interval (s)** — interval at which the driver model samples
+  the vehicle's position relative to the path.
+- **Driver Preview Time (s)** — how far ahead of the vehicle (in time) the
+  driver looks when computing the path correction.
+- **Min Preview Distance** — lower limit on the preview distance, used at low
   speeds (units set in Preferences).
-- **Max Path Error** — HVE's *Path Error Null Distance*.
-- **Max Lateral Accel (g)** — HVE's *Driver Comfort Level*: the maximum lateral
-  acceleration the driver will tolerate.
+- **Path Error Null Distance** — maximum allowable lateral path error; the
+  driver steers to null path errors within this distance (units set in
+  Preferences).
+- **Driver Comfort Level (g)** — the maximum lateral acceleration the driver
+  will tolerate.
 
 ## Steering tab
 
@@ -70,7 +72,7 @@ The parameters of the selected path method — see
 The target path (HVE's *Path Source*). The vehicle's initial position is the
 first path node; up to **7** further waypoints follow, each with **Use**,
 **X**, **Y**, **Z** (units set in Preferences), **Yaw**, **Roll** and **Pitch**
-(deg) and **Speed**. The Yaw of a node is the direction of the path's tangent
+(deg), **Speed** and **Slip** (deg; sideslip, read by EDGEN only). The Yaw of a node is the direction of the path's tangent
 there, so editing it bends the path; each segment is a cubic curve whose handle
 length the engine fixes.
 

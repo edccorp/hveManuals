@@ -31,9 +31,13 @@ set in Preferences.
 When checked, the initial lengths of the RHO (crush perimeter) vectors are measured from the vehicle's body mesh rather than from a plain rectangle built from the vehicle's exterior extents. The two agree across the middle of a face and differ at a corner, which matters for oblique impacts.
 
 !!! warning "HVE 2027"
-    A vehicle with no mesh file is given a box-shaped mesh, and EDSMAC4 rejects
-    the rho profile built from it (stop code −6244). Use this option only with
-    vehicles that have a real mesh.
+    EDSMAC4 needs a mesh vertex close to every rho direction (within twice the
+    vector spacing) and otherwise refuses the run (stop code −6244). Real bodies
+    with flat side panels fail this as well as the box-shaped body given to a
+    vehicle with no mesh file. Tessellate each vehicle for the event (**Event ›
+    Advanced Mesh Options**, a maximum leg of about 0.06 m for a car); a
+    refused run's status names the vehicle, the empty direction and a leg that
+    works.
 
 ## Collision Parameters
 

@@ -58,10 +58,10 @@ This condition indicates dynamic instability. Experience suggests if reasonable 
 
 **(Level 1 - Fatal)**
 
-This message is self-explanatory. The maximum articulation angle is defined in the Rear connections parameters (see Vehicle Editor).
+This message is self-explanatory. The maximum articulation angle is defined in the Rear connections parameters (see Vehicle Editor). The value is established by the angle required to create pinching between the tow vehicle and trailer. Note that such pinching would cause forces not modeled by EDVTS, so the run is terminated.
 
 !!! note "HVE 2027"
-    The limit is **Max Articulation › Yaw** in **Connection Properties** (Vehicle editor, **Vehicles** panel › **Vehicle Properties** › **Connections…** › **Properties…**), on the tow vehicle. The value is established by the angle required to create pinching between the tow vehicle and trailer. Note that such pinching would cause forces not modeled by EDVTS, so the run is terminated.
+    The limit is **Max Articulation › Yaw** in **Connection Properties** (Vehicle editor, **Vehicles** panel › **Vehicle Properties** › **Connections…** › **Properties…**), on the tow vehicle.
 
 ---
 
