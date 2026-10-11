@@ -79,7 +79,7 @@ another event's run), and offers:
   pulse** removes it
 - **Start time** and **Threshold (g)**, and for the impulse pulse type the
   **Impulse centre X, Y, Z**, which only that type reads (HVE's *Collision
-  Pulse Options*)
+  Pulse Options*). The threshold reaches no engine, in HVE or in HVE 2027.
 - **Scale factors** — a factor for each column (HVE's *Collision Pulse
   Factors*)
 

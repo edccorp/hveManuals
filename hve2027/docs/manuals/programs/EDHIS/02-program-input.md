@@ -509,7 +509,7 @@ The collision pulse provides the vehicle acceleration vs time history for the ev
 
     - **Source** — pick another event of the case that runs the same vehicle and click **Take pulse from this event**. The forward and lateral acceleration come from that event's stored run and the yaw acceleration from differentiating its yaw rate; vertical, roll and pitch are left at zero, because the stored run holds none of them. The source event has to have been run.
     - **Pulse type** — EDHIS reads an **Acceleration** table only and refuses any other type by name; the dialog warns if another type is chosen. (*Position* and *Velocity* are for GATB; *Impulse* for SIMON.)
-    - **Start time** and **Threshold (g)**, and **Scale factors** for each of the six columns (HVE's in-use factors).
+    - **Start time** and **Threshold (g)**, and **Scale factors** for each of the six columns (HVE's in-use factors). The threshold reaches no engine, in HVE or in HVE 2027.
     - **The table** — linear acceleration in g and angular acceleration in deg/s², with **Add row**, **Import file…** (seven numbers a line: time, x, y, z, roll, pitch, yaw) and **Export file…**, and a plot of the total acceleration.
     - **Clear pulse.**
 

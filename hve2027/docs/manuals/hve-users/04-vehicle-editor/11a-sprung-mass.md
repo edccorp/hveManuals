@@ -533,8 +533,8 @@ Belt Restraint System dialog (**Vehicle › Belt Restraint**, also Event ›
 Restraints › Belt Restraint).
 
 ![Figure 11-12](../images/hvn-04-belt-restraint.png)
-*Figure 11-12: Belt Restraint System dialog (HVE 2027), captured before the
-Segment and Restraint Force fields were removed and Attached To was added.*
+*Figure 11-12: Belt Restraint System dialog (HVE 2027), EDHIS tutorial case,
+Buick Skylark driver.*
 
 !!! note "HVE 2027"
     In HVE 2027 a belt system is kept per OCCUPANT of the vehicle rather than

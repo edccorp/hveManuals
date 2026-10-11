@@ -425,8 +425,8 @@ uses — is a property of the vehicle, entered in **Vehicle › Crush
 Stiffness...** in the Vehicle editor.
 
 ![Figure 2-17](../images/hvn-01-damage-profiles.png)
-*Figure 2-17: The Crush Stiffness dialog (captured under its earlier title,
-Damage Profiles).*
+*Figure 2-17: The Crush Stiffness dialog (the RICSAC 6 Chevelle of the
+DyMESH validation suite).*
 
 *See also: [Damage Data](../../11-reports-output/DamageData.md) and
 [Stiffness Coefficients](../../02-vehicles/StiffCoeffDlg.md).*
@@ -454,7 +454,9 @@ Under **Scale factors**, each column of the pulse is multiplied by its factor.
 #### Collision Pulse Options
 
 **Start time** and **Threshold (g)**, and for the impulse pulse type the
-**Impulse centre** (X, Y, Z from the CG), which only that type reads.
+**Impulse centre** (X, Y, Z from the CG), which only that type reads. The
+threshold reaches no engine, in HVE or in HVE 2027: every sample of the
+table is applied.
 
 The pulse table itself can be edited row by row, and **Import file...** and
 **Export file...** read and write it as a text file.
