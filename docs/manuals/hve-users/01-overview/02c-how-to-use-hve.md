@@ -840,7 +840,7 @@ The About HVE dialog is shown in Figure 2-76.
 For more information about getting Help, refer to the Help Menu in the Menu
 Reference section of this manual.
 
-![Figure 2-76](../images/about-hve-current.png){ width="368" }
+![Figure 2-76](../images/about-hve-current.png){ width="395" }
 
 *Figure 2-76: The About HVE dialog.*
 

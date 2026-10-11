@@ -119,7 +119,7 @@ The *Reset Defaults* button returns the Key Results windows to their default scr
 
 > **NOTE:** You should have this information available when you call for Technical Support.
 
-![Figure 7-4](../images/about-hve-current.png){ width="368" }
+![Figure 7-4](../images/about-hve-current.png){ width="395" }
 
 *Figure 7-4: The About HVE Dialog contains useful release information.*
 
