@@ -15,7 +15,7 @@ see [User Preferences](../01-user-interface/PrefDlg.md) and
 
 ## Quick Case (Text)
 
-**Tools › Quick Case (Text)...** builds an event from a sentence.
+**Tools › Automatic Tools › Quick Case (Text)...** builds an event from a sentence.
 
 ![Quick Case](images/hvn-quick-case.png)
 
@@ -51,8 +51,8 @@ and vehicles are kept. Building is disabled while results are on screen.
 
 ## Vehicle Package, Case Intake, Provenance, EDR Import
 
-**Tools › Vehicle Package...**, **Tools › Case Intake...**, **Tools ›
-Provenance...** and **Tools › EDR Import...** put what is known about a crash
+**Tools › Automatic Tools › Vehicle Package...**, **Tools › Automatic Tools › Case Intake...**, **Tools › Automatic Tools ›
+Provenance...** and **Tools › Automatic Tools › EDR Import...** put what is known about a crash
 into the case, and record where each value came from. They are described,
 with the vehicle's **Aboard** list and **Crush Stiffness from Crash Tests**, in
 [Case Intake and Vehicle Data](12-case-intake-and-vehicle-data.md).

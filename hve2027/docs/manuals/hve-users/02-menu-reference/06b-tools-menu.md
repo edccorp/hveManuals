@@ -11,11 +11,7 @@ The Tools menu is on the menu bar in every editor.
 
 | Item | What it does | HVE equivalent |
 |---|---|---|
-| **Quick Case (Text)...** | Builds a case from a typed sentence | *(new)* |
-| **Vehicle Package...** | Builds a case vehicle from its VIN or year, make and model, its stated specifications, and who and what it carried | *(new)* |
-| **Case Intake...** | Builds an event from the case documents, read by your own AI tool | *(new)* |
-| **Provenance...** | Where each value set by those tools came from | *(new)* |
-| **EDR Import...** | An event data recorder's pre-crash record into an event vehicle, and its delta-V against the run's | *(new)* |
+| **Automatic Tools ›** | The tools that fill a case from a source, in one submenu (below) | *(new)* |
 | **Monte Carlo Analysis...** | Uncertainty analysis by repeated runs with sampled inputs | *(new)* |
 | **Motorcycle Analysis...** | Cornering and slide-to-stop calculations for a motorcycle | *(new)* |
 | **Preferences...** | Units, date format, background colour, diagnostics, auto-save | Options › Units, Options › Preferences |
@@ -24,14 +20,26 @@ The Tools menu is on the menu bar in every editor.
 | **Audit Log...** | A time-stamped record of what was done in this session | *(new; HVE's Audit Trail is a different thing — see [Audit Trail](../01-overview/02b-how-to-use-hve.md#audit-trail))* |
 | **Limits Editor...** | The minimum and maximum accepted by input fields | *(new)* |
 
-Quick Case, Vehicle Package, Case Intake, Provenance, EDR Import, Monte Carlo
-Analysis and Motorcycle Analysis are not in the viewer product.
+**Automatic Tools** holds the tools that fill a case from a source, together
+with the record of where each value came from:
+
+| Item | What it does |
+|---|---|
+| **Case Intake...** | Builds an event from the case documents, read by your own AI tool |
+| **Quick Case (Text)...** | Builds a case from a typed sentence |
+| **Vehicle Package...** | Builds a case vehicle from its VIN or year, make and model, its stated specifications, and who and what it carried |
+| **Crush Stiffness from Crash Tests...** | CRASH3 A, B and G for the active vehicle from staged barrier tests, typed in, read from an NHTSA test file or fetched from NHTSA's database. Also opened by **From crash tests...** in Crush Stiffness |
+| **EDR Import...** | An event data recorder's pre-crash record into an event vehicle, and its delta-V against the run's |
+| **Provenance...** | Where each value set by those tools came from |
+
+Automatic Tools, Monte Carlo Analysis and Motorcycle Analysis are not in the
+viewer product.
 
 ---
 
 ## QUICK CASE (TEXT)
 
-**Menu Option:** Tools › Quick Case (Text)...
+**Menu Option:** Tools › Automatic Tools › Quick Case (Text)...
 
 **Description:** Type a description of a case — for example *SIMON event,
 vehicle 1 at (0,0) heading 0 speed 50 mph, vehicle 2 at (12,-3) heading 180
@@ -46,7 +54,7 @@ event active; existing events and vehicles are kept.
 
 ## VEHICLE PACKAGE
 
-**Menu Option:** Tools › Vehicle Package...
+**Menu Option:** Tools › Automatic Tools › Vehicle Package...
 
 **Description:** Identify a vehicle by its VIN (checked offline; **Decode with
 NHTSA (online)** asks NHTSA's decoder) or its year, make and model; choose the
@@ -61,7 +69,7 @@ is listed with where it came from. See
 
 ## CASE INTAKE
 
-**Menu Option:** Tools › Case Intake...
+**Menu Option:** Tools › Automatic Tools › Case Intake...
 
 **Description:** Copy the prompt, give it with the case documents to your own
 AI tool, and paste its answer. Every value is listed with its citation and
@@ -74,7 +82,7 @@ nothing anywhere. See
 
 ## PROVENANCE
 
-**Menu Option:** Tools › Provenance...
+**Menu Option:** Tools › Automatic Tools › Provenance...
 
 **Description:** Every value set by Vehicle Package, Case Intake, EDR Import
 and Crush Stiffness from Crash Tests: what it was set to, whether it was
@@ -87,7 +95,7 @@ field has been changed by hand since. The records are saved with the case. See
 
 ## EDR IMPORT
 
-**Menu Option:** Tools › EDR Import...
+**Menu Option:** Tools › Automatic Tools › EDR Import...
 
 **Description:** Read an EDR report's pre-crash record, through your own AI
 tool or as a pasted table, and set an event vehicle's initial speed and its

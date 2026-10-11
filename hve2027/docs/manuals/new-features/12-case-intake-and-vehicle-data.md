@@ -9,12 +9,12 @@
 
 | Tool | Where | What it changes in the case |
 | --- | --- | --- |
-| [Vehicle Package](#vehicle-package) | **Tools › Vehicle Package...** | Adds one vehicle; seats its occupants and loads its cargo in an event, or puts them aboard the vehicle |
-| [Case Intake](#case-intake) | **Tools › Case Intake...** | Adds one event with new vehicles, their starting positions and speeds |
-| [Provenance](#provenance) | **Tools › Provenance...** | Nothing in the physics: it lists, and can remove, the records the other tools keep |
+| [Vehicle Package](#vehicle-package) | **Tools › Automatic Tools › Vehicle Package...** | Adds one vehicle; seats its occupants and loads its cargo in an event, or puts them aboard the vehicle |
+| [Case Intake](#case-intake) | **Tools › Automatic Tools › Case Intake...** | Adds one event with new vehicles, their starting positions and speeds |
+| [Provenance](#provenance) | **Tools › Automatic Tools › Provenance...** | Nothing in the physics: it lists, and can remove, the records the other tools keep |
 | [Aboard](#aboard-occupants-and-cargo-on-the-vehicle) | **Inertia / Mass** dialog, *Aboard* section | The occupants and cargo a vehicle carries into every event |
-| [Crush Stiffness from Crash Tests](#crush-stiffness-from-crash-tests) | **Vehicle › Crush Stiffness...**, button **From crash tests...** | One side's A and B, and the A and B of the vehicle's EDCRASH events |
-| [EDR Import](#edr-import) | **Tools › EDR Import...** | An event vehicle's initial speed and its throttle, brake and steering tables |
+| [Crush Stiffness from Crash Tests](#crush-stiffness-from-crash-tests) | **Tools › Automatic Tools › Crush Stiffness from Crash Tests...**, or **Vehicle › Crush Stiffness...**, button **From crash tests...** | One side's A and B, and the A and B of the vehicle's EDCRASH events |
+| [EDR Import](#edr-import) | **Tools › Automatic Tools › EDR Import...** | An event vehicle's initial speed and its throttle, brake and steering tables |
 
 These tools are in the workstation product. The viewer product (which opens a
 published bundle) has none of them.
@@ -22,7 +22,7 @@ published bundle) has none of them.
 ## Where each value came from
 
 Every value these tools set is labelled with one of five kinds, in the tool's
-own window and afterwards in **Tools › Provenance**:
+own window and afterwards in **Tools › Automatic Tools › Provenance**:
 
 | Kind | Means |
 | --- | --- |
@@ -63,7 +63,7 @@ and only when you press it.
 
 ## Vehicle Package
 
-**Tools › Vehicle Package...** builds a case vehicle from what is known about
+**Tools › Automatic Tools › Vehicle Package...** builds a case vehicle from what is known about
 it: its VIN or its year, make and model, its measured specifications, who was
 in it and what it carried. The window is worked from top to bottom, in five
 numbered sections. Weights, lengths and positions are shown and typed in the
@@ -151,9 +151,13 @@ not use. Three things can fill the rows:
 - **NHTSA test file** box and **Load NHTSA test**: type the path of a test
   file from NHTSA's Vehicle Crash Test Database (see
   [Reading an NHTSA crash test file](#reading-an-nhtsa-crash-test-file)). The
-  first vehicle in the file fills **Weight** (its curb weight), **Front axle
-  share** (from its CG position and wheelbase, at the test weight),
-  **Wheelbase**, **Length** and **Width**.
+  tested vehicle (the first with a model year, so a side test's impactor is
+  passed over) fills **Weight** (its curb weight), **Wheelbase**, **Length**
+  and **Width**, and **Front axle share** from its CG position at the test
+  weight. The database's API states the CG's distance behind the front axle
+  but no wheelbase, so for a file fetched from it the share needs the
+  **Wheelbase** row filled first (stated, or from vPIC); the note says so when
+  it is missing. Load the file again once it is filled.
 - **Copy spec-sheet prompt**, the box under it, and **Read spec sheet**: give
   the prompt and the spec sheet (a manufacturer's sheet, a brochure, a Canadian
   Vehicle Specifications page) to your AI tool and paste its answer. Each value
@@ -307,9 +311,37 @@ the scaling rule with its ratio). **Add to Case** also stores each line in
 
 ## Case Intake
 
-**Tools › Case Intake...** builds one new event from a structured description
+**Tools › Automatic Tools › Case Intake...** builds one new event from a structured description
 of the case that your own AI tool extracted from the case documents (see
 [Case documents stay on your computer](#case-documents-stay-on-your-computer)).
+
+### Case material
+
+The **Case material** section at the top of the window holds the documents the
+case is built from: police report, diagram, photographs, statements, a CDR
+report, an inspection, a survey, spec sheets, crash tests, medical records.
+Each has a number, **D1**, **D2** and so on, which a value cites (*"D2 p.3"*).
+A number is never reused, even after its document is removed.
+
+- **Add document...** picks a file. Its **Kind** is guessed from its name (an
+  image is a photograph, *police* or *crash report* a police report, a `.cdrx`
+  an EDR report) and can be changed, as can its **Title**.
+- **Embed in the case**, ticked before adding, copies the file into the case.
+  Untick it (the default) and the case LINKS to the file where it is: it keeps
+  the path, the size and a SHA-256 fingerprint, and the case stays small. A
+  file inside the case's folder is kept by a path relative to it, so a case
+  folder moved or copied whole keeps its documents.
+- **State** says *linked*, *embedded*, **MISSING** (not at its path, beside the
+  case, or under its name in the case's folder) or **CHANGED since added**
+  (its bytes are not the ones added, so it is not the document the case
+  cites; add it again to cite the new version).
+- **Open** opens it in your system's viewer; an embedded one is opened from a
+  copy in the temporary folder. **Embed** copies a linked document in, only if
+  it is still the file added; **Link** stops carrying it in the case.
+  **Remove** takes it out of the case and leaves the file alone.
+
+Documents are not a solver input: adding one does not make saved results
+stale. Open is not available in the browser version.
 
 ### Pasting the description
 
@@ -319,7 +351,9 @@ of the case that your own AI tool extracted from the case documents (see
    holds a `{ ... }` object). If it is not the answer the prompt asks for, the
    window says why.
 
-The prompt asks for one JSON object holding the case ID; the road surface,
+When the case has documents, the prompt ends with their list by number, so
+the tool cites each value as the case does. The prompt asks for one JSON
+object holding the case ID; the road surface,
 friction, grade and conditions; each vehicle's label, type, year, make and
 model, weight, CG height, length, width and wheelbase, and its starting x, y,
 heading and speed; and the event sequence. It tells the tool to:
@@ -391,7 +425,7 @@ vehicles.
 
 ## Provenance
 
-**Tools › Provenance...** lists where values in the case came from: every value
+**Tools › Automatic Tools › Provenance...** lists where values in the case came from: every value
 set by Vehicle Package, Case Intake, Crush Stiffness from Crash Tests or EDR
 Import. With no records, the window says so and nothing else.
 
@@ -467,9 +501,10 @@ anything: its load in kilograms and how many items, and how it was applied
 
 ## Crush Stiffness from Crash Tests
 
-In the Vehicle editor, **Vehicle › Crush Stiffness...** has a **From crash
-tests...** button below the four sides. It opens **Crush Stiffness from Crash
-Tests** for the selected vehicle (named at the top), which works out a side's
+**Tools › Automatic Tools › Crush Stiffness from Crash Tests...**, or the
+**From crash tests...** button below the four sides in the Vehicle editor's
+**Vehicle › Crush Stiffness...**, opens **Crush Stiffness from Crash Tests**
+for the selected vehicle (named at the top), which works out a side's
 CRASH3 stiffness from one or more staged tests into a full-width rigid barrier
 and puts it on the vehicle.
 
@@ -489,12 +524,25 @@ are in the units set in Preferences.
 | **Crush width** | The width of the damage |
 
 Or read a test from a file: type its path in the **NHTSA test file** box and
-press **Load NHTSA test**. Each vehicle in the test that has a crush profile
-becomes a row, with its test weight (or its curb weight when the test weight is
-missing), its speed and its crush points. A file gives no crush width this
-reader knows, so **enter each one's Crush width**. The note under the button
-says what was added and what was skipped, and **What was read from the file**
-lists which field gave each value and the fields it did not use. See
+press **Load NHTSA test**. Or fetch one: type its number in **NHTSA test
+number** and press **Fetch from NHTSA (online)**. The window asks NHTSA's
+Vehicle Crash Test Database for the test, its vehicles and its barrier, and
+saves the answers unchanged beside the case as `nhtsa_test_<number>.json`, so
+the rows can be rebuilt offline by loading that file. A case not yet saved has
+nowhere to keep them, and the note says so. Not available in the browser
+version.
+
+Each vehicle in the test that has a crush profile becomes a row, with its test
+weight (or its curb weight when the test weight is missing), its speed, its
+crush points and its crush width. Many tests record no crush width (the
+database writes 9999 for that): enter it, or press **Vehicle's** beside the
+empty box to use the tested vehicle's width, which is the crush width of a
+full-width frontal test. Only a vehicle driven into a barrier is ticked
+**Use**. In any other test, such as a side test, the struck vehicle stands still
+and its crush energy came from the impactor, which this fit does not take, so
+its row comes in unticked. The note under the buttons says what was added,
+skipped and left unticked, and **What was read from the file** lists which
+field gave each value and the fields it did not use. See
 [Reading an NHTSA crash test file](#reading-an-nhtsa-crash-test-file).
 
 ### No-damage speed b0
@@ -564,8 +612,9 @@ NHTSA's Vehicle Crash Test Database. The file can be:
 - a table with a header row, its columns separated by commas, tabs, `|` or
   `;` (the shape of the database's table downloads, or a spreadsheet saved
   from one); or
-- JSON, with the fields in any object at any depth (the shape of an API
-  response).
+- JSON, with the fields in any object at any depth: a response from the
+  database's API (nrd.api.nhtsa.dot.gov), or the file **Fetch from NHTSA**
+  saves.
 
 Fields are found by **name**, never by position, and names match in upper or
 lower case. The test fields read are TSTNO, TITLE, TSTCFN, TSTTYP and CLSSPD;
@@ -573,21 +622,37 @@ the vehicle fields are VEHNO, MAKE (or MAKED), MODEL (or MODELD), YEAR, BODY
 (or BODYD), VIN, VEHTWT (test weight), CURBWT (curb weight), WHLBAS
 (wheelbase), VEHLEN, VEHWID, VEHCG (the CG's distance behind the front axle),
 VEHSPD (impact speed; the test's CLSSPD closing speed when missing), PDOF,
-DPD1 to DPD6 (the crush profile) and VDI. Values are in NHTSA's metric units:
-kilograms, millimeters and km/h. A crush profile is read from DPD1 in order,
-and a missing DPD ends it. A file holding several tests is read for its first
-test.
+DPD1 to DPD6 (the crush profile) and VDI. The API's own names are read as
+the same fields (`vehicleTestWeight`, `vehicleCurbWeight`, `vehicleLength`,
+`vehiclecenterofGravityDistanceBehindFrontAxle`, `vehicleSpeed`,
+`damageProfileDistancesOne` to `Six`, `closingSpeed`, and so on), and so are
+three it adds: `totalLengthofIndentation` (the crush width),
+`distancebetweencenterofDamagedareaandCGAxis` (the damage offset) and
+`maximumCrushDistance`. Values are in NHTSA's metric units: kilograms,
+millimeters and km/h. A crush profile is read from DPD1 in order, and a
+missing DPD ends it. A file holding several tests is read for its first test.
+A vehicle listed twice (the API's vehicle list and its vehicle detail both
+carry it) is read once.
 
-!!! warning "Field names not yet checked against NHTSA's own files"
-    The names and units are those of NHTSA's Test Reference Guide. They have
-    not yet been checked against a file NHTSA served. So every read lists which
-    field gave which value, and the fields it did not use: a file that names a
-    value differently shows that value missing and the field as not used; it
-    does not produce a wrong number.
+- **9999 means not recorded.** The database writes 9999 for a value it did
+  not record. It is read as missing, and **What was read** says so; it never
+  becomes a 9.999 m crush width.
+- **A stated speed of 0 is real.** The struck vehicle in a side test stands
+  still. Only a vehicle driven into a barrier that states no speed of its own
+  takes the test's closing speed.
+
+!!! note "Which names are checked"
+    The API names were checked against responses NHTSA's database served
+    (tests 4457, a frontal test into a rigid barrier, and 5270, a side test;
+    kept in `tests/data/nhtsa/`). The Test Reference Guide's codes (VEHTWT,
+    DPD1, ...) for table downloads have not yet been checked against a table
+    NHTSA served. Every read lists which field gave which value and the fields
+    it did not use, so a file that names a value differently shows that value
+    missing; it does not produce a wrong number.
 
 ## EDR Import
 
-**Tools › EDR Import...** brings an event data recorder's pre-crash record (a
+**Tools › Automatic Tools › EDR Import...** brings an event data recorder's pre-crash record (a
 Bosch CDR report or a manufacturer's equivalent) into an event vehicle: its
 initial speed, and its throttle, brake and steering tables on the simulation's
 own clock. After the event is run, it compares the recorded delta-V with the

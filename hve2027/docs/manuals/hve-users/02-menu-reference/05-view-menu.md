@@ -127,13 +127,18 @@ shows the current shadow resolution in centimetres per texel.
 | Item | Draws |
 |---|---|
 | **Velocity Vectors** | Each vehicle's velocity, from its forward and lateral velocity rotated into the earth frame — not along the heading, so a sideslip shows (HVE: Show Velocity Vectors) |
-| **Collision Force (PDOF)** | While the vehicles are in contact only, an arrow that turns and grows with the engine's collision force sample by sample. It points into the CG from the direction the force came from, HVE's PDOF convention |
+| **Collision Force (PDOF)** | While the vehicles are in contact only, an arrow that turns and grows with the engine's collision force sample by sample. It runs along the force on the vehicle, its tail on the side the force came from (HVE's PDOF convention). The two options below choose where it acts |
+| **…at the CG, with moments** | The force into the CG, and the collision moment about the CG as three arcs: roll Mx (orange), pitch My (yellow), yaw Mz (magenta). Each arc turns the way the moment turns the vehicle. The engine's own numbers, nothing derived. The default |
+| **…at impact (line of action)** | The same load as one force on its line of action: the line along which a single force has the engine's moment about the CG. The arrow ends where that line meets the vehicle's declared extents, so the moment shows as how far it passes beside the CG; roll and pitch put it above or below the CG. Any part of the moment along the force, a twist no single force can carry, is a small arc around the arrow |
 | **Tire Force Vectors** | Each tire's Fx' (red, longitudinal) and Fy' (green, lateral) at the contact patch |
 | **…include vertical Fz'** | Adds the normal load (blue), drawn up from the patch on the same scale |
+| **Show Values** | Each vector's value at its end, in the units set in Tools › Preferences: speed, force, each moment on its arc, and at impact the arm from the CG to the line of action |
 | **Draw Vectors Through Bodywork** | Draws the arrows over the vehicles instead of hidden by them |
 
-Each arrow is scaled against the run's own peak, so lengths compare within a
-run, not between runs.
+Each type of arrow has one fixed scale, shown in the viewport's legend and set
+in the Scene Display window, so lengths compare between vehicles and between
+runs. A moment arc of radius R is as long as the collision-force arrow for the
+force that moment would be at R. The arcs' radius is the vehicle's half width.
 
 ---
 

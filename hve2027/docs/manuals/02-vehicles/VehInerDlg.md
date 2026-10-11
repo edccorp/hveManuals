@@ -46,7 +46,7 @@ The values above stay those of the **empty** vehicle; each run adds these to a
 copy of the case as it starts, so the load is never counted twice. How each
 engine receives the load is described in
 [Aboard: occupants and cargo on the vehicle](../new-features/12-case-intake-and-vehicle-data.md#aboard-occupants-and-cargo-on-the-vehicle).
-**Tools › Vehicle Package** can fill this list.
+**Tools › Automatic Tools › Vehicle Package** can fill this list.
 
 ### Applied
 - **Added to the vehicle (every engine)** — the vehicle's weight, CG and rotational inertia are combined with the load before any engine runs, the same way in every engine.
