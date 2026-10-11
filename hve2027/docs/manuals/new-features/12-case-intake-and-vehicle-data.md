@@ -660,6 +660,10 @@ is shown but not applied. The status line says what was set, and what was not
 and why. Every value set is recorded in [Provenance](#provenance), tool *EDR
 import*, with the clock offset.
 
+**The record is kept with the case.** **Apply** keeps it for that vehicle in
+that event, with the window's settings: start time, brake level, sign choices
+and time zero. **Keep with the case** does the same without setting any table.
+
 ### 3. Delta-V: the record against the run
 
 When the record has delta-V samples, run the event (it must be the active
@@ -691,3 +695,15 @@ run ends before the record does, the comparison stops there and says so.
     **Apply** is locked while results are on screen, and the delta-V
     comparison needs them. To apply a different start time or brake level
     after a run, reset the run, apply, and run again.
+
+### 4. Kept with the case
+
+A reopened case lists its records under **Kept with the case** at the top of
+the window. **Open** brings one back to compare or apply again, and **Remove**
+deletes it. A record follows its vehicle and event when either is renumbered,
+and goes when either is deleted.
+
+**Export Run Report (HTML)** in the HVE Reports window adds an **EDR Delta-V**
+section for each record kept for a vehicle of the event. It holds the record's
+source, how its time zero and signs were set, the peaks and RMS difference, the
+plot and the values, in your display units.

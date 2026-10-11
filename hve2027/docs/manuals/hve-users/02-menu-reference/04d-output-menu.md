@@ -128,7 +128,9 @@ units set in Preferences.
   Pages as HTML** write every page in print order (the HTML with a list of
   contents); a browser prints the HTML or saves it as PDF. **Export Run Report
   (HTML)** writes `run_report.html`, HVE 2027's own printable summary of the
-  run (inputs, key results, plan view of the trajectories).
+  run (inputs, key results, plan view of the trajectories), in the units set in
+  Tools › Preferences, with an EDR delta-V section for each EDR record kept for
+  a vehicle of the event.
 - A file name without a folder is saved beside the case file, and the window
   shows the full path of every file written.
 
