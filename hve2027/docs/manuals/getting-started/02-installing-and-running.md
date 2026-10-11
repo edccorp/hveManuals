@@ -6,16 +6,47 @@ its log, and the tasks it can run from the command line.
 
 | Edition | What it is | In the preview |
 | --- | --- | --- |
-| Desktop program, Windows | The full program: the editors, every physics program, playback, reports and export | Yes: a folder of files for 64-bit Windows |
+| Desktop program, Windows | The full program: the editors, every physics program, playback, reports and export | Yes: an installer for 64-bit Windows (or, from EDC, a folder of the same files) |
 | Desktop program, Linux | The same program for Linux | Not packaged for the preview |
 | Browser version | The same program running inside a web browser tab, on your own computer | Not part of the Windows package; see [The browser version](#the-browser-version) |
 | Read-only viewer | Opens solved cases and plays back their saved results, with no editors and no physics programs | Not part of the Windows package; see [The read-only viewer](#the-read-only-viewer) |
 
 All of them read the same case files.
 
-## What is in the Windows package
+## Installing on Windows
 
-The preview is a folder. Keep its contents together:
+Run the installer, **`HVE-2027-<version>-setup.exe`**.
+
+- **For yourself (the default).** It installs into
+  `%LOCALAPPDATA%\Programs\EDC\HVE 2027\<version>` and needs no administrator
+  rights. Install this way unless you have a reason not to: the program keeps
+  its settings and its log in its own folder (see
+  [Where the program keeps its settings](#where-the-program-keeps-its-settings)), which you can
+  write to.
+- **For every user.** Run the installer with **`/ALLUSERS`** from a command
+  prompt opened as an administrator; it installs into `Program Files\EDC\HVE
+  2027\<version>`. **`/S`** installs without asking anything.
+- **Side by side.** Each version installs into its own folder, with its own
+  Start menu entry, **HVE 2027 <version>**, and its own entry in Windows'
+  installed-apps list. **HVE 2027** in the Start menu, and double-clicking an
+  `.hvc` case, open the version installed last.
+- **Classic HVE is left alone.** The installer never takes over `.hve` files;
+  they stay with HVE.
+- **Uninstalling** a version (from Windows' installed-apps list) removes that
+  version's folder, and only that one. Your license and your cases are kept;
+  the settings and saved vehicles inside that folder are not (see the warning
+  under [Where the program keeps its settings](#where-the-program-keeps-its-settings)).
+
+!!! note "HVE 2027"
+    An installed release needs a **license** that covers the program of the
+    event you run: activate it under **Help › License...** with your EDC
+    Software secret (see [Help › License](../hve-users/02-menu-reference/07-help-menu.md#online-licensing)).
+    Without one, **Run** is refused and the run status says why. The program
+    does not check for updates.
+
+## What is in the program folder
+
+Installed or copied, the program is one folder. Keep its contents together:
 
 | File or folder | Purpose |
 | --- | --- |
@@ -23,7 +54,7 @@ The preview is a folder. Keep its contents together:
 | `hve-solver.exe` | The physics solver. On Windows every **Run** is solved by this program in a separate process, so it must stay in the same folder as `hve-next.exe` |
 | `SDL2.dll` | A library the program needs for its window, keyboard and mouse |
 | `hve-rsc\` | The text each physics program uses to lay out its report pages (**Output › HVE Reports**) |
-| `db\` | HVE's vehicle databases: `EDC.db`, `VMSTANDARD_7_00.db` and `Generic.db` |
+| `db\` | HVE's vehicle databases. An installed release carries `Generic.db`; EDC's vehicle data (`EDC.db`, `VMSTANDARD_7_00.db`) is licensed separately and is not in the program package. A preview folder from EDC may carry all three |
 | `vehicles\` | The 3-D vehicle geometry those databases name |
 
 The program file is still called `hve-next.exe`; on screen the program calls
@@ -31,11 +62,9 @@ itself **HVE 2027 Preview**. All the physics programs, GATB included, are part
 of it.
 
 !!! note "HVE 2027"
-    The preview has **no installer** and no update check, and it does not need a
-    license to run (**Help › License...** shows the license and is where one is
-    activated).
-    Installing it is copying the folder; removing it is deleting the folder.
-    A newer preview comes from EDC as a new folder.
+    If EDC gives you the preview as a **folder** rather than an installer, copy
+    the whole folder (below); removing it is deleting the folder. Whether such
+    a copy needs a license is shown in **Help › License...**.
 
 ### What the computer needs
 
@@ -48,7 +77,7 @@ of it.
 - **A mouse with a wheel or middle button** is recommended for moving the 3-D
   view (see the [Interface Tour](03-interface-tour.md#the-viewport)).
 
-### Putting it on your computer
+### Using a preview folder instead of the installer
 
 1. Copy the whole folder to a folder you can write to, for example
    `C:\HVE 2027 Preview` or a folder under *Documents*. Do not put it under
@@ -116,8 +145,19 @@ Deleting `imgui.ini` restores the default panel layout the next time the
 program starts.
 
 Vehicles saved with **Vehicle › Save Vehicle As** go, unless you choose another
-file, into `userdb\user.db` in the same folder. Keep that folder (copy it
-aside) if you remove or replace the preview.
+file, into `userdb\user.db` in the same folder.
+
+When HVE 2027 is installed, "the program's own folder" is that version's
+install folder, so each installed version keeps its own settings and its own
+`userdb`. Your license is kept apart from them, in
+`%APPDATA%\EDC\HVE 2027\license.json`, and is shared by every version.
+
+!!! warning "Before you uninstall or replace a version"
+    Uninstalling a version deletes its whole install folder, **including the
+    settings above and any vehicles saved into its `userdb\user.db`**. Copy
+    the `userdb` folder somewhere else first if you have saved vehicles there.
+    Cases are not affected: they are wherever you saved them. The same applies
+    to deleting a preview folder.
 
 ## Log and crash files
 

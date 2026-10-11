@@ -91,10 +91,12 @@ says why.
   on this license**, and **Release this computer**, which frees its seat after
   asking you to confirm.
 
-!!! note "HVE 2027 Preview"
-    The preview does not require a license: every engine runs, and the License
-    window says so. HVE's user ID code is not used; the EDC Software secret
-    takes its place.
+!!! note "HVE 2027"
+    An installed release needs a license covering the program of the event you
+    run; without one, **Run** is refused and the run status gives the reason.
+    A copy that does not require a license (a preview folder or development
+    build) says so in this window, and runs every engine. HVE's user ID code is
+    not used; the EDC Software secret takes its place.
 
 <!-- NAV -->
 
