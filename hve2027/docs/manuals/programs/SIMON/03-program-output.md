@@ -1,6 +1,6 @@
 # Chapter 3 — SIMON Program Output
 
-This chapter defines the outputs available from a SIMON event. In HVE they are viewed in the Playback Editor's report windows; HVE 2027 has no Playback Editor, and the same outputs are reached from the **Output** menu of the Event editor and from the viewport.
+This chapter defines the outputs available from a SIMON event. In HVE they are viewed in the Playback Editor's report windows; in HVE 2027 the same outputs are reached from the **Output** menu of the Event editor and from the viewport, and the **Playback (F6)** editor plays several solved events on one timeline.
 
 ## Overview
 

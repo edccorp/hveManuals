@@ -12,7 +12,7 @@ HVE 2027 compiles HVE's own EDSMAC source, so the physics described in this manu
 
 - **Choosing EDSMAC.** In the **Event (F5)** editor, pick **EDSMAC** from the **Method** list in **Event Information › Calculation Method**. HVE 2027 checks EDSMAC's own limits there: one or two vehicles, each with exactly two axles.
 - **Calculation options** are in the **EDSMAC Options** window (**Method Options...** under the Method list). EDSMAC shares this window with EDSMAC4, and only some of its settings reach EDSMAC; see [Chapter 2 — Calculation Options](02-program-input.md#calculation-options).
-- **Running and playback.** Press **Run** on the playback bar under the viewport (or **Output › Run Simulation**, Ctrl+R). The solved event plays back in the same viewport; there is no separate Playback Editor.
+- **Running and playback.** Press **Run** on the playback bar under the viewport (or **Output › Run Simulation**, Ctrl+R). The solved event plays back in the same viewport. To play it with other solved events on one timeline, use the **Playback (F6)** editor.
 - **Reports.** EDSMAC's own report pages (Accident History, Damage Data, Messages, Program Data, References, Vehicle Data) are in **Output › HVE Reports**; time histories are in **Output › Key Results**, **Output › Output Graph** and **Output › Timestep Data Table**.
 
 Where HVE 2027 behaves differently from HVE, the page says so in a box marked **HVE 2027**. Two things to know before you start:

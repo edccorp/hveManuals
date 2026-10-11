@@ -10,7 +10,7 @@ HVE 2027 compiles HVE's own EDSMAC4 source, so the physics described in this man
 
 - **Choosing EDSMAC4.** Open the **Event (F5)** editor, and in **Event Information › Calculation Method** pick **EDSMAC4** from the **Method** list. There is no separate EDSMAC4 program to start: the event's method selects the engine.
 - **Calculation options** are in the **EDSMAC Options** window, opened with the **Method Options...** button under the Method list. EDSMAC and EDSMAC4 share this window; see [Chapter 2 — Calculation Options](02-program-input.md#calculation-options) for which settings each program reads.
-- **Running and playback.** Press **Run** on the playback bar under the viewport (or **Output › Run Simulation**, Ctrl+R). The solved event plays back in the same viewport; there is no separate Playback Editor.
+- **Running and playback.** Press **Run** on the playback bar under the viewport (or **Output › Run Simulation**, Ctrl+R). The solved event plays back in the same viewport. To play it with other solved events on one timeline, use the **Playback (F6)** editor.
 - **Reports.** EDSMAC4's own report pages (Accident History, Damage Data, Driver Data, Event Data, Environment Data, Messages, Program Data, References, Vehicle Data) are in **Output › HVE Reports**. Time histories are in **Output › Key Results** (the Variable Output table), **Output › Output Graph** and **Output › Timestep Data Table**.
 - **HVE cases.** **File › Open Case** reads HVE's own `.hve` files, including the EDSMAC4 tutorial case used in [Chapter 5](05-tutorial.md).
 
