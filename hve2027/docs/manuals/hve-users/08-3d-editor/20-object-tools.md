@@ -1,0 +1,121 @@
+# Chapter 20 — 3-D Editor Object Tools
+
+## Overview
+
+HVE's 3-D Editor creates environment objects with nine Object Tools — Surface, Cone, Box, Cylinder, Sphere, Text, Light, Signal and Edit — each with its own Object Editor dialog for size, position and orientation.
+
+!!! warning "Not in HVE 2027"
+    HVE 2027 does not build environment geometry. There are no Surface, Cone, Cylinder, Sphere or Text tools, no object editor dialogs, and no vertex editing. A site is **imported**:
+
+    - from a geometry file — DXF, `.h3d`, `.iv`, OBJ or glTF — under **Environment › Environment… › Terrain › Scene Geometry** (enter or browse for the file, set the scale and axis options, tick **Use surfaces as terrain (physics)** if vehicles are to drive on it, and press **Import**); or
+    - with an HVE case: **File › Open** reads a `.hve` case, including the site built for it in HVE's 3-D Editor, with its object types, overlays and friction factors.
+
+    Build or edit the site in HVE or in a modelling program and import the result. The tools that remain are described below.
+
+The table maps each HVE tool to what HVE 2027 offers:
+
+| HVE tool | HVE 2027 |
+|---|---|
+| Surface | Imported geometry; surface type and friction set per surface ([Chapter 19](19-using-3d-editor.md#object-attributes-tool)) |
+| Cone, Cylinder, Sphere, Text | Not available |
+| Box | **Environment › Scene Box Editor** — display boxes only (below) |
+| Light | Not available as a scene object; see [Light Tool](#light-tool) |
+| Signal | Timing fields only; see [Signal Tool](#signal-tool) |
+| Edit | Click to select in the Viewport ([Chapter 19](19-using-3d-editor.md#object-attributes-tool)); vehicles are moved with the gizmo ([Chapter 21](21-manipulators.md)) |
+
+## Surface Tool
+
+HVE's Surface tool creates drivable polygons (roads, medians, adjacent surfaces) vertex by vertex.
+
+!!! warning "Not in HVE 2027"
+    Surfaces come only from imported geometry. What HVE 2027 does edit on an imported surface is its **Surface Type**, **Friction Multiplier** and other physical properties, its **layer**, whether it is **drawn** and whether it is **driven on**, and its display **material** — see [Chapter 19](19-using-3d-editor.md#object-attributes-tool). Reversing a surface's normals, moving vertices and changing object hierarchy are not available.
+
+## Cone Tool
+
+!!! warning "Not in HVE 2027"
+    There is no Cone tool. Include delineators in the imported geometry.
+
+## Box Tool
+
+HVE's Box tool creates box-shaped objects such as buildings and curbs.
+
+!!! note "HVE 2027"
+    **Environment › Scene Box Editor…** keeps a list of boxes with the case. **They are display objects only**: no engine reads them, so a box is not a curb, a barrier or a drivable surface. Use them to mark a location, a building footprint or a reference volume in the 3-D view.
+
+![Figure 20-5](../images/hvn-08-scene-box-editor.png)
+*Figure 20-5 — The Scene Box Editor, with two boxes from a test case.*
+
+### Box Editor Dialog
+
+The Scene Box Editor shows the list of boxes on the left and the selected box's fields on the right:
+
+- **Name** — the box's name, shown in the list.
+- **Position (x fwd, y right, z up)** — X, Y and Z of the box's center. **Z is the height above the ground (positive up)**, not the SAE z-down coordinate.
+- **Size** — **L** (along x), **W** (along y) and **H** (vertical).
+
+Positions and sizes are shown in the units set in Preferences (in the US system, positions in feet and sizes in inches).
+- **Rotation (deg)** — **Rx** (roll), **Ry** (pitch) and **Rz** (yaw), applied as for a vehicle.
+- **Appearance** — **Color** and **Wireframe**.
+
+### Creating a New Box
+
+1. Choose **Environment › Scene Box Editor…**.
+2. Press **Add**. A box named *Box n* is added and selected.
+3. Enter its name, position, size, rotation and colour.
+
+The box appears in the 3-D view, and as an outline in the Environment editor's Top view.
+
+### Editing an Existing Box
+
+1. Choose **Environment › Scene Box Editor…**.
+2. Click the box in the list and change its fields.
+3. To remove it, press **Delete**.
+
+> **NOTE:** Boxes cannot be selected or moved in the 3-D view; use the dialog's fields.
+
+## Cylinder Tool
+
+!!! warning "Not in HVE 2027"
+    There is no Cylinder tool.
+
+## Sphere Tool
+
+!!! warning "Not in HVE 2027"
+    There is no Sphere tool.
+
+## Text Tool
+
+!!! warning "Not in HVE 2027"
+    There is no Text tool. Street names and other labels cannot be placed in the scene.
+
+## Light Tool
+
+HVE's Light tool adds point, directional and spot light sources (such as street lights) to the environment.
+
+!!! warning "Not in HVE 2027"
+    There are no environment light objects. The 3-D view is lit by the sun and sky (**Environment › Environment… › Sky**); **View › Scene Display › Rendering › Light Sources On** turns the sun's contribution off and on. **Vehicle › Vehicle Lights…** keeps a list of lights for each vehicle — name, enabled, type (Point, Directional, Spot), intensity, direction, spot cone angle and drop-off, position and colour — but the viewport does not draw them. Lamps modelled in a vehicle's mesh can be given an emissive material in the Shader Editor.
+
+## Signal Tool
+
+HVE's Signal tool creates traffic signal lights in the environment.
+
+!!! warning "Not in HVE 2027"
+    No signal object is drawn. **Environment › Environment… › Signals** records one traffic signal's data with the case — **Traffic Signal Active**, **Phase at Impact**, **Cycle Time**, **Green Time** and **Yellow Time** — and **Event › Signals** edits the same three times. No engine models a traffic light, so these values do not affect any result.
+
+## Edit Tool
+
+HVE's Edit tool selects an object so that its attributes can be edited and a manipulator attached.
+
+!!! note "HVE 2027"
+    There is no separate Edit tool; clicking selects. In the Environment editor a click on a surface selects it for the Surface Materials section and the Shader Editor. In the Event editor a click on a vehicle selects it and shows its gizmo ([Chapter 21](21-manipulators.md)). In the Vehicle editor, **Tab** enters Edit Mode, in which a click picks a named part of the vehicle mesh.
+
+---
+*Converted and updated from the legacy HVE User's Manual (Seventh Edition, Jan 2006), Chapter 20; adapted for HVE 2027.*
+
+<!-- NAV -->
+
+---
+
+← Previous: [Chapter 19 — Using the 3-D Viewport](19-using-3d-editor.md)  |  [Index](README.md)  |  Next: [Chapter 21 — Manipulators](21-manipulators.md) →
+
+<!-- /NAV -->

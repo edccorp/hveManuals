@@ -1,0 +1,693 @@
+# Case Intake and Vehicle Data
+
+!!! tip "New in HVE 2027"
+    HVE has no counterpart for the tools on this page. They put what is known
+    about a crash into the case (a vehicle's identity and measured
+    specifications, who and what it carried, crash-test stiffness, an event
+    data recorder's pre-crash record, the facts in the case documents) and
+    record where every value they set came from.
+
+| Tool | Where | What it changes in the case |
+| --- | --- | --- |
+| [Vehicle Package](#vehicle-package) | **Tools › Vehicle Package...** | Adds one vehicle; seats its occupants and loads its cargo in an event, or puts them aboard the vehicle |
+| [Case Intake](#case-intake) | **Tools › Case Intake...** | Adds one event with new vehicles, their starting positions and speeds |
+| [Provenance](#provenance) | **Tools › Provenance...** | Nothing in the physics: it lists, and can remove, the records the other tools keep |
+| [Aboard](#aboard-occupants-and-cargo-on-the-vehicle) | **Inertia / Mass** dialog, *Aboard* section | The occupants and cargo a vehicle carries into every event |
+| [Crush Stiffness from Crash Tests](#crush-stiffness-from-crash-tests) | **Vehicle › Crush Stiffness...**, button **From crash tests...** | One side's A and B, and the A and B of the vehicle's EDCRASH events |
+| [EDR Import](#edr-import) | **Tools › EDR Import...** | An event vehicle's initial speed and its throttle, brake and steering tables |
+
+These tools are in the workstation product. The viewer product (which opens a
+published bundle) has none of them.
+
+## Where each value came from
+
+Every value these tools set is labelled with one of five kinds, in the tool's
+own window and afterwards in **Tools › Provenance**:
+
+| Kind | Means |
+| --- | --- |
+| **Stated** | You typed it, or a document you supplied states it |
+| **Looked up** | Taken from a named source: a vehicle database record, NHTSA's VIN decoder, a spec sheet, an NHTSA crash test file, an EDR report |
+| **Estimated** | Worked out by a named rule from named inputs, for example GEBOD's 50th-percentile body for an occupant whose weight nobody stated |
+| **Generic default** | The generic vehicle's own value, which the tool could not replace with this vehicle's |
+| **Unknown** | Nothing stated it. A placeholder stands in the case until you set it |
+
+Nothing is guessed and then presented as a fact. A value no source states is
+left out, estimated by a rule the sheet names, or entered as a placeholder
+recorded as **Unknown**, and the window says which.
+
+## Case documents stay on your computer
+
+Case Intake, the spec-sheet reader in Vehicle Package and EDR Import read
+documents through **your own AI tool**, not through HVE 2027:
+
+1. Press the window's **Copy prompt...** button. The prompt goes to the
+   clipboard. It tells the tool exactly what to return (one JSON object), to
+   give every value with its place in the document, and to leave out anything
+   the document does not state.
+2. Give the prompt and the documents (a police report, a spec sheet, a CDR
+   report) to the AI tool you use.
+3. Paste its whole answer into the window's text box. Text around the answer,
+   such as a sentence before it or code-fence marks, does no harm: the window
+   reads from the first `{` to the last `}`.
+
+HVE 2027 calls no AI service and sends nothing anywhere; the documents go only
+where your own tool sends them. The one network action on this page is
+**Decode with NHTSA (online)** in Vehicle Package, which sends the VIN alone,
+and only when you press it.
+
+!!! warning "Check the answer"
+    An AI tool can misread a document. Each window shows every value beside
+    the citation the tool gave for it, so that it can be checked against the
+    page it names before it goes into the case.
+
+## Vehicle Package
+
+**Tools › Vehicle Package...** builds a case vehicle from what is known about
+it: its VIN or its year, make and model, its measured specifications, who was
+in it and what it carried. The window is worked from top to bottom, in five
+numbered sections. Weights, lengths and positions are shown and typed in the
+units set in Preferences.
+
+### 1. Identify
+
+| Control | Does |
+| --- | --- |
+| **VIN** | The 17-character Vehicle Identification Number. Spaces and dashes are ignored |
+| **Check** | Checks the VIN offline: 17 characters, none of them I, O or Q; the check digit in position 9, reported as *Check digit OK* or *Check digit does NOT match (expected ...)*; and the model year from position 10. If **Year** is empty, Check fills it in |
+| **Decode with NHTSA (online)** | Sends the VIN to NHTSA's vPIC decoder and fills **Make**, **Model**, **Series**, **Trim** and **Year** from its answer, and **Type** when vPIC's body class names one plainly (a bus or an incomplete vehicle is not guessed). It also fills any specifications vPIC states (below). Enabled once the VIN is well formed; never automatic. The line under the buttons repeats vPIC's own message. Not available in the browser version |
+| **Year**, **Make**, **Model**, **Series**, **Trim** | What the vehicle is. Type them, or correct what the decoder filled in |
+| **Type** | The vehicle type. It picks the generic vehicle used when no database record is chosen |
+
+The model-year code in position 10 repeats every 30 years. For a car,
+multipurpose vehicle or light truck (GVWR up to 10,000 lb), position 7 settles
+it: a digit there means 1980–2009, a letter 2010–2039 (49 CFR 565.15). Heavier
+vehicles do not follow that rule, so the window shows both candidate years and
+the rule it applied.
+
+Two disagreements are reported in orange rather than left for you to notice:
+a **Year** that is neither of the VIN's two candidate years, and a **Make**
+that is not the make NHTSA decoded the VIN as.
+
+### 2. Vehicle data
+
+The vehicle databases are searched for the make and model. They are the same
+databases the vehicle database dialog reads (**Add...** or **Replace...** on
+the Vehicles panel; the folders searched are listed under its **Database
+folders**; see [Adding New Vehicles](../hve-users/04-vehicle-editor/10-creating-editing-vehicles.md#adding-new-vehicles)).
+If no database is loaded, the generic vehicle is the only choice and the
+window says so.
+
+The table lists the matching records, best first, with a **Generic** row at
+the bottom. Click a row to choose it.
+
+| Match | Means |
+| --- | --- |
+| **Exact** | Same make and model, and the year inside the record's years |
+| **Same model, other years** | Same make and model, another generation (or a record that states no years), nearest years first |
+| **Generic** | No record: HVE's generic vehicle of the chosen **Type** (the middle size class where HVE has several). Every value is the generic's, not this vehicle's |
+
+Only records of the same make and model are offered. A similar vehicle of
+another model is a judgment for you, and is never offered as a match.
+
+- **Spelling.** *F-150* and *F150* match, and so do *Silverado* and
+  *Silverado 1500* (one name is the other's leading words). *Caravan* does not
+  match *Grand Caravan*.
+- **Family names.** NHTSA names a model family (*C-Class*, *3-Series*,
+  *Silverado*) and puts the designation in its series or trim (*C300*,
+  *335i*, *1500*), while the databases use either. A record whose model
+  matches the series or trim is offered too, and its **Why** column says so.
+- **Ranking.** Exact before other years, then the nearest years, then the
+  record whose name contains more of the series and trim words (a *Ram 1500*
+  before the *2500* of the same years).
+
+**Name in the case** is the new vehicle's name. Left empty, the vehicle keeps
+the record's or the generic's own name.
+
+### Stated specifications
+
+Expand **Stated specifications** (under the name) to enter what is known about
+the real vehicle. Leave a value at 0 when it is not known.
+
+| Row | Is |
+| --- | --- |
+| **Weight** | The vehicle without occupants or cargo: its curb weight. It becomes the vehicle's total weight |
+| **Front axle share (0-1, total)** | The fraction of the total weight on the front axle |
+| **Wheelbase** | Front axle to rear axle |
+| **Front track**, **Rear track** | Each axle's track width |
+| **Length**, **Width**, **Height** | The overall dimensions |
+| **CG height (total)** | The CG height of the whole vehicle (total-mass basis) |
+
+Each row has its value, a **From** column (**Stated** for a value you typed,
+**Looked up** for one filled from a source) and a **Source** box for where it
+came from (a spec sheet, a weigh ticket, a measurement). Typing a value makes it
+Stated. A line above the table says what the last fill did and what it could
+not use. Three things can fill the rows:
+
+- **Decode with NHTSA (online)** fills the curb weight, wheelbase and track
+  width when vPIC states them for this VIN (it often does not for cars), into
+  rows that are still empty. vPIC gives one track width, which is used for both
+  axles. A model sold in two wheelbases gives a range, which is not used.
+- **NHTSA test file** box and **Load NHTSA test**: type the path of a test
+  file from NHTSA's Vehicle Crash Test Database (see
+  [Reading an NHTSA crash test file](#reading-an-nhtsa-crash-test-file)). The
+  first vehicle in the file fills **Weight** (its curb weight), **Front axle
+  share** (from its CG position and wheelbase, at the test weight),
+  **Wheelbase**, **Length** and **Width**.
+- **Copy spec-sheet prompt**, the box under it, and **Read spec sheet**: give
+  the prompt and the spec sheet (a manufacturer's sheet, a brochure, a Canadian
+  Vehicle Specifications page) to your AI tool and paste its answer. Each value
+  arrives with its unit and its place in the document, and the window converts
+  inches, millimeters, centimeters, meters and feet, and pounds and kilograms.
+  A front share may be given as a percentage, a fraction, or front and rear
+  axle weights. A value in a unit the window does not know, or one that cannot
+  be right for a road vehicle (a length of 189.5 m because the unit was
+  misread), is left out and named.
+
+The NHTSA test file and the spec sheet replace any row they give a value for;
+the VIN decoder only fills empty rows.
+
+**What stated specifications do.** A **database** vehicle keeps its own values:
+the specifications are recorded as *not applied*, and reconciling them is left
+to you. A **generic** vehicle is scaled to them. Each stated value sets:
+
+| Stated | Sets |
+| --- | --- |
+| Weight | The total weight. A weight alone keeps the generic's front axle share |
+| Front axle share, Wheelbase | The CG-to-axle distances (an unstated one keeps the generic's value) |
+| Front track, Rear track | That axle's track |
+| Length | The overall length |
+| Width | The overall width, and both CG-to-side distances (the CG is taken on the centerline) |
+| Height | The overall height; and the CG height in proportion, when the CG height is not stated |
+| CG height | The CG height of the whole vehicle |
+
+and these move with them, each marked **Estimated** on the sheet with its rule:
+
+- **Overhangs**: length minus wheelbase, split front and rear as the generic
+  splits it. A stated wheelbase without a length keeps the generic's overhangs.
+- **Wheel positions**: fore and aft with their axle, sideways with the track,
+  and in height with the CG, which keeps the wheel-center height above the
+  ground. **Hitch points** move with their end of the body, and in height with
+  the CG. The **CG-to-underside** distance moves with the CG height, which
+  keeps the ground clearance.
+- **Inertias**: the sprung roll inertia scales with the sprung mass and the
+  square of the mean track; pitch and yaw with the sprung mass and the square
+  of the wheelbase. (A generic that states no inertia has it estimated from
+  the new mass and size.)
+- **Suspension**: each axle's spring, damper and auxiliary roll stiffness scale
+  with that axle's sprung static load, which keeps its ride frequency, damping
+  ratio and roll gradient.
+
+Tires, brakes, drivetrain and aerodynamics stay the generic's, and the sheet
+says so.
+
+A generic is **not** scaled, and the specifications are recorded as not
+applied with the reason, when:
+
+- it has a body mesh file (the motorcycle generic), which would not follow
+  new dimensions;
+- it is not a two-axle powered vehicle (a trailer or dolly, a barrier, a
+  motorcycle, or a vehicle with more than two axles): a tandem's or a
+  trailer's wheelbase is not one number;
+- it states an explicit axle position, which would override the wheelbase;
+- the specifications cannot describe one vehicle: a length not longer than
+  the wheelbase, a CG at or above the overall height, a width not wider than
+  the track, a front share outside 0 to 1, or a value that is zero or negative.
+
+The vehicle is still added, as the unscaled generic.
+
+### 3. Occupants
+
+One row per person. **Add occupant** adds a row (the first in the driver's
+seat, the next in the front right seat); **Remove** deletes one. Leave a value
+at 0 when it is not known.
+
+| Column | Is |
+| --- | --- |
+| **Seat** | One of the nine seats: Front Right, Front Center, Front Left (driver), Rear Right, Rear Center, Rear Left, Back Right, Back Center, Back Left |
+| **Sex** | Not stated, Male or Female |
+| **Age (yr)** | The occupant's age |
+| **Weight**, **Height** | As stated |
+| **Seat pos?** | Tick when the seat position is known |
+| **x / y / z** | The seat position from the vehicle CG: x forward, y right, **z down** |
+
+Each occupant is given a GEBOD body. A stated weight, height or age goes to
+GEBOD as given. A weight or height left at 0 is GEBOD's 50th percentile for the
+sex, marked **Estimated**. A sex not stated gives a male body, an age not
+stated an adult, both marked Estimated. A stated age under 18 builds GEBOD's
+body for that age. The occupant is named *Driver* in the driver's seat, and
+after the seat otherwise.
+
+### 4. Cargo
+
+One row per item: **Item** (a name), **Weight**, and **x / y / z**, its
+position from the vehicle CG, x forward, y right, **z up** (the payload's
+frame, as in the [Payload dialog](../02-vehicles/PayLoadDlg.md)). **Add cargo
+item** adds a row and **Remove** deletes one. Each item counts as a point mass.
+
+Put in an event, several items become one payload: their total weight, the
+weight-weighted CG, and their inertia about that CG by the parallel-axis
+theorem. The products of inertia this creates are dropped, and the sheet says
+so. SIMON reads one payload item per vehicle. In an event, an item with no
+weight stops the cargo from being loaded, and the status line names it; put
+aboard the vehicle, such an item is skipped.
+
+**Put the occupants and cargo aboard the vehicle.** Unticked, the occupants
+are seated in the chosen event and the cargo becomes that event's payload for
+the vehicle, as HVE does it. Ticked, they go on the vehicle's
+[Aboard](#aboard-occupants-and-cargo-on-the-vehicle) list instead and travel
+with it into every event: each occupant as its GEBOD (or stated) weight at its
+seat position, or at the CG when no seat position is given; each cargo item as
+itself. Two more controls appear, **Applied** and **On the centreline (ignore
+sideways offsets)**, with the meanings given under
+[Aboard](#aboard-occupants-and-cargo-on-the-vehicle). Aboard occupants are
+weights only: no human body is added to the case for them.
+
+### 5. Add to the case
+
+| Control | Does |
+| --- | --- |
+| **Event** | The event the vehicle joins: the active event, another event, or **Case only (no event)** |
+| **Preview** | Builds the package on a copy of the case and shows the sheet. The case is not changed and nothing is recorded |
+| **Add to Case** | Builds it into the case. Locked while results are on screen; reset the run first |
+| **Close** | Closes the window |
+
+**Add to Case** adds a new vehicle (the chosen record, or the generic, scaled
+if specifications were stated) and adds it to the chosen event; if the event
+has no room for another vehicle, the vehicle is added to the case only and the
+status line says so. Then:
+
+- unticked *aboard*: it seats the occupants in that event (an event holds at
+  most four; anyone beyond that is named in the status line and not seated)
+  with the seat positions given, and sets the event's payload for the vehicle
+  from the cargo;
+- ticked *aboard*: it puts the occupants and cargo on the vehicle's Aboard
+  list;
+- with **Case only (no event)**: it adds the vehicle alone. Occupants and
+  cargo are added only when they are going aboard the vehicle.
+
+A vehicle already in the case is never changed. The status line under the
+buttons says which vehicle was added and anything that was not done.
+
+**The sheet** below lists every value the package set: **Set** (what), the
+**Value** (in the units set in Preferences), **From** (its kind, in color)
+and the **Source** (the database file and record, NHTSA, the GEBOD rule, or
+the scaling rule with its ratio). **Add to Case** also stores each line in
+[Provenance](#provenance), tool *Vehicle Package*.
+
+!!! note "HVE 2027"
+    SIMON adds each occupant's mass at the occupant's seat position. With no
+    seat position the mass counts at the vehicle CG, and the sheet says so.
+    SIMON's *Event Data* report shows the effect in **Static Vehicle Loads**,
+    whose **Loaded** column appears when the occupants or payload change an
+    axle load. Its *Inertial Properties Including Occupants and Payload* table,
+    as in HVE, adds the payload but not the occupants to **Total Weight**, and
+    its **CG Location Adjustment** is the payload's alone; **Sprung Weight**
+    includes both.
+
+## Case Intake
+
+**Tools › Case Intake...** builds one new event from a structured description
+of the case that your own AI tool extracted from the case documents (see
+[Case documents stay on your computer](#case-documents-stay-on-your-computer)).
+
+### Pasting the description
+
+1. Press **Copy prompt for your AI tool** and give the prompt, with the police
+   report, diagram, statements and inspection notes, to your AI tool.
+2. Paste its answer into the box and press **Read** (enabled once the box
+   holds a `{ ... }` object). If it is not the answer the prompt asks for, the
+   window says why.
+
+The prompt asks for one JSON object holding the case ID; the road surface,
+friction, grade and conditions; each vehicle's label, type, year, make and
+model, weight, CG height, length, width and wheelbase, and its starting x, y,
+heading and speed; and the event sequence. It tells the tool to:
+
+- use only what the documents state, and give **null** for anything they do
+  not;
+- give every value with its source (*"Police report p. 2"*), and mark a value
+  **uncertain** where a document is unclear or two documents disagree;
+- give meters, kilograms, meters per second and degrees, saying in the source
+  when it converted mph, km/h or feet;
+- place x forward along the first vehicle's direction of travel and y to its
+  right, with the origin at the area of impact unless the diagram gives a
+  reference point, and headings with 0 along +x and positive turning right.
+
+### Reviewing it
+
+The **Review** section shows how many values were stated and how many the
+source marked uncertain, and the **Engine** the event will use: the first
+method named anywhere in the event sequence, looked for in the order EDSMAC4,
+EDSMAC, EDCRASH, EDGEN, EDHIS, GATB, SIMON; with none named, SIMON. The line
+says which.
+
+Then one table for the environment (**Surface**, **Friction**, **Grade (%)**,
+**Conditions**) and one per vehicle (**Identified as**, **Initial x**,
+**Initial y**, **Heading (deg)**, **Speed**, **Weight**, **Length**,
+**Width**, **Wheelbase**, **CG height**). Each row gives the value in the units
+set in Preferences or *not stated*, its kind (**Stated**, **Stated,
+uncertain** or **Unknown**) and its **Source**, the citation the tool gave or
+*(no citation given)*.
+
+For each vehicle:
+
+- the check box before its label includes it, or leaves it out of the build;
+- **Vehicle data** chooses its data: the database records that match the year,
+  make and model the tool read (matched as in
+  [Vehicle Package](#2-vehicle-data); hover over one for why it matched), or
+  the generic of its type;
+- its **type** is the one the answer states (car, pickup, SUV, van, truck,
+  trailer); with none it is a passenger car. The type is never guessed from the
+  make and model.
+
+The values cannot be edited in this window. Correct the answer and press
+**Read** again, or edit the case after it is built.
+
+### Building
+
+**Build** (locked while results are on screen) adds **one** new event, named
+after the case ID (or *Case intake*), with the engine shown, and makes it the
+active event. For each included vehicle it adds a **new** vehicle, as Vehicle
+Package does, places it in the event and sets its initial x, y, heading and
+speed. Existing vehicles and events are not changed. Every value is recorded
+in [Provenance](#provenance), tool *Case Intake* (the vehicle's own lines,
+tool *Vehicle Package*). Nothing is built, and the status line says why, when
+no vehicle is included or the case has no room for another event or for these
+vehicles.
+
+| What the answer states | What happens |
+| --- | --- |
+| A starting position, heading or speed | Set in the event. One not stated is entered as **0** and recorded **Unknown**, and a red line under **Build** counts these placeholders: set them before running |
+| Weight, length, width, wheelbase, CG height | Stated specifications: they **scale a generic** vehicle as in [Vehicle Package](#stated-specifications). On a database vehicle (the review marks the rows *-- not applied*) they are recorded and not applied |
+| Friction | Applied to the tires of the vehicles this build adds: each one's tire friction is scaled so that its front tire's peak friction equals the stated value. Other vehicles and the site's surfaces are not changed |
+| Grade | Recorded only. No engine reads a case-wide grade; the ground the vehicles drive on is the site geometry |
+| Surface, conditions | Recorded only |
+
+!!! note "HVE 2027"
+    Case Intake builds the vehicles and their starting conditions. It does not
+    seat occupants, set driver controls, or import a site; do those in the
+    usual dialogs, or with Vehicle Package and EDR Import.
+
+## Provenance
+
+**Tools › Provenance...** lists where values in the case came from: every value
+set by Vehicle Package, Case Intake, Crush Stiffness from Crash Tests or EDR
+Import. With no records, the window says so and nothing else.
+
+The line at the top counts the records by kind, and how many have been
+**changed since recorded**. **Show** narrows the list: **All records**, **Not
+stated (estimated, generic, unknown)**, or **Changed since recorded**.
+
+| Column | Is |
+| --- | --- |
+| **Subject** | What the value belongs to: a vehicle (*V1 name*), an event (*E1 name*), a vehicle in an event (*E1 name / V1 name*), an occupant (*name in V1 name*), or *Case* |
+| **Set** | What was set, in words |
+| **Recorded** | The value as it was set, with its unit |
+| **Now** | For a record about a single field (an occupant's weight, a payload's weight, a vehicle's name), what that field reads today: *same*, or the new value marked **(changed)** when it was edited by hand afterwards. Blank for other records |
+| **From** | The kind (Stated, Looked up, Estimated, Generic default, Unknown) |
+| **Source** | Where it came from, with its citation, or the rule that produced it |
+| **Tool** | Which tool recorded it |
+| **When** | The date and time it was recorded |
+| **Remove** | Deletes the record. The value in the case is not changed |
+
+The records are saved with the case, in both the `.hvc` and the `.json`
+format. They keep naming the right vehicle, occupant or event when vehicles
+are reordered or another vehicle, occupant or event is deleted, and a record
+about something that is deleted goes with it. They are not a physics input:
+recording or removing one never discards a run, and the window is never
+locked.
+
+## Aboard: occupants and cargo on the vehicle
+
+A vehicle can carry a list of people and loads that travels with it into every
+event and every engine. The list is in the **Aboard** section of the
+[Inertia / Mass dialog](../02-vehicles/VehInerDlg.md#aboard-occupants-and-cargo)
+(Vehicles panel › **Vehicle Properties** › **Inertia / Mass...**), where each
+item has a name, a kind (occupant or cargo), a weight and a position from the
+vehicle's sprung-mass CG (x forward, y right, z up). Vehicle Package fills it
+when *Put the occupants and cargo aboard the vehicle* is ticked.
+
+The vehicle's own weight, CG and inertia stay those of the **empty** vehicle.
+Each run adds the list to a copy of the case as it starts, so the stored
+vehicle never becomes the loaded one and a load cannot be counted twice by
+editing.
+
+**Applied** chooses how the engine gets the load:
+
+| Applied | What the engine gets |
+| --- | --- |
+| **Added to the vehicle (every engine)** | The vehicle's weight, CG and rotational inertia with the load combined in, before any engine runs: the hand method, the same in SIMON, EDSMAC4 and every other engine. The CG moves fore and aft, sideways and in height, and every position measured from it (axles and wheels, CG height, the CG-to-side and CG-to-underside distances, roll centers, steer axes, hitch points, accelerometers) moves with it, so the vehicle's geometry stays where it was. The sprung inertias gain the load by the parallel-axis theorem. The springs are the vehicle's own, so SIMON starts it at its entered ride height |
+| **As payload in SIMON and EDVDS (the suspension sags)** | In SIMON and EDVDS, the load as the event's payload, combined with any payload the event already states. SIMON then lowers the body on each suspension by the extra static load and moves the wheels by the CG shift, as HVE does with a payload. Every other engine, and a dolly in any engine, gets the load added to the vehicle instead, and the run status says so |
+
+**On the centreline (ignore sideways offsets)** counts each item's weight and
+its fore-and-aft and height position, but not its sideways offset. A lone
+driver then does not pull the vehicle off a straight line on a flat road, so no
+steering correction is needed.
+
+The run status (under **Run** on the playback bar, and in the **Simulation**
+panel) ends with an **Aboard:** note naming each vehicle that carries
+anything: its load in kilograms and how many items, and how it was applied
+(with the CG shift, in meters, when added to the vehicle). It also says when:
+
+- the engine takes no 3-D payload, so a payload-mode load was added to the
+  vehicle;
+- the vehicle has a body mesh file, which does not move with the CG;
+- the event also seats occupants in the same vehicle: check that they are not
+  the same people counted twice.
+
+!!! note "HVE 2027"
+    HVE has no such list: it adds payloads and occupants per event, which
+    HVE 2027 also does (**Event › Payload...** and the event's occupants).
+    Aboard items are weights at positions. They have no rotational inertia of
+    their own, they are not drawn, and an aboard occupant is not a human body:
+    an occupant simulation (EDHIS, GATB) needs the occupant seated in the event.
+    The products of inertia a load creates are dropped, because neither the
+    vehicle model nor a payload carries them.
+
+## Crush Stiffness from Crash Tests
+
+In the Vehicle editor, **Vehicle › Crush Stiffness...** has a **From crash
+tests...** button below the four sides. It opens **Crush Stiffness from Crash
+Tests** for the selected vehicle (named at the top), which works out a side's
+CRASH3 stiffness from one or more staged tests into a full-width rigid barrier
+and puts it on the vehicle.
+
+### The tests
+
+**Add test** adds a row; **Remove** deletes one. Weights, speeds and lengths
+are in the units set in Preferences.
+
+| Column | Is |
+| --- | --- |
+| **Use** | Include the test in the calculation |
+| **Test** | Its name (*NHTSA 5423*) and, in the box under it, where the numbers come from (a report and page) |
+| **Weight** | The test weight, as tested |
+| **Speed** | The impact speed into the barrier |
+| **Points** | How many crush measurements, 2 to 10 |
+| **C1 ... Cn** | The residual crush, equally spaced across the crush width |
+| **Crush width** | The width of the damage |
+
+Or read a test from a file: type its path in the **NHTSA test file** box and
+press **Load NHTSA test**. Each vehicle in the test that has a crush profile
+becomes a row, with its test weight (or its curb weight when the test weight is
+missing), its speed and its crush points. A file gives no crush width this
+reader knows, so **enter each one's Crush width**. The note under the button
+says what was added and what was skipped, and **What was read from the file**
+lists which field gave each value and the fields it did not use. See
+[Reading an NHTSA crash test file](#reading-an-nhtsa-crash-test-file).
+
+### No-damage speed b0
+
+**b0** is the barrier speed below which nothing is permanently crushed. It is a
+choice, and is recorded as one: commonly 5 mph for fronts and rears and 2 mph
+for sides. Type it, or press **5 mph** or **2 mph** (the default is 5 mph).
+
+**Fit b0 to the tests (two or more at different speeds)** fits b0 to the tests
+instead. It needs at least two included tests.
+
+### The result
+
+Campbell's model makes each test's barrier speed a straight line in its
+average crush: V = b0 + b1 · C̄. The average crush C̄ is CRASH3's own
+(C1/2 + C2 + ... + Cn−1 + Cn/2) / (n − 1). Then, with m/L the test mass per
+unit of crush width (the mean over the tests used):
+
+- A = (m/L) · b0 · b1
+- B = (m/L) · b1²
+- G = A² / 2B
+
+With b0 chosen, b1 is the best fit through that b0 (for one test, (V − b0) / C̄).
+With b0 fitted, b0 and b1 are the best straight line through every test's
+(C̄, V).
+
+The **Result** section shows **A**, **B** and **G** in the units set in
+Preferences, b0 (*chosen* or *fitted*) and b1, and for each test its average
+crush and how much of the test's kinetic energy its crush profile absorbs with
+this A, B and G. When b0 was fitted it also shows how far the line misses the
+tests (RMS, as a speed).
+
+There is no result, and the section says why, when a test lacks its weight,
+speed, crush width or crush, a crush depth is negative, or b0 is not below a
+test's speed; and, when fitting, when the tests' average crushes are all the
+same, or the fitted line has no positive slope (more crush at a lower speed)
+or no positive b0 (choose b0 instead).
+
+### Apply to this vehicle
+
+| Control | Does |
+| --- | --- |
+| **Side** | Front, Rear, Left or Right |
+| **Also set it in this vehicle's EDCRASH events with damage on this side (CDC)** | On by default. See below |
+| **Apply** | Sets the stiffness. Locked while this vehicle's results are on screen |
+
+**Apply** puts A and B on that side of the vehicle (the values in **Vehicle ›
+Crush Stiffness**; see [Stiffness Coefficient Dialog](../02-vehicles/StiffCoeffDlg.md)).
+With the check box on, it also sets the **A Stiffness** and **B Stiffness** of
+every EDCRASH event of this vehicle whose CDC names the same side in its third
+character (F, B, L or R; see
+[Vehicle Impact Setup](../09-events-driver-controls/EventInfo.md#vehicle-impact-setup-edcrash)).
+An EDCRASH event that states per-zone stiffness is left as it is and named,
+because one pair cannot say what its zones do. Every value set is recorded in
+[Provenance](#provenance) as **Estimated**, tool *Crush from tests*, with the
+tests and the b0 it came from.
+
+!!! note "HVE 2027"
+    Kv is not set, and G is shown for reference only: the vehicle stores A and
+    B, from which G follows.
+
+## Reading an NHTSA crash test file
+
+Vehicle Package and Crush Stiffness from Crash Tests both read a test from
+NHTSA's Vehicle Crash Test Database. The file can be:
+
+- a table with a header row, its columns separated by commas, tabs, `|` or
+  `;` (the shape of the database's table downloads, or a spreadsheet saved
+  from one); or
+- JSON, with the fields in any object at any depth (the shape of an API
+  response).
+
+Fields are found by **name**, never by position, and names match in upper or
+lower case. The test fields read are TSTNO, TITLE, TSTCFN, TSTTYP and CLSSPD;
+the vehicle fields are VEHNO, MAKE (or MAKED), MODEL (or MODELD), YEAR, BODY
+(or BODYD), VIN, VEHTWT (test weight), CURBWT (curb weight), WHLBAS
+(wheelbase), VEHLEN, VEHWID, VEHCG (the CG's distance behind the front axle),
+VEHSPD (impact speed; the test's CLSSPD closing speed when missing), PDOF,
+DPD1 to DPD6 (the crush profile) and VDI. Values are in NHTSA's metric units:
+kilograms, millimeters and km/h. A crush profile is read from DPD1 in order,
+and a missing DPD ends it. A file holding several tests is read for its first
+test.
+
+!!! warning "Field names not yet checked against NHTSA's own files"
+    The names and units are those of NHTSA's Test Reference Guide. They have
+    not yet been checked against a file NHTSA served. So every read lists which
+    field gave which value, and the fields it did not use: a file that names a
+    value differently shows that value missing and the field as not used; it
+    does not produce a wrong number.
+
+## EDR Import
+
+**Tools › EDR Import...** brings an event data recorder's pre-crash record (a
+Bosch CDR report or a manufacturer's equivalent) into an event vehicle: its
+initial speed, and its throttle, brake and steering tables on the simulation's
+own clock. After the event is run, it compares the recorded delta-V with the
+run's.
+
+### 1. The record
+
+Either press **Copy prompt for your AI tool**, give the prompt and the report
+to your AI tool and paste its answer, or paste the report's pre-crash table
+with its header row. Then press **Read**.
+
+- **The AI tool's answer** gives the vehicle, the recording module, the
+  recorded event, the report, what the report says positive steering is and
+  what positive lateral delta-V is, the speed unit, the pre-crash rows (time,
+  speed, accelerator %, service brake, steering degrees, engine RPM) and the
+  delta-V rows (milliseconds, longitudinal, lateral). The prompt tells the tool
+  to copy the numbers exactly as printed: no interpolating, no unit
+  conversion, no sign change, no filled gaps.
+- **A pasted table** is separated by tabs, `|`, `;` or commas. Its columns are
+  found by their labels: Time, Speed, Accelerator (or Throttle), Service brake,
+  Steering and Engine RPM. The speed unit comes from the label (mph, km/h or
+  m/s); a speed column without one is not used. Steering in radians is not
+  used. A table carries no steering sign, so you state it below.
+
+Brake samples read as on (*On*, *Applied*, *Yes*, *1*) or off (*Off*, *Not
+applied*, *No*, *0*). A value in a unit the window does not know is left out
+and named. The window then shows the vehicle and module, how many pre-crash and
+delta-V samples were read, anything not used, and the pre-crash samples:
+**Time (s)**, **Speed** (in the units set in Preferences), **Accelerator
+(%)**, **Service brake**, **Steering (deg, as recorded)** and **Engine RPM**.
+
+### 2. Into the case
+
+| Control | Does |
+| --- | --- |
+| **Event** | The event (the active one by default). A case with no event, or an event with no vehicle, is told to add one first |
+| **Vehicle** | Which of the event's vehicles the record belongs to |
+| **Simulation starts at recorder time** | The recorded sample the simulation starts at. That recorder time becomes 0 on the simulation clock |
+| **Initial speed** | Set the vehicle's initial speed (**Event › Position / Velocity**) to the recorded speed at that time |
+| **Throttle** | Set the throttle table from the accelerator position |
+| **Brake** | Set the brake table from the service brake |
+| **Steering** | Set the steering table from the steering-wheel angle |
+| **Brake ON means this fraction of friction** | Shown with **Brake** ticked: the fraction of available friction (above 0, up to 1) an ON sample stands for |
+| **positive = right (clockwise)** / **positive = left (counter-clockwise)** | Shown with **Steering** ticked when the record does not state the recorder's steering sign: choose it from the report. When the record states it, a line says which, and that a positive-left record is flipped |
+| **Apply** | Sets the ticked items. Locked while results are on screen |
+
+What **Apply** sets, for the chosen vehicle in the chosen event:
+
+- **Initial speed.** The recorded speed at the start time. It is an
+  *indicated* speed, from wheel speed, which reads low under hard braking or in
+  a slide; the provenance record says so.
+- **Throttle.** The accelerator pedal position as a 0–1 fraction, under the
+  **Pedal (AT_DRIVER)** input method, since that is what a pedal percentage is
+  (see [Driver Controls Throttle](../09-events-driver-controls/DriverControls4.md)).
+- **Brake.** An EDR records the brake switch, not the pressure. An ON sample
+  becomes the fraction of friction you enter, an OFF sample 0, under the **% of
+  Friction** input method (see
+  [Driver Controls Brake](../09-events-driver-controls/DriverControls3.md)).
+  The level is your choice and is recorded as one (Estimated). With no level
+  entered, the brake table is not set.
+- **Steering.** Steering-wheel degrees. Manufacturers differ on which way is
+  positive, so the record must state it or you must choose; otherwise the
+  steering table is not set. HVE 2027's convention is + = right (clockwise),
+  and a record whose positive is left is flipped. A per-wheel (at the tires)
+  steer table for the vehicle is cleared.
+
+Each table starts at the last sample at or before the start time, so it has a
+value at time 0; its times are the recorder's minus the start time. Engine RPM
+is shown but not applied. The status line says what was set, and what was not
+and why. Every value set is recorded in [Provenance](#provenance), tool *EDR
+import*, with the clock offset.
+
+### 3. Delta-V: the record against the run
+
+When the record has delta-V samples, run the event (it must be the active
+event). While its results are on screen this section shows:
+
+| Control | Does |
+| --- | --- |
+| **Recorder time zero is the run's first contact** | Takes the recorder's time zero as this vehicle's first contact in the run, whose time is shown beside it (or a note that the run records no contact for this vehicle) |
+| **...is this simulation time** | Takes it as the time you enter, in seconds |
+| **Shift (ms)** | Moves the recorder's time zero by this much |
+| **positive = right** / **positive = left** | The record's lateral sign, offered when it does not state it. Without it, the lateral comparison is left out |
+
+The run's figure is formed the way the recorder forms its own: the vehicle's
+body-axis accelerations (the run's **Fwd Accel** and **Lateral Accel**
+outputs) integrated from the recorder's time zero, not the difference of two
+velocities, which on a yawing vehicle is a different quantity. The window shows
+the peak longitudinal and lateral delta-V of the record and of the run, and
+the RMS difference between them, in the units set in Preferences; a plot with
+the record as points and the run as lines (blue longitudinal, + forward;
+orange lateral, + right); and under **Values**, the numbers row by row. If the
+run ends before the record does, the comparison stops there and says so.
+
+!!! note "HVE 2027"
+    The recording module is not at the CG, so on a yawing vehicle the module's
+    delta-V and the CG's differ by the module's offset. The comparison shows
+    that difference; it does not correct for it.
+
+!!! note "HVE 2027"
+    **Apply** is locked while results are on screen, and the delta-V
+    comparison needs them. To apply a different start time or brake level
+    after a run, reset the run, apply, and run again.

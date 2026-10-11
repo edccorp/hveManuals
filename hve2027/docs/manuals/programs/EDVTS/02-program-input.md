@@ -1,0 +1,544 @@
+# Chapter 2 — EDVTS Program Input
+
+This chapter defines the objects (vehicles and environment) and the event set-up parameters (positions and velocities, driver controls, and so forth) used by the EDVTS analysis. In general, the chapter is divided into the following sections:
+
+- **Objects** — The number of vehicles and the specific vehicle parameters actually used by EDVTS.
+- **Events** — The various HVE-2D options available for setting up and executing an EDVTS event.
+
+## Objects Overview
+
+The objects used by the EDVTS model are:
+
+- **Vehicles** — Two vehicles (a tow vehicle and a trailer) may be studied by EDVTS.
+- **Environment** — Like the *real* world, EDVTS has exactly one environment.
+
+> NOTE: The environment is used in any HVE-compatible reconstruction or simulation model.
+
+The following sections describe how the vehicle and environment provide the required inputs to the EDVTS calculation model.
+
+## Vehicles
+
+EDVTS uses two vehicles created using the Vehicle Editor (see Figures 2-1 and 2-2). Vehicles are selected from the Vehicle Database by choosing the following attributes:
+
+- **Type** — EDVTS supports the following vehicle types: *Passenger Car, Pickup, Van, Sport-Utility, Truck, Trailer* and *Movable Barrier*.
+- **Make** — EDVTS supports all available vehicle makes.
+- **Model** — EDVTS supports all available vehicle models, within the limits defined by number of axles and drive axles; see below.
+- **Year** — EDVTS supports all available vehicle years.
+- **Body Style** — EDVTS supports all available vehicle body styles.
+
+Each vehicle also has the following additional user-editable parameters:
+
+- **Driver Location** — The *Driver Location* is not used by EDVTS. However, *Driver Location* must not be *None*; otherwise, the Driver Controls (Steering, Throttle, Brakes) will not be available during Event mode.
+- **Engine Location** — The Engine Location is not used by EDVTS. However, Engine Location must not be *None*; otherwise, the Throttle Table will not be available during Event mode.
+- **Number of Axles** — EDVTS supports 2- and 3-axled tow vehicles and 1- and 2-axled trailers.
+
+!!! note "HVE 2027"
+    EDVTS checks the axle count by position in the event, not by vehicle type: the first vehicle (V1) must have 2 or 3 axles and the second (V2) 1 or 2. The first vehicle must not have a front connection. HVE 2027 reports a vehicle that breaks either rule in **Event Information** before running. The Driver Controls dialog is available for both vehicles whatever their Driver Location.
+- **Drive Axle(s)** — EDVTS supports all drive axles.
+
+To add a vehicle to the current case in HVE 2027, perform the following steps:
+
+- Choose the **Vehicle (F3)** editor tab.
+- Click **Add…** on the **Vehicles** panel. The vehicle picker is displayed; it searches the loaded vehicle databases and also offers HVE's Generic vehicles by type and class.
+- Pick the vehicle. It is added to the case and to the active event, and its data are shown in the **Vehicles** panel under **Information** (Name, Vehicle Type, Make, Model, Year, Body Style, Number of Axles, Driver Location, Engine Location, Drive Axle(s), Color).
+- If desired, modify the *Number of Axles*, *Driver Location*, *Engine Location* and *Drive Axle(s)*, and edit the *Name*. The name does not affect calculations.
+
+**Vehicle › Vehicle Information…** opens the same information as a dialog.
+
+![Figure 2-1](images/hvn-edvts-vehicle-editor.png)
+*Figure 2-1: The Vehicle editor's Vehicles panel in HVE 2027, with EDC's EDVTS tutorial case loaded: the case's two vehicles, and the tractor's Information and Dimensions / Inertias sections.*
+
+*Figure 2-2 of the printed manual, a second HVE-2D Vehicle Editor screenshot, is not reproduced.*
+
+The following Vehicle Parameter groups are used by EDVTS:
+
+- Sprung Mass
+  - Inertias
+  - Move CG
+  - Inter-vehicle Connections
+- Unsprung Mass
+  - Wheel Location
+  - Tire Data
+  - Suspension Data
+  - Brake Data
+- Steering System
+
+> NOTE: The Exterior Data Group (Overall Dimensions, Structural Stiffness Coefficients), Brake System and Drivetrain are not used by EDVTS.
+
+The specific data used in each of the above parameter groups are defined in Tables 2-1 through 2-3.
+
+### Sprung Mass
+
+The Sprung Mass parameters are shown in Table 2-1. Information on each group is provided below.
+
+**Table 2-1: Vehicle Sprung Mass Parameters Used By EDVTS**
+
+| Parameter | Description |
+|---|---|
+| Weight | Total vehicle weight |
+| Total Yaw Inertia | Total rotational inertia about the vehicle-fixed z axis |
+| Move CG (x, y, z) | Relocates the CG in the vehicle-fixed x, y and z directions. This entry causes an automatic adjustment of all vehicle coordinate-related parameters (e.g., contact surface, belt anchor points). |
+| Connection x,z | Vehicle-fixed location of the connection |
+| Connection Friction, Radius and Maximum Articulation Angle | Connection properties |
+
+#### Inertias
+
+EDVTS uses the total vehicle weight (converted to mass according to the current gravitational constant; see Environment), and the total yaw rotational inertia.
+
+!!! note "HVE 2027"
+    Weight and inertias are edited in the **Vehicles** panel (**Dimensions / Inertias**), or with **Inertia / Mass…** under the panel's **Vehicle Properties** section.
+
+The total weight is used because it is the value traditionally obtained from data sources. Because EDVTS does not have separate degrees of freedom for the unsprung masses, the Total Yaw Moment of inertia used by EDVTS is the sum of the sprung mass yaw inertia plus the additional yaw inertia created by the individual wheels. See also EDVTS Output, Vehicle Data report.
+
+#### Move CG
+
+Move CG is not directly used by EDVTS. Its current value does not show up in the results. However, the Move CG fields may be used to quickly move the vehicle's center of gravity; the x and z coordinates for the wheels are updated to reflect the new CG location.
+
+**[HVE]** If using HVE, the CG may also be relocated in the vehicle-fixed y direction.
+
+#### Geometry File
+
+The Geometry File is not used by EDVTS.
+
+#### Inter-vehicle Connections
+
+Inter-vehicle Connection parameters define the type, location and properties of the front and rear vehicle connections. The x,z location is specified relative to the vehicle CG. The z coordinates for each vehicle determine the elevation at the connection point, and thus establish the pitch angle of the trailer.
+
+The Connection Friction, Radius and Maximum Articulation Angle are only supplied for rear connections.
+
+> NOTE: Every trailer will have a pre-defined front connection. However, not every tow vehicle has a pre-defined rear connection. Use the Vehicle Editor to confirm the vehicle has a connection.
+
+> NOTE: If no connection is supplied, EDVTS cannot be executed; a message will be displayed during Event Set-up.
+
+> NOTE: Be sure both vehicles have the proper connections (Hitch/Ball or King Pin/Fifth Wheel). If the connections are not compatible, or if connections are not supplied, a message will be issued during Event Set-up.
+
+> NOTE: The connection elevation above ground must also be the same for the tow vehicle and the trailer. Otherwise, the vehicle will accelerate or decelerate on level ground (the 2-D equations of motion have no way of knowing how to handle non-normal tire forces).
+
+!!! note "HVE 2027"
+    In the Vehicle editor, open the **Vehicles** panel's **Vehicle Properties** section and click **Connections…**. The **Vehicle Connections** dialog has a **Front Connection** and a **Rear Connection**, each with a type and X / Y / Z coordinates relative to the CG (Z is measured down from the CG); below each Z it shows the connection's height above ground. **Properties…** (under Rear Connection) opens **Connection Properties**, where EDVTS uses the **Radius**, the **Friction** and the **Max Articulation Yaw** of the tow vehicle's rear connection.
+
+    The pair must match — Ball with Hitch, 5th Wheel with King Pin, or Pintle Hook with Pintle Eye — and the two connections must be at the same height above ground to within 0.1 in. EDVTS does not adjust connection heights: a larger difference stops the event during input processing. HVE 2027 checks both rules when EDVTS is chosen and reports a failure in **Event Information** as **Cannot run:**, naming the vehicles and heights.
+
+### Unsprung Mass
+
+The Unsprung Mass parameters used by EDVTS are shown in Table 2-2. Information on each group is provided below.
+
+**Table 2-2: Vehicle Unsprung Mass, Brake and Tire Parameters Used By EDVTS**
+
+| Parameter | Description |
+|---|---|
+| Wheel Location | Vehicle-fixed x,y,z coordinates for each wheel |
+| Anti-lock Effectiveness | The percentage of gain in longitudinal braking force due to anti-lock |
+| Tire Unloaded Radius | Tire radius in unloaded condition (editable in HVE) |
+| Tire Friction Table, Test Load/Speed | The load and speed for a given set of friction results (EDVTS uses the middle load and middle speed) |
+| Peak Longitudinal Friction, Slide Friction, Slip at Peak Friction and Longitudinal Stiffness | Tire frictional properties |
+| Friction In-use Factor | Multiplier for Longitudinal and Slide Friction |
+| Cornering Stiffness | Tire lateral force per unit of tire lateral slip for small amounts of lateral slip |
+| Cornering Stiffness In-use Factor | Multiplier for Cornering Stiffness |
+
+#### Wheel Location
+
+Although HVE-2D provides values for the vehicle-fixed x,y,z coordinates of each wheel, EDVTS uses only the following parameters:
+
+- **Tow Vehicle** — $a$, the distance from the CG to the front axle; $b$, the distance from the CG to the rear axle; $tw_f$, the front track width; $tw_r$, the rear track width, and $z_w$, the vertical distance from the CG to the wheel (for each wheel).
+- **Trailer** — $d$, the distance from the CG to the rear axle; $tw_r$, the rear track width, and $z_w$, the vertical distance from the CG to the wheel (for each wheel).
+
+> NOTE: For Tandem rear suspensions, the average track width of the two axles is used.
+
+> NOTE: EDVTS uses the average $x_{wheel}$ for the front wheels to calculate $a$ and the average $x_{wheel}$ for the rear wheels to calculate $b$. Similarly, EDVTS uses the total distance between right-side and left-side tires to calculate track width. Bilateral symmetry is initially assumed. Finally, EDVTS uses $z_{wheel}$ and the tire radius (see Tire Parameters) to calculate CG elevation above ground.
+
+**[HVE]** NOTE: In HVE, tire radius is user-editable.
+
+#### Brake
+
+EDVTS uses the wheel brake system Antilock Effectiveness. The specific parameters used by EDVTS are shown in Table 2-2.
+
+!!! note "HVE 2027"
+    Antilock effectiveness is the **ABS Efficiency** row of **Vehicle › Brake Assembly…**, per wheel.
+
+#### Tire
+
+The HVE tire parameters provide the following data groups:
+
+- Physical Data
+- Friction Table
+- Cornering Stiffness Table
+- Slip-vs Rolloff Table
+
+EDVTS's use of these parameters is described below.
+
+!!! note "HVE 2027"
+    Tire parameters are in **Vehicle › Tire Data (Detailed)…** and **Vehicle › Tire Tables…**.
+
+#### Physical Data
+
+The Tire Physical Data used by EDVTS are shown in Table 2-2. The tire's unloaded radius is used to establish the vehicle's CG elevation. Other physical data parameters are not used.
+
+**[HVE]** In HVE, tire unloaded radius is user-editable.
+
+#### Friction Data
+
+The Friction Data used by EDVTS are shown in Table 2-2. EDVTS uses both Peak and Slide Friction values.
+
+**[HVE]** The EDVTS tire model does not incorporate load- or speed-dependence. If friction data for more than one load or speed are supplied, EDVTS uses the friction parameters for the middle load and/or speed.
+
+> NOTE: If any doubt exists about which value is actually used by the EDVTS tire model, you can check the Vehicle Data output report.
+
+**[HVE]** The *In-use Factor* is a convenient way to reduce or increase the dependent friction values (peak and slide friction) by making just one adjustment.
+
+#### Cornering Stiffness Data
+
+The Cornering Stiffness data used by EDVTS are shown in Table 2-2.
+
+**[HVE]** EDVTS does not use the $F_y$ vs Slip Angle table, but instead uses the cornering stiffness parameter directly. If cornering stiffness data for more than one load or speed are supplied, EDVTS uses the parameters for the middle load and/or speed.
+
+> NOTE: If any doubt exists about which value is actually used by the EDVTS tire model, you can check the Vehicle Data output report.
+
+**[HVE]** Cornering Stiffness *In-use Factor* is a convenient way to reduce or increase the dependent cornering stiffness values for all speeds and loads by making just one adjustment.
+
+> NOTE: If you are simulating a vehicle with a flat tire, you'll probably want to reduce the In-use Factor to about 0.1.
+
+#### Slip vs Rolloff Table
+
+EDVTS uses the longitudinal Slip vs Rolloff Table. Lateral rolloff is not used.
+
+#### Suspension
+
+The HVE-2D Suspension Model provides the following data groups:
+
+- Inter-tandem Load Transfer
+
+EDVTS supports all suspension types, including those with tandem axles. However, the suspension at each wheel is not modeled, per se. Rather, *roll couple distribution* (see Event Editor, Calculation Options) is used.
+
+!!! note "HVE 2027"
+    HVE 2027 has no EDVTS Calculation Options dialog. EDVTS takes the roll couple distribution from the tow vehicle's front axle: the **Roll Couple Dist** row of **Vehicle › Suspension Data…**. The inter-tandem load transfer is the **Int. Tandem Load Xfr** row of the same dialog.
+
+**Table 2-3: Vehicle Suspension and Steering Parameters Used By EDVTS**
+
+| Parameter | Description |
+|---|---|
+| Inter-tandem Axle Load Transfer | Rear-to-front inter-axle load transfer due to braking of tandem axles |
+| Steering Gear Ratio | Ratio of the angle at the steering wheel to the angle at the wheel |
+
+#### Inter-tandem Axle Load Transfer
+
+If three axles are supplied for the vehicle, the vehicle is assumed to have tandem rear axles. In this case, a longitudinal load transfer due to braking may be simulated by supplying an Inter-tandem Load Transfer Coefficient.
+
+Studies have shown the value of -0.38 to be representative of typical four spring suspension systems [4]. The negative sign indicates load transfer from the front to the rear axle.
+
+The value for walking beam suspensions with 100% torque rod effectiveness is 0.0 [14]. For non-perfect torque rods with effectiveness less than 100%, the load transfer is:
+
+$$\left(\frac{AAA}{R}\right)\left(\frac{100 - T_e}{100}\right)$$
+
+where:
+
+| Symbol | Meaning |
+|---|---|
+| $AAA$ | inter-tandem dimension |
+| $R$ | tire radius |
+| $T_e$ | torque rod efficiency |
+
+### Exterior
+
+The Vehicle Exterior Data (Exterior Dimensions, Stiffness) are not used by EDVTS.
+
+### Steering System Data
+
+EDVTS uses the steering gear ratio if the *At Steering Wheel* Steering Table option is used during Event set-up (see Table 2-3). Otherwise, the steering system data are not used by EDVTS.
+
+!!! note "HVE 2027"
+    The steering gear ratio is in **Vehicle › Steering System…**.
+
+### Brake System Data
+
+The Brake System data are not used by EDVTS.
+
+## Environment
+
+EDVTS uses the environment created by the Environment Editor (see Figure 2-3). The environment is created by defining the following groups of attributes:
+
+- Visual Data
+- Physical Data
+
+### Creating an Environment
+
+A case in HVE 2027 always has exactly one environment; there is nothing to add. To edit it:
+
+- Choose the **Environment (F4)** editor tab.
+- The **Environment** panel is displayed (**Environment › Environment…** reopens it).
+- In **Location**, set the location (search an address, paste a coordinate, or enter latitude and longitude) and the date and time of the event.
+- In **Terrain › Scene Geometry**, open the site's 3-D geometry (`.h3d`, DXF, `.iv`, OBJ or glTF) with **Browse…** and **Import**.
+- In **Physical**, enter the ambient temperature and pressure, the wind and the **Gravity**.
+
+Values are shown in the units set in **Tools › Preferences**. A case with no site geometry still has a flat ground plane for the tires to run on.
+
+*Figure 2-3 of the printed manual, a screenshot of HVE's Environment Editor, is not reproduced; the HVE 2027 Environment editor is shown in the [EDVDS manual](../EDVDS/02-program-input.md#creating-an-environment).*
+
+### Visual Data
+
+The following visual parameters may be edited:
+
+- **Environment Location** — A database containing the name (City/State/Country), Latitude and Longitude and GMT for the selected location.
+- **Time and Date** — The local standard time and date for the event.
+
+The visual data are not used by the event; they are provided for studies related to visibility at the time of an event (e.g., avoidability of an accident).
+
+> NOTE: The visual data (Location, Time, Date and Angle of earth-fixed X axis) affect the lighting of the event! Depending on your view (Camera Position) the scene may be shaded and difficult to see. If the time is after sundown, the view will be dark.
+
+### Physical Data
+
+The Physical Data groups are:
+
+- Angle of X Axis
+- Wind Speed and Direction
+- Atmospheric Temperature and Pressure
+- Gravity Constant
+- Surface Geometry
+
+The specific physical environment data used by EDVTS are described below; see also Table 2-4.
+
+**Table 2-4: Environment Model Parameters Used By EDVTS**
+
+| Parameter | Description |
+|---|---|
+| Gravitational Constant | Local gravitational constant |
+| 3-D Surface Geometry (Friction Factor, Elevation, Slope) | The polygon database used to create the 3-D environment |
+
+#### Angle Of X Axis
+
+The angle of the X axis is used to position the earth-fixed coordinate system on the surface of the earth.
+
+> NOTE: The angle is specified relative to true north. If you are using a compass to determine direction at the scene of an accident, you should provide a correction factor before entering this angle.
+
+> NOTE: The angle of the X axis affects how you visualize an EDVTS event because it affects the location of the sun.
+
+#### Wind Speed and Direction
+
+Wind Speed and Direction are not used by EDVTS.
+
+#### Atmospheric Temperature and Pressure
+
+Atmospheric temperature and pressure are not used by EDVTS.
+
+#### Gravity Constant
+
+The gravity constant converts mass to force. An object's mass and rotational inertias are properties that are the same throughout the universe; however the weight of an object is dependent on the local gravitational constant.
+
+#### Surface Geometry
+
+The Surface Geometry is used by the tire model in EDVTS to calculate the friction multiplier for the current X,Y position of the tire.
+
+**[HVE]** In HVE, it is also used to calculate the elevation and slope.
+
+**[HVE]** If the elevation changes result in a vehicle roll or pitch that exceeds the allowable angle, EDVTS will terminate and report an error condition (Excessive Roll or Pitch Angle). See [Chapter 6 — Messages](06-messages.md) for more information.
+
+## Event
+
+EDVTS uses the Event editor (see Figure 2-4) to create, set up and execute an event. Each of these topics is described below.
+
+### Creating an Event
+
+An EDVTS event is created in the Event editor's **Event Information** panel.
+
+To create an EDVTS event:
+
+- Choose the **Event (F5)** editor tab. The **Event Information** panel is displayed.
+- Click **+** beside **Active Event** to add an event.
+- In **Calculation Method**, choose **EDVTS** from the **Method** list.
+- In **Vehicles in Event**, click **Add Vehicle** and choose the tow vehicle (slot **V1**), then the trailer (**V2**).
+
+> NOTE: The slot order is the order of the vehicle train. A vehicle in the wrong slot is corrected with its slot's drop-down list, which keeps that slot's inputs.
+
+- Enter the event name in **Event › Name**. The name does not affect calculations.
+
+> NOTE: If you choose a vehicle that is not compatible with EDVTS, or if the tow vehicle connections are incompatible with the trailer, the panel shows **Cannot run:** and the reason, and the Method list marks EDVTS "N/A for these vehicles". The event can still be edited; it cannot be run until the problem is fixed.
+
+!!! note "HVE 2027"
+    EDVTS runs its own engine; on HVE's EDVTS tutorial and validation cases its tracks end within a centimetre of HVE's saved runs. The **Method Options…** button is greyed for EDVTS, which has no options in HVE 2027.
+
+### Setting Up an Event
+
+EDVTS uses the following *event set-up* options:
+
+- Position/Velocity
+- Driver Controls
+- Payload Data
+
+The specific Event Set-up data used by EDVTS are defined in Table 2-5.
+
+![Figure 2-4](images/hvn-edvts-event-editor.png)
+*Figure 2-4: The HVE 2027 Event editor with EDC's EDVTS tutorial case loaded. In Vehicle Initial Conditions the trailer (V2) shows a greyed, derived position and an Articulation angle.*
+
+!!! note "HVE 2027"
+    In HVE 2027:
+
+    - **Position / Velocity** — each vehicle's initial conditions are in **Event Information › Vehicle Initial Conditions**; **Event › Position / Velocity…** (Ctrl+P) opens them for the selected vehicle.
+    - **Driver Controls** — **Event › Driver Controls…** (Ctrl+D).
+    - **Payload** — **Event › Payload…** edits the trailer's payload for this event. EDVTS refuses a payload on the tow vehicle.
+
+**Table 2-5: Event Set-up Parameters Used by EDVTS**
+
+| Parameter | Description |
+|---|---|
+| Vehicle Initial Position | The earth-fixed X,Y coordinates and heading angle of the tow vehicle, and the articulation angle of the trailer, at the start of the simulation |
+| Vehicle Initial Velocity | The forward and lateral linear velocities, and the yaw and articulation angular velocities at the start of the run |
+| Driver Controls, Steer Table | Steer Table Option: Steering Wheel Angle vs Time or Tire Steer Angle vs Time |
+| Driver Controls, Brake Table | Brake Table Option: Wheel Force vs Time or Percent Available Friction vs Time |
+| Driver Controls, Throttle Table | Throttle Table Option: Wheel Force vs Time or Percent Available Friction vs Time |
+| Payload Data | Payload Exists option; Payload vehicle-fixed x,y,z coordinates; Payload Weight, Yaw Inertia |
+
+#### Position/Velocity
+
+Like all simulations, EDVTS requires initial positions and velocities to be supplied by the user.
+
+The tow vehicle is positioned relative to the earth-fixed coordinate system by supplying the X,Y,Z coordinates of its CG, and roll ($\Phi$), pitch ($\Theta$) and yaw ($\Psi$) angles about vehicle x, y and z axes, respectively.
+
+> NOTE: In HVE-2D, Z is equal to the CG height above ground, and roll and pitch are equal to 0.0.
+
+**[HVE]** NOTE: In HVE, Z, roll and pitch are supplied automatically by AutoPosition.
+
+The trailer is positioned relative to the tow vehicle by supplying the initial articulation angle, $\gamma$. The default articulation angle is 0.0 degrees.
+
+!!! note "HVE 2027"
+    The tow vehicle (V1) has X and Y Position, Heading, an **Auto Position (settle onto terrain)** checkbox, Z Height, Speed, Sideslip and Yaw rate, with roll, pitch and the other rates under **Advanced initial state**. For the trailer (V2) the X and Y Position are greyed: EDVTS does not read a trailer position, so HVE 2027 computes it from the tow vehicle's position and heading and the two connections, and draws the trailer there. The trailer's angle is entered as **Articulation (deg)**, relative to the tow vehicle (0 = in line). In the viewport, select the tow vehicle and press **G** to move it or **R** to rotate it; the trailer follows.
+
+The tow vehicle linear velocities are supplied in the form of a total velocity and sideslip angle.
+
+> NOTE: The vehicle-fixed u (forward) and v (side) velocity components are calculated using the total velocity and sideslip angle. Vertical velocity is set to zero.
+
+The trailer articulation angular velocity is assigned relative to the tow vehicle.
+
+#### Driver Controls
+
+EDVTS uses the following Driver Controls:
+
+- **Steering** — A table of steering inputs as a function of time. The *At Steering Wheel* and *At Axle* options are supported.
+- **Braking** — A table of braking inputs as a function of time. The *Wheel Force* and *Percent Available Friction* options are supported.
+- **Throttle** — A table of throttle inputs as a function of time. The *Wheel Force* and *Percent Available Friction* options are supported.
+
+The Driver Controls Data used by EDVTS are shown in Table 2-5.
+
+!!! note "HVE 2027"
+    **Event › Driver Controls…** has **Throttle**, **Brake**, **Steer** and **Gear** tabs and a **Vehicle** list for choosing the tow vehicle or the trailer. Brake has an **Input Method** list (*Pedal (AT_DRIVER)*, *Wheel Force*, *% of Friction*) and Throttle (*Pedal (AT_DRIVER)*, *% of Friction*). EDVTS has no pedal method: a *Pedal (AT_DRIVER)* table is run as % of Friction (the same values), and the run status says so. The Steer tab is a steering-wheel-angle table; a table of road-wheel angles (HVE's *At Axle* option) is shown and used when the case already contains one, but there is no control to start one.
+
+##### Brake
+
+Typical values for non-braking rolling resistance for passenger car tires are provided below for reference in Table 2-7 [11]. These values should be entered in the Driver Controls - Brakes dialog using the Percent Available Friction option.
+
+Representative values for locked-wheel (slide) friction coefficients for passenger car tires on a variety of surfaces are also provided, in Table 2-8 [10]. While the table is very complete, EDC makes no claim as to the accuracy of the data. The user is urged to perform thorough research in order to supply EDVTS with the best possible data.
+
+**Table 2-7: Rolling Resistance Braking Inputs for Pavement [11]**
+
+| Tire/Wheel Condition | % Available Friction |
+|---|---|
+| Normal Inflation | $0.010/\mu$ |
+| Partial Inflation | $0.013/\mu$ |
+| Damaged | 0.0 to 1.0 |
+| Engine Braking — High Gear | $0.150/\mu$ to $0.200/\mu$ |
+| Engine Braking — Low Gear | $0.200/\mu$ to $0.400/\mu$ |
+
+**Table 2-8: Tire-Ground Friction Coefficients on Various Surfaces [10]**
+
+| Surface | Dry <30 mph | Dry >30 mph | Wet <30 mph | Wet >30 mph |
+|---|---|---|---|---|
+| Portland Cement — New, Sharp | 0.80 - 1.20 | 0.70 - 1.00 | 0.50 - 0.80 | 0.40 - 0.75 |
+| Portland Cement — Traveled | 0.60 - 0.80 | 0.60 - 0.75 | 0.45 - 0.70 | 0.45 - 0.65 |
+| Portland Cement — Polished | 0.55 - 0.75 | 0.50 - 0.65 | 0.45 - 0.65 | 0.45 - 0.60 |
+| Asphalt or Tar — New, Sharp | 0.80 - 1.20 | 0.65 - 1.00 | 0.50 - 0.80 | 0.45 - 0.75 |
+| Asphalt or Tar — Traveled | 0.60 - 0.80 | 0.55 - 0.70 | 0.50 - 0.80 | 0.45 - 0.75 |
+| Asphalt or Tar — Polished | 0.55 - 0.75 | 0.45 - 0.65 | 0.45 - 0.65 | 0.40 - 0.60 |
+| Asphalt or Tar — Excess Tar | 0.50 - 0.60 | 0.35 - 0.60 | 0.30 - 0.60 | 0.25 - 0.55 |
+| Gravel — Packed, Oiled | 0.55 - 0.85 | 0.50 - 0.80 | 0.40 - 0.80 | 0.40 - 0.60 |
+| Gravel — Loose | 0.40 - 0.70 | 0.40 - 0.70 | 0.45 - 0.75 | 0.45 - 0.75 |
+| Cinders — Packed | 0.50 - 0.70 | 0.50 - 0.70 | 0.65 - 0.75 | 0.65 - 0.75 |
+| Rock — Crushed | 0.55 - 0.75 | 0.55 - 0.75 | 0.55 - 0.75 | 0.55 - 0.75 |
+| Ice — Smooth | 0.10 - 0.25 | 0.07 - 0.20 | 0.05 - 0.10 | 0.05 - 0.10 |
+| Snow — Packed | 0.30 - 0.55 | 0.35 - 0.55 | 0.30 - 0.60 | 0.30 - 0.60 |
+| Snow — Loose | 0.10 - 0.25 | 0.10 - 0.20 | 0.30 - 0.60 | 0.30 - 0.60 |
+
+#### Damage Profile
+
+The Damage Profile Data are not used by EDVTS.
+
+#### Payload
+
+The Payload Data used by EDVTS include the payload coordinates relative to the vehicle's CG, the payload mass and yaw inertia.
+
+> NOTE: Payload positioning is relative to the vehicle CG, not the rear suspension.
+
+> NOTE: You must select the trailer before adding a payload. Placing the payload on the tow vehicle has no effect.
+
+!!! note "HVE 2027"
+    In the current EDVTS code a payload on the tow vehicle is not ignored: EDVTS refuses the event. Payloads cannot be entered for an EDVTS event in HVE 2027 (see above).
+
+### Simulation Controls
+
+EDVTS uses the current simulation control parameters. The Simulation parameters used by EDVTS are shown in Table 2-6.
+
+!!! note "HVE 2027"
+    The simulation controls are in the **Simulation** panel, a tab beside **Event Information**: **Duration**, **Trajectory Timestep** and **Output Timestep**, a **Termination** section (linear and angular termination velocities, each with an **On** checkbox) and an **Integrator Convergence** section (**Maximum Bisections**, **Velocity Convergence**, both read by EDVTS). The collision and separation timesteps are hidden for EDVTS, which does not use them.
+
+> NOTE: The output time interval should be an even multiple of the vehicle trajectory integration timestep. For example, if the integration timestep is 0.02, the output interval might be 5 x 0.02, or 0.10.
+
+**Table 2-6: Simulation Control Parameters Used by EDVTS**
+
+| Parameter | Description |
+|---|---|
+| Vehicle Trajectory Integration Timestep | The integration timestep used by the numerical integration routine |
+| Output Interval | The timestep used to send output results back to HVE |
+| Maximum Simulation Time | Maximum length of the run |
+| Min Linear Velocity | The linear velocity used to terminate the run (if the linear and angular velocities are simultaneously less than these termination velocities, the run terminates) |
+
+### Calculation Options
+
+*(updated: The printed manual described two calculation options — Roll-Couple Distribution and Get Surface Information — set through an EDVTS Calculation Options dialog. In the current version, **EDVTS does not present a Calculation Options dialog**. The Roll Couple Distribution value is taken directly from the tow vehicle's **Roll Couple Distribution** suspension value (Vehicle Editor → Suspension Parameters; default 0.55), not from a per-event option. The terrain surface-search method is selected in the separate **Get Surface Information Options** dialog on the Options menu.)*
+
+!!! note "HVE 2027"
+    HVE 2027 has no EDVTS Calculation Options dialog either. The roll couple distribution is the tow vehicle's front-axle **Roll Couple Dist** in **Vehicle › Suspension Data…**; the surface search is **Event Information › Road Surface Search**. The value used is whatever the tow vehicle's suspension data hold — the value its database record carries, or HVE 2027's own default of 0.50 — so check it; the 0.55 described below is not applied automatically.
+
+**Roll Couple Distribution** describes the ratio of lateral load transferred between the front and rear suspensions during cornering. This distribution depends directly on the characteristics of the front and rear suspension systems and chassis stiffness. As EDVTS is a limited-degree-of-freedom analysis, the effects of the suspension system and chassis are included in this one parameter. A good approximation for the fraction of the total load transfer borne by the front axle can be obtained by dividing the roll moment produced at the front suspension by the total roll moment (i.e., the total produced by both front and rear suspensions together) during a steady turn. Note that a neutral vehicle will tend to have a lateral load transfer coefficient equal to the percentage of load on the front axle; an understeering vehicle will tend to have a greater value and an oversteering vehicle will have a lesser value. The default value is 0.55 (55 percent of the roll couple carried by the front axle).
+
+For full details of the current dialog and how the value is applied by the simulation, see [EDVTS Calculation Options](../../10-calculation-options/CalcOptEDVTS.md).
+
+#### Get Surface Information
+
+Both HVE-2D and HVE use a surface information lookup to determine on which environment polygon each tire is riding. The lookup searches below the X,Y coordinates of each tire contact patch, and uses a user-selectable algorithm to determine the friction and other characteristics of the surface beneath.
+
+The default surface-search method is *From Previous Polygon*. This results in fastest execution, but does not work for all environments. Refer to the User's Manual for further information about how the surface information lookup works.
+
+*(updated: The surface-search method is now selected in the separate Get Surface Information Options dialog (Options menu), not in the EDVTS Calculation Options dialog. The available methods are From First Polygon, From Previous Polygon and From Previous Polygon (Sorted); the By Elevation method is not supported.)*
+
+!!! note "HVE 2027"
+    The search method is in **Event Information › Road Surface Search**: *Default for this method* (tracks the previous polygon), *All triangles - first hit in file order* (HVE's From First Polygon), *Track the previous polygon*, and *Track the previous polygon, friction zones first*. By Elevation, which EDVTS refuses, is not offered.
+
+### Executing An Event
+
+To execute an EDVTS event, use the playback bar under the viewport (Figure 2-6) or **Output › Run Simulation…** (Ctrl+R). The playback bar's buttons have the following functions:
+
+- **Run** — Execute the event (greyed while the event's results are on screen)
+- **Reset** — Clear the results so the event can be edited and run again
+- **|<** — Jump to the start of the simulation
+- **<<** / **>>** — Step back / forward one output step
+- **Play** / **Pause** — Play the simulation forwards, or pause it
+- **>|** — Jump to the end of the simulation
+
+There is no reverse-play button; use the time slider or the step buttons.
+
+![Figure 2-6](images/hvn-playback-bar.png)
+*Figure 2-6: The HVE 2027 playback bar, used for starting event execution and for replaying an executed event.*
+
+> NOTE: After an event is executed, its inputs are locked while the results are on screen. Press **Reset** to edit the event and run it again.
+
+> NOTE: Display options such as Key Results, velocity vectors and skidmarks are on the **View** and **Output** menus.
+
+---
+
+[Previous: Chapter 1 — Program Description](01-program-description.md) | [Contents](README.md) | [Next: Chapter 3 — Program Output](03-program-output.md)
+
+<!-- NAV -->
+
+---
+
+← Previous: [Chapter 1 — EDVTS Program Description](01-program-description.md)  |  [Index](README.md)  |  Next: [Chapter 3 — EDVTS Program Output](03-program-output.md) →
+
+<!-- /NAV -->

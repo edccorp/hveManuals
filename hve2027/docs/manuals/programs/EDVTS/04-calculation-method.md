@@ -1,0 +1,269 @@
+# Chapter 4 — Calculation Method
+
+## Basis for Analysis
+
+EDVTS is a dynamic analysis of vehicle motion in the horizontal (yaw) plane. Using the standard engineering approach, the equations of motion are written using Newtonian mechanics. The mathematical model for EDVTS was developed and validated at the University of Michigan Transportation Research Institute [1-3,14], and extended by EDC [25].
+
+For successful use of EDVTS, a good understanding of vehicle dynamics is extremely useful and is recommended. However, the following discussion is limited to the general analytical approach. For a detailed treatise on the subject of vehicle dynamics and simulation programs, the user is referred to the references listed at the end of this Physics Manual as well as those listed in User's Manual Appendix VI, References.
+
+### Equations of Motion
+
+The 4-degree of freedom analysis solves the equations of motion in the horizontal (yaw) plane. In this plane, the tow vehicle x- and y- linear motion and yaw angle (rotation about the z-axis) and the articulation angle of the trailer about its connection are calculated. Vehicle motion is defined relative to the vehicle-fixed coordinate system (see User's Manual Appendix III, Coordinate Systems; for more information, refer to SAE J670e — Vehicle Dynamics Terminology [6.2], portions of which are found in the Help Index).
+
+The required equations of motion are written below:
+
+$$m(\dot{u} - vr) = \Sigma F_x$$
+
+$$m(\dot{v} + ur) = \Sigma F_y$$
+
+$$I_{zz}\dot{r} = \Sigma M_z$$
+
+$$I_{z,2}\ddot{\gamma} = \Sigma M_{z,conn}$$
+
+where:
+
+| Symbol | Meaning |
+|---|---|
+| $m$ | total mass of tow vehicle |
+| $I_{zz1,2}$ | total yaw moment of inertia of tow vehicle and trailer |
+| $u$ | forward velocity (vehicle-fixed component) of tow vehicle |
+| $v$ | lateral velocity (vehicle-fixed component) of tow vehicle |
+| $r$ | angular yaw velocity of tow vehicle |
+| $\gamma$ | articulation angle |
+| $\Sigma F_x$ | summation of external forces in the x-direction |
+| $\Sigma F_y$ | summation of external forces in the y-direction |
+| $\Sigma M_z$ | summation of external moments about the z-axis |
+| $\Sigma M_{z,conn}$ | summation of external moments about the connection z-axis |
+
+EDVTS solves these equations of motion at discrete time intervals (specified by the vehicle trajectory integration timestep, see User's Manual, Simulation Controls). The current accelerations are integrated, using numerical integration, to predict velocity and position at the start of the next timestep. EDVTS uses **Hamming's modified predictor-corrector** method, which helps to ensure stable results. Where the predicted and corrected values disagree by more than the Velocity Convergence Criterion, the integration timestep is halved and the step retried; exceeding the Maximum Bisections terminates the run (see Simulation Controls). A predictor-corrector method estimates the future position and velocity based on the current acceleration history, and then, once they are calculated, compares the predicted results with the calculated results.
+
+There are no degrees of freedom (and hence no equations of motion) for vertical motion, or pitch or roll rotation. Therefore, suspension dynamics cannot be studied directly. However, EDVTS considers the suspension as it affects tire forces by calculating the *roll couple distribution* (the ratio of lateral load transferred at the front and rear suspensions during cornering). The CG elevation above ground is used in conjunction with longitudinal and lateral accelerations to compute quasi-static load transfers due to pitch and roll, respectively.
+
+
+### Load transfer
+
+EDVTS has no vertical, pitch or roll degree of freedom, so load transfer is
+computed quasi-statically from the current accelerations and applied as a change
+in vertical force at each wheel. The transfers sum to zero — load is moved
+between wheels, never added.
+
+**Lateral** transfer is apportioned between the axles by the roll couple
+distribution:
+
+$$\Delta F_{z,Lat} = \frac{\gamma\,h\,m}{T}\left(a_y - g\sin\phi_{Road}\right)$$
+
+where $\gamma$ is the fraction of the roll couple carried by that axle, $h$ the
+CG height, $T$ the track width at that axle, and $a_y = \dot v + u r$ the
+vehicle-fixed lateral acceleration. The road roll angle term removes the
+component of gravity acting across a superelevated surface, so a vehicle
+standing on a banked road carries the correct static crossfall load without any
+lateral acceleration.
+
+!!! note "HVE 2027"
+    EDVTS takes the roll couple distribution from the tow vehicle's front axle: the **Roll Couple Dist** row of **Vehicle › Suspension Data…**. The inter-tandem load transfer coefficient is the **Int. Tandem Load Xfr** row of the same dialog.
+
+**Longitudinal** transfer is taken about the wheelbase:
+
+$$\Delta F_{z,Long} = \frac{-m\left(a_x + g\sin\theta_{Road}\right)h
+   + \gamma_{T}\,\ell_{T}\sum F_{x,Rear}}{2\left(a + b\right)}$$
+
+where $a_x = \dot u - v r$, $a$ and $b$ are the CG distances to the front and
+rear axles, and the final term is the inter-tandem transfer: $\gamma_T$ is the
+inter-tandem load transfer coefficient entered with the suspension, $\ell_T$ the
+spacing between the tandem axles, and the sum is the longitudinal force at the
+rear wheels. For a vehicle without tandem axles the coefficient is zero and the
+term vanishes.
+
+Where tandem axles are present, the rear-axle share of both transfers is split
+equally between the two tandem axles before the inter-tandem term is applied.
+
+> **NOTE:** The accelerations used are those from the **previous** timestep, not the current one. This is inherent to a quasi-static treatment computed alongside the tire forces that produce it — the load transfer at any instant reflects the acceleration that has just occurred. At normal timesteps the difference is immaterial, but it is one reason a very coarse timestep degrades results in hard transient manoeuvres.
+
+Because EDVTS simulates a tow vehicle and trailer, both transfers additionally
+carry the forces at the hitch. The lateral transfer on each tow-vehicle axle
+includes a term in the lateral connection force acting at the hitch height, and
+the longitudinal transfer includes both the longitudinal connection force and a
+**vertical** load transfer through the hitch, which moves load between the tow
+vehicle and the trailer as the combination accelerates, brakes or rolls. The
+trailer axle transfers are formed the same way from the connection forces
+resolved into the trailer's own frame.
+
+### Tire Forces
+
+All of the external forces applied to the vehicle which direct its motion are applied at the tires. Therefore, accurate computation of these forces is essential. Unfortunately, pneumatic tires do not behave in an easy-to-calculate manner. Rather, these properties are functions of several variables and are extremely non-linear.
+
+Historically, two methods have been used to compute tire forces. Either formulas utilizing experimental coefficients are used (this method is referred to as a *tire model*) or tables containing test data at various speed and load conditions are applied according to the current speed and load conditions (this method is referred to as a *table look-up*). EDVTS uses the Fiala tire model [5] to compute the lateral forces on a free rolling tire. This model has been used in many popular simulations developed at Calspan [8]. Using this model, the tire forces are computed for the current integration timestep as follows:
+
+| Symbol | Meaning |
+|---|---|
+| $C_\alpha$ | tire cornering stiffness (lb/radian) |
+| $\alpha$ | tire slip angle (radians) |
+| $F_z$ | tire vertical force (lb) |
+| $F_{sx}$ | attempted brake or acceleration force (lb) |
+| $\mu_p$ | peak coefficient of friction |
+| $\mu_s$ | slide coefficient of friction |
+| $\mu_{slip}$ | % slip at $\mu_p$ |
+| $\delta_{dual}$ | dual-tire factor (1 for dual tires, 0 for a single tire) |
+| $s_{fx}$ | determines direction of wheel force relative to vehicle |
+
+At the current simulation time, the force is computed for each tire, one tire at a time. If the percent wheel lock-up method was used to supply wheel forces when entering the Brake and/or Throttle Table, the percent lock-up must be converted into the actual wheel force,
+
+$$F_{sx} = F_{sx}\,\mu_p F_z (1 + \delta_{dual})$$
+
+*(updated: earlier editions applied this conversion whenever the tabulated
+value was less than 1.0. It is applied according to the table method
+selected, not the magnitude of the entry. The Brake table offers three
+methods and the Throttle table two:*
+
+| Table method | Attempted wheel force |
+| --- | --- |
+| *Wheel Force* | *Used directly as entered* |
+| *Percent Available Friction* | *Converted as shown above* |
+| *Pedal Force* (brake only) | *Converted through the vehicle's brake pressure ratio and the wheel's brake torque ratio, divided by the tire radius* |
+
+*The Pedal Force brake method was not described in earlier editions.)*
+
+The attempted wheel force is assigned as the longitudinal wheel force (lb),
+
+$$F_x = F_{sx} \cdot s_{fx}$$
+
+where $s_{fx}$ determines the direction of the wheel force relative to the vehicle-fixed coordinate system.
+
+If the vehicle's forward and lateral velocities are both below the minimum
+linear velocity, the lateral force is set to zero for this tire and the Fiala
+calculation below is skipped, so that a stopped vehicle develops no side force.
+
+*(updated: this condition was not described in earlier editions.)*
+
+Next, the non-dimensional sideslip parameter, $\bar{\alpha}$, is determined as
+
+$$\bar{\alpha} = C_\alpha \sin(\alpha) / (\mu_p F_z)$$
+
+If $|\bar{\alpha}|$ is equal to or greater than 3, the tire's ability to produce a cornering force, $F_y$ (lb), is saturated. In this case,
+
+$$F_y = -\mu_p F_z (1 + \delta_{dual})\,\text{sign}(\bar{\alpha})$$
+
+Since the tire is saturated, it is assumed to be generating a scuff mark due to the excessive lateral forces, and the skid flag is turned on.
+
+Otherwise, $|\bar{\alpha}|$ is less than 3, and the Fiala tire model computes the lateral force, $F_y$, using a 3rd-order polynomial in $\bar{\alpha}$:
+
+$$F_y = -\mu_p F_z \left(\bar{\alpha} - \frac{\bar{\alpha}\,|\bar{\alpha}|}{3} + \frac{\bar{\alpha}^3}{27}\right)(1 + \delta_{dual})$$
+
+In this case, the tire is operating within its traction limits, and the skid flag is turned off.
+
+In either case, the direction of the lateral force, $F_y$, is determined by the sign of $\bar{\alpha}$.
+
+Next, a potential reduction in tire forces, $F_x$ and $F_y$, due to the amount of lateral tire slip is determined. $\mu_p$ is modified by the tire slip angle, $\alpha$:
+
+$$\mu_{mod} = \mu_p (1 - 1.72\,|\alpha|)$$
+
+If $\mu_{mod} < |\mu_s \cos(\alpha)|$ then
+
+$$\mu_{mod} = |\mu_s \cos(\alpha)|$$
+
+The attempted longitudinal wheel force, $F_x$ (see above), is compared to available force at the current slip angle, $\alpha$. This available force, $F_{max}$ (lb), is
+
+$$F_{max} = \mu_{mod} F_z (1 + \delta_{dual})$$
+
+If the attempted force, $F_x$, is less than $F_{max}$, the amount of longitudinal tire slip, $S$, is computed:
+
+$$\mu_x = \left| F_x / (F_z\,(1 + \delta_{dual})) \right|$$
+
+$$S = (\mu_x / \mu_p)\,\mu_{slip}$$
+
+The longitudinal tire slip, $S$, is used in the slip vs. rolloff table to determine the reduction in lateral tire force, $F_y$. The following table illustrates this effect for typical tires [14]:
+
+| Slip, S | Rolloff |
+|---|---|
+| 0.00 | 1.00 |
+| 0.05 | 0.88 |
+| 0.10 | 0.64 |
+| 0.15 | 0.46 |
+| 0.20 | 0.33 |
+
+Linear interpolation is used to determine the amount of rolloff for values of slip between the table values of $S$. The computed lateral force, $F_y$, is then adjusted by the rolloff,
+
+$$F_y = F_y \cdot Rolloff$$
+
+The skid flag is set for this tire if the longitudinal slip has reached the
+slip at peak friction, $S \ge \mu_{slip}$, which is wheel lock-up.
+
+*(updated: earlier editions stated that the skid flag is turned off in this
+branch. The flag is cleared at the start of each tire's calculation and may
+be set here by the lock-up test above, or earlier by tire saturation.)*
+
+If the attempted longitudinal wheel force, $F_x$, is greater than $F_{max}$, the longitudinal slip exceeds the slip at $\mu_p$ and the tire is either locked (braking) or spinning (accelerating). The skid flag is turned on and the forward and lateral tire forces are:
+
+$$F_x = \mu_s \left|\cos(\alpha)\right| F_z (1 + \delta_{dual})\,s_{fx}$$
+
+*(updated: the magnitude of $\cos\alpha$ is used here, so that the longitudinal
+force keeps the direction given by $s_{fx}$ at slip angles beyond 90 degrees.)*
+
+$$F_y = -\mu_s \sin(\alpha) F_z (1 + \delta_{dual})$$
+
+
+*(updated: hydroplaning is **not** modeled by EDVTS. Hydroplaning models (NASA, NASA-TTI, Gallaway) are available in HVE, but only through SIMON and EDSMAC4; EDVTS offers no Hydroplaning Model calculation option, and any water-related tire output variables it reports are unused placeholders. See [SIMON — Hydroplaning Model](../SIMON/04-calculation-method.md#hydroplaning-model).)*
+
+### Antilock Model
+
+EDVTS allows the use of a simple antilock model to study the effects of improvements due to *perfect braking*. Perfect braking is defined as "braking which maintains the longitudinal braking force at the level associated with the peak friction coefficient". Under normal conditions (without antilock), it is nearly impossible to hold this level of braking. The tire locks up, thus causing a reduction in brake force from that associated with the peak friction coefficient to that associated with the slide friction coefficient.
+
+The Vehicle Brake Model includes an antilock effectiveness coefficient, $\eta_a$, which defines the effectiveness of the antilock system; an antilock coefficient equal to 0.0 is the same as no antilock, while a coefficient equal to 1.0 defines the perfect system. The same antilock coefficient applies to both longitudinal and lateral tire forces. The antilock parameters are assigned using the Vehicle Editor's Wheel Brake dialog (see User's Manual, Section 4 (Vehicle Editor) for more information).
+
+!!! note "HVE 2027"
+    The antilock effectiveness coefficient is the **ABS Efficiency** row of **Vehicle › Brake Assembly…**.
+
+The antilock model is only applicable if the attempted brake force, $F_x$, is greater than $F_{max}$ (see above). Under this condition, an additional amount of force, $\Delta F$, is generated because of the difference between $\mu_p$ and $\mu_s$. For longitudinal tire force:
+
+$$\Delta F_x = (\mu_p - \mu_s)\cos(\alpha)\,F_z\,s_{fx}\,(1 + \delta_{dual})\,\eta_a$$
+
+$$F_x = (\mu_s F_z (1 + \delta_{dual})\cos(\alpha)\,s_{fx}) + \Delta F_x$$
+
+For lateral tire force:
+
+$$\Delta F_y = (F_y + \mu_s F_z (1 + \delta_{dual})\sin(\alpha))\,\eta_a$$
+
+$$F_y = -\mu_s F_z (1 + \delta_{dual})\sin(\alpha) + \Delta F_y$$
+
+*(updated: in the antilock branch the longitudinal force takes the sign of the
+attempted wheel force directly, rather than the vehicle-fixed direction
+$s_{fx}$ used in the non-antilock branch. The two differ only when the tire is
+travelling rearward.)*
+
+## Assumptions
+
+In order to provide a useful analysis without becoming burdensome and overly complex, EDVTS makes several simplifying assumptions. If EDVTS is to be properly used, it is important these assumptions and their consequences be understood. In some cases, data which violate these assumptions will cause a fatal error, along with a message indicating the reason for the error. In other cases, the error is not with the data but with the use of the program under conditions which violate the assumptions inherent to the computations. EDVTS will issue results which may not be valid for the given circumstances.
+
+Before using EDVTS, be sure the events you wish to simulate are within the scope of the program analysis defined by the following assumptions:
+
+### No Rollover Allowed
+
+EDVTS is a yaw plane analysis and does not consider roll or pitch degrees of freedom. The analysis is only valid while all wheels are generating a positive (downward) force on the road surface. As soon as a wheel load becomes negative, wheel lift-off is assumed and computations are halted. A warning message will be displayed indicating the time at which wheel lift-off occurred and the wheel that lifted.
+
+### No Suspension Effects
+
+EDVTS assumes the wheels remain vertical at all times. Therefore, camber stiffness does not contribute to lateral force generation. There is no roll degree of freedom, so bump steer and roll steer are also ignored. (See Roll Couple Distribution for information about how the suspension affects the front/rear distribution of lateral forces.)
+
+### All External Forces Applied At Tires
+
+Aerodynamic effects are ignored. This assumption may become a significant factor at excessive speeds. In addition, undercarriage contact with the ground caused by impact-related damage is not considered.
+
+#### Small Angle Assumption for Roll and Pitch
+
+**[HVE]** EDVTS has been extended for use in the HVE 3-D environment to include a gravity vector. Thus, vehicle motion on sloped surfaces may be accommodated. However, the model is valid only for small roll and pitch angles. If this angle is exceeded, a message is issued (*Excessive Roll or Pitch*) and the run is terminated.
+
+### Roll/Pitch Not Greater Than 15 Degrees
+
+**[HVE]** EDVTS uses the small angle assumption; if the roll and/or pitch exceed about 15 degrees, errors may become significant. To prevent this problem, EDVTS returns a fatal message under this condition.
+
+---
+
+[Previous: Chapter 3 — Program Output](03-program-output.md) | [Contents](README.md) | [Next: Chapter 5 — Tutorial](05-tutorial.md)
+
+<!-- NAV -->
+
+---
+
+← Previous: [Chapter 3 — EDVTS Program Output](03-program-output.md)  |  [Index](README.md)  |  Next: [Chapter 5 — EDVTS Tutorial](05-tutorial.md) →
+
+<!-- /NAV -->
