@@ -24,6 +24,11 @@ jobs:
           python-version: '3.12'
       - run: pip install -r docs/requirements.txt
       - run: mkdocs build --strict
+      # The HVE 2027 manuals, served under /2027/ beside the classic set. Their
+      # source is edccorp/hve-next (scripts/sync_manuals_2027.sh copies it into
+      # hve2027/); never edit hve2027/ here. -d is relative to hve2027/mkdocs.yml.
+      - name: Build the HVE 2027 manuals into /2027/
+        run: mkdocs build --strict -f hve2027/mkdocs.yml -d ../site/2027
       - name: Build the PDF manuals
         run: |
           python -m pip install -r tools/pdf/requirements.txt
