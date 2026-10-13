@@ -30,7 +30,7 @@ The original printed manual contained a page-number index. Page numbers do not a
 | Trajectory Simulation | [Chapter 3](03-program-output.md#trajectory-simulations), [Chapter 5](05-tutorial.md#trajectory-simulation-report) |
 | Tutorial | [Chapter 5](05-tutorial.md) |
 | Validation | [Chapter 1](01-program-description.md#validation) |
-| Variable Output / Variable Selection | [Chapter 3](03-program-output.md#variable-output-table), [Chapter 5](05-tutorial.md#variable-output-report) |
+| Variable Output / Variable Selection | [Chapter 3](03-program-output.md#variable-output-table), [Chapter 5](05-tutorial.md#variable-output) |
 | Vehicle (attributes, editing, color) | [Chapter 2](02-program-input.md#vehicles), [Chapter 5](05-tutorial.md#creating-the-vehicles) |
 | Video output | [Chapter 5](05-tutorial.md#video) |
 
