@@ -1185,8 +1185,8 @@ Results windows and, during Playback Mode, in the Variable Output Table.
 
 !!! note "HVE 2027"
     In HVE 2027 the output tracks are chosen with Output › Variable
-    Selection and displayed in the **Output Graph**, the **Timestep Data
-    Table** and the **Variable Report**, and written to a file with Output ›
+    Selection and displayed in **Key Results**, the **Output Graph** and
+    the **Timestep Data Table**, and written to a file with Output ›
     Export Variables (see
     [Chapter 17](../07-playback-editor/17-report-playback-windows.md)).
     A channel that no HVE program computes — the program writes it as a
@@ -1645,8 +1645,8 @@ run.
     the last run, one tab per page, from the program's own report text; the
     pages can be placed side by side, stacked or floated (see
     [Common Reports](../../11-reports-output/CommRepDlg.md)).
-    **Output › Accident History Report...** shows the engine's accident
-    history (the ACCIDENT HISTORY page of HVE Reports), the
+    The ACCIDENT HISTORY page of HVE Reports shows the engine's accident
+    history, the
     Viewport's **Momentum** view the momentum diagram, and **Output ›
     Damage Studio Report...** the damage.
 

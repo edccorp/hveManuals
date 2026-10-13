@@ -85,8 +85,8 @@ zone unless per-zone values are entered.
 !!! warning "Not in HVE 2027"
     The read-only **Delta-V Total / Long / Lat**, **Damage Energy** and **Peak
     Force** fields, and the graphic pane drawing the profile, are not part of
-    the panel. Run the event: the results are in **Key Results**, the
-    **Variable Report** and the engine's own pages in **Output › HVE Reports**.
+    the panel. Run the event: the results are in **Key Results** and the
+    engine's own pages in **Output › HVE Reports**.
 
 !!! note "HVE 2027"
     **Event › Damage Profiles...** (**Ctrl+M**, EDCRASH events) opens these

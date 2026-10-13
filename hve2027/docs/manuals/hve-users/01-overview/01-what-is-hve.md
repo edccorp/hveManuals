@@ -161,8 +161,8 @@ describe each method: see the [program manuals](../../programs/README.md).
   camera list.
 - **Report windows** — HVE's numeric reports, graphic reports and variable
   output tables are the **Key Results**, **Output Graph** and **Timestep Data**
-  panels and the report dialogs on the **Output** menu (Variable Report,
-  Accident History Report, HVE Reports, Damage Studio).
+  panels and the report dialogs on the **Output** menu (HVE Reports, which
+  holds the Accident History, and Damage Studio).
 - **Playback windows** — combining several events into one sequence, with
   multiple humans and vehicles from any number of events, is the **Playback
   (F6)** editor and its **Playback › Playback Sequence...** panel.

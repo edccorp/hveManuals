@@ -99,6 +99,25 @@ vehicles drive on. Unchecked, the geometry is drawn only.
 section shows the number of surfaces and lines and the X, Y and Z extents, or an
 error.
 
+**Outside the site** — what a tire finds where there is no site surface: past
+the edge of the mesh, or in a hole in it.
+
+- **As HVE** (the default): a point-contact tire rides a flat ground at
+  elevation 0; a radial-spring tire finds nothing, so the vehicle falls.
+- **Flat ground**: every tire model drives on a flat ground at **Ground
+  elevation** (up is positive, in the site's own frame), friction multiplier 1.
+- **Nothing (vehicles fall)**: no tire model finds ground.
+
+Whichever is chosen, a tire off the site no longer searches every surface of
+the site on every step, so a run no longer slows to a crawl once a vehicle
+leaves the mesh. A large site also solves faster with radial-spring tires.
+Results are unchanged by the speed-up (ctest `site_bounds_ab` compares every
+step).
+
+A **zero-area triangle** in the site (its corners on one line, or at one point)
+is not ground. HVE reads a flat one as ground along its line, or under the whole
+scene; here it is ignored, and the run status says how many the site has.
+
 !!! warning "Not in HVE 2027"
     - The **Type** choice (None / Terrain Map / Aerial Photo). An aerial photo is
       set separately with **Environment › Aerial Image...** (the **Aerial Image
@@ -115,12 +134,14 @@ error.
 ### Survey Point Cloud (scan)
 
 !!! tip "New in HVE 2027"
-    A collapsed section that loads a survey scan (LAS, PLY, XYZ, PTS, TXT or
+    A collapsed section that loads a survey scan (LAS, PLY, E57, XYZ, PTS, TXT or
     CSV; a LAZ file must first be exported as LAS) as a picture of the scene.
     A point cloud is **display only**: vehicles cannot drive on it, settle onto
-    it or collide with it. Import a site surface for that. The section has the
+    it or collide with it. Import a site surface for that, or build one from
+    the scan with **Drivable Surface from Scan**. The section has the
     file, **Scale (source -> m)**, **Source is Y-up**, **Source is Z-down**,
-    **Max points (load ceiling)**, **Shown (%)**, **Colour** (Auto, File colour,
+    **Points loaded (for the surface)**, **Points drawn per frame**, **More detail
+    near the camera**, **Shown (%)**, **Colour** (Auto, File colour,
     Intensity, Elevation, Flat grey), **Point size (px)**, **Visible**, a
     **Placement** offset and rotation (to level a scan), and **Import** /
     **Clear**.

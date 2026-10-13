@@ -131,6 +131,49 @@ dimmer by a factor of ten for every 6° below it (civil twilight ends at −6°,
 nautical at −12°, astronomical at −18°), down to a floor. The material preview
 stays lit as in a studio, on purpose.
 
+## Vehicle lamps
+
+At night each vehicle lights the road with its own lamps. Which lamps, and
+where, comes from the first of these that applies:
+
+1. **The vehicle's own list** (Vehicle › Vehicle Lights…), when it has any
+   entry. A switched-off entry is dark; the vehicle does not fall back to
+   anything else.
+2. **Its body file's lamps.** An HVE vehicle file marks each lamp lens
+   (`HVE_LIGHT_` tags), and the lamp sits on that lens. A file that marks none
+   but names its lenses by material — HVE's `LIGHT_WHITE_*` and `LIGHT_RED_*`,
+   or a modeller's `Headlight`/`Taillight` names — gets a headlamp on each white
+   lens at the front and a tail lamp on each red lens at the back. Amber lenses,
+   a white lens at the back (reversing) and a red one at the front are not
+   lit at night.
+3. **An estimate** at the corners of the vehicle's extents: two headlamps and
+   two tail lamps. A trailer or dolly gets tail lamps only.
+
+**Lamp gizmos.** Scene Display › Paths & Overlays › **Lamp Gizmos** draws every
+lamp as Blender draws a light: a ring where it is, a line along its aim and,
+for a spot, its cone. A switched-off lamp is grey and the selected one orange.
+**Click** a lamp to select it; **drag** it to move it. It moves in the plane
+facing you through where you grabbed it, as Blender's G does, and holding
+**Ctrl** snaps it to 5 cm. The position is stored in the vehicle's own frame, so
+the lamp rides with the vehicle.
+
+**Light settings in the Shader Editor.** Picking a lamp switches the Shader
+Editor to **Light** (beside Object and World). There you can set its type
+(spot or point), colour, strength, cone and softness, aim, position, and
+switch it on or off. The same fields are in Vehicle Lights. You can also choose
+any vehicle's lamp from the list at the top, and the **Lamp gizmos in the
+viewport** box turns the gizmos on or off from there.
+
+**The first change copies.** A vehicle drawn with its file's lamps or the
+estimate has no list yet. The first move or change of one of its lamps copies
+all of them into its list, unchanged, and then applies the change to that
+entry. From then on the list is what lights the vehicle. To go back, use
+**Remove all** in Vehicle Lights. To turn off the tail lamps of the front unit
+of an articulated bus, for example, pick each one and untick **Enabled**.
+
+Lamps are display only: no engine reads them, so they stay editable with
+results on screen.
+
 ## The Sky Texture node
 
 The default world's **Sky Texture** node is HVE 2027's own analytic sky: a

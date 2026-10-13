@@ -54,9 +54,8 @@ every page, floating ones included, and reopening it brings the arrangement
 back. Collapsing the window hides the pages docked in it; a floating page
 stays up.
 
-**Output › Accident History Report...** opens this window with the **ACCIDENT
-HISTORY** page brought forward — see [Accident History](AcciHistDlg.md).
-Otherwise the window opens on the page it last showed.
+The window opens on the page it last showed. The engine's Accident History
+is its **ACCIDENT HISTORY** page — see [Accident History](AcciHistDlg.md).
 
 ## This page
 
@@ -136,7 +135,7 @@ When there are no pages the window says why:
 
 !!! note "HVE 2027"
     HVE 2027's own views of the same results are the **Key Results**,
-    **Variable Report** and **Timestep Data** windows (Output menu), and the
+    **Output Graph** and **Timestep Data** windows (Output menu), and the
     [Results HUD](../new-features/11-results-hud.md) over the viewport. The HVE
     Reports pages are what the engine printed; the others are what HVE 2027
     computed from the run.

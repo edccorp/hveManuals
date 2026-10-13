@@ -235,7 +235,6 @@ nav:
       - "Trajectory Report": 11-reports-output/TrajRepDlg.md
       - "Variable Output Edit Dialog": 11-reports-output/VarOutEdDlg.md
       - "Variable Output: Graph Dialog": 11-reports-output/VarOutGraphDlg.md
-      - "Variable Output Report": 11-reports-output/VarOutRepDlg.md
       - "Selecting Variables": 11-reports-output/VarSelDlg.md
   - HVE User's Manual:
     - Overview: hve-users/README.md

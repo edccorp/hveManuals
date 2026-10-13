@@ -27,7 +27,7 @@ EDHIS inputs include one human, one vehicle, and an optional environment. Event 
 EDHIS output reports include the Accident History, Event Data, Human and Vehicle Data, Injury Predictions, Variable Output and Trajectory Simulation.
 
 !!! note "HVE 2027"
-    The engine's own report pages (Accident History, Event Data, Human Data, Injury Data, Vehicle Data, Program Data, Messages) are under **Output › HVE Reports**. The time histories are in **Output › Output Graph**, **Timestep Data Table** and **Variable Report**, and the trajectory simulation plays in the viewport. See [Chapter 3](03-program-output.md).
+    The engine's own report pages (Accident History, Event Data, Human Data, Injury Data, Vehicle Data, Program Data, Messages) are under **Output › HVE Reports**. The time histories are in **Output › Key Results**, **Output Graph** and **Timestep Data Table**, and the trajectory simulation plays in the viewport. See [Chapter 3](03-program-output.md).
 
 ## Validation
 

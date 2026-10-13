@@ -9,9 +9,10 @@
     Vehicles cannot drive on a point cloud, settle onto it or collide with it.
     Every engine asks the ground for an elevation, a normal and a friction at a
     point, and a set of points has none of those. Loading a cloud changes no
-    result. Import a site surface for what the vehicles drove on, and use the
+    result. Import a site surface for what the vehicles drove on, or build one
+    from the scan (see *A drivable surface from the scan* below), and use the
     cloud for what the scene looked like; a case can, and usually should, carry
-    both. There is deliberately no "use as terrain" option.
+    both. There is deliberately no "use as terrain" option on the cloud itself.
 
 ## Loading a cloud
 
@@ -29,6 +30,7 @@
 | --- | --- |
 | LAS 1.0–1.4 (uncompressed) | The survey standard; what a scanner or its software exports |
 | PLY (ASCII or binary) | The common interchange format |
+| E57 | The scanner exchange standard (ASTM E2807). Every scan in the file is loaded, each placed by its own registration; points the scanner marked invalid are skipped and counted. A damaged file is refused, naming where. |
 | XYZ / PTS / TXT / CSV | `x y z [intensity] [r g b]`, space- or comma-separated |
 
 **LAZ** (compressed LAS) is refused: export it as uncompressed `.las`, or as
@@ -58,8 +60,10 @@ have already placed is never moved by a re-import.
 
 | Field | Meaning |
 | --- | --- |
-| **Max points (load ceiling)** | A hard limit on how many points are **loaded** (a survey scan is routinely 50–500 million points; each costs about 16 bytes of graphics memory). Above it the cloud is thinned evenly and repeatably when it is read, and the summary says by how much. Takes effect on the next Import. |
-| **Shown (%)** | How much of what is loaded is **drawn**. Applies immediately. |
+| **Points loaded (for the surface)** | A hard limit on how many points are **loaded** (default 20 million; a survey scan is routinely 50–500 million points). The drivable surface is built from these, so more gives a finer surface. Above the limit the cloud is thinned evenly and repeatably when it is read, and the summary says by how much. Takes effect on the next Import. |
+| **Points drawn per frame** | How many of the loaded points are drawn each frame on this computer (default 3 million). Lower it if the view stutters. This setting belongs to the computer, not the case. |
+| **More detail near the camera** | Spends the drawn points where the scan fills the screen: close up you see it nearly whole, and distant parts thin out. Off, every part is thinned alike. |
+| **Shown (%)** | Thins what is loaded, evenly, before drawing. Applies immediately. |
 
 Below the slider the panel always says what you are looking at — *Drawing N of
 M loaded (P% of the T in the file)* — so a thinned picture is never mistaken for
@@ -88,3 +92,11 @@ The cloud is saved as a file reference, with its placement and display
 settings, and re-read when the case opens — found the same way as the site
 geometry (the case's own folder, then by name in the mesh library). A published
 bundle names the cloud but does not copy the scan file into the bundle.
+
+## A drivable surface from the scan
+
+Under **Drivable Surface from Scan** in the same section, HVE 2027 can build a
+ground surface from the loaded cloud and make it the case's site, which the
+engines then drive on. See *Building a drivable surface from a scan* in the
+Environment Editor chapter for the settings. The surface is saved as an `.obj`
+file, and the cloud itself stays a picture.

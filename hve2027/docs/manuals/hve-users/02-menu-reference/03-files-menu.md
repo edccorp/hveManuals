@@ -231,8 +231,9 @@ running.
 
 !!! warning "Not in HVE 2027"
     HVE 2027 does not print. Reports and tables are saved to files and printed
-    from another program: the Variable Report has a **Save** button, HVE
-    Reports (which holds the Accident History) has **Save This Page** and
+    from another program: **Output › Export Variables...** writes the
+    selected variables to a file, HVE Reports (which holds the Accident
+    History) has **Save This Page** and
     **Save All Pages** for text, **Save Page as HTML** and **Save All Pages as
     HTML** for a page a browser can print or save as PDF, and **Export Run
     Report (HTML)** for HVE 2027's own printable run summary, and Key

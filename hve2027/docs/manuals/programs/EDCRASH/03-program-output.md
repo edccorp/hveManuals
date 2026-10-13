@@ -31,8 +31,8 @@ The pages are EDCRASH's own, built from its resource strings in HVE's layout and
       energy, separation speed and angular velocity, brake deceleration and
       impact sideslip. **Select Variables...**, **Export CSV...** and
       **Copy CSV** are in its **Trajectory** section.
-    - **Output › Accident History Report...** opens HVE Reports on its
-      ACCIDENT HISTORY tab — the EDCRASH page described below. Save it with
+    - **Output › HVE Reports...** (its **ACCIDENT HISTORY** tab) shows the
+      EDCRASH page described below. Save it with
       **Save This Page** or **Save Page as HTML**.
     - If the run is refused, the HVE Reports window says so, and the reason
       (with the EDCRASH stop code) is in the run status on the Simulation

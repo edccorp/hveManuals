@@ -12,7 +12,7 @@ This chapter defines the outputs available from an EDVDS event. In HVE the repor
     | Key Results | **Output › Key Results…** |
     | Trajectory Simulation | the Event editor's own viewport, driven by the playback bar |
 
-    **Output › Accident History Report…** opens HVE Reports on its ACCIDENT HISTORY tab — the EDVDS page of the same name. There is no Print command; save a report page as text or HTML (**Save This Page**, **Save Page as HTML**), or export variables, and print from another program or a browser.
+    The EDVDS Accident History page is the ACCIDENT HISTORY tab of **Output › HVE Reports…**. There is no Print command; save a report page as text or HTML (**Save This Page**, **Save Page as HTML**), or export variables, and print from another program or a browser.
 
 ## Overview
 

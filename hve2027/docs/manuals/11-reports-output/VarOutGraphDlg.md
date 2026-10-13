@@ -30,6 +30,6 @@ Preferences, each trace in its own colour with a legend entry.
 
 ---
 
-← Previous: [Variable Output Edit Dialog](VarOutEdDlg.md)  |  [Index](README.md)  |  Next: [Variable Output Report](VarOutRepDlg.md) →
+← Previous: [Variable Output Edit Dialog](VarOutEdDlg.md)  |  [Index](README.md)  |  Next: [Selecting Variables](VarSelDlg.md) →
 
 <!-- /NAV -->

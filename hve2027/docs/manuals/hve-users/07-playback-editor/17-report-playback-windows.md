@@ -44,7 +44,7 @@ HVE displays the results of each event in Report Windows of several kinds. In HV
 
 - **Numeric output** — the program's own report pages:
     - **Output › HVE Reports...** shows the report pages the program built for the last run (HVE's Messages, Program Data, Event Data, Vehicle Data, Environment Data and the other pages the program produces). Each page is its own window, docked as a tab in HVE Reports; drag a tab beside another page to read the two side by side, above or below it to stack them, or out of the window to float it, and **Reset Layout** puts them back. **Save This Page** and **Save All Pages** write them to text files, **Save Page as HTML** and **Save All Pages as HTML** to an HTML file a browser can print, in the order and with the pages set in **Print Order...**; **Export Run Report (HTML)** writes HVE 2027's own printable summary of the run (inputs, key results, plan view of the trajectories). If the event has not been run, or the program refused it, the window says so. See [Common Reports](../../11-reports-output/CommRepDlg.md).
-    - **Output › Accident History Report...** opens HVE Reports with its ACCIDENT HISTORY page brought forward: the engine's own table of important positions and velocities during the event (see [Accident History](../../11-reports-output/AcciHistDlg.md)).
+    - The **ACCIDENT HISTORY** page of HVE Reports is the engine's own table of important positions and velocities during the event (see [Accident History](../../11-reports-output/AcciHistDlg.md)).
     - **Output › Key Results...** shows the important results for each vehicle — for example impact and separation speeds, delta-V, PDOF, energy, and the final position, heading change and peak accelerations.
     - **View › Results HUD** draws chosen numbers — time, and each vehicle's speed, heading, Delta-V or any output channel — in boxes over the Viewport itself as the event plays, and into recorded videos (see [Results HUD](../../new-features/11-results-hud.md)).
 - **Graphic output**:
@@ -55,7 +55,6 @@ HVE displays the results of each event in Report Windows of several kinds. In HV
     - **Output › Variable Selection...** chooses the channels to show.
     - **Output › Output Graph...** plots the selected channels against time (**Select Variables...**, **Format...**).
     - **Output › Timestep Data Table...** lists them at each output step (**Export CSV...**, **Copy**).
-    - **Output › Variable Report...** lists each channel's minimum, maximum and final value (**Save** writes it to a text file).
     - **Output › Export Variables...** writes the selected channels of the event on screen to a file (CSV, tab-separated text or MATLAB), at a chosen interval and in SAE or Traditional signs.
 - **Trajectory simulation** — the Viewport itself.
 
@@ -162,8 +161,8 @@ To play back the current event, perform the following steps:
     HVE 2027 does not print. Save the output to a file and print that
     instead: **Save This Page** / **Save All Pages** (or **Save Page as
     HTML** / **Save All Pages as HTML**) in HVE Reports, which holds the
-    Accident History, **Save** in the Variable Report, **Export CSV...**
-    in the Timestep Data table, and **Output › Export Variables...**.
+    Accident History, **Export CSV...** in Key Results and the Timestep
+    Data table, and **Output › Export Variables...**.
 
 For more information about combining events, refer to the next chapter, [Editing the Event Sequence](18-editing-event-sequence.md).
 

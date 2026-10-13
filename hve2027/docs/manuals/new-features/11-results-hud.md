@@ -100,7 +100,7 @@ A row is one of five kinds:
 | **Time** | The playback time, plus the box's **Time offset** (see [Box Style](#box-style)) | s |
 | **Speed** | The vehicle's speed: the same speed the Timestep Data table lists | mph or km/h |
 | **Heading** | The vehicle's heading, between −180 and 180 degrees: the same heading the Timestep Data table lists | deg |
-| **Delta-V** | The vehicle's change in velocity since the start of the run (below) | mph or km/h |
+| **Delta-V** | The vehicle's collision Delta-V, as it develops through the impact (below) | mph or km/h |
 | An output channel | The value of that channel for the vehicle, the same value the Output Graph and Timestep Data table show | the channel's own display unit |
 
 The default label of a vehicle row starts with the vehicle's name: *Ford Taurus
@@ -114,28 +114,30 @@ that channel, the row reads `--`.
 
 ### What Delta-V means here
 
-The **Delta-V** row is the magnitude of the vehicle's velocity change in the
-ground plane, from the start of the run to the current time:
+The **Delta-V** row is the vehicle's **collision Delta-V**: the same number
+**Key Results** and the run report print for the impact, shown as it develops
+while the event plays.
 
-Delta-V(t) = | **v**(t) − **v**(0) |
+| When | The row shows |
+| --- | --- |
+| Before the collision | 0 |
+| During the collision | \| **v**(t) − **v**<sub>before</sub> \| |
+| From the end of the collision on | \| **v**<sub>after</sub> − **v**<sub>before</sub> \| — the reported Delta-V |
+| The run found no collision for the vehicle | `--` |
 
-where **v** is the vehicle's velocity in earth-fixed axes, built from its
-longitudinal and lateral velocity (the *Long Vel (u)* and *Lat Vel (v)*
-channels) turned through its heading. It is a vector difference, not a
-difference in speed: a vehicle that only changes direction at constant speed
-has a Delta-V. Because the velocity is taken in earth-fixed axes, a vehicle
-that yaws while its velocity stays the same — spinning as it slides straight
-on — does not.
+**v**<sub>before</sub> and **v**<sub>after</sub> are the vehicle's velocities just
+before and just after the collision, in earth-fixed axes, at the same instants
+the report measures them; **v**(t) is built from the *Long Vel (u)* and *Lat Vel
+(v)* channels turned through the heading. It is a vector difference, not a
+difference in speed, so a rebound counts in full.
 
-Because it runs from the start of the run, this Delta-V includes everything
-that happens before the impact too — braking, steering, a yaw before the
-collision — and it keeps changing after separation as the vehicle slows to
-rest. It is therefore **not** the collision Delta-V an engine reports for an
-impact (from impact to separation). For that, read **Key Results** or the
-engine's own pages in **Output › HVE Reports...**.
+Braking, steering or a yaw **before** the impact is not part of it, and nor is
+the vehicle slowing to rest **after** separation: from the end of the collision
+on, the row holds the reported value. Only the primary impact is measured, as in
+the report.
 
-In a playback sequence, Delta-V is measured from the start of the event that
-places the vehicle at that moment (see [In a playback sequence](#in-a-playback-sequence)).
+In a playback sequence, Delta-V is the collision of the event that places the
+vehicle at that moment (see [In a playback sequence](#in-a-playback-sequence)).
 
 ### What "--" means
 
@@ -207,8 +209,8 @@ sequence time. A vehicle's numbers come from the event that places the vehicle
 at that moment, at that event's own time, and the row's label names the event
 in brackets — *Ford Taurus Speed [Lane change] (mph)* — because two events'
 numbers for one vehicle are different numbers. When a later track takes the
-vehicle over, its rows switch to that event. Delta-V is measured from the
-start of the event placing the vehicle.
+vehicle over, its rows switch to that event. Delta-V is the collision Delta-V
+of the event placing the vehicle.
 
 ## In a recorded movie
 

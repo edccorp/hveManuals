@@ -319,7 +319,7 @@ To view it, click the **PROGRAM DATA** tab of the HVE Reports window.
 
 *Figure 5-7: Program Data Report for EDGEN, Taurus.*
 
-#### Variable Output Report
+#### Variable Output
 
 The Variable Output table displays the time-dependent results computed by EDGEN. In HVE 2027 the table of chosen channels is the **Key Results** panel, and **Output › Timestep Data Table...** lists every output step of each vehicle's position, heading and speed.
 

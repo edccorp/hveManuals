@@ -15,8 +15,8 @@ EDVSM produces three types of output reports:
     HVE 2027 has no report windows to create, and the reports are not in the **Playback** editor (F6), which plays several events in sequence. Run the event, then:
 
     - **Output › HVE Reports** shows the alpha-numeric pages EDVSM writes itself, one tab per page: *ACCIDENT HISTORY*, *DRIVER DATA*, *ENVIRON DATA*, *MESSAGES*, *PROGRAM DATA* and *VEHICLE DATA*. **Save This Page** and **Save All Pages** write them to a text file for printing.
-    - **Output › Key Results** shows the time histories (the Variable Output of this chapter) of the channels chosen with **Output › Variable Selection**, and **Output › Export Variables** writes them to a file. **Output › Output Graph** plots channels chosen with its own **Select Variables…** button. **Output › Timestep Data Table** lists the position, heading and speed at each output step, and **Output › Variable Report** their minimum, maximum and final values.
-    - **Output › Accident History Report** opens HVE Reports on its *ACCIDENT HISTORY* tab — EDVSM's own Accident History page. **Save This Page** saves it as text and **Save Page as HTML** as an HTML page.
+    - **Output › Key Results** shows the time histories (the Variable Output of this chapter) of the channels chosen with **Output › Variable Selection**, and **Output › Export Variables** writes them to a file. **Output › Output Graph** plots channels chosen with its own **Select Variables…** button. **Output › Timestep Data Table** lists the position, heading and speed at each output step.
+    - **Output › HVE Reports** (its *ACCIDENT HISTORY* tab) shows EDVSM's own Accident History page. **Save This Page** saves it as text and **Save Page as HTML** as an HTML page.
     - The trajectory and damage play back in the viewport with the playback bar.
 
     The reports describe the event that was last run. Running another event replaces them.

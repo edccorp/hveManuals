@@ -31,7 +31,6 @@ vehicle:
 | **Save Vehicle As...** | Save Vehicle As: identification, geometry file, and **Save to Database** — HVE's Options › Create DB and the vehicle Save As | [Vehicle Save As](../../02-vehicles/VehSaveAs.md) |
 | **Edit Mode (materials per part)** (Tab) | Switches the viewport to selecting parts of the vehicle body, to assign materials per part (as Blender's Edit Mode); new in HVE 2027 | — |
 | **Vehicle Lights...** | Vehicle Lights: each light's type, intensity, direction, spot parameters, position and colour | — |
-| **Advanced Suspension...** | A hub opening Jounce / Rebound, Camber vs Deflection, Roll Steer and Anti-Pitch | [Suspension and Steering](../../03-suspension-steering/README.md) |
 | **ABS / Brake Design...** | A hub opening ABS System and ABS Designer | [ABS](../10-brake-designer/31-abs.md) |
 | **Accelerometers...** | Accelerometers | [Accelerometers](../../06-safety-systems/AcclMtrsDlg.md) |
 | **Steering System...** | Steering System | [Steering System](../../03-suspension-steering/SteerSysDlg.md) |

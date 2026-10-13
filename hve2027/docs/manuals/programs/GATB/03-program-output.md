@@ -16,7 +16,7 @@ GATB produces three types of output reports:
     | Output | HVE 2027 |
     |---|---|
     | Alpha-numeric reports | **Output › HVE Reports** — GATB's own report pages, one tab each |
-    | Variable output | **Output › Key Results** and **Output › Output Graph**, for the vehicle's and the occupants' variables (chosen in **Output › Variable Selection**); **Timestep Data Table** and **Variable Report** for the vehicle — see [Variable Output Table](#variable-output-table) |
+    | Variable output | **Output › Key Results** and **Output › Output Graph**, for the vehicle's and the occupants' variables (chosen in **Output › Variable Selection**); **Timestep Data Table** for the vehicle — see [Variable Output Table](#variable-output-table) |
     | Trajectory simulation | the 3-D viewport, with the playback bar |
 
     There is no printing from HVE 2027. **Save This Page** and **Save All Pages** in the HVE Reports window write the report text to a file.
@@ -47,7 +47,7 @@ An example of each of these numeric output reports from GATB is shown on the fol
 
 The Accident History Report displays a table of initial and final positions and velocities for the human and vehicle.
 
-> **NOTE:** **Output › Accident History Report** opens HVE Reports on this GATB page; there is no separate HVE 2027 accident history.
+> **NOTE:** This GATB page is the ACCIDENT HISTORY tab of **Output › HVE Reports**; there is no separate HVE 2027 accident history.
 
 ### Human Data
 
@@ -148,7 +148,7 @@ A detailed listing of each Variable Output parameter produced by GATB is found i
 
     - The contact variables are the contact force of each interaction, summed over its pairs and as its largest single pair (HVE lists every pair separately).
     - The belt variables are GATB's belt tension at the occupant's seat; GATB writes no stretch or attachment point there, so those read **--**. Any variable the run did not compute reads **--**.
-    - **Timestep Data Table** and **Variable Report** remain vehicle-only. The GATB report pages are in **Output › HVE Reports** (including the Results and Injury Data pages), the occupant peaks are in the run status, and every segment moves in the 3-D viewport.
+    - **Timestep Data Table** remains vehicle-only. The GATB report pages are in **Output › HVE Reports** (including the Results and Injury Data pages), the occupant peaks are in the run status, and every segment moves in the 3-D viewport.
 
 ## Trajectory Simulations
 

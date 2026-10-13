@@ -41,7 +41,7 @@ the **active event** (the one selected in Event Information):
 
 | HVE report window | HVE 2027 |
 |---|---|
-| Numeric reports (Accident History, Key Results and other numeric output) | **Output › Accident History Report...**, **Output › Key Results...**, **Output › Variable Report...**, **Output › HVE Reports...** |
+| Numeric reports (Accident History, Key Results and other numeric output) | **Output › Key Results...**, **Output › HVE Reports...** (Accident History is its ACCIDENT HISTORY page) |
 | Graphic reports | **Output › Output Graph...** |
 | Variable Output Table | **Output › Timestep Data Table...**, with **Output › Variable Selection...** |
 | Trajectory Simulation | the Event editor's viewport |
@@ -51,11 +51,10 @@ the **active event** (the one selected in Event Information):
 
 The **Key Results** panel shows the event's main results — for a collision,
 Delta-V, PDOF, impact duration and force, energy and the like, one column per
-vehicle. **Output › Accident History Report...** opens HVE Reports on the
-engine's own ACCIDENT HISTORY page;
-**Output › Variable Report...** prints the selected variables as a text report;
-and **Output › HVE Reports...** shows the report pages the calculation program
-builds itself, in its own layout.
+vehicle, and each selected variable at every output step.
+**Output › HVE Reports...** shows the report pages the calculation program
+builds itself, in its own layout, among them the engine's own ACCIDENT HISTORY
+page.
 
 ### Graphic Outputs
 
@@ -256,7 +255,7 @@ in the Add Vehicle dialog's folder list.
     Print To File. Save the output instead and print it from another program:
 
     - **Key Results** and **Timestep Data**: **Export CSV...** (or **Copy CSV**)
-    - **Variable Report**: **Save**
+    - **Selected variables**: **Output › Export Variables...**
     - **HVE Reports** (including the Accident History): **Save This Page**,
       **Save All Pages** (text), **Save Page as HTML**, **Save All Pages as
       HTML** (the "all pages" files in the order set with **Print Order...**),

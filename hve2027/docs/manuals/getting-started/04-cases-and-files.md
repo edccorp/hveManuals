@@ -139,8 +139,11 @@ HVE 2027 reads HVE's vehicle database files (`.db`), such as `EDC.db`,
   vehicles by type and class (the **Generics** button) and a few built-in
   vehicles that need no database. **Replace...** replaces the selected
   vehicle's data with a database record.
-- **Where databases are found.** A `db` folder beside the program, and any
-  folders added under **Database folders** in the same dialog.
+- **Where databases are found.** A `db` folder beside the program, any
+  folders added under **Database folders** in the same dialog, and your own
+  `userdb` folder in `%APPDATA%\EDC\HVE 2027`, where **Save Vehicle As** writes
+  unless you choose another file. That folder is shared by every installed
+  version and kept when one is uninstalled.
 - **Saving a vehicle.** **Vehicle › Save Vehicle As** sets the name, type,
   make, model, year and body style and either writes a copy of the database
   record the vehicle was loaded from into a `.db` file under those keys
@@ -158,7 +161,7 @@ comes in with an imported `.hve` case.
 | --- | --- | --- |
 | Vehicle body | `.h3d`, `.iv`, `.wrl`, `.obj`, `.gltf`, `.glb` | Vehicle › Vehicle Mesh (also on the Event menu); the Library... button lists the geometry folders |
 | Site (terrain and scene) | `.dxf`, `.h3d`, `.iv`, `.wrl`, `.obj`, `.gltf`, `.glb` | Environment panel › Terrain › Geometry File; with scale factor, Y-up / Z-down options and **Use surfaces as terrain (physics)** |
-| Survey point cloud | `.las`, `.ply`, `.xyz`, `.pts`, `.txt`, `.csv` | Environment panel › Survey Point Cloud (scan) |
+| Survey point cloud | `.las`, `.ply`, `.e57`, `.xyz`, `.pts`, `.txt`, `.csv` | Environment panel › Survey Point Cloud (scan) |
 | Aerial photograph | image file | Environment › Aerial Image (with its world-bounds corners) |
 | Material textures | `.png`, `.jpg`, `.bmp`, `.tga`, `.hdr` | View › Shader Editor |
 
@@ -234,4 +237,4 @@ The case file itself is never saved automatically.
 | File › Record Animation | The 3-D playback as a Motion-JPEG `.avi` video, between the start and end times you choose, through the camera you choose, in real time or slow motion. Available after a run. Tick **Burn in key results (Results HUD)** to draw the case's [Results HUD](../new-features/11-results-hud.md) boxes into every frame. Panels and dialogs are not recorded. A file name without a folder is written to the folder the program was started from (see [Recording a video](../new-features/07-video-and-playback-sequences.md#recording-a-video)) |
 | Output › Export Variables | The selected variables of the event on screen, one column each, at the chosen interval: CSV, tab-separated text or a MATLAB `.m` script, in SAE or HVE's Traditional signs |
 | Timestep Data panel › Export CSV | Time, vehicle, position, heading and speed at every output step |
-| Output › HVE Reports, Variable Report, Accident History Report | Reports of the run. HVE Reports saves its pages as text (`hve_report.txt`) or HTML (`hve_report.html`), and HVE 2027's own run summary as `run_report.html`; a file name without a folder is saved beside the case file (in the folder the program was started from, for a case never saved), and the window shows the full path (see [Common Reports](../11-reports-output/CommRepDlg.md)) |
+| Output › HVE Reports | Reports of the run, the Accident History among them. HVE Reports saves its pages as text (`hve_report.txt`) or HTML (`hve_report.html`), and HVE 2027's own run summary as `run_report.html`; a file name without a folder is saved beside the case file (in the folder the program was started from, for a case never saved), and the window shows the full path (see [Common Reports](../11-reports-output/CommRepDlg.md)) |

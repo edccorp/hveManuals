@@ -95,6 +95,6 @@ selection takes effect immediately.
 
 ---
 
-← Previous: [Variable Output Report](VarOutRepDlg.md)  |  [Index](README.md)
+← Previous: [Variable Output: Graph Dialog](VarOutGraphDlg.md)  |  [Index](README.md)
 
 <!-- /NAV -->

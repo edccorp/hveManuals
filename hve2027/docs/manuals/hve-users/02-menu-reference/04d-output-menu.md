@@ -18,9 +18,7 @@ that they say there is nothing to show.
 | **Output Graph...** | The Output Graph panel — variables plotted against time | Variable Graphing window |
 | **Timestep Data Table...** | The Timestep Data panel — variables at each output time | Variable Output Table |
 | **Variable Selection...** | Select Output Variables, for the timestep table | Variable Selection dialog |
-| **Variable Report...** | The Variable Output Report | Variable Output Report |
-| **Accident History Report...** | HVE Reports, with its ACCIDENT HISTORY page (the engine's own) brought forward | Accident History numeric report |
-| **HVE Reports...** | The report pages the engine itself builds | the engine's report windows |
+| **HVE Reports...** | The report pages the engine itself builds, among them its ACCIDENT HISTORY page | the engine's report windows, including the Accident History numeric report |
 | **Playback Options...** | Playback speed, frame step, loop, CG path | Options › Playback |
 | **Run Simulation...** | Opens the Simulation panel and runs the active event | the Event Controller's execute button |
 | **Damage Studio Options...** | What the Damage Studio displays | Damage Studio |
@@ -60,7 +58,12 @@ See the dialog reference: [Key Results](../../01-user-interface/KeyResDlg.md).
 **Description:** Plots output variables against time. **Select Variables...**
 chooses the variables; **Fit**, **Reset** and **Whole run** set the axes;
 **Format...** and **Reset formatting** change the appearance (gridlines,
-colours); **Vehicle name in the legend** labels the traces.
+colours); **Vehicle name in the legend** labels the traces. **Other Events...**
+draws the same traces from up to four other events that have results, dashed
+in each trace's colour over the active event's solid ones -- for instance an
+event and a copy of it (the **Copy** button beside **+** and **−** on the
+Events row) with one input changed. Vehicle and occupant traces alike; a
+trace is matched by its vehicle slot or occupant.
 
 See the dialog reference: [Variable Output Graph](../../11-reports-output/VarOutGraphDlg.md).
 
@@ -79,30 +82,6 @@ Choose the variables with **Output › Variable Selection...**.
 
 See the dialog reference: [Variable Output Table](../../11-reports-output/VarOutEdDlg.md)
 and [Variable Selection](../../11-reports-output/VarSelDlg.md).
-
----
-
-## VARIABLE REPORT
-
-**Menu Option:** Output › Variable Report...
-
-**Description:** The Variable Output Report: the selected variables as a text
-report, in the units set in Preferences. **Save** writes it to a file.
-
-See the dialog reference: [Variable Output Report](../../11-reports-output/VarOutRepDlg.md).
-
----
-
-## ACCIDENT HISTORY REPORT
-
-**Menu Option:** Output › Accident History Report...
-
-**Description:** Opens **HVE Reports** (below) and brings its **ACCIDENT
-HISTORY** page forward: the accident history of the active event as the engine
-itself builds it. There is one accident history in HVE 2027; save it from HVE
-Reports with **Save This Page** (text) or **Save Page as HTML**.
-
-See the dialog reference: [Accident History](../../11-reports-output/AcciHistDlg.md).
 
 ---
 
@@ -136,6 +115,11 @@ units set in Preferences.
 
 Before a run, or when a run built no pages, the dialog says so; the motorcycle
 (SINGLETRACK) model is not one of HVE's engines and builds none.
+
+The **ACCIDENT HISTORY** page is the accident history of the active event as
+the engine itself builds it. There is one accident history in HVE 2027; save it
+with **Save This Page** (text) or **Save Page as HTML** — see
+[Accident History](../../11-reports-output/AcciHistDlg.md).
 
 See the dialog reference: [Common Reports](../../11-reports-output/CommRepDlg.md).
 

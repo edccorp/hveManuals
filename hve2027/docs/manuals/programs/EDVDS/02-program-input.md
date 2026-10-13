@@ -276,7 +276,7 @@ The HVE Suspension Model provides the following data groups:
 EDVDS supports only solid axle suspensions. EDVDS's use of the suspension parameters is described below.
 
 !!! note "HVE 2027"
-    Suspension parameters are edited in **Vehicle › Suspension Data…** (Suspension Type, Roll Couple Distribution and Inter-Tandem Load Transfer rows, per axle) and **Vehicle › Advanced Suspension…**. An *Independent* suspension on any axle is refused for EDVDS, and on a 3-axle tow vehicle the rear axles must be a tandem type (*4-Spring Tandem* or *Walking Beam Tandem*); HVE 2027 reports both before running.
+    Suspension parameters are edited in **Vehicle › Suspension Data…** (Suspension Type, Roll Couple Distribution and Inter-Tandem Load Transfer rows, per axle, and its Jounce / Rebound, Camber, Roll Steer and Anti-Pitch tabs). An *Independent* suspension on any axle is refused for EDVDS, and on a 3-axle tow vehicle the rear axles must be a tandem type (*4-Spring Tandem* or *Walking Beam Tandem*); HVE 2027 reports both before running.
 
 ##### Inter-tandem Load Transfer
 

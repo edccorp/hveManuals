@@ -34,7 +34,7 @@ The main entries:
   [Cases and Files](04-cases-and-files.md).
 - **Edit** — Undo, Redo and Undo History (below).
 - **Vehicle** — Vehicle Information, Save Vehicle As, Edit Mode (materials per
-  part), and the vehicle's data dialogs: Vehicle Lights, Advanced Suspension,
+  part), and the vehicle's data dialogs: Vehicle Lights,
   ABS / Brake Design, Accelerometers, Steering System, Suspension Data, Tire
   Data (Detailed), Tire Tables, Brake Assembly, Brake Designer, Brake System
   Pressure, Brake Material Props, Drivetrain, Aero Dynamic Drag, Body Torsion,
@@ -49,8 +49,7 @@ The main entries:
   Crush Profile). An item the event's program does not use is greyed rather
   than hidden.
 - **Output** — Key Results, Output Graph, Timestep Data Table, Variable
-  Selection, Variable Report, Accident History Report, HVE Reports, Playback
-  Options, Run Simulation, Damage Studio Options, Damage Studio Report, Export
+  Selection, HVE Reports, Playback Options, Run Simulation, Damage Studio Options, Damage Studio Report, Export
   Variables.
 - **Playback** — Playback Sequence, Playback Options, Run All Events.
 - **Occupant** — Human Information.
@@ -119,7 +118,8 @@ Every panel and dialog is a window that can be docked or float:
 - Drag it away from the dock to make it float. Floating windows have rounded
   corners and a drop shadow; docked ones are square.
 - The window layout is saved when the program closes and restored when it
-  starts. Deleting `imgui.ini` (in the folder the program is started from)
+  starts. Deleting `imgui.ini` (in `%APPDATA%\EDC\HVE 2027`; see
+  [Where the program keeps its settings](02-installing-and-running.md#where-the-program-keeps-its-settings))
   restores the default layout.
 
 **View › Panels Outside the Main Window** lets a panel be dragged out of the

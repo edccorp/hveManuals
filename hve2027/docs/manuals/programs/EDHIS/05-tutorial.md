@@ -411,7 +411,7 @@ EDHIS produces several messages, depending on the outcome of the event. For a co
 
 The Accident History report displays the earth-fixed positions and velocities for the three human segments and the vehicle at the start of the run. It is on the *Accident History* tab.
 
-> **NOTE:** **Output › Accident History Report** opens HVE Reports on this EDHIS page; there is no separate HVE 2027 accident history.
+> **NOTE:** This EDHIS page is the ACCIDENT HISTORY tab of **Output › HVE Reports**; there is no separate HVE 2027 accident history.
 
 ### Event Data
 
@@ -440,7 +440,7 @@ The Program Data report displays the simulation controls and other program contr
 HVE's tutorial selects the head's position, velocity and forward and pitch accelerations, and the head vs headrest contact force, in the Variable Output window.
 
 !!! note "HVE 2027"
-    The human output groups are offered as variables in **Output › Variable Selection** (the **Occupant** groups, **H1** column) and can be graphed in **Output › Output Graph** and written by **Output › Export Variables**. The **Timestep Data Table** and **Variable Report** show vehicle channels only. Contact force is per interaction (sum of pairs, largest pair), not per pair.
+    The human output groups are offered as variables in **Output › Variable Selection** (the **Occupant** groups, **H1** column) and can be graphed in **Output › Output Graph** and written by **Output › Export Variables**. The **Timestep Data Table** shows vehicle channels only. Contact force is per interaction (sum of pairs, largest pair), not per pair.
 
 ### Trajectory Simulation
 

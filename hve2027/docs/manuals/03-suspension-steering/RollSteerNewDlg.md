@@ -2,7 +2,7 @@
 
 In HVE, this small dialog edits the roll steer of a **Solid Axle** or tandem suspension; for an independent suspension the full [Roll Steer Dialog](RollSteerDlg.md) is displayed instead.
 
-HVE 2027 has no separate dialog. The coefficient is the **Solid axle** row of the **Roll Steer** dialog (**Vehicle › Advanced Suspension... › Roll Steer...** in the Vehicle Editor), one column per wheel.
+HVE 2027 has no separate dialog. The coefficient is the **Solid axle** row of the **Roll Steer** dialog (the **Roll Steer** tab of **Vehicle › Suspension Data...** in the Vehicle Editor), one column per wheel.
 
 ## Solid axle (HVE: Roll Steer Coefficient, deg/deg)
 

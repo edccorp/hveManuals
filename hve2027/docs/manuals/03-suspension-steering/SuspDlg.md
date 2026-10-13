@@ -70,11 +70,11 @@ The axle beam's weight and inertia (HVE's Axle Inertia dialog); see [Inertia Dia
 |---|---|
 | Springs and Shocks... | The **Spring & Damper** and **Solid Axle** rows of this dialog. |
 | Inertia... | **Beam Mass** and **Beam Inertia** rows of this dialog. |
-| Jounce/Rebound... | **Vehicle › Advanced Suspension... › Jounce / Rebound...** — see [Jounce and Rebound Stops Dialog](JouAndRebDlg.md). |
+| Jounce/Rebound... | the **Jounce / Rebound** tab of **Vehicle › Suspension Data...** — see [Jounce and Rebound Stops Dialog](JouAndRebDlg.md). |
 | Spindle Axis... | **Vehicle › Steering System...** — see [Spindle Axis Dialog](SpndleAxisDlg.md). |
-| Camber... | **Vehicle › Advanced Suspension... › Camber vs Deflection...** — see [Camber Dialog](CamberDlg.md). |
-| Anti-Pitch... | **Vehicle › Advanced Suspension... › Anti-Pitch...** — see [Anti-Pitch Dialog](AntiPitchDlg.md). |
-| Roll Steer... | **Vehicle › Advanced Suspension... › Roll Steer...** — see [Roll Steer Dialog](RollSteerDlg.md). |
+| Camber... | the **Camber vs Deflection** tab of **Vehicle › Suspension Data...** — see [Camber Dialog](CamberDlg.md). |
+| Anti-Pitch... | the **Anti-Pitch** tab of **Vehicle › Suspension Data...** — see [Anti-Pitch Dialog](AntiPitchDlg.md). |
+| Roll Steer... | the **Roll Steer** tab of **Vehicle › Suspension Data...** — see [Roll Steer Dialog](RollSteerDlg.md). |
 
 !!! warning "Not in HVE 2027"
     - **HVE's enable rules**: HVE 2027 does not grey Inter-Tandem Load Transfer for non-tandem types, the Roll Center Height and Lateral Spring Spacing for an independent suspension, the axle inertia for an independent suspension, Anti-Pitch for a solid axle, or Spindle Axis for a non-steerable axle. It offers the tandem types on every axle, where HVE offers them only where a tandem set is possible.

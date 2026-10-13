@@ -8,7 +8,7 @@ In HVE this dialog is used when adding a playback window that displays a report 
 Where the reports are in HVE 2027:
 
 - **Output › HVE Reports...** — the report pages the engine itself builds for the active event (HVE's report types, such as the program, event, vehicle and accident-history pages). Each page is a tab that can be dragged beside another page, above or below it, or out of the window, and the pages are saved as text or HTML in an order you set (see [Common Reports](../11-reports-output/CommRepDlg.md)). Before a run, the window says that there is nothing to show yet.
-- **Output › Accident History Report...**, **Output › Variable Report...**, **Output › Key Results...**, **Output › Output Graph...** and **Output › Timestep Data Table...** — see the Reports & Output chapter.
+- **Output › Key Results...**, **Output › Output Graph...**, **Output › Timestep Data Table...** and **Output › Export Variables...** — see the Reports & Output chapter.
 
 To see the reports of another event, make it the active event (Event Information panel, **Events** section) and run it.
 

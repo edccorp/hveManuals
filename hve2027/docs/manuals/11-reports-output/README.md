@@ -13,17 +13,15 @@ the [HVE Manual](../README.md).
 
     | Output menu item | Opens |
     |---|---|
-    | Key Results... | the **Key Results** panel: summary results and a time table of selected variables ([Variable Output Report](VarOutRepDlg.md)) |
+    | Key Results... | the **Key Results** panel: summary results and a time table of selected variables ([Key Results](../01-user-interface/KeyResDlg.md)) |
     | Output Graph... | the **Output Graph** panel ([Variable Output: Graph](VarOutGraphDlg.md)) |
     | Timestep Data Table... | the **Timestep Data** table: position, heading and speed of every vehicle at every output step |
     | Variable Selection... | **Select Output Variables** ([Selecting Variables](VarSelDlg.md)) |
-    | Variable Report... | the **Variable Output Report**: minimum, maximum and final values per vehicle |
-    | Accident History Report... | HVE Reports with its ACCIDENT HISTORY page brought forward — the engine's own [Accident History](AcciHistDlg.md) page |
-    | HVE Reports... | the report pages built by the engine itself, as tabs that can be placed side by side, stacked or floated, and saved as text or HTML in an order you set ([Common Reports](CommRepDlg.md)) |
+    | HVE Reports... | the report pages built by the engine itself — among them its own [Accident History](AcciHistDlg.md) — as tabs that can be placed side by side, stacked or floated, and saved as text or HTML in an order you set ([Common Reports](CommRepDlg.md)) |
     | Playback Options... | playback settings (multi-event playback is the Playback (F6) editor) |
     | Run Simulation... | runs the active event (Simulation panel) |
     | Damage Studio Options..., Damage Studio Report... | crush and damage display and report |
-    | Export Variables... | writes the run's variables to a file |
+    | Export Variables... | writes the run's selected variables to a file, with a choice of format, interval and coordinate system |
 
     Every one of these that shows results needs a solved event; before a run
     they say so.
@@ -40,7 +38,6 @@ the [HVE Manual](../README.md).
 - [Trajectory Report](TrajRepDlg.md)
 - [Variable Output Edit Dialog](VarOutEdDlg.md)
 - [Variable Output: Graph Dialog](VarOutGraphDlg.md)
-- [Variable Output Report](VarOutRepDlg.md)
 - [Selecting Variables](VarSelDlg.md)
 
 <!-- NAV -->

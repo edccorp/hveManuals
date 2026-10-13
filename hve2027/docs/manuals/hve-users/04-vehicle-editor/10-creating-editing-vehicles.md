@@ -259,7 +259,7 @@ reached in HVE 2027 as follows:
 | CG: Aerodynamic Drag | **Vehicle › Aero Dynamic Drag** |
 | CG: Body Torsion | **Vehicle › Body Torsion** |
 | CG: Lights | **Vehicle › Vehicle Lights** |
-| Wheel: Suspension | **Vehicle › Suspension Data**, **Vehicle › Advanced Suspension** |
+| Wheel: Suspension | **Vehicle › Suspension Data** (all its tabs) |
 | Wheel: Tire | **Vehicle › Tire Data (Detailed)**, **Vehicle › Tire Tables** |
 | Wheel: Brake | **Vehicle › Brake Assembly**, **Vehicle › Brake Designer** |
 | Wheel: Location | Vehicles panel › Dimensions / Inertias › **Wheel Positions (from CG)** |

@@ -256,7 +256,7 @@ The alpha-numeric reports are EDSMAC's own report pages. To view them:
 
 ### Accident History
 
-The Accident History report displays the positions and velocities for each vehicle at key times (Start of Run, Impact, Separation and Final/Rest) during the run. It is the **ACCIDENT HISTORY** tab of HVE Reports, which **Output › Accident History Report...** opens directly.
+The Accident History report displays the positions and velocities for each vehicle at key times (Start of Run, Impact, Separation and Final/Rest) during the run. It is the **ACCIDENT HISTORY** tab of **Output › HVE Reports...**.
 
 For this event the report gives, in round figures:
 

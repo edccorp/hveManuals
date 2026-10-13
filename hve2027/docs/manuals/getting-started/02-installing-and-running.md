@@ -19,10 +19,7 @@ Run the installer, **`HVE-2027-<version>-setup.exe`**.
 
 - **For yourself (the default).** It installs into
   `%LOCALAPPDATA%\Programs\EDC\HVE 2027\<version>` and needs no administrator
-  rights. Install this way unless you have a reason not to: the program keeps
-  its settings and its log in its own folder (see
-  [Where the program keeps its settings](#where-the-program-keeps-its-settings)), which you can
-  write to.
+  rights. Install this way unless you have a reason not to.
 - **For every user.** Run the installer with **`/ALLUSERS`** from a command
   prompt opened as an administrator; it installs into `Program Files\EDC\HVE
   2027\<version>`. **`/S`** installs without asking anything.
@@ -33,9 +30,9 @@ Run the installer, **`HVE-2027-<version>-setup.exe`**.
 - **Classic HVE is left alone.** The installer never takes over `.hve` files;
   they stay with HVE.
 - **Uninstalling** a version (from Windows' installed-apps list) removes that
-  version's folder, and only that one. Your license and your cases are kept;
-  the settings and saved vehicles inside that folder are not (see the warning
-  under [Where the program keeps its settings](#where-the-program-keeps-its-settings)).
+  version's folder, and only that one. Your license, settings, saved vehicles
+  and cases are kept: none of them is in a version's folder (see
+  [Where the program keeps its settings](#where-the-program-keeps-its-settings)).
 
 !!! note "HVE 2027"
     An installed release needs a **license** that covers the program of the
@@ -79,13 +76,12 @@ of it.
 
 ### Using a preview folder instead of the installer
 
-1. Copy the whole folder to a folder you can write to, for example
-   `C:\HVE 2027 Preview` or a folder under *Documents*. Do not put it under
-   *Program Files*: the program keeps its settings and its log in the folder it
-   is started from (see below), and an ordinary user cannot write there.
+1. Copy the whole folder anywhere, for example `C:\HVE 2027 Preview` or a
+   folder under *Documents*. The program keeps nothing of yours in it: your
+   settings and saved vehicles are kept in the same place as an installed
+   version's (see below), so they are shared with it.
 2. If you want a desktop shortcut, right-click `hve-next.exe` and choose
-   **Send to › Desktop (create shortcut)**. A shortcut made this way starts the
-   program in its own folder, so the settings stay in one place.
+   **Send to › Desktop (create shortcut)**.
 
 The preview does not change HVE or its files and can be used on the same
 computer as HVE. It opens HVE's `.hve` case files but never writes them, and it
@@ -127,9 +123,9 @@ playback bar under the viewport, or choose **Output › Run Simulation**
 ## Where the program keeps its settings
 
 The window layout, the recent-files list, the style and the preferences are
-kept in small files in the folder the program is started from, which is the
-program's own folder when you start it by double-clicking it or from a shortcut
-made as above:
+kept in small files in your own application-data folder,
+**`%APPDATA%\EDC\HVE 2027`** (type that into Explorer's address bar to open
+it), beside your license (`license.json`):
 
 | File | Holds |
 | --- | --- |
@@ -145,26 +141,24 @@ Deleting `imgui.ini` restores the default panel layout the next time the
 program starts.
 
 Vehicles saved with **Vehicle › Save Vehicle As** go, unless you choose another
-file, into `userdb\user.db` in the same folder.
+file, into `userdb\user.db` in the same folder, and appear in the vehicle
+database picker of every version.
 
-When HVE 2027 is installed, "the program's own folder" is that version's
-install folder, so each installed version keeps its own settings and its own
-`userdb`. Your license is kept apart from them, in
-`%APPDATA%\EDC\HVE 2027\license.json`, and is shared by every version.
-
-!!! warning "Before you uninstall or replace a version"
-    Uninstalling a version deletes its whole install folder, **including the
-    settings above and any vehicles saved into its `userdb\user.db`**. Copy
-    the `userdb` folder somewhere else first if you have saved vehicles there.
-    Cases are not affected: they are wherever you saved them. The same applies
-    to deleting a preview folder.
+This folder is **shared by every installed version** and is **not touched when
+a version is uninstalled**, so a new version starts with your layout,
+preferences and saved vehicles, and removing an old one loses none of them.
+Cases are wherever you saved them. A cache of imported point clouds is kept
+separately, in `%LOCALAPPDATA%\EDC\HVE 2027\pccache`; deleting it only makes
+the next import of each scan slower.
 
 ## Log and crash files
 
 When the program is started from Explorer or a shortcut, it writes everything
-it reports to **`hve-next.log`** in the folder it was started from. The file is
-started afresh each time the program starts, so copy it before restarting if
-you need it. A line near the top beginning `[hve] build` names the build.
+it reports to **`hve-next.log`** in `%APPDATA%\EDC\HVE 2027`, beside the
+settings above. The file is started afresh each time the program starts, so
+copy it before restarting if you need it. A line near the top beginning
+`[hve] build` names the build. What the physics program itself reported during
+the last run is in `hve-solver.log` in the same folder.
 
 If the program crashes it also writes **`hve-next.crash.txt`** in the same
 folder.

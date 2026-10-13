@@ -185,7 +185,7 @@ SIMON produces a number of messages, depending on the outcome of the event. For 
 
 ### Accident History
 
-The Accident History report displays the time and total distance traveled, as well as the position and velocity at the start and end of the run. It is the **ACCIDENT HISTORY** tab of HVE Reports, which **Output › Accident History Report...** opens directly.
+The Accident History report displays the time and total distance traveled, as well as the position and velocity at the start and end of the run. It is the **ACCIDENT HISTORY** tab of **Output › HVE Reports...**.
 
 ### Driver Data
 
@@ -209,7 +209,7 @@ The Program Data report includes the simulation control parameters and other run
 
 ### Variable Output
 
-The time-dependent results are shown in three places on the **Output** menu: **Key Results** (a summary, and each selected variable at every output step, with the row at the current playback time highlighted; it docks under the viewport), **Variable Report** (minimum, maximum and final value of each selected variable) and **Timestep Data Table** (time, X, Y, heading and speed at every output step).
+The time-dependent results are shown in two places on the **Output** menu: **Key Results** (a summary, and each selected variable at every output step, with the row at the current playback time highlighted; it docks under the viewport) and **Timestep Data Table** (time, X, Y, heading and speed at every output step).
 
 #### Variable Selection
 

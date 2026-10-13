@@ -339,11 +339,58 @@ Blender's Shade Flat / Shade Smooth does:
 
 !!! tip "New in HVE 2027"
     The **Survey Point Cloud (scan)** part of the Terrain section shows a
-    laser scan or photogrammetry point cloud (LAS, PLY, XYZ/PTS/TXT/CSV)
+    laser scan or photogrammetry point cloud (LAS, PLY, E57, XYZ/PTS/TXT/CSV)
     behind the simulation, with its own scale, axis options, colour mode,
     point size and placement (offset, yaw, pitch, roll). A point cloud is a
     picture, not a surface: vehicles cannot drive on it, settle onto it or
-    collide with it. Import a site surface for what the vehicle drove on.
+    collide with it. Import a site surface for what the vehicle drove on, or
+    build one from the scan as described below.
+
+#### Building a drivable surface from a scan
+
+Under **Drivable Surface from Scan**, HVE drapes the loaded point cloud, as
+placed, into a ground grid. It uses the same method as EDC Point Cloud
+Toolkit's *Create Roadway Surface* in Blender:
+
+| Setting | Meaning |
+|---|---|
+| **Cell size** | The grid spacing (default 0.305 m, one foot). |
+| **Ground percentile** | Each grid point takes this low percentile of the scan heights within half a cell of it, so the road under a parked car is kept and the car is not. |
+| **Fill holes / Max fill** | Grid points with no scan data are filled from their neighbours, up to this distance from measured ground (0 = any distance), and smoothed to follow the slope of the ground around them. Ground further away is left as a hole. |
+| **Below-grade reject** | A single return this far below *all* its neighbours is ignored. |
+| **Spike reject above / Spike width max** | Anything rising this far above the local ground and no wider than this (a vehicle, a pole) is removed and filled. |
+
+Click **Create Drivable Surface...** and choose where to save the surface (an
+`.obj` file, suggested beside the scan). The file becomes the case's site
+geometry, used as terrain, and the engines drive on it from the next run. It
+is one surface, *Asphalt_scan_surface*, so set its friction like any other
+surface's. The file's header records the scan, its placement and the
+settings used.
+
+**Texture from the scan's colour** (on by default) paints the surface with the
+scan's own colours, or with its intensity in grey if it has no colour. Points
+more than **Colour height tolerance** above or below the surface are left out,
+so a parked car does not colour the road. **Texture size** sets the image's
+resolution. The image is saved beside the surface as a `.png`, with a `.mtl`
+file that names it.
+
+To surface only part of the scan, use **Region to surface**: tick **Click
+corners in the 3-D view**, then click around the area, ideally looking straight
+down. The outline is drawn in yellow. **Undo corner** removes the last corner
+and **Clear region** removes them all. With fewer than three corners the whole
+scan is used.
+
+If the case already has site geometry, the button reads **Replace Site with
+Scan Surface...**. The new surface replaces the old site, along with the
+surface edits made to the old site. Undo restores both, unless you saved the new
+surface over the old site's own file. Saving over a file is allowed, but Undo
+then re-reads that file and finds the new surface. To be able to go back, save
+the new surface under a different name.
+
+The surface is built from the points that were *loaded*, so **Points loaded
+(for the surface)** limits how fine it can be. It defaults to 20 million, which
+takes a typical scan whole. The viewport draws a separate, smaller number each
+frame (**Points drawn per frame**), so loading more does not slow the view.
 
 ## Road Surfaces and Their Materials
 

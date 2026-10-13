@@ -176,7 +176,7 @@ Press **Run**. The Charger moves according to the vehicle model, the terrain, th
 
 **Key Results.** Numeric results for the current playback time are shown in the **Key Results** panel (**Output › Key Results…**). To add tire forces, choose **Output › Variable Selection…**, select the Fx', Fy' and Fz' channels of the right front tire, and play the event again.
 
-> **NOTE:** Like all events, this EDVSM event produces several output reports (Accident History, Messages, Vehicle Data and others). They are on the **Output** menu (**Accident History Report…**, **HVE Reports…**). Read the run status in the **Simulation** panel too: it says how the run ended and lists anything HVE 2027 assumed ([Appendix II](appendix-02-messages.md#run-status-and-disclosures)).
+> **NOTE:** Like all events, this EDVSM event produces several output reports (Accident History, Messages, Vehicle Data and others). They are pages of **Output › HVE Reports…**. Read the run status in the **Simulation** panel too: it says how the run ended and lists anything HVE 2027 assumed ([Appendix II](appendix-02-messages.md#run-status-and-disclosures)).
 
 ## Lesson 3 — Combining Multiple Events
 
@@ -203,7 +203,7 @@ HVE adds a Trajectory Simulation window per event in the Playback Editor.
 
 ### Editing the Time Sequence
 
-Three of the five events must start later in the sequence. Because they begin at separation following the 3-vehicle collision, their times are in the Accident History report of the first event: select Event 1 and choose **Output › Accident History Report…**. From the report:
+Three of the five events must start later in the sequence. Because they begin at separation following the 3-vehicle collision, their times are in the Accident History report of the first event: select Event 1, choose **Output › HVE Reports…** and click its **ACCIDENT HISTORY** tab. From the report:
 
 - **Event 2** — EDVSM, Ford Taurus Post-impact: separation begins at 8.99 seconds; however, the vehicle still has residual velocity at the end of the simulation time (10.00 seconds), so the final position is used for the start of this event. *(This vehicle is involved in two impacts; the end of the second impact, with the Chevrolet Suburban, is chosen for the separation conditions.)*
 - **Event 3** — EDVSM, Honda Accord Post-impact: separation occurs at 8.44 seconds.

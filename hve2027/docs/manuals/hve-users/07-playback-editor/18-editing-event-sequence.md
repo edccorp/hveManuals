@@ -129,7 +129,7 @@ HVE 2027 applies the following rules:
     HVE lets a simulation make some results editable — for example a 2-D
     simulation's sprung mass Z position, roll and pitch — through the
     Variable Output window's Edit button. HVE 2027 has no way to edit a
-    result: the Variable Report and the Timestep Data table are read-only.
+    result: Key Results and the Timestep Data table are read-only.
     The planar engines already settle the vehicle onto the site
     (AutoPosition), so the drawn Z, roll and pitch of a 2-D run follow the
     terrain.

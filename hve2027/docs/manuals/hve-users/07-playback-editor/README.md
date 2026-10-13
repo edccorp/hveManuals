@@ -10,8 +10,8 @@ A motor vehicle crash sequence often includes several events involving many diff
       **Output › Playback Options...**, and the **reports, graphs and
       tables** for the current event are on the **Output** menu: Key
       Results, Output Graph, Timestep Data Table, Variable Selection,
-      Variable Report, Accident History Report, HVE Reports, Damage Studio
-      Report and Export Variables.
+      HVE Reports (which holds the Accident History), Damage Studio Report
+      and Export Variables.
     - In **Playback** mode (the **Playback (F6)** tab) **several events are
       combined** into one timeline in the **Playback Sequence** panel, and
       that sequence is what the Viewport plays.
