@@ -20,8 +20,8 @@ The rows, in table order:
 ## Friction rows
 
 These are the tire's scalar friction values. They are used when the tire has no
-load/speed friction table of its own (see [Tire Friction Data](TireFrictDataDlg.md)),
-and they seed the table when one is created there.
+load/speed friction table of its own (the **Load & Speed Tables** panel below
+the grid; see [Tire Friction Data](TireFrictDataDlg.md)), and they seed the table when one is created there.
 
 - **Peak Long. Friction** — maximum F<sub>x</sub>/F<sub>z</sub>.
 - **Peak Lat. Friction** — maximum F<sub>y</sub>/F<sub>z</sub>.
@@ -41,7 +41,7 @@ in US units. It is used when the tire has no cornering table, and seeds one
 when it is created.
 
 Camber stiffness has no scalar field: it exists only as the load × speed table
-on the **Camber** tab of the Tire Friction Data window.
+on the **Camber** tab of the **Load & Speed Tables** panel below the grid.
 
 ## Min Skid Fz
 
@@ -57,6 +57,55 @@ trail, and it is kept with its sign.
 ## Align Torque Coeff
 
 Self-aligning torque coefficient due to mechanical and pneumatic trail.
+
+## Relaxation Length
+
+Read by SIMON only: the rolling distance over which a slip angle builds the
+tire's side force, in the length units set in Preferences. Each wheel has a
+**default** checkbox; ticked (the default), the relaxation length is one
+unloaded radius of that tire (car tires measure about one to two radii), and
+the field shows that value greyed. Untick it to enter a length. **0** gives
+HVE's own instant side force for that tire.
+
+!!! tip "New in HVE 2027"
+    HVE's tire data has no relaxation length, and HVE's SIMON applies the side
+    force at once. Set the length to 0 to reproduce that.
+
+## TMeasy rows
+
+Three rows, read by SIMON only, and only when the event's **Tire Model** is
+**TMeasy (Rill)** (SIMON Options, opened with **Method Options...** in Event
+Information; see [SIMON Calculation Options](../10-calculation-options/CalcOptSIMON.md#tire-model)).
+TMeasy builds each tire's force curve, in each direction, from an initial
+slope, a peak and a sliding level. It takes them from the tire's existing
+data at its current load and speed — the longitudinal stiffness and cornering
+stiffness for the slopes, peak and slide friction for the peak and sliding
+forces, **Slip at Peak** for the longitudinal peak — and from these three rows
+for the shape that HVE's tire data does not describe:
+
+- **TMeasy Lateral Peak Slip (tan a)** — the lateral slip, as the tangent of
+  the slip angle, at which the side force reaches its peak.
+- **TMeasy Long. Sliding Slip** — the longitudinal slip ratio from which the
+  tire is fully sliding, at slide friction.
+- **TMeasy Lateral Sliding Slip (tan a)** — the tangent of the slip angle from
+  which the tire is fully sliding.
+
+Each wheel has an **auto** checkbox, ticked by default, and the field then
+shows *auto*. With **auto** ticked:
+
+- the lateral peak slip is twice the slip at which the cornering stiffness
+  alone would reach peak friction (2 × μ × F<sub>z</sub> / C<sub>α</sub>, at
+  the tire's load);
+- the longitudinal sliding slip is 1, a locked wheel, where HVE's own friction
+  curve reaches slide friction;
+- the lateral sliding slip is 1 (45°).
+
+Untick **auto** to enter a value (0.01 to 5). The semi-empirical tire models
+do not read these rows.
+
+!!! tip "New in HVE 2027"
+    HVE has no TMeasy tire model, and its tire data has no lateral peak slip
+    or sliding slips.
 
 ## Unloaded Radius
 

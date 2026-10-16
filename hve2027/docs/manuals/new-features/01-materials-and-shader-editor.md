@@ -69,8 +69,8 @@ Editor until you click it.
 
 | Selected | Slots |
 | --- | --- |
-| A vehicle whose mesh names its parts | **(whole)**, then one slot per part: `BODY`, `GLASS`, `CHROME`, `LIGHT_RED_HI`, `TRIM`, ... — the names come from the mesh file |
-| A vehicle whose mesh names no parts (OBJ, glTF, the generic body) | **(whole)** only |
+| A vehicle whose mesh names its parts | **(whole)**, then one slot per part: `BODY`, `GLASS`, `CHROME`, `LIGHT_RED_HI`, `TRIM`, ... — the names come from the mesh file (an OBJ's `usemtl` names, a glTF's material names, an Inventor file's material names), plus any parts made from faces in Edit Mode |
+| A vehicle whose mesh names no parts (an OBJ without `usemtl`, the generic body) | **(whole)** only, until parts are made from its faces in Edit Mode |
 | A human | **(whole)**, then the fifteen body segments, `Pelvis` to `Lt Lower Arm` |
 | A road surface | one slot, named after the surface |
 | The ground plane | one slot |
@@ -256,7 +256,7 @@ To give a part its own material by clicking on it:
 1. In the **Vehicle** editor, choose **Vehicle › Edit Mode (materials per
    part)**, or press **Tab** with the mouse over the viewport.
 2. Click a part of the vehicle — the body, the glass, a lamp lens. It is
-   tinted, and a panel at the viewport's corner names the part and what it
+   outlined, and a panel at the viewport's corner names the part and what it
    wears.
 3. Choose a material from the panel's **Material** list (each with its user
    count), press **+ New** for a material for this part alone, or press **Edit
@@ -266,13 +266,21 @@ To give a part its own material by clicking on it:
 The part clicked is also the Shader Editor's active slot, and clicking a slot
 in the Shader Editor highlights its part in the viewport. **(none -- wear the
 vehicle's)** in the panel's list removes the part's own material. A mesh that
-names no parts says so: it has only the whole-vehicle slot.
+names no parts says so: it has only the whole-vehicle slot, until parts are made
+from its faces (Edit Mode's **Faces** switch and **Make Part**). Parts
+themselves are display only too, except that a part unticked under **Collides**
+in the Vehicle Mesh editor is left out of what DyMESH collides, which changes the
+run.
 
 !!! note "HVE 2027"
-    The unit you can assign is the **part**, as named by the mesh file's own
-    materials. Blender's Edit Mode can assign a material to any face you
-    select; an HVE mesh has no face identities to store, so arbitrary faces
-    cannot be assigned here. A mesh's own modelled wheels are not offered.
+    The unit a material is assigned to is the **part**, as named by the mesh
+    file's own materials. To give some faces a material of their own, switch
+    the panel to **Faces**, select them (they are tinted as well as outlined),
+    and press **Make Part**, or **Add to Part** to put them in a part the
+    vehicle already has. **H** hides the selected faces while you edit,
+    **Shift+H** hides the rest, and **Alt+H** shows them all again. See
+    [Creating and Editing Vehicles](../hve-users/04-vehicle-editor/10-creating-editing-vehicles.md).
+    A mesh's own modelled wheels are not offered.
 
 Faces the file left unnamed, and a mesh that names no parts, wear the
 whole-vehicle material. An opaque vehicle with a see-through part (glass on a
@@ -284,13 +292,39 @@ Each road surface of a loaded site has a material slot. To open it:
 
 - in the **Environment** editor, click the surface in the viewport and open the
   Shader Editor; or
-- in **Environment › Environment...**, *Surface Materials*, select the surface
-  and press **Edit in Shader Editor**; or
+- select the surface in the viewport or **View › Outliner**, and in
+  **Environment › Environment...**, *Selected Surface*, press **Edit in Shader
+  Editor**; or
 - pick it from the Shader Editor's object list.
 
 On a site that stores its road twice (a drivable copy and a drawn copy), the
 surface selected by a click is the one that **drew the pixel**, because that is
 the one a material paints.
+
+### Faces of a surface: the Environment Edit Mode
+
+Press **Tab** in the Environment editor to select single **faces** of the site
+instead of whole surfaces, so that some faces of a surface can wear a material
+of their own. Click a face (Shift adds or removes it). **A** selects every face
+of its surface, **L** grows the selection across flat edges, **B** drags a box
+and **Alt+A** clears. Selected faces are tinted orange as well as outlined;
+the tint is light, so the surface's own material still shows.
+
+**G**, **R** and **S** move, turn and scale the selected faces, as they do a
+surface: X / Y / Z lock an axis, a typed number is exact, Ctrl snaps, and a
+click or Enter keeps the move while Esc or a right-click puts it back. The
+faces part from the faces around them; the move is kept in the case and
+undone with Ctrl+Z, and **Put All Faces Back** (Environment panel, *Site
+Placement*) removes every face move. Where the site is a single mesh (an
+imported DXF, OBJ or similar), the ground the solver drives on moves with the
+faces. A site taken from an HVE case stores its road twice, so only its
+scenery's faces can move; the road's say so instead.
+
+**H** hides the selected faces, **Shift+H** hides every other face, and
+**Alt+H** shows them all again. A hidden face cannot be clicked or selected,
+which is how a face under another is reached. Hiding lasts only while Edit
+Mode is on, is not saved, and changes nothing the simulation sees. Press
+**Tab** or **Esc** to leave.
 
 ### The HVE Surface node
 
@@ -347,7 +381,7 @@ not exported to glTF or sent to Blender.
 ## Saving
 
 Materials, assignments and keyframes are saved with the case, in both the
-`.hvc` and the `.json` format. A node type that a newer build of HVE 2027 added
+`.hvex` and the `.json` format. A node type that a newer build of HVE 2027 added
 is kept, untouched, when the case is opened by an older one.
 
 ## Outside HVE 2027

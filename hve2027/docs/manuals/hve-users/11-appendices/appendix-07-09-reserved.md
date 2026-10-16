@@ -55,8 +55,8 @@ database files reside in the `supportFiles\db` directory (see
     | 9 / 5 / . | Opposite view / perspective–orthographic / frame the selected vehicle |
     | 4, 6, 8, 2 | Orbit in 15° steps |
     | G, R | Move, rotate the selected vehicle (Event editor); then X, Y, Z to lock an axis, a number to type an exact value, Enter to apply, Esc to cancel, Ctrl to snap |
-    | Tab | Edit Mode (Vehicle editor) |
-    | Esc | Clear the environment surface selection |
+    | Tab | Edit Mode (Vehicle editor: parts of the body; Environment editor: faces of the site) |
+    | Esc | Clear the environment surface selection; leave the Environment editor's Edit Mode |
 
     With the pointer over the Outliner: **H** hides the selection, **Alt+H** shows everything.
 

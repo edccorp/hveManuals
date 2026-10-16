@@ -7,9 +7,9 @@ In HVE, clicking the CG of the vehicle in the Vehicle Editor displays the Sprung
 | HVE button | Where it is in HVE 2027 |
 |---|---|
 | Inertias... | **Inertia / Mass...** under Vehicle Properties — see [Vehicle Inertia Dialog](VehInerDlg.md). Weight and inertias are also in the Vehicles panel under **Dimensions / Inertias**. |
-| Move CG... | **Vehicle › Vehicle Mesh...**, row **Move CG** — see [Moving CG](MoveCGDlg.md). |
+| Move CG... | **Vehicle › Vehicle Mesh...** (or the Vehicles panel's **3D Geometry** section), row **Move CG** — see [Moving CG](MoveCGDlg.md). |
 | Color... | **Vehicle Color** in Vehicle Information, or **Color** in the Information section of the Vehicles panel. |
-| Geometry File... | **3D File** in Vehicle Information, in the **3D Geometry** section of the Vehicles panel, or **Mesh File** in **Vehicle › Vehicle Mesh...**. |
+| Geometry File... | **3D File** in Vehicle Information, or **Mesh File** in the Vehicle Mesh editor (the **3D Geometry** section of the Vehicles panel, or **Vehicle › Vehicle Mesh...**). |
 | Refresh Geometry File | **Load 3D File** in the same places reloads the file from disk. |
 | Transform Geometry... | **Vehicle › Vehicle Mesh...**, section **Move, Rotate and Scale the Model** (Translate, Rotate and per-axis Scale). |
 | Contact Surfaces... | **Vehicle › Contact Surfaces...** |

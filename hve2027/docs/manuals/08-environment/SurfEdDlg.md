@@ -13,8 +13,7 @@ coordinates, reversing a face normal, and decimating or tessellating the mesh.
     What HVE 2027 does edit on imported surfaces:
 
     - whether each surface is **drawn** and whether it is **driven on** (the
-      eye and road switches of the Terrain section's **Surface Materials** list,
-      or of the Outliner, View › Outliner);
+      eye and road switches of the Outliner, View › Outliner);
     - each surface's **type, friction, stiffness and soil properties**, on the
       HVE Surface node of its material in the Shader Editor (see
       [Environment Material Properties](EnvrMatPropDlg.md));

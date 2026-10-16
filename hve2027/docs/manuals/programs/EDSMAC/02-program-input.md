@@ -116,7 +116,7 @@ The HVE-2D tire parameters provide the following data groups:
 EDSMAC's use of these parameters is described below.
 
 !!! note "HVE 2027"
-    The tire friction and cornering stiffness tables are in **Vehicle › Tire Tables...** (the **Tire Friction Data** window).
+    The tire friction and cornering stiffness tables are on the **Friction** and **Cornering** tabs of the **Load & Speed Tables** panel at the bottom of **Vehicle › Tire Data (Detailed)...** (the Tire Properties window).
 
 ##### Friction Data
 
@@ -256,7 +256,7 @@ The gravitational constant converts mass to force. An object's mass and rotation
 The Surface Geometry is used by the tire model in EDSMAC to calculate the friction multiplier for the current X,Y position of each tire.
 
 !!! note "HVE 2027"
-    Surface friction is set per surface material in the **Surface Materials** section of the Environment panel. HVE 2027's site is 3-D, but EDSMAC uses only the friction beneath each tire; the vehicles are drawn on the terrain.
+    Surface friction is set per surface material on each surface selected in the Environment editor (the Environment panel's **Selected Surface** section, **Edit in Shader Editor**). HVE 2027's site is 3-D, but EDSMAC uses only the friction beneath each tire; the vehicles are drawn on the terrain.
 
 ## Event
 
@@ -467,7 +467,7 @@ To execute an EDSMAC event, use the playback bar under the viewport (Figure 2-5)
 
 > NOTE: A solved event's inputs are locked while its results are on screen. To change any vehicle, environment or event set-up input, press **Reset** first, then **Run** again.
 
-> NOTE: Use the **View** menu to choose useful displays, such as **Key Results**, and **View › Scene Display** for **Skidmarks** and **Velocity Vectors**.
+> NOTE: Use the **View** menu to choose useful displays, such as **Key Results**, and **View › Scene Display** for **Skidmarks** and the **Velocity** vector.
 
 ### Barrier Collisions
 

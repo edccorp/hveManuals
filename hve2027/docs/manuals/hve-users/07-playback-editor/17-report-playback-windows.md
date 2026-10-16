@@ -21,9 +21,9 @@ This chapter describes how each of these is done in HVE 2027, beginning with the
 
 In Event mode (the **Event (F5)** tab), the following components take the place of HVE's Playback Editor:
 
-- **Viewport** — displays the current event's motion, from any of its Top, Front, Side or 3D views, or as a **Momentum** diagram. It replaces HVE's Trajectory Simulation report windows.
+- **Viewport** — displays the current event's motion in 3-D, from any view: click a face of the view cube in its top-right corner for a preset view, or use a saved camera. It replaces HVE's Trajectory Simulation report windows.
 - **Playback bar** — along the bottom of the Viewport: it plays the results forward, steps through them and jumps to any time. It replaces the Playback Controller.
-- **Output panels** — the Key Results, Output Graph and Timestep Data panels, which dock beside the Viewport like any other panel; they replace HVE's Report Windows.
+- **Output panels** — the Key Results and Output Graph panels, which dock beside the Viewport like any other panel; they replace HVE's Report Windows.
 - **Output menu** — opens the output panels and reports and the Playback Options. (The Playback Sequence is on the **Playback** menu, in Playback mode.)
 
 ![Figure 17-1](../images/hvn-07-solved-event.png)
@@ -49,12 +49,12 @@ HVE displays the results of each event in Report Windows of several kinds. In HV
     - **View › Results HUD** draws chosen numbers — time, and each vehicle's speed, heading, Delta-V or any output channel — in boxes over the Viewport itself as the event plays, and into recorded videos (see [Results HUD](../../new-features/11-results-hud.md)).
 - **Graphic output**:
     - **Damage** — the crushed vehicles are shown in the Viewport. **Output › Damage Studio Report...** gives a table, per vehicle, of the key results chosen in **Output › Damage Studio Options...** (by default impact velocity, delta-V, PDOF, separation velocity and damage energy) and the **Max Crush** the program recorded on the vehicle's mesh (see the note below).
-    - **Momentum Diagram** — the Viewport's **Momentum** view.
-    - **Site Drawing** — the Viewport's **Top** view shows the vehicles at their positions; for EDCRASH, the surveyed scene positions are drawn as ghosts.
+    - **Momentum Diagram** — not produced by HVE 2027. Each vehicle's impact speed, Delta-V and PDOF are in **Output › Key Results...**.
+    - **Site Drawing** — the view cube's **Top** face (or key **7**) gives a plan of the vehicles at their positions; for EDCRASH, the surveyed scene positions are drawn as ghosts.
 - **Variable output** — the output tracks (see [Chapter 16](../06-event-editor/16-event-model-definition.md)):
     - **Output › Variable Selection...** chooses the channels to show.
     - **Output › Output Graph...** plots the selected channels against time (**Select Variables...**, **Format...**).
-    - **Output › Timestep Data Table...** lists them at each output step (**Export CSV...**, **Copy**).
+    - **Output › Key Results...** lists them at each output step in its *Trajectory* section (**Export CSV...**, **Copy CSV**).
     - **Output › Export Variables...** writes the selected channels of the event on screen to a file (CSV, tab-separated text or MATLAB), at a chosen interval and in SAE or Traditional signs.
 - **Trajectory simulation** — the Viewport itself.
 
@@ -120,7 +120,7 @@ To view an output of the current event in HVE 2027, perform the following steps:
    > **NOTE:** If the event has not been run, the output panels and reports
    > are empty and say so. Click **Run** on the playback bar first.
 
-2. Choose the output from the **Output** menu (or, for the Key Results, Output Graph and Timestep Table panels, from the View menu).
+2. Choose the output from the **Output** menu (or, for the Key Results and Output Graph panels, from the View menu).
 3. Drag the panel's tab to dock it where you want it, or out of the main window if View › Panels Outside the Main Window is on.
 
 ## Adding Playback Windows

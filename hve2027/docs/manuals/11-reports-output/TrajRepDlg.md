@@ -7,7 +7,7 @@ Playback Controller.
 !!! note "HVE 2027"
     There is no separate Trajectory Simulation window. A solved event plays back
     in the main 3-D **Viewport** of the Event editor (F5), driven by the
-    **playback bar** under it (Run, Reset, and the step and play buttons). The viewport's view buttons (Top, Front, Side, Momentum, 3D) and
+    **playback bar** under it (Run, Reset, and the step and play buttons). The view cube in the viewport's top-right corner and
     the camera choice beside the playback bar select the view.
     **Output › Playback Options...** sets how playback is drawn, and the
     **Playback (F6)** editor plays several events one after another.

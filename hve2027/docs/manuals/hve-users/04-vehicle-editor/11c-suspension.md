@@ -227,7 +227,7 @@ reference page,
 !!! note "HVE 2027"
     HVE keeps the spindle axis under Suspension › Spindle Axis, per wheel.
     In HVE 2027 the per-axle alignment rows (Caster Angle, Kingpin
-    Inclination, Camber Angle, Toe Angle, Kingpin Offset) are in the
+    Inclination, Camber Angle, Kingpin Offset) are in the
     Steering System table, and the per-wheel rows (Stub Axle Length,
     Kingpin Friction, Stop Angle Right/Left, Stop Stiffness) are in its
     **Steer-Axis Mechanics (per wheel)** table. They are enabled only for an
@@ -257,9 +257,10 @@ System** and edit the steerable axle's column.
 !!! note "HVE 2027"
     In HVE, Kingpin Inclination, Steering Offset and Stub Axle Length are
     inter-related and editing one recalculates another. HVE 2027 stores and
-    edits them independently. Its Toe row is an angle (Toe Angle, degrees)
-    where HVE's Toe-in is a distance, and HVE's Steer Axis Friction Torque is
-    **Kingpin Friction**.
+    edits them independently. HVE's Steer Axis Friction Torque is
+    **Kingpin Friction**. HVE's per-wheel Toe-in, a length, is kept with the
+    vehicle but has no control in HVE 2027: no engine reads it, in HVE or
+    here.
 
 #### Steering Stops
 
@@ -403,14 +404,16 @@ The Anti-pitch Table properties are described below.
 - **Jounce/Rebound** — Suspension travel from equilibrium (see Figure
   11-28). Jounce (compression) is negative; rebound (extension) is
   positive.
-- **Anti-pitch** — Anti-pitch force at the specified suspension deflection.
+- **Anti-pitch** — Anti-pitch coefficient at the specified suspension
+  deflection: the suspension force per unit tire-force moment, in lb/ft-lb
+  (N/N·m in metric units). HVE 2027 holds up to 15 points per wheel.
 
 **Table 11-17: Anti-pitch Table Parameters**
 
 | Parameter | Unit Name | Description |
 | --- | --- | --- |
 | Jounce/Rebound | UtSusDispLength | Suspension travel from equilibrium to Jounce (−) or Rebound (+) stop |
-| Anti-pitch | UtSusAntiPitch | Anti-pitch force at given suspension jounce or rebound |
+| Anti-pitch | UtSusAntiPitch | Anti-pitch coefficient (suspension force per unit tire-force moment) at given suspension jounce or rebound |
 
 ### Roll Steer
 

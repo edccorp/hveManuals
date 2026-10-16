@@ -14,7 +14,7 @@ what it affects. This chapter takes HVE's Options menu item by item.
 | Show Axes | **View › Scene Display › Axes** ([details](#show-axes)) |
 | Show Contacts | **View › Scene Display › Occupant Equipment** |
 | Show Belt Anchors | **View › Scene Display › Occupant Equipment** |
-| Show Velocity Vectors | **View › Scene Display › Vectors › Velocity Vectors** |
+| Show Velocity Vectors | **View › Scene Display › Vectors › Velocity** |
 | Show Skidmarks | **View › Scene Display › Skidmarks** |
 | Show Tracks | **View › Scene Display › Tire Contact Patch Paths** |
 | Show CGs / Show CG Paths | **View › Scene Display › CG Path** (no separate CG marker) |
@@ -191,7 +191,7 @@ stores an option but does not read it, the dialog says so beside the control.
 !!! warning "Not in HVE 2027"
     There is no tool that reports the surface under a picked point. In the
     Environment editor, clicking a surface in the viewport selects it, and the
-    Environment panel's Surface Materials section shows its material.
+    Environment panel's Selected Surface section shows its material.
 
 ---
 
@@ -202,7 +202,7 @@ stores an option but does not read it, the dialog says so beside the control.
 | HVE preference | HVE 2027 |
 |---|---|
 | Diagnostic Level | **Diagnostic Level** — greyed: nothing to control (a run's status always says what it assumed) |
-| Auto Backup | **Enable Auto-Save** and **Interval (min)** — a recovery copy, `<case>.autosave.hvc`, written beside the case while there are unsaved changes |
+| Auto Backup | **Enable Auto-Save** and **Interval (min)** — a recovery copy, `<case>.autosave.hvex`, written beside the case while there are unsaved changes |
 | Date Style | **Date Format** — how dates are shown in the Audit Log, the file browser and the run report |
 | Background Color | **Background Color** — the colour of the main window behind the panels |
 | Skidmark Height | Not in HVE 2027 |
@@ -210,7 +210,7 @@ stores an option but does not read it, the dialog says so beside the control.
 | *(units)* | **Units** — see [UNITS](#units) |
 
 !!! note "HVE 2027"
-    Auto-Save never writes the case file itself: **Enable Auto-Save** (on by default) and **Interval (min)** write a recovery copy of the case, `<case>.autosave.hvc` beside it, while there are unsaved changes; the case file itself is never written. Saving the case removes the copy, and opening a case whose recovery copy is newer offers to open the copy.
+    Auto-Save never writes the case file itself: **Enable Auto-Save** (on by default) and **Interval (min)** write a recovery copy of the case, `<case>.autosave.hvex` beside it, while there are unsaved changes; the case file itself is never written. Saving the case removes the copy, and opening a case whose recovery copy is newer offers to open the copy.
 
 <!-- NAV -->
 

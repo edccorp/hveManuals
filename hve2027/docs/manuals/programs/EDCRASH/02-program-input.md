@@ -37,7 +37,7 @@ To add a vehicle to the current case in HVE 2027:
 
 1. Choose the **Vehicle** editor tab (F3).
 2. In the **Vehicles** panel, click **Add...**. The **Add Vehicle** dialog lets you search the loaded vehicle databases or pick one of HVE's generic vehicles by type and class.
-3. Choose the vehicle and add it. The new vehicle is selected, and it is also added to the active event.
+3. Choose the vehicle and add it. The new vehicle is added to the case and selected; it is not put in any event (add it to the event under **Vehicles in Event**, below).
 4. If desired, edit its name and attributes (type, number of axles, driver and engine location, drive axles) in the **Information** section of the Vehicles panel. The name does not affect calculations.
 
 ![Figure 2-1](images/hvn-vehicle-editor.png)
@@ -472,7 +472,9 @@ After entering the CDC, the damage profile may be edited by over-riding the defa
       the depths **C1**, **C2**, ..., **Damage width** and **Damage
       offset**, and **Per-zone A/B** with one A and B per zone (zones =
       depths − 1) and an **All same as zone 1** button. Depths are spaced
-      evenly across the width.
+      evenly across the width. **Measure from a scan...** opens *Crush
+      Profile from Scan* for this vehicle (below), which fills the depths,
+      width and offset from a scan of the damaged vehicle.
 
     HVE 2027 does not display barrier results while you enter the profile;
     the damage energy and force appear in Key Results and the Damage Data
@@ -485,6 +487,61 @@ After entering the CDC, the damage profile may be edited by over-riding the defa
 ![Damage profile in HVE 2027](images/hvn-edcrash-damage-escort.png)
 
 *Vehicle Impact Setup for the Ford Escort in the EDCRASH Tutorial case, with Measured Crush open.*
+
+#### Crush Profile from Scan
+
+*(New in HVE 2027.)* **Measure from a scan...** under Measured Crush, or
+**Tools › Automatic Tools › Crush Profile from Scan...**, measures the crush
+profile off a scan of the damaged vehicle (LAS, PLY, E57 or a text point file)
+instead of a tape.
+
+- **Vehicle** (the vehicle picker at the top of the window, offering the
+  active event's vehicles; picking one selects it everywhere, and **Measure
+  from a scan...** opens the window on its own vehicle) and **Damaged face**:
+  the event vehicle the profile is written to, and the face, which comes from
+  the CDC's third character (F, B, R, L) unless you choose one. EDCRASH takes the face from the CDC, so a different
+  choice is warned about.
+- **The damaged vehicle's scan**: the file, read like a scanned vehicle body:
+  x forward, y to the LEFT, z up, with the vehicle's CG at the origin. The
+  placement starts from the case vehicle's own body placement; **Scale
+  Factor**, **Center on CG**, **CG in the scan** and **Turn about vertical**
+  move it. The line under it gives the scan's size and how far its front is
+  ahead of the CG, to check against the vehicle.
+- **Undamaged reference**: what the face would have been without damage.
+  **The vehicle's own 3-D body** uses the body the case vehicle collides with
+  (its mesh, or its generic body when it has none -- the window says which; a
+  generic body is the vehicle's size, not its shape). The scan must be placed
+  on the same CG. **Exemplar scan** reads an undamaged vehicle of the same model the same way,
+  so a curved bumper's bow is not counted as crush. **String line** draws a
+  straight line across the face's two undamaged ends, as a tape line does in
+  the field; on a bowed bumper it lies behind the centre and misses the bow's
+  depth. **Plane** uses the vehicle's own exterior extent.
+- **Measure**: where in height the crush is read. EDCRASH takes no height;
+  this is how the measurement is taken.
+  - **At one height**: a 5 cm slice centred on a **Height above ground** (a
+    bumper's, a sill's).
+  - **Deepest crush in a height band** (the default): the band is cut into
+    5 cm slices, and at each place across the face the deepest crush of any
+    slice is used, so a bumper that survived over a crushed rail does not hide
+    it. The result line says at what height the deepest crush was found.
+  - **Average crush over a height band**: the same slices, averaged at each
+    place across the face -- the practice of averaging crush measured at
+    several heights.
+  - **Outermost surface of a height band**: the face is the outermost surface
+    anywhere in the band, which is its least crushed height.
+
+  **Crush stations** sets how many depths (2 to 10). **Smallest crush that is damage** sets where the damaged width
+  ends.
+
+**Measure** draws the face, the reference and the crush at each station, and
+lists the stations with the damage width and offset. The face is the
+outermost surface of the scan in the band, read in 2 cm slices. The damaged
+width is the longest stretch crushed more than the smallest crush, and the
+stations are spaced equally across it in EDCRASH's own order: C1 is the LEFT
+end of a front or back and the REAR end of a side, and the offset is the
+centre of the width from the CG (positive to the right for a front or back,
+forward for a side). **Apply to the event** writes the depths, width and
+offset into Measured Crush; it is locked while results are on screen.
 
 #### Payload
 

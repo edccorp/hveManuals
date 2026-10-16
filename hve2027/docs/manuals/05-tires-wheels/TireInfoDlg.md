@@ -13,8 +13,8 @@ and a tire is picked from HVE's databases in its **Tire Database** section.
     **A2 Left**, and so on. All values are shown in the units set in
     Tools › Preferences. The same window holds the fields of HVE's
     [Tire Physical Data dialog](TirePhyDataDlg.md) and the scalar friction and
-    cornering values; the load/speed tables are in **Vehicle › Tire Tables...**
-    (see [Tire Friction Data](TireFrictDataDlg.md)).
+    cornering values; the load/speed tables are in the **Load & Speed Tables**
+    panel under the grid (see [Tire Friction Data](TireFrictDataDlg.md)).
 
 ![Tire Properties window](images/hvn-tire-properties.png)
 
@@ -41,8 +41,10 @@ HVE 2027's counterpart of choosing a tire by Type, Manufacturer, Model, Size and
 Source Database. The collapsed **Tire Database** section lists the tires in the
 HVE vehicle databases HVE 2027 finds (the same folders the vehicle database
 picker reads), each as manufacturer, model and size with its source database in
-brackets. **Type** narrows the list and **Search** filters it by manufacturer,
-model or size. Selecting a tire shows its radius, ride rate and the size of its
+brackets. **Type** narrows the list, **Database** shows only the tires of one
+database file (*All databases*, or a file with its tire count), and **Search**
+filters it by manufacturer, model or size. While the list is narrowed, a line
+under it reads *Showing N of M*. Selecting a tire shows its radius, ride rate and the size of its
 tables. **Apply Tire** replaces the tire data and all four tables of the wheels
 chosen in **Apply to** (All wheels, or one axle) with the database tire's; each
 wheel keeps its own dual setup.
@@ -94,9 +96,11 @@ The HVE buttons **Friction...**, **Fy vs Slip Angle...**, **Fy vs Inclination
 Angle...** and **Slip vs Roll-Off...** are the **Friction Table**, **Cornering
 Table**, **Camber Table** and **Fy Roll-off** rows of the table's **Load &
 Speed Dependence** section: each wheel's button shows the size of its table
-(hover it for the contents) and opens that table on its tab of the **Tire
-Friction Data** window (Vehicle › Tire Tables...). **Physical Data...** has no
-counterpart: the physical data are in the same table.
+(hover it for the contents) and selects that wheel and that table's tab in the
+**Load & Speed Tables** panel below the grid; the button for the table on
+screen is highlighted. A drag bar between the grid and the panel resizes them.
+**Physical Data...** has no counterpart: the physical data are in the same
+table.
 
 !!! warning "Not in HVE 2027"
     - **Mass**: the table shows the tire's **Tire Weight** instead.

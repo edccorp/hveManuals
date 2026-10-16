@@ -193,11 +193,11 @@ EDCRASH produces the following Graphic reports:
 
     - **Site drawing.** The viewport outlines each vehicle at every scene
       position that is set (View › Scene Display › Scene Ghosts: None, Outline, Translucent
-      vehicle or Both). Use the Top view for a plan.
-    - **Momentum.** The viewport's **Momentum** view draws a simple vector
-      sketch of each vehicle's impact speed, departure and delta-V from the
-      Key Results. It is HVE 2027's own drawing, not EDCRASH's scene or
-      damage momentum diagram, and should not be used in their place.
+      vehicle or Both). For a plan, click the view cube's **Top** face (or
+      press **7**).
+    - **Momentum.** HVE 2027 does not produce the momentum diagrams. Each
+      vehicle's impact speed, Delta-V and PDOF (and separation speed) are
+      reported in **Output › Key Results...**.
     - **Damage profiles.** The damage width, depths, offset and impulse
       center are listed in the Damage Data report.
 

@@ -39,6 +39,12 @@ screen.
 **Name** — the event's name. HVE 2027 does not generate a name from the
 selected objects; a new event is named *Event n*.
 
+**Start time (s)** — the time shown at the event's start, for example −5 so
+that the impact reads near 0. The results, the graphs, exported output, the
+event's playback bar and the Results HUD read the event's clock, and a new
+Playback track is placed at it. The run itself is unchanged: the engine still
+integrates from 0. *(New in HVE 2027.)*
+
 ## Calculation Method
 
 **Method** — a drop-down list of the calculation methods: EDCRASH, EDSMAC, EDGEN,
@@ -58,6 +64,23 @@ event.
   saved but not run.
 
 Unlike HVE, the method of an existing event can be changed at any time.
+
+**Physics** — which physics runs the event:
+
+- **HVE** — the physics as it now stands (the default).
+- **HVE-reference** — the same engines frozen as they were validated against
+  original HVE, run by their own solver program (`hve-solver-reference.exe`
+  beside the program). Where that program is not present, or in the browser
+  version, a red *Cannot run:* line says why.
+- **HVE (imported)** — solves nothing: **Run** plays original HVE's own saved
+  run of this event. Only a `.hve` saved after the event was executed carries
+  one, and only while the case is open from that file; otherwise a red *Cannot
+  play:* line says why.
+
+Results solved by one are not the other's. **Output › Compare Runs...** runs
+the event with two of them and compares the runs (see
+[Compare Runs](../hve-users/02-menu-reference/04d-output-menu.md#compare-runs)).
+*(New in HVE 2027.)*
 
 **Method Options...** opens the active method's calculation options window
 (see [Calculation Options](../10-calculation-options/README.md)). EDSVS, EDVDS,
@@ -150,7 +173,10 @@ Position/Velocity dialog. One block per vehicle slot, headed *V*n* -- name*:
 - **Auto Position (settle onto terrain)** — 3-D methods only. On, the engine
   settles the vehicle onto the terrain, and a line reports the resulting
   height, roll and pitch (or why it fell back to flat ground). Off, **Z Height**
-  is entered directly. Planar methods always settle.
+  is entered directly. Planar methods always settle. For SIMON (HVE
+  physics), the run also starts 2 s early and settles the vehicle in place on
+  its suspension and tires before the event begins (see
+  [SIMON Program Input](../programs/SIMON/02-program-input.md)).
 - **This height is the SETTLED ride height** — SIMON only, with Auto Position
   off. Off (the default), SIMON applies its static tire deflection once; on, the
   entered height is already the settled elevation.

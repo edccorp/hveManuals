@@ -5,7 +5,7 @@
 In HVE, an object selected in the 3-D Editor is positioned and sized with one of seven Open Inventor manipulators — Direct, Trackball, HandleBox, Jack, Centerball, TransformBox and TabBox — chosen from the 3-D Edit menu.
 
 !!! note "HVE 2027"
-    HVE 2027 has no manipulator menu and does not move environment objects. It has **one gizmo**, used in the **Event editor (F5)** to place a vehicle's starting position (and the measured scene positions drawn as ghosts), plus Blender-style keyboard operators: **G** to move and **R** to rotate. The camera has its own controls (see [Chapter 19](19-using-3d-editor.md#navigating-the-3-d-view) and [Cameras](#cameras) below).
+    HVE 2027 has no manipulator menu. It has **one gizmo**, used in the **Event editor (F5)** to place a vehicle's starting position (and the measured scene positions drawn as ghosts), plus Blender-style keyboard operators: **G** to move and **R** to rotate, and, in the Environment and Vehicle editors, **S** to scale (see the notes at the end of [HVE Manipulators](#hve-manipulators)). The camera has its own controls (see [Chapter 19](19-using-3d-editor.md#navigating-the-3-d-view) and [Cameras](#cameras) below).
 
     The gizmo is available only while the event's inputs are editable: once a run's results are on screen the start layout is locked until **Reset** on the playback bar.
 
@@ -57,19 +57,22 @@ The seven HVE manipulators and their HVE 2027 counterparts:
 |---|---|---|
 | Direct | Drag the object in the plane of the screen | **G** (the vehicle follows the mouse over the ground) |
 | Trackball | Free rotation about the object's center | **R** (heading); pitch and roll knobs for 3-D methods |
-| HandleBox | Translate and scale with box handles | Arrows for translation; no scaling |
+| HandleBox | Translate and scale with box handles | Arrows for translation; a vehicle's start position is never scaled. **S** scales a site, a site surface or a vehicle's mesh |
 | Jack | Translate along and rotate about each axis | Arrows and ring; **G**/**R** with **X**/**Y**/**Z** |
 | Centerball | Rotate about each axis, move the center | Ring and knobs; the rotation center is always the CG |
-| TransformBox | Translate, rotate and scale | Not available (no scaling) |
+| TransformBox | Translate, rotate and scale | **G**, **R** and **S** on a site, a site surface or a vehicle's mesh |
 | TabBox | Scale by tabs on the faces | Not available |
 
 !!! note "HVE 2027"
-    In the Environment Editor, **G** and **R** move and turn the whole **site**, or the selected **surface**, with the same axis keys and typed numbers; the Environment panel's **Site Placement** fields and the selected surface's **Placement** fields hold the numbers. The solver drives on the moved ground. A surface turns about its own centre and the site about its centre. On a site taken from an HVE case the road moves only with the whole site; its scenery moves on its own. Nothing is scaled in the view: imported geometry takes its scale and up axis from **Scene Geometry**, and scene boxes are placed by the fields of the Scene Box Editor.
+    In the Environment Editor, **G**, **R** and **S** move, turn and scale the whole **site**, or the selected **surface**, with the same axis keys and typed numbers (with **S**, **X**, **Y** or **Z** scales that axis alone, a typed number is the factor, and **Ctrl** steps by 0.1); the Environment panel's **Site Placement** fields and the selected surface's **Placement** fields, including **Scale (x, y, z)**, hold the numbers. The solver drives on the moved ground. A surface turns and scales about its own centre and the site about the middle of its box. Several surfaces selected together (Ctrl or Shift in the Outliner, a click on a layer's row, or Shift-clicks in the 3-D view) move, turn and scale as one about their common centre; the move is refused if any of them moves only with the whole site. On a site taken from an HVE case the road moves only with the whole site; its scenery moves on its own. Scene boxes are placed by the fields of the Scene Box Editor.
+
+!!! note "HVE 2027"
+    In the **Vehicle Editor**, **G**, **R** and **S** move, rotate and scale the vehicle's **mesh** (its picture and the body DyMESH collides). **G** moves it (**X** or **Y** locks an axis, **Z** lifts it), **R** turns it about the vertical (with **X** or **Y**, rolls or pitches it as the mouse moves up or down), and **S** scales it (**X**, **Y** or **Z**: one axis). A typed number is exact (metres, degrees or a factor), **Enter** or a left click keeps it, and **Esc** or a right click puts it back. They edit the same **Translate**, **Rotate** and **Scale** rows as the Vehicle Mesh editor, as one undo step, and are refused while results are on screen. With a display mesh set, they move the display mesh and the collision mesh stays.
 
 ## Cameras
 
 !!! tip "New in HVE 2027"
-    **Tools › Cameras…** (also the **Cam** button in the corner of the view, or **Camera Properties…** on the view's right-click menu) has two tabs:
+    **Tools › Cameras…** (also a right-click on the **Camera** button under the view cube, or **Camera Properties…** on the view's right-click menu) has two tabs:
 
     - **Viewport View** — the live camera: **Orbit** or **Free (Euler)** control; view presets **Top**, **Front**, **Rear**, **Left**, **Right**, **Persp**; azimuth, elevation, distance and target point (orbit) or eye position and pitch/yaw/roll (free); **Perspective** or **Orthographic** projection with focal length or field of view; **Reset Camera**.
     - **Saved Cameras** — the case's named cameras (up to 16). **Add** captures the current view as a new camera; **Delete** and **Rename** act on the selected one; **Activate** looks through it (only the active camera drives the view); **Capture Current View** stores the current framing in it. Re-framing an active camera in the view makes it *Current*, with **Save as New**, **Overwrite** and **Revert**.

@@ -35,7 +35,7 @@ In HVE 2027, set the following:
 - **Tools › Preferences** — Units equals US
 - **View › Key Results** — on
 - **View › Scene Display › Occupant Equipment** — on, to show the contact panels, belt anchors and airbag
-- **View › Scene Display › Vectors › Velocity Vectors** — off
+- **View › Scene Display › Vectors › Velocity** — off
 - **View › Scene Display › Skidmarks** — on
 - **View › Scene Display › Rendering** — *Phong*
 - **View › Scene Display › Humans Through Bodywork** — on, to see the occupant inside the car

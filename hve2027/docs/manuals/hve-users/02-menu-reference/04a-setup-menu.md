@@ -26,7 +26,7 @@ part by method:
 | Driver Controls... | EDSMAC, EDSMAC4, SIMON, EDSVS, EDVDS, EDVTS, EDVSM, SINGLETRACK; and EDCRASH, where it shows the Wheel Data page |
 | Damage Profiles... | EDCRASH (it opens Event Information's Vehicle Impact Setup) |
 | Collision Pulse... | EDCRASH, SIMON, EDHIS, GATB |
-| Vehicle Mesh..., DyMESH Options..., Path Follower..., Notes, Advanced Mesh Options... | every event |
+| Vehicle Mesh..., DyMESH Options..., Path Follower..., Notes | every event |
 | Payload... | SIMON, EDSMAC4, EDSVS, EDVDS, EDVTS |
 | Wheels... | the methods that use driver controls (not EDCRASH, EDGEN, EDHIS, GATB or READDATAFILE) |
 | Accelerometers... | SIMON, EDSMAC4, EDVDS, EDVSM (the methods that compute accelerometer output) |

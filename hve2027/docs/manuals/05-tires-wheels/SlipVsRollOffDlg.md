@@ -4,9 +4,11 @@ The roll-off table for one wheel position: how much the tire's lateral force is
 reduced as longitudinal slip increases.
 
 !!! note "HVE 2027"
-    This is the **Fy Rolloff** tab of the **Tire Friction Data** window, opened
-    in the Vehicle editor (F3) with **Vehicle › Tire Tables...**. **Axle** and
-    **Side** at the top of the window choose the wheel (see the
+    This is the **Fy Roll-off** tab of the **Load & Speed Tables** panel at the
+    bottom of the **Tire Properties** window, opened in the Vehicle editor (F3)
+    with **Vehicle › Tire Data (Detailed)...**, or by a wheel's **Fy Roll-off**
+    button in the grid's **Load & Speed Dependence** rows. The **Wheel:**
+    buttons at the top of the panel choose the wheel (see the
     [Tire Friction Data](TireFrictDataDlg.md) page).
 
 The table is read by EDVTS and EDSVS. With no table the multiplier is 1.0 (no

@@ -4,6 +4,16 @@ This chapter covers two things HVE did in its Playback editor: combining
 several events on one timeline (HVE's *Video Creator*), and writing a video
 file. HVE 2027 has a Playback editor too: the **Playback (F6)** tab.
 
+## An event's start time
+
+Every event starts at 0 s. To show it on a different clock -- for example
+**−5** so that an impact five seconds in reads near 0 -- enter a **Start
+time (s)** in the Event editor, under the event's name. It changes only how
+times are SHOWN: the Key Results table and its CSV, the graph's time axis,
+Export Variables' Time column, the playback bar and its time entry, and the
+Results HUD's Time row while that event plays. The run itself is unchanged.
+A case read from HVE starts at 0.
+
 ## Playback sequences
 
 !!! tip "New in HVE 2027"
@@ -25,6 +35,12 @@ comparison.
 2. Press **New**. The new sequence takes every event in the case, laid end to
    end, and becomes the active sequence. (Its default name is *Sequence N*;
    change it in **Name**.)
+   If any event has a **Start time** (Event editor, under its name), the
+   tracks are instead placed by those clocks: an event that starts at −5 s
+   lands 5 s before one that starts at 0, so a pre-impact event and its
+   impact event play one after the other. The timeline itself always begins
+   at 0, so the earliest event starts there. **Add Event** and **Add All
+   Events** place a new track the same way.
 3. Press **Run All Events** to solve every event the sequence uses, one after
    another. The window is busy until they finish; an event that has no result
    yet shows **not solved** in the *Result* column and contributes nothing.
@@ -133,7 +149,7 @@ In the Playback editor:
     Saving the case saves the results of every solved event beside it, so a
     reopened case plays its sequences without **Run All Events**. An event
     edited after it was solved comes back unsolved; press **Run All Events** to
-    solve it again (see [Saved results](../getting-started/04-cases-and-files.md#saved-results-hvr)).
+    solve it again (see [Saved results](../getting-started/04-cases-and-files.md#saved-results-hver)).
 
 ## Recording a video
 
@@ -258,7 +274,7 @@ noise out of the lighting while keeping paint, photographs and shadow edges
 sharp, so 16–32 samples already give a clean picture.
 
 A still can also be made without opening the app:
-`hve-next --render-traced case.hvc picture.png 128 1920` traces the case at the
+`hve-next --render-traced case.hvex picture.png 128 1920` traces the case at the
 end of its run through its active camera (add a time after the width for
 another instant, and `--no-denoise` for the raw samples).
 

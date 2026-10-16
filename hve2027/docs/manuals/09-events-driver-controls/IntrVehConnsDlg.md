@@ -6,12 +6,15 @@ the Vehicle editor (F3) open **Vehicle Information**, expand **Vehicle
 Properties** and press **Connections...** (the same list is in the vehicle
 panel's *Vehicle Properties* section).
 
-Values are shown in the units set in Preferences. The dialog is locked while the
-vehicle is part of results on screen.
+The dialog is a table with a **Front** and a **Rear** column, one for each
+connection, and the rows **Type**, **X**, **Y**, **Z**, **Height above ground**
+and **Properties**. Values are shown in the units set in Preferences and take
+effect as they are made (**Edit › Undo** takes one back); **Close** closes the
+dialog. The dialog is locked while the vehicle is part of results on screen.
 
 ## Front Connection
 
-**Front Type**
+**Type** (Front column)
 The type of connection on the front of the vehicle. A **towed** unit (trailer or
 dolly) connects here:
 
@@ -23,11 +26,11 @@ dolly) connects here:
 
 **X / Y / Z**
 The vehicle-fixed coordinates of the front connection. For a connection other
-than None, a line gives its height above the ground.
+than None, the **Height above ground** row gives its height.
 
 ## Rear Connection
 
-**Rear Type**
+**Type** (Rear column)
 The type of connection on the rear of the vehicle. A **towing** unit connects
 here:
 
@@ -55,8 +58,10 @@ options (EDSMAC4 *Inter-Vehicle Connection*).
 ## Properties...
 
 The connection properties belong to the **towing** end, so **Properties...**
-under Rear Connection opens **Connection Properties** for the vehicle's rear
-connection:
+in the Rear column opens **Connection Properties** for the vehicle's rear
+connection (the Front column says *set on the towing end*). Its edits also take
+effect as they are made and undo with **Edit › Undo**; it has a single
+**Close** button:
 
 - **Radius** — the moment arm at which the frictional torque acts at the
   connection (HVE's *Radius*).

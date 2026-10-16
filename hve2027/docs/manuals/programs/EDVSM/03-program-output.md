@@ -15,7 +15,7 @@ EDVSM produces three types of output reports:
     HVE 2027 has no report windows to create, and the reports are not in the **Playback** editor (F6), which plays several events in sequence. Run the event, then:
 
     - **Output › HVE Reports** shows the alpha-numeric pages EDVSM writes itself, one tab per page: *ACCIDENT HISTORY*, *DRIVER DATA*, *ENVIRON DATA*, *MESSAGES*, *PROGRAM DATA* and *VEHICLE DATA*. **Save This Page** and **Save All Pages** write them to a text file for printing.
-    - **Output › Key Results** shows the time histories (the Variable Output of this chapter) of the channels chosen with **Output › Variable Selection**, and **Output › Export Variables** writes them to a file. **Output › Output Graph** plots channels chosen with its own **Select Variables…** button. **Output › Timestep Data Table** lists the position, heading and speed at each output step.
+    - **Output › Key Results** shows the time histories (the Variable Output of this chapter) of the channels chosen with **Output › Variable Selection**, and **Output › Export Variables** writes them to a file. **Output › Output Graph** plots channels chosen with its own **Select Variables…** button.
     - **Output › HVE Reports** (its *ACCIDENT HISTORY* tab) shows EDVSM's own Accident History page. **Save This Page** saves it as text and **Save Page as HTML** as an HTML page.
     - The trajectory and damage play back in the viewport with the playback bar.
 
@@ -121,10 +121,10 @@ EDVSM produces a Variable Output table containing the time-based simulation resu
 - **Drivetrain** - Current levels of driving torque and other information related to the drivetrain
 - **Driver** - Current levels of driver inputs (steering, braking, throttle and gear ratios)
 
-An example of a Variable Output table is shown in Figure 3-7. A detailed listing of each Variable Output parameter produced by EDVSM is found in Table 3-1. For more information about HVE Variable Output parameters, refer to the HVE Operations Manual, Chapter 16, Event Model.
+A detailed listing of each Variable Output parameter produced by EDVSM is found in Table 3-1. For more information about HVE Variable Output parameters, refer to the HVE Operations Manual, Chapter 16, Event Model.
 
 !!! note "HVE 2027"
-    In HVE 2027 the table is **Output › Key Results** (its *Trajectory* section); choose its columns with **Output › Variable Selection** (the *Filter* box accepts HVE's own variable names, such as Delta, Spin or V-tot). **Output › Timestep Data Table** (Figure 3-7) is a fixed table of the position, heading and speed at each output step. Channel names follow HVE's. One thing to know when reading them:
+    In HVE 2027 the table is **Output › Key Results** (its *Trajectory* section); choose its columns with **Output › Variable Selection** (the *Filter* box accepts HVE's own variable names, such as Delta, Spin or V-tot); position (X, Y), heading and speed are among them, and **Export CSV...** writes the table to a file. Channel names follow HVE's. One thing to know when reading them:
 
     - EDVSM does not compute brake temperatures. A brake-temperature channel holds no number after the first sample, so HVE 2027 shows it as blank (`--`) rather than as a flat line, the channel names carry *(no thermal data)*, and the run status says how many such channels there are.
 
@@ -139,10 +139,6 @@ An example of a Variable Output table is shown in Figure 3-7. A detailed listing
 | Wheel Data | x,y,z location of wheel; Camber, Steer angle of wheel; Wheel Spin Velocity; $F_x$, $F_y$, $F_z$ of wheel; Jounce/Rebound displacement, velocity; Spring, Damping and Anti-pitch Suspension Force; Drive and Brake Torque at wheel; Brake Pressure at wheel |
 | Drivetrain Data | Engine Speed, Power and Torque; Transmission and Differential Numeric Ratio |
 | Driver Data | Steering wheel angle; Throttle position; Brake Pedal Force and Master Cylinder Pressure; Transmission and Differential Gear Selection |
-
-![Figure 3-7](images/hvn-edvsm-timestep-table.png)
-
-*Figure 3-7: Output › Timestep Data Table for the tutorial's Curb-tripped Rollover event.*
 
 ## Trajectory Simulations
 

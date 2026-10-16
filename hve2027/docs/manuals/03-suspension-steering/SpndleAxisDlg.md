@@ -18,8 +18,8 @@ The distance from the center of the tire contact patch to the point where the st
 **Camber Angle (deg)**
 The static camber angle of the axle's wheels.
 
-**Toe Angle (deg)** (HVE: Toe-In)
-The toe of the axle's wheels, entered as an angle. HVE enters toe-in as a distance.
+**Toe-In**
+Not in HVE 2027's Steering System dialog. HVE's per-wheel toe-in, a length, is kept with the vehicle (read from an HVE case or a vehicle database) but has no control in HVE 2027: no engine reads it, in HVE or here.
 
 ## Steer-Axis Mechanics (per wheel)
 

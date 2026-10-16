@@ -31,11 +31,13 @@ Environment Editor's components:
   **Terrain**, **Sky**, **Physical** and **Friction Zones**. It replaces HVE's
   Environment Information property sheet. Terrain and Physical — the
   sections the engines read — are open by default.
-- **Viewport** — the 3-D view of the current environment, with the Top,
-  Front, Side, Momentum and 3D views selectable above it.
+- **Viewport** — the 3-D view of the current environment, with a view cube
+  in its top-right corner for the preset views.
 - **Environment menu** — **Environment...** (shows the Environment panel),
   **Aerial Image...** and **Scene Box Editor...**, described later in this
-  chapter.
+  chapter, and **Edit Mode (materials per face)** (**Tab**), which switches
+  the Viewport to selecting single faces of the site (see
+  [Edit Mode: faces of the site](#edit-mode-faces-of-the-site)).
 
 ![Figure 12-1](../images/hvn-05-environment-editor.png)
 *Figure 12-1: The Environment Editor — the Environment panel and the Viewport, showing the site embedded in HVE's PA27_UpdateFord-Final case.*
@@ -44,14 +46,69 @@ Environment Editor's components:
 
 Unlike HVE's Environment Viewer, which had no pickable objects, the
 HVE 2027 Viewport lets you click a surface of the site in Environment mode.
-The clicked surface is selected in the panel's **Surface Materials** list
-(see Road Surfaces and Their Materials, below), where its contact material
-can be edited.
+The clicked surface is selected: it is highlighted in the view and in
+**View › Outliner**, and the panel's **Selected Surface** section (see Road
+Surfaces and Their Materials, below) shows it, where its contact material
+can be edited. **Shift**-click adds a surface to the selection.
 
 > **NOTE:** If a site stores the road twice — once as the surface the
 > engines drive on and once as the surface that is drawn, as a native HVE
 > case does — clicking the road names both halves together, each with its
 > own Drive and Draw switch.
+
+### Edit Mode: faces of the site
+
+Press **Tab** with the pointer over the Viewport, or choose **Environment ›
+Edit Mode (materials per face)**, to select single **faces** of the site
+instead of whole surfaces. A panel at the bottom left of the Viewport, headed
+**EDIT MODE faces**, shows what is selected. Press **Tab** again, or **Esc**,
+to leave Edit Mode. (While a box select is armed, **Esc** first cancels the
+box.)
+
+Selecting faces:
+
+| Key or click | Does |
+| --- | --- |
+| Click | Selects one face |
+| **Shift**+click | Adds a face to the selection, or removes it |
+| **A** | Selects every face of the clicked face's surface that is not hidden (**Shift+A** adds them to the selection) |
+| **Alt+A** | Selects no face |
+| **B** | Drag a box in the Viewport: every face whose centre is inside it is added (**Ctrl**+drag removes). The box sees through the site, so hidden faces are taken too |
+| **L** | Grows the selection across edges to faces of the same surface that lie flat with it (within 1 degree): the polygon the importer split into triangles, or a flat run of road up to its kerb |
+| **H** | Hides the selected faces |
+| **Shift+H** | Hides every other face |
+| **Alt+H** | Shows every hidden face again |
+
+The panel repeats the selection keys as buttons: **All of surface (A)**,
+**Linked flat (L)**, **Box (B)** and **None (Alt+A)**; with no face selected
+and some hidden, it shows how many are hidden and a **Show All** button. A
+hidden face cannot be clicked or selected, which is how a face under another
+is reached. Hiding lasts only while Edit Mode is on, is not saved, and changes
+nothing the programs see. Outside Edit Mode, **H** and **Alt+H** hide and show
+whole surfaces instead.
+
+With faces selected, the panel names how many and of which surface, and gives
+them a material of their own:
+
+- **Material** — the material the selected faces wear, *(mixed)* when they
+  wear several, or their surface's. Choose another from the list.
+- **+ New** — a new material for the selected faces alone, drawing them as
+  they are now.
+- **Edit in Shader Editor** — opens the material the faces wear. Greyed until
+  they wear one of their own.
+- **Clear** — the selected faces wear their surface's material again.
+
+A face material is display only: it changes what the site looks like. The
+surface type and friction — what the programs drive on — stay the surface's.
+If the case holds face materials picked on a different geometry of this site,
+the panel lists them as not applied and offers **Forget the stale ones**.
+Materials are described in
+[Materials and the Shader Editor](../../new-features/01-materials-and-shader-editor.md#faces-of-a-surface-the-environment-edit-mode).
+
+**G**, **R** and **S** move, turn and scale the selected faces, the same way
+they move a surface (see
+[Moving the site, or one of its surfaces](#moving-the-site-or-one-of-its-surfaces)).
+With no face selected, the keys do nothing in Edit Mode.
 
 ## Editing the Environment
 
@@ -179,11 +236,13 @@ Environment panel's Sky section or the Event panel's Lighting section). The
 !!! warning "Not in HVE 2027"
     HVE's **Fog Type** (None, Fog, Haze, Smoke) and **Maximum Visibility**
     are not available. A value imported from an HVE case is kept with the
-    case, but there is no control for it, and the viewport's **Distance
-    Haze** (View › Scene Display › Effects) is a fixed fade of far geometry,
-    not a visibility distance, so HVE 2027 cannot be used for HVE's
-    visibility studies. (The Shader Editor's Sky Texture node has a *Haze* setting, but
-    it only veils the sky itself.) HVE's **Sky Color** dialog is replaced by the world material in
+    case, but there is no control for it, so HVE 2027 cannot be used for
+    HVE's visibility studies. The viewport's **Distance Haze** (View › Scene
+    Display › Effects) fades far geometry toward the sky's horizon colour by
+    the **Haze** of the World material's Sky Texture node; it is a picture,
+    not a visibility distance, and draws nothing while Haze is 0 (the
+    default sky), with no World material, or with Scene Lighting off. HVE's
+    **Sky Color** dialog is replaced by the world material in
     the Shader Editor; see
     [Materials and the Shader Editor](../../new-features/01-materials-and-shader-editor.md).
 
@@ -297,29 +356,55 @@ ground the vehicles drive on and its picture together:
   site is moved, in the length units of **Preferences**.
 - **Turn (deg)** — how far it is turned about the vertical through its
   centre; a positive turn is to the right.
+- **Scale (x, y, z)** — a factor along each of the site's own axes, about
+  the middle of its box (1 = as read). The scale is applied first, then the
+  turn, then the move.
 - **Reset** — back to where the file put it.
 
 A selected surface has the same fields under **Placement** in the
-*Surface Materials* section. A surface turns about its own centre, and the
-site's placement then carries it with everything else.
+**Selected Surface** section. A surface turns and scales about its own
+centre, and the site's placement then carries it with everything else.
 
-In the Viewport, **G** moves and **R** turns the selected surface, or the
-whole site when no surface is selected. **X**, **Y** or **Z** locks the
-motion to an axis, a typed number gives an exact distance (metres) or angle
-(degrees), **Enter** or a left click keeps it, and **Esc** or a right click
-puts it back. **Ctrl** steps by 0.5 m or 15 degrees.
+In the Viewport, **G** moves, **R** turns and **S** scales the selected
+surface, or the whole site when no surface is selected. **X**, **Y** or
+**Z** locks the motion to an axis (with **S**, scales that axis alone), a
+typed number gives an exact distance (metres), angle (degrees) or scale
+factor, **Enter** or a left click keeps it, and **Esc** or a right click
+puts it back. **Ctrl** steps by 0.5 m, 15 degrees or a factor of 0.1.
+
+Several surfaces can be selected at once: **Ctrl**- or **Shift**-click rows
+in **View › Outliner**, click a layer's row there (it selects every surface
+in the layer), or **Shift**-click surfaces in the Viewport. **G**, **R** and
+**S** then move, turn and scale them together as one body about their common
+centre; each keeps its own placement. If any of them moves only with the
+whole site (see the note below), the move is refused and the Viewport says
+how many to deselect.
+
+In Edit Mode (see [Edit Mode: faces of the site](#edit-mode-faces-of-the-site)),
+**G**, **R** and **S** move, turn and scale the selected **faces** instead,
+about their middle, with the same axis keys, typed numbers and **Ctrl**
+steps. The faces part from the faces around them. Where the site is a single
+mesh (an imported DXF, OBJ or similar), the ground the solver drives on moves
+with them. Faces of a surface that moves only with the whole site (see the
+note below) cannot be moved, and the Viewport says so. A face move is kept in
+the case and can be undone with **Ctrl+Z**. While the case holds face moves,
+**Site Placement** says how many there are and how many faces they move, and
+how many of them no longer match the site's faces or lie on a surface that
+moves only with the whole site, and so are not applied. **Put All Faces Back**
+removes every face move.
 
 The placement is kept in the case; the geometry file is not changed.
 Vehicles, friction zones, scene boxes and the point cloud keep their own
 positions. Like every surface property the solver reads, the fields are
-locked while results are on screen.
+locked while results are on screen; pressing **G**, **R** or **S** then
+says *The site is locked while results are on screen -- Reset the run to
+move it*.
 
 !!! note "HVE 2027"
     On a site taken from an HVE case the road is kept twice — the polygons
     the solver drives on and the picture drawn over them — so a road surface
     moves only with the whole site. Its scenery (surfaces of type *Other*)
-    moves on its own. HVE's manipulators could also scale a surface; HVE 2027
-    does not.
+    moves on its own.
 
 ### Shading
 
@@ -355,6 +440,7 @@ Toolkit's *Create Roadway Surface* in Blender:
 | Setting | Meaning |
 |---|---|
 | **Cell size** | The grid spacing (default 0.305 m, one foot). |
+| **Use the file's ground class** | Drape only the points the scan file classifies as ground (class 2). Survey processing software usually separates ground from cars, kerbs and trees better than the percentile alone can. Offered only when the file has ground-classified points (LAS and PLY can carry classes; E57 and text files cannot). The settings below still apply to what is left. |
 | **Ground percentile** | Each grid point takes this low percentile of the scan heights within half a cell of it, so the road under a parked car is kept and the car is not. |
 | **Fill holes / Max fill** | Grid points with no scan data are filled from their neighbours, up to this distance from measured ground (0 = any distance), and smoothed to follow the slope of the ground around them. Ground further away is left as a hole. |
 | **Below-grade reject** | A single return this far below *all* its neighbours is ignored. |
@@ -367,18 +453,35 @@ is one surface, *Asphalt_scan_surface*, so set its friction like any other
 surface's. The file's header records the scan, its placement and the
 settings used.
 
-**Texture from the scan's colour** (on by default) paints the surface with the
-scan's own colours, or with its intensity in grey if it has no colour. Points
-more than **Colour height tolerance** above or below the surface are left out,
-so a parked car does not colour the road. **Texture size** sets the image's
-resolution. The image is saved beside the surface as a `.png`, with a `.mtl`
-file that names it.
+**Texture the surface** (on by default) paints the surface. **Shows** picks
+what with:
+
+- **Scan colour** -- the scan's own colours, or its intensity in grey if it
+  has no colour. Points more than **Colour height tolerance** above or below
+  the surface are left out, so a parked car does not colour the road.
+- **Coverage (measured / filled)** -- green where the height came from scan
+  points, amber where it was filled in from the neighbours (under a car, in a
+  scan shadow), red where points were removed as a spike and the gap filled.
+- **Fit (distance from the scan)** -- how far the scan's ground points lie from
+  the surface: green at 0, yellow at 5 cm, red at 10 cm and over; blue-grey
+  where there is no ground point to check against. The result line gives the
+  mean and the 95th percentile.
+
+The two quality maps are for checking a surface before running on it; build it
+again with **Scan colour** for the finished site. **Texture size** sets the
+image's resolution. The image is saved beside the surface as a `.png`, with a
+`.mtl` file that names it.
 
 To surface only part of the scan, use **Region to surface**: tick **Click
 corners in the 3-D view**, then click around the area, ideally looking straight
 down. The outline is drawn in yellow. **Undo corner** removes the last corner
 and **Clear region** removes them all. With fewer than three corners the whole
-scan is used.
+scan is used. Pressing the create or replace button turns corner clicking off,
+so looking around the result does not add corners.
+
+**Make a friction zone from the region** adds a friction zone with the same
+outline (up to 16 corners), for a patch of the scan that is gravel, a wet stain
+or a painted area. Set its friction multiplier under **Friction Zones**.
 
 If the case already has site geometry, the button reads **Replace Site with
 Scan Surface...**. The new surface replaces the old site, along with the
@@ -394,25 +497,29 @@ frame (**Points drawn per frame**), so loading more does not slow the view.
 
 ## Road Surfaces and Their Materials
 
-When a site has been imported, the Terrain section lists its surfaces under
-**Surface Materials**, in a tree of the site's layers with their surfaces
-under them (the same tree as **View › Outliner**). Each row has two
-switches:
+When a site has been imported, its surfaces are listed in **View ›
+Outliner**, in a tree of the site's layers with their surfaces under them.
+Each surface row has two switches:
 
 - **Draw** (the eye) — draw the surface in the Viewport.
 - **Drive** (the road) — send the surface to the engines as road.
 
 Clearing both removes a surface from the picture and from the solver. This
 is reversible: the geometry is rebuilt from its source each time the case is
-opened, and the switches are re-applied.
+opened, and the switches are re-applied. A loaded point cloud is listed in
+the Outliner too, with its file name, its point count and an eye that shows
+or hides it; it has no Drive switch, because a point cloud is never a
+surface.
 
-The **Default material** row under *Solver surface* is the material used by
-any drivable polygon that has no material of its own; the row says whether
-any polygon uses it.
+The Environment panel's **Selected Surface** section shows the surface
+selected in the Viewport or the Outliner: its name, type and friction, its
+**Placement**, and the buttons **Edit in Shader Editor** and **Deselect**.
+**Open Outliner** opens the Outliner. **Default material** edits the material
+used by any drivable polygon that has no material of its own.
 
 To edit a surface's contact material:
 
-1. Click the surface in the Viewport, or select its row in the list.
+1. Click the surface in the Viewport, or select its row in the Outliner.
 2. Click **Edit in Shader Editor**. The surface's material opens in the
    Shader Editor with its **HVE Surface** node, which holds the surface
    type and every physical property the engines read (see
@@ -431,8 +538,8 @@ To edit a surface's contact material:
    source file stated.
 
 A surface's edits are saved with the case and re-applied each time the
-geometry is re-imported. Selecting the Default material row edits the
-fallback material in the panel itself.
+geometry is re-imported. **Default material** edits the fallback material
+in the panel itself; **Deselect** under it closes it.
 
 !!! note "HVE 2027"
     HVE edits surface type and friction with the 3-D Editor's Object

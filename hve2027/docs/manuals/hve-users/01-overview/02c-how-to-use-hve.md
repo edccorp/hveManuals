@@ -60,11 +60,13 @@ the same for the occupant.
 
 ### Velocity Vectors
 
-**View › Scene Display › Vectors › Velocity Vectors** draws each vehicle's velocity vector. It is
+**View › Scene Display › Vectors › Velocity** draws each vehicle's velocity vector. It is
 formed from the vehicle's forward and lateral velocity, so a vehicle in a
-sideslip shows an arrow off its heading. The Vectors group also offers the
-**Collision Force (PDOF)** while the vehicles are in contact and the **Tire Force
-Vectors** at each contact patch. Arrows are scaled to the run's own peak.
+sideslip shows an arrow off its heading. The Vectors table also offers
+**Acceleration**, the **Collision force** and **Collision moments** while the
+vehicles are in contact, and the tire forces at each contact patch. Each type of
+arrow has one fixed scale, set in the table, so lengths compare between vehicles
+and between runs.
 
 ### Skidmarks
 

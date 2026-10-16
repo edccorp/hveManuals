@@ -113,7 +113,7 @@ Now we have both vehicles ready for our study.
 HVE 2027 does not write `.hve` files, so save the case under a new name in HVE 2027's own format:
 
 1. Choose **File › Save Case As...**.
-2. Enter the file name `Edsmac4Tutorial` and save. The case is saved as an `.hvc` file (or use **File › Save Case As JSON...** for a `.json` file).
+2. Enter the file name `Edsmac4Tutorial` and save. The case is saved as an `.hvex` file (or use **File › Save Case As JSON...** for a `.json` file).
 
 > **NOTE:** Saving the file occasionally is a highly recommended practice. Once the event has been run, saving also writes its results beside the case, so they are there when the case is next opened.
 
@@ -397,7 +397,7 @@ To visualize the motion:
 
 ### Variable Output
 
-The Variable Output table displays the time-dependent results computed by EDSMAC4. In HVE 2027 it is the **Key Results** panel (**Output › Key Results...**), with one row per output step and one column per selected variable; the same variables can be graphed with **Output › Output Graph...**. (**Output › Timestep Data Table...** gives the trajectory alone — time, X, Y, heading and speed — in a fixed layout.)
+The Variable Output table displays the time-dependent results computed by EDSMAC4. In HVE 2027 it is the **Key Results** panel (**Output › Key Results...**), with one row per output step and one column per selected variable; the same variables can be graphed with **Output › Output Graph...**.
 
 #### Variable Selection
 
@@ -425,7 +425,7 @@ The Vehicle Data report displays the vehicle data, tire data and driver tables f
 HVE 2027 does not print reports directly. To keep a copy:
 
 1. In **Output › HVE Reports**, click **Save All Pages** (or **Save This Page**). The pages are written to the text file named in the box beside the buttons.
-2. For the time histories, click **Export CSV...** in the Key Results panel (the selected variables) or in the Timestep Data table (the trajectory).
+2. For the time histories, click **Export CSV...** in the Key Results panel; it writes the selected variables.
 
 You can then print or include these files in your own report.
 

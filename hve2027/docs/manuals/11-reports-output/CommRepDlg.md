@@ -134,8 +134,8 @@ When there are no pages the window says why:
   it looked in.
 
 !!! note "HVE 2027"
-    HVE 2027's own views of the same results are the **Key Results**,
-    **Output Graph** and **Timestep Data** windows (Output menu), and the
+    HVE 2027's own views of the same results are the **Key Results**
+    and **Output Graph** windows (Output menu), and the
     [Results HUD](../new-features/11-results-hud.md) over the viewport. The HVE
     Reports pages are what the engine printed; the others are what HVE 2027
     computed from the run.

@@ -189,8 +189,10 @@ axle, so there is no Current Axle selector:
 - **Has steering column** — Off for a castoring axle with no steering
   linkage.
 - Alignment: **Caster Angle**, **Kingpin Inclination**, **Camber Angle**,
-  **Toe Angle**, **Kingpin Offset** (see [Spindle
-  Axis](11c-suspension.md#spindle-axis)).
+  **Kingpin Offset** (see [Spindle
+  Axis](11c-suspension.md#spindle-axis)). There is no toe row: HVE's
+  per-wheel toe-in, a length, is kept with the vehicle but no engine reads
+  it.
 - **Column Friction**, **Column Inertia**, **Friction Lag (rad/s)**.
 
 Below the table, **Steer-Axis Mechanics (per wheel)** has a column per wheel

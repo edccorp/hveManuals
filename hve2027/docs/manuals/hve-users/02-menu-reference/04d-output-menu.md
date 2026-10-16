@@ -14,18 +14,18 @@ that they say there is nothing to show.
 
 | Item | What it does | HVE equivalent |
 |---|---|---|
-| **Key Results...** | The Key Results panel | Options › Show Key Results; Key Results windows |
+| **Key Results...** | The Key Results panel — key results, and in its *Trajectory* section the selected variables at each output time | Options › Show Key Results; Key Results windows; Variable Output Table |
 | **Output Graph...** | The Output Graph panel — variables plotted against time | Variable Graphing window |
-| **Timestep Data Table...** | The Timestep Data panel — variables at each output time | Variable Output Table |
-| **Variable Selection...** | Select Output Variables, for the timestep table | Variable Selection dialog |
+| **Variable Selection...** | Select Output Variables, for Key Results | Variable Selection dialog |
 | **HVE Reports...** | The report pages the engine itself builds, among them its ACCIDENT HISTORY page | the engine's report windows, including the Accident History numeric report |
+| **Compare Runs...** | Runs the active event with two physics (HVE, HVE-reference, or HVE's own saved run) and shows the differences — see [COMPARE RUNS](#compare-runs) | *(new)* |
 | **Playback Options...** | Playback speed, frame step, loop, CG path | Options › Playback |
 | **Run Simulation...** | Opens the Simulation panel and runs the active event | the Event Controller's execute button |
 | **Damage Studio Options...** | What the Damage Studio displays | Damage Studio |
 | **Damage Studio Report...** | The Damage Studio report | Damage Studio |
 | **Export Variables...** | Export output to a file | File › Export |
 
-The panels — Key Results, Output Graph, Timestep Data and Simulation — can also
+The panels — Key Results, Output Graph and Simulation — can also
 be shown and hidden from the **View** menu, and dock below the viewport by
 default.
 
@@ -69,22 +69,6 @@ See the dialog reference: [Variable Output Graph](../../11-reports-output/VarOut
 
 ---
 
-## TIMESTEP DATA TABLE
-
-**Menu Option:** Output › Timestep Data Table... · View › Timestep Table
-
-**Description:** The selected output variables at each output time — HVE's
-Variable Output Table. **Copy** and **Export CSV...** take the table out.
-Choose the variables with **Output › Variable Selection...**.
-
-![Select Output Variables](../images/hvn-01-variable-selection.png)
-*Output › Variable Selection... opens Select Output Variables.*
-
-See the dialog reference: [Variable Output Table](../../11-reports-output/VarOutEdDlg.md)
-and [Variable Selection](../../11-reports-output/VarSelDlg.md).
-
----
-
 ## HVE REPORTS
 
 **Menu Option:** Output › HVE Reports...
@@ -122,6 +106,41 @@ with **Save This Page** (text) or **Save Page as HTML** — see
 [Accident History](../../11-reports-output/AcciHistDlg.md).
 
 See the dialog reference: [Common Reports](../../11-reports-output/CommRepDlg.md).
+
+---
+
+## COMPARE RUNS
+
+**Menu Option:** Output › Compare Runs...
+
+**Description:** Answers the active event twice: once with the physics
+**shown**, whose run is left on screen, and once with the one it is
+**compared against**, which is kept as the comparison and drawn as an orange
+ghost in the viewport. The choices are **HVE** (the physics as it now stands),
+**HVE-reference** (the same engines frozen as they were validated against
+original HVE) and **HVE (imported)** (original HVE's own saved run of the event,
+played rather than solved).
+
+| Control | Does |
+|---|---|
+| **Shown (the run on screen)** | The event's own physics: the same setting as Event Information › **Physics**, used by **Run** and saved with the case. Locked while the event holds results |
+| **Compared against (the ghost)** | *the other physics* (the default), or one of the three; the one shown cannot also be the ghost |
+| **Compare Runs** | Solves the event with the comparison first, then with its own physics. Greyed, with the reason, while a run is in progress, when the event is already solved (press **Reset** first) or when the comparison cannot run |
+
+When both runs are done the window names the event and the two physics, and
+shows the differences between the two runs for each vehicle, and for each
+occupant both runs carry (GATB, EDHIS). Every number is read from the two runs'
+own trajectories and outputs. If the run on screen is of another event, the
+window says so; press Compare Runs again for this one.
+
+An *HVE-reference* comparison needs `hve-solver-reference.exe` beside the
+program, and *HVE (imported)* a case opened from a `.hve` saved after the event
+was executed (see
+[Event Information](../../09-events-driver-controls/EventInfo.md#calculation-method)).
+
+!!! tip "New in HVE 2027"
+    HVE has no counterpart: HVE 2027 carries both its current physics and the
+    physics as it was validated against HVE.
 
 ---
 
@@ -232,7 +251,7 @@ The dialog's sections:
 CSV and ASCII files start with four header rows — vehicle, output group,
 variable and units (in parentheses) — then the data rows, with time in
 seconds in the first column. The values are in the units set in
-**Preferences** (imperial or metric), the same units the Timestep Data Table
+**Preferences** (imperial or metric), the same units Key Results
 shows; units are written in plain text (`ft-lbf`, `deg/s^2`, `degF`). A
 MATLAB file assigns the numbers to the matrix `hve_data` (time in column 1)
 and the column titles to the cell arrays `hve_columns`, `hve_vehicles`,

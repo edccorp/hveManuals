@@ -59,7 +59,7 @@ chapter 12 set vehicle, event and driver-control inputs.
 ## What "display only" means here
 
 A case stores its materials, sun, cameras, keyframes and Results HUD boxes alongside its physics
-inputs, and saves them in both the `.hvc` and the `.json` format. They are
+inputs, and saves them in both the `.hvex` and the `.json` format. They are
 deliberately left out of the fingerprint HVE 2027 uses to decide whether a
 solved result still matches its inputs, so editing a material, moving the sun,
 keying a camera or editing a HUD box never discards a run, and none of them is

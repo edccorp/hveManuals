@@ -6,7 +6,9 @@ The default CG (center of gravity) location of the vehicle is determined from ra
 
 ## Move CG in the Vehicle Mesh dialog
 
-Open **Vehicle › Vehicle Mesh...** in the Vehicle Editor (also on the Event menu). In the section **Move, Rotate and Scale the Model**, the row **Move CG** holds three values, X, Y and Z, in the units set in Preferences. They state where the CG sits in the geometry file's own coordinates, in the SAE vehicle frame (+x forward, +y right, +z down). The body is drawn displaced from the CG by this amount, so that the wheels and the bodywork line up. This is the value HVE's Move CG dialog stores, and it is read from an HVE case when one is opened. It moves the drawn body and the body mesh used for DyMESH contact together; it does not change the vehicle's dimensions or inertias.
+Open **Vehicle › Vehicle Mesh...** in the Vehicle Editor (also on the Event menu, and the same editor as the Vehicles panel's **3D Geometry** section). In the section **Move, Rotate and Scale the Model**, the row **Move CG** holds three values, X, Y and Z, in the units set in Preferences. They state where the CG sits in the geometry file's own coordinates, in the SAE vehicle frame (+x forward, +y right, +z down). This is the value HVE's Move CG dialog stores, and it is read from an HVE case when one is opened.
+
+Typing a new value **moves the CG**, as HVE's Move CG does: the body, the wheels and everything fitted to the vehicle stay where they are, and the CG-to-axle distances, the CG-to-side distances and the CG height change to match. A move that would put the CG at or below the ground is refused, and the reason is shown under the row. To move the picture of the body instead, use **Translate**.
 
 The same section holds **Translate**, **Rotate (deg)** and **Scale** (per axis), which are HVE's Transform Geometry. They are applied as scale, then rotate, then translate, inside the Move CG shift, which is HVE's own order.
 

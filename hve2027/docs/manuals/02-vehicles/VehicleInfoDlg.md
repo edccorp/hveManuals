@@ -64,7 +64,7 @@ The body color used to draw the vehicle. Click the swatch for a color picker, or
 ## 3D Geometry
 
 ### 3D File
-The 3-D geometry file used to draw the vehicle (OBJ, Inventor/VRML or HVE `.h3d`: `.obj`, `.iv`, `.wrl`, `.h3d`). **Browse...** picks the file; **Load 3D File** loads it, and **Clear** removes it so the vehicle is drawn with a generic body. A status line reports whether the load succeeded. Scaling, moving and rotating the model is done in the Vehicle Mesh dialog (**Vehicle › Vehicle Mesh...**).
+The 3-D geometry file used to draw the vehicle: OBJ, glTF, Inventor/VRML, HVE `.h3d`, or a point-cloud scan (`.obj`, `.gltf`, `.glb`, `.iv`, `.wrl`, `.h3d`, `.las`, `.ply`, `.e57`, `.xyz`, `.pts`). **Browse...** picks the file; **Load 3D File** loads it, and **Clear** removes it so the vehicle is drawn with a generic body. A status line reports whether the load succeeded. Scaling, moving and rotating the model, and its collision settings, are in the Vehicle Mesh editor (the Vehicles panel's **3D Geometry** section, or **Vehicle › Vehicle Mesh...**).
 
 ## Tools
 

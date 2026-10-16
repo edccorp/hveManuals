@@ -97,7 +97,8 @@ no-damage threshold.
 Maximum contact moment used by the wheel damage model.
 
 !!! tip "New in HVE 2027"
-    **View › Scene Display › DyMESH Wheel Mesh** draws the four-ring wheel contact body built
+    The **Mesh** box of the **DyMESH Wheel** row (**View › Scene Display**, Vehicle
+    group) draws the four-ring wheel contact body built
     from the tire's size and static loaded radius, deformed by the run, with the
     vertices the run crushed in red. It is available after a SIMON run with
     DyMESH enabled.

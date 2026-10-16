@@ -216,11 +216,12 @@ of the collision load each wheel carried.
     Patch**. Each name carries both readings because other engines write a
     different quantity to the same slot; on a SIMON event the *Wheel Impact*
     reading applies. These are time histories of force and moment, not
-    impulses. After a run, **View › Scene Display › DyMESH Wheel Mesh** draws each wheel's
+    impulses. After a run, the **Mesh** box of the **DyMESH Wheel** row (**View › Scene
+    Display**, Vehicle group) draws each wheel's
     contact mesh, deformed by the run, with crushed vertices in red.
 
 ![Figure: HVE 2027 DyMESH wheel meshes](images/hvn-dymesh-wheel-mesh.png)
-*Figure: View › Scene Display › DyMESH Wheel Mesh after a run of the CityBlockAccident T-bone case: the ring-shaped wheel contact meshes are drawn at each wheel of the struck Audi.*
+*Figure: View › Scene Display, DyMESH Wheel › Mesh, after a run of the CityBlockAccident T-bone case: the ring-shaped wheel contact meshes are drawn at each wheel of the struck Audi.*
 
 ## Wheel displacement capping *(updated)*
 

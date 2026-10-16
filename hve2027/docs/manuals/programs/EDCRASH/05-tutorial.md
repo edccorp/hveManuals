@@ -65,7 +65,7 @@ In HVE's tutorial the vehicles' colour and weight are edited, and the Nissan's r
 Now that we've opened the case, let's save it as an HVE 2027 case file:
 
 1. Choose **File › Save Case As...**.
-2. Enter the file name *EdcrashTutorial* and save. HVE 2027 saves `.hvc` files; **File › Save Case As JSON...** saves the same case as a `.json` text file.
+2. Enter the file name *EdcrashTutorial* and save. HVE 2027 saves `.hvex` files; **File › Save Case As JSON...** saves the same case as a `.json` text file.
 
    > **NOTE:** HVE 2027 reads HVE's `.hve` files but does not write them.
 
@@ -386,7 +386,7 @@ The Messages report produced by EDCRASH is one of its most important reports. Wh
 
 ### Momentum Diagrams
 
-The Momentum Diagram reports are not produced by HVE 2027. (The viewport's Momentum view is a simple vector sketch drawn by HVE 2027, not EDCRASH's scene or damage momentum diagram.)
+The Momentum Diagram reports are not produced by HVE 2027.
 
 ### Program Data
 

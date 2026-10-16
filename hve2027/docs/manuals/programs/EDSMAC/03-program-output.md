@@ -17,7 +17,7 @@ To view the alpha-numeric reports in HVE 2027:
 3. Click a tab to display that page.
 
 !!! note "HVE 2027"
-    These pages are EDSMAC's own: the engine builds them from its own resource strings at the end of the run, as in HVE, and HVE 2027 displays them as tables built from the engine's own report records. **Save This Page** and **Save All Pages** at the bottom of the window write them to a text file, and **Save Page as HTML** / **Save All Pages as HTML** to an HTML file a browser can print; the window has no Print button. The figures of HVE-2D's report windows that this chapter used to carry are not reproduced. The Accident History is its ACCIDENT HISTORY tab. HVE 2027 also has views of its own built from its results — **Output › Key Results...** and **Output › Timestep Data Table...**.
+    These pages are EDSMAC's own: the engine builds them from its own resource strings at the end of the run, as in HVE, and HVE 2027 displays them as tables built from the engine's own report records. **Save This Page** and **Save All Pages** at the bottom of the window write them to a text file, and **Save Page as HTML** / **Save All Pages as HTML** to an HTML file a browser can print; the window has no Print button. The figures of HVE-2D's report windows that this chapter used to carry are not reproduced. The Accident History is its ACCIDENT HISTORY tab. HVE 2027 also has views of its own built from its results — **Output › Key Results...** and **Output › Output Graph...**.
 
 ## Alpha-Numeric Reports
 
@@ -93,7 +93,6 @@ EDSMAC produces a Variable Output table containing the time-based simulation res
 
     - **Output › Key Results...** — the equivalent of the Variable Output table: one row per output step and one column per selected variable and vehicle, plus each vehicle's key results. **Select Variables...** at the top of the panel (or **Output › Variable Selection...**) opens the **Select Output Variables** window, which chooses the columns; **Export CSV...** writes the table to a file;
     - **Output › Output Graph...** — selected variables plotted against time;
-    - **Output › Timestep Data Table...** — the trajectory itself (time, vehicle, X, Y, heading and speed at every output step);
     - **Output › Export Variables...** — the selected variables written to a file.
 
     Channels that EDSMAC never computes are marked "(not computed)" in their names, and **Only variables this run computed** in the Select Output Variables window hides them.

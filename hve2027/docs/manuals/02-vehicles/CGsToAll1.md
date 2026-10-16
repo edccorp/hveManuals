@@ -11,7 +11,7 @@ Vehicle-fixed distance from the CG to the back of the vehicle. In HVE 2027 this 
 Distance from the rearmost axle to the back of the vehicle, an **input** under **Overall**.
 
 ### Overall Length
-Shown under **Overall** and, as derived by the solver, in the *Overall* column of **Exterior Extents**.
+Shown under **Overall** and, as derived by the solver, in the *Overall* column of **Exterior Extents**. Typing or dragging **Overall Length** moves each overhang by half the change. An overhang cannot go below zero: a shortfall one overhang cannot take goes to the other, so the shortest length is the axle span, with no overhang at either end, and the panel says so.
 
 ## Stiffness...
 The rear face's A, B and Kv stiffness is edited in **Vehicle › Crush Stiffness...** (Vehicle editor, F3), section **Rear**, or in the **CG to Rear...** dialog of the **Crush & Geometry** window (**Event › Crush Profile...**, EDCRASH, EDSMAC and EDSMAC4 events). Its 3-D node stiffness is the **Rear** zone under **3-D Node Stiffness** in Crush Stiffness. See [Stiffness Coefficient Dialog](StiffCoeffDlg.md).

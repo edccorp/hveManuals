@@ -50,16 +50,16 @@ appear only here; in the Vehicle editor the Vehicle menu takes their place.*
 
 | Chapter | Menu | HVE chapter it replaces |
 |---|---|---|
-| [3](03-files-menu.md) | File — New, Open, Open Recent, Save, Save As, Save As JSON, Embed the environment, Publish Bundle, Export Scene for Blender, Blender Live Link, Record Animation, Play Video, Exit | File Menu |
+| [3](03-files-menu.md) | File — New, Open, Open Recent, Save, Save As, Save As JSON, Embed vehicle meshes, Embed the environment, Publish Bundle, Export Scene for Blender, Blender Live Link, Record Animation, Play Video, Exit | File Menu |
 | [3B](03b-edit-menu.md) | Edit — Undo, Redo, Undo History | *(new)* |
 | [4 (Part A)](04a-setup-menu.md) | Event — Event Information, Position / Velocity, Driver Controls, Path Follower | Set-up Menu (Part A) |
 | [4 (Part B)](04b-setup-menu.md) | Event — Damage Profiles, Collision Pulse, Vehicle Mesh, DyMESH Options, Payload, Wheels, Accelerometers, Contacts, Restraints, Lights, Notes, and the method-specific items | Set-up Menu (Part B) |
 | [4C](04c-vehicle-environment-occupant-menus.md) | Vehicle, Environment and Occupant menus | *(new; HVE's editor dialogs)* |
-| [4D](04d-output-menu.md) | Output — reports, graphs, tables, playback, Run Simulation, Damage Studio, Export Variables | *(new; HVE's Playback Editor)* |
+| [4D](04d-output-menu.md) | Output — reports, graphs, tables, Compare Runs, playback, Run Simulation, Damage Studio, Export Variables | *(new; HVE's Playback Editor)* |
 | [5](05-view-menu.md) | View — panels, paths, vectors, rendering, Outliner, Scene Ghosts | View Menu |
 | [6](06-options-menu.md) | *Where HVE's Options menu went* — item-by-item map | Options Menu |
 | [6B](06b-tools-menu.md) | Tools — Quick Case, Vehicle Package, Case Intake, Provenance, EDR Import, Monte Carlo, Motorcycle Analysis, Preferences, Style Editor, Cameras, Audit Log, Limits Editor | *(new)* |
-| [7](07-help-menu.md) | Help — About HVE 2027 | Help Menu |
+| [7](07-help-menu.md) | Help — License, Check for Vehicle Data Updates, About HVE 2027 | Help Menu |
 
 For a first look at the window, panels and viewport, see the
 [interface tour](../../getting-started/03-interface-tour.md); for what is different from

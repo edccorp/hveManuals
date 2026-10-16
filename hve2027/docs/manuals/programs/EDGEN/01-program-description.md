@@ -71,7 +71,7 @@ The procedure for using EDGEN is substantially the same as using any reconstruct
    - Position the vehicle at its initial position and enter its initial speed, then add the further positions and speeds as waypoints in **Event › Path Follower** (Path tab). A human's positions are entered under the human in **Humans in Event**.
    - Execute the EDGEN event with **Run** on the playback bar.
 5. Press **Reset**, edit and re-execute the event, if necessary, to achieve the desired accelerations between each position.
-6. Finally, review the results (Key Results, Output Graph, Timestep Data Table, HVE Reports) and play the motion back in the viewport. *(File › Record Animation writes the playback to an AVI video; for a rendered movie, export the scene with File › Export Scene for Blender.)*
+6. Finally, review the results (Key Results, Output Graph, HVE Reports) and play the motion back in the viewport. *(File › Record Animation writes the playback to an AVI video; for a rendered movie, export the scene with File › Export Scene for Blender.)*
 
 <!-- NAV -->
 

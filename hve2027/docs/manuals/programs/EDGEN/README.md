@@ -29,8 +29,8 @@ messages are the ones this manual describes. The program around it differs:
 - **Path Model.** Linear or 3-D Spline Interpolation, under **Method
   Options...**, is passed to the engine.
 - **Running and reviewing.** **Run** on the playback bar executes the event
-  and the viewport plays it back. Results are in **Key Results**, **Output ›
-  Output Graph** and **Output › Timestep Data Table**; HVE's own report pages
+  and the viewport plays it back. Results are in **Key Results** and **Output ›
+  Output Graph**; HVE's own report pages
   (Accident History, Messages, Program Data) are in **Output › HVE
   Reports**. Several events are combined in the **Playback** editor (F6),
   **Playback › Playback Sequence...**. See [Chapter 3](03-program-output.md).

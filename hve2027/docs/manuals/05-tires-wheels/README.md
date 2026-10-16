@@ -1,6 +1,6 @@
 # Tires & Wheels
 
-Dialog reference for the **Tires & Wheels** area: one page per HVE dialog, each describing the HVE 2027 window that replaces it. Vehicle tire data are edited in the Vehicle editor (F3) under **Vehicle › Tire Data (Detailed)...** and **Vehicle › Tire Tables...**; per-event wheel options in the Event editor (F5) under **Event › Wheels...**. Part of the [HVE Manual](../README.md).
+Dialog reference for the **Tires & Wheels** area: one page per HVE dialog, each describing the HVE 2027 window that replaces it. Vehicle tire data are edited in the Vehicle editor (F3) under **Vehicle › Tire Data (Detailed)...** (the Tire Properties window, whose **Load & Speed Tables** panel holds the load/speed tables); per-event wheel options in the Event editor (F5) under **Event › Wheels...**. Part of the [HVE Manual](../README.md).
 
 ## Pages
 

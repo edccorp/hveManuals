@@ -43,7 +43,7 @@ the **active event** (the one selected in Event Information):
 |---|---|
 | Numeric reports (Accident History, Key Results and other numeric output) | **Output › Key Results...**, **Output › HVE Reports...** (Accident History is its ACCIDENT HISTORY page) |
 | Graphic reports | **Output › Output Graph...** |
-| Variable Output Table | **Output › Timestep Data Table...**, with **Output › Variable Selection...** |
+| Variable Output Table | **Output › Key Results...** (its *Trajectory* section), with **Select Variables...** |
 | Trajectory Simulation | the Event editor's viewport |
 | Damage reports | **Output › Damage Studio Report...** |
 
@@ -65,14 +65,15 @@ appearance.
 !!! warning "Not in HVE 2027"
     HVE's graphic report types that drew a site drawing or other diagram (for
     example EDCRASH's Site Drawing, HVE's Figure 2-35) are not available as
-    reports; the viewport's **Top** view and the scene ghosts show the scene.
+    reports; the viewport's view cube **Top** face (or key **7**) and the scene
+    ghosts show the scene.
 
 ### Variable Output Table
 
-The **Timestep Data** panel (Output › Timestep Data Table...) lists the selected
-variables at each output time. **Output › Variable Selection...** chooses the
-variables (HVE's Variable Selection dialogs); **Copy** and **Export CSV...** take
-the table out.
+The **Key Results** panel's *Trajectory* section (Output › Key Results...) lists
+the selected variables at each output time. **Select Variables...** (or **Output ›
+Variable Selection...**) chooses the variables (HVE's Variable Selection
+dialogs); **Copy CSV** and **Export CSV...** take the table out.
 
 ![Figure 2-37](../images/hvn-01-variable-selection.png)
 *Figure 2-37: The Select Output Variables dialog.*
@@ -80,9 +81,9 @@ the table out.
 ### Trajectory Simulation
 
 A run's trajectory plays back in the Event editor's viewport — HVE's Trajectory
-Simulation window. Choose the view with the viewport's **Top**, **Front**,
-**Side**, **Momentum** and **3D** buttons, or a saved camera from the playback
-bar's camera list.
+Simulation window. Choose the view with the view cube in the viewport's
+top-right corner (click a face for that view, drag it to orbit), or a saved
+camera from the playback bar's camera list.
 
 ### Creating a Playback Window
 
@@ -157,19 +158,19 @@ case are saved in it too.
 
 ### Opening Cases
 
-**File › Open Case...** (Ctrl+O) opens an HVE 2027 case (`.hvc` or `.json`) or an
+**File › Open Case...** (Ctrl+O) opens an HVE 2027 case (`.hvex` or `.json`) or an
 HVE case (`.hve`). See [File Menu](../02-menu-reference/03-files-menu.md#open).
 
 ### Saving Cases
 
 **File › Save Case** (Ctrl+S) saves the case to its current file. When the case
 has been run, the results of every solved event are saved beside it in a
-`.hvr` file and come back when the case is opened — each event's unless its
+`.hver` file and come back when the case is opened — each event's unless its
 inputs have changed since.
 
 !!! note "A case opened from an HVE `.hve` file"
     The first Save Case opens the save dialog with the same name ending
-    `.hvc`; the `.hve` itself is never overwritten. See
+    `.hvex`; the `.hve` itself is never overwritten. See
     [File Menu — Save](../02-menu-reference/03-files-menu.md#save).
 
 ### Save As
@@ -219,8 +220,9 @@ selected vehicle from a database record.
 A vehicle's tires come with its vehicle record. To fit a different tire, open
 **Vehicle › Tire Data (Detailed)...**: its **Tire Database** section lists the
 tires in the loaded vehicle databases, and **Apply Tire** puts the chosen tire,
-with its tables, on all wheels or one axle. Tire data is edited there and in
-**Vehicle › Tire Tables...**.
+with its tables, on all wheels or one axle. Tire data is edited there: the
+scalar data in the per-wheel grid, and the load/speed tables in the **Load &
+Speed Tables** panel below it.
 
 ### Generic Databases
 
@@ -237,8 +239,15 @@ As).
 
 ### User Databases
 
-A database written with Save Vehicle As is read like any other once its folder is
-in the Add Vehicle dialog's folder list.
+**Vehicle › Save to My Vehicles...** keeps the selected vehicle, as edited in the
+case, in your own database: `MyVehicles.hvedb`, or another one you name. Your
+own databases are kept in your `userdb` folder and listed in the Add Vehicle
+dialog without any setup, as is a database written with Save Vehicle As into
+that folder. A database someone else gives you (a classic `.db` or an `.hvedb`)
+is copied into the same folder with **Import database...** under **Database
+folders** in the Add Vehicle dialog; a database in another folder is read once
+that folder is added to the list (see
+[Save to My Vehicles](../04-vehicle-editor/10-creating-editing-vehicles.md#save-to-my-vehicles)).
 
 ### Case Database
 
@@ -254,7 +263,7 @@ in the Add Vehicle dialog's folder list.
     HVE 2027 does not print, either from its windows or from dialogs, and has no
     Print To File. Save the output instead and print it from another program:
 
-    - **Key Results** and **Timestep Data**: **Export CSV...** (or **Copy CSV**)
+    - **Key Results**: **Export CSV...** (or **Copy CSV**)
     - **Selected variables**: **Output › Export Variables...**
     - **HVE Reports** (including the Accident History): **Save This Page**,
       **Save All Pages** (text), **Save Page as HTML**, **Save All Pages as
@@ -269,8 +278,10 @@ in the Add Vehicle dialog's folder list.
 
 ## Setting the View
 
-Every 3-D view in HVE 2027 is the viewport. Choose the view type with the
-viewport's **Top**, **Front**, **Side**, **Momentum** and **3D** buttons;
+Every 3-D view in HVE 2027 is the viewport. Click a face of the view cube in
+its top-right corner for a preset view in orthographic projection, or drag the
+cube to orbit; the buttons under the cube zoom, pan, look through the scene
+camera and switch between perspective and orthographic. In the view,
 left-drag to orbit, right-drag to pan, and use the wheel to zoom; the number
 keys give standard views (see [Window Basics](00-using-hve.md#keyboard)).
 

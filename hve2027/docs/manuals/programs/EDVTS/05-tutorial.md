@@ -22,7 +22,7 @@ This basic procedure is described in detail in this tutorial.
 
 Open the tutorial case:
 
-- Choose **File › Open Case…** and open `EdvtsTutorialEDC.hve` from the `supportfiles\case` folder of your HVE installation. HVE 2027 reads HVE's `.hve` case files directly; saving writes HVE 2027's own `.hvc` or `.json` format, never `.hve`.
+- Choose **File › Open Case…** and open `EdvtsTutorialEDC.hve` from the `supportfiles\case` folder of your HVE installation. HVE 2027 reads HVE's `.hve` case files directly; saving writes HVE 2027's own `.hvex` or `.json` format, never `.hve`.
 
 The original tutorial set a list of user options before starting. In HVE 2027:
 
@@ -49,7 +49,7 @@ The original walkthrough makes the following edits. Each is already in the finis
 - **Color** — the **Color** field in the **Vehicles** panel's **Information** section.
 - **Rear axle positions** — the tractor's third axle moved to x = -161.50 in and its second to x = -110.00 in. Wheel positions are in the panel's **Dimensions / Inertias** section.
 - **Fifth wheel** — the tractor's rear connection moved to x = -135.75 in, z = -4 in. Connections are edited with **Vehicle Properties › Connections…** in the **Vehicles** panel; the dialog shows the connection's height above ground, which must match the trailer's kingpin to within 0.1 in.
-- **Geometry files** — `TKMackTractor.h3d` for the tractor and `TLGeneric44Van.h3d` for the trailer, in the panel's **3D Geometry** section (**Browse…**, then **Load 3D File**) or **Vehicle › Vehicle Mesh…**. HVE 2027 opens `.h3d` files directly; the geometry is used for display only.
+- **Geometry files** — `TKMackTractor.h3d` for the tractor and `TLGeneric44Van.h3d` for the trailer, in the panel's **3D Geometry** section, the Vehicle Mesh editor (**Mesh File**: **...** or **Library...**, then **Load 3D File**; also **Vehicle › Vehicle Mesh…**). HVE 2027 opens `.h3d` files directly; the geometry is used for display only.
 
 ## Creating the Environment
 
@@ -61,7 +61,7 @@ The environment is a freeway off-ramp (*Freeway Offramp, Exit 342*, Denver, Colo
 
 ## Saving the Case
 
-Choose **File › Save Case As…** to save your working copy as an HVE 2027 case (`.hvc`), or **File › Save Case As JSON…** for the text format. HVE 2027 does not write `.hve` files, so the original is left unchanged.
+Choose **File › Save Case As…** to save your working copy as an HVE 2027 case (`.hvex`), or **File › Save Case As JSON…** for the text format. HVE 2027 does not write `.hve` files, so the original is left unchanged.
 
 ## Creating the Event
 

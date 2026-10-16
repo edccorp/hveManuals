@@ -15,12 +15,12 @@ In HVE 2027, after the event has been run (Chapter 2, *Executing An Event*):
 | HVE output | Where it is in HVE 2027 |
 |---|---|
 | Accident History, Damage Data, Driver Data, Environment Data, Event Data, Human Data, Messages, Program Data, Vehicle Data | **Output › HVE Reports...** — the pages SIMON itself builds, one tab per page, with **Save This Page** and **Save All Pages** (plain text), **Save Page as HTML** and **Save All Pages as HTML**, and **Export Run Report (HTML)** (HVE 2027's own printable run summary). The Accident History is its ACCIDENT HISTORY tab. |
-| Variable Output table | **Output › Key Results...** (a summary, plus the selected variables at every output step, with the row at the current playback time highlighted), **Output › Timestep Data Table...** (time, X, Y, heading and speed at every output step); variables are chosen with **Select Variables...** in Key Results and Output Graph, or **Output › Variable Selection...** |
+| Variable Output table | **Output › Key Results...** (a summary, plus the selected variables at every output step, with the row at the current playback time highlighted); variables are chosen with **Select Variables...** in Key Results and Output Graph, or **Output › Variable Selection...** |
 | Variable Output graph | **Output › Output Graph...** |
 | Trajectory Simulation | The 3-D **Viewport** of the Event editor, with the playback bar under it |
 | Damage Profiles | The deformed vehicle meshes in the viewport during playback; **Output › Damage Studio Options...** and **Damage Studio Report...** (see the [Damage Studio manual](../DamageStudio/README.md)) |
 
-Results are exported with **Export CSV...** (or **Copy**) in the result panels and with **Output › Export Variables...**; the Timestep Data export is written in SI units whatever the display units, with each column header naming its unit. HVE 2027 does not print; save a report page or export a table and print it from another program.
+Results are exported with **Export CSV...** (or **Copy**) in the result panels and with **Output › Export Variables...**. HVE 2027 does not print; save a report page or export a table and print it from another program.
 
 > **NOTE:** The engine's own report pages are built only when the run completes. A refused or aborted run shows no pages in HVE Reports and says so; read the run status in the *Simulation* panel and the Messages page, if any, for the reason.
 
@@ -152,10 +152,7 @@ SIMON produces a Variable Output table containing the time-based simulation resu
 - **Drivetrain** — Engine and transmission parameters used by SIMON
 - **Driver** — Current levels of driver inputs (steering, braking and throttle)
 
-In HVE 2027 the groups are listed in the variable picker opened by **Select Variables...** (in Key Results and Output Graph) and by **Output › Variable Selection...**. An example of HVE 2027's time-step table is shown in Figure 3-10. Detailed listings of each Variable Output parameter produced by SIMON are found in Tables 3-1, 3-2, and 3-3. For more information about HVE Variable Output parameters, refer to the HVE User's Manual, Chapter 16, Event Model.
-
-![Figure 3-10](images/hvn-timestep-data.png)
-*Figure 3-10: HVE 2027's Timestep Data table for the SIMON tutorial event (time, position, heading and speed at each output step). Selected variables are tabulated in Key Results and plotted in Output Graph.*
+In HVE 2027 the groups are listed in the variable picker opened by **Select Variables...** (in Key Results and Output Graph) and by **Output › Variable Selection...**, and the selected variables are tabulated in Key Results and plotted in Output Graph. Detailed listings of each Variable Output parameter produced by SIMON are found in Tables 3-1, 3-2, and 3-3. For more information about HVE Variable Output parameters, refer to the HVE User's Manual, Chapter 16, Event Model.
 
 **Table 3-1 General Vehicle Variable Output Table**
 
@@ -217,7 +214,7 @@ The playback bar's controls have the following functions:
 
 There is no reverse-play button; step backward with **<<** or drag the time slider.
 
-The viewport's **Top**, **Front**, **Side**, **Momentum** and **3D** buttons choose the view. Playback speed, frame step and looping are set in **Output › Playback Options...**; display options such as paths, velocity vectors and skidmarks are on the **View** menu. Several events can be played back together in the **Playback (F6)** editor. A movie is recorded with **File › Record Animation...**.
+The view cube in the viewport's top-right corner chooses the view: click a face for that view, or drag it to orbit. Playback speed, frame step and looping are set in **Output › Playback Options...**; display options such as paths, velocity vectors and skidmarks are on the **View** menu. Several events can be played back together in the **Playback (F6)** editor. A movie is recorded with **File › Record Animation...**.
 
 ### Displaying a Damage Profile
 

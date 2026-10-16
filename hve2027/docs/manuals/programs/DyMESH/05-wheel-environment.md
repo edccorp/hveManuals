@@ -282,8 +282,10 @@ tread/rim contact takes over the shear loads through its own friction model.
     Fx** and the related channels, see the
     [Version 3 chapter](03-version-3.md#output-vs-time)), which Variable
     Selection adds to Key Results or the Output Graph. The program-data tables are in **Output › HVE
-    Reports**. **View › Scene Display › DyMESH Wheel Mesh** draws the wheel contact meshes after
-    a run.
+    Reports**. The **Mesh** box of the **DyMESH Wheel** row (**View › Scene Display**, Vehicle
+    group) draws the wheel contact meshes after a run, and its **Nodes** box labels each
+    wheel's contact model and tire law. The **Tire Fz' (nodes)** vector row draws the
+    loaded tread-spring node forces of a wheel on Tire Contact Model 4.
 
 ## Quick reference
 

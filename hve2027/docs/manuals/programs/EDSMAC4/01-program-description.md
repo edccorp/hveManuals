@@ -30,7 +30,7 @@ EDSMAC4 inputs include one or more vehicles, and an optional environment with te
 EDSMAC4 output reports include Accident History, Damage Data, Driver Data, Environment Data, Event Data, Messages, Program Data, Vehicle Data, Variable Output, Trajectory Simulations and Damage Profile Simulations. The acceleration vs time history provides a collision pulse available for use in any HVE-compatible occupant impact simulator.
 
 !!! note "HVE 2027"
-    The alpha-numeric reports are EDSMAC4's own pages, shown in **Output › HVE Reports**. Variable output is in **Output › Key Results**, **Output › Output Graph** and **Output › Timestep Data Table**; the trajectory and damage profile simulations are the playback of the event in the 3-D viewport. See [Chapter 3](03-program-output.md).
+    The alpha-numeric reports are EDSMAC4's own pages, shown in **Output › HVE Reports**. Variable output is in **Output › Key Results** and **Output › Output Graph**; the trajectory and damage profile simulations are the playback of the event in the 3-D viewport. See [Chapter 3](03-program-output.md).
 
 ## Validation
 

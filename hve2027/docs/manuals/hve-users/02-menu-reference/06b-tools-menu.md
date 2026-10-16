@@ -15,6 +15,7 @@ The Tools menu is on the menu bar in every editor.
 | **Monte Carlo Analysis...** | Uncertainty analysis by repeated runs with sampled inputs | *(new)* |
 | **Motorcycle Analysis...** | Cornering and slide-to-stop calculations for a motorcycle | *(new)* |
 | **Preferences...** | Units, date format, background colour, diagnostics, auto-save | Options › Units, Options › Preferences |
+| **Report Text...** | Your own wording for any string of the programs' report pages, kept with your settings — see [Report Text](../../11-reports-output/ReportText.md) | *(new; HVE kept these strings in each program's `.rsc` file)* |
 | **Style Editor...** | The look of the interface: base theme and live style settings | *(new; Options › Preferences › Font Size)* |
 | **Cameras...** | The case's named cameras | View › Set Camera |
 | **Audit Log...** | A time-stamped record of what was done in this session | *(new; HVE's Audit Trail is a different thing — see [Audit Trail](../01-overview/02b-how-to-use-hve.md#audit-trail))* |
@@ -28,8 +29,9 @@ with the record of where each value came from:
 | **Case Intake...** | Builds an event from the case documents, read by your own AI tool |
 | **Quick Case (Text)...** | Builds a case from a typed sentence |
 | **Vehicle Package...** | Builds a case vehicle from its VIN or year, make and model, its stated specifications, and who and what it carried |
-| **Crush Stiffness from Crash Tests...** | CRASH3 A, B and G for the active vehicle from staged barrier tests, typed in, read from an NHTSA test file or fetched from NHTSA's database. Also opened by **From crash tests...** in Crush Stiffness |
-| **EDR Import...** | An event data recorder's pre-crash record into an event vehicle, and its delta-V against the run's |
+| **Crush Stiffness from Crash Tests...** | CRASH3 A, B and G for the active vehicle from staged barrier tests, typed in, read from an NHTSA test file, or found with **Search NHTSA's crash tests (online)** and fetched from NHTSA's database; shows the side's stiffness now beside the tests' before you apply it. Also opened by **From crash tests...** in Crush Stiffness |
+| **Crush Profile from Scan...** | The crush depths C1..Cn, damage width and damage offset of a vehicle of the active event (chosen with the vehicle picker at the top), measured off a scan of the damaged vehicle against the vehicle's own 3-D body (the default), an exemplar scan, a string line across the face's undamaged ends, or a plane at the vehicle's exterior extent. Also opened by **Measure from a scan...** under Measured Crush in the Event editor, which selects its own vehicle |
+| **EDR Import...** | An event data recorder's pre-crash record (a CDR report PDF, its tables as CSV or text, typed in by hand, or your AI tool's answer) into a vehicle of the active event; for SIMON, a driver solved so the run follows the recorded speed; and the recorded yaw rate, accelerations and delta-V against the run's |
 | **Provenance...** | Where each value set by those tools came from |
 
 Automatic Tools, Monte Carlo Analysis and Motorcycle Analysis are not in the
@@ -97,11 +99,16 @@ field has been changed by hand since. The records are saved with the case. See
 
 **Menu Option:** Tools › Automatic Tools › EDR Import...
 
-**Description:** Read an EDR report's pre-crash record, through your own AI
-tool or as a pasted table, and set an event vehicle's initial speed and its
-throttle, brake and steering tables from it, with the recorder time the
-simulation starts at. After a run, the recorded delta-V is plotted against
-the run's. See
+**Description:** Read an EDR report's pre-crash record (open the report's PDF,
+or its tables as CSV or text; paste its tables or your AI tool's answer; or
+enter it by hand) for the vehicle chosen at the top of the window, in the
+active event, and set its initial speed and its throttle, brake and steering
+tables from it, with the recorder time the simulation starts at. For a SIMON
+event, **Solve from the record** finds the throttle and brake that make the
+run follow the recorded speed, and the start can be moved so the vehicle is at
+a given pose later. After a run, the recorded yaw rate and accelerations are
+compared with the run's, and the recorded delta-V is plotted against the
+run's. See
 [EDR Import](../../new-features/12-case-intake-and-vehicle-data.md#edr-import).
 
 !!! tip "New in HVE 2027"
@@ -164,7 +171,7 @@ Preferences*
 
 !!! note "HVE 2027"
     **Diagnostic Level** is greyed (it has nothing to control). **Date Format**
-    sets how dates are shown. **Enable Auto-Save** (on by default) and **Interval (min)** write a recovery copy of the case, `<case>.autosave.hvc` beside it, while there are unsaved changes; the case file itself is never written. Saving the case removes the copy, and opening a case whose recovery copy is newer offers to open the copy.
+    sets how dates are shown. **Enable Auto-Save** (on by default) and **Interval (min)** write a recovery copy of the case, `<case>.autosave.hvex` beside it, while there are unsaved changes; the case file itself is never written. Saving the case removes the copy, and opening a case whose recovery copy is newer offers to open the copy.
 
 ![The Preferences dialog](../images/hvn-01-preferences.png)
 *Tools › Preferences.*

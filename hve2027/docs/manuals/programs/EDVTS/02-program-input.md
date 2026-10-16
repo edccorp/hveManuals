@@ -40,7 +40,7 @@ To add a vehicle to the current case in HVE 2027, perform the following steps:
 
 - Choose the **Vehicle (F3)** editor tab.
 - Click **Add…** on the **Vehicles** panel. The vehicle picker is displayed; it searches the loaded vehicle databases and also offers HVE's Generic vehicles by type and class.
-- Pick the vehicle. It is added to the case and to the active event, and its data are shown in the **Vehicles** panel under **Information** (Name, Vehicle Type, Make, Model, Year, Body Style, Number of Axles, Driver Location, Engine Location, Drive Axle(s), Color).
+- Pick the vehicle. It is added to the case (not to an event: that is done under **Vehicles in Event**, below), and its data are shown in the **Vehicles** panel under **Information** (Name, Vehicle Type, Make, Model, Year, Body Style, Number of Axles, Driver Location, Engine Location, Drive Axle(s), Color).
 - If desired, modify the *Number of Axles*, *Driver Location*, *Engine Location* and *Drive Axle(s)*, and edit the *Name*. The name does not affect calculations.
 
 **Vehicle › Vehicle Information…** opens the same information as a dialog.
@@ -168,7 +168,7 @@ The HVE tire parameters provide the following data groups:
 EDVTS's use of these parameters is described below.
 
 !!! note "HVE 2027"
-    Tire parameters are in **Vehicle › Tire Data (Detailed)…** and **Vehicle › Tire Tables…**.
+    Tire parameters are in **Vehicle › Tire Data (Detailed)…**: the scalar data in its per-wheel grid, and the load/speed and roll-off tables in its **Load & Speed Tables** panel.
 
 #### Physical Data
 

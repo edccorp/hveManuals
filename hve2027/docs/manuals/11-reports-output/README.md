@@ -15,7 +15,6 @@ the [HVE Manual](../README.md).
     |---|---|
     | Key Results... | the **Key Results** panel: summary results and a time table of selected variables ([Key Results](../01-user-interface/KeyResDlg.md)) |
     | Output Graph... | the **Output Graph** panel ([Variable Output: Graph](VarOutGraphDlg.md)) |
-    | Timestep Data Table... | the **Timestep Data** table: position, heading and speed of every vehicle at every output step |
     | Variable Selection... | **Select Output Variables** ([Selecting Variables](VarSelDlg.md)) |
     | HVE Reports... | the report pages built by the engine itself — among them its own [Accident History](AcciHistDlg.md) — as tabs that can be placed side by side, stacked or floated, and saved as text or HTML in an order you set ([Common Reports](CommRepDlg.md)) |
     | Playback Options... | playback settings (multi-event playback is the Playback (F6) editor) |
@@ -34,6 +33,7 @@ the [HVE Manual](../README.md).
 - [Collision Pulse](ColPulse.md)
 - [Common Reports Dialog Box](CommRepDlg.md)
 - [Common Scene Report Dialog](CommSceDlg.md)
+- [Report Text (Tools › Report Text...)](ReportText.md) — your own wording for any report string, kept with your settings
 - [Damage Data](DamageData.md)
 - [Trajectory Report](TrajRepDlg.md)
 - [Variable Output Edit Dialog](VarOutEdDlg.md)

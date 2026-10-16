@@ -25,7 +25,7 @@ If the site was built in HVE's 3-D Editor, open the case directly:
 5. Press **Import**. The panel reports the number of surfaces and the extents of the site, and the site is drawn in the Viewport.
 
 ![Figure 23-1](../images/hvn-08-environment-terrain.png)
-*Figure 23-1 — The Environment panel's Terrain section, for a site read from an HVE case: Scene Geometry (here the site is embedded in the case, with **Use a geometry file instead** to replace it) and Surface Materials, which carries the same layer tree as the Outliner.*
+*Figure 23-1 — The Environment panel's Terrain section, for a site read from an HVE case: Scene Geometry (here the site is embedded in the case, with **Use a geometry file instead** to replace it) and Surface Materials, which carried the same layer tree as the Outliner. That section is now **Selected Surface**, and the tree is only in View › Outliner.*
 
 > **NOTE:** A saved case carries the site inside it, so it can be sent to someone else as it is. If **File › Embed the environment in the case** has been unticked, the case names the geometry file instead; tick it again before sending the case.
 
@@ -35,7 +35,7 @@ Each surface's physical properties take the place of HVE's Object Type and Frict
 
 #### Object Type
 
-1. In the 3-D view, click the surface (for example, the road). It is highlighted, and the **Surface Materials** section of the Environment panel shows *Selected: name — type, friction*.
+1. In the 3-D view, click the surface (for example, the road). It is highlighted, and the **Selected Surface** section of the Environment panel shows *Selected: name — type, friction*.
 2. Press **Edit in Shader Editor**. The Shader Editor opens on that surface; its Surface node is headed *PHYSICS — these change the result*.
 3. Set **Surface Type** to **Road** (or Friction Zone, Curb, Water or Other).
 

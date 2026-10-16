@@ -17,7 +17,7 @@ HVE 2027 compiles EDC's own EDHIS source, so the model this manual describes —
 - **Validation status.** On HVE's EDHIS tutorial case the seated occupant reproduces HVE's saved run over the whole event. The pedestrian event matches to t = 0.14 s and then depends on the human integration step, in HVE's run as in ours.
 
 !!! note "HVE 2027"
-    HVE 2027 opens HVE's own `.hve` case files, including the EDHIS tutorial case `EdhisTutorialEDC.hve` used in [Chapter 5](05-tutorial.md). It does not write `.hve`; save as `.hvc` or `.json`.
+    HVE 2027 opens HVE's own `.hve` case files, including the EDHIS tutorial case `EdhisTutorialEDC.hve` used in [Chapter 5](05-tutorial.md). It does not write `.hve`; save as `.hvex` or `.json`.
 
 ## How to Use This Manual
 

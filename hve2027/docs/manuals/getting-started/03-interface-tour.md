@@ -28,19 +28,21 @@ The menu bar always carries **File**, **Edit**, **View**, **Tools** and
 The main entries:
 
 - **File** — New Case, Open Case, Open Recent, Save Case, Save Case As, Save
-  Case As JSON, Embed the environment in the case, Publish Bundle, Export Scene
-  for Blender, Blender Live Link, Record Animation (writes the 3-D playback
+  Case As JSON, Embed vehicle meshes in the case, Embed the environment in the
+  case, Publish Bundle, Seal Case for Handoff (one read-only `.hves` file for
+  an outside party), Export Scene for Blender, Blender Live Link, Record Animation (writes the 3-D playback
   to an AVI video) and Play Video, Exit. See
   [Cases and Files](04-cases-and-files.md).
 - **Edit** — Undo, Redo and Undo History (below).
-- **Vehicle** — Vehicle Information, Save Vehicle As, Edit Mode (materials per
-  part), and the vehicle's data dialogs: Vehicle Lights,
+- **Vehicle** — Vehicle Information, Save Vehicle As, Save to My Vehicles,
+  Edit Mode (materials per part), and the vehicle's data dialogs: Vehicle Lights,
   ABS / Brake Design, Accelerometers, Steering System, Suspension Data, Tire
-  Data (Detailed), Tire Tables, Brake Assembly, Brake Designer, Brake System
+  Data (Detailed) and its Load & Speed Tables panel, Brake Assembly, Brake Designer, Brake System
   Pressure, Brake Material Props, Drivetrain, Aero Dynamic Drag, Body Torsion,
-  Crush Stiffness, Vehicle Mesh, Advanced Mesh Options, Contact Surfaces,
+  Crush Stiffness, Vehicle Mesh, Contact Surfaces,
   Airbags, Belt Restraint.
-- **Environment** — Environment, Aerial Image, Scene Box Editor.
+- **Environment** — Environment, Aerial Image, Scene Box Editor, Edit Mode
+  (materials per face).
 - **Event** — Event Information, Position / Velocity, Driver Controls, Damage
   Profiles, Collision Pulse, Vehicle Mesh, DyMESH Options, Path Follower,
   Payload, Lights, Wheels, Accelerometers, Contacts, Restraints (Airbags / Belt
@@ -48,8 +50,8 @@ The main entries:
   (EDCRASH: Crush Profile; EDSMAC and EDSMAC4: Handling Parameters, Move CG,
   Crush Profile). An item the event's program does not use is greyed rather
   than hidden.
-- **Output** — Key Results, Output Graph, Timestep Data Table, Variable
-  Selection, HVE Reports, Playback Options, Run Simulation, Damage Studio Options, Damage Studio Report, Export
+- **Output** — Key Results, Output Graph, Variable
+  Selection, HVE Reports, Compare Runs, Playback Options, Run Simulation, Damage Studio Options, Damage Studio Report, Export
   Variables.
 - **Playback** — Playback Sequence, Playback Options, Run All Events.
 - **Occupant** — Human Information.
@@ -67,7 +69,8 @@ The main entries:
 - **Tools** — Quick Case (Text), Vehicle Package, Case Intake, Provenance,
   EDR Import, Monte Carlo Analysis, Motorcycle Analysis, Preferences, Style
   Editor, Cameras, Audit Log, Limits Editor.
-- **Help** — License (this computer's license), About HVE 2027.
+- **Help** — License (this computer's license), Check for Vehicle Data
+  Updates, About HVE 2027.
 
 The name of the open case file is shown at the right end of the menu bar,
 with a `*` in front of it when the case has unsaved changes. Hover over it to
@@ -132,17 +135,22 @@ browser build.
 
 ## The Viewport
 
-The buttons along the top of the Viewport choose the view:
+The Viewport shows the rendered 3-D scene. A short key reminder is drawn in
+its top-left corner.
 
-| View | Shows |
+The **view cube** sits in the top-right corner and turns with the camera. Click
+a face (Top, Bottom, Front, Back, Left, Right) to go to that view, in
+orthographic projection -- the Top face gives a plan of the scene. Drag the cube
+to orbit. Under the cube is a column of buttons:
+
+| Button | Does |
 | --- | --- |
-| Top, Front, Side | A 2-D drawing of the vehicles (in the Vehicle editor, the selected vehicle). In Top, an arrowhead inside each body points to its front |
-| Momentum | The momentum diagram of a solved event: each vehicle's velocity before (V) and after (V') the collision and the change dV between them |
-| 3D | The rendered 3-D scene (the default) |
+| Zoom (magnifier) | Drag up or down to zoom |
+| Pan (four-way arrow) | Drag to pan |
+| Camera | Look through the scene camera; click again to go back to the free view. Right-click for **Camera Properties**. With no saved camera, it opens Camera Properties |
+| Perspective / Orthographic (grid) | Switch between perspective and orthographic, as key **5** does |
 
-In the 3D view a short key reminder is drawn in the top-left corner. The
-**Cam** button at the top right (tooltip *Camera Properties*) opens the camera
-properties, and a right-click without moving the mouse offers **Camera
+A right-click on the view without moving the mouse offers **Camera
 Properties...** and **Reset Camera**.
 
 ### Moving the view (3D)
@@ -162,23 +170,19 @@ Properties...** and **Reset Camera**.
 | **C** / **Shift+C** | Look through the next / previous saved camera |
 | **I** | Insert a keyframe on the camera you are looking through, at the current playback time |
 
-### Moving the view (Top, Front, Side)
+### Hiding a vehicle in the view
 
-The 2-D views frame the vehicles for you: when a case is opened, when you
-switch to a 2-D view, and -- until you pan or zoom yourself -- whenever the event,
-its results or the panel size change. With results on screen the frame covers
-the whole run, so the vehicles stay in view as they play back.
-
-| Action | Does |
-| --- | --- |
-| Left-drag or middle-drag | Pan |
-| Mouse wheel, or Ctrl+middle-drag | Zoom |
-| **Home**, **Frame All** (top right), or double right-click | Frame everything the view draws |
-| **.** (or numpad **.**) | Frame the selected vehicle |
-| **Follow** (top right) | Keep the vehicles centred while the event plays (the selected vehicle, when one is selected); dragging moves the view relative to them |
-
-The grid spacing is shown at the bottom left; it steps (1, 2, 5, 10 m ...) as
-you zoom.
+In the Event and Playback editors a vehicle can be taken out of the 3-D view,
+for example to see one vehicle's damage where another stands. With the pointer
+over the view, **H** hides the selected vehicle, **Shift+H** hides every other
+vehicle and **Alt+H** shows them all. The same can be done from **View › Scene
+Display › Vehicles Shown**, the **Shown** checkbox in the Event editor's
+Vehicles in Event list, the Playback Sequence window's **Shown in the view:**
+strip, and the eyes in the Outliner's **Vehicles** group. A hidden vehicle's
+ghosts and tire marks are hidden with it, and an amber note at the top left of
+the view names the hidden vehicles, with a **Show all** button. This is a view
+setting only: nothing is saved, no result changes, and opening another case
+shows every vehicle again.
 
 ### Moving objects (the gizmo)
 
@@ -198,6 +202,20 @@ pointer over the viewport:
 | **Delete** or **X** (no move in progress) | Delete the selected path waypoint |
 | **Esc** (no move in progress) | Clear the selection |
 | **Tab** (Vehicle editor) | Toggle Edit Mode — click a part of the vehicle to give it a material |
+| **Tab** (Environment editor) | Toggle Edit Mode — click a face of the site to give it a material or move it; **Esc** also leaves |
+| **A**, **L**, **B**, **Alt+A** (Vehicle editor, Edit Mode, *Faces*) | Select every face of the clicked face's part; grow the selection across flat edges; drag a box; select none |
+| **A**, **L**, **B**, **Alt+A** (Environment editor, Edit Mode) | Select every face of the clicked face's surface; grow the selection across flat edges; drag a box; select none |
+| **H**, **Shift+H**, **Alt+H** (Environment editor, Edit Mode) | Hide the selected faces; hide every other face; show all (while editing only, not saved) |
+
+In the **Vehicle editor**, **G**, **R** and **S** move, rotate and scale the
+vehicle's **mesh** rather than the vehicle: they edit the Translate, Rotate and
+Scale rows of the Vehicle Mesh editor (see
+[Manipulators](../hve-users/08-3d-editor/21-manipulators.md#hve-manipulators)).
+In the **Environment editor**, **G**, **R** and **S** move, turn and scale the
+site, or the selected surface or surfaces; **Ctrl** steps a scale by 0.1. In
+the Environment editor's Edit Mode they move, turn and scale the selected
+faces (see
+[Edit Mode: faces of the site](../hve-users/05-environment-editor/12-creating-editing-environments.md#edit-mode-faces-of-the-site)).
 
 Typing into a text field never triggers these keys.
 
@@ -241,9 +259,11 @@ Information) carries the same controls plus a status line and a progress bar.
 
 **View › Outliner** lists the scene the way Blender's Outliner does: the
 environment's layers (HVE's overlays) as collections, the surfaces and objects
-on each layer as rows, plus the solver's drivable surface and the saved
-cameras. The same tree is also in the Environment panel under Surface
-Materials.
+on each layer as rows, plus the solver's drivable surface, a loaded point
+cloud (its file name, point count and an eye to show or hide it; no Drive
+switch) and the saved cameras. The Environment panel's **Selected Surface**
+section edits the material and placement of the surface selected here, and its
+**Open Outliner** button opens this panel.
 
 ![The Outliner on an imported HVE case](images/hvn-outliner.png)
 
@@ -256,16 +276,23 @@ programs drive on.*
   several. **Ctrl**-click an eye to show only that one; **Shift**-click a
   layer's eye to set the layer and everything in it.
 - Click, **Ctrl**-click or **Shift**-click rows to select; the active row is
-  highlighted in the 3-D view. Drag rows onto a layer to move them there.
+  highlighted in the 3-D view. A click on a layer's row selects every object
+  in it, and **Shift**-click in the 3-D view adds a surface to the selection.
+  **G**, **R** and **S** in the Environment editor's 3-D view move several
+  selected surfaces together. Drag rows onto a layer to move them there.
   **New Layer** creates a layer.
 - **H** hides the selection; **Alt+H** shows everything.
 - The same keys work in the Environment editor's 3-D view: click a surface,
   press **H** and it stops drawing (its row's eye closes; what the programs
   drive on is unchanged), and **Alt+H** shows every hidden surface and layer
   again. In Edit Mode (**Tab**), where a click selects a face rather than a
-  surface, **H** does nothing.
+  surface, **H** hides the selected faces instead, and **Alt+H** shows them.
 - Right-click a row or layer for its menu (for example, **Add Camera From
   View** on Cameras).
+- The **Vehicles** group lists the case's vehicles. Click a name to select the
+  vehicle; its eye shows or hides it in the 3-D view (**Ctrl**-click to show
+  only that one). This is a view setting only and is not saved -- see
+  [Hiding a vehicle in the view](#hiding-a-vehicle-in-the-view).
 
 A layer has no Drive switch: in HVE the drivable polygons come from the
 physics element of the site, which is on no layer.
@@ -327,7 +354,7 @@ message appears as the case opens; see
 - **Date Format** — how dates are shown in the file browser, the Audit Log
   and the run report.
 - **Auto-Save** — while the case has unsaved changes, a recovery copy
-  (`<case>.autosave.hvc`) is written every **Interval (min)** minutes. It
+  (`<case>.autosave.hvex`) is written every **Interval (min)** minutes. It
   never overwrites the case; opening a case with a newer recovery copy offers
   to open the copy, and saving the case removes it.
 

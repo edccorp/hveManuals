@@ -120,7 +120,7 @@ Now that we've created all the objects (*vehicle* and *environment*) for our cas
 
 - Click on the **File** menu and choose **Save Case As…**. Enter the file name `EdvsmTutorial` and save.
 
-> **NOTE:** HVE 2027 saves a case as `.hvc` (or as `.json` with **File › Save Case As JSON…**). It reads HVE's `.hve` case files but does not write them. A case saved after a run also keeps its results, in a separate file beside it.
+> **NOTE:** HVE 2027 saves a case as `.hvex` (or as `.json` with **File › Save Case As JSON…**). It reads HVE's `.hve` case files but does not write them. A case saved after a run also keeps its results, in a separate file beside it.
 
 > **NOTE:** Saving the file occasionally is a highly recommended practice.
 
@@ -328,7 +328,7 @@ Now, let's set up the HVE Tire Blow-out Model.
 
 Now, we're ready to execute the event.
 
-- Press **Run** on the playback bar. The simulation runs to t = 5.00 seconds. Press **Play** to watch it; the **Top** view above the viewport and the CG path (**Output › Playback Options**, *CG Path*) show the path best.
+- Press **Run** on the playback bar. The simulation runs to t = 5.00 seconds. Press **Play** to watch it; the view cube's **Top** face (top-right corner of the viewport) and the CG path (**Output › Playback Options**, *CG Path*) show the path best.
 
 To study the effect of a blow-out at each of the other three tires, add three more events in the same way: `L/F Tire Blow-out`, `R/R Tire Blow-out` and `L/R Tire Blow-out`. Each uses the same initial position (X = `123` ft, Y = `0` ft), the same initial speed (`50` mph), the same steer table (Table 5-5) and the same blow-out parameters (3.0 s, 0.2 s, 0.10, 10). The only difference is the column in which **Blown** is checked:
 
@@ -453,11 +453,7 @@ The purpose of our EDVSM study is to illustrate a rollover sequence. To document
 
 > **NOTE:** Feel free to add additional variables. You might be especially interested in the tire forces.
 
-Key Results for the *Curb-tripped Rollover* event now includes the selected results, and **Output › Export Variables** writes them to a file. **Output › Output Graph** plots channels against time; choose them with its own **Select Variables…** button. **Output › Timestep Data Table** (Figure 5-15) lists the CG position, heading and speed at each output step.
-
-![Figure 5-15](images/hvn-edvsm-timestep-table.png)
-
-*Figure 5-15: The Timestep Data Table for the Curb-tripped Rollover event.*
+Key Results for the *Curb-tripped Rollover* event now includes the selected results, and **Output › Export Variables** writes them to a file. **Output › Output Graph** plots channels against time; choose them with its own **Select Variables…** button.
 
 ### Trajectory Simulation
 

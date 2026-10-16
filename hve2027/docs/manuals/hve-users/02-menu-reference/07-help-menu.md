@@ -3,7 +3,8 @@
 *HVE User's Manual — Section Two: Menu Reference, HVE 2027 edition. Replaces
 HVE's Chapter 7, Help Menu.*
 
-HVE 2027's Help menu has two items: **License...** and **About HVE 2027...**.
+HVE 2027's Help menu has three items: **License...**, **Check for Vehicle Data
+Updates** and **About HVE 2027...**.
 
 | HVE item | HVE 2027 |
 |---|---|
@@ -12,6 +13,7 @@ HVE 2027's Help menu has two items: **License...** and **About HVE 2027...**.
 | Tech Support | Not in HVE 2027 — see [TECH SUPPORT](#tech-support) |
 | About | Help › **About HVE 2027...** |
 | Online Licensing | Help › **License...** — see [ONLINE LICENSING](#online-licensing) |
+| — | Help › **Check for Vehicle Data Updates** — see [CHECK FOR VEHICLE DATA UPDATES](#check-for-vehicle-data-updates) |
 
 ---
 
@@ -97,6 +99,36 @@ says why.
     A copy that does not require a license (a preview folder or development
     build) says so in this window, and runs every engine. HVE's user ID code is
     not used; the EDC Software secret takes its place.
+
+---
+
+## CHECK FOR VEHICLE DATA UPDATES
+
+**Menu Option:** Help › Check for Vehicle Data Updates
+
+**Purpose:** Install a newer edition of EDC's vehicle data.
+
+**Description:** EDC's licensed vehicle data (`EDCVehicles.hvedb`, with its
+meshes and wheel images inside it) is a separate download from the program,
+installed once per computer in the EDC vehicle data folder (see
+[Vehicle databases](../../getting-started/04-cases-and-files.md#vehicle-databases)).
+This item asks EDC whether a newer edition that your license covers is
+available. The program also checks by itself, in the background, at most once
+a day.
+
+When an update is available, a notice in the bottom-right corner of the window
+names the version, the version installed and the download size. **Install**
+downloads it, with a progress bar, then checks and unpacks it; **Later** hides
+the notice for this session. When it is done, the notice says where it was
+installed and how many vehicles the library now holds; **OK** closes it. If any
+step fails, the notice says why and the vehicle data already installed is left
+exactly as it was.
+
+Vehicle data updates come with an activated license (see
+[ONLINE LICENSING](#online-licensing)); without one, the check says so. A check
+asked for from this menu always reports its result, including that there is no
+update. This item checks for vehicle data only, not for new versions of the
+program.
 
 <!-- NAV -->
 

@@ -9,7 +9,7 @@ HVE 2027 has **no Options menu**. HVE's Options menu mixes display switches, too
 | Show Axes | **View › Scene Display › Axes**: the case's X, Y and Z at the origin and each vehicle's own axes at its CG, turning and tilting with it (red X forward, green Y right, blue Z up; on by default). |
 | Show Contacts | **View › Scene Display › Occupant Equipment** draws the active vehicle's contact surfaces, airbags and belts; **View › Scene Display › Occupant Equipment Through Bodywork** draws them over the body. |
 | Show Belt Anchors | **View › Scene Display › Occupant Equipment** (as above). |
-| Show Velocity Vectors | **View › Scene Display › Vectors › Velocity Vectors**. The same section of the Scene Display window has **Collision Force (PDOF)**, **Tire Force Vectors** (optionally **...include vertical Fz'**) and **Draw Vectors Through Bodywork**. HVE's *Long Velocity Vectors* preference has no equivalent. |
+| Show Velocity Vectors | **View › Scene Display › Vectors › Velocity**. The same table in the Scene Display window has **Acceleration**, **Collision force**, **Collision moments**, **Tire Fx', Fy'**, **Tire Fz'** and **Tire Fz' (nodes)**, with **Collision load at the CG**, **Collision load at impact (line of action)** and **Draw Vectors Through Bodywork** below it. HVE's *Long Velocity Vectors* preference has no equivalent. |
 | Show Skidmarks | **View › Scene Display › Skidmarks**: the contact-patch path drawn only where the tire was marking, faded by how hard. Skidmarks are drawn at the width of the tire that laid them. |
 | Show Tracks | **View › Scene Display › Tire Contact Patch Paths**: where each tire touched the ground, one path per wheel. |
 | Show CGs | Not available as a switch. |
@@ -33,7 +33,7 @@ HVE 2027 has **no Options menu**. HVE's Options menu mixes display switches, too
 | Preferences (Ctrl+F) | **Tools › Preferences...** — see [User Preferences Dialog Box](PrefDlg.md). |
 
 !!! tip "New in HVE 2027"
-    The Scene Display panel (**View › Scene Display**) also has **North Arrow**, **Humans Through Bodywork**, **Vehicle Extents** (a translucent box at the vehicle's declared extents) and **DyMESH Wheel Mesh**. The View menu itself has **Show Guidance Text** (the long explanatory notes in the dialogs, off by default; messages about a problem with the open case are always shown), **Panels Outside the Main Window**, **Outliner**, **Shader Editor** and **Dope Sheet**.
+    The Scene Display panel (**View › Scene Display**) also has **North Arrow**, **Humans Through Bodywork**, **Vehicle Extents** (a translucent box at the vehicle's declared extents), **See-Through Body (Vehicle editor)**, and a DyMESH overlay table: rows **DyMESH Body** and **DyMESH Wheel**, each with a **Mesh** and a **Nodes** box. **DyMESH Body** draws the body DyMESH collides as a wireframe deformed by the run, crushed edges in red; **Nodes** draws its vertices; **DyMESH Wheel**'s **Nodes** also labels each wheel's contact model and tire law. The View menu itself has **Show Guidance Text** (the long explanatory notes in the dialogs, off by default; messages about a problem with the open case are always shown), **Panels Outside the Main Window**, **Outliner**, **Shader Editor** and **Dope Sheet**.
 
 <!-- NAV -->
 

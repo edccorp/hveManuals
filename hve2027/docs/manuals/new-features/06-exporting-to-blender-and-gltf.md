@@ -80,8 +80,6 @@ t = 0).
   models its own wheels exports them welded to the body (they do not turn), and
   no cylinder is added for them.
 - A vehicle whose mesh is OBJ or glTF exports as the generated body.
-- The viewport's *Center on CG* display option is not applied; the export shows
-  the mesh where the physics placed it.
 
 ## The Blender Live Link
 
@@ -197,7 +195,6 @@ HVE 2027's for negative inputs.
 - Live Preview resends damage only when new vertices enter the crush; fetch
   **Damage** after the run for the settled shape.
 - Vehicle shading (Auto Smooth) is not carried.
-- The *Center on CG* display option is not applied.
 
 ## Without a window
 

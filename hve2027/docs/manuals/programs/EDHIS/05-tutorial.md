@@ -30,7 +30,7 @@ In HVE 2027, set the following:
 - **Tools › Preferences** — Units equals US
 - **View › Key Results** — on
 - **View › Scene Display › Skidmarks** — on
-- **View › Scene Display › Vectors › Velocity Vectors** — off
+- **View › Scene Display › Vectors › Velocity** — off
 - **View › Scene Display › Rendering** — *Phong*
 - **View › Scene Display › Humans Through Bodywork** — on, to see the occupant inside the car
 
@@ -237,7 +237,7 @@ The environment is drawn in the viewport. Use the mouse to orbit and zoom the vi
 
 Now that we've created all the objects (*humans, vehicles* and *environment*) for our case, let's save the case file.
 
-- Choose **File › Save Case As…**. HVE 2027 saves the case as an `.hvc` file; **File › Save Case As JSON…** saves the same case as JSON.
+- Choose **File › Save Case As…**. HVE 2027 saves the case as an `.hvex` file; **File › Save Case As JSON…** saves the same case as JSON.
 
   > **NOTE:** HVE 2027 does not write HVE's `.hve` format. Saving the tutorial case leaves `EdhisTutorialEDC.hve` unchanged.
 
@@ -440,7 +440,7 @@ The Program Data report displays the simulation controls and other program contr
 HVE's tutorial selects the head's position, velocity and forward and pitch accelerations, and the head vs headrest contact force, in the Variable Output window.
 
 !!! note "HVE 2027"
-    The human output groups are offered as variables in **Output › Variable Selection** (the **Occupant** groups, **H1** column) and can be graphed in **Output › Output Graph** and written by **Output › Export Variables**. The **Timestep Data Table** shows vehicle channels only. Contact force is per interaction (sum of pairs, largest pair), not per pair.
+    The human output groups are offered as variables in **Output › Variable Selection** (the **Occupant** groups, **H1** column) and can be graphed in **Output › Output Graph** and written by **Output › Export Variables**. Contact force is per interaction (sum of pairs, largest pair), not per pair.
 
 ### Trajectory Simulation
 

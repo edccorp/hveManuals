@@ -2,7 +2,7 @@
 
 HVE's Overlays dialog, opened from the View menu, displays or removes from the scene all the objects belonging to a named overlay (for example *Accident Debris* or *Measured Skids*).
 
-In HVE 2027 the same job is done by **layers** in the **Outliner**: **View › Outliner**. The same tree also appears in the Environment panel's **Surface Materials** section. Each layer of the site is listed with its surfaces under it, and the case's saved cameras are listed in their own group.
+In HVE 2027 the same job is done by **layers** in the **Outliner**: **View › Outliner** (the Environment panel's **Selected Surface** section has an **Open Outliner** button). Each layer of the site is listed with its surfaces under it, and the case's saved cameras are listed in their own group.
 
 ## Draw and Drive switches
 

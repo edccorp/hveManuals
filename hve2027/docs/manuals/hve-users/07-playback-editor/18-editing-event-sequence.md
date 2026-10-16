@@ -67,7 +67,7 @@ Each row of the Playback Sequence table has three times, entered in seconds:
     side. With it off, HVE's rule applies: a vehicle is one car across the
     sequence, and while two events overlap the later-starting one drives it (on
     an exact tie, the one listed first). The Playback header marks such a row
-    **[separate copy]**. Copies are drawn in the 3-D view; the 2-D views, lamp
+    **[separate copy]**. Copies are drawn in the 3-D view; lamp
     beams and trajectory trails show the vehicles' own runs only.
 
 > **NOTE:** Start and End allow you to select a specific portion of the event. For example, an occupant simulation may contain 50 milliseconds of irrelevant motion while the human settles into the seat and reaches equilibrium. By starting the event 50 milliseconds after its output begins, you can remove this undesired motion.
@@ -129,7 +129,7 @@ HVE 2027 applies the following rules:
     HVE lets a simulation make some results editable — for example a 2-D
     simulation's sprung mass Z position, roll and pitch — through the
     Variable Output window's Edit button. HVE 2027 has no way to edit a
-    result: Key Results and the Timestep Data table are read-only.
+    result: Key Results is read-only.
     The planar engines already settle the vehicle onto the site
     (AutoPosition), so the drawn Z, roll and pitch of a 2-D run follow the
     terrain.

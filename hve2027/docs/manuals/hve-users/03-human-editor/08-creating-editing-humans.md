@@ -181,7 +181,7 @@ the case; editing it does not affect any other case.
 !!! warning "Not in HVE 2027"
     HVE 2027 has no Previous Human Selection dialog (HVE's Add › Previous).
     To reuse a human from another case, open that case with **File › Open Case...**
-    (an HVE `.hve` case or an HVE 2027 `.hvc`/`.json` case) and work from it.
+    (an HVE `.hve` case or an HVE 2027 `.hvex`/`.json` case) and work from it.
 
 ## Selecting and Editing Humans
 

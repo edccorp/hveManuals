@@ -97,11 +97,11 @@ A row is one of five kinds:
 
 | Row | Shows | Unit |
 | --- | --- | --- |
-| **Time** | The playback time, plus the box's **Time offset** (see [Box Style](#box-style)) | s |
-| **Speed** | The vehicle's speed: the same speed the Timestep Data table lists | mph or km/h |
-| **Heading** | The vehicle's heading, between −180 and 180 degrees: the same heading the Timestep Data table lists | deg |
+| **Time** | The playback time, plus the box's **Time offset** (see [Box Style](#box-style)). Playing one event, the time is on that event's clock: its **Start time** (Event editor) is added | s |
+| **Speed** | The vehicle's speed | mph or km/h |
+| **Heading** | The vehicle's heading, between −180 and 180 degrees | deg |
 | **Delta-V** | The vehicle's collision Delta-V, as it develops through the impact (below) | mph or km/h |
-| An output channel | The value of that channel for the vehicle, the same value the Output Graph and Timestep Data table show | the channel's own display unit |
+| An output channel | The value of that channel for the vehicle, the same value the Output Graph and Key Results show | the channel's own display unit |
 
 The default label of a vehicle row starts with the vehicle's name: *Ford Taurus
 Speed*, *Ford Taurus Long Vel (u)*. A per-wheel or per-tire channel has the
@@ -184,6 +184,8 @@ removes the row.
 | **Light box** | Dark text on a light grey plate with a dark frame: the look of a new box |
 | **Dark box** | Light text on a dark, partly transparent plate with a grey frame |
 | **Time offset (s)** | Added to the **Time** row only. Enter minus the impact time, for example, to read time from impact. |
+| **Zero at impact** | Sets the time offset so that **Time** reads 0 at the first contact of the run on screen, and negative before it. In a playback sequence it is the first contact the sequence plays, on the sequence's timeline. Greyed when there is no collision. |
+| **Show event name** | In a playback sequence, each row's label names the event its numbers come from (see [In a playback sequence](#in-a-playback-sequence)). On by default. |
 
 ### Placement
 
@@ -206,9 +208,10 @@ same box sits at the top edge of the frame.
 
 In the Playback (F6) editor the HUD follows the sequence. **Time** is the
 sequence time. A vehicle's numbers come from the event that places the vehicle
-at that moment, at that event's own time, and the row's label names the event
-in brackets — *Ford Taurus Speed [Lane change] (mph)* — because two events'
-numbers for one vehicle are different numbers. When a later track takes the
+at that moment, at that event's own time. With the box's **Show event name**
+ticked (the default), the row's label names the event in brackets — *Ford
+Taurus Speed [Lane change] (mph)* — because two events' numbers for one vehicle
+are different numbers; untick it to leave the event name out. When a later track takes the
 vehicle over, its rows switch to that event. Delta-V is the collision Delta-V
 of the event placing the vehicle.
 
@@ -244,11 +247,11 @@ sharp; with the **Ray traced** renderer it is drawn over the traced frame. See
 ## Saved with the case
 
 The boxes are part of the case, because their rows name the case's own
-vehicles. **File › Save Case** stores them in both the `.hvc` and the `.json`
+vehicles. **File › Save Case** stores them in both the `.hvex` and the `.json`
 format, and they come back when the case is opened. They are left out of the
 fingerprint HVE 2027 uses to decide whether a solved result still matches its
 inputs, so editing a box never discards a run (see
-[Cases and Files](../getting-started/04-cases-and-files.md#saved-results-hvr)).
+[Cases and Files](../getting-started/04-cases-and-files.md#saved-results-hver)).
 
 !!! note "HVE 2027"
     Earlier preview builds of HVE 2027 had a single HUD whose settings were

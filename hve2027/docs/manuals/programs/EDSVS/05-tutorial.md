@@ -99,7 +99,7 @@ Now that we've created all the objects (*vehicle* and *environment*) for our cas
 
 1. Click on the **File** menu and choose **Save Case As…**. Enter the file name `EdsvsTutorial` and save.
 
-   > NOTE: HVE 2027 saves a case as `.hvc` (or as `.json` with **File › Save Case As JSON…**). It reads HVE's `.hve` case files but does not write them. A case saved after a run also keeps its results, in a separate file beside it.
+   > NOTE: HVE 2027 saves a case as `.hvex` (or as `.json` with **File › Save Case As JSON…**). It reads HVE's `.hve` case files but does not write them. A case saved after a run also keeps its results, in a separate file beside it.
 
    > NOTE: Saving the file occasionally is a highly recommended practice.
 
@@ -257,10 +257,7 @@ The purpose of our EDSVS study is to make our vehicle follow a desired path. To 
 
    > NOTE: Feel free to add additional variables.
 
-Key Results for the *Steering Maneuver* event now includes the selected results. **Output › Output Graph** plots channels against time; choose them with its own **Select Variables…** button. **Output › Timestep Data Table** (Figure 5-12) lists the CG position, heading and speed at each output step.
-
-![Figure 5-12](images/hvn-edsvs-timestep-table.png)
-*Figure 5-12: The Timestep Data Table for the Steering Maneuver event.*
+Key Results for the *Steering Maneuver* event now includes the selected results. **Output › Output Graph** plots channels against time; choose them with its own **Select Variables…** button.
 
 ### Trajectory Simulation
 

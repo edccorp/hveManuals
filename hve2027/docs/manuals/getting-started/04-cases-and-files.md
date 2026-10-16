@@ -8,25 +8,27 @@ vehicles, environment and events — and either one opens with
 
 | File | What it is | Saved by |
 | --- | --- | --- |
-| `<name>.hvc` | The case, in a binary file. The format of record | **File › Save Case**, **File › Save Case As** |
+| `<name>.hvex` | The case, in a binary file. The format of record | **File › Save Case**, **File › Save Case As** |
 | `<name>.json` | The same case as text: readable, and comparable line by line between two versions | **File › Save Case As JSON** (or Save Case As with a name ending in `.json`) |
-| `<name>.hvr` | The results of every solved event, saved beside the case | Written automatically by Save when there is a solved run |
+| `<name>.hver` | The results of every solved event, saved beside the case | Written automatically by Save when there is a solved run |
+| `<name>.hves` | A **sealed case** for an outside party: the solved case, its results and report pages, the site and the vehicle meshes (encrypted) in one file, opened read only and never re-run | **File › Seal Case for Handoff...** (see [Sealed cases](#sealed-cases-hves)) |
 
 **Save Case As** writes the binary format unless the file name ends in `.json`.
 **Open Case** does not go by the extension: it reads a file whose content is
-JSON as JSON, an `.hvc` as `.hvc`, and anything else as an HVE `.hve` case.
+JSON as JSON, an `.hvex` as `.hvex`, a sealed case as a sealed case, and
+anything else as an HVE `.hve` case.
 
 Case files are stored in SI units whatever the unit setting, so a case saved in
 one unit system opens unchanged in the other.
 
 !!! note "HVE 2027"
     HVE 2027 reads HVE's `.hve` case files but does not write them. A case
-    opened from a `.hve` is saved as `.hvc` or `.json`.
+    opened from a `.hve` is saved as `.hvex` or `.json`.
 
-### Saved results (`.hvr`)
+### Saved results (`.hver`)
 
 When you save a case that has been run, the results of **every event you have
-solved** are written beside it as `<name>.hvr` — trajectories, the variable
+solved** are written beside it as `<name>.hver` — trajectories, the variable
 output, damage, occupant motion and the report pages — so a playback sequence
 plays straight away when the case is opened again, without **Run All Events**.
 Each event's results carry a fingerprint of the inputs that event was solved
@@ -43,8 +45,8 @@ If you edit an event after running it and then save without running it again,
 that event's results are not saved, and the save message says which event was
 left out.
 
-Opening a case never re-runs it on its own. A case with no `.hvr` simply opens
-unsolved, and saving a case that has no results removes an old `.hvr` beside it.
+Opening a case never re-runs it on its own. A case with no `.hver` simply opens
+unsolved, and saving a case that has no results removes an old `.hver` beside it.
 Moving or changing the camera, materials, lights, Results HUD boxes or other display settings —
 or selecting a different event, or rearranging a playback sequence — does not
 discard saved results; changing an input does. Saving into another folder
@@ -131,19 +133,41 @@ button re-reads the folders.
 
 ## Vehicle databases
 
-HVE 2027 reads HVE's vehicle database files (`.db`), such as `EDC.db`,
-`VMSTANDARD_7_00.db` and `Generic.db`.
+HVE 2027 reads HVE's classic vehicle database files (`.db`), such as
+`Generic.db`, and its own databases (`.hvedb`), which carry each vehicle's mesh
+and wheel images inside them:
+
+- `EDCVehicles.hvedb` — EDC's licensed vehicle data, installed as a separate
+  data pack (see below). Where it is present, the classic `EDC.db` and
+  `VMSTANDARD_7_00.db` it replaces are listed as superseded and not read.
+- `MyVehicles.hvedb` and any other database you name — your own vehicles,
+  written by **Vehicle › Save to My Vehicles...** (see
+  [Save to My Vehicles](../hve-users/04-vehicle-editor/10-creating-editing-vehicles.md#save-to-my-vehicles)).
+
+A program package carries only `Generic.db`.
 
 - **Adding a vehicle.** In the Vehicle editor, **Add...** on the Vehicles panel
   opens a search of every vehicle in the loaded databases, plus HVE's generic
   vehicles by type and class (the **Generics** button) and a few built-in
   vehicles that need no database. **Replace...** replaces the selected
   vehicle's data with a database record.
-- **Where databases are found.** A `db` folder beside the program, any
-  folders added under **Database folders** in the same dialog, and your own
-  `userdb` folder in `%APPDATA%\EDC\HVE 2027`, where **Save Vehicle As** writes
-  unless you choose another file. That folder is shared by every installed
-  version and kept when one is uninstalled.
+- **Where databases are found.** Any folders added under **Database folders**
+  in the same dialog; your own `userdb` folder (on Windows, in
+  `%APPDATA%\EDC\HVE 2027`);
+  the EDC vehicle data folder; and a `db` folder beside the program. Your
+  `userdb` folder is where **Save to My Vehicles** writes `MyVehicles.hvedb`
+  and your other databases, where **Import database...** copies a database
+  someone gave you, and where **Save Vehicle As** writes unless you choose
+  another file. It is shared by every installed version and kept when one is
+  uninstalled.
+- **The EDC vehicle data folder.** EDC's vehicle data pack is installed once
+  per computer, for every installed version, in `%ProgramData%\EDC\HVE\data`
+  on Windows (`~/Library/Application Support/EDC/HVE/data` on macOS,
+  `~/.local/share/hve/data` on Linux). Uninstalling a version does not touch
+  it. Among the folders that come with the program it is searched first, ahead
+  of the program's own `db` folder. **Help › Check for Vehicle Data Updates**
+  installs a newer edition there (see
+  [Help menu](../hve-users/02-menu-reference/07-help-menu.md#check-for-vehicle-data-updates)).
 - **Saving a vehicle.** **Vehicle › Save Vehicle As** sets the name, type,
   make, model, year and body style and either writes a copy of the database
   record the vehicle was loaded from into a `.db` file under those keys
@@ -159,13 +183,23 @@ comes in with an imported `.hve` case.
 
 | Used for | Formats | Where |
 | --- | --- | --- |
-| Vehicle body | `.h3d`, `.iv`, `.wrl`, `.obj`, `.gltf`, `.glb` | Vehicle › Vehicle Mesh (also on the Event menu); the Library... button lists the geometry folders |
+| Vehicle body | `.h3d`, `.iv`, `.wrl`, `.obj`, `.gltf`, `.glb`, and point-cloud scans `.las`, `.ply`, `.e57`, `.xyz`, `.pts` (drawn as points, collided as a closed surface rebuilt from them) | The Vehicle Mesh editor: the Vehicles panel's 3D Geometry section, or Vehicle › Vehicle Mesh (also on the Event menu); the Library... button lists the geometry folders |
 | Site (terrain and scene) | `.dxf`, `.h3d`, `.iv`, `.wrl`, `.obj`, `.gltf`, `.glb` | Environment panel › Terrain › Geometry File; with scale factor, Y-up / Z-down options and **Use surfaces as terrain (physics)** |
 | Survey point cloud | `.las`, `.ply`, `.e57`, `.xyz`, `.pts`, `.txt`, `.csv` | Environment panel › Survey Point Cloud (scan) |
 | Aerial photograph | image file | Environment › Aerial Image (with its world-bounds corners) |
 | Material textures | `.png`, `.jpg`, `.bmp`, `.tga`, `.hdr` | View › Shader Editor |
 
 An `.h3d` file is read in HVE's own frame (inches, Z down) automatically.
+
+## Embedding vehicle meshes
+
+**File › Embed vehicle meshes in the case**, a tick-box remembered between
+sessions and **off** by default, stores each vehicle's own mesh inside the case
+file when it is saved, so the case opens with its vehicle bodies on a computer
+that does not have those files. EDC's licensed meshes are never stored: they
+stay references to the vehicle database. The menu tooltip says how many meshes
+the case carries and their size. Unticking it and saving removes the stored
+meshes, and the case names the files again.
 
 ## Embedding the environment
 
@@ -211,6 +245,42 @@ to publish one it cannot solve:
 hve-next --export-bundle <case> <output folder> [title] [--inputs-only] [--with-capture]
 ```
 
+## Sealed cases (`.hves`)
+
+**File › Seal Case for Handoff...** writes a case that is to be turned over to
+an outside party as one file ending `.hves`. It carries the case, every
+event's results and report pages, the site and the vehicle meshes, so it
+opens on a computer that has none of the case's files. It opens read only: it
+cannot be edited, re-run or saved, and its geometry cannot be exported.
+
+- **Every event must be solved first**, with results that still match its
+  inputs, because a sealed case can never be re-run. The dialog lists the
+  events and greys **Seal...** until they all are; run an unsolved event or
+  delete it.
+- **Licensed vehicle data stays out.** Each vehicle keeps only what it takes
+  to draw it; its weights, inertias, suspension, tires, brakes, drivetrain and
+  stiffness are not in the file, and its dialogs say their values are
+  placeholders. The values the run used are on **Output › HVE Reports**. The
+  vehicle meshes are encrypted, so they cannot be copied out of the file with
+  a zip tool or a file manager.
+- **A sealed case says if it has been changed.** A band along the bottom of
+  the window says the case is sealed, when, and that the seal verifies. A
+  file changed since it was sealed still opens, but the band turns red and
+  says it has been modified and cannot be trusted.
+
+The recipient opens it with **File › Open Case...** and can play it back and
+save images, videos, channel data and report pages. Opening another case
+leaves sealed mode. The solver alone (`hve-solver`) refuses a sealed case.
+See [Seal Case for Handoff](../hve-users/02-menu-reference/03-files-menu.md#seal-case-for-handoff)
+for the dialog. The same is available from the command line:
+
+```sh
+hve-next --seal-case <case> <out.hves> [--solve]
+```
+
+Without `--solve` it seals the results saved with the case (its `.hver`);
+with it, every event is solved first.
+
 ## Recent files
 
 **File › Open Recent** lists the last 12 cases opened or saved, newest first,
@@ -224,7 +294,7 @@ discard them.
 The case file itself is never saved automatically.
 
 !!! note "HVE 2027"
-    HVE's auto-backup is **Tools › Preferences › Auto-Save**. **Enable Auto-Save** (on by default) and **Interval (min)** write a recovery copy of the case, `<case>.autosave.hvc` beside it, while there are unsaved changes; the case file itself is never written. Saving the case removes the copy, and opening a case whose recovery copy is newer offers to open the copy. **File › Exit**,
+    HVE's auto-backup is **Tools › Preferences › Auto-Save**. **Enable Auto-Save** (on by default) and **Interval (min)** write a recovery copy of the case, `<case>.autosave.hvex` beside it, while there are unsaved changes; the case file itself is never written. Saving the case removes the copy, and opening a case whose recovery copy is newer offers to open the copy. **File › Exit**,
     closing the window, **New Case** and **Open Case** all ask before discarding
     unsaved changes.
 
@@ -236,5 +306,5 @@ The case file itself is never saved automatically.
 | File › Blender Live Link | No file: Blender reads the scene from the running program |
 | File › Record Animation | The 3-D playback as a Motion-JPEG `.avi` video, between the start and end times you choose, through the camera you choose, in real time or slow motion. Available after a run. Tick **Burn in key results (Results HUD)** to draw the case's [Results HUD](../new-features/11-results-hud.md) boxes into every frame. Panels and dialogs are not recorded. A file name without a folder is written to the folder the program was started from (see [Recording a video](../new-features/07-video-and-playback-sequences.md#recording-a-video)) |
 | Output › Export Variables | The selected variables of the event on screen, one column each, at the chosen interval: CSV, tab-separated text or a MATLAB `.m` script, in SAE or HVE's Traditional signs |
-| Timestep Data panel › Export CSV | Time, vehicle, position, heading and speed at every output step |
+| Key Results › Export CSV | The channels chosen with **Select Variables...** (position, heading and speed among them) at every output step |
 | Output › HVE Reports | Reports of the run, the Accident History among them. HVE Reports saves its pages as text (`hve_report.txt`) or HTML (`hve_report.html`), and HVE 2027's own run summary as `run_report.html`; a file name without a folder is saved beside the case file (in the folder the program was started from, for a case never saved), and the window shows the full path (see [Common Reports](../11-reports-output/CommRepDlg.md)) |

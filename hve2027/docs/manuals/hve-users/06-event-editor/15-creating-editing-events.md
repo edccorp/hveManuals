@@ -23,8 +23,8 @@ components:
   calculation method and starting conditions. It replaces HVE's Event
   Editor dialog and Event Information dialog.
 - **Viewport** — displays the environment and the current event's humans and
-  vehicles, and is used for positioning them. Above it are the Top, Front,
-  Side, Momentum and 3D views.
+  vehicles, and is used for positioning them. The view cube in its top-right
+  corner sets a preset view.
 - **Playback bar** — the strip along the bottom of the Viewport. It runs,
   resets and plays back the current event, replacing HVE's Event Controller.
 - **Event menu** — the event set-up dialogs (Position / Velocity, Driver
@@ -46,12 +46,20 @@ sections are:
 - **Events** — the **Active Event** list, with the name and calculation
   method of every event in the case, and the **+** (add) and **−** (delete)
   buttons.
-- **Event** — the current event's **Name**.
-- **Calculation Method** — the **Method** list and the **Method Options...**
-  button.
+- **Event** — the current event's **Name**, and its **Start time (s)**: the
+  time shown at the event's start (for example −5, so the impact reads near
+  0), which the results, graphs, exports, the playback bar and the Results HUD
+  read; the run itself still starts at 0.
+- **Calculation Method** — the **Method** list, the **Physics** list (*HVE*,
+  *HVE-reference* or *HVE (imported)*; see
+  [Event Information](../../09-events-driver-controls/EventInfo.md#calculation-method))
+  and the **Method Options...** button.
 - **Road Surface Search** — how the engine finds the road polygon under each
   tire (see [Chapter 13](../05-environment-editor/13-environment-model-definition.md)).
-- **Vehicles in Event** — the vehicles in the event, one per slot.
+- **Vehicles in Event** — the vehicles in the event, one per slot. Each row's
+  **Shown** checkbox shows or hides that vehicle in the 3-D view. This is a
+  view setting only: the event, its results and the run are unchanged, and
+  nothing is saved.
 - **Humans in Event** — the humans in the event (shown for the occupant
   methods, EDHIS and GATB, and for SIMON and EDGEN).
 - **Vehicle Initial Conditions** (simulations) or **Vehicle Impact Setup**
@@ -81,6 +89,13 @@ vehicles directly:
   Velocity dialog and the Event Information panel show.
 - For EDCRASH, each surveyed scene position (Impact, Rest, ...) is drawn as a
   ghost of the vehicle; selecting a ghost moves that position.
+- To see one vehicle where another stands, hide a vehicle in the view: **H**
+  hides the selected vehicle, **Shift+H** hides the others, and **Alt+H** shows
+  them all (also **View › Scene Display › Vehicles Shown** and the **Shown**
+  checkboxes above). A hidden vehicle's ghosts and tire marks are hidden with
+  it, and an amber note at the top left of the view names the hidden vehicles,
+  with a **Show all** button. Nothing is saved; opening another case shows
+  every vehicle again.
 
 ### Position / Velocity Dialog
 
@@ -258,7 +273,6 @@ To set up the event, perform the following steps:
    | Notes | all methods |
    | Crush Profile... | EDCRASH, EDSMAC, EDSMAC4 |
    | Handling Parameters..., Move CG... | EDSMAC, EDSMAC4 |
-   | Advanced Mesh Options... | all methods |
 
    > **NOTE:** Normally, the first thing you'll set is the vehicle's
    > position and velocity.
@@ -318,7 +332,7 @@ event and re-execute it:
 !!! note "HVE 2027"
     In HVE, Reset erased results that had to be kept for the Playback
     Editor. In HVE 2027 the results of a run are saved with the case, in a
-    results file (`.hvr`) beside it — every solved event's, not only the one
+    results file (`.hver`) beside it — every solved event's, not only the one
     on screen — and are restored when the case is opened again, provided none
     of the inputs that event's run read has changed since; otherwise that event
     opens unsolved. Results for several events at once are produced by **Run

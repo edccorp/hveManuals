@@ -56,7 +56,7 @@ shows the full path of the file written.
 
 !!! note "HVE 2027"
     Delta-V and the other results in the units set in Preferences are in
-    **Key Results** and the **Timestep Data Table**, and **Output › Export
+    **Key Results** and the **Output Graph**, and **Output › Export
     Variables...** writes them to a file.
 
 <!-- NAV -->

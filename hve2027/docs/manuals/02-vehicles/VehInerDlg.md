@@ -66,9 +66,9 @@ One row per item, shown once there is one:
 
 **Add occupant** and **Add cargo** add a row (named *Occupant n* or *Cargo n*). Each item is a point mass. A line under the list gives the number of items and their weight, the **loaded** weight, and how far the CG moves (x, y and z, z up) when the load is added to the vehicle.
 
-## OK / Cancel
+## Close
 
-**OK** closes the dialog, keeping the changes. **Cancel** discards every change made since the dialog was opened and closes it. Values take effect as they are typed, so there is no separate Apply button.
+Values take effect as they are typed, so the dialog has a single **Close** button. To take a change back, use **Edit › Undo** (Ctrl+Z); each edited field is one undo step.
 
 If the sprung mass comes out zero or negative (the total mass is less than the tire weights), the dialog says so in orange and the Total columns show the sprung values until it is corrected.
 

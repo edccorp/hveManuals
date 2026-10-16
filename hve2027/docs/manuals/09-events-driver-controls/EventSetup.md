@@ -35,8 +35,8 @@ Displays the [Collision Pulse](../11-reports-output/ColPulse.md) dialog.
 Enabled for EDCRASH, SIMON, EDHIS and GATB.
 
 **Vehicle Mesh...**
-Displays the Vehicle Mesh dialog. Always available. (**Advanced Mesh Options...**
-at the bottom of the menu opens the same dialog.)
+Displays the Vehicle Mesh dialog. Always available. It is the same editor as the
+Vehicles panel's **3D Geometry** section and **Vehicle › Vehicle Mesh...**.
 
 **DyMESH Options...**
 Displays the DyMESH Options dialog for the active event. Always available; the

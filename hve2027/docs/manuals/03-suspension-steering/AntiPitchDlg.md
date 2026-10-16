@@ -14,13 +14,13 @@ Four small buttons per wheel: **-**, **A**, **B** and **C**. Wheels in the same 
 ## Data Table
 
 **Num Points**
-The number of rows in the wheel's table, 3 to 10.
+The number of rows in the wheel's table, 3 to 15.
 
 **Pt *n* Deflect**
 Suspension deflection of row *n* (jounce negative, rebound positive), in the units set in Preferences.
 
-**Pt *n* Force**
-The anti-pitch value at that deflection. HVE 2027 labels and converts this column as a force, in the force units set in Preferences; HVE labels it *Anti-Pitch (lb/ft-lb)*.
+**Pt *n* Anti-Pitch**
+The anti-pitch coefficient at that deflection: the suspension force per unit tire-force moment, in lb/ft-lb (imperial) or N/N·m (metric), as set in Preferences. HVE labels it *Anti-Pitch (lb/ft-lb)*.
 
 !!! warning "Not in HVE 2027"
     - The **Anti-Pitch vs. Jounce/Rebound** graph, **Apply** and **Print**, and HVE's sorting and validation of the rows.

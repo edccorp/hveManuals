@@ -16,7 +16,7 @@
 2. Move through the event with the playback bar under the viewport. Before
    contact the vehicles are undamaged; through the collision the meshes
    deform; after it they keep their final crush.
-3. Turn on **View › Scene Display › Vectors › Collision Force (PDOF)** to draw the collision
+3. Turn on **View › Scene Display › Vectors › Collision force** to draw the collision
    force on each vehicle while it is in contact. The arrow follows the engine's
    force at each output step, so it shows the force direction turning through
    the impact rather than one average.

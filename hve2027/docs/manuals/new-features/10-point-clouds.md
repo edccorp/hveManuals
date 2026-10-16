@@ -79,12 +79,34 @@ and **Import** reads it.
 
 | Field | Meaning |
 | --- | --- |
-| **Colour** | **Auto (file colour, else elevation)**, **File colour**, **Intensity**, **Elevation**, or **Flat grey**. A mode the file cannot provide falls back visibly. |
+| **Colour** | **Auto (file colour, else intensity, else elevation)**, **File colour**, **Intensity**, **Elevation**, **Flat grey**, or **Classification** (the file's own point classes in the usual survey colours: ground brown, vegetation green, buildings red). A mode the file cannot provide falls back visibly. |
 | **Point size (px)** | The size of each dot on screen |
 | **Visible** | Show or hide the cloud |
+| **Eye-dome lighting (shade by depth)** | Darkens each point where its neighbours on screen are nearer the camera, so kerbs, steps and edges read as shape instead of flat colour. **Strength** sets how dark. Drawing only, and a setting of this computer rather than of the case. |
+| **Clip box** | Draws only the scan inside the box (Min / Max x, y, z, in metres; x forward, y right, z up). **Fit to the scan** sets it to the whole cloud, to narrow from. For looking under a canopy, into a building or along one lane. Not saved, and the surface and measurements still use every point. |
 
-Points are drawn as fixed-size dots: they do not get denser as you approach,
-and they are not lit or shadowed.
+Points are drawn as fixed-size dots: they do not get denser as you approach.
+They are lit by the scene's sun, sky and lamps, but not shadowed.
+
+## Measuring on the scan
+
+Under **Measure on the Scan**, tick **Click two points on the scan** and click
+twice in the 3-D view. Each click picks the scan point under the cursor -- the
+nearest one along the line of sight, so a car's roof is picked rather than the
+road beneath it. The panel shows both points and, between them, the distance,
+the distance in plan, the rise and the grade.
+
+**Ground profile A to B** then reads the scan's ground along the line between
+the two points: every **Station spacing**, the **Ground percentile** (a low
+one, as the surface uses, so a car on the line is not a hump) of the points
+within **Corridor half-width** of the line. It is drawn as a graph (hover for
+a station's height and how many points stand behind it), with the best-fit
+grade and how far the ground rises above or dips below that line -- a road's
+crown, a dip, a kerb. A station with no points is a gap in the graph, not a
+line drawn across it. **Copy as CSV** puts the stations on the clipboard.
+
+Measurements read the points themselves, not the drivable surface, and change
+nothing in the case.
 
 ## In the case
 

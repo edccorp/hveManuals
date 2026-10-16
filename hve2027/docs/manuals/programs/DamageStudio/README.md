@@ -32,10 +32,13 @@ are reached as follows:
 - **A crush heat map** can be made in the **Shader Editor** (View › Shader
   Editor): the *HVE Simulation* node's **Crush** output is how far each vertex
   of the body was crushed, in meters.
-- **The collision force direction** is drawn by **View › Scene Display › Vectors › Collision
-  Force (PDOF)** while the vehicles are in contact.
-- **The DyMESH wheel contact meshes** are drawn by **View › Scene Display ›
-  DyMESH Wheel Mesh**.
+- **The collision force direction** is drawn by **View › Scene Display › Vectors ›
+  Collision force** while the vehicles are in contact.
+- **The DyMESH contact meshes** are drawn by the DyMESH overlay table in
+  **View › Scene Display** (Vehicle group): the **DyMESH Body** row draws the
+  collided body as a wireframe deformed by the run, crushed edges in red, and
+  the **DyMESH Wheel** row each wheel's contact mesh. Each row's **Nodes** box
+  draws the mesh's vertices.
 - **The Damage Data report** — collision kinetics, damage profiles with CDC,
   and crush depth tables, per impulse — is the *DAMAGE DATA* page of **Output ›
   HVE Reports**, built by the engine exactly as HVE builds it.
@@ -51,7 +54,7 @@ To review collision damage in HVE 2027:
    (**Output › Run Simulation**, or **Run** on the playback bar).
 2. Use the playback bar under the viewport to move through the event. The
    vehicle bodies deform as the collision proceeds.
-3. Turn on **View › Scene Display › Vectors › Collision Force (PDOF)** to see the collision
+3. Turn on **View › Scene Display › Vectors › Collision force** to see the collision
    force on each vehicle while it is in contact.
 4. Open **Output › HVE Reports** and select the *DAMAGE DATA* tab for each
    vehicle's impulses, CDCs, damage profiles and crush depth tables.

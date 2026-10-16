@@ -15,13 +15,13 @@ In HVE 2027, after running the event:
 | Report | Where in HVE 2027 |
 |---|---|
 | Alpha-numeric reports (Messages, Accident History, Program Data) | **Output › HVE Reports...** — one tab per page, as EDGEN built it |
-| Variable output | **Key Results** (its table of chosen channels, with **Select Variables...**), **Output › Output Graph...** (graphs) and **Output › Timestep Data Table...** (time, position, heading and speed of each vehicle at every output step) |
+| Variable output | **Key Results** (its *Trajectory* section: the chosen channels at every output step, with **Select Variables...**) and **Output › Output Graph...** (graphs) |
 | Trajectory simulation | The viewport itself, driven by the playback bar |
 
 !!! note "HVE 2027"
     HVE 2027 does not print. In HVE Reports, **Save This Page** and **Save
-    All Pages** write the pages to a text file; Key Results and the
-    Timestep Data window export CSV (**Export CSV...**). The report pages
+    All Pages** write the pages to a text file; Key Results exports CSV
+    (**Export CSV...**). The report pages
     are in HVE's units; the other outputs follow Tools › Preferences.
 
 ## Alpha-Numeric Reports
@@ -74,8 +74,6 @@ EDGEN produces a Variable Output table containing the time-dependent simulation 
     the channels are chosen by object and group, and **Follow playback
     time** makes the table follow the playback. **Output › Output Graph...**
     graphs channels against time, with its own **Select Variables...**.
-    **Output › Timestep Data Table...** lists the time, X, Y, heading and
-    speed of each vehicle at every output step (it lists vehicles only).
 
 > **NOTE:** If the object is a human, the kinematics are displayed for the human Pelvis segment.
 
@@ -86,10 +84,6 @@ A detailed listing of each Variable Output parameter produced by EDGEN is found 
 | Parameter | Description |
 |---|---|
 | Human or Vehicle Kinematic Data | X, Y, Z coordinates; $\phi, \theta, \psi$ angles; Total velocity, fwd, side, vert components; $\dot\phi, \dot\theta, \dot\psi$ angular velocities; Total acceleration, fwd, side, vert components; $\ddot\phi, \ddot\theta, \ddot\psi$ angular accelerations |
-
-![Figure 3-4](images/hvn-edgen-timestep-table.png)
-
-*Figure 3-4: The Timestep Data window for the EDGEN tutorial's Taurus event (Imperial units).*
 
 ## Trajectory Simulations
 

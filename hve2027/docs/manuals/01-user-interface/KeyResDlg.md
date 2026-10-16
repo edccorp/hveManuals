@@ -30,7 +30,7 @@ Arrange the columns by variable or by vehicle, and prefix each column title with
 
 Click a row to move playback to that instant. A value the run did not compute (for example a channel that is not finite) is shown as `--` rather than a number. Variable names that no engine computes carry *(not computed)* in their name, and they read zero for every run — in HVE as well.
 
-**Output › Timestep Data Table...** lists every vehicle's position, heading and speed at every output step; its exported values are always in SI (m, km/h), and each CSV header names its unit. **Output › Export Variables...** writes the selected variables to a file, with a choice of format, interval and coordinate system.
+Position (X, Y), heading and speed are chosen with **Select Variables...** like any other channel. **Output › Export Variables...** writes the selected variables to a file, with a choice of format, interval and coordinate system.
 
 !!! note "HVE 2027"
     One panel for the event instead of one window per object, and a full time history instead of the value at the current time step. The **Select Variables...** button is available for every event.

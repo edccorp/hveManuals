@@ -155,22 +155,28 @@ the Tire Information dialog in HVE. See also the reference page,
 [Tire Information dialog](../../05-tires-wheels/TireInfoDlg.md).
 
 !!! note "HVE 2027"
-    HVE 2027 has two tire dialogs:
+    HVE 2027 has one tire window, **Tire Properties** (**Vehicle › Tire Data
+    (Detailed)**, or Vehicles panel › Vehicle Properties › Tires…), in two
+    parts:
 
-    - **Tire Properties** (**Vehicle › Tire Data (Detailed)**, or Vehicles
-      panel › Vehicle Properties › Tires…) — the scalar tire data of every
-      wheel, a column per wheel: Friction (Peak Long. and Lat. Friction,
+    - The **grid** — the scalar tire data of every wheel, a column per
+      wheel: Friction (Peak Long. and Lat. Friction,
       Slide Friction, Slip at Peak, Velocity Dependence), Cornering
       Stiffness (Cornering Stiffness, Min Skid Fz, Pneumatic Trail, Align
-      Torque Coeff), Load & Speed Dependence (a summary of the friction
-      table), Identity (Tire Name, Manufacturer, Model, HVE Version — for
+      Torque Coeff), Load & Speed Dependence (each wheel's four tables
+      summarized, with a button per table that selects that wheel and tab
+      in the panel below), Identity (Tire Name, Manufacturer, Model, HVE Version — for
       the reports only), Physical (Size Designation, Tire Type, Unloaded
       Radius, the derived Static Deflection, Dual Tires, Dual Spacing),
       Spring / Deflection, Rotational Properties, Rolling Resistance and
       Physical Dimensions.
-    - **Tire Friction Data** (**Vehicle › Tire Tables**) — the tables of one
-      wheel at a time (choose **Axle** and **Side**), on four tabs:
-      **Friction**, **Cornering**, **Camber** and **Fy Rolloff**.
+    - The **Load & Speed Tables** panel under the grid — the tables of one
+      wheel at a time (chosen with the **Wheel:** buttons, **A1 Right**,
+      **A1 Left**, ...), on four tabs: **Friction**, **Cornering**,
+      **Camber** and **Fy Roll-off**. **Copy to Axle** and **Copy to All
+      Wheels** copy the selected wheel's four tables. A drag bar between
+      the grid and the panel resizes them. Edits apply immediately and
+      **Edit › Undo** takes them back.
 
 ![Figure 11-39](../images/hvn-04-tire-properties.png)
 *Figure 11-39: Tire Properties dialog (HVE 2027), with Build from Tire Size at the top.*
@@ -179,7 +185,9 @@ the Tire Information dialog in HVE. See also the reference page,
     A tire is chosen from the tire tables of the loaded vehicle databases in
     the **Tire Database** section at the top of the Tire Properties dialog:
     narrow the list by **Type** (Passenger Car, Light Truck, Heavy Truck or
-    Mobile Home) and **Search** (manufacturer, model or size), select a
+    Mobile Home), **Database** (one database file, with its tire count) and
+    **Search** (manufacturer, model or size), with a *Showing N of M* line
+    while it is narrowed, select a
     tire, choose **Apply to** (all wheels or one axle) and press **Apply
     Tire**. This replaces the tire's data and all four of its tables; each
     wheel keeps its own dual setup. **Build from Tire Size** fills only a
@@ -286,22 +294,29 @@ The Tire Physical Data parameters are described below.
 ### Tire Friction Data
 
 The tire frictional properties are displayed and edited on the **Friction**
-tab of the Tire Friction Data dialog (**Vehicle › Tire Tables**). See also
+tab of the **Load & Speed Tables** panel at the bottom of the Tire Properties
+window (**Vehicle › Tire Data (Detailed)**). See also
 the reference page,
 [Tire Friction Data dialog](../../05-tires-wheels/TireFrictDataDlg.md).
 
 ![Figure 11-42](../images/hvn-04-tire-friction.png)
-*Figure 11-42: Tire Friction Data dialog (HVE 2027), shown on its Cornering tab.*
+*Figure 11-42: the tire tables (HVE 2027), shown on the Cornering tab. The
+screenshot predates their move into the Tire Properties window.*
 
 To display or edit a wheel's tire frictional properties:
 
-1. Choose **Vehicle › Tire Tables**, and select the **Axle** and **Side**.
-2. On the **Friction** tab, choose a table point (load and speed) from the
-   **Point** list, or press **Add** to add one (**Delete** removes it).
-3. At the selected load and speed, view and/or edit the Friction Values:
-   Peak Long. Friction, Peak Lat. Friction, Slide Friction, Slip at Peak,
-   Long. Stiffness and the **In-Use Factor**. The In-use Factor acts as a
-   modifier that multiplies the current dependent tire data.
+1. Choose **Vehicle › Tire Data (Detailed)**, and pick the wheel with the
+   **Wheel:** buttons of the **Load & Speed Tables** panel (or press that
+   wheel's **Friction Table** button in the grid's Load & Speed Dependence
+   rows).
+2. On the **Friction** tab every table point (load and speed) is a row.
+   To add one, enter its **Load** and **Speed** under the table and press
+   **Add Row**; the **x** at the end of a row deletes it. Load and speed
+   are editable, and the table re-sorts by load, then speed.
+3. In each row, view and/or edit the friction values: **Peak Long.**,
+   **Peak Lat.**, **Slide**, **Slip at Peak**, **Long. Stiffness** and
+   **In-Use** (the In-Use Factor). The In-use Factor acts as a modifier
+   that multiplies the current dependent tire data.
 
    > **NOTE:** For example, let's say you believe a given tire's frictional
    > properties are only 90 percent of the values displayed in the dialog.
@@ -309,15 +324,17 @@ To display or edit a wheel's tire frictional properties:
    > longitudinal stiffness values and edit the current data accordingly,
    > or you could simply choose an in-use factor of 0.90.
 
-4. The **Friction vs. Longitudinal Slip** graph updates as you edit.
+4. Click a row's number to plot its friction vs. longitudinal slip curve
+   below the table; the graph updates as you edit.
 
 With no table points the simulations use the scalar friction values of the
-Tire Properties dialog. **Seed This Wheel** and **Seed All Wheels** build a
+Tire Properties grid. **Seed This Wheel** and **Seed All Wheels** build a
 table from those scalars (three load rows about the vehicle's nominal wheel
-load, and optionally a 0 / 30 / 60 mph speed axis). With **View › Show Guidance Text** on, the dialog explains
-which simulations read which axis.
+load, and with **with a speed axis (0 / 30 / 60 mph)** checked a speed axis
+too). With **View › Show Guidance Text** on, the panel explains which
+simulations read which axis.
 
-The Tire Friction Data parameters are described below.
+The tire friction parameters are described below.
 
 - **Load** — Vertical tire load at which the frictional values were
   obtained.
@@ -358,10 +375,11 @@ The Tire Fy vs Slip Angle Data (Cornering Stiffness) for the selected wheel
 position are displayed and edited using the Tire Fy vs Slip Angle Data
 dialog.
 
-In HVE 2027 the cornering data is on the **Cornering** tab of the Tire
-Friction Data dialog: for each table point (load and speed) a **Cornering
-Stiffness** and an **In-Use Factor**, with a preview graph of Fy vs slip
-angle (0–20°). Points are added and deleted as on the Friction tab, and
+In HVE 2027 the cornering data is on the **Cornering** tab of the **Load &
+Speed Tables** panel: a row per table point with **Load**, **Speed**,
+**Cornering Stiffness** and **In-Use**, and a preview graph of Fy vs slip
+angle (0–20°) for the row whose number is clicked. Rows are added and
+deleted as on the Friction tab, and
 **Seed This Wheel** / **Seed All Wheels** build them from the Tire
 Properties scalar.
 
@@ -410,10 +428,10 @@ reference page,
 > **NOTE:** As a rough estimate, camber stiffness is normally about 1/10 of
 > the cornering stiffness.
 
-In HVE 2027 the camber data is on the **Camber** tab of the Tire Friction
-Data dialog: a **Camber Stiffness** per table point (load and speed), with a
-preview graph of Fy vs camber angle (0–10°). With no points, camber thrust
-is off. **Seed This Wheel** / **Seed All Wheels** derive the points from the
+In HVE 2027 the camber data is on the **Camber** tab of the **Load & Speed
+Tables** panel: a row per table point with **Load**, **Speed** and **Camber
+Stiffness**, added with **Add Row** and deleted with **x**. With no rows,
+camber thrust is off. **Seed This Wheel** / **Seed All Wheels** derive the points from the
 cornering stiffness.
 
 The Tire Fy vs Inclination Angle Data parameters are described below.
@@ -454,8 +472,8 @@ and edited in HVE using the Tire Slip vs Rolloff Tables dialog. See also the
 reference page,
 [Slip vs Rolloff dialog](../../05-tires-wheels/SlipVsRollOffDlg.md).
 
-In HVE 2027 the roll-off table is on the **Fy Rolloff** tab of the Tire
-Friction Data dialog: rows of **Long. Slip (0–1)** against **Fy
+In HVE 2027 the roll-off table is on the **Fy Roll-off** tab of the **Load &
+Speed Tables** panel: rows of **Long. Slip (0–1)** against **Fy
 Multiplier** (the lateral force multiplier), with **Add Row** and **x** to
 remove a row, and a graph of roll-off vs slip. It is read by EDVTS and
 EDSVS; with no table the multiplier is 1.0 (no roll-off).
@@ -542,11 +560,28 @@ wheels.
 ![Figure 11-48](../images/figure-11-48.jpg)
 *Figure 11-48: Typical wheel image (shown in HVE).*
 
+In HVE 2027 the picture on each wheel's face is set in the Vehicles panel,
+**3D Geometry › Wheel Images**. Each wheel (*A1 Right*, *A1 Left*, ...) has a
+field with the picture's name and:
+
+- **Pick...** — opens a picker that shows every wheel picture available as
+  thumbnails: those stored in the vehicle databases and those in the
+  *WheelTextures* folders, with a **Filter** by name and a **Source** list
+  (one database or folder). **Use on this wheel** or **Use on every wheel**
+  applies the one selected; **Cancel** closes the picker.
+- **Browse...** — picks your own picture (`.bmp`, `.png`, `.jpg`, `.tga`),
+  kept relative to the case when it is beside it.
+- **All** — uses this wheel's picture on every wheel of the vehicle.
+- **Clear** — removes it; the wheel then draws the rim.
+
+A line under each wheel says where its picture comes from, or that it was not
+found and the wheel draws the rim. A vehicle added from a database brings its
+own wheel images with it. Wheel images are display only: no engine reads them.
+
 !!! warning "Not in HVE 2027"
-    HVE 2027 has no wheel images. A vehicle's wheels are drawn as tires of
-    the tire radius (Vehicle Mesh › **Draw wheels (tire radius)**), or as
-    the wheels the vehicle's own 3-D model contains. HVE's wheel *New* and
-    *Open* options, and the Image File Selection dialog, are not available.
+    HVE's tire sidewall and tread images are not available. Without a 3-D
+    model of its own, a vehicle's wheels are drawn as tires of the tire radius
+    (Vehicle Mesh › **Draw wheels (tire radius)**).
 
 <!-- NAV -->
 

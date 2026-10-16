@@ -146,15 +146,17 @@ scene; here it is ignored, and the run status says how many the site has.
     **Placement** offset and rotation (to level a scan), and **Import** /
     **Clear**.
 
-### Surface Materials
+### Selected Surface
 
-Shown once geometry is loaded. It lists the scene's surfaces grouped by layer,
-as in the **Outliner** (View › Outliner): the eye switch draws a surface, the
-road switch sends it to the solver; clearing both removes it from the picture
-and the solver. Click a surface in the 3-D view, or pick a row, to select it.
+Shown once geometry is loaded. The scene's surfaces, grouped by layer, are
+listed in the **Outliner** (View › Outliner; **Open Outliner** here opens it):
+the eye switch draws a surface, the road switch sends it to the solver;
+clearing both removes it from the picture and the solver. Click a surface in
+the 3-D view, or pick its row in the Outliner, to select it.
 
-For the selected surface the section shows its name, type and friction, with
-**Edit in Shader Editor** and **Deselect**. A surface's **type, friction,
+For the selected surface this section shows its name, type and friction, with
+**Edit in Shader Editor** and **Deselect**, and its **Placement** (move, turn
+and scale it on its own). A surface's **type, friction,
 stiffness and soil properties** are edited on its material in the Shader
 Editor, on the **HVE Surface** node — see
 [Environment Material Properties](EnvrMatPropDlg.md).
@@ -163,8 +165,9 @@ When the surface clicked is stored twice by the case — once as the drivable
 surface and once as the drawn one — the section shows both, each with its own
 switch; the material belongs to the drivable half.
 
-Selecting **Default surface material** in the Outliner edits here the material
-applied to any drivable polygon that has none of its own.
+**Default material** (a button here, or the *Default material* row in the
+Outliner) edits here the material applied to any drivable polygon that has
+none of its own.
 
 ## Sky
 
@@ -180,11 +183,39 @@ sun and sky are set.
 !!! warning "Not in HVE 2027"
     Sky image, sky dome and its rotation, fog (type and visibility).
 
+## Lights
+
+Lights of the site itself — street lights, work lights, a floodlight on a
+pole — not attached to any vehicle. **Add Light** places one 8 m above the
+ground at the middle of the view; **Duplicate** and **Delete** manage the list.
+
+For the selected light: **Name**; **On**; **On in daylight too**; **Type**
+(**Point**, shining every way, or **Spot**); **X** and **Y** in the site's
+plan; **Height above the ground** (the ground beneath it is found where the
+light stands, so it stays on its pole when moved); for a spot, **Aim** (the
+compass direction it points, from the site's +X axis), **Tilt down** (0° is
+level, 90° straight down), **Cone** and **Edge softness**; **Color** and
+**Intensity**.
+
+A site light comes on as the sky darkens, as a vehicle's lamps do; tick
+**On in daylight too** for one that should also light the scene by day. In
+the 3-D view each light is marked by a star with a dotted line to the ground
+(and, for a spot, a line along its aim) while the Environment is selected.
+
+The 3-D view lights the scene with up to 32 lamps at once, site lights and
+vehicle lamps together. Site lights take at most sixteen of them, the ones
+nearest the middle of the view, so the vehicles' lamps always have the rest. The ray-traced render and the glTF export (as KHR_lights_punctual
+lights) carry every one. Site lights are display only: no engine reads them.
+
+!!! note "HVE 2027"
+    HVE's site lights are drawn by its Open Inventor scene; HVE 2027 stores them
+    in the case.
+
 ## Physical
 
 There is no friction on this page: for every engine, the single-track model
 included, friction is each tire's own times the Friction Multiplier of the
-surface (Surface Materials) or friction zone it is on.
+surface (Selected Surface) or friction zone it is on.
 
 **Rolling Resistance** — Used only for tires that state no rolling resistance of
 their own.
@@ -224,7 +255,7 @@ there.
 The list shows each zone's **On** switch, name, **Friction Mult.** and status;
 **Add Zone**, **Duplicate** and **Delete** manage it. For the selected zone:
 **Name**, **Applied to the run**, **Friction Multiplier**, a **Rectangle**
-(**Centre X**, **Centre Y**, **Length**, **Width**, **Heading (deg)**, and **Set
+(**Center X**, **Center Y**, **Length**, **Width**, **Heading (deg)**, and **Set
 Outline to Rectangle**) and its **Corners** (up to 16): **Click corners in the
 3-D view**, **Clear Corners**, the corners' X and Y, and **Add Corner**. A zone
 the run cannot apply says why.

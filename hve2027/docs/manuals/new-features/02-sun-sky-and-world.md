@@ -181,7 +181,7 @@ three-colour gradient, the sun's disc, and haze. It has these inputs:
 
 | Input | Default | Effect |
 | --- | --- | --- |
-| **Haze** | 0 | A milky veil over the whole sky, thickest at the horizon, plus a glow around the sun. 0 leaves the sky clear; 1 is a clear haze; 3 nearly white. There is no upper limit. |
+| **Haze** | 0 | A milky veil over the whole sky, thickest at the horizon, plus a glow around the sun. 0 leaves the sky clear; 1 is a clear haze; 3 nearly white. There is no upper limit. With **View › Scene Display › Effects › Distance Haze** on (the default), the same amount also fades far geometry toward the horizon colour; at 0 nothing is faded. Display only. |
 | **Sun Size** | 0.545 | The angular size of the sun's disc, in degrees |
 | **Sun Intensity** | 20 | The sun's brightness |
 

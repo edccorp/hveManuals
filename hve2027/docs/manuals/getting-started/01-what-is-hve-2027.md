@@ -58,7 +58,7 @@ page is marked otherwise.
 | --- | --- | --- |
 | User interface | MFC dialogs and Open Inventor 3-D editors, Windows only | One window with dockable panels and an OpenGL 3-D view, on Windows and in a web browser |
 | Editors | Separate Human, Vehicle, Environment, Event and Playback editors | Five editor tabs in one window — Human, Vehicle, Environment, Event and Playback. A solved event plays back in the Event editor's viewport; the Playback editor plays several solved events on one timeline |
-| Case files | `.hve` | `.hvc` (binary) or `.json` (text). HVE's `.hve` files open directly; HVE 2027 does not write `.hve` |
+| Case files | `.hve` | `.hvex` (binary) or `.json` (text). HVE's `.hve` files open directly; HVE 2027 does not write `.hve` |
 | Running a program | The event's program runs inside HVE | The event's **Calculation Method** chooses the program. On Windows each run is solved by `hve-solver.exe`, a separate program beside `hve-next.exe`; you do not start it yourself |
 | 3-D view | Open Inventor | OpenGL renderer with node-based materials, shadows, cameras and keyframes (display only — nothing here changes a result) |
 

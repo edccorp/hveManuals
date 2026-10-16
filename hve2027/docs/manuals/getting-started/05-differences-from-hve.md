@@ -10,11 +10,11 @@ HVE does.
 | In HVE | In HVE 2027 |
 | --- | --- |
 | Separate Human, Vehicle, Environment, Event and Playback editors | Five tabs under the menu bar: **Human (F2)**, **Vehicle (F3)**, **Environment (F4)**, **Event (F5)**, **Playback (F6)**. The menu bar shows the menus of the active tab. See [Interface Tour](03-interface-tour.md#editor-tabs) |
-| Playback Editor with report and playback windows | The **Playback (F6)** editor plays several solved events on one timeline: its **Playback** menu has Playback Sequence, Playback Options and **Run All Events**, which solves every event the sequence uses. One event also plays back where it is set up: **Run** on the playback bar under the Event editor's viewport. Reports, graphs and tables are on the Event editor's **Output** menu (Key Results, Output Graph, Timestep Data Table, HVE Reports — which holds the Accident History — and Export Variables); Key Results, the Results HUD, Output Graph and Timestep Table are also on the **View** menu in every editor |
+| Playback Editor with report and playback windows | The **Playback (F6)** editor plays several solved events on one timeline: its **Playback** menu has Playback Sequence, Playback Options and **Run All Events**, which solves every event the sequence uses. One event also plays back where it is set up: **Run** on the playback bar under the Event editor's viewport. Reports, graphs and tables are on the Event editor's **Output** menu (Key Results, Output Graph, HVE Reports — which holds the Accident History — and Export Variables); Key Results, the Results HUD and Output Graph are also on the **View** menu in every editor |
 | Video Creator (several events on one timeline, written to video) | The **Playback (F6)** editor's timeline (above) takes the Video Creator's place; **File › Record Animation** writes the 3-D playback to a Motion-JPEG AVI — through any saved camera, between the start and end times you choose, in real time or slow motion, with the [Results HUD](../new-features/11-results-hud.md) burned in if you wish — and **File › Play Video** plays one; Record Animation can also **ray-trace** every frame (and add motion blur), and **File › Render Image (Ray Traced)** makes a still; for full control of a render, use Blender with the glTF export or the Blender Live Link (see [Video and Playback Sequences](../new-features/07-video-and-playback-sequences.md)) |
-| Options menu: show/hide velocity vectors, skidmarks, targets, paths… | **View › Scene Display** panel: Vectors (Velocity Vectors, Collision Force (PDOF), Tire Force Vectors), Skidmarks, CG Path, Accelerometer Path, Tire Contact Patch Paths, **Scene Ghosts** (HVE's targets, drawn as outlines, translucent vehicles or both), Axes (the origin's, and each vehicle's at its CG), North Arrow, Vehicle Extents |
+| Options menu: show/hide velocity vectors, skidmarks, targets, paths… | **View › Scene Display** panel: Vectors (Velocity, Acceleration, Collision force and moments, Tire Fx', Fy' and Fz'), Skidmarks, CG Path, Accelerometer Path, Tire Contact Patch Paths, **Scene Ghosts** (HVE's targets, drawn as outlines, translucent vehicles or both), Axes (the origin's, and each vehicle's at its CG), North Arrow, Vehicle Extents |
 | Render dialog (Phong, Flat, Wireframe, Hidden Line; light sources) | **View › Scene Display › Rendering**: Phong, Flat, Wireframe, Light Sources On. Hidden Line is not offered: in this renderer it would draw the same picture as Wireframe |
-| Camera Setup | **Tools › Cameras** — saved cameras and a Viewport View tab in one dialog; the **Cam** button and right-click menu in the viewport; **C** / **Shift+C** cycle cameras |
+| Camera Setup | **Tools › Cameras** — saved cameras and a Viewport View tab in one dialog; the **Camera** button under the viewport's view cube (click to look through the scene camera, right-click for Camera Properties) and the viewport's right-click menu; **C** / **Shift+C** cycle cameras |
 | Units dialog (US, SI, Custom) | **Tools › Preferences › Units**: Imperial or Metric. No custom mix |
 | 3-D editor manipulators | A gizmo, plus Blender-style keys: **G** move, **R** rotate, **X/Y/Z** axis lock, typed values, **Ctrl** snap. See [Interface Tour](03-interface-tour.md#moving-objects-the-gizmo) |
 | Path Follower | **Event › Path Follower** — it is per event and per vehicle, so it is on the Event menu, not the Vehicle menu |
@@ -26,7 +26,7 @@ HVE does.
 | Damage Studio | **Output › Damage Studio Options** and **Damage Studio Report**; crush is drawn on the vehicle's 3-D body as the run plays |
 | Impact Plane / Barrier (EDCRASH) | Greyed in the Event menu. Model a barrier as a vehicle of type **Fixed Barrier** in Vehicle Information |
 | An input a program does not use is greyed | The same, and in addition HVE 2027 says **why** where it matters (for example, which program reads a field). Inputs are locked while results are on screen; press **Reset** to edit |
-| `.hve` case files | `.hvc` or `.json`; `.hve` files open directly but are not written. Like a `.hve`, a saved case carries its site (geometry and aerial photograph) inside it; **File › Embed the environment in the case** turns that off for a case that should only name its site file. See [Cases and Files](04-cases-and-files.md) |
+| `.hve` case files | `.hvex` or `.json`; `.hve` files open directly but are not written. Like a `.hve`, a saved case carries its site (geometry and aerial photograph) inside it; **File › Embed the environment in the case** turns that off for a case that should only name its site file. See [Cases and Files](04-cases-and-files.md) |
 
 Most of HVE's dialogs are ported field for field. Where a dialog page in this
 manual set describes a field HVE 2027 does not have, the page marks it
@@ -108,7 +108,7 @@ running something else:
 | Case Intake and Provenance | **Tools › Automatic Tools › Case Intake**, **Tools › Automatic Tools › Provenance** | Builds an event from the case documents through your own AI tool (HVE 2027 sends nothing anywhere), and keeps, with the case, where every value these tools set came from: stated, looked up, estimated, a generic's default or unknown |
 | Occupants and cargo aboard a vehicle | **Inertia / Mass** dialog, *Aboard* | A load the vehicle carries into every event and engine, added to its mass, CG and inertia, or handed to SIMON and EDVDS as payload |
 | Crush stiffness from crash tests | **Tools › Automatic Tools › Crush Stiffness from Crash Tests**, or **Vehicle › Crush Stiffness › From crash tests** | CRASH3 A and B from staged barrier tests, typed in, read from an NHTSA test file or fetched from NHTSA's database by test number, put on a side of the vehicle and on its EDCRASH events |
-| EDR import | **Tools › Automatic Tools › EDR Import** | An event data recorder's pre-crash record into an event vehicle's initial speed and driver-control tables, and the recorded delta-V against the run's |
+| EDR import | **Tools › Automatic Tools › EDR Import** | An event data recorder's pre-crash record (from the report's PDF or tables, or typed in) into an event vehicle's initial speed and driver-control tables; for SIMON, the driver solved to follow the recorded speed; and the recorded yaw rate, accelerations and delta-V against the run's |
 | Node materials | **View › Shader Editor** | Blender-style material graphs for vehicles, road surfaces and the sky. Display only: a surface's friction stays in the Environment editor |
 | Keyframes | **View › Dope Sheet**; **I** in the viewport | Animate material values and cameras over the playback time. Display only |
 | Blender | **File › Export Scene for Blender** (glTF), **File › Blender Live Link** | Take the solved scene into Blender; the live link updates the objects already in Blender after each re-run, keeping the materials and cameras set up there |
@@ -118,7 +118,7 @@ running something else:
 ## Not available in HVE 2027
 
 !!! warning "Not in HVE 2027"
-    - **Writing `.hve` files.** Cases are saved as `.hvc` or `.json`.
+    - **Writing `.hve` files.** Cases are saved as `.hvex` or `.json`.
     - **Calculation programs HVE 2027 does not have.** An event whose program is
       not one of HVE 2027's opens, keeps its inputs, and does not run; the run
       status says so. (Read Data File runs: it replays the event's data file.)

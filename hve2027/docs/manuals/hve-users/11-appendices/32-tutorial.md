@@ -35,12 +35,12 @@ Start HVE 2027 as you would any other program (see [Installing and running HVE 2
 
 The menu bar holds **File**, **Edit**, the menus of the current editor (**Vehicle**, **Environment**, **Event**, **Output**, **Playback**, **Occupant** — which of them appear depends on the editor), **View**, **Tools** and **Help**:
 
-- **File** — New, Open and Save cases (Ctrl+N, Ctrl+O, Ctrl+S), Open Recent, Save Case As JSON, Embed the environment in the case, Publish Bundle, the Blender export and live link, and Exit.
+- **File** — New, Open and Save cases (Ctrl+N, Ctrl+O, Ctrl+S), Open Recent, Save Case As JSON, Embed vehicle meshes in the case, Embed the environment in the case, Publish Bundle, the Blender export and live link, and Exit.
 - **Edit** — Undo History (Ctrl+Z undoes and Ctrl+Y redoes, except while a run's results are on screen).
 - **Vehicle**, **Environment**, **Event**, **Occupant** — the dialogs for setting up vehicles, the environment, events and humans (HVE's Set-up menu and Object Info dialogs).
-- **Output** — Key Results, Output Graph, Timestep Data Table, Variable Selection, reports, Playback Options and Run Simulation (HVE's Playback Editor).
+- **Output** — Key Results, Output Graph, Variable Selection, reports, Playback Options and Run Simulation (HVE's Playback Editor).
 - **Playback** — Playback Sequence, Playback Options and Run All Events, in the Playback editor.
-- **View** — the panels (Viewport, Shader Editor, Dope Sheet, Key Results, Output Graph, Timestep Table, Simulation, Outliner) and what the 3-D view draws.
+- **View** — the panels (Viewport, Shader Editor, Dope Sheet, Key Results, Output Graph, Simulation, Outliner) and what the 3-D view draws.
 - **Tools** — Quick Case, Vehicle Package, Case Intake, Provenance, EDR Import, Monte Carlo Analysis, Motorcycle Analysis, Preferences, Style Editor, Cameras, Audit Log and Limits Editor (HVE's Options menu).
 - **Help** — License, About.
 
@@ -225,7 +225,7 @@ Three of the five events must start later in the sequence. Because they begin at
 
 **Audit Trail.** HVE's Audit Trail table, listing which event controls each object's motion, has no direct counterpart; the sequence's table shows which event each track plays. (**Tools › Audit Log…** in HVE 2027 is a log of the session's actions.)
 
-Finally, save the case: **File › Save Case As…** and enter the file name `HveTutorialLesson4`. HVE 2027 saves it as an `.hvc` (or **Save Case As JSON…** for `.json`); it does not write `.hve` files.
+Finally, save the case: **File › Save Case As…** and enter the file name `HveTutorialLesson4`. HVE 2027 saves it as an `.hvex` (or **Save Case As JSON…** for `.json`); it does not write `.hve` files.
 
 ## Lesson 4 — Creating a Video
 

@@ -2,7 +2,7 @@
 
 In HVE every object created with the 3-D Editor has attributes — name, type, overlay, material name and friction factor — edited in the Object Attributes dialog. HVE 2027 has no 3-D Editor (see [3-D Editor Menu](3dEditor.md)); the environment's surfaces come from an imported site file or HVE case, and their physical attributes are edited per surface:
 
-- In the Environment Editor (**Environment (F4)**), **Environment** panel, **Terrain** section, **Surface Materials**: the site's surfaces grouped by layer, each with a draw switch (eye) and a drive switch (road). Click a surface to select it; the panel then shows *Selected: name -- type, friction* with **Edit in Shader Editor** and **Deselect** buttons.
+- In the Environment Editor (**Environment (F4)**): the site's surfaces are listed grouped by layer in **View › Outliner**, each with a draw switch (eye) and a drive switch (road). Click a surface in the viewport or the Outliner to select it; the **Environment** panel's **Selected Surface** section then shows *Selected: name -- type, friction* with **Edit in Shader Editor** and **Deselect** buttons.
 - In the **Shader Editor** (**View › Shader Editor**, or **Edit in Shader Editor**), whose surface page holds the surface's physical properties beside its appearance.
 
 ## Type (Surface Type)
@@ -27,7 +27,7 @@ The same page carries the surface's stiffness (Force Constant, Linear, Quadratic
 
 ## Overlay
 
-HVE 2027 groups surfaces into **layers**, shown in **View › Outliner** and in the Surface Materials list; see [Overlays Dialog Box](OverLayDlg.md). A surface is moved to another layer by dragging it onto the layer.
+HVE 2027 groups surfaces into **layers**, shown in **View › Outliner**; see [Overlays Dialog Box](OverLayDlg.md). A surface is moved to another layer by dragging it onto the layer.
 
 ## Material Name, Material Edit...
 

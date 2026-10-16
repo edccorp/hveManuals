@@ -26,7 +26,7 @@ Run the installer, **`HVE-2027-<version>-setup.exe`**.
 - **Side by side.** Each version installs into its own folder, with its own
   Start menu entry, **HVE 2027 <version>**, and its own entry in Windows'
   installed-apps list. **HVE 2027** in the Start menu, and double-clicking an
-  `.hvc` case, open the version installed last.
+  `.hvex` case, open the version installed last.
 - **Classic HVE is left alone.** The installer never takes over `.hve` files;
   they stay with HVE.
 - **Uninstalling** a version (from Windows' installed-apps list) removes that
@@ -39,7 +39,9 @@ Run the installer, **`HVE-2027-<version>-setup.exe`**.
     event you run: activate it under **Help › License...** with your EDC
     Software secret (see [Help › License](../hve-users/02-menu-reference/07-help-menu.md#online-licensing)).
     Without one, **Run** is refused and the run status says why. The program
-    does not check for updates.
+    does not check for new versions of itself. With an activated license it
+    does check, at most once a day, for a newer edition of EDC's vehicle data
+    (see [Help › Check for Vehicle Data Updates](../hve-users/02-menu-reference/07-help-menu.md#check-for-vehicle-data-updates)).
 
 ## What is in the program folder
 
@@ -50,9 +52,16 @@ Installed or copied, the program is one folder. Keep its contents together:
 | `hve-next.exe` | The program |
 | `hve-solver.exe` | The physics solver. On Windows every **Run** is solved by this program in a separate process, so it must stay in the same folder as `hve-next.exe` |
 | `SDL2.dll` | A library the program needs for its window, keyboard and mouse |
-| `hve-rsc\` | The text each physics program uses to lay out its report pages (**Output › HVE Reports**) |
-| `db\` | HVE's vehicle databases. An installed release carries `Generic.db`; EDC's vehicle data (`EDC.db`, `VMSTANDARD_7_00.db`) is licensed separately and is not in the program package. A preview folder from EDC may carry all three |
-| `vehicles\` | The 3-D vehicle geometry those databases name |
+| `hve-solver-reference.exe` | Where present: the HVE-reference physics, used when an event's **Physics** is *HVE-reference* (Event Information) and by **Output › Compare Runs...**. Without it, an HVE-reference event says it cannot run |
+| `db\` | HVE's vehicle databases. An installed release carries `Generic.db` only; EDC's vehicle data (`EDCVehicles.hvedb`, with its meshes and wheel images inside it) is licensed separately and installed in its own folder (below). A preview folder from EDC may carry `EDCVehicles.hvedb` here as well |
+| `vehicles\` | 3-D vehicle geometry files that the classic `.db` databases in `db\` name, and the program's own (such as the generic motorcycle's) |
+
+EDC's vehicle data is a separate download, installed once per computer in
+**`%ProgramData%\EDC\HVE\data`**, outside every version's folder: every
+installed version reads it, and uninstalling a version does not touch it. Among
+the folders that come with the program it is searched first. **Help › Check for
+Vehicle Data Updates** installs a newer edition there (see
+[Vehicle databases](04-cases-and-files.md#vehicle-databases)).
 
 The program file is still called `hve-next.exe`; on screen the program calls
 itself **HVE 2027 Preview**. All the physics programs, GATB included, are part
@@ -98,7 +107,7 @@ changes.
 To open a case:
 
 - **File › Open Case...** (**Ctrl+O**) opens an HVE case (`.hve`) or an
-  HVE 2027 case (`.hvc` or `.json`). **File › Open Recent** lists the cases
+  HVE 2027 case (`.hvex` or `.json`). **File › Open Recent** lists the cases
   opened or saved most recently.
 - A case can also be named when the program is started, for example from a
   Command Prompt in the program's folder:
@@ -136,13 +145,16 @@ it), beside your license (`license.json`):
 | `hve_prefs.ini` | Other preferences, such as **Tools › Preferences › Auto-Save** |
 | `hvenext.meshlib`, `hvenext.vdblib` | Geometry and database folders you have added |
 | `hve_limits.ini` | Written when the **Limits Editor** saves to a file |
+| `hve_report_text.json` | Your own wording for report strings, set in **Tools › Report Text...** |
 
 Deleting `imgui.ini` restores the default panel layout the next time the
 program starts.
 
-Vehicles saved with **Vehicle › Save Vehicle As** go, unless you choose another
-file, into `userdb\user.db` in the same folder, and appear in the vehicle
-database picker of every version.
+Your own vehicle databases are kept in its `userdb` folder: `MyVehicles.hvedb`
+and any other database written by **Vehicle › Save to My Vehicles...**, the
+databases copied in with **Import database...** in the Add Vehicle dialog, and,
+unless you choose another file, `user.db`, written by **Vehicle › Save Vehicle
+As**. They appear in the vehicle database picker of every version.
 
 This folder is **shared by every installed version** and is **not touched when
 a version is uninstalled**, so a new version starts with your layout,
@@ -220,7 +232,7 @@ saved results. It has no editors and no physics programs at all, so it cannot
 change or re-run a case. It is not part of the Windows preview package.
 
 A case opened in the viewer shows results only if they were saved with it (a
-`.hvr` results file beside the case, or a bundle published with its results;
+`.hver` results file beside the case, or a bundle published with its results;
 see [Cases and Files](04-cases-and-files.md)). A bundle published without
 results opens with a message saying so. The viewer shows one event's results —
 the event that was on screen when the case was saved — and a case with several
@@ -241,6 +253,6 @@ opening the program's window.
 | Command | Does |
 | --- | --- |
 | `hve-next.exe --version` | Prints which build this is: the same build identifier that **Help › About HVE 2027...** shows |
-| `hve-next.exe --convert-case <in> <out>` | Opens a case (for example an HVE `.hve`) and writes it as `.hvc` (if `<out>` ends in `.hvc`) or JSON. Stops if a vehicle's geometry cannot be found; add `--allow-missing-geometry` after `<out>` to write it anyway |
+| `hve-next.exe --convert-case <in> <out>` | Opens a case (for example an HVE `.hve`) and writes it as `.hvex` (if `<out>` ends in `.hvex`) or JSON. Stops if a vehicle's geometry cannot be found; add `--allow-missing-geometry` after `<out>` to write it anyway |
 | `hve-next.exe --export-bundle <case> <folder> [title] [--inputs-only] [--with-capture]` | Solves the case and publishes it as a self-contained folder; refuses if the case cannot be solved, unless `--inputs-only` is given. See [Publish Bundle](04-cases-and-files.md#publish-bundle) |
 | `hve-next.exe --serve=PORT` | Starts the program normally, with the Blender live link already listening on PORT (`--serve` alone uses port 17690). See [Exporting to Blender and glTF](../new-features/06-exporting-to-blender-and-gltf.md) |

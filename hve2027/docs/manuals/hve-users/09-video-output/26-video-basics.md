@@ -413,7 +413,7 @@ use the Rendering Options dialog to increase the Anti-aliasing value to about
 anti-aliasing is increased).
 
 !!! note "HVE 2027"
-    HVE 2027 has no anti-aliasing scale. The 3-D view is multisampled, and **View › Scene Display › Effects › FXAA** smooths the edges multisampling cannot reach; the **Ray traced** renderer in **File › Record Animation…** is smoothed by its **Samples**. When rendering in Blender, use Blender's own sampling and filter settings.
+    HVE 2027 has no anti-aliasing scale. The 3-D view is multisampled, and **View › Scene Display › Effects › Anti-Aliasing (FXAA)** smooths the edges multisampling cannot reach; the **Ray traced** renderer in **File › Record Animation…** is smoothed by its **Samples**. When rendering in Blender, use Blender's own sampling and filter settings.
 
 ### Keep Objects Close
 

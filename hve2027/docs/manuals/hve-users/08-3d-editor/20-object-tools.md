@@ -63,7 +63,7 @@ Positions and sizes are shown in the units set in Preferences (in the US system,
 2. Press **Add**. A box named *Box n* is added and selected.
 3. Enter its name, position, size, rotation and colour.
 
-The box appears in the 3-D view, and as an outline in the Environment editor's Top view.
+The box appears in the 3-D view.
 
 ### Editing an Existing Box
 
@@ -107,7 +107,7 @@ HVE's Signal tool creates traffic signal lights in the environment.
 HVE's Edit tool selects an object so that its attributes can be edited and a manipulator attached.
 
 !!! note "HVE 2027"
-    There is no separate Edit tool; clicking selects. In the Environment editor a click on a surface selects it for the Surface Materials section and the Shader Editor. In the Event editor a click on a vehicle selects it and shows its gizmo ([Chapter 21](21-manipulators.md)). In the Vehicle editor, **Tab** enters Edit Mode, in which a click picks a named part of the vehicle mesh.
+    There is no separate Edit tool; clicking selects. In the Environment editor a click on a surface selects it for the Environment panel's Selected Surface section and the Shader Editor. In the Event editor a click on a vehicle selects it and shows its gizmo ([Chapter 21](21-manipulators.md)). In the Vehicle editor, **Tab** enters Edit Mode, in which a click picks a named part of the vehicle mesh. In the Environment editor, **Tab** enters Edit Mode, in which a click picks one face of the site ([Chapter 12](../05-environment-editor/12-creating-editing-environments.md#edit-mode-faces-of-the-site)).
 
 ---
 *Converted and updated from the legacy HVE User's Manual (Seventh Edition, Jan 2006), Chapter 20; adapted for HVE 2027.*

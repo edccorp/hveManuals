@@ -8,15 +8,12 @@ and **Previous** buttons to step through the momentum analysis.
     There is no Common Scene Report window. The graphic reports are reached as
     follows:
 
-    - **Momentum diagram** — the viewport's **Momentum** view (the view buttons
-      above the viewport: Top, Front, Side, Momentum, 3D). After a run it draws
-      each vehicle's pre-impact (V1, V2) and post-impact (V1', V2') momentum
-      vectors and their delta-V (dV1, dV2). It is a single diagram; there are
-      no phases and no **Next** / **Previous** buttons. Before a run it says
-      *Run simulation to see momentum diagram*.
+    - **Momentum diagram** — not produced by HVE 2027. Each vehicle's impact
+      speed, Delta-V and PDOF are reported in **Output › Key Results...**.
     - **Damage profiles** — **Output › Damage Studio Report...** (and **Damage
       Studio Options...**), and the crushed vehicles in the 3-D viewport.
-    - **Site drawing** — the viewport's **Top** view of the scene.
+    - **Site drawing** — the viewport's plan view of the scene: click the
+      view cube's **Top** face (or press **7**).
 
 <!-- NAV -->
 

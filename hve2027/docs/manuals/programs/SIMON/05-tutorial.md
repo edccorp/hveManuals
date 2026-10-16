@@ -21,7 +21,7 @@ Like all SIMON events, the procedures used in the tutorial involve the following
 Before you start, set the display so that what you see matches this chapter:
 
 - **Tools › Preferences...**: set **Units** to **Imperial (ft/in, mph, lb, lbf)** (the values below are in US units).
-- **View** menu: show **Key Results**; in **View › Scene Display**, turn on **Skidmarks** (*Paths & Overlays*) and leave **Velocity Vectors** (*Vectors*) off.
+- **View** menu: show **Key Results**; in **View › Scene Display**, turn on **Skidmarks** (*Paths & Overlays*) and leave the **Velocity** vector (*Vectors*) off.
 - **Output › Playback Options...**: choose a playback speed you are comfortable with.
 
 > **NOTE:** These options affect only the display. The vehicle's initial position is set by the event's initial conditions; with **Auto Position** checked it is settled onto the terrain.
@@ -70,7 +70,7 @@ To see it, choose the **Environment (F4)** editor and open **Environment › Env
 
 ### Saving the Case
 
-HVE 2027 does not write `.hve` files. To keep your own copy, choose **File › Save Case As...** (a binary `.hvc` case) or **File › Save Case As JSON...**. After a run, saving also stores the results beside the case, and they are restored when you open it again.
+HVE 2027 does not write `.hve` files. To keep your own copy, choose **File › Save Case As...** (a binary `.hvex` case) or **File › Save Case As JSON...**. After a run, saving also stores the results beside the case, and they are restored when you open it again.
 
 ## Creating the Events
 
@@ -209,7 +209,7 @@ The Program Data report includes the simulation control parameters and other run
 
 ### Variable Output
 
-The time-dependent results are shown in two places on the **Output** menu: **Key Results** (a summary, and each selected variable at every output step, with the row at the current playback time highlighted; it docks under the viewport) and **Timestep Data Table** (time, X, Y, heading and speed at every output step).
+The time-dependent results are shown in **Output › Key Results** (a summary, and in its *Trajectory* section each selected variable at every output step, with the row at the current playback time highlighted; it docks under the viewport) and plotted in **Output › Output Graph**.
 
 #### Variable Selection
 
@@ -235,7 +235,7 @@ The trajectory simulation is the Event editor's viewport. After the run, use the
 4. Click **|<**. The simulation returns to the start.
 5. Click **>|**. The simulation advances to the end of the run.
 
-Use the viewport's **Top**, **Front**, **Side** and **3D** buttons, and the camera list on the playback bar, to change the view.
+Use the view cube in the viewport's top-right corner (click a face for that view, drag it to orbit), and the camera list on the playback bar, to change the view.
 
 ### Printing
 

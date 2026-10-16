@@ -30,7 +30,7 @@ DamageStudio provides the following information about a collision:
     |---|---|
     | Simulated damage in a 3-D viewer | The crushed vehicle in the main viewport, following the playback time |
     | Impulse number, CDC, PDOF, width, offset, height, crush table per impulse | The *DAMAGE DATA* page of **Output › HVE Reports** (end of run, per impulse) |
-    | PDOF vector | **View › Scene Display › Vectors › Collision Force (PDOF)**, drawn while in contact |
+    | PDOF vector | **View › Scene Display › Vectors › Collision force**, drawn while in contact |
     | Crush vectors, impulse-center sphere | Not available |
     | Crush depth over the body | A crush heat map through the Shader Editor (*HVE Simulation* › **Crush**) |
     | Undamaged / From File / User-entered views, Multiple Views | Not available |
@@ -97,7 +97,7 @@ The 3-D viewer displays the current impulse center and PDOF vector, as well as a
 !!! note "HVE 2027"
     The closest equivalent is the run itself in the main viewport. After a run
     the vehicle mesh deforms as the playback time passes through the collision,
-    and **View › Scene Display › Vectors › Collision Force (PDOF)** draws an arrow at each
+    and **View › Scene Display › Vectors › Collision force** draws an arrow at each
     vehicle while it is in contact, swinging and growing with the engine's own
     collision force sample by sample. The arrow points into the CG from the
     direction the force came from, which is HVE's PDOF convention. The per-impulse
@@ -192,7 +192,7 @@ For simulation events, the available key results are: Time; Impulse No; Total, L
     (Initial Velocity to Damage Energy), and each one ticked is a column. HVE's
     PDOF arrow and crush-vector display settings are not offered: HVE 2027 has
     no DamageStudio viewer for them to control. To show the collision force
-    arrow use **View › Scene Display › Vectors › Collision Force (PDOF)**; for a crush map use
+    arrow use **View › Scene Display › Vectors › Collision force**; for a crush map use
     the *HVE Simulation* node's **Crush** output in the Shader Editor. The settings last for the
     session and are not saved with the case.
 

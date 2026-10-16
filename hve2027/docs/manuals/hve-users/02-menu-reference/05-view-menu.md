@@ -34,11 +34,10 @@ HVE's View menu items map as follows:
 | **Key Results** | The Key Results panel (Event editor) |
 | **Results HUD** | The Results HUD window: boxes of solved numbers drawn over the viewport and into recorded videos, saved with the case (every editor) — see [Results HUD](../../new-features/11-results-hud.md) |
 | **Output Graph** | The Output Graph panel (Event editor) |
-| **Timestep Table** | The Timestep Data panel (Event editor) |
 | **Simulation** | The Simulation panel: simulation controls, Run / Reset and the last result (Event editor) |
 | **Outliner** | The site's layers and surfaces — see [OUTLINER](#outliner) |
 
-Key Results, Output Graph, Timestep Table and Simulation are drawn only in the
+Key Results, Output Graph and Simulation are drawn only in the
 Event editor. Panels dock: drag a panel's tab to move it to another dock position
 or to float it.
 
@@ -55,14 +54,42 @@ the scene draws, so they can be left on screen beside the Viewport. It is in
 every editor, docks like any other panel, and remembers whether it was open.
 These switches are only in this panel, not on the View menu.
 
-Its groups are **Paths & Overlays** (the paths, Axes, North Arrow, Skidmarks,
-occupant equipment, the two Through Bodywork switches and Path thickness),
-**Vehicle** (Vehicle Extents, DyMESH Wheel Mesh), **Vectors** (with the arrow
-scales), **Scene Ghosts**, **Shadow Coverage**, **Effects** and **Rendering**.
-Click a group's header to fold it away. A greyed switch says why when you point
-at it.
+Its groups are **Vehicles Shown** (see [VEHICLES SHOWN](#vehicles-shown)),
+**Paths & Overlays** (the paths, Axes, the CG markers, Lamp Gizmos, North
+Arrow, Skidmarks, occupant equipment, the two Through Bodywork switches and
+Path thickness), **Vehicle**
+(Vehicle Extents, See-Through Body and the DyMESH overlay table), **Vectors**
+(with the arrow scales), **Scene Ghosts**, **Shadow Coverage**, **Effects** and
+**Rendering**. Click a group's header to fold it away. A greyed switch says why
+when you point at it.
 
-The sections below describe each group. Panels, **Outliner**, **Panels Outside
+The sections below describe each group.
+
+---
+
+## VEHICLES SHOWN
+
+The first group of the Scene Display panel lists the case's vehicles, each with a
+checkbox. Untick a vehicle to take it out of the 3-D view of the Event and
+Playback editors, for example to see one vehicle's damage where the other stands.
+**Show all** puts every vehicle back. A hidden vehicle's ghosts and tire marks are
+hidden with it.
+
+The same set of hidden vehicles is changed from several places:
+
+- in the 3-D view, **H** hides the selected vehicle, **Shift+H** hides every other
+  vehicle, and **Alt+H** shows them all;
+- the **Shown** checkbox on each row of the Event editor's Vehicles in Event list;
+- the **Shown in the view:** checkboxes in the Playback Sequence window;
+- the eye beside each vehicle in the Outliner's **Vehicles** group (Ctrl-click an
+  eye to show only that vehicle).
+
+While any vehicle is hidden, an amber note at the top left of the view names the
+hidden vehicles, with a **Show all** button.
+
+Hiding a vehicle is a view setting only: the case, its results and the run are
+unchanged, nothing is saved, and opening another case shows every vehicle again.
+The Vehicle editor always draws the vehicle it edits. Panels, **Outliner**, **Panels Outside
 the Main Window** and **Show Guidance Text** stay on the View menu, because they
 do not change the scene.
 
@@ -78,6 +105,10 @@ run leaves behind, and the case's axes.
 | **Accelerometer Path** | One path per installed accelerometer, at the device's own position (HVE: Show Accelerometer Paths) |
 | **Tire Contact Patch Paths** | Where each tire actually touched the ground, one path per wheel (HVE: Show Tracks) |
 | **Axes** | The case's axes at the origin, and each vehicle's own axes at its CG (X red, Y green, Z blue, drawn up). On by default |
+| **Sprung CG** | Each vehicle's sprung-mass CG, the point every "CG to ..." distance is measured from. On by default, independent of Axes |
+| **Total CG** | Each vehicle's total-mass CG (sprung and unsprung masses together), labelled with its offset from the sprung CG. On by default |
+| **CG Weights** | Adds to each CG label the weight it carries: the sprung weight at the Sprung CG, the total weight at the Total CG, in the units set in Preferences. Off by default |
+| **Lamp Gizmos** | Each vehicle lamp drawn as a ring, a line along its aim and, for a spot, its cone; click one to select it, drag it to move it. Off by default |
 | **North Arrow** | A compass in the corner of the viewport pointing to the case's north, which is set in the Shader Editor's Sun & Sky panel or read from an imported `.hve` |
 | **Skidmarks** | The contact-patch path, only where the tire was marking. SIMON grades the mark's opacity; EDSMAC4, EDVSM, EDSVS and EDVDS report a tire as skidding or not, so their marks are all-or-nothing (HVE: Show Skidmarks) |
 | **CG Path** | Each vehicle's CG path up to the current playback time, in its paint colour (HVE: Show CG Paths) |
@@ -87,8 +118,8 @@ run leaves behind, and the case's axes.
 
 ## OCCUPANTS AND VEHICLES
 
-The occupant switches are in **Paths & Overlays**; Vehicle Extents and DyMESH
-Wheel Mesh are in **Vehicle**.
+The occupant switches are in **Paths & Overlays**; Vehicle Extents, See-Through
+Body and the DyMESH overlay table are in **Vehicle**.
 
 | Item | Does |
 |---|---|
@@ -96,7 +127,15 @@ Wheel Mesh are in **Vehicle**.
 | **Occupant Equipment Through Bodywork** | Draws that equipment over the vehicle instead of hidden inside it. Turn it off to judge what is in front of what |
 | **Humans Through Bodywork** | Draws the occupant figure over the vehicle, so a seated occupant can be seen from outside. A human that draws nothing with this on has no body yet: generate one in the Human editor |
 | **Vehicle Extents** | A translucent box at the CG-to-front, CG-to-rear, width and height the engine is given, to compare with the drawn body |
-| **DyMESH Wheel Mesh** | The DyMESH contact body built for each tire, drawn deformed by the run, with crushed vertices in red. Greyed until a SIMON event with DyMESH has been run |
+| **See-Through Body (Vehicle editor)** | In the Vehicle editor, draws the body translucent so the axles, wheels, CGs and lamps inside it can be seen. The vehicle's own opacity is unchanged, and the other editors draw it as before |
+| **DyMESH overlay** | A table with two rows, **DyMESH Body** and **DyMESH Wheel**, and two columns, **Mesh** and **Nodes**. The **DyMESH Wheel** row is greyed until a SIMON event with DyMESH and at least one wheel's DyMESH contact on has been run; point at a row's **(?)** to see why it is greyed |
+
+The DyMESH overlay table:
+
+| Row | Mesh | Nodes |
+|---|---|---|
+| **DyMESH Body** | The body DyMESH collides, drawn as a wireframe over the vehicle. After a run it is deformed by the run's crush at the playback time; an edge with a crushed node is red | The body's nodes (its mesh vertices, where the contact forces act); a node the run crushed is red |
+| **DyMESH Wheel** | The DyMESH contact body built for each wheel whose DyMESH contact is on, drawn deformed by the run; a displaced vertex is red | Every vertex of that wheel mesh as a small cross, red where the run displaced it, and a label naming the wheel's contact model and the event's tire law |
 
 ---
 
@@ -122,31 +161,52 @@ shows the current shadow resolution in centimetres per texel.
 
 ## VECTORS
 
-**Menu Option:** View › Scene Display › Vectors › …
+**Menu Option:** View › Scene Display › Vectors
 
-| Item | Draws |
+The Vectors group is a table with one row per vector. All are off by default.
+Each row has a **Show** checkbox (draw the arrows), a **Value** checkbox (print
+each arrow's value at its end, in the units set in Tools › Preferences), **Dec**
+(decimal places, 0 to 4), the arrow scale (**1 m =** or **1 ft =**, how much one
+length unit of arrow stands for) and, where the row has its own scale, a
+**Fit** button that sets the scale so the run's largest value draws about 5 m
+long.
+
+| Vector | Draws |
 |---|---|
-| **Velocity Vectors** | Each vehicle's velocity, from its forward and lateral velocity rotated into the earth frame — not along the heading, so a sideslip shows (HVE: Show Velocity Vectors) |
-| **Collision Force (PDOF)** | While the vehicles are in contact only, an arrow that turns and grows with the engine's collision force sample by sample. It runs along the force on the vehicle, its tail on the side the force came from (HVE's PDOF convention). The two options below choose where it acts |
-| **…at the CG, with moments** | The force into the CG, and the collision moment about the CG as three arcs: roll Mx (orange), pitch My (yellow), yaw Mz (magenta). Each arc turns the way the moment turns the vehicle. The engine's own numbers, nothing derived. The default |
-| **…at impact (line of action)** | The same load as one force on its line of action: the line along which a single force has the engine's moment about the CG. The arrow ends where that line meets the vehicle's declared extents, so the moment shows as how far it passes beside the CG; roll and pitch put it above or below the CG. Any part of the moment along the force, a twist no single force can carry, is a small arc around the arrow |
-| **Tire Force Vectors** | Each tire's Fx' (red, longitudinal) and Fy' (green, lateral) at the contact patch |
-| **…include vertical Fz'** | Adds the normal load (blue), drawn up from the patch on the same scale |
-| **Show Values** | Each vector's value at its end, in the units set in Tools › Preferences: speed, force, each moment on its arc, and at impact the arm from the CG to the line of action |
+| **Velocity** | Each vehicle's velocity, from its forward and lateral velocity rotated into the earth frame — not along the heading, so a sideslip shows (HVE: Show Velocity Vectors) |
+| **Acceleration** | The CG's acceleration in the ground plane (the engine's forward and lateral acceleration, turned into earth by the heading), in g |
+| **Collision force** | While the vehicles are in contact only, an arrow that turns and grows with the engine's collision force sample by sample. It runs along the force on the vehicle, its tail on the side the force came from (HVE's PDOF convention). Where it acts is chosen by the two checkboxes below the table |
+| **Collision moments** | The engine's collision moment about the CG while in contact, as arcs: roll Mx (orange), pitch My (yellow), yaw Mz (magenta). Shares the collision force scale |
+| **Tire Fx', Fy'** | Each tire's Fx' (red, longitudinal) and Fy' (green, lateral) at the contact patch |
+| **Tire Fz'** | The normal load, drawn up from the patch on the same scale as Fx' and Fy' |
+| **Tire Fz' (nodes)** | For a DyMESH wheel with tread springs (Tire Contact Model 4), the force of each loaded tread node, drawn from where it meets the surface on the tire scale. Their sum is the wheel's Tire Fz' on a flat road. Nothing is drawn for a wheel running point contact |
+
+Below the table:
+
+| Item | Does |
+|---|---|
+| **Default scales** | Puts every arrow scale back to its default |
+| **Collision load at the CG** | Draws the collision force into the CG, and the collision moment about the CG as three arcs: roll Mx (orange), pitch My (yellow), yaw Mz (magenta). Each arc turns the way the moment turns the vehicle. The engine's own numbers, nothing derived |
+| **Collision load at impact (line of action)** | Draws the same load as one force on its line of action: the line along which a single force has the engine's moment about the CG. The arrow ends where that line meets the vehicle's declared extents, so the moment shows as how far it passes beside the CG; roll and pitch put it above or below the CG. Any part of the moment along the force, a twist no single force can carry, is a small arc around the arrow |
 | **Draw Vectors Through Bodywork** | Draws the arrows over the vehicles instead of hidden by them |
 
+The two collision-load checkboxes are independent: either, both (each drawing
+is shown) or neither can be on.
+
 Each type of arrow has one fixed scale, shown in the viewport's legend and set
-in the Scene Display window, so lengths compare between vehicles and between
-runs. A moment arc of radius R is as long as the collision-force arrow for the
+in the table, so lengths compare between vehicles and between runs. A moment arc of radius R is as long as the collision-force arrow for the
 force that moment would be at R. The arcs' radius is the vehicle's half width.
 
 ---
 
 ## RENDERING
 
-**Menu Option:** View › Scene Display › Rendering › Phong · Flat · Wireframe · Light Sources On
+**Menu Option:** View › Scene Display › Rendering › Ground Plane · Phong · Flat · Wireframe · Light Sources On
 
-**Description:** **Phong** (smooth shading, the default), **Flat** (one normal
+**Description:** **Ground Plane** (on by default) draws the flat plane and grid
+where there is no imported site; an imported site is drawn either way. The
+**Ground** checkbox on the viewport's toolbar is the same switch. It is display
+only: no engine reads it. **Phong** (smooth shading, the default), **Flat** (one normal
 per face, showing the real tessellation) and **Wireframe** (edges only, depth
 tested — what HVE calls Hidden Line). **Light Sources On** turns the sun's
 contribution off and on; with it off, the ambient light is raised so the scene
@@ -163,8 +223,20 @@ Options dialog.
 
 **Description:** The site's layers with their surfaces under them. Each surface
 has a **draw** switch (show it in the viewport) and a **drive** switch (give it to
-the engine as road); drag a surface onto a layer to move it. It is the same tree
-as the Environment panel's Surface Materials section.
+the engine as road); drag a surface onto a layer to move it. Click a row to
+select a surface; **Ctrl**-click adds to the selection, **Shift**-click extends
+it, and a click on a layer's row selects every surface in the layer. The
+Environment panel's **Selected Surface** section edits the selected surface's
+material and placement, and its **Open Outliner** button opens this panel.
+
+A loaded point cloud has a row of its own: its file name, its point count and an
+eye that shows or hides it. It has no drive switch, because a point cloud is a
+picture, never a surface.
+
+The Outliner also has a **Vehicles** group, one row per vehicle. Click a name to
+select the vehicle; the eye shows or hides it in the 3-D view, and Ctrl-click an
+eye to show only that vehicle. This is the view-only setting described under
+[VEHICLES SHOWN](#vehicles-shown).
 
 ---
 
@@ -214,8 +286,11 @@ cameras; **C** and **Shift+C** step through them.
 ![The Cameras dialog](../images/hvn-01-cameras.png)
 *The Cameras dialog.*
 
-The viewport's own buttons — **Top**, **Front**, **Side**, **Momentum** and
-**3D** — choose the view type, and the number keys (or keypad) set standard
+The view cube in the top-right corner of the 3-D view sets a preset view: click
+a face for that view, orthographic, or drag the cube to orbit. The buttons under
+it are **Zoom** (drag up or down), **Pan** (drag), **Camera** (look through the
+scene camera, click again for the free view; right-click for Camera Properties)
+and **Perspective/Orthographic**. The number keys (or keypad) also set standard
 views: **1** front (Ctrl+1 rear), **3** right (Ctrl+3 left), **7** top (Ctrl+7
 bottom), **9** the opposite side, **5** perspective/orthographic, **4**/**6**
 and **8**/**2** orbit in 15° steps, and **.** frames the selection. Double-click the viewport,

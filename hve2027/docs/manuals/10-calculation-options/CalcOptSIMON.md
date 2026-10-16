@@ -42,13 +42,22 @@ Simulation panel.
 
 ## Tire model
 
-**Semi-empirical V1**, **V2** or **V3** — the version of EDC's semi-empirical tire
-model. The versions agree on gentle forward maneuvers and differ at large slip
-angles and in reverse (V1 uses sin of the slip angle where V2 and later use tan,
-V2 and later tie the lateral-force sign to the direction of travel, and V3 also
-clamps μ to its peak and softens cornering and camber stiffness at low wheel
-speed). V3 is HVE's default for a new event; cases saved by older HVE versions
-commonly store V2.
+**Semi-empirical V3** or **TMeasy (Rill)**.
+
+- **Semi-empirical V3** — EDC's semi-empirical tire model, latest version, and
+  the default for a new event. HVE also has V1 and V2. The versions agree on
+  gentle forward maneuvers and differ at large slip angles and in reverse (V1
+  uses sin of the slip angle where V2 and later use tan, V2 and later tie the
+  lateral-force sign to the direction of travel, and V3 also clamps μ to its
+  peak and softens cornering and camber stiffness at low wheel speed). The list
+  does not offer V1 or V2, but a case imported from HVE that states one (cases
+  saved by older HVE versions commonly store V2) runs it as HVE did, and the
+  window says so; choosing from the list changes it.
+- **TMeasy (Rill)** — G. Rill's TMeasy tire model, new in HVE 2027: a force
+  curve in each direction (initial slope, peak, sliding) built from the tire
+  inputs, with braking and cornering combined on one normalised slip. It uses
+  three shape inputs of its own, the **TMeasy** rows of the Tire Properties
+  table (see [TMeasy rows](../05-tires-wheels/TirePhyDataDlg.md#tmeasy-rows)).
 
 ## Hydroplaning
 

@@ -9,8 +9,8 @@ In HVE, the 3-D Editor is the tool for creating and editing the 3-D objects used
 
 The HVE 2027 equivalents of the 3-D Editor's components are:
 
-- **Viewport** — the 3-D view, with Top, Front, Side, Momentum and 3D view buttons (see [Viewers](#viewers)).
-- **Surface Materials** and the **Shader Editor's Surface node** — the per-surface attributes HVE edits in the Object Attributes tool (see [Object Attributes Tool](#object-attributes-tool)).
+- **Viewport** — the 3-D view, with a view cube for the preset views (see [Viewers](#viewers)).
+- The Environment panel's **Selected Surface** section and the **Shader Editor's Surface node** — the per-surface attributes HVE edits in the Object Attributes tool (see [Object Attributes Tool](#object-attributes-tool)).
 - **Outliner** — the scene's layers (HVE's overlays) with their surfaces (see [Overlay Name](#overlay-name)).
 - **Shader Editor** — materials and textures (see [Materials Editor](#materials-editor)).
 
@@ -19,16 +19,17 @@ The HVE 2027 equivalents of the 3-D Editor's components are:
 
 ## Viewers
 
-HVE's 3-D Editor shows four viewers (Perspective, X-Y, Y-Z and X-Z). The HVE 2027 Viewport shows one view at a time, selected by the buttons along its top edge:
+HVE's 3-D Editor shows four viewers (Perspective, X-Y, Y-Z and X-Z). The HVE 2027 Viewport shows one 3-D view at a time. The **view cube** in its top-right corner turns with the camera: click a face (Top, Bottom, Front, Back, Left or Right) and the view goes there in orthographic projection, which is the rendered equivalent of HVE's plan, front and side orthographic viewers; drag the cube to orbit. The column of buttons under the cube is:
 
-- **Top**, **Front**, **Side** — schematic 2-D views: the event's vehicles drawn as outlines at their start positions (or along the solved trajectory), and in the Environment editor's Top view the scene boxes. The site geometry is not drawn in these views. The 2-D views read the same way as the 3-D view's own Top (**7**), Front (**1**) and Right (**3**) views. **Top**: +X to the right and +Y down the screen, so a vehicle with a positive heading (a right turn) is turned clockwise. **Front** looks back from ahead of the scene: +Y runs to the LEFT, as it does when you face a car, and height is up. **Side** looks from the right: +X to the right, as in the Top view, and height is up. In Front and Side each vehicle stands on the ground height the 3-D view gives it, its outline is as wide as the vehicle looks from that side at its heading, and white lamps (front) or red lamps (rear) mark the end that faces you; seen broadside, a windscreen marks the nose. The top-right corner of the view names its axes. After a run, the Top view marks each vehicle's position at the moment of impact with a red **PDOF** arrow pointing into it from the direction the collision force came from, as the 3-D view's Collision Force arrow does.
-- **Momentum** — the momentum diagram of the active event (Event editor): for each vehicle, its velocity just before the collision (**V**, solid), just after it (**V'**, dashed) and the change between them (**dV**, yellow, drawn from the tip of V to the tip of V'), all from one origin and to one scale. These are the run's own velocities either side of the collision, so the length of dV is the Delta-V the results report. For an EDCRASH reconstruction the diagram is EDCRASH's own model -- V along the impact course and dV along its impulse -- and says so.
-- **3D** — the rendered 3-D view (the default). Everything else in this chapter refers to this view.
+- **Zoom** — drag up or down to zoom.
+- **Pan** — drag to pan.
+- **Camera** — look through the scene camera; click again to go back to the free view. Right-click it for **Camera Properties**. With no saved camera it opens Camera Properties.
+- **Perspective/Orthographic** — switch the projection, as key **5** does.
 
-In the 3-D view the camera can also be set to a top, front, rear, left, right or bottom view with the number keys, and switched to orthographic projection with **5** (below) — the rendered equivalent of HVE's plan, front and side orthographic viewers.
+The camera can also be set to a top, front, rear, left, right or bottom view with the number keys, and switched to orthographic projection with **5** (below).
 
 !!! note "HVE 2027"
-    The 2-D Top, Front and Side views pan with a left or middle-button drag, zoom with the mouse wheel or Ctrl + middle-button drag, and return to their default scale with a right-button double-click.
+    HVE 2027 has no separate 2-D views and does not draw a momentum diagram. For a plan, click the view cube's Top face (or press **7**, then **5** for orthographic). Each vehicle's impact speed, Delta-V and PDOF are reported in **Output › Key Results...** (for an EDCRASH reconstruction, the separation speed too).
 
 ### Navigating the 3-D view
 
@@ -44,7 +45,7 @@ The mouse controls follow Blender's conventions:
 | Ctrl + middle-button drag | Zoom |
 | Left double-click | Reset the camera to the default perspective view |
 | Right click (without dragging) | Menu: **Camera Properties…** and **Reset Camera** |
-| **Cam** button (top-right corner of the view) | Opens the **Cameras** dialog |
+| **Camera** button (under the view cube) | Looks through the scene camera, or back to the free view; right-click for **Camera Properties** |
 
 With the mouse pointer over the view, the number keys (top row or numeric keypad) move the camera:
 
@@ -60,8 +61,8 @@ With the mouse pointer over the view, the number keys (top row or numeric keypad
 | . (period) | Frame the selected vehicle |
 | C / Shift+C | Look through the next / previous saved camera (the list includes the free view) |
 | I | Insert a camera key on the camera being looked through (see [Chapter 21](21-manipulators.md#cameras)) |
-| Esc | Clear the environment surface selection |
-| Tab | Vehicle editor only: toggle **Edit Mode** (pick parts of the vehicle mesh to give them materials) |
+| Esc | Clear the environment surface selection; in the Environment editor's Edit Mode, leave Edit Mode |
+| Tab | Toggle **Edit Mode**: in the Vehicle editor, pick parts of the vehicle mesh to give them materials; in the Environment editor, pick single faces of the site to give them materials or move them (see [Chapter 12](../05-environment-editor/12-creating-editing-environments.md#edit-mode-faces-of-the-site)) |
 
 !!! note "HVE 2027"
     The numeric keys are not read while a G or R operation is in progress (they enter a typed distance or angle instead), nor while a text field has the keyboard.
@@ -73,7 +74,7 @@ The camera itself — orbit or free (Euler) control, presets, target point, proj
 HVE's 3-D Editor dialog combines the Current Object tool, the Object Attributes tool and the Group tool.
 
 !!! warning "Not in HVE 2027"
-    There is no 3-D Editor dialog. Object creation is replaced by geometry import and the Scene Box Editor ([Chapter 20](20-object-tools.md)); object attributes by **Surface Materials** and the Shader Editor (below); the Group tool has no equivalent (see [Group Tool](#group-tool)).
+    There is no 3-D Editor dialog. Object creation is replaced by geometry import and the Scene Box Editor ([Chapter 20](20-object-tools.md)); object attributes by the **Selected Surface** section and the Shader Editor (below); the Group tool has no equivalent (see [Group Tool](#group-tool)).
 
 ## Current Object Tool
 
@@ -96,10 +97,9 @@ Every HVE environment object has an Object Type, an Overlay Name and a Friction 
 To select a surface, perform one of the following:
 
 - In the **Environment** editor, click the surface in the 3-D view. (Selection happens when the button is released without the mouse having moved, so an orbit drag does not select anything.) Clicking empty sky clears the selection, as does Esc.
-- Pick its row under **Environment › Environment… › Terrain › Surface Materials**.
-- Pick its row in the **Outliner** (**View › Outliner**).
+- Pick its row in the **Outliner** (**View › Outliner**). **Ctrl**-click adds a row to the selection, **Shift**-click extends it, and a click on a layer's row selects every surface in the layer. **Shift**-click in the 3-D view also adds a surface.
 
-The selected surface is highlighted in the view. **Surface Materials** shows *Selected: name — type, friction* with an **Edit in Shader Editor** button and a **Deselect** button.
+The selected surface is highlighted in the view. The Environment panel's **Selected Surface** section (**Environment › Environment…**, **Terrain**) shows *Selected: name — type, friction* with an **Edit in Shader Editor** button and a **Deselect** button.
 
 The physical attributes are edited in the Shader Editor's **Surface** node, headed *PHYSICS — these change the result*:
 
@@ -128,11 +128,13 @@ HVE assigns each object to a named overlay and turns overlays on and off in the 
 
 - **Draw** column (the eye) — draw or hide the layer or surface. Ctrl-click an eye shows only that one among its siblings (again to show all); Shift-click a layer's eye switches the layer and every surface in it. Click-dragging down the column sets every switch the pointer passes.
 - **Drive** column (surfaces only) — whether the solver drives on the surface. Clearing both Draw and Drive removes a surface from the scene.
-- Click, Ctrl-click and Shift-click rows to select, add to and extend the selection; the active row is the one the 3-D view highlights.
+- Click, Ctrl-click and Shift-click rows to select, add to and extend the selection; the active row is the one the 3-D view highlights. A click on a layer's row (not its arrow) selects every surface in the layer. Several selected surfaces move, turn and scale together with **G**, **R** and **S** in the 3-D view ([Chapter 21](21-manipulators.md#hve-manipulators)).
+- A loaded point cloud has a row of its own: its file name, its point count and an eye that shows or hides it. It has no Drive switch: a point cloud is a picture, never a surface. Its settings and placement are in the Environment panel.
 - Drag surfaces onto a layer to move them to it. **New Layer** creates a layer; a layer you created can be renamed or deleted from its right-click menu.
 - Right-click a layer for **Show Only This Layer**, **Show All Layers**, **Select Surfaces**, **Make All Drivable** and **Make None Drivable**.
 - With the pointer over the tree, **H** hides the selection and **Alt+H** shows everything.
 - A **Search** field filters the tree, and a **Cameras** group lists the case's saved cameras.
+- A **Vehicles** group lists the case's vehicles. Click a name to select the vehicle. Its eye shows or hides the vehicle in the Event and Playback 3-D view, and Ctrl-click an eye to show only that vehicle. A hidden vehicle's ghosts and tire marks are hidden with it. This is a view setting only: nothing is saved and no result changes (see [Chapter 5, Vehicles Shown](../02-menu-reference/05-view-menu.md#vehicles-shown)). In the 3-D view, **H** hides the selected vehicle, **Shift+H** the others and **Alt+H** shows all.
 
 ![Figure 19-2](../images/hvn-08-outliner.png)
 *Figure 19-2 — The Outliner: layers (HVE's overlays) with their surfaces, Draw (eye) and Drive switches.*
@@ -142,7 +144,7 @@ HVE assigns each object to a named overlay and turns overlays on and off in the 
 
 ### Friction Factor
 
-HVE's Friction Factor is the **Friction Multiplier** of the selected surface (see [Object Attributes Tool](#object-attributes-tool)). Use it, as in HVE, for regions with frictional properties different from the base surface — gravel shoulders, oil, and so on. A drivable polygon with no surface material of its own uses the site's *default surface material*, which is edited from the same Surface Materials section.
+HVE's Friction Factor is the **Friction Multiplier** of the selected surface (see [Object Attributes Tool](#object-attributes-tool)). Use it, as in HVE, for regions with frictional properties different from the base surface — gravel shoulders, oil, and so on. A drivable polygon with no surface material of its own uses the site's *default surface material*, which is edited with the **Default material** button of the same Selected Surface section.
 
 > **NOTE:** For more information about how the friction attribute is used, see Environment Model Definition.
 
@@ -174,9 +176,11 @@ HVE's Group tool combines objects into a group, splits groups, and saves and loa
 
     - **Rendering** — **Phong** (smooth), **Flat** (one normal per face) or **Wireframe** shading, and **Light Sources On** (off, the sun stops contributing and the ambient light is raised so shape stays readable).
     - **Shadow Coverage** — fit the shadow to the **Vehicles (sharp)** or the **Whole scene**.
-    - **Vectors** — **Velocity Vectors**, **Collision Force (PDOF)** (drawn only while the vehicles are in contact, pointing into the CG from the direction the force came from), **Tire Force Vectors** (red Fx', green Fy', with **…include vertical Fz'** in blue) and **Draw Vectors Through Bodywork**. Each arrow is scaled against its run's own peak, so lengths compare within a run, not between runs.
+    - **Vectors** — a table of **Velocity**, **Acceleration**, **Collision force** (drawn only while the vehicles are in contact, its tail on the side the force came from), **Collision moments**, **Tire Fx', Fy'** (red Fx', green Fy'), **Tire Fz'** and **Tire Fz' (nodes)**, each with its own Show and Value switches and scale; below it **Collision load at the CG** and **Collision load at impact (line of action)** (two independent switches) and **Draw Vectors Through Bodywork**. Each type of arrow has one fixed scale, so lengths compare between vehicles and between runs.
     - **Scene Ghosts** — how a vehicle is marked at each measured scene position (Initial, Begin Perception, Begin Braking, Impact, Separation, Point On Curve, End of Rotation, Rest): **None**, **Outline**, **Translucent vehicle** or **Both** (HVE's targets).
-    - Paths and markers — **CG Path**, **Accelerometer Path**, **Tire Contact Patch Paths**, **Skidmarks**, **Axes** (the origin's and each vehicle's own, at its CG), **North Arrow**, **Vehicle Extents**, **Occupant Equipment**, **Humans Through Bodywork** and **DyMESH Wheel Mesh**.
+    - Paths and markers — **CG Path**, **Accelerometer Path**, **Tire Contact Patch Paths**, **Skidmarks**, **Axes** (the origin's and each vehicle's own, at its CG), **North Arrow**, **Vehicle Extents**, **See-Through Body (Vehicle editor)**, **Occupant Equipment** and **Humans Through Bodywork**.
+    - **DyMESH overlay** — a table with rows **DyMESH Body** and **DyMESH Wheel** and columns **Mesh** and **Nodes**. The Body row draws the body DyMESH collides as a wireframe deformed by the run, crushed edges in red; Nodes draws its vertices. The Wheel row draws each DyMESH wheel's contact mesh, and Wheel Nodes labels each wheel with its contact model and tire law.
+    - **Vehicles Shown** — a checkbox per vehicle, and **Show all**, to take vehicles out of the Event and Playback view.
 
 ![Figure 19-3](../images/hvn-08-viewport-scene.png)
 *Figure 19-3 — The 3-D view of a site read from an HVE case, with scene ghosts in outline style marking measured scene positions.*

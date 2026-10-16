@@ -70,7 +70,7 @@ The case carries its environment, HVE's *4T2_Intersection.h3d* site. Choose the 
 Let's save the opened case as an HVE 2027 case file:
 
 1. Choose **File › Save Case As...**.
-2. Enter the file name *EdgenTutorial* and save. HVE 2027 saves `.hvc` files, or `.json` with **File › Save Case As JSON...**; it does not write `.hve`.
+2. Enter the file name *EdgenTutorial* and save. HVE 2027 saves `.hvex` files, or `.json` with **File › Save Case As JSON...**; it does not write `.hve`.
 
 > **NOTE:** Saving the file occasionally is a highly recommended practice.
 
@@ -321,7 +321,7 @@ To view it, click the **PROGRAM DATA** tab of the HVE Reports window.
 
 #### Variable Output
 
-The Variable Output table displays the time-dependent results computed by EDGEN. In HVE 2027 the table of chosen channels is the **Key Results** panel, and **Output › Timestep Data Table...** lists every output step of each vehicle's position, heading and speed.
+The Variable Output table displays the time-dependent results computed by EDGEN. In HVE 2027 the table of chosen channels is the **Key Results** panel (**Output › Key Results**, its *Trajectory* section), which lists the chosen channels at every output step.
 
 ##### Variable Selection
 
@@ -331,12 +331,6 @@ The purpose of our EDGEN study is to evaluate the avoidability of the accident b
 2. Choose the Ford Taurus and its kinematics channels — X, Y, Z, roll, pitch, yaw, total velocity, sideslip, total, forward and lateral acceleration — and clear the others.
 
 Key Results now shows those channels for the Ford Taurus; with **Follow playback time** ticked they follow the playback. **Export CSV...** writes them to a file, and **Output › Output Graph...** graphs them against time.
-
-For the whole time history of the Taurus's position, heading and speed, choose **Output › Timestep Data Table...**.
-
-![Figure 5-8](images/hvn-edgen-timestep-table.png)
-
-*Figure 5-8: The Timestep Data window for EDGEN, Taurus.*
 
 #### Trajectory Simulation Report
 

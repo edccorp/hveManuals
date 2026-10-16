@@ -18,7 +18,7 @@ EDHIS produces four types of output reports:
     |---|---|
     | Alpha-numeric reports | **Output › HVE Reports** — EDHIS's own report pages, one tab each |
     | Graphic reports | (EDHIS produces none) |
-    | Variable output | **Output › Key Results** and **Output › Output Graph**, for the vehicle's and the occupant's variables (chosen in **Output › Variable Selection**); **Timestep Data Table** for the vehicle — see [Variable Output Table](#variable-output-table) |
+    | Variable output | **Output › Key Results** and **Output › Output Graph**, for the vehicle's and the occupant's variables (chosen in **Output › Variable Selection**) — see [Variable Output Table](#variable-output-table) |
     | Trajectory simulation | the 3-D viewport, with the playback bar |
 
     There is no printing from HVE 2027. **Save This Page** and **Save All Pages** in the HVE Reports window write the report text to a file you can print or attach.
@@ -142,7 +142,6 @@ EDHIS produces a Variable Output table containing the time-based simulation resu
 
     - EDHIS computes three segments — the torso (HVE's *Pelvis* slot), the head and the legs (both upper-leg slots) — so the other segments read **--**, as do EDHIS's unwritten slots: the head's and legs' *Acc Tot* (use **Acc Resultant (from Fwd/Lat/Vert)**, which is the head acceleration the run's *Occ. Peak Head Accel* is taken from).
     - The belt and airbag variables are the restraint at the occupant's seat; EDHIS writes the belt's attachment point, stretch and tension and the bag's pressure, radius, contact force and deployment point.
-    - **Timestep Data Table** remains vehicle-only.
 
     Also for the occupant:
 

@@ -21,7 +21,7 @@ simulation models are provided in the HVE Developer's Toolkit references.
     compiled from HVE's source, plus its own single-track (motorcycle)
     model. There is no Developer's Toolkit for adding other programs. The
     motion is displayed in the Viewport, and the numeric results in the Key
-    Results, Output Graph and Timestep Data panels (see
+    Results and Output Graph panels (see
     [Chapter 17](../07-playback-editor/17-report-playback-windows.md)).
 
 ## Overview
@@ -1185,8 +1185,8 @@ Results windows and, during Playback Mode, in the Variable Output Table.
 
 !!! note "HVE 2027"
     In HVE 2027 the output tracks are chosen with Output › Variable
-    Selection and displayed in **Key Results**, the **Output Graph** and
-    the **Timestep Data Table**, and written to a file with Output ›
+    Selection and displayed in **Key Results** and the **Output Graph**,
+    and written to a file with Output ›
     Export Variables (see
     [Chapter 17](../07-playback-editor/17-report-playback-windows.md)).
     A channel that no HVE program computes — the program writes it as a
@@ -1646,9 +1646,9 @@ run.
     pages can be placed side by side, stacked or floated (see
     [Common Reports](../../11-reports-output/CommRepDlg.md)).
     The ACCIDENT HISTORY page of HVE Reports shows the engine's accident
-    history, the
-    Viewport's **Momentum** view the momentum diagram, and **Output ›
-    Damage Studio Report...** the damage.
+    history, and **Output › Damage Studio Report...** the damage. HVE 2027
+    does not produce the Momentum Diagram; each vehicle's impact speed,
+    Delta-V and PDOF are in **Output › Key Results...**.
 
 > **NOTE:** There is an important and fundamental difference between the
 > output track definitions and the information displayed in the Static

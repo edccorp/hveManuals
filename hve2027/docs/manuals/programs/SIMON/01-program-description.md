@@ -48,7 +48,7 @@ SIMON output reports include the following HVE Output Reports:
 - Vehicle Data
 
 !!! note "HVE 2027"
-    In HVE 2027 the outputs are not added as Playback Editor windows. The engine's own report pages (Accident History, Damage Data, Driver Data, Environment Data, Event Data, Human Data, Messages, Program Data, Vehicle Data) are shown in **Output › HVE Reports...**; the time-based results are in **Output › Key Results**, **Output Graph** and **Timestep Data Table**; and the trajectory and damage are played back in the 3-D viewport of the Event editor, or with other solved events on one timeline in the **Playback (F6)** editor. See [Chapter 3](03-program-output.md).
+    In HVE 2027 the outputs are not added as Playback Editor windows. The engine's own report pages (Accident History, Damage Data, Driver Data, Environment Data, Event Data, Human Data, Messages, Program Data, Vehicle Data) are shown in **Output › HVE Reports...**; the time-based results are in **Output › Key Results** and **Output Graph**; and the trajectory and damage are played back in the 3-D viewport of the Event editor, or with other solved events on one timeline in the **Playback (F6)** editor. See [Chapter 3](03-program-output.md).
 
 ## Validation
 

@@ -22,7 +22,7 @@ This basic procedure is described in detail in this tutorial.
 
 Open the tutorial case:
 
-- Choose **File › Open Case…** and open `EdvdsTutorialEDC.hve` from the `supportfiles\case` folder of your HVE installation. HVE 2027 reads HVE's `.hve` case files directly; saving writes HVE 2027's own `.hvc` or `.json` format, never `.hve`.
+- Choose **File › Open Case…** and open `EdvdsTutorialEDC.hve` from the `supportfiles\case` folder of your HVE installation. HVE 2027 reads HVE's `.hve` case files directly; saving writes HVE 2027's own `.hvex` or `.json` format, never `.hve`.
 
 > **NOTE:** When the case opens, HVE 2027 reports in its status what it imported, for example that two event-vehicle slots carry a payload and that some vehicle placements were settled by HVE's run.
 
@@ -51,7 +51,7 @@ To build the same vehicles yourself, use **Add…** on the **Vehicles** panel. T
 HVE's walkthrough makes the following edits. Each is already in the finished case; this is where to find it in HVE 2027.
 
 - **Color** — the **Color** field in the **Vehicles** panel's **Information** section.
-- **Geometry file** — the trailers use EDC's `TLVdsTutorTrlr45Van.h3d`. It is set in the panel's **3D Geometry** section (**Browse…**, then **Load 3D File**), or with **Vehicle › Vehicle Mesh…**. HVE 2027 opens `.h3d` files directly.
+- **Geometry file** — the trailers use EDC's `TLVdsTutorTrlr45Van.h3d`. It is set in the panel's **3D Geometry** section, the Vehicle Mesh editor (**Mesh File**: **...** or **Library...**, then **Load 3D File**; also **Vehicle › Vehicle Mesh…**). HVE 2027 opens `.h3d` files directly.
 - **Trailer weight** — 13 135 lb for each trailer, in the panel's **Dimensions / Inertias** section, or **Vehicle Properties › Inertia / Mass…**.
 - **Trailer 1 front connection height** — z = 15 in, to match the tractor's fifth wheel. Connections are edited with **Vehicle Properties › Connections…** (Front Connection X / Y / Z). The dialog shows each connection's height above ground; for EDVDS the fifth wheel and kingpin heights must agree to within 0.1 in.
 - **Trailer 2 left rear brake time lag** — 0.305 sec, in **Vehicle › Brake Assembly…** (Time Lag, per wheel).
@@ -72,7 +72,7 @@ The environment is HVE's *Rowena Point* site near Hood River, Oregon — a downh
 
 ## Saving the Case
 
-Choose **File › Save Case As…** to save your working copy as an HVE 2027 case (`.hvc`), or **File › Save Case As JSON…** for the text format. HVE 2027 does not write `.hve` files, so the original is left unchanged.
+Choose **File › Save Case As…** to save your working copy as an HVE 2027 case (`.hvex`), or **File › Save Case As JSON…** for the text format. HVE 2027 does not write `.hve` files, so the original is left unchanged.
 
 > **NOTE:** When a case is saved after a run, the results are saved beside it and are restored the next time the case is opened, as long as its inputs have not changed.
 

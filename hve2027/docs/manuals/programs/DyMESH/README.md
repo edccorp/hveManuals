@@ -38,8 +38,9 @@ runs. What differs is where the controls are and how the results are shown:
   per event per vehicle in **Event › Vehicle Mesh**, under *DyMESH Contact Mesh
   Preparation*; see [Facts of Life](04-facts-of-life.md).
 - **Wheels.** The per-wheel DyMESH inputs are on the *Wheel Damage* tab of
-  **Event › Wheels**; **View › Scene Display › DyMESH Wheel Mesh** draws the wheel contact
-  meshes after a run.
+  **Event › Wheels**; the **Mesh** box of the **DyMESH Wheel** row (**View › Scene Display**,
+  Vehicle group) draws the wheel contact meshes after a run, and its **Nodes**
+  box labels each wheel's contact model and tire law.
 - **Results.** The crushed mesh is drawn in the viewport and follows the
   playback time. HVE's DamageStudio window is not available; see
   [DamageStudio](../DamageStudio/README.md) for what HVE 2027 offers instead.

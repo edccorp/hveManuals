@@ -35,8 +35,10 @@ instead of on the case.
 
 While results are on screen, Undo and Redo step only over changes that no
 program reads -- the sun and sky, the location, cameras and scene boxes, which
-stay editable then. A step that changes an input of the run being displayed is
-**locked**: undoing it would change the inputs of that run. Press **Reset** (on
+stay editable then -- and over changes to events that have not been run, such
+as moving a vehicle in another event. A step that changes an input of an event
+that holds results is **locked**: undoing it would change the inputs of that
+run. Press **Reset** (on
 the playback bar or in the Simulation panel) first. Opening or saving a case
 clears the undo history.
 

@@ -177,8 +177,10 @@ Vehicles panel docked on the left and the 3-D viewport on the right.*
 - **Dialogs** — the windows opened from the menus float over the panels. Most
   take effect as you edit them: there is usually no **OK** or **Cancel**. Undo a
   change with **Edit › Undo** (Ctrl+Z).
-- **Viewport** — the 3-D view, used in every editor. Its buttons choose the view:
-  **Top**, **Front**, **Side**, **Momentum** and **3D**. A line of hints across
+- **Viewport** — the 3-D view, used in every editor. The view cube in its
+  top-right corner sets a preset view (click a face for that view, orthographic;
+  drag the cube to orbit), and the buttons under it zoom, pan, look through the
+  scene camera and switch between perspective and orthographic. A line of hints across
   the top lists the keys that apply. In the Event editor the **playback bar**
   under the viewport carries **Run**, **Reset**, the playback buttons, the camera
   list and the run status.
@@ -217,7 +219,8 @@ type a value.
 | Delete or X | Delete the selected path waypoint |
 | 1, 3, 7 (with Ctrl: the opposite view), 9, 5, 4/6/8/2, . | Front, right, top views; opposite side; perspective/orthographic; orbit in 15° steps; frame the selection |
 | C, Shift+C | Next / previous saved camera |
-| Tab | Edit Mode (Vehicle editor: select parts of the body) |
+| H, Shift+H, Alt+H | Hide the selected vehicle; hide the other vehicles; show all vehicles (Event and Playback editors, view only, not saved) |
+| Tab | Edit Mode (Vehicle editor: select parts of the body; Environment editor: select faces of the site) |
 
 Keys act in the viewport only when you are not typing in a field.
 

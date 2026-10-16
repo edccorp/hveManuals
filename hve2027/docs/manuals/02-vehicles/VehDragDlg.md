@@ -6,16 +6,18 @@ The vehicle drag associated with aerodynamic pressure. The Aerodynamic Drag dial
 
 Open it in the Vehicle Editor with **Vehicle › Aero Dynamic Drag...**, or with **Aerodynamic Drag...** under **Vehicle Properties** (in the Vehicles panel or the [Vehicle Information dialog](VehicleInfoDlg.md)). The **Vehicle** list at the top selects the vehicle. Lengths and areas are shown in the units set in Preferences. Values take effect as they are typed; **Close** closes the dialog.
 
-## Surface
-Selects the surface whose data is displayed. The available surfaces are:
+## Surfaces
+The four surfaces are the table's columns, side by side, and each row below is a property of every surface:
 
 - Front
 - Rear
 - Left
 - Right
 
+There is no surface selector.
+
 ## Drag Device Installed
-Switch that activates the selected surface. When unchecked, the surface produces no aerodynamic force. In HVE 2027 the other fields stay editable whether or not the box is checked.
+Switch that activates the surface in its column. When unchecked, the surface produces no aerodynamic force. In HVE 2027 the other fields stay editable whether or not the box is checked.
 
 ## Coefficients
 
@@ -23,6 +25,8 @@ Switch that activates the selected surface. When unchecked, the surface produces
 Assigns the properties resisting motion due to dynamic air pressure acting on the selected surface in the direction of the vehicle's total velocity vector. The force associated with this pressure is proportional to the velocity squared.
 
 ### Lift Coef
+> **Sign.** A positive Lift Coef presses the vehicle DOWN onto its tires (the force is +Cl·q·A along the vehicle's z axis, which points down): it is a downforce coefficient. This is HVE's own convention and the opposite of the SAE one, where a positive C_L unloads the tires. A production car's SAE lift of about +0.3 is entered here as -0.3.
+
 Assigns the properties resisting motion due to dynamic air pressure acting on the selected surface in the direction normal (vertical) to the vehicle's total velocity vector.
 
 ### Side Coef

@@ -79,7 +79,7 @@ selected with the tabs under the menu bar or the function keys:
 A *case* is a file holding the humans, vehicles, environment and events of a
 study. HVE 2027 opens with an empty case. To work on an existing one, choose
 **File › Open Case...** (Ctrl+O): HVE 2027's file browser opens, and lists
-HVE 2027 cases (`.hvc`, `.json`) and HVE cases (`.hve`). Double-click a file, or
+HVE 2027 cases (`.hvex`, `.json`) and HVE cases (`.hve`). Double-click a file, or
 select it and choose **Open**. **File › Open Recent** lists recent cases.
 
 ![Figure 2-2](../images/hvn-02-open-case.png)
@@ -178,8 +178,8 @@ reference](../../08-environment/EnvtInfoDlg.md).*
     HVE's 3-D Editor — a modelling tool with four viewers and manipulators for
     building and editing environment geometry and its surface friction — is not
     in HVE 2027. Environment geometry is imported, its surfaces' materials are
-    set in the Environment panel's **Surface Materials** section and in **View ›
-    Outliner**, and **Environment › Scene Box Editor...** adds simple boxes for
+    set for the surface selected in the viewport or **View › Outliner** (the
+    Environment panel's **Selected Surface** section), and **Environment › Scene Box Editor...** adds simple boxes for
     the picture (they are not drivable).
 
 ![Figure 2-6](../images/hvn-01-box-editor.png)
@@ -597,7 +597,7 @@ are switches on the **View** menu:
 - **Key Results** — View › Key Results (or Output › Key Results...)
 - **Coordinate Axes** — View › Scene Display › Axes
 - **Contacts** and **Belt Anchors** — View › Scene Display › Occupant Equipment
-- **Velocity Vectors** — View › Scene Display › Vectors › Velocity Vectors
+- **Velocity Vectors** — View › Scene Display › Vectors › Velocity
 - **Skidmarks** — View › Scene Display › Skidmarks
 - **Targets** — View › Scene Display › Scene Ghosts
 
