@@ -320,7 +320,8 @@ also the [Throttle page](../../09-events-driver-controls/DriverControls4.md)):
   drive wheel.
 
   > **NOTE:** The Tractive Effort Table only allows entries at drive
-  > wheels, as specified by the Vehicle Information dialog.
+  > wheels, as specified by the Vehicle Information dialog (in HVE 2027,
+  > Drive Axle(s) in the Vehicles panel's Configuration section).
 
 - **Percent Available Friction** — This method allows the user to enter a
   table of available tractive effort (percentage of total available
@@ -331,7 +332,8 @@ also the [Throttle page](../../09-events-driver-controls/DriverControls4.md)):
   vertical tire load.
 
   > **NOTE:** The Percent Available Friction Table only allows entries at
-  > drive wheels, as specified by the Vehicle Information dialog.
+  > drive wheels, as specified by the Vehicle Information dialog (in HVE
+  > 2027, Drive Axle(s) in the Vehicles panel's Configuration section).
 
 !!! note "HVE 2027"
     The Throttle tab's **Input Method** offers two of these:

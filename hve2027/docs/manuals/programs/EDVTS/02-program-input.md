@@ -40,13 +40,11 @@ To add a vehicle to the current case in HVE 2027, perform the following steps:
 
 - Choose the **Vehicle (F3)** editor tab.
 - Click **Add…** on the **Vehicles** panel. The vehicle picker is displayed; it searches the loaded vehicle databases and also offers HVE's Generic vehicles by type and class.
-- Pick the vehicle. It is added to the case (not to an event: that is done under **Vehicles in Event**, below), and its data are shown in the **Vehicles** panel under **Information** (Name, Vehicle Type, Make, Model, Year, Body Style, Number of Axles, Driver Location, Engine Location, Drive Axle(s), Color).
+- Pick the vehicle. It is added to the case (not to an event: that is done under **Vehicles in Event**, below), and its data are shown in the **Vehicles** panel under **Identity** (Name, Vehicle Type, Make, Model, Year, Body Style, Color) and **Configuration** (Number of Axles, Driver Location, Engine Location, Drive Axle(s)).
 - If desired, modify the *Number of Axles*, *Driver Location*, *Engine Location* and *Drive Axle(s)*, and edit the *Name*. The name does not affect calculations.
 
-**Vehicle › Vehicle Information…** opens the same information as a dialog.
-
 ![Figure 2-1](images/hvn-edvts-vehicle-editor.png)
-*Figure 2-1: The Vehicle editor's Vehicles panel in HVE 2027, with EDC's EDVTS tutorial case loaded: the case's two vehicles, and the tractor's Information and Dimensions / Inertias sections.*
+*Figure 2-1: The Vehicle editor's Vehicles panel in HVE 2027, with EDC's EDVTS tutorial case loaded: the case's two vehicles, and the tractor's Identity, Configuration and Size & Weight sections.*
 
 *Figure 2-2 of the printed manual, a second HVE-2D Vehicle Editor screenshot, is not reproduced.*
 
@@ -86,7 +84,7 @@ The Sprung Mass parameters are shown in Table 2-1. Information on each group is 
 EDVTS uses the total vehicle weight (converted to mass according to the current gravitational constant; see Environment), and the total yaw rotational inertia.
 
 !!! note "HVE 2027"
-    Weight and inertias are edited in the **Vehicles** panel (**Dimensions / Inertias**), or with **Inertia / Mass…** under the panel's **Vehicle Properties** section.
+    Weight is edited in the **Vehicles** panel (**Size & Weight**); weight and inertias on both bases in the **Inertia / Mass** dialog (**Edit…** in the panel's **Inertia** section).
 
 The total weight is used because it is the value traditionally obtained from data sources. Because EDVTS does not have separate degrees of freedom for the unsprung masses, the Total Yaw Moment of inertia used by EDVTS is the sum of the sprung mass yaw inertia plus the additional yaw inertia created by the individual wheels. See also EDVTS Output, Vehicle Data report.
 
@@ -115,7 +113,7 @@ The Connection Friction, Radius and Maximum Articulation Angle are only supplied
 > NOTE: The connection elevation above ground must also be the same for the tow vehicle and the trailer. Otherwise, the vehicle will accelerate or decelerate on level ground (the 2-D equations of motion have no way of knowing how to handle non-normal tire forces).
 
 !!! note "HVE 2027"
-    In the Vehicle editor, open the **Vehicles** panel's **Vehicle Properties** section and click **Connections…**. The **Vehicle Connections** dialog has a **Front Connection** and a **Rear Connection**, each with a type and X / Y / Z coordinates relative to the CG (Z is measured down from the CG); below each Z it shows the connection's height above ground. **Properties…** (under Rear Connection) opens **Connection Properties**, where EDVTS uses the **Radius**, the **Friction** and the **Max Articulation Yaw** of the tow vehicle's rear connection.
+    In the Vehicle editor, open the **Vehicles** panel's **Components** section and click **Connections…**. The **Vehicle Connections** dialog has a **Front Connection** and a **Rear Connection**, each with a type and X / Y / Z coordinates relative to the CG (Z is measured down from the CG); below each Z it shows the connection's height above ground. **Properties…** (under Rear Connection) opens **Connection Properties**, where EDVTS uses the **Radius**, the **Friction** and the **Max Articulation Yaw** of the tow vehicle's rear connection.
 
     The pair must match — Ball with Hitch, 5th Wheel with King Pin, or Pintle Hook with Pintle Eye — and the two connections must be at the same height above ground to within 0.1 in. EDVTS does not adjust connection heights: a larger difference stops the event during input processing. HVE 2027 checks both rules when EDVTS is chosen and reports a failure in **Event Information** as **Cannot run:**, naming the vehicles and heights.
 
@@ -154,7 +152,7 @@ Although HVE-2D provides values for the vehicle-fixed x,y,z coordinates of each 
 EDVTS uses the wheel brake system Antilock Effectiveness. The specific parameters used by EDVTS are shown in Table 2-2.
 
 !!! note "HVE 2027"
-    Antilock effectiveness is the **ABS Efficiency** row of **Vehicle › Brake Assembly…**, per wheel. EDVTS uses it only on a wheel whose **Antilock (ABS)** box, in the same dialog, is checked.
+    Antilock effectiveness is the **ABS Efficiency** row of **Vehicle › Brakes › Brake Assembly…**, per wheel. EDVTS uses it only on a wheel whose **Antilock (ABS)** box, in the same dialog, is checked.
 
 #### Tire
 
@@ -168,7 +166,7 @@ The HVE tire parameters provide the following data groups:
 EDVTS's use of these parameters is described below.
 
 !!! note "HVE 2027"
-    Tire parameters are in **Vehicle › Tire Data (Detailed)…**: the scalar data in its per-wheel grid, and the load/speed and roll-off tables in its **Load & Speed Tables** panel.
+    Tire parameters are in **Vehicle › Tires…**: the scalar data in its per-wheel grid, and the load/speed and roll-off tables in its **Load & Speed Tables** panel.
 
 #### Physical Data
 

@@ -40,7 +40,7 @@ SIMON uses the total weight of the human in order to adjust the inertial propert
 
 SIMON uses vehicles created in HVE 2027's Vehicle editor (**Vehicle (F3)**). Vehicles come from the vehicle databases (HVE's classic `.db` databases, HVE 2027's own `.hvedb` databases such as `EDCVehicles.hvedb` and your own **My Vehicles**, and the generic vehicles), as well as vehicles carried in an opened `.hve` case. SIMON supports all vehicle types: *Passenger Car, Pickup, Van, Sport-Utility, Truck, Trailer, Dolly, Fixed Barrier* and *Movable Barrier*.
 
-Each vehicle also has the following user-editable parameters, in the *Information* section of the *Vehicles* panel and in **Vehicle › Vehicle Information...**:
+Each vehicle also has the following user-editable parameters, in the *Identity* and *Configuration* sections of the *Vehicles* panel:
 
 - **Number of Axles** — SIMON supports 0-, 1-, 2-, 3- and 4-axled vehicles.
 - **Driver Location** and **Engine Location** — not used by SIMON.
@@ -56,7 +56,7 @@ To add a vehicle to the case:
 3. Pick a vehicle. It is added to the case only; to use it in an event, add it under **Vehicles in Event** (below).
 4. Edit its name in the *Information* section if desired. The name does not affect calculations.
 
-The vehicle's parameter groups are edited from the **Vehicle** menu (**Inertia / Mass...** and **Connections...** are in the *Vehicle Properties* section of the *Vehicles* panel; Steering System, Suspension Data, Tire Data (with its Load & Speed Tables panel), Brake Assembly, Brake Designer, ABS / Brake Design, Drivetrain, Aero Dynamic Drag, Body Torsion, Vehicle Mesh, and so on).
+The vehicle's parameter groups are edited from the **Vehicle** menu or the *Components* section of the *Vehicles* panel (Suspension Data, Steering System, Tires (with its Load & Speed Tables panel), Drivetrain, the Brakes submenu with Brake Assembly, Brake Designer, Brake System Pressure and ABS / Brake Design, Aerodynamic Drag, Body Torsion, Vehicle Mesh, and so on); the *Inertia / Mass* dialog is opened with **Edit...** in the panel's *Inertia* section, and *Connections...* is in its *Components* section.
 
 ![Figure 2-2](images/hvn-vehicle-editor.png)
 *Figure 2-2: The HVE 2027 Vehicle editor, showing the Cadillac Catera from the SIMON tutorial case.*
@@ -135,7 +135,7 @@ Dollys may be either *fixed* or *converter* dollys. A fixed dolly is permanently
 
 The *Connection Friction, Radius* and *Maximum Articulation Angle* are only supplied for the rear connections.
 
-> **NOTE:** Every trailer will have a pre-defined front connection. However, not every tow vehicle has a pre-defined rear connection. In HVE 2027, check the vehicle's connections with **Connections...** in the *Vehicle Properties* section of the *Vehicles* panel.
+> **NOTE:** Every trailer will have a pre-defined front connection. However, not every tow vehicle has a pre-defined rear connection. In HVE 2027, check the vehicle's connections with **Connections...** in the *Components* section of the *Vehicles* panel.
 
 #### Drag Forces
 
@@ -348,7 +348,7 @@ The Brake System Data also include the HVE ABS System Model option. If this mode
 > **NOTE:** See also Wheel Brake Data (Unsprung Mass Parameters) for related information.
 
 !!! note "HVE 2027"
-    Where the brake data live in HVE 2027: the brake pedal ratio and system pressure in **Vehicle › Brake System Pressure...**; time lag, rise time, proportioning and the per-wheel **Antilock (ABS)** checkbox in **Vehicle › Brake Assembly...**; the Brake Designer in **Vehicle › Brake Designer...**; and the ABS controller in **Vehicle › ABS / Brake Design... › ABS System...**.
+    Where the brake data live in HVE 2027: the brake pedal ratio and system pressure in **Vehicle › Brakes › Brake System Pressure...**; time lag, rise time, proportioning and the per-wheel **Antilock (ABS)** checkbox in **Vehicle › Brakes › Brake Assembly...**; the Brake Designer in **Vehicle › Brakes › Brake Designer...**; and the ABS controller in **Vehicle › Brakes › ABS / Brake Design... › ABS System...**.
 
 !!! warning "Not in HVE 2027"
     **ABS Algorithms 3, 5 and 6 stop the run.** HVE's ABS System dialog offers six algorithms, and SIMON implements three of them: *Tire Slip*, *Bosch Version 1* and *Algorithm 4*. HVE 2027 offers all six under HVE's names and marks the other three "(not implemented)": with one of them selected, the run stops with error −5230 the first time ABS regulates a braking wheel, and the results cover only the part of the run before that. HVE's SIMON behaves the same way. Note also that *Bosch Version 1* enters regulation only when a wheel's spin acceleration falls below **Spin Accel Min**, and *Algorithm 4* only when it exceeds **Spin Accel Max**; if the wheels never reach that threshold the run is identical to one without ABS.
@@ -563,7 +563,7 @@ SIMON uses the following Driver Controls. In HVE 2027 the four tables are the ta
 
   > **NOTE:** The Pedal Force option is recommended (see Chapter 4, Calculation Method).
 
-  Antilock is not set on the Brake tab. SIMON regulates every wheel when the vehicle's **ABS Installed** (**Vehicle › ABS / Brake Design... › ABS System...**) or any wheel's **Antilock (ABS)** box (**Vehicle › Brake Assembly...**) is ticked, and an event can override it in **Event › Wheels... › Brake** (see [Vehicle Wheels](#vehicle-wheels)).
+  Antilock is not set on the Brake tab. SIMON regulates every wheel when the vehicle's **ABS Installed** (**Vehicle › Brakes › ABS / Brake Design... › ABS System...**) or any wheel's **Antilock (ABS)** box (**Vehicle › Brakes › Brake Assembly...**) is ticked, and an event can override it in **Event › Wheels... › Brake** (see [Vehicle Wheels](#vehicle-wheels)).
 
 - **Throttle** — A table of throttle inputs as a function of time. HVE 2027's **Input Method** list on the **Throttle** tab offers **Pedal (AT_DRIVER)** (percent wide-open throttle through the engine model) and **% of Friction**; the **Use Clutch / Torque Converter** checkbox is on the same tab.
 
@@ -605,7 +605,7 @@ SIMON supports a user-entered collision pulse table, available from **Event › 
 
 #### Vehicle Mesh
 
-The Vehicle Mesh options used by SIMON include the ability to tessellate the vehicle mesh, assign inter-vehicle friction and relaxation length values between the selected object and target objects. These options are used in vehicle collision simulations by the DyMESH 3-D collision algorithm. In HVE 2027 the *Vehicle Mesh* dialog (**Event › Vehicle Mesh...**, also on the Vehicle menu) assigns the vehicle's mesh file and, under **DyMESH Contact Mesh Preparation**, sets tessellation, maximum leg length and weld distance — for the vehicle, or for this event only with **This event states its own preparation**. The per-pair inter-vehicle friction and relaxation length are in the grid at the bottom of **Event › DyMESH Options...**.
+The Vehicle Mesh options used by SIMON include the ability to tessellate the vehicle mesh, assign inter-vehicle friction and relaxation length values between the selected object and target objects. These options are used in vehicle collision simulations by the DyMESH 3-D collision algorithm. In HVE 2027 the *Vehicle Mesh* window (**Event › Vehicle Mesh...**, also on the Vehicle menu) assigns the vehicle's mesh file and, on its Collision tab under **DyMESH Contact Mesh Preparation**, sets the vehicle's default tessellation, maximum leg length and weld distance. For this event only, tick **This event states its own preparation** under the vehicle in **Event › DyMESH Options...**, section **Contact Mesh Preparation (per vehicle)**. The per-pair inter-vehicle friction and relaxation length are in the grid at the bottom of **Event › DyMESH Options...**.
 
 #### Vehicle Payload
 

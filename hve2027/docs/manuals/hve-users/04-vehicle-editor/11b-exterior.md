@@ -11,7 +11,7 @@ Viewer.
 
 !!! note "HVE 2027"
     HVE 2027 has no exterior spheres. The dimensions are edited in the
-    **Dimensions / Inertias** section of the Vehicles panel, and the
+    **Size & Weight** section of the Vehicles panel, and the
     stiffness coefficients with **Vehicle › Crush Stiffness...** (see below).
 
 ## Vehicle Exterior Dimensions
@@ -20,26 +20,27 @@ The vehicle's exterior dimensions are defined by its overall length and
 overall width. In HVE they are edited with the Vehicle Dimensions dialogs
 (CG to Front, Right Side, Back, Left Side, Top, Bottom).
 
-In HVE 2027 they are edited in the Vehicles panel's **Dimensions / Inertias**
+In HVE 2027 they are edited in the Vehicles panel's **Size & Weight**
 section (Figure 11-19), which is HVE's Vehicle Wizard: Overall Length,
 Overall Width, Overall Height, CG Height, Wheelbase, Front Overhang, Rear
 Overhang (from the rearmost axle), and CG to Axle 1 / Axle 2. The
-**Exterior Extents** table below them shows the result — the CG to front,
-back, right, left, top and bottom distances the solver receives, with the
-overall length, width and height — and, when a 3-D model is loaded, the
-model's own extents for comparison.
+**Exterior Extents** table, under the section's collapsed **Details** node,
+shows the result — the CG to front, back, right, left, top and bottom
+distances the solver receives, with the overall length, width and height. It
+is read-only, and warns when a loaded 3-D model does not reach the declared
+extents.
 
 ![Figure 11-19](../images/hvn-04-vehicles-panel.png)
-*Figure 11-19: The Vehicles panel. Its Dimensions / Inertias section edits the overall dimensions; the Exterior Extents table shows the CG-to-exterior distances derived from them.*
+*Figure 11-19: The Vehicles panel. Its Size & Weight section edits the overall dimensions; Details › Exterior Extents shows the CG-to-exterior distances derived from them.*
 
 !!! note "HVE 2027"
     - The CG-to-exterior distances are **derived** from the overall
       dimensions, overhangs, wheelbase and CG location; they are not typed
       directly. Edits apply as you type, and Edit › Undo reverses them.
-    - The dimensions are measured from the sprung-mass CG. The **Dimensions
-      From CG** part of the section shows the CG to axle distances and CG
-      height on both the total and the sprung basis. HVE 2027 has no Vehicle
-      Dimensions Basis preference.
+    - The dimensions are measured from the sprung-mass CG. The **Inertia /
+      Mass** dialog (Vehicles panel › Inertia › **Edit…**) shows the CG to
+      axle distances and CG height on both the total and the sprung basis.
+      HVE 2027 has no Vehicle Dimensions Basis preference.
 
 The Exterior Dimension parameters are described below.
 

@@ -35,8 +35,11 @@ Displays the [Collision Pulse](../11-reports-output/ColPulse.md) dialog.
 Enabled for EDCRASH, SIMON, EDHIS and GATB.
 
 **Vehicle Mesh...**
-Displays the Vehicle Mesh dialog. Always available. It is the same editor as the
-Vehicles panel's **3D Geometry** section and **Vehicle › Vehicle Mesh...**.
+Displays the Vehicle Mesh window (File & Placement, Collision, Display and
+Wheel Images tabs). Always available. It is the same window as **Vehicle ›
+Vehicle Mesh...** and the **Vehicle Mesh...** button in the Vehicles panel's
+**3D Geometry** section. The event's own contact mesh preparation for each
+vehicle is in **Event › DyMESH Options...**.
 
 **DyMESH Options...**
 Displays the DyMESH Options dialog for the active event. Always available; the
@@ -87,7 +90,7 @@ with the case. They reach no calculation.
 !!! warning "Not in HVE 2027"
     **Impact Plane / Barrier** is shown greyed for EDCRASH events: the dialog is
     not implemented. Model a barrier as a vehicle whose type is Fixed Barrier
-    (Vehicle Information).
+    (Vehicle Type, in the Vehicles panel's Identity section).
 
 <!-- NAV -->
 

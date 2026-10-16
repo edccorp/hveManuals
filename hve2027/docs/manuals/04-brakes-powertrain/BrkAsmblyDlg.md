@@ -1,6 +1,6 @@
 # Brake Assembly Dialog Box
 
-The Brake Assembly properties of the wheels are displayed and edited using the **Brake Assembly** dialog. Open it in the Vehicle Editor (**Vehicle (F3)**) with **Vehicle › Brake Assembly...**, or with **Brakes...** under **Vehicle Properties** (in the Vehicles panel or the Vehicle Information dialog). The **Vehicle** list at the top selects the vehicle.
+The Brake Assembly properties of the wheels are displayed and edited using the **Brake Assembly** dialog. Open it in the Vehicle Editor (**Vehicle (F3)**) with **Vehicle › Brakes › Brake Assembly...**, or with **Brakes...** › **Brake Assembly...** under **Components** in the Vehicles panel. The **Vehicle** list at the top selects the vehicle.
 
 ![Brake Assembly dialog](images/hvn-brake-assembly.png)
 
@@ -55,15 +55,15 @@ Check if the system pressure at the wheel is reduced by a proportioning value.
 At master cylinder pressure above P-Start, additional pressure is reduced by this ratio: the wheel sees P-Start + (P − P-Start) × ratio. A ratio of 1.0 reduces nothing, and a note says so when Proportioning is on at 1.0 (HVE's own cases use 0.16 to 0.33). A ratio of **0** is valid: it caps the wheel pressure at P-Start.
 
 ### Antilock (ABS)
-Check if the wheel has an anti-lock device. Checking it enables ABS Efficiency. EDSVS and EDVTS use it wheel by wheel. SIMON regulates **every** wheel once any wheel's box is checked, or once the vehicle's **ABS Installed** is (**Vehicle › ABS / Brake Design... › ABS System...**); the dialog says so under the table. EDVDS has no ABS model.
+Check if the wheel has an anti-lock device. Checking it enables ABS Efficiency. EDSVS and EDVTS use it wheel by wheel. SIMON regulates **every** wheel once any wheel's box is checked, or once the vehicle's **ABS Installed** is (**Vehicle › Brakes › ABS / Brake Design... › ABS System...**); the dialog says so under the table. EDVDS has no ABS model.
 
 ### ABS Efficiency
 The ability of the anti-lock system to achieve and hold the wheel at its peak frictional force, even if the driver braking input exceeds the available frictional force (0 to 1). A 100% effective anti-lock system maintains a longitudinal wheel force associated with the peak coefficient of friction. A 0% effective system maintains a longitudinal wheel force associated with the slide coefficient of friction. A 50% effective system would maintain a longitudinal force halfway between that associated with peak and slide friction.
 
-The detailed per-wheel ABS data (HVE's **ABS Designer...** button) are in **Vehicle › ABS / Brake Design... › ABS Designer...**.
+The detailed per-wheel ABS data (HVE's **ABS Designer...** button) are in **Vehicle › Brakes › ABS / Brake Design... › ABS Designer...**.
 
 !!! warning "Not in HVE 2027"
-    - The rule that enables the antilock controls only when **ABS Installed** is checked: they are always enabled. ABS Installed is in **Vehicle › ABS / Brake Design... › ABS System...** (see [Brake System Pressure vs Pedal Force](BrkSysVsPedFrcDlg.md)).
+    - The rule that enables the antilock controls only when **ABS Installed** is checked: they are always enabled. ABS Installed is in **Vehicle › Brakes › ABS / Brake Design... › ABS System...** (see [Brake System Pressure vs Pedal Force](BrkSysVsPedFrcDlg.md)).
 
 !!! tip "New in HVE 2027"
     All wheels in one table, Link Groups, the Temperature Model row, and the note on a proportioning ratio of 1.0.

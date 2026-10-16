@@ -1,6 +1,6 @@
 # Steering System Dialog
 
-The steering system parameters for the current vehicle are displayed and edited using the **Steering System** dialog. Open it in the Vehicle Editor (**Vehicle (F3)**) with **Vehicle › Steering System...**, or with **Steering...** under **Vehicle Properties** (in the Vehicles panel or the Vehicle Information dialog). The **Vehicle** list at the top selects the vehicle.
+The steering system parameters for the current vehicle are displayed and edited using the **Steering System** dialog. Open it in the Vehicle Editor (**Vehicle (F3)**) with **Vehicle › Steering System...**, or with **Steering...** under **Components** in the Vehicles panel. The **Vehicle** list at the top selects the vehicle.
 
 Where HVE shows one axle at a time (chosen with *Steering Data For*), HVE 2027 shows a table with one column per axle (**Axle 1**, **Axle 2**, ...). Below it, the **Steer-Axis Mechanics (per wheel)** table holds HVE's Spindle Axis data; see [Spindle Axis Dialog](SpndleAxisDlg.md). Values are shown in the units set in Preferences and take effect as they are typed.
 

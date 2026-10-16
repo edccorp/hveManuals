@@ -38,7 +38,7 @@ The tow vehicle is a chrome-yellow Mack truck tractor; the trailer is a 44 foot-
 ![Figure 5-1](images/hvn-edvts-vehicle-editor.png)
 *Figure 5-1: The tutorial's vehicles in the HVE 2027 Vehicles panel, with the Mack Truck Tractor selected. Its rear axles (CG to Axle 2 = 110 in) already carry the walkthrough's edits.*
 
-To build them yourself, use **Add…** on the **Vehicles** panel; the picker offers HVE's Generic vehicles by type and class. The tractor starts from a Generic *Truck*, Class 3 (short wheelbase, tandem axle), and the trailer from a Generic *Trailer*, Class 4. Rename each in the **Name** field of the panel's **Information** section.
+To build them yourself, use **Add…** on the **Vehicles** panel; the picker offers HVE's Generic vehicles by type and class. The tractor starts from a Generic *Truck*, Class 3 (short wheelbase, tandem axle), and the trailer from a Generic *Trailer*, Class 4. Rename each in the **Name** field of the panel's **Identity** section.
 
 > NOTE: A 'tractor' is a 'truck' with a fifth wheel; there is no need for a separate 'tractor' vehicle type.
 
@@ -46,10 +46,10 @@ To build them yourself, use **Add…** on the **Vehicles** panel; the picker off
 
 The original walkthrough makes the following edits. Each is already in the finished case; this is where to find it in HVE 2027.
 
-- **Color** — the **Color** field in the **Vehicles** panel's **Information** section.
-- **Rear axle positions** — the tractor's third axle moved to x = -161.50 in and its second to x = -110.00 in. Wheel positions are in the panel's **Dimensions / Inertias** section.
-- **Fifth wheel** — the tractor's rear connection moved to x = -135.75 in, z = -4 in. Connections are edited with **Vehicle Properties › Connections…** in the **Vehicles** panel; the dialog shows the connection's height above ground, which must match the trailer's kingpin to within 0.1 in.
-- **Geometry files** — `TKMackTractor.h3d` for the tractor and `TLGeneric44Van.h3d` for the trailer, in the panel's **3D Geometry** section, the Vehicle Mesh editor (**Mesh File**: **...** or **Library...**, then **Load 3D File**; also **Vehicle › Vehicle Mesh…**). HVE 2027 opens `.h3d` files directly; the geometry is used for display only.
+- **Color** — the **Color** field in the **Vehicles** panel's **Identity** section.
+- **Rear axle positions** — the tractor's third axle moved to x = -161.50 in and its second to x = -110.00 in. Wheel positions are in the panel's **Size & Weight › Details › Wheel Positions (from CG)**.
+- **Fifth wheel** — the tractor's rear connection moved to x = -135.75 in, z = -4 in. Connections are edited with **Components › Connections…** in the **Vehicles** panel; the dialog shows the connection's height above ground, which must match the trailer's kingpin to within 0.1 in.
+- **Geometry files** — `TKMackTractor.h3d` for the tractor and `TLGeneric44Van.h3d` for the trailer, in the panel's **3D Geometry** section (**Mesh File**: **...** or **Library...**) or on the File & Placement tab of **Vehicle › Vehicle Mesh…**, then **Load 3D File** there. HVE 2027 opens `.h3d` files directly; the geometry is used for display only.
 
 ## Creating the Environment
 

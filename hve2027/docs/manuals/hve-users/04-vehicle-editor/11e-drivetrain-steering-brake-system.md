@@ -7,7 +7,9 @@ This part covers the vehicle-level systems HVE edits by clicking on the
 Engine icon (Drivetrain), the Steering Wheel icon (Steering System) and the
 Brake Pedal/Master Cylinder icon (Brake System) in the Vehicle Viewer. In
 HVE 2027 they are **Vehicle › Drivetrain**, **Vehicle › Steering System**,
-**Vehicle › Brake System Pressure** and **Vehicle › ABS / Brake Design**.
+**Vehicle › Brakes › Brake System Pressure** and **Vehicle › Brakes › ABS /
+Brake Design** (each also a button in the Vehicles panel's Components
+section).
 Values are shown in the units set in Preferences, and changes apply as they
 are made.
 
@@ -175,7 +177,7 @@ reference page,
 
 To display or edit the current vehicle's steerable axles and associated
 parameters, choose **Vehicle › Steering System** (or Vehicles panel ›
-Vehicle Properties › Steering…). The dialog is a table with a column per
+Components › Steering…). The dialog is a table with a column per
 axle, so there is no Current Axle selector:
 
 - **Steerable Axle** — HVE's Is Steerable check box; the other cells of an
@@ -212,7 +214,8 @@ Left, Stop Stiffness, and Stop Damping (disabled; no simulation reads it).
 The Steering System parameters are described below.
 
 - **Axle Selector** — Axle number (1, 2 or 3, limited by the number of
-  axles defined in the Vehicle Information dialog).
+  axles defined in the Vehicle Information dialog; in HVE 2027, Number of
+  Axles in the Vehicles panel's Configuration section).
 - **Is Steerable Check Box** — Switch to allow or disallow steering at the
   selected axle.
 - **Gear Ratio** — Ratio of the steering wheel angle to the wheel angle.
@@ -223,8 +226,8 @@ The Steering System parameters are described below.
 - **Column Stiffness** — Torsional stiffness of the steering system between
   the steering wheel and the wheel on the driver's side.
 
-  > **NOTE:** The driver's side is defined in the Vehicle Information
-  > dialog.
+  > **NOTE:** The driver's side is defined by Driver Location (in HVE 2027,
+  > in the Vehicles panel's Configuration section).
 
 - **Linkage Mass** — Mass (weight/g) of all translating linkage components.
 - **Linkage Stiffness** — Torsional stiffness of the steering system
@@ -259,7 +262,7 @@ Force). See also the reference page,
 *Figure 11-54: The Brake System Pressure dialog (HVE 2027).*
 
 To display or edit the current vehicle's brake master cylinder pressure
-ratio, choose **Vehicle › Brake System Pressure**. The dialog contains an
+ratio, choose **Vehicle › Brakes › Brake System Pressure**. The dialog contains an
 **Axle** selector, **System Type** (Hydraulic, Air (Pneumatic)), **Pedal
 Ratio** (per vehicle; 0 derives the slope from the curve below), **Pressure
 Ratio**, and a table of pedal force against pressure with **Add Point**.
@@ -268,8 +271,8 @@ Ratio**, and a table of pedal force against pressure with **Add Point**.
     The Brake System Pressure dialog has **System Type**, which reaches
     SIMON's input report only, and no Assembly Type or ABS Installed. The
     disc/drum choice is the per-wheel Brake Type in the Brake Assembly
-    dialog. **ABS Installed** is in **Vehicle › ABS / Brake Design › ABS
-    System**, with the ABS System data; the ABS Designer is reached from the
+    dialog. **ABS Installed** is in **Vehicle › Brakes › ABS / Brake Design ›
+    ABS System**, with the ABS System data; the ABS Designer is reached from the
     same menu item. SIMON regulates every wheel when ABS Installed, or any
     wheel's Antilock box in Brake Assembly, is ticked. EDSVS and EDVTS use the
     per-wheel boxes, and EDVDS has no ABS model.
@@ -305,7 +308,7 @@ The Brake System parameters are described below.
   apply delay and release delay).
 
   !!! note "HVE 2027"
-      **Vehicle › ABS / Brake Design** opens a window with **ABS System…**
+      **Vehicle › Brakes › ABS / Brake Design** opens a window with **ABS System…**
       and **ABS Designer…**. The ABS System dialog has **ABS Installed**,
       the Algorithm, Control Method, the thresholds (Min Pressure, Min
       Velocity), the
@@ -342,10 +345,10 @@ In HVE the Brake Designer is accessed from the Brake Assembly dialog (via
 the Brake Type option list and Edit Brake pushbutton — see
 [Part D](11d-brakes-tires-wheels.md)), from the ABS Designer pushbutton
 (per-wheel ABS data) and from the Brake System dialog's ABS Edit pushbutton
-(system-level ABS data). In HVE 2027 it is **Vehicle › Brake Designer** (see
-[Part D](11d-brakes-tires-wheels.md#hve-brake-designer)), with the ABS data
-under **Vehicle › ABS / Brake Design** (**Vehicle › Brake Material Props** is
-a material library no engine reads). The individual Brake Designer dialogs
+(system-level ABS data). In HVE 2027 it is **Vehicle › Brakes › Brake
+Designer** (see [Part D](11d-brakes-tires-wheels.md#hve-brake-designer)), with
+the ABS data under **Vehicle › Brakes › ABS / Brake Design**. HVE's Brake
+Material Properties library, which no engine reads, is not in HVE 2027. The individual Brake Designer dialogs
 are documented in the HVE reference pages in
 [Brakes and Powertrain](../../04-brakes-powertrain/README.md):
 [Disc Brake](../../04-brakes-powertrain/DiskBreakDlg.md),
@@ -353,8 +356,9 @@ are documented in the HVE reference pages in
 [Duplex](../../04-brakes-powertrain/DuplexBrkDlg.md),
 [Single Piston](../../04-brakes-powertrain/BrkSingPistDlg.md),
 [Dual Piston](../../04-brakes-powertrain/DualPistBrkDlg.md),
-[Dual Wedge](../../04-brakes-powertrain/DualWedgeBrkDlg.md) and
-[Brake Material Properties](../../04-brakes-powertrain/BrkMatPropDlg.md).
+[Dual Wedge](../../04-brakes-powertrain/DualWedgeBrkDlg.md) (and HVE's
+[Brake Material Properties](../../04-brakes-powertrain/BrkMatPropDlg.md),
+which HVE 2027 does not have).
 
 <!-- NAV -->
 

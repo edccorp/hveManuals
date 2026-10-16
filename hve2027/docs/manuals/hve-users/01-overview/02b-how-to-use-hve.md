@@ -218,7 +218,7 @@ selected vehicle from a database record.
 ### Tire Database
 
 A vehicle's tires come with its vehicle record. To fit a different tire, open
-**Vehicle › Tire Data (Detailed)...**: its **Tire Database** section lists the
+**Vehicle › Tires...**: its **Tire Database** section lists the
 tires in the loaded vehicle databases, and **Apply Tire** puts the chosen tire,
 with its tables, on all wheels or one axle. Tire data is edited there: the
 scalar data in the per-wheel grid, and the load/speed tables in the **Load &

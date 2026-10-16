@@ -46,11 +46,11 @@ First let's add the vehicle to our case. The vehicle is a yellow 1984 Ford Bronc
   - Year = *1984-1991*
   - Body Style = *2-Door*
   - Source Database = *Tutorial.db*
-- Open **Vehicle › Vehicle Information** and set *Drive Axle(s)* to **Axle 2**.
+- In the Vehicles panel's *Configuration* section, set *Drive Axle(s)* to **Axle 2**.
 
 > **NOTE:** The Ford Bronco II is a 4-wheel drive vehicle. Because it was used in 2-wheel drive mode during the handling experiments, we must edit the default Drive Axle option. EDVSM does not run 4-wheel drive vehicles.
 
-- In the same dialog, edit the *Name*: `Ford Bronco II, Loaded`.
+- In the *Identity* section, edit the *Name*: `Ford Bronco II, Loaded`.
 
 The Ford Bronco II is displayed in the viewport, as shown in Figure 5-1.
 
@@ -64,15 +64,15 @@ Next, we will edit the vehicle to change its color and inertias (the test vehicl
 
 To edit the color:
 
-- In **Vehicle › Vehicle Information**, click the **Vehicle Color** swatch (or type the red, green and blue values beside it) and choose a light yellow (Figure 5-2).
+- In the Vehicles panel's *Identity* section, click the **Color** swatch (or type the red, green and blue values beside it) and choose a light yellow (Figure 5-2).
 
 ![Figure 5-2](images/hvn-edvsm-vehicle-information.png)
 
-*Figure 5-2: The Vehicle Information dialog, with the vehicle's name, drive axle and color.*
+*Figure 5-2: The Vehicles panel, with the vehicle's name, drive axle and color.*
 
 Next, let's change the weight and rotational inertias to account for the outriggers installed on the test vehicle to prevent rollover:
 
-- In Vehicle Information, open **Vehicle Properties** and click **Inertia / Mass…**. The Inertia / Mass dialog shows each quantity on both the *Total* and the *Sprung* basis.
+- In the Vehicles panel's *Inertia* section, click **Edit…**. The Inertia / Mass dialog shows each quantity on both the *Total* and the *Sprung* basis.
 - In the *Weight* row, *Total* column, enter the measured (test) value, `4329.2` lb.
 - In the *Roll*, *Pitch* and *Yaw* rows, *Sprung* column, enter the measured values `5372.4`, `23666.9` and `26100.85` lb-sec²-in.
 
@@ -85,7 +85,7 @@ Next, let's add a 1-inch anti-sway bar at the rear suspension:
 
 Finally, let's disable the left front brake by setting its brake torque ratio to zero:
 
-- Open **Vehicle › Brake Assembly**. The dialog has one column per wheel (*A1 Right* is the right front, *A1 Left* the left front).
+- Open **Vehicle › Brakes › Brake Assembly**. The dialog has one column per wheel (*A1 Right* is the right front, *A1 Left* the left front).
 - In the *Torque Ratio* row, *A1 Left* column, replace the existing value with `0.0` (Figure 5-3).
 
 > **NOTE:** The wheel columns are linked in groups (the *- A B C* selector at the top of each column), and an edit in one column is copied to every column in the same group. A vehicle usually arrives with all four columns in group *A*, so click **-** at the top of the *A1 Left* column to unlink it before you enter the zero.
@@ -223,7 +223,7 @@ To enter the brake input:
 | 10.40 | 10.75 |
 
 !!! note "HVE 2027"
-    In EDC's case this table arrives as a *Pedal force* table, in pounds when Preferences are set to Imperial units. A pedal table typed into a new HVE 2027 event is a 0 to 1 pedal *position* instead, scaled by the vehicle's brake pressure curve (**Vehicle › Brake System Pressure**).
+    In EDC's case this table arrives as a *Pedal force* table, in pounds when Preferences are set to Imperial units. A pedal table typed into a new HVE 2027 event is a 0 to 1 pedal *position* instead, scaled by the vehicle's brake pressure curve (**Vehicle › Brakes › Brake System Pressure**).
 
 The driver control inputs are now complete.
 

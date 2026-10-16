@@ -43,14 +43,12 @@ chapter.
 ## Inertial Properties
 
 The inertial properties of the vehicle are displayed and edited using the
-**Inertia / Mass** dialog (Vehicles panel › Vehicle Properties › Inertia /
-Mass…). It shows paired **Total** (i.e., sprung + unsprung) and **Sprung**
+**Inertia / Mass** dialog (Vehicles panel › Inertia › **Edit…**). It shows paired **Total** (i.e., sprung + unsprung) and **Sprung**
 columns side by side for the weight, the mass, the CG location (CG to front
 axle, CG to rear axle, CG height) and the roll, pitch and yaw inertias.
 Either column may be edited; the other is recalculated from the vehicle's
-unsprung masses and their locations. The same Total/Sprung pairs for the
-weight and inertias are also in the **Inertia** part of the Vehicles panel's
-Dimensions / Inertias section.
+unsprung masses and their locations. The Vehicles panel's **Inertia** section
+shows one line of the totals (weight, yaw, pitch and roll inertia).
 
 !!! note "HVE 2027"
     - There is no Basic/Complex toggle: both columns are always shown.
@@ -141,8 +139,8 @@ parallel axis theorem, as shown above.
 To display or edit the current vehicle's inertial properties, perform the
 following steps:
 
-1. In the Vehicles panel, open the **Vehicle Properties** section and press
-   **Inertia / Mass…**. The Inertia / Mass dialog will be displayed.
+1. In the Vehicles panel, open the **Inertia** section and press
+   **Edit…**. The Inertia / Mass dialog will be displayed.
 2. View and/or edit the desired properties. The other properties are
    updated as described above as you type.
 3. Press *OK* to close the dialog, or *Cancel* to discard the changes.
@@ -191,9 +189,10 @@ reference page, [Move CG dialog](../../02-vehicles/MoveCGDlg.md).
       events) — HVE's Move CG dialog: ΔX, ΔY and ΔZ move the CG relative to
       the body, and every distance measured from the CG follows; CG Height
       is read-only. The CG location may also be edited directly in the Vehicles
-      panel (CG to Axle 1/2, CG Height) and in the Inertia / Mass dialog.
-    - **Vehicle › Vehicle Mesh › Move CG** (also in the Vehicles panel's 3D
-      Geometry section) — where the CG sits in the 3-D model file's own
+      panel's Size & Weight section (CG to axle, CG height) and in the
+      Inertia / Mass dialog.
+    - **Vehicle › Vehicle Mesh › Move CG** (on the Vehicle Mesh window's File &
+      Placement tab) — where the CG sits in the 3-D model file's own
       coordinates. Typing a new value moves the CG the same way: the body and
       the wheels stay, and the CG distances change (see
       [Geometry File](#geometry-file)).
@@ -235,8 +234,8 @@ The Move CG parameters are described below.
 ## Color
 
 The color of the vehicle is obvious from looking at it. In HVE 2027 it is
-edited with the **Color** field in the Information section of the Vehicles
-panel, or **Vehicle Color** in the Vehicle Information dialog: three R, G, B
+edited with the **Color** field in the Identity section of the Vehicles
+panel: three R, G, B
 values (0–255) and a swatch. Click the swatch to open a color picker (color
 wheel or square, hue, saturation and value, or hexadecimal), or drag or type
 in the R, G, B fields.
@@ -254,14 +253,14 @@ in the R, G, B fields.
 
 The current vehicle may be visualized using a simplified vehicle shape or an
 actual 3-D geometry file created by digitizing the vehicle. If a 3-D
-geometry file is available for the current vehicle, it is assigned in the
-**Vehicle Mesh** editor: the **3D Geometry** section of the Vehicles panel,
-which is the same editor as the **Vehicle Mesh** window (Vehicle › Vehicle
-Mesh, also Event › Vehicle Mesh). The Vehicle Information dialog has a **3D
-File** field as well.
+geometry file is available for the current vehicle, it is assigned with the
+**Mesh File** field in the **3D Geometry** section of the Vehicles panel, or
+in the **Vehicle Mesh** window (Vehicle › Vehicle Mesh, Event › Vehicle Mesh,
+or **Vehicle Mesh...** in the 3D Geometry section), which also holds every
+other setting of the model.
 
 ![Figure 11-5](../images/hvn-04-vehicle-mesh.png)
-*Figure 11-5: Vehicle Mesh dialog.*
+*Figure 11-5: Vehicle Mesh window.*
 
 ### Mechanical Properties
 
@@ -319,40 +318,23 @@ deformation to the vehicle exterior.
 ### Geometry File Options
 
 In HVE, Geometry File offers *New, Open* and *Save-As*. In HVE 2027 the
-Vehicle Mesh editor (the Vehicles panel's **3D Geometry** section, or the
-Vehicle Mesh window) contains:
+Vehicles panel's **3D Geometry** section holds the **Mesh File** field (with
+**…** and **Library…**), **Generic Body** and **Vehicle Mesh...**, and the
+Vehicle Mesh window holds the rest, in four tabs.
 
-- **Mesh Assignment** — **Mesh File**: the 3-D model. **…** browses for a
-  file; **Library…** searches the vehicle geometry library by name. HVE's
-  `.h3d` files, Open Inventor/VRML (`.iv`, `.wrl`), `.obj`, glTF (`.gltf`,
-  `.glb`) and point-cloud scans (`.las`, `.ply`, `.e57`, `.xyz`, `.pts`) are
-  read. With a display mesh set (below), this section is headed **Collision
-  Mesh (what DyMESH collides)**, because this file is then collided but not
-  drawn.
+**File & Placement**
+
+- **Mesh File** — the 3-D model. **…** browses for a file; **Library…**
+  searches the vehicle geometry library by name. HVE's `.h3d` files, Open
+  Inventor/VRML (`.iv`, `.wrl`), `.obj`, glTF (`.gltf`, `.glb`) and
+  point-cloud scans (`.las`, `.ply`, `.e57`, `.xyz`, `.pts`) are read. With a
+  display mesh set (Display tab), this section is headed **Collision Mesh
+  (what DyMESH collides)**, because this file is then collided but not drawn.
 - **Import Options** — Scale Factor, Smooth normals (use vn), Flip normals,
-  **Center on CG**, Draw wheels (tire radius), and three collision settings
-  that change the run:
-    - **Collision mesh max triangles** — the most triangles DyMESH collides
-      for this body. A mesh with more is reduced for the collision alone; the
-      full mesh is still drawn and the crush is carried onto it. **0**
-      collides the file as authored, except that an OBJ or glTF body with more
-      than 50 000 vertices is reduced automatically to 10 000 triangles, and
-      the run status says so. A scan body always collides as a rebuilt
-      surface; 0 gives it 10 000 triangles.
-    - **Collide as a closed outer shell** — rebuilds what collides as one
-      closed outer surface (the mesh is sampled to points and rebuilt the way
-      a scan is), so interior faces, open edges and loose pieces fall away;
-      reduced to the triangle budget (0 = 10 000). The mesh is still drawn.
-      Off for every HVE case.
-    - **Collides: n of m parts** — a list of the mesh's parts (its material
-      names, and any parts made from faces in Edit Mode), each with a tick.
-      Untick a part, such as a mirror or an antenna, to leave it out of what
-      DyMESH collides; it is still drawn.
-
-  A note under them says what DyMESH collides. Then Round shell (curved
-  subdivision: Off, 1 or 2 levels; needs Smooth normals) and Opacity, with
-  **Load 3D File** and **Clear**. Normals, Round shell and Damage Display are
-  display only.
+  **Center on CG** and Draw wheels (tire radius), then **Load 3D File** and
+  **Clear**, and a status line: whether the mesh loaded (*Mesh did NOT load*,
+  with the reason, if it did not), or that the vehicle is drawn and collided
+  as the generated box. Normals and Draw wheels are display only.
 - **Move, Rotate and Scale the Model** — **Move CG**, and HVE's Transform
   Vehicle Geometry: **Translate**, **Rotate** (degrees) and **Scale** per
   axis, applied scale, then rotate, then translate. SAE axes: +x forward, +y
@@ -365,6 +347,38 @@ Vehicle Mesh window) contains:
   In the Vehicle editor's 3-D view, **G**, **R** and **S** move, rotate and
   scale the mesh and edit the same Translate, Rotate and Scale rows (see
   [Chapter 21](../08-3d-editor/21-manipulators.md)).
+
+**Collision** — what DyMESH collides; these settings change the run.
+
+- **Collision mesh max triangles** — the most triangles DyMESH collides
+  for this body. A mesh with more is reduced for the collision alone; the
+  full mesh is still drawn and the crush is carried onto it. **0**
+  collides the file as authored, except that an OBJ or glTF body with more
+  than 50 000 vertices is reduced automatically to 10 000 triangles, and
+  the run status says so. A scan body always collides as a rebuilt
+  surface; 0 gives it 10 000 triangles.
+- **Collide as a closed outer shell** — rebuilds what collides as one
+  closed outer surface (the mesh is sampled to points and rebuilt the way
+  a scan is), so interior faces, open edges and loose pieces fall away;
+  reduced to the triangle budget (0 = 10 000). The mesh is still drawn.
+  Off for every HVE case.
+- **Collides: n of m parts** — a list of the mesh's parts (its material
+  names, and any parts made from faces in Edit Mode), each with a tick.
+  Untick a part, such as a mirror or an antenna, to leave it out of what
+  DyMESH collides; it is still drawn.
+- A note says what DyMESH collides. When the drawn file is a scan, the scan
+  tools (see [Scan bodies](#scan-bodies)) follow; for a scan used as the
+  display mesh they are on the Display tab.
+- **DyMESH Contact Mesh Preparation** — the vehicle's defaults for
+  **Tessellate**, maximum triangle leg and weld distance. An event can state
+  its own, which then outrank these: **Event › DyMESH Options** (Contact Mesh
+  Preparation, per vehicle). A note here says when the active event does.
+
+**Display** — how the model is drawn. Except **Collide the display mesh
+instead** (below), nothing on this tab reaches an engine.
+
+- **Opacity** and **Round shell** (curved subdivision: Off, 1 or 2 levels;
+  needs Smooth normals).
 - **Display Mesh (drawn instead)** — **Display File**: a second model or scan
   to draw in place of the collision mesh, for example a detailed model or a
   scan of the actual vehicle, with **…** and **Clear**. What collides does not
@@ -376,19 +390,17 @@ Vehicle Mesh window) contains:
   keeping its Rotate, with what is left over in width and height reported.
   **Collide the display mesh instead** makes DyMESH collide the display mesh
   (reduced to the triangle budget, or rebuilt as a closed shell when that is
-  ticked); this changes the run, and an imported HVE case then no longer
-  collides HVE's own body.
+  ticked); this changes the run, and an imported HVE case
+  then no longer collides HVE's own body.
 - **Shading** — **As Loaded**, **Flat**, **Smooth** or **Auto Smooth**, with
   the **Auto Smooth Angle** (default 60°) for the last. As Loaded uses the
   file's own normals; Auto Smooth smooths across edges whose faces meet
-  within the angle and keeps sharper edges creased. Display only.
+  within the angle and keeps sharper edges creased.
 - **Damage Display** — Smooth crush deformation and its number of passes
-  (display only: reported crush depths and energies are the solver's).
-- **DyMESH Contact Mesh Preparation** — Tessellate, maximum triangle leg and
-  weld distance, for the vehicle and, when the active event states its own,
-  for that event (the event's values are the ones the run uses).
-- A status line: whether the mesh loaded, or that the vehicle is drawn and
-  collided as the generated box.
+  (reported crush depths and energies are the solver's).
+
+**Wheel Images** — the picture drawn on each wheel's face (see
+[Chapter 11, Part D](11d-brakes-tires-wheels.md)). Display only.
 
 **Center on CG** is off by default. On, the body is placed by the middle of
 its length and width instead of taking the file's own origin as the CG, and
@@ -442,17 +454,19 @@ display mesh.
 #### New
 
 HVE's *New* removes the 3-D geometry file and replaces it with the simple
-vehicle shape. In HVE 2027 press **Clear** in the Vehicle Mesh editor (the 3D
-Geometry section of the Vehicles panel, or the Vehicle Mesh window).
+vehicle shape. In HVE 2027 press **Clear** on the File & Placement tab of the
+Vehicle Mesh window.
 
 #### Open
 
 To assign a 3-D geometry file to the current vehicle:
 
-1. Open the Vehicles panel's **3D Geometry** section, or choose **Vehicle ›
-   Vehicle Mesh**.
+1. Choose **Vehicle › Vehicle Mesh** (or press **Vehicle Mesh...** in the
+   Vehicles panel's **3D Geometry** section) and select the **File &
+   Placement** tab.
 2. Press **…** beside Mesh File and choose the file, or press **Library…**
-   and search for it by name.
+   and search for it by name. (The same Mesh File row is in the panel's 3D
+   Geometry section.)
 3. Press **Load 3D File**.
 
 The selected 3-D geometry file is displayed on the current vehicle.
@@ -746,8 +760,8 @@ The Airbag Restraint Properties are described below, under HVE's names.
 - **Passenger Airbag Length** — Assigns the length for non-driver-side
   airbags.
 
-  > **NOTE:** The driver's position is defined in the Vehicle Information
-  > dialog.
+  > **NOTE:** The driver's position is defined by Driver Location, in the
+  > Configuration section of the Vehicles panel.
 
 - **Initial Pressure** — Assigns the initial pressure for the airbag.
 - **Bag Membrane Thickness** — Assigns the material thickness for the
@@ -846,7 +860,7 @@ The available inter-vehicle connections are:
 To display or edit the current vehicle's connection properties, perform the
 following steps:
 
-1. In the Vehicles panel, open **Vehicle Properties** and press
+1. In the Vehicles panel, open **Components** and press
    **Connections…**. The Vehicle Connections dialog will be displayed. It is
    a table with a **Front** and a **Rear** column and the rows **Type**,
    **X**, **Y**, **Z**, **Height above ground** and **Properties**.
@@ -943,8 +957,8 @@ reference page,
 To display or edit the current vehicle's drag factors, perform the following
 steps:
 
-1. Choose **Vehicle › Aero Dynamic Drag** (or Vehicles panel › Vehicle
-   Properties › Aerodynamic Drag…). The Aerodynamic Drag dialog will be
+1. Choose **Vehicle › Aerodynamic Drag** (or Vehicles panel › Components ›
+   Aerodynamic Drag…). The Aerodynamic Drag dialog will be
    displayed.
 2. The four surfaces, **Front**, **Rear**, **Left** and **Right**, are the
    table's columns (by default, the front surface has already been assigned

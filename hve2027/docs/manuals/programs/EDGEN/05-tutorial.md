@@ -55,7 +55,7 @@ The case contains two vehicles: a yellow 1990 International Loadstar school bus 
 
 ### Editing the Vehicles
 
-HVE's tutorial changes the vehicles' colours. In HVE 2027 a vehicle's colour is the **Color** field (red, green and blue values and a swatch) in the **Information** section of the Vehicles panel; in the opened case the bus is already yellow and the Taurus blue.
+HVE's tutorial changes the vehicles' colours. In HVE 2027 a vehicle's colour is the **Color** field (red, green and blue values and a swatch) in the **Identity** section of the Vehicles panel; in the opened case the bus is already yellow and the Taurus blue.
 
 > **NOTE:** Color is the only vehicle attribute used by EDGEN.
 

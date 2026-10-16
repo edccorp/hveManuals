@@ -126,14 +126,15 @@ Vehicles are created and edited in the Vehicle editor. To create a vehicle:
 1. Choose the **Vehicle (F3)** tab.
 2. In the **Vehicles** panel, choose **Add...**. Search the loaded vehicle
    databases, or choose one of HVE's generic vehicles by type and class.
-3. The vehicle's information (name, type, make, model, year, body style,
-   number of axles, driver location, engine location, drive axles, colour) is
-   shown below the list and can be edited there or in **Vehicle › Vehicle
-   Information...**.
+3. The vehicle's identity (name, type, make, model, year, body style,
+   colour), configuration (number of axles, driver location, engine location,
+   drive axles) and size and weight are shown below the list, in the panel's
+   Identity, Configuration and Size & Weight sections, and are edited there.
 
 The vehicle is now displayed in the viewport. At this point you may edit its
-properties with the Vehicle menu (see the Vehicle Editor section of this manual;
-see also the [Vehicle Information dialog reference](../../02-vehicles/VehicleInfoDlg.md)).
+properties with the Vehicle menu or the panel's Components section (see the
+[Vehicle Editor](../04-vehicle-editor/10-creating-editing-vehicles.md) section
+of this manual).
 Repeat for each vehicle; **Dup** copies the selected vehicle and **Del** removes
 it.
 
@@ -466,12 +467,15 @@ The pulse table itself can be edited row by row, and **Import file...** and
 
 ### Vehicle Mesh
 
-**Event › Vehicle Mesh...** assigns the vehicle's 3-D body mesh and prepares it
-for DyMESH contact (tessellation, maximum side length, vertex weld distance).
-The inter-vehicle contact options are in **Event › DyMESH Options...**.
+**Event › Vehicle Mesh...** assigns the vehicle's 3-D body mesh, places it, and
+sets what DyMESH collides and the vehicle's default contact mesh preparation
+(tessellation, maximum side length, vertex weld distance), in four tabs: File &
+Placement, Collision, Display and Wheel Images. The event's own mesh
+preparation for each vehicle, and the inter-vehicle contact options, are in
+**Event › DyMESH Options...**.
 
 ![Figure 2-22](../images/hvn-01-vehicle-mesh.png)
-*Figure 2-22: The Vehicle Mesh dialog.*
+*Figure 2-22: The Vehicle Mesh window.*
 
 ### Assigning Payloads
 

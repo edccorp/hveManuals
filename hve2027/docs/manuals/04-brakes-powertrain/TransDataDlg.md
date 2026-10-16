@@ -33,7 +33,7 @@ The final drive (differential) ratio. HVE enters it in the Differential Data dia
 Shown greyed: there is no engine field it could be given to.
 
 ## Shift Time (s), Drive Type
-Stored with the vehicle; no engine reads them. The drive axle(s) the engines use are set by **Drive Axle(s)** in the Vehicle Information dialog.
+Stored with the vehicle; no engine reads them. The drive axle(s) the engines use are set by **Drive Axle(s)** in the Vehicles panel's Configuration section.
 
 !!! warning "Not in HVE 2027"
     - Upshift and downshift points entered in %WOT (HVE 2027 uses fractions 0 to 1).

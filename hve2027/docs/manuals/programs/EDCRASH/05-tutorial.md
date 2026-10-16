@@ -52,9 +52,9 @@ The case contains two vehicles: a 1996 Ford Escort 2-Door Hatchback, drawn in bl
 
 In HVE's tutorial the vehicles' colour and weight are edited, and the Nissan's right-side stiffness is changed. In the opened case all of this is already done; here is where each value lives in HVE 2027.
 
-**Colour.** Each vehicle's colour is the **Color** field (red, green and blue values and a colour swatch) in the **Information** section of the Vehicles panel.
+**Colour.** Each vehicle's colour is the **Color** field (red, green and blue values and a colour swatch) in the **Identity** section of the Vehicles panel.
 
-**Weight.** The Escort's measured total weight is 11032 N and the Nissan's 11282 N. Open **Dimensions / Inertias** in the Vehicles panel; the **Total Weight** field is under **Weight**. The case already carries these values (2480.1 lbf and 2536.3 lbf in Imperial units).
+**Weight.** The Escort's measured total weight is 11032 N and the Nissan's 11282 N. Open **Size & Weight** in the Vehicles panel; the **Total Weight** field is under **Weight**. The case already carries these values (2480.1 lbf and 2536.3 lbf in Imperial units).
 
 > **NOTE:** HVE's Inertias dialog has an *Auto Update Inertia When Weight Changes* option. Check the yaw inertia in the same section after changing a weight; only the yaw inertia is used by the 3-DOF EDCRASH calculations.
 

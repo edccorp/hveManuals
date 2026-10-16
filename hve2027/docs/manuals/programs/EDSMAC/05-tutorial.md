@@ -46,15 +46,15 @@ The case opens with two vehicles, the *Blind Intersection* site, and one event, 
 The case contains the two vehicles of our study: a white 1996 Ford Escort 2-Door Hatchback and a dark red 1995 Nissan Sentra 4-Door Sedan.
 
 1. Choose the **Vehicle (F3)** editor tab. The Vehicles panel lists **Tutorial - Ford Escort** and **Tutorial - Nissan Sentra**.
-2. Click **Tutorial - Ford Escort**. In the **Information** section, note its attributes: Vehicle Type = Passenger Car, Make = Ford, Model = Escort, Year = 1991-1996, Body Style = 2-Door Hatchback, Driver Location = Right.
+2. Click **Tutorial - Ford Escort**. In the **Identity** and **Configuration** sections, note its attributes: Vehicle Type = Passenger Car, Make = Ford, Model = Escort, Year = 1991-1996, Body Style = 2-Door Hatchback, Driver Location = Right.
 
-    > NOTE: The Information section (and **Vehicle › Vehicle Information**) also lets you edit the Driver Location, Engine Location, Number of Axles and Drive Axle(s). For our tutorial, only the driver location differs from its default.
+    > NOTE: The Configuration section also lets you edit the Driver Location, Engine Location, Number of Axles and Drive Axle(s). For our tutorial, only the driver location differs from its default.
 
 3. Click **Tutorial - Nissan Sentra** and note its attributes: Passenger Car, Nissan, Sentra, 1995-1999, 4-Door, Driver Location Right.
 
 ![Figure 5-1](images/hvn-edsmac-vehicle-info.png)
 
-*Figure 5-1: The Vehicle Information window for the Ford Escort.*
+*Figure 5-1: The Vehicles panel for the Ford Escort.*
 
 > NOTE: To build the case from scratch, click **Add...** at the top of the Vehicles panel. The **Add Vehicle** dialog searches the vehicle databases in the folders listed under **Database folders**; add the folder holding HVE's `Tutorial.db`, choose the vehicle, and click **Add Vehicle**. Then set **Driver Location** to **Right**.
 
@@ -65,12 +65,12 @@ In the original tutorial we edit the vehicles to change their color and weight, 
 The Ford Escort:
 
 1. Select **Tutorial - Ford Escort** in the Vehicles panel.
-2. The **Color** row of the **Information** section holds the color as red, green and blue values; click the color chip at the end of the row for a color picker. The Escort is white.
+2. The **Color** row of the **Identity** section holds the color as red, green and blue values; click the color chip at the end of the row for a color picker. The Escort is white.
 
     !!! note "HVE 2027"
         HVE 2027 has no separate Vehicle Color dialog.
 
-3. In the **Vehicle Properties** section, click **Inertia / Mass...**. The total **Weight** is the measured value, 11037 N (2481.2 lbf), where the database value was 10283 N.
+3. In the **Inertia** section, click **Edit...** (the Inertia / Mass window). The total **Weight** is the measured value, 11037 N (2481.2 lbf), where the database value was 10283 N.
 
     > NOTE: The weight is entered as a force; the mass is calculated and displayed beside it. The value may show extra digits, because the weight is stored as mass and multiplied by the gravity constant for display.
 
@@ -80,7 +80,7 @@ The Ford Escort:
 The Nissan Sentra:
 
 1. Select **Tutorial - Nissan Sentra**. Its color is a dark red.
-2. In **Vehicle Properties › Inertia / Mass...**, the total **Weight** is the measured value, 11282 N (2536.3 lbf), where the database value was 10858 N.
+2. In the **Inertia / Mass** window (**Inertia › Edit...**), the total **Weight** is the measured value, 11282 N (2536.3 lbf), where the database value was 10858 N.
 
 Finally, let's change the stiffness of the Nissan. From a previous reconstruction analysis, the A and B stiffnesses were re-calculated in order to balance the forces (the technique is described in references [20] and [21]). Based on this analysis, a new $K_v$ stiffness was calculated, 89.2 N/cm² (129.4 lb/in²). This is the one value we have to enter, because the case was saved for EDSMAC4, which does not use $K_v$.
 

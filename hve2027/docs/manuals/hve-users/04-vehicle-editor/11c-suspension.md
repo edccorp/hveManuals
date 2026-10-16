@@ -14,7 +14,7 @@ scoped to that wheel.
     column per axle or per wheel:
 
     - **Suspension Data** (**Vehicle › Suspension Data**, or Vehicles panel ›
-      Vehicle Properties › Suspension…) — one column per axle: Suspension
+      Components › Suspension…) — one column per axle: Suspension
       Type, Roll Couple Dist, Int. Tandem Load Xfr; Spring Rate, Damp Rate,
       the derived Static Deflection and Natural Freq (Hz), Aux Roll
       Stiffness, Coulomb Friction, Friction Null Band; and, under Solid Axle,

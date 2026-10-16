@@ -2,7 +2,7 @@
 
 In HVE the Tire Physical Data dialog edits one tire's physical parameters. In
 HVE 2027 the same parameters are rows of the **Tire Properties** table (Vehicle
-editor, **Vehicle › Tire Data (Detailed)...**), with one column per wheel, so
+editor, **Vehicle › Tires...**), with one column per wheel, so
 every wheel of the vehicle is visible and editable at once. Each value is a
 drag field: drag it, or double-click (Ctrl+click) and type. Values follow the
 units set in Tools › Preferences; the unit is shown in each row label.

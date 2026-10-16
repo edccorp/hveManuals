@@ -6,7 +6,7 @@ set of test loads and road speeds, interpolated by the physics at run time.
 !!! note "HVE 2027"
     There is no separate window. The tables are the **Load & Speed Tables**
     panel at the bottom of the **Tire Properties** window, opened in the
-    Vehicle editor (F3) with **Vehicle › Tire Data (Detailed)...** (see
+    Vehicle editor (F3) with **Vehicle › Tires...** (see
     [Tire Information](TireInfoDlg.md)). The panel holds HVE's four tire-table
     dialogs as tabs: **Friction** (this page), **Cornering** (F<sub>y</sub> vs
     slip angle), **Camber** ([F<sub>y</sub> vs inclination

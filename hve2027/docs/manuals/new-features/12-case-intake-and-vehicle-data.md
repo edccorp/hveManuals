@@ -548,7 +548,7 @@ locked.
 A vehicle can carry a list of people and loads that travels with it into every
 event and every engine. The list is in the **Aboard** section of the
 [Inertia / Mass dialog](../02-vehicles/VehInerDlg.md#aboard-occupants-and-cargo)
-(Vehicles panel › **Vehicle Properties** › **Inertia / Mass...**), where each
+(Vehicles panel › **Inertia** › **Edit...**), where each
 item has a name, a kind (occupant or cargo), a weight and a position from the
 vehicle's sprung-mass CG (x forward, y right, z up). Vehicle Package fills it
 when *Put the occupants and cargo aboard the vehicle* is ticked.

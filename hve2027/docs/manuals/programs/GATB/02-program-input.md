@@ -168,7 +168,7 @@ To add a vehicle to the current case in HVE 2027:
 
 - Choose the **Vehicle (F3)** editor.
 - In the *Vehicles* panel, click **Add…**. The *Add Vehicle* dialog is displayed: search the loaded vehicle databases, or pick one of HVE's generic vehicles by type and class.
-- Add the vehicle. Its attributes, including *Driver Location*, are edited in **Vehicle › Vehicle Information**.
+- Add the vehicle. Its attributes, including *Driver Location*, are edited in the Vehicles panel's *Identity* and *Configuration* sections.
 
 The following Vehicle Parameter groups are used by GATB:
 

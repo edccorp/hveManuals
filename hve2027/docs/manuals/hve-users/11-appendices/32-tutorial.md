@@ -80,7 +80,7 @@ HVE 2027 has five editors:
 - **Event (F5)** — Setting up, executing and playing back reconstruction and simulation events, with the reports on the **Output** menu
 - **Playback (F6)** — Combining several solved events on one timeline and playing them back together
 
-Using the tutorial case, select each tab in turn. The Human editor shows the case's humans, the Vehicle editor the current vehicle with its **Vehicles** list, the Environment editor the site, and the Event editor the current event in **Event Information**. **Vehicle › Vehicle Information…** shows a vehicle's basic attributes (Name, Vehicle Type, Make, Model, Year, Body Style, Number of Axles, Driver Location, Engine Location, Drive Axle(s)); **Environment › Environment…** holds the location and sun, the terrain, the sky, and the physical properties (ambient temperature and pressure, wind, gravity, standing water).
+Using the tutorial case, select each tab in turn. The Human editor shows the case's humans, the Vehicle editor the current vehicle with its **Vehicles** list, the Environment editor the site, and the Event editor the current event in **Event Information**. The Vehicles panel's **Identity** and **Configuration** sections show a vehicle's basic attributes (Name, Vehicle Type, Make, Model, Year, Body Style, Number of Axles, Driver Location, Engine Location, Drive Axle(s)); **Environment › Environment…** holds the location and sun, the terrain, the sky, and the physical properties (ambient temperature and pressure, wind, gravity, standing water).
 
 ### Using Dialogs
 

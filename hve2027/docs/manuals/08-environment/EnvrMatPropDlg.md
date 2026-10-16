@@ -56,7 +56,7 @@ Friction Multiplier to that value.
 
 Friction multiplier for the surface. 1.0 is the tire's own friction, unreduced:
 it scales the tire friction tables (the Load & Speed Tables panel of
-Vehicle › Tire Data (Detailed)).
+Vehicle › Tires).
 
 ## Force-deflection properties
 

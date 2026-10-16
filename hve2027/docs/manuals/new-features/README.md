@@ -52,7 +52,7 @@ chapter 12 set vehicle, event and driver-control inputs.
 | Results HUD | **View › Results HUD** (every editor) |
 | Quick Case, Monte Carlo, Motorcycle Analysis | **Tools** menu |
 | Vehicle Package, Case Intake, Provenance, EDR Import | **Tools** menu |
-| Aboard (occupants and cargo on a vehicle) | **Inertia / Mass** dialog (Vehicles panel › Vehicle Properties) |
+| Aboard (occupants and cargo on a vehicle) | **Inertia / Mass** dialog (Vehicles panel › Inertia › Edit...) |
 | Crush stiffness from crash tests | **Vehicle › Crush Stiffness...**, **From crash tests...** |
 | Point clouds | **Environment › Environment...**, *Terrain* section, *Survey Point Cloud (scan)* |
 

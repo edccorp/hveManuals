@@ -41,7 +41,7 @@ To add a vehicle to the current case, perform the following steps:
 1. Choose the **Vehicle** editor (the **Vehicle (F3)** tab under the menu bar).
 2. In the **Vehicles** panel, click **Add…**. The vehicle database search is displayed.
 3. Search for the vehicle, or pick it by *Type, Make, Model, Year* and *Body Style*, and add it to the case.
-4. If desired, modify the *Number of Axles*, *Driver Location*, *Engine Location* and *Drive Axle(s)* under *Information* in the Vehicles panel (or in **Vehicle › Vehicle Information**).
+4. If desired, modify the *Number of Axles*, *Driver Location*, *Engine Location* and *Drive Axle(s)* under *Configuration* in the Vehicles panel.
 5. Edit the vehicle's *Name* if you wish. The name does not affect calculations.
 
 ![Figure 2-1](images/hvn-edsvs-vehicle-editor.png)
@@ -80,7 +80,7 @@ The Sprung Mass parameters are shown in Table 2-1. Information on each group is 
 EDSVS uses the total vehicle weight (converted to mass using the current gravitational constant; see Environment), and the total yaw rotational inertia.
 
 !!! note "HVE 2027"
-    The total weight is under *Dimensions / Inertias* in the Vehicles panel. The rotational inertias are in **Vehicle › Vehicle Information › Vehicle Properties › Inertia / Mass…**, which shows each one on both the *Total* and the *Sprung* basis.
+    The total weight is under *Size & Weight* in the Vehicles panel. The rotational inertias are in the *Inertia / Mass* dialog (**Edit…** in the Vehicles panel's *Inertia* section), which shows each one on both the *Total* and the *Sprung* basis.
 
 #### Move CG
 
@@ -126,7 +126,7 @@ Although HVE-2D provides values for the vehicle-fixed x,y,z coordinates of each 
 EDSVS uses the wheel brake system Antilock Effectiveness. The specific parameters used by EDSVS are shown in Table 2-2.
 
 !!! note "HVE 2027"
-    Antilock is set per wheel in **Vehicle › Brake Assembly**: the *Antilock (ABS)* checkbox turns it on for that wheel and *ABS Efficiency* is the Antilock Effectiveness (0 to 1). EDSVS reads both for each wheel; *ABS Efficiency* is used only on a wheel whose *Antilock (ABS)* box is checked. To run one event with and another without antilock, leave the vehicle alone and use the *Antilock brakes* setting on the **Brake** tab of **Event › Wheels** (*Use the vehicle's setting*, *Force OFF for this event* or *Force ON for this event*).
+    Antilock is set per wheel in **Vehicle › Brakes › Brake Assembly**: the *Antilock (ABS)* checkbox turns it on for that wheel and *ABS Efficiency* is the Antilock Effectiveness (0 to 1). EDSVS reads both for each wheel; *ABS Efficiency* is used only on a wheel whose *Antilock (ABS)* box is checked. To run one event with and another without antilock, leave the vehicle alone and use the *Antilock brakes* setting on the **Brake** tab of **Event › Wheels** (*Use the vehicle's setting*, *Force OFF for this event* or *Force ON for this event*).
 
 #### Tire
 

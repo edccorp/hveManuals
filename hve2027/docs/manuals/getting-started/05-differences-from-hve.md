@@ -24,7 +24,7 @@ HVE does.
 | Contact surfaces, airbags, belts | **Vehicle › Contact Surfaces**, **Airbags**, **Belt Restraint**; per event, **Event › Restraints** |
 | GEBOD Human Information | **Occupant › Human Information** (the Occupants panel) |
 | Damage Studio | **Output › Damage Studio Options** and **Damage Studio Report**; crush is drawn on the vehicle's 3-D body as the run plays |
-| Impact Plane / Barrier (EDCRASH) | Greyed in the Event menu. Model a barrier as a vehicle of type **Fixed Barrier** in Vehicle Information |
+| Impact Plane / Barrier (EDCRASH) | Greyed in the Event menu. Model a barrier as a vehicle of type **Fixed Barrier** (Vehicles panel, Identity) |
 | An input a program does not use is greyed | The same, and in addition HVE 2027 says **why** where it matters (for example, which program reads a field). Inputs are locked while results are on screen; press **Reset** to edit |
 | `.hve` case files | `.hvex` or `.json`; `.hve` files open directly but are not written. Like a `.hve`, a saved case carries its site (geometry and aerial photograph) inside it; **File › Embed the environment in the case** turns that off for a case that should only name its site file. See [Cases and Files](04-cases-and-files.md) |
 
@@ -80,7 +80,7 @@ running something else:
 | --- | --- | --- |
 | SIMON Method Options › Hydroplaning | Blythe-Day *(refuses the run)* | SIMON implements Off, NASA, NASA-TTI and Gallaway |
 | EDSMAC4 Method Options › Hydroplane Model | NASA-TTI, Gallaway *(not supported by EDSMAC4)* | EDSMAC4 implements Off and NASA |
-| Vehicle › ABS / Brake Design › ABS algorithm | Algorithm 3, 5 and 6 *(not implemented)* | The run stops when the ABS first acts. Tire Slip, Bosch Version 1 and Algorithm 4 are implemented |
+| Vehicle › Brakes › ABS / Brake Design › ABS algorithm | Algorithm 3, 5 and 6 *(not implemented)* | The run stops when the ABS first acts. Tire Slip, Bosch Version 1 and Algorithm 4 are implemented |
 | EDCRASH Method Options › Separation Velocity Basis | Iterate on Sideslip | EDCRASH refuses it. Normal, Trajectory Simulation and Sustained Contact work |
 | Event › DyMESH Options › Search Option | Search all vertices *(refuses the run)* | Automatic box size and Set box size work |
 

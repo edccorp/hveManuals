@@ -27,7 +27,7 @@ are reached as follows:
 
 - **The crushed vehicle** is drawn in the 3-D viewport after a run and follows
   the playback time — undamaged before contact, deforming through the impact.
-  **Smooth crush deformation** in **Event › Vehicle Mesh** (*Damage Display*)
+  **Smooth crush deformation** in **Event › Vehicle Mesh** (Display tab, *Damage Display*)
   changes how it is drawn, not what was computed.
 - **A crush heat map** can be made in the **Shader Editor** (View › Shader
   Editor): the *HVE Simulation* node's **Crush** output is how far each vertex

@@ -70,8 +70,9 @@ restraints. The vehicle is shown in the viewport.
 ![The Vehicle editor](../images/hvn-01-main-window.png)
 *The Vehicle editor (F3).*
 
-*See also: [Vehicles](../../02-vehicles/README.md), in particular
-[Vehicle Information Dialog](../../02-vehicles/VehicleInfoDlg.md), and the
+*See also: [Vehicles](../../02-vehicles/README.md), the
+[Vehicles panel](../04-vehicle-editor/10-creating-editing-vehicles.md#vehicles-panel)
+and the
 [Vehicle menu](../02-menu-reference/04c-vehicle-environment-occupant-menus.md#vehicle-menu).*
 
 ## Environment Editor

@@ -34,17 +34,17 @@ To use the Brake Designer in HVE 2027, perform the following steps:
 
 1. Select the **Vehicle (F3)** editor.
 2. Select the vehicle (in the vehicle list, or with the vehicle selector at the top of each brake dialog).
-3. Choose **Vehicle › Brake System Pressure…** and confirm or edit the **Pedal Ratio** and the pressure vs pedal force curve.
-4. If the vehicle is fitted with ABS, choose **Vehicle › ABS / Brake Design…**, press **ABS System…** and tick **ABS Installed**, then edit the ABS System and ABS Designer (wheel) properties. Tick **Antilock (ABS)** in **Vehicle › Brake Assembly…** for the wheels that have it.
-5. Choose **Vehicle › Brake Designer…**, select the **Axle** and **Side**, and choose the **Brake Design** (e.g., Disc, Duo-Servo Drum, S-Cam).
+3. Choose **Vehicle › Brakes › Brake System Pressure…** and confirm or edit the **Pedal Ratio** and the pressure vs pedal force curve.
+4. If the vehicle is fitted with ABS, choose **Vehicle › Brakes › ABS / Brake Design…**, press **ABS System…** and tick **ABS Installed**, then edit the ABS System and ABS Designer (wheel) properties. Tick **Antilock (ABS)** in **Vehicle › Brakes › Brake Assembly…** for the wheels that have it.
+5. Choose **Vehicle › Brakes › Brake Designer…**, select the **Axle** and **Side**, and choose the **Brake Design** (e.g., Disc, Duo-Servo Drum, S-Cam).
 6. Edit the design parameters; the brake factor, actuation factor and torque ratio are recalculated as you type.
 7. Press **Apply to Wheel** (or **Apply to All Wheels**) to write the torque ratio and pushout pressure into the Brake Assembly.
-8. Design the remaining wheels as desired, and check the result in **Vehicle › Brake Assembly…**.
+8. Design the remaining wheels as desired, and check the result in **Vehicle › Brakes › Brake Assembly…**.
 9. Execute the desired suite of simulations to test the effectiveness of the design.
 10. Edit the design as required to obtain optimum braking performance.
 
 !!! note "HVE 2027"
-    **ABS Installed** is in **Vehicle › ABS / Brake Design… › ABS System…**, not in Brake System Pressure. SIMON reads it: SIMON regulates **every** wheel when ABS Installed, or any wheel's **Antilock (ABS)** box in Brake Assembly, is ticked. EDSVS and EDVTS read only the per-wheel boxes, and EDVDS has no ABS model. Brake System Pressure's **System Type** reaches SIMON's input report only, and the disc/drum choice is each wheel's **Brake Type** in Brake Assembly.
+    **ABS Installed** is in **Vehicle › Brakes › ABS / Brake Design… › ABS System…**, not in Brake System Pressure. SIMON reads it: SIMON regulates **every** wheel when ABS Installed, or any wheel's **Antilock (ABS)** box in Brake Assembly, is ticked. EDSVS and EDVTS read only the per-wheel boxes, and EDVDS has no ABS model. Brake System Pressure's **System Type** reaches SIMON's input report only, and the disc/drum choice is each wheel's **Brake Type** in Brake Assembly.
 
 ## Overview of Section Eleven
 
@@ -71,7 +71,7 @@ The individual brake dialogs (HVE's) are documented in detail in the
 - [Single Piston Drum Brake designer dialog](../../04-brakes-powertrain/BrkSingPistDlg.md)
 - [Dual Piston Drum Brake designer dialog](../../04-brakes-powertrain/DualPistBrkDlg.md)
 - [Dual Wedge Drum Brake designer dialog](../../04-brakes-powertrain/DualWedgeBrkDlg.md)
-- [Brake Designer Material Properties dialog](../../04-brakes-powertrain/BrkMatPropDlg.md)
+- [Brake Designer Material Properties dialog](../../04-brakes-powertrain/BrkMatPropDlg.md) (HVE only; not in HVE 2027)
 - [Brake System Pressure vs Pedal Force dialog](../../04-brakes-powertrain/BrkSysVsPedFrcDlg.md)
 
 <!-- NAV -->

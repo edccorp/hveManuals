@@ -1,6 +1,6 @@
 # Suspension Data Dialog
 
-The suspension parameters of the vehicle are displayed and edited using the **Suspension Data** dialog. Open it in the Vehicle Editor (**Vehicle (F3)**) with **Vehicle › Suspension Data...**, or with **Suspension...** under **Vehicle Properties** (in the Vehicles panel or the Vehicle Information dialog). The **Vehicle** list at the top selects the vehicle.
+The suspension parameters of the vehicle are displayed and edited using the **Suspension Data** dialog. Open it in the Vehicle Editor (**Vehicle (F3)**) with **Vehicle › Suspension Data...**, or with **Suspension...** under **Components** in the Vehicles panel. The **Vehicle** list at the top selects the vehicle.
 
 Where HVE edits one wheel at a time (the dialog title names the axle and side) and reaches the springs, inertia, stops and geometry through further dialogs, HVE 2027 shows **every axle at once**: the dialog is a table with one column per axle (**Axle 1**, **Axle 2**, ...) and one row per parameter. The values are per axle; both wheels of an axle share them. Values are shown in the units set in Preferences and take effect as they are typed. While results are on screen the vehicle is locked; reset the run to edit it.
 
@@ -59,7 +59,7 @@ Vertical distance from the sprung mass CG down to the suspension roll center (so
 Lateral distance between the left and right springs of a solid axle. 0 lets HVE 2027 estimate it from the track width.
 
 ### Tandem Axle Spacing
-For a tandem set, how far the tandem axle sits behind the axle ahead of it. It is the same value as the **Axle Spacing** rows (for example **A2 to A3**) in the Vehicles panel under **Dimensions / Inertias › Overall**; 0 uses a default spacing.
+For a tandem set, how far the tandem axle sits behind the axle ahead of it. It is the same value as the **Axle Spacing** rows (for example **A2 to A3**) in the Vehicles panel under **Size & Weight › Axle Spacing**; 0 uses a default spacing.
 
 ### Beam Mass, 0=default / Beam Inertia, 0=default
 The axle beam's weight and inertia (HVE's Axle Inertia dialog); see [Inertia Dialog Box](../02-vehicles/InertiasDlg.md).

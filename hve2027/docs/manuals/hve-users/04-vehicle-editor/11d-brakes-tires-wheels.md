@@ -17,8 +17,8 @@ properties, the Wheel Location and the Wheel Image.
 ## Brake Assembly Parameters
 
 The Brake Assembly properties are displayed and edited using the Brake
-Assembly dialog (**Vehicle › Brake Assembly**, or Vehicles panel › Vehicle
-Properties › Brakes…). See also the reference page,
+Assembly dialog (**Vehicle › Brakes › Brake Assembly**, or Vehicles panel ›
+Components › Brakes… › Brake Assembly…). See also the reference page,
 [Brake Assembly dialog](../../04-brakes-powertrain/BrkAsmblyDlg.md).
 
 ![Figure 11-36](../images/hvn-04-brake-assembly.png)
@@ -93,8 +93,8 @@ The Brake properties at each wheel are described below.
 - **ABS Designer** — Access to the ABS Wheel Data of the HVE Brake
   Designer: wheel kinematics thresholds (minimum velocity, tire slip range,
   spin acceleration range) and pressure modulation (cycle rate, apply and
-  release rates). In HVE 2027 it is **Vehicle › ABS / Brake Design › ABS
-  Designer…**.
+  release rates). In HVE 2027 it is **Vehicle › Brakes › ABS / Brake
+  Design**, then **ABS Designer…**.
 
 > **NOTE:** In HVE the Simple Antilock option is not enabled if the vehicle
 > is fitted with an ABS brake system, and ABS is installed in the Brake
@@ -105,7 +105,7 @@ The Brake properties at each wheel are described below.
     In HVE 2027 EDSVS and EDVTS apply antilock wheel by wheel, as each
     wheel's **Antilock (ABS)** checkbox here says. SIMON regulates every wheel
     once any of these boxes is ticked, or once the vehicle's **ABS Installed**
-    is (Vehicle › ABS / Brake Design › ABS System). EDVDS has no ABS model.
+    is (Vehicle › Brakes › ABS / Brake Design › ABS System). EDVDS has no ABS model.
 
 **Table 11-19: Wheel Brake Assembly Parameters**
 
@@ -130,13 +130,13 @@ design for each wheel and evaluate the resulting vehicle performance using
 a predefined suite of maneuvers or compliance test simulations. The HVE
 Brake Designer also includes a detailed tool for simulating ABS.
 
-In HVE 2027 the Brake Designer is **Vehicle › Brake Designer**: choose the
+In HVE 2027 the Brake Designer is **Vehicle › Brakes › Brake Designer**: choose the
 wheel (**Axle**, **Side**) and the **Brake Design**, enter the Design
 Parameters, read the **Results**, and press **Apply to Wheel** or **Apply to
 All Wheels**. The Brake Designer also opens on a wheel from the Brake
 Assembly dialog's Design… row, and a design's lining friction is in its
-**Lining Friction Properties** section. **Vehicle › Brake Material Props** is
-a separate material library that no engine reads, shown greyed.
+**Lining Friction Properties** section. HVE's separate Brake Material
+Properties library, which no engine reads, is not in HVE 2027.
 
 The Brake Designer dialogs for the individual assembly types are documented
 in the HVE reference pages:
@@ -145,8 +145,9 @@ in the HVE reference pages:
 [Duplex](../../04-brakes-powertrain/DuplexBrkDlg.md),
 [Single Piston](../../04-brakes-powertrain/BrkSingPistDlg.md),
 [Dual Piston](../../04-brakes-powertrain/DualPistBrkDlg.md),
-[Dual Wedge](../../04-brakes-powertrain/DualWedgeBrkDlg.md) and
-[Brake Material Properties](../../04-brakes-powertrain/BrkMatPropDlg.md).
+[Dual Wedge](../../04-brakes-powertrain/DualWedgeBrkDlg.md). HVE's
+[Brake Material Properties](../../04-brakes-powertrain/BrkMatPropDlg.md)
+dialog is not in HVE 2027.
 
 ## Tire Properties
 
@@ -155,8 +156,8 @@ the Tire Information dialog in HVE. See also the reference page,
 [Tire Information dialog](../../05-tires-wheels/TireInfoDlg.md).
 
 !!! note "HVE 2027"
-    HVE 2027 has one tire window, **Tire Properties** (**Vehicle › Tire Data
-    (Detailed)**, or Vehicles panel › Vehicle Properties › Tires…), in two
+    HVE 2027 has one tire window, **Tire Properties** (**Vehicle › Tires**,
+    or Vehicles panel › Components › Tires…), in two
     parts:
 
     - The **grid** — the scalar tire data of every wheel, a column per
@@ -216,7 +217,7 @@ Each of these is described in the following sections.
 
 The Tire Physical parameters are displayed and edited in the Physical,
 Spring / Deflection, Rotational Properties and Physical Dimensions rows of
-the Tire Properties dialog (**Vehicle › Tire Data (Detailed)**). See also
+the Tire Properties dialog (**Vehicle › Tires**). See also
 the reference page,
 [Tire Physical Data dialog](../../05-tires-wheels/TirePhyDataDlg.md).
 
@@ -295,7 +296,7 @@ The Tire Physical Data parameters are described below.
 
 The tire frictional properties are displayed and edited on the **Friction**
 tab of the **Load & Speed Tables** panel at the bottom of the Tire Properties
-window (**Vehicle › Tire Data (Detailed)**). See also
+window (**Vehicle › Tires**). See also
 the reference page,
 [Tire Friction Data dialog](../../05-tires-wheels/TireFrictDataDlg.md).
 
@@ -305,7 +306,7 @@ screenshot predates their move into the Tire Properties window.*
 
 To display or edit a wheel's tire frictional properties:
 
-1. Choose **Vehicle › Tire Data (Detailed)**, and pick the wheel with the
+1. Choose **Vehicle › Tires**, and pick the wheel with the
    **Wheel:** buttons of the **Load & Speed Tables** panel (or press that
    wheel's **Friction Table** button in the grid's Load & Speed Dependence
    rows).
@@ -513,7 +514,7 @@ system are displayed and edited in HVE using the Wheel Location dialog. See
 also the reference page,
 [Wheel Location dialog](../../03-suspension-steering/WheelLocDlg.md).
 
-In HVE 2027 they are in the Vehicles panel, **Dimensions / Inertias ›
+In HVE 2027 they are in the Vehicles panel, **Size & Weight › Details ›
 Wheel Positions (from CG)**: a table with a column per wheel (A1 Right, A1
 Left, …) giving each wheel's X, Y and Z from the CG (SAE: +X forward, +Y
 right, +Z down). Left and right may differ.
@@ -523,7 +524,7 @@ right, +Z down). Left and right may differ.
       CG to axle, track and CG height).
     - Once any wheel carries its own X, the wheelbase and CG-to-axle
       distances are derived from the wheels, as HVE derives them; the
-      Overall section says so. Clear the per-wheel X values to type them
+      Size & Weight section says so. Clear the per-wheel X values to type them
       there again.
     - There is no Copy To Other Side.
 
@@ -560,8 +561,9 @@ wheels.
 ![Figure 11-48](../images/figure-11-48.jpg)
 *Figure 11-48: Typical wheel image (shown in HVE).*
 
-In HVE 2027 the picture on each wheel's face is set in the Vehicles panel,
-**3D Geometry › Wheel Images**. Each wheel (*A1 Right*, *A1 Left*, ...) has a
+In HVE 2027 the picture on each wheel's face is set on the **Wheel Images**
+tab of the Vehicle Mesh window (**Vehicle › Vehicle Mesh**, or **Vehicle
+Mesh...** in the Vehicles panel's 3D Geometry section). Each wheel (*A1 Right*, *A1 Left*, ...) has a
 field with the picture's name and:
 
 - **Pick...** — opens a picker that shows every wheel picture available as

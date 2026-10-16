@@ -42,7 +42,7 @@ In the finished case these are already present. Choose the **Vehicle (F3)** edit
 ![Figure 5-1](images/hvn-edvds-vehicle-editor.png)
 *Figure 5-1: The tutorial's vehicles in the HVE 2027 Vehicle editor, with the Freightliner tractor selected.*
 
-To build the same vehicles yourself, use **Add…** on the **Vehicles** panel. The picker searches the loaded vehicle databases and offers HVE's Generic vehicles by type and class: the trailers are Generic *Trailer*, Class 4, and the dolly a Generic *Dolly*, Class 4 Hinged Drawbar. Rename a vehicle in the **Name** field of the panel's **Information** section.
+To build the same vehicles yourself, use **Add…** on the **Vehicles** panel. The picker searches the loaded vehicle databases and offers HVE's Generic vehicles by type and class: the trailers are Generic *Trailer*, Class 4, and the dolly a Generic *Dolly*, Class 4 Hinged Drawbar. Rename a vehicle in the **Name** field of the panel's **Identity** section.
 
 > **NOTE:** A 'tractor' is a 'truck' with a fifth wheel; there is no need for a separate 'tractor' vehicle type.
 
@@ -50,11 +50,11 @@ To build the same vehicles yourself, use **Add…** on the **Vehicles** panel. T
 
 HVE's walkthrough makes the following edits. Each is already in the finished case; this is where to find it in HVE 2027.
 
-- **Color** — the **Color** field in the **Vehicles** panel's **Information** section.
-- **Geometry file** — the trailers use EDC's `TLVdsTutorTrlr45Van.h3d`. It is set in the panel's **3D Geometry** section, the Vehicle Mesh editor (**Mesh File**: **...** or **Library...**, then **Load 3D File**; also **Vehicle › Vehicle Mesh…**). HVE 2027 opens `.h3d` files directly.
-- **Trailer weight** — 13 135 lb for each trailer, in the panel's **Dimensions / Inertias** section, or **Vehicle Properties › Inertia / Mass…**.
-- **Trailer 1 front connection height** — z = 15 in, to match the tractor's fifth wheel. Connections are edited with **Vehicle Properties › Connections…** (Front Connection X / Y / Z). The dialog shows each connection's height above ground; for EDVDS the fifth wheel and kingpin heights must agree to within 0.1 in.
-- **Trailer 2 left rear brake time lag** — 0.305 sec, in **Vehicle › Brake Assembly…** (Time Lag, per wheel).
+- **Color** — the **Color** field in the **Vehicles** panel's **Identity** section.
+- **Geometry file** — the trailers use EDC's `TLVdsTutorTrlr45Van.h3d`. It is set in the panel's **3D Geometry** section (**Mesh File**: **...** or **Library...**) or on the File & Placement tab of **Vehicle › Vehicle Mesh…**, then **Load 3D File** there. HVE 2027 opens `.h3d` files directly.
+- **Trailer weight** — 13 135 lb for each trailer, in the panel's **Size & Weight** section, or the **Inertia / Mass** dialog (**Inertia › Edit…**).
+- **Trailer 1 front connection height** — z = 15 in, to match the tractor's fifth wheel. Connections are edited with **Components › Connections…** (Front Connection X / Y / Z). The dialog shows each connection's height above ground; for EDVDS the fifth wheel and kingpin heights must agree to within 0.1 in.
+- **Trailer 2 left rear brake time lag** — 0.305 sec, in **Vehicle › Brakes › Brake Assembly…** (Time Lag, per wheel).
 - **Dolly drawbar length** — the dolly's front connection x = 120 in, in **Connections…** for the dolly.
 
 > **NOTE:** Changing a connection does not redraw a custom 3-D geometry file; the drawn model is not used by EDVDS.

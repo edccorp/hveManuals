@@ -12,7 +12,7 @@ HVE 2027 compiles HVE's own EDVTS source, so the model described in this manual 
 - **No Calculation Options dialog.** The roll couple distribution is the tow vehicle's front-axle **Roll Couple Dist** in **Vehicle › Suspension Data…**; the surface search is **Event Information › Road Surface Search**.
 - **Trailer position.** The trailer's position is derived from the tow vehicle and the hitch; only its **Articulation** angle is entered.
 - **Payload.** **Event › Payload…** is not available for EDVTS events in this version; a payload stored in an imported HVE case is used.
-- **Connections.** Edited in the Vehicle editor (**Vehicles** panel › **Vehicle Properties** › **Connections…**). The hitch must be a matched pair at the same height above ground; HVE 2027 checks both before running.
+- **Connections.** Edited in the Vehicle editor (**Vehicles** panel › **Components** › **Connections…**). The hitch must be a matched pair at the same height above ground; HVE 2027 checks both before running.
 - **Output.** A solved event plays back in the Event editor's own viewport (the **Playback** editor, F6, plays several events in sequence), and **Output › HVE Reports** shows the report pages EDVTS itself builds.
 
 HVE-2D is not part of HVE 2027; read the **[HVE]** passages and ignore the HVE-2D ones. See also [Differences from HVE](../../getting-started/05-differences-from-hve.md).

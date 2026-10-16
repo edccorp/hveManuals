@@ -42,8 +42,8 @@ To add a vehicle to the current case, perform the following steps:
 1. Choose the **Vehicle** editor (the **Vehicle (F3)** tab under the menu bar).
 2. In the **Vehicles** panel, click **Add…**. The vehicle database search is displayed.
 3. Search for the vehicle, or pick it by *Type, Make, Model, Year* and *Body Style*, and add it to the case.
-4. If desired, open **Vehicle › Vehicle Information** and modify the *Number of Axles*, *Driver Location*, *Engine Location* and *Drive Axle(s)* for the current vehicle.
-5. Edit the vehicle's name in the same dialog if you wish. The name does not affect calculations.
+4. If desired, modify the *Number of Axles*, *Driver Location*, *Engine Location* and *Drive Axle(s)* for the current vehicle in the Vehicles panel's *Configuration* section.
+5. Edit the vehicle's name in the *Identity* section if you wish. The name does not affect calculations.
 
 ![Figure 2-1](images/hvn-edvsm-vehicle-editor.png)
 
@@ -196,7 +196,7 @@ The *In-use Factor* is a convenient way to reduce or increase the dependent fric
 The Cornering Stiffness data used by EDVSM are shown in Table 2-3. EDVSM does not use the $F_y$ vs Slip Angle table, but instead uses the cornering stiffness parameter directly. EDVSM requires that cornering stiffness data are provided for at least two loads and two speeds. Like the Friction Data described above, if fewer values are supplied, EDVSM will generate the additional required parameters.
 
 !!! note "HVE 2027"
-    EDVSM fits its cornering-stiffness (and camber-stiffness) curve to **three** test loads, and gives a meaningless, sometimes negative, stiffness when the table has fewer. Vehicles from HVE's databases always carry three load rows. When a tire in HVE 2027 states fewer (for example a single cornering stiffness typed in **Vehicle › Tire Data (Detailed)…**), HVE 2027 expands it to three load rows about the vehicle's own nominal wheel load before the run, keeping the entered value at that load, and says so in the run status ("cornering/camber tables seeded to 3 load rows for EDVSM"). A vehicle with no usable mass cannot be expanded, and the event is refused with a message saying so.
+    EDVSM fits its cornering-stiffness (and camber-stiffness) curve to **three** test loads, and gives a meaningless, sometimes negative, stiffness when the table has fewer. Vehicles from HVE's databases always carry three load rows. When a tire in HVE 2027 states fewer (for example a single cornering stiffness typed in **Vehicle › Tires…**), HVE 2027 expands it to three load rows about the vehicle's own nominal wheel load before the run, keeping the entered value at that load, and says so in the run status ("cornering/camber tables seeded to 3 load rows for EDVSM"). A vehicle with no usable mass cannot be expanded, and the event is refused with a message saying so.
 
 The *In-use Factor* is a convenient way to reduce or increase the dependent cornering stiffness values for all speeds and loads by making just one adjustment.
 
@@ -467,7 +467,7 @@ The Driver Controls Data used by EDVSM are shown in Table 2-7.
     The tables are entered in **Event › Driver Controls**, which has **Throttle**, **Brake**, **Steer** and **Gear** tabs and a vehicle selector at the top. The terms differ from HVE's:
 
     - **Throttle** — *Input Method* **Pedal (AT_DRIVER)** is HVE's *Percent Wide-open Throttle*: throttle position from 0 (closed) to 1 (wide open), through the engine torque curve.
-    - **Brake** — *Input Method* **Pedal (AT_DRIVER)** is HVE's *At Pedal*. A table imported from an HVE case is HVE's pedal-force table, shown as *Pedal force* in the units set in Preferences and used as it is. A table typed into a new event is a pedal *position* from 0 (released) to 1 (full apply), converted to pedal force through the vehicle's brake pressure curve (**Vehicle › Brake System Pressure**).
+    - **Brake** — *Input Method* **Pedal (AT_DRIVER)** is HVE's *At Pedal*. A table imported from an HVE case is HVE's pedal-force table, shown as *Pedal force* in the units set in Preferences and used as it is. A table typed into a new event is a pedal *position* from 0 (released) to 1 (full apply), converted to pedal force through the vehicle's brake pressure curve (**Vehicle › Brakes › Brake System Pressure**).
     - **Steer** — the main table is steering-wheel angle against time (HVE's *At Steering Wheel*, through the gear ratio). A steer table *at the tires* (HVE's *At Axle*, road-wheel angles per wheel) is shown above it when the case carries one, for example an imported HVE case, and then overrides the steering-wheel table.
     - **Gear** — gear against time (0 = neutral, 1 = reverse, 2 = first, 3 = second, …).
 
@@ -496,7 +496,7 @@ The Damage Profile Data are not used by EDVSM.
 The Payload Data are not used by EDVSM. Payload inertias may be added to the vehicle inertias and the CG may be moved longitudinally and/or vertically using the Move CG dialog.
 
 !!! note "HVE 2027"
-    **Event › Payload** is greyed for an EDVSM event. To account for a load, edit the vehicle's weight, CG and inertias in **Vehicle › Vehicle Information › Vehicle Properties › Inertia / Mass…**.
+    **Event › Payload** is greyed for an EDVSM event. To account for a load, edit the vehicle's weight, CG and inertias in the *Inertia / Mass* dialog (**Edit…** in the Vehicles panel's *Inertia* section).
 
 > **NOTE:** Lateral relocation of the CG is not supported by EDVSM.
 

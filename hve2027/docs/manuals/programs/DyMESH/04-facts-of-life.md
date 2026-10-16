@@ -65,27 +65,32 @@ include a *Tessellate* toggle, a *Vertex Weld Distance*, and a *Max Side Length*
 — these are the levers referred to here for cleaning up a mesh.)*
 
 !!! note "HVE 2027"
-    The controls are in **Event › Vehicle Mesh**, section *DyMESH Contact Mesh
-    Preparation*: **Tessellate**, **Max triangle leg** and **Weld distance**.
+    The controls are **Tessellate**, **Max triangle leg** and **Weld
+    distance**. The vehicle's defaults are on the **Collision** tab of
+    **Vehicle › Vehicle Mesh** (section *DyMESH Contact Mesh Preparation*); an
+    event's own are in **Event › DyMESH Options**, section *Contact Mesh
+    Preparation (per vehicle)*.
     The mesh is subdivided until no triangle leg exceeds the maximum, then
     vertices closer than the weld distance are merged. A weld distance of 0
     means no welding.
 
-    As in HVE, preparation is stored **per event per vehicle**. Tick **This
-    event states its own preparation** to give the active event its own values;
-    otherwise the event uses the vehicle's values (*Tessellate (vehicle
-    default)* and the two fields under it). Where both exist the event's values
+    As in HVE, preparation is stored **per event per vehicle**. In Event ›
+    DyMESH Options, tick **This event states its own preparation** under a
+    vehicle to give the active event its own values; otherwise the event uses
+    the vehicle's values (*Tessellate (vehicle default)* and the two fields
+    under it, on the Vehicle Mesh window's Collision tab). Where both exist the event's values
     are the ones the solver uses. An imported HVE case carries its own per-event
     settings; EDC's DyMESH validation cases ask for a 20 in leg and a 0.2 in
     weld.
 
     This is physics, not display: it changes how finely contact is resolved and
     how much area each node carries, so it can change the answer. The *Damage
-    Display* section above it (**Smooth crush deformation**, **Smoothing
-    passes**) only changes how the crushed mesh is drawn.
+    Display* section on the Vehicle Mesh window's Display tab (**Smooth crush
+    deformation**, **Smoothing passes**) only changes how the crushed mesh is
+    drawn.
 
-![Figure: HVE 2027 Vehicle Mesh dialog](images/hvn-vehicle-mesh-preparation.png)
-*Figure: Event › Vehicle Mesh in HVE 2027, with the Damage Display and DyMESH Contact Mesh Preparation sections at the bottom.*
+![Figure: HVE 2027 DyMESH Options dialog](images/hvn-vehicle-mesh-preparation.png)
+*Figure: Event › DyMESH Options in HVE 2027, with the event's own Contact Mesh Preparation for each vehicle at the bottom.*
 
 ## 7. Generic vehicles must be tessellated
 
@@ -99,7 +104,7 @@ tessellation.
     on, the run status says how many vehicles collided that way, because the
     crush and PDOF then describe that generic shape rather than the real
     vehicle. A mesh file that is named but fails to load is reported in the
-    Vehicle Mesh dialog, and that vehicle is then collided as a generated body as well.
+    Vehicle Mesh window (File & Placement tab), and that vehicle is then collided as a generated body as well.
 
 ---
 *Source: DyMESH Important Notes (2026 HVE Forum). Updated to match the current version of HVE.*

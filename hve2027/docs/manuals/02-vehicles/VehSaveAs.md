@@ -2,7 +2,7 @@
 
 **Save Vehicle As Dialog**
 
-New vehicles may be added to a vehicle database file (by default `user.db` in the user database folder), extending the vehicle library. The dialog is opened with **Vehicle › Save Vehicle As...** in the Vehicle Editor, with the **Save As...** button in the Vehicle Information dialog, or with **Save As...** in the Information section of the Vehicles panel. The fields start with the selected vehicle's own identification.
+New vehicles may be added to a vehicle database file (by default `user.db` in the user database folder), extending the vehicle library. The dialog is opened with **Vehicle › Save Vehicle As...** in the Vehicle Editor. The fields start with the selected vehicle's own identification.
 
 ![Save Vehicle As dialog](images/hvn-save-vehicle-as.png)
 

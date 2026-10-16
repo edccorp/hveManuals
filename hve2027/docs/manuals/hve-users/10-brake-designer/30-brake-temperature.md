@@ -2,7 +2,7 @@
 
 *Updated Markdown edition of the HVE User's Manual (HVE Version 5, Seventh
 Edition, January 2006), Chapter 30, pages 30-1 through 30-16, adapted for HVE 2027 (the model itself does not run in HVE 2027 — see the warning below); see also the
-[Brake Designer Material Properties dialog reference](../../04-brakes-powertrain/BrkMatPropDlg.md).*
+[Brake Designer Material Properties dialog reference](../../04-brakes-powertrain/BrkMatPropDlg.md) (an HVE dialog HVE 2027 does not have).*
 
 ## Overview
 
@@ -127,16 +127,13 @@ The inputs to the lumped mass model are:
   convective heat transfer.
 
 These parameters, shown in Table 30-1, are assigned using the HVE Brake
-Designer dialogs (see Figures 29-10 through 29-17) and the Brake Material
-Properties dialog (see Figure 30-2).
+Designer dialogs (see Figures 29-10 through 29-17) and HVE's Brake Material
+Properties dialog.
 
 !!! note "HVE 2027"
     HVE 2027 does not offer the material properties of Table 30-1: they feed only the brake temperature model, which does not run (see above).
 
-    **Vehicle › Brake Material Props…** is a different dialog: a list of named lining materials (Standard Organic, Semi-Metallic, Ceramic Composite, Sintered Metal) with dry, wet and hot friction, heat capacity and wear rate. Its contents are not saved with the case and are not used by anything; HVE's Brake Material Properties dialog has no working counterpart in HVE 2027.
-
-![Figure 30-2](../images/hvn-10-brake-material-props.png)
-*Figure 30-2 — HVE 2027's Vehicle › Brake Material Props dialog. Its values are not saved and reach no calculation.*
+    HVE's Brake Material Properties dialog is not in HVE 2027. No engine reads its material library, so HVE 2027 does not have it.
 
 The remaining independent parameters for the brake temperature model are
 assigned by the user during event set-up:

@@ -49,7 +49,7 @@ Now let's add the vehicle to our case. The vehicle is a dark green 1997 Ford Exp
    - Year = *1995-1999*
    - Body Style = *4-Door*
    - Source Database = *Tutorial.db*
-3. Under *Information* in the Vehicles panel, set *Drive Axle(s)* to **Axle 2**.
+3. Under *Configuration* in the Vehicles panel, set *Drive Axle(s)* to **Axle 2**.
 
    > NOTE: The Ford Explorer is a 4-wheel drive vehicle, but we're going to select 2-wheel drive for the tutorial. (EDC's saved case has *Axle 1 & 2*; EDSVS accepts either. This tutorial uses no throttle, so the choice does not affect the result.)
 
@@ -62,11 +62,11 @@ The Ford Explorer is displayed in the viewport, as shown in Figure 5-2.
 
 Next, we will edit the vehicle to change its color and weight. To edit the color:
 
-1. Under *Information* in the Vehicles panel, click the **Color** swatch (or type the red, green and blue values beside it) and choose a dark green.
+1. Under *Identity* in the Vehicles panel, click the **Color** swatch (or type the red, green and blue values beside it) and choose a dark green.
 
 Next, let's change the weight:
 
-1. Under *Dimensions / Inertias* in the Vehicles panel, find the *Weight* group.
+1. Under *Size & Weight* in the Vehicles panel, find the *Weight* group.
 
    > NOTE: Only total weight and total yaw inertia is used by the 3-DOF EDSVS calculations.
 
@@ -74,7 +74,7 @@ Next, let's change the weight:
 
    > NOTE: HVE 2027 stores the case in SI units, so a value you type may redisplay with a small difference in its last digit after conversion.
 
-3. Check the yaw inertia in **Vehicle › Vehicle Information › Vehicle Properties › Inertia / Mass…**, which shows each inertia on both the *Total* and the *Sprung* basis.
+3. Check the yaw inertia in the *Inertia / Mass* dialog (**Edit…** in the Vehicles panel's *Inertia* section), which shows each inertia on both the *Total* and the *Sprung* basis.
 
 ## Creating the Environment
 

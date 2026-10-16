@@ -183,7 +183,7 @@ comes in with an imported `.hve` case.
 
 | Used for | Formats | Where |
 | --- | --- | --- |
-| Vehicle body | `.h3d`, `.iv`, `.wrl`, `.obj`, `.gltf`, `.glb`, and point-cloud scans `.las`, `.ply`, `.e57`, `.xyz`, `.pts` (drawn as points, collided as a closed surface rebuilt from them) | The Vehicle Mesh editor: the Vehicles panel's 3D Geometry section, or Vehicle › Vehicle Mesh (also on the Event menu); the Library... button lists the geometry folders |
+| Vehicle body | `.h3d`, `.iv`, `.wrl`, `.obj`, `.gltf`, `.glb`, and point-cloud scans `.las`, `.ply`, `.e57`, `.xyz`, `.pts` (drawn as points, collided as a closed surface rebuilt from them) | The Mesh File of the Vehicles panel's 3D Geometry section, or the Vehicle Mesh window (Vehicle › Vehicle Mesh, also on the Event menu); the Library... button lists the geometry folders |
 | Site (terrain and scene) | `.dxf`, `.h3d`, `.iv`, `.wrl`, `.obj`, `.gltf`, `.glb` | Environment panel › Terrain › Geometry File; with scale factor, Y-up / Z-down options and **Use surfaces as terrain (physics)** |
 | Survey point cloud | `.las`, `.ply`, `.e57`, `.xyz`, `.pts`, `.txt`, `.csv` | Environment panel › Survey Point Cloud (scan) |
 | Aerial photograph | image file | Environment › Aerial Image (with its world-bounds corners) |

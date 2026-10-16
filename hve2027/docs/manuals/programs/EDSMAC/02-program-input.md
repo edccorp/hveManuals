@@ -18,7 +18,7 @@ The following sections describe how the vehicle and environment provide the requ
 
 ## Vehicles
 
-EDSMAC uses one or two vehicles created in the **Vehicle (F3)** editor (see Figure 2-1). Vehicles are selected from a vehicle database by the following attributes, shown in the **Information** section of the Vehicles panel and in **Vehicle › Vehicle Information**:
+EDSMAC uses one or two vehicles created in the **Vehicle (F3)** editor (see Figure 2-1). Vehicles are selected from a vehicle database by the following attributes, shown in the **Identity** and **Configuration** sections of the Vehicles panel:
 
 - **Type** — EDSMAC supports the following vehicle types: *Passenger Car, Pickup, Sport-Utility* (HVE 2027: *Multi-Purpose*)*, Van,* and *Truck,* within the limits defined by number of axles and drive axles; see below.
 - **Make** — EDSMAC supports all available vehicle makes.
@@ -41,14 +41,14 @@ To add a vehicle to the current case:
 1. Choose the **Vehicle (F3)** editor tab (or press F3). The Vehicles panel and the viewport are displayed.
 2. Click **Add...** at the top of the Vehicles panel. The **Add Vehicle** dialog is displayed.
 3. Search the loaded databases (open **Database folders** to add a folder holding HVE `.db` files), or choose one of HVE's built-in generic vehicles under **Built in (no database needed)**, and click **Add**.
-4. If desired, modify the *Driver Location, Engine Location, Number of Axles* and *Drive Axle(s)* in the **Information** section.
+4. If desired, modify the *Driver Location, Engine Location, Number of Axles* and *Drive Axle(s)* in the **Configuration** section.
 5. Edit the vehicle's **Name**. The name does not affect calculations.
 
 ![Figure 2-1](images/hvn-edsmac-vehicle-editor.png)
 
 *Figure 2-1: The Vehicle (F3) editor in HVE 2027.*
 
-The following Vehicle Parameter groups are assigned in the Vehicle editor (the **Dimensions / Inertias** and **Vehicle Properties** sections of the Vehicles panel, and the **Vehicle** menu):
+The following Vehicle Parameter groups are assigned in the Vehicle editor (the **Size & Weight**, **Inertia** and **Components** sections of the Vehicles panel, and the **Vehicle** menu):
 
 - Sprung Mass (Inertias, Move CG, Inter-vehicle Connections)
 - Unsprung Mass (Wheel Location, Tire Data, Suspension Data)
@@ -74,7 +74,7 @@ EDSMAC uses the total vehicle weight (converted to mass according to the current
 > NOTE: The yaw inertia displayed in the Inertias dialog applies only to the sprung mass. EDSMAC does not include independent degrees of freedom for the unsprung masses. Therefore, the inertial contributions of the unsprung masses are added to the sprung mass yaw inertia to calculate the total yaw inertia used by EDSMAC.
 
 !!! note "HVE 2027"
-    The weight and yaw inertia are edited in **Vehicle Properties › Inertia / Mass...** on the Vehicles panel, which shows each quantity both TOTAL and SPRUNG. **Move CG** is in the **Event** menu for an EDSMAC or EDSMAC4 event.
+    The weight and yaw inertia are edited in the **Inertia / Mass** dialog (**Edit...** in the Vehicles panel's **Inertia** section), which shows each quantity both TOTAL and SPRUNG. **Move CG** is in the **Event** menu for an EDSMAC or EDSMAC4 event.
 
 #### Move CG
 
@@ -116,7 +116,7 @@ The HVE-2D tire parameters provide the following data groups:
 EDSMAC's use of these parameters is described below.
 
 !!! note "HVE 2027"
-    The tire friction and cornering stiffness tables are on the **Friction** and **Cornering** tabs of the **Load & Speed Tables** panel at the bottom of **Vehicle › Tire Data (Detailed)...** (the Tire Properties window).
+    The tire friction and cornering stiffness tables are on the **Friction** and **Cornering** tabs of the **Load & Speed Tables** panel at the bottom of **Vehicle › Tires...** (the Tire Properties window).
 
 ##### Friction Data
 

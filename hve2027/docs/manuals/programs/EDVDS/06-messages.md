@@ -62,7 +62,7 @@ This condition indicates dynamic instability. Experience suggests if reasonable 
 This message is self-explanatory. The maximum articulation angle is defined in the Rear Connections parameters (see Vehicle Editor). The value is established by the angle required to create pinching between the tow vehicle and trailer. Note that such pinching would cause forces not modeled by EDVDS, so the run is terminated.
 
 !!! note "HVE 2027"
-    The limit is **Max Articulation › Yaw** in **Connection Properties** (Vehicle editor, **Vehicles** panel › **Vehicle Properties** › **Connections…** › **Properties…**).
+    The limit is **Max Articulation › Yaw** in **Connection Properties** (Vehicle editor, **Vehicles** panel › **Components** › **Connections…** › **Properties…**).
 
 ---
 
@@ -75,7 +75,7 @@ The first step in calculating tire forces is to calculate the radial tire force 
 This problem can sometimes be solved by increasing slightly the Maximum Tire Deflection (see Tire Physical Data parameters) and/or by reducing the Vehicle Trajectory Integration Timestep (see Simulation Controls). *(updated: the current message text additionally notes that this condition suggests a wheel may have been broken during the event, and that EDVDS does not model failed wheel rims.)*
 
 !!! note "HVE 2027"
-    Maximum Tire Deflection is in **Vehicle › Tire Data (Detailed)…**; the trajectory timestep is **Trajectory Timestep** in the **Simulation** panel.
+    Maximum Tire Deflection is in **Vehicle › Tires…**; the trajectory timestep is **Trajectory Timestep** in the **Simulation** panel.
 
 ---
 

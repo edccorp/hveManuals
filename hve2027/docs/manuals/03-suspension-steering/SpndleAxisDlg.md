@@ -1,6 +1,6 @@
 # Spindle Axis Dialog
 
-HVE edits the spindle (steer) axis geometry of one wheel in the Spindle Axis dialog, opened from the Suspension Data dialog and available only for steerable axles. HVE 2027 has no separate dialog: the same properties are in the **Steering System** dialog (**Vehicle › Steering System...** in the Vehicle Editor, or **Steering...** under Vehicle Properties). See [Steering System Dialog](SteerSysDlg.md).
+HVE edits the spindle (steer) axis geometry of one wheel in the Spindle Axis dialog, opened from the Suspension Data dialog and available only for steerable axles. HVE 2027 has no separate dialog: the same properties are in the **Steering System** dialog (**Vehicle › Steering System...** in the Vehicle Editor, or **Steering...** under Components in the Vehicles panel). See [Steering System Dialog](SteerSysDlg.md).
 
 The alignment values are rows of the dialog's main table, one column per axle (both wheels of the axle share them); the steering stops and steer-axis friction are in the **Steer-Axis Mechanics (per wheel)** table below it, one column per wheel (**A1-R**, **A1-L**, ...). Every field of an axle is greyed unless the axle's **Steerable Axle** box is checked. Lengths and torques are shown in the units set in Preferences.
 

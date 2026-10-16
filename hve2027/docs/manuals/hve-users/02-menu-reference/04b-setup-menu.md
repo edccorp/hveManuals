@@ -12,7 +12,7 @@ screen; press **Reset** to edit.
 |---|---|
 | Damage Profiles (Vehicle Damage) | Event › **Damage Profiles...**, which opens Event Information › **Vehicle Impact Setup** (CDC, PDOF, crush) — EDCRASH; the vehicle's crush stiffness is Vehicle › **Crush Stiffness...** |
 | Collision Pulse | Event › **Collision Pulse...** |
-| Vehicle Mesh | Event › **Vehicle Mesh...** (also Vehicle › Vehicle Mesh..., and the Vehicles panel's 3D Geometry section) |
+| Vehicle Mesh | Event › **Vehicle Mesh...** (also Vehicle › Vehicle Mesh..., and **Vehicle Mesh...** in the Vehicles panel's 3D Geometry section) |
 | — (Options › DyMESH in HVE) | Event › **DyMESH Options...** |
 | Payload | Event › **Payload...** |
 | Wheels | Event › **Wheels...** |
@@ -108,18 +108,27 @@ See the dialog reference: [Collision Pulse](../../11-reports-output/ColPulse.md)
 
 **Purpose:** Assign and prepare the selected vehicle's 3-D body mesh.
 
-**Description:** The Vehicle Mesh dialog assigns the mesh file (OBJ, glTF, Open
-Inventor, `.h3d` or a point-cloud scan) and its import options, sets what DyMESH
-collides (a triangle budget, a closed outer shell, which parts collide), moves,
-rotates and scales the model to the vehicle, can draw a second **display mesh**
-instead of the collided one, sets its shading and how damage is displayed, and
-holds the **DyMESH Contact Mesh Preparation** options — HVE's tessellate,
-maximum side length and vertex weld distance. The same editor is on the Vehicle
-menu and is the Vehicles panel's **3D Geometry** section; see
+**Description:** The Vehicle Mesh window has four tabs:
+
+- **File & Placement** — the mesh file (OBJ, glTF, Open Inventor, `.h3d` or a
+  point-cloud scan) with **...** and **Library...**, its import options,
+  **Load 3D File** and **Clear** with the load status, and moving, rotating and
+  scaling the model to the vehicle (Move CG, Translate, Rotate, Scale).
+- **Collision** — what DyMESH collides (a triangle budget, a closed outer
+  shell, which parts collide), the scan tools for a point-cloud body, and the
+  vehicle's default **DyMESH Contact Mesh Preparation** — HVE's tessellate,
+  maximum side length and vertex weld distance. An event can state its own,
+  in **Event › DyMESH Options** (below).
+- **Display** — opacity, round shell, a second **display mesh** drawn instead
+  of the collided one, shading and how damage is displayed.
+- **Wheel Images** — the picture on each wheel's face.
+
+The same window is on the Vehicle menu, and **Vehicle Mesh...** in the
+Vehicles panel's **3D Geometry** section opens it; see
 [Geometry File](../04-vehicle-editor/11a-sprung-mass.md#geometry-file).
 
-![The Vehicle Mesh dialog](../images/hvn-01-vehicle-mesh.png)
-*The Vehicle Mesh dialog.*
+![The Vehicle Mesh window](../images/hvn-01-vehicle-mesh.png)
+*The Vehicle Mesh window.*
 
 !!! note "HVE 2027"
     HVE's *Inter-vehicle Options* correspond to the **DyMESH Options** dialog's
@@ -135,9 +144,15 @@ menu and is the Vehicles panel's **3D Geometry** section; see
 **Purpose:** Set the DyMESH contact options for the active event.
 
 **Description:** Sections for **Start Times**, **Contact Search**, **Contact
-Model**, **Restoration**, **Inter-Vehicle Contact (fallback)** and a
-**Per-pair override**. Options that the engine carries but does not read are
-labelled as such in the dialog, with the reason.
+Model**, **Restoration**, **Inter-Vehicle Contact (fallback)**, a
+**Per-pair override** and, at the end, **Contact Mesh Preparation (per
+vehicle)**: for each vehicle in the active event, **This event states its own
+preparation** and, when it is ticked, that event's **Tessellate**, maximum
+triangle leg and weld distance, which outrank the vehicle's defaults (Vehicle
+Mesh › Collision). They are read by SIMON's DyMESH, and by EDSMAC4 when it
+initialises its rho vectors from the vehicle mesh. Options that the engine
+carries but does not read are labelled as such in the dialog, with the
+reason.
 
 ![The DyMESH Options dialog](../images/hvn-01-dymesh-options.png)
 *The DyMESH Options dialog.*
@@ -313,7 +328,7 @@ not affect the run.
 
 !!! warning "Not in HVE 2027"
     Not implemented. Model a barrier as a **Fixed Barrier** vehicle (vehicle type
-    in Vehicle Information).
+    in the Vehicles panel's Identity section).
 
 ---
 

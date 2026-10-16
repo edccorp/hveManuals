@@ -75,7 +75,7 @@ To add a vehicle to the current case in HVE 2027:
 
 1. Choose the **Vehicle** editor tab (F3).
 2. In the **Vehicles** panel, click **Add...** and choose a vehicle from the loaded databases, or one of HVE's generic vehicles by type and class.
-3. If desired, edit its name and attributes in the **Information** section of the Vehicles panel. The name does not affect calculations.
+3. If desired, edit its name and attributes in the **Identity** and **Configuration** sections of the Vehicles panel. The name does not affect calculations.
 
 ![Figure 2-2](images/hvn-vehicle-editor.png)
 

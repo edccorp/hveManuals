@@ -2,13 +2,17 @@
 
 **Vehicle Information Dialog**
 
-New vehicles are added to the case in the Vehicle Editor (**Vehicle (F3)** tab): the **Vehicles** panel lists every vehicle in the case, and its **Add...**, **Replace...**, **Dup** and **Del** buttons add a vehicle from a database or from HVE's generic vehicles, replace the selected vehicle's data with a database record, copy it, or remove it. The identification and configuration of the selected vehicle are viewed and edited in the Vehicle Information dialog, opened with **Vehicle › Vehicle Information...** in the Vehicle Editor. The **Information** section at the top of the Vehicles panel carries the same identification and configuration fields, so most of these values can be edited in either place.
+!!! note "HVE 2027"
+    HVE 2027 has no Vehicle Information dialog. HVE's Vehicle Information
+    fields are edited in the Vehicle Editor's **Vehicles** panel, in its
+    **Identity** and **Configuration** sections; the fields below are
+    described as they appear there.
+
+New vehicles are added to the case in the Vehicle Editor (**Vehicle (F3)** tab): the **Vehicles** panel lists every vehicle in the case, and its **Add...**, **Replace...**, **Dup** and **Del** buttons add a vehicle from a database or from HVE's generic vehicles, replace the selected vehicle's data with a database record, copy it, or remove it. Below the list the panel is the selected vehicle's editor: **Identity**, **Configuration**, **Size & Weight**, **Inertia**, **Components** and **3D Geometry** (see [Creating & Editing Vehicles](../hve-users/04-vehicle-editor/10-creating-editing-vehicles.md#vehicles-panel)).
 
 ![Vehicles panel](images/hvn-vehicles-panel.png)
 
-![Vehicle Information dialog](images/hvn-vehicle-info.png)
-
-The **Vehicle** list at the top of the dialog selects which vehicle the dialog edits, and the note beside it says whether that vehicle is in the active event. While the active event's results are on screen the vehicles they were solved with are locked; reset the run to edit them.
+While the active event's results are on screen the vehicles they were solved with are locked; reset the run to edit them.
 
 ## Identity
 
@@ -32,20 +36,23 @@ Defines the basic vehicle type. The choices are:
 
 When a vehicle database is loaded, changing the type re-runs the database lookup below.
 
-## Vehicle Search
-
-Shown only when a vehicle database is loaded. Type any part of the make, model or year (for example *honda accord* or *1998 or 1999*) and the matching database records are listed with their type, make, model, year, body style and source database. Click a match to load it into the vehicle. **Clear** empties the search.
-
 ## Database Lookup
 
 When a vehicle database is loaded, **Make**, **Model**, **Year**, **Body Style** and **Source Database** are lists filled from the loaded databases; each selection filters the choices available in the lists below it, as in HVE.
 
-When no database is loaded, the same five fields are plain text fields so the vehicle can be identified by hand.
+When no database is loaded, Make, Model, Year and Body Style are plain text fields so the vehicle can be identified by hand, and the source database is shown read-only.
+
+To search the databases by free text (for example *honda accord*), use the **Filter** of the vehicle database dialog opened by **Add...** or **Replace...**.
+
+### Vehicle Color
+The body color used to draw the vehicle. Click the swatch for a color picker, or type the red, green and blue values.
+
+The line under the color gives the HVE version that wrote the vehicle's database record, when it is known.
 
 ## Configuration
 
 ### Number of Axles
-Allowable selections are None, One, Two, Three or Four. For a Fixed Barrier the list is disabled and the number of axles is None.
+Allowable selections are None, One, Two, Three or Four, as the vehicle type allows (a Motorcycle has two). For a Fixed Barrier the number of axles is None. The axle count is set only here; the Size & Weight section has no axle control.
 
 ### Driver Location
 Allowable selections are None, Left, Center or Right. Disabled for a Fixed Barrier.
@@ -56,37 +63,33 @@ Allowable selections are None, Front, Mid or Rear.
 ### Drive Axle(s)
 Allowable selections depend on the number of axles: None; Axle 1; Axle 2; Axle 3; Axle 1 & 2; Axle 2 & 3; or Axle 1,2 & 3.
 
-Engine Location and Drive Axle(s) are disabled for a vehicle without a powertrain: a Fixed Barrier, Trailer, Dolly or Movable Barrier, a vehicle with no axles, or a vehicle whose Driver Location is None. Setting the number of axles to None, or the driver location to None, also resets the engine location and drive axle to None.
-
-### Vehicle Color
-The body color used to draw the vehicle. Click the swatch for a color picker, or type the red, green and blue values.
+Engine Location and Drive Axle(s) are disabled for a vehicle without a powertrain: a Fixed Barrier, Trailer, Dolly or Movable Barrier, a vehicle with no axles, or a vehicle whose Driver Location is None. Setting the number of axles to None, or the driver location to None, also resets the engine location and drive axle to None. These rules are applied when you change one of these fields; an imported case keeps what it states.
 
 ## 3D Geometry
 
 ### 3D File
-The 3-D geometry file used to draw the vehicle: OBJ, glTF, Inventor/VRML, HVE `.h3d`, or a point-cloud scan (`.obj`, `.gltf`, `.glb`, `.iv`, `.wrl`, `.h3d`, `.las`, `.ply`, `.e57`, `.xyz`, `.pts`). **Browse...** picks the file; **Load 3D File** loads it, and **Clear** removes it so the vehicle is drawn with a generic body. A status line reports whether the load succeeded. Scaling, moving and rotating the model, and its collision settings, are in the Vehicle Mesh editor (the Vehicles panel's **3D Geometry** section, or **Vehicle › Vehicle Mesh...**).
+In HVE 2027 the 3-D geometry file is the **Mesh File** of the Vehicles panel's **3D Geometry** section (with **...** to browse and **Library...**), and everything else about the model is in the Vehicle Mesh window (**Vehicle › Vehicle Mesh...**, or **Vehicle Mesh...** in that section). See [Geometry File](../hve-users/04-vehicle-editor/11a-sprung-mass.md#geometry-file).
 
 ## Tools
 
 ### Wizard...
-Starts the Vehicle Wizard for building a custom vehicle. The button is enabled for Passenger Car, Pickup, Multi-Purpose, Van, Truck, Trailer and Dolly types having 1 to 3 axles; it is disabled for barriers, Other and Motorcycle, and while the vehicle is locked by results on screen.
+HVE's Vehicle Wizard is the Vehicles panel's **Size & Weight** section, applied as you type; there is no separate Wizard window.
 
 ### Vehicle Properties
-Expands a list of buttons that open the vehicle's property dialogs: **Inertia / Mass...** (see [Vehicle Inertia Dialog](VehInerDlg.md)), **Aerodynamic Drag...** (see [Vehicle Drag Dialog](VehDragDlg.md)), **Tires...**, **Brakes...**, **Suspension...**, **Steering...** and **Connections...**. The same list appears in the Vehicles panel under **Vehicle Properties**.
+The vehicle's property dialogs are buttons in the Vehicles panel's **Components** section (every vehicle data dialog, grouped as Chassis, Body, Equipment and Occupant Protection), and items of the **Vehicle** menu. The Inertia / Mass dialog (see [Vehicle Inertia Dialog](VehInerDlg.md)) is opened with **Edit...** in the panel's **Inertia** section.
 
 ### Save As...
-Displays the [Save Vehicle As dialog](VehSaveAs.md), used to write the vehicle to a vehicle database.
+Use **Vehicle › Save Vehicle As...** (see [Save Vehicle As dialog](VehSaveAs.md)) or **Vehicle › Save to My Vehicles...**.
 
 ### Delete
-Removes the vehicle record from its source database file after a confirmation prompt. Enabled only when the vehicle was loaded from a writable user database (a database whose name contains *user*). The vehicle entry is permanently removed from the database file; the vehicle in the case is not deleted (use **Del** in the Vehicles panel for that).
+**Delete from database...**, in the Identity section, removes the vehicle's record from its database file after a confirmation prompt. It is shown only when the record is in one of your own, writable databases (for example *My Vehicles*). The record is permanently removed from the database file; the vehicle in the case is kept (use **Del** in the Vehicles panel to remove it from the case).
 
 !!! note "HVE 2027"
-    The dialog shows all of HVE's Vehicle Information fields, grouped into Identity, Database Lookup, Configuration, 3D Geometry and Tools sections, and adds a free-text **Vehicle Search** across the loaded databases. The type list says *Multi-Purpose* where HVE's says *Sport-Utility*.
+    All of HVE's Vehicle Information fields are in the Vehicles panel, in its Identity and Configuration sections. The type list says *Multi-Purpose* where HVE's says *Sport-Utility*.
 
 !!! tip "New in HVE 2027"
-    - Vehicle types **Other** and **Motorcycle**, and a fourth axle. A Motorcycle always has two axles; in the Vehicles panel a **Seed Generic Motorcycle** button fills class-typical data, and a note explains that a single-track vehicle is modelled by a narrow-track approximation.
-    - The 3-D geometry file is chosen here as well as in the Vehicle Mesh dialog.
-    - Vehicle Properties buttons that open the vehicle's other property dialogs from one place.
+    - Vehicle types **Other** and **Motorcycle**, and a fourth axle. A Motorcycle always has two axles; under Vehicle Type a **Seed Generic Motorcycle** button fills class-typical data, and a note explains that a single-track vehicle is modelled by a narrow-track approximation.
+    - The Components section opens every vehicle data dialog from one place.
 
 <!-- NAV -->
 

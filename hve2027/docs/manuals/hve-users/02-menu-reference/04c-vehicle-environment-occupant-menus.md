@@ -22,36 +22,44 @@ The Vehicle editor's **Vehicles** panel lists the case's vehicles, with **Add...
 (choose a vehicle from the loaded databases or one of HVE's generic vehicles),
 **Replace...** (replace the selected vehicle's data with a database record),
 **Dup** (copy the selected vehicle) and **Del**, and below the list the selected
-vehicle's information. The Vehicle menu opens the detailed dialogs for that
-vehicle:
+vehicle's editor: **Identity**, **Configuration**, **Size & Weight**,
+**Inertia** (with **Edit...** for the Inertia / Mass dialog), **Components**
+(a button for each dialog below) and **3D Geometry** (see
+[Chapter 10](../04-vehicle-editor/10-creating-editing-vehicles.md#vehicles-panel)).
+The Vehicle menu opens the detailed dialogs for that vehicle:
 
 | Item | Opens | Dialog reference |
 |---|---|---|
-| **Vehicle Information...** | Vehicle Information: identity, configuration, the 3-D geometry file, database lookup and search, and the vehicle's properties | [Vehicle Information](../../02-vehicles/VehicleInfoDlg.md) |
 | **Save Vehicle As...** | Save Vehicle As: identification, geometry file, and **Save to Database** — HVE's Options › Create DB and the vehicle Save As | [Vehicle Save As](../../02-vehicles/VehSaveAs.md) |
 | **Save to My Vehicles...** | Save to My Vehicles: keeps the vehicle, as edited in the case, in one of your own vehicle databases (`MyVehicles.hvedb` or one you name), where **Add...** lists it; new in HVE 2027 | [My Vehicles](../04-vehicle-editor/10-creating-editing-vehicles.md#save-to-my-vehicles) |
 | **Edit Mode (materials per part)** (Tab) | Switches the viewport to selecting parts of the vehicle body, to assign materials per part (as Blender's Edit Mode); new in HVE 2027 | — |
-| **Vehicle Lights...** | Vehicle Lights: each light's type, intensity, direction, spot parameters, position and colour | — |
-| **ABS / Brake Design...** | A hub opening ABS System and ABS Designer | [ABS](../10-brake-designer/31-abs.md) |
-| **Accelerometers...** | Accelerometers | [Accelerometers](../../06-safety-systems/AcclMtrsDlg.md) |
-| **Steering System...** | Steering System | [Steering System](../../03-suspension-steering/SteerSysDlg.md) |
 | **Suspension Data...** | Suspension Data | [Suspension](../../03-suspension-steering/SuspDlg.md) |
-| **Tire Data (Detailed)...** | Tire Properties: the per-wheel grid, and below it the **Load & Speed Tables** panel (friction, cornering, camber and Fy roll-off tables of the selected wheel) | [Tire Information](../../05-tires-wheels/TireInfoDlg.md), [Tire Friction Data](../../05-tires-wheels/TireFrictDataDlg.md) |
-| **Brake Assembly...** | Brake Assembly | [Brake Assembly](../../04-brakes-powertrain/BrkAsmblyDlg.md) |
-| **Brake Designer...** | Brake Designer | [Brake Designer](../10-brake-designer/29-brake-designer.md) |
-| **Brake System Pressure...** | Brake System Pressure | [Brake System vs Pedal Force](../../04-brakes-powertrain/BrkSysVsPedFrcDlg.md) |
-| **Brake Material Props...** | Brake Material Properties: a library of friction coefficients and thermal properties, greyed because no engine reads it and it is not saved with the case | [Brake Material Properties](../../04-brakes-powertrain/BrkMatPropDlg.md) |
+| **Steering System...** | Steering System | [Steering System](../../03-suspension-steering/SteerSysDlg.md) |
+| **Tires...** | Tire Properties: the per-wheel grid, and below it the **Load & Speed Tables** panel (friction, cornering, camber and Fy roll-off tables of the selected wheel) | [Tire Information](../../05-tires-wheels/TireInfoDlg.md), [Tire Friction Data](../../05-tires-wheels/TireFrictDataDlg.md) |
 | **Drivetrain...** | Drivetrain | [Drivetrain](../../04-brakes-powertrain/DriveTraDlg.md) |
-| **Aero Dynamic Drag...** | Aerodynamic Drag | [Vehicle Drag](../../02-vehicles/VehDragDlg.md) |
+| **Brakes ›** **Brake Assembly...** | Brake Assembly | [Brake Assembly](../../04-brakes-powertrain/BrkAsmblyDlg.md) |
+| **Brakes ›** **Brake Designer...** | Brake Designer | [Brake Designer](../10-brake-designer/29-brake-designer.md) |
+| **Brakes ›** **Brake System Pressure...** | Brake System Pressure | [Brake System vs Pedal Force](../../04-brakes-powertrain/BrkSysVsPedFrcDlg.md) |
+| **Brakes ›** **ABS / Brake Design...** | A hub opening ABS System and ABS Designer | [ABS](../10-brake-designer/31-abs.md) |
+| **Aerodynamic Drag...** | Aerodynamic Drag | [Vehicle Drag](../../02-vehicles/VehDragDlg.md) |
 | **Body Torsion...** | Body Torsion | [Body Torsion](../../02-vehicles/BodyTorDlg.md) |
 | **Crush Stiffness...** | Crush Stiffness: A, B and Kv for each side and the 3-D node stiffness for each zone, with **From crash tests...** (CRASH3 A and B from staged barrier tests) | [Stiffness Coefficient Dialog](../../02-vehicles/StiffCoeffDlg.md) |
-| **Vehicle Mesh...** | Vehicle Mesh: the same editor as the Vehicles panel's **3D Geometry** section (see [Chapter 4, Part B](04b-setup-menu.md#vehicle-mesh)) | — |
+| **Vehicle Mesh...** | Vehicle Mesh, in four tabs: **File & Placement**, **Collision**, **Display** and **Wheel Images** (see [Chapter 4, Part B](04b-setup-menu.md#vehicle-mesh)) | — |
+| **Vehicle Lights...** | Vehicle Lights: each light's type, intensity, direction, spot parameters, position and colour | — |
+| **Accelerometers...** | Accelerometers | [Accelerometers](../../06-safety-systems/AcclMtrsDlg.md) |
 | **Contact Surfaces...** | Contact Surfaces: the vehicle's interior surfaces for occupant simulations | [Contact Surfaces](../../08-environment/ContSurfDlg.md) |
 | **Airbags...** | Airbags | [Airbag System](../../06-safety-systems/AirBagSysDlg.md) |
 | **Belt Restraint...** | Belt Restraint System | [Belt Restraint System](../../06-safety-systems/BeltResSysDlg.md) |
 
-![The Vehicle Information dialog](../images/hvn-01-vehicle-information.png)
-*Vehicle › Vehicle Information...*
+!!! note "HVE 2027"
+    - There is no **Vehicle Information** dialog: the Vehicles panel is the
+      vehicle's editor ([Vehicle Information](../../02-vehicles/VehicleInfoDlg.md)
+      says where each of its fields is). To search the databases, use the
+      **Filter** of the dialog opened by **Add...** or **Replace...**.
+    - There is no **Brake Material Props** dialog: HVE's lining and rotor
+      friction library was read by no engine (see
+      [Brake Material Properties](../../04-brakes-powertrain/BrkMatPropDlg.md)).
+      A brake design's lining friction is in the Brake Designer.
 
 !!! note "HVE 2027"
     The Accelerometers, Vehicle Mesh, Airbags and Belt Restraint

@@ -269,7 +269,7 @@ vehicle's)** in the panel's list removes the part's own material. A mesh that
 names no parts says so: it has only the whole-vehicle slot, until parts are made
 from its faces (Edit Mode's **Faces** switch and **Make Part**). Parts
 themselves are display only too, except that a part unticked under **Collides**
-in the Vehicle Mesh editor is left out of what DyMESH collides, which changes the
+on the Vehicle Mesh window's Collision tab is left out of what DyMESH collides, which changes the
 run.
 
 !!! note "HVE 2027"

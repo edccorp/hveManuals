@@ -1,11 +1,11 @@
 # Brakes & Powertrain
 
-Dialog and feature reference for the **Brakes & Powertrain** area of HVE 2027, page by page against HVE's own help: **Vehicle › Brake Assembly...**, **Vehicle › Brake Designer...**, **Vehicle › Brake System Pressure...**, **Vehicle › Brake Material Props...** and **Vehicle › Drivetrain...** in the Vehicle Editor. Part of the [HVE Manual](../README.md).
+Dialog and feature reference for the **Brakes & Powertrain** area of HVE 2027, page by page against HVE's own help: **Vehicle › Brakes › Brake Assembly...**, **Vehicle › Brakes › Brake Designer...**, **Vehicle › Brakes › Brake System Pressure...** and **Vehicle › Drivetrain...** in the Vehicle Editor (the same dialogs are buttons in the Vehicles panel's Components section). HVE's Brake Designer Material Properties dialog is not in HVE 2027; its page is kept as HVE reference. Part of the [HVE Manual](../README.md).
 
 ## Pages
 
 - [Brake Assembly Dialog Box](BrkAsmblyDlg.md)
-- [Brake Designer Material Properties Dialog Box](BrkMatPropDlg.md)
+- [Brake Designer Material Properties Dialog Box](BrkMatPropDlg.md) (HVE only; not in HVE 2027)
 - [Brake Designer Single Piston Dialog Box](BrkSingPistDlg.md)
 - [Brake System Pressure vs Pedal Force Dialog Box](BrkSysVsPedFrcDlg.md)
 - [Differential Data Dialog Box](DiffDataDlg.md)

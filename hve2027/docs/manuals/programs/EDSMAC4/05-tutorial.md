@@ -50,7 +50,7 @@ The case contains the two vehicles of our study. The first vehicle is a white 19
 
 1. Choose the **Vehicle (F3)** editor tab. The Vehicles panel lists **Tutorial - Ford Escort** and **Tutorial - Nissan Sentra**.
 2. Click **Tutorial - Ford Escort** in the list. Its data are shown in the panel below the list and the vehicle is displayed in the viewport.
-3. In the **Information** section, note the vehicle's attributes:
+3. In the **Identity** and **Configuration** sections, note the vehicle's attributes:
     - Vehicle Type = Passenger Car
     - Make = Ford
     - Model = Escort
@@ -58,12 +58,12 @@ The case contains the two vehicles of our study. The first vehicle is a white 19
     - Body Style = 2-Door Hatchback
     - Driver Location = Right
 
-    > **NOTE:** The Information section (and **Vehicle › Vehicle Information**) also lets you edit the Driver Location, Engine Location, Number of Axles and Drive Axle(s). For our tutorial, only the driver location differs from its default.
+    > **NOTE:** The Configuration section also lets you edit the Driver Location, Engine Location, Number of Axles and Drive Axle(s). For our tutorial, only the driver location differs from its default.
 
 4. Click **Tutorial - Nissan Sentra** and note its attributes: Passenger Car, Nissan, Sentra, 1995-1999, 4-Door, Driver Location Right.
 
 ![Figure 5-1](images/hvn-edsmac4-vehicle-info.png)
-*Figure 5-1: The Vehicle Information window for the Ford Escort.*
+*Figure 5-1: The Vehicles panel for the Ford Escort.*
 
 > **NOTE:** To build the case from scratch, click **Add...** at the top of the Vehicles panel. The **Add Vehicle** dialog searches the vehicle databases in the folders listed under **Database folders**; add the folder holding HVE's `Tutorial.db`, choose the vehicle, and click **Add Vehicle**. Then set **Driver Location** to **Right**.
 
@@ -74,14 +74,14 @@ In the original tutorial we edit the vehicles to change their color and weight, 
 Start with the color of the Ford Escort:
 
 1. Select **Tutorial - Ford Escort** in the Vehicles panel.
-2. In the **Information** section, the **Color** row holds the vehicle's color as red, green and blue values; click the color chip at the end of the row to open a color picker. The Escort is white (229, 240, 240).
+2. In the **Identity** section, the **Color** row holds the vehicle's color as red, green and blue values; click the color chip at the end of the row to open a color picker. The Escort is white (229, 240, 240).
 
     !!! note "HVE 2027"
-        HVE 2027 has no separate Vehicle Color dialog; the color is the Color row of the Information section. The vehicle is drawn in this color in every editor.
+        HVE 2027 has no separate Vehicle Color dialog; the color is the Color row of the Identity section. The vehicle is drawn in this color in every editor.
 
 Next, the Escort's weight:
 
-1. In the **Vehicle Properties** section, click **Inertia / Mass...**. The **Inertia / Mass** window is displayed, with each quantity shown TOTAL and SPRUNG.
+1. In the **Inertia** section, click **Edit...**. The **Inertia / Mass** window is displayed, with each quantity shown TOTAL and SPRUNG.
 2. The total **Weight** is the measured value, 11037 N (2481.2 lbf), where the database value was 10283 N.
 
     > **NOTE:** The weight is entered as a force; the mass is calculated and displayed beside it. The value may show extra digits, because the weight is stored as mass and multiplied by the gravity constant for display.
@@ -94,7 +94,7 @@ The Ford Escort is now ready for use in our tutorial. In the viewport, orbit, pa
 Now the Nissan Sentra:
 
 1. Select **Tutorial - Nissan Sentra**. Its color is a dark red (Color row).
-2. In **Vehicle Properties › Inertia / Mass...**, the total **Weight** is the measured value, 11282 N (2536.3 lbf), where the database value was 10858 N.
+2. In the **Inertia / Mass** window (**Inertia › Edit...**), the total **Weight** is the measured value, 11282 N (2536.3 lbf), where the database value was 10858 N.
 
 Finally, the stiffness of the Nissan. From a previous reconstruction analysis, the A and B stiffnesses were re-calculated in order to balance the forces (the technique is described in references [20] and [21]). The stiffness of each side of a vehicle is edited from the Event editor:
 

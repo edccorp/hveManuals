@@ -18,7 +18,7 @@ The following sections describe how the vehicle and environment provide the requ
 
 ## Vehicles
 
-EDSMAC4 uses one or more vehicles created in the **Vehicle (F3)** editor. Vehicles are selected from a vehicle database by the following attributes, shown in the **Information** section of the Vehicles panel and in **Vehicle › Vehicle Information**:
+EDSMAC4 uses one or more vehicles created in the **Vehicle (F3)** editor. Vehicles are selected from a vehicle database by the following attributes, shown in the **Identity** and **Configuration** sections of the Vehicles panel:
 
 - **Type** — EDSMAC4 supports the following vehicle types: Passenger Car, Pickup, Multi-Purpose (HVE's Sport-Utility), Van, Truck, Trailer, Dolly, Fixed Barrier and Movable Barrier.
 - **Make** — EDSMAC4 supports all available vehicle makes.
@@ -44,13 +44,13 @@ To add a vehicle to the current case:
 1. Choose the **Vehicle (F3)** editor tab (or press F3). The Vehicles panel and the viewport are displayed.
 2. Click **Add...** at the top of the Vehicles panel. The **Add Vehicle** dialog is displayed.
 3. Search the loaded databases (open **Database folders** to add a folder holding HVE `.db` files), or choose one of HVE's built-in generic vehicles under **Built in (no database needed)**, and click **Add**.
-4. If desired, modify the Driver Location, Engine Location, Number of Axles and Drive Axle(s) in the **Information** section.
+4. If desired, modify the Driver Location, Engine Location, Number of Axles and Drive Axle(s) in the **Configuration** section.
 5. Edit the vehicle's **Name**. The name does not affect calculations.
 
 ![Figure 2-1](images/hvn-edsmac4-vehicle-editor.png)
 *Figure 2-1: The Vehicle (F3) editor in HVE 2027, showing the EDSMAC4 tutorial's Ford Escort.*
 
-The following Vehicle Parameter groups are assigned in the Vehicle editor (the **Dimensions / Inertias** and **Vehicle Properties** sections of the Vehicles panel, and the **Vehicle** menu):
+The following Vehicle Parameter groups are assigned in the Vehicle editor (the **Size & Weight**, **Inertia** and **Components** sections of the Vehicles panel, and the **Vehicle** menu):
 
 - Sprung Mass — Inertias, Move CG, Inter-vehicle Connections
 - Unsprung Mass — Wheel Location, Tire Data, Suspension Data
@@ -77,7 +77,7 @@ EDSMAC4 uses the total vehicle weight (converted to mass according to the curren
 #### Move CG
 
 !!! note "HVE 2027"
-    In HVE 2027 the vehicle's weight and yaw inertia are edited in **Vehicle Properties › Inertia / Mass...** on the Vehicles panel, which shows each quantity both TOTAL and SPRUNG. **Move CG** is in the **Event** menu for an EDSMAC or EDSMAC4 event (and in **Event › Crush Profile...**).
+    In HVE 2027 the vehicle's weight and yaw inertia are edited in the **Inertia / Mass** dialog (**Edit...** in the Vehicles panel's **Inertia** section), which shows each quantity both TOTAL and SPRUNG. **Move CG** is in the **Event** menu for an EDSMAC or EDSMAC4 event (and in **Event › Crush Profile...**).
 
 Move CG is not used directly by EDSMAC4. Its current value does not show up in the results. However, the Move CG fields may be used to quickly move the vehicle's center of gravity. The x and z coordinates for the wheels are updated to reflect the new CG location.
 
@@ -91,7 +91,7 @@ The Geometry File is not used by EDSMAC4 for physics calculations (it is used fo
 
 EDSMAC4 uses the x,y,z Connection Locations when articulated vehicles are simulated. The Maximum Articulation Angle is also used.
 
-The Connection y coordinate is user-editable only in HVE. In HVE 2027 the connections are edited in **Vehicle Properties › Connections...** on the Vehicles panel.
+The Connection y coordinate is user-editable only in HVE. In HVE 2027 the connections are edited with **Connections...** in the Vehicles panel's **Components** section.
 
 > **NOTE:** Every trailer will have a pre-defined front connection. However, not every tow vehicle has a pre-defined rear connection. Use the Vehicle Editor to confirm the vehicle has a connection.
 
@@ -145,7 +145,7 @@ EDSMAC4's tire model does not incorporate load dependence. If friction data for 
 
 EDSMAC4's tire model has the capability to include speed dependence. If friction data are entered for more than one speed, EDSMAC4 calculates a speed dependence factor (see [Chapter 4 — Calculation Method](04-calculation-method.md)).
 
-Friction In-use Factor, available in HVE, is a convenient way to reduce or increase the slide friction value during the entire run for a specific tire. In HVE 2027 the friction and cornering stiffness tables, each with its **In-Use Factor**, are on the **Friction** and **Cornering** tabs of the **Load & Speed Tables** panel at the bottom of **Vehicle › Tire Data (Detailed)...** (the Tire Properties window).
+Friction In-use Factor, available in HVE, is a convenient way to reduce or increase the slide friction value during the entire run for a specific tire. In HVE 2027 the friction and cornering stiffness tables, each with its **In-Use Factor**, are on the **Friction** and **Cornering** tabs of the **Load & Speed Tables** panel at the bottom of **Vehicle › Tires...** (the Tire Properties window).
 
 > **NOTE:** During an event, the actual tire-terrain friction used during the current timestep is the product of the slide friction coefficient, the in-use factor and the terrain friction multiplier for the polygon beneath the tire. Mathematically,
 >
@@ -476,7 +476,7 @@ The **Tessellation** option allows the user to add additional detail to the 3-D 
 The **Inter-vehicle** option allows the user to choose the value for the coefficient of sliding friction (default 0.55) between the exteriors of the selected pair of objects. *(updated: the original manual associated this coefficient with the **Minimum Velocity for Friction** calculation option; the two quantities were transposed. The inter-vehicle sliding friction coefficient is set per vehicle pair and is not the Minimum Velocity for Friction.)*
 
 !!! note "HVE 2027"
-    - **Tessellation** is in **Event › Vehicle Mesh**, section **DyMESH Contact Mesh Preparation** (**Tessellate**, **Max triangle leg**, **Weld distance**), for this event's vehicle or as the vehicle's default.
+    - **Tessellation** (**Tessellate**, **Max triangle leg**, **Weld distance**) is set as the vehicle's default on the **Collision** tab of **Vehicle › Vehicle Mesh** (section DyMESH Contact Mesh Preparation), and for this event in **Event › DyMESH Options**, section **Contact Mesh Preparation (per vehicle)**, where **This event states its own preparation** gives the event values that outrank the vehicle's.
     - **Inter-vehicle friction** is in the **EDSMAC Options** window (**Method Options...** in Event Information): **Inter-Vehicle Friction** is the value for every pair, and the **Per-pair override** grid below it sets a value for one ordered pair (blank uses the value above). The same per-pair friction is also shown in **Event › DyMESH Options**.
 
 #### Payload
@@ -563,7 +563,7 @@ EDSMAC4 has the following calculation option parameters. For the dialog referenc
 - **Use Vehicle Geometry for Rho Vector Init** *(new)* (HVE 2027: **Initialize from the vehicle mesh**) — Initializes the RHO (crush perimeter) vectors from the vehicle's actual body mesh geometry rather than the idealized rectangle.
 
     !!! note "HVE 2027"
-        A vehicle with no geometry file is given HVE's generic body. EDSMAC4 refuses the run if any RHO direction finds no mesh vertex near it, which a coarse body, generic or real, often does; tessellate the vehicle for this event (**Event › Vehicle Mesh**), and a refused run's status names the vehicle, the empty direction and a triangle leg that works.
+        A vehicle with no geometry file is given HVE's generic body. EDSMAC4 refuses the run if any RHO direction finds no mesh vertex near it, which a coarse body, generic or real, often does; tessellate the vehicle for this event (**Event › DyMESH Options**, Contact Mesh Preparation), and a refused run's status names the vehicle, the empty direction and a triangle leg that works.
 
 - **Steer DOF** *(new)* — Off / Normal / Append / AutoStart; enables the dynamic steer degree of freedom.
 
@@ -631,7 +631,7 @@ The collision algorithm developed for EDSMAC4 has been improved significantly. T
 > **NOTE:** Barriers with large aspect ratios (long and skinny) can be problematic, especially if impacted near the ends where there are fewer RHO vectors (see [Chapter 4 — Calculation Method](04-calculation-method.md)). To avoid this, make your barriers square and contact them in the center. You can apply a realistic geometry file so that they "look right."
 
 !!! note "HVE 2027"
-    A barrier is a vehicle in HVE 2027: add one and set its **Type** in Vehicle Information to **Fixed Barrier** (which must have 0 axles for EDSMAC4) or **Movable Barrier**, then size it in **Dimensions / Inertias** and set its stiffness in **Event › Crush Profile...**. HVE's separate Impact Plane / Barrier dialog is not in HVE 2027.
+    A barrier is a vehicle in HVE 2027: add one and set its **Vehicle Type** in the Vehicles panel's Identity section to **Fixed Barrier** (which must have 0 axles for EDSMAC4) or **Movable Barrier**, then size it in **Size & Weight** and set its stiffness in **Event › Crush Profile...**. HVE's separate Impact Plane / Barrier dialog is not in HVE 2027.
 
 ---
 *Previous: [Chapter 1 — Program Description](01-program-description.md) — Next: [Chapter 3 — EDSMAC4 Program Output](03-program-output.md)*

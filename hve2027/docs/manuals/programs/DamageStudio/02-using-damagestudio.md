@@ -33,7 +33,7 @@
    Editor material that uses the *HVE Simulation* node's **Crush** output (see
    [The DamageStudio Interface](01-interface.md#geometry-simulated-damage-simulated)).
 7. To change how the crush is drawn, use **Smooth crush deformation** and
-   **Smoothing passes** in **Event › Vehicle Mesh** (*Damage Display*). The
+   **Smoothing passes** in **Event › Vehicle Mesh** (Display tab, *Damage Display*). The
    display updates at once; the reported crush is not affected.
 
 !!! note "HVE 2027"

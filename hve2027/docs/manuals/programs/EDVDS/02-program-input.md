@@ -44,10 +44,8 @@ To add a vehicle to the current case in HVE 2027, perform the following steps:
 
 1. Choose the **Vehicle (F3)** editor tab.
 2. Click **Add…** on the **Vehicles** panel. The vehicle picker is displayed; it searches the loaded vehicle databases and also offers HVE's Generic vehicles by type and class (a Generic *Trailer* or *Dolly* is chosen this way).
-3. Pick the vehicle. It is added to the case (not to an event: that is done under **Vehicles in Event**, below), and its data are shown in the **Vehicles** panel under **Information** (Name, Vehicle Type, Make, Model, Year, Body Style, Number of Axles, Driver Location, Engine Location, Drive Axle(s), Color).
+3. Pick the vehicle. It is added to the case (not to an event: that is done under **Vehicles in Event**, below), and its data are shown in the **Vehicles** panel under **Identity** (Name, Vehicle Type, Make, Model, Year, Body Style, Color) and **Configuration** (Number of Axles, Driver Location, Engine Location, Drive Axle(s)).
 4. If desired, modify the *Number of Axles*, *Driver Location*, *Engine Location* and *Drive Axle(s)*, and edit the *Name*. The name does not affect calculations.
-
-**Vehicle › Vehicle Information…** opens the same information as a dialog.
 
 ![Figure 2-1](images/hvn-edvds-vehicle-editor.png)
 *Figure 2-1: The HVE 2027 Vehicle editor with EDC's tutorial tractor selected. The Vehicles panel (left) lists the case's tow vehicle, two trailers and dolly; the viewport (right) shows the selected vehicle.*
@@ -96,7 +94,7 @@ EDVDS uses the total vehicle weight (converted to mass according to the current 
 The total weight is used because it is the value traditionally obtained from data sources. The equations of motion require that the sprung mass be known. To obtain this value, EDVDS simply deducts the weight of the suspensions and wheels.
 
 !!! note "HVE 2027"
-    Weight and inertias are edited in the **Vehicles** panel (**Dimensions / Inertias**), or with **Inertia / Mass…** under the panel's **Vehicle Properties** section, which shows each value on both the total and the sprung basis.
+    Weight is edited in the **Vehicles** panel (**Size & Weight**); weight and inertias in the **Inertia / Mass** dialog (**Edit…** in the panel's **Inertia** section), which shows each value on both the total and the sprung basis.
 
 > **NOTE:** The inertial contributions of the front and rear suspensions are added to calculate the total yaw inertia reported in the Vehicle Data output report.
 
@@ -109,7 +107,7 @@ Move CG is not directly used by EDVDS. Its current value does not show up in the
 The Geometry File is not used by EDVDS.
 
 !!! note "HVE 2027"
-    The 3-D model is set in the **Vehicles** panel's **3D Geometry** section or with **Vehicle › Vehicle Mesh…**. It is used for display only in an EDVDS event.
+    The 3-D model is set in the **Vehicles** panel's **3D Geometry** section or on the File & Placement tab of **Vehicle › Vehicle Mesh…**. It is used for display only in an EDVDS event.
 
 #### Contact Surfaces
 
@@ -138,7 +136,7 @@ Dollys may be either *fixed* or *converter* dollys. A fixed dolly is permanently
 > **NOTE:** The rear connection of the first tow vehicle must be a fifth wheel. If it is not, a message will be displayed during Event Set-up.
 
 !!! note "HVE 2027"
-    In the Vehicle editor, open the **Vehicles** panel's **Vehicle Properties** section and click **Connections…**. The **Vehicle Connections** dialog has a **Front Connection** and a **Rear Connection**, each with a type and X / Y / Z coordinates (relative to the CG; Z is measured down from the CG). Below each Z the dialog shows the connection's height above ground.
+    In the Vehicle editor, open the **Vehicles** panel's **Components** section and click **Connections…**. The **Vehicle Connections** dialog has a **Front Connection** and a **Rear Connection**, each with a type and X / Y / Z coordinates (relative to the CG; Z is measured down from the CG). Below each Z the dialog shows the connection's height above ground.
 
     **Properties…** (under Rear Connection) opens **Connection Properties**: Radius, Friction, Free Play, Stiffness, Damping and Breakaway Force, and the Max Articulation Roll, Pitch and Yaw. EDVDS uses the **Yaw** limit: a run in which a trailer exceeds it stops with the maximum-articulation message (see [Chapter 6](06-messages.md)).
 
@@ -184,7 +182,7 @@ EDVDS uses the wheel brake system *Time Lag, Time Rise* and *Brake Torque Ratio*
 EDVDS also fully supports the HVE Brake Designer. Refer to the Brake Designer section of the HVE User's Manual for more information.
 
 !!! note "HVE 2027"
-    Time Lag, Time Rise and Torque Ratio are edited per wheel in **Vehicle › Brake Assembly…**; the Brake Designer is **Vehicle › Brake Designer…**.
+    Time Lag, Time Rise and Torque Ratio are edited per wheel in **Vehicle › Brakes › Brake Assembly…**; the Brake Designer is **Vehicle › Brakes › Brake Designer…**.
 
 #### Tire
 
@@ -347,7 +345,7 @@ The Vehicle Exterior Data (Exterior Dimensions, Stiffness) are not used by EDVDS
 EDVDS uses the steering gear ratio if the *At Driver* Steering Table option is used during Event set-up. See Table 2-5. Otherwise the steering system data are not used.
 
 !!! note "HVE 2027"
-    The steering gear ratio is in **Vehicle › Steering System…**; the pedal ratio is in **Vehicle › Brake System Pressure…**; engine, transmission and differential data are in **Vehicle › Drivetrain…**.
+    The steering gear ratio is in **Vehicle › Steering System…**; the pedal ratio is in **Vehicle › Brakes › Brake System Pressure…**; engine, transmission and differential data are in **Vehicle › Drivetrain…**.
 
 ### Brake System Data
 

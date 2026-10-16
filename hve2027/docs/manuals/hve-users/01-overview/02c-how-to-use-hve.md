@@ -116,7 +116,7 @@ draw solid surfaces.
 
 **Phong** (smooth, the default) or **Flat** (one normal per face, which shows the
 real tessellation of a mesh). **Light Sources On** turns the sun's contribution
-on and off. A vehicle's own shading is chosen in its Vehicle Mesh dialog, and the
+on and off. A vehicle's own shading is chosen on the Display tab of its Vehicle Mesh window, and the
 site's in the Environment panel. Shadows are set with **View › Scene Display › Shadow Coverage**.
 
 #### Complexity
@@ -193,8 +193,10 @@ is no options dialog in HVE 2027.
 ### DyMESH Options
 
 **Event › DyMESH Options...** sets the DyMESH contact options of the active
-event: start times, contact search, contact model, restoration, and inter-vehicle
-contact with a per-pair override. An option the engine stores but does not read
+event: start times, contact search, contact model, restoration, inter-vehicle
+contact with a per-pair override, and each vehicle's contact mesh preparation
+for this event (tessellate, maximum triangle leg, weld distance), which
+outranks the vehicle's own defaults. An option the engine stores but does not read
 is labelled so in the dialog.
 
 ![Figure 2-71](../images/hvn-01-dymesh-options.png)

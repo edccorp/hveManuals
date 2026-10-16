@@ -34,13 +34,14 @@ The main entries:
   to an AVI video) and Play Video, Exit. See
   [Cases and Files](04-cases-and-files.md).
 - **Edit** — Undo, Redo and Undo History (below).
-- **Vehicle** — Vehicle Information, Save Vehicle As, Save to My Vehicles,
-  Edit Mode (materials per part), and the vehicle's data dialogs: Vehicle Lights,
-  ABS / Brake Design, Accelerometers, Steering System, Suspension Data, Tire
-  Data (Detailed) and its Load & Speed Tables panel, Brake Assembly, Brake Designer, Brake System
-  Pressure, Brake Material Props, Drivetrain, Aero Dynamic Drag, Body Torsion,
-  Crush Stiffness, Vehicle Mesh, Contact Surfaces,
-  Airbags, Belt Restraint.
+- **Vehicle** — Save Vehicle As, Save to My Vehicles, Edit Mode (materials
+  per part), and the vehicle's data dialogs: Suspension Data, Steering System,
+  Tires (with its Load & Speed Tables panel), Drivetrain, the **Brakes**
+  submenu (Brake Assembly, Brake Designer, Brake System Pressure, ABS / Brake
+  Design), Aerodynamic Drag, Body Torsion, Crush Stiffness, Vehicle Mesh,
+  Vehicle Lights, Accelerometers, Contact Surfaces, Airbags, Belt Restraint.
+  The vehicle's identity, configuration, size and weight are edited in the
+  Vehicles panel itself.
 - **Environment** — Environment, Aerial Image, Scene Box Editor, Edit Mode
   (materials per face).
 - **Event** — Event Information, Position / Velocity, Driver Controls, Damage
@@ -102,7 +103,8 @@ The five buttons under the menu bar replace HVE's separate editors:
 *The Vehicle editor (F3). The Vehicles panel lists every vehicle in the case
 with **Add...** (search the vehicle databases or pick a generic vehicle),
 **Replace...** (replace the selected vehicle's data from a database),
-**Dup** and **Del**, and below it the selected vehicle's information. The
+**Dup** and **Del**, and below it the selected vehicle's editor (Identity,
+Configuration, Size & Weight, Inertia, Components and 3D Geometry). The
 viewport shows only the selected vehicle. Note the banner at the bottom of the
 viewport: the vehicle shown is not in the active event.*
 
@@ -209,7 +211,7 @@ pointer over the viewport:
 
 In the **Vehicle editor**, **G**, **R** and **S** move, rotate and scale the
 vehicle's **mesh** rather than the vehicle: they edit the Translate, Rotate and
-Scale rows of the Vehicle Mesh editor (see
+Scale rows of the Vehicle Mesh window's File & Placement tab (see
 [Manipulators](../hve-users/08-3d-editor/21-manipulators.md#hve-manipulators)).
 In the **Environment editor**, **G**, **R** and **S** move, turn and scale the
 site, or the selected surface or surfaces; **Ctrl** steps a scale by 0.1. In

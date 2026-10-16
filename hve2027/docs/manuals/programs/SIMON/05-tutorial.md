@@ -47,13 +47,13 @@ To add the same vehicle to a new case instead:
 
 ## Editing the Vehicle
 
-The one vehicle feature this tutorial is about is the ABS system. In HVE 2027 antilock is fitted per wheel, or for the whole vehicle with **ABS Installed** in **Vehicle › ABS / Brake Design... › ABS System...**; SIMON regulates every wheel when either is set:
+The one vehicle feature this tutorial is about is the ABS system. In HVE 2027 antilock is fitted per wheel, or for the whole vehicle with **ABS Installed** in **Vehicle › Brakes › ABS / Brake Design... › ABS System...**; SIMON regulates every wheel when either is set:
 
-1. Choose **Vehicle › Brake Assembly...**. The *Brake Assembly* dialog is displayed, one column per wheel (Figure 5-2).
+1. Choose **Vehicle › Brakes › Brake Assembly...**. The *Brake Assembly* dialog is displayed, one column per wheel (Figure 5-2).
 2. The **Antilock (ABS)** row has a checkbox for each wheel. Wheels in the same link group change together.
 
 ![Figure 5-2](images/hvn-tut-brake-assembly.png)
-*Figure 5-2: The Brake Assembly dialog. The Antilock (ABS) row fits ABS per wheel; the ABS controller itself is set up in Vehicle › ABS / Brake Design... › ABS System....*
+*Figure 5-2: The Brake Assembly dialog. The Antilock (ABS) row fits ABS per wheel; the ABS controller itself is set up in Vehicle › Brakes › ABS / Brake Design... › ABS System....*
 
 > **NOTE:** In the tutorial case as EDC saved it, the vehicle's own ABS checkboxes are **off** — the last state of the vehicle after the second event was run. HVE's saved results show ABS active in the first event, so HVE 2027 turns ABS on for that event when it opens the case and says so on the console and in the event's **Wheels › Brake** tab (see below). This is why HVE 2027's per-event antilock setting exists: in HVE, running the same vehicle with and without ABS means editing the vehicle between the two runs.
 

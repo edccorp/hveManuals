@@ -21,7 +21,7 @@ what it affects. This chapter takes HVE's Options menu item by item.
 | Show Accelerometers / Show Accelerometer Paths | **View › Scene Display › Accelerometer Path** |
 | Show Position Sequences | Not in HVE 2027 |
 | Show Targets | **View › Scene Display › Scene Ghosts** |
-| Show Connections | Not in HVE 2027 as a display switch; connections are edited in Vehicle Information |
+| Show Connections | Not in HVE 2027 as a display switch; connections are edited with **Connections...** in the Vehicles panel's Components section |
 | Distance Tool | Not in HVE 2027 |
 | Show Path | The path follower's path is drawn while **Event › Path Follower...** is open |
 | AutoPosition | **Auto Position (settle onto terrain)**, per vehicle, in Event Information's Vehicle Initial Conditions |
@@ -106,7 +106,7 @@ the unit of each quantity separately, is not reproduced.
 | Complexity, Show Only + Faces, Render Quality, Anti-aliasing Level | Not in HVE 2027 |
 
 A vehicle's own shading (as loaded, flat, smooth, auto smooth) is set in its
-Vehicle Mesh dialog, and the site's in the Environment panel's Terrain section.
+Vehicle Mesh window (Display tab), and the site's in the Environment panel's Terrain section.
 
 ---
 
@@ -177,8 +177,10 @@ See the dialog reference: [Calculation Options](../../10-calculation-options/REA
 HVE's DyMESH dialog had General and Advanced pages (search, pushback,
 restitution, timesteps, debug output). HVE 2027's DyMESH Options dialog is one
 page with **Start Times**, **Contact Search**, **Contact Model**,
-**Restoration**, **Inter-Vehicle Contact (fallback)** and a **Per-pair
-override**. The collision timestep is in the Simulation panel. Where the engine
+**Restoration**, **Inter-Vehicle Contact (fallback)**, a **Per-pair
+override** and **Contact Mesh Preparation (per vehicle)** (the event's own
+tessellate, maximum triangle leg and weld distance for each vehicle, which in
+HVE are set per event and vehicle with the mesh). The collision timestep is in the Simulation panel. Where the engine
 stores an option but does not read it, the dialog says so beside the control.
 
 !!! warning "Not in HVE 2027"

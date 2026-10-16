@@ -1,6 +1,6 @@
 # Wheel Location Dialog
 
-HVE edits each wheel's location in a Wheel Location dialog. In HVE 2027 the wheel locations are a table in the Vehicle Editor (**Vehicle (F3)**): in the **Vehicles** panel, open **Dimensions / Inertias › Wheel Positions (from CG)**. The table has one column per wheel (**A1 Right**, **A1 Left**, **A2 Right**, ...) and the coordinates are relative to the vehicle-fixed (SAE) coordinate system, in the units set in Preferences.
+HVE edits each wheel's location in a Wheel Location dialog. In HVE 2027 the wheel locations are a table in the Vehicle Editor (**Vehicle (F3)**): in the **Vehicles** panel, open **Size & Weight › Details › Wheel Positions (from CG)**. The table has one column per wheel (**A1 Right**, **A1 Left**, **A2 Right**, ...) and the coordinates are relative to the vehicle-fixed (SAE) coordinate system, in the units set in Preferences.
 
 Each wheel's position is normally **derived** from the vehicle's dimensions (the CG-to-axle distances, axle spacings, track widths, CG height and tire radius). A field left at 0 shows the derived value, and its tooltip says *Derived. Type a value to override this wheel.* Typing a value overrides that one wheel; setting it back to 0 returns it to the derived value. The left and right wheels may differ.
 

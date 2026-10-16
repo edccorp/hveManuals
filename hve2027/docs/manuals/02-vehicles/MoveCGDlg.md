@@ -4,9 +4,9 @@
 
 The default CG (center of gravity) location of the vehicle is determined from raw data (e.g., measured or table values). HVE's Move CG dialog moves the CG relative to the vehicle's 3-D geometry. HVE 2027 has two places that do related jobs.
 
-## Move CG in the Vehicle Mesh dialog
+## Move CG in the Vehicle Mesh window
 
-Open **Vehicle › Vehicle Mesh...** in the Vehicle Editor (also on the Event menu, and the same editor as the Vehicles panel's **3D Geometry** section). In the section **Move, Rotate and Scale the Model**, the row **Move CG** holds three values, X, Y and Z, in the units set in Preferences. They state where the CG sits in the geometry file's own coordinates, in the SAE vehicle frame (+x forward, +y right, +z down). This is the value HVE's Move CG dialog stores, and it is read from an HVE case when one is opened.
+Open **Vehicle › Vehicle Mesh...** in the Vehicle Editor (also on the Event menu, and opened by **Vehicle Mesh...** in the Vehicles panel's **3D Geometry** section). On the **File & Placement** tab, in the section **Move, Rotate and Scale the Model**, the row **Move CG** holds three values, X, Y and Z, in the units set in Preferences. They state where the CG sits in the geometry file's own coordinates, in the SAE vehicle frame (+x forward, +y right, +z down). This is the value HVE's Move CG dialog stores, and it is read from an HVE case when one is opened.
 
 Typing a new value **moves the CG**, as HVE's Move CG does: the body, the wheels and everything fitted to the vehicle stay where they are, and the CG-to-axle distances, the CG-to-side distances and the CG height change to match. A move that would put the CG at or below the ground is refused, and the reason is shown under the row. To move the picture of the body instead, use **Translate**.
 

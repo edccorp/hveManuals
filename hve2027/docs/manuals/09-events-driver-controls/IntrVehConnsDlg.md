@@ -2,9 +2,8 @@
 
 The connections between tow vehicles and trailers are displayed and edited in the
 **Vehicle Connections** dialog. It is a vehicle property, not an event one: in
-the Vehicle editor (F3) open **Vehicle Information**, expand **Vehicle
-Properties** and press **Connections...** (the same list is in the vehicle
-panel's *Vehicle Properties* section).
+the Vehicle editor (F3) press **Connections...** in the Vehicles panel's
+**Components** section.
 
 The dialog is a table with a **Front** and a **Rear** column, one for each
 connection, and the rows **Type**, **X**, **Y**, **Z**, **Height above ground**

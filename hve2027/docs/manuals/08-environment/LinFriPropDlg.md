@@ -8,7 +8,7 @@ by giving lining friction as a function of brake temperature and sliding
 velocity.
 
 !!! note "HVE 2027"
-    In the Vehicle editor (F3) choose **Vehicle › Brake Designer...** and expand
+    In the Vehicle editor (F3) choose **Vehicle › Brakes › Brake Designer...** and expand
     the **Lining Friction Properties** section of the **Brake Designer**
     window. It edits the brake design of the wheel (**Axle**, **Side**) and
     **Brake Design** type selected in that window, and appears only for a
@@ -57,11 +57,12 @@ through it the torque ratio the brake assembly carries to the physics.
       rows in increasing temperature and speed.
     - **Print**, **Apply** and **OK / Cancel**: edits apply immediately.
 
-!!! note "Brake Material Properties"
-    **Vehicle › Brake Material Props...** opens a separate **Brake Material
-    Properties** window — a list of named lining materials with dry, wet and
-    hot friction, heat capacity and wear rate. Its controls are greyed: the
-    list is not saved with the case and no physics program reads it.
+!!! warning "Not in HVE 2027"
+    HVE's separate **Brake Material Properties** library is not in HVE 2027:
+    no physics program reads it (see
+    [Brake Designer Material Properties](../04-brakes-powertrain/BrkMatPropDlg.md)).
+    The lining friction a brake design uses is this section of the Brake
+    Designer.
 
 <!-- NAV -->
 
