@@ -123,6 +123,12 @@ the case, or add their folder under **Search folders** in the **Vehicle
 Geometry Library** (Vehicle › Vehicle Mesh › **Library...**). Its **Rescan**
 button re-reads the folders.
 
+The message lists each vehicle whose geometry is missing with a **Locate...**
+button to pick its file. **Add Search Folder...** adds a folder to the vehicle
+mesh library and looks for every missing name in it (in the browser build,
+**Upload Mesh Files...** does the same with uploaded files).
+**Continue Without** closes the message and leaves those vehicles as boxes.
+
 !!! note "HVE 2027"
     For an imported `.hve`, HVE 2027 keeps a reference to the original `.hve`.
     A case saved from it carries the site inside it (see
@@ -294,7 +300,7 @@ discard them.
 The case file itself is never saved automatically.
 
 !!! note "HVE 2027"
-    HVE's auto-backup is **Tools › Preferences › Auto-Save**. **Enable Auto-Save** (on by default) and **Interval (min)** write a recovery copy of the case, `<case>.autosave.hvex` beside it, while there are unsaved changes; the case file itself is never written. Saving the case removes the copy, and opening a case whose recovery copy is newer offers to open the copy. **File › Exit**,
+    HVE's auto-backup is **Tools › Preferences › Auto-Save**. **Enable Auto-Save** (on by default) and **Interval (min)** write a recovery copy of the case, `<case>.autosave.hvex` beside it, while there are unsaved changes; the case file itself is never written. Saving the case removes the copy, and opening a case whose recovery copy is newer offers to open the copy: the **Unsaved Work Found** message offers **Open the Recovery Copy** (then **Save As** to keep its changes) or **Keep the Case**, which leaves the case you opened as it is. **File › Exit**,
     closing the window, **New Case** and **Open Case** all ask before discarding
     unsaved changes.
 

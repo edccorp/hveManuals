@@ -75,13 +75,14 @@ instant outside the occupant's run. With **Only variables this run computed**
 on, those rows are hidden.
 
 - Click a variable's name to toggle its whole row (every vehicle).
-- Right-click a wheel or tire variable for **Select at ALL wheels** / **Clear at
-  all wheels**.
+- Right-click a wheel or tire variable for **Select at ALL wheels** /
+  **Clear at all wheels**.
 - Hover a name for its group and, where it differs, HVE's own name for it.
 
 **Select All** / **Clear All** select or clear every variable shown (when a filter
-or family is active they read **Select Shown** / **Clear Shown**). **Clear
-Everything** clears the whole selection. **Close** closes the window; the
+or family is active they read **Select Shown** / **Clear Shown**). While a
+filter or family is active, **Clear Everything** also appears and clears the
+whole selection, including variables the filter is hiding. **Close** closes the window; the
 selection takes effect immediately.
 
 !!! note "HVE 2027"

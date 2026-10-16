@@ -78,8 +78,8 @@ long it works without reaching the license server. When no license is active it
 says why.
 
 - **Activate.** Paste the EDC Software secret you received by email when you
-  bought HVE (the same one EDC's Blender add-ons use) and press **Activate this
-  computer**. **Computers on this license** lists the computers already
+  bought HVE (the same one EDC's Blender add-ons use) and press
+  **Activate this computer**. **Computers on this license** lists the computers already
   activated. Activation sends the secret, the computer's name and three hashed
   hardware identifiers to EDC's license server; no raw hardware identifier
   leaves the computer.

@@ -70,6 +70,9 @@ See [Collision Pulse Options](ColPulOptDlg.md) and
   counted.
 - **Export file...** — writes the table in the same format.
 
+A line under the buttons reports what the last import or export did (or why
+it could not open the file); **Dismiss** clears it.
+
 A summary line gives the pulse duration and its peak resultant. A graph of the
 resultant draws straight lines between the stated points.
 

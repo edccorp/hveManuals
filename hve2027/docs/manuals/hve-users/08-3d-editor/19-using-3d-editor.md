@@ -133,7 +133,7 @@ HVE assigns each object to a named overlay and turns overlays on and off in the 
 - Drag surfaces onto a layer to move them to it. **New Layer** creates a layer; a layer you created can be renamed or deleted from its right-click menu.
 - Right-click a layer for **Show Only This Layer**, **Show All Layers**, **Select Surfaces**, **Make All Drivable** and **Make None Drivable**.
 - With the pointer over the tree, **H** hides the selection and **Alt+H** shows everything.
-- A **Search** field filters the tree, and a **Cameras** group lists the case's saved cameras.
+- A **Search** field filters the tree, and a **Cameras** group lists the case's saved cameras. Right-click the **Cameras** group for **Add Camera From View** (a new camera framed as the viewport is now), **Free View (stop looking through)**, **Show All** and **Hide All**.
 - A **Vehicles** group lists the case's vehicles. Click a name to select the vehicle. Its eye shows or hides the vehicle in the Event and Playback 3-D view, and Ctrl-click an eye to show only that vehicle. A hidden vehicle's ghosts and tire marks are hidden with it. This is a view setting only: nothing is saved and no result changes (see [Chapter 5, Vehicles Shown](../02-menu-reference/05-view-menu.md#vehicles-shown)). In the 3-D view, **H** hides the selected vehicle, **Shift+H** the others and **Alt+H** shows all.
 
 ![Figure 19-2](../images/hvn-08-outliner.png)

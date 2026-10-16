@@ -63,6 +63,8 @@ Animates the camera over the playback time: step to the previous or next key, se
 
 Controls for the live Viewport camera, without saving it: **View Controls** (**Orbit** or **Free (Euler)**), **View Preset** buttons (**Top**, **Front**, **Rear**, **Left**, **Right**, **Persp**), the orbit azimuth, elevation, distance and target (or, in Free mode, the eye position and pitch, yaw and roll), **Projection** (**Perspective** or **Orthographic**, with a focal length or field of view), and **Reset Camera**.
 
+In Orbit mode, **Eye / Orientation** (linked) shows, read-only, the eye position and the pitch and yaw that the orbit settings give, as the Free mode would show them.
+
 !!! warning "Not in HVE 2027"
     - **View From / Look At a human or the environment**: a camera rides on, or aims at, a vehicle or nothing (Fixed).
     - **Use Vehicle's Vertical** and **Make Glass Clear**.

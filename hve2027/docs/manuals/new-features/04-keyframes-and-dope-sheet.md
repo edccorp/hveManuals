@@ -148,6 +148,12 @@ are drawn as faint diamonds (they cannot be picked).
 | Delete | **Delete** or **X**, or the **Delete** button |
 | Change interpolation, easing, extrapolation, cycles | Right-click a key; or use the toolbar |
 | Type a key's time, value, interpolation and easing | Double-click it |
+| Move the playback time to a key | Right-click it and choose **Go to key**, or press **Go to key** in its double-click editor |
+
+Right-click a key for a menu that offers **Interpolation** and **Easing** (for
+the selected keys), **Extrapolation** and **Cycles** (for their channels),
+**Go to key** (the playback time jumps to the first selected key) and
+**Delete**.
 
 A dragged key that lands on another key replaces it when you let go, as in
 Blender. Every edit marks the case modified.

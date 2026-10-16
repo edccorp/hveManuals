@@ -205,8 +205,13 @@ What is different in a browser:
   geometry files** (`.h3d` and so on) together, since a browser has no folder
   to look in for them. Vehicle databases and whole geometry folders are
   uploaded from the **Load Vehicle from Database** and **Vehicle Geometry
-  Library** dialogs (**Upload database files...**, **Upload mesh files...**,
-  and the whole-folder buttons beside them).
+  Library** dialogs (**Upload database files...** and
+  **Upload a whole db folder...**; **Upload mesh files...** and
+  **Upload a whole folder...**). Uploading geometry does not reach a case that
+  is already open, because it found its geometry when it was loaded: when the
+  open case still has vehicles without geometry, the Geometry Library offers
+  **Reload case to use the uploaded geometry** (if the case has unsaved
+  changes, save it and reopen it instead).
 - **Saving and exporting** downloads the file.
 - **What you upload is remembered** in the browser's storage for that site,
   together with the case that was open, so a page refresh brings the case back

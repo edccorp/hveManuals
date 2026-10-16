@@ -244,7 +244,8 @@ says so; the first click stores it. **Arm All**, **Pelvis Only** and **Use
 Run-Time Default** set the whole list at once, and the last armed pair cannot
 be removed. For GATB a second grid arms body segments against each other
 (self contact). Contact blocks an imported case states against a vehicle the
-event does not select are listed read-only. Vehicle contact surfaces themselves
+event does not select are listed read-only under **Other contact blocks**, each
+as the human, the vehicle and its number of armed pairs. Vehicle contact surfaces themselves
 are edited in the Vehicle editor (Vehicle › Contact Surfaces...).
 
 !!! note "HVE 2027"

@@ -122,6 +122,8 @@ Press **Run Analysis**. The batch runs in the background with a progress bar;
 
 ### Export and audit
 
+The **Export & audit** section of the results has three buttons:
+
 | Button | Writes |
 | --- | --- |
 | **Export raw CSV** | `mc_dataset.csv`, one row per run |

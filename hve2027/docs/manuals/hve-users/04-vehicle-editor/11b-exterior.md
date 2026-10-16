@@ -30,6 +30,12 @@ distances the solver receives, with the overall length, width and height. It
 is read-only, and warns when a loaded 3-D model does not reach the declared
 extents.
 
+When the **Wheelbase** does not match where the axles are (CG to Axle 1 /
+Axle 2; on a vehicle with three or more axles, to the tandem centre), the
+section says so with both numbers. **Use the axle positions** sets the
+wheelbase to the figure the axle positions give; to go the other way, type the
+CG-to-axle distances you want, since the engines place the wheels from them.
+
 ![Figure 11-19](../images/hvn-04-vehicles-panel.png)
 *Figure 11-19: The Vehicles panel. Its Size & Weight section edits the overall dimensions; Details › Exterior Extents shows the CG-to-exterior distances derived from them.*
 

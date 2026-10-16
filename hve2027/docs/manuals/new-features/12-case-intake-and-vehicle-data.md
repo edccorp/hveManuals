@@ -41,8 +41,9 @@ recorded as **Unknown**, and the window says which.
 Case Intake, the spec-sheet reader in Vehicle Package and EDR Import read
 documents through **your own AI tool**, not through HVE 2027:
 
-1. Press the window's **Copy prompt...** button. The prompt goes to the
-   clipboard. It tells the tool exactly what to return (one JSON object), to
+1. Press the window's prompt button: **Copy prompt for your AI tool** in Case
+   Intake and EDR Import, **Copy spec-sheet prompt** in Vehicle Package. The
+   prompt goes to the clipboard. It tells the tool exactly what to return (one JSON object), to
    give every value with its place in the document, and to leave out anything
    the document does not state.
 2. Give the prompt and the documents (a police report, a spec sheet, a CDR
@@ -282,8 +283,8 @@ after the seat otherwise.
 
 One row per item: **Item** (a name), **Weight**, and **x / y / z**, its
 position from the vehicle CG, x forward, y right, **z up** (the payload's
-frame, as in the [Payload dialog](../02-vehicles/PayLoadDlg.md)). **Add cargo
-item** adds a row and **Remove** deletes one. Each item counts as a point mass.
+frame, as in the [Payload dialog](../02-vehicles/PayLoadDlg.md)).
+**Add cargo item** adds a row and **Remove** deletes one. Each item counts as a point mass.
 
 Put in an event, several items become one payload: their total weight, the
 weight-weighted CG, and their inertia about that CG by the parallel-axis
@@ -432,6 +433,10 @@ stale. Open is not available in the browser version.
 
 ### Pasting the description
 
+Under **1. The case description** the window offers two routes.
+**Enter it by hand** starts from an empty description that you fill in under
+Review, value by value with where each is stated, and needs no AI tool. Or:
+
 1. Press **Copy prompt for your AI tool** and give the prompt, with the police
    report, diagram, statements and inspection notes, to your AI tool.
 2. Paste its answer into the box and press **Read** (enabled once the box
@@ -481,7 +486,9 @@ For each vehicle:
 - **Vehicle data** chooses its data: the database records that match the year,
   make and model the tool read (matched as in
   [Vehicle Package](#2-vehicle-data); hover over one for why it matched), or
-  the generic of its type;
+  the generic of its type. After correcting the year, make and model in its
+  row, press **Find in the database** beside the list to match the records
+  again;
 - its **type** is the one the answer states (car, pickup, SUV, van, truck,
   trailer); with none it is a passenger car. The type is never guessed from the
   make and model.

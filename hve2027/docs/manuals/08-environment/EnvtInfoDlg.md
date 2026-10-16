@@ -42,6 +42,20 @@ result to set Latitude and Longitude. **Set UTC offset from location** looks up
 the time zone of the coordinate. Both send what you type, or the coordinate, to
 online services (OpenStreetMap's Nominatim and timeapi.io).
 
+The results are a numbered list beside numbered pins on the **Map** below it.
+Choosing a result shows it on the map; **Use this place** (or a double-click on
+the result) sets the case's Latitude and Longitude to it and looks up its time
+zone. **Clear results** empties the list. On the map, drag to pan, use the
+wheel to zoom, and double-click anywhere to put the case's location there.
+
+Under the map, choose the tile source. When it is an aerial source, choose a
+size (50 to 800 m square) and press **Download aerial image**: the yellow
+square on the map, centred on the map's centre and aligned to the case's axes,
+is downloaded and laid on the ground as the case's aerial site image
+(**Environment › Aerial Image...**). It is placed assuming the case origin is at
+this location and +X points along its North angle. The button needs the case's
+location to be set first.
+
 The location is recorded with the case; it does not position or scale the
 scene geometry. It places the sun (see **Sky**).
 
@@ -260,8 +274,9 @@ there.
 The list shows each zone's **On** switch, name, **Friction Mult.** and status;
 **Add Zone**, **Duplicate** and **Delete** manage it. For the selected zone:
 **Name**, **Applied to the run**, **Friction Multiplier**, a **Rectangle**
-(**Center X**, **Center Y**, **Length**, **Width**, **Heading (deg)**, and **Set
-Outline to Rectangle**) and its **Corners** (up to 16): **Click corners in the
+(**Center X**, **Center Y**, **Length**, **Width**, **Heading (deg)**, and
+**Set Outline to Rectangle**, which replaces the zone's outline with that
+rectangle; length runs along the heading, 0 = +x) and its **Corners** (up to 16): **Click corners in the
 3-D view**, **Clear Corners**, the corners' X and Y, and **Add Corner**. A zone
 the run cannot apply says why.
 

@@ -42,6 +42,9 @@ force, energy, maximum speed, distance travelled and heading change. With
 **Select Variables...** chooses what is listed, **Group columns by** arranges
 the columns, **Vehicle name in column titles** labels them, and **Export CSV...**
 or **Copy CSV** take the table out. **Sections...** hides and shows sections.
+Right-click a section header for **Move up**, **Move down**,
+**Hide this section**, **Show all sections** and **Reset order** (or drag one
+header onto another to reorder).
 
 ![Key Results under a solved run](../images/hvn-01-playback.png)
 *A solved SIMON event part-way through playback, with the Key Results panel
@@ -132,6 +135,12 @@ shows the differences between the two runs for each vehicle, and for each
 occupant both runs carry (GATB, EDHIS). Every number is read from the two runs'
 own trajectories and outputs. If the run on screen is of another event, the
 window says so; press Compare Runs again for this one.
+
+Under **A channel from both runs**, choose a vehicle (or, after the vehicles,
+an occupant) and one of its output channels: the window plots that channel
+from both runs over time (the run on screen in blue, the comparison in
+orange) and states the time and value range, the largest difference and when
+it occurs, and each run's peak with its own instant.
 
 An *HVE-reference* comparison needs `hve-solver-reference.exe` beside the
 program, and *HVE (imported)* a case opened from a `.hve` saved after the event

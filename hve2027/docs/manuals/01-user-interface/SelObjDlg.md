@@ -8,7 +8,7 @@ In HVE this is not a dialog of its own: it is a panel added to the standard Wind
 HVE 2027 opens and saves files with its own file browser window (for example **File › Open Case...**, **File › Save Case As...**, or a **Browse...** / **...** button beside a file field). It shows:
 
 - a **path** field at the top (type a folder and press Enter);
-- a list of places: **Home**, **Working folder**, the root folder and, where present, mounted drives; a **favorites** list (**+ Add current** adds the current folder; right-click a favorite to remove it); and the **Recent folders**;
+- a list of places: **Home**, **Working folder**, the root folder and, where present, mounted drives; a **favorites** list (**+ Add current** adds the current folder; right-click a favorite for **Remove from favorites**); and the **Recent folders**;
 - the folder's sub-folders, with **.. (up)**, and its files, filtered to the types the command accepts;
 - a **Search...** box that filters the file list;
 - the selected file name, which can be typed for a save.

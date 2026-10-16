@@ -7,7 +7,7 @@ The vehicle's structural properties are defined by its stiffness coefficients. H
 HVE 2027 edits the same coefficients in two places:
 
 - **Vehicle › Crush Stiffness...** in the Vehicle editor (**Vehicle (F3)**) — the **Crush Stiffness** window, with every side and the 3-D stiffness in one window. They are the vehicle's own data, as in HVE.
-- **Event › Crush Profile...** (EDCRASH, EDSMAC and EDSMAC4 events) — the **Crush & Geometry** window, whose **CG to Front...**, **CG to Rear...**, **CG to Left...** and **CG to Right...** buttons open one small dialog per side, titled *CG to Front Stiffness* and so on.
+- **Event › Crush Profile...** (EDCRASH, EDSMAC and EDSMAC4 events) — the **Crush & Geometry** window, whose **CG to Front...**, **CG to Rear...**, **CG to Left...** and **CG to Right...** buttons open one small dialog per side, titled **CG to Front Stiffness**, **CG to Rear Stiffness**, **CG to Left Stiffness** and **CG to Right Stiffness**; each holds that side's stiffness.
 
 Both edit the same values for the selected vehicle, shown in the units set in Preferences.
 

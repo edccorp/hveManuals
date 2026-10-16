@@ -7,9 +7,11 @@ reconstruction setup).
 
 Open it from **Event › Event Information...** in the Event editor (F5). It is a
 dockable panel (by default it shares a dock with the **Simulation** panel). Its
-body is a list of collapsible sections; right-click a section header to move or
-hide it, and use **Sections...** at the bottom to show hidden sections again or
-reset the order.
+body is a list of collapsible sections; drag a section header onto another to
+reorder them. Right-click a section header for **Move up**, **Move down**,
+**Hide this section**, **Show all sections** and **Reset order**. Use
+**Sections...** at the bottom to tick which sections are shown (the only way
+back once every section is hidden), or for **Show all** and **Reset order**.
 
 ![Event Information panel for a SIMON event](images/hvn-event-info.png)
 

@@ -8,6 +8,11 @@ Before a run the panel says *Run simulation to see output graph*. After a run it
 plots the selected variables against simulation time, in the units set in
 Preferences, each trace in its own colour with a legend entry.
 
+Drag the legend to move it within the graph. Right-click it to put it in a
+corner (**Top left**, **Top right**, **Bottom left**, **Bottom right**) or
+choose **Hide legend**; the **Legend** check box beside **Close** shows it
+again.
+
 - **Select Variables...** — opens [Select Output Variables](VarSelDlg.md) for the
   graph's traces. The graph keeps its own selection, separate from the Key
   Results table.
