@@ -28,7 +28,7 @@ Environment Editor's components:
 
 - **Environment panel** — a docked panel (normally on the left) holding all
   the environment's parameters in collapsing sections: **Location**,
-  **Terrain**, **Sky**, **Physical** and **Friction Zones**. It replaces HVE's
+  **Terrain**, **Sky**, **Lights**, **Physical** and **Friction Zones**. It replaces HVE's
   Environment Information property sheet. Terrain and Physical — the
   sections the engines read — are open by default.
 - **Viewport** — the 3-D view of the current environment, with a view cube
@@ -195,6 +195,29 @@ and elevation, whether they come from the location and time or were set by
 hand, and the sun and ambient light levels — and has an **Edit the sun and
 sky...** button that opens the Shader Editor on the world's **Sun & Sky**
 panel.
+
+### Lights
+
+The **Lights** section holds the site's own lights — street lights, work
+lights, a floodlight on a pole — that are not attached to any vehicle (HVE
+made these with the 3-D Editor's Light tool). **Add Light** puts one 8 m above
+the ground at the middle of the view; **Duplicate** and **Delete** manage the
+list. For the selected light set its **Name**, **On**, **On in daylight too**,
+**Type** (**Point** or **Spot**), its position — **X (forward)**, **Y
+(right)** and **Height above the ground**, which keeps it on its pole when you
+move it — and, for a spot, its **Aim**, **Tilt down**, **Cone** and **Edge
+softness**; then its **Color** and **Intensity** (1 is about a headlamp).
+
+A site light comes on as the sky darkens, as a vehicle's lamps do, unless **On
+in daylight too** is ticked. While the Environment is selected, the Viewport
+marks each light with a yellow star (grey when switched off), a dotted line
+down to the ground and, for a spot, a short line along its aim. The 3-D view
+lights the scene with up to 32 lamps at a time, shared with the vehicles; the
+site takes at most 16 of them, the ones nearest the middle of the view. The
+ray-traced render and the glTF export carry every light. The lights move with
+the site when its placement is changed. They are display only: no engine reads
+them, so they stay editable with results on screen. Full field list:
+[Environment Information › Lights](../../08-environment/EnvtInfoDlg.md#lights).
 
 ## Sun and Sky
 

@@ -19,7 +19,7 @@ The table maps each HVE tool to what HVE 2027 offers:
 | Surface | Imported geometry; surface type and friction set per surface ([Chapter 19](19-using-3d-editor.md#object-attributes-tool)) |
 | Cone, Cylinder, Sphere, Text | Not available |
 | Box | **Environment › Scene Box Editor** — display boxes only (below) |
-| Light | Not available as a scene object; see [Light Tool](#light-tool) |
+| Light | The Environment panel's **Lights** section — point and spot site lights (below) |
 | Signal | Not available; see [Signal Tool](#signal-tool) |
 | Edit | Click to select in the Viewport ([Chapter 19](19-using-3d-editor.md#object-attributes-tool)); vehicles are moved with the gizmo ([Chapter 21](21-manipulators.md)) |
 
@@ -92,8 +92,10 @@ The box appears in the 3-D view.
 
 HVE's Light tool adds point, directional and spot light sources (such as street lights) to the environment.
 
-!!! warning "Not in HVE 2027"
-    There are no environment light objects. The 3-D view is lit by the sun and sky (**Environment › Environment… › Sky**); **View › Scene Display › Rendering › Light Sources On** turns the sun's contribution off and on. **Vehicle › Vehicle Lights…** keeps a list of lights for each vehicle — name, enabled, type (Point, Directional, Spot), intensity, direction, spot cone angle and drop-off, position and colour — and the 3-D view uses them as the vehicle's lamps, which light the scene once the sky darkens. No engine reads them. Lamps modelled in a vehicle's mesh can be given an emissive material in the Shader Editor.
+!!! note "HVE 2027"
+    Site lights are made in the Environment Editor (F4), in the Environment panel's **Lights** section, not with a tool in the viewport. **Add Light** puts a light 8 m above the ground at the middle of the view; for each light you set its name, on/off, **On in daylight too**, type (**Point** or **Spot** — the sun is the only directional light), position (**X**, **Y**, **Height above the ground**), a spot's aim, tilt, cone and edge softness, and its colour and intensity. They come on as the sky darkens, as vehicle lamps do, and light the 3-D view, the ray-traced render and the glTF export. While the Environment is selected, each is marked by a yellow star (grey when off) with a dotted line to the ground. No engine reads them. See [Environment Information › Lights](../../08-environment/EnvtInfoDlg.md#lights).
+
+    **Vehicle › Vehicle Lights…** keeps each vehicle's own lamps, which move with it. Lamps modelled in a vehicle's mesh can be given an emissive material in the Shader Editor.
 
 ## Signal Tool
 

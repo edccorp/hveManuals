@@ -46,6 +46,7 @@ item glTF could not carry — is added to **Tools › Audit Log**.
 | Materials | Each vehicle's paint, its tires, one material per road surface, and node materials **baked** (below) — one material per vehicle part |
 | Texture coordinates | On a body or a surface whose source has them, so an image material travels |
 | Cameras | Every saved camera, keyed per frame when it rides a vehicle or is keyframed |
+| Lights | Each vehicle's lamps, riding with it, and every site light (Environment panel › Lights), as `KHR_lights_punctual` point and spot lights |
 
 In Playback mode (F6), with a [playback sequence](07-video-and-playback-sequences.md)
 active, the export carries the whole sequence: each vehicle the sequence places moves, and

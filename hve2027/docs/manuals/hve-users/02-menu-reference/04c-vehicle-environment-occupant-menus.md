@@ -76,7 +76,7 @@ The Vehicle menu opens the detailed dialogs for that vehicle:
 
 | Item | Opens |
 |---|---|
-| **Environment...** | The **Environment** panel (it opens by itself when you enter the Environment editor): **Location**, **Terrain** (the site geometry — DXF, `.h3d`, `.iv`, OBJ or glTF — a survey point cloud, and the surface materials), **Sky**, **Physical** (ambient conditions and wind, atmosphere and gravity, standing water) and **Friction Zones** |
+| **Environment...** | The **Environment** panel (it opens by itself when you enter the Environment editor): **Location**, **Terrain** (the site geometry — DXF, `.h3d`, `.iv`, OBJ or glTF — a survey point cloud, and the surface materials), **Sky**, **Lights** (the site's own point and spot lights, display only), **Physical** (ambient conditions and wind, atmosphere and gravity, standing water) and **Friction Zones** |
 | **Aerial Image...** | Aerial Image Options: an image file laid over the site, with its world bounds (upper-left and lower-right corners) |
 | **Scene Box Editor...** | Scene Box Editor: named boxes with a position, size, rotation and colour (or wireframe), drawn in the scene |
 | **Edit Mode (materials per face)** (Tab) | Switches the viewport to selecting single faces of the site, to give them materials of their own or move them (as Blender's Edit Mode); new in HVE 2027. See [Edit Mode: faces of the site](../05-environment-editor/12-creating-editing-environments.md#edit-mode-faces-of-the-site) |

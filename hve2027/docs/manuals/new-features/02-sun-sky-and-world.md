@@ -174,6 +174,24 @@ of an articulated bus, for example, pick each one and untick **Enabled**.
 Lamps are display only: no engine reads them, so they stay editable with
 results on screen.
 
+## Site lights
+
+The site can have lights of its own — street lights, work lights, a floodlight
+— made in the Environment Editor (F4), in the Environment panel's **Lights**
+section. Each is a **Point** light (every way) or a **Spot** (a cone with an
+aim, a downward tilt and a soft edge), with a colour, an intensity (1 is about
+a headlamp) and a height above the ground. Like vehicle lamps they come on as
+the sky darkens; tick **On in daylight too** for one that should also light
+the scene by day.
+
+The 3-D view lights the scene with up to **32 lamps at once**, site lights and
+vehicle lamps together. Site lights take at most 16 of them — the ones nearest
+the middle of the view — so the vehicles' lamps always have the rest. A
+ray-traced render and the glTF export carry every light. While the Environment
+is selected, each light is marked by a yellow star (grey when off) with a
+dotted line to the ground. Site lights are display only: no engine reads them.
+See [Environment Information › Lights](../08-environment/EnvtInfoDlg.md#lights).
+
 ## The Sky Texture node
 
 The default world's **Sky Texture** node is HVE 2027's own analytic sky: a

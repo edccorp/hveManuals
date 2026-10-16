@@ -6,8 +6,8 @@ site, and its friction zones.
 
 !!! note "HVE 2027"
     In the Environment editor (F4) choose **Environment › Environment...**. The
-    **Environment** window has five collapsible sections in place of HVE's
-    tabs: **Location**, **Terrain**, **Sky**, **Physical** and **Friction
+    **Environment** window has six collapsible sections in place of HVE's
+    tabs: **Location**, **Terrain**, **Sky**, **Lights**, **Physical** and **Friction
     Zones**. Terrain and Physical — what the solver reads — open by default,
     and Friction Zones when the case has any. All five are always present;
     there is no 2-D/3-D distinction. Lengths, speeds, temperature and pressure
@@ -190,12 +190,16 @@ pole — not attached to any vehicle. **Add Light** places one 8 m above the
 ground at the middle of the view; **Duplicate** and **Delete** manage the list.
 
 For the selected light: **Name**; **On**; **On in daylight too**; **Type**
-(**Point**, shining every way, or **Spot**); **X** and **Y** in the site's
-plan; **Height above the ground** (the ground beneath it is found where the
-light stands, so it stays on its pole when moved); for a spot, **Aim** (the
-compass direction it points, from the site's +X axis), **Tilt down** (0° is
-level, 90° straight down), **Cone** and **Edge softness**; **Color** and
-**Intensity**.
+(**Point (every way)** or **Spot (a cone)**); **X (forward)** and **Y (right)**
+in the site's plan; **Height above the ground** (the ground beneath it is found
+where the light stands, so it stays on its pole when moved; with no ground under
+it the field reads **Height (no ground under it)**); for a spot, **Aim (deg,
+right of forward)**, **Tilt down (deg, 90 = straight down)**, **Cone (deg,
+half-angle)** and **Edge softness**; **Color** and **Intensity (1 = a
+headlamp)**. A light in the list that is switched off reads "(off)".
+
+The lights belong to the site: when the site is moved, turned or scaled (its
+placement), they move with it, and a spot's aim turns with it.
 
 A site light comes on as the sky darkens, as a vehicle's lamps do; tick
 **On in daylight too** for one that should also light the scene by day. In
@@ -208,8 +212,9 @@ nearest the middle of the view, so the vehicles' lamps always have the rest. The
 lights) carry every one. Site lights are display only: no engine reads them.
 
 !!! note "HVE 2027"
-    HVE's site lights are drawn by its Open Inventor scene; HVE 2027 stores them
-    in the case.
+    HVE made site lights with the 3-D Editor's Light tool; HVE 2027 has no 3-D
+    Editor, so they are made here and stored in the case (JSON
+    `environment.lights`).
 
 ## Physical
 

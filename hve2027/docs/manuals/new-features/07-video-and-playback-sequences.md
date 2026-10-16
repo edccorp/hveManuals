@@ -264,8 +264,9 @@ window opens the file just written.
 ### A ray-traced picture
 
 **File › Render Image (Ray Traced)...** traces the 3-D view as it is now: its
-camera, the playback instant, the case's sun and sky, and the vehicles' lamps as
-the run switched them. You get soft shadows from a sun disc of real size,
+camera, the playback instant, the case's sun and sky, the vehicles' lamps as
+the run switched them, and every site light that is on (Environment panel ›
+Lights). You get soft shadows from a sun disc of real size,
 reflections, and light bounced off the road. Set the **Width** (the height
 follows the view), the **Samples** (64–256 for a clean picture) and the
 **Bounces**, then press **Render**. The picture sharpens pass by pass; **Stop**
