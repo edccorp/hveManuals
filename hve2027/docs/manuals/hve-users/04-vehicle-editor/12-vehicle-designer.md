@@ -50,8 +50,10 @@ Track and Summary stages say what they will do and do nothing yet.
 
 ### Stage 2: Packaging
 
-The Packaging stage holds the dimensions a solve reads. It opens with the two
-sections the Vehicles panel has: **Configuration** (number of axles, driver
+The Packaging stage holds the dimensions a solve reads. It opens with **Axle
+loads**, the static load on each axle from the mass and the weight split, and
+where the CG sits along the wheelbase. Under it are the two sections the
+Vehicles panel has: **Configuration** (number of axles, driver
 location, engine location and drive axles, with HVE's rules applied as you
 change one) and **Size & Weight** (HVE's Vehicle Wizard form, applied as you
 type: wheelbase, tracks, lengths, weights and CG, with the wheelbase check and
@@ -73,7 +75,11 @@ vehicle is the window's job, reached by **Open in its own window**.
 
 ### Stage 3: Mass
 
-The Mass stage hosts the **Inertia / Mass** editor that the Vehicles panel's
+The Mass stage opens with **Stated against estimated inertia**: the roll, pitch
+and yaw inertias the vehicle states against EDC's estimate from mass alone (its
+power-law fits), the estimate drawn hatched because it is a regression, not
+this vehicle; a stated value far from the fit is worth a look. Under it the
+stage hosts the **Inertia / Mass** editor that the Vehicles panel's
 Inertia **Edit...** opens: total and sprung mass, the CG location, the roll,
 pitch and yaw inertias and the product of inertia, each in the stored basis and
 the other basis side by side, and what is aboard (occupants and cargo). One
@@ -83,6 +89,14 @@ window.
 ![Figure 12-10: the Mass stage hosting the Inertia / Mass editor](../images/hvn-04-vehicle-designer-mass.png)
 
 ### Stage 4: Suspension
+
+The Suspension stage opens with **Ride and roll**: each axle's ride frequency
+and damping ratio, with the body's response to a unit bump drawn for the front
+and rear corner (a quarter of the sprung mass on its spring and damper), and
+the roll gradient in degrees per g with the roll stiffness split front to rear.
+The roll axis is at the stated roll centers, or at the ground when none is
+stated, and the headline says which. These are the numbers the damping and
+roll-split rules judge.
 
 The Suspension stage hosts the suspension editor itself: the same **Springs &
 Dampers** table and the four advanced tabs that **Vehicle › Suspension Data...**
@@ -96,6 +110,11 @@ the run is reset.
 ![Figure 12-4: the Suspension stage hosting the suspension editor](../images/hvn-04-vehicle-designer-suspension.png)
 
 ### Stage 5: Tires
+
+The Tires stage opens with **Peak friction against load**: each axle's peak
+longitudinal friction from zero to twice its static tire load, read from the
+tire's load table where it has one (a constant otherwise), with the static load
+marked. This is the capacity the Brakes chart divides the brake force by.
 
 The Tires stage hosts the tire editor: the same **Tire Properties** table, the
 tire-size and database tools and the **Load & Speed Tables** panel that
@@ -213,6 +232,12 @@ rather than a measurement) arrives with the Mass stage.
 
 ### Stage 7: Engine
 
+The Engine stage opens with **Torque and power**: the wide-open torque curve
+and the power it implies against engine speed, from idle to the redline, with
+the closed-throttle curve (engine braking) when one is stated. Without a
+wide-open table the flat maximum torque is drawn, which is what the engines
+receive.
+
 The Engine stage hosts the **Engine** section of the Drivetrain editor that
 **Vehicle › Drivetrain...** opens: the engine's name, idle and redline rpm,
 maximum torque and power, rotational inertia, friction torque, and the **Engine
@@ -226,6 +251,13 @@ Drivetrain window.
 
 ### Stage 8: Transmission
 
+The Transmission stage opens with **Tractive effort**: the force at the tires
+in each gear against road speed (the wide-open torque through the gear and the
+final drive, times the efficiency, over the tire radius), with the road load of
+drag and rolling resistance across it. The markers show the rev limit in top
+gear and where the road load meets the power; the headline says which of the
+two sets the top speed, as the rev-limit rule does.
+
 The Transmission stage hosts the other three sections of the Drivetrain editor:
 **Transmission** (automatic or manual with the shift rpm window, the number of
 gears and their ratios with reverse, the final drive ratio, efficiency, shift
@@ -237,6 +269,12 @@ opens the whole Drivetrain window.
 ![Figure 12-9: the Transmission stage hosting the Drivetrain editor's driveline sections](../images/hvn-04-vehicle-designer-transmission.png)
 
 ### Stage 9: Steering
+
+The Steering stage opens with **Yaw-rate gain**: the yaw rate per degree at
+the steering wheel against speed, from the steering ratio and the wheelbase.
+Until the Test Track has measured the understeer gradient the curve assumes
+neutral steer and says so; with the measurement it falls off above the
+characteristic speed, which is marked.
 
 The Steering stage hosts the steering editor: the per-axle table that
 **Vehicle › Steering System...** opens (steerable axle, steer ratio, the steering
