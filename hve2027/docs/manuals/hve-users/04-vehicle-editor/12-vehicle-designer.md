@@ -424,15 +424,27 @@ Wheel names are **wheel_FL**, **wheel_FR**, **wheel_RL** and **wheel_RR**.
 ## Stage 1: Body
 
 The Body stage is a body-shape design tool: it edits its own design, saved to
-its own design file, and never the case vehicle, so a wheelbase changed here
-changes nothing a solve reads. The case vehicle's dimensions are on stage 2,
+its own design file, and changes nothing a solve reads until you write it to
+the case vehicle with **Apply to this vehicle** (under the design). That writes
+the design's dimensions into the vehicle's Packaging fields (wheelbase,
+overhangs, overall length, width and height, the tracks and the tire radii;
+the CG's front/rear split and its height stay the vehicle's own, since a body
+shape determines neither) and carries the generated body in the case as the
+vehicle's mesh, so it is drawn and collided like a mesh file. The vehicle's
+database record is not changed. Each applied dimension becomes a Stated record
+in the Summary's provenance tally, naming the design. The button is disabled
+while a run holds the vehicle, and a design that does not validate is refused
+with the reason. Until applied, the case vehicle's dimensions are on stage 2,
 Packaging; the stage says so above its controls.
+
+![Figure 12-18: the Body stage with Apply to this vehicle under the four views](../images/hvn-04-vehicle-designer-body-apply.png)
 
 The body stage builds a recognizable sedan body from a short list of
 dimensions, with the wheels at their axle positions, and shows it in four views
 (**Side**, **Top**, **Front** and **Rear**). Use it to settle a vehicle's overall
-proportions, then save the design as a file. It is a design and preview tool: it
-does not change the case or any simulation result.
+proportions, then save the design as a file or apply it to the case vehicle.
+Saving the design changes nothing in the case; applying it does, as described
+above.
 
 At the top, **New Sedan** restores the default sedan. **Save Design** writes the
 design to the file named in **File**, and **Load Design** reads it back. A line
