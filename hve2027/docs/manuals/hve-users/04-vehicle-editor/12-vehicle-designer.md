@@ -109,9 +109,23 @@ axle locking before the front is a **Fix**; brakes that reach less than 85% of
 the grip limit at full pedal without locking are a **Consider**; a
 proportioning ratio of 0 (HVE reads it as a pressure limiter), ABS on a wheel
 (the chart shows lockup as if it were off) and a wheel with no torque ratio are
-**Notes**. The inputs themselves are edited in **Brake Assembly...**, **Brake
-Designer...**, **Brake System Pressure...** and **ABS / Brake Design...**, opened
-from the stage.
+**Notes**.
+
+**Edit the brakes** sits under the chart: the brake editors themselves, one tab
+each, so a change to a torque ratio or a proportioning knee redraws the chart
+above it at once. The **Assembly** tab is the Brake Assembly editor (per-wheel
+type, torque ratio, pushout, proportioning and antilock, with its per-wheel
+**Design...** buttons), the **Designer** tab the Brake Designer, **System
+Pressure** the Brake System Pressure editor with its pedal-force curve, and
+**ABS System** and **ABS Designer** the two ABS editors that the ABS / Brake
+Design window otherwise opens. They are the same editors as the windows, not
+copies: a field has one editor, drawn here or in the window. Under the designer,
+a **Design...** click in the Assembly tab selects the Designer tab on that wheel
+instead of opening a second window. Each tab's **Open in its own window** button
+opens that editor as its separate window, to work it beside another stage; the
+two ABS tabs open the ABS / Brake Design window.
+
+![Figure 12-7: the Brakes stage with the brake editors under the chart](../images/hvn-04-vehicle-designer-brakes-editors.png)
 
 ### The stat strip
 
