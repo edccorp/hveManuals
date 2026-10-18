@@ -53,7 +53,9 @@ Track and Summary stages say what they will do and do nothing yet.
 
 The Packaging stage holds the dimensions a solve reads. It opens with **Axle
 loads**, the static load on each axle from the mass and the weight split, and
-where the CG sits along the wheelbase. Under it are the two sections the
+where the CG sits along the wheelbase. On a vehicle with more than two axles
+the rear axles share the rear load equally (a tandem's equalizer at rest), one
+bar each, and the headline says so. Under it are the two sections the
 Vehicles panel has: **Configuration** (number of axles, driver
 location, engine location and drive axles, with HVE's rules applied as you
 change one) and **Size & Weight** (HVE's Vehicle Wizard form, applied as you
@@ -92,9 +94,11 @@ window.
 ### Stage 4: Suspension
 
 The Suspension stage opens with **Ride and roll**: each axle's ride frequency
-and damping ratio, with the body's response to a unit bump drawn for the front
-and rear corner (a quarter of the sprung mass on its spring and damper), and
-the roll gradient in degrees per g with the roll stiffness split front to rear.
+and damping ratio, with the body's response to a unit bump drawn for each
+axle's corner (half the axle's static load, less the unsprung share, on its
+spring and damper), and the roll gradient in degrees per g with the roll
+stiffness split front against the rear group (every axle behind the front one,
+as HVE's roll couple counts them).
 The roll axis is at the stated roll centers, or at the ground when none is
 stated, and the headline says which. These are the numbers the damping and
 roll-split rules judge.
@@ -115,7 +119,8 @@ the run is reset.
 The Tires stage opens with **Peak friction against load**: each axle's peak
 longitudinal friction from zero to twice its static tire load, read from the
 tire's load table where it has one (a constant otherwise), with the static load
-marked. This is the capacity the Brakes chart divides the brake force by.
+marked; one curve per axle, however many the vehicle has. This is the capacity
+the Brakes chart divides the brake force by.
 
 The Tires stage hosts the tire editor: the same **Tire Properties** table, the
 tire-size and database tools and the **Load & Speed Tables** panel that
@@ -142,24 +147,34 @@ which it locks, the grip-limited deceleration (every tire at its peak) and the
 deceleration at full pedal, then the brake balance by design (the front share
 of torque ratio over radius, before any valve or pushout).
 
-**Braking vs grip** plots four curves against pedal force: the front and rear
-brake force the brakes can deliver (solid) and the force the front and rear
-tires can transmit at that moment's load (translucent). Where a brake curve
+**Braking vs grip** plots two curves per axle against pedal force: the brake
+force the brakes can deliver (solid) and the force the tires can transmit at
+that moment's load (translucent, in the axle's color). Where a brake curve
 crosses above its grip curve that axle locks; a vertical marker names the
-first. **Inputs feeding the chart** lists, per axle, the static load, the peak
+first. On a two-axle vehicle the axles are Front and Rear; on a tractor or a
+straight truck they are numbered, and the rear axles share the rear load and
+the load transfer equally (a tandem's equalizer at rest) with the transfer's
+arm running from the front axle to the rear group's center. HVE's inter-tandem
+transfer coefficient, which moves load between a tandem's two axles under
+braking, is not applied, and the stage says so.
+
+![Figure 12-17: the Brakes stage on a three-axle tractor, one brake and one grip curve per axle](../images/hvn-04-vehicle-designer-brakes-tractor.png)
+
+**Inputs feeding the chart** lists, per axle, the static load, the peak
 friction (from the friction table where the tire has one), the tire radius,
 the right and left torque ratios, the pushout, the proportioning knee and
 ratio, and ABS. Under it is what the chart leaves out: the lining is at
 ambient (no fade; the Test Track stage will measure that), tire friction is
 read at the table's lowest speed, the unloaded tire radius is used, and a
 pedal ratio derived from the pressure curve says so. A vehicle the chart cannot
-describe (more than two axles, no mass, no wheelbase or CG height, no brake
-torque ratio on any wheel) is told why instead of being drawn.
+describe (a towed unit, which has no front axle and states no front/rear
+split; a single axle; no mass; no wheelbase or CG height; no brake torque ratio
+on any wheel) is told why instead of being drawn.
 
 The stage adds three rows to the stat strip: **Brake balance F (design)**,
 **First lock** with the axle named and the deceleration in g, and the
-**Grip-limited decel**. Its warnings are the first rules in the panel: the rear
-axle locking before the front is a **Fix**; brakes that reach less than 85% of
+**Grip-limited decel**. Its warnings are the first rules in the panel: a rear
+axle locking before the front is a **Fix** naming the axle; brakes that reach less than 85% of
 the grip limit at full pedal without locking are a **Consider**; a
 proportioning ratio of 0 (HVE reads it as a pressure limiter), ABS on a wheel
 (the chart shows lockup as if it were off) and a wheel with no torque ratio are
@@ -210,14 +225,14 @@ The rules, by stage:
 
 | Grade | Stage | Rule |
 |---|---|---|
-| Fix | Brakes | The rear axle reaches its grip before the front in the braking-against-grip sweep. |
+| Fix | Brakes | A rear axle reaches its grip before the front in the braking-against-grip sweep (named on a vehicle with more than two axles). |
 | Consider | Brakes | At full pedal no axle locks and the deceleration is under 85% of the grip limit. |
 | Note | Brakes | A wheel's proportioning is on with a ratio of 0, which HVE reads as a pressure limiter. |
 | Note | Brakes | ABS is on at a wheel; the chart shows lockup as if it were off. |
 | Note | Brakes | A wheel's brake torque ratio is 0. |
-| Note | Brakes | The brake chart cannot be drawn (not two axles, no mass, no wheelbase or CG height, no brake anywhere). |
-| Consider | Suspension | The front share of roll stiffness (spring rate times track squared over two, plus the auxiliary roll stiffness) differs from the front weight share by more than 20 points. |
-| Consider | Suspension | An axle's damping ratio (damping rate over twice the root of spring rate times corner sprung mass) is under 0.2 or over 0.5. |
+| Note | Brakes | The brake chart cannot be drawn (a towed unit or a single axle, no mass, no wheelbase or CG height, no brake anywhere). |
+| Consider | Suspension | The front share of roll stiffness (spring rate times track squared over two, plus the auxiliary roll stiffness; the rear axles counted together) differs from the front weight share by more than 20 points. |
+| Consider | Suspension | An axle's damping ratio (damping rate over twice the root of spring rate times corner sprung mass) is under 0.2 or over 0.5, on any axle. |
 | Consider | Mass | The static stability factor, front track over twice the CG height, is under 1.1. |
 | Note | Mass | Roll, pitch or yaw inertia is 0 in both its fields, so the run uses the mass-basis estimate the editor shows. |
 | Note | Steering | A steerable axle's steer ratio is 0, which HVE reads as no steering gear. |
