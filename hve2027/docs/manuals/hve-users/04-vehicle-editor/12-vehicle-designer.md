@@ -37,7 +37,7 @@ numbered so the order is visible; any stage can be clicked at any time:
 8. **Transmission** — gear ratios, final drive, shift logic, drive type, differential.
 9. **Steering** — steer ratio, column and geometry per axle.
 10. **Exterior** — the mesh, the lamps, aerodynamic drag, accelerometers, crush stiffness and body torsion.
-11. **Test Track** — three canned SIMON runs on the current physics, read back as numbers.
+11. **Test Track** — three canned SIMON runs on the current physics, read back as numbers (stage 11 below).
 12. **Summary** — the spec sheet, the whole warnings list and the provenance tally.
 
 In this release stages 1, 4, 5, 6 and 9 are built. Each other stage names the dialogs that hold
@@ -277,6 +277,36 @@ editor's window. The mesh is the one of the four an engine reads, in DyMESH cont
 other three are display and instrumentation.
 
 ![Figure 12-11: the Exterior stage with its four editors as tabs](../images/hvn-04-vehicle-designer-exterior.png)
+
+### Stage 11: Test Track
+
+The Test Track runs the vehicle, alone, on a flat surface, in three canned
+SIMON events, and reads the numbers back. **Run test track** solves them one
+after another on the current physics, as a copy: the case's own events and
+results do not change, nothing in the 3-D view moves, and the run is the
+solver beside the app, so a number here is what an event built the same way
+would give. **Cancel** stops the runs.
+
+- **Straight-line stop**: from 100 km/h, full pedal at 0.5 s on the vehicle's
+  own brake system (the pedal path). The stopping distance, the time and the
+  mean deceleration, with the speed trace. A vehicle that has not stopped by
+  15 s is reported as such.
+- **Step steer**: at 80 km/h, coasting, 45° at the steering wheel from 1 s. The
+  steady yaw rate over 4 to 6 s, the yaw-rate gain, the lateral acceleration and
+  the understeer gradient (the road-wheel angle over the Ackermann angle, per g
+  of lateral acceleration), with the yaw-rate trace. A vehicle whose steering
+  ratio is 0 (no steering gear) is refused with that reason rather than read as
+  16:1.
+- **Tightening circle**: at 60 km/h, coasting, the wheel ramped from 0 to 180°
+  over 12 s. The most lateral acceleration the tires reach and the wheel angle
+  where they reach it, with lateral acceleration against steering angle.
+
+The stat strip's **100-0 km/h stop**, **Understeer (deg/g)** and **Max lateral
+g** rows are filled from these runs and stay "--" until the track has been run
+for the vehicle; they clear when a different vehicle is picked. A run the
+solver refuses shows the solver's own reason.
+
+![Figure 12-14: the Test Track stage before its runs](../images/hvn-04-vehicle-designer-track.png)
 
 ## Frame and units
 
