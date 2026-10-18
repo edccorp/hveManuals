@@ -67,7 +67,7 @@ include a *Tessellate* toggle, a *Vertex Weld Distance*, and a *Max Side Length*
 !!! note "HVE 2027"
     The controls are **Tessellate**, **Max triangle leg** and **Weld
     distance**. The vehicle's defaults are on the **Collision** tab of
-    **Vehicle › Vehicle Mesh** (section *DyMESH Contact Mesh Preparation*); an
+    **Vehicle › Editors › Vehicle Mesh** (section *DyMESH Contact Mesh Preparation*); an
     event's own are in **Event › DyMESH Options**, section *Contact Mesh
     Preparation (per vehicle)*.
     The mesh is subdivided until no triangle leg exceeds the maximum, then

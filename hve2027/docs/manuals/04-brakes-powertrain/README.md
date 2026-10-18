@@ -1,6 +1,6 @@
 # Brakes & Powertrain
 
-Dialog and feature reference for the **Brakes & Powertrain** area of HVE 2027, page by page against HVE's own help: **Vehicle › Brakes › Brake Assembly...**, **Vehicle › Brakes › Brake Designer...**, **Vehicle › Brakes › Brake System Pressure...** and **Vehicle › Drivetrain...** in the Vehicle Editor (the same dialogs are buttons in the Vehicles panel's Components section). HVE's Brake Designer Material Properties dialog is not in HVE 2027; its page is kept as HVE reference. Part of the [HVE Manual](../README.md).
+Dialog and feature reference for the **Brakes & Powertrain** area of HVE 2027, page by page against HVE's own help: **Vehicle › Editors › Brakes › Brake Assembly...**, **Vehicle › Editors › Brakes › Brake Designer...**, **Vehicle › Editors › Brakes › Brake System Pressure...** and **Vehicle › Editors › Drivetrain...** in the Vehicle Editor (the same dialogs are buttons in the Vehicles panel's Components section). HVE's Brake Designer Material Properties dialog is not in HVE 2027; its page is kept as HVE reference. Part of the [HVE Manual](../README.md).
 
 ## Pages
 

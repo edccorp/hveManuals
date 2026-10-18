@@ -6,7 +6,7 @@ body and how much slack it has. The belt hardware (anchors and webbing) is
 installed in the vehicle editor's Belt Restraints dialog.
 
 !!! note "HVE 2027"
-    Open the **Belt Restraint System** window from **Vehicle › Belt
+    Open the **Belt Restraint System** window from **Vehicle › Editors › Belt
     Restraint...** in the Vehicle editor (F3), or **Event › Restraints... › Belt
     Restraint...** in the Event editor (F5; EDHIS and GATB events). HVE 2027
     puts HVE's vehicle-side belt hardware and event-side belt use in this one
@@ -36,7 +36,7 @@ What the selected occupant wears **in the active event**: **None**, **Lap Belt**
 airbag) in use for the run: a lap belt is used for any choice but None, the
 torso belt for 3-Point Belt and Airbag + Belt — each only if it is installed
 below — and the airbag only for Airbag + Belt. An Airbag + Belt occupant needs a
-bag installed at their seat (**Vehicle › Airbags...**), or the run is refused.
+bag installed at their seat (**Vehicle › Editors › Airbags...**), or the run is refused.
 The event's name is shown beside the list. If the occupant is not in the active
 event the list is replaced by a note; add the occupant in Event Information
 first.

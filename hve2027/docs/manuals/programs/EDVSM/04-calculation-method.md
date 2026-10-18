@@ -216,7 +216,7 @@ EDVSM also incorporates an extended version of HVOSM's Steer Degree of Freedom m
 > **NOTE:** The Append option is not supported by EDVSM.
 
 !!! note "HVE 2027"
-    In HVE 2027 this is **Steering Degree of Freedom › On - steer is a degree of freedom** in the **EDVSM Options** window (Event Information › Method Options…). The column inertia and friction come from **Vehicle › Steering System**, and the steering stops from the *Stop Angle* rows of the same dialog's *Steer-Axis Mechanics (per wheel)* section. The hint in that section refers to SIMON's per-axle *Steer DOF*; EDVSM reads the stops whenever its own steering degree of freedom is On.
+    In HVE 2027 this is **Steering Degree of Freedom › On - steer is a degree of freedom** in the **EDVSM Options** window (Event Information › Method Options…). The column inertia and friction come from **Vehicle › Editors › Steering System**, and the steering stops from the *Stop Angle* rows of the same dialog's *Steer-Axis Mechanics (per wheel)* section. The hint in that section refers to SIMON's per-axle *Steer DOF*; EDVSM reads the stops whenever its own steering degree of freedom is On.
 
 The engineering model used by the Steer Degree of Freedom option is shown in Figure 4-1. The linkage is assumed to be rigid, thus the angular acceleration about the steering axis is the same for right-side and left-side wheels. External steer forces are generated at the tire-road interface, thus producing a moment about each tire's steering axis according to the tire's pneumatic trail. The moments are resisted by steer system inertia and internal coulomb friction. Steering is limited by right and left steering stops at each wheel.
 

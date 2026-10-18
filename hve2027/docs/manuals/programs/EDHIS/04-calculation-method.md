@@ -241,7 +241,7 @@ expressed as angles.
 > **NOTE:** Because belt tension uses the same law as contact, a belt also carries a permanent set: once its maximum force has been exceeded it unloads along the entered slope rather than back down the loading curve, and does not recover its original stiffness.
 
 !!! note "HVE 2027"
-    HVE 2027 sends EDHIS the belt's *Stiffness* as $C_1$, its *Damping* as $C_d$ and its *Break Strength* as the maximum force (**Vehicle › Belt Restraint**); $C_2$ and $C_3$ are zero. The unloading slope is the one stored in a case imported from HVE, and zero (purely elastic) otherwise.
+    HVE 2027 sends EDHIS the belt's *Stiffness* as $C_1$, its *Damping* as $C_d$ and its *Break Strength* as the maximum force (**Vehicle › Editors › Belt Restraint**); $C_2$ and $C_3$ are zero. The unloading slope is the one stored in a case imported from HVE, and zero (purely elastic) otherwise.
 
 ## Airbag Model
 

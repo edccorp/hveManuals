@@ -145,7 +145,7 @@ EDSMAC4's tire model does not incorporate load dependence. If friction data for 
 
 EDSMAC4's tire model has the capability to include speed dependence. If friction data are entered for more than one speed, EDSMAC4 calculates a speed dependence factor (see [Chapter 4 — Calculation Method](04-calculation-method.md)).
 
-Friction In-use Factor, available in HVE, is a convenient way to reduce or increase the slide friction value during the entire run for a specific tire. In HVE 2027 the friction and cornering stiffness tables, each with its **In-Use Factor**, are on the **Friction** and **Cornering** tabs of the **Load & Speed Tables** panel at the bottom of **Vehicle › Tires...** (the Tire Properties window).
+Friction In-use Factor, available in HVE, is a convenient way to reduce or increase the slide friction value during the entire run for a specific tire. In HVE 2027 the friction and cornering stiffness tables, each with its **In-Use Factor**, are on the **Friction** and **Cornering** tabs of the **Load & Speed Tables** panel at the bottom of **Vehicle › Editors › Tires...** (the Tire Properties window).
 
 > **NOTE:** During an event, the actual tire-terrain friction used during the current timestep is the product of the slide friction coefficient, the in-use factor and the terrain friction multiplier for the polygon beneath the tire. Mathematically,
 >
@@ -186,7 +186,7 @@ EDSMAC4 supports all suspension types, including those with tandem axles. Howeve
 
 If three axles are supplied for the vehicle, the vehicle is assumed to have tandem rear axles. In this case, a longitudinal load transfer due to braking may be simulated by supplying an Inter-tandem Load Transfer Coefficient.
 
-In HVE 2027 the coefficient is the **Int. Tandem Load Xfr** row of **Vehicle › Suspension Data...**.
+In HVE 2027 the coefficient is the **Int. Tandem Load Xfr** row of **Vehicle › Editors › Suspension Data...**.
 
 Studies have shown the value of −0.38 to be representative of typical four-spring suspension systems [4]. The negative sign indicates load transfer from the front to the rear axle.
 
@@ -226,12 +226,12 @@ EDSMAC4 uses the following Vehicle Exterior Data:
 
 ### Steering System Data
 
-EDSMAC4 uses the Steering System to determine which axles are steerable. Only steerable wheels are displayed in the Driver Controls, Steer Table. In addition, if the Steer Table, At Driver option is used, the steering gear ratio parameter is used to compute the steer angle at each steerable tire. In HVE 2027 these are in **Vehicle › Steering System...** (the **Gear Ratio** row).
+EDSMAC4 uses the Steering System to determine which axles are steerable. Only steerable wheels are displayed in the Driver Controls, Steer Table. In addition, if the Steer Table, At Driver option is used, the steering gear ratio parameter is used to compute the steer angle at each steerable tire. In HVE 2027 these are in **Vehicle › Editors › Steering System...** (the **Gear Ratio** row).
 
 *(updated: the current EDSMAC4 can also use the Steering System data in an optional dynamic steer degree of freedom, selected by the Steer DOF calculation option. When Steer DOF is Normal, Append or AutoStart, steer angles are computed from the torques acting on the steering system rather than taken directly from the steer tables.)*
 
 !!! warning "Not in HVE 2027"
-    HVE 2027 always runs EDSMAC4 with Steer DOF **Off**, so the steer table is applied as a prescribed steer angle. There is no Steer DOF control for an EDSMAC4 event, and a non-zero Steer DOF stored in an imported HVE case is ignored; the run status says so ("EDSMAC4 steer DOF *n* from the file ignored"). The reason is that EDSMAC4 skips the prescribed steer table under Steer DOF Normal. (The **Steer DOF** column in **Vehicle › Steering System** is SIMON's.)
+    HVE 2027 always runs EDSMAC4 with Steer DOF **Off**, so the steer table is applied as a prescribed steer angle. There is no Steer DOF control for an EDSMAC4 event, and a non-zero Steer DOF stored in an imported HVE case is ignored; the run status says so ("EDSMAC4 steer DOF *n* from the file ignored"). The reason is that EDSMAC4 skips the prescribed steer table under Steer DOF Normal. (The **Steer DOF** column in **Vehicle › Editors › Steering System** is SIMON's.)
 
 ### Brake System Data
 
@@ -476,7 +476,7 @@ The **Tessellation** option allows the user to add additional detail to the 3-D 
 The **Inter-vehicle** option allows the user to choose the value for the coefficient of sliding friction (default 0.55) between the exteriors of the selected pair of objects. *(updated: the original manual associated this coefficient with the **Minimum Velocity for Friction** calculation option; the two quantities were transposed. The inter-vehicle sliding friction coefficient is set per vehicle pair and is not the Minimum Velocity for Friction.)*
 
 !!! note "HVE 2027"
-    - **Tessellation** (**Tessellate**, **Max triangle leg**, **Weld distance**) is set as the vehicle's default on the **Collision** tab of **Vehicle › Vehicle Mesh** (section DyMESH Contact Mesh Preparation), and for this event in **Event › DyMESH Options**, section **Contact Mesh Preparation (per vehicle)**, where **This event states its own preparation** gives the event values that outrank the vehicle's.
+    - **Tessellation** (**Tessellate**, **Max triangle leg**, **Weld distance**) is set as the vehicle's default on the **Collision** tab of **Vehicle › Editors › Vehicle Mesh** (section DyMESH Contact Mesh Preparation), and for this event in **Event › DyMESH Options**, section **Contact Mesh Preparation (per vehicle)**, where **This event states its own preparation** gives the event values that outrank the vehicle's.
     - **Inter-vehicle friction** is in the **EDSMAC Options** window (**Method Options...** in Event Information): **Inter-Vehicle Friction** is the value for every pair, and the **Per-pair override** grid below it sets a value for one ordered pair (blank uses the value above). The same per-pair friction is also shown in **Event › DyMESH Options**.
 
 #### Payload
@@ -519,7 +519,7 @@ EDSMAC4 supports the Tire Blowout Model [26] and Wheel Displacement option. Thes
 EDSMAC4 allows the user to place virtual accelerometers in the vehicle at up to five vehicle-fixed locations. These accelerometers can be used to track the total acceleration and acceleration components at various locations within the vehicle (e.g., specific seat locations). The accelerometer outputs are included in the Variable Output, Accelerometer group (see [Chapter 3, Variable Output](03-program-output.md#variable-output-table)).
 
 !!! note "HVE 2027"
-    Place them with **Event › Accelerometers** (or **Vehicle › Accelerometers**); they are stored on the vehicle and drawn in the viewport during playback.
+    Place them with **Event › Accelerometers** (or **Vehicle › Editors › Accelerometers**); they are stored on the vehicle and drawn in the viewport during playback.
 
 ### Simulation Controls
 

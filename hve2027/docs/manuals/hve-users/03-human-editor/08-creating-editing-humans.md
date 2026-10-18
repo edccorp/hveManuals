@@ -91,7 +91,7 @@ attributes in the panel:
 
   > **NOTE:** The Location also selects which seat's airbag the human uses:
   > the bag at that seat of the event's vehicle, edited in the Vehicle editor
-  > (Vehicle › Airbags...). A pedestrian has no seat and no airbag.
+  > (Vehicle › Editors › Airbags...). A pedestrian has no seat and no airbag.
 
 - **Subject Type** — Male or Female.
 - **Age Group** — Child (0-12), Teen (13-17), Adult (18-64) or Senior (65+).

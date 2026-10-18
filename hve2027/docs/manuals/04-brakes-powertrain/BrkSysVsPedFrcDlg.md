@@ -1,6 +1,6 @@
 # Brake System Pressure vs Pedal Force Dialog Box
 
-The brake system parameters for the current vehicle are displayed and edited using the **Brake System Pressure** dialog. Open it in the Vehicle Editor (**Vehicle (F3)**) with **Vehicle › Brakes › Brake System Pressure...**. The **Vehicle** list at the top selects the vehicle. Pressures and forces are shown in the units set in Preferences.
+The brake system parameters for the current vehicle are displayed and edited using the **Brake System Pressure** dialog. Open it in the Vehicle Editor (**Vehicle (F3)**) with **Vehicle › Editors › Brakes › Brake System Pressure...**. The **Vehicle** list at the top selects the vehicle. Pressures and forces are shown in the units set in Preferences.
 
 This dialog contains the following items:
 
@@ -30,7 +30,7 @@ A table of **Pedal Force** against **Pressure**, with an **x** button to delete 
     HVE's Brake System dialog also has **Assembly Type** and **ABS Installed**. In HVE 2027 they are elsewhere:
 
     - **Assembly Type**: the disc/drum choice is the per-wheel **Brake Type** in Brake Assembly.
-    - **ABS Installed**: in **Vehicle › Brakes › ABS / Brake Design... › ABS System...**, with the system-level ABS parameters (HVE's **Edit...** button). SIMON regulates every wheel when it, or any wheel's **Antilock (ABS)** box in Brake Assembly, is ticked. EDSVS and EDVTS use the per-wheel boxes, and EDVDS has no ABS model.
+    - **ABS Installed**: in **Vehicle › Editors › Brakes › ABS / Brake Design... › ABS System...**, with the system-level ABS parameters (HVE's **Edit...** button). SIMON regulates every wheel when it, or any wheel's **Antilock (ABS)** box in Brake Assembly, is ticked. EDSVS and EDVTS use the per-wheel boxes, and EDVDS has no ABS model.
 
 !!! warning "Not in HVE 2027"
     - HVE's rule that disables Pedal Ratio for a vehicle with no driver.

@@ -166,7 +166,7 @@ EDCRASH uses the following Vehicle Exterior Data:
     In HVE 2027 EDCRASH takes the A and B stiffness coefficients from the
     **event** (Event Information, Vehicle Impact Setup — see Damage Profile
     below), not from the vehicle. The per-side A and B values of the
-    vehicle (Vehicle › Crush Stiffness... and the **Crush & Geometry** dialog,
+    vehicle (Vehicle › Editors › Crush Stiffness... and the **Crush & Geometry** dialog,
     Event › Crush Profile...) are used by the simulation programs, not by
     EDCRASH. A case opened from HVE carries the stiffness HVE stored in
     the event.
@@ -451,7 +451,7 @@ After entering the CDC, the damage profile may be edited by over-riding the defa
     **Vehicle Impact Setup** section, under each vehicle's name. **Event › Damage
     Profiles...** (Ctrl+M) opens that section, as HVE's menu item opens its
     dialog. (The vehicle's per-side crush stiffness, which EDCRASH does not
-    use, is Vehicle › Crush Stiffness....)
+    use, is Vehicle › Editors › Crush Stiffness....)
 
     - **CDC** — the seven-character code. If no usable crush profile is
       entered, EDCRASH derives the default width, offset and depths from it,

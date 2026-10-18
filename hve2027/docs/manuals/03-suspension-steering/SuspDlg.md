@@ -1,6 +1,6 @@
 # Suspension Data Dialog
 
-The suspension parameters of the vehicle are displayed and edited using the **Suspension Data** dialog. Open it in the Vehicle Editor (**Vehicle (F3)**) with **Vehicle › Suspension Data...**, or with **Suspension...** under **Components** in the Vehicles panel. The **Vehicle** list at the top selects the vehicle.
+The suspension parameters of the vehicle are displayed and edited using the **Suspension Data** dialog. Open it in the Vehicle Editor (**Vehicle (F3)**) with **Vehicle › Editors › Suspension Data...**, or with **Suspension...** under **Components** in the Vehicles panel. The **Vehicle** list at the top selects the vehicle.
 
 Where HVE edits one wheel at a time (the dialog title names the axle and side) and reaches the springs, inertia, stops and geometry through further dialogs, HVE 2027 shows **every axle at once**: the dialog is a table with one column per axle (**Axle 1**, **Axle 2**, ...) and one row per parameter. The values are per axle; both wheels of an axle share them. Values are shown in the units set in Preferences and take effect as they are typed. While results are on screen the vehicle is locked; reset the run to edit it.
 
@@ -70,11 +70,11 @@ The axle beam's weight and inertia (HVE's Axle Inertia dialog); see [Inertia Dia
 |---|---|
 | Springs and Shocks... | The **Spring & Damper** and **Solid Axle** rows of this dialog. |
 | Inertia... | **Beam Mass** and **Beam Inertia** rows of this dialog. |
-| Jounce/Rebound... | the **Jounce / Rebound** tab of **Vehicle › Suspension Data...** — see [Jounce and Rebound Stops Dialog](JouAndRebDlg.md). |
-| Spindle Axis... | **Vehicle › Steering System...** — see [Spindle Axis Dialog](SpndleAxisDlg.md). |
-| Camber... | the **Camber vs Deflection** tab of **Vehicle › Suspension Data...** — see [Camber Dialog](CamberDlg.md). |
-| Anti-Pitch... | the **Anti-Pitch** tab of **Vehicle › Suspension Data...** — see [Anti-Pitch Dialog](AntiPitchDlg.md). |
-| Roll Steer... | the **Roll Steer** tab of **Vehicle › Suspension Data...** — see [Roll Steer Dialog](RollSteerDlg.md). |
+| Jounce/Rebound... | the **Jounce / Rebound** tab of **Vehicle › Editors › Suspension Data...** — see [Jounce and Rebound Stops Dialog](JouAndRebDlg.md). |
+| Spindle Axis... | **Vehicle › Editors › Steering System...** — see [Spindle Axis Dialog](SpndleAxisDlg.md). |
+| Camber... | the **Camber vs Deflection** tab of **Vehicle › Editors › Suspension Data...** — see [Camber Dialog](CamberDlg.md). |
+| Anti-Pitch... | the **Anti-Pitch** tab of **Vehicle › Editors › Suspension Data...** — see [Anti-Pitch Dialog](AntiPitchDlg.md). |
+| Roll Steer... | the **Roll Steer** tab of **Vehicle › Editors › Suspension Data...** — see [Roll Steer Dialog](RollSteerDlg.md). |
 
 !!! warning "Not in HVE 2027"
     - **HVE's enable rules**: HVE 2027 does not grey Inter-Tandem Load Transfer for non-tandem types, the Roll Center Height and Lateral Spring Spacing for an independent suspension, the axle inertia for an independent suspension, Anti-Pitch for a solid axle, or Spindle Axis for a non-steerable axle. It offers the tandem types on every axle, where HVE offers them only where a tandem set is possible.

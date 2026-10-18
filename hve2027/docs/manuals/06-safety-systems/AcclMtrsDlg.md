@@ -4,7 +4,7 @@ Accelerometers are points on the vehicle at which the simulation reports
 velocity and acceleration. HVE assigns up to five per vehicle, in event mode.
 
 !!! note "HVE 2027"
-    Open the **Accelerometers** window from **Vehicle › Accelerometers...** in the
+    Open the **Accelerometers** window from **Vehicle › Editors › Accelerometers...** in the
     Vehicle editor (F3), or **Event › Accelerometers...** in the Event editor
     (F5; available for SIMON, EDSMAC4, EDVDS and EDVSM, the methods that
     compute accelerometer output). Both open the same

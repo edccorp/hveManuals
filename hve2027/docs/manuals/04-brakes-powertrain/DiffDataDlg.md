@@ -1,6 +1,6 @@
 # Differential Data Dialog Box
 
-In HVE 2027 the differential is the **Differential** section of the **Drivetrain** dialog (**Vehicle › Drivetrain...** in the Vehicle Editor); see [Drive Train Dialog Box](DriveTraDlg.md). The final drive ratio is entered in the Transmission section as **Final Drive Ratio**.
+In HVE 2027 the differential is the **Differential** section of the **Drivetrain** dialog (**Vehicle › Editors › Drivetrain...** in the Vehicle Editor); see [Drive Train Dialog Box](DriveTraDlg.md). The final drive ratio is entered in the Transmission section as **Final Drive Ratio**.
 
 This section contains the following items:
 

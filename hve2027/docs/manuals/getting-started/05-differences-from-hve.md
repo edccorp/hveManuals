@@ -18,10 +18,10 @@ HVE does.
 | Units dialog (US, SI, Custom) | **Tools › Preferences › Units**: Imperial or Metric. No custom mix |
 | 3-D editor manipulators | A gizmo, plus Blender-style keys: **G** move, **R** rotate, **X/Y/Z** axis lock, typed values, **Ctrl** snap. See [Interface Tour](03-interface-tour.md#moving-objects-the-gizmo) |
 | Path Follower | **Event › Path Follower** — it is per event and per vehicle, so it is on the Event menu, not the Vehicle menu |
-| Body Torsion | **Vehicle › Body Torsion** (a property of the vehicle, whichever event is open) |
-| Transform Vehicle Geometry, Move CG of the geometry | **Vehicle › Vehicle Mesh** (also offered on the Event menu): scale, move and rotate the body, and its other mesh options |
+| Body Torsion | **Vehicle › Editors › Body Torsion** (a property of the vehicle, whichever event is open) |
+| Transform Vehicle Geometry, Move CG of the geometry | **Vehicle › Editors › Vehicle Mesh** (also offered on the Event menu): scale, move and rotate the body, and its other mesh options |
 | Use Ackermann Steering, set per event in Driver Controls | Ackermann / parallel steer is chosen in the vehicle's **Steering System** |
-| Contact surfaces, airbags, belts | **Vehicle › Contact Surfaces**, **Airbags**, **Belt Restraint**; per event, **Event › Restraints** |
+| Contact surfaces, airbags, belts | **Vehicle › Editors › Contact Surfaces**, **Airbags**, **Belt Restraint**; per event, **Event › Restraints** |
 | GEBOD Human Information | **Occupant › Human Information** (the Occupants panel) |
 | Damage Studio | **Output › Damage Studio Options** and **Damage Studio Report**; crush is drawn on the vehicle's 3-D body as the run plays |
 | Impact Plane / Barrier (EDCRASH) | Greyed in the Event menu. Model a barrier as a vehicle of type **Fixed Barrier** (Vehicles panel, Identity) |
@@ -80,7 +80,7 @@ running something else:
 | --- | --- | --- |
 | SIMON Method Options › Hydroplaning | Blythe-Day *(refuses the run)* | SIMON implements Off, NASA, NASA-TTI and Gallaway |
 | EDSMAC4 Method Options › Hydroplane Model | NASA-TTI, Gallaway *(not supported by EDSMAC4)* | EDSMAC4 implements Off and NASA |
-| Vehicle › Brakes › ABS / Brake Design › ABS algorithm | Algorithm 3, 5 and 6 *(not implemented)* | The run stops when the ABS first acts. Tire Slip, Bosch Version 1 and Algorithm 4 are implemented |
+| Vehicle › Editors › Brakes › ABS / Brake Design › ABS algorithm | Algorithm 3, 5 and 6 *(not implemented)* | The run stops when the ABS first acts. Tire Slip, Bosch Version 1 and Algorithm 4 are implemented |
 | EDCRASH Method Options › Separation Velocity Basis | Iterate on Sideslip | EDCRASH refuses it. Normal, Trajectory Simulation and Sustained Contact work |
 | Event › DyMESH Options › Search Option | Search all vertices *(refuses the run)* | Automatic box size and Set box size work |
 
@@ -100,14 +100,14 @@ running something else:
 | Single-track (motorcycle) program | Calculation Method **SINGLETRACK**; **Tools › Motorcycle Analysis** | A motorcycle model with lean as a degree of freedom, countersteer, load transfer and pitch-over, validated against the published benchmark. HVE's programs can only approximate a two-wheeler as a narrow four-wheeled vehicle |
 | Prescribed lean (SIMON) | **Event › Driver Controls › Lean** tab (shown for a motorcycle) | Makes SIMON's body follow a lean-angle table, for a motorcycle that would otherwise fall over |
 | Path follower through impact (SIMON, EDSMAC4) | **Event › Path Follower › Keep following through an impact** | Keeps a vehicle's path follower active after it collides. Off by default, and always off in a case imported from HVE |
-| Per-axle steer degree of freedom (SIMON) | **Vehicle › Steering System**, Steer DOF (SIMON) | Sets SIMON's steer degree of freedom — Normal (free), Append (free after the table) or Auto start (free at contact) — for each axle separately, instead of one setting for the whole event; for example, a free castoring axle |
-| Limited-slip and locked differentials (SIMON) | **Vehicle › Drivetrain** | See [Physics differences](#physics-differences-by-design) |
+| Per-axle steer degree of freedom (SIMON) | **Vehicle › Editors › Steering System**, Steer DOF (SIMON) | Sets SIMON's steer degree of freedom — Normal (free), Append (free after the table) or Auto start (free at contact) — for each axle separately, instead of one setting for the whole event; for example, a free castoring axle |
+| Limited-slip and locked differentials (SIMON) | **Vehicle › Editors › Drivetrain** | See [Physics differences](#physics-differences-by-design) |
 | Monte Carlo analysis | **Tools › Monte Carlo Analysis** | Runs the event many times with uncertain inputs (Normal, Uniform, Triangular or Lognormal; Random or Latin Hypercube sampling) through the real physics programs, and reports confidence intervals, sensitivity and convergence, with a CSV, an HTML report and an audit record |
 | Quick Case | **Tools › Automatic Tools › Quick Case (Text)** | Builds a case from a typed sentence, such as "SIMON event, vehicle 1 at (0,0) heading 0 speed 50 mph, vehicle 2 at (12,-3) heading 180 speed 30 mph", with a preview before it is applied |
 | Vehicle Package | **Tools › Automatic Tools › Vehicle Package** | Builds a case vehicle from its VIN (checked offline, or decoded by NHTSA on request) or year, make and model: the matching database record, or a generic scaled to the vehicle's stated weight, dimensions and CG height; with its occupants (GEBOD) and cargo. See [Case Intake and Vehicle Data](../new-features/12-case-intake-and-vehicle-data.md) |
 | Case Intake and Provenance | **Tools › Automatic Tools › Case Intake**, **Tools › Automatic Tools › Provenance** | Builds an event from the case documents through your own AI tool (HVE 2027 sends nothing anywhere), and keeps, with the case, where every value these tools set came from: stated, looked up, estimated, a generic's default or unknown |
 | Occupants and cargo aboard a vehicle | **Inertia / Mass** dialog, *Aboard* | A load the vehicle carries into every event and engine, added to its mass, CG and inertia, or handed to SIMON and EDVDS as payload |
-| Crush stiffness from crash tests | **Tools › Automatic Tools › Crush Stiffness from Crash Tests**, or **Vehicle › Crush Stiffness › From crash tests** | CRASH3 A and B from staged barrier tests, typed in, read from an NHTSA test file or fetched from NHTSA's database by test number, put on a side of the vehicle and on its EDCRASH events |
+| Crush stiffness from crash tests | **Tools › Automatic Tools › Crush Stiffness from Crash Tests**, or **Vehicle › Editors › Crush Stiffness › From crash tests** | CRASH3 A and B from staged barrier tests, typed in, read from an NHTSA test file or fetched from NHTSA's database by test number, put on a side of the vehicle and on its EDCRASH events |
 | EDR import | **Tools › Automatic Tools › EDR Import** | An event data recorder's pre-crash record (from the report's PDF or tables, or typed in) into an event vehicle's initial speed and driver-control tables; for SIMON, the driver solved to follow the recorded speed; and the recorded yaw rate, accelerations and delta-V against the run's |
 | Node materials | **View › Shader Editor** | Blender-style material graphs for vehicles, road surfaces and the sky. Display only: a surface's friction stays in the Environment editor |
 | Keyframes | **View › Dope Sheet**; **I** in the viewport | Animate material values and cameras over the playback time. Display only |

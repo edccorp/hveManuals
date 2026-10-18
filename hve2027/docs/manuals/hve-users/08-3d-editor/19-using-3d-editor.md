@@ -185,7 +185,7 @@ HVE's Group tool combines objects into a group, splits groups, and saves and loa
 ![Figure 19-3](../images/hvn-08-viewport-scene.png)
 *Figure 19-3 — The 3-D view of a site read from an HVE case, with scene ghosts in outline style marking measured scene positions.*
 
-Lighting comes from the sun and sky set in **Environment › Environment… › Sky**. **Vehicle › Vehicle Lights…** keeps a list of lights with each vehicle (type, intensity, direction, position, colour); the 3-D view uses them as the vehicle's lamps, which light the scene once the sky darkens. No engine reads them.
+Lighting comes from the sun and sky set in **Environment › Environment… › Sky**. **Vehicle › Editors › Vehicle Lights…** keeps a list of lights with each vehicle (type, intensity, direction, position, colour); the 3-D view uses them as the vehicle's lamps, which light the scene once the sky darkens. No engine reads them.
 
 ---
 *Converted and updated from the legacy HVE User's Manual (Seventh Edition, Jan 2006), Chapter 19; adapted for HVE 2027.*

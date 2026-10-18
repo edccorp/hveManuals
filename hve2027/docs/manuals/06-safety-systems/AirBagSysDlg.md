@@ -6,7 +6,7 @@ sets when it deploys.
 
 !!! note "HVE 2027"
     HVE 2027 has no separate Airbag Restraint System window. Its fields are
-    in the vehicle's **Airbags** window — **Vehicle › Airbags...** in the
+    in the vehicle's **Airbags** window — **Vehicle › Editors › Airbags...** in the
     Vehicle editor (F3), or **Event › Restraints... › Airbags...** in the
     Event editor (F5; EDHIS and GATB events) — beside the bag's own
     properties (see [Air Bag Restraints](AirBagDlg.md)). They are stored with

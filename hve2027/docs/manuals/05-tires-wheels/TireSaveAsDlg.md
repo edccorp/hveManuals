@@ -8,7 +8,7 @@ Information dialog.
 !!! warning "Not in HVE 2027"
     HVE 2027 has no Tire Save As dialog: a tire cannot be saved to a database
     on its own. Each wheel's tire data are part of the vehicle and are edited
-    in place in **Vehicle › Tires...**, in its per-wheel grid and its Load &
+    in place in **Vehicle › Editors › Tires...**, in its per-wheel grid and its Load &
     Speed Tables panel (see [Tire Information](TireInfoDlg.md)). The tire data are
     saved with the case. A tire can be taken from HVE's databases in the
     **Tire Database** section of the Tire Properties window.

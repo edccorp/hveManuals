@@ -11,7 +11,7 @@ Vehicle-fixed distance from the CG to the left side of the vehicle. In HVE 2027 
 An **input** under **Geometry**. The CG-to-left and CG-to-right distances are each half of it only when the vehicle carries no CG-to-side distances of its own; a vehicle read from an HVE database or case normally carries them, and editing Overall Width does not change its side extents.
 
 ## Stiffness...
-The left face's A, B and Kv stiffness is edited in **Vehicle › Crush Stiffness...** (Vehicle editor, F3), section **Left**, or in the **CG to Left...** dialog of the **Crush & Geometry** window (**Event › Crush Profile...**, EDCRASH, EDSMAC and EDSMAC4 events). Its 3-D node stiffness is the **Left** zone under **3-D Node Stiffness** in Crush Stiffness. See [Stiffness Coefficient Dialog](StiffCoeffDlg.md).
+The left face's A, B and Kv stiffness is edited in **Vehicle › Editors › Crush Stiffness...** (Vehicle editor, F3), section **Left**, or in the **CG to Left...** dialog of the **Crush & Geometry** window (**Event › Crush Profile...**, EDCRASH, EDSMAC and EDSMAC4 events). Its 3-D node stiffness is the **Left** zone under **3-D Node Stiffness** in Crush Stiffness. See [Stiffness Coefficient Dialog](StiffCoeffDlg.md).
 
 !!! warning "Not in HVE 2027"
     - A separate CG To Left dialog, and its Apply / OK / Cancel buttons. Edits in the Vehicles panel take effect as they are typed.

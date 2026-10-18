@@ -79,7 +79,7 @@ injury data" (with **View › Show Guidance Text** on), and after one it shows
 - **Body Pose...** — the human's initial posture and initial velocity in the
   active event (below)
 
-The airbag at an occupant's seat belongs to the vehicle: **Vehicle › Airbags...**
+The airbag at an occupant's seat belongs to the vehicle: **Vehicle › Editors › Airbags...**
 in the Vehicle editor (see [Air Bag Restraints](../06-safety-systems/AirBagDlg.md)).
 
 ## Body Pose

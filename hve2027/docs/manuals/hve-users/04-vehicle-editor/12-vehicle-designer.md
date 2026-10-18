@@ -104,7 +104,7 @@ stated, and the headline says which. These are the numbers the damping and
 roll-split rules judge.
 
 The Suspension stage hosts the suspension editor itself: the same **Springs &
-Dampers** table and the four advanced tabs that **Vehicle › Suspension Data...**
+Dampers** table and the four advanced tabs that **Vehicle › Editors › Suspension Data...**
 opens, drawn in the stage's center under the frame's vehicle line, so an edit
 here is the edit, with the stat strip and the warnings panel updating beside it.
 The window and the stage draw one editor, so they can never disagree.
@@ -124,7 +124,7 @@ the Brakes chart divides the brake force by.
 
 The Tires stage hosts the tire editor: the same **Tire Properties** table, the
 tire-size and database tools and the **Load & Speed Tables** panel that
-**Vehicle › Tires...** opens, drawn in the stage's center under the frame's
+**Vehicle › Editors › Tires...** opens, drawn in the stage's center under the frame's
 vehicle line. One editor serves the window and the stage.
 
 ![Figure 12-5: the Tires stage hosting the tire editor](../images/hvn-04-vehicle-designer-tires.png)
@@ -260,7 +260,7 @@ wide-open table the flat maximum torque is drawn, which is what the engines
 receive.
 
 The Engine stage hosts the **Engine** section of the Drivetrain editor that
-**Vehicle › Drivetrain...** opens: the engine's name, idle and redline rpm,
+**Vehicle › Editors › Drivetrain...** opens: the engine's name, idle and redline rpm,
 maximum torque and power, rotational inertia, friction torque, and the **Engine
 Tables** (the wide-open
 and closed-throttle torque curves, with the power each row implies). Nothing is copied: the stage
@@ -298,7 +298,7 @@ neutral steer and says so; with the measurement it falls off above the
 characteristic speed, which is marked.
 
 The Steering stage hosts the steering editor: the per-axle table that
-**Vehicle › Steering System...** opens (steerable axle, steer ratio, the steering
+**Vehicle › Editors › Steering System...** opens (steerable axle, steer ratio, the steering
 degree of freedom, column and linkage, geometry and stops), drawn in the stage's
 center under the frame's vehicle line. One editor serves the window and the
 stage.

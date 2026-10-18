@@ -1,6 +1,6 @@
 # Camber vs Jounce/Rebound Dialog
 
-The camber properties of the wheels are displayed and edited in the **Camber vs Deflection** dialog. Open it in the Vehicle Editor as the **Camber vs Deflection** tab of **Vehicle › Suspension Data...**. The **Vehicle** list at the top selects the vehicle.
+The camber properties of the wheels are displayed and edited in the **Camber vs Deflection** dialog. Open it in the Vehicle Editor as the **Camber vs Deflection** tab of **Vehicle › Editors › Suspension Data...**. The **Vehicle** list at the top selects the vehicle.
 
 Where HVE edits one wheel at a time, and opens either this table/graph dialog (independent suspension) or a single constant *Camber (deg)* dialog (solid and tandem axles), HVE 2027 shows one table with a column per wheel (**A1 Right**, **A1 Left**, **A2 Right**, ...) holding both. Deflections are shown in the units set in Preferences; angles are in degrees.
 

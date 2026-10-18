@@ -9,7 +9,7 @@ Updated Markdown edition, converted from the Sixth Edition (January 2006) printe
 HVE 2027 compiles HVE's own EDVTS source, so the model described in this manual — the equations of motion, tire model, load transfer and messages — is the model HVE 2027 runs. On EDC's tutorial case (`EdvtsTutorialEDC.hve`) and validation cases, HVE 2027's runs reproduce the trajectories HVE saved in those files. The **[HVE]** passages of this manual apply to HVE 2027, which, like HVE, uses a 3-D environment. What differs is the user interface, and a short list of set-up details:
 
 - **Selecting EDVTS.** In the **Event (F5)** editor, choose **EDVTS** in **Event Information › Calculation Method**. An EDVTS event has exactly two vehicles: slot V1 is the tow vehicle and V2 the trailer.
-- **No Calculation Options dialog.** The roll couple distribution is the tow vehicle's front-axle **Roll Couple Dist** in **Vehicle › Suspension Data…**; the surface search is **Event Information › Road Surface Search**.
+- **No Calculation Options dialog.** The roll couple distribution is the tow vehicle's front-axle **Roll Couple Dist** in **Vehicle › Editors › Suspension Data…**; the surface search is **Event Information › Road Surface Search**.
 - **Trailer position.** The trailer's position is derived from the tow vehicle and the hitch; only its **Articulation** angle is entered.
 - **Payload.** **Event › Payload…** is not available for EDVTS events in this version; a payload stored in an imported HVE case is used.
 - **Connections.** Edited in the Vehicle editor (**Vehicles** panel › **Components** › **Connections…**). The hitch must be a matched pair at the same height above ground; HVE 2027 checks both before running.

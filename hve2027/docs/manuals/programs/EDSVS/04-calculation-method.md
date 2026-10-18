@@ -199,7 +199,7 @@ EDSVS allows the use of a simple antilock model to study the effects of improvem
 The Vehicle Brake Model includes an antilock effectiveness coefficient, $\eta_a$, which defines the effectiveness of the antilock system; an antilock coefficient equal to 0.0 is the same as no antilock, while a coefficient equal to 1.0 defines the perfect system. The same antilock coefficient applies to both longitudinal and lateral tire forces. The antilock parameters are assigned using the Vehicle Editor's Wheel Brake dialog (see User's Manual, Section 4 (Vehicle Editor) for more information).
 
 !!! note "HVE 2027"
-    In HVE 2027 the antilock parameters are the *Antilock (ABS)* and *ABS Efficiency* rows of **Vehicle › Brakes › Brake Assembly**, per wheel; *ABS Efficiency* is $\eta_a$. **Event › Wheels**, Brake tab, *Antilock brakes* can force antilock on or off for one event.
+    In HVE 2027 the antilock parameters are the *Antilock (ABS)* and *ABS Efficiency* rows of **Vehicle › Editors › Brakes › Brake Assembly**, per wheel; *ABS Efficiency* is $\eta_a$. **Event › Wheels**, Brake tab, *Antilock brakes* can force antilock on or off for one event.
 
 The antilock model is only applicable if the attempted brake force, $F_x$, is greater than $F_{max}$ (see above). Under this condition, an additional amount of force, $\Delta F$, is generated because of the difference between $\mu_p$ and $\mu_s$. For longitudinal tire force:
 

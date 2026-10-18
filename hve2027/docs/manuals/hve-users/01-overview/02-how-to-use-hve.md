@@ -423,7 +423,7 @@ For an EDCRASH event, the A and B stiffness are entered with the damage in
 Vehicle Impact Setup, and per zone in Measured Crush; **Event › Damage
 Profiles...** opens that section. The vehicle's own crush stiffness, used by the
 simulations — A, B and Kv for each side, and the 3-D node stiffness DyMESH
-uses — is a property of the vehicle, entered in **Vehicle › Crush
+uses — is a property of the vehicle, entered in **Vehicle › Editors › Crush
 Stiffness...** in the Vehicle editor.
 
 ![Figure 2-17](../images/hvn-01-damage-profiles.png)
@@ -515,7 +515,7 @@ sidewall impact) or soft soil.
 
 ### Accelerometers
 
-**Event › Accelerometers...** (or Vehicle › Accelerometers...) places
+**Event › Accelerometers...** (or Vehicle › Editors › Accelerometers...) places
 accelerometers on the vehicle; **View › Scene Display › Accelerometer Path** draws their paths
 after a run.
 
@@ -541,7 +541,7 @@ occupants.
     shows the interactions it states; an event built in HVE 2027 shows the
     default the run generates until it is edited. Combined material properties
     are in Event Information › **Combined Contact Materials**. The vehicle's
-    contact surfaces are edited with Vehicle › Contact Surfaces..., and for an
+    contact surfaces are edited with Vehicle › Editors › Contact Surfaces..., and for an
     EDSMAC4 event **Event › Contacts...** lists the surfaces.
 
 ## Executing Events

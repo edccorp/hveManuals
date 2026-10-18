@@ -10,9 +10,9 @@ screen; press **Reset** to edit.
 
 | HVE Set-up item | HVE 2027 |
 |---|---|
-| Damage Profiles (Vehicle Damage) | Event › **Damage Profiles...**, which opens Event Information › **Vehicle Impact Setup** (CDC, PDOF, crush) — EDCRASH; the vehicle's crush stiffness is Vehicle › **Crush Stiffness...** |
+| Damage Profiles (Vehicle Damage) | Event › **Damage Profiles...**, which opens Event Information › **Vehicle Impact Setup** (CDC, PDOF, crush) — EDCRASH; the vehicle's crush stiffness is Vehicle › **Editors › Crush Stiffness...** |
 | Collision Pulse | Event › **Collision Pulse...** |
-| Vehicle Mesh | Event › **Vehicle Mesh...** (also Vehicle › Vehicle Mesh..., and **Vehicle Mesh...** in the Vehicles panel's 3D Geometry section) |
+| Vehicle Mesh | Event › **Vehicle Mesh...** (also Vehicle › Editors › Vehicle Mesh..., and **Vehicle Mesh...** in the Vehicles panel's 3D Geometry section) |
 | — (Options › DyMESH in HVE) | Event › **DyMESH Options...** |
 | Payload | Event › **Payload...** |
 | Wheels | Event › **Wheels...** |
@@ -40,7 +40,7 @@ screen; press **Reset** to edit.
   the crush depths and per-zone A and B stiffness — is entered per vehicle in
   Event Information's **Vehicle Impact Setup** section. **Event › Damage
   Profiles...** opens that section.
-- **Vehicle › Crush Stiffness...** (Vehicle editor) holds the vehicle's own crush
+- **Vehicle › Editors › Crush Stiffness...** (Vehicle editor) holds the vehicle's own crush
   **stiffness** for the simulations — Front, Rear, Left and Right, each with its
   A, B and Kv stiffness — and the **3-D Node Stiffness** used by DyMESH
   (constant, linear, quadratic and cubic terms per zone, conversion height,
@@ -211,7 +211,7 @@ See the dialog reference: [Wheels](../../05-tires-wheels/WheelsDlg.md).
 ## ACCELEROMETERS
 
 **Menu Option:** Event › Accelerometers... (SIMON, EDSMAC4, EDVDS, EDVSM) ·
-also Vehicle › Accelerometers...
+also Vehicle › Editors › Accelerometers...
 
 **Purpose:** Place accelerometers on the selected vehicle.
 
@@ -246,7 +246,7 @@ be removed. For GATB a second grid arms body segments against each other
 (self contact). Contact blocks an imported case states against a vehicle the
 event does not select are listed read-only under **Other contact blocks**, each
 as the human, the vehicle and its number of armed pairs. Vehicle contact surfaces themselves
-are edited in the Vehicle editor (Vehicle › Contact Surfaces...).
+are edited in the Vehicle editor (Vehicle › Editors › Contact Surfaces...).
 
 !!! note "HVE 2027"
     HVE's combined material properties and material files are not part of
@@ -274,7 +274,7 @@ Occupant Equipment** draws it at any time.
 !!! note "HVE 2027"
     The Event menu's Restraints submenu is offered for the occupant methods,
     EDHIS and GATB. The same dialogs are on the Vehicle menu (Vehicle ›
-    Airbags..., Belt Restraint...).
+    Editors › Airbags..., Belt Restraint...).
 
 See the dialog reference: [Airbag](../../06-safety-systems/AirBagSysDlg.md) and
 [Belt Restraint System](../../06-safety-systems/BeltResSysDlg.md).
@@ -304,7 +304,7 @@ and signal lamps) or **User-Entered**, a table of **Turn On** and **Turn Off**
 times (**Add Row**, **Remove Last Row**). Signal and flasher lamps also take an
 on/off cycle time. An event with nothing edited uses HVE's defaults: brake and
 backup lamps follow the driver controls, and every other lamp is off. The lamps
-themselves are defined in the Vehicle editor (Vehicle › Vehicle Lights...).
+themselves are defined in the Vehicle editor (Vehicle › Editors › Vehicle Lights...).
 
 !!! note "HVE 2027"
     In HVE this was the Lights page of the Driver Controls dialog.

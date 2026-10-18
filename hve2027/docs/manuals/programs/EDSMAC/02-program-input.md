@@ -116,7 +116,7 @@ The HVE-2D tire parameters provide the following data groups:
 EDSMAC's use of these parameters is described below.
 
 !!! note "HVE 2027"
-    The tire friction and cornering stiffness tables are on the **Friction** and **Cornering** tabs of the **Load & Speed Tables** panel at the bottom of **Vehicle › Tires...** (the Tire Properties window).
+    The tire friction and cornering stiffness tables are on the **Friction** and **Cornering** tabs of the **Load & Speed Tables** panel at the bottom of **Vehicle › Editors › Tires...** (the Tire Properties window).
 
 ##### Friction Data
 
@@ -170,7 +170,7 @@ EDSMAC uses the following Vehicle Exterior data:
 
 ### Steering System Data
 
-EDSMAC uses the Steering System to determine which axles are steerable. Only steerable wheels are displayed in the Driver Controls, Steer Table. In addition, if the Steer Table *At Driver* option is used, the steering gear ratio parameter is used to compute the steer angle at each steerable tire. In HVE 2027 these are in **Vehicle › Steering System...** (the **Gear Ratio** row).
+EDSMAC uses the Steering System to determine which axles are steerable. Only steerable wheels are displayed in the Driver Controls, Steer Table. In addition, if the Steer Table *At Driver* option is used, the steering gear ratio parameter is used to compute the steer angle at each steerable tire. In HVE 2027 these are in **Vehicle › Editors › Steering System...** (the **Gear Ratio** row).
 
 ### Brake System Data
 

@@ -11,7 +11,7 @@ Vehicle-fixed distance from the CG to the top of the vehicle. In HVE 2027 this i
 An **input** under **Geometry**; the CG-to-top distance is derived from it.
 
 ## Stiffness...
-There is no A/B/Kv stiffness for this face in HVE 2027. Its 3-D node stiffness (used by DyMESH) is the **Top** zone under **3-D Node Stiffness** in **Vehicle › Crush Stiffness...** (Vehicle editor, F3). See [Stiffness Coefficient Dialog](StiffCoeffDlg.md).
+There is no A/B/Kv stiffness for this face in HVE 2027. Its 3-D node stiffness (used by DyMESH) is the **Top** zone under **3-D Node Stiffness** in **Vehicle › Editors › Crush Stiffness...** (Vehicle editor, F3). See [Stiffness Coefficient Dialog](StiffCoeffDlg.md).
 
 !!! warning "Not in HVE 2027"
     - A separate CG To Top dialog, and its Apply / OK / Cancel buttons. Edits in the Vehicles panel take effect as they are typed.

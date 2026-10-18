@@ -68,7 +68,7 @@ Engine Location and Drive Axle(s) are disabled for a vehicle without a powertrai
 ## 3D Geometry
 
 ### 3D File
-In HVE 2027 the 3-D geometry file is the **Mesh File** of the Vehicles panel's **3D Geometry** section (with **...** to browse and **Library...**), and everything else about the model is in the Vehicle Mesh window (**Vehicle › Vehicle Mesh...**, or **Vehicle Mesh...** in that section). See [Geometry File](../hve-users/04-vehicle-editor/11a-sprung-mass.md#geometry-file).
+In HVE 2027 the 3-D geometry file is the **Mesh File** of the Vehicles panel's **3D Geometry** section (with **...** to browse and **Library...**), and everything else about the model is in the Vehicle Mesh window (**Vehicle › Editors › Vehicle Mesh...**, or **Vehicle Mesh...** in that section). See [Geometry File](../hve-users/04-vehicle-editor/11a-sprung-mass.md#geometry-file).
 
 ## Tools
 

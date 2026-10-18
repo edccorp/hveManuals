@@ -1,6 +1,6 @@
 # Drive Train Dialog Box
 
-The drivetrain parameters for the current vehicle are displayed and edited using the **Drivetrain** dialog. Open it in the Vehicle Editor (**Vehicle (F3)**) with **Vehicle › Drivetrain...**. The **Vehicle** list at the top selects the vehicle. The drivetrain is composed of components that HVE edits in separate dialogs and HVE 2027 shows as collapsible sections of one dialog:
+The drivetrain parameters for the current vehicle are displayed and edited using the **Drivetrain** dialog. Open it in the Vehicle Editor (**Vehicle (F3)**) with **Vehicle › Editors › Drivetrain...**. The **Vehicle** list at the top selects the vehicle. The drivetrain is composed of components that HVE edits in separate dialogs and HVE 2027 shows as collapsible sections of one dialog:
 
 - **Engine**
 - **Transmission** — see [Transmission Data Dialog Box](TransDataDlg.md)

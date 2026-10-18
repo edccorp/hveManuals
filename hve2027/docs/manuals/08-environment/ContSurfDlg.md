@@ -6,7 +6,7 @@ forces between the vehicle and its occupants (interior surfaces) or pedestrians
 fourth is assigned by assuming a parallelogram.
 
 !!! note "HVE 2027"
-    In the Vehicle editor (F3) choose **Vehicle › Contact Surfaces...**. The
+    In the Vehicle editor (F3) choose **Vehicle › Editors › Contact Surfaces...**. The
     **Contact Surfaces** window lists the vehicle's surfaces on the left and
     edits the selected one on the right. While it is open the panels are drawn
     in the 3-D view — in the Vehicle editor, and in the Event editor where they

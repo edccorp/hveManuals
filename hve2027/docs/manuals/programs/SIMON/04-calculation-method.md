@@ -485,7 +485,7 @@ values multiplied by the steering gear ratio.
 editions.)*
 
 !!! note "HVE 2027"
-    In HVE the Steer DOF setting applies to every steerable axle. HVE 2027 can also set it **per axle** (Vehicle › Steering System, *Steer DOF (SIMON)*), and can leave an axle's steering column out of its steer degree of freedom (*Has steering column*), which models a castoring tag axle. An axle left at *Event default* behaves exactly as described above. With per-axle settings, Auto Start frees only the axles set to it, on both vehicles of the colliding pair. See [Chapter 2, Steering System Data](02-program-input.md#steering-system-data).
+    In HVE the Steer DOF setting applies to every steerable axle. HVE 2027 can also set it **per axle** (Vehicle › Editors › Steering System, *Steer DOF (SIMON)*), and can leave an axle's steering column out of its steer degree of freedom (*Has steering column*), which models a castoring tag axle. An axle left at *Event default* behaves exactly as described above. With per-axle settings, Auto Start frees only the axles set to it, on both vehicles of the colliding pair. See [Chapter 2, Steering System Data](02-program-input.md#steering-system-data).
 
 ### Steering Stop Torque
 
@@ -822,7 +822,7 @@ Braking Force and Percent Available Friction brake table options are also allowe
 
 ### HVE Brake Designer
 
-If the At Pedal braking option is selected, SIMON uses the HVE Brake Designer. Detailed brake component designs can be created and edited in the Vehicle Editor (HVE 2027: Vehicle › Brakes › Brake Designer...). The resulting brake design is then used during SIMON simulations. The brake torque is calculated dynamically for each wheel according to the mechanical design of the brake assembly as well as the current brake pressure, lining/drum temperature and sliding speed. The current lining friction is determined from the lining temperature and sliding speed; thus, brake fade can be simulated.
+If the At Pedal braking option is selected, SIMON uses the HVE Brake Designer. Detailed brake component designs can be created and edited in the Vehicle Editor (HVE 2027: Vehicle › Editors › Brakes › Brake Designer...). The resulting brake design is then used during SIMON simulations. The brake torque is calculated dynamically for each wheel according to the mechanical design of the brake assembly as well as the current brake pressure, lining/drum temperature and sliding speed. The current lining friction is determined from the lining temperature and sliding speed; thus, brake fade can be simulated.
 
 The HVE Brake Designer is described in detail in the HVE Designer Manual. Additional information may be found in reference [1].
 

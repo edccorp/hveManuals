@@ -13,7 +13,7 @@ scoped to that wheel.
     HVE 2027 shows the whole vehicle in two dialogs, each a table with a
     column per axle or per wheel:
 
-    - **Suspension Data** (**Vehicle › Suspension Data**, or Vehicles panel ›
+    - **Suspension Data** (**Vehicle › Editors › Suspension Data**, or Vehicles panel ›
       Components › Suspension…) — one column per axle: Suspension
       Type, Roll Couple Dist, Int. Tandem Load Xfr; Spring Rate, Damp Rate,
       the derived Static Deflection and Natural Freq (Hz), Aux Roll
@@ -61,7 +61,7 @@ The HVE Vehicle Model includes the following suspension types:
 - **Tandem, Walking Beam** — A set of two solid axle suspensions connected
   by a rigid link.
 
-To choose the suspension type for any axle, choose **Vehicle › Suspension
+To choose the suspension type for any axle, choose **Vehicle › Editors › Suspension
 Data** and select the type in the axle's **Suspension Type** cell.
 
 !!! note "HVE 2027"
@@ -178,7 +178,7 @@ The Suspension Inertial properties are described below.
 ### Jounce/Rebound
 
 The Jounce and Rebound properties of each wheel are displayed and edited
-using the Jounce / Rebound dialog (the **Jounce / Rebound** tab of **Vehicle › Suspension Data…**). Suspension stops are used to limit the travel of the
+using the Jounce / Rebound dialog (the **Jounce / Rebound** tab of **Vehicle › Editors › Suspension Data…**). Suspension stops are used to limit the travel of the
 suspension. See also the reference page,
 [Jounce and Rebound dialog](../../03-suspension-steering/JouAndRebDlg.md).
 
@@ -220,7 +220,7 @@ The Jounce/Rebound properties are described below.
 ### Spindle Axis
 
 The Spindle Axis geometry properties are displayed and edited in the
-Steering System dialog (**Vehicle › Steering System**). See also the
+Steering System dialog (**Vehicle › Editors › Steering System**). See also the
 reference page,
 [Spindle Axis dialog](../../03-suspension-steering/SpndleAxisDlg.md).
 
@@ -251,7 +251,7 @@ response.
 > steerable axle actually steers about the kingpin axis. Some simulation
 > models (e.g., SIMON) rigorously model this behavior.
 
-To display or edit the Alignment parameters, choose **Vehicle › Steering
+To display or edit the Alignment parameters, choose **Vehicle › Editors › Steering
 System** and edit the steerable axle's column.
 
 !!! note "HVE 2027"
@@ -270,7 +270,7 @@ employed, to calculate the steering torque that results when a wheel is
 steered beyond its limit.
 
 To display or edit the Steering Stop parameters, choose **Vehicle ›
-Steering System** and edit **Stop Angle Right (deg)**, **Stop Angle Left
+Editors › Steering System** and edit **Stop Angle Right (deg)**, **Stop Angle Left
 (deg)** and **Stop Stiffness** in the Steer-Axis Mechanics table, per wheel.
 Both stop angles are entered as positive numbers.
 
@@ -351,7 +351,7 @@ The Steer Axis Steering Stop parameters are described below.
 ### Camber & Half-track Table
 
 The Camber properties of each wheel are displayed and edited using the
-Camber vs Deflection dialog (the **Camber vs Deflection** tab of **Vehicle › Suspension Data…**). See also the reference page,
+Camber vs Deflection dialog (the **Camber vs Deflection** tab of **Vehicle › Editors › Suspension Data…**). See also the reference page,
 [Camber dialog](../../03-suspension-steering/CamberDlg.md).
 
 The dialog has a column per wheel: a **Num Points** row and a table of
@@ -389,7 +389,7 @@ The Camber and Half-track Table properties are described below.
 ### Anti-Pitch
 
 The Anti-Pitch properties of each wheel are displayed and edited using the
-Anti-Pitch dialog (the **Anti-Pitch** tab of **Vehicle › Suspension Data…**): a
+Anti-Pitch dialog (the **Anti-Pitch** tab of **Vehicle › Editors › Suspension Data…**): a
 column per wheel with a Num Points row and a table of deflection against
 force. See also the reference page,
 [Anti-Pitch dialog](../../03-suspension-steering/AntiPitchDlg.md).
@@ -418,7 +418,7 @@ The Anti-pitch Table properties are described below.
 ### Roll Steer
 
 The Roll Steer properties of each wheel are displayed and edited using the
-Roll Steer dialog (the **Roll Steer** tab of **Vehicle › Suspension Data…**). In HVE
+Roll Steer dialog (the **Roll Steer** tab of **Vehicle › Editors › Suspension Data…**). In HVE
 the roll steer dialogs are different for independent and solid axle
 suspensions: independent suspensions use a polynomial with a *Roll Steer
 vs. Jounce/Rebound* graph; solid axle (and tandem) suspensions use a single

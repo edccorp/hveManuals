@@ -1,6 +1,6 @@
 # Suspension & Steering
 
-Dialog and feature reference for the **Suspension & Steering** area of HVE 2027, page by page against HVE's own help. Where HVE edits one wheel at a time, HVE 2027's suspension and steering dialogs show every axle (or every wheel) of the vehicle in one table: **Vehicle › Suspension Data...** (with its Jounce / Rebound, Camber vs Deflection, Roll Steer and Anti-Pitch tabs) and **Vehicle › Steering System...** in the Vehicle Editor. Part of the [HVE Manual](../README.md).
+Dialog and feature reference for the **Suspension & Steering** area of HVE 2027, page by page against HVE's own help. Where HVE edits one wheel at a time, HVE 2027's suspension and steering dialogs show every axle (or every wheel) of the vehicle in one table: **Vehicle › Editors › Suspension Data...** (with its Jounce / Rebound, Camber vs Deflection, Roll Steer and Anti-Pitch tabs) and **Vehicle › Editors › Steering System...** in the Vehicle Editor. Part of the [HVE Manual](../README.md).
 
 ## Pages
 

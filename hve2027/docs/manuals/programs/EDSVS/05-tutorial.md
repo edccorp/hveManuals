@@ -148,7 +148,7 @@ The steer angles are applied at the front wheels (HVE's *At Axle* table):
 | 13.75 | 0.00 | 0.00 |
 
 !!! note "HVE 2027"
-    Open **Event › Driver Controls** and choose the **Steer** tab. In EDC's tutorial case the table above appears as the steer table *at the tires*, which overrides the steering-wheel table below it. HVE 2027 does not currently have a control for creating an at-the-tires table from scratch. To build the event yourself, enter the equivalent **steering-wheel** angles instead: the road-wheel angle multiplied by the *Gear Ratio* shown in **Vehicle › Steering System**. EDSVS then divides by the same ratio, so the road-wheel angles are those of Table 5-1.
+    Open **Event › Driver Controls** and choose the **Steer** tab. In EDC's tutorial case the table above appears as the steer table *at the tires*, which overrides the steering-wheel table below it. HVE 2027 does not currently have a control for creating an at-the-tires table from scratch. To build the event yourself, enter the equivalent **steering-wheel** angles instead: the road-wheel angle multiplied by the *Gear Ratio* shown in **Vehicle › Editors › Steering System**. EDSVS then divides by the same ratio, so the road-wheel angles are those of Table 5-1.
 
 ![Figure 5-5](images/hvn-edsvs-driver-controls.png)
 *Figure 5-5: The Driver Controls dialog for the Steering Maneuver event. The tutorial case's throttle and brake tables are %-of-friction tables of zeros.*

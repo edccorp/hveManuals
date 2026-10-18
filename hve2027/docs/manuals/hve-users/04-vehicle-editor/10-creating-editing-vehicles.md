@@ -339,24 +339,24 @@ reached in HVE 2027 as follows:
 | HVE component and data | HVE 2027 |
 |---|---|
 | CG: Inertias | Vehicles panel › Inertia › **Edit…** (the Inertia / Mass dialog) |
-| CG: Move CG | **Vehicle › Vehicle Mesh** (File & Placement tab, Move CG); for EDSMAC/EDSMAC4 events also **Event › Move CG** |
+| CG: Move CG | **Vehicle › Editors › Vehicle Mesh** (File & Placement tab, Move CG); for EDSMAC/EDSMAC4 events also **Event › Move CG** |
 | CG: Color | Vehicles panel › Identity › **Color** |
-| CG: Geometry File | Vehicles panel › **3D Geometry**; **Vehicle › Vehicle Mesh** |
-| CG: Contact Surfaces | **Vehicle › Contact Surfaces** |
-| CG: Belt / Airbag Restraints | **Vehicle › Belt Restraint**, **Vehicle › Airbags** (one bag per seat) |
+| CG: Geometry File | Vehicles panel › **3D Geometry**; **Vehicle › Editors › Vehicle Mesh** |
+| CG: Contact Surfaces | **Vehicle › Editors › Contact Surfaces** |
+| CG: Belt / Airbag Restraints | **Vehicle › Editors › Belt Restraint**, **Vehicle › Editors › Airbags** (one bag per seat) |
 | CG: Connections | Vehicles panel › Components › **Connections…** |
-| CG: Aerodynamic Drag | **Vehicle › Aerodynamic Drag** |
-| CG: Body Torsion | **Vehicle › Body Torsion** |
-| CG: Lights | **Vehicle › Vehicle Lights** |
-| Wheel: Suspension | **Vehicle › Suspension Data** (all its tabs) |
-| Wheel: Tire | **Vehicle › Tires** (grid and Load & Speed Tables panel) |
-| Wheel: Brake | **Vehicle › Brakes › Brake Assembly**, **Vehicle › Brakes › Brake Designer** |
+| CG: Aerodynamic Drag | **Vehicle › Editors › Aerodynamic Drag** |
+| CG: Body Torsion | **Vehicle › Editors › Body Torsion** |
+| CG: Lights | **Vehicle › Editors › Vehicle Lights** |
+| Wheel: Suspension | **Vehicle › Editors › Suspension Data** (all its tabs) |
+| Wheel: Tire | **Vehicle › Editors › Tires** (grid and Load & Speed Tables panel) |
+| Wheel: Brake | **Vehicle › Editors › Brakes › Brake Assembly**, **Vehicle › Editors › Brakes › Brake Designer** |
 | Wheel: Location | Vehicles panel › Size & Weight › Details › **Wheel Positions (from CG)** |
 | Exterior: dimensions | Vehicles panel › Size & Weight (Details › Exterior Extents shows the derived extents) |
-| Exterior: stiffness | **Vehicle › Crush Stiffness**; also **Event › Crush Profile** (Crush & Geometry), for EDCRASH, EDSMAC and EDSMAC4 events |
-| Brake master cylinder | **Vehicle › Brakes › Brake System Pressure**, **Vehicle › Brakes › ABS / Brake Design** |
-| Steering wheel | **Vehicle › Steering System** |
-| Engine | **Vehicle › Drivetrain** |
+| Exterior: stiffness | **Vehicle › Editors › Crush Stiffness**; also **Event › Crush Profile** (Crush & Geometry), for EDCRASH, EDSMAC and EDSMAC4 events |
+| Brake master cylinder | **Vehicle › Editors › Brakes › Brake System Pressure**, **Vehicle › Editors › Brakes › ABS / Brake Design** |
+| Steering wheel | **Vehicle › Editors › Steering System** |
+| Engine | **Vehicle › Editors › Drivetrain** |
 
 The Vehicle menu also offers **Accelerometers**, **Save to My Vehicles** and
 **Edit Mode**. Every data dialog in the table, and Accelerometers, is also a

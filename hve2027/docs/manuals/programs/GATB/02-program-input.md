@@ -11,9 +11,9 @@ This chapter defines the objects (humans, vehicles and environment) and the even
     | Input | HVE 2027 |
     |---|---|
     | Human body (segments, joints, ellipsoids) | **Human (F2)** editor › **Occupant › Human Information** (*Occupants* panel) and its *Body Segments…* and *Joint Properties…* buttons |
-    | Contact surfaces | **Vehicle (F3)** › **Vehicle › Contact Surfaces** |
-    | Belt installed, anchors, attachment segment, slack | **Vehicle › Belt Restraint** |
-    | Airbag, per seat (installed, timing, contact segments, reaction panels, bag geometry, gas, vent, membrane, ATB gas dynamics) | **Vehicle › Airbags** |
+    | Contact surfaces | **Vehicle (F3)** › **Vehicle › Editors › Contact Surfaces** |
+    | Belt installed, anchors, attachment segment, slack | **Vehicle › Editors › Belt Restraint** |
+    | Airbag, per seat (installed, timing, contact segments, reaction panels, bag geometry, gas, vent, membrane, ATB gas dynamics) | **Vehicle › Editors › Airbags** |
     | Which humans, which vehicle, seat, restraint worn, pose, pedestrian velocity | **Event (F5)** › Event Information › *Humans in Event* (and its **Pose** button) |
     | Vehicle initial position and velocity | Event Information › *Vehicle Initial Conditions*, or **Event › Position / Velocity** |
     | Collision pulse | **Event › Collision Pulse** |
@@ -204,7 +204,7 @@ The geometry file plays no role in the GATB calculations. However, there are som
 > **NOTE:** Remember to save the file with a new name, such as PCFordTaurus4DrSNoRoof.xxx, to avoid losing the original geometry file!
 
 !!! tip "New in HVE 2027"
-    **View › Scene Display › Humans Through Bodywork** draws the occupant through the vehicle body, so a cut-down geometry file is not needed just to see inside. The geometry file is chosen in **Vehicle › Vehicle Mesh**.
+    **View › Scene Display › Humans Through Bodywork** draws the occupant through the vehicle body, so a cut-down geometry file is not needed just to see inside. The geometry file is chosen in **Vehicle › Editors › Vehicle Mesh**.
 
 ### Contact Surfaces
 
@@ -222,7 +222,7 @@ Vehicle contact surfaces are the surfaces that interact with human ellipsoids to
 **Table 2-6: HVE contact surface information used in GATB**
 
 !!! note "HVE 2027"
-    Contact surfaces are edited in **Vehicle › Contact Surfaces**: by centre, size and yaw/pitch/roll angles, or with *Edit corner points instead* by the three corner points; the dialog shows each surface's normal and can **Flip** it, and the panels are drawn in the 3-D view while it is open. *Side* (Interior/Exterior) is stored with the surface. The dialog also offers **Derive from Mesh**, **Seed Standard Interior**, a **Pedestrian preset**, interior templates and **Save/Load Interior…**.
+    Contact surfaces are edited in **Vehicle › Editors › Contact Surfaces**: by centre, size and yaw/pitch/roll angles, or with *Edit corner points instead* by the three corner points; the dialog shows each surface's normal and can **Flip** it, and the panels are drawn in the 3-D view while it is open. *Side* (Interior/Exterior) is stored with the surface. The dialog also offers **Derive from Mesh**, **Seed Standard Interior**, a **Pedestrian preset**, interior templates and **Save/Load Interior…**.
 
     The stiffness GATB actually uses for a human against a surface is the event's **combined** material (Event Information › *Combined Contact Materials*), which a case imported from HVE states per surface; a surface with none stated uses the surface's own material.
 
@@ -248,7 +248,7 @@ A belt restraint system may be supplied for up to nine seat positions. Although 
 **Table 2-7: HVE belt restraint data used in GATB**
 
 !!! note "HVE 2027"
-    **The belt's force law does not reach GATB, in HVE or in HVE 2027.** GATB writes ATB its own fixed eight-point webbing stress/strain table and harness friction constants, so the belt's stretch rates, damping and breaking strength do not change a GATB run. The geometry does: the vehicle anchors, the attachment points on the body and the slack. In HVE 2027 belts are edited in **Vehicle › Belt Restraint**, whose *Properties* section is labelled "EDHIS reads these. GATB does not". The torso belt attaches to the chest and the lap belt to the pelvis.
+    **The belt's force law does not reach GATB, in HVE or in HVE 2027.** GATB writes ATB its own fixed eight-point webbing stress/strain table and harness friction constants, so the belt's stretch rates, damping and breaking strength do not change a GATB run. The geometry does: the vehicle anchors, the attachment points on the body and the slack. In HVE 2027 belts are edited in **Vehicle › Editors › Belt Restraint**, whose *Properties* section is labelled "EDHIS reads these. GATB does not". The torso belt attaches to the chest and the lap belt to the pelvis.
 
 *(Note: each belt system has separate left and right lap and torso sections; the human's belt injury tolerances are likewise carried as separate left lap, left torso, right lap and right torso values.)*
 
@@ -276,7 +276,7 @@ An airbag restraint system may be supplied for up to nine seat positions. Like b
 **Table 2-8: Airbag restraint data used in GATB**
 
 !!! note "HVE 2027"
-    The whole bag is edited in one dialog, **Vehicle › Airbags** (also **Event › Restraints › Airbags**), one bag per **Seat**, as HVE stores it: **Device Installed**; the **Position** from the vehicle CG; **Begin Fill Time** (default **0.001 s**) and **Fill Duration** (default 0.05 s); the head/chest/arm **Contact Segments**; the **Reaction Panel** the bag deploys from and up to three **confining panels**, with the deployment **Offset on the Reaction Panel** in that panel's frame; the bag geometry, gas properties, vent, steering column and membrane; and an **ATB Gas Dynamics (GATB)** section (supply gas temperature and volume, sonic discharge coefficient and throat area, gas constant, bag mass, panel spring rate and friction, mass multiplier, bag yaw and roll), whose defaults reproduce the values GATB used to hardcode. The dialog says which of the seat's fields reach which engine: Begin Fill Time, the Contact Segments and the reaction panels reach GATB; Position and Fill Duration are read by EDHIS, not by GATB. A vehicle with no contact surfaces cannot support a bag, and GATB refuses the run.
+    The whole bag is edited in one dialog, **Vehicle › Editors › Airbags** (also **Event › Restraints › Airbags**), one bag per **Seat**, as HVE stores it: **Device Installed**; the **Position** from the vehicle CG; **Begin Fill Time** (default **0.001 s**) and **Fill Duration** (default 0.05 s); the head/chest/arm **Contact Segments**; the **Reaction Panel** the bag deploys from and up to three **confining panels**, with the deployment **Offset on the Reaction Panel** in that panel's frame; the bag geometry, gas properties, vent, steering column and membrane; and an **ATB Gas Dynamics (GATB)** section (supply gas temperature and volume, sonic discharge coefficient and throat area, gas constant, bag mass, panel spring rate and friction, mass multiplier, bag yaw and roll), whose defaults reproduce the values GATB used to hardcode. The dialog says which of the seat's fields reach which engine: Begin Fill Time, the Contact Segments and the reaction panels reach GATB; Position and Fill Duration are read by EDHIS, not by GATB. A vehicle with no contact surfaces cannot support a bag, and GATB refuses the run.
 
     The bag deploys only in an event where the occupant at that seat has the restraint **Airbag + Belt**.
 
@@ -523,7 +523,7 @@ By default, the Contacts dialog assumes interaction between every human ellipsoi
 The Restraints dialog determines if a belt or airbag restraint system is in use for the current event.
 
 !!! note "HVE 2027"
-    **Event › Restraints** opens the vehicle's Airbags and Belt Restraint dialogs (the same as **Vehicle › Airbags** and **Vehicle › Belt Restraint**). What each occupant wears in the event is **Restraint (this event)** beside the human in Event Information › *Humans in Event* (also shown as *Restraint In Use* in **Vehicle › Belt Restraint** for the active event): *None*; *Lap Belt*; *3-Point Belt* (torso and lap); or *Airbag + Belt* (torso, lap and airbag) — each belt only where the vehicle has it installed. The attachment points and slack are part of the belt in **Vehicle › Belt Restraint**; the airbag's Begin Fill Time (default 0.001 s) and Fill Duration (default 0.05 s, read by EDHIS) are in **Vehicle › Airbags**.
+    **Event › Restraints** opens the vehicle's Airbags and Belt Restraint dialogs (the same as **Vehicle › Editors › Airbags** and **Vehicle › Editors › Belt Restraint**). What each occupant wears in the event is **Restraint (this event)** beside the human in Event Information › *Humans in Event* (also shown as *Restraint In Use* in **Vehicle › Editors › Belt Restraint** for the active event): *None*; *Lap Belt*; *3-Point Belt* (torso and lap); or *Airbag + Belt* (torso, lap and airbag) — each belt only where the vehicle has it installed. The attachment points and slack are part of the belt in **Vehicle › Editors › Belt Restraint**; the airbag's Begin Fill Time (default 0.001 s) and Fill Duration (default 0.05 s, read by EDHIS) are in **Vehicle › Editors › Airbags**.
 
 > **NOTE:** If the current vehicle does not have a restraint system installed at the position specified for the current human, no restraints will be available for selection. If necessary, use the Vehicle Editor to install a restraint system at the desired seat position.
 

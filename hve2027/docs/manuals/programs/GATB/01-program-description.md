@@ -69,7 +69,7 @@ GATB was validated against several ATB runs [6]. The GATB program basically extr
 The procedure for using GATB in HVE 2027 is:
 
 - In the **Human (F2)** editor, open **Occupant › Human Information** (the *Occupants* panel) and click **Add Occupant** for each human. Each body is generated with GEBOD from its Subject Type, Age Group and Weight/Height Percentile; edit the body (*Body Segments…*, *Joint Properties…*) to match specific case information.
-- In the **Vehicle (F3)** editor, add the vehicle and edit its properties to match specific case information — in particular its contact surfaces (**Vehicle › Contact Surfaces**) and any belt and airbag (**Vehicle › Belt Restraint**, **Vehicle › Airbags**).
+- In the **Vehicle (F3)** editor, add the vehicle and edit its properties to match specific case information — in particular its contact surfaces (**Vehicle › Editors › Contact Surfaces**) and any belt and airbag (**Vehicle › Editors › Belt Restraint**, **Vehicle › Editors › Airbags**).
 
 > **NOTE:** Review the following chapter, GATB Program Input, to confirm those parameters that affect the GATB program results; many physical parameters are not used by GATB, and therefore, do not affect the results.
 

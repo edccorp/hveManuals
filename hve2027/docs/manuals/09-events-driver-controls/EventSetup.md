@@ -28,7 +28,7 @@ only the Wheel Data page.
 Opens EDCRASH's measured damage (CDC, PDOF, crush depths) in the Vehicle Impact
 Setup section of [Event Information](EventInfo.md#vehicle-impact-setup-edcrash).
 Enabled for EDCRASH only. A vehicle's crush stiffness (A, B, Kv and the 3-D node
-stiffness) is **Vehicle › Crush Stiffness...** in the Vehicle editor.
+stiffness) is **Vehicle › Editors › Crush Stiffness...** in the Vehicle editor.
 
 **Collision Pulse...**
 Displays the [Collision Pulse](../11-reports-output/ColPulse.md) dialog.
@@ -37,7 +37,7 @@ Enabled for EDCRASH, SIMON, EDHIS and GATB.
 **Vehicle Mesh...**
 Displays the Vehicle Mesh window (File & Placement, Collision, Display and
 Wheel Images tabs). Always available. It is the same window as **Vehicle ›
-Vehicle Mesh...** and the **Vehicle Mesh...** button in the Vehicles panel's
+Editors › Vehicle Mesh...** and the **Vehicle Mesh...** button in the Vehicles panel's
 **3D Geometry** section. The event's own contact mesh preparation for each
 vehicle is in **Event › DyMESH Options...**.
 

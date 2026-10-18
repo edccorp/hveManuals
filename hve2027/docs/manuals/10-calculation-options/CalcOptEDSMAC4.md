@@ -36,7 +36,7 @@ When checked, the initial lengths of the RHO (crush perimeter) vectors are measu
     with flat side panels fail this as well as the box-shaped body given to a
     vehicle with no mesh file. Tessellate each vehicle for the event (**Event ›
     DyMESH Options**, *Contact Mesh Preparation (per vehicle)*, or as the
-    vehicle's default on the Collision tab of **Vehicle › Vehicle Mesh**; a
+    vehicle's default on the Collision tab of **Vehicle › Editors › Vehicle Mesh**; a
     maximum leg of about 0.06 m for a car); a
     refused run's status names the vehicle, the empty direction and a leg that
     works.

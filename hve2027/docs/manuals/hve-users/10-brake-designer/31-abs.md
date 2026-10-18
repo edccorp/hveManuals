@@ -144,12 +144,12 @@ may be supported. The interface is divided into two sections:
 The interface, dialogs and associated variables are described below.
 
 !!! note "HVE 2027"
-    Choose **Vehicle › Brakes › ABS / Brake Design…**. The window has two buttons: **ABS System…** opens the **ABS System** dialog (the system variables, for the whole vehicle) and **ABS Designer…** opens the **ABS Designer** (the wheel variables, one column per wheel: A1 Right, A1 Left, A2 Right, …). In the ABS Designer, the **Link Group** buttons (–, A, B, C) above each column tie wheels together: editing a value in one column copies it to every column in the same group. All wheels start in group A. Like every vehicle dialog, both are read-only while a run's results are on screen, until **Reset**.
+    Choose **Vehicle › Editors › Brakes › ABS / Brake Design…**. The window has two buttons: **ABS System…** opens the **ABS System** dialog (the system variables, for the whole vehicle) and **ABS Designer…** opens the **ABS Designer** (the wheel variables, one column per wheel: A1 Right, A1 Left, A2 Right, …). In the ABS Designer, the **Link Group** buttons (–, A, B, C) above each column tie wheels together: editing a value in one column copies it to every column in the same group. All wheels start in group A. Like every vehicle dialog, both are read-only while a run's results are on screen, until **Reset**.
 
-    The window also notes that S-cam brake geometry is edited in **Vehicle › Brakes › Brake Designer** ([Chapter 29](29-brake-designer.md)).
+    The window also notes that S-cam brake geometry is edited in **Vehicle › Editors › Brakes › Brake Designer** ([Chapter 29](29-brake-designer.md)).
 
 ![Figure 31-2](../images/hvn-10-abs-brake-design.png)
-*Figure 31-2 — Vehicle › Brakes › ABS / Brake Design, which opens the ABS System and ABS Designer dialogs.*
+*Figure 31-2 — Vehicle › Editors › Brakes › ABS / Brake Design, which opens the ABS System and ABS Designer dialogs.*
 
 *Figure 31-3 — ABS Wheel Data dialog. These parameters affect the selected
 wheel (compare with the ABS System Data dialog). In HVE 2027 this is the ABS Designer, with all wheels side by side.*
@@ -552,7 +552,7 @@ ABS systems.
     2. Optionally, edit the vehicle's ABS System parameters.
     3. Optionally, edit the ABS wheel parameters.
 
-    HVE's Brake System Information dialog (Figure 31-8) has no single equivalent. Its **ABS Installed** checkbox is at the top of **Vehicle › Brakes › ABS / Brake Design… › ABS System…**, with the system parameters its **Edit…** button opened.
+    HVE's Brake System Information dialog (Figure 31-8) has no single equivalent. Its **ABS Installed** checkbox is at the top of **Vehicle › Editors › Brakes › ABS / Brake Design… › ABS System…**, with the system parameters its **Edit…** button opened.
 
 ### Invoking the ABS Model
 
@@ -562,19 +562,19 @@ Database (EDC.db) are currently created with the ABS model turned off.
 To model an ABS system in HVE 2027, perform the following steps:
 
 1. Select the **Vehicle (F3)** editor and the vehicle.
-2. Choose **Vehicle › Brakes › ABS / Brake Design…**, press **ABS System…** and tick **ABS Installed**.
-3. Choose **Vehicle › Brakes › Brake Assembly…** and tick **Antilock (ABS)** for each wheel fitted with ABS (link groups copy the tick across the wheels in the same group), and set **ABS Efficiency** if required.
+2. Choose **Vehicle › Editors › Brakes › ABS / Brake Design…**, press **ABS System…** and tick **ABS Installed**.
+3. Choose **Vehicle › Editors › Brakes › Brake Assembly…** and tick **Antilock (ABS)** for each wheel fitted with ABS (link groups copy the tick across the wheels in the same group), and set **ABS Efficiency** if required.
 
 Which of the two switches an engine reads differs. SIMON regulates **every** wheel when ABS Installed, or any wheel's Antilock (ABS) box, is ticked; it does not read the per-wheel box itself. EDSVS and EDVTS read only the per-wheel boxes. EDVDS has no ABS model. A vehicle read from an HVE case keeps HVE's own ABS settings, both of them. For one event only, **Event › Wheels…** has an **Antilock brakes** choice per vehicle: *Use the vehicle's setting*, *Force OFF for this event* or *Force ON for this event*.
 
 ### Editing ABS System Parameters
 
-1. Choose **Vehicle › Brakes › ABS / Brake Design…** and press **ABS System…**.
+1. Choose **Vehicle › Editors › Brakes › ABS / Brake Design…** and press **ABS System…**.
 2. Edit the system parameters (see System Variables, above).
 
 ### Editing ABS Wheel Parameters
 
-1. Choose **Vehicle › Brakes › ABS / Brake Design…** and press **ABS Designer…**.
+1. Choose **Vehicle › Editors › Brakes › ABS / Brake Design…** and press **ABS Designer…**.
 2. Edit each wheel's parameters in its column. To give several wheels the same values, put them in the same **Link Group** before editing.
 
 Any event that supports the HVE ABS model (e.g., SIMON) will now include the

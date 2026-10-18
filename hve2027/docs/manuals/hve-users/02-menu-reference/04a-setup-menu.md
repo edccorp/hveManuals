@@ -259,7 +259,7 @@ For an **EDCRASH** event the dialog has a single **Wheel Data** page instead (se
 !!! note "HVE 2027"
     HVE's Driver Controls dialog also had a **Lights** page. In HVE 2027 it is
     its own Event menu item, **Event › Lights...** (SIMON and EDSMAC4); the
-    lamps themselves are defined in the Vehicle editor (Vehicle › Vehicle
+    lamps themselves are defined in the Vehicle editor (Vehicle › Editors › Vehicle
     Lights...).
 
 See the dialog reference: [Driver Controls](../../09-events-driver-controls/DriverControls.md).

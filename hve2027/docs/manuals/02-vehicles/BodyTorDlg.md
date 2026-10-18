@@ -4,7 +4,7 @@
 
 The HVE Vehicle Model includes the capability to model torsional distortion of the body. By default, the body is assumed to be rigid. However, the user may wish to edit these default parameters, if the actual torsional stiffness of the body is known, to study the effect of torsional distortion on vehicle handling.
 
-Open the dialog in the Vehicle Editor with **Vehicle › Body Torsion...**; it is also reached from the **Body Torsion...** button of the **Crush & Geometry** window (**Event › Crush Profile...**). The **Vehicle** list at the top selects the vehicle. Values are shown in the units set in Preferences, and take effect as they are typed; close the dialog with its close button.
+Open the dialog in the Vehicle Editor with **Vehicle › Editors › Body Torsion...**; it is also reached from the **Body Torsion...** button of the **Crush & Geometry** window (**Event › Crush Profile...**). The **Vehicle** list at the top selects the vehicle. Values are shown in the units set in Preferences, and take effect as they are typed; close the dialog with its close button.
 
 The parameters of this dialog are as follows:
 

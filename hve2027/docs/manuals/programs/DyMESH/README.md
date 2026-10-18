@@ -37,7 +37,7 @@ runs. What differs is where the controls are and how the results are shown:
 - **Mesh preparation** (tessellate, maximum triangle leg, weld distance) is set
   per event per vehicle in **Event › DyMESH Options**, under *Contact Mesh
   Preparation (per vehicle)*, with the vehicle's defaults on the Collision tab
-  of **Vehicle › Vehicle Mesh**; see [Facts of Life](04-facts-of-life.md).
+  of **Vehicle › Editors › Vehicle Mesh**; see [Facts of Life](04-facts-of-life.md).
 - **Wheels.** The per-wheel DyMESH inputs are on the *Wheel Damage* tab of
   **Event › Wheels**; the **Mesh** box of the **DyMESH Wheel** row (**View › Scene Display**,
   Vehicle group) draws the wheel contact meshes after a run, and its **Nodes**

@@ -152,7 +152,7 @@ Although HVE-2D provides values for the vehicle-fixed x,y,z coordinates of each 
 EDVTS uses the wheel brake system Antilock Effectiveness. The specific parameters used by EDVTS are shown in Table 2-2.
 
 !!! note "HVE 2027"
-    Antilock effectiveness is the **ABS Efficiency** row of **Vehicle › Brakes › Brake Assembly…**, per wheel. EDVTS uses it only on a wheel whose **Antilock (ABS)** box, in the same dialog, is checked.
+    Antilock effectiveness is the **ABS Efficiency** row of **Vehicle › Editors › Brakes › Brake Assembly…**, per wheel. EDVTS uses it only on a wheel whose **Antilock (ABS)** box, in the same dialog, is checked.
 
 #### Tire
 
@@ -166,7 +166,7 @@ The HVE tire parameters provide the following data groups:
 EDVTS's use of these parameters is described below.
 
 !!! note "HVE 2027"
-    Tire parameters are in **Vehicle › Tires…**: the scalar data in its per-wheel grid, and the load/speed and roll-off tables in its **Load & Speed Tables** panel.
+    Tire parameters are in **Vehicle › Editors › Tires…**: the scalar data in its per-wheel grid, and the load/speed and roll-off tables in its **Load & Speed Tables** panel.
 
 #### Physical Data
 
@@ -209,7 +209,7 @@ The HVE-2D Suspension Model provides the following data groups:
 EDVTS supports all suspension types, including those with tandem axles. However, the suspension at each wheel is not modeled, per se. Rather, *roll couple distribution* (see Event Editor, Calculation Options) is used.
 
 !!! note "HVE 2027"
-    HVE 2027 has no EDVTS Calculation Options dialog. EDVTS takes the roll couple distribution from the tow vehicle's front axle: the **Roll Couple Dist** row of **Vehicle › Suspension Data…**. The inter-tandem load transfer is the **Int. Tandem Load Xfr** row of the same dialog.
+    HVE 2027 has no EDVTS Calculation Options dialog. EDVTS takes the roll couple distribution from the tow vehicle's front axle: the **Roll Couple Dist** row of **Vehicle › Editors › Suspension Data…**. The inter-tandem load transfer is the **Int. Tandem Load Xfr** row of the same dialog.
 
 **Table 2-3: Vehicle Suspension and Steering Parameters Used By EDVTS**
 
@@ -245,7 +245,7 @@ The Vehicle Exterior Data (Exterior Dimensions, Stiffness) are not used by EDVTS
 EDVTS uses the steering gear ratio if the *At Steering Wheel* Steering Table option is used during Event set-up (see Table 2-3). Otherwise, the steering system data are not used by EDVTS.
 
 !!! note "HVE 2027"
-    The steering gear ratio is in **Vehicle › Steering System…**.
+    The steering gear ratio is in **Vehicle › Editors › Steering System…**.
 
 ### Brake System Data
 
@@ -492,7 +492,7 @@ EDVTS uses the current simulation control parameters. The Simulation parameters 
 *(updated: The printed manual described two calculation options — Roll-Couple Distribution and Get Surface Information — set through an EDVTS Calculation Options dialog. In the current version, **EDVTS does not present a Calculation Options dialog**. The Roll Couple Distribution value is taken directly from the tow vehicle's **Roll Couple Distribution** suspension value (Vehicle Editor → Suspension Parameters; default 0.55), not from a per-event option. The terrain surface-search method is selected in the separate **Get Surface Information Options** dialog on the Options menu.)*
 
 !!! note "HVE 2027"
-    HVE 2027 has no EDVTS Calculation Options dialog either. The roll couple distribution is the tow vehicle's front-axle **Roll Couple Dist** in **Vehicle › Suspension Data…**; the surface search is **Event Information › Road Surface Search**. The value used is whatever the tow vehicle's suspension data hold — the value its database record carries, or HVE 2027's own default of 0.50 — so check it; the 0.55 described below is not applied automatically.
+    HVE 2027 has no EDVTS Calculation Options dialog either. The roll couple distribution is the tow vehicle's front-axle **Roll Couple Dist** in **Vehicle › Editors › Suspension Data…**; the surface search is **Event Information › Road Surface Search**. The value used is whatever the tow vehicle's suspension data hold — the value its database record carries, or HVE 2027's own default of 0.50 — so check it; the 0.55 described below is not applied automatically.
 
 **Roll Couple Distribution** describes the ratio of lateral load transferred between the front and rear suspensions during cornering. This distribution depends directly on the characteristics of the front and rear suspension systems and chassis stiffness. As EDVTS is a limited-degree-of-freedom analysis, the effects of the suspension system and chassis are included in this one parameter. A good approximation for the fraction of the total load transfer borne by the front axle can be obtained by dividing the roll moment produced at the front suspension by the total roll moment (i.e., the total produced by both front and rear suspensions together) during a steady turn. Note that a neutral vehicle will tend to have a lateral load transfer coefficient equal to the percentage of load on the front axle; an understeering vehicle will tend to have a greater value and an oversteering vehicle will have a lesser value. The default value is 0.55 (55 percent of the roll couple carried by the front axle).
 

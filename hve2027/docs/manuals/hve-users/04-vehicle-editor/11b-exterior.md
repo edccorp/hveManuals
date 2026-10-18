@@ -12,7 +12,7 @@ Viewer.
 !!! note "HVE 2027"
     HVE 2027 has no exterior spheres. The dimensions are edited in the
     **Size & Weight** section of the Vehicles panel, and the
-    stiffness coefficients with **Vehicle › Crush Stiffness...** (see below).
+    stiffness coefficients with **Vehicle › Editors › Crush Stiffness...** (see below).
 
 ## Vehicle Exterior Dimensions
 
@@ -88,7 +88,7 @@ back or sides of the vehicle.
 
 !!! note "HVE 2027"
     The stiffness coefficients are vehicle data, edited in the Vehicle editor
-    with **Vehicle › Crush Stiffness...**. The dialog shows the Front, Rear,
+    with **Vehicle › Editors › Crush Stiffness...**. The dialog shows the Front, Rear,
     Left and Right sides, each with its **A**, **B** and **Kv** Stiffness, and
     below them HVE's 3-D stiffness: **3-D Node Stiffness** — Constant, Linear,
     Quadratic and Cubic for the Front, Right, Back, Left, Top and
@@ -111,7 +111,7 @@ To display or edit the current vehicle's A, B and Kv stiffness
 coefficients, perform the following steps:
 
 1. In the Vehicle editor (F3), select the vehicle.
-2. Choose **Vehicle › Crush Stiffness...**. The Crush Stiffness dialog is
+2. Choose **Vehicle › Editors › Crush Stiffness...**. The Crush Stiffness dialog is
    displayed.
 3. View and/or edit the stiffness properties of each side. Changes apply as
    they are made.

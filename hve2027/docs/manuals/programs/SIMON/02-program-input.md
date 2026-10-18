@@ -321,7 +321,7 @@ SIMON uses the steering gear ratio if the *At Driver* Steering Table option is u
 
 If the Steer Degree of Freedom Normal option is selected, SIMON ignores user-entered steering system data and computes steer angles based on driving surface inputs. If the Append option is selected, SIMON uses the user-entered steering system data until the last timestep for which data are entered; after that, the Steer Degree of Freedom model is used.
 
-The steering system data used by SIMON are shown in Table 2-5. In HVE 2027 they are edited in **Vehicle › Steering System...** (one column per axle).
+The steering system data used by SIMON are shown in Table 2-5. In HVE 2027 they are edited in **Vehicle › Editors › Steering System...** (one column per axle).
 
 !!! tip "New in HVE 2027"
     **Steer degree of freedom per axle.** The *Steering System* dialog has a **Steer DOF (SIMON)** row with one setting per steerable axle — *Event default*, *Normal (free)*, *Append (free after table)* or *Auto start (free at contact)* — and a **Has steering column** checkbox per axle. *Event default* follows the Steer DOF chosen for the event in the SIMON Options dialog, which is HVE's behavior. Any other setting overrides it for that axle only, so the driver can keep steering the front axle from the steer table while a castoring tag axle finds its own angle from the tire forces. Clear **Has steering column** for an axle with no steering linkage: the column's inertia and friction are then left out of that axle's steer degree of freedom. HVE applies one Steer DOF setting to every steerable axle of every vehicle.
@@ -348,7 +348,7 @@ The Brake System Data also include the HVE ABS System Model option. If this mode
 > **NOTE:** See also Wheel Brake Data (Unsprung Mass Parameters) for related information.
 
 !!! note "HVE 2027"
-    Where the brake data live in HVE 2027: the brake pedal ratio and system pressure in **Vehicle › Brakes › Brake System Pressure...**; time lag, rise time, proportioning and the per-wheel **Antilock (ABS)** checkbox in **Vehicle › Brakes › Brake Assembly...**; the Brake Designer in **Vehicle › Brakes › Brake Designer...**; and the ABS controller in **Vehicle › Brakes › ABS / Brake Design... › ABS System...**.
+    Where the brake data live in HVE 2027: the brake pedal ratio and system pressure in **Vehicle › Editors › Brakes › Brake System Pressure...**; time lag, rise time, proportioning and the per-wheel **Antilock (ABS)** checkbox in **Vehicle › Editors › Brakes › Brake Assembly...**; the Brake Designer in **Vehicle › Editors › Brakes › Brake Designer...**; and the ABS controller in **Vehicle › Editors › Brakes › ABS / Brake Design... › ABS System...**.
 
 !!! warning "Not in HVE 2027"
     **ABS Algorithms 3, 5 and 6 stop the run.** HVE's ABS System dialog offers six algorithms, and SIMON implements three of them: *Tire Slip*, *Bosch Version 1* and *Algorithm 4*. HVE 2027 offers all six under HVE's names and marks the other three "(not implemented)": with one of them selected, the run stops with error −5230 the first time ABS regulates a braking wheel, and the results cover only the part of the run before that. HVE's SIMON behaves the same way. Note also that *Bosch Version 1* enters regulation only when a wheel's spin acceleration falls below **Spin Accel Min**, and *Algorithm 4* only when it exceeds **Spin Accel Max**; if the wheels never reach that threshold the run is identical to one without ABS.
@@ -357,7 +357,7 @@ The Brake System Data also include the HVE ABS System Model option. If this mode
 
 Engine power as a function of engine speed is defined for both wide-open throttle and closed throttle positions. The Drivetrain data (engine power vs. speed, transmission ratio, differential ratio, drivetrain inertia) are used if the *Percent Wide-open Throttle* option is used during Event set-up (see Table 2-7). Rotational inertia includes the engine, transmission, driveline, and differential.
 
-The drivetrain data used by SIMON are shown in Table 2-5. In HVE 2027 they are edited in **Vehicle › Drivetrain...** (engine, transmission, differential and the Electronic Stability (ESS) section — see [Electronic Stability Systems](09-electronic-stability-systems.md)).
+The drivetrain data used by SIMON are shown in Table 2-5. In HVE 2027 they are edited in **Vehicle › Editors › Drivetrain...** (engine, transmission, differential and the Electronic Stability (ESS) section — see [Electronic Stability Systems](09-electronic-stability-systems.md)).
 
 !!! note "HVE 2027"
     **Differential type changes the answer in HVE 2027.** HVE stores the differential's *Diff Type* (Open, Limited Slip, Locked) but its SIMON solves every differential as open — equal torque to both wheels. HVE 2027 adds a torque-biasing model: in the *Differential* section of the Drivetrain dialog, **Limited Slip** sends a torque difference of **Preload Torque** plus **Locking Coeff** times the axle torque toward the slower wheel, and **Locked** uses a locking coefficient of 1.0. **Open** is exactly HVE's behavior, so a case with open differentials (every case in EDC's own case library) gives HVE's answer. The difference shows only when the two wheels of a driven axle have different grip, and only under the *Pedal* throttle method.
@@ -563,7 +563,7 @@ SIMON uses the following Driver Controls. In HVE 2027 the four tables are the ta
 
   > **NOTE:** The Pedal Force option is recommended (see Chapter 4, Calculation Method).
 
-  Antilock is not set on the Brake tab. SIMON regulates every wheel when the vehicle's **ABS Installed** (**Vehicle › Brakes › ABS / Brake Design... › ABS System...**) or any wheel's **Antilock (ABS)** box (**Vehicle › Brakes › Brake Assembly...**) is ticked, and an event can override it in **Event › Wheels... › Brake** (see [Vehicle Wheels](#vehicle-wheels)).
+  Antilock is not set on the Brake tab. SIMON regulates every wheel when the vehicle's **ABS Installed** (**Vehicle › Editors › Brakes › ABS / Brake Design... › ABS System...**) or any wheel's **Antilock (ABS)** box (**Vehicle › Editors › Brakes › Brake Assembly...**) is ticked, and an event can override it in **Event › Wheels... › Brake** (see [Vehicle Wheels](#vehicle-wheels)).
 
 - **Throttle** — A table of throttle inputs as a function of time. HVE 2027's **Input Method** list on the **Throttle** tab offers **Pedal (AT_DRIVER)** (percent wide-open throttle through the engine model) and **% of Friction**; the **Use Clutch / Torque Converter** checkbox is on the same tab.
 
@@ -588,7 +588,7 @@ The Driver Controls Data used by SIMON are shown in Table 2-7.
 The Damage Profiles data are not used by SIMON.
 
 !!! note "HVE 2027"
-    **Event › Damage Profiles...** is EDCRASH's measured damage and is disabled for a SIMON event. The vehicle's **3-D Node Stiffness**, the force law DyMESH collides with, is in **Vehicle › Crush Stiffness...**; the CRASH3 A/B/Kv sides in the same window are not read by SIMON.
+    **Event › Damage Profiles...** is EDCRASH's measured damage and is disabled for a SIMON event. The vehicle's **3-D Node Stiffness**, the force law DyMESH collides with, is in **Vehicle › Editors › Crush Stiffness...**; the CRASH3 A/B/Kv sides in the same window are not read by SIMON.
 
 #### Collision Pulse
 
@@ -631,7 +631,7 @@ In HVE 2027 these are the tabs of **Event › Wheels...**, one column per wheel 
 SIMON allows the user to place virtual accelerometers in the vehicle at up to five vehicle-fixed locations. These accelerometers can be used to track the total acceleration and acceleration components at various locations within the vehicle (e.g., specific seat locations). The accelerometer outputs are included in the Variable Output, Accelerometer group (see Chapter 3, Variable Output).
 
 !!! note "HVE 2027"
-    HVE 2027 stores accelerometers with the **vehicle**, not with the event: **Event › Accelerometers...** and **Vehicle › Accelerometers...** open the same list (**Add**, **Delete**, a name, a reference frame and the X, Y, Z mount position), and it applies to every event the vehicle is in.
+    HVE 2027 stores accelerometers with the **vehicle**, not with the event: **Event › Accelerometers...** and **Vehicle › Editors › Accelerometers...** open the same list (**Add**, **Delete**, a name, a reference frame and the X, Y, Z mount position), and it applies to every event the vehicle is in.
 
 #### Contacts
 

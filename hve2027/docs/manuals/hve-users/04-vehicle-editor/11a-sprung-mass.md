@@ -191,7 +191,7 @@ reference page, [Move CG dialog](../../02-vehicles/MoveCGDlg.md).
       is read-only. The CG location may also be edited directly in the Vehicles
       panel's Size & Weight section (CG to axle, CG height) and in the
       Inertia / Mass dialog.
-    - **Vehicle › Vehicle Mesh › Move CG** (on the Vehicle Mesh window's File &
+    - **Vehicle › Editors › Vehicle Mesh › Move CG** (on the Vehicle Mesh window's File &
       Placement tab) — where the CG sits in the 3-D model file's own
       coordinates. Typing a new value moves the CG the same way: the body and
       the wheels stay, and the CG distances change (see
@@ -255,7 +255,7 @@ The current vehicle may be visualized using a simplified vehicle shape or an
 actual 3-D geometry file created by digitizing the vehicle. If a 3-D
 geometry file is available for the current vehicle, it is assigned with the
 **Mesh File** field in the **3D Geometry** section of the Vehicles panel, or
-in the **Vehicle Mesh** window (Vehicle › Vehicle Mesh, Event › Vehicle Mesh,
+in the **Vehicle Mesh** window (Vehicle › Editors › Vehicle Mesh, Event › Vehicle Mesh,
 or **Vehicle Mesh...** in the 3D Geometry section), which also holds every
 other setting of the model.
 
@@ -461,7 +461,7 @@ Vehicle Mesh window.
 
 To assign a 3-D geometry file to the current vehicle:
 
-1. Choose **Vehicle › Vehicle Mesh** (or press **Vehicle Mesh...** in the
+1. Choose **Vehicle › Editors › Vehicle Mesh** (or press **Vehicle Mesh...** in the
    Vehicles panel's **3D Geometry** section) and select the **File &
    Placement** tab.
 2. Press **…** beside Mesh File and choose the file, or press **Library…**
@@ -485,7 +485,7 @@ interaction forces between the vehicle and its occupants or pedestrians.
 
 Contact Surfaces are planes defined by 3 corners (the fourth corner is
 automatically assigned by assuming a parallelogram). Contact surfaces are
-created using the Contact Surfaces dialog (**Vehicle › Contact Surfaces**).
+created using the Contact Surfaces dialog (**Vehicle › Editors › Contact Surfaces**).
 
 ![Figure 11-7](../images/figure-11-7.jpg)
 *Figure 11-7: Vehicle contact surfaces — both interior and exterior contact surfaces are permissible (rendered in HVE).*
@@ -498,7 +498,7 @@ selected surface is edited on the right. Click a name to select it;
 Ctrl-click and Shift-click select several (for Delete). To create and edit a
 contact surface, perform the following steps:
 
-1. Choose **Vehicle › Contact Surfaces**. The Contact Surfaces dialog is
+1. Choose **Vehicle › Editors › Contact Surfaces**. The Contact Surfaces dialog is
    displayed, and the vehicle's surfaces are drawn in the viewport, each with
    an arrow showing its normal. A surface may also be selected by clicking
    it in the viewport.
@@ -635,7 +635,7 @@ The Contact Surface parameters are described below.
 ## Belt Restraints
 
 The belt restraint systems of the vehicle are displayed and edited using the
-Belt Restraint System dialog (**Vehicle › Belt Restraint**, also Event ›
+Belt Restraint System dialog (**Vehicle › Editors › Belt Restraint**, also Event ›
 Restraints › Belt Restraint).
 
 ![Figure 11-12](../images/hvn-04-belt-restraint.png)
@@ -652,7 +652,7 @@ Buick Skylark driver.*
 To display or edit the current vehicle's belt properties, perform the
 following steps:
 
-1. Choose **Vehicle › Belt Restraint**. The Belt Restraint System dialog will
+1. Choose **Vehicle › Editors › Belt Restraint**. The Belt Restraint System dialog will
    be displayed, and the belt anchors are drawn in the viewport.
 2. Choose the occupant in the **Occupant** list, and set **Restraint In
    Use** for the active event.
@@ -710,7 +710,7 @@ of each section:
 ## Airbag Restraints
 
 The airbags are displayed and edited using the **Airbags** dialog
-(**Vehicle › Airbags**, also Event › Restraints › Airbags). As in HVE, a bag
+(**Vehicle › Editors › Airbags**, also Event › Restraints › Airbags). As in HVE, a bag
 belongs to the vehicle, one per seat location: choose the **Seat** at the top
 of the dialog (each seat is listed with the occupants seated there in the
 active event, and whether it has a bag). For the selected seat the dialog
@@ -739,12 +739,12 @@ Rebound and Bottom-out Moduli); and an **ATB Gas Dynamics (GATB)** section.
 
 To display or edit a seat's airbag, perform the following steps:
 
-1. Choose **Vehicle › Airbags**. The dialog opens on the seat of the occupant
+1. Choose **Vehicle › Editors › Airbags**. The dialog opens on the seat of the occupant
    selected in the Occupants panel.
 2. Choose the **Seat**, check **Device Installed** and edit the bag's
    properties. A pedestrian has no seat and no airbag.
 3. Set the occupant's **Restraint In Use** to Airbag + Belt for the event
-   (Vehicle › Belt Restraint, or Event Information).
+   (Vehicle › Editors › Belt Restraint, or Event Information).
 
 The Airbag Restraint Properties are described below, under HVE's names.
 
@@ -957,7 +957,7 @@ reference page,
 To display or edit the current vehicle's drag factors, perform the following
 steps:
 
-1. Choose **Vehicle › Aerodynamic Drag** (or Vehicles panel › Components ›
+1. Choose **Vehicle › Editors › Aerodynamic Drag** (or Vehicles panel › Components ›
    Aerodynamic Drag…). The Aerodynamic Drag dialog will be
    displayed.
 2. The four surfaces, **Front**, **Rear**, **Left** and **Right**, are the
@@ -1014,7 +1014,7 @@ the reference page,
 To display or edit the vehicle's torsional data, perform the following
 steps:
 
-1. Choose **Vehicle › Body Torsion**. The Body Torsion dialog will be
+1. Choose **Vehicle › Editors › Body Torsion**. The Body Torsion dialog will be
    displayed.
 2. Edit the **Torsional Stiffness** and the torsional roll axis location
    (**CG to Torsion Axis**).

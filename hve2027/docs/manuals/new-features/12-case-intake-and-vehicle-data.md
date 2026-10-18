@@ -13,7 +13,7 @@
 | [Case Intake](#case-intake) | **Tools › Automatic Tools › Case Intake...** | Adds one event with new vehicles, their starting positions and speeds |
 | [Provenance](#provenance) | **Tools › Automatic Tools › Provenance...** | Nothing in the physics: it lists, and can remove, the records the other tools keep |
 | [Aboard](#aboard-occupants-and-cargo-on-the-vehicle) | **Inertia / Mass** dialog, *Aboard* section | The occupants and cargo a vehicle carries into every event |
-| [Crush Stiffness from Crash Tests](#crush-stiffness-from-crash-tests) | **Tools › Automatic Tools › Crush Stiffness from Crash Tests...**, or **Vehicle › Crush Stiffness...**, button **From crash tests...** | One side's A and B, and the A and B of the vehicle's EDCRASH events |
+| [Crush Stiffness from Crash Tests](#crush-stiffness-from-crash-tests) | **Tools › Automatic Tools › Crush Stiffness from Crash Tests...**, or **Vehicle › Editors › Crush Stiffness...**, button **From crash tests...** | One side's A and B, and the A and B of the vehicle's EDCRASH events |
 | [EDR Import](#edr-import) | **Tools › Automatic Tools › EDR Import...** | An event vehicle's initial speed and its throttle, brake and steering tables |
 
 These tools are in the workstation product. The viewer product (which opens a
@@ -601,7 +601,7 @@ anything: its load in kilograms and how many items, and how it was applied
 
 **Tools › Automatic Tools › Crush Stiffness from Crash Tests...**, or the
 **From crash tests...** button below the four sides in the Vehicle editor's
-**Vehicle › Crush Stiffness...**, opens **Crush Stiffness from Crash Tests**
+**Vehicle › Editors › Crush Stiffness...**, opens **Crush Stiffness from Crash Tests**
 for the selected vehicle (named at the top), which works out a side's
 CRASH3 stiffness from one or more staged tests into a full-width rigid barrier
 and puts it on the vehicle.
@@ -706,7 +706,7 @@ or no positive b0 (choose b0 instead).
 | **Apply** | Sets the stiffness. Locked while this vehicle's results are on screen |
 
 **Apply** puts A and B on that side of the vehicle (the values in **Vehicle ›
-Crush Stiffness**; see [Stiffness Coefficient Dialog](../02-vehicles/StiffCoeffDlg.md)).
+Editors › Crush Stiffness**; see [Stiffness Coefficient Dialog](../02-vehicles/StiffCoeffDlg.md)).
 With the check box on, it also sets the **A Stiffness** and **B Stiffness** of
 every EDCRASH event of this vehicle whose CDC names the same side in its third
 character (F, B, L or R; see

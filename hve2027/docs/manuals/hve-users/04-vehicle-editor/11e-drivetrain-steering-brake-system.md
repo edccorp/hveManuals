@@ -6,8 +6,8 @@ Edition, Jan 2006), Chapter 11.*
 This part covers the vehicle-level systems HVE edits by clicking on the
 Engine icon (Drivetrain), the Steering Wheel icon (Steering System) and the
 Brake Pedal/Master Cylinder icon (Brake System) in the Vehicle Viewer. In
-HVE 2027 they are **Vehicle › Drivetrain**, **Vehicle › Steering System**,
-**Vehicle › Brakes › Brake System Pressure** and **Vehicle › Brakes › ABS /
+HVE 2027 they are **Vehicle › Editors › Drivetrain**, **Vehicle › Editors › Steering System**,
+**Vehicle › Editors › Brakes › Brake System Pressure** and **Vehicle › Editors › Brakes › ABS /
 Brake Design** (each also a button in the Vehicles panel's Components
 section).
 Values are shown in the units set in Preferences, and changes apply as they
@@ -16,7 +16,7 @@ are made.
 ## Drivetrain
 
 The Drivetrain parameters for the current vehicle are displayed and edited
-using the Drivetrain dialog (**Vehicle › Drivetrain**). The drivetrain is
+using the Drivetrain dialog (**Vehicle › Editors › Drivetrain**). The drivetrain is
 composed of three components, each a section of the dialog (HVE 2027 adds a
 fourth, Electronic Stability (ESS)):
 
@@ -176,7 +176,7 @@ reference page,
 *Figure 11-53: The Steering System dialog (HVE 2027), one column per axle. The per-wheel Steer-Axis Mechanics table is further down the dialog.*
 
 To display or edit the current vehicle's steerable axles and associated
-parameters, choose **Vehicle › Steering System** (or Vehicles panel ›
+parameters, choose **Vehicle › Editors › Steering System** (or Vehicles panel ›
 Components › Steering…). The dialog is a table with a column per
 axle, so there is no Current Axle selector:
 
@@ -265,7 +265,7 @@ Force). See also the reference page,
 *Figure 11-54: The Brake System Pressure dialog (HVE 2027).*
 
 To display or edit the current vehicle's brake master cylinder pressure
-ratio, choose **Vehicle › Brakes › Brake System Pressure**. The dialog contains an
+ratio, choose **Vehicle › Editors › Brakes › Brake System Pressure**. The dialog contains an
 **Axle** selector, **System Type** (Hydraulic, Air (Pneumatic)), **Pedal
 Ratio** (per vehicle; 0 derives the slope from the curve below), **Pressure
 Ratio**, and a table of pedal force against pressure with **Add Point**.
@@ -274,7 +274,7 @@ Ratio**, and a table of pedal force against pressure with **Add Point**.
     The Brake System Pressure dialog has **System Type**, which reaches
     SIMON's input report only, and no Assembly Type or ABS Installed. The
     disc/drum choice is the per-wheel Brake Type in the Brake Assembly
-    dialog. **ABS Installed** is in **Vehicle › Brakes › ABS / Brake Design ›
+    dialog. **ABS Installed** is in **Vehicle › Editors › Brakes › ABS / Brake Design ›
     ABS System**, with the ABS System data; the ABS Designer is reached from the
     same menu item. SIMON regulates every wheel when ABS Installed, or any
     wheel's Antilock box in Brake Assembly, is ticked. EDSVS and EDVTS use the
@@ -311,7 +311,7 @@ The Brake System parameters are described below.
   apply delay and release delay).
 
   !!! note "HVE 2027"
-      **Vehicle › Brakes › ABS / Brake Design** opens a window with **ABS System…**
+      **Vehicle › Editors › Brakes › ABS / Brake Design** opens a window with **ABS System…**
       and **ABS Designer…**. The ABS System dialog has **ABS Installed**,
       the Algorithm, Control Method, the thresholds (Min Pressure, Min
       Velocity), the
@@ -348,9 +348,9 @@ In HVE the Brake Designer is accessed from the Brake Assembly dialog (via
 the Brake Type option list and Edit Brake pushbutton — see
 [Part D](11d-brakes-tires-wheels.md)), from the ABS Designer pushbutton
 (per-wheel ABS data) and from the Brake System dialog's ABS Edit pushbutton
-(system-level ABS data). In HVE 2027 it is **Vehicle › Brakes › Brake
+(system-level ABS data). In HVE 2027 it is **Vehicle › Editors › Brakes › Brake
 Designer** (see [Part D](11d-brakes-tires-wheels.md#hve-brake-designer)), with
-the ABS data under **Vehicle › Brakes › ABS / Brake Design**. HVE's Brake
+the ABS data under **Vehicle › Editors › Brakes › ABS / Brake Design**. HVE's Brake
 Material Properties dialog is the Brake Designer's **Material Properties**
 section (see [Part D](11d-brakes-tires-wheels.md#hve-brake-designer)). The individual Brake Designer dialogs
 are documented in the HVE reference pages in

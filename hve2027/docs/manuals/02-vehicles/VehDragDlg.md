@@ -4,7 +4,7 @@
 
 The vehicle drag associated with aerodynamic pressure. The Aerodynamic Drag dialog allows the user to view or edit these properties for each of the vehicle's aerodynamic surfaces. Each surface stores its own complete set of coefficients and center-of-pressure data.
 
-Open it in the Vehicle Editor with **Vehicle › Aerodynamic Drag...**, or with **Aerodynamic Drag...** under **Components** in the Vehicles panel. The **Vehicle** list at the top selects the vehicle. Lengths and areas are shown in the units set in Preferences. Values take effect as they are typed; **Close** closes the dialog.
+Open it in the Vehicle Editor with **Vehicle › Editors › Aerodynamic Drag...**, or with **Aerodynamic Drag...** under **Components** in the Vehicles panel. The **Vehicle** list at the top selects the vehicle. Lengths and areas are shown in the units set in Preferences. Values take effect as they are typed; **Close** closes the dialog.
 
 ## Surfaces
 The four surfaces are the table's columns, side by side, and each row below is a property of every surface:

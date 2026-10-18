@@ -1,6 +1,6 @@
 # Transmission Data Dialog Box
 
-The HVE vehicle transmission is modeled by a reverse gear, neutral and a number of forward gears. In HVE 2027 the transmission is the **Transmission** section of the **Drivetrain** dialog (**Vehicle › Drivetrain...** in the Vehicle Editor); see [Drive Train Dialog Box](DriveTraDlg.md).
+The HVE vehicle transmission is modeled by a reverse gear, neutral and a number of forward gears. In HVE 2027 the transmission is the **Transmission** section of the **Drivetrain** dialog (**Vehicle › Editors › Drivetrain...** in the Vehicle Editor); see [Drive Train Dialog Box](DriveTraDlg.md).
 
 This section contains the following items:
 

@@ -1,6 +1,6 @@
 # Jounce and Rebound Stops Dialog
 
-The jounce and rebound stop properties are displayed and edited in the **Jounce / Rebound** dialog. Open it in the Vehicle Editor as the **Jounce / Rebound** tab of **Vehicle › Suspension Data...**. The Suspension Data window's tabs are Springs & Dampers, Jounce / Rebound, Camber vs Deflection, Roll Steer and Anti-Pitch.
+The jounce and rebound stop properties are displayed and edited in the **Jounce / Rebound** dialog. Open it in the Vehicle Editor as the **Jounce / Rebound** tab of **Vehicle › Editors › Suspension Data...**. The Suspension Data window's tabs are Springs & Dampers, Jounce / Rebound, Camber vs Deflection, Roll Steer and Anti-Pitch.
 
 The **Vehicle** list at the top selects the vehicle.
 

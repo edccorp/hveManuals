@@ -6,7 +6,7 @@ properties, membrane moduli, steering-column collapse and the backside contact
 surface.
 
 !!! note "HVE 2027"
-    Open the **Airbags** window from **Vehicle › Airbags...** in the Vehicle
+    Open the **Airbags** window from **Vehicle › Editors › Airbags...** in the Vehicle
     editor (F3), or **Event › Restraints... › Airbags...** in the Event editor
     (F5; EDHIS and GATB events). As in HVE, a bag belongs to the vehicle, one
     per seat location. The same window also holds the deploy timing and

@@ -1,6 +1,6 @@
 # Disk Brake Dialog Box
 
-HVE has one Brake Designer dialog per brake type. HVE 2027 has a single **Brake Designer** dialog for all of them: open it in the Vehicle Editor (**Vehicle (F3)**) with **Vehicle › Brakes › Brake Designer...** and choose **Disc** in its **Brake Design** list. This page describes the parts of the Brake Designer every type shares, then the disc brake's own fields. The **Vehicle** list at the top selects the vehicle. Lengths, areas and pressures are shown in the units set in Preferences; angles are in degrees.
+HVE has one Brake Designer dialog per brake type. HVE 2027 has a single **Brake Designer** dialog for all of them: open it in the Vehicle Editor (**Vehicle (F3)**) with **Vehicle › Editors › Brakes › Brake Designer...** and choose **Disc** in its **Brake Design** list. This page describes the parts of the Brake Designer every type shares, then the disc brake's own fields. The **Vehicle** list at the top selects the vehicle. Lengths, areas and pressures are shown in the units set in Preferences; angles are in degrees.
 
 ![Brake Designer dialog, showing the Generic design](images/hvn-brake-designer.png)
 

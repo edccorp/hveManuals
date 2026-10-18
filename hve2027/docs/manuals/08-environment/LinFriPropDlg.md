@@ -8,7 +8,7 @@ by giving lining friction as a function of brake temperature and sliding
 velocity.
 
 !!! note "HVE 2027"
-    In the Vehicle editor (F3) choose **Vehicle › Brakes › Brake Designer...** and expand
+    In the Vehicle editor (F3) choose **Vehicle › Editors › Brakes › Brake Designer...** and expand
     the **Lining Friction Properties** section of the **Brake Designer**
     window. It edits the brake design of the wheel (**Axle**, **Side**) and
     **Brake Design** type selected in that window, and appears only for a

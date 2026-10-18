@@ -195,7 +195,7 @@ third-order curve fit.
 !!! note "HVE 2027"
     HVE 2027 has no Vehicle Exterior Stiffness dialog or force-per-area plot.
     The 3-D node stiffnesses are the **3-D Node Stiffness** section of the
-    **Crush Stiffness** dialog (Vehicle › Crush Stiffness...), one
+    **Crush Stiffness** dialog (Vehicle › Editors › Crush Stiffness...), one
     collapsible block per body zone — Front, Right, Back, Left, Top and
     Undercarriage — each with **Constant**, **Linear**, **Quadratic**,
     **Cubic**, **Conversion Height**, **Saturation Crush** and **Max Crush**.

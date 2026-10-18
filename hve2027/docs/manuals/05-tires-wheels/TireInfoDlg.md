@@ -7,7 +7,7 @@ every wheel is edited directly in one table, the **Tire Properties** window,
 and a tire is picked from HVE's databases in its **Tire Database** section.
 
 !!! note "HVE 2027"
-    Open it in the Vehicle editor (F3) with **Vehicle › Tires...**.
+    Open it in the Vehicle editor (F3) with **Vehicle › Editors › Tires...**.
     The window shows the current vehicle (chosen in the **Vehicle** list at the
     top) with one column per wheel: **A1 Right**, **A1 Left**, **A2 Right**,
     **A2 Left**, and so on. All values are shown in the units set in

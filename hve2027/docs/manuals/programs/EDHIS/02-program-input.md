@@ -11,9 +11,9 @@ This chapter defines the objects (humans, vehicles and environment) and the even
     | Input | HVE 2027 |
     |---|---|
     | Human body (segments, joints, ellipsoids, injury tolerances) | **Human (F2)** editor › **Occupant › Human Information** (*Occupants* panel) and its *Body Segments…*, *Joint Properties…*, *Injury Tolerances…* buttons |
-    | Contact surfaces | **Vehicle (F3)** › **Vehicle › Contact Surfaces** |
-    | Belt installed, anchors, attachment segment, slack, webbing | **Vehicle › Belt Restraint** |
-    | Airbag, per seat (installed, position, timing, reaction panel, bag geometry, gas, vent, column, membrane) | **Vehicle › Airbags** |
+    | Contact surfaces | **Vehicle (F3)** › **Vehicle › Editors › Contact Surfaces** |
+    | Belt installed, anchors, attachment segment, slack, webbing | **Vehicle › Editors › Belt Restraint** |
+    | Airbag, per seat (installed, position, timing, reaction panel, bag geometry, gas, vent, column, membrane) | **Vehicle › Editors › Airbags** |
     | Which human, which vehicle, seat, restraint worn, pose, pedestrian velocity | **Event (F5)** › Event Information › *Humans in Event* (and its **Pose** button) |
     | Vehicle initial position and velocity | Event Information › *Vehicle Initial Conditions*, or **Event › Position / Velocity** |
     | Collision pulse | **Event › Collision Pulse** |
@@ -217,14 +217,14 @@ The geometry file plays no role in the EDHIS calculations. However, there are so
   > **NOTE:** Remember to save the file with a new name, such as PCFordTaurus4DrSNoRoof.xxx, to avoid losing the original geometry file!
 
 !!! tip "New in HVE 2027"
-    **View › Scene Display › Humans Through Bodywork** draws the occupant through the vehicle body, so a cut-down geometry file is not needed just to see inside. The geometry file is chosen in **Vehicle › Vehicle Mesh**.
+    **View › Scene Display › Humans Through Bodywork** draws the occupant through the vehicle body, so a cut-down geometry file is not needed just to see inside. The geometry file is chosen in **Vehicle › Editors › Vehicle Mesh**.
 
 #### Contact Surfaces
 
 Vehicle contact surfaces are the surfaces that interact with human ellipsoids to produce forces on the human. Up to 25 contact surfaces are allowed by EDHIS, the properties for which are shown in Table 2-3.
 
 !!! note "HVE 2027"
-    Contact surfaces are edited in **Vehicle › Contact Surfaces**. A surface is entered either by centre, size and yaw/pitch/roll angles or, with *Edit corner points instead*, by its three corner points; the dialog shows the surface normal and has a **Flip** button to reverse it. The panels are drawn in the 3-D view, with an arrow on each normal, while the dialog is open. Its *Material Properties* section holds the surface's own force-deflection data, and *Side* (Interior/Exterior) is stored with the surface.
+    Contact surfaces are edited in **Vehicle › Editors › Contact Surfaces**. A surface is entered either by centre, size and yaw/pitch/roll angles or, with *Edit corner points instead*, by its three corner points; the dialog shows the surface normal and has a **Flip** button to reverse it. The panels are drawn in the 3-D view, with an arrow on each normal, while the dialog is open. Its *Material Properties* section holds the surface's own force-deflection data, and *Side* (Interior/Exterior) is stored with the surface.
 
     The dialog also offers **Derive from Mesh**, **Seed Standard Interior**, a **Pedestrian preset**, interior templates and **Save/Load Interior…** for building a set of panels quickly.
 
@@ -240,7 +240,7 @@ A belt restraint system may be supplied for up to nine seat positions. Although 
 > **NOTE:** At this point, you are saying the vehicle has a belt installed at a specific location. Whether or not the belt is used is event-dependent! See Event Set-up, Restraints, for more information.
 
 !!! note "HVE 2027"
-    Belts are edited in **Vehicle › Belt Restraint** (the *Belt Restraint System* dialog). Its **Occupant** list names the human each entry belongs to; for that human the dialog has *Torso Belt Installed* and *Lap Belt Installed*, a **Section** selector (Torso or Lap — each section has its own anchors, slack and webbing), the **Left Anchor** and **Right Anchor** (slack and the attachment point on the body, i/j/k), the **Vehicle Anchor** (the other end of the webbing, about the vehicle CG), and the webbing **Properties**: *Stiffness*, *Damping* and *Break Strength*. Each section's **Attached To** chooses the body segment it is fastened to; *Default* is the chest for the torso section and the pelvis for the lap section. EDHIS accepts the pelvis, abdomen or chest for a torso belt and the pelvis or abdomen for a lap belt, and refuses the run otherwise.
+    Belts are edited in **Vehicle › Editors › Belt Restraint** (the *Belt Restraint System* dialog). Its **Occupant** list names the human each entry belongs to; for that human the dialog has *Torso Belt Installed* and *Lap Belt Installed*, a **Section** selector (Torso or Lap — each section has its own anchors, slack and webbing), the **Left Anchor** and **Right Anchor** (slack and the attachment point on the body, i/j/k), the **Vehicle Anchor** (the other end of the webbing, about the vehicle CG), and the webbing **Properties**: *Stiffness*, *Damping* and *Break Strength*. Each section's **Attached To** chooses the body segment it is fastened to; *Default* is the chest for the torso section and the pelvis for the lap section. EDHIS accepts the pelvis, abdomen or chest for a torso belt and the pelvis or abdomen for a lap belt, and refuses the run otherwise.
 
     The dialog also carries **Restraint In Use** for the active event (see [Restraints](#restraints)).
 
@@ -275,7 +275,7 @@ An airbag restraint system may be supplied for up to nine seat positions. Like b
 > **NOTE:** At this point, you are saying the vehicle has an airbag installed at a specific location. Whether or not the airbag deploys is event-dependent! See Event Set-up, Restraints, for more information.
 
 !!! note "HVE 2027"
-    The whole bag is edited in one dialog, **Vehicle › Airbags** (also **Event › Restraints › Airbags**), one bag per **Seat**, as HVE stores it: **Device Installed**; the **Position** (X, Y, Z from the vehicle CG — the bag position EDHIS uses); **Begin Fill Time** (default **0.001 s**) and **Fill Duration** (default **0.05 s**, limited to HVE's own range of 0.0001–0.20 s); the head/chest/arm **Contact Segments**; the **Reaction Panel** (the contact surface the bag deploys from — HVE's *Backside Contact Surface*) and up to three confining panels; the bag geometry (*Full Inflated Volume*, *Initial Radius*, *Passenger Bag Length*), gas (*Initial Pressure*, *Gas Density*, *Mass Flow Rate*, *Specific Heat Ratio*), vent (*Discharge Coef*, *Vent Area*, *Pressure Open Vent*), steering column (*Column Angle*, *Col. Load*, *Max Col. Disp*), *Max Penetration*, *Force Conv. Criterion* and the membrane's force-deflection law. The dialog says which of the seat's fields reach which engine; Position and Fill Duration are read by EDHIS.
+    The whole bag is edited in one dialog, **Vehicle › Editors › Airbags** (also **Event › Restraints › Airbags**), one bag per **Seat**, as HVE stores it: **Device Installed**; the **Position** (X, Y, Z from the vehicle CG — the bag position EDHIS uses); **Begin Fill Time** (default **0.001 s**) and **Fill Duration** (default **0.05 s**, limited to HVE's own range of 0.0001–0.20 s); the head/chest/arm **Contact Segments**; the **Reaction Panel** (the contact surface the bag deploys from — HVE's *Backside Contact Surface*) and up to three confining panels; the bag geometry (*Full Inflated Volume*, *Initial Radius*, *Passenger Bag Length*), gas (*Initial Pressure*, *Gas Density*, *Mass Flow Rate*, *Specific Heat Ratio*), vent (*Discharge Coef*, *Vent Area*, *Pressure Open Vent*), steering column (*Column Angle*, *Col. Load*, *Max Col. Disp*), *Max Penetration*, *Force Conv. Criterion* and the membrane's force-deflection law. The dialog says which of the seat's fields reach which engine; Position and Fill Duration are read by EDHIS.
 
     The bag deploys only in an event where the occupant at that seat has the restraint **Airbag + Belt** (see [Restraints](#restraints)); the dialog says so when it does not, and a run with such an occupant at a seat with no bag installed is refused.
 
@@ -552,7 +552,7 @@ By default, the Contacts dialog assumes interaction between every human ellipsoi
 The Restraints dialog determines if a belt or airbag restraint system is in use for the current event.
 
 !!! note "HVE 2027"
-    **Event › Restraints** opens the vehicle's Airbags and Belt Restraint dialogs (the same as **Vehicle › Airbags** and **Vehicle › Belt Restraint**). What the occupant wears in the event is one choice, **Restraint (this event)**, beside the human in Event Information › *Humans in Event* — the same value appears as *Restraint In Use* in **Vehicle › Belt Restraint** for the active event:
+    **Event › Restraints** opens the vehicle's Airbags and Belt Restraint dialogs (the same as **Vehicle › Editors › Airbags** and **Vehicle › Editors › Belt Restraint**). What the occupant wears in the event is one choice, **Restraint (this event)**, beside the human in Event Information › *Humans in Event* — the same value appears as *Restraint In Use* in **Vehicle › Editors › Belt Restraint** for the active event:
 
     | Restraint | Torso belt | Lap belt | Airbag |
     |---|---|---|---|
@@ -561,7 +561,7 @@ The Restraints dialog determines if a belt or airbag restraint system is in use 
     | 3-Point Belt | if installed | if installed | — |
     | Airbag + Belt | if installed | if installed | deploys |
 
-    A pedestrian wears nothing and is not offered the choice. The attachment segment, attachment coordinates and slack are part of the belt in **Vehicle › Belt Restraint**; Begin Fill Time and Fill Duration are part of the airbag in **Vehicle › Airbags** (defaults 0.001 s and 0.05 s, HVE's own).
+    A pedestrian wears nothing and is not offered the choice. The attachment segment, attachment coordinates and slack are part of the belt in **Vehicle › Editors › Belt Restraint**; Begin Fill Time and Fill Duration are part of the airbag in **Vehicle › Editors › Airbags** (defaults 0.001 s and 0.05 s, HVE's own).
 
 > **NOTE:** If the current vehicle does not have a restraint system installed at the position specified for the current human, no restraints will be available for selection. If necessary, use the Vehicle Editor to install a restraint system at the desired seat position.
 

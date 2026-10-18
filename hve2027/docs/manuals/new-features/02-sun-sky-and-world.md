@@ -136,7 +136,7 @@ stays lit as in a studio, on purpose.
 At night each vehicle lights the road with its own lamps. Which lamps, and
 where, comes from the first of these that applies:
 
-1. **The vehicle's own list** (Vehicle › Vehicle Lights…), when it has any
+1. **The vehicle's own list** (Vehicle › Editors › Vehicle Lights…), when it has any
    entry. A switched-off entry is dark; the vehicle does not fall back to
    anything else.
 2. **Its body file's lamps.** An HVE vehicle file marks each lamp lens

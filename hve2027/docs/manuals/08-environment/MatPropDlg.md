@@ -6,7 +6,7 @@ used when an occupant or pedestrian strikes that surface.
 !!! note "HVE 2027"
     These are the **Material Properties** section of the
     [Contact Surfaces](ContSurfDlg.md) window (Vehicle editor, **Vehicle ›
-    Contact Surfaces...**): select a surface in the list and expand **Material
+    Editors › Contact Surfaces...**): select a surface in the list and expand **Material
     Properties**. The material's name is the **Material** field at the top of
     the window. Values follow the units set in Tools › Preferences.
 

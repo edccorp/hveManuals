@@ -1,6 +1,6 @@
 # Anti-Pitch Dialog
 
-The anti-pitch properties of the wheels are displayed and edited in the **Anti-Pitch** dialog. Open it in the Vehicle Editor as the **Anti-Pitch** tab of **Vehicle › Suspension Data...**. Anti-pitch data are entered as a table of anti-pitch coefficient vs. suspension deflection. The **Vehicle** list at the top selects the vehicle.
+The anti-pitch properties of the wheels are displayed and edited in the **Anti-Pitch** dialog. Open it in the Vehicle Editor as the **Anti-Pitch** tab of **Vehicle › Editors › Suspension Data...**. Anti-pitch data are entered as a table of anti-pitch coefficient vs. suspension deflection. The **Vehicle** list at the top selects the vehicle.
 
 HVE 2027 shows one table with a column per wheel (**A1 Right**, **A1 Left**, **A2 Right**, ...), where HVE edits one wheel at a time.
 

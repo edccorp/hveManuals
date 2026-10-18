@@ -16,7 +16,7 @@ Information is greyed for an EDSVS event.
 
 Roll Couple Distribution sets the fraction of the total lateral load transfer (roll couple) that is reacted by the front axle; the remainder is reacted by the rear axle. It is expressed as a fraction (units %/100) in the range 0.00 to 1.00.
 
-For EDSVS this value is **not** entered through a calculation options window. It is the vehicle's suspension setting: in the Vehicle editor open **Vehicle › Suspension Data** and edit the **Roll Couple Dist** row (one value per axle).
+For EDSVS this value is **not** entered through a calculation options window. It is the vehicle's suspension setting: in the Vehicle editor open **Vehicle › Editors › Suspension Data** and edit the **Roll Couple Dist** row (one value per axle).
 
 Within the physics model, this parameter is the front-axle lateral load transfer coefficient $\gamma_1$, with the rear axle taking $\gamma_2 = 1 - \gamma_1$, which apportion the lateral weight shift used to compute the individual tire normal loads during cornering.
 

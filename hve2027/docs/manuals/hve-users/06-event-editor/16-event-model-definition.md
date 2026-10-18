@@ -279,7 +279,7 @@ The Driver Controls options are described below.
     are labelled *(not read)*, because that model has no drivetrain. The
     HVE Driver is on its own **Path Follower** dialog. HVE's Lights page is
     **Event › Lights...** (SIMON and EDSMAC4), not in Driver Controls; the
-    lamps themselves are defined under Vehicle › Vehicle Lights. Each table
+    lamps themselves are defined under Vehicle › Editors › Vehicle Lights. Each table
     is a list of time/value rows; **Add** adds a row and **Sort by Time**
     puts them in order.
 
@@ -386,8 +386,8 @@ Brake controls are available for simulations. Three methods are available
     The Brake tab's **Input Method** offers **Pedal (AT_DRIVER)** (pedal
     force), **Wheel Force** (a brake force at each wheel, applied as
     entered — HVE's Brake Force) and **% of Friction**. Antilock brakes
-    belong to the vehicle (**ABS Installed** under Vehicle › ABS / Brake
-    Design... › ABS System, and the Antilock row of Vehicle › Brake
+    belong to the vehicle (**ABS Installed** under Vehicle › Editors › Brakes › ABS / Brake
+    Design... › ABS System, and the Antilock row of Vehicle › Editors › Brakes › Brake
     Assembly...) and are tuned in the ABS Designer; an event can force them
     on or off for itself on the **Brake** tab of Event › Wheels. As with the
     throttle, EDSMAC4 runs a Pedal brake table as % of Friction and the run
@@ -697,7 +697,7 @@ The Damage Profile Event Set-up parameters are defined in Table 16-8.
     vehicle's crush stiffness for each side (Front, Rear, Left, Right:
     **A Stiffness**, **B Stiffness**, **Kv Stiffness**) and its 3-D node
     stiffness for DyMESH, which the simulations use, are under **Vehicle ›
-    Crush Stiffness...**.
+    Editors › Crush Stiffness...**.
 
 The Damage Profile dialog allows the user to enter a damage profile for the
 selected vehicle. The damage profile is obtained by post-crash inspection

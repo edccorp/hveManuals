@@ -1,6 +1,6 @@
 # Springs and Shocks Dialog
 
-HVE edits a wheel's springs and shock absorbers in a separate Springs and Shocks dialog opened from the Suspension Data dialog. HVE 2027 has no separate dialog: the same parameters are rows of the **Suspension Data** dialog (**Vehicle › Suspension Data...** in the Vehicle Editor), one column per axle, under **Spring & Damper** and **Solid Axle**. See [Suspension Data Dialog](SuspDlg.md). Values are per axle and are shown in the units set in Preferences.
+HVE edits a wheel's springs and shock absorbers in a separate Springs and Shocks dialog opened from the Suspension Data dialog. HVE 2027 has no separate dialog: the same parameters are rows of the **Suspension Data** dialog (**Vehicle › Editors › Suspension Data...** in the Vehicle Editor), one column per axle, under **Spring & Damper** and **Solid Axle**. See [Suspension Data Dialog](SuspDlg.md). Values are per axle and are shown in the units set in Preferences.
 
 ## Springs
 

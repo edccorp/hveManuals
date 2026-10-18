@@ -80,12 +80,12 @@ Next, let's change the weight and rotational inertias to account for the outrigg
 
 Next, let's add a 1-inch anti-sway bar at the rear suspension:
 
-- Open **Vehicle › Suspension Data**. The dialog has one column per axle.
+- Open **Vehicle › Editors › Suspension Data**. The dialog has one column per axle.
 - In the *Aux Roll Stiffness* row, Axle 2 column, enter the calculated value for a 1-inch anti-sway bar, `1310.0` in-lb/deg.
 
 Finally, let's disable the left front brake by setting its brake torque ratio to zero:
 
-- Open **Vehicle › Brakes › Brake Assembly**. The dialog has one column per wheel (*A1 Right* is the right front, *A1 Left* the left front).
+- Open **Vehicle › Editors › Brakes › Brake Assembly**. The dialog has one column per wheel (*A1 Right* is the right front, *A1 Left* the left front).
 - In the *Torque Ratio* row, *A1 Left* column, replace the existing value with `0.0` (Figure 5-3).
 
 > **NOTE:** The wheel columns are linked in groups (the *- A B C* selector at the top of each column), and an edit in one column is copied to every column in the same group. A vehicle usually arrives with all four columns in group *A*, so click **-** at the top of the *A1 Left* column to unlink it before you enter the zero.
@@ -167,7 +167,7 @@ The rollover event steers the front wheels directly (HVE's *At Axle* table):
 | 12.00 | 4.00 | 4.00 |
 
 !!! note "HVE 2027"
-    Open **Event › Driver Controls** and choose the **Steer** tab. In EDC's tutorial case the table above appears as the steer table *at the tires*, which overrides the steering-wheel table below it. HVE 2027 does not currently have a control for creating an at-the-tires table from scratch. To build the event yourself, enter the equivalent **steering-wheel** angles instead (the road-wheel angle multiplied by the steering gear ratio shown in **Vehicle › Steering System**); EDVSM then applies the gear ratio, so the result is the same road-wheel angle.
+    Open **Event › Driver Controls** and choose the **Steer** tab. In EDC's tutorial case the table above appears as the steer table *at the tires*, which overrides the steering-wheel table below it. HVE 2027 does not currently have a control for creating an at-the-tires table from scratch. To build the event yourself, enter the equivalent **steering-wheel** angles instead (the road-wheel angle multiplied by the steering gear ratio shown in **Vehicle › Editors › Steering System**); EDVSM then applies the gear ratio, so the result is the same road-wheel angle.
 
 #### Throttle Input
 
@@ -223,7 +223,7 @@ To enter the brake input:
 | 10.40 | 10.75 |
 
 !!! note "HVE 2027"
-    In EDC's case this table arrives as a *Pedal force* table, in pounds when Preferences are set to Imperial units. A pedal table typed into a new HVE 2027 event is a 0 to 1 pedal *position* instead, scaled by the vehicle's brake pressure curve (**Vehicle › Brakes › Brake System Pressure**).
+    In EDC's case this table arrives as a *Pedal force* table, in pounds when Preferences are set to Imperial units. A pedal table typed into a new HVE 2027 event is a 0 to 1 pedal *position* instead, scaled by the vehicle's brake pressure curve (**Vehicle › Editors › Brakes › Brake System Pressure**).
 
 The driver control inputs are now complete.
 

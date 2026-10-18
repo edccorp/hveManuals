@@ -132,7 +132,7 @@ No messages were produced; no action is necessary.
 (Informative) *(updated: present in current code; not listed in original manual)*
 
 !!! note "HVE 2027"
-    A Fill Duration of zero shuts the inflator off the instant it starts and produces this message on every run. HVE 2027's Fill Duration defaults to HVE's 0.05 s and cannot be set below 0.0001 s (**Vehicle › Airbags**).
+    A Fill Duration of zero shuts the inflator off the instant it starts and produces this message on every run. HVE 2027's Fill Duration defaults to HVE's 0.05 s and cannot be set below 0.0001 s (**Vehicle › Editors › Airbags**).
 
 ---
 

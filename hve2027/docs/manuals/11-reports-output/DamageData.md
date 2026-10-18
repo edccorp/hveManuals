@@ -93,7 +93,7 @@ zone unless per-zone values are entered.
     inputs in Event Information. A vehicle's crush **stiffness** per side (A,
     B and Kv for Front, Rear, Left and Right, and the 3-D node stiffness used by
     DyMESH), which the simulation programs use, is a different dialog:
-    **Vehicle › Crush Stiffness...**. It is not the measured damage.
+    **Vehicle › Editors › Crush Stiffness...**. It is not the measured damage.
 
 <!-- NAV -->
 

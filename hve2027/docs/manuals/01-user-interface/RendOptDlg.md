@@ -21,7 +21,7 @@ When off, the sun stops contributing to the picture; the ambient light is raised
     - **Complexity**, **Show Only Faces**, **Render Quality**, **Texture Quality** and **Anti-Aliasing Level**.
 
 !!! tip "New in HVE 2027"
-    Per-material appearance (color, roughness, metallic and other Principled-BSDF terms) in the Shader Editor, the **Vehicle › Vehicle Mesh...** shading and opacity controls, and **View › Scene Display › Scene Ghosts** for scene positions. All of these are display only; they do not change a result.
+    Per-material appearance (color, roughness, metallic and other Principled-BSDF terms) in the Shader Editor, the **Vehicle › Editors › Vehicle Mesh...** shading and opacity controls, and **View › Scene Display › Scene Ghosts** for scene positions. All of these are display only; they do not change a result.
 
 <!-- NAV -->
 

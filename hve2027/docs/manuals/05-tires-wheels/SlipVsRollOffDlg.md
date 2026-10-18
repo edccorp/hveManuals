@@ -6,7 +6,7 @@ reduced as longitudinal slip increases.
 !!! note "HVE 2027"
     This is the **Fy Roll-off** tab of the **Load & Speed Tables** panel at the
     bottom of the **Tire Properties** window, opened in the Vehicle editor (F3)
-    with **Vehicle › Tires...**, or by a wheel's **Fy Roll-off**
+    with **Vehicle › Editors › Tires...**, or by a wheel's **Fy Roll-off**
     button in the grid's **Load & Speed Dependence** rows. The **Wheel:**
     buttons at the top of the panel choose the wheel (see the
     [Tire Friction Data](TireFrictDataDlg.md) page).

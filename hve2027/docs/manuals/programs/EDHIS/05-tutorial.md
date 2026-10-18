@@ -97,7 +97,7 @@ Let's start with the Buick. This vehicle was struck from the rear, and we wish t
 
 - Select the Buick (in the *Vehicles* panel, or with the *Vehicle* picker at the top of any vehicle dialog).
 
-HVE's tutorial removes the passenger compartment so the occupant can be seen, using a modified geometry file, `PCBuickNoTop.h3d`. In HVE 2027 the geometry file is chosen in **Vehicle › Vehicle Mesh**; the tutorial case already uses `PCBuickNoTop.h3d`.
+HVE's tutorial removes the passenger compartment so the occupant can be seen, using a modified geometry file, `PCBuickNoTop.h3d`. In HVE 2027 the geometry file is chosen in **Vehicle › Editors › Vehicle Mesh**; the tutorial case already uses `PCBuickNoTop.h3d`.
 
 !!! tip "New in HVE 2027"
     **View › Scene Display › Humans Through Bodywork** draws the occupant through an intact body, so a cut-down geometry file is no longer needed just to see the occupant.
@@ -109,7 +109,7 @@ Next, let's add the contact surfaces for the Buick. We'll need a minimum of thre
 
 To add the contact surfaces in HVE 2027:
 
-- Open **Vehicle › Contact Surfaces**. The Contact Surfaces dialog is displayed (see Figure 5-5).
+- Open **Vehicle › Editors › Contact Surfaces**. The Contact Surfaces dialog is displayed (see Figure 5-5).
 - Click **Add** and enter the **Name** `Seat Bottom`.
 - Set **Side** to *Interior*.
 - Tick **Edit corner points instead** and enter the three corners from the table below: the *First Corner* as **P1**, the *Middle Corner* as **P2** and the *Third Corner* as **P3**.
@@ -165,7 +165,7 @@ Now, let's add *Bumper, Grille, Hood* and *Windshield* contacts to the Plymouth 
 
 To create the contact surfaces for the van:
 
-- Select the Plymouth Voyager and open **Vehicle › Contact Surfaces**.
+- Select the Plymouth Voyager and open **Vehicle › Editors › Contact Surfaces**.
 - Click **Add** and enter `Bumper`. Set *Side* to *Exterior* and enter the coordinates for 3 corners of the front end (Table 5-4).
 
 **Table 5-4 — Plymouth Van Bumper Contact Surface Coordinates**

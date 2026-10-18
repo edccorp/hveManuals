@@ -80,7 +80,7 @@ Now that we have our human, let's add our vehicles: a Buick Skylark 4-Door (Pass
 
 The contact panels will be entered for the right front seat position in the Chevrolet Caprice. This can be done using numerical values from the computer mesh if it has been measured in a CAD package, or it can be done visually, which is the way we will proceed in this tutorial. We will first position a contact panel for the seat cushion on the right front seat.
 
-- Select the Caprice and open **Vehicle › Contact Surfaces**. The Contact Surfaces dialog is displayed (Figure 5-6).
+- Select the Caprice and open **Vehicle › Editors › Contact Surfaces**. The Contact Surfaces dialog is displayed (Figure 5-6).
 - Click **Add** to add a contact surface.
 - Enter the **Name** `RF Seat Cushion`, and set **Side** to *Interior*.
 
@@ -348,7 +348,7 @@ Choose the following human attributes:
 ### Creating the Vehicle
 
 - In the **Vehicle (F3)** editor, click **Add…** in the *Vehicles* panel and add a Dodge Dakota Fleetside 4x4 pickup (Pickup, Dodge, Dakota, 1987-1996, Fleetside 4x4), or a comparable pickup.
-- Create the exterior contact panels using the data from Table 5-2, in **Vehicle › Contact Surfaces**.
+- Create the exterior contact panels using the data from Table 5-2, in **Vehicle › Editors › Contact Surfaces**.
 
 > **NOTE:** Make sure to set **Side** to *Exterior* when creating your contact surfaces.
 

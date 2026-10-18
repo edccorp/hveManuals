@@ -84,7 +84,7 @@ by the engines. **Discard per-wheel table** returns to the steering-wheel table.
     activation — **Use Driver Controls** or a **User-Entered** table of **Turn
     On (sec)** / **Turn Off (sec)** times — with **On/Off Cycle Time (sec)**
     and **Min Steer Angle (deg)** where they apply. The lamps themselves are
-    defined in **Vehicle › Vehicle Lights...**.
+    defined in **Vehicle › Editors › Vehicle Lights...**.
 
 <!-- NAV -->
 

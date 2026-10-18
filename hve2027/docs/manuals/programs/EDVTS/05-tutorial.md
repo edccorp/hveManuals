@@ -49,7 +49,7 @@ The original walkthrough makes the following edits. Each is already in the finis
 - **Color** — the **Color** field in the **Vehicles** panel's **Identity** section.
 - **Rear axle positions** — the tractor's third axle moved to x = -161.50 in and its second to x = -110.00 in. Wheel positions are in the panel's **Size & Weight › Details › Wheel Positions (from CG)**.
 - **Fifth wheel** — the tractor's rear connection moved to x = -135.75 in, z = -4 in. Connections are edited with **Components › Connections…** in the **Vehicles** panel; the dialog shows the connection's height above ground, which must match the trailer's kingpin to within 0.1 in.
-- **Geometry files** — `TKMackTractor.h3d` for the tractor and `TLGeneric44Van.h3d` for the trailer, in the panel's **3D Geometry** section (**Mesh File**: **...** or **Library...**) or on the File & Placement tab of **Vehicle › Vehicle Mesh…**, then **Load 3D File** there. HVE 2027 opens `.h3d` files directly; the geometry is used for display only.
+- **Geometry files** — `TKMackTractor.h3d` for the tractor and `TLGeneric44Van.h3d` for the trailer, in the panel's **3D Geometry** section (**Mesh File**: **...** or **Library...**) or on the File & Placement tab of **Vehicle › Editors › Vehicle Mesh…**, then **Load 3D File** there. HVE 2027 opens `.h3d` files directly; the geometry is used for display only.
 
 ## Creating the Environment
 
@@ -145,7 +145,7 @@ The trailer carries a 40 000 lb payload whose CG is 30 in above the unloaded tra
 
 ### Roll couple distribution
 
-The original tutorial sets the Roll Couple Distribution to `0.2`, a value representative of a heavy truck. In HVE 2027 it is the **Roll Couple Dist** row, front axle, of **Vehicle › Suspension Data…** with the tractor selected. The case already has it: the Vehicle Data report prints *Lateral Load Xfer : 0.20*.
+The original tutorial sets the Roll Couple Distribution to `0.2`, a value representative of a heavy truck. In HVE 2027 it is the **Roll Couple Dist** row, front axle, of **Vehicle › Editors › Suspension Data…** with the tractor selected. The case already has it: the Vehicle Data report prints *Lateral Load Xfer : 0.20*.
 
 ### Simulation controls
 

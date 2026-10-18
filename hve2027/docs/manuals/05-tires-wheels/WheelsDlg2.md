@@ -18,7 +18,7 @@ during the event.
     A list above the table overrides the vehicle's own antilock setting for this
     event only: **Use the vehicle's setting**, **Force OFF for this event** or
     **Force ON for this event**. The vehicle's own setting is made in
-    **Vehicle › Brakes › ABS / Brake Design...**. When a case imported from HVE recovered
+    **Vehicle › Editors › Brakes › ABS / Brake Design...**. When a case imported from HVE recovered
     ABS from HVE's saved run, or the vehicle's own ABS flag is off while this
     event forces it on, a note says so.
 

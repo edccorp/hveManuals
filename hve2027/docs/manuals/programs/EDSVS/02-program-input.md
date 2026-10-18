@@ -126,7 +126,7 @@ Although HVE-2D provides values for the vehicle-fixed x,y,z coordinates of each 
 EDSVS uses the wheel brake system Antilock Effectiveness. The specific parameters used by EDSVS are shown in Table 2-2.
 
 !!! note "HVE 2027"
-    Antilock is set per wheel in **Vehicle › Brakes › Brake Assembly**: the *Antilock (ABS)* checkbox turns it on for that wheel and *ABS Efficiency* is the Antilock Effectiveness (0 to 1). EDSVS reads both for each wheel; *ABS Efficiency* is used only on a wheel whose *Antilock (ABS)* box is checked. To run one event with and another without antilock, leave the vehicle alone and use the *Antilock brakes* setting on the **Brake** tab of **Event › Wheels** (*Use the vehicle's setting*, *Force OFF for this event* or *Force ON for this event*).
+    Antilock is set per wheel in **Vehicle › Editors › Brakes › Brake Assembly**: the *Antilock (ABS)* checkbox turns it on for that wheel and *ABS Efficiency* is the Antilock Effectiveness (0 to 1). EDSVS reads both for each wheel; *ABS Efficiency* is used only on a wheel whose *Antilock (ABS)* box is checked. To run one event with and another without antilock, leave the vehicle alone and use the *Antilock brakes* setting on the **Brake** tab of **Event › Wheels** (*Use the vehicle's setting*, *Force OFF for this event* or *Force ON for this event*).
 
 #### Tire
 
@@ -183,14 +183,14 @@ The HVE-2D Suspension Model provides the following data:
 EDSVS supports all suspension types, including those with tandem axles. However, the suspension at each wheel is not modeled, per se. Rather, *roll couple distribution* (see Event, Calculation Options) is used. *(updated: in the current version the roll couple distribution used by the simulation is read from the vehicle's **Roll Couple Distribution** suspension value, set on the Vehicle Editor's suspension screen — see [EDSVS Calculation Options](../../10-calculation-options/CalcOptEDSVS.md).)*
 
 !!! note "HVE 2027"
-    The value is the *Roll Couple Dist* row of **Vehicle › Suspension Data**. The dialog has one column per axle; EDSVS reads the **front axle's** value as the front fraction and uses one minus it for the rear. The default for a vehicle created in HVE 2027 is **0.50** (not 0.55). A vehicle from an HVE database or case carries its own value, and a stored value of 0 is used as 0.
+    The value is the *Roll Couple Dist* row of **Vehicle › Editors › Suspension Data**. The dialog has one column per axle; EDSVS reads the **front axle's** value as the front fraction and uses one minus it for the rear. The default for a vehicle created in HVE 2027 is **0.50** (not 0.55). A vehicle from an HVE database or case carries its own value, and a stored value of 0 is used as 0.
 
 ##### Inter-tandem Axle Load Transfer
 
 If three axles are supplied for the vehicle, the vehicle is assumed to have tandem rear axles. In this case, a longitudinal load transfer due to braking may be simulated by supplying an Inter-tandem Load Transfer Coefficient.
 
 !!! note "HVE 2027"
-    The coefficient is the *Int. Tandem Load Xfr* row of **Vehicle › Suspension Data**. EDSVS reads the value of the second axle.
+    The coefficient is the *Int. Tandem Load Xfr* row of **Vehicle › Editors › Suspension Data**. EDSVS reads the value of the second axle.
 
 Studies have shown the value of -0.38 to be representative of typical four spring suspension systems [4]. The negative sign indicates load transfer from the front to the rear axle.
 
@@ -222,7 +222,7 @@ The Vehicle Exterior Data (Exterior Dimensions, Stiffness) are not used by EDSVS
 EDSVS uses the steering gear ratio if the *At Steering Wheel* Steering Table option is used during Event set-up (see Table 2-3). Otherwise, the steering system data are not used by EDSVS.
 
 !!! note "HVE 2027"
-    The gear ratio is *Gear Ratio* in **Vehicle › Steering System**.
+    The gear ratio is *Gear Ratio* in **Vehicle › Editors › Steering System**.
 
 ### Brake System Data
 
@@ -456,7 +456,7 @@ The historically documented calculation option was:
 *(updated: the original manual listed two calculation options — Roll-Couple Distribution and Get Surface Information. In the current software EDSVS does not present or use a Calculation Options dialog, and no calculation-option value is read by the simulation. The Roll Couple Distribution used by the simulation is taken from the vehicle's suspension data (see below), and the terrain surface-search method is selected separately.)*
 
 !!! note "HVE 2027"
-    HVE 2027 has no EDSVS options window; the **Method Options…** button in Event Information is greyed for an EDSVS event. The roll couple distribution is the *Roll Couple Dist* row of **Vehicle › Suspension Data** (see [Suspension](#suspension)), and the surface-search method is the **Road Surface Search** section of Event Information.
+    HVE 2027 has no EDSVS options window; the **Method Options…** button in Event Information is greyed for an EDSVS event. The roll couple distribution is the *Roll Couple Dist* row of **Vehicle › Editors › Suspension Data** (see [Suspension](#suspension)), and the surface-search method is the **Road Surface Search** section of Event Information.
 
 **Roll Couple Distribution** describes the ratio of lateral load transferred between the front and rear suspensions during cornering. This distribution depends directly on the characteristics of the front and rear suspension systems and chassis stiffness. As EDSVS is a 3-degree of freedom analysis, the effects of the suspension system and chassis are included in this one parameter. A good approximation for the fraction of the total load transfer borne by the front axle can be obtained by dividing the roll moment produced at the front suspension by the total roll moment (i.e., the total produced by both front and rear suspensions together) during a steady turn. Note that a neutral vehicle will tend to have a lateral load transfer coefficient equal to the percentage of load on the front axle; an understeering vehicle will tend to have a greater value and an oversteering vehicle will have a lesser value.
 

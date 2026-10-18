@@ -17,7 +17,7 @@ properties, the Wheel Location and the Wheel Image.
 ## Brake Assembly Parameters
 
 The Brake Assembly properties are displayed and edited using the Brake
-Assembly dialog (**Vehicle › Brakes › Brake Assembly**, or Vehicles panel ›
+Assembly dialog (**Vehicle › Editors › Brakes › Brake Assembly**, or Vehicles panel ›
 Components › Brakes… › Brake Assembly…). See also the reference page,
 [Brake Assembly dialog](../../04-brakes-powertrain/BrkAsmblyDlg.md).
 
@@ -93,7 +93,7 @@ The Brake properties at each wheel are described below.
 - **ABS Designer** — Access to the ABS Wheel Data of the HVE Brake
   Designer: wheel kinematics thresholds (minimum velocity, tire slip range,
   spin acceleration range) and pressure modulation (cycle rate, apply and
-  release rates). In HVE 2027 it is **Vehicle › Brakes › ABS / Brake
+  release rates). In HVE 2027 it is **Vehicle › Editors › Brakes › ABS / Brake
   Design**, then **ABS Designer…**.
 
 > **NOTE:** In HVE the Simple Antilock option is not enabled if the vehicle
@@ -105,7 +105,7 @@ The Brake properties at each wheel are described below.
     In HVE 2027 EDSVS and EDVTS apply antilock wheel by wheel, as each
     wheel's **Antilock (ABS)** checkbox here says. SIMON regulates every wheel
     once any of these boxes is ticked, or once the vehicle's **ABS Installed**
-    is (Vehicle › Brakes › ABS / Brake Design › ABS System). EDVDS has no ABS model.
+    is (Vehicle › Editors › Brakes › ABS / Brake Design › ABS System). EDVDS has no ABS model.
 
 **Table 11-19: Wheel Brake Assembly Parameters**
 
@@ -130,7 +130,7 @@ design for each wheel and evaluate the resulting vehicle performance using
 a predefined suite of maneuvers or compliance test simulations. The HVE
 Brake Designer also includes a detailed tool for simulating ABS.
 
-In HVE 2027 the Brake Designer is **Vehicle › Brakes › Brake Designer**: choose the
+In HVE 2027 the Brake Designer is **Vehicle › Editors › Brakes › Brake Designer**: choose the
 wheel (**Axle**, **Side**) and the **Brake Design**, enter the Design
 Parameters, read the **Results**, and press **Apply to Wheel** or **Apply to
 All Wheels**. The Brake Designer also opens on a wheel from the Brake
@@ -166,7 +166,7 @@ the Tire Information dialog in HVE. See also the reference page,
 [Tire Information dialog](../../05-tires-wheels/TireInfoDlg.md).
 
 !!! note "HVE 2027"
-    HVE 2027 has one tire window, **Tire Properties** (**Vehicle › Tires**,
+    HVE 2027 has one tire window, **Tire Properties** (**Vehicle › Editors › Tires**,
     or Vehicles panel › Components › Tires…), in two
     parts:
 
@@ -227,7 +227,7 @@ Each of these is described in the following sections.
 
 The Tire Physical parameters are displayed and edited in the Physical,
 Spring / Deflection, Rotational Properties and Physical Dimensions rows of
-the Tire Properties dialog (**Vehicle › Tires**). See also
+the Tire Properties dialog (**Vehicle › Editors › Tires**). See also
 the reference page,
 [Tire Physical Data dialog](../../05-tires-wheels/TirePhyDataDlg.md).
 
@@ -306,7 +306,7 @@ The Tire Physical Data parameters are described below.
 
 The tire frictional properties are displayed and edited on the **Friction**
 tab of the **Load & Speed Tables** panel at the bottom of the Tire Properties
-window (**Vehicle › Tires**). See also
+window (**Vehicle › Editors › Tires**). See also
 the reference page,
 [Tire Friction Data dialog](../../05-tires-wheels/TireFrictDataDlg.md).
 
@@ -316,7 +316,7 @@ screenshot predates their move into the Tire Properties window.*
 
 To display or edit a wheel's tire frictional properties:
 
-1. Choose **Vehicle › Tires**, and pick the wheel with the
+1. Choose **Vehicle › Editors › Tires**, and pick the wheel with the
    **Wheel:** buttons of the **Load & Speed Tables** panel (or press that
    wheel's **Friction Table** button in the grid's Load & Speed Dependence
    rows).
@@ -572,7 +572,7 @@ wheels.
 *Figure 11-48: Typical wheel image (shown in HVE).*
 
 In HVE 2027 the picture on each wheel's face is set on the **Wheel Images**
-tab of the Vehicle Mesh window (**Vehicle › Vehicle Mesh**, or **Vehicle
+tab of the Vehicle Mesh window (**Vehicle › Editors › Vehicle Mesh**, or **Vehicle
 Mesh...** in the Vehicles panel's 3D Geometry section). Each wheel (*A1 Right*, *A1 Left*, ...) has a
 field with the picture's name and:
 

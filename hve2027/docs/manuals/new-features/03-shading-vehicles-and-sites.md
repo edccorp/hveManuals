@@ -29,7 +29,7 @@ Auto Smooth fixes both while keeping the edges that should be sharp.
 
 Where:
 
-- **Vehicle › Vehicle Mesh...** (Vehicle editor) or **Event › Vehicle Mesh...**
+- **Vehicle › Editors › Vehicle Mesh...** (Vehicle editor) or **Event › Vehicle Mesh...**
   (Event editor), section **Shading**; or
 - the **Shader Editor**, with the vehicle selected — the **Shading** controls
   under its material slots. The two are the same control.
@@ -54,7 +54,7 @@ and the roof line stay sharp.
 
 To remove panel creases from a vehicle:
 
-1. Select the vehicle and open **Vehicle › Vehicle Mesh...** (or select it in
+1. Select the vehicle and open **Vehicle › Editors › Vehicle Mesh...** (or select it in
    the Shader Editor).
 2. Under **Shading**, choose **Auto Smooth**.
 3. If thin panels still look faceted, raise the angle; if an edge you want

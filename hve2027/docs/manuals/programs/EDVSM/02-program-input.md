@@ -196,7 +196,7 @@ The *In-use Factor* is a convenient way to reduce or increase the dependent fric
 The Cornering Stiffness data used by EDVSM are shown in Table 2-3. EDVSM does not use the $F_y$ vs Slip Angle table, but instead uses the cornering stiffness parameter directly. EDVSM requires that cornering stiffness data are provided for at least two loads and two speeds. Like the Friction Data described above, if fewer values are supplied, EDVSM will generate the additional required parameters.
 
 !!! note "HVE 2027"
-    EDVSM fits its cornering-stiffness (and camber-stiffness) curve to **three** test loads, and gives a meaningless, sometimes negative, stiffness when the table has fewer. Vehicles from HVE's databases always carry three load rows. When a tire in HVE 2027 states fewer (for example a single cornering stiffness typed in **Vehicle › Tires…**), HVE 2027 expands it to three load rows about the vehicle's own nominal wheel load before the run, keeping the entered value at that load, and says so in the run status ("cornering/camber tables seeded to 3 load rows for EDVSM"). A vehicle with no usable mass cannot be expanded, and the event is refused with a message saying so.
+    EDVSM fits its cornering-stiffness (and camber-stiffness) curve to **three** test loads, and gives a meaningless, sometimes negative, stiffness when the table has fewer. Vehicles from HVE's databases always carry three load rows. When a tire in HVE 2027 states fewer (for example a single cornering stiffness typed in **Vehicle › Editors › Tires…**), HVE 2027 expands it to three load rows about the vehicle's own nominal wheel load before the run, keeping the entered value at that load, and says so in the run status ("cornering/camber tables seeded to 3 load rows for EDVSM"). A vehicle with no usable mass cannot be expanded, and the event is refused with a message saying so.
 
 The *In-use Factor* is a convenient way to reduce or increase the dependent cornering stiffness values for all speeds and loads by making just one adjustment.
 
@@ -293,7 +293,7 @@ EDVSM uses the Kv Stiffness value for roll-over simulations. The other Vehicle E
 EDVSM uses the steering gear ratio if the *At Driver* Steering Table option is used during Event set-up. See Table 2-5. In addition, if the Steer Degree of Freedom option is selected (see Event Set-up), the Steering Column Inertia and Friction are also used.
 
 !!! note "HVE 2027"
-    These values are in **Vehicle › Steering System** (*Gear Ratio*, *Column Inertia*, *Column Friction*). The per-axle row labelled **Steer DOF (SIMON)** in that dialog is SIMON's setting and is not read by EDVSM; EDVSM's steer degree of freedom is chosen per event in the **EDVSM Options** window (see [Calculation Options](#steer-degree-of-freedom)).
+    These values are in **Vehicle › Editors › Steering System** (*Gear Ratio*, *Column Inertia*, *Column Friction*). The per-axle row labelled **Steer DOF (SIMON)** in that dialog is SIMON's setting and is not read by EDVSM; EDVSM's steer degree of freedom is chosen per event in the **EDVSM Options** window (see [Calculation Options](#steer-degree-of-freedom)).
 
     EDVSM applies the steer angle as the wheel's angle about the vehicle's vertical axis. Unlike SIMON, it does not project the table angle through the caster and kingpin inclination, so the same steer table produces a somewhat larger road-wheel yaw angle in EDVSM than in SIMON on a vehicle with large caster.
 
@@ -467,7 +467,7 @@ The Driver Controls Data used by EDVSM are shown in Table 2-7.
     The tables are entered in **Event › Driver Controls**, which has **Throttle**, **Brake**, **Steer** and **Gear** tabs and a vehicle selector at the top. The terms differ from HVE's:
 
     - **Throttle** — *Input Method* **Pedal (AT_DRIVER)** is HVE's *Percent Wide-open Throttle*: throttle position from 0 (closed) to 1 (wide open), through the engine torque curve.
-    - **Brake** — *Input Method* **Pedal (AT_DRIVER)** is HVE's *At Pedal*. A table imported from an HVE case is HVE's pedal-force table, shown as *Pedal force* in the units set in Preferences and used as it is. A table typed into a new event is a pedal *position* from 0 (released) to 1 (full apply), converted to pedal force through the vehicle's brake pressure curve (**Vehicle › Brakes › Brake System Pressure**).
+    - **Brake** — *Input Method* **Pedal (AT_DRIVER)** is HVE's *At Pedal*. A table imported from an HVE case is HVE's pedal-force table, shown as *Pedal force* in the units set in Preferences and used as it is. A table typed into a new event is a pedal *position* from 0 (released) to 1 (full apply), converted to pedal force through the vehicle's brake pressure curve (**Vehicle › Editors › Brakes › Brake System Pressure**).
     - **Steer** — the main table is steering-wheel angle against time (HVE's *At Steering Wheel*, through the gear ratio). A steer table *at the tires* (HVE's *At Axle*, road-wheel angles per wheel) is shown above it when the case carries one, for example an imported HVE case, and then overrides the steering-wheel table.
     - **Gear** — gear against time (0 = neutral, 1 = reverse, 2 = first, 3 = second, …).
 
@@ -518,7 +518,7 @@ EDVSM also supports the HVE Brake Designer. When the Brake Designer is used, the
 EDVSM allows the user to supply up to five virtual accelerometers at user-defined x,y,z (vehicle-fixed) coordinates. The current acceleration output for each location is provided in the EDVSM output tracks (see [Chapter 3, EDVSM Output](03-program-output.md)).
 
 !!! note "HVE 2027"
-    Place them with **Event › Accelerometers** (or **Vehicle › Accelerometers**); they are stored on the vehicle.
+    Place them with **Event › Accelerometers** (or **Vehicle › Editors › Accelerometers**); they are stored on the vehicle.
 
 #### Contacts
 

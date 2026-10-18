@@ -47,7 +47,7 @@ What else HVE 2027 offers:
   (0 = infinite), maximum deflection, unloading stiffness, maximum penetration
   and edge constant (0–1, HVE default 0.5). A surface with no combined material
   stated uses that surface's own material with an edge constant of 0.5.
-- The vehicle contact surfaces themselves are defined in **Vehicle › Contact
+- The vehicle contact surfaces themselves are defined in **Vehicle › Editors › Contact
   Surfaces**.
 - Imported **self-contact** pairs (one body segment against another, used by
   GATB) are also counted under the human in *Humans in Event*.

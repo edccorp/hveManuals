@@ -95,7 +95,7 @@ HVE's Light tool adds point, directional and spot light sources (such as street 
 !!! note "HVE 2027"
     Site lights are made in the Environment Editor (F4), in the Environment panel's **Lights** section, not with a tool in the viewport. **Add Light** puts a light 8 m above the ground at the middle of the view; for each light you set its name, on/off, **On in daylight too**, type (**Point** or **Spot** — the sun is the only directional light), position (**X**, **Y**, **Height above the ground**), a spot's aim, tilt, cone and edge softness, and its colour and intensity. They come on as the sky darkens, as vehicle lamps do, and light the 3-D view, the ray-traced render and the glTF export. While the Environment is selected, each is marked by a yellow star (grey when off) with a dotted line to the ground. No engine reads them. See [Environment Information › Lights](../../08-environment/EnvtInfoDlg.md#lights).
 
-    **Vehicle › Vehicle Lights…** keeps each vehicle's own lamps, which move with it. Lamps modelled in a vehicle's mesh can be given an emissive material in the Shader Editor.
+    **Vehicle › Editors › Vehicle Lights…** keeps each vehicle's own lamps, which move with it. Lamps modelled in a vehicle's mesh can be given an emissive material in the Shader Editor.
 
 ## Signal Tool
 

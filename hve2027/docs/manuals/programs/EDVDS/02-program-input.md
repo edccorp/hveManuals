@@ -107,7 +107,7 @@ Move CG is not directly used by EDVDS. Its current value does not show up in the
 The Geometry File is not used by EDVDS.
 
 !!! note "HVE 2027"
-    The 3-D model is set in the **Vehicles** panel's **3D Geometry** section or on the File & Placement tab of **Vehicle › Vehicle Mesh…**. It is used for display only in an EDVDS event.
+    The 3-D model is set in the **Vehicles** panel's **3D Geometry** section or on the File & Placement tab of **Vehicle › Editors › Vehicle Mesh…**. It is used for display only in an EDVDS event.
 
 #### Contact Surfaces
 
@@ -182,7 +182,7 @@ EDVDS uses the wheel brake system *Time Lag, Time Rise* and *Brake Torque Ratio*
 EDVDS also fully supports the HVE Brake Designer. Refer to the Brake Designer section of the HVE User's Manual for more information.
 
 !!! note "HVE 2027"
-    Time Lag, Time Rise and Torque Ratio are edited per wheel in **Vehicle › Brakes › Brake Assembly…**; the Brake Designer is **Vehicle › Brakes › Brake Designer…**.
+    Time Lag, Time Rise and Torque Ratio are edited per wheel in **Vehicle › Editors › Brakes › Brake Assembly…**; the Brake Designer is **Vehicle › Editors › Brakes › Brake Designer…**.
 
 #### Tire
 
@@ -274,7 +274,7 @@ The HVE Suspension Model provides the following data groups:
 EDVDS supports only solid axle suspensions. EDVDS's use of the suspension parameters is described below.
 
 !!! note "HVE 2027"
-    Suspension parameters are edited in **Vehicle › Suspension Data…** (Suspension Type, Roll Couple Distribution and Inter-Tandem Load Transfer rows, per axle, and its Jounce / Rebound, Camber, Roll Steer and Anti-Pitch tabs). An *Independent* suspension on any axle is refused for EDVDS, and on a 3-axle tow vehicle the rear axles must be a tandem type (*4-Spring Tandem* or *Walking Beam Tandem*); HVE 2027 reports both before running.
+    Suspension parameters are edited in **Vehicle › Editors › Suspension Data…** (Suspension Type, Roll Couple Distribution and Inter-Tandem Load Transfer rows, per axle, and its Jounce / Rebound, Camber, Roll Steer and Anti-Pitch tabs). An *Independent* suspension on any axle is refused for EDVDS, and on a 3-axle tow vehicle the rear axles must be a tandem type (*4-Spring Tandem* or *Walking Beam Tandem*); HVE 2027 reports both before running.
 
 ##### Inter-tandem Load Transfer
 
@@ -345,7 +345,7 @@ The Vehicle Exterior Data (Exterior Dimensions, Stiffness) are not used by EDVDS
 EDVDS uses the steering gear ratio if the *At Driver* Steering Table option is used during Event set-up. See Table 2-5. Otherwise the steering system data are not used.
 
 !!! note "HVE 2027"
-    The steering gear ratio is in **Vehicle › Steering System…**; the pedal ratio is in **Vehicle › Brakes › Brake System Pressure…**; engine, transmission and differential data are in **Vehicle › Drivetrain…**.
+    The steering gear ratio is in **Vehicle › Editors › Steering System…**; the pedal ratio is in **Vehicle › Editors › Brakes › Brake System Pressure…**; engine, transmission and differential data are in **Vehicle › Editors › Drivetrain…**.
 
 ### Brake System Data
 

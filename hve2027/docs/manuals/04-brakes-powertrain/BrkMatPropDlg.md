@@ -4,7 +4,7 @@ In HVE this dialog displays the material properties used by the Brake Designer f
 
 !!! note "In HVE 2027"
     These properties are the Brake Designer's **Material Properties** section
-    (**Vehicle › Brakes › Brake Designer...**), with **Rotor / Drum** and
+    (**Vehicle › Editors › Brakes › Brake Designer...**), with **Rotor / Drum** and
     **Pad / Lining** groups and the rotor, pad, drum and lining
     **Thicknesses** beside them, rather than a separate dialog behind a
     **Material ...** button. They are the inputs of SIMON's brake temperature
@@ -17,7 +17,7 @@ In HVE this dialog displays the material properties used by the Brake Designer f
     Vehicle menu: a list of named lining materials with friction, heat capacity and
     wear rate that no engine read and the case did not save. It has been
     removed. The lining friction a wheel's brake design uses is in the Brake
-    Designer's **Lining Friction Properties** section (**Vehicle › Brakes ›
+    Designer's **Lining Friction Properties** section (**Vehicle › Editors › Brakes ›
     Brake Designer...**).
 
 <!-- NAV -->
