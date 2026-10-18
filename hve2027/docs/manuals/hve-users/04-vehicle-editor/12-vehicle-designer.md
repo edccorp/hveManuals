@@ -50,8 +50,15 @@ Track and Summary stages say what they will do and do nothing yet.
 
 ### Stage 2: Packaging
 
-The Packaging stage hosts the **Vehicle Package** wizard that **Tools › Vehicle
-Package...** opens, pinned to the designer's vehicle: **1. Identify** (the VIN
+The Packaging stage holds the dimensions a solve reads. It opens with the two
+sections the Vehicles panel has: **Configuration** (number of axles, driver
+location, engine location and drive axles, with HVE's rules applied as you
+change one) and **Size & Weight** (HVE's Vehicle Wizard form, applied as you
+type: wheelbase, tracks, lengths, weights and CG, with the wheelbase check and
+the **Details** tables underneath). They are the panel's own sections, not
+copies: a field has one editor. Under them, folded, is the **Vehicle Package**
+wizard that **Tools › Vehicle Package...** opens, pinned to the designer's
+vehicle: **1. Identify** (the VIN
 and what decoding it says, or the year, make, model and trim), **2.
 Specifications** (weight, front axle share, wheelbase, front and rear track,
 length, width, height and CG height, each marked Stated or Looked up with its
@@ -276,6 +283,11 @@ the wheel's rotational center: its height above the ground is the tire radius.
 Wheel names are **wheel_FL**, **wheel_FR**, **wheel_RL** and **wheel_RR**.
 
 ## Stage 1: Body
+
+The Body stage is a body-shape design tool: it edits its own design, saved to
+its own design file, and never the case vehicle, so a wheelbase changed here
+changes nothing a solve reads. The case vehicle's dimensions are on stage 2,
+Packaging; the stage says so above its controls.
 
 The body stage builds a recognizable sedan body from a short list of
 dimensions, with the wheels at their axle positions, and shows it in four views
