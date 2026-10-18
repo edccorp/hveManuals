@@ -8,7 +8,7 @@
     changed, and keeping a design means **Save to My Vehicles** (Chapter 10).
 
 **Vehicle › Vehicle Designer...** opens the **Vehicle Designer** window. It has one
-frame and twelve stages. The frame is the same on every stage: a **stat strip**
+frame and thirteen stages. The frame is the same on every stage: a **stat strip**
 on the left, the stage's own controls and views in the center, a **Warnings &
 Suggestions** panel on the right, and a stage bar along the bottom with every
 stage reachable. The first line names the case vehicle and where it came from,
@@ -24,7 +24,7 @@ and which stage is open.
 
 ## The stages
 
-The stage bar lists the twelve stages in the order a design is usually worked,
+The stage bar lists the thirteen stages in the order a design is usually worked,
 numbered so the order is visible; any stage can be clicked at any time:
 
 1. **Body** — the parametric body and its dimensions (the rest of this chapter).
@@ -37,8 +37,9 @@ numbered so the order is visible; any stage can be clicked at any time:
 8. **Transmission** — gear ratios, final drive, shift logic, drive type, differential.
 9. **Steering** — steer ratio, column and geometry per axle.
 10. **Exterior** — the mesh, the lamps, aerodynamic drag, accelerometers, crush stiffness and body torsion.
-11. **Test Track** — three canned SIMON runs on the current physics, read back as numbers (stage 11 below).
-12. **Summary** (stage 12 below) — the spec sheet, the whole warnings list and the provenance tally.
+11. **Occupant Protection** — the contact surfaces, airbags and belts an occupant meets, per seat.
+12. **Test Track** — three canned SIMON runs on the current physics, read back as numbers (stage 12 below).
+13. **Summary** (stage 13 below) — the spec sheet, the whole warnings list and the provenance tally.
 
 In this release stages 1, 4, 5, 6 and 9 are built. Each other stage names the dialogs that hold
 its inputs and opens them with a button (**Suspension Data...**, **Tires...**,
@@ -318,7 +319,21 @@ other three are display and instrumentation.
 
 ![Figure 12-11: the Exterior stage with its four editors as tabs](../images/hvn-04-vehicle-designer-exterior.png)
 
-### Stage 11: Test Track
+### Stage 11: Occupant Protection
+
+The Occupant Protection stage hosts the three editors of what an occupant
+meets in this vehicle, one tab each: **Contact Surfaces** (the panels an
+occupant can strike, with their materials), **Airbags** and **Belt Restraint**.
+They are the same editors as the windows under **Vehicle**, not copies: a field
+has one editor. The belts and airbags are per seat, so these two open on the
+human the Occupants panel has selected, with the editors' own occupant picker
+to change seat. While the stage is open the 3-D view draws the surfaces, bags
+and belts, as it does when their windows are open. Each tab's **Open in its own
+window** opens that editor's window.
+
+![Figure 12-16: the Occupant Protection stage](../images/hvn-04-vehicle-designer-occupants.png)
+
+### Stage 12: Test Track
 
 The Test Track runs the vehicle, alone, on a flat surface, in three canned
 SIMON events, and reads the numbers back. **Run test track** solves them one
@@ -348,7 +363,7 @@ solver refuses shows the solver's own reason.
 
 ![Figure 12-14: the Test Track stage before its runs](../images/hvn-04-vehicle-designer-track.png)
 
-### Stage 12: Summary
+### Stage 13: Summary
 
 The Summary is the design on one page. It opens with the vehicle's identity (the
 Vehicle Package's year, make, model and trim, and its VIN when kept; otherwise
