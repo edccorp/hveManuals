@@ -36,7 +36,7 @@ numbered so the order is visible; any stage can be clicked at any time:
 7. **Engine** — idle and redline, the torque and power curves, engine braking.
 8. **Transmission** — gear ratios, final drive, shift logic, drive type, differential.
 9. **Steering** — steer ratio, column and geometry per axle.
-10. **Exterior** — the mesh, the lamps, aerodynamic drag and accelerometers.
+10. **Exterior** — the mesh, the lamps, aerodynamic drag, accelerometers, crush stiffness and body torsion.
 11. **Test Track** — three canned SIMON runs on the current physics, read back as numbers.
 12. **Summary** — the spec sheet, the whole warnings list and the provenance tally.
 
@@ -56,7 +56,9 @@ location, engine location and drive axles, with HVE's rules applied as you
 change one) and **Size & Weight** (HVE's Vehicle Wizard form, applied as you
 type: wheelbase, tracks, lengths, weights and CG, with the wheelbase check and
 the **Details** tables underneath). They are the panel's own sections, not
-copies: a field has one editor. Under them, folded, is the **Vehicle Package**
+copies: a field has one editor. Under them, folded, are **Connections** (the
+Vehicle Connections editor: how this unit couples to another by hitch, fifth
+wheel or pintle, with its **Properties...** window) and the **Vehicle Package**
 wizard that **Tools › Vehicle Package...** opens, pinned to the designer's
 vehicle: **1. Identify** (the VIN
 and what decoding it says, or the year, make, model and trim), **2.
@@ -268,8 +270,10 @@ carries, one tab each: **Mesh** (the Vehicle Mesh editor with its File &
 Placement, Collision, Display and Wheel Images tabs), **Lights** (the Vehicle Lights
 editor with its Lamp parts and Light sources tabs), **Aerodynamic Drag** (the
 drag coefficients of the four surfaces) and **Accelerometers** (the vehicle's
-accelerometer list). Each tab's **Open in its own window** opens that editor's
-window. The mesh is the one of the four an engine reads, in DyMESH contact; the
+accelerometer list), then the body's structure: **Crush Stiffness** (A, B and Kv
+per side, and DyMESH's node stiffness) and **Body Torsion** (the frame's
+torsional stiffness and axis). Each tab's **Open in its own window** opens that
+editor's window. The mesh is the one of the four an engine reads, in DyMESH contact; the
 other three are display and instrumentation.
 
 ![Figure 12-11: the Exterior stage with its four editors as tabs](../images/hvn-04-vehicle-designer-exterior.png)
