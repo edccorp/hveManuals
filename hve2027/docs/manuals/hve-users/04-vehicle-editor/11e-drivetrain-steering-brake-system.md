@@ -205,8 +205,11 @@ Left, Stop Stiffness, and Stop Damping (disabled; no simulation reads it).
     - Column Friction, Column Inertia and Friction Lag, and the steer-axis
       friction and stops, are read only when an axle's Steer DOF is not Off:
       a prescribed steer angle cannot be resisted. The dialog says so.
-    - HVE's Column Stiffness, Linkage Mass, Linkage Stiffness and Steering
-      Linkage Damping have no control in this dialog.
+    - HVE's Column Stiffness and Linkage Stiffness are kept with the vehicle
+      but have no control: EDVDS receives them and the calculation that would
+      use them is disabled in HVE's own source. Linkage Mass, Steering Linkage
+      Damping, the power-assist ratios and linkage play are not read by any
+      engine and are not kept.
     - In HVE, "Use Ackermann Steering" is chosen per event vehicle in the
       Driver Controls; HVE 2027 takes it from the vehicle (Steer Data
       Preset).
@@ -348,7 +351,8 @@ the Brake Type option list and Edit Brake pushbutton — see
 (system-level ABS data). In HVE 2027 it is **Vehicle › Brakes › Brake
 Designer** (see [Part D](11d-brakes-tires-wheels.md#hve-brake-designer)), with
 the ABS data under **Vehicle › Brakes › ABS / Brake Design**. HVE's Brake
-Material Properties library, which no engine reads, is not in HVE 2027. The individual Brake Designer dialogs
+Material Properties dialog is the Brake Designer's **Material Properties**
+section (see [Part D](11d-brakes-tires-wheels.md#hve-brake-designer)). The individual Brake Designer dialogs
 are documented in the HVE reference pages in
 [Brakes and Powertrain](../../04-brakes-powertrain/README.md):
 [Disc Brake](../../04-brakes-powertrain/DiskBreakDlg.md),
@@ -356,9 +360,8 @@ are documented in the HVE reference pages in
 [Duplex](../../04-brakes-powertrain/DuplexBrkDlg.md),
 [Single Piston](../../04-brakes-powertrain/BrkSingPistDlg.md),
 [Dual Piston](../../04-brakes-powertrain/DualPistBrkDlg.md),
-[Dual Wedge](../../04-brakes-powertrain/DualWedgeBrkDlg.md) (and HVE's
-[Brake Material Properties](../../04-brakes-powertrain/BrkMatPropDlg.md),
-which HVE 2027 does not have).
+[Dual Wedge](../../04-brakes-powertrain/DualWedgeBrkDlg.md) and
+[Brake Material Properties](../../04-brakes-powertrain/BrkMatPropDlg.md).
 
 <!-- NAV -->
 

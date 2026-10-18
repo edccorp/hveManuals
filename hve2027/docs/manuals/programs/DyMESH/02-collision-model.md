@@ -330,6 +330,22 @@ the six-degree-of-freedom equations of motion are integrated by the host model
 time step and the meshes are advanced with the vehicle motion, the collision
 force develops continuously through the contact rather than as a single impulse.
 
+!!! note "HVE 2027"
+    HVE evaluated DyMESH at two of SIMON's four Runge-Kutta stages and held the
+    collision force at the other two. HVE 2027 evaluates it at every stage, each
+    trial stage from the deformation the step started with, so the force the
+    integrator sees is the force at that stage's own position. At the stage that
+    commits the step, each vehicle pair is evaluated in both orientations
+    (each vehicle as the master surface once) from the same start-of-step
+    state, the two force sums are averaged and each vehicle keeps the crush it
+    received as the slave. The first master of a pair is the faster vehicle, so
+    the vehicle order in the event does not change the answer. The run status
+    counts DyMESH's own internal checks, which HVE muted, for example
+    `[DyMESH inside test ambiguous (x192)]`: an ambiguous inside-vehicle test,
+    a penetrating vertex with no surface found, or a body node pushed past 4 in.
+    These are counts of what the contact search could not resolve, not errors
+    in the run.
+
 The vehicle orientation used to transform between the vehicle-fixed and
 earth-fixed frames is the standard Euler-angle direction-cosine matrix
 $A$, built from roll $\phi$, pitch $\theta$, and yaw $\psi$.

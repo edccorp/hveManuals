@@ -99,8 +99,10 @@ as-delivered meshes are not suitable for the contact algorithm without
 tessellation.
 
 !!! note "HVE 2027"
-    A vehicle with no mesh file is collided as HVE's generic body (a shape
-    profiled from the vehicle's type and dimensions), as HVE does. When DyMESH is
+    A vehicle with no mesh file is collided as its generic body (a shape
+    profiled from the vehicle's type and dimensions): HVE's own for a vehicle
+    imported from an HVE case, as HVE does, and the modern body otherwise
+    (**Generic Body** in the Vehicles panel's 3D Geometry section). When DyMESH is
     on, the run status says how many vehicles collided that way, because the
     crush and PDOF then describe that generic shape rather than the real
     vehicle. A mesh file that is named but fails to load is reported in the

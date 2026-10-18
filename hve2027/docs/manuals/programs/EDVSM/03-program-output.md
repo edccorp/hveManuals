@@ -126,7 +126,7 @@ A detailed listing of each Variable Output parameter produced by EDVSM is found 
 !!! note "HVE 2027"
     In HVE 2027 the table is **Output › Key Results** (its *Trajectory* section); choose its columns with **Output › Variable Selection** (the *Filter* box accepts HVE's own variable names, such as Delta, Spin or V-tot); position (X, Y), heading and speed are among them, and **Export CSV...** writes the table to a file. Channel names follow HVE's. One thing to know when reading them:
 
-    - EDVSM does not compute brake temperatures. A brake-temperature channel holds no number after the first sample, so HVE 2027 shows it as blank (`--`) rather than as a flat line, the channel names carry *(no thermal data)*, and the run status says how many such channels there are.
+    - EDVSM does not compute brake temperatures. A brake-temperature channel holds no number after the first sample, so HVE 2027 shows it as blank (`--`) rather than as a flat line, and the run status says how many such channels there are. (SIMON's brake temperature model does run; its inputs are the Brake Designer's Material Properties.)
 
 **Table 3-1 Vehicle Variable Output Data**
 

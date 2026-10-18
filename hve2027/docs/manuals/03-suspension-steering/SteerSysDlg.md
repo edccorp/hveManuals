@@ -39,8 +39,10 @@ Rotational velocity required to develop the full steering friction torque. HVE e
 
 Column Friction, Column Inertia and Friction Lag are used only when an axle's steer angle is free (see Steer DOF); a note under the table says so when no axle sets its own Steer DOF.
 
+There is no Column Stiffness or Linkage Stiffness row either: HVE's per-axle steering column and linkage stiffnesses are kept with the vehicle (read from an HVE case or a vehicle database; every EDC vehicle stores the rigid 687,549,354 in-lb/rad) but have no control in HVE 2027, because no simulation uses them: EDVDS receives them and the one calculation that would apply them is disabled in HVE's own source.
+
 !!! warning "Not in HVE 2027"
-    - **Steering Column Stiffness**, **Steering Linkage Mass**, **Steering Linkage Stiffness** and **Steering Linkage Damping**. They are not read from an HVE vehicle or case, and cannot be edited; the engines receive fixed column and linkage stiffnesses.
+    - **Steering Column Stiffness** and **Steering Linkage Stiffness** (kept with the vehicle, no control: see above); **Steering Linkage Mass** and **Steering Linkage Damping**, the power-assist ratios and linkage play (no engine reads them; not kept).
     - **Steering Data For** (all axles are shown at once).
 
 !!! tip "New in HVE 2027"

@@ -7,7 +7,9 @@
     box says what is new. These chapters are written from scratch for
     HVE 2027.
 
-HVE 2027 runs HVE's own physics programs. What it adds sits *around* the
+HVE 2027 runs HVE's own physics programs, in double precision where HVE
+computed in single (every program; the saved-file comparisons use a copy
+frozen at HVE's own precision). What it adds sits *around* the
 physics: how the scene looks, how it is filmed, how it leaves the program,
 and a handful of analysis tools. None of the presentation features in this
 section changes a result. A material, a sun position, a camera or a keyframe

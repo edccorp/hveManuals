@@ -1,6 +1,8 @@
 # Report Text (Tools › Report Text...)
 
-HVE 2027 only; classic HVE has no such window.
+HVE 2027 only; classic HVE has no such window. Since 2026-10-16 it is the
+Report Text tab of [Output Settings](OutputSettings.md), whose presets carry
+these changes along with the variable labels and the limits.
 
 Every physics program (EDCRASH, SIMON, EDSMAC4, ...) lays out its report pages
 (**Output › HVE Reports**) from a set of strings: the headings, the column

@@ -60,7 +60,7 @@ Calculated wheel brake torque per unit of system pressure, in N·m/kPa (SI) or i
 
 ## Drum data slots / Disc data slots
 
-A collapsed section with the drum (S-cam) or disc hardware table for the selected wheel — whichever matches its type. It is copied into the engine's brake-data block and read by nothing that reaches an output, as the note in it says; it is kept so that a case can record the hardware. Until 2026-10-09 these were two all-wheel tables opened from Brake Assembly.
+A collapsed section with the drum (S-cam) or disc hardware table for the selected wheel — whichever matches its type. It is recorded with the case and read by nothing, as the note in it says: the engine's brake-data block is filled from the design above it. It is kept so that a case can record the hardware. Until 2026-10-09 these were two all-wheel tables opened from Brake Assembly.
 
 !!! note "HVE 2027"
     The engines compute brake torque from the Brake Assembly's **Torque Ratio** and **Pushout**; the design parameters themselves are not passed to them. The Brake Designer is the calculator that produces those two numbers.

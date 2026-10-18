@@ -60,6 +60,10 @@ To use the Vehicle Editor, perform the following steps:
     Drivetrain (Engine, Transmission, Differential), Steering System
     Parameters, Brake System Parameters and the HVE Brake Designer
     overview.
+- **[Chapter 12 — Vehicle Designer](12-vehicle-designer.md)** (new in HVE 2027)
+  describes **Vehicle › Vehicle Designer...**, a parametric sedan body with
+  dimension and shape controls, wheel positions and a four-view preview. It is a
+  design tool; it does not change the case or any simulation.
 
 ## Related Dialog References
 

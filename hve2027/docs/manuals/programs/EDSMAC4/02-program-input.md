@@ -563,7 +563,7 @@ EDSMAC4 has the following calculation option parameters. For the dialog referenc
 - **Use Vehicle Geometry for Rho Vector Init** *(new)* (HVE 2027: **Initialize from the vehicle mesh**) — Initializes the RHO (crush perimeter) vectors from the vehicle's actual body mesh geometry rather than the idealized rectangle.
 
     !!! note "HVE 2027"
-        A vehicle with no geometry file is given HVE's generic body. EDSMAC4 refuses the run if any RHO direction finds no mesh vertex near it, which a coarse body, generic or real, often does; tessellate the vehicle for this event (**Event › DyMESH Options**, Contact Mesh Preparation), and a refused run's status names the vehicle, the empty direction and a triangle leg that works.
+        A vehicle with no geometry file is given its generic body (HVE's own for a vehicle imported from an HVE case, the modern body otherwise). EDSMAC4 refuses the run if any RHO direction finds no mesh vertex near it, which a coarse body, generic or real, often does; tessellate the vehicle for this event (**Event › DyMESH Options**, Contact Mesh Preparation), and a refused run's status names the vehicle, the empty direction and a triangle leg that works.
 
 - **Steer DOF** *(new)* — Off / Normal / Append / AutoStart; enables the dynamic steer degree of freedom.
 

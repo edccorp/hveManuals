@@ -910,8 +910,9 @@ target's x, y and heading from a position the case already holds for this
 vehicle: this event's scene positions and path waypoints, then the same
 vehicle's positions in the other events (for example an EDCRASH
 reconstruction's impact, listed with that event's name and program). A
-forward event's own Initial and Impact position is its start and is not
-offered. Choosing one ticks the target; its recorder time stays yours. With
+simulation event's own start is not offered; its **Impact** scene position —
+where the vehicle is entered to be when it crashes, which an HVE case's
+Position/Velocity dialog carries and the import keeps — is. Choosing one ticks the target; its recorder time stays yours. With
 no position in the case the list reads *No positions in the case for this
 vehicle*.
 

@@ -25,6 +25,16 @@ HVE 2027, whatever a case stores; an imported case's stored value is left as
 the file has it. To change the step size, use *Trajectory Timestep* in the
 Simulation panel.
 
+!!! note "HVE 2027"
+    The simulation clock is the exact sum of the steps taken, accumulated in
+    double precision. HVE rounds its single-precision clock to the nearest
+    integration step after each step, which can place an output frame or the
+    start of a contact a fraction of a step off the grid; HVE 2027 does not.
+    The physics programs also compute in double precision (HVE: single), so
+    an HVE 2027 result differs from HVE's by rounding where everything else is
+    equal; the knife-edge cases that rested in two different places on two
+    machines are the ones that move.
+
 ## Steering Degree of Freedom
 
 - **Off - prescribed steer table only** (default) — the road-wheel angles follow

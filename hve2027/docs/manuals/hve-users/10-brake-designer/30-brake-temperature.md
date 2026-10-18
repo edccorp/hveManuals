@@ -1,7 +1,7 @@
 # Chapter 30 — Brake Temperature Model
 
 *Updated Markdown edition of the HVE User's Manual (HVE Version 5, Seventh
-Edition, January 2006), Chapter 30, pages 30-1 through 30-16, adapted for HVE 2027 (the model itself does not run in HVE 2027 — see the warning below); see also the
+Edition, January 2006), Chapter 30, pages 30-1 through 30-16, adapted for HVE 2027 (the model runs in HVE 2027 — see the note below); see also the
 [Brake Designer Material Properties dialog reference](../../04-brakes-powertrain/BrkMatPropDlg.md) (an HVE dialog HVE 2027 does not have).*
 
 ## Overview
@@ -27,8 +27,8 @@ material. Therefore, the HVE Brake Designer (see
 [Chapter 29](29-brake-designer.md)) includes the temperatures calculated by
 this model as an independent input to the equations for brake torque.
 
-!!! warning "Not in HVE 2027"
-    The brake temperature model does not run in HVE 2027. The engine's model forms its node capacitances from the drum and lining areas, thicknesses, densities and specific heats; HVE 2027 does not pass those values to the engine, so the calculation has nothing to work with. The brake temperature output channels are present but carry no data after t = 0 — they are labelled **(no thermal data)** in the variable lists and show `--` in graphs, tables and reports — and the brake torque does not depend on temperature (see [Chapter 29](29-brake-designer.md)). This chapter describes HVE's model for reference.
+!!! note "HVE 2027"
+    The brake temperature model runs in HVE 2027 for every pedal-braked wheel of a SIMON vehicle. Its inputs — the rotor/drum and pad/lining density, specific heat, conduction and convection, and the rotor, pad, drum and lining thicknesses and drum width — are the Brake Designer's **Material Properties** section ([Chapter 29](29-brake-designer.md)), kept with the vehicle and imported from HVE's vehicle database. The six temperature output channels carry the model's values, and a wheel with a brake design reads them back: its lining friction follows the **Lining Friction Properties** table at the simulated temperature and, for S-cam, wedge and air disc brakes, its stroke factor follows the drum temperature, which is brake fade ([Chapter 29](29-brake-designer.md)). A **Generic** wheel keeps a constant torque ratio.
 
 ## Modeling Technique
 
@@ -131,7 +131,7 @@ Designer dialogs (see Figures 29-10 through 29-17) and HVE's Brake Material
 Properties dialog.
 
 !!! note "HVE 2027"
-    HVE 2027 does not offer the material properties of Table 30-1: they feed only the brake temperature model, which does not run (see above).
+    The material properties of Table 30-1 are the Brake Designer's **Material Properties** section in HVE 2027 (see above).
 
     HVE's Brake Material Properties dialog is not in HVE 2027. No engine reads its material library, so HVE 2027 does not have it.
 
@@ -147,7 +147,7 @@ assigned by the user during event set-up:
   Six).
 
 !!! note "HVE 2027"
-    The ambient temperature is **Ambient Temperature** in the **Physical** section of **Environment › Environment…**. The initial temperatures are the **Initial pad/lining temp** and **Initial rotor/drum temp** rows (with **Initial stroke**) of the brake table in **Event › Wheels…**, one column per wheel. They are stored and passed to the engine, but the temperature calculation does not run.
+    The ambient temperature is **Ambient Temperature** in the **Physical** section of **Environment › Environment…**. The initial temperatures are the **Initial pad/lining temp** and **Initial rotor/drum temp** rows (with **Initial stroke**) of the brake table in **Event › Wheels…**, one column per wheel. They are passed to the engine and the temperature calculation starts from them.
 
 > **NOTE:** See Table 29-2 for parameter definitions related to shoe and
 > rotor/drum geometry.
@@ -193,7 +193,7 @@ $T_L$, $T_{L/D}$ and $T_D$ are available in the Vehicle Output Tracks, Wheel
 Group (Key Results or Variable Output; see Chapter 15, Event Model).
 
 !!! note "HVE 2027"
-    HVE 2027 lists six wheel brake temperature channels — Drum/Lining Temp, Drum Temp, Lining Temp, Rotor/Inner Pad Temp, Rotor/Outer Pad Temp and Rotor Internal Temp — each marked **(no thermal data)**. Only the t = 0 sample (the initial temperature) is a number; every later sample is missing, and the run status names the channels affected. HVE's other six brake temperature channels are not offered.
+    HVE 2027 lists six wheel brake temperature channels — Drum/Lining Temp, Drum Temp, Lining Temp, Rotor/Inner Pad Temp, Rotor/Outer Pad Temp and Rotor Internal Temp. A drum brake writes the first three and a disc brake the last three; the other three read `--` for that wheel because the engine never writes them. HVE's other six brake temperature channels are not offered.
 
 ## Model Equations
 

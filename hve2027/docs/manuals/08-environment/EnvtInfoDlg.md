@@ -222,8 +222,10 @@ the 3-D view each light is marked by a star with a dotted line to the ground
 
 The 3-D view lights the scene with up to 32 lamps at once, site lights and
 vehicle lamps together. Site lights take at most sixteen of them, the ones
-nearest the middle of the view, so the vehicles' lamps always have the rest. The ray-traced render and the glTF export (as KHR_lights_punctual
-lights) carry every one. Site lights are display only: no engine reads them.
+nearest the middle of the view, so the vehicles' lamps always have the rest.
+The ray-traced render, the glTF export (as KHR_lights_punctual lights) and the
+Blender live link (as lights named HVE_Site_<name>) carry every one. Site
+lights are display only: no engine reads them.
 
 !!! note "HVE 2027"
     HVE made site lights with the 3-D Editor's Light tool; HVE 2027 has no 3-D

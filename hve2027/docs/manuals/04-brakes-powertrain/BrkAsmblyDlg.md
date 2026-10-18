@@ -24,7 +24,7 @@ HVE's brake type for each wheel, listed with HVE's own labels: **Generic Brake**
 One button per wheel. It opens the **Brake Designer** on that wheel, in its design. It is greyed for a Generic wheel, which has nothing to design.
 
 ### Temperature Model
-Shown, not edited: **Drum** or **Disc**, which brake temperature model the engines run. A design sets it; a Generic wheel keeps the case's. The engines take **one per axle, from the right wheel**, and a note says so when the right and left wheels of an axle differ (HVE warns about this too). The brake temperature channels read *(no thermal data)* either way: the model needs data no case states.
+Shown, not edited: **Drum** or **Disc**, which brake temperature model the engines run. A design sets it; a Generic wheel keeps the case's. The engines take **one per axle, from the right wheel**, and a note says so when the right and left wheels of an axle differ (HVE warns about this too). The brake temperature model's inputs are the Brake Designer's **Material Properties** section.
 
 ## Actuation
 

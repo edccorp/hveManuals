@@ -34,10 +34,10 @@ sliding speed and temperature on lining friction. The model also includes the
 capability to study brake fade characteristics associated with reduced
 braking capacity of heavy trucks on long downhill grades.
 
-!!! warning "Not in HVE 2027"
-    In HVE 2027 the Brake Designer is a **design-time calculator**. It evaluates the equations of this chapter at the design condition — lining at 20 °C ambient and zero sliding speed — and **Apply** writes the resulting **brake torque ratio** and **pushout pressure** into the wheel's Brake Assembly. During a simulation every wheel brake runs as HVE's **Generic** brake: a constant torque ratio times (line pressure − pushout pressure). The brake factor is not re-evaluated at the simulated lining temperature and sliding speed, the actuation factor does not change with stroke, and the brake temperature model does not run ([Chapter 30](30-brake-temperature.md)). **Brake fade is therefore not simulated.**
+!!! note "HVE 2027"
+    In HVE 2027 the Brake Designer works as it does in HVE. **Apply** writes the design to the wheel, and during a simulation a wheel whose design is not **Generic** recomputes its brake torque at every step from that design: the brake factor at the simulated lining temperature and sliding speed (the **Lining Friction Properties** tables), the actuation factor, and for S-cam, wedge and air disc brakes the stroke factor at the current stroke and drum temperature ([Chapter 30](30-brake-temperature.md), the **Material Properties** section). A **Generic** wheel runs as a constant torque ratio times (line pressure − pushout pressure). **Brake fade is simulated for a designed brake**; on the BrakeTest case HVE 2027 reproduces HVE's own rising front torque and its temperatures record for record.
 
-    The reason is the engine's own recompute path: it needs shoe-geometry terms and lining-friction tables that HVE 2027 does not collect, and with them missing a run fails rather than producing a smaller torque. The Brake Designer's **Disc data slots** / **Drum data slots** section says the same ("reach no engine output") and keeps its values only as a record of the hardware.
+    Until October 2026 a designed wheel ran at the Generic torque ratio Apply wrote, because the engine's own recompute path needs the shoe-geometry terms and the lining-friction and stroke tables, which HVE 2027 did not then collect; they are all collected and handed to the engine now. The Brake Designer's **Disc data slots** / **Drum data slots** section, the old Brake Assembly sub-dialogs' values, still reaches no engine output; the design above it does.
 
 ![Figure 29-1](../images/hvn-10-brake-assembly.png)
 *Figure 29-1 — Vehicle › Brakes › Brake Assembly. One column per wheel (A1 Right, A1 Left, …); the Torque Ratio and Pushout rows are what the simulation uses.*
@@ -441,7 +441,7 @@ otherwise,
 $$AF = AF_1 - \left(\frac{S - S_1}{S_{max} - S_1}\right) \times AF_1 \qquad (\text{29-15})$$
 
 !!! note "HVE 2027"
-    The Brake Designer's collapsible **Stroke Factor** section (S-cam, wedge and air disc brakes) holds **2nd Deflection Factor** ($AF_1$), **Stroke at 2nd Deflection** ($S_1$), **Maximum Stroke** ($S_{max}$) and **Thermal Expansion Coef** ($KT_1$, per °C). There is no $S_{100}$ input. At the design condition the stroke is zero and the lining is at ambient, so equation 29-14 gives exactly $AF = 1.0$ and these four values do not change the applied torque ratio; nor are they used during a simulation (see the warning at the start of this chapter).
+    The Brake Designer's collapsible **Stroke Factor** section (S-cam, wedge and air disc brakes) holds **2nd Deflection Factor** ($AF_1$), **Stroke at 2nd Deflection** ($S_1$), **Maximum Stroke** ($S_{max}$) and **Thermal Expansion Coef** ($KT_1$, per °C). Below them is the **Actuation Factor vs. Pushrod Stroke** table (columns **Stroke** and **Factor**, with **Add Row** and a delete button per row), HVE's stroke-factor table. There is no $S_{100}$ input. At the design condition the stroke is zero and the lining is at ambient, so equation 29-14 gives exactly $AF = 1.0$ and these values do not change the torque ratio Apply reports; during a simulation of a designed S-cam, wedge or air disc brake the engine evaluates the stroke factor at the simulated stroke and lining temperature from them every step (see Brake Fade below).
 
 ## Brake Fade
 
@@ -460,8 +460,8 @@ Brake Temperature Model, described in
 [Chapter 30](30-brake-temperature.md); loss in actuation force was
 discussed earlier in this chapter (see Actuation Factor).
 
-!!! warning "Not in HVE 2027"
-    Brake fade cannot be studied in HVE 2027: the simulation uses a constant torque ratio per wheel, and the brake temperature channels carry no data (see the warning at the start of this chapter and [Chapter 30](30-brake-temperature.md)).
+!!! note "HVE 2027"
+    Brake fade is simulated in HVE 2027 for a wheel with a brake design (see the note at the start of this chapter and [Chapter 30](30-brake-temperature.md)); a **Generic** wheel keeps a constant torque ratio.
 
 **Table 29-2 — HVE Brake Model Parameters (see Figures 29-4 to 29-8)**
 
@@ -777,7 +777,7 @@ $$BrakeTorque = BF \times TR \times AF \times Factor$$
 
 !!! note "HVE 2027"
     - The HVE 2027 Brake Designer is one window for all types; **Brake Design** selects the type. There is no schematic preview drawing.
-    - **Lining Friction Properties** (friction vs temperature and friction multiplier vs sliding speed) is a collapsible section of the same window rather than a separate dialog. HVE's **Material Properties** (drum/rotor and lining/pad density, specific heat, conduction and convection) and the drum, lining and pad thicknesses are not offered: they feed only the brake temperature model, which does not run ([Chapter 30](30-brake-temperature.md)).
+    - **Lining Friction Properties** (friction vs temperature and friction multiplier vs sliding speed) is a collapsible section of the same window rather than a separate dialog. HVE's **Material Properties** (drum/rotor and lining/pad density, specific heat, conduction and convection) and the drum, lining and pad thicknesses are the **Material Properties** section of the same window; they feed the brake temperature model ([Chapter 30](30-brake-temperature.md)).
     - The **Results** are recalculated continuously; there is no Apply-to-recalculate button. **Apply to Wheel** and **Apply to All Wheels** write the result into the Brake Assembly.
     - The **Brake Assembly** dialog's **Brake Type** row is each wheel's design type, and its **Design...** button opens the Brake Designer on that wheel (greyed for Generic). The Brake Designer is the designer whose result the simulation uses.
 

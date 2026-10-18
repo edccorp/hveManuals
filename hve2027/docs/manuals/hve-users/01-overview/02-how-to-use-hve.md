@@ -361,7 +361,8 @@ locations, and so does HVE 2027:
 For EDCRASH, the impact and rest positions, the impact speed and the measured
 damage are entered in Event Information's **Vehicle Impact Setup**. The other
 positions are ticked and entered in the vehicle's **Scene positions** list in
-Event Information. Simulations *require* only initial positions and velocities;
+Event Information — and so is a simulation's Impact position, which marks where
+the vehicle should be at the crash and is not read by the run. Simulations *require* only initial positions and velocities;
 reconstructions normally *require* impact and rest positions.
 
 *See also: [Position/Velocity dialog

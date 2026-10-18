@@ -33,6 +33,7 @@ the [HVE Manual](../README.md).
 - [Collision Pulse](ColPulse.md)
 - [Common Reports Dialog Box](CommRepDlg.md)
 - [Common Scene Report Dialog](CommSceDlg.md)
+- [Output Settings (Tools › Output Settings...)](OutputSettings.md) — a label and decimal places per output variable, the field limits and the report wording, saved as presets
 - [Report Text (Tools › Report Text...)](ReportText.md) — your own wording for any report string, kept with your settings
 - [Damage Data](DamageData.md)
 - [Trajectory Report](TrajRepDlg.md)

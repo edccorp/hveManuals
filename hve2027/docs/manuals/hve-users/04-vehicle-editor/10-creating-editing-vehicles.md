@@ -85,6 +85,10 @@ sections. Each input has one place in it:
   (browse) and **Library...**; when the case named a file that was not found,
   a notice says so, with **Locate...**. **Generic Body** (*HVE (original)* or
   *Modern*) is the body a vehicle without a 3-D file is drawn and collided as.
+  It is *Modern* unless the vehicle came from a native HVE case (`.hve`),
+  which keeps *HVE (original)* so an imported crash collides the shape HVE
+  solved it with. Vehicles in hve-next cases saved before this choice existed
+  open as *Modern*; switch one back here to reproduce an older run.
   **Vehicle Mesh...** opens the Vehicle Mesh window, which holds everything
   else about the model: import options, placement, what DyMESH collides, the
   display mesh, shading, damage display and the wheel images (see
@@ -256,6 +260,12 @@ where **Add…** lists it. The dialog contains:
 - **Private note** — Kept only in your database and shown where you browse
   it; never in a case, a report or an export.
 - **Save** / **Close**.
+
+A vehicle that came from EDC's data stays licensed: if you give it your own
+mesh, it keeps its EDC data tag, is listed and opened only where the EDC data
+license is present, and its original is also named in its private note. A
+vehicle you built yourself carries no tag and opens everywhere. The tag is a
+gate, not secrecy: a printed vehicle report still shows the vehicle's values.
 
 The EDC databases themselves are never written. When a vehicle from one of
 your own databases is selected in the Add Vehicle dialog, its mesh is shown

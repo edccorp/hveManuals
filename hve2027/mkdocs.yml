@@ -270,6 +270,7 @@ nav:
       - "Chapter 11 — Vehicle Model Definition (Part C: Suspension)": hve-users/04-vehicle-editor/11c-suspension.md
       - "Chapter 11 — Vehicle Model Definition (Part D: Brakes, Tires and Wheels)": hve-users/04-vehicle-editor/11d-brakes-tires-wheels.md
       - "Chapter 11 — Vehicle Model Definition (Part E: Drivetrain, Steering and Brake System)": hve-users/04-vehicle-editor/11e-drivetrain-steering-brake-system.md
+      - "Chapter 12 — Vehicle Designer": hve-users/04-vehicle-editor/12-vehicle-designer.md
     - Environment Editor:
       - Overview: hve-users/05-environment-editor/README.md
       - "Chapter 12 — Creating & Editing Environments": hve-users/05-environment-editor/12-creating-editing-environments.md

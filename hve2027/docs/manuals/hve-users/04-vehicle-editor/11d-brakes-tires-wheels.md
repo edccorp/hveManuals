@@ -135,8 +135,19 @@ wheel (**Axle**, **Side**) and the **Brake Design**, enter the Design
 Parameters, read the **Results**, and press **Apply to Wheel** or **Apply to
 All Wheels**. The Brake Designer also opens on a wheel from the Brake
 Assembly dialog's Design… row, and a design's lining friction is in its
-**Lining Friction Properties** section. HVE's separate Brake Material
-Properties library, which no engine reads, is not in HVE 2027.
+**Lining Friction Properties** section. HVE's Brake Material Properties
+dialog is the Brake Designer's **Material Properties** section: the
+**Rotor / Drum** and **Pad / Lining** density, specific heat, conduction
+coefficient, convection coefficient and convection velocity term, and under
+**Thicknesses** the rotor and pad thicknesses of a disc brake or the drum
+thickness, drum width and primary/secondary lining thicknesses of a drum
+brake. These are the inputs of SIMON's brake temperature model, which runs
+on every pedal-braked wheel whatever the design type; they are shown in
+HVE's in-lb units in the US system (lb/in³, in-lb/lb-°F, in-lb/in-s-°F,
+in-lb/in²-s-°F) and in SI otherwise. A wheel with a brake design
+recomputes its torque from the design at every step, with the lining
+friction at the simulated temperature and speed; a Generic wheel uses the
+design's torque ratio as a constant.
 
 The Brake Designer dialogs for the individual assembly types are documented
 in the HVE reference pages:
@@ -145,9 +156,8 @@ in the HVE reference pages:
 [Duplex](../../04-brakes-powertrain/DuplexBrkDlg.md),
 [Single Piston](../../04-brakes-powertrain/BrkSingPistDlg.md),
 [Dual Piston](../../04-brakes-powertrain/DualPistBrkDlg.md),
-[Dual Wedge](../../04-brakes-powertrain/DualWedgeBrkDlg.md). HVE's
-[Brake Material Properties](../../04-brakes-powertrain/BrkMatPropDlg.md)
-dialog is not in HVE 2027.
+[Dual Wedge](../../04-brakes-powertrain/DualWedgeBrkDlg.md) and
+[Brake Material Properties](../../04-brakes-powertrain/BrkMatPropDlg.md).
 
 ## Tire Properties
 

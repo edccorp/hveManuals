@@ -5,7 +5,7 @@
 HVE edits the vehicle's exterior dimensions in six Vehicle Dimensions dialogs, one per face (CG to Front, Back, Top, Left, Right and Bottom), each with a Stiffness button. HVE 2027 has no per-face dialogs. The exterior dimensions are entered in the Vehicle Editor (**Vehicle (F3)**), in the **Vehicles** panel under **Size & Weight › Geometry**, and the distance from the CG to each face that the engines receive is shown, read-only, in the **Exterior Extents** table under the section's collapsed **Details** node. All values are in the units set in Preferences.
 
 ## x Coord
-Vehicle-fixed distance from the CG to the back of the vehicle. In HVE 2027 this is the **X** row, *behind* column, of **Exterior Extents**. It is derived as **CG to Axle 2**, plus any spacing to the rearmost axle, plus **Rear Overhang (from the rearmost axle)**; edit those values under **Geometry** to change it.
+Vehicle-fixed distance from the CG to the back of the vehicle. In HVE 2027 this is the **X** row, *behind* column, of **Exterior Extents**. It is derived as **CG to Axle 2**, plus any spacing to the rearmost axle, plus **Rear Overhang** (measured from the rearmost axle); edit those values under **Geometry** to change it.
 
 ### Rear Overhang
 Distance from the rearmost axle to the back of the vehicle, an **input** under **Geometry**.

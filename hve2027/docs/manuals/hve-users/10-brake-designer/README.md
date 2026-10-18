@@ -26,7 +26,7 @@ data, extending existing designs, providing parametric comparisons and
 estimating the behavior of a proposed design.
 
 !!! warning "Not in HVE 2027"
-    In HVE 2027 the Brake Designer is a design-time calculator: it computes a wheel's brake torque ratio and pushout pressure from the brake's geometry and lining friction, and writes them into the Brake Assembly. During a simulation every wheel brake runs as HVE's Generic brake (a constant torque ratio), and the brake temperature model does not run, so **brake fade is not simulated**. The ABS model runs as in HVE. See [Chapter 29](29-brake-designer.md) and [Chapter 30](30-brake-temperature.md).
+    In HVE 2027 the Brake Designer works as in HVE: it computes a wheel's brake torque ratio and pushout pressure from the brake's geometry and lining friction and writes the design to the wheel, and during a simulation a designed brake recomputes its torque from that design at every step, with the lining friction at the simulated temperature and sliding speed and, for air brakes, the stroke factor; the brake temperature model runs on every pedal-braked wheel, so **brake fade is simulated** for a designed brake. A Generic wheel keeps a constant torque ratio. The ABS model runs as in HVE. See [Chapter 29](29-brake-designer.md) and [Chapter 30](30-brake-temperature.md).
 
 ## General Procedure
 

@@ -201,6 +201,11 @@ and Rest. In Event Information, open the vehicle's **Scene positions — *n* of 
 set, drawn as ghosts** list and tick a position to enter its X, Y and heading.
 Every position that is set is drawn in the viewport as a ghost of the vehicle
 (HVE's *targets*), so a simulated path can be compared with the measured one.
+In a simulation event (SIMON and the other programs that run forward from a
+start) **Impact** is where the vehicle is entered to be when it crashes; the run
+does not read it, and it is drawn as a ghost and offered as a target in EDR
+Import. In an EDCRASH event the impact is the reconstruction's own and is
+entered in **Vehicle Impact Setup**.
 **View › Scene Display › Scene Ghosts** chooses how the ghosts are drawn — outline, translucent
 vehicle, both, or none (see [Chapter 5](05-view-menu.md#scene-ghosts)).
 
