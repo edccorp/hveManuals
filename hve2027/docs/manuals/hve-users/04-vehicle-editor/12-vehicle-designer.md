@@ -38,7 +38,7 @@ numbered so the order is visible; any stage can be clicked at any time:
 9. **Steering** — steer ratio, column and geometry per axle.
 10. **Exterior** — the mesh, the lamps, aerodynamic drag, accelerometers, crush stiffness and body torsion.
 11. **Test Track** — three canned SIMON runs on the current physics, read back as numbers (stage 11 below).
-12. **Summary** — the spec sheet, the whole warnings list and the provenance tally.
+12. **Summary** (stage 12 below) — the spec sheet, the whole warnings list and the provenance tally.
 
 In this release stages 1, 4, 5, 6 and 9 are built. Each other stage names the dialogs that hold
 its inputs and opens them with a button (**Suspension Data...**, **Tires...**,
@@ -250,8 +250,10 @@ stage.
 
 The Exterior stage opens with the **Vehicle view**: three drawings of the
 vehicle's body, from the right side, from above and from the front, with its
-**Lights**, **Accelerometers** and **CG** marked and named (each a checkbox to
-show or hide). The body is the mesh the 3-D view draws; where none is loaded the
+**Tires** drawn at the wheel positions the solver uses (a circle from the side,
+the tread from above and from the front, each at its own radius and width,
+duals as two) and its **Lights**, **Accelerometers** and **CG** marked and named
+(each a checkbox to show or hide). The body is the mesh the 3-D view draws; where none is loaded the
 vehicle's extents box is drawn instead and the line under the views says so.
 Forward is to the right in the side and top views, and the front view is as a
 person standing ahead of the vehicle sees it, so the vehicle's right side is
@@ -307,6 +309,26 @@ for the vehicle; they clear when a different vehicle is picked. A run the
 solver refuses shows the solver's own reason.
 
 ![Figure 12-14: the Test Track stage before its runs](../images/hvn-04-vehicle-designer-track.png)
+
+### Stage 12: Summary
+
+The Summary is the design on one page. It opens with the vehicle's identity (the
+Vehicle Package's year, make, model and trim, and its VIN when kept; otherwise
+the case vehicle's name) and the one action a finished design has: **Save to My
+Vehicles...**, which keeps the vehicle as designed in a database of your own
+for future cases, since a design otherwise lives in the case and never changes
+the database record. **Set as baseline** makes the current values the "was"
+column.
+
+The **Spec sheet** is the stat strip in full: every quantity with its value,
+its baseline and the change, in the current display units, the measured rows
+from the Test Track stage among them. **Provenance** counts the case's records
+for this vehicle by kind, Stated, Looked up, Estimated or Generic default, so a
+reader sees how much of the vehicle is documented; a vehicle with no records is
+told so. **Warnings & Suggestions** is the whole list from the right-hand panel,
+each with its stage to go to.
+
+![Figure 12-15: the Summary stage](../images/hvn-04-vehicle-designer-summary.png)
 
 ## Frame and units
 
