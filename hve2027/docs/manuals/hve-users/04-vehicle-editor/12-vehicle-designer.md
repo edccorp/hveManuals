@@ -241,6 +241,11 @@ The rules, by stage:
 | Consider | Transmission | An upshift at the redline lands under the automatic shift window's minimum rpm. |
 | Note | Engine | The full-throttle torque curve ends below the redline; the engine holds the last row's torque beyond it. |
 | Note | Exterior | The front drag coefficient or frontal area is 0, so the vehicle has no aerodynamic drag. |
+| Fix | Suspension | Test Track: the measured understeer gradient is negative, so the rear tires reach their limit before the front (oversteer). |
+| Consider | Tires | Test Track: the measured understeer gradient is over 5 deg/g (passenger cars run 1 to 4). |
+| Consider | Brakes | Test Track: the mean deceleration of the stop from 100 km/h is under 70% of the Brakes chart's grip limit, so the brakes and not the tires limit the stop. |
+| Fix | Mass | Test Track: the most lateral acceleration the tires reach is over 85% of the static stability factor (front track over twice the CG height). |
+| Consider | Suspension | Test Track: the measured roll gradient is over 7 deg/g (passenger cars run 3 to 7). |
 
 The understeer gradient and brake fade need a run and arrive with the Test
 Track stage; a rule on a value's provenance (an inertia that is an estimate
@@ -359,22 +364,32 @@ would give. **Cancel** stops the runs.
 
 - **Straight-line stop**: from 100 km/h, full pedal at 0.5 s on the vehicle's
   own brake system (the pedal path). The stopping distance, the time and the
-  mean deceleration, with the speed trace. A vehicle that has not stopped by
+  mean deceleration, with the speed trace, and the brake dive (the mean pitch
+  while braking, less the attitude at rest). A vehicle that has not stopped by
   15 s is reported as such.
 - **Step steer**: at 80 km/h, coasting, 45° at the steering wheel from 1 s. The
   steady yaw rate over 4 to 6 s, the yaw-rate gain, the lateral acceleration and
   the understeer gradient (the road-wheel angle over the Ackermann angle, per g
-  of lateral acceleration), with the yaw-rate trace. A vehicle whose steering
-  ratio is 0 (no steering gear) is refused with that reason rather than read as
-  16:1.
+  of lateral acceleration), with the yaw-rate trace; and the steady roll angle
+  with the roll gradient in degrees per g, saying whether the body leans out of
+  the turn (as it should) or into it. The pose comes from the solver's probe;
+  an older solver that answers without one gives no roll gradient rather than
+  0. A vehicle whose steering ratio is 0 (no steering gear) is refused with
+  that reason rather than read as 16:1.
 - **Tightening circle**: at 60 km/h, coasting, the wheel ramped from 0 to 180°
   over 12 s. The most lateral acceleration the tires reach and the wheel angle
   where they reach it, with lateral acceleration against steering angle.
 
-The stat strip's **100-0 km/h stop**, **Understeer (deg/g)** and **Max lateral
-g** rows are filled from these runs and stay "--" until the track has been run
-for the vehicle; they clear when a different vehicle is picked. A run the
-solver refuses shows the solver's own reason.
+The stat strip's **100-0 km/h stop**, **Understeer (deg/g)**, **Max lateral
+g** and **Roll gradient (deg/g)** rows are filled from these runs and stay "--"
+until the track has been run for the vehicle; they clear when a different
+vehicle is picked. A run the solver refuses shows the solver's own reason.
+
+The measurements also feed five rules in **Warnings & Suggestions** (the
+`Test Track` rows of the table below): oversteer measured, heavy understeer, a
+stop well under the Brakes chart's grip limit, lateral grip within 15% of the
+static stability factor, and a soft roll gradient. They are silent until the
+track has run for the vehicle: an unrun track is not a finding.
 
 ![Figure 12-14: the Test Track stage before its runs](../images/hvn-04-vehicle-designer-track.png)
 
