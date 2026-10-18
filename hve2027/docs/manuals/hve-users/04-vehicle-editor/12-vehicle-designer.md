@@ -40,13 +40,26 @@ numbered so the order is visible; any stage can be clicked at any time:
 11. **Test Track** — three canned SIMON runs on the current physics, read back as numbers.
 12. **Summary** — the spec sheet, the whole warnings list and the provenance tally.
 
-In this release stages 1 and 6 are built. Each other stage names the dialogs that hold
+In this release stages 1, 4 and 6 are built. Each other stage names the dialogs that hold
 its inputs and opens them with a button (**Suspension Data...**, **Tires...**,
 **Brake Assembly...**, **Drivetrain...** and so on, the same windows the Vehicle
 menu opens), so nothing an analyst could set before is out of reach. The Test
 Track and Summary stages say what they will do and do nothing yet.
 
 ![Figure 12-2: a stage that is not built yet names the dialogs that hold its inputs and opens them](../images/hvn-04-vehicle-designer-stage.png)
+
+### Stage 4: Suspension
+
+The Suspension stage hosts the suspension editor itself: the same **Springs &
+Dampers** table and the four advanced tabs that **Vehicle › Suspension Data...**
+opens, drawn in the stage's center under the frame's vehicle line, so an edit
+here is the edit, with the stat strip and the warnings panel updating beside it.
+The window and the stage draw one editor, so they can never disagree.
+**Open in its own window** opens the same editor as a separate window, to work
+it beside another stage. A solved run's inputs are read-only here as everywhere, until
+the run is reset.
+
+![Figure 12-4: the Suspension stage hosting the suspension editor](../images/hvn-04-vehicle-designer-suspension.png)
 
 ### Stage 6: Brakes
 
@@ -112,10 +125,34 @@ when the same stage is re-opened.
 Each entry is one sentence naming the symptom, the stat it costs and the fix,
 graded **Fix**, **Consider** or **Note**, with a **Go to** button for the stage
 that owns the input. A stage with an open Fix carries a red marker on the stage
-bar. In this release no rule is evaluated yet and the panel says so; the first
-set (brake balance, roll stiffness distribution, damping ratio, static
-stability, and what a stored zero means for the steer ratio and the
-proportioning valve) arrives with the warnings milestone.
+bar. The count beside the panel's title says how many rules are checked; hover
+it for the list. A rule that lacks one of its inputs stays silent rather than
+firing on a default, and a vehicle that trips no rule is told so.
+
+The rules, by stage:
+
+| Grade | Stage | Rule |
+|---|---|---|
+| Fix | Brakes | The rear axle reaches its grip before the front in the braking-against-grip sweep. |
+| Consider | Brakes | At full pedal no axle locks and the deceleration is under 85% of the grip limit. |
+| Note | Brakes | A wheel's proportioning is on with a ratio of 0, which HVE reads as a pressure limiter. |
+| Note | Brakes | ABS is on at a wheel; the chart shows lockup as if it were off. |
+| Note | Brakes | A wheel's brake torque ratio is 0. |
+| Note | Brakes | The brake chart cannot be drawn (not two axles, no mass, no wheelbase or CG height, no brake anywhere). |
+| Consider | Suspension | The front share of roll stiffness (spring rate times track squared over two, plus the auxiliary roll stiffness) differs from the front weight share by more than 20 points. |
+| Consider | Suspension | An axle's damping ratio (damping rate over twice the root of spring rate times corner sprung mass) is under 0.2 or over 0.5. |
+| Consider | Mass | The static stability factor, front track over twice the CG height, is under 1.1. |
+| Note | Mass | Roll, pitch or yaw inertia is 0 in both its fields, so the run uses the mass-basis estimate the editor shows. |
+| Note | Steering | A steerable axle's steer ratio is 0, which HVE reads as no steering gear. |
+| Consider | Packaging | The body design's wheelbase and the vehicle's differ by more than 5 mm. |
+| Note | Transmission | Top speed is set by the redline in top gear, below the drag limit from engine power, drag coefficient, frontal area and rolling resistance. |
+| Consider | Transmission | An upshift at the redline lands under the automatic shift window's minimum rpm. |
+| Note | Engine | The full-throttle torque curve ends below the redline; the engine holds the last row's torque beyond it. |
+| Note | Exterior | The front drag coefficient or frontal area is 0, so the vehicle has no aerodynamic drag. |
+
+The understeer gradient and brake fade need a run and arrive with the Test
+Track stage; a rule on a value's provenance (an inertia that is an estimate
+rather than a measurement) arrives with the Mass stage.
 
 ## Frame and units
 

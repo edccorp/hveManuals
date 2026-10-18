@@ -159,6 +159,16 @@ overrides, are in **Event › DyMESH Options...**.
     some restoration options — are carried to the engine but read by nothing,
     in HVE as well; the dialog labels them *Carried, not consumed*.
 
+!!! note "HVE 2027"
+    Within one evaluation of the equations of motion, HVE 2027 computes every
+    vehicle's wheel positions, tire and suspension forces before it runs the
+    DyMESH collision pairs. HVE does them vehicle by vehicle, so when the
+    first vehicle's body meets the second vehicle's DyMESH wheel, that wheel
+    is placed with the previous evaluation's position and spin. The
+    difference is small (on a wheel strike at 8 m/s, 0.02 km/h of a 3 km/h
+    Delta-V and 0.2 mm of rest position) and no longer depends on which
+    vehicle is listed first.
+
 ## Termination Velocity
 
 **Linear** (units set in Preferences) and **Angular (rad/s)** — SIMON's stored
