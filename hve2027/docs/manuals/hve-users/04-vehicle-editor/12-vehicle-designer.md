@@ -48,6 +48,31 @@ Track and Summary stages say what they will do and do nothing yet.
 
 ![Figure 12-2: a stage that is not built yet names the dialogs that hold its inputs and opens them](../images/hvn-04-vehicle-designer-stage.png)
 
+### Stage 2: Packaging
+
+The Packaging stage hosts the **Vehicle Package** wizard that **Tools › Vehicle
+Package...** opens, pinned to the designer's vehicle: **1. Identify** (the VIN
+and what decoding it says, or the year, make, model and trim), **2.
+Specifications** (weight, front axle share, wheelbase, front and rear track,
+length, width, height and CG height, each marked Stated or Looked up with its
+source) and **3. Save with the case**, with **Scale the vehicle to these specs**
+for a generic vehicle. The window's vehicle picker and its path for building a
+new vehicle are not drawn here: the frame's vehicle line is the picker, and a new
+vehicle is the window's job, reached by **Open in its own window**.
+
+![Figure 12-12: the Packaging stage hosting the Vehicle Package wizard](../images/hvn-04-vehicle-designer-packaging.png)
+
+### Stage 3: Mass
+
+The Mass stage hosts the **Inertia / Mass** editor that the Vehicles panel's
+Inertia **Edit...** opens: total and sprung mass, the CG location, the roll,
+pitch and yaw inertias and the product of inertia, each in the stored basis and
+the other basis side by side, and what is aboard (occupants and cargo). One
+editor serves the window and the stage; **Open in its own window** opens the
+window.
+
+![Figure 12-10: the Mass stage hosting the Inertia / Mass editor](../images/hvn-04-vehicle-designer-mass.png)
+
 ### Stage 4: Suspension
 
 The Suspension stage hosts the suspension editor itself: the same **Springs &
@@ -211,6 +236,36 @@ center under the frame's vehicle line. One editor serves the window and the
 stage.
 
 ![Figure 12-6: the Steering stage hosting the steering editor](../images/hvn-04-vehicle-designer-steering.png)
+
+### Stage 10: Exterior
+
+The Exterior stage opens with the **Vehicle view**: three drawings of the
+vehicle's body, from the right side, from above and from the front, with its
+**Lights**, **Accelerometers** and **CG** marked and named (each a checkbox to
+show or hide). The body is the mesh the 3-D view draws; where none is loaded the
+vehicle's extents box is drawn instead and the line under the views says so.
+Forward is to the right in the side and top views, and the front view is as a
+person standing ahead of the vehicle sees it, so the vehicle's right side is
+on the viewer's left. A light is drawn in its own color with a short stroke
+along its aim, gray when it is off; the lights are the case's own list, or the
+lamps the body file places, or the estimate, and the line under the views names
+which. An accelerometer stated in the inertial frame is not on the body and is
+not drawn. Hover a marker for its position (SAE about the CG); click a light to
+select it in the Lights editor below and in the 3-D view, or an accelerometer to
+select it in the Accelerometers editor.
+
+![Figure 12-13: the Exterior stage's vehicle view with the lights and accelerometers marked](../images/hvn-04-vehicle-designer-exterior-view.png)
+
+Under the view are the four editors of what the vehicle looks like and
+carries, one tab each: **Mesh** (the Vehicle Mesh editor with its File &
+Placement, Collision, Display and Wheel Images tabs), **Lights** (the Vehicle Lights
+editor with its Lamp parts and Light sources tabs), **Aerodynamic Drag** (the
+drag coefficients of the four surfaces) and **Accelerometers** (the vehicle's
+accelerometer list). Each tab's **Open in its own window** opens that editor's
+window. The mesh is the one of the four an engine reads, in DyMESH contact; the
+other three are display and instrumentation.
+
+![Figure 12-11: the Exterior stage with its four editors as tabs](../images/hvn-04-vehicle-designer-exterior.png)
 
 ## Frame and units
 
