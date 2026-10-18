@@ -40,7 +40,7 @@ numbered so the order is visible; any stage can be clicked at any time:
 11. **Test Track** — three canned SIMON runs on the current physics, read back as numbers.
 12. **Summary** — the spec sheet, the whole warnings list and the provenance tally.
 
-In this release stages 1, 4 and 6 are built. Each other stage names the dialogs that hold
+In this release stages 1, 4, 5, 6 and 9 are built. Each other stage names the dialogs that hold
 its inputs and opens them with a button (**Suspension Data...**, **Tires...**,
 **Brake Assembly...**, **Drivetrain...** and so on, the same windows the Vehicle
 menu opens), so nothing an analyst could set before is out of reach. The Test
@@ -60,6 +60,15 @@ it beside another stage. A solved run's inputs are read-only here as everywhere,
 the run is reset.
 
 ![Figure 12-4: the Suspension stage hosting the suspension editor](../images/hvn-04-vehicle-designer-suspension.png)
+
+### Stage 5: Tires
+
+The Tires stage hosts the tire editor: the same **Tire Properties** table, the
+tire-size and database tools and the **Load & Speed Tables** panel that
+**Vehicle › Tires...** opens, drawn in the stage's center under the frame's
+vehicle line. One editor serves the window and the stage.
+
+![Figure 12-5: the Tires stage hosting the tire editor](../images/hvn-04-vehicle-designer-tires.png)
 
 ### Stage 6: Brakes
 
@@ -153,6 +162,16 @@ The rules, by stage:
 The understeer gradient and brake fade need a run and arrive with the Test
 Track stage; a rule on a value's provenance (an inertia that is an estimate
 rather than a measurement) arrives with the Mass stage.
+
+### Stage 9: Steering
+
+The Steering stage hosts the steering editor: the per-axle table that
+**Vehicle › Steering System...** opens (steerable axle, steer ratio, the steering
+degree of freedom, column and linkage, geometry and stops), drawn in the stage's
+center under the frame's vehicle line. One editor serves the window and the
+stage.
+
+![Figure 12-6: the Steering stage hosting the steering editor](../images/hvn-04-vehicle-designer-steering.png)
 
 ## Frame and units
 
