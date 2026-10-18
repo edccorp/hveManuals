@@ -177,6 +177,31 @@ The understeer gradient and brake fade need a run and arrive with the Test
 Track stage; a rule on a value's provenance (an inertia that is an estimate
 rather than a measurement) arrives with the Mass stage.
 
+### Stage 7: Engine
+
+The Engine stage hosts the **Engine** section of the Drivetrain editor that
+**Vehicle › Drivetrain...** opens: the engine's name, idle and redline rpm,
+maximum torque and power, rotational inertia, friction torque, and the **Engine
+Tables** (the wide-open
+and closed-throttle torque curves, with the power each row implies). Nothing is copied: the stage
+and the window draw the same editor, and the Transmission stage holds the rest
+of that window. The **Open in its own window** button opens the whole
+Drivetrain window.
+
+![Figure 12-8: the Engine stage hosting the Drivetrain editor's Engine section](../images/hvn-04-vehicle-designer-engine.png)
+
+### Stage 8: Transmission
+
+The Transmission stage hosts the other three sections of the Drivetrain editor:
+**Transmission** (automatic or manual with the shift rpm window, the number of
+gears and their ratios with reverse, the final drive ratio, efficiency, shift
+time and drive type), **Differential** (the differential type, locking
+coefficient, preload torque and its speeds) and **Electronic Stability (ESS)**
+(traction and yaw stability control with their rates). The **Open in its own window** button
+opens the whole Drivetrain window.
+
+![Figure 12-9: the Transmission stage hosting the Drivetrain editor's driveline sections](../images/hvn-04-vehicle-designer-transmission.png)
+
 ### Stage 9: Steering
 
 The Steering stage hosts the steering editor: the per-axle table that
