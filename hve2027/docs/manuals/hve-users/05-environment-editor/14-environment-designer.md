@@ -56,9 +56,26 @@ so a field has one editor and nothing is reachable in one and not the other.
 5. **Sky & Lights**: the sun, the sky and the site's lights. Display only, and
    the stage says so.
 6. **Objects**: **Scene Box Editor...** for the drawn boxes.
-7. **Site Check**: not built yet. It will settle a probe vehicle on the current
-   physics at each drivable surface and read back the settle height and the
-   friction and water the engine found.
+7. **Site Check**: does a vehicle stand on this ground? **Run the Site Check**
+   places the case's own vehicle (the first one SIMON drives on its wheels: not a
+   motorcycle, trailer, dolly or barrier) by Auto Position at a point of each of
+   the six largest drivable patches and of each generated surface applied to the
+   run, and creeps it forward at 2 m/s for 1 s on SIMON, on the current physics.
+   The runs are solved quietly: nothing in the case or on screen changes. The
+   table gives each point's friction, its CG height above the ground under it at
+   the start and the end, and a result (the reason is under the table and on
+   hover): **Settled**, **Fell through** (the CG
+   ended at or below the ground, or sank more than 0.3 m), **Moved** (its height
+   above the ground changed by more than 0.1 m), **Off the site** (it left the
+   drivable triangles), or **No answer** (the solver refused the run, with its
+   reason). The Key figures show **Probes settled** and **Probes failed** once a
+   check has run on this ground; a check made before the site changed is not
+   read.
+
+   ![Figure 14-4](../images/hvn-05-environment-designer-sitecheck.png)
+
+   *Figure 14-4: The Site Check with a truck: the ramp and an ice patch
+   settle; a friction zone drawn beside the ramp has no ground under it.*
 8. **Summary**: the site's name and file, **Set as baseline** (kept for this case
    across sessions), **Copy spec sheet** (tab-separated text on the clipboard),
    the spec sheet with its baseline and change, and every warning.
@@ -84,6 +101,9 @@ keeps the current values as the "was" column for this case.
 | Note | Water & Weather | The stated gravity differs from 9.80665 m/s² by more than 1%. |
 | Consider | Surfaces | The drivable surface is more than one patch and the smallest is under 2% of the area, so its edge drops a wheel onto the default plane. |
 | Note | Surfaces | A palette entry owns no drawn or drivable triangle, so editing its friction changes nothing. |
+| Fix | Site Check | The probe vehicle's CG ended at or below the ground, or sank more than 0.3 m: a hole or a seam there. |
+| Consider | Site Check | The probe vehicle's CG height above the ground changed by more than 0.1 m in 1 s: a step, a ramp edge or a bump. |
+| Consider | Site Check | The probe vehicle started off the drivable triangles or left them within its 2 m: a generated surface over no ground, or a patch too small to hold it. |
 
 A rule that lacks its input stays silent, and the count beside the panel's
 title lists what is checked on hover.
