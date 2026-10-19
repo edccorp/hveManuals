@@ -108,10 +108,10 @@ Once active, YSC makes two interventions:
    Drive Torque** threshold and the axle's side-to-side wheel speed difference
    reaches the **Side Difference** threshold, the wheel's share of the axle
    torque is adjusted by $R_{Tq}\,S_{axle}\,\Delta\omega_{side}$ (proportional
-   to the axle's torque fraction, as in TCS), clamped to the axle total. Note
-   that the signed side difference of the **right-hand wheel** is used when
-   adjusting either side of the axle, so the left- and right-side corrections
-   are not exact mirror images of one another.
+   to the axle's torque fraction, as in TCS), clamped to the axle total. Each
+   side is adjusted using its own signed side difference, so the two sides'
+   corrections mirror one another: the faster side sheds torque share and the
+   slower side gains it, each clamped independently.
 
 2. **Brake modulation.** If the driver's brake system pressure is at or above
    the **Minimum Brake Pressure** threshold and the wheel's spin-velocity
