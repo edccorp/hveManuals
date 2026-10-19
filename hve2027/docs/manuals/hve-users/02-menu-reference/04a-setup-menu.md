@@ -21,6 +21,7 @@ part by method:
 
 | Item | Available for |
 |---|---|
+| Event Designer... | every event: the staged Event Designer beside the 3-D view (see [Chapter 16a](../06-event-editor/16a-event-designer.md)) |
 | Event Information... | every event |
 | Position / Velocity... | every method that starts from initial conditions — all except EDCRASH and READDATAFILE |
 | Driver Controls... | EDSMAC, EDSMAC4, SIMON, EDSVS, EDVDS, EDVTS, EDVSM, SINGLETRACK; and EDCRASH, where it shows the Wheel Data page |

@@ -280,6 +280,7 @@ nav:
       - Overview: hve-users/06-event-editor/README.md
       - "Chapter 15 — Creating & Editing Events": hve-users/06-event-editor/15-creating-editing-events.md
       - "Chapter 16 — Event Model Definition": hve-users/06-event-editor/16-event-model-definition.md
+      - "Chapter 16a — Event Designer": hve-users/06-event-editor/16a-event-designer.md
     - Playback Editor:
       - Overview: hve-users/07-playback-editor/README.md
       - "Chapter 17 — Creating Report and Playback Windows": hve-users/07-playback-editor/17-report-playback-windows.md
