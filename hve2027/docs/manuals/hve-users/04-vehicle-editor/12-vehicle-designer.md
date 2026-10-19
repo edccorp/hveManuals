@@ -396,9 +396,11 @@ Placement, Collision, Display and Wheel Images tabs), **Lights** (the Vehicle Li
 editor with its Lamp parts and Light sources tabs), **Aerodynamic Drag** (the
 drag coefficients of the four surfaces) and **Accelerometers** (the vehicle's
 accelerometer list), then the body's structure: **Crush Stiffness** (A, B and Kv
-per side, and DyMESH's node stiffness) and **Body Torsion** (the frame's
-torsional stiffness and axis). Each tab's **Open in its own window** opens that
-editor's window. The mesh is the one of the four an engine reads, in DyMESH contact; the
+per side, and DyMESH's node stiffness), **Crush from Crash Tests** (the
+Automatic Tools' Crush Stiffness from Crash Tests: CRASH3 A, B and G from staged
+barrier tests, shown beside the stiffness now before you apply it; not offered on
+a sealed case) and **Body Torsion** (the frame's torsional stiffness and axis).
+Each editor tab's **Open in its own window** opens that editor's window. The mesh is the one of the four an engine reads, in DyMESH contact; the
 other three are display and instrumentation.
 
 ![Figure 12-11: the Exterior stage with its four editors as tabs](../images/hvn-04-vehicle-designer-exterior.png)
