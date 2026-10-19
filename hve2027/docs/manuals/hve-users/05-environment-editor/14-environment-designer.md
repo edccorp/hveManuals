@@ -80,6 +80,25 @@ so a field has one editor and nothing is reachable in one and not the other.
    across sessions), **Copy spec sheet** (tab-separated text on the clipboard),
    the spec sheet with its baseline and change, and every warning.
 
+## Everything in one place
+
+Every section of the **Environment** window and every item of the
+**Environment** menu has a home in the designer:
+
+| In the Environment window or menu | In the designer |
+|---|---|
+| Location | Site |
+| Aerial Image... | Site (opens its own window) |
+| Terrain: scene geometry, site placement, survey point cloud | Geometry |
+| Terrain: Selected Surface | Surfaces |
+| Surface Generator | Surfaces |
+| Edit Mode (materials per face) | Surfaces |
+| Physical | Water & Weather |
+| Sky, Lights | Sky & Lights |
+| Scene Box Editor... | Objects (opens its own window) |
+
+The Environment window stays available while the designer is new.
+
 ## Key figures
 
 Site extent in x and y and the farthest point from the origin; the drivable
