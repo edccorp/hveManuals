@@ -10,7 +10,7 @@ This dialog contains the following parameters.
 
 ## Link Group
 
-Four small buttons per wheel: **-**, **A**, **B** and **C**. Wheels in the same group share their values: an edit in one column is copied to every other wheel in the group, and moving a wheel into a group that already has a member copies that member's values to it. **By default every wheel is in group A**, so an edit applies to all wheels until wheels are moved to other groups or to **-**. This replaces HVE's *Copy to Other Side* and *Copy to Other Axles*.
+Four small buttons per wheel: **-**, **A**, **B** and **C**. One group per wheel serves the brakes as a whole: the Brake Designer's **Apply to group** writes a design to every wheel of the group, the ABS System and ABS Designer edit the same row, and a wheel that joins a group takes the group's brake design with its assembly. Wheels in the same group share their values: an edit in one column is copied to every other wheel in the group, and moving a wheel into a group that already has a member copies that member's values to it. **By default every wheel is in group A**, so an edit applies to all wheels until wheels are moved to other groups or to **-**. This replaces HVE's *Copy to Other Side* and *Copy to Other Axles*.
 
 ## Brake Type & Design
 

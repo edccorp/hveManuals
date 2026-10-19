@@ -38,7 +38,7 @@ To use the Brake Designer in HVE 2027, perform the following steps:
 4. If the vehicle is fitted with ABS, choose **Vehicle › Editors › Brakes › ABS / Brake Design…**, press **ABS System…** and tick **ABS Installed**, then edit the ABS System and ABS Designer (wheel) properties. Tick **Antilock (ABS)** in **Vehicle › Editors › Brakes › Brake Assembly…** for the wheels that have it.
 5. Choose **Vehicle › Editors › Brakes › Brake Designer…**, select the **Axle** and **Side**, and choose the **Brake Design** (e.g., Disc, Duo-Servo Drum, S-Cam).
 6. Edit the design parameters; the brake factor, actuation factor and torque ratio are recalculated as you type.
-7. Press **Apply to Wheel** (or **Apply to All Wheels**) to write the torque ratio and pushout pressure into the Brake Assembly.
+7. Press **Apply to group** (or **Apply to this wheel** for a wheel outside any link group) to write the torque ratio and pushout pressure into the Brake Assembly.
 8. Design the remaining wheels as desired, and check the result in **Vehicle › Editors › Brakes › Brake Assembly…**.
 9. Execute the desired suite of simulations to test the effectiveness of the design.
 10. Edit the design as required to obtain optimum braking performance.

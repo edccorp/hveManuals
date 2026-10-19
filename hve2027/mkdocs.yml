@@ -275,6 +275,7 @@ nav:
       - Overview: hve-users/05-environment-editor/README.md
       - "Chapter 12 — Creating & Editing Environments": hve-users/05-environment-editor/12-creating-editing-environments.md
       - "Chapter 13 — Environment Model Definition": hve-users/05-environment-editor/13-environment-model-definition.md
+      - "Chapter 14 — Environment Designer": hve-users/05-environment-editor/14-environment-designer.md
     - Event Editor:
       - Overview: hve-users/06-event-editor/README.md
       - "Chapter 15 — Creating & Editing Events": hve-users/06-event-editor/15-creating-editing-events.md

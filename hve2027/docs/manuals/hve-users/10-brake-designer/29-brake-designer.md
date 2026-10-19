@@ -48,7 +48,7 @@ To use the Brake Designer in HVE 2027, perform the following steps:
 2. Choose **Vehicle › Editors › Brakes › Brake Designer…**. Under **Wheel**, choose the **Axle** and **Side** (Right is listed first, as in the Brake Assembly table).
 3. Choose the **Brake Design**: Generic (torque ratio), Disc, Duo-Servo Drum, Duplex Drum, Single-Piston Drum, Dual-Piston Drum, S-Cam (Air Drum), Single-Wedge (Air), Dual-Wedge (Air) or Air Disc. The **Design Parameters** for that type are displayed (see the sections for each type, below), with a collapsible **Lining Friction Properties** section for every type except Generic.
 4. Edit the parameters. The **Results** — Brake Factor, Actuation Factor and Torque Ratio — are recalculated as you type.
-5. Press **Apply to Wheel** to write the torque ratio and pushout pressure (and the matching brake type) into the selected wheel's Brake Assembly, or **Apply to All Wheels** to copy the design to every wheel and apply it to each.
+5. Press **Apply to group** to write the torque ratio and pushout pressure (and the matching brake type) into the Brake Assembly of every wheel in the selected wheel's **Link Group**, copying the design to them (the line above the button names them); a wheel outside any group gets **Apply to this wheel** and is written alone to each.
 
 ![Figure 29-2](../images/hvn-10-brake-designer-scam.png)
 *Figure 29-2 — The HVE 2027 Brake Designer for an S-cam brake.*
@@ -778,7 +778,7 @@ $$BrakeTorque = BF \times TR \times AF \times Factor$$
 !!! note "HVE 2027"
     - The HVE 2027 Brake Designer is one window for all types; **Brake Design** selects the type. There is no schematic preview drawing.
     - **Lining Friction Properties** (friction vs temperature and friction multiplier vs sliding speed) is a collapsible section of the same window rather than a separate dialog. HVE's **Material Properties** (drum/rotor and lining/pad density, specific heat, conduction and convection) and the drum, lining and pad thicknesses are the **Material Properties** section of the same window; they feed the brake temperature model ([Chapter 30](30-brake-temperature.md)).
-    - The **Results** are recalculated continuously; there is no Apply-to-recalculate button. **Apply to Wheel** and **Apply to All Wheels** write the result into the Brake Assembly.
+    - The **Results** are recalculated continuously; there is no Apply-to-recalculate button. **Apply to group** (or **Apply to this wheel**) writes the result into the Brake Assembly. For a Generic design the Brake Factor and Actuation Factor read "not derived": a Generic design states its torque ratio and has no geometry to derive them from.
     - The **Brake Assembly** dialog's **Brake Type** row is each wheel's design type, and its **Design...** button opens the Brake Designer on that wheel (greyed for Generic). The Brake Designer is the designer whose result the simulation uses.
 
 <!-- NAV -->

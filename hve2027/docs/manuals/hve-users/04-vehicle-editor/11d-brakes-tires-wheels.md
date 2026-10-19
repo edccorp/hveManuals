@@ -65,8 +65,8 @@ The Brake properties at each wheel are described below.
       HVE's own Generic brake does. A brake design reaches them when its
       computed torque ratio and pushout pressure are written into the Brake
       Assembly — by choosing the design's Brake Type here, or with the Brake
-      Designer's **Apply to Wheel** (or Apply to All Wheels); editing a
-      design parameter alone changes no result.
+      Designer's **Apply to group** (or **Apply to this wheel** for a wheel
+      outside any group); editing a design parameter alone changes no result.
 
 - **Push-out Pressure** — Brake system pressure required to begin causing
   brake torque (any system pressure below this point is simply taking out
@@ -132,8 +132,9 @@ Brake Designer also includes a detailed tool for simulating ABS.
 
 In HVE 2027 the Brake Designer is **Vehicle › Editors › Brakes › Brake Designer**: choose the
 wheel (**Axle**, **Side**) and the **Brake Design**, enter the Design
-Parameters, read the **Results**, and press **Apply to Wheel** or **Apply to
-All Wheels**. The Brake Designer also opens on a wheel from the Brake
+Parameters, read the **Results**, and press **Apply to group**, which writes the
+design to every wheel of the wheel's brake link group (**Apply to this wheel**
+for a wheel outside any group). The Brake Designer also opens on a wheel from the Brake
 Assembly dialog's Design… row, and a design's lining friction is in its
 **Lining Friction Properties** section. HVE's Brake Material Properties
 dialog is the Brake Designer's **Material Properties** section: the
@@ -184,8 +185,8 @@ the Tire Information dialog in HVE. See also the reference page,
     - The **Load & Speed Tables** panel under the grid — the tables of one
       wheel at a time (chosen with the **Wheel:** buttons, **A1 Right**,
       **A1 Left**, ...), on four tabs: **Friction**, **Cornering**,
-      **Camber** and **Fy Roll-off**. **Copy to Axle** and **Copy to All
-      Wheels** copy the selected wheel's four tables. A drag bar between
+      **Camber** and **Fy Roll-off**. The wheel's **Link Group** carries an
+      edit to every wheel of its group, and a line names them. A drag bar between
       the grid and the panel resizes them. Edits apply immediately and
       **Edit › Undo** takes them back.
 

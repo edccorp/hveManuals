@@ -54,8 +54,9 @@ wheel keeps its own dual setup.
 The row of **–  A  B  C** buttons at the top of every column. Columns in the same
 group (A, B or C) are edited together: changing a value in one changes it in all
 the others of that group, and moving a column into a group copies that group's
-current values into it. **–** makes a wheel independent. All wheels start in
-group A.
+current values into it, its four **Load & Speed Tables** included. **–** makes a
+wheel independent. All wheels start in group A. The tables panel below the grid
+follows the same groups.
 
 !!! note "HVE 2027"
     The link groups replace HVE's **Copy to Other Side** and **Copy to Other

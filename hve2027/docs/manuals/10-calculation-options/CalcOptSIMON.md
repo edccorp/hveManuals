@@ -163,8 +163,7 @@ overrides, are in **Event › DyMESH Options...**.
     in HVE as well; the dialog labels them *Carried, not consumed*.
 
 !!! note "HVE 2027"
-    The DyMESH collision model has been updated in HVE 2027: the collision
-    forces are evaluated at every stage of the integration step, every
+    The DyMESH collision model has been updated in HVE 2027: every
     vehicle's wheel positions, tire and suspension forces are computed
     before the collision pairs, and the forces a DyMESH wheel passes to its
     vehicle are accounted for once. A case that involves DyMESH contact,

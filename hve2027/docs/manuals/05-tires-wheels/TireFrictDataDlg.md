@@ -34,8 +34,11 @@ The **Wheel:** row of buttons (**A1 Right**, **A1 Left**, **A2 Right**, ...)
 chooses the wheel whose tables are shown, on every tab. The selected wheel's
 button is highlighted.
 
-**Copy to Axle** copies the selected wheel's four tables to the other wheel on
-its axle. **Copy to All Wheels** copies them to every wheel of the vehicle.
+The wheel's **Link Group** (the row at the top of the Tire Properties grid)
+decides how far an edit reaches: a change to this wheel's tables is copied to
+every wheel in its group, a line under the wheel buttons names them, and a
+wheel set to **–** edits alone. Moving a wheel into a group gives it that
+group's tables as well as its scalars. There are no copy buttons.
 
 !!! note "HVE 2027"
     **Right** is listed first because the calculation models number the right

@@ -79,6 +79,7 @@ designer stage, so the submenu is for a reader who wants one dialog alone.
 
 | Item | Opens |
 |---|---|
+| **Environment Designer...** | The staged Environment Designer beside the 3-D view: Site, Geometry, Surfaces, Water & Weather, Sky & Lights, Objects, Site Check and Summary (see [Chapter 14](../05-environment-editor/14-environment-designer.md)) | — |
 | **Environment...** | The **Environment** panel (it opens by itself when you enter the Environment editor): **Location**, **Terrain** (the site geometry — DXF, `.h3d`, `.iv`, OBJ or glTF — a survey point cloud, and the surface materials), **Sky**, **Lights** (the site's own point and spot lights, display only), **Physical** (ambient conditions and wind, atmosphere and gravity, standing water) and **Surface Generator** (roads, friction zones, water and other surfaces drawn over the site) |
 | **Aerial Image...** | Aerial Image Options: an image file laid over the site, with its world bounds (upper-left and lower-right corners) |
 | **Scene Box Editor...** | Scene Box Editor: named boxes with a position, size, rotation and colour (or wireframe), drawn in the scene |
