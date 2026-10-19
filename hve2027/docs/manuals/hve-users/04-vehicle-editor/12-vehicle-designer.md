@@ -246,6 +246,9 @@ The rules, by stage:
 | Consider | Brakes | Test Track: the mean deceleration of the stop from 100 km/h is under 70% of the Brakes chart's grip limit, so the brakes and not the tires limit the stop. |
 | Fix | Mass | Test Track: the most lateral acceleration the tires reach is over 85% of the static stability factor (front track over twice the CG height). |
 | Consider | Suspension | Test Track: the measured roll gradient is over 7 deg/g (passenger cars run 3 to 7). |
+| Fix | Occupant Protection | An occupant seated in this vehicle is belted in an event (Lap, 3-Point or Airbag + Belt) and no belt restraint system is in use for them on this vehicle. |
+| Fix | Occupant Protection | An occupant has an Airbag + Belt restraint in an event and no airbag is installed at their seat, which EDHIS refuses. |
+| Consider | Occupant Protection | An installed airbag names a primary reaction panel the vehicle has no contact surface for. |
 
 The understeer gradient and brake fade need a run and arrive with the Test
 Track stage; a rule on a value's provenance (an inertia that is an estimate
@@ -401,7 +404,11 @@ the case vehicle's name) and the one action a finished design has: **Save to My
 Vehicles...**, which keeps the vehicle as designed in a database of your own
 for future cases, since a design otherwise lives in the case and never changes
 the database record. **Set as baseline** makes the current values the "was"
-column.
+column and keeps them for this vehicle of this case across stage changes and
+sessions (in your user settings, not in the case); **Forget baseline** drops the
+kept baseline and the "was" column goes back to the values when a stage was
+opened. **Copy spec sheet** puts the spec sheet on the clipboard as
+tab-separated text in the display units, for a report or a spreadsheet.
 
 The **Spec sheet** is the stat strip in full: every quantity with its value,
 its baseline and the change, in the current display units, the measured rows
