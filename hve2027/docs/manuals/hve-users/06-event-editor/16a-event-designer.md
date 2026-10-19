@@ -22,16 +22,23 @@ hosted and the 3-D view beside it.*
 
 1. **Event**: the **Event Information** panel: the events, the active event's
    name and start time, the calculation method and its options, the vehicles and
-   humans in the event, and their initial conditions.
+   humans in the event, and their initial conditions. Beside it,
+   **Start from documents** (Case Intake) and **Start from a sentence** (Quick
+   Case) build the event from the case documents or a typed sentence.
 2. **Positions**: **Position / Velocity** for the vehicle chosen in its own
    **Vehicle** picker, which is the same selection as the 3-D view's.
 3. **Driver Controls**: **Driver Controls** (throttle, brake, steer and gear
-   against time) for the chosen vehicle.
+   against time) for the chosen vehicle, and **From the EDR** (EDR Import): the
+   vehicle's event data recorder record, and for SIMON a driver solved so the run
+   follows the recorded speed. The solve keeps running while another stage or tab
+   is shown.
 4. **Collision**: a tab for each dialog the calculation method reads, as the
    Event menu greys the rest: **Collision Pulse**, **DyMESH Options**, **Vehicle
    Mesh**, **Contacts** (EDSMAC4's vehicle contacts, or EDHIS and GATB's occupant
    contacts) and **Crush Profile**. For EDCRASH, **Damage Profiles (Event stage)**
-   opens Event Information's Vehicle Impact Setup on the Event stage.
+   opens Event Information's Vehicle Impact Setup on the Event stage, and
+   **Crush from Scan** (Crush Profile from Scan) measures the crush depths off a
+   scan.
 5. **Equipment**: the same for what each vehicle carries and does: **Payload**,
    **Path Follower**, **Lights**, **Wheels**, **Accelerometers**, **Airbags**,
    **Belt Restraint**, and for EDSMAC and EDSMAC4 **Handling Parameters** and
@@ -43,7 +50,11 @@ hosted and the 3-D view beside it.*
    the stage says so. Fix warnings do not stop a run; the stage counts them.
 7. **Summary**: the event's spec sheet with its was column, **Set as baseline**
    (kept for this case across sessions) and **Copy spec sheet**, the warnings,
-   and the event's **Notes**.
+   **Provenance** (where each value an automatic tool set came from) and the
+   event's **Notes**.
+
+The automatic tools on these stages are the same windows the **Automatic Tools**
+menu opens, and like the menu they are not offered on a sealed case.
 
 Every item of the Event menu has a place on a stage. The one exception is
 **Impact Plane / Barrier...**, which this port does not implement (model a
