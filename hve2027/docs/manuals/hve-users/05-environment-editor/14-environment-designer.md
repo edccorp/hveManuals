@@ -26,9 +26,20 @@ so a field has one editor and nothing is reachable in one and not the other.
 2. **Geometry**: the scene geometry file, its import frame and the survey point
    cloud — the Terrain section. The drivable triangles here are what every
    vehicle runs on.
-3. **Surfaces**: the Surface Generator, and **Open the Outliner** for the layers,
-   surfaces and objects with their Drive switch; Edit Mode (Tab) in the 3-D
-   view splits a surface by its faces.
+3. **Surfaces**: the Outliner's tree hosted on the stage (layers, surfaces and
+   objects with their eye and Drive switches; **Open the Outliner** puts the
+   same tree in its own window), the **Selected Surface** section for the
+   surface picked in the tree or the 3-D view, **Edit Mode (Tab)** to pick
+   faces in the viewport and give them a material or split a surface by them,
+   and the Surface Generator. The Key figures strip's **Drivable patches** row
+   counts the drivable surface's connected pieces: more than one means a wheel
+   can run off an edge onto the default plane.
+
+   ![Figure 14-2](../images/hvn-05-environment-designer-surfaces.png)
+
+   *Figure 14-2: The Surfaces stage: the Outliner tree, Edit Mode, the
+   Selected Surface section and the Surface Generator on one page.*
+
 4. **Water & Weather**: gravity, rolling resistance, the ambient air and wind,
    and standing water — the Physical section.
 5. **Sky & Lights**: the sun, the sky and the site's lights. Display only, and
@@ -59,6 +70,8 @@ keeps the current values as the "was" column for this case.
 | Fix | Geometry | The site names a geometry file but no triangle is drivable, so vehicles run on the default plane. |
 | Note | Site | The site reaches more than 2 km from the origin, where single precision coarsens. |
 | Note | Water & Weather | The stated gravity differs from 9.80665 m/s² by more than 1%. |
+| Consider | Surfaces | The drivable surface is more than one patch and the smallest is under 2% of the area, so its edge drops a wheel onto the default plane. |
+| Note | Surfaces | A palette entry owns no drawn or drivable triangle, so editing its friction changes nothing. |
 
 A rule that lacks its input stays silent, and the count beside the panel's
 title lists what is checked on hover.
