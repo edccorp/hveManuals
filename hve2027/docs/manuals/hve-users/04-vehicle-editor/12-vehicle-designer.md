@@ -7,14 +7,20 @@
     **case's vehicle**: the database record the vehicle came from is never
     changed, and keeping a design means **Save to My Vehicles** (Chapter 10).
 
-**Vehicle › Vehicle Designer...** opens the **Vehicle Designer** window. It has one
-frame and thirteen stages. The frame is the same on every stage: a **stat strip**
-on the left, the stage's own controls and views in the center, a **Warnings &
+**Vehicle › Vehicle Designer...** opens the **Vehicle Designer** window, and so does
+switching to the Vehicle editor (the **Vehicle (F3)** button or F3). It fills the
+Vehicle editor's work area, in front of the Vehicles panel and the 3-D view; close
+it to work in the Vehicle editor's own panels. (Key Results and the Output Graph are
+in the Event and Playback editors.) **Fill the window**, on its first line, turns
+that off and leaves it a window of its own size. A session that starts in the
+Vehicle editor opens it the first time you switch back to it. It has one
+frame and thirteen stages. The frame is the same on every stage: the **Key figures**
+column on the left, the stage's own controls and views in the center, a **Warnings &
 Suggestions** panel on the right, and a stage bar along the bottom with every
 stage reachable. The first line names the case vehicle and where it came from,
 and which stage is open.
 
-![Figure 12-1: the Vehicle Designer frame on stage 1, Body, with the stat strip, the body designer and the warnings panel](../images/hvn-04-vehicle-designer-frame.png)
+![Figure 12-1: the Vehicle Designer frame on stage 1, Vehicle, with Key figures, the case's vehicles, the database list, the picked vehicle drawn and the warnings panel](../images/hvn-04-vehicle-designer-frame.png)
 
 !!! warning "A shape is not a vehicle model"
     A body shape cannot determine a vehicle's mass, center of gravity, inertia,
@@ -25,9 +31,11 @@ and which stage is open.
 ## The stages
 
 The stage bar lists the thirteen stages in the order a design is usually worked,
-numbered so the order is visible; any stage can be clicked at any time:
+numbered so the order is visible. The designer opens on the first, **Vehicle**;
+every other stage edits a vehicle, so it opens once the case has one (until then
+its button is unavailable and says so):
 
-1. **Body** — the parametric body and its dimensions (the rest of this chapter).
+1. **Vehicle** — which vehicle the designer works on: the case's vehicles, and the Add Vehicle list to add or replace one from (Stage 1 below).
 2. **Packaging** — axle layout, center of gravity and the weight split.
 3. **Mass** — total and sprung mass, roll, pitch and yaw inertia.
 4. **Suspension** — spring and damping rates, anti-roll, roll center and roll couple.
@@ -38,7 +46,7 @@ numbered so the order is visible; any stage can be clicked at any time:
 9. **Steering** — steer ratio, column and geometry per axle.
 10. **Exterior** — the mesh, the lamps, aerodynamic drag, accelerometers, crush stiffness and body torsion.
 11. **Occupant Protection** — the contact surfaces, airbags and belts an occupant meets, per seat.
-12. **Test Track** — three canned SIMON runs on the current physics, read back as numbers (stage 12 below).
+12. **Test Track** — three canned runs on the current physics, each on SIMON and on EDSMAC4, read back as numbers (stage 12 below).
 13. **Summary** (stage 13 below) — the spec sheet, the whole warnings list and the provenance tally.
 
 In this release stages 1, 4, 5, 6 and 9 are built. Each other stage names the dialogs that hold
@@ -48,6 +56,46 @@ menu opens), so nothing an analyst could set before is out of reach. The Test
 Track and Summary stages say what they will do and do nothing yet.
 
 ![Figure 12-2: a stage that is not built yet names the dialogs that hold its inputs and opens them](../images/hvn-04-vehicle-designer-stage.png)
+
+### Stage 1: Vehicle
+
+The Vehicle stage is where a vehicle comes into the case and where the designer
+is pointed at one.
+
+**Vehicles in this case** lists the case's vehicles, one row each with its
+**Type**, where it came **From** (its database, or *(entered)*) and how many
+**Events** use it. Click a row to work on that vehicle: the designer, the
+Vehicle editor and the 3-D view all follow it. **Duplicate** copies the selected
+vehicle with every setting, as a new vehicle after it in no event (the Vehicles
+panel's **Dup**); it is unavailable while results are on screen, because the copy
+renumbers the vehicles after it.
+
+**Add or replace from a database** is the **Add Vehicle** window's own list (see
+Vehicle › Add...): **Built in (no database needed)**, HVE's generic vehicles by
+type and class, for a vehicle that is in no database, then the search
+(**Filter**, **Clear**, **Generics**, **Database**) and the sortable table of
+every vehicle in the loaded databases. Clicking a vehicle — in the table or in
+the built-in list — **picks** it, and the four views below draw the picked vehicle
+before anything is added: its body from its own mesh file (or its extents box,
+with the reason, when it has no mesh or the mesh cannot be opened), its tires,
+lights and CG. With nothing picked they draw the case vehicle selected above.
+
+The stage fits the window without scrolling: the vehicles, the list and the
+buttons on the left, and on the right the four views, sized to the height
+there is. The views are **Side (from the right)**, **Top**, **Front** and **3-D**, two by
+two. The 3-D view turns with a left-button drag and returns to its starting
+angle on a double-click; the angle is kept as you change vehicles.
+
+- **Add to case** adds the picked vehicle to the case and selects it, so the
+  other twelve stages open on it with its data. It joins no event until an
+  event's vehicle slot names it. Unavailable while the active event's results
+  are on screen.
+- **Replace V*n* with it...** replaces all of the selected vehicle's data with the
+  picked vehicle's, after a confirmation. The vehicle keeps its place in the
+  case and in every event that uses it. Unavailable while the results on screen
+  were solved with that vehicle.
+
+Figure 12-1 shows the stage with a vehicle picked in the database list.
 
 ### Stage 2: Packaging
 
@@ -106,7 +154,7 @@ roll-split rules judge.
 The Suspension stage hosts the suspension editor itself: the same **Springs &
 Dampers** table and the four advanced tabs that **Vehicle › Editors › Suspension Data...**
 opens, drawn in the stage's center under the frame's vehicle line, so an edit
-here is the edit, with the stat strip and the warnings panel updating beside it.
+here is the edit, with Key figures and the warnings panel updating beside it.
 The window and the stage draw one editor, so they can never disagree.
 **Open in its own window** opens the same editor as a separate window, to work
 it beside another stage. A solved run's inputs are read-only here as everywhere, until
@@ -152,13 +200,20 @@ force the brakes can deliver (solid) and the force the tires can transmit at
 that moment's load (translucent, in the axle's color). Where a brake curve
 crosses above its grip curve that axle locks; a vertical marker names the
 first. On a two-axle vehicle the axles are Front and Rear; on a tractor or a
-straight truck they are numbered, and the rear axles share the rear load and
-the load transfer equally (a tandem's equalizer at rest) with the transfer's
-arm running from the front axle to the rear group's center. HVE's inter-tandem
-transfer coefficient, which moves load between a tandem's two axles under
-braking, is not applied, and the stage says so.
+straight truck they are numbered, and the rear axles share the rear load
+equally at rest (a tandem's equalizer) with the transfer's arm running from the
+front axle to the rear group's center. On three axles HVE's **Inter-tandem Load
+Transfer** coefficient (the Suspension editor's row on axle 2) is applied as
+EDSVS and EDVTS apply it: the tandem's braking force times the coefficient
+moves load from the trailing axle to the leading one, and the same force times
+the tandem spacing enters the front-to-rear transfer, so with equal brakes the
+trailing axle is the one that locks early. The stage's note names the
+coefficient and the spacing it used. SIMON, which the Test Track runs, does not
+read the coefficient, and EDVDS applies its own four-spring form; a coefficient
+of 0 (HVE's none) or more than three axles keeps the equal sharing, and the
+note says so.
 
-![Figure 12-17: the Brakes stage on a three-axle tractor, one brake and one grip curve per axle](../images/hvn-04-vehicle-designer-brakes-tractor.png)
+![Figure 12-17: the Brakes stage on a three-axle tractor with an inter-tandem load transfer coefficient of 0.15 on axle 2: one brake and one grip curve per axle, the trailing axle unloading under braking and locking first](../images/hvn-04-vehicle-designer-brakes-tractor.png)
 
 **Inputs feeding the chart** lists, per axle, the static load, the peak
 friction (from the friction table where the tire has one), the tire radius,
@@ -171,14 +226,19 @@ describe (a towed unit, which has no front axle and states no front/rear
 split; a single axle; no mass; no wheelbase or CG height; no brake torque ratio
 on any wheel) is told why instead of being drawn.
 
-The stage adds three rows to the stat strip: **Brake balance F (design)**,
+The stage adds three rows to Key figures: **Brake balance F (design)**,
 **First lock** with the axle named and the deceleration in g, and the
-**Grip-limited decel**. Its warnings are the first rules in the panel: a rear
-axle locking before the front is a **Fix** naming the axle; brakes that reach less than 85% of
-the grip limit at full pedal without locking are a **Consider**; a
+**Grip-limited decel**. Where the axle that reaches its grip first has ABS, the
+chart, the headline and that row say **ABS engages** instead of locks: the sweep
+is the brakes against the grip and ignores ABS, so that point is where ABS
+starts cycling the pressure in a run, and the wheel keeps rolling. Its warnings
+are the first rules in the panel: a rear axle locking before the front is a
+**Fix** naming the axle, and a **Consider** when ABS on that axle keeps it from
+locking (the stop is stable only while ABS works); brakes that reach less than
+85% of the grip limit at full pedal without locking are a **Consider**; a
 proportioning ratio of 0 (HVE reads it as a pressure limiter), ABS on a wheel
-(the chart shows lockup as if it were off) and a wheel with no torque ratio are
-**Notes**.
+(the curves past the point where it engages are the brakes as if it were off)
+and a wheel with no torque ratio are **Notes**.
 
 **Edit the brakes** sits under the chart: the brake editors themselves, one tab
 each, so a change to a torque ratio or a proportioning knee redraws the chart
@@ -196,9 +256,9 @@ two ABS tabs open the ABS / Brake Design window.
 
 ![Figure 12-7: the Brakes stage with the brake editors under the chart](../images/hvn-04-vehicle-designer-brakes-editors.png)
 
-### The stat strip
+### Key figures
 
-The strip shows the case vehicle's key numbers in the current display units:
+The **Key figures (was)** column shows the case vehicle's key numbers in the current display units:
 total and sprung mass, front axle load, CG height, wheelbase, front track,
 overall length and height, yaw inertia (the sprung value, as HVE stores it),
 the static stability factor (track over twice the CG height), the front drag
@@ -241,11 +301,11 @@ The rules, by stage:
 | Consider | Transmission | An upshift at the redline lands under the automatic shift window's minimum rpm. |
 | Note | Engine | The full-throttle torque curve ends below the redline; the engine holds the last row's torque beyond it. |
 | Note | Exterior | The front drag coefficient or frontal area is 0, so the vehicle has no aerodynamic drag. |
-| Fix | Suspension | Test Track: the measured understeer gradient is negative, so the rear tires reach their limit before the front (oversteer). |
-| Consider | Tires | Test Track: the measured understeer gradient is over 5 deg/g (passenger cars run 1 to 4). |
-| Consider | Brakes | Test Track: the mean deceleration of the stop from 100 km/h is under 70% of the Brakes chart's grip limit, so the brakes and not the tires limit the stop. |
-| Fix | Mass | Test Track: the most lateral acceleration the tires reach is over 85% of the static stability factor (front track over twice the CG height). |
-| Consider | Suspension | Test Track: the measured roll gradient is over 7 deg/g (passenger cars run 3 to 7). |
+| Fix | Suspension | Test Track (SIMON or EDSMAC4): the measured understeer gradient is negative, so the rear tires reach their limit before the front (oversteer). |
+| Consider | Tires | Test Track (SIMON or EDSMAC4): the measured understeer gradient is over 5 deg/g (passenger cars run 1 to 4). |
+| Consider | Brakes | Test Track (SIMON): the mean deceleration of the stop from 100 km/h is under 70% of the Brakes chart's grip limit, so the brakes and not the tires limit the stop. |
+| Fix | Mass | Test Track (SIMON or EDSMAC4): the most lateral acceleration the tires reach is over 85% of the static stability factor (front track over twice the CG height). |
+| Consider | Suspension | Test Track (SIMON): the measured roll gradient is over 7 deg/g (passenger cars run 3 to 7). |
 | Fix | Occupant Protection | An occupant seated in this vehicle is belted in an event (Lap, 3-Point or Airbag + Belt) and no belt restraint system is in use for them on this vehicle. |
 | Fix | Occupant Protection | An occupant has an Airbag + Belt restraint in an event and no airbag is installed at their seat, which EDHIS refuses. |
 | Consider | Occupant Protection | An installed airbag names a primary reaction panel the vehicle has no contact surface for. |
@@ -310,8 +370,9 @@ stage.
 
 ### Stage 10: Exterior
 
-The Exterior stage opens with the **Vehicle view**: three drawings of the
-vehicle's body, from the right side, from above and from the front, with its
+The Exterior stage opens with the **Vehicle view**: four drawings of the
+vehicle's body, from the right side, from above, from the front and in 3-D (drag to
+turn it, double-click to reset), with its
 **Tires** drawn at the wheel positions the solver uses (a circle from the side,
 the tread from above and from the front, each at its own radius and width,
 duals as two) and its **Lights**, **Accelerometers** and **CG** marked and named
@@ -327,7 +388,7 @@ not drawn. Hover a marker for its position (SAE about the CG); click a light to
 select it in the Lights editor below and in the 3-D view, or an accelerometer to
 select it in the Accelerometers editor.
 
-![Figure 12-13: the Exterior stage's vehicle view with the lights and accelerometers marked](../images/hvn-04-vehicle-designer-exterior-view.png)
+![Figure 12-13: the Exterior stage's vehicle view -- side, top, front and 3-D -- with the lights and CG marked](../images/hvn-04-vehicle-designer-exterior-view.png)
 
 Under the view are the four editors of what the vehicle looks like and
 carries, one tab each: **Mesh** (the Vehicle Mesh editor with its File &
@@ -359,17 +420,30 @@ window** opens that editor's window.
 ### Stage 12: Test Track
 
 The Test Track runs the vehicle, alone, on a flat surface, in three canned
-SIMON events, and reads the numbers back. **Run test track** solves them one
+events, and reads the numbers back. Each event is solved twice, on **SIMON**
+(3-D) and on **EDSMAC4** (planar), the two most used calculation methods: the
+same vehicle answers differently on them, because the two engines model it
+differently, and a number from one read as the other's would mislead. Each
+test shows the two engines' results side by side, and one plot carries both
+traces (SIMON blue, EDSMAC4 orange). **Run test track** solves the six runs one
 after another on the current physics, as a copy: the case's own events and
 results do not change, nothing in the 3-D view moves, and the run is the
 solver beside the app, so a number here is what an event built the same way
-would give. **Cancel** stops the runs.
+on that calculation method would give. **Cancel** stops the runs.
 
-- **Straight-line stop**: from 100 km/h, full pedal at 0.5 s on the vehicle's
-  own brake system (the pedal path). The stopping distance, the time and the
-  mean deceleration, with the speed trace, and the brake dive (the mean pitch
-  while braking, less the attitude at rest). A vehicle that has not stopped by
-  15 s is reported as such.
+What each engine does not model is said beside its number:
+
+- EDSMAC4 has no pedal path and no brake system. Its stop applies all the tire
+  friction available at every wheel at the same instant, so it measures the
+  tires, not the brakes.
+- EDSMAC4 is planar: it has no roll and no pitch, so it gives no brake dive and
+  no roll gradient.
+
+- **Straight-line stop**: from 100 km/h, brakes full on at 0.5 s; on SIMON
+  through the vehicle's own brake system (the pedal path). The stopping
+  distance, the time and the mean deceleration, with the speed trace, and on
+  SIMON the brake dive (the mean pitch while braking, less the attitude at
+  rest). A vehicle that has not stopped by 15 s is reported as such.
 - **Step steer**: at 80 km/h, coasting, 45° at the steering wheel from 1 s. The
   steady yaw rate over 4 to 6 s, the yaw-rate gain, the lateral acceleration and
   the understeer gradient (the road-wheel angle over the Ackermann angle, per g
@@ -383,16 +457,20 @@ would give. **Cancel** stops the runs.
   over 12 s. The most lateral acceleration the tires reach and the wheel angle
   where they reach it, with lateral acceleration against steering angle.
 
-The stat strip's **100-0 km/h stop**, **Understeer (deg/g)**, **Max lateral
-g** and **Roll gradient (deg/g)** rows are filled from these runs and stay "--"
+Key figures' **100-0 km/h stop**, **Understeer (deg/g)** and **Max lateral
+g** rows come once per engine (**…, SIMON** and **…, EDSMAC4**), and **Roll
+gradient (deg/g), SIMON** once. They are filled from these runs and stay "--"
 until the track has been run for the vehicle; they clear when a different
 vehicle is picked. A run the solver refuses shows the solver's own reason.
 
 The measurements also feed five rules in **Warnings & Suggestions** (the
 `Test Track` rows of the table below): oversteer measured, heavy understeer, a
 stop well under the Brakes chart's grip limit, lateral grip within 15% of the
-static stability factor, and a soft roll gradient. They are silent until the
-track has run for the vehicle: an unrun track is not a finding.
+static stability factor, and a soft roll gradient. The first two and the
+lateral-grip rule read both engines and name each one whose number trips them;
+the stop and the roll gradient read SIMON alone, since EDSMAC4 has no brake
+system and no roll. They are silent until the track has run for the vehicle: an
+unrun track is not a finding.
 
 ![Figure 12-14: the Test Track stage before its runs](../images/hvn-04-vehicle-designer-track.png)
 
@@ -410,7 +488,7 @@ kept baseline and the "was" column goes back to the values when a stage was
 opened. **Copy spec sheet** puts the spec sheet on the clipboard as
 tab-separated text in the display units, for a report or a spreadsheet.
 
-The **Spec sheet** is the stat strip in full: every quantity with its value,
+The **Spec sheet** is Key figures in full: every quantity with its value,
 its baseline and the change, in the current display units, the measured rows
 from the Test Track stage among them. **Provenance** counts the case's records
 for this vehicle by kind, Stated, Looked up, Estimated or Generic default, so a
@@ -422,15 +500,18 @@ each with its stage to go to.
 
 ## Frame and units
 
-All values are in meters and degrees. The design frame is the SAE convention
+Lengths, masses and inertias are shown in the display units chosen in
+Preferences; the design file stores meters and degrees. The design frame is the SAE convention
 the rest of HVE 2027 uses: x forward, y to the right, z down. Its origin is on
 the ground, on the center line, at the rear of the body. A wheel node sits at
 the wheel's rotational center: its height above the ground is the tire radius.
 Wheel names are **wheel_FL**, **wheel_FR**, **wheel_RL** and **wheel_RR**.
 
-## Stage 1: Body
+## The body designer
 
-The Body stage is a body-shape design tool: it edits its own design, saved to
+**Body designer (generate or resize a sedan body)**, at the foot of the Exterior
+stage (closed until opened), is a body-shape design tool. Until 2026-10-19 it was
+stage 1. It it edits its own design, saved to
 its own design file, and changes nothing a solve reads until you write it to
 the case vehicle with **Apply to this vehicle** (under the design). That writes
 the design's dimensions into the vehicle's Packaging fields (wheelbase,
@@ -444,9 +525,9 @@ while a run holds the vehicle, and a design that does not validate is refused
 with the reason. Until applied, the case vehicle's dimensions are on stage 2,
 Packaging; the stage says so above its controls.
 
-![Figure 12-18: the Body stage with Apply to this vehicle under the four views](../images/hvn-04-vehicle-designer-body-apply.png)
+![Figure 12-18: the body designer with Apply to this vehicle under its four views](../images/hvn-04-vehicle-designer-body-apply.png)
 
-The body stage builds a recognizable sedan body from a short list of
+The body designer builds a recognizable sedan body from a short list of
 dimensions, with the wheels at their axle positions, and shows it in four views
 (**Side**, **Top**, **Front** and **Rear**). Use it to settle a vehicle's overall
 proportions, then save the design as a file or apply it to the case vehicle.

@@ -31,14 +31,15 @@ HVE's View menu items map as follows:
 | **Scene Display** | The panel holding every switch that changes what the scene draws — see [SCENE DISPLAY](#scene-display) |
 | **Shader Editor** | The node-material editor for vehicles, road surfaces and the world (display only) |
 | **Dope Sheet** | Every keyframed material and camera value on one time axis |
-| **Key Results** | The Key Results panel (Event editor) |
+| **Key Results** | The Key Results panel (Event and Playback editors) |
 | **Results HUD** | The Results HUD window: boxes of solved numbers drawn over the viewport and into recorded videos, saved with the case (every editor) — see [Results HUD](../../new-features/11-results-hud.md) |
-| **Output Graph** | The Output Graph panel (Event editor) |
+| **Output Graph** | The Output Graph panel (Event and Playback editors) |
 | **Simulation** | The Simulation panel: simulation controls, Run / Reset and the last result (Event editor) |
 | **Outliner** | The site's layers and surfaces — see [OUTLINER](#outliner) |
 
-Key Results, Output Graph and Simulation are drawn only in the
-Event editor. Panels dock: drag a panel's tab to move it to another dock position
+Key Results and Output Graph are drawn only in the Event and Playback
+editors, and Simulation only in the Event editor; elsewhere their items are
+greyed. Panels dock: drag a panel's tab to move it to another dock position
 or to float it.
 
 !!! tip "New in HVE 2027"

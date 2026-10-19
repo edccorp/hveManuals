@@ -32,7 +32,7 @@ designer stage, so the submenu is for a reader who wants one dialog alone.
 
 | Item | Opens | Dialog reference |
 |---|---|---|
-| **Vehicle Designer...** | The staged Vehicle Designer for the selected vehicle: body, packaging, mass, suspension, tires, brakes, engine, transmission, steering, exterior, occupant protection, test track and summary (see [Chapter 12](../04-vehicle-editor/12-vehicle-designer.md)) | — |
+| **Vehicle Designer...** | The staged Vehicle Designer for the selected vehicle, which also opens on switching to the Vehicle editor: vehicle, packaging, mass, suspension, tires, brakes, engine, transmission, steering, exterior, occupant protection, test track and summary (see [Chapter 12](../04-vehicle-editor/12-vehicle-designer.md)) | — |
 | **Save Vehicle As...** | Save Vehicle As: identification, geometry file, and **Save to Database** — HVE's Options › Create DB and the vehicle Save As | [Vehicle Save As](../../02-vehicles/VehSaveAs.md) |
 | **Save to My Vehicles...** | Save to My Vehicles: keeps the vehicle, as edited in the case, in one of your own vehicle databases (`MyVehicles.hvedb` or one you name), where **Add...** lists it; new in HVE 2027 | [My Vehicles](../04-vehicle-editor/10-creating-editing-vehicles.md#save-to-my-vehicles) |
 | **Edit Mode (materials per part)** (Tab) | Switches the viewport to selecting parts of the vehicle body, to assign materials per part (as Blender's Edit Mode); new in HVE 2027 | — |
@@ -79,7 +79,7 @@ designer stage, so the submenu is for a reader who wants one dialog alone.
 
 | Item | Opens |
 |---|---|
-| **Environment...** | The **Environment** panel (it opens by itself when you enter the Environment editor): **Location**, **Terrain** (the site geometry — DXF, `.h3d`, `.iv`, OBJ or glTF — a survey point cloud, and the surface materials), **Sky**, **Lights** (the site's own point and spot lights, display only), **Physical** (ambient conditions and wind, atmosphere and gravity, standing water) and **Friction Zones** |
+| **Environment...** | The **Environment** panel (it opens by itself when you enter the Environment editor): **Location**, **Terrain** (the site geometry — DXF, `.h3d`, `.iv`, OBJ or glTF — a survey point cloud, and the surface materials), **Sky**, **Lights** (the site's own point and spot lights, display only), **Physical** (ambient conditions and wind, atmosphere and gravity, standing water) and **Surface Generator** (roads, friction zones, water and other surfaces drawn over the site) |
 | **Aerial Image...** | Aerial Image Options: an image file laid over the site, with its world bounds (upper-left and lower-right corners) |
 | **Scene Box Editor...** | Scene Box Editor: named boxes with a position, size, rotation and colour (or wireframe), drawn in the scene |
 | **Edit Mode (materials per face)** (Tab) | Switches the viewport to selecting single faces of the site, to give them materials of their own or move them (as Blender's Edit Mode); new in HVE 2027. See [Edit Mode: faces of the site](../05-environment-editor/12-creating-editing-environments.md#edit-mode-faces-of-the-site) |

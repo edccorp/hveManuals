@@ -186,7 +186,10 @@ Position/Velocity dialog. One block per vehicle slot, headed *V*n* -- name*:
 - **Measured rest position** (EDSMAC4 only) — **Rest position known**, **Rest X**,
   **Rest Y**, **Rest heading (deg)**.
 - **Advanced initial state** — **Vertical vel w**, **Roll angle (deg)**,
-  **Pitch angle (deg)**, **Roll rate (deg/s)**, **Pitch rate (deg/s)**.
+  **Pitch angle (deg)**, **Roll rate (deg/s)**, **Pitch rate (deg/s)**. Roll and
+  pitch take HVE's own range, ±1800°, so a vehicle can start on its roof (roll
+  180°). A pitch within about 1° of ±90° is flagged: SIMON's and EDVSM's
+  Euler-angle equations are singular there and the run may stop.
 
 For an EDVTS trailer the X and Y positions are shown greyed (EDVTS derives them
 from the hitch) and **Articulation (deg)** relative to the tow vehicle replaces

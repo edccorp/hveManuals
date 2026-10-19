@@ -130,6 +130,7 @@ HVE assigns each object to a named overlay and turns overlays on and off in the 
 - **Drive** column (surfaces only) — whether the solver drives on the surface. Clearing both Draw and Drive removes a surface from the scene.
 - Click, Ctrl-click and Shift-click rows to select, add to and extend the selection; the active row is the one the 3-D view highlights. A click on a layer's row (not its arrow) selects every surface in the layer. Several selected surfaces move, turn and scale together with **G**, **R** and **S** in the 3-D view ([Chapter 21](21-manipulators.md#hve-manipulators)).
 - A loaded point cloud has a row of its own: its file name, its point count and an eye that shows or hides it. It has no Drive switch: a point cloud is a picture, never a surface. Its settings and placement are in the Environment panel.
+- Each surface drawn with the **Surface Generator** (Environment panel) is a row of the layer it is on, or of **Generated surfaces** when it is on none, marked with a diamond in its color and its type. Its eye draws it (display only) and its Drive wheel applies it to the run. Drag it onto a layer, or right-click it for **Move to Layer** (or **No Layer**), **Hide**/**Show** and **Applied**/**Not Applied**. Renaming a layer carries its generated surfaces along; deleting it leaves them on no layer.
 - Drag surfaces onto a layer to move them to it. **New Layer** creates a layer; a layer you created can be renamed or deleted from its right-click menu.
 - Right-click a layer for **Show Only This Layer**, **Show All Layers**, **Select Surfaces**, **Make All Drivable** and **Make None Drivable**.
 - With the pointer over the tree, **H** hides the selection and **Alt+H** shows everything.
@@ -140,7 +141,7 @@ HVE assigns each object to a named overlay and turns overlays on and off in the 
 *Figure 19-2 — The Outliner: layers (HVE's overlays) with their surfaces, Draw (eye) and Drive switches.*
 
 !!! note "HVE 2027"
-    A layer has no Drive switch, because an HVE overlay is a visibility switch only: the drivable polygons of a `.hve` site belong to its physics element, which is on no overlay. Groups in the Outliner may include *Solver surface* (drivable polygons on no layer), *Not on a layer* (drawn triangles the site puts on no layer) and *Unused*.
+    A layer has no Drive switch, because an HVE overlay is a visibility switch only: the drivable polygons of a `.hve` site belong to its physics element, which is on no overlay. Groups in the Outliner may include *Solver surface* (drivable polygons on no layer), *Not on a layer* (drawn triangles the site puts on no layer), *Generated surfaces* (Surface Generator surfaces on no layer) and *Unused*.
 
 ### Friction Factor
 

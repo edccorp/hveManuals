@@ -10,7 +10,7 @@ HVE 2027 opens and saves files with its own file browser window (for example **F
 - a **path** field at the top (type a folder and press Enter);
 - a list of places: **Home**, **Working folder**, the root folder and, where present, mounted drives; a **favorites** list (**+ Add current** adds the current folder; right-click a favorite for **Remove from favorites**); and the **Recent folders**;
 - the folder's sub-folders, with **.. (up)**, and its files, filtered to the types the command accepts;
-- a **Search...** box that filters the file list;
+- a **Search...** box, on its own row above the file list, that filters the list by name; click a column header to sort it;
 - the selected file name, which can be typed for a save.
 
 The case's name is shown at the right-hand end of the main menu bar (with an asterisk when it has unsaved changes; hover for the full path).

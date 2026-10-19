@@ -41,16 +41,19 @@ recorded as **Unknown**, and the window says which.
 Case Intake, the spec-sheet reader in Vehicle Package and EDR Import read
 documents through **your own AI tool**, not through HVE 2027:
 
-1. Press the window's prompt button: **Copy prompt for your AI tool** in Case
-   Intake and EDR Import, **Copy spec-sheet prompt** in Vehicle Package. The
-   prompt goes to the clipboard. It tells the tool exactly what to return (one JSON object), to
+1. Each of these windows has the same row of buttons for getting its data in:
+   **Enter it by hand**, **Open a file...** where the window reads files, and
+   **Paste AI answer**. Press **Paste AI answer**: it opens a box, with
+   **Copy prompt for your AI tool** above it and **Read** below. Pressing it
+   again folds the box away and keeps what you pasted. **Copy prompt for your
+   AI tool** puts the prompt on the clipboard. It tells the tool exactly what to return (one JSON object), to
    give every value with its place in the document, and to leave out anything
    the document does not state.
 2. Give the prompt and the documents (a police report, a spec sheet, a CDR
    report) to the AI tool you use.
-3. Paste its whole answer into the window's text box. Text around the answer,
-   such as a sentence before it or code-fence marks, does no harm: the window
-   reads from the first `{` to the last `}`.
+3. Paste its whole answer into the box and press **Read**. Text around the
+   answer, such as a sentence before it or code-fence marks, does no harm: the
+   window reads from the first `{` to the last `}`.
 
 HVE 2027 calls no AI service and sends nothing anywhere; the documents go only
 where your own tool sends them. Vehicle Package has two network actions, each
@@ -73,12 +76,13 @@ units set in Preferences.
 
 The **Vehicle** list at the top of the window chooses what the window works on:
 
-- **New vehicle (look it up and add it)** — the window is worked from top to
-  bottom, in the five numbered sections below, and adds a new vehicle to the
-  case.
+- **New vehicle (look it up and add it)** — the window has four tabs, worked
+  in order (**1. Identify**, **2. Vehicle data**, **3. Occupants & cargo**,
+  **4. Add to the case**), and adds a new vehicle to the case. What the last
+  Preview or Add set is listed under the tabs, whichever one is showing.
 - **A vehicle already in the case** — choosing it also selects it everywhere
   else. The window shows that vehicle's kept identity and specifications, and
-  its sections are different; see
+  its tabs are different; see
   [A vehicle already in the case](#a-vehicle-already-in-the-case).
 
 Opening another case sets the list back to a new vehicle.
@@ -140,8 +144,8 @@ the record's or the generic's own name.
 
 ### Stated specifications
 
-Expand **Stated specifications** (under the name) to enter what is known about
-the real vehicle. Leave a value at 0 when it is not known.
+**Stated specifications**, under the name on the **2. Vehicle data** tab, is
+what is known about the real vehicle. Leave a value at 0 when it is not known.
 
 | Row | Is |
 | --- | --- |
@@ -180,8 +184,8 @@ not use. Four things can fill the rows:
   but no wheelbase, so for a file fetched from it the share needs the
   **Wheelbase** row filled first (stated, or from vPIC); the note says so when
   it is missing. Load the file again once it is filled.
-- **Copy spec-sheet prompt**, the box under it, and **Read spec sheet**: give
-  the prompt and the spec sheet (a manufacturer's sheet, a brochure, a Canadian
+- **Paste AI answer**, which opens **Copy prompt for your AI tool**, a box and
+  **Read**: give the prompt and the spec sheet (a manufacturer's sheet, a brochure, a Canadian
   Vehicle Specifications page) to your AI tool and paste its answer. Each value
   arrives with its unit and its place in the document, and the window converts
   inches, millimeters, centimeters, meters and feet, and pounds and kilograms.
@@ -257,9 +261,11 @@ applied with the reason, when:
 
 The vehicle is still added, as the unscaled generic.
 
-### 3. Occupants
+### 3. Occupants & cargo
 
-One row per person. **Add occupant** adds a row (the first in the driver's
+The tab has two tables, **Occupants** and **Cargo**.
+
+**Occupants.** One row per person. **Add occupant** adds a row (the first in the driver's
 seat, the next in the front right seat); **Remove** deletes one. Leave a value
 at 0 when it is not known.
 
@@ -279,9 +285,7 @@ stated an adult, both marked Estimated. A stated age under 18 builds GEBOD's
 body for that age. The occupant is named *Driver* in the driver's seat, and
 after the seat otherwise.
 
-### 4. Cargo
-
-One row per item: **Item** (a name), **Weight**, and **x / y / z**, its
+**Cargo.** One row per item: **Item** (a name), **Weight**, and **x / y / z**, its
 position from the vehicle CG, x forward, y right, **z up** (the payload's
 frame, as in the [Payload dialog](../02-vehicles/PayLoadDlg.md)).
 **Add cargo item** adds a row and **Remove** deletes one. Each item counts as a point mass.
@@ -304,7 +308,7 @@ sideways offsets)**, with the meanings given under
 [Aboard](#aboard-occupants-and-cargo-on-the-vehicle). Aboard occupants are
 weights only: no human body is added to the case for them.
 
-### 5. Add to the case
+### 4. Add to the case
 
 | Control | Does |
 | --- | --- |
@@ -349,14 +353,14 @@ the scaling rule with its ratio). **Add to Case** also stores each line in
 ### A vehicle already in the case
 
 With a case vehicle chosen in the **Vehicle** list, the window keeps what is
-known about that real vehicle with the case. Its sections are:
+known about that real vehicle with the case. Its tabs are:
 
-| Section | Holds |
+| Tab | Holds |
 | --- | --- |
 | **1. Identify** | The VIN, **Check**, **Decode with NHTSA (online)**, and Year, Make, Model, Series, Trim and Type, as for a new vehicle |
 | **2. Specifications** | The same specification rows as [Stated specifications](#stated-specifications), with the same four ways to fill them. They change the vehicle only if you scale it to them |
-| **Measured steering and suspension** | What was measured on the vehicle, and **Calculate from measurements** (below) |
-| **3. Save with the case** | **Save to this vehicle**, **Scale the vehicle to these specs** and **Close** |
+| **3. Measurements** | **Measured steering and suspension**: what was measured on the vehicle, and **Calculate from measurements** (below) |
+| **4. Save with the case** | **Save to this vehicle**, **Scale the vehicle to these specs** and **Close** |
 
 There is no matching table, no occupants, no cargo and no **Add to Case**.
 
@@ -437,8 +441,9 @@ Under **1. The case description** the window offers two routes.
 **Enter it by hand** starts from an empty description that you fill in under
 Review, value by value with where each is stated, and needs no AI tool. Or:
 
-1. Press **Copy prompt for your AI tool** and give the prompt, with the police
-   report, diagram, statements and inspection notes, to your AI tool.
+1. Press **Paste AI answer**, then **Copy prompt for your AI tool**, and give
+   the prompt, with the police report, diagram, statements and inspection
+   notes, to your AI tool.
 2. Paste its answer into the box and press **Read** (enabled once the box
    holds a `{ ... }` object). If it is not the answer the prompt asks for, the
    window says why.
@@ -606,25 +611,14 @@ for the selected vehicle (named at the top), which works out a side's
 CRASH3 stiffness from one or more staged tests into a full-width rigid barrier
 and puts it on the vehicle.
 
-### The tests
+The window has five numbered sections.
 
-**Add test** adds a row; **Remove** deletes one. Weights, speeds and lengths
-are in the units set in Preferences.
+### 1. Add a test
 
-| Column | Is |
-| --- | --- |
-| **Use** | Include the test in the calculation |
-| **Test** | Its name (*NHTSA 5423*) and, in the box under it, where the numbers come from (a report and page) |
-| **Weight** | The test weight, as tested |
-| **Speed** | The impact speed into the barrier |
-| **Points** | How many crush measurements, 2 to 10 |
-| **C1 ... Cn** | The residual crush, equally spaced across the crush width |
-| **Crush width** | The width of the damage |
+Three tabs, one for each place a test can come from. A test can also be typed
+in by hand under [2. The tests](#2-the-tests).
 
-Or read a test from a file: type its path in the **NHTSA test file** box (or
-**Browse...**) and press **Load NHTSA test**.
-
-Or find one in NHTSA's database. **Search NHTSA's crash tests (online)** has:
+**Search NHTSA (online)** finds a vehicle's tests in NHTSA's database:
 
 | Control | Does |
 | --- | --- |
@@ -640,13 +634,20 @@ each row that fetches that test. A line says how many tests matched and how many
 are listed; **List more** lists the next page. With no match, the note suggests
 the make alone, or fewer letters of the model.
 
-Or fetch a test by its number: type it in **NHTSA test number** and press
-**Fetch from NHTSA (online)**. The window asks NHTSA's
+**NHTSA test number (online)** fetches one test whose number you know.
+Type the test's number in **NHTSA test number** and press **Fetch from NHTSA
+(online)**. The window asks NHTSA's
 Vehicle Crash Test Database for the test, its vehicles and its barrier, and
 saves the answers unchanged beside the case as `nhtsa_test_<number>.json`, so
 the rows can be rebuilt offline by loading that file. A case not yet saved has
 nowhere to keep them, and the note says so. Searching and fetching are not
 available in the browser version.
+
+**NHTSA test file** reads a test saved on this computer: type its path in the
+**NHTSA test file** box (or **Browse...**) and press **Load NHTSA test**.
+
+A fetch started from a search result's **Fetch** carries on whichever tab is
+showing.
 
 Each vehicle in the test that has a crush profile becomes a row, with its test
 weight (or its curb weight when the test weight is missing), its speed, its
@@ -661,7 +662,23 @@ skipped and left unticked, and **What was read from the file** lists which
 field gave each value and the fields it did not use. See
 [Reading an NHTSA crash test file](#reading-an-nhtsa-crash-test-file).
 
-### No-damage speed b0
+### 2. The tests
+
+One row a test. **Add a test by hand** adds an empty row to type a test into
+from its report; **Remove** deletes one. Weights, speeds and lengths are in
+the units set in Preferences.
+
+| Column | Is |
+| --- | --- |
+| **Use** | Include the test in the calculation |
+| **Test** | Its name (*NHTSA 5423*) and, in the box under it, where the numbers come from (a report and page) |
+| **Weight** | The test weight, as tested |
+| **Speed** | The impact speed into the barrier |
+| **Points** | How many crush measurements, 2 to 10 |
+| **C1 ... Cn** | The residual crush, equally spaced across the crush width |
+| **Crush width** | The width of the damage |
+
+### 3. No-damage speed b0
 
 **b0** is the barrier speed below which nothing is permanently crushed. It is a
 choice, and is recorded as one: commonly 5 mph for fronts and rears and 2 mph
@@ -670,7 +687,7 @@ for sides. Type it, or press **5 mph** or **2 mph** (the default is 5 mph).
 **Fit b0 to the tests (two or more at different speeds)** fits b0 to the tests
 instead. It needs at least two included tests.
 
-### The result
+### 4. The result
 
 Campbell's model makes each test's barrier speed a straight line in its
 average crush: V = b0 + b1 · C̄. The average crush C̄ is CRASH3's own
@@ -697,7 +714,7 @@ test's speed; and, when fitting, when the tests' average crushes are all the
 same, or the fitted line has no positive slope (more crush at a lower speed)
 or no positive b0 (choose b0 instead).
 
-### Apply to this vehicle
+### 5. Apply to this vehicle
 
 | Control | Does |
 | --- | --- |
@@ -781,18 +798,19 @@ selects it everywhere, and everything below is that vehicle's record. A case
 with no event, or an event with no vehicle, is told to add one first. A new or
 opened case starts the window empty.
 
-### Kept with the case
+### Records kept with the case
 
-When the case keeps records, they are listed first, under **Kept with the
-case**, each with its vehicle, event, sample counts and when it was kept.
-**Open** brings one back (it selects its vehicle at the top) to compare or apply
-again; a record kept for another event opens once that event is the active one.
-**Remove** deletes it. A record follows its vehicle and event when either is
-renumbered, and goes when either is deleted.
+A kept record belongs to one vehicle in one event, and picking that vehicle at
+the top shows it, with the window set as it was kept. A line under the picker
+says how many records the case keeps and how many are in this event; hovering
+it lists each one's vehicle and event. A record kept for another event shows
+once that event is the active one. **Remove the kept record**, beside **Keep
+with the case**, stops keeping the record shown. A record follows its vehicle
+and event when either is renumbered, and goes when either is deleted.
 
 ### 1. The record
 
-There are three ways in:
+There are three ways in, in one row of buttons:
 
 - **Enter it by hand** — an empty record to type the report's pre-crash table
   and delta-V into, row by row, as the report prints them, with no AI tool and
@@ -804,9 +822,9 @@ There are three ways in:
   UTF-16 text); or a saved AI answer (`.json`). The CDR tool's own `.cdr` and
   `.cdrx` files are not read: their data is encrypted. A PDF whose tables are
   pictures has no text to read; read them by eye or with your AI tool.
-- **Paste** the report's tables, each with its header row, or your AI tool's
-  answer, into the box and press **Read**. **Copy prompt for your AI tool**
-  copies a prompt to give the tool with the report; it asks for one JSON answer
+- **Paste AI answer** — opens a box: paste the report's tables, each with its
+  header row, or your AI tool's answer, and press **Read**. **Copy prompt for
+  your AI tool**, above the box, copies a prompt to give the tool with the report; it asks for one JSON answer
   with the numbers copied exactly as printed (no interpolating, no unit
   conversion, no sign change, no filled gaps).
 
@@ -836,10 +854,13 @@ acceleration); a column whose unit is not known is left out and named. Brake
 samples read as on (*On*, *Applied*, *Yes*, *1*) or off (*Off*, *Not applied*,
 *No*, *0*).
 
+Sections 2 to 4 are tabs under the record, used one at a time: **2. Into the
+case**, **3. Position (SIMON)** and **4. Delta-V**. A positioning solve keeps
+running whichever tab is showing.
+
 ### 2. Into the case
 
-The section is titled with the vehicle and the event: *2. Into the case:
-<vehicle> in <event>*.
+The tab first names the vehicle and the event.
 
 | Control | Does |
 | --- | --- |
@@ -848,11 +869,11 @@ The section is titled with the vehicle and the event: *2. Into the case:
 | **Throttle** | Set the throttle table from the accelerator position |
 | **Brake** | Set the brake table from the service brake |
 | **Steering** | Set the steering table from the steering-wheel angle |
-| **Brake ON means this fraction of friction** | Shown with **Brake** ticked: the fraction of available friction (above 0, up to 1) an ON sample stands for |
-| **positive = right (clockwise)** / **positive = left (counter-clockwise)** | Shown with **Steering** ticked when the record does not state its steering sign: choose it from the report. When the record states it, a line says which, and that a positive-left record is flipped |
-| Yaw rate and lateral acceleration signs | When the record has yaw rate or lateral acceleration and does not state its sign, the same kind of choice is offered (**positive = clockwise (right turn)** / **counter-clockwise (left turn)**; **positive = right** / **left**). Longitudinal acceleration not stated is taken as + forward, the EDR standards' convention, and a line says so |
+| **Brake ON means this fraction of friction** | Shown with **Brake** ticked: the fraction of available friction (above 0, up to 1) an ON sample stands for. It is your choice, since an EDR records only the switch |
+| The signs table | One row a channel the record has: **Steering** (with **Steering** ticked), **Yaw rate**, **Lateral accel.** and **Longitudinal accel.**. **The report's positive** is what the record states; where it states nothing, choose it there from the report (*not stated: choose*). **hve-next** says what is done with it: *as recorded*, *flipped to + = right* (or *+ = clockwise*), or *unknown: choose its sign*. Longitudinal acceleration not stated is taken as + forward, the EDR standards' convention |
 | **Apply** | Sets the ticked items. Locked while results are on screen |
 | **Keep with the case** | Keeps the record with the case for this vehicle in this event, without setting any table |
+| **Remove the kept record** | Shown when the record on screen is kept: stops keeping it. The tables **Apply** set are not changed |
 
 What **Apply** sets, for the chosen vehicle in the active event:
 
@@ -883,12 +904,13 @@ not and why. Every value set is recorded in [Provenance](#provenance), tool
 case, with the window's settings: start time, brake level, sign choices, time
 zero and the impact position (target).
 
-### 3. Position: the run follows the record (SIMON)
+### 3. Position (SIMON): the run follows the record
 
 For a SIMON event, this section drives SIMON's own physics so that its speed
 matches the record: the throttle and brake are solved by time, the brake only
 where the record's switch is on and the throttle only where it is off, and the
-steering is the recorded wheel angle. Where the tires cannot follow the record,
+steering is the recorded wheel angle (or, with the steering fit ticked, that
+angle through a fitted gain and offset). Where the tires cannot follow the record,
 the run says where and by how much. For any other method the section says that
 the positioning engine solves SIMON's driver.
 
@@ -917,10 +939,24 @@ no position in the case the list reads *No positions in the case for this
 vehicle*.
 
 The target is kept with the record in the case, as typed, when the record is
-kept; **Open** under **Kept with the case** brings it back.
+kept, and comes back when its vehicle is picked again.
 
+- **Fit the steering to the recorded yaw rate** — ticked, the solve also steers
+  the run by *gain × the recorded angle + offset* and fits the gain and the
+  offset until SIMON's yaw rate is within 1 deg/s of the recorded yaw rate at
+  every sample. The steering keeps the record's shape. The summary gives both
+  numbers and what they mean: a gain away from 1 says the run needs more (or
+  less) steering than recorded to turn as the record does, which points at the
+  case's steering gear ratio (it names the ratio that would match) or its
+  tires; an offset away from 0 is the steering-angle sensor's zero, or a road
+  crown or crosswind the driver held against. It needs the record's steering
+  angle and at least two yaw-rate samples, both signs known, and **Steering**
+  ticked in section 2; hovering it says which is missing. With it ticked the
+  solve allows up to 20 runs.
 - **Solve from the record** (**Solve speed and start position from the
-  record** when the target is ticked) — replaces this event's throttle and
+  record** when the target is ticked; **Solve speed and steering from the
+  record**, or **Solve speed, steering and start position from the record**,
+  with the steering fit) — replaces this event's throttle and
   brake tables (and its steering table, from the record, when its sign is
   known) and runs the event until its speed matches the record. With the
   target ticked, each run also moves the start position until the run is at
@@ -951,8 +987,10 @@ When the record has yaw rate or accelerations and the event's results are on
 screen, a line compares them with the run, sample by sample: how many samples
 of yaw rate, longitudinal and lateral acceleration were compared and the worst
 difference of each, with **Yaw rate and acceleration, sample by sample**
-(folded) listing them. These are not solved for: a yaw-rate miss is evidence
-about the steering ratio or offset, the tires, or the recorder's sign.
+(folded) listing them. Without the steering fit these are not solved for: a
+yaw-rate miss is evidence about the steering ratio or offset, the tires, or the
+recorder's sign. After a solve with the fit, the line under the comparison
+gives the gain and offset the run was steered with.
 
 ### 4. Delta-V: the record against the run
 

@@ -1,6 +1,6 @@
 # Key Results Dialog Box
 
-HVE displays a separate Key Results window, titled *Key Results-\<object name\>*, for each human and vehicle in the event. HVE 2027 has **one Key Results panel** for the active event, with a column per vehicle. Open it with **View › Key Results**, or with **Output › Key Results...** in the Event Editor. Like every panel it can be docked or floated. Values are shown in the units set in Preferences.
+HVE displays a separate Key Results window, titled *Key Results-\<object name\>*, for each human and vehicle in the event. HVE 2027 has **one Key Results panel** for the active event, with a column per vehicle. Open it with **View › Key Results** or **Output › Key Results...** in the Event or Playback editor; it is not available in the Human, Vehicle or Environment editors. Like every panel it can be docked or floated. Values are shown in the units set in Preferences.
 
 The panel has three collapsible sections. Their order can be changed and is remembered.
 
@@ -27,6 +27,18 @@ Highlights the row at the current playback time and keeps it in view.
 
 ### Group columns by Variable / Vehicle, Vehicle name in column titles
 Arrange the columns by variable or by vehicle, and prefix each column title with its vehicle.
+
+## In the Playback editor
+
+With a playback sequence selected, the panel follows the **sequence** rather than the active event:
+
+- **The columns are the sequence's vehicles**, in the order they first appear over its tracks, so a vehicle that only a later event moves still has a column.
+- **Summary** shows one block per event on the timeline, headed with the event's name and the time it starts on the master clock. An event that has not been solved says so; run it with **Run All Events** in Playback, or in the Event editor.
+- **Trajectory** is sampled on the sequence's master clock, and its time column is that clock: the same time the transport, the playback cursor and **Follow playback time** use. Each vehicle's value comes from the event that places that vehicle at that instant, exactly as the 3-D view draws it, so a row can hold values from two events.
+- Occupant variables are read from the active event, at that event's own time on its track, and are blank where the active event is not on the timeline.
+- **vs. original HVE** compares one event with HVE's saved run, so it is not shown here; open the event in the Event editor to see it.
+
+With no sequence selected, the Playback editor shows the active event as the Event editor does.
 
 Click a row to move playback to that instant. A value the run did not compute (for example a channel that is not finite) is shown as `--` rather than a number. Variable names that no engine computes carry *(not computed)* in their name, and they read zero for every run — in HVE as well.
 

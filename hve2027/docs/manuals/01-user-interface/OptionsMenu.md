@@ -5,7 +5,7 @@ HVE 2027 has **no Options menu**. HVE's Options menu mixes display switches, too
 | HVE Options item | HVE 2027 |
 |---|---|
 | Create DB | Not in HVE 2027. Vehicle databases are read as they are; **Save Vehicle As** writes a vehicle into a database file (see [Saving Vehicles](../02-vehicles/VehSaveAs.md)). |
-| Show Key Results | **View › Key Results** (or **Output › Key Results...** in the Event Editor) — see [Key Results Dialog Box](KeyResDlg.md). |
+| Show Key Results | **View › Key Results** or **Output › Key Results...** (Event and Playback editors) — see [Key Results Dialog Box](KeyResDlg.md). |
 | Show Axes | **View › Scene Display › Axes**: the case's X, Y and Z at the origin and each vehicle's own axes at its CG, turning and tilting with it (red X forward, green Y right, blue Z up; on by default). |
 | Show Contacts | **View › Scene Display › Occupant Equipment** draws the active vehicle's contact surfaces, airbags and belts; **View › Scene Display › Occupant Equipment Through Bodywork** draws them over the body. |
 | Show Belt Anchors | **View › Scene Display › Occupant Equipment** (as above). |

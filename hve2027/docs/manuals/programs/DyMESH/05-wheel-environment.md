@@ -114,6 +114,16 @@ value is not used for wheels.
   its bounding extents are padded downward — 60 in when the object extents are
   updated, and 120 in in the polygon-search bounding boxes — so a wheel cannot
   pass through a zero-thickness ground plane between timesteps.
+- A case with **no site geometry** still has a flat ground for DyMESH, and it
+  carries the default material set in the Environment editor's **Terrain** section. If that material
+  has no force-deflection terms, the run status says the contact produces no
+  force.
+- Because the environment never deforms, its share of a contact's overlap is
+  the part the body has not yet taken. HVE judged that share from the
+  environment's own vertex damage, which is always zero. A terrain whose
+  material has a linear term but no constant term (HVE's default terrain)
+  therefore read as infinitely soft, and a body dropped on it fell through.
+  In this port the body crushes and comes to rest.
 
 ## The simulation loop
 

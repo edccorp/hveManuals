@@ -22,14 +22,16 @@ The Tools menu is on the menu bar in every editor.
 | **Limits Editor...** | The minimum and maximum accepted by input fields | *(new)* |
 
 **Automatic Tools** holds the tools that fill a case from a source, together
-with the record of where each value came from:
+with the record of where each value came from. The submenu groups them under
+**Case** (Case Intake, Quick Case) and **Vehicle** (the rest), with Provenance
+last:
 
 | Item | What it does |
 |---|---|
 | **Case Intake...** | Builds an event from the case documents, read by your own AI tool |
 | **Quick Case (Text)...** | Builds a case from a typed sentence |
 | **Vehicle Package...** | Builds a case vehicle from its VIN or year, make and model, its stated specifications, and who and what it carried |
-| **Crush Stiffness from Crash Tests...** | CRASH3 A, B and G for the active vehicle from staged barrier tests, typed in, read from an NHTSA test file, or found with **Search NHTSA's crash tests (online)** and fetched from NHTSA's database; shows the side's stiffness now beside the tests' before you apply it. Also opened by **From crash tests...** in Crush Stiffness |
+| **Crush Stiffness from Crash Tests...** | CRASH3 A, B and G for the active vehicle from staged barrier tests, typed in, read from an NHTSA test file, or found with **Search NHTSA (online)** or fetched by test number from NHTSA's database; shows the side's stiffness now beside the tests' before you apply it. Also opened by **From crash tests...** in Crush Stiffness |
 | **Crush Profile from Scan...** | The crush depths C1..Cn, damage width and damage offset of a vehicle of the active event (chosen with the vehicle picker at the top), measured off a scan of the damaged vehicle against the vehicle's own 3-D body (the default), an exemplar scan, a string line across the face's undamaged ends, or a plane at the vehicle's exterior extent. Also opened by **Measure from a scan...** under Measured Crush in the Event editor, which selects its own vehicle |
 | **EDR Import...** | An event data recorder's pre-crash record (a CDR report PDF, its tables as CSV or text, typed in by hand, or your AI tool's answer) into a vehicle of the active event; for SIMON, a driver solved so the run follows the recorded speed; and the recorded yaw rate, accelerations and delta-V against the run's |
 | **Provenance...** | Where each value set by those tools came from |

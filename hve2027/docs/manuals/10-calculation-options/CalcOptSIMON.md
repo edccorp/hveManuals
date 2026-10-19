@@ -54,8 +54,9 @@ Simulation panel.
 
 **Semi-empirical V3** or **TMeasy (Rill)**.
 
-- **Semi-empirical V3** — EDC's semi-empirical tire model, latest version, and
-  the default for a new event. HVE also has V1 and V2. The versions agree on
+- **Semi-empirical V3** — EDC's semi-empirical tire model, latest version. HVE's
+  own default for a new event, and what a case reads when its file states no tire
+  model. HVE also has V1 and V2. The versions agree on
   gentle forward maneuvers and differ at large slip angles and in reverse (V1
   uses sin of the slip angle where V2 and later use tan, V2 and later tie the
   lateral-force sign to the direction of travel, and V3 also clamps μ to its
@@ -63,7 +64,9 @@ Simulation panel.
   does not offer V1 or V2, but a case imported from HVE that states one (cases
   saved by older HVE versions commonly store V2) runs it as HVE did, and the
   window says so; choosing from the list changes it.
-- **TMeasy (Rill)** — G. Rill's TMeasy tire model, new in HVE 2027: a force
+- **TMeasy (Rill)** — the default for a new event in HVE 2027: one added with
+  **+** in Event Information or built by Case Intake. A case imported from HVE
+  keeps the model its file states. G. Rill's TMeasy tire model: a force
   curve in each direction (initial slope, peak, sliding) built from the tire
   inputs, with braking and cornering combined on one normalised slip. It uses
   three shape inputs of its own, the **TMeasy** rows of the Tire Properties
@@ -160,14 +163,16 @@ overrides, are in **Event › DyMESH Options...**.
     in HVE as well; the dialog labels them *Carried, not consumed*.
 
 !!! note "HVE 2027"
-    Within one evaluation of the equations of motion, HVE 2027 computes every
-    vehicle's wheel positions, tire and suspension forces before it runs the
-    DyMESH collision pairs. HVE does them vehicle by vehicle, so when the
-    first vehicle's body meets the second vehicle's DyMESH wheel, that wheel
-    is placed with the previous evaluation's position and spin. The
-    difference is small (on a wheel strike at 8 m/s, 0.02 km/h of a 3 km/h
-    Delta-V and 0.2 mm of rest position) and no longer depends on which
-    vehicle is listed first.
+    The DyMESH collision model has been updated in HVE 2027: the collision
+    forces are evaluated at every stage of the integration step, every
+    vehicle's wheel positions, tire and suspension forces are computed
+    before the collision pairs, and the forces a DyMESH wheel passes to its
+    vehicle are accounted for once. A case that involves DyMESH contact,
+    and in particular contact with a DyMESH wheel, will give a different
+    outcome than the existing HVE version. The result does not depend on
+    the order in which the vehicles are listed, nor on the number of
+    processor cores the calculation runs on: SIMON's DyMESH sweeps use every
+    core of the machine and give the same answer on any count.
 
 ## Termination Velocity
 

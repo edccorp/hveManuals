@@ -28,7 +28,7 @@ Environment Editor's components:
 
 - **Environment panel** — a docked panel (normally on the left) holding all
   the environment's parameters in collapsing sections: **Location**,
-  **Terrain**, **Sky**, **Lights**, **Physical** and **Friction Zones**. It replaces HVE's
+  **Terrain**, **Sky**, **Lights**, **Physical** and **Surface Generator**. It replaces HVE's
   Environment Information property sheet. Terrain and Physical — the
   sections the engines read — are open by default.
 - **Viewport** — the 3-D view of the current environment, with a view cube
@@ -504,7 +504,7 @@ so looking around the result does not add corners.
 
 **Make a friction zone from the region** adds a friction zone with the same
 outline (up to 16 corners), for a patch of the scan that is gravel, a wet stain
-or a painted area. Set its friction multiplier under **Friction Zones**.
+or a painted area. Set its friction multiplier under **Surface Generator**.
 
 If the case already has site geometry, the button reads **Replace Site with
 Scan Surface...**. The new surface replaces the old site, along with the

@@ -266,31 +266,62 @@ surface of its own — see [Environment Material Properties](EnvrMatPropDlg.md).
     The *Angle of X Axis* is in the Shader Editor's Sun & Sky panel as
     **North** (see Sky).
 
-## Friction Zones
+## Surface Generator
 
-A friction zone is a patch of different grip — spilled oil, loose gravel, a wet
-strip — laid over the road in plan. The run cuts it out of the road beneath, so
-it lies on the terrain, and its **Friction Multiplier** replaces the road's
-there.
+The Surface Generator draws a surface over the site in plan: a road, a
+friction zone, standing water or another surface. Each lies on the ground
+beneath its outline, draped over a bank or a ramp exactly as that ground lies.
+Its **Type** decides what it does in a run:
 
-The list shows each zone's **On** switch, name, **Friction Mult.** and status;
-**Add Zone**, **Duplicate** and **Delete** manage it. For the selected zone:
-**Name**, **Applied to the run**, **Friction Multiplier**, a **Rectangle**
-(**Center X**, **Center Y**, **Length**, **Width**, **Heading (deg)**, and
-**Set Outline to Rectangle**, which replaces the zone's outline with that
-rectangle; length runs along the heading, 0 = +x) and its **Corners** (up to 16): **Click corners in the
-3-D view**, **Clear Corners**, the corners' X and Y, and **Add Corner**. A zone
-the run cannot apply says why.
+| Type | In the run |
+|---|---|
+| **Road** | Replaces the ground beneath its outline. A tire there drives on the surface's own material, under every road-surface search. |
+| **Other** | The same as **Road**. HVE's engines treat an Other surface as road; only the label differs. |
+| **Friction Zone** | A patch of different grip (spilled oil, loose gravel, a wet strip) laid on the ground. It keeps the ground's material with only the friction replaced, or uses its own material. |
+| **Water** | Water standing on the ground. The ground keeps its own material; the hydroplaning models of SIMON and EDSMAC4 read the depth and the wet friction. |
+
+The list shows each surface's **On** switch, name, **Type**, **Layer** and
+status. Pick a type and click **Add Surface** to make one; **Duplicate** and
+**Delete** manage the list. For the selected surface:
+
+- **Name**, **Type**, **Applied to the run** and **Show**. Show only draws it:
+  a hidden surface still acts in the run while it is applied.
+- **Layer**: the layer it is drawn on, as an imported surface's is. Hiding the
+  layer hides it. A layer takes nothing out of the run. Create layers in the
+  [Outliner](../01-user-interface/OverLayDlg.md).
+- **Material**, for a road or other surface: the material library, **Condition
+  preset**, **Friction Multiplier**, the force terms, the soil terms and
+  standing water, as for any surface. A new road starts as the default
+  material (**Terrain**) at a multiplier of 1.
+- **Material**, for a friction zone: **Ground's material, friction replaced**
+  (with its **Friction Multiplier**) or **Its own material** (the full
+  material rows).
+- **Water**, for water: **Water Depth** and **Wet Friction**.
+- **Appearance**: **Own color**, the color the 3-D view draws it. Display only.
+- A **Rectangle** (**Center X**, **Center Y**, **Length**, **Width**,
+  **Heading (deg)**, and **Set Outline to Rectangle**, which replaces the
+  outline with that rectangle; length runs along the heading, 0 = +x) and its
+  **Corners** (up to 16): **Click corners in the 3-D view**, **Clear Corners**,
+  the corners' X and Y, and **Add Corner**.
+
+A surface the run cannot apply says why. The 3-D view draws each surface where
+the run put it; one switched off for the run is drawn faint.
 
 Under HVE's default road surface search, which tracks each tire's previous
-polygon, a zone lying on the road is mostly stepped over. The section names
-each event that searches that way, with a button that switches it to
+polygon, a friction zone lying on the road is mostly stepped over. The section
+names each event that searches that way, with a button that switches it to
 friction zones first (see
 [Event Information](../09-events-driver-controls/EventInfo.md#road-surface-search)).
+A road, other or water surface is met under every search.
+
+Each generated surface is also a row of the
+[Outliner](../01-user-interface/OverLayDlg.md), under its layer or under
+**Generated surfaces**.
 
 !!! note "HVE 2027"
-    HVE draws a friction zone as a polygon of its own in its geometry editor;
-    HVE 2027 draws it here, in plan.
+    HVE draws its surfaces as polygons of their own in its geometry editor;
+    HVE 2027 draws them here, in plan. A case saved before the Surface
+    Generator existed opens with its friction zones as Friction Zone surfaces.
 
 ## Signals
 
