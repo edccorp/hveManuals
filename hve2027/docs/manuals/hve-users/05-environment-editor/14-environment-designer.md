@@ -33,7 +33,18 @@ so a field has one editor and nothing is reachable in one and not the other.
    faces in the viewport and give them a material or split a surface by them,
    and the Surface Generator. The Key figures strip's **Drivable patches** row
    counts the drivable surface's connected pieces: more than one means a wheel
-   can run off an edge onto the default plane.
+   can run off an edge onto the default plane. **Color the site by** recolors
+   the 3-D view while this stage is open: **Friction** runs from red at 0
+   through orange, yellow and green to teal above 1.2, so a seam between two
+   surfaces shows; **Drive and water** shows drivable ground green, a drivable
+   surface at friction 0 red, water blue and surfaces with Drive off gray in
+   both. **Picture** is the site as drawn. The colors are display only, and
+   leaving the stage or closing the designer gives the picture back.
+
+   ![Figure 14-3](../images/hvn-05-environment-designer-tint.png)
+
+   *Figure 14-3: Color the site by Friction: the road at 0.75, an ice patch
+   at 0.25 and a pond, with the Key figures' friction range reading both.*
 
    ![Figure 14-2](../images/hvn-05-environment-designer-surfaces.png)
 
@@ -56,8 +67,9 @@ so a field has one editor and nothing is reachable in one and not the other.
 
 Site extent in x and y and the farthest point from the origin; the drivable
 area, the drivable and scenery triangle counts, the surfaces and generated
-surfaces; the lowest and highest friction multiplier among the drivable
-materials; the water triangles; the maximum grade read from the drivable
+surfaces; the drivable patches; the lowest and highest friction multiplier
+among the drivable materials and the generated surfaces applied to the run;
+the water triangles; the maximum grade read from the drivable
 triangles and the stated grade of a graded terrain; gravity, ambient
 temperature, scene boxes and site lights. **Set as baseline** under the strip
 keeps the current values as the "was" column for this case.
@@ -66,7 +78,7 @@ keeps the current values as the "was" column for this case.
 
 | Grade | Stage | Rule |
 |---|---|---|
-| Fix | Surfaces | A drivable surface's friction multiplier is 0, which every tire reads as no friction. |
+| Fix | Surfaces | A drivable surface, or a generated surface applied to the run, has a friction multiplier of 0, which every tire reads as no friction. |
 | Fix | Geometry | The site names a geometry file but no triangle is drivable, so vehicles run on the default plane. |
 | Note | Site | The site reaches more than 2 km from the origin, where single precision coarsens. |
 | Note | Water & Weather | The stated gravity differs from 9.80665 m/s² by more than 1%. |
