@@ -4,12 +4,15 @@ The Event Designer is the Vehicle Designer's frame turned on the event: a stage
 bar along the bottom, a **Key figures** strip on the left that remembers what
 each number was, the event's own dialogs hosted on the stage that asks their
 question, and a **Warnings & Suggestions** panel on the right whose rows name the
-fix and the stage that owns it. Open it with **Event › Event Designer...** in the
-Event editor (F5), where it is the first item.
+fix and the stage that owns it. It is the Event editor's panel: switching to the
+Event editor (F5) opens it where the Event Information panel used to open, and
+**Event › Event Designer...** (the first item) opens it too. **Event › Event
+Information...** still opens that panel.
 
-Like the Environment Designer, with **Fill the window** on it takes the left of
-the editor's work area and leaves the 3-D view on the right, where the vehicles
-stand. Off, it is a window of its own size. A dialog on a stage is the same
+Like the other designers it is an ordinary docked window, on the left with the 3-D
+view beside it, where the vehicles stand: drag its tab to move it, float it, or dock
+it anywhere, and the arrangement is kept. Docked narrow, the **Key figures** and
+**Warnings & Suggestions** fold into the top of the stage. A dialog on a stage is the same
 dialog the Event menu opens, drawn in the stage instead of its own window, so a
 field has one editor and nothing is reachable in one and not the other.
 

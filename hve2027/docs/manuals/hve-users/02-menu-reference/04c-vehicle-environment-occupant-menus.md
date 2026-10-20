@@ -36,6 +36,7 @@ designer stage, so the submenu is for a reader who wants one dialog alone.
 | **Save Vehicle As...** | Save Vehicle As: identification, geometry file, and **Save to Database** — HVE's Options › Create DB and the vehicle Save As | [Vehicle Save As](../../02-vehicles/VehSaveAs.md) |
 | **Save to My Vehicles...** | Save to My Vehicles: keeps the vehicle, as edited in the case, in one of your own vehicle databases (`MyVehicles.hvedb` or one you name), where **Add...** lists it; new in HVE 2027 | [My Vehicles](../04-vehicle-editor/10-creating-editing-vehicles.md#save-to-my-vehicles) |
 | **Edit Mode (materials per part)** (Tab) | Switches the viewport to selecting parts of the vehicle body, to assign materials per part (as Blender's Edit Mode); new in HVE 2027 | — |
+| **Editors ›** **Vehicles Panel** | The Vehicles panel the Vehicle Designer replaced as the Vehicle editor's panel | — |
 | **Editors ›** **Suspension Data...** | Suspension Data | [Suspension](../../03-suspension-steering/SuspDlg.md) |
 | **Editors ›** **Steering System...** | Steering System | [Steering System](../../03-suspension-steering/SteerSysDlg.md) |
 | **Editors ›** **Tires...** | Tire Properties: the per-wheel grid, and below it the **Load & Speed Tables** panel (friction, cornering, camber and Fy roll-off tables of the selected wheel) | [Tire Information](../../05-tires-wheels/TireInfoDlg.md), [Tire Friction Data](../../05-tires-wheels/TireFrictDataDlg.md) |

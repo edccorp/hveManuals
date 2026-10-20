@@ -7,12 +7,16 @@
     **case's vehicle**: the database record the vehicle came from is never
     changed, and keeping a design means **Save to My Vehicles** (Chapter 10).
 
-**Vehicle › Vehicle Designer...** opens the **Vehicle Designer** window, and so does
-switching to the Vehicle editor (the **Vehicle (F3)** button or F3). It fills the
-Vehicle editor's work area, in front of the Vehicles panel and the 3-D view; close
-it to work in the Vehicle editor's own panels. (Key Results and the Output Graph are
-in the Event and Playback editors.) **Fill the window**, on its first line, turns
-that off and leaves it a window of its own size. A session that starts in the
+**The Vehicle Designer is the Vehicle editor's panel.** Switching to the Vehicle
+editor (the **Vehicle (F3)** button or F3) opens it where the Vehicles panel used to
+open, docked on the left with the 3-D view beside it; **Vehicle › Vehicle
+Designer...** opens it too. It is an ordinary docked window: drag its tab to move it,
+float it, or dock it anywhere, as you would the 3-D view, and the arrangement is
+kept. Docked narrow, the **Key figures** and **Warnings & Suggestions** fold into
+the top of the stage so the stage keeps its width; wider than about 1000 pixels
+they are columns on either side. The Vehicles panel is one item away, **Vehicle ›
+Editors › Vehicles Panel**. (Key Results and the Output Graph are in the Event and
+Playback editors.) A session that starts in the
 Vehicle editor opens it the first time you switch back to it. It has one
 frame and thirteen stages. The frame is the same on every stage: the **Key figures**
 column on the left, the stage's own controls and views in the center, a **Warnings &

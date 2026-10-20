@@ -5,13 +5,15 @@ a stage bar along the bottom, a **Key figures** strip on the left that
 remembers what each number was, the site's panels hosted on the stage that
 asks their question, and a **Warnings & Suggestions** panel on the right whose
 rows name the fix and the stage that owns it. Open it with **Environment ›
-Environment Designer...** in the Environment editor (F4), where it is the
-first item.
+Environment Designer...** (the first item), and it is the Environment editor's
+panel: switching to the Environment editor (F4) opens it where the Environment
+window used to open. **Environment › Environment...** still opens that window.
 
-One thing differs from the vehicle's frame: terrain needs the real renderer,
-so with **Fill the window** on the designer takes the left of the editor's
-work area and the 3-D view stays on the right. Off, it is a window of its own
-size. Every panel it hosts is the same panel the **Environment** window draws,
+It is an ordinary docked window, on the left with the 3-D view beside it by
+default: drag its tab to move it, float it, or dock it anywhere, and the
+arrangement is kept. Docked narrow, the **Key figures** and **Warnings &
+Suggestions** fold into the top of the stage; wider than about 1000 pixels they
+are columns on either side. Every panel it hosts is the same panel the **Environment** window draws,
 so a field has one editor and nothing is reachable in one and not the other.
 
 ![Figure 14-1](../images/hvn-05-environment-designer.png)
