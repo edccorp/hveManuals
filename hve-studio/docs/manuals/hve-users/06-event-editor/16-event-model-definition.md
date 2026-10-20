@@ -694,10 +694,10 @@ The Damage Profile Event Set-up parameters are defined in Table 16-8.
     **C1**, **C2**, ..., **Damage width**, **Damage offset** and per-zone A
     and B stiffness, with the **A Stiffness** and **B Stiffness** above it.
     **Event › Damage Profiles...** (Ctrl+M) opens this section. The
-    vehicle's crush stiffness for each side (Front, Rear, Left, Right:
-    **A Stiffness**, **B Stiffness**, **Kv Stiffness**) and its 3-D node
-    stiffness for DyMESH, which the simulations use, are under **Vehicle ›
-    Editors › Crush Stiffness...**.
+    vehicle's crush stiffness, which the simulations use, is under
+    **Vehicle › Editors › Crush Stiffness...**: one table with a column per
+    face (Front, Rear, Top, Bottom, Left, Right), its **2-D** rows (**A**,
+    **B**, **Kv**) and its **3-D** node stiffness rows for DyMESH.
 
 The Damage Profile dialog allows the user to enter a damage profile for the
 selected vehicle. The damage profile is obtained by post-crash inspection

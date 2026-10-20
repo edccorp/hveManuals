@@ -62,7 +62,7 @@ The main entries:
   Table), and the
   app's two preferences (**Panels Outside the Main Window**, **Show Guidance
   Text**). What the viewport draws — paths, North Arrow, Skidmarks, occupant
-  equipment, Vectors, Rendering, Scene Ghosts, Shadow Coverage, Vehicle
+  equipment, Vectors, Rendering, Scene Ghosts, Light & Shadow, Vehicle
   Extents and the rest — is switched in the dockable **Scene Display** panel,
   not in the menu. **Results HUD** sets up boxes of solved numbers drawn over
   the viewport and into recorded videos (see
@@ -363,8 +363,9 @@ message appears as the case opens; see
 **Diagnostic Level** is greyed: what a run assumed or repaired is always in
 its run status.
 
-**Tools › Style Editor** chooses the base colour theme (**Dark**, **Light** or
-**Classic**; remembered between sessions) and gives live control over colours,
+**Tools › Style Editor** chooses the base colour theme (**HVE**, the default —
+the HVE cube's maroons on a dark ground — **Dark**, **Light** or **Classic**;
+remembered between sessions) and gives live control over colours,
 sizes, rounding and spacing. Only the base theme is saved.
 
 **Tools › Cameras** keeps the saved cameras (with a **Viewport View** tab for

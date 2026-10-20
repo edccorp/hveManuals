@@ -41,17 +41,20 @@ screen; press **Reset** to edit.
   Event Information's **Vehicle Impact Setup** section. **Event › Damage
   Profiles...** opens that section.
 - **Vehicle › Editors › Crush Stiffness...** (Vehicle editor) holds the vehicle's own crush
-  **stiffness** for the simulations — Front, Rear, Left and Right, each with its
-  A, B and Kv stiffness — and the **3-D Node Stiffness** used by DyMESH
-  (constant, linear, quadratic and cubic terms per zone, conversion height,
-  saturation and maximum crush).
+  **stiffness** for the simulations, in one table with a column per face
+  (**Front**, **Rear**, **Top**, **Bottom**, **Left**, **Right**): the **2-D**
+  rows A, B and Kv (none for Top and Bottom), and the **3-D** rows used by
+  DyMESH (constant, linear, quadratic and cubic terms, conversion height,
+  saturation crush and the unread maximum crush), with a graph of the
+  selected column.
 
 The CDC must be a valid seven-character code. EDCRASH needs at least two crush
 depths to form a crush profile; with fewer, its Delta-V stays zero.
 
 ![The Crush Stiffness dialog](../images/hvn-01-damage-profiles.png)
 *The Crush Stiffness dialog (captured under its earlier title, Damage
-Profiles).*
+Profiles, and its earlier layout, before the one table with a column per
+face).*
 
 !!! note "HVE Studio"
     HVE's *Use Newton's 3rd Law* option corresponds to **Auto-calculate PDOF
@@ -338,8 +341,8 @@ not affect the run.
 The Event menu has no Crush Profile item. EDCRASH is the only method that reads a
 crush profile, and it is the measured damage under **Event › Damage Profiles...**
 (Ctrl+M). The sides' crush stiffness is the vehicle's own data, edited in
-**Vehicle › Editors › Crush Stiffness...** or the Vehicle Designer's **Exterior &
-Body** stage, and **Handling Parameters...** and **Move CG...** have their own
+**Vehicle › Editors › Crush Stiffness...** or the Vehicle Designer's **Stiffness**
+stage, and **Handling Parameters...** and **Move CG...** have their own
 Event menu items for EDSMAC and EDSMAC4.
 
 ---

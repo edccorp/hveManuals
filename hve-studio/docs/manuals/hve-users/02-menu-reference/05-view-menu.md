@@ -60,8 +60,10 @@ Its groups are **Vehicles Shown** (see [VEHICLES SHOWN](#vehicles-shown)),
 Arrow, Skidmarks, occupant equipment, the two Through Bodywork switches and
 Path thickness), **Vehicle**
 (Vehicle Extents, See-Through Body and the DyMESH overlay table), **Vectors**
-(with the arrow scales), **Scene Ghosts**, **Shadow Coverage**, **Effects** and
-**Rendering**. Click a group's header to fold it away. A greyed switch says why
+(with the arrow scales), **Scene Ghosts**, **Light & Shadow** (Scene Lighting,
+**Lamps**, the shadow coverage, Site Shadows, Contact Shadows, Ambient
+Occlusion), **Sky & Reflections** (Default Sky, Sky Reflections, Distance Haze,
+Wet Ground, Ground Reflections) and **Rendering**. Click a group's header to fold it away. A greyed switch says why
 when you point at it.
 
 The sections below describe each group.
@@ -151,7 +153,7 @@ The DyMESH overlay table:
 
 ## SHADOW COVERAGE
 
-**Menu Option:** View › Scene Display › Shadow Coverage › Vehicles (sharp) · Whole scene
+**Menu Option:** View › Scene Display › Light & Shadow › Vehicles (sharp) · Whole scene
 
 **Description:** **Vehicles (sharp)** fits the shadow to the vehicles, so their
 shadows are as sharp as possible but site geometry outside that region casts

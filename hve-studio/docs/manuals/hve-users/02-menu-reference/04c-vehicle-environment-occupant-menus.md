@@ -32,7 +32,7 @@ designer stage, so the submenu is for a reader who wants one dialog alone.
 
 | Item | Opens | Dialog reference |
 |---|---|---|
-| **Vehicle Designer...** | The staged Vehicle Designer for the selected vehicle, which also opens on switching to the Vehicle editor: vehicle, packaging, mass, suspension, tires, brakes, engine, transmission, steering, exterior, occupant protection, test track and summary (see [Chapter 12](../04-vehicle-editor/12-vehicle-designer.md)) | — |
+| **Vehicle Designer...** | The staged Vehicle Designer for the selected vehicle, which also opens on switching to the Vehicle editor: vehicle, size & weight, mass & inertia, stiffness, geometry, tires, brakes, suspension, engine, transmission, steering, connections (with body torsion), exterior, occupant protection, test track and summary (see [Chapter 12](../04-vehicle-editor/12-vehicle-designer.md)) | — |
 | **Save Vehicle As...** | Save Vehicle As: identification, geometry file, and **Save to Database** — HVE's Options › Create DB and the vehicle Save As | [Vehicle Save As](../../02-vehicles/VehSaveAs.md) |
 | **Save to My Vehicles...** | Save to My Vehicles: keeps the vehicle, as edited in the case, in one of your own vehicle databases (`MyVehicles.hvedb` or one you name), where **Add...** lists it; new in HVE Studio | [My Vehicles](../04-vehicle-editor/10-creating-editing-vehicles.md#save-to-my-vehicles) |
 | **Edit Mode (materials per part)** (Tab) | Switches the viewport to selecting parts of the vehicle body, to assign materials per part (as Blender's Edit Mode); new in HVE Studio | — |
@@ -47,7 +47,7 @@ designer stage, so the submenu is for a reader who wants one dialog alone.
 | **Editors ›** **Brakes ›** **ABS / Brake Design...** | A hub opening ABS System and ABS Designer | [ABS](../10-brake-designer/31-abs.md) |
 | **Editors ›** **Aerodynamic Drag...** | Aerodynamic Drag | [Vehicle Drag](../../02-vehicles/VehDragDlg.md) |
 | **Editors ›** **Body Torsion...** | Body Torsion | [Body Torsion](../../02-vehicles/BodyTorDlg.md) |
-| **Editors ›** **Crush Stiffness...** | Crush Stiffness: A, B and Kv for each side and the 3-D node stiffness for each zone, with **From crash tests...** (CRASH3 A and B from staged barrier tests) | [Stiffness Coefficient Dialog](../../02-vehicles/StiffCoeffDlg.md) |
+| **Editors ›** **Crush Stiffness...** | Crush Stiffness: one table with a column per face, A, B and Kv (2-D) and the 3-D node stiffness, with a graph of the selected column and **From crash tests...** (CRASH3 A and B from staged barrier tests) | [Stiffness Coefficient Dialog](../../02-vehicles/StiffCoeffDlg.md) |
 | **Editors ›** **Vehicle Mesh...** | Vehicle Mesh, in four tabs: **File & Placement**, **Collision**, **Display** and **Wheel Images** (see [Chapter 4, Part B](04b-setup-menu.md#vehicle-mesh)) | — |
 | **Editors ›** **Vehicle Lights...** | Vehicle Lights: each light's type, intensity, direction, spot parameters, position and colour | — |
 | **Editors ›** **Accelerometers...** | Accelerometers | [Accelerometers](../../06-safety-systems/AcclMtrsDlg.md) |
@@ -80,7 +80,7 @@ designer stage, so the submenu is for a reader who wants one dialog alone.
 
 | Item | Opens |
 |---|---|
-| **Environment Designer...** | The staged Environment Designer beside the 3-D view: Site, Geometry, Surfaces, Water & Weather, Sky & Lights, Site Check and Summary (see [Chapter 14](../05-environment-editor/14-environment-designer.md)) | — |
+| **Environment Designer...** | The staged Environment Designer beside the 3-D view: Site, Geometry, Surfaces, Weather, Sky & Lights, Site Check and Summary (see [Chapter 14](../05-environment-editor/14-environment-designer.md)) | — |
 | **Environment...** | The **Environment** panel (it opens by itself when you enter the Environment editor): **Location**, **Terrain** (the site geometry — DXF, `.h3d`, `.iv`, OBJ or glTF — a survey point cloud, and the surface materials), **Sky**, **Lights** (the site's own point and spot lights, display only), **Physical** (ambient conditions and wind, atmosphere and gravity, standing water) and **Surface Generator** (roads, friction zones, water and other surfaces drawn over the site) |
 | **Aerial Image...** | Aerial Image Options: an image file laid over the site, with its world bounds (upper-left and lower-right corners) |
 | **Edit Mode (materials per face)** (Tab) | Switches the viewport to selecting single faces of the site, to give them materials of their own or move them (as Blender's Edit Mode); new in HVE Studio. See [Edit Mode: faces of the site](../05-environment-editor/12-creating-editing-environments.md#edit-mode-faces-of-the-site) |

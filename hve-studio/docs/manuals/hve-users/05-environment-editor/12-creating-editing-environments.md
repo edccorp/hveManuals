@@ -261,7 +261,7 @@ Environment panel's Sky section or the Event panel's Lighting section). The
     are not available. A value imported from an HVE case is kept with the
     case, but there is no control for it, so HVE Studio cannot be used for
     HVE's visibility studies. The viewport's **Distance Haze** (View › Scene
-    Display › Effects) fades far geometry toward the sky's horizon colour by
+    Display › Sky & Reflections) fades far geometry toward the sky's horizon colour by
     the **Haze** of the World material's Sky Texture node; it is a picture,
     not a visibility distance, and draws nothing while Haze is 0 (the
     default sky), with no World material, or with Scene Lighting off. HVE's

@@ -61,7 +61,9 @@ sections are:
   view setting only: the event, its results and the run are unchanged, and
   nothing is saved.
 - **Humans in Event** — the humans in the event (shown for the occupant
-  methods, EDHIS and GATB, and for SIMON and EDGEN).
+  methods, EDHIS and GATB, and for SIMON and EDGEN). The 3-D view draws the
+  humans listed here and no others; an EDHIS or GATB event that lists none
+  runs, and so draws, every human of the case.
 - **Vehicle Initial Conditions** (simulations) or **Vehicle Impact Setup**
   (EDCRASH) — each vehicle's starting state or scene data.
 - **Lighting** — a summary of the sun and sky, with a button to edit them.
@@ -234,7 +236,9 @@ for a complete description of all outputs.
 window of the selected method: *EDCRASH Options*, *EDSMAC Options* (shared by
 EDSMAC and EDSMAC4), *EDGEN Options*, *EDHIS Options*, *SIMON Options*,
 *EDVSM Options*, *GATB Options* or *SINGLETRACK Options*. EDSVS, EDVDS and
-EDVTS have no options window.
+EDVTS have no options window. The button opens the window while a solved run's
+results are on screen too, so you can see which options were run; its fields
+are then read-only until **Reset**.
 
 The integration and output timesteps, the duration and the termination
 criteria are in the **Simulation** panel (View › Simulation), under

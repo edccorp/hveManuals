@@ -525,18 +525,25 @@ system are displayed and edited in HVE using the Wheel Location dialog. See
 also the reference page,
 [Wheel Location dialog](../../03-suspension-steering/WheelLocDlg.md).
 
-In HVE Studio they are in the Vehicles panel, **Size & Weight › Details ›
-Wheel Positions (from CG)**: a table with a column per wheel (A1 Left, A1
-Left, …) giving each wheel's X, Y and Z from the CG (SAE: +X forward, +Y
-right, +Z down). Left and right may differ.
+In HVE Studio they are in the Vehicles panel, **Size & Weight › Wheel
+Positions (from CG)**: a table with a column per wheel (A1 Left, A1 Right,
+…) giving each wheel's X, Y and Z from the CG (SAE: +X forward, +Y right, +Z
+down). Left and right may differ.
 
 !!! note "HVE Studio"
     - A field left at 0 is derived from the vehicle's dimensions (wheelbase,
       CG to axle, track and CG height).
-    - Once any wheel carries its own X, the wheelbase and CG-to-axle
-      distances are derived from the wheels, as HVE derives them; the
-      Size & Weight section says so. Clear the per-wheel X values to type them
-      there again.
+    - Once the wheels carry their own X, the wheelbase, CG-to-axle
+      distances, axle spacing and overhangs follow from them, as HVE derives
+      them, and are greyed in Size & Weight, showing the wheels' values; once
+      a wheel carries its own Y, that axle's track width is greyed the same
+      way. A note above them says so. Moving an end axle's wheels keeps the
+      body's ends where they were: the overhang takes up the move. Overall
+      Length still sets the body's length, and a typed weight split or axle
+      weight moves the CG (as Move CG does) rather than the axles.
+      **Use dimensions instead** gives the dimensions the wheels' values and
+      clears every wheel's own X and Y, so the fields can be typed again with
+      nothing moving; a wheel's own Z is kept.
     - There is no Copy To Other Side.
 
 > **NOTE:** If you wish to move the CG, you can edit each individual

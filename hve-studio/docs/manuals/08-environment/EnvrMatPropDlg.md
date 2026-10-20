@@ -27,8 +27,12 @@ law (for contact with the ground) and its soil properties (for sinkage).
 **Road**, **Friction Zone**, **Curb**, **Water** or **Other**. Friction Zone and
 Curb reach the solver: the road database is searched in type order, and a hit on
 a curb or friction zone ends the search where a road hit keeps searching. A
-Water or Other surface is run as Road; standing water comes from **Water Depth**
-below.
+Water surface is run as Road; standing water comes from **Water Depth** below.
+**Other** is scenery, as in HVE, which leaves an Other polygon out of its
+physics: a surface of type Other comes in with **Drive** off, and choosing Other
+switches Drive off (choosing another type switches it back on). The type is
+also the **Type** column of the Outliner, where it can be changed for several
+selected surfaces at once.
 
 !!! note "HVE Studio"
     In HVE the type is set as the Default Type of an imported geometry file.

@@ -29,7 +29,8 @@ so a field has one editor and nothing is reachable in one and not the other.
    cloud — the Terrain section. The drivable triangles here are what every
    vehicle runs on.
 3. **Surfaces**: the Outliner's tree hosted on the stage (layers, surfaces and
-   objects with their eye and Drive switches; **Open the Outliner** puts the
+   objects with their eye and Drive switches and each surface's **Type**;
+   **Open the Outliner** puts the
    same tree in its own window), the **Selected Surface** section for the
    surface picked in the tree or the 3-D view, **Edit Mode (Tab)** to pick
    faces in the viewport and give them a material or split a surface by them,
@@ -53,8 +54,9 @@ so a field has one editor and nothing is reachable in one and not the other.
    *Figure 14-2: The Surfaces stage: the Outliner tree, Edit Mode, the
    Selected Surface section and the Surface Generator on one page.*
 
-4. **Water & Weather**: gravity, rolling resistance, the ambient air and wind,
-   and standing water — the Physical section.
+4. **Weather**: gravity, the ambient air and wind — the Physical section.
+   Standing water and texture depth are each surface's own (Surfaces stage,
+   the surface's HVE Surface node), and rolling resistance is each tire's.
 5. **Sky & Lights**: the sun, the sky and the site's lights. Display only, and
    the stage says so.
 6. **Site Check**: does a vehicle stand on this ground? **Run the Site Check**
@@ -66,8 +68,12 @@ so a field has one editor and nothing is reachable in one and not the other.
    table gives each point's friction, its CG height above the ground under it at
    the start and the end, and a result (the reason is under the table and on
    hover): **Settled**, **Fell through** (the CG
-   ended at or below the ground, or sank more than 0.3 m), **Moved** (its height
-   above the ground changed by more than 0.1 m), **Off the site** (it left the
+   ended at or below the ground, or sank more than 0.3 m), **Height changed**
+   (its height above the ground changed by more than 0.1 m in the 1 s; nothing
+   was moved by you), **Not driven on** (the CG started *below* the surface at
+   the point, so the wheels stood on lower ground beside or under it: the top of
+   a narrow object, a curb, or something over the road; that surface was not
+   tested), **Off the site** (it left the
    drivable triangles), or **No answer** (the solver refused the run, with its
    reason). The Key figures show **Probes settled** and **Probes failed** once a
    check has run on this ground; a check made before the site changed is not
@@ -94,7 +100,7 @@ Every section of the **Environment** window and every item of the
 | Terrain: Selected Surface | Surfaces |
 | Surface Generator | Surfaces |
 | Edit Mode (materials per face) | Surfaces |
-| Physical | Water & Weather |
+| Physical | Weather |
 | Sky, Lights | Sky & Lights |
 
 The Environment window stays available while the designer is new.
@@ -117,7 +123,7 @@ keeps the current values as the "was" column for this case.
 | Fix | Surfaces | A drivable surface, or a generated surface applied to the run, has a friction multiplier of 0, which every tire reads as no friction. |
 | Fix | Geometry | The site names a geometry file but no triangle is drivable, so vehicles run on the default plane. |
 | Note | Site | The site reaches more than 2 km from the origin, where single precision coarsens. |
-| Note | Water & Weather | The stated gravity differs from 9.80665 m/s² by more than 1%. |
+| Note | Weather | The stated gravity differs from 9.80665 m/s² by more than 1%. |
 | Consider | Surfaces | The drivable surface is more than one patch and the smallest is under 2% of the area, so its edge drops a wheel onto the default plane. |
 | Note | Surfaces | A palette entry owns no drawn or drivable triangle, so editing its friction changes nothing. |
 | Fix | Site Check | The probe vehicle's CG ended at or below the ground, or sank more than 0.3 m: a hole or a seam there. |

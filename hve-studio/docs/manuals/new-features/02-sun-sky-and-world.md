@@ -149,7 +149,7 @@ where, comes from the first of these that applies:
    anything else.
 2. **Its body file's lamps.** An HVE vehicle file marks each lamp lens
    (`HVE_LIGHT_` tags), and the lamp sits on that lens. A file that marks none
-   but names its lenses by material — HVE's `LIGHT_WHITE_*` and `LIGHT_RED_*`,
+   but names its lenses by material — HVE's `LIGHTWHITE` / `LIGHT_WHITE_*` and `LIGHTRED` / `LIGHT_RED_*`,
    or a modeller's `Headlight`/`Taillight` names — gets a headlamp on each white
    lens at the front and a tail lamp on each red lens at the back. Amber lenses,
    a white lens at the back (reversing) and a red one at the front are not
@@ -207,7 +207,7 @@ three-colour gradient, the sun's disc, and haze. It has these inputs:
 
 | Input | Default | Effect |
 | --- | --- | --- |
-| **Haze** | 0 | A milky veil over the whole sky, thickest at the horizon, plus a glow around the sun. 0 leaves the sky clear; 1 is a clear haze; 3 nearly white. There is no upper limit. With **View › Scene Display › Effects › Distance Haze** on (the default), the same amount also fades far geometry toward the horizon colour; at 0 nothing is faded. Display only. |
+| **Haze** | 0 | A milky veil over the whole sky, thickest at the horizon, plus a glow around the sun. 0 leaves the sky clear; 1 is a clear haze; 3 nearly white. There is no upper limit. With **View › Scene Display › Sky & Reflections › Distance Haze** on (the default), the same amount also fades far geometry toward the horizon colour; at 0 nothing is faded. Display only. |
 | **Sun Size** | 0.545 | The angular size of the sun's disc, in degrees |
 | **Sun Intensity** | 20 | The sun's brightness |
 | **Ambient** | 1.00 | A field, not a socket: how much light the sky gives the scene, the fill in the shadows and the sky's reflection. 1.00 is the viewport's own; 0 leaves only the sun and the lamps. The drawn sky is unchanged. |
@@ -251,7 +251,7 @@ The viewport draws shadows from the key light (the sun).
 - **Low sun.** A low sun throws long shadows; HVE Studio extends the shadow
   calculation down the light to the ground, so a long shadow is not cut off
   short of where it lands.
-- **View › Scene Display › Shadow Coverage** chooses what the shadow calculation covers:
+- **View › Scene Display › Light & Shadow** (Shadow coverage) chooses what the shadow calculation covers:
   - **Vehicles (sharp)** — fitted to the vehicles, so their shadows are as sharp
     as possible, but site geometry outside that region casts nothing.
   - **Whole scene** — fitted to the site too, so everything that can cast a

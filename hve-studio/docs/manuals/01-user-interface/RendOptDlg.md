@@ -12,7 +12,7 @@ HVE's Render dialog sets various options that affect the visual appearance of al
 
 When off, the sun stops contributing to the picture; the ambient light is raised so that shape and layout stay readable. In HVE Studio the light sources are the sun and ambient light (see [Light Editor Dialog Box](LightEdDlg.md)).
 
-## Shadows (View › Scene Display › Shadow Coverage)
+## Shadows (View › Scene Display › Light & Shadow)
 
 **Vehicles (sharp)** fits the shadow-casting light to the vehicles, so their shadows are sharp; **Whole scene** fits it to the site as well.
 

@@ -34,8 +34,9 @@ and which stage is open.
 
 ## The stages
 
-The stage bar lists the fifteen stages in the order a vehicle is usually set
-up, numbered so the order is visible. The designer opens on the first,
+The stage bar lists the sixteen stages, left to right, in the order a vehicle
+is usually set up; the line above the stage says which one is open ("Stage 4
+of 16: Stiffness"). The designer opens on the first,
 **Vehicle**; every other stage edits a vehicle, so it opens once the case has
 one (until then its button is unavailable and says so).
 
@@ -47,18 +48,19 @@ vehicle's own data and are usually left as they are.
 1. **Vehicle** — which vehicle the designer works on: the case's vehicles, and the Add Vehicle list to add or replace one from (Stage 1 below).
 2. **Size & Weight** — axles from the CG, length, overhangs, width, track and weight, and the axle layout.
 3. **Mass & Inertia** — total and sprung mass, the CG, roll, pitch and yaw inertia.
-4. **Stiffness** — crush stiffness per side (A, B and Kv) and DyMESH's node stiffness, crush stiffness from crash tests, and body torsion.
+4. **Stiffness** — crush stiffness for an impact: A, B and Kv per side, DyMESH's node stiffness per face, and crush stiffness from crash tests.
 5. **Geometry** — the body drawn against the wheels and the CG, and the mesh's file, placement and collision options.
-6. **Suspension** — spring and damping rates, anti-roll, roll center and roll couple.
-7. **Tires** — size, friction, cornering and camber stiffness and their tables.
-8. **Brakes** — the assemblies, the Brake Designer, system pressure and ABS.
+6. **Tires** — size, friction, cornering and camber stiffness and their tables.
+7. **Brakes** — the assemblies, the Brake Designer, system pressure and ABS.
+8. **Suspension** — spring and damping rates, anti-roll, roll center and roll couple.
 9. **Engine** — idle and redline, the torque and power curves, engine braking.
 10. **Transmission** — gear ratios, final drive, shift logic, drive type, differential.
 11. **Steering** — steer ratio, column and geometry per axle.
-12. **Exterior** — the lamps, aerodynamic drag and accelerometers.
-13. **Occupant Protection** — the contact surfaces, airbags and belts an occupant meets, per seat.
-14. **Test Track** — three canned runs on the current physics, each on SIMON and on EDSMAC4, read back as numbers (stage 14 below).
-15. **Summary** (stage 15 below) — the spec sheet, the whole warnings list and the provenance tally.
+12. **Connections** — how this unit couples to another (hitch, fifth wheel or pintle) and the frame's torsional stiffness, which only a coupled rig uses.
+13. **Exterior** — the lamps, aerodynamic drag and accelerometers.
+14. **Occupant Protection** — the contact surfaces, airbags and belts an occupant meets, per seat.
+15. **Test Track** — three canned runs on the current physics, each on SIMON and on EDSMAC4, read back as numbers (stage 15 below).
+16. **Summary** (stage 16 below) — the spec sheet, the whole warnings list and the provenance tally.
 
 Every stage hosts the editors that hold its inputs, the same windows the
 Vehicle menu opens; each editor's **Open in its own window** opens its window.
@@ -111,18 +113,16 @@ The Size & Weight stage holds the dimensions a solve reads. It opens with **Axle
 loads**, the static load on each axle from the mass and the weight split, and
 where the CG sits along the wheelbase. On a vehicle with more than two axles
 the rear axles share the rear load equally (a tandem's equalizer at rest), one
-bar each, and the headline says so. Under it are three tabs. **Size & Weight**
+bar each, and the headline says so. Under it are two tabs. **Size & Weight**
 holds the two sections the Vehicles panel has: **Configuration** (number of axles, driver
 location, engine location and drive axles, with HVE's rules applied as you
 change one) and **Size & Weight** (HVE's Vehicle Wizard form, applied as you
-type: wheelbase, tracks, lengths, weights and CG, with the wheelbase check and
-the **Details** table underneath). They are the panel's own sections, not
-copies: a field has one editor. Size & Weight ends with **Wheel Positions (from
-CG)**, each wheel's X, Y and Z, each axle left then right. **Connections** is
-the Vehicle Connections editor: how this unit couples to another by hitch, fifth
-wheel or pintle, with its **Properties...** window. While the tab is open the
-3-D view marks the front connection point in cyan and the rear one in orange,
-each with a line down to the ground; a point whose type is None is drawn dim.
+type: weights, the overall dimensions, the CG height, the body's distance from
+the CG to its front, rear, right, left, top and bottom, the wheelbase,
+overhangs and CG-to-axle distances, and the tracks, with the wheelbase check).
+They are the panel's own sections, not copies: a field has one editor. Size &
+Weight ends with **Wheel Positions (from CG)**, each wheel's X, Y and Z, each
+axle left then right.
 The Vehicle Connections window marks them the same way. **Vehicle Package** is
 the wizard that **Tools › Vehicle Package...** opens, pinned to the designer's
 vehicle: **1. Identify** (the VIN
@@ -155,19 +155,28 @@ window.
 
 ### Stage 4: Stiffness
 
-The body's structure, one editor per tab:
+What the body does in an impact, one editor per tab:
 
-- **Crush Stiffness** — **A**, **B** and **Kv** for the front, rear, left and
-  right (A and B are read by EDSMAC4, Kv by EDSMAC and by EDVSM for the body
-  against the ground; EDCRASH takes its A and B from the event's damage
-  profile instead), and **3-D Node Stiffness** per zone, read by SIMON's
-  DyMESH contact. The same editor as **Vehicle › Editors › Crush Stiffness...**.
+- **Crush Stiffness** — one table with a column per face: **Front**,
+  **Rear**, **Top**, **Bottom**, **Left** and **Right**. The **2-D** rows come
+  first: **A**, **B** and **Kv** (A and B are read by EDSMAC4, Kv by EDSMAC and
+  by EDVSM for the body against the ground; EDCRASH takes A and B from the
+  event's damage profile instead; Top and Bottom have none, since the 2-D
+  programs are planar). The **3-D** rows follow, read by SIMON's DyMESH contact:
+  the node pressure's **Constant**, **Linear**, **Quadratic** and **Cubic**
+  terms, **Conversion Height**, **Saturation Crush** and **Max Crush (not
+  read)**. A face whose four 3-D terms are all zero is tinted red: a DyMESH
+  contact there meets no resistance. Above the table a graph shows the selected
+  column — click a column's header, or edit one of its cells, to select it; it
+  opens on **Front**. **2-D (per unit width)** plots A + B C and Kv C against
+  crush; **3-D (per unit area)** plots the node pressure, flat past the
+  saturation crush. The same editor as **Vehicle › Editors › Crush
+  Stiffness...**.
 - **Crush from Crash Tests** — the Automatic Tools' Crush Stiffness from Crash
   Tests: CRASH3 A, B and G from staged barrier tests, shown beside the
   stiffness now before you apply it. Not offered on a sealed case.
-- **Body Torsion** — the frame's torsional stiffness and axis.
 
-![Figure 12-19: the Stiffness stage with the Crush Stiffness editor](../images/hvn-04-vehicle-designer-stiffness.png)
+![Figure 12-19: the Stiffness stage with the Crush Stiffness editor and its graph](../images/hvn-04-vehicle-designer-stiffness.png)
 
 ### Stage 5: Geometry
 
@@ -209,33 +218,11 @@ only where the event arms it (**Event › Wheels › Wheel Damage › Use DyMESH
 Under the view is the **Mesh** editor (the Vehicle Mesh editor with its File &
 Placement, Collision, Display and Wheel Images tabs): the mesh file, and
 **Move CG**, **Translate**, **Rotate** and **Scale** to bring the body onto the
-wheels. The mesh is what DyMESH collides. At the foot of the stage, closed
-until opened, is the **Body designer** (see *The body designer* below).
+wheels. The mesh is what DyMESH collides. At the foot of the stage, for a
+vehicle with no 3-D body of its own, is the **body designer** (see *The body
+designer* below).
 
-### Stage 6: Suspension
-
-The Suspension stage opens with **Ride and roll**: each axle's ride frequency
-and damping ratio, with the body's response to a unit bump drawn for each
-axle's corner (half the axle's static load, less the unsprung share, on its
-spring and damper), and the roll gradient in degrees per g with the roll
-stiffness split front against the rear group (every axle behind the front one,
-as HVE's roll couple counts them).
-The roll axis is at the stated roll centers, or at the ground when none is
-stated, and the headline says which. These are the numbers the damping and
-roll-split rules judge.
-
-The Suspension stage hosts the suspension editor itself: the same **Springs &
-Dampers** table and the four advanced tabs that **Vehicle › Editors › Suspension Data...**
-opens, drawn in the stage's center under the frame's vehicle line, so an edit
-here is the edit, with Key figures and the warnings panel updating beside it.
-The window and the stage draw one editor, so they can never disagree.
-**Open in its own window** opens the same editor as a separate window, to work
-it beside another stage. A solved run's inputs are read-only here as everywhere, until
-the run is reset.
-
-![Figure 12-4: the Suspension stage hosting the suspension editor](../images/hvn-04-vehicle-designer-suspension.png)
-
-### Stage 7: Tires
+### Stage 6: Tires
 
 The Tires stage opens with **Peak friction against load**: each axle's peak
 longitudinal friction from zero to twice its static tire load, read from the
@@ -252,7 +239,7 @@ stage scrolls as one page; the window keeps its divider between the two.
 
 ![Figure 12-5: the Tires stage hosting the tire editor](../images/hvn-04-vehicle-designer-tires.png)
 
-### Stage 8: Brakes
+### Stage 7: Brakes
 
 The Brakes stage answers one question from the vehicle's own inputs: at what
 pedal force does each axle lock, and which locks first. Nothing is solved; the
@@ -390,6 +377,29 @@ The understeer gradient and brake fade need a run and arrive with the Test
 Track stage; a rule on a value's provenance (an inertia that is an estimate
 rather than a measurement) arrives with the Mass stage.
 
+### Stage 8: Suspension
+
+The Suspension stage opens with **Ride and roll**: each axle's ride frequency
+and damping ratio, with the body's response to a unit bump drawn for each
+axle's corner (half the axle's static load, less the unsprung share, on its
+spring and damper), and the roll gradient in degrees per g with the roll
+stiffness split front against the rear group (every axle behind the front one,
+as HVE's roll couple counts them).
+The roll axis is at the stated roll centers, or at the ground when none is
+stated, and the headline says which. These are the numbers the damping and
+roll-split rules judge.
+
+The Suspension stage hosts the suspension editor itself: the same **Springs &
+Dampers** table and the four advanced tabs that **Vehicle › Editors › Suspension Data...**
+opens, drawn in the stage's center under the frame's vehicle line, so an edit
+here is the edit, with Key figures and the warnings panel updating beside it.
+The window and the stage draw one editor, so they can never disagree.
+**Open in its own window** opens the same editor as a separate window, to work
+it beside another stage. A solved run's inputs are read-only here as everywhere, until
+the run is reset.
+
+![Figure 12-4: the Suspension stage hosting the suspension editor](../images/hvn-04-vehicle-designer-suspension.png)
+
 ### Stage 9: Engine
 
 The Engine stage opens with **Torque and power**: the wide-open torque curve
@@ -444,7 +454,20 @@ stage.
 
 ![Figure 12-6: the Steering stage hosting the steering editor](../images/hvn-04-vehicle-designer-steering.png)
 
-### Stage 12: Exterior
+### Stage 12: Connections
+
+How this unit couples to another, one editor per tab. **Connections** is the
+Vehicle Connections editor: the front and rear connection points (hitch, fifth
+wheel or pintle) with their **Properties...** window. While the tab is open the
+3-D view marks the front connection point in cyan and the rear one in orange,
+each with a line down to the ground; a point whose type is None is drawn dim.
+**Body Torsion** is the frame's torsional stiffness and axis: SIMON uses it in
+the coupling moment of a tow and trailer, EDVDS only reports it, and a single
+vehicle ignores it.
+
+![Figure 12-20: the Connections stage](../images/hvn-04-vehicle-designer-connections.png)
+
+### Stage 13: Exterior
 
 The Exterior stage opens with the same **Vehicle view** as the Geometry stage,
 here for placing what the vehicle carries: click a light to select it in the
@@ -458,7 +481,7 @@ drag and the accelerometers are the vehicle's own data, usually left as it says.
 
 ![Figure 12-11: the Exterior stage with its three editors as tabs](../images/hvn-04-vehicle-designer-exterior.png)
 
-### Stage 13: Occupant Protection
+### Stage 14: Occupant Protection
 
 The Occupant Protection stage hosts the three editors of what an occupant
 meets in this vehicle, one tab each: **Contact Surfaces** (the panels an
@@ -472,7 +495,7 @@ window** opens that editor's window.
 
 ![Figure 12-16: the Occupant Protection stage](../images/hvn-04-vehicle-designer-occupants.png)
 
-### Stage 14: Test Track
+### Stage 15: Test Track
 
 The Test Track runs the vehicle, alone, on a flat surface, in three canned
 events, and reads the numbers back. Each event is solved twice, on **SIMON**
@@ -530,7 +553,7 @@ unrun track is not a finding.
 
 ![Figure 12-14: the Test Track stage before its runs](../images/hvn-04-vehicle-designer-track.png)
 
-### Stage 15: Summary
+### Stage 16: Summary
 
 The Summary is the design on one page. It opens with the vehicle's identity (the
 Vehicle Package's year, make, model and trim, and its VIN when kept; otherwise
@@ -565,21 +588,30 @@ Wheel names are **wheel_FL**, **wheel_FR**, **wheel_RL** and **wheel_RR**.
 
 ## The body designer
 
-**Body designer (generate or resize a sedan body)**, at the foot of the Geometry
-stage (closed until opened), is a body-shape design tool. Until 2026-10-19 it was
-stage 1. It it edits its own design, saved to
-its own design file, and changes nothing a solve reads until you write it to
-the case vehicle with **Apply to this vehicle** (under the design). That writes
-the design's dimensions into the vehicle's Size & Weight fields (wheelbase,
-overhangs, overall length, width and height, the tracks and the tire radii;
-the CG's front/rear split and its height stay the vehicle's own, since a body
-shape determines neither) and carries the generated body in the case as the
+The body designer is for a vehicle that has **no 3-D body of its own** — one
+drawn and collided as a generic box because it names no model, or because the
+model it names was not found. For such a vehicle the Geometry stage shows
+**No 3-D body: build one (body designer)**, open; for a vehicle with its own
+model it shows only a line saying so, since the designer's one effect there
+would be to replace that model with a sedan.
+
+It is a body-shape design tool: it edits its own design, saved to its own
+design file, and changes nothing a solve reads until you write it to the case
+vehicle with **Apply to this vehicle** (under the design). **From this
+vehicle** starts the design at the vehicle's own length, width, height,
+wheelbase, overhangs, tracks and tires, with the sedan's profile scaled to
+them, so applying it gives the vehicle a body and changes none of its
+dimensions; a vehicle that is not a two-axle car, or whose overhangs do not add
+up to its length, is refused with the reason. Apply writes the design's
+dimensions into the vehicle's Size & Weight fields (wheelbase, overhangs,
+overall length, width and height, the tracks and the tire radii; the CG's
+front/rear split and its height stay the vehicle's own, since a body shape
+determines neither) and carries the generated body in the case as the
 vehicle's mesh, so it is drawn and collided like a mesh file. The vehicle's
 database record is not changed. Each applied dimension becomes a Stated record
 in the Summary's provenance tally, naming the design. The button is disabled
 while a run holds the vehicle, and a design that does not validate is refused
-with the reason. Until applied, the case vehicle's dimensions are on stage 2,
-Size & Weight; the stage says so above its controls.
+with the reason.
 
 ![Figure 12-18: the body designer with Apply to this vehicle under its four views](../images/hvn-04-vehicle-designer-body-apply.png)
 
@@ -590,7 +622,8 @@ proportions, then save the design as a file or apply it to the case vehicle.
 Saving the design changes nothing in the case; applying it does, as described
 above.
 
-At the top, **New Sedan** restores the default sedan. **Save Design** writes the
+At the top, **New Sedan** restores the default sedan, **From this vehicle**
+starts it at the case vehicle's own dimensions (see above), **Save Design** writes the
 design to the file named in **File**, and **Load Design** reads it back. A line
 under them reports what happened. The four views follow; the **Side** view
 carries the dimension overlay: rear overhang, wheelbase, front overhang and the

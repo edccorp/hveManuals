@@ -55,15 +55,16 @@ chooses what happens to the camera's offset from that vehicle as it moves:
 
 | Follow | Effect |
 | --- | --- |
-| **Fixed - do not move the camera** | The camera stays put and turns to watch; the vehicle drives through the shot |
+| **Fixed - do not move the camera** | The camera stays put and turns to watch, like a camera on a tripod; the vehicle drives through the shot |
 | **Follow - keep the offset in world axes** | The camera travels with the vehicle but keeps its compass direction from it — a tracking or panning shot. After a right turn you are watching the vehicle's left side. |
-| **Chase - keep the offset behind the vehicle** | The offset turns with the vehicle's heading, so behind stays behind through a turn — a riding-along shot |
+| **Chase - keep the offset behind the vehicle** | The offset turns with the vehicle's heading, so behind stays behind through a turn — a riding-along shot. Its angle is stored from the vehicle's heading, so it also stays behind when the start heading is edited, and a camera switched on part-way through a run, the exported camera and the view all agree |
 
 With **View From** set to a vehicle, the list is **Aim** instead:
 
 | Aim | Effect |
 | --- | --- |
-| **Rides with the vehicle** | The camera looks at its **Aim Point**, in the vehicle's own frame, so it turns with the vehicle |
+| **Rides with the vehicle** | The camera looks at its **Aim Point**, in the vehicle's own frame, so it turns, pitches and rolls with the vehicle, and the picture banks with it — the view from a camera bolted to the car |
+| **Rides with the vehicle, level horizon** | The same, turning with the vehicle's heading only: the mount and aim stay level and the horizon stays horizontal through a pitch or a roll |
 | **Stays on a fixed world point** | The camera rides the vehicle but keeps looking at a fixed point in the scene |
 
 Below these:

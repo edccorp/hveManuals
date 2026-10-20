@@ -22,10 +22,10 @@ The vehicle the camera rides on, or **Fixed** for a camera that does not ride on
 The vehicle at which the camera is aimed, or **Fixed**. The camera can, for example, ride on one vehicle while aimed at another.
 
 **Follow** (camera not riding on a vehicle, aimed at one)
-**Fixed** — the camera does not move; the vehicle drives through the shot. **Follow** — the camera keeps its offset in world axes (a tracking or panning shot). **Chase** — the offset turns with the vehicle's heading, so *behind* stays behind through a turn.
+**Fixed** — the camera does not move, and turns to keep the vehicle in view (a tripod shot); the vehicle drives through the shot. **Follow** — the camera keeps its offset in world axes (a tracking or panning shot). **Chase** — the offset turns with the vehicle's heading, so *behind* stays behind through a turn, and when the start heading is edited.
 
 **Aim** (camera riding on a vehicle)
-**Rides with the vehicle** or **Stays on a fixed world point**.
+**Rides with the vehicle** — the camera pitches and rolls with the vehicle, and the picture banks with it; **Rides with the vehicle, level horizon** — it turns with the vehicle's heading only, so the horizon stays level; **Stays on a fixed world point**.
 
 An orange note reminds that only the **active** camera drives the Viewport.
 

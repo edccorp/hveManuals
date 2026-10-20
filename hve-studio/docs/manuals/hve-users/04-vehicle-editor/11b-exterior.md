@@ -23,12 +23,12 @@ overall width. In HVE they are edited with the Vehicle Dimensions dialogs
 In HVE Studio they are edited in the Vehicles panel's **Size & Weight**
 section (Figure 11-19), which is HVE's Vehicle Wizard: Overall Length,
 Overall Width, Overall Height, CG Height, Wheelbase, Front Overhang, Rear
-Overhang (from the rearmost axle), and CG to Axle 1 / Axle 2. The
-**Exterior Extents** table, under the section's collapsed **Details** node,
-shows the result — the CG to front, back, right, left, top and bottom
-distances the solver receives, with the overall length, width and height. It
-is read-only, and warns when a loaded 3-D model does not reach the declared
-extents.
+Overhang (from the rearmost axle), and CG to Axle 1 / Axle 2. Right after
+**CG Height**, six fields give the CG to front, back, right, left, top and
+bottom distances the solver receives: **CG to Front**, **CG to Rear**, **CG to
+Right**, **CG to Left**, **CG to Top** and **CG to Bottom**. When a loaded 3-D
+model does not reach the declared front and rear extents, a warning says so
+directly under the **Wheel Positions** table.
 
 When the **Wheelbase** does not match where the axles are (CG to Axle 1 /
 Axle 2; on a vehicle with three or more axles, to the tandem centre), the
@@ -37,12 +37,21 @@ wheelbase to the figure the axle positions give; to go the other way, type the
 CG-to-axle distances you want, since the engines place the wheels from them.
 
 ![Figure 11-19](../images/hvn-04-vehicles-panel.png)
-*Figure 11-19: The Vehicles panel. Its Size & Weight section edits the overall dimensions; Details › Exterior Extents shows the CG-to-exterior distances derived from them.*
+*Figure 11-19: The Vehicles panel. Its Size & Weight section edits the overall dimensions and, under Geometry, the CG-to-exterior distances (CG to Front ... CG to Bottom).*
 
 !!! note "HVE Studio"
-    - The CG-to-exterior distances are **derived** from the overall
-      dimensions, overhangs, wheelbase and CG location; they are not typed
-      directly. Edits apply as you type, and Edit › Undo reverses them.
+    - Each CG-to-exterior distance is computed from the vehicle's stored
+      dimensions, so typing one writes the dimension behind it: **CG to Front** sets
+      the front overhang (front extent = CG to Axle 1 + front overhang),
+      **CG to Rear** the rear overhang (rear extent = CG to Axle 2 + the rear
+      axle group + rear overhang), **CG to Right** and **CG to Left** are the
+      stored CG-to-side distances (the engines receive their mean on both
+      sides), and **CG to Top** sets the Overall Height (top = overall height
+      − CG height). **CG to Bottom** is shown grayed: it equals the CG Height,
+      since the extents run to the ground. When the wheels carry their own X
+      positions (**Wheel Positions**), CG to Front and CG to Rear are grayed
+      along with the overhangs and the wheelbase. Edits apply as you type, and
+      Edit › Undo reverses them.
     - The dimensions are measured from the sprung-mass CG. The **Inertia /
       Mass** dialog (Vehicles panel › Inertia › **Edit…**) shows the CG to
       axle distances and CG height on both the total and the sprung basis.
@@ -74,10 +83,10 @@ The Exterior Dimension parameters are described below.
 
 See also the HVE reference pages:
 [CG to Front](../../02-vehicles/CGsToAll.md),
-[CG to Right Side](../../02-vehicles/CGsToAll1.md),
-[CG to Back](../../02-vehicles/CGsToAll2.md),
+[CG to Back](../../02-vehicles/CGsToAll1.md),
+[CG to Top](../../02-vehicles/CGsToAll2.md),
 [CG to Left Side](../../02-vehicles/CGsToAll3.md),
-[CG to Top](../../02-vehicles/CGsToAll4.md),
+[CG to Right Side](../../02-vehicles/CGsToAll4.md),
 [CG to Bottom](../../02-vehicles/CGsToAll5.md).
 
 ## Vehicle Exterior Stiffness Coefficients
@@ -88,12 +97,16 @@ back or sides of the vehicle.
 
 !!! note "HVE Studio"
     The stiffness coefficients are vehicle data, edited in the Vehicle editor
-    with **Vehicle › Editors › Crush Stiffness...**. The dialog shows the Front, Rear,
-    Left and Right sides, each with its **A**, **B** and **Kv** Stiffness, and
-    below them HVE's 3-D stiffness: **3-D Node Stiffness** — Constant, Linear,
-    Quadratic and Cubic for the Front, Right, Back, Left, Top and
-    Undercarriage zones — with the Conversion Height, Saturation Crush and Max
-    Crush. It says which engine reads each part: A and B are read by EDSMAC4,
+    with **Vehicle › Editors › Crush Stiffness...** (and in the Vehicle
+    Designer's **Stiffness** stage). It is one table with a column per face —
+    **Front**, **Rear**, **Top**, **Bottom**, **Left** and **Right** — whose
+    **2-D** rows are **A**, **B** and **Kv** (Top and Bottom show "--") and
+    whose **3-D** rows are HVE's 3-D node stiffness: **Constant**, **Linear**,
+    **Quadratic** and **Cubic**, **Conversion Height**, **Saturation Crush**
+    and **Max Crush (not read)**; the 3-D columns are DyMESH's Front, Back,
+    Top, Undercarriage, Left and Right zones. A graph above the table plots the
+    selected column (click its header), per unit width (2-D) or per unit area
+    (3-D). It says which engine reads each part: A and B are read by EDSMAC4,
     Kv by EDSMAC (and by EDVSM for the body against the ground), and the 3-D
     node stiffness by SIMON (DyMESH); EDCRASH takes its A and B from the
     event's damage profile (Event Information › Vehicle Impact Setup).
@@ -109,8 +122,8 @@ coefficients, perform the following steps:
 1. In the Vehicle editor (F3), select the vehicle.
 2. Choose **Vehicle › Editors › Crush Stiffness...**. The Crush Stiffness dialog is
    displayed.
-3. View and/or edit the stiffness properties of each side. Changes apply as
-   they are made.
+3. View and/or edit the stiffness properties in each face's column. Changes
+   apply as they are made.
 
 The Exterior Stiffness parameters are described below.
 

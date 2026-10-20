@@ -25,6 +25,9 @@ site, and its friction zones.
 (mm/dd/yyyy, as HVE writes it, or yyyy-mm-dd).
 
 **Time** — The local standard time of day. HVE's *Time of Crash (24 Hr)*.
+Typed as 14:30, 1430 or 7:05:30 and kept as hh:mm (or hh:mm:ss); an entry that
+is not a time of day (such as 3221:30) is refused with the reason and the
+previous time kept.
 
 **Latitude (°)** / **Longitude (°)** — The site's latitude and longitude in
 decimal degrees, north and east positive (HVE enters them as dd.mm.ss with
@@ -256,11 +259,11 @@ compute it; display only.
 
 **Gravity** — The local acceleration of gravity (m/s² or in/s²).
 
-### Standing Water
-
-Standing water is set per surface, on each surface's HVE Surface node in the
-Shader Editor, and on the **Default surface material** for ground with no
-surface of its own — see [Environment Material Properties](EnvrMatPropDlg.md).
+Standing water is not on this page: it is set per surface, on each surface's
+HVE Surface node in the Shader Editor, and on the **Default surface material**
+for ground with no surface of its own — see
+[Environment Material Properties](EnvrMatPropDlg.md). Rolling resistance is
+each tire's own (**Vehicle › Editors › Tires...**).
 
 !!! note "HVE Studio"
     The *Angle of X Axis* is in the Shader Editor's Sun & Sky panel as

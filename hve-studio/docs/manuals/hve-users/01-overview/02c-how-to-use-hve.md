@@ -117,7 +117,7 @@ draw solid surfaces.
 **Phong** (smooth, the default) or **Flat** (one normal per face, which shows the
 real tessellation of a mesh). **Light Sources On** turns the sun's contribution
 on and off. A vehicle's own shading is chosen on the Display tab of its Vehicle Mesh window, and the
-site's in the Environment panel. Shadows are set with **View › Scene Display › Shadow Coverage**.
+site's in the Environment panel. Shadows are set with **View › Scene Display › Light & Shadow**.
 
 #### Complexity
 

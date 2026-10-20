@@ -23,7 +23,7 @@ HVE Studio has **no Options menu**. HVE's Options menu mixes display switches, t
 | Autoposition | Per event and per vehicle: **Auto Position (settle onto terrain)** under the vehicle in the **Vehicle Initial Conditions** section of the **Event Information** panel. It is always on for the planar methods. |
 | Grid | A datum grid is drawn when no site is loaded; it has no settings. See [Set Grid Dialog Box](SetGridDlg.md). |
 | Units | **Tools › Preferences... › Units** — see [Units Dialog Box](UnitsDlg.md). |
-| Shadows | **View › Scene Display › Shadow Coverage**: **Vehicles (sharp)** fits the shadows to the vehicles, **Whole scene** to the site as well. HVE's shadow radius, quality, precision and intensity are not offered. |
+| Shadows | **View › Scene Display › Light & Shadow** (Shadow coverage): **Vehicles (sharp)** fits the shadows to the vehicles, **Whole scene** to the site as well. HVE's shadow radius, quality, precision and intensity are not offered. |
 | Render (Ctrl+R) | **View › Scene Display › Rendering** — see [Render Dialog Box](RendOptDlg.md). (In HVE Studio **Ctrl+R** is **Output › Run Simulation...**, in the Event Editor.) |
 | Playback | **Output › Playback Options...** (Event Editor) |
 | Simulation Controls (Ctrl+Y) | The **Simulation** panel (**View › Simulation**), *Simulation Controls* section: duration, time steps, termination velocities and the integrator convergence controls the event's method uses. |

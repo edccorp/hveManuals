@@ -60,13 +60,18 @@ sections. Each input has one place in it:
 - **Size & Weight** — HVE's Vehicle Wizard, applied as you type: total
   weight and its front/rear distribution and axle weights, the overall length,
   width and height, wheelbase, overhangs, CG height, CG to axle distances,
-  axle spacings and the track of each axle. The axle count is not set here
+  axle spacings and the track of each axle. Right after **CG Height**, six
+  fields give the CG-to-exterior distances the solver receives: **CG to
+  Front** (typing it sets the front overhang), **CG to Rear** (sets the rear
+  overhang), **CG to Right** and **CG to Left** (the stored CG-to-side
+  distances), **CG to Top** (sets the Overall Height) and **CG to Bottom**
+  (grayed: it equals the CG Height). The axle count is not set here
   but under Configuration. **Wheel Positions (from CG)** follows: the
   per-wheel x, y, z table, each axle left then right, where a value typed
-  overrides the derived one. **Details**, collapsed, holds **Exterior
-  Extents** (the derived CG-to-front, back, side, top and bottom distances the
-  solver receives; read-only, with a warning when a loaded 3-D model does not
-  reach the declared extents).
+  overrides the derived one; when the wheels carry their own X positions, CG
+  to Front and CG to Rear are grayed with the overhangs and the wheelbase.
+  Under the table, a warning appears when a loaded 3-D model does not reach
+  the declared front and rear extents.
 - **Inertia** — One line of totals (weight, and yaw, pitch and roll inertia)
   and **Edit...**, which opens the **Inertia / Mass** dialog: weight and
   inertias on both the total and the sprung basis, the CG location, the XZ
@@ -352,7 +357,7 @@ reached in HVE Studio as follows:
 | Wheel: Tire | **Vehicle › Editors › Tires** (grid and Load & Speed Tables panel) |
 | Wheel: Brake | **Vehicle › Editors › Brakes › Brake Assembly**, **Vehicle › Editors › Brakes › Brake Designer** |
 | Wheel: Location | Vehicles panel › Size & Weight › **Wheel Positions (from CG)** |
-| Exterior: dimensions | Vehicles panel › Size & Weight (Details › Exterior Extents shows the derived extents) |
+| Exterior: dimensions | Vehicles panel › Size & Weight (**CG to Front** ... **CG to Bottom** under Geometry) |
 | Exterior: stiffness | **Vehicle › Editors › Crush Stiffness** |
 | Brake master cylinder | **Vehicle › Editors › Brakes › Brake System Pressure**, **Vehicle › Editors › Brakes › ABS / Brake Design** |
 | Steering wheel | **Vehicle › Editors › Steering System** |
