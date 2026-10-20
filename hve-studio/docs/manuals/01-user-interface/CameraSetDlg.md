@@ -32,6 +32,8 @@ An orange note reminds that only the **active** camera drives the Viewport.
 ### Onboard Mount (vehicle frame)
 Shown when View From is a vehicle. **Mount X fwd**, **Mount Y right**, **Mount Z up**: the camera's position relative to that vehicle's CG (+X forward, +Y right, +Z up). The camera rotates with the vehicle. For example, 0, 0, 0 views the scene from the vehicle's CG, wherever the vehicle is.
 
+A camera mounted this way is a **vehicle camera**: the Vehicle editor's Outliner lists it under the vehicle (**Vehicle Cameras**), and right-clicking that group adds one at the driver's eye (**Add Driver's-Eye Camera**). Before a run, a vehicle the active event does not place is taken at the origin heading forward, where the Vehicle editor draws it.
+
 ### Aim Point
 Shown when the camera is aimed at a vehicle. **Aim X fwd**, **Aim Y right**, **Aim Z up**: the point the camera looks at, relative to the aimed-at vehicle's CG; it turns with the vehicle, so a point ahead stays ahead through a turn. **Look ahead** and **Aim at the vehicle** set typical values.
 

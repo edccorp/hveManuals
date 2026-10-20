@@ -28,20 +28,27 @@ are numbered:
 
 ### An automatic transmission in a SIMON event
 
-SIMON uses the gear schedule only for a manual transmission. For a vehicle
-whose transmission is automatic (Drivetrain › Transmission), the tab shows a
-single **Selector at start** instead of the table:
+For a vehicle whose transmission is automatic (Drivetrain › Transmission), the
+table's second column is **Selector**: each row puts the selector in **Drive**,
+**Neutral** or **Reverse** from its time on, so an automatic can be shifted
+into Neutral (or Reverse) during the run and back into Drive later.
 
-- **Drive** — SIMON picks the starting gear from the vehicle's speed (the gear
-  that puts the engine about halfway through its speed range), then the
-  transmission shifts itself on the vehicle's shift points. This happens only
-  under the **At Driver** throttle method; under % of Friction the engine is
-  not used and the gear makes no difference.
-- **Neutral** or **Reverse** — the selector stays there for the whole run.
+- **Drive** — the transmission picks its own gear on the vehicle's shift
+  points. At the start of the run SIMON chooses the starting gear from the
+  vehicle's speed (the gear that puts the engine about halfway through its
+  speed range). Coming back into Drive from Neutral or Reverse, it starts in
+  first and shifts up. A row in an older case that names a forward gear above
+  first reads *Drive (enters in 3rd)*, for example: that is the gear Drive
+  re-enters in.
+- **Neutral** — no drive torque reaches the wheels.
+- **Reverse** — the reverse ratio.
 
-Rows after the first are not read by SIMON. A case that has them keeps them,
-with a note: EDVDS and EDVSM run every transmission as a manual, so in their
-events the full table is shown and every row is used.
+A Drive row while the vehicle is already in Drive changes nothing; the shift
+points decide. All of this applies only under the **At Driver** throttle
+method; under % of Friction the engine is not used and the selector makes no
+difference. EDVDS and EDVSM have no automatic model and run every
+transmission as a manual, so in their events the column is **Gear** and each
+row is the gear itself.
 
 ## Differential
 

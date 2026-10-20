@@ -108,7 +108,7 @@ The physical attributes are edited in the Shader Editor's **Surface** node, head
 - **Friction Multiplier** — HVE's Friction Factor: a multiplier on each tire's own friction.
 - The surface's force-deflection properties (Force Constant, Linear, Quadratic and Cubic Stiffness, Damping Rate, Unloading Stiffness), its soil properties (Bekker Constant, Kphi, Kc, Moisture %, Clay %), and a material-library picker that fills them in.
 
-Below them, *Object Color (display only)* — roughness, metallic and an optional base colour — reaches no engine.
+The surface's look (color, roughness, metallic) is its material's, edited in the Shader Editor; it reaches no engine. A surface whose base color was overridden in an earlier version says so, with **Clear Override**.
 
 ### Object Name
 
@@ -136,6 +136,7 @@ HVE assigns each object to a named overlay and turns overlays on and off in the 
 - With the pointer over the tree, **H** hides the selection and **Alt+H** shows everything.
 - A **Search** field filters the tree, and a **Cameras** group lists the case's saved cameras. Right-click the **Cameras** group for **Add Camera From View** (a new camera framed as the viewport is now), **Free View (stop looking through)**, **Show All** and **Hide All**.
 - In the Environment editor a **Lights** group lists the site's own lights (the Lights section of Sky & Lights), with *(off)* beside one that is switched off. Click a light — its row here, its name in the Lights section, or its star in the 3-D view (the selected star is drawn white and larger) — to select it. **G** then moves it and **R** turns its aim about the vertical, with the same X/Y/Z locks, typed values and Ctrl snapping as a surface; **S** does nothing to a light. Selecting a surface deselects the light, and the other way round.
+- In the Vehicle editor, two groups follow for the **selected** vehicle. **Vehicle Lights** lists its lamps — its own Vehicle Lights entries, or, when it lists none, the lamps the 3-D view draws it with — with *(off)* beside one switched off; click one to select it, as a click on its marker does (the Vehicle Lights list and the Shader Editor's Light panel follow). **Vehicle Cameras** lists the cameras mounted on it (a camera whose **View From** is this vehicle): they ride the vehicle through playback. Click one to select it for the Cameras dialog and double-click to look through it (again to stop). Right-click the group for **Add Driver's-Eye Camera**: a camera on the vehicle's left seat, 0.25 m under its roof, looking 30 m straight ahead, which the Cameras dialog then edits like any other (Mount, Aim Point, lens). A vehicle that is in no event is drawn at the origin heading forward, and its cameras ride it there.
 - A **Vehicles** group lists the case's vehicles (not in the Environment editor, whose Outliner lists the site's own objects). Click a name to select the vehicle. Its eye shows or hides the vehicle in the Event and Playback 3-D view, and Ctrl-click an eye to show only that vehicle. A hidden vehicle's ghosts and tire marks are hidden with it. This is a view setting only: nothing is saved and no result changes (see [Chapter 5, Vehicles Shown](../02-menu-reference/05-view-menu.md#vehicles-shown)). In the 3-D view, **H** hides the selected vehicle, **Shift+H** the others and **Alt+H** shows all.
 
 ![Figure 19-2](../images/hvn-08-outliner.png)

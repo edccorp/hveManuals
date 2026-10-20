@@ -331,9 +331,10 @@ Mode is on, is not saved, and changes nothing the simulation sees. Press
 A road surface's material shows an extra node with an orange title bar,
 **HVE Surface — <surface name>**. It carries the surface's **type and
 physics** — Surface Type, Friction Multiplier, the force and damping rows and
-the soil terms — under the heading **PHYSICS -- these change the result**, and
-below them the display values the Object Color node reads (Roughness,
-Metallic, and an override base colour).
+the soil terms — under the heading **PHYSICS -- these change the result**. The
+surface's look is the material's own: the node no longer carries display copies
+of roughness, metallic or a base color. A surface whose base color was
+overridden in an earlier version says so, with **Clear Override**.
 
 - It is a **view of the surface, not part of the material.** Its physics rows
   edit the surface itself, exactly as the Environment panel did. A material

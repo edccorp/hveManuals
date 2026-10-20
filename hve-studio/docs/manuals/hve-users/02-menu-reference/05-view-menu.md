@@ -238,6 +238,10 @@ In the Environment editor the Outliner also has a **Lights** group, one row per
 light of the site. Click one to select it; in the 3-D view **G** moves it and
 **R** turns its aim.
 
+In the Vehicle editor it also lists the selected vehicle's **Vehicle Lights** and
+**Vehicle Cameras** (cameras mounted on it); right-click Vehicle Cameras for
+**Add Driver's-Eye Camera**.
+
 Outside the Environment editor the Outliner also has a **Vehicles** group, one row per vehicle. Click a name to
 select the vehicle; the eye shows or hides it in the 3-D view, and Ctrl-click an
 eye to show only that vehicle. This is the view-only setting described under

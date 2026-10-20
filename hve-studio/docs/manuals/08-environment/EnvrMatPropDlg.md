@@ -96,13 +96,14 @@ A surface imported from an HVE case or `.h3d` arrives with its own **Texture Dep
 !!! note "No Clay (%) row"
     HVE's dialog shows that twelfth term as *Clay Content*, but no physics program reads a clay fraction: the slot is the texture depth above. HVE Studio shows it once, as **Texture Depth**.
 
-## Object Color (display only)
+## Appearance
 
 !!! tip "New in HVE Studio"
-    Below the physics rows, the values the material's **Object Color** node
-    reads: **Roughness**, **Metallic**, and **Override base colour** with **Base
-    Colour**. They reach no physics program. Unchecked, the surface keeps the
-    colour its file gave it, or a legend derived from its type and name.
+    The surface's look — its color, roughness and metallic — belongs to its
+    material and is edited in the **Shader Editor** (**Edit in Shader
+    Editor**). None of it reaches a physics program. A case saved by an
+    earlier version that overrode a surface's base color keeps that color and
+    says so under the physics rows, with **Clear Override** to drop it.
 
 ## Reset to File Value
 

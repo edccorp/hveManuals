@@ -4,7 +4,7 @@
 
 The vehicle's structural properties are defined by its stiffness coefficients. HVE edits them for the front, back, sides, top or bottom of the vehicle from the Stiffness button of each Vehicle Dimensions (CG to ...) dialog: in 2-D mode a Stiffness Coefficients dialog (A, B and Kv), in 3-D mode the Vehicle Exterior Stiffness dialog, which adds the constant/linear/quadratic/cubic 3-D stiffness, saturation crush and maximum crush.
 
-HVE Studio edits the same coefficients in **Vehicle › Editors › Crush Stiffness...** in the Vehicle editor (**Vehicle (F3)**): the **Crush Stiffness** window, with every side and the 3-D stiffness in one window, shown in the units set in Preferences. The Vehicle Designer's **Exterior & Body** stage hosts the same window as its **Crush Stiffness** tab. They are the vehicle's own data, as in HVE, so no Event menu item edits them.
+HVE Studio edits the same coefficients in **Vehicle › Editors › Crush Stiffness...** in the Vehicle editor (**Vehicle (F3)**): the **Crush Stiffness** window, with every side and the 3-D stiffness in one window, shown in the units set in Preferences. The Vehicle Designer's **Stiffness** stage (step 4) hosts the same window as its **Crush Stiffness** tab. They are the vehicle's own data, as in HVE, so no Event menu item edits them.
 
 !!! note "HVE Studio: Damage Profiles is not this"
     Until 2026-10-09 this window was **Event › Damage Profiles...**. In HVE that name is EDCRASH's *measured* damage — CDC, PDOF, crush depths — and **Event › Damage Profiles...** (Ctrl+M) now opens that, in Event Information's **Vehicle Impact Setup** section, for an EDCRASH event.
