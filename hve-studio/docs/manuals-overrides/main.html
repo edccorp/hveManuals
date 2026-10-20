@@ -1,0 +1,17 @@
+{#- HVE Studio manual: theme overrides (mkdocs.yml theme.custom_dir).
+    Kept OUT of docs/manuals so MkDocs does not publish this file as a page. -#}
+{% extends "base.html" %}
+
+{% block extrahead %}
+  {{ super() }}
+  {#- Published at manuals.edccorp.com/studio/ ahead of release and linked from
+      nowhere: this keeps search engines from listing it until then. Remove
+      at release, with the Preview banner below. -#}
+  <meta name="robots" content="noindex, nofollow">
+{% endblock %}
+
+{% block announce %}
+  <strong>HVE Studio.</strong>
+  This manual describes a preview release. For the current release of HVE, see the
+  <a href="https://manuals.edccorp.com/">HVE manuals</a>.
+{% endblock %}

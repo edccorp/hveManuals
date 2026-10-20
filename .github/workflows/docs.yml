@@ -24,11 +24,27 @@ jobs:
           python-version: '3.12'
       - run: pip install -r docs/requirements.txt
       - run: mkdocs build --strict
-      # The HVE 2027 manuals, served under /2027/ beside the classic set. Their
-      # source is edccorp/hve-next (scripts/sync_manuals_2027.sh copies it into
-      # hve2027/); never edit hve2027/ here. -d is relative to hve2027/mkdocs.yml.
-      - name: Build the HVE 2027 manuals into /2027/
-        run: mkdocs build --strict -f hve2027/mkdocs.yml -d ../site/2027
+      # The HVE Studio manuals, served under /studio/ beside the classic set.
+      # Their source is edccorp/hve-next (scripts/sync_manuals_studio.sh copies
+      # it into hve-studio/); never edit hve-studio/ here. -d is relative to
+      # hve-studio/mkdocs.yml.
+      - name: Build the HVE Studio manuals into /studio/
+        run: mkdocs build --strict -f hve-studio/mkdocs.yml -d ../site/studio
+      # They were under /2027/ until the product was named HVE Studio
+      # (2026-10-20): an old link to any page there lands on the new home.
+      - name: Send /2027/ to /studio/
+        run: |
+          mkdir -p site/2027
+          cat > site/2027/index.html <<'HTML'
+          <!doctype html>
+          <meta charset="utf-8">
+          <meta name="robots" content="noindex">
+          <title>HVE Studio manuals</title>
+          <meta http-equiv="refresh" content="0; url=/studio/">
+          <link rel="canonical" href="/studio/">
+          <p>The HVE Studio manuals have moved to <a href="/studio/">/studio/</a>.</p>
+          HTML
+          sed -i 's/^          //' site/2027/index.html
       - name: Build the PDF manuals
         run: |
           python -m pip install -r tools/pdf/requirements.txt
