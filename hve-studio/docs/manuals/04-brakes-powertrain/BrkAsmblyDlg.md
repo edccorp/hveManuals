@@ -4,7 +4,7 @@ The Brake Assembly properties of the wheels are displayed and edited using the *
 
 ![Brake Assembly dialog](images/hvn-brake-assembly.png)
 
-Where HVE edits one wheel at a time, HVE Studio shows a table with one column per wheel (**A1 Right**, **A1 Left**, **A2 Right**, ...). Pressures and torque ratios are shown in the units set in Preferences. Values take effect as they are typed; while results are on screen the vehicle is locked.
+Where HVE edits one wheel at a time, HVE Studio shows a table with one column per wheel (**A1 Left**, **A1 Right**, **A2 Left**, ...). Pressures and torque ratios are shown in the units set in Preferences. Values take effect as they are typed; while results are on screen the vehicle is locked.
 
 This dialog contains the following parameters.
 

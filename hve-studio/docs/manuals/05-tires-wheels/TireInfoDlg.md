@@ -9,7 +9,7 @@ and a tire is picked from HVE's databases in its **Tire Database** section.
 !!! note "HVE Studio"
     Open it in the Vehicle editor (F3) with **Vehicle › Editors › Tires...**.
     The window shows the current vehicle (chosen in the **Vehicle** list at the
-    top) with one column per wheel: **A1 Right**, **A1 Left**, **A2 Right**,
+    top) with one column per wheel: **A1 Left**, **A1 Right**, **A2 Left**,
     **A2 Left**, and so on. All values are shown in the units set in
     Tools › Preferences. The same window holds the fields of HVE's
     [Tire Physical Data dialog](TirePhyDataDlg.md) and the scalar friction and
@@ -92,6 +92,13 @@ reads them.
 The remaining rows of the table — friction, cornering stiffness, pneumatic trail,
 spring rates, inertias, rolling resistance and dimensions — are described on the
 [Tire Physical Data](TirePhyDataDlg.md) page.
+
+Where every wheel has a friction table, the friction rows (peak longitudinal
+and lateral friction, slide friction, slip at peak, velocity dependence) are
+not shown: those values are entered in the tables, even when a table has one
+load and one speed, and the Friction section says so in one line. The same goes
+for **Cornering Stiffness** when every wheel has a cornering table. When only
+some wheels have a table, the row stays, greyed on those wheels.
 
 The HVE buttons **Friction...**, **Fy vs Slip Angle...**, **Fy vs Inclination
 Angle...** and **Slip vs Roll-Off...** are the **Friction Table**, **Cornering

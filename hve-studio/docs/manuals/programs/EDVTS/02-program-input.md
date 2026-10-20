@@ -417,7 +417,7 @@ EDVTS uses the following Driver Controls:
 The Driver Controls Data used by EDVTS are shown in Table 2-5.
 
 !!! note "HVE Studio"
-    **Event › Driver Controls…** has **Throttle**, **Brake**, **Steer** and **Gear** tabs and a **Vehicle** list for choosing the tow vehicle or the trailer. Brake has an **Input Method** list (*Pedal (AT_DRIVER)*, *Wheel Force*, *% of Friction*) and Throttle (*Pedal (AT_DRIVER)*, *% of Friction*). EDVTS has no pedal method: a *Pedal (AT_DRIVER)* table is run as % of Friction (the same values), and the run status says so. The Steer tab is a steering-wheel-angle table; a table of road-wheel angles (HVE's *At Axle* option) is shown and used when the case already contains one, but there is no control to start one.
+    **Event › Driver Controls…** has **Throttle**, **Brake**, **Steer** and **Gear** tabs and a **Vehicle** list for choosing the tow vehicle or the trailer. Brake has an **Input Method** list (*At Driver*, *Wheel Force*, *% of Friction*) and Throttle (*At Driver*, *% of Friction*). EDVTS has no pedal method: a *At Driver* table is run as % of Friction (the same values), and the run status says so. The Steer tab is a steering-wheel-angle table; a table of road-wheel angles (HVE's *At Axle* option) is shown and used when the case already contains one, but there is no control to start one.
 
 ##### Brake
 

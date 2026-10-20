@@ -22,7 +22,7 @@ scoped to that wheel.
       and Beam Inertia.
     - The window's other tabs — **Jounce / Rebound**, **Camber vs
       Deflection**, **Roll Steer** and **Anti-Pitch** — each a table with a
-      column per wheel (A1 Right, A1 Left, …).
+      column per wheel (A1 Left, A1 Right, …).
 
     The spindle axis (alignment and steering stops) is in the **Steering
     System** dialog (see [Part E](11e-drivetrain-steering-brake-system.md)).

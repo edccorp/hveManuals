@@ -2,7 +2,7 @@
 
 The anti-pitch properties of the wheels are displayed and edited in the **Anti-Pitch** dialog. Open it in the Vehicle Editor as the **Anti-Pitch** tab of **Vehicle › Editors › Suspension Data...**. Anti-pitch data are entered as a table of anti-pitch coefficient vs. suspension deflection. The **Vehicle** list at the top selects the vehicle.
 
-HVE Studio shows one table with a column per wheel (**A1 Right**, **A1 Left**, **A2 Right**, ...), where HVE edits one wheel at a time.
+HVE Studio shows one table with a column per wheel (**A1 Left**, **A1 Right**, **A2 Left**, ...), where HVE edits one wheel at a time.
 
 !!! note "HVE Studio"
     An orange note at the top of the dialog says which engines use the table: **EDVSM** reads it, in each wheel's suspension force; SIMON only prints it on a report page; no other engine reads it. This is HVE's own behavior.

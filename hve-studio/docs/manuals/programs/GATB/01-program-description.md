@@ -55,7 +55,7 @@ GATB inputs include at least one human (up to four), one vehicle, and an optiona
 GATB output reports include Accident History, Human Data, Injury Data, Messages, Program Data, Results, Trajectory Simulation, Variable Output Tables, and Vehicle Data.
 
 !!! note "HVE Studio"
-    In HVE Studio the report pages are under **Output › HVE Reports**, and the trajectory simulation plays in the viewport. The human Variable Output groups are the **Occupant** groups of **Output › Variable Selection** — see [Chapter 3](03-program-output.md).
+    In HVE Studio the report pages are under **Output › HVE Reports**, and the trajectory simulation plays in the viewport. The human Variable Output groups are the **Human** groups of **Output › Variable Selection** — see [Chapter 3](03-program-output.md).
 
 ## Validation
 
@@ -68,7 +68,7 @@ GATB was validated against several ATB runs [6]. The GATB program basically extr
 
 The procedure for using GATB in HVE Studio is:
 
-- In the **Human (F2)** editor, open **Occupant › Human Information** (the *Occupants* panel) and click **Add Occupant** for each human. Each body is generated with GEBOD from its Subject Type, Age Group and Weight/Height Percentile; edit the body (*Body Segments…*, *Joint Properties…*) to match specific case information.
+- In the **Human (F2)** editor, open **Human › Human Information** (the *Humans* panel) and click **Add Human** for each human. Each body is generated with GEBOD from its Subject Type, Age Group and Weight/Height Percentile; edit the body (*Body Segments…*, *Joint Properties…*) to match specific case information.
 - In the **Vehicle (F3)** editor, add the vehicle and edit its properties to match specific case information — in particular its contact surfaces (**Vehicle › Editors › Contact Surfaces**) and any belt and airbag (**Vehicle › Editors › Belt Restraint**, **Vehicle › Editors › Airbags**).
 
 > **NOTE:** Review the following chapter, GATB Program Input, to confirm those parameters that affect the GATB program results; many physical parameters are not used by GATB, and therefore, do not affect the results.

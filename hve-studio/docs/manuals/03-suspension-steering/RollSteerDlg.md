@@ -2,7 +2,7 @@
 
 The roll steer properties of the wheels are displayed and edited in the **Roll Steer** dialog. Open it in the Vehicle Editor as the **Roll Steer** tab of **Vehicle › Editors › Suspension Data...**. The **Vehicle** list at the top selects the vehicle.
 
-Where HVE edits one wheel at a time, and opens either this polynomial dialog (independent suspension) or the single-coefficient [Roll Steer Properties](RollSteerNewDlg.md) dialog (solid and tandem axles), HVE Studio shows one table with a column per wheel (**A1 Right**, **A1 Left**, **A2 Right**, ...) holding both the polynomial and the solid-axle coefficient.
+Where HVE edits one wheel at a time, and opens either this polynomial dialog (independent suspension) or the single-coefficient [Roll Steer Properties](RollSteerNewDlg.md) dialog (solid and tandem axles), HVE Studio shows one table with a column per wheel (**A1 Left**, **A1 Right**, **A2 Left**, ...) holding both the polynomial and the solid-axle coefficient.
 
 ## Link Group
 

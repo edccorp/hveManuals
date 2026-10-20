@@ -39,9 +39,9 @@ Each position of a vehicle's path carries its own elevation, roll and pitch (see
 
 ## Creating the Humans
 
-The case contains the male child pedestrian. Choose the **Human** editor tab (F2): the **Occupants** panel lists *Male Child Pedestrian*, with **Location** *Pedestrian*, **Subject Type** male, a 12-year-old **Age Group** and the 50th **Weight Percentile** and **Height Percentile**.
+The case contains the male child pedestrian. Choose the **Human** editor tab (F2): the **Humans** panel lists *Male Child Pedestrian*, with **Location** *Pedestrian*, **Subject Type** male, a 12-year-old **Age Group** and the 50th **Weight Percentile** and **Height Percentile**.
 
-> **NOTE:** To add such a human yourself, click **Add Occupant** in the Occupants panel and choose those values under **Identity** and **Anthropometry**.
+> **NOTE:** To add such a human yourself, click **Add Human** in the Humans panel and choose those values under **Identity** and **Anthropometry**.
 
 ## Creating the Vehicles
 

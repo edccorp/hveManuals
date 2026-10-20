@@ -69,7 +69,7 @@ All vehicle-related data, such as wheel locations, steer angles and sideslip
 angles, are defined relative to the vehicle-fixed coordinate system.
 
 !!! note "HVE Studio"
-    The calculation models number the two wheels of an axle with the **right** wheel (+y) first. HVE Studio's per-wheel tables follow that order — columns read A1 Right, A1 Left, A2 Right, and so on — and per-wheel output channels are labelled the same way.
+    The calculation models number the two wheels of an axle with the **right** wheel (+y) first. HVE Studio's per-wheel output channels follow that order. Its per-wheel tables show each axle the way a vehicle is pictured from behind, left then right — columns read A1 Left, A1 Right, A2 Left, and so on; the order of the columns changes nothing in the data.
 
 ### Articulated Vehicles
 

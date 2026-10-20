@@ -22,7 +22,7 @@ HVE does.
 | Transform Vehicle Geometry, Move CG of the geometry | **Vehicle › Editors › Vehicle Mesh** (also offered on the Event menu): scale, move and rotate the body, and its other mesh options |
 | Use Ackermann Steering, set per event in Driver Controls | Ackermann / parallel steer is chosen in the vehicle's **Steering System** |
 | Contact surfaces, airbags, belts | **Vehicle › Editors › Contact Surfaces**, **Airbags**, **Belt Restraint**; per event, **Event › Restraints** |
-| GEBOD Human Information | **Occupant › Human Information** (the Occupants panel) |
+| GEBOD Human Information | **Human › Human Information** (the Humans panel) |
 | Damage Studio | **Output › Damage Studio Options** and **Damage Studio Report**; crush is drawn on the vehicle's 3-D body as the run plays |
 | Impact Plane / Barrier (EDCRASH) | Greyed in the Event menu. Model a barrier as a vehicle of type **Fixed Barrier** (Vehicles panel, Identity) |
 | An input a program does not use is greyed | The same, and in addition HVE Studio says **why** where it matters (for example, which program reads a field). Inputs are locked while results are on screen; press **Reset** to edit |

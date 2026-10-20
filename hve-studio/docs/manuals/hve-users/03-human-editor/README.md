@@ -21,14 +21,14 @@ in Chapter 9.
     HVE Studio uses HVE's own human model and HVE's own GEBOD body generator,
     so the model described in Chapter 9 is unchanged. The editor around it is
     new: the Human Editor is the **Human (F2)** tab under the menu bar, and
-    the humans of the case are managed in its **Occupants** panel.
+    the humans of the case are managed in its **Humans** panel.
 
 ## General Procedure
 
 To use the Human Editor, perform the following steps:
 
 1. Select the **Human (F2)** tab (or press F2).
-2. In the Occupants panel, press **Add Occupant**. HVE Studio generates a body
+2. In the Humans panel, press **Add Human**. HVE Studio generates a body
    with GEBOD from the subject type, age group and weight and height
    percentiles (see Chapter 8). Humans also arrive with an HVE case file
    (`.hve`) or an HVE Studio case opened with **File › Open Case...**.

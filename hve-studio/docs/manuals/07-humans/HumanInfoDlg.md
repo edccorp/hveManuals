@@ -4,17 +4,17 @@ This dialog defines the basic parameters of a human in the case: its name,
 seating location and body description, from which the body model is generated.
 
 !!! note "HVE Studio"
-    In the Human editor (F2) choose **Occupant › Human Information...**. It opens
-    the **Occupants** panel, which lists the humans of the case and edits the
+    In the Human editor (F2) choose **Human › Human Information...**. It opens
+    the **Humans** panel, which lists the humans of the case and edits the
     selected one. It replaces both of HVE's dialogs — the classic Human
     Information dialog and the GEBOD Human Information dialog — and also holds
     the buttons that open the human's other windows. Weight and mass follow the
     units set in Tools › Preferences. While a solved run is on screen the panel
     is read-only (the buttons that open other windows stay available).
 
-## Add Occupant / Remove
+## Add Human / Remove
 
-**Add Occupant** adds a human ("Occupant 1", "Occupant 2", …) and builds its body
+**Add Human** adds a human ("Human 1", "Human 2", …) and builds its body
 with GEBOD at once. **Remove** deletes the selected human from the case and from
 every event that holds it.
 

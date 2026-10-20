@@ -115,8 +115,16 @@ time-zone lookup fails, the status line says so — set the UTC offset by hand.
 | Field | Meaning |
 | --- | --- |
 | **Sun Light** | A multiplier on the key light that casts the shadows; 1.00 is the viewport's own. It has no upper limit (Ctrl+click to type a value). |
-| **Ambient Light** | How much light fills the shadows, 0–1; 0.80 is the viewport's own |
-| **Reset sun to default** | Back to the manual sun at its default position, Sun Light 1.00, Ambient 0.80 |
+| **Reset sun to default** | Back to the manual sun at its default position, Sun Light 1.00 |
+
+The light that fills the shadows is the world's, not the panel's: the **Sky
+Texture** node's **Ambient** and **Night Light** fields (below). The panel says
+their values, and for a case with no world offers **Make the world**. A case
+saved before these moved keeps its Ambient Light and Night Ambient: they are put
+on its world's Sky Texture when it is opened (Ambient Light 0.80 is Ambient
+1.00), and a world is made for it when it has none. A world with no Sky Texture
+(an image world) is lit by its image, as much as its Background **Strength**
+says.
 
 HVE's sky *condition* and *visibility* are not offered: nothing in HVE's
 renderer or engines reads them. A value an HVE file states is kept in the case,
@@ -202,6 +210,8 @@ three-colour gradient, the sun's disc, and haze. It has these inputs:
 | **Haze** | 0 | A milky veil over the whole sky, thickest at the horizon, plus a glow around the sun. 0 leaves the sky clear; 1 is a clear haze; 3 nearly white. There is no upper limit. With **View › Scene Display › Effects › Distance Haze** on (the default), the same amount also fades far geometry toward the horizon colour; at 0 nothing is faded. Display only. |
 | **Sun Size** | 0.545 | The angular size of the sun's disc, in degrees |
 | **Sun Intensity** | 20 | The sun's brightness |
+| **Ambient** | 1.00 | A field, not a socket: how much light the sky gives the scene, the fill in the shadows and the sky's reflection. 1.00 is the viewport's own; 0 leaves only the sun and the lamps. The drawn sky is unchanged. |
+| **Night Light** | 0 | A field: light that stays once the sky is dark (moon, street lighting, a town's glow), as a fraction of the daytime fill. It fades in only as the sky darkens, so daylight is unchanged, and Ambient scales it too. 0 is a dark night lit only by the lamps. |
 
 The node also shows **Sun Rotation** and **Sun Elevation**, which are the
 case's sun: on a manual sun you can drag them on the node; with **From location

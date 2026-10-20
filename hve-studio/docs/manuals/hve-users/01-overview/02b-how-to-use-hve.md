@@ -202,7 +202,7 @@ HVE organizes humans, vehicles and tires in databases.
 
 ### Human Database
 
-HVE Studio builds a human from its anthropometry: in the Occupants panel choose
+HVE Studio builds a human from its anthropometry: in the Humans panel choose
 the subject type, age group, weight and height percentiles, and **Regenerate
 GEBOD Body**. Humans in an imported HVE case come with the case.
 

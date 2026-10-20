@@ -881,7 +881,7 @@ What **Apply** sets, for the chosen vehicle in the active event:
   *indicated* speed, from wheel speed, which reads low under hard braking or in
   a slide; the provenance record says so.
 - **Throttle.** The accelerator pedal position as a 0–1 fraction, under the
-  **Pedal (AT_DRIVER)** input method, since that is what a pedal percentage is
+  **At Driver** input method, since that is what a pedal percentage is
   (see [Driver Controls Throttle](../09-events-driver-controls/DriverControls4.md)).
 - **Brake.** An EDR records the brake switch, not the pressure. An ON sample
   becomes the fraction of friction you enter, an OFF sample 0, under the **% of

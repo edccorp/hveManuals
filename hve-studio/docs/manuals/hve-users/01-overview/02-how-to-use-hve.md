@@ -44,7 +44,7 @@ The HVE Studio menu bar has the following menus:
 
 - **File** — opening, saving and publishing cases; export to Blender
 - **Edit** — undo and redo
-- **Vehicle**, **Environment**, **Occupant** — the current editor's dialogs
+- **Vehicle**, **Environment**, **Human** — the current editor's dialogs
   (Vehicle, Environment and Human editors respectively)
 - **Event** — event set-up (HVE's Set-up menu), in the Event editor
 - **Output** — reports, graphs, tables, playback and running, in the Event editor
@@ -96,8 +96,8 @@ The first step is to create the humans, vehicles and environment to be studied.
 
 Humans are created and edited in the Human editor. To create a human:
 
-1. Choose the **Human (F2)** tab. The **Occupants** panel opens.
-2. Choose **Add Occupant**.
+1. Choose the **Human (F2)** tab. The **Humans** panel opens.
+2. Choose **Add Human**.
 3. Choose the human's **Location**: any of nine occupant positions (Front, Rear
    and Back rows; Right, Center, Left) or **Pedestrian**.
 4. Choose the **Subject Type**, **Age Group**, **Weight Percentile** and
@@ -112,7 +112,7 @@ section of this manual and the
 for each human in the study.
 
 ![Figure 2-3](../images/hvn-01-human-editor.png)
-*Figure 2-3: The Human editor and its Occupants panel.*
+*Figure 2-3: The Human editor and its Humans panel.*
 
 !!! note "HVE Studio"
     The Location is the seat the occupant nominally occupies. Which vehicle the

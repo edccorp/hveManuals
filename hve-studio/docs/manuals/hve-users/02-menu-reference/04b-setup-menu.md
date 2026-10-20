@@ -234,7 +234,7 @@ interact with which vehicle contact surfaces (and, for GATB, which body
 segments with which). For an EDSMAC4 event, list the contact surfaces assigned
 for the event.
 
-**Description:** For an occupant or pedestrian event the **Occupant Contacts**
+**Description:** For an occupant or pedestrian event the **Human Contacts**
 dialog names the human and the vehicle and shows a grid of the human's
 segments (rows) against the vehicle's contact surfaces (columns); a ticked box
 is an armed pair. An imported HVE case shows HVE's own list. An event with no
@@ -335,18 +335,12 @@ not affect the run.
 
 ## CRUSH PROFILE
 
-**Menu Option:** Event › Crush Profile... (EDCRASH, EDSMAC, EDSMAC4)
-
-**Purpose:** The selected vehicle's crush stiffness and related data.
-
-**Description:** Opens the **Crush & Geometry** hub for the selected vehicle,
-whose buttons open the related dialogs: under **Crush Stiffness**, **CG to
-Front...**, **CG to Rear...**, **CG to Left...** and **CG to Right...** (the
-stiffness of each side); under **Dynamics**, **Handling Properties...** and
-**Body Torsion...**; under **CG**, **Move CG...** and **Payload...**.
-
-![The Crush & Geometry dialog](../images/hvn-01-crush-stiffness.png)
-*The Crush & Geometry hub.*
+The Event menu has no Crush Profile item. EDCRASH is the only method that reads a
+crush profile, and it is the measured damage under **Event › Damage Profiles...**
+(Ctrl+M). The sides' crush stiffness is the vehicle's own data, edited in
+**Vehicle › Editors › Crush Stiffness...** or the Vehicle Designer's **Exterior &
+Body** stage, and **Handling Parameters...** and **Move CG...** have their own
+Event menu items for EDSMAC and EDSMAC4.
 
 ---
 

@@ -160,8 +160,6 @@ the sun, in the Shader Editor's **Sun & Sky** panel (see Sun and Sky, below).
 
 The **Physical** section holds the environment's physical properties:
 
-- **Rolling Resistance** — used only for tires that state no rolling
-  resistance of their own; a tire's own value always wins.
 - **Ambient Temperature** and **Ambient Pressure** — the air temperature
   and barometric pressure (defaults 68 °F and 14.695 psi, HVE's own).
 - **Wind Speed** and **Wind Direction** — the ambient wind. The direction
@@ -246,8 +244,10 @@ Environment panel's Sky section or the Event panel's Lighting section). The
   - **Refraction** — NOAA only: the apparent sun, raised by atmospheric
     refraction near the horizon.
 - **Sun Light** — a multiplier on the sunlight that casts the shadows.
-- **Ambient Light** — how much light fills the shadows (HVE's *Ambient
-  Intensity*; default 0.80).
+- The light that fills the shadows (HVE's *Ambient Intensity*) is the
+  world's: the **Sky Texture** node's **Ambient** (default 1.00) and **Night
+  Light** fields. The panel says their values and offers **Make the world**
+  for a case that has none.
 - **Reset sun to default**.
 
 ![Figure 12-4](../images/hvn-05-sun-and-sky.png)

@@ -380,8 +380,8 @@ The Driver Controls Data used by EDSVS are shown in Table 2-5.
 !!! note "HVE Studio"
     The tables are entered in **Event › Driver Controls**, which has **Throttle**, **Brake**, **Steer** and **Gear** tabs (EDSVS has no drivetrain and does not read the Gear table). The terms differ from HVE's:
 
-    - **Throttle** — *Input Method* **% of Friction** is HVE's *Percent Available Friction*. EDSVS also accepts HVE's *Wheel Force* throttle table, but HVE Studio cannot enter one. EDSVS has no *Pedal (AT_DRIVER)* method: a Pedal table is run as % of Friction, and the run status says so.
-    - **Brake** — *Input Method* **% of Friction** (one value for every wheel, or a per-wheel table) or **Wheel Force** (a force at each wheel, in the units set in Preferences) are HVE's two EDSVS options. A *Pedal (AT_DRIVER)* brake table is run as % of Friction, and the run status says so.
+    - **Throttle** — *Input Method* **% of Friction** is HVE's *Percent Available Friction*. EDSVS also accepts HVE's *Wheel Force* throttle table, but HVE Studio cannot enter one. EDSVS has no *At Driver* method: a Pedal table is run as % of Friction, and the run status says so.
+    - **Brake** — *Input Method* **% of Friction** (one value for every wheel, or a per-wheel table) or **Wheel Force** (a force at each wheel, in the units set in Preferences) are HVE's two EDSVS options. A *At Driver* brake table is run as % of Friction, and the run status says so.
     - **Steer** — the main table is steering-wheel angle against time (HVE's *At Steering Wheel*, through the gear ratio). A steer table *at the tires* (HVE's *At Axle*) is shown above it when the case carries one, for example an imported HVE case, and then overrides the steering-wheel table. HVE Studio has no control for creating an at-the-tires table from scratch; enter the equivalent steering-wheel angles (road-wheel angle times the gear ratio) instead.
 
 ##### Brake

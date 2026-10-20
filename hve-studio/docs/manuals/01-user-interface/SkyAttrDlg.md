@@ -1,9 +1,9 @@
 # Sky Attributes Dialog Box
 
-Sky attributes determine the appearance of the background and the lighting of the scene. In HVE Studio the sky and its lighting are part of the scene's **world**, edited in the **Shader Editor** (**View › Shader Editor**). The Environment Editor's **Environment** panel has a **Sky** section that summarizes the sun (azimuth, elevation, whether it comes from the location and time or is set by hand, its strength) and the ambient light, with an **Edit the sun and sky...** button that opens the Shader Editor on the world.
+Sky attributes determine the appearance of the background and the lighting of the scene. In HVE Studio the sky and its lighting are part of the scene's **world**, edited in the **Shader Editor** (**View › Shader Editor**). The Environment Editor's **Environment** panel has a **Sky** section that summarizes the sun (azimuth, elevation, whether it comes from the location and time or is set by hand, its strength), with an **Edit the sun and sky...** button that opens the Shader Editor on the world.
 
 ## Ambient Light Intensity
-**Ambient Light**, a slider from 0 to 1 in the Shader Editor's **Sun & Sky** section. It may be used for visualizing various levels of daylight, dusk/dawn and darkness.
+**Ambient** and **Night Light**, fields on the world's **Sky Texture** node in the Shader Editor. **Ambient** scales the light the sky gives the scene (1.00 is the viewport's own); **Night Light** is the fraction of the daytime fill that stays once the sky is dark. Together they may be used for visualizing various levels of daylight, dusk/dawn and darkness.
 
 ## Set Sky Color
 The sky's color and brightness come from the world's shader nodes (a sky texture or a background color) in the Shader Editor.

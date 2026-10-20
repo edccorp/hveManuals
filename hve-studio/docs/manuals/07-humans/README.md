@@ -1,6 +1,6 @@
 # Humans
 
-Dialog reference for the **Humans** area: one page per HVE dialog, each describing the HVE Studio window that replaces it. Humans are edited in the Human editor (F2): **Occupant › Human Information...** opens the **Occupants** panel, whose buttons open the Body Segments, Joint Properties, Injury Tolerances and Body Pose windows. Which event and vehicle a human is in is set in Event Information. Part of the [HVE Manual](../README.md).
+Dialog reference for the **Humans** area: one page per HVE dialog, each describing the HVE Studio window that replaces it. Humans are edited in the Human editor (F2): **Human › Human Information...** opens the **Humans** panel, whose buttons open the Body Segments, Joint Properties, Injury Tolerances and Body Pose windows. Which event and vehicle a human is in is set in Event Information. Part of the [HVE Manual](../README.md).
 
 ## Pages
 

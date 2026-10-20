@@ -163,7 +163,7 @@ EDSMAC uses the following Vehicle Exterior data:
 > NOTE: EDSMAC assumes the exterior structure is homogeneous and does not use different stiffness values for the front, sides, and rear. The $K_v$ stiffness coefficient entered for the frontal surface is applied to all other surfaces of the vehicle!
 
 !!! note "HVE Studio"
-    The stiffness is edited from the **Event** menu of an EDSMAC or EDSMAC4 event: **Event › Crush Profile...** opens the **Crush & Geometry** window, and **CG to Front...** opens the **CG to Front Stiffness** window, whose **Kv Stiffness** is the value EDSMAC uses. (The A and B fields are EDSMAC4's; the Kv fields of the other three sides are not read by EDSMAC.) The values belong to the vehicle, not to the event.
+    The stiffness is the vehicle's own, edited in the Vehicle editor: **Vehicle › Editors › Crush Stiffness...** opens the **Crush Stiffness** window, whose **Front** section's **Kv Stiffness** is the value EDSMAC uses. (The A and B fields are EDSMAC4's; the Kv fields of the other three sides are not read by EDSMAC.) The values belong to the vehicle, not to the event.
 
 !!! note "HVE Studio: the Kv field's unit"
     The Kv field is in **lbf/in²** in US units and **N/m²** in metric units, the unit EDSMAC reads. A frontal Kv of 104.1 lb/in² (71.8 N/cm²) reads 104.1 in US units and about 717 744 in metric units (1 N/cm² = 10 000 N/m²).
@@ -334,10 +334,10 @@ EDSMAC uses the following Driver Controls:
     The tables are in **Event › Driver Controls** (Ctrl+D), on the **Throttle**, **Brake** and **Steer** tabs, stored per event per vehicle; the vehicle being edited is chosen at the top of the window.
 
     - **Steer** edits the steering-wheel angle table (*At Driver*; +right). A steer table at the tires (*At Axle*) that came from an imported HVE case is shown above it and overrides it.
-    - **Brake** offers **Pedal (AT_DRIVER)**, **Wheel Force** and **% of Friction** as its **Input Method**; **Throttle** offers **Pedal (AT_DRIVER)** and **% of Friction** (HVE Studio has no Wheel Force throttle). A % of Friction table entered in HVE Studio applies one value to every wheel; a per-wheel table imported from an HVE case is shown above it and is used instead.
+    - **Brake** offers **At Driver**, **Wheel Force** and **% of Friction** as its **Input Method**; **Throttle** offers **At Driver** and **% of Friction** (HVE Studio has no Wheel Force throttle). A % of Friction table entered in HVE Studio applies one value to every wheel; a per-wheel table imported from an HVE case is shown above it and is used instead.
 
 !!! note "HVE Studio: the Pedal input method with EDSMAC"
-    EDSMAC reads only Wheel Force and Percent Available Friction tables. A **Pedal (AT_DRIVER)** brake or throttle table is run as **% of Friction** (the same values), and the run status says "EDSMAC has no pedal (AT_DRIVER) path: driver input forced to %-friction". EDSMAC4, EDSVS and EDVTS do the same.
+    EDSMAC reads only Wheel Force and Percent Available Friction tables. An **At Driver** brake or throttle table is run as **% of Friction** (the same values), and the run status says "EDSMAC has no pedal (AT_DRIVER) path: driver input forced to %-friction". EDSMAC4, EDSVS and EDVTS do the same.
 
 ##### Brake
 

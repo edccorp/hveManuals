@@ -15,8 +15,8 @@ Click a vehicle in the 3-D view of the Event editor. The vehicle is selected and
 
 - **Forward arrow** — drag to slide the vehicle along its own x axis (forward/back).
 - **Lateral arrow** — drag to slide it along its own y axis (right/left).
-- **Ring** — drag around the ring to change the heading.
-- **Z-lift, pitch and roll knobs** — only for a 3-D calculation method with **Auto Position** turned off for that vehicle. Drag a knob up or down to raise or lower the vehicle (never below the ground), or to change its pitch or roll (limited to ±90°).
+- **Ring** — drag around the ring to change the heading. It lies flat and is blue, the color of the vertical axis it turns about.
+- **Z-lift knob, pitch ring and roll ring** — only for a 3-D calculation method with **Auto Position** turned off for that vehicle. Drag the Z-lift knob above the roof up or down to raise or lower the vehicle (never below the ground). The **pitch ring** (green) stands along the vehicle and the **roll ring** (red) across it, both the heading ring's size and centered on the body; drag around either one to change the pitch or roll (limited to ±90°), as you drag the heading ring. Seen exactly edge-on, a ring follows an up or down drag instead.
 
 A click on the body only selects it; a left drag that does not start on a handle orbits the view. The middle mouse button never moves a vehicle — it always moves the view.
 
@@ -56,10 +56,10 @@ The seven HVE manipulators and their HVE Studio counterparts:
 | HVE manipulator | Purpose in HVE | HVE Studio |
 |---|---|---|
 | Direct | Drag the object in the plane of the screen | **G** (the vehicle follows the mouse over the ground) |
-| Trackball | Free rotation about the object's center | **R** (heading); pitch and roll knobs for 3-D methods |
+| Trackball | Free rotation about the object's center | **R** (heading); pitch and roll rings for 3-D methods |
 | HandleBox | Translate and scale with box handles | Arrows for translation; a vehicle's start position is never scaled. **S** scales a site, a site surface or a vehicle's mesh |
 | Jack | Translate along and rotate about each axis | Arrows and ring; **G**/**R** with **X**/**Y**/**Z** |
-| Centerball | Rotate about each axis, move the center | Ring and knobs; the rotation center is always the CG |
+| Centerball | Rotate about each axis, move the center | Heading, pitch and roll rings; the rotation center is always the CG |
 | TransformBox | Translate, rotate and scale | **G**, **R** and **S** on a site, a site surface or a vehicle's mesh |
 | TabBox | Scale by tabs on the faces | Not available |
 

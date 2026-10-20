@@ -38,7 +38,7 @@ editor's section in this manual.
 
 ## Human Editor
 
-**Human (F2).** The **Occupants** panel lists the case's humans, with **Add
+**Human (F2).** The **Humans** panel lists the case's humans, with **Add
 Occupant** and **Remove** — HVE's Add Human and Delete Human — and an occupant
 list that plays the part of HVE's Active Humans List and Current Human label.
 The selected human's identity and anthropometry (subject type, age group, weight
@@ -48,7 +48,7 @@ the body from them; and **Injury Tolerances...**,
 detailed dialogs. The human is shown in the viewport.
 
 ![The Human editor](../images/hvn-01-human-editor.png)
-*The Human editor (F2) with the Occupants panel.*
+*The Human editor (F2) with the Humans panel.*
 
 Which vehicle an occupant rides in, and where, is part of the event, not of the
 human: it is set in Event Information's **Humans in Event**.
@@ -56,7 +56,7 @@ human: it is set in Event Information's **Humans in Event**.
 *See also the dialog reference:
 [Humans](../../07-humans/README.md), in particular
 [Human Information Dialog](../../07-humans/HumanInfoDlg.md), and the
-[Occupant menu](../02-menu-reference/04c-vehicle-environment-occupant-menus.md#occupant-menu).*
+[Human menu](../02-menu-reference/04c-vehicle-environment-occupant-menus.md#human-menu).*
 
 ## Vehicle Editor
 

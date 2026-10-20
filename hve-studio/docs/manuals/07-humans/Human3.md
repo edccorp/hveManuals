@@ -6,7 +6,7 @@ connects.
 
 !!! note "HVE Studio"
     This is the **Joints** tab of the **Body Segments** window: in the Human
-    editor (F2) open the **Occupants** panel (**Occupant › Human
+    editor (F2) open the **Humans** panel (**Occupant › Human
     Information...**), select the human, press **Body Segments...**, choose the
     segment in the **Segment** list (or click it in the 3-D view) and open the
     **Joints** tab. Lengths follow the units set in Tools › Preferences.
@@ -24,7 +24,7 @@ principal axis system. HVE's *Coordinates i, j, k*.
 
 The stiffness and damping of a joint are edited in the
 [Joint Properties](HumJntPropDlg.md) window, opened with **Joint Properties...**
-on the Occupants panel. HVE opens it with the **Properties** button here.
+on the Humans panel. HVE opens it with the **Properties** button here.
 
 !!! note "HVE Studio"
     Coordinates are not range-checked when the window is closed; edits apply

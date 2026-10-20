@@ -337,7 +337,7 @@ also the [Throttle page](../../09-events-driver-controls/DriverControls4.md)):
 
 !!! note "HVE Studio"
     The Throttle tab's **Input Method** offers two of these:
-    **Pedal (AT_DRIVER)** — throttle position (0 closed to 1 full open) fed
+    **At Driver** — throttle position (0 closed to 1 full open) fed
     through the engine torque curve, HVE's Wide-open Throttle method, with a
     **Use Clutch / Torque Converter** option — and **% of Friction**, HVE's
     Percent Available Friction, the default. **Tractive Effort is not
@@ -383,7 +383,7 @@ Brake controls are available for simulations. Three methods are available
   load.
 
 !!! note "HVE Studio"
-    The Brake tab's **Input Method** offers **Pedal (AT_DRIVER)** (pedal
+    The Brake tab's **Input Method** offers **At Driver** (pedal
     force), **Wheel Force** (a brake force at each wheel, applied as
     entered — HVE's Brake Force) and **% of Friction**. Antilock brakes
     belong to the vehicle (**ABS Installed** under Vehicle › Editors › Brakes › ABS / Brake
@@ -1125,7 +1125,7 @@ standard materials dialog is displayed for the selected pair. *(See the
 
 !!! note "HVE Studio"
     For an occupant event (EDHIS, GATB), **Event › Contacts...** opens the
-    Occupant Contacts dialog, a grid of human segments against vehicle
+    Human Contacts dialog, a grid of human segments against vehicle
     contact surfaces in which the human-ellipsoid vs. contact-surface pairs
     are selected and deselected (and, for GATB, body segment against body
     segment). The Combined Material is not chosen per pair there: the
@@ -1202,7 +1202,7 @@ The output tracks for HVE humans are divided into five categories:
 
 - Kinematics
 - Joints
-- Occupant Contacts
+- Human Contacts
 - Belts
 - Airbags
 
@@ -1314,7 +1314,7 @@ categories:
 - Connections
 - Drivetrain
 - Driver Inputs
-- Occupant Contacts
+- Human Contacts
 - Belts
 - Airbags
 

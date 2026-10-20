@@ -68,7 +68,7 @@ Displays the event Wheels dialog. Enabled for the simulation methods.
 Displays the Accelerometers dialog. Enabled for the methods that compute accelerometer output: SIMON, EDSMAC4, EDVDS and EDVSM. (EDSMAC, EDSVS, EDVTS and EDGEN produce no accelerometer output, as in HVE.)
 
 **Contacts...**
-Displays the [Contacts](ContactsDlg.md) dialog: the Occupant Contacts dialog
+Displays the [Contacts](ContactsDlg.md) dialog: the Human Contacts dialog
 for an EDHIS or GATB event, the Contacts window for EDSMAC4. Enabled for those
 three methods.
 
@@ -82,10 +82,8 @@ with the case. They reach no calculation.
 
 **Method-specific items**
 
-- EDCRASH: **Impact Plane / Barrier...** (greyed — see below) and
-  **Crush Profile...**.
-- EDSMAC and EDSMAC4: **Handling Parameters...**, **Move CG...** and
-  **Crush Profile...**.
+- EDCRASH: **Impact Plane / Barrier...** (greyed — see below).
+- EDSMAC and EDSMAC4: **Handling Parameters...** and **Move CG...**.
 
 !!! warning "Not in HVE Studio"
     **Impact Plane / Barrier** is shown greyed for EDCRASH events: the dialog is

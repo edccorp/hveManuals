@@ -86,10 +86,10 @@ only; the path follower of the other programs ignores it, as HVE's does.
   shown greyed. With it off, they are what you enter.
 - A node that states no pose (a case saved by an earlier version) takes the
   initial position's.
-- **Add points by clicking the 3-D viewport** — each click on the site's
+- **Add positions by clicking the 3-D viewport** — each click on the site's
   ground appends the next waypoint, with yaw set from the segment direction and
   the vehicle settled on the ground there (Z, Roll and Pitch).
-- **Clear all points** — removes every waypoint.
+- **Clear all positions** — removes every waypoint.
 - **Ghost vehicle at each node** — draws this vehicle's footprint at each
   waypoint, at the node's height and tilt, so you can see whether the path
   fits (display only).

@@ -75,7 +75,7 @@ The following procedure outlines the basic steps for using HVE Studio:
 | Step | Where in HVE Studio | Reference |
 | --- | --- | --- |
 | Open an HVE case, or start a new one | File › Open Case... / New Case | [File Menu](../02-menu-reference/03-files-menu.md) |
-| Select and edit humans | Human editor (F2), Occupants panel | Ch. 8, 9 |
+| Select and edit humans | Human editor (F2), Humans panel | Ch. 8, 9 |
 | Select and edit vehicles | Vehicle editor (F3), Vehicles panel and Vehicle menu | Ch. 10, 11 |
 | Create and edit the environment | Environment editor (F4), Environment panel | Ch. 12, 13 |
 | Create events (humans, vehicles, calculation method) | Event editor (F5), Event Information | Ch. 15 |
@@ -157,7 +157,7 @@ Vehicles panel docked on the left and the 3-D viewport on the right.*
 ### Components
 
 - **Menu Bar** — **File, Edit, View, Tools, Help**, plus the menu of the
-  current editor: **Occupant** (Human editor), **Vehicle**, **Environment**,
+  current editor: **Human** (Human editor), **Vehicle**, **Environment**,
   **Event** and **Output** (Event editor), or **Playback** (Playback editor).
   The open case's name is at the right, with `*` when it has unsaved changes.
   See the [Menu Reference](../02-menu-reference/README.md).

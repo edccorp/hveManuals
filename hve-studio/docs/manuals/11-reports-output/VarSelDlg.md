@@ -30,7 +30,7 @@ then apply to just the matching rows.
 ## Show and Wheel
 
 **Show:** limits the list to the **Vehicle**, **Wheel**, **Tire**, **Accel** or
-**Occupant** families (**All** for all). **Wheel:** limits wheel and tire variables to one
+**Human** families (**All** for all). **Wheel:** limits wheel and tire variables to one
 position (*A1-R*, *A1-L*, ...; R is the right wheel).
 
 **Only variables this run computed** hides variables that the last run left at
@@ -48,18 +48,18 @@ so a variable is selected per vehicle.
 After an **EDHIS** or **GATB** run (or any run that moves a human) the list also
 carries the occupant's own output, as HVE's human output groups do:
 
-- **Occupant Pelvis** ... **Occupant Left Lower Arm** — one group per body
+- **Human Pelvis** ... **Occupant Left Lower Arm** — one group per body
   segment: position, roll/pitch/yaw, velocity, acceleration, angular velocity
   and acceleration, kinetic energy, plus **Acc Resultant (from Fwd/Lat/Vert)**,
   the resultant of the three acceleration components (EDHIS writes *Acc Tot*
   for its torso only; this resultant is the head acceleration the run's
   occupant peak is taken from).
-- **Occupant Joint L5-S1** ... **Occupant Joint Left Elbow** — joint angles,
+- **Human Joint L5-S1** ... **Human Joint Left Elbow** — joint angles,
   moments and forces.
-- **Occupant Contacts, Interaction 1-4** — the contact force of each
+- **Human Contacts, Interaction 1-4** — the contact force of each
   interaction, summed over its contact pairs and as its largest single pair.
-- **Occupant Belt Right Torso / Left Torso / Right Lap / Left Lap** and
-  **Occupant Airbag** — the restraint at the occupant's seat.
+- **Human Belt Right Torso / Left Torso / Right Lap / Left Lap** and
+  **Human Airbag** — the restraint at the occupant's seat.
 
 The occupants get check-box columns of their own after the vehicles' — **H1**,
 **H2**, ... with each human's name — and their columns in Key Results, the

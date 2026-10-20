@@ -28,7 +28,7 @@ surface.
 
 HVE's *Seat Position*: the seat whose bag is edited, labelled with who sits
 there in the active event and whether a bag is installed. The window opens on
-the seat of the occupant selected in the Occupants panel, or of the vehicle's
+the seat of the occupant selected in the Humans panel, or of the vehicle's
 first occupant.
 
 ## Device Installed

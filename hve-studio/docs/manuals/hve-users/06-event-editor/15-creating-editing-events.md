@@ -271,7 +271,6 @@ To set up the event, perform the following steps:
    | Contacts... (Ctrl+T) | EDSMAC4 (vehicle contacts), EDHIS and GATB (occupant contacts) |
    | Restraints... › Airbags..., Belt Restraint... | EDHIS and GATB |
    | Notes | all methods |
-   | Crush Profile... | EDCRASH, EDSMAC, EDSMAC4 |
    | Handling Parameters..., Move CG... | EDSMAC, EDSMAC4 |
 
    > **NOTE:** Normally, the first thing you'll set is the vehicle's

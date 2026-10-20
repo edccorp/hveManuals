@@ -466,8 +466,8 @@ The Driver Controls Data used by EDVSM are shown in Table 2-7.
 !!! note "HVE Studio"
     The tables are entered in **Event › Driver Controls**, which has **Throttle**, **Brake**, **Steer** and **Gear** tabs and a vehicle selector at the top. The terms differ from HVE's:
 
-    - **Throttle** — *Input Method* **Pedal (AT_DRIVER)** is HVE's *Percent Wide-open Throttle*: throttle position from 0 (closed) to 1 (wide open), through the engine torque curve.
-    - **Brake** — *Input Method* **Pedal (AT_DRIVER)** is HVE's *At Pedal*. A table imported from an HVE case is HVE's pedal-force table, shown as *Pedal force* in the units set in Preferences and used as it is. A table typed into a new event is a pedal *position* from 0 (released) to 1 (full apply), converted to pedal force through the vehicle's brake pressure curve (**Vehicle › Editors › Brakes › Brake System Pressure**).
+    - **Throttle** — *Input Method* **At Driver** is HVE's *Percent Wide-open Throttle*: throttle position from 0 (closed) to 1 (wide open), through the engine torque curve.
+    - **Brake** — *Input Method* **At Driver** is HVE's *At Pedal*. A table imported from an HVE case is HVE's pedal-force table, shown as *Pedal force* in the units set in Preferences and used as it is. A table typed into a new event is a pedal *position* from 0 (released) to 1 (full apply), converted to pedal force through the vehicle's brake pressure curve (**Vehicle › Editors › Brakes › Brake System Pressure**).
     - **Steer** — the main table is steering-wheel angle against time (HVE's *At Steering Wheel*, through the gear ratio). A steer table *at the tires* (HVE's *At Axle*, road-wheel angles per wheel) is shown above it when the case carries one, for example an imported HVE case, and then overrides the steering-wheel table.
     - **Gear** — gear against time (0 = neutral, 1 = reverse, 2 = first, 3 = second, …).
 

@@ -77,7 +77,7 @@ EDSMAC4 uses the total vehicle weight (converted to mass according to the curren
 #### Move CG
 
 !!! note "HVE Studio"
-    In HVE Studio the vehicle's weight and yaw inertia are edited in the **Inertia / Mass** dialog (**Edit...** in the Vehicles panel's **Inertia** section), which shows each quantity both TOTAL and SPRUNG. **Move CG** is in the **Event** menu for an EDSMAC or EDSMAC4 event (and in **Event › Crush Profile...**).
+    In HVE Studio the vehicle's weight and yaw inertia are edited in the **Inertia / Mass** dialog (**Edit...** in the Vehicles panel's **Inertia** section), which shows each quantity both TOTAL and SPRUNG. **Move CG** is in the **Event** menu for an EDSMAC or EDSMAC4 event.
 
 Move CG is not used directly by EDSMAC4. Its current value does not show up in the results. However, the Move CG fields may be used to quickly move the vehicle's center of gravity. The x and z coordinates for the wheels are updated to reflect the new CG location.
 
@@ -222,7 +222,7 @@ EDSMAC4 uses the following Vehicle Exterior Data:
 > **NOTE:** Unlike EDSMAC, EDSMAC4 uses individual stiffness values for the front, sides and back. Note also the use of A and B stiffness coefficients, rather than $K_L$, is unique to EDSMAC4.
 
 !!! note "HVE Studio"
-    In HVE Studio the per-side stiffness is edited from the **Event** menu of an EDSMAC or EDSMAC4 event: **Event › Crush Profile...** opens the **Crush & Geometry** window, whose **CG to Front... / CG to Rear... / CG to Left... / CG to Right...** buttons open a stiffness window for that side with **A Stiffness**, **B Stiffness** and **Kv Stiffness** (EDSMAC4 reads A and B; Kv is EDSMAC's). The values belong to the vehicle, not to the event.
+    In HVE Studio the per-side stiffness is the vehicle's own, edited in the Vehicle editor: **Vehicle › Editors › Crush Stiffness...** opens the **Crush Stiffness** window, whose **Front**, **Rear**, **Left** and **Right** sections each have **A Stiffness**, **B Stiffness** and **Kv Stiffness** (EDSMAC4 reads A and B; Kv is EDSMAC's). The values belong to the vehicle, not to the event.
 
 ### Steering System Data
 
@@ -407,8 +407,8 @@ EDSMAC4 uses the following Driver Controls:
     The tables are in **Event › Driver Controls** (Ctrl+D), on the **Throttle**, **Brake**, **Steer** and **Gear** tabs, and are stored per event per vehicle. The vehicle being edited is chosen at the top of the window.
 
     - **Steer** edits the steering-wheel angle table (At Driver; +right). A steer table at the tires (HVE's At Axle) that came from an imported case is shown above it and **overrides** it; it is applied as road-wheel angles.
-    - **Brake** offers three **Input Method**s: **Pedal (AT_DRIVER)**, **Wheel Force** and **% of Friction**. EDSMAC4 has no pedal (At Driver) brake or throttle path, so a Pedal table is run as % of Friction and the run status says "EDSMAC4 has no pedal (AT_DRIVER) path: driver input forced to %-friction". Use **% of Friction** (0 = released, 1 = full) or **Wheel Force**. A % of Friction table entered in HVE Studio applies one value to every wheel; a per-wheel table imported from an HVE case is shown above it and is used instead.
-    - **Throttle** works the same way, with **Pedal (AT_DRIVER)** or **% of Friction**. HVE Studio offers no Wheel Force throttle table.
+    - **Brake** offers three **Input Method**s: **At Driver**, **Wheel Force** and **% of Friction**. EDSMAC4 has no pedal (At Driver) brake or throttle path, so a Pedal table is run as % of Friction and the run status says "EDSMAC4 has no pedal (AT_DRIVER) path: driver input forced to %-friction". Use **% of Friction** (0 = released, 1 = full) or **Wheel Force**. A % of Friction table entered in HVE Studio applies one value to every wheel; a per-wheel table imported from an HVE case is shown above it and is used instead.
+    - **Throttle** works the same way, with **At Driver** or **% of Friction**. HVE Studio offers no Wheel Force throttle table.
 
 !!! note "HVE Studio"
     The HVE Driver Model is set up in **Event › Path Follower**. Two differences from HVE:
@@ -631,7 +631,7 @@ The collision algorithm developed for EDSMAC4 has been improved significantly. T
 > **NOTE:** Barriers with large aspect ratios (long and skinny) can be problematic, especially if impacted near the ends where there are fewer RHO vectors (see [Chapter 4 — Calculation Method](04-calculation-method.md)). To avoid this, make your barriers square and contact them in the center. You can apply a realistic geometry file so that they "look right."
 
 !!! note "HVE Studio"
-    A barrier is a vehicle in HVE Studio: add one and set its **Vehicle Type** in the Vehicles panel's Identity section to **Fixed Barrier** (which must have 0 axles for EDSMAC4) or **Movable Barrier**, then size it in **Size & Weight** and set its stiffness in **Event › Crush Profile...**. HVE's separate Impact Plane / Barrier dialog is not in HVE Studio.
+    A barrier is a vehicle in HVE Studio: add one and set its **Vehicle Type** in the Vehicles panel's Identity section to **Fixed Barrier** (which must have 0 axles for EDSMAC4) or **Movable Barrier**, then size it in **Size & Weight** and set its stiffness in **Vehicle › Editors › Crush Stiffness...**. HVE's separate Impact Plane / Barrier dialog is not in HVE Studio.
 
 ---
 *Previous: [Chapter 1 — Program Description](01-program-description.md) — Next: [Chapter 3 — EDSMAC4 Program Output](03-program-output.md)*

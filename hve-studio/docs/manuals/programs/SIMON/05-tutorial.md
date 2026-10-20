@@ -111,11 +111,11 @@ Open **Event › Path Follower...** (Figure 5-5):
 ![Figure 5-5](images/hvn-tut-path-follower.png)
 *Figure 5-5: The Path Follower dialog for the Cadillac in the first event (Method tab). The target points are on the Path tab.*
 
-> **NOTE:** In HVE Studio the path follower's target points are entered on the Path tab (or by clicking **Add points by clicking the 3-D viewport**) rather than as named path positions in the Position/Velocity dialog.
+> **NOTE:** In HVE Studio the path follower's target points are entered on the Path tab (or by clicking **Add positions by clicking the 3-D viewport**) rather than as named path positions in the Position/Velocity dialog.
 
 #### Brake Input
 
-The brake input is a large pedal force (120 lb) applied at the start of the steering maneuver. Open **Event › Driver Controls...** and choose the **Brake** tab. **Input Method** is **Pedal (AT_DRIVER)**, and the table is Table 5-2.
+The brake input is a large pedal force (120 lb) applied at the start of the steering maneuver. Open **Event › Driver Controls...** and choose the **Brake** tab. **Input Method** is **At Driver**, and the table is Table 5-2.
 
 **Table 5-2 Brake Table.**
 

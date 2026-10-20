@@ -238,8 +238,8 @@ There is no friction on this page: for every engine, the single-track model
 included, friction is each tire's own times the Friction Multiplier of the
 surface (Selected Surface) or friction zone it is on.
 
-**Rolling Resistance** — Used only for tires that state no rolling resistance of
-their own.
+Rolling resistance is not on this page either: it is each tire's own
+(**Vehicle › Editors › Tires...**, Rolling Resistance), as in HVE.
 
 **Ambient Temperature** — The ambient temperature. Feeds the air density used by
 the aerodynamic model.

@@ -234,7 +234,11 @@ A loaded point cloud has a row of its own: its file name, its point count and an
 eye that shows or hides it. It has no drive switch, because a point cloud is a
 picture, never a surface.
 
-The Outliner also has a **Vehicles** group, one row per vehicle. Click a name to
+In the Environment editor the Outliner also has a **Lights** group, one row per
+light of the site. Click one to select it; in the 3-D view **G** moves it and
+**R** turns its aim.
+
+Outside the Environment editor the Outliner also has a **Vehicles** group, one row per vehicle. Click a name to
 select the vehicle; the eye shows or hides it in the 3-D view, and Ctrl-click an
 eye to show only that vehicle. This is the view-only setting described under
 [VEHICLES SHOWN](#vehicles-shown).

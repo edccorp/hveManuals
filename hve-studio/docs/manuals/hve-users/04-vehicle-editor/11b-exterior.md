@@ -99,10 +99,6 @@ back or sides of the vehicle.
     event's damage profile (Event Information › Vehicle Impact Setup).
     **From crash tests...** computes CRASH3 A and B from staged barrier tests.
 
-    The four sides are also reached from **Event › Crush Profile** (EDCRASH,
-    EDSMAC and EDSMAC4 events), whose **Crush & Geometry** window has **CG to
-    Front…**, **CG to Rear…**, **CG to Left…** and **CG to Right…** buttons.
-
     There is no stiffness for the top and bottom in the A/B/Kv form, as in
     HVE. Coefficients are shown in the units set in Preferences (A in lb/in
     and B in lb/in² in US units).

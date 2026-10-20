@@ -253,7 +253,7 @@ The following messages were added after the Sixth Edition manual was printed:
 These are not EDSMAC4 messages: HVE Studio adds them to the run status when it changes or refuses an input on the way to the engine.
 
 - **"EDSMAC4 steer DOF *n* from the file ignored: the prescribed steer table needs SteerDOF Off"** — an imported case stored a Steer DOF other than Off. HVE Studio runs EDSMAC4 with Steer DOF Off. See [Chapter 2 — Steering System Data](02-program-input.md#steering-system-data).
-- **"EDSMAC4 has no pedal (AT_DRIVER) path: driver input forced to %-friction"** — a brake or throttle table uses the Pedal input method, which EDSMAC4 does not have; the table was applied as % of friction.
+- **"EDSMAC4 has no pedal (At Driver) path: driver input forced to %-friction"** — a brake or throttle table uses the Pedal input method, which EDSMAC4 does not have; the table was applied as % of friction.
 - **"brake method is Wheel Force but no per-wheel table was entered: fell back to %-friction"** — choose % of Friction, or enter the per-wheel table.
 - **"EDSMAC4 ParseHveInput failed (*code*)"** — EDSMAC4 refused the event while reading its input, before simulating anything. Code −5520 means a Hydroplane Model EDSMAC4 does not implement (NASA-TTI or Gallaway) was selected; choose Off or NASA.
 - **"Delta-V resolved only at the output interval: the impact is shorter than one output step, so this is a LOWER BOUND"** — reduce the event's **Output Timestep** in the Simulation panel to resolve the collision pulse.

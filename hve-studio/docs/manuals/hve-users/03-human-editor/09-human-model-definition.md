@@ -18,7 +18,7 @@ In HVE the parameters are selected by clicking on the individual segment CG
 spheres in the Human Viewer, which displays an option list of parameter
 groups for that segment (see the [Human CG Dialog reference
 page](../../07-humans/HumCGDlg.md)). In HVE Studio they are reached from the
-buttons of the Occupants panel (see [Chapter 8](08-creating-editing-humans.md)):
+buttons of the Humans panel (see [Chapter 8](08-creating-editing-humans.md)):
 **Body Segments…** for the per-segment groups, **Joint Properties…** and
 **Injury Tolerances…**. In the Body Segments dialog a segment is chosen from
 its **Segment** list or by clicking the segment in the viewport. The Human
@@ -34,7 +34,7 @@ These categories, and their associated parameters, are described in the
 following sections.
 
 ![Figure 9-1](../images/hvn-03-body-segments.png)
-*Figure 9-1: The Body Segments dialog (HVE Studio), opened from the Occupants panel. The segment is chosen from the Segment list or by clicking it in the viewport.*
+*Figure 9-1: The Body Segments dialog (HVE Studio), opened from the Humans panel. The segment is chosen from the Segment list or by clicking it in the viewport.*
 
 The HVE Human Model has 15 segments and 14 joints; it [3.9] is based on
 GEBOD [3.10]. The 15 segments are: Pelvis, Abdomen, Chest, Neck, Head, right
@@ -170,7 +170,7 @@ specific injuries might occur.
 > **NOTE:** Injury Predictions are an available Output Report.
 
 To view and edit the current human's injury tolerances, press **Injury
-Tolerances…** in the Occupants panel. The individual parameters are displayed
+Tolerances…** in the Humans panel. The individual parameters are displayed
 in the Injury Tolerances dialog, as shown in Figure 9-9 and Table 9-5. See
 also the [Injury Tolerance Data Dialog reference
 page](../../07-humans/Human2.md).
@@ -238,7 +238,7 @@ page](../../07-humans/Human3.md).
 ### Joint Properties
 
 Each joint is defined by a number of physical properties. To view and edit
-these properties, press **Joint Properties…** in the Occupants panel and
+these properties, press **Joint Properties…** in the Humans panel and
 choose the joint from the **Joint** list. The Joint Properties dialog is
 shown in Figure 9-12; the individual properties are defined in Table 9-7.
 Except for the joint type (Ball-and-Socket or Hinge), each property is

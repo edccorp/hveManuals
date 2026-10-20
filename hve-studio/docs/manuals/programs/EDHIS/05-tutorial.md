@@ -38,11 +38,11 @@ The remaining options will automatically initialize to their default conditions.
 
 ## Creating the Humans
 
-To create the humans for both events (the occupant in the intersection collision and the pedestrian in the pedestrian impact), choose the **Human (F2)** editor and open **Occupant › Human Information**. The *Occupants* panel is displayed.
+To create the humans for both events (the occupant in the intersection collision and the pedestrian in the pedestrian impact), choose the **Human (F2)** editor and open **Human › Human Information**. The *Humans* panel is displayed.
 
 First, let's add the human occupant to the case.
 
-- Click **Add Occupant**. A new human is added and its body generated with GEBOD. The panel offers a *Location* (a seat within the vehicle, or *Pedestrian*) and the human's *Subject Type*, *Age Group*, *Weight Percentile* and *Height Percentile*.
+- Click **Add Human**. A new human is added and its body generated with GEBOD. The panel offers a *Location* (a seat within the vehicle, or *Pedestrian*) and the human's *Subject Type*, *Age Group*, *Weight Percentile* and *Height Percentile*.
 - Choose the following human attributes:
   - Location = *Front Left (driver)*
 
@@ -56,7 +56,7 @@ First, let's add the human occupant to the case.
 
 Now, let's add the female pedestrian.
 
-- Click **Add Occupant** again and choose:
+- Click **Add Human** again and choose:
   - Location = *Pedestrian*
   - Subject Type = *Female*
   - Age Group = *Adult (18-64)*
@@ -72,7 +72,7 @@ Now, let's add the female pedestrian.
 After the above steps are performed, both humans have been added to the case and are ready to be analyzed.
 
 ![Figure 5-1](images/hvn-occupants-panel.png)
-*Figure 5-1: The Occupants panel showing Male Adult Driver.*
+*Figure 5-1: The Humans panel showing Male Adult Driver.*
 
 ## Creating the Vehicles
 
@@ -318,7 +318,7 @@ In HVE Studio:
 The final step in HVE's event set-up is to set up contacts and assign combined material property data for the human ellipsoid to contact surface interactions, using HVE's *Contacts* dialog (Select All objects and targets, then the `TypicalSeat.matl` combined material).
 
 !!! note "HVE Studio"
-    **Event › Contacts...** opens the Occupant Contacts dialog, where the tutorial case shows HVE's own armed pairs (every segment against each of the three surfaces); **Arm All** is the equivalent of selecting all objects and targets. HVE Studio does not read HVE's `.matl` combined-material files: the tutorial case carries HVE's own combined materials, in Event Information › **Combined Contact Materials** (three surfaces stated for this event), where each value can be edited. A case built in HVE Studio has no stored pairs until you edit them, and for a surface with no combined material uses the surface's own material — see [Chapter 2, Contacts](02-program-input.md#contacts).
+    **Event › Contacts...** opens the Human Contacts dialog, where the tutorial case shows HVE's own armed pairs (every segment against each of the three surfaces); **Arm All** is the equivalent of selecting all objects and targets. HVE Studio does not read HVE's `.matl` combined-material files: the tutorial case carries HVE's own combined materials, in Event Information › **Combined Contact Materials** (three surfaces stated for this event), where each value can be edited. A case built in HVE Studio has no stored pairs until you edit them, and for a surface with no combined material uses the surface's own material — see [Chapter 2, Contacts](02-program-input.md#contacts).
 
 The contacts are now assigned and we are ready to proceed with executing the simulation.
 
@@ -330,7 +330,7 @@ Since our goal for this event is to study how the impact severity affects force 
 - After the run, the panel lists the occupant's peak head and torso accelerations, the HIC exceedance and the number of injury tolerances exceeded, beside the vehicle's results. The run status reports the same peaks.
 
 !!! note "HVE Studio"
-    HVE's tutorial then adds *Head Fwd Accel*, *Head Pitch Accel* and the *Head vs Head Rest* contact force to the Key Results window through the Variable Selection dialog. In HVE Studio tick them in the occupant's **H1** column of **Output › Variable Selection**: *Fwd Acc* and *Pitch Acc* in the **Occupant Head** group. Contact force is offered per interaction rather than per pair — **Occupant Contacts, Interaction 1** has the sum over all armed pairs and the largest single pair — so the head-vs-headrest force on its own is not available (see [Chapter 3](03-program-output.md#variable-output-table)).
+    HVE's tutorial then adds *Head Fwd Accel*, *Head Pitch Accel* and the *Head vs Head Rest* contact force to the Key Results window through the Variable Selection dialog. In HVE Studio tick them in the occupant's **H1** column of **Output › Variable Selection**: *Fwd Acc* and *Pitch Acc* in the **Human Head** group. Contact force is offered per interaction rather than per pair — **Human Contacts, Interaction 1** has the sum over all armed pairs and the largest single pair — so the head-vs-headrest force on its own is not available (see [Chapter 3](03-program-output.md#variable-output-table)).
 
 We have finished our occupant simulation. You may wish to view it a few more times with the playback bar's **|<** and **Play** buttons.
 
@@ -440,7 +440,7 @@ The Program Data report displays the simulation controls and other program contr
 HVE's tutorial selects the head's position, velocity and forward and pitch accelerations, and the head vs headrest contact force, in the Variable Output window.
 
 !!! note "HVE Studio"
-    The human output groups are offered as variables in **Output › Variable Selection** (the **Occupant** groups, **H1** column) and can be graphed in **Output › Output Graph** and written by **Output › Export Variables**. Contact force is per interaction (sum of pairs, largest pair), not per pair.
+    The human output groups are offered as variables in **Output › Variable Selection** (the **Human** groups, **H1** column) and can be graphed in **Output › Output Graph** and written by **Output › Export Variables**. Contact force is per interaction (sum of pairs, largest pair), not per pair.
 
 ### Trajectory Simulation
 

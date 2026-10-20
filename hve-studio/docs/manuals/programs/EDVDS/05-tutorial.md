@@ -123,7 +123,7 @@ Choose **Event › Driver Controls…** (Ctrl+D). The dialog has a **Vehicle** l
 | 2.00 | 180.0 |
 | 5.00 | 220.0 |
 
-**Table 5-2: Brake Table entries for the Freightliner tractor** (Brake tab, Input Method *Pedal (AT_DRIVER)*)
+**Table 5-2: Brake Table entries for the Freightliner tractor** (Brake tab, Input Method *At Driver*)
 
 | Time (sec) | Brake Pedal Force (lb) |
 |-----------|------------------------|

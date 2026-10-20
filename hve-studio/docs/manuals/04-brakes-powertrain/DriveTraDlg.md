@@ -61,7 +61,7 @@ TCS thresholds and rate (enabled when TCS is on): TCS engages above the drive to
 ### Yaw Vel Error (rad/s), Spin Vel Error (rad/s), Side Spin Diff (rad/s), Brake Press Threshold, Brake Press Rate
 YSC thresholds and rate (enabled when YSC is on); the rate is the brake pressure applied per unit of yaw error.
 
-An orange note in the section states the conditions under which these systems act: they require **Driver Controls › Input Method = Pedal** (TCS runs only when the throttle is driven by the driver model and YSC only when the brake is); TCS rebalances torque between drive axles, so it needs more than one; and YSC's pressure branch acts only while the driver is already braking. Both rates default to 0: if TCS or YSC is enabled with its rate at 0, an orange warning says that the system will report itself active and change nothing.
+An orange note in the section states the conditions under which these systems act: they require **Driver Controls › Input Method = At Driver** (TCS runs only when the throttle is driven by the driver model and YSC only when the brake is); TCS rebalances torque between drive axles, so it needs more than one; and YSC's pressure branch acts only while the driver is already braking. Both rates default to 0: if TCS or YSC is enabled with its rate at 0, an orange warning says that the system will report itself active and change nothing.
 
 !!! warning "Not in HVE Studio"
     - The engine chart, **Apply** and **Print...**. (The engine tables themselves are edited in the grid above; the **Power** column cannot be edited, because no engine reads it.)

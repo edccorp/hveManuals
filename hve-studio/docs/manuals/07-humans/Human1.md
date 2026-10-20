@@ -5,7 +5,7 @@ contact shape. Each segment may have up to 3 contact ellipsoids.
 
 !!! note "HVE Studio"
     This is the **Ellipsoids** tab of the **Body Segments** window: in the Human
-    editor (F2) open the **Occupants** panel (**Occupant › Human
+    editor (F2) open the **Humans** panel (**Occupant › Human
     Information...**), select the human, press **Body Segments...**, choose the
     segment in the **Segment** list (or click it in the 3-D view) and open the
     **Ellipsoids** tab. Lengths follow the units set in Tools › Preferences.

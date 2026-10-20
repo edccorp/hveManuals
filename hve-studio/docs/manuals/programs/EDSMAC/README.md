@@ -17,7 +17,7 @@ HVE Studio compiles HVE's own EDSMAC source, so the physics described in this ma
 
 Where HVE Studio behaves differently from HVE, the page says so in a box marked **HVE Studio**. Two things to know before you start:
 
-- **Use % of Friction for brake and throttle tables (or Wheel Force for brakes).** EDSMAC has no pedal input; HVE Studio runs a **Pedal (AT_DRIVER)** table as % of Friction and the run status says so ([Chapter 2 — Driver Controls](02-program-input.md#driver-controls)).
+- **Use % of Friction for brake and throttle tables (or Wheel Force for brakes).** EDSMAC has no pedal input; HVE Studio runs an **At Driver** table as % of Friction and the run status says so ([Chapter 2 — Driver Controls](02-program-input.md#driver-controls)).
 - **Kv** is shown in lbf/in² (N/m² in metric units), the unit EDSMAC reads ([Chapter 2 — Exterior](02-program-input.md#exterior)).
 
 ## Contents

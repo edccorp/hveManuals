@@ -14,7 +14,7 @@ different, and part of it changes with the editor you are in:
 | **Event** | Event editor (F5) | Set-up |
 | **Output** | Event editor (F5) | Playback Editor's report windows, Options › Playback, File › Export |
 | **Playback** | Playback editor (F6) | Playback Editor's Playback Window and Video Creator table, Options › Playback |
-| **Occupant** | Human editor (F2) | Human Editor's dialogs |
+| **Human** | Human editor (F2) | Human Editor's dialogs |
 | **View** | always | View, and the display toggles of the Options menu |
 | **Tools** | always | Options › Units, Options › Preferences, View › Set Camera |
 | **Help** | always | Help |
@@ -41,7 +41,7 @@ appear only here; in the Vehicle editor the Vehicle menu takes their place.*
 !!! note "HVE Studio"
     The viewer product (the playback-only build that opens a published bundle)
     has only the File, View, Tools and Help menus: no Edit, Vehicle,
-    Environment, Event, Output or Occupant menu, and no Quick Case, Vehicle
+    Environment, Event, Output or Human menu, and no Quick Case, Vehicle
     Package, Case Intake, Provenance, EDR Import, Monte Carlo or Motorcycle
     Analysis on the Tools menu. This section describes the full
     workstation build.
@@ -54,7 +54,7 @@ appear only here; in the Vehicle editor the Vehicle menu takes their place.*
 | [3B](03b-edit-menu.md) | Edit — Undo, Redo, Undo History | *(new)* |
 | [4 (Part A)](04a-setup-menu.md) | Event — Event Information, Position / Velocity, Driver Controls, Path Follower | Set-up Menu (Part A) |
 | [4 (Part B)](04b-setup-menu.md) | Event — Damage Profiles, Collision Pulse, Vehicle Mesh, DyMESH Options, Payload, Wheels, Accelerometers, Contacts, Restraints, Lights, Notes, and the method-specific items | Set-up Menu (Part B) |
-| [4C](04c-vehicle-environment-occupant-menus.md) | Vehicle, Environment and Occupant menus | *(new; HVE's editor dialogs)* |
+| [4C](04c-vehicle-environment-occupant-menus.md) | Vehicle, Environment and Human menus | *(new; HVE's editor dialogs)* |
 | [4D](04d-output-menu.md) | Output — reports, graphs, tables, Compare Runs, playback, Run Simulation, Damage Studio, Export Variables | *(new; HVE's Playback Editor)* |
 | [5](05-view-menu.md) | View — panels, paths, vectors, rendering, Outliner, Scene Ghosts | View Menu |
 | [6](06-options-menu.md) | *Where HVE's Options menu went* — item-by-item map | Options Menu |

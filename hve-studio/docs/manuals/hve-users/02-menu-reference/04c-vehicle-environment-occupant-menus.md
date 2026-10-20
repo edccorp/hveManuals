@@ -1,4 +1,4 @@
-# Chapter 4C: Vehicle, Environment and Occupant Menus
+# Chapter 4C: Vehicle, Environment and Human Menus
 
 *HVE User's Manual — Section Two: Menu Reference, HVE Studio edition. A new
 chapter. In HVE these dialogs were reached from each editor's own dialog and
@@ -6,7 +6,7 @@ viewer (clicking a vehicle's engine, for example, opened the Drivetrain dialog).
 In HVE Studio each editor has a menu that lists them.*
 
 Each of these menus appears only in its own editor: **Vehicle** in the Vehicle
-editor (F3), **Environment** in the Environment editor (F4), **Occupant** in the
+editor (F3), **Environment** in the Environment editor (F4), **Human** in the
 Human editor (F2). The dialogs edit the vehicle, environment or human selected in
 that editor. Vehicle data is locked while a solved run that used the vehicle is
 on screen; press **Reset** in the Event editor to edit it.
@@ -100,17 +100,17 @@ See the dialog reference: [Environment](../../08-environment/README.md),
 
 ---
 
-## OCCUPANT MENU
+## HUMAN MENU
 
-![The Occupant menu](../images/hvn-02-occupant-menu.png)
-*The Occupant menu (Human editor).*
+![The Human menu](../images/hvn-02-occupant-menu.png)
+*The Human menu (Human editor); the picture predates its rename from Occupant.*
 
 | Item | Opens |
 |---|---|
-| **Human Information...** | The **Occupants** panel, if it has been closed (it opens by itself when you enter the Human editor) |
+| **Human Information...** | The **Humans** panel, if it has been closed (it opens by itself when you enter the Human editor) |
 
-The Occupants panel holds what HVE's Human Editor and Human Information dialog
-held: **Add Occupant** and **Remove**, the occupant list, **Identity**
+The Humans panel holds what HVE's Human Editor and Human Information dialog
+held: **Add Human** and **Remove**, the human list, **Identity**
 (Location), **Anthropometry** (subject type, age group, weight and height
 percentiles, and **Regenerate GEBOD Body**), and buttons for **Injury
 Tolerances...**, **Body Segments...**, **Joint Properties...** and **Body

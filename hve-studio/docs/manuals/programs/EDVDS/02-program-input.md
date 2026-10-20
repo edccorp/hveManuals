@@ -545,7 +545,7 @@ EDVDS uses the following Driver Controls:
 The Driver Controls Data used by EDVDS are shown in Table 2-7.
 
 !!! note "HVE Studio"
-    **Event › Driver Controls…** has **Throttle**, **Brake**, **Steer** and **Gear** tabs and a **Vehicle** list for choosing the unit. Throttle and Brake each have an **Input Method** list (*Pedal (AT_DRIVER)*, *Wheel Force* for the brake, *% of Friction*). The Steer tab is a steering-wheel-angle table; a table of road-wheel angles (HVE's *At Axle* option) is shown and used when the case already contains one, for example an imported HVE case, but there is no control to start one. The HVE Driver Model is **Event › Path Follower…**.
+    **Event › Driver Controls…** has **Throttle**, **Brake**, **Steer** and **Gear** tabs and a **Vehicle** list for choosing the unit. Throttle and Brake each have an **Input Method** list (*At Driver*, *Wheel Force* for the brake, *% of Friction*). The Steer tab is a steering-wheel-angle table; a table of road-wheel angles (HVE's *At Axle* option) is shown and used when the case already contains one, for example an imported HVE case, but there is no control to start one. The HVE Driver Model is **Event › Path Follower…**.
 
     EDVDS reads the steering, braking and throttle tables of the tow vehicle and the first trailer only. Tables entered for a dolly or a second trailer are not used.
 

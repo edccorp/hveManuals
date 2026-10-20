@@ -4,12 +4,7 @@
 
 The vehicle's structural properties are defined by its stiffness coefficients. HVE edits them for the front, back, sides, top or bottom of the vehicle from the Stiffness button of each Vehicle Dimensions (CG to ...) dialog: in 2-D mode a Stiffness Coefficients dialog (A, B and Kv), in 3-D mode the Vehicle Exterior Stiffness dialog, which adds the constant/linear/quadratic/cubic 3-D stiffness, saturation crush and maximum crush.
 
-HVE Studio edits the same coefficients in two places:
-
-- **Vehicle › Editors › Crush Stiffness...** in the Vehicle editor (**Vehicle (F3)**) — the **Crush Stiffness** window, with every side and the 3-D stiffness in one window. They are the vehicle's own data, as in HVE.
-- **Event › Crush Profile...** (EDCRASH, EDSMAC and EDSMAC4 events) — the **Crush & Geometry** window, whose **CG to Front...**, **CG to Rear...**, **CG to Left...** and **CG to Right...** buttons open one small dialog per side, titled **CG to Front Stiffness**, **CG to Rear Stiffness**, **CG to Left Stiffness** and **CG to Right Stiffness**; each holds that side's stiffness.
-
-Both edit the same values for the selected vehicle, shown in the units set in Preferences.
+HVE Studio edits the same coefficients in **Vehicle › Editors › Crush Stiffness...** in the Vehicle editor (**Vehicle (F3)**): the **Crush Stiffness** window, with every side and the 3-D stiffness in one window, shown in the units set in Preferences. The Vehicle Designer's **Exterior & Body** stage hosts the same window as its **Crush Stiffness** tab. They are the vehicle's own data, as in HVE, so no Event menu item edits them.
 
 !!! note "HVE Studio: Damage Profiles is not this"
     Until 2026-10-09 this window was **Event › Damage Profiles...**. In HVE that name is EDCRASH's *measured* damage — CDC, PDOF, crush depths — and **Event › Damage Profiles...** (Ctrl+M) now opens that, in Event Information's **Vehicle Impact Setup** section, for an EDCRASH event.
@@ -27,7 +22,7 @@ SIMON does not read A, B or Kv; EDCRASH reads none of this window (it takes A an
 
 ## Front, Rear, Left, Right
 
-Each side (a collapsible section in Crush Stiffness, its own dialog from Crush & Geometry) has:
+Each side (a collapsible section in Crush Stiffness) has:
 
 ### Distance (CG to Front / Rear / Left / Right)
 The distance from the CG to that face of the vehicle. It is stored with the case, but no engine reads it: they take the vehicle's exterior extents from the Vehicles panel (see [CG To Front](CGsToAll.md)). Crush Stiffness shows it greyed, *(not read by any engine)*.

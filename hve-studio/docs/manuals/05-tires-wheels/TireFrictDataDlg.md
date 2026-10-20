@@ -30,7 +30,7 @@ it. Edits apply immediately; **Edit › Undo** (Ctrl+Z) takes one back.
 
 ## Wheel
 
-The **Wheel:** row of buttons (**A1 Right**, **A1 Left**, **A2 Right**, ...)
+The **Wheel:** row of buttons (**A1 Left**, **A1 Right**, **A2 Left**, ...)
 chooses the wheel whose tables are shown, on every tab. The selected wheel's
 button is highlighted.
 

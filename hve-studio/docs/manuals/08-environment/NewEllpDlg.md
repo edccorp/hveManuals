@@ -6,7 +6,7 @@ segment and at most 30 characters, and a segment may have at most 3 ellipsoids.
 
 !!! note "HVE Studio"
     There is no separate dialog. In the **Ellipsoids** tab of the **Body
-    Segments** window (Human editor, Occupants panel, **Body Segments...**),
+    Segments** window (Human editor, Humans panel, **Body Segments...**),
     **Add** creates the ellipsoid at once, named after the segment and its
     number (for example "Head 2"), and **Name** renames it. **Add** is disabled
     when the segment already has 3 ellipsoids. Names are not checked for

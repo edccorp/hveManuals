@@ -93,7 +93,7 @@ All of them are listed in
   What is not imported is listed in [Cases and Files](04-cases-and-files.md).
 - **The editors are tabs.** Press **F2**–**F6** (Human, Vehicle, Environment,
   Event, Playback) instead of choosing an editor from a menu. The menu bar
-  changes with the tab: the **Occupant** menu appears in the Human editor, the
+  changes with the tab: the **Human** menu appears in the Human editor, the
   **Vehicle** menu in the Vehicle editor, the **Event** and **Output** menus in
   the Event editor, and so on.
 - **A single event plays back where it is set up.** Press **Run** on the

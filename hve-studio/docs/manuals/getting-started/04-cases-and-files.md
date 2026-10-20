@@ -182,7 +182,7 @@ A program package carries only `Generic.db`.
   case, not in the database (see [Saving Vehicles](../02-vehicles/VehSaveAs.md)).
 
 There are no human database files. A human is created in the Human editor
-(**Add Occupant** on the Occupants panel) with a GEBOD-generated body, or
+(**Add Human** on the Humans panel) with a GEBOD-generated body, or
 comes in with an imported `.hve` case.
 
 ## Geometry formats

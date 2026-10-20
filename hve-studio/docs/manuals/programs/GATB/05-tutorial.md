@@ -47,9 +47,9 @@ The remaining options will automatically initialize to their default conditions.
 
 ### Creating the Humans
 
-To create the human occupant in the collision, choose the **Human (F2)** editor and open **Occupant › Human Information**. The *Occupants* panel is displayed.
+To create the human occupant in the collision, choose the **Human (F2)** editor and open **Human › Human Information**. The *Humans* panel is displayed.
 
-- Click **Add Occupant**. A new human is added and its body is generated with GEBOD.
+- Click **Add Human**. A new human is added and its body is generated with GEBOD.
 
 Choose the following human attributes (Figure 5-1):
 
@@ -60,7 +60,7 @@ Choose the following human attributes (Figure 5-1):
 - Height Percentile = *5th*
 
 ![Figure 5-1](images/hvn-occupants-panel.png)
-*Figure 5-1: The Occupants panel.*
+*Figure 5-1: The Humans panel.*
 
 > **NOTE:** The passenger's position is assumed to be on the right side of the vehicle.
 
@@ -333,7 +333,7 @@ Using GATB to simulate a pedestrian impact is very similar to the previous occup
 
 To create the human pedestrian in this example:
 
-- In the **Human (F2)** editor, open **Occupant › Human Information** and click **Add Occupant**.
+- In the **Human (F2)** editor, open **Human › Human Information** and click **Add Human**.
 
 Choose the following human attributes:
 
@@ -343,7 +343,7 @@ Choose the following human attributes:
 - Weight Percentile = *50th*
 - Height Percentile = *50th*
 
-> **NOTE:** HVE's tutorial checks that the moment of inertia data for the right and left upper legs are Ixx = 1.3599, Jyy = 1.4348 and Kzz = 0.3769 lb-sec²-inch. In HVE Studio, read them in the *Occupants* panel's **Body Segments…** dialog (*Inertia* tab, with the Right or Left Upper Leg chosen). HVE Studio generates the body with its own built-in GEBOD tables, so compare the values rather than assume them.
+> **NOTE:** HVE's tutorial checks that the moment of inertia data for the right and left upper legs are Ixx = 1.3599, Jyy = 1.4348 and Kzz = 0.3769 lb-sec²-inch. In HVE Studio, read them in the *Humans* panel's **Body Segments…** dialog (*Inertia* tab, with the Right or Left Upper Leg chosen). HVE Studio generates the body with its own built-in GEBOD tables, so compare the values rather than assume them.
 
 ### Creating the Vehicle
 
@@ -417,7 +417,7 @@ HVE's tutorial next uses the *Contacts* dialog to allow all of the human's ellip
 In HVE the interaction between the pedestrian and the GROUND contact panel is then checked with the Key Results window, showing the total force on each foot ellipsoid against GROUND, and the pedestrian's height adjusted until the two feet together carry about the pedestrian's weight (173.5 lbs in this example; the tutorial moves the pedestrian from z = -1.0 ft to z = -1.053 ft).
 
 !!! note "HVE Studio"
-    Set the pedestrian's height with **Z from vehicle CG** in the human's row of the Event Information panel (SAE: + is down, so a body above the datum is negative). The contact force is offered per interaction rather than per ellipsoid: in **Output › Variable Selection**, tick **Cont F tot, sum of pairs** in the **Occupant Contacts** group for the GROUND interaction. That is both feet together, which is the quantity to compare with the pedestrian's weight; the force on each foot separately is not available.
+    Set the pedestrian's height with **Z from vehicle CG** in the human's row of the Event Information panel (SAE: + is down, so a body above the datum is negative). The contact force is offered per interaction rather than per ellipsoid: in **Output › Variable Selection**, tick **Cont F tot, sum of pairs** in the **Human Contacts** group for the GROUND interaction. That is both feet together, which is the quantity to compare with the pedestrian's weight; the force on each foot separately is not available.
 
 We will use the collision pulse to approximate the vehicle braking.
 

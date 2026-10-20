@@ -49,7 +49,7 @@ To implement the collision model, the user must provide data which describe the 
 
 The vehicle exterior is described by its crush stiffness, $K_v$. This parameter has the properties of a linear spring. However, since the spring properties are distributed around the vehicle exterior, the stiffness spring rate has units of pound per inch of crush depth per inch of crush length. The resulting units for stiffness are lb/in². Note that this is not a true "pressure", since the two-dimensional analysis results in a body exterior that has no vertical dimension and, therefore, has no area. The apparent units of area in the denominator result from the crush depth dimension related to the spring rate, lb/in.
 
-Default values for $K_v$ are assigned to each vehicle and may be edited using the HVE-2D Vehicle Editor (in HVE Studio: **Event › Crush Profile...** › **CG to Front...** › **Kv Stiffness**; see [Chapter 2 — Exterior](02-program-input.md#exterior) about its unit label). Values for $K_v$ may also be computed from crash test data. The method is described in the literature [14].
+Default values for $K_v$ are assigned to each vehicle and may be edited using the HVE-2D Vehicle Editor (in HVE Studio: **Vehicle › Editors › Crush Stiffness...**, **Front**, **Kv Stiffness**; see [Chapter 2 — Exterior](02-program-input.md#exterior) about its unit label). Values for $K_v$ may also be computed from crash test data. The method is described in the literature [14].
 
 *(updated: EDSMAC takes the vehicle's **frontal** stiffness and applies it to the
 entire perimeter — the side and rear stiffness values stored with the vehicle are

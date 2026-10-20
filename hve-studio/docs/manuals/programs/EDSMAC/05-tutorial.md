@@ -89,17 +89,14 @@ Finally, let's change the stiffness of the Nissan. From a previous reconstructio
     !!! note "HVE Studio"
         The Kv field is in lbf/in² in US units and N/m² in metric units (71.8 N/cm² is 718 000 N/m²). See [Chapter 2 — Exterior](02-program-input.md#exterior).
 
-2. Choose the **Event (F5)** editor tab, then **Event › Crush Profile...**. The **Crush & Geometry** window is displayed. Choose **V2 Tutorial - Nissan Sentra** in its **Vehicle** list.
-
-    > NOTE: Crush Profile is in the Event menu of an EDSMAC or EDSMAC4 event; the case's event is EDSMAC4 at this point, which is fine.
-
-3. Click **CG to Front...**. The **CG to Front Stiffness** window is displayed.
+2. Choose the **Vehicle (F3)** editor tab, then **Vehicle › Editors › Crush Stiffness...**. The **Crush Stiffness** window is displayed. Choose **V2 Tutorial - Nissan Sentra** in its **Vehicle** list.
+3. Open its **Front** section.
 4. In **Kv Stiffness**, replace the current value, 104.1 (HVE's 71.8 N/cm²), with the calculated value, `129.4`.
-5. Close the two windows, and set **Units** back to **Metric** in Preferences.
+5. Close the window, and set **Units** back to **Metric** in Preferences.
 
-![Figure 5-4](images/hvn-edsmac-crush-hub.png)
+![Figure 5-4](images/hvn-edsmac-crush-stiffness.png)
 
-*Figure 5-4: The Crush & Geometry window. **CG to Front...** opens the window holding the A, B and Kv stiffness of the front surface. EDSMAC uses the front Kv for the entire vehicle.*
+*Figure 5-4: The Crush Stiffness window. Its **Front** section holds the A, B and Kv stiffness of the front surface. EDSMAC uses the front Kv for the entire vehicle.*
 
 > NOTE: It is obviously of great importance to recognize that EDSMAC assumes the stiffness is uniform about the exterior of the vehicle, and that EDSMAC uses the value assigned for the FRONT surface.
 
@@ -178,7 +175,7 @@ Now let's look at how the vehicles are placed in the environment and what the dr
 *(Percent Available Friction, %/100)*
 
 !!! note "HVE Studio"
-    Leave **Input Method** on **% of Friction**. EDSMAC has no pedal input; a **Pedal (AT_DRIVER)** table is run as % of Friction, and the run status says so; see [Chapter 2 — Driver Controls](02-program-input.md#driver-controls).
+    Leave **Input Method** on **% of Friction**. EDSMAC has no pedal input; an **At Driver** table is run as % of Friction, and the run status says so; see [Chapter 2 — Driver Controls](02-program-input.md#driver-controls).
 
 ### The Nissan Sentra
 

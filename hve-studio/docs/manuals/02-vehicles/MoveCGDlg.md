@@ -14,13 +14,15 @@ The same section holds **Translate**, **Rotate (deg)** and **Scale** (per axis),
 
 ## Move CG dialog (EDSMAC and EDSMAC4 events)
 
-In the Event Editor, when the active event's method is EDSMAC or EDSMAC4, **Event › Move CG...** opens a small **Move CG** dialog. The same dialog is reached from the **Move CG...** button of the **Crush & Geometry** window (**Event › Crush Profile...**, for EDCRASH, EDSMAC and EDSMAC4 events). It moves the CG relative to the body, as HVE's Move CG does: the body, the wheels, the contact surfaces, the belt and airbag anchors, the connections, the payload, the accelerometers and the occupants' seats stay where they are, and only the CG moves. Every distance measured from the CG changes to match.
+In the Event Editor, when the active event's method is EDSMAC or EDSMAC4, **Event › Move CG...** opens a small **Move CG** dialog. It moves the CG relative to the body, as HVE's Move CG does: the body, the wheels, the contact surfaces, the belt and airbag anchors, the connections, the vehicle's lights, the payload, the occupants and cargo aboard, the accelerometers and the occupants' seats stay where they are, and only the CG moves. Every distance measured from the CG changes to match.
 
 ### dX (+forward), dY (+right), dZ (+down)
 How far to move the CG, in the units set in Preferences, in the SAE vehicle frame: +x forward, +y right, +z down. The CG-to-axle distances change by dX (the wheelbase does not), the CG-to-side distances by dY, and the CG height by dZ. A lateral move gives every wheel its own Y, since the track width alone can only describe wheels symmetric about the CG.
 
 ### CG Height
-Read-only: the vehicle's CG height after the pending dZ. A move that would put the CG at or below the ground is refused with a note in the dialog.
+Read-only: the vehicle's CG height after the pending dZ. A move that would put the CG at or below the ground, or at or past the front or rear axle, is refused with a note in the dialog.
+
+In the Vehicle editor the 3-D view holds the body still: the midpoint between the first and last axle stays at the origin, so after a move the CG markers move and the body does not. In an event the vehicle's start position is its CG, as in HVE, so the body moves by the opposite amount there.
 
 ### Apply
 Makes the move and clears the three fields, so pressing Apply again does nothing until new values are entered. The dialog has no OK or Cancel; close it with the window's close button.

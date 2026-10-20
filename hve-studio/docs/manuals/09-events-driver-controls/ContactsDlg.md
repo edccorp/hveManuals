@@ -7,7 +7,7 @@ properties to each pair.
 
 !!! note "HVE Studio"
     **Event › Contacts...** (Ctrl+T) for an **EDHIS or GATB** event opens the
-    **Occupant Contacts** dialog. In place of HVE's Object / Source(s) /
+    **Human Contacts** dialog. In place of HVE's Object / Source(s) /
     Target(s) lists it shows a grid: one row per human segment (per ellipsoid
     where a segment has more than one), one column per vehicle contact surface,
     a ticked box for each armed pair. Edits apply at once and go into the undo
@@ -24,9 +24,9 @@ properties to each pair.
       an un-ticked pair is handed to EDHIS as explicitly un-armed, and the
       dialog warns when a surface has no pelvis pair (EDHIS stops, -5436).
     - GATB: **each occupant has its own list**, as in HVE. With more than one
-      occupant an **Occupant** selector chooses whose list the grid edits, and
+      occupant a **Human** selector chooses whose list the grid edits, and
       each is armed for its own occupant only; an occupant with none is said to
-      have nothing to strike, and **Create This Occupant's List** arms every
+      have nothing to strike, and **Create This Human's List** arms every
       ellipsoid against every surface of the vehicle it rides.
     - GATB: a second grid arms body **segment against segment** (self contact),
       row = base, column = target. A newly ticked pair copies the first stored

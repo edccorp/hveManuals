@@ -9,7 +9,7 @@ properties, the Wheel Location and the Wheel Image.
 
 !!! note "HVE Studio"
     HVE Studio edits the brakes and tires of every wheel at once, in tables
-    with a column per wheel (A1 Right, A1 Left, …). As in the suspension
+    with a column per wheel (A1 Left, A1 Right, …). As in the suspension
     dialogs, a **Link Group** row replaces HVE's Copy To Other Side: columns
     in the same group receive each other's edits. Values are shown in the
     units set in Preferences, and changes apply as they are made.
@@ -183,8 +183,8 @@ the Tire Information dialog in HVE. See also the reference page,
       Spring / Deflection, Rotational Properties, Rolling Resistance and
       Physical Dimensions.
     - The **Load & Speed Tables** panel under the grid — the tables of one
-      wheel at a time (chosen with the **Wheel:** buttons, **A1 Right**,
-      **A1 Left**, ...), on four tabs: **Friction**, **Cornering**,
+      wheel at a time (chosen with the **Wheel:** buttons, **A1 Left**,
+      **A1 Right**, ...), on four tabs: **Friction**, **Cornering**,
       **Camber** and **Fy Roll-off**. The wheel's **Link Group** carries an
       edit to every wheel of its group, and a line names them. A drag bar between
       the grid and the panel resizes them. Edits apply immediately and
@@ -526,7 +526,7 @@ also the reference page,
 [Wheel Location dialog](../../03-suspension-steering/WheelLocDlg.md).
 
 In HVE Studio they are in the Vehicles panel, **Size & Weight › Details ›
-Wheel Positions (from CG)**: a table with a column per wheel (A1 Right, A1
+Wheel Positions (from CG)**: a table with a column per wheel (A1 Left, A1
 Left, …) giving each wheel's X, Y and Z from the CG (SAE: +X forward, +Y
 right, +Z down). Left and right may differ.
 

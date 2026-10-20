@@ -10,7 +10,7 @@ This chapter defines the objects (humans, vehicles and environment) and the even
 
     | Input | HVE Studio |
     |---|---|
-    | Human body (segments, joints, ellipsoids) | **Human (F2)** editor › **Occupant › Human Information** (*Occupants* panel) and its *Body Segments…* and *Joint Properties…* buttons |
+    | Human body (segments, joints, ellipsoids) | **Human (F2)** editor › **Human › Human Information** (*Humans* panel) and its *Body Segments…* and *Joint Properties…* buttons |
     | Contact surfaces | **Vehicle (F3)** › **Vehicle › Editors › Contact Surfaces** |
     | Belt installed, anchors, attachment segment, slack | **Vehicle › Editors › Belt Restraint** |
     | Airbag, per seat (installed, timing, contact segments, reaction panels, bag geometry, gas, vent, membrane, ATB gas dynamics) | **Vehicle › Editors › Airbags** |
@@ -66,12 +66,12 @@ GATB uses humans created using the Human Editor. In HVE, humans are selected fro
 *(updated: the original table listed only the 2.5 weight percentile; the classic database provides 2.5, 50 and 97.5 weight percentiles, and the GEBOD dialog accepts arbitrary values when the Basis includes Weight and/or Height.)*
 
 !!! note "HVE Studio"
-    HVE Studio generates every body with GEBOD, from the *Occupants* panel's **Subject Type** (Male, Female), **Age Group** (Child, Teen, Adult, Senior) and **Weight Percentile** and **Height Percentile** (5th, 25th, 50th, 75th or 95th). An adult or senior is generated from the two percentiles together (HVE's *All* basis); a child is generated as a 6-year-old and a teen as a 12-year-old (HVE's *Age* basis). The 2.5th and 97.5th percentiles and the 3- and 9-year-old children of the tables above cannot be chosen, and there is no *User* subject type. A body imported from an HVE case is kept as HVE stored it. The GEBOD tables are built into HVE Studio.
+    HVE Studio generates every body with GEBOD, from the *Humans* panel's **Subject Type** (Male, Female), **Age Group** (Child, Teen, Adult, Senior) and **Weight Percentile** and **Height Percentile** (5th, 25th, 50th, 75th or 95th). An adult or senior is generated from the two percentiles together (HVE's *All* basis); a child is generated as a 6-year-old and a teen as a 12-year-old (HVE's *Age* basis). The 2.5th and 97.5th percentiles and the 3- and 9-year-old children of the tables above cannot be chosen, and there is no *User* subject type. A body imported from an HVE case is kept as HVE stored it. The GEBOD tables are built into HVE Studio.
 
 To add a human to the current case in HVE Studio:
 
-- Choose the **Human (F2)** editor and open **Occupant › Human Information**. The *Occupants* panel is displayed (Figure 2-2).
-- Click **Add Occupant**. A new human is added and its body generated with GEBOD.
+- Choose the **Human (F2)** editor and open **Human › Human Information**. The *Humans* panel is displayed (Figure 2-2).
+- Click **Add Human**. A new human is added and its body generated with GEBOD.
 - Choose its **Location**: the seat it nominally occupies, or *Pedestrian*.
 
 > **NOTE:** If you choose a seat, the human will be a vehicle occupant. If you choose Pedestrian, the human will be a pedestrian. Which vehicle a human rides in, and where, are set per event in Event Information › *Humans in Event*.
@@ -80,7 +80,7 @@ To add a human to the current case in HVE Studio:
 - Edit the **Name**. The name does not affect calculations.
 
 ![Figure 2-2](images/hvn-occupants-panel.png)
-*Figure 2-2: The Occupants panel in HVE Studio (Human editor, Occupant › Human Information).*
+*Figure 2-2: The Humans panel in HVE Studio (Human editor, Human › Human Information).*
 
 The following Human Parameter groups are used by GATB:
 
@@ -88,7 +88,7 @@ The following Human Parameter groups are used by GATB:
 - Ellipsoids
 - Joints
 
-In HVE Studio the segment inertias, ellipsoids and joint locations are edited in the *Occupants* panel's **Body Segments…** dialog (choose the segment, then the *Inertia*, *Ellipsoids* or *Joints* tab), and the joint properties in **Joint Properties…**.
+In HVE Studio the segment inertias, ellipsoids and joint locations are edited in the *Humans* panel's **Body Segments…** dialog (choose the segment, then the *Inertia*, *Ellipsoids* or *Joints* tab), and the joint properties in **Joint Properties…**.
 
 The GATB human is modeled with 15 mass segments connected by 14 joints. Refer to *Chapter 4, Calculation Method*, for important details describing how the GATB human model is derived. See Table 1-1 and the GEBOD Data Pages.
 
@@ -499,11 +499,11 @@ By default, the Contacts dialog assumes interaction between every human ellipsoi
 > **NOTE:** Actually, GATB does some pre-screening: If the current human is an occupant, only interior contact surfaces will be highlighted; if the current human is a pedestrian, only exterior surfaces will be highlighted.
 
 !!! note "HVE Studio"
-    **Event › Contacts...** (Ctrl+T) opens the **Occupant Contacts** dialog for a GATB event, in two parts.
+    **Event › Contacts...** (Ctrl+T) opens the **Human Contacts** dialog for a GATB event, in two parts.
 
     **Human vs Vehicle.** An occupant against the vehicle it rides (a pedestrian: the event's first vehicle). One row per human segment (one per ellipsoid where a segment has more than one), one column per vehicle contact surface; a ticked box is an armed pair, and GATB reads every segment.
 
-    - **Every occupant has its own list**, as in HVE (one block per human and vehicle). With more than one occupant in the event an **Occupant** selector chooses whose list the grid shows, and GATB arms each list for its own occupant only. An occupant with no list of its own has nothing to strike; the dialog says so and offers **Create This Occupant's List** (every ellipsoid against every surface of the vehicle it rides, with that vehicle's combined materials), and the run status says how many occupants have none.
+    - **Every occupant has its own list**, as in HVE (one block per human and vehicle). With more than one occupant in the event a **Human** selector chooses whose list the grid shows, and GATB arms each list for its own occupant only. An occupant with no list of its own has nothing to strike; the dialog says so and offers **Create This Human's List** (every ellipsoid against every surface of the vehicle it rides, with that vehicle's combined materials), and the run status says how many occupants have none.
 
     - A case opened from an HVE `.hve` file carries **HVE's own list**, and the grid shows it. Entries stating the same pair more than once are kept as stated, because GATB arms each entry as its own contact; un-ticking removes every entry for the pair.
     - A case built in HVE Studio has **no stored list**; the dialog says so and shows the default the run generates — every ellipsoid of the pelvis, abdomen, chest, neck, head and upper legs against every contact surface, with no interior/exterior pre-screening and no self contact. The first click stores that default with the click applied.

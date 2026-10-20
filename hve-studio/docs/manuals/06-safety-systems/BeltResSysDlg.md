@@ -27,7 +27,7 @@ point on the vehicle.
 HVE's *Belt Restraints For*. The list names each occupant of the vehicle by seat
 and name. Occupants who ride in this vehicle in the active event come first;
 below a separator are pedestrians, humans not in the event and humans in
-another vehicle. Selecting an occupant also selects them in the Occupants panel.
+another vehicle. Selecting an occupant also selects them in the Humans panel.
 
 ## Restraint In Use
 

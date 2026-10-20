@@ -40,7 +40,7 @@ braking capacity of heavy trucks on long downhill grades.
     Until October 2026 a designed wheel ran at the Generic torque ratio Apply wrote, because the engine's own recompute path needs the shoe-geometry terms and the lining-friction and stroke tables, which HVE Studio did not then collect; they are all collected and handed to the engine now. The Brake Designer's **Disc data slots** / **Drum data slots** section, the old Brake Assembly sub-dialogs' values, still reaches no engine output; the design above it does.
 
 ![Figure 29-1](../images/hvn-10-brake-assembly.png)
-*Figure 29-1 — Vehicle › Editors › Brakes › Brake Assembly. One column per wheel (A1 Right, A1 Left, …); the Torque Ratio and Pushout rows are what the simulation uses.*
+*Figure 29-1 — Vehicle › Editors › Brakes › Brake Assembly. One column per wheel (A1 Left, A1 Right, …); the Torque Ratio and Pushout rows are what the simulation uses.*
 
 To use the Brake Designer in HVE Studio, perform the following steps:
 

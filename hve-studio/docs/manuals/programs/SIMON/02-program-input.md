@@ -19,7 +19,7 @@ The following sections describe how the humans, vehicles and environment provide
 
 ## Humans
 
-SIMON uses humans created in HVE Studio's Human editor. A human is added to the case in the **Human (F2)** editor, where the *Occupants* panel (**Occupant › Human Information...**) holds its identity and anthropometry (location, sex, age, weight and height percentiles).
+SIMON uses humans created in HVE Studio's Human editor. A human is added to the case in the **Human (F2)** editor, where the *Humans* panel (**Human › Human Information...**) holds its identity and anthropometry (location, sex, age, weight and height percentiles).
 
 To place an occupant in a SIMON event, open **Event › Event Information...** in the **Event (F5)** editor and add the human under **Humans in Event**. SIMON carries each occupant rigidly with the vehicle it rides in.
 
@@ -559,13 +559,13 @@ SIMON uses the following Driver Controls. In HVE Studio the four tables are the 
 !!! note "HVE Studio"
     The **Steer** tab edits a steering-wheel angle table (*At Driver*). A road-wheel angle table (*At Axle*, HVE's "at the tires") is shown and editable on the same tab when the case carries one, as EDC's validation cases do, and then overrides the steering-wheel table; HVE Studio has no control for starting a new one.
 
-- **Brakes** — A table of braking inputs as a function of time. All input options are supported; in HVE Studio the **Input Method** list on the **Brake** tab offers **Pedal (AT_DRIVER)**, **Wheel Force** and **% of Friction**.
+- **Brakes** — A table of braking inputs as a function of time. All input options are supported; in HVE Studio the **Input Method** list on the **Brake** tab offers **At Driver**, **Wheel Force** and **% of Friction**.
 
   > **NOTE:** The Pedal Force option is recommended (see Chapter 4, Calculation Method).
 
   Antilock is not set on the Brake tab. SIMON regulates every wheel when the vehicle's **ABS Installed** (**Vehicle › Editors › Brakes › ABS / Brake Design... › ABS System...**) or any wheel's **Antilock (ABS)** box (**Vehicle › Editors › Brakes › Brake Assembly...**) is ticked, and an event can override it in **Event › Wheels... › Brake** (see [Vehicle Wheels](#vehicle-wheels)).
 
-- **Throttle** — A table of throttle inputs as a function of time. HVE Studio's **Input Method** list on the **Throttle** tab offers **Pedal (AT_DRIVER)** (percent wide-open throttle through the engine model) and **% of Friction**; the **Use Clutch / Torque Converter** checkbox is on the same tab.
+- **Throttle** — A table of throttle inputs as a function of time. HVE Studio's **Input Method** list on the **Throttle** tab offers **At Driver** (percent wide-open throttle through the engine model) and **% of Friction**; the **Use Clutch / Torque Converter** checkbox is on the same tab.
 
   > **NOTE:** The %WOT (Pedal) option is recommended (see Chapter 4, Calculation Method).
 

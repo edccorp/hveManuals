@@ -4,7 +4,7 @@ Injury tolerances may be defined for each human. They are used during the event
 as guidelines to estimate when specific injuries might occur.
 
 !!! note "HVE Studio"
-    In the Human editor (F2), open the **Occupants** panel (**Occupant › Human
+    In the Human editor (F2), open the **Humans** panel (**Occupant › Human
     Information...**), select the human and press **Injury Tolerances...**. The
     window is titled **Injury Tolerances**; the tolerances belong to the whole
     human, not to a segment. Forces follow the units set in Tools ›

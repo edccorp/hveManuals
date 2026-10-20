@@ -33,11 +33,11 @@ Start HVE Studio as you would any other program (see [Installing and running HVE
 
 ### Learning About the Menu Bar
 
-The menu bar holds **File**, **Edit**, the menus of the current editor (**Vehicle**, **Environment**, **Event**, **Output**, **Playback**, **Occupant** — which of them appear depends on the editor), **View**, **Tools** and **Help**:
+The menu bar holds **File**, **Edit**, the menus of the current editor (**Vehicle**, **Environment**, **Event**, **Output**, **Playback**, **Human** — which of them appear depends on the editor), **View**, **Tools** and **Help**:
 
 - **File** — New, Open and Save cases (Ctrl+N, Ctrl+O, Ctrl+S), Open Recent, Save Case As JSON, Embed vehicle meshes in the case, Embed the environment in the case, Publish Bundle, the Blender export and live link, and Exit.
 - **Edit** — Undo History (Ctrl+Z undoes and Ctrl+Y redoes, except while a run's results are on screen).
-- **Vehicle**, **Environment**, **Event**, **Occupant** — the dialogs for setting up vehicles, the environment, events and humans (HVE's Set-up menu and Object Info dialogs).
+- **Vehicle**, **Environment**, **Event**, **Human** — the dialogs for setting up vehicles, the environment, events and humans (HVE's Set-up menu and Object Info dialogs).
 - **Output** — Key Results, Output Graph, Variable Selection, reports, Playback Options and Run Simulation (HVE's Playback Editor).
 - **Playback** — Playback Sequence, Playback Options and Run All Events, in the Playback editor.
 - **View** — the panels (Viewport, Shader Editor, Dope Sheet, Key Results, Output Graph, Simulation, Outliner) and what the 3-D view draws.
@@ -113,7 +113,7 @@ Lesson 2 is a high-level overview describing how to execute a single event. In t
 ### Selecting Humans
 
 1. Select the **Human (F2)** tab.
-2. Press **Add Occupant**. A human is added and its fields are shown.
+2. Press **Add Human**. A human is added and its fields are shown.
 3. Enter **Name** `Fred`, and choose **Location** (front left seat), **Subject Type** (male), **Age Group** (adult), **Weight Percentile** 50 and **Height Percentile** 50.
 
 Fred is displayed in the Viewport, seated, because we assigned him as an occupant.

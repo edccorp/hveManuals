@@ -98,13 +98,13 @@ Now the Nissan Sentra:
 
 Finally, the stiffness of the Nissan. From a previous reconstruction analysis, the A and B stiffnesses were re-calculated in order to balance the forces (the technique is described in references [20] and [21]). The stiffness of each side of a vehicle is edited from the Event editor:
 
-1. Choose the **Event (F5)** editor tab.
-2. Choose **Event › Crush Profile...**. The **Crush & Geometry** window is displayed. Choose **V2 Tutorial - Nissan Sentra** in its **Vehicle** list.
-3. Click **CG to Right...**. The **CG to Right Stiffness** window is displayed for the Nissan's right side.
+1. Choose the **Vehicle (F3)** editor tab.
+2. Choose **Vehicle › Editors › Crush Stiffness...**. The **Crush Stiffness** window is displayed. Choose **V2 Tutorial - Nissan Sentra** in its **Vehicle** list.
+3. Open its **Right** section, the Nissan's right side.
 4. **A Stiffness** is the calculated value, 980 N/cm (shown as 98000 N/m in metric units, 559.6 lbf/in in US units), and **B Stiffness** is 200 N/cm² (2 000 000 N/m², 290.1 lbf/in²). The database values were 175.1 N/cm and 45.6 N/cm².
 
-![Figure 5-4](images/hvn-edsmac4-crush-hub.png)
-*Figure 5-4: The Crush & Geometry window, from which each side's A, B and Kv stiffness is edited. EDSMAC4 uses the A and B stiffness of the surface that is struck; earlier programs used a single value of Kv for the entire vehicle.*
+![Figure 5-4](images/hvn-edsmac4-crush-stiffness.png)
+*Figure 5-4: The Crush Stiffness window, in which each side's A, B and Kv stiffness is edited. EDSMAC4 uses the A and B stiffness of the surface that is struck; earlier programs used a single value of Kv for the entire vehicle.*
 
 Now we have both vehicles ready for our study.
 

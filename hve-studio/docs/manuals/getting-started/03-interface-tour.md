@@ -19,7 +19,7 @@ The menu bar always carries **File**, **Edit**, **View**, **Tools** and
 
 | Editor | Extra menus |
 | --- | --- |
-| Human (F2) | **Occupant** |
+| Human (F2) | **Human** |
 | Vehicle (F3) | **Vehicle** |
 | Environment (F4) | **Environment** |
 | Event (F5) | **Event** and **Output** |
@@ -55,7 +55,7 @@ The main entries:
   Selection, HVE Reports, Compare Runs, Playback Options, Run Simulation, Damage Studio Options, Damage Studio Report, Export
   Variables.
 - **Playback** — Playback Sequence, Playback Options, Run All Events.
-- **Occupant** — Human Information.
+- **Human** — Human Information.
 - **View** — which panels are shown, in three groups: the scene (Viewport,
   **Outliner**, **Scene Display**, Shader Editor, Dope Sheet), the run and its
   results (Simulation, Key Results, **Results HUD**, Output Graph, Timestep

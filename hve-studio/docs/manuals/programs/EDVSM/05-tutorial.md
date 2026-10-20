@@ -174,7 +174,7 @@ The rollover event steers the front wheels directly (HVE's *At Axle* table):
 To enter the throttle table:
 
 - In Driver Controls, choose the **Throttle** tab.
-- Set *Input Method* to **Pedal (AT_DRIVER)** (HVE's *Wide-open Throttle* option: 0 is closed, 1 is wide open).
+- Set *Input Method* to **At Driver** (HVE's *Wide-open Throttle* option: 0 is closed, 1 is wide open).
 - Enter the throttle position, as shown below, using **Add** for each row (Figure 5-6).
 
 **Table 5-2: Throttle Table entries for the Ford Bronco.**
@@ -212,7 +212,7 @@ To enter the gear selection:
 
 To enter the brake input:
 
-- In Driver Controls, choose the **Brake** tab and set *Input Method* to **Pedal (AT_DRIVER)** (HVE's *Pedal Force*).
+- In Driver Controls, choose the **Brake** tab and set *Input Method* to **At Driver** (HVE's *Pedal Force*).
 - Enter the brake pedal force, as shown below:
 
 **Table 5-4: Brake Table entries for the Ford Bronco.**

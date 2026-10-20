@@ -5,7 +5,7 @@ segments: Pelvis, Abdomen, Chest, Neck, Head, Rt/Lt Upper Leg, Rt/Lt Lower Leg,
 Rt/Lt Foot, Rt/Lt Upper Arm and Rt/Lt Lower Arm.
 
 !!! note "HVE Studio"
-    In the Human editor (F2), open the **Occupants** panel (**Occupant › Human
+    In the Human editor (F2), open the **Humans** panel (**Occupant › Human
     Information...**), select the human and press **Body Segments...**. The
     **Body Segments** window shows the human's name, a **Segment** list and
     three tabs: **Inertia** (this page), **Ellipsoids**

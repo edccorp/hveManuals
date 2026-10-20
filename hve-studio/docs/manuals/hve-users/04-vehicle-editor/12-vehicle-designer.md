@@ -107,16 +107,20 @@ The Packaging stage holds the dimensions a solve reads. It opens with **Axle
 loads**, the static load on each axle from the mass and the weight split, and
 where the CG sits along the wheelbase. On a vehicle with more than two axles
 the rear axles share the rear load equally (a tandem's equalizer at rest), one
-bar each, and the headline says so. Under it are the two sections the
-Vehicles panel has: **Configuration** (number of axles, driver
+bar each, and the headline says so. Under it are three tabs. **Size & Weight**
+holds the two sections the Vehicles panel has: **Configuration** (number of axles, driver
 location, engine location and drive axles, with HVE's rules applied as you
 change one) and **Size & Weight** (HVE's Vehicle Wizard form, applied as you
 type: wheelbase, tracks, lengths, weights and CG, with the wheelbase check and
-the **Details** tables underneath). They are the panel's own sections, not
-copies: a field has one editor. Under them, folded, are **Connections** (the
-Vehicle Connections editor: how this unit couples to another by hitch, fifth
-wheel or pintle, with its **Properties...** window) and the **Vehicle Package**
-wizard that **Tools › Vehicle Package...** opens, pinned to the designer's
+the **Details** table underneath). They are the panel's own sections, not
+copies: a field has one editor. Size & Weight ends with **Wheel Positions (from
+CG)**, each wheel's X, Y and Z, each axle left then right. **Connections** is
+the Vehicle Connections editor: how this unit couples to another by hitch, fifth
+wheel or pintle, with its **Properties...** window. While the tab is open the
+3-D view marks the front connection point in cyan and the rear one in orange,
+each with a line down to the ground; a point whose type is None is drawn dim.
+The Vehicle Connections window marks them the same way. **Vehicle Package** is
+the wizard that **Tools › Vehicle Package...** opens, pinned to the designer's
 vehicle: **1. Identify** (the VIN
 and what decoding it says, or the year, make, model and trim), **2.
 Specifications** (weight, front axle share, wheelbase, front and rear track,
@@ -177,7 +181,9 @@ the Brakes chart divides the brake force by.
 The Tires stage hosts the tire editor: the same **Tire Properties** table, the
 tire-size and database tools and the **Load & Speed Tables** panel that
 **Vehicle › Editors › Tires...** opens, drawn in the stage's center under the frame's
-vehicle line. One editor serves the window and the stage.
+vehicle line. One editor serves the window and the stage. In the stage the
+table and the Load & Speed Tables follow each other at full height and the
+stage scrolls as one page; the window keeps its divider between the two.
 
 ![Figure 12-5: the Tires stage hosting the tire editor](../images/hvn-04-vehicle-designer-tires.png)
 
@@ -194,7 +200,8 @@ transferred forward by the deceleration the brakes themselves produce.
 
 ![Figure 12-3: the Brakes stage, braking against grip for the front and rear axles](../images/hvn-04-vehicle-designer-brakes.png)
 
-The headline names the first axle to lock, the deceleration and pedal force at
+The chart and its readings are under **Braking against grip**, a heading
+that folds away like the Tires stage's chart. The headline names the first axle to lock, the deceleration and pedal force at
 which it locks, the grip-limited deceleration (every tire at its peak) and the
 deceleration at full pedal, then the brake balance by design (the front share
 of torque ratio over radius, before any valve or pushout).
@@ -430,7 +437,7 @@ meets in this vehicle, one tab each: **Contact Surfaces** (the panels an
 occupant can strike, with their materials), **Airbags** and **Belt Restraint**.
 They are the same editors as the windows under **Vehicle**, not copies: a field
 has one editor. The belts and airbags are per seat, so these two open on the
-human the Occupants panel has selected, with the editors' own occupant picker
+human the Humans panel has selected, with the editors' own occupant picker
 to change seat. While the stage is open the 3-D view draws the surfaces, bags
 and belts, as it does when their windows are open. Each tab's **Open in its own
 window** opens that editor's window.

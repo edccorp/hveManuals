@@ -645,7 +645,7 @@ Buick Skylark driver.*
 !!! note "HVE Studio"
     In HVE Studio a belt system is kept per OCCUPANT of the vehicle rather than
     per seat: the dialog's **Occupant** list chooses whose belts are edited
-    (it follows the human selected in the Occupants panel). What the occupant
+    (it follows the human selected in the Humans panel). What the occupant
     actually wears is stated per event, in **Restraint In Use** (None, Lap
     Belt, 3-Point Belt, Airbag + Belt), which edits the active event.
 
@@ -740,7 +740,7 @@ Rebound and Bottom-out Moduli); and an **ATB Gas Dynamics (GATB)** section.
 To display or edit a seat's airbag, perform the following steps:
 
 1. Choose **Vehicle › Editors › Airbags**. The dialog opens on the seat of the occupant
-   selected in the Occupants panel.
+   selected in the Humans panel.
 2. Choose the **Seat**, check **Device Installed** and edit the bag's
    properties. A pedestrian has no seat and no airbag.
 3. Set the occupant's **Restraint In Use** to Airbag + Belt for the event
@@ -864,6 +864,9 @@ following steps:
    **Connections…**. The Vehicle Connections dialog will be displayed. It is
    a table with a **Front** and a **Rear** column and the rows **Type**,
    **X**, **Y**, **Z**, **Height above ground** and **Properties**.
+   While it is open the 3-D view marks the front connection point (cyan) and
+   the rear one (orange), each with a line down to the ground, so you can see
+   where the coupling is on the body; a point whose type is None is drawn dim.
 2. To put a connection on the front of a towed vehicle (e.g., a trailer),
    choose a **Type** in the **Front** column (*None, Hitch, King Pin, Pintle
    Eye, Fixed* or *Pintle Eye, Hinged*) and enter the vehicle-fixed X, Y and

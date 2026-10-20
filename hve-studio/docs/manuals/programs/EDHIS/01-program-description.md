@@ -37,7 +37,7 @@ EDHIS was validated first by direct comparison with HSRI-3D to ensure the basic 
 
 The procedure for using EDHIS in HVE Studio is:
 
-1. In the **Human (F2)** editor, open **Occupant › Human Information** (the *Occupants* panel) and click **Add Occupant**. HVE Studio generates the body with GEBOD from the Subject Type, Age Group and Weight/Height Percentile. Optionally edit the segments, joints, ellipsoids and injury tolerances (*Body Segments…*, *Joint Properties…*, *Injury Tolerances…*).
+1. In the **Human (F2)** editor, open **Human › Human Information** (the *Humans* panel) and click **Add Human**. HVE Studio generates the body with GEBOD from the Subject Type, Age Group and Weight/Height Percentile. Optionally edit the segments, joints, ellipsoids and injury tolerances (*Body Segments…*, *Joint Properties…*, *Injury Tolerances…*).
 2. In the **Vehicle (F3)** editor, add the vehicle. Give it interior (occupant) or exterior (pedestrian) contact surfaces with **Vehicle › Editors › Contact Surfaces**. Optionally install a belt (**Vehicle › Editors › Belt Restraint**) and/or an airbag (**Vehicle › Editors › Airbags**) for the occupant's seat.
 3. Optionally, set up an environment in the **Environment (F4)** editor.
 

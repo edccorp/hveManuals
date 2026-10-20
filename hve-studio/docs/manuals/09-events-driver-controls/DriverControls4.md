@@ -10,7 +10,11 @@ The **Throttle** tab of the [Driver Controls](DriverControls.md) dialog
 
 Selects the type of throttle table:
 
-- **Pedal (AT_DRIVER)** — HVE's *Wide-open Throttle*: throttle position from
+A vehicle added to a SIMON, EDVDS or EDVSM event, or an event switched to one of
+them, starts with **At Driver** for both throttle and brake until its tables are
+edited; the other methods have no pedal path and start with **% of Friction**.
+
+- **At Driver** — HVE's *Wide-open Throttle*: throttle position from
   0 (closed) to 1 (wide open) versus time. The drivetrain model converts it to
   engine torque through the engine torque curve, and thus to tractive force at
   each drive wheel. This option engages the vehicle's engine and drivetrain

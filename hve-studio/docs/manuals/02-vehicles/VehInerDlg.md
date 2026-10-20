@@ -19,7 +19,9 @@ Vehicle mass (weight/g). In HVE Studio the mass fields are editable as well; edi
 ## CG Location
 
 ### CG to Front Axle / CG to Rear Axle / CG Height (Total / Sprung)
-The longitudinal distances from the CG to the front and rear axles and the CG height, on each mass basis. The wheelbase does not depend on the basis, so editing one axle distance moves the other.
+The longitudinal distances from the CG to the front and rear axles and the CG height, on each mass basis. Editing one **moves the CG within the vehicle**, exactly as [Move CG](MoveCGDlg.md) does: the body, wheels and equipment stay where they are, the wheelbase is unchanged and the other axle distance follows. The **Sprung** column moves the sprung-mass CG by the change typed. The **Total** column is where the sprung mass and the wheels, tires and axles together balance; since those unsprung masses stay with the body, moving the total CG by a distance moves the sprung CG by that distance times total mass over sprung mass. A move that would put the CG at or below the ground, or at or past an axle, is refused and the reason is shown under the rows.
+
+The total CG is computed from every wheel's own position (including per-wheel positions and every axle of a tandem) and its tire, wheel and axle-beam weight. Changing an unsprung weight (tire weight, dual tires, a solid axle's beam mass) leaves the sprung CG where it is and the total weight unchanged; the sprung weight and the total CG move.
 
 ## Rotational Inertia
 

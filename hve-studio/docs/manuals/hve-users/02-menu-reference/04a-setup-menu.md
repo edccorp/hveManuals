@@ -32,16 +32,15 @@ part by method:
 | Wheels... | the methods that use driver controls (not EDCRASH, EDGEN, EDHIS, GATB or READDATAFILE) |
 | Accelerometers... | SIMON, EDSMAC4, EDVDS, EDVSM (the methods that compute accelerometer output) |
 | Restraints › | EDHIS, GATB |
-| Contacts... | EDSMAC4 (the contact surfaces); EDHIS, GATB (Occupant Contacts) |
+| Contacts... | EDSMAC4 (the contact surfaces); EDHIS, GATB (Human Contacts) |
 | Lights... | SIMON, EDSMAC4 |
 | Impact Plane / Barrier... | shown for EDCRASH, always greyed — not in HVE Studio |
-| Crush Profile... | EDCRASH, EDSMAC, EDSMAC4 |
 | Handling Parameters..., Move CG... | EDSMAC, EDSMAC4 |
 
 ![The Event menu for an EDCRASH event](../images/hvn-02-event-menu-edcrash.png)
 *The Event menu for an EDCRASH event: Position/Velocity, Payload, Wheels and the
-other simulation inputs are greyed, and Impact Plane / Barrier and Crush Profile
-are added.*
+other simulation inputs are greyed, and Impact Plane / Barrier is added. EDCRASH's
+crush profile is Damage Profiles (Ctrl+M).*
 
 !!! note "HVE Studio"
     The shortcuts printed beside Position / Velocity (Ctrl+P), Driver Controls
@@ -239,8 +238,8 @@ time.
 
 | Page | Table | HVE's options and their HVE Studio equivalent |
 |---|---|---|
-| **Throttle** | throttle vs time | *Percent Wide-Open Throttle* → input method **Pedal (AT_DRIVER)** (through the engine curve); *Percent Available Friction* → **% of Friction**. *Tractive Effort* is not offered |
-| **Brake** | brake vs time | *Pedal Force* → **Pedal (AT_DRIVER)**; *Wheel Force* → **Wheel Force**; *Percent Available Friction* → **% of Friction** |
+| **Throttle** | throttle vs time | *Percent Wide-Open Throttle* → input method **At Driver** (through the engine curve); *Percent Available Friction* → **% of Friction**. *Tractive Effort* is not offered |
+| **Brake** | brake vs time | *Pedal Force* → **At Driver**; *Wheel Force* → **Wheel Force**; *Percent Available Friction* → **% of Friction** |
 | **Steer** | steering-wheel angle vs time | *At Steering Wheel* is the table here. A table *At Axle* (road-wheel angles) that came with an imported case is shown, and overrides the steering-wheel table |
 | **Gear** | gear vs time (0 = neutral, 1 = reverse, 2 = first, …) | as HVE |
 | **Lean** | lean angle vs time | motorcycles (single-track vehicles) only; read by SIMON; new in HVE Studio |

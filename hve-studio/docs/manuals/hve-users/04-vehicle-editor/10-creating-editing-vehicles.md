@@ -61,12 +61,12 @@ sections. Each input has one place in it:
   weight and its front/rear distribution and axle weights, the overall length,
   width and height, wheelbase, overhangs, CG height, CG to axle distances,
   axle spacings and the track of each axle. The axle count is not set here
-  but under Configuration. **Resulting Layout**, a collapsed fold-out, shows
-  the axle layout these give. **Details**, also collapsed, holds **Exterior
+  but under Configuration. **Wheel Positions (from CG)** follows: the
+  per-wheel x, y, z table, each axle left then right, where a value typed
+  overrides the derived one. **Details**, collapsed, holds **Exterior
   Extents** (the derived CG-to-front, back, side, top and bottom distances the
   solver receives; read-only, with a warning when a loaded 3-D model does not
-  reach the declared extents) and **Wheel Positions (from CG)** (the per-wheel
-  x, y, z table, where a value typed overrides the derived one).
+  reach the declared extents).
 - **Inertia** — One line of totals (weight, and yaw, pitch and roll inertia)
   and **Edit...**, which opens the **Inertia / Mass** dialog: weight and
   inertias on both the total and the sprung basis, the CG location, the XZ
@@ -351,9 +351,9 @@ reached in HVE Studio as follows:
 | Wheel: Suspension | **Vehicle › Editors › Suspension Data** (all its tabs) |
 | Wheel: Tire | **Vehicle › Editors › Tires** (grid and Load & Speed Tables panel) |
 | Wheel: Brake | **Vehicle › Editors › Brakes › Brake Assembly**, **Vehicle › Editors › Brakes › Brake Designer** |
-| Wheel: Location | Vehicles panel › Size & Weight › Details › **Wheel Positions (from CG)** |
+| Wheel: Location | Vehicles panel › Size & Weight › **Wheel Positions (from CG)** |
 | Exterior: dimensions | Vehicles panel › Size & Weight (Details › Exterior Extents shows the derived extents) |
-| Exterior: stiffness | **Vehicle › Editors › Crush Stiffness**; also **Event › Crush Profile** (Crush & Geometry), for EDCRASH, EDSMAC and EDSMAC4 events |
+| Exterior: stiffness | **Vehicle › Editors › Crush Stiffness** |
 | Brake master cylinder | **Vehicle › Editors › Brakes › Brake System Pressure**, **Vehicle › Editors › Brakes › ABS / Brake Design** |
 | Steering wheel | **Vehicle › Editors › Steering System** |
 | Engine | **Vehicle › Editors › Drivetrain** |

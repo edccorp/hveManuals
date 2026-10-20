@@ -27,7 +27,7 @@ The original printed manual concluded with an alphabetical index keyed to page n
 | Restitution model | [Ch. 4 — Collision Phase](04-calculation-method.md#collision-phase); [Calc Options reference](../../10-calculation-options/CalcOptEDSMAC.md) |
 | RHO vectors (collision vectors) | [Ch. 3 — Damage Data](03-program-output.md#damage-data); [Ch. 4 — Collision Phase](04-calculation-method.md#collision-phase) |
 | Simulation Controls (timesteps, output interval, termination) | [Ch. 2 — Simulation Controls](02-program-input.md#simulation-controls) |
-| Pedal (AT_DRIVER) input method — not usable with EDSMAC | [Ch. 2 — Driver Controls](02-program-input.md#driver-controls) |
+| At Driver input method — not usable with EDSMAC | [Ch. 2 — Driver Controls](02-program-input.md#driver-controls) |
 | Stiffness coefficients (Kv) | [Ch. 2 — Exterior](02-program-input.md#exterior); [Ch. 4 — Collision Phase](04-calculation-method.md#collision-phase); [Ch. 5 — Editing the Vehicles](05-tutorial.md#editing-the-vehicles) |
 | Trajectory Simulation / Playback | [Ch. 3 — Trajectory Simulation](03-program-output.md#trajectory-simulation); [Ch. 5 — Viewing Results](05-tutorial.md#viewing-results) |
 | Tutorial (Visibility Study) | [Ch. 5](05-tutorial.md) |

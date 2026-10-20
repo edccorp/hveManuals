@@ -37,8 +37,8 @@ EDGEN may use one human created using the HVE Human Editor. Humans are selected 
 
 To add a human to the current case in HVE Studio:
 
-1. Choose the **Human** editor tab (F2). The **Occupants** panel is displayed.
-2. Click **Add Occupant**.
+1. Choose the **Human** editor tab (F2). The **Humans** panel is displayed.
+2. Click **Add Human**.
 3. Under **Identity**, enter a **Name** and choose the **Location** (an occupant position or *Pedestrian*).
 4. Under **Anthropometry**, choose the **Subject Type**, **Age Group**, **Weight Percentile** and **Height Percentile**.
 
@@ -183,7 +183,7 @@ To create an EDGEN event:
     human event that states no path is reported rather than run.
 
     To build one: add a human whose **Location** is *Pedestrian* (**Add
-    Occupant** in the Occupants panel generates its body), add an EDGEN event,
+    Occupant** in the Humans panel generates its body), add an EDGEN event,
     leave **Vehicles in Event** empty, and under **Humans in Event** click
     **Add Human**. The human's path is entered below it, in the Event
     Information panel (see *Entering a human's path* below). A human event

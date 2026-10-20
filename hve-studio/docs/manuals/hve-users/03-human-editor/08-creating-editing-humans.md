@@ -15,30 +15,30 @@ case. This chapter describes how to use it, beginning with its components.
 To use the Human Editor, select the **Human (F2)** tab under the menu bar, or
 press **F2**. The Human Editor has two components:
 
-- **Occupants panel** — Used for adding humans to the case, removing them,
+- **Humans panel** — Used for adding humans to the case, removing them,
   selecting the current human and editing its basic attributes. It takes the
   place of HVE's Human Editor dialog and its GEBOD Human Information dialog.
-  If it has been closed, reopen it with **Occupant › Human Information**.
+  If it has been closed, reopen it with **Human › Human Information**.
 - **Viewport** — Displays the current human. Clicking a body segment in the
   viewport selects that segment in the Body Segments dialog (see Selecting
   and Editing Humans, below).
 
 ![Figure 8-1](../images/hvn-03-human-editor.png)
-*Figure 8-1: HVE Studio Human Editor — the Occupants panel over the viewport.*
+*Figure 8-1: HVE Studio Human Editor — the Humans panel over the viewport.*
 
 !!! note "HVE Studio"
-    The Occupants panel floats over the viewport when the Human editor is
+    The Humans panel floats over the viewport when the Human editor is
     first opened. Like every HVE Studio panel it can be docked by dragging its
     title bar onto the dock area.
 
 ### Occupants Panel
 
-The Occupants panel manages all the humans in the current case. It contains:
+The Humans panel manages all the humans in the current case. It contains:
 
-- **Add Occupant** — Adds a new human to the case and generates its body with
+- **Add Human** — Adds a new human to the case and generates its body with
   GEBOD (see Adding New Humans, below).
 - **Remove** — Removes the current human from the case.
-- **Occupant** — A list of the names of all the humans in the case. Select a
+- **Human** — A list of the names of all the humans in the case. Select a
   different name to make it the current human.
 - **Identity** — Name and Location (see below).
 - **Anthropometry** — The GEBOD inputs: Subject Type, Age Group, Weight
@@ -54,7 +54,7 @@ The Occupants panel manages all the humans in the current case. It contains:
 !!! note "HVE Studio"
     HVE does not allow a human that is used in an event to be deleted;
     HVE Studio does, and removes it from those events. While the results of a
-    simulation are on screen, Add Occupant and Remove are disabled, and the
+    simulation are on screen, Add Human and Remove are disabled, and the
     human data that run used is read-only until the run is reset.
 
 > **NOTE:** Although every human's properties are defined using the Human
@@ -68,13 +68,13 @@ The Occupants panel manages all the humans in the current case. It contains:
     Which vehicle a human rides in is set in the Event Editor, in Event
     Information's **Humans in Event** section. That section's **Pose** button
     opens the Body Pose dialog for the event; the same dialog opens from the
-    Occupants panel's **Body Pose…** button and edits the pose in the active
+    Humans panel's **Body Pose…** button and edits the pose in the active
     event. A human's pose and the restraint it wears are stored per event.
 
 ## Adding New Humans
 
-To add a new human, press **Add Occupant** in the Occupants panel. HVE Studio
-adds a human named "Occupant *n*" and immediately generates its 15-segment
+To add a new human, press **Add Human** in the Humans panel. HVE Studio
+adds a human named "Human *n*" and immediately generates its 15-segment
 body with GEBOD from the current Anthropometry settings. Then edit its
 attributes in the panel:
 
@@ -188,7 +188,7 @@ the case; editing it does not affect any other case.
 The last human added becomes the current human. To select and edit any
 human:
 
-1. Choose its name in the **Occupant** list of the Occupants panel. The
+1. Choose its name in the **Human** list of the Humans panel. The
    selected human becomes the current human and is displayed in the
    viewport.
 2. If desired, change its Identity and Anthropometry in the panel, as

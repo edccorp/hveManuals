@@ -4,7 +4,7 @@ The jounce and rebound stop properties are displayed and edited in the **Jounce 
 
 The **Vehicle** list at the top selects the vehicle.
 
-Where HVE edits one wheel at a time and switches between the jounce and the rebound stop with two radio buttons, HVE Studio shows a table with one column per wheel (**A1 Right**, **A1 Left**, **A2 Right**, ...) and both stops at once, jounce rows above rebound rows. Values are shown in the units set in Preferences and take effect as they are typed.
+Where HVE edits one wheel at a time and switches between the jounce and the rebound stop with two radio buttons, HVE Studio shows a table with one column per wheel (**A1 Left**, **A1 Right**, **A2 Left**, ...) and both stops at once, jounce rows above rebound rows. Values are shown in the units set in Preferences and take effect as they are typed.
 
 ## Link Group
 

@@ -5,7 +5,7 @@ type, each property is entered separately for rotation about the joint's i, j
 and k axes.
 
 !!! note "HVE Studio"
-    In the Human editor (F2), open the **Occupants** panel (**Occupant › Human
+    In the Human editor (F2), open the **Humans** panel (**Occupant › Human
     Information...**), select the human and press **Joint Properties...**. The
     **Joint Properties** window has a **Joint** list of all 14 joints; it needs a
     body model (see [Inertial Data](Human.md)). The properties are a table with
