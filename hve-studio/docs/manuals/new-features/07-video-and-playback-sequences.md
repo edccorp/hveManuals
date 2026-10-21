@@ -192,8 +192,11 @@ can be drawn into every frame.
    3-D view's own picture. **Ray traced** traces every frame with the built-in
    path tracer (see below) at the **Samples** given (default 64), which takes
    seconds a frame instead of milliseconds; **Denoise** (on by default) lets far
-   fewer samples give a clean frame. The app stays usable while frames are
-   traced, and **Cancel** answers at once. Tick **Motion blur** to make each
+   fewer samples give a clean frame. **Trace on the GPU** (on by default) traces
+   each frame on the graphics card where it can, many times faster; the window
+   pauses for each frame while the card traces it. On the processor (the box
+   cleared, or a graphics card that cannot trace) the app stays usable while
+   frames are traced, and **Cancel** answers at once. Tick **Motion blur** to make each
    frame the average of several instants (**Steps**, default 8) across the
    **Shutter** (default 0.50 of a frame): 0.5 of a frame is a film camera's
    look, where a spinning wheel blurs and an impact smears.
@@ -276,15 +279,27 @@ another shape than the view shows all of the view and more at the sides (or
 above and below); it is never stretched. The picture sharpens pass by pass; **Stop**
 at any point and **Save PNG**. **Denoise**, on by default, smooths the remaining
 noise out of the lighting while keeping paint, photographs and shadow edges
-sharp, so 16–32 samples already give a clean picture.
+sharp, so 16–32 samples already give a clean picture. **Trace on the GPU**, on
+by default, traces on the graphics card (see below); the status line beside
+the sample count says what traced the picture.
 **Results HUD** (on by default) burns the HUD boxes marked **Burn into movies
 and renders**, of the view on screen (Event or Playback), over the picture and
 into the saved PNG, as a recorded movie carries them; it is greyed when no such
 box exists.
 
-The tracer runs on the processor, on every core the machine has; it does not
-use the graphics card. A finer picture costs time in proportion to its pixels
-and samples.
+The tracer runs on the graphics card when **Trace on the GPU** is ticked and
+the card can: the same tracer, the same scene and the same picture as on the
+processor, many times faster. It needs only what the 3-D view already uses
+(OpenGL 3.3, or WebGL2 in the browser) plus 32-bit float render targets, so it
+works on Windows, macOS, Linux and in the browser alike. Where the card cannot
+— no float render targets, or a scene or picture too large for its memory —
+the render runs on the processor, on every core the machine has, and the
+window says why in a note; very large scene textures are reduced to fit the
+card, and the window says that too. A finer picture costs time in proportion
+to its pixels and samples either way.
+
+`--render-traced` (below) uses the graphics card when it can, and prints which
+traced the picture.
 
 A still can also be made without opening the app:
 `HVEStudio --render-traced case.hvex picture.png 128 1920` traces the case at the
