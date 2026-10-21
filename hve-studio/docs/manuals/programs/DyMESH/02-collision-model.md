@@ -123,6 +123,32 @@ selected. Under Version 3 the reduction is not applied.)*
     The dialog marks all of them *Carried, not consumed*; they are kept so a
     case round-trips.
 
+!!! note "HVE Studio: a wheel is pushed back by its true depth"
+    HVE uses one restoration direction for the whole contact pair: the
+    area-weighted average of the contacting surfaces' normals. A node is pushed
+    along it until it reaches the other surface. Where that direction runs
+    *along* the surface a node actually crossed, the push skims the surface
+    and books far more crush than the node penetrated. The clearest case is a
+    wheel sliding sideways into a curb. The curb's wide top makes the direction
+    nearly vertical while the tire crosses the curb's vertical face. A node
+    0.57 in through the face was booked 5.1 in of crush, and the face pushed
+    the wheel *into* the curb and upward.
+
+    HVE Studio pushes a **wheel** node to the nearest point of the surface it
+    is inside, along that surface's normal, whenever the shared direction
+    would book more than its true depth (by more than 0.05 in). The wheel mesh
+    is convex, so that distance is its penetration. Where the two agree
+    nothing changes, and body nodes keep HVE's shared direction, which is
+    what stops two crushed bodies locking together. On the curb the face now
+    pushes the wheel back out. Running with the environment variable
+    `HVE_DYMESH_WHEEL_NEAREST=0` restores HVE's push.
+
+    A wheel contact computed this way depends on the collision timestep: the
+    curb-face impulse at a 1 ms step is about 2.4 times its fine-step value.
+    For a wheel striking a curb face or another vehicle, use a collision
+    timestep in which the wheel closes no more than about 0.05 in per step,
+    roughly 0.3 ms at 4 m/s.
+
 ## 3. Node force–deflection law
 
 A central design point is that **any force-deflection relationship can be used**;
