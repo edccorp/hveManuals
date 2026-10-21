@@ -42,7 +42,7 @@ database files reside in the `supportFiles\db` directory (see
     | Ctrl+N, Ctrl+O, Ctrl+S | New case, Open case, Save case |
     | Ctrl+R | Run Simulation (Event editor) |
     | Ctrl+P, Ctrl+D, Ctrl+M, Ctrl+U, Ctrl+W, Ctrl+T | Position / Velocity, Driver Controls, Damage Profiles, Collision Pulse, Wheels, Contacts (Event editor, when the item is offered for the method) |
-    | Ctrl+Z; Ctrl+Y or Ctrl+Shift+Z | Undo; redo (not while a run's results are on screen, nor inside a text field) |
+    | Ctrl+Z; Ctrl+Y or Ctrl+Shift+Z | Undo; redo (inside a text field, the field's own; over an input of a run whose results are on screen, it asks to clear those results first) |
     | C / Shift+C | Look through the next / previous saved camera |
     | I | Insert a key on the camera being looked through |
     | Delete or X | Delete the selected path-follower waypoint in the 3-D view |

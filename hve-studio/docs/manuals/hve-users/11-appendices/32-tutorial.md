@@ -36,7 +36,7 @@ Start HVE Studio as you would any other program (see [Installing and running HVE
 The menu bar holds **File**, **Edit**, the menus of the current editor (**Vehicle**, **Environment**, **Event**, **Output**, **Playback**, **Human** — which of them appear depends on the editor), **View**, **Tools** and **Help**:
 
 - **File** — New, Open and Save cases (Ctrl+N, Ctrl+O, Ctrl+S), Open Recent, Save Case As JSON, Embed vehicle meshes in the case, Embed the environment in the case, Publish Bundle, the Blender export and live link, and Exit.
-- **Edit** — Undo History (Ctrl+Z undoes and Ctrl+Y redoes, except while a run's results are on screen).
+- **Edit** — Undo History (Ctrl+Z undoes and Ctrl+Y redoes; undoing an input of a run whose results are on screen asks to clear those results first).
 - **Vehicle**, **Environment**, **Event**, **Human** — the dialogs for setting up vehicles, the environment, events and humans (HVE's Set-up menu and Object Info dialogs).
 - **Output** — Key Results, Output Graph, Variable Selection, reports, Playback Options and Run Simulation (HVE's Playback Editor).
 - **Playback** — Playback Sequence, Playback Options and Run All Events, in the Playback editor.

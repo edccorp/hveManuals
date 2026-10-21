@@ -37,10 +37,14 @@ While results are on screen, Undo and Redo step only over changes that no
 program reads -- the sun and sky, the location and cameras, which
 stay editable then -- and over changes to events that have not been run, such
 as moving a vehicle in another event. A step that changes an input of an event
-that holds results is **locked**: undoing it would change the inputs of that
-run. Press **Reset** (on
-the playback bar or in the Simulation panel) first. Opening or saving a case
-clears the undo history.
+that holds results — an edit made before you pressed **Run**, say — would change
+the inputs of that run, so the results would no longer match the case. Undo,
+Redo (from the menu, Ctrl+Z / Ctrl+Y or the Undo History) then asks first:
+**Clear Results to Undo?** names the step and the events whose results are on
+screen. **Clear Results and Undo** (or **Redo**, or **Go to Step** from the
+history list) clears those results and makes the move; run the event again to
+see the new results. **Cancel** leaves both the results and the case as they
+are. Opening or saving a case clears the undo history.
 
 ---
 
