@@ -67,6 +67,45 @@ vehicle's own data and are usually left as they are.
 Every stage hosts the editors that hold its inputs, the same windows the
 Vehicle menu opens; each editor's **Open in its own window** opens its window.
 
+### Used by
+
+**Used by**, on the line under the stage name, picks a calculation method, and
+every stage that edits the vehicle's inputs dims the rows that method does not
+read. Dimmed rows stay editable. **All programs** dims nothing, and a method
+marked **(in an event)** is one this vehicle's events run. Hover a row's name
+for what the chosen method does with it and the source line that reads it; an
+amber **\*** marks a row read only in part (one row of a table, one axle). A
+row the method prints in its report but does not simulate is dimmed too, and
+says so. Several rows count only under an option of the run (the steer degree
+of freedom, the *At Driver* brake or throttle method, hydroplaning), and their
+note names it. The dimming applies in the designer only: an editor opened in
+its own window is never dimmed.
+
+Results that are easy to miss:
+
+- **Stiffness**: EDSMAC4 reads the crush **A** and **B**, EDSMAC and EDVSM read
+  **Kv** (EDSMAC only the front's, for every side), and SIMON reads the DyMESH
+  node stiffness. **Max Crush** reaches no program, and **Conversion Height** is
+  printed in SIMON's report only.
+- **Brakes**: SIMON, EDVSM and EDVDS read the brake model only when the event's
+  brake input is *At Driver*; under *% of Friction* they read none of this stage
+  but SIMON's **ABS Installed**. EDSVS and EDVTS read only their antilock switch
+  and efficiency.
+- **Engine** and **Transmission**: only SIMON, EDVSM and EDVDS have a
+  drivetrain, and they read it under the *At Driver* throttle method. **Max
+  Power**, **Efficiency**, **Shift Time** and **Drive Type** reach no program
+  (the driven axle comes from the vehicle's drive axle).
+- **Suspension**: of the 2-D programs, EDSMAC4, EDSVS and EDVTS read the front
+  axle's **Roll Couple Dist**, and they and EDSMAC and EDCRASH read the
+  suspension type and beam mass and inertia (for the CG and yaw inertia); none
+  reads the springs or dampers.
+- **Steering**: the column's friction, inertia and lag are read from axle 1 only.
+- **Connections**: read by SIMON, EDSMAC4, EDVDS and EDVTS.
+- **Occupant Protection**: read by EDHIS and GATB. **Lights** reach no program.
+
+Each claim is checked against the engine source by the test suite, so the
+filter cannot drift from what the programs read.
+
 ![Figure 12-2: the stage bar, the five stages of the walk first](../images/hvn-04-vehicle-designer-stage.png)
 
 ### Stage 1: Vehicle
@@ -234,6 +273,21 @@ table and the Load & Speed Tables follow each other at full height and the
 stage scrolls as one page; the window keeps its divider between the two.
 
 ![Figure 12-5: the Tires stage hosting the tire editor](../images/hvn-04-vehicle-designer-tires.png)
+
+With a method chosen in **Used by** (above), the tire rows it does not read are
+dimmed (see also [Tire Properties](../../05-tires-wheels/TireInfoDlg.md#used-by)).
+A few results that are easy to miss:
+
+- **SIMON** reads every tire input but **Peak Lat. Friction**, which only
+  EDVSM reads; minimum skid Fz only places skidmarks.
+- **EDSMAC4** reads slide friction, cornering stiffness, the unloaded radius,
+  the duals, weight and steer inertia; from each table it takes one row (the
+  middle load, the lower of two). It reads no tire spring rate, rolling
+  resistance or camber; max deflection only drives its blown-tire model.
+- **EDGEN** reads no tire input at all: it moves the vehicle along a stated path.
+- **Velocity Dependence** reaches SIMON, EDVSM, EDSMAC4 and EDSMAC only: it
+  becomes a second speed column of the friction table, and EDVDS, EDSVS, EDVTS
+  and EDCRASH read the first.
 
 ### Stage 7: Brakes
 

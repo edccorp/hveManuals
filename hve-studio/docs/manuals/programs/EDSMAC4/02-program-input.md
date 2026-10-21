@@ -388,7 +388,7 @@ EDSMAC4 uses the following positions and velocities:
     > **NOTE:** Other positions may be supplied as target positions, used to assess how closely the simulated path matches the actual path during a run.
 
     !!! note "HVE Studio"
-        For an EDSMAC4 event, Event Information also has a **Measured rest position** entry per vehicle (Rest X, Rest Y, Rest heading) for comparing the simulated rest position with the evidence. It does not change the simulation.
+        For an EDSMAC4 event, each vehicle's **Named Positions** list in Event Information holds HVE's eight named positions. **Initial** is the vehicle's initial conditions (the same values; editing either edits both). EDSMAC4 reads **Final/Rest** as the measured rest position, for comparing the simulated rest position with the evidence; unset, it defaults a rest position and says so. The other positions are drawn only, to compare with the run.
 
 - **Initial Velocity** — The total velocity and sideslip angle of the vehicle(s) at the start of the simulation.
 

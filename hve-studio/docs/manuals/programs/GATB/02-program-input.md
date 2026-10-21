@@ -518,6 +518,8 @@ By default, the Contacts dialog assumes interaction between every human ellipsoi
 !!! note "HVE Studio"
     The per-surface combined material — stiffness, damping, friction, maximum force and deflection, unloading slope, maximum penetration and edge constant — that GATB turns into ATB's force-deflection functions is edited in Event Information › **Combined Contact Materials**. A case imported from HVE states these per surface; a surface with none stated uses the surface's own material with an edge constant of 0.5.
 
+    GATB needs a **Max Force** above 0 that the force law reaches: it works out each contact's energy absorption by solving the law for that force. A Max Force of 0, which EDHIS reads as unlimited, stops a GATB run with a message naming this panel, unless the surface's force law is all zero (a surface that pushes on nothing). An unloading slope of 0 runs with no energy restored and no permanent set.
+
 ### Restraints
 
 The Restraints dialog determines if a belt or airbag restraint system is in use for the current event.

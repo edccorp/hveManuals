@@ -83,7 +83,7 @@ HVE split between its Event Editor and its Event Information dialog:
 - **Humans in Event** — the humans, for the methods that solve an occupant
 - **Vehicle Initial Conditions** (simulations) or **Vehicle Impact Setup**
   (EDCRASH) — the starting state, or the measured impact, rest and crush, of each
-  vehicle, and the **Scene positions** list (see [Target Positions](#target-positions))
+  vehicle, and its **Named Positions** list (see [Target Positions](#target-positions))
 - **Lighting** — the sun for the 3-D view (display only)
 
 **Sections...** at the bottom hides, shows and re-orders these sections;
@@ -197,10 +197,15 @@ replaced by this one gizmo.
 
 Each vehicle of an event has HVE's eight named positions — Initial, Begin
 Perception, Begin Braking, Impact, Separation, Point On Curve, End of Rotation
-and Rest. In Event Information, open the vehicle's **Scene positions — *n* of 8
-set, drawn as ghosts** list and tick a position to enter its X, Y and heading.
-Every position that is set is drawn in the viewport as a ghost of the vehicle
-(HVE's *targets*), so a simulated path can be compared with the measured one.
+and Rest. In Event Information (the Event Designer's Positions stage), open a
+position in the vehicle's **Named Positions** list and tick **Set** to enter its
+X, Y and heading; with **Auto Position (on the ground)** turned off, its **Z
+Height**, **Roll (deg)** and **Pitch (deg)** are entered too, so the ghost can
+be rolled, pitched or airborne. A note in each says what reads it under the
+event's method. A simulation's **Initial** is the vehicle's initial conditions
+themselves (editing either edits both). Every other position that is set is
+drawn in the viewport as a ghost of the vehicle (HVE's *targets*), so a
+simulated path can be compared with the measured one.
 In a simulation event (SIMON and the other programs that run forward from a
 start) **Impact** is where the vehicle is entered to be when it crashes; the run
 does not read it, and it is drawn as a ghost and offered as a target in EDR
@@ -209,7 +214,7 @@ entered in **Vehicle Impact Setup**.
 **View › Scene Display › Scene Ghosts** chooses how the ghosts are drawn — outline, translucent
 vehicle, both, or none (see [Chapter 5](05-view-menu.md#scene-ghosts)).
 
-To remove a position, untick it.
+To remove a position, clear its **Set** check box.
 
 ### Positioning Humans in Vehicles
 

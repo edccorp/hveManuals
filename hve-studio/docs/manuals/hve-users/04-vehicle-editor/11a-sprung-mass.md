@@ -375,7 +375,8 @@ Vehicle Mesh window holds the rest, in four tabs.
   tools (see [Scan bodies](#scan-bodies)) follow; for a scan used as the
   display mesh they are on the Display tab.
 - **DyMESH Contact Mesh Preparation** — the vehicle's defaults for
-  **Tessellate**, maximum triangle leg and weld distance. An event can state
+  **Tessellate**, maximum triangle leg and weld distance (shown greyed: it is
+  not applied, in HVE or here, so the mesh keeps its own vertices). An event can state
   its own, which then outrank these: **Event › DyMESH Options** (Contact Mesh
   Preparation, per vehicle). A note here says when the active event does.
 

@@ -168,7 +168,10 @@ stiffness, maximum penetration and edge constant).
 
 For every method except EDCRASH this section is titled **Vehicle Initial
 Conditions (*method*)** and replaces HVE's Initial path location in the
-Position/Velocity dialog. One block per vehicle slot, headed *V*n* -- name*:
+Position/Velocity dialog. The Event Designer's **Positions** stage shows this
+section (or, for EDCRASH, Vehicle Impact Setup) by itself; the Event stage's
+Event Information does not show it. One block per vehicle slot, headed *V*n* --
+name*:
 
 - **X Position**, **Y Position** (units set in Preferences) and **Heading (deg)**.
   Moving a tow vehicle carries its trailer; a trailer is kept on its hitch.
@@ -183,20 +186,21 @@ Position/Velocity dialog. One block per vehicle slot, headed *V*n* -- name*:
   off. Off (the default), SIMON applies its static tire deflection once; on, the
   entered height is already the settled elevation.
 - **Speed**, **Sideslip β (deg)** and **Yaw rate (deg/s)**.
-- **Measured rest position** (EDSMAC4 only) — **Rest position known**, **Rest X**,
-  **Rest Y**, **Rest heading (deg)**.
 - **Advanced initial state** — **Vertical vel w**, **Roll angle (deg)**,
   **Pitch angle (deg)**, **Roll rate (deg/s)**, **Pitch rate (deg/s)**. Roll and
   pitch take HVE's own range, ±1800°, so a vehicle can start on its roof (roll
   180°). A pitch within about 1° of ±90° is flagged: SIMON's and EDVSM's
   Euler-angle equations are singular there and the run may stop.
+- **Named Positions** — the vehicle's named positions (see
+  [Named Positions](#named-positions) below).
 
 For an EDVTS trailer the X and Y positions are shown greyed (EDVTS derives them
 from the hitch) and **Articulation (deg)** relative to the tow vehicle replaces
 the heading.
 
-**Only the selected vehicle** collapses the other vehicles' blocks (a view
-setting, not saved with the case).
+**Only the selected vehicle** collapses the other vehicles' blocks and limits
+the 3-D view's named-position outlines to the selected vehicle (a view setting,
+not saved with the case).
 
 !!! tip "New in HVE Studio"
     **Seed from a previous run** chains events: it takes where the vehicles
@@ -222,20 +226,72 @@ and the scene positions from its Position/Velocity dialog:
   the EES speed.
 - **A Stiffness**, **B Stiffness**, and **Derive impulse center from damage
   profile** (uncheck to enter **Impulse Center X / Y**).
-- **Scene positions** — HVE's eight named path locations (Initial, Begin
-  Perception, Begin Braking, Impact, Separation, Point On Curve, End of Rotation,
-  Final/Rest). Each one that is set is drawn as a ghost in the viewport. Impact
-  and Final/Rest are edited in the fields below the list.
-- **Scene positions known (impact + rest)** — with it on, **Impact X / Y /
-  heading**, **Impact sideslip (deg)**, **Rest X / Y / heading** and **Velocity
-  at rest**. With it off the run is a damage-only reconstruction (delta-V from
-  crush alone).
+- **Named Positions** — the vehicle's named positions (see
+  [Named Positions](#named-positions) below). EDCRASH reads Impact and
+  Final/Rest together: ticking either sets both, and with neither set the run is
+  a damage-only reconstruction (delta-V from crush alone).
+- **Impact sideslip (deg)** and **Velocity at rest** — below the list, shown
+  when Impact and Final/Rest are set.
 - **Measured Crush** — number of crush depths, **C1**...**Cn**, **Damage width**,
   **Damage offset**, and per-zone A/B stiffness.
 
 See [Damage Data](../11-reports-output/DamageData.md) for how these map to
 HVE's Damage Data dialog, and [Position/Velocity](PosVelDlg.md) for what each
 scene position does in EDCRASH.
+
+## Named Positions
+
+A list in each vehicle's block, one collapsible node per HVE named position in
+HVE's order: Initial, Begin Perception, Begin Braking, Impact, Separation, Point
+On Curve, End of Rotation, Final/Rest. A line above the list counts how many are
+set. The nodes start collapsed; each header reads *name*: *X*, *Y* *unit*,
+*heading* deg when the position is set, or *name*: not set. Open a node to edit
+it:
+
+- **Set** — ticked, the position is set.
+- **X**, **Y** (units set in Preferences) and **Heading (deg)**.
+- **Auto Position (on the ground)** — on (the default), the vehicle stands on
+  the ground at that position. Off, the entered **Z Height** (the CG's height
+  above ground), **Roll (deg)** and **Pitch (deg)** are used, so a position can
+  be rolled, pitched or airborne. Turning it off starts the three from where
+  the ground puts the vehicle; with it on they are greyed.
+- **Read by:** — a note saying what reads that position under the event's
+  calculation method:
+    - EDCRASH: **Begin Braking** (the speed before braking), **Impact** and
+      **Final/Rest** (the reconstruction; set together, and without them
+      EDCRASH runs a damage-only reconstruction), **Separation** (the
+      separation velocity), **Point On Curve** (the post-impact path becomes an
+      arc through it) and **End of Rotation** (the spinout ends there and a
+      rollout follows). **Initial** and **Begin Perception** are drawn only.
+    - EDSMAC4: **Final/Rest**; unset, EDSMAC4 defaults a rest position and says
+      so.
+    - Every simulation method: **Initial** is the start of the run (below). The
+      other positions are drawn only, to compare with the run. This includes
+      EDGEN, whose path comes from the Path Follower waypoints, not from the
+      named positions.
+
+A named position's elevation and attitude (Auto Position, Z Height, Roll and
+Pitch) are drawn only — they place its outline in the 3-D view, and no program
+reads them — except a simulation's Initial. For EDCRASH, the Impact node's
+elevation and attitude are the event's own impact fields.
+
+**Initial is the start of a simulation.** For every method except EDCRASH, the
+Initial node is the vehicle's initial conditions: it has no **Set** check box
+(it is always set; its note reads *The start of the run: the initial conditions
+above.*), and its X, Y, Heading, Auto Position, Z Height, Roll and Pitch are the
+same values as the **X Position**, **Y Position**, **Heading (deg)**, **Auto
+Position**, **Z Height** and Advanced initial state's **Roll angle** and **Pitch
+angle** fields of [Vehicle Initial Conditions](#vehicle-initial-conditions).
+Editing one edits the other, and moving a tow vehicle there carries its trailer.
+For a planar method the node shows *Auto Position: always on (method is a
+planar engine)* in place of the check box and **Z Height** is greyed; roll and
+pitch stay editable, as in Advanced initial state. No outline is drawn at a
+simulation's Initial: the vehicle itself stands there. For EDCRASH, Initial is
+an ordinary named position.
+
+Every other set position is outlined in the 3-D view (**View › Scene Display ›
+Scene Ghosts**), on the ground or at its entered height and attitude, and can be
+dragged there.
 
 ## Lighting
 

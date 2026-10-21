@@ -91,7 +91,9 @@ HVE's Playback Window combined trajectory simulations from several events into
 one window. In HVE Studio this is the **Playback (F6)** editor: in its
 **Playback Sequence** panel create a sequence with **New**, choose **Add Event**
 for each event, and tick the events to include. **Run All Events** solves every event the sequence uses, one after
-another.
+another. The panel has two tabs: **Sequence**, and **Results HUD**, the HUD boxes drawn
+while the sequence plays -- Playback's own, apart from the Event view's (see
+[Results HUD](../../new-features/11-results-hud.md)).
 
 ![Figure 2-41](../images/hvn-01-playback-sequence.png)
 *Figure 2-41: The Playback Sequence dialog.*

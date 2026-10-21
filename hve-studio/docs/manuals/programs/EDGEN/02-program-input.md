@@ -248,6 +248,11 @@ Position/Velocity data used by EDGEN are shown in Table 2-1.
     waypoint row of the same slot (HVE's Begin Braking is row 3, its
     Final/Rest row 8, and so on).
 
+    The vehicle's **Named Positions** list in Event Information is not
+    EDGEN's path: under EDGEN those positions are drawn only, to compare
+    with the run, except **Initial**, which is the initial conditions
+    (Position 1) itself.
+
 !!! note "HVE Studio: entering a human's path"
     A human's path is entered in the **Event Information** panel, under
     **Humans in Event**, below the human's row. It is shown on EDGEN events

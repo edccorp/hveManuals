@@ -52,14 +52,22 @@ HVE's TCS/YSC dialog. SIMON implements traction control (TCS) and yaw stability 
 ### TCS Enabled, YSC Enabled
 Whether traction control and yaw stability control are installed.
 
+Each field is enabled by the system(s) that read it.
+
 ### Min Speed
-Below this speed the systems stay inactive (enabled when TCS or YSC is on).
+Below this speed YSC stays inactive (enabled when YSC is on; TCS does not read it).
 
-### Drive Torque Threshold, Axle Spin Diff (rad/s), Drive Torque Rate
-TCS thresholds and rate (enabled when TCS is on): TCS engages above the drive torque threshold; the rate is the torque removed per unit of spin error.
+### Drive Torque Threshold, Drive Torque Rate, Side Spin Diff (rad/s)
+Read by both TCS and YSC (enabled when either is on): they act on the drive torque only above the threshold; the rate is the torque moved per unit of spin error; the side spin difference is the left/right wheel-speed difference that triggers a side torque shift.
 
-### Yaw Vel Error (rad/s), Spin Vel Error (rad/s), Side Spin Diff (rad/s), Brake Press Threshold, Brake Press Rate
-YSC thresholds and rate (enabled when YSC is on); the rate is the brake pressure applied per unit of yaw error.
+### Axle Spin Diff (rad/s)
+TCS only (enabled when TCS is on): the axle-to-axle speed difference that triggers an axle torque shift.
+
+### Yaw Vel Error (rad/s), Spin Vel Error (rad/s), Brake Press Threshold, Brake Press Rate
+YSC only (enabled when YSC is on); the rate is the brake pressure applied per unit of yaw error.
+
+!!! note "Changed in HVE Studio 2026-10-21"
+    Min Speed used to be enabled by TCS too, and Drive Torque Threshold, Drive Torque Rate and Side Spin Diff by only one system, though both read them; each now follows the system that reads it.
 
 An orange note in the section states the conditions under which these systems act: they require **Driver Controls › Input Method = At Driver** (TCS runs only when the throttle is driven by the driver model and YSC only when the brake is); TCS rebalances torque between drive axles, so it needs more than one; and YSC's pressure branch acts only while the driver is already braking. Both rates default to 0: if TCS or YSC is enabled with its rate at 0, an orange warning says that the system will report itself active and change nothing.
 

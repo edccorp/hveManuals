@@ -356,11 +356,13 @@ locations, and so does HVE Studio:
 - End Of Rotation
 - Final/Rest
 
-For EDCRASH, the impact and rest positions, the impact speed and the measured
-damage are entered in Event Information's **Vehicle Impact Setup**. The other
-positions are ticked and entered in the vehicle's **Scene positions** list in
-Event Information — and so is a simulation's Impact position, which marks where
-the vehicle should be at the crash and is not read by the run. Simulations *require* only initial positions and velocities;
+For EDCRASH, the impact speed and the measured damage are entered in Event
+Information's **Vehicle Impact Setup**. Every named position — EDCRASH's impact
+and rest included — is set and entered in the vehicle's **Named Positions**
+list in Event Information (the Event Designer's Positions stage), where a note
+on each says what reads it; a simulation's Initial position is its initial
+conditions, and its Impact position marks where the
+vehicle should be at the crash and is not read by the run. Simulations *require* only initial positions and velocities;
 reconstructions normally *require* impact and rest positions.
 
 *See also: [Position/Velocity dialog

@@ -84,7 +84,7 @@ Once the raw data are acquired and reduced, analyzing the data involves the foll
   - Add one or two vehicles under **Vehicles in Event**.
   - Choose **EDCRASH** as the **Method**.
   - Choose the Separation Velocity Basis under **Method Options...**.
-  - Optionally, tick **Scene positions known (impact + rest)** and enter the impact and rest positions; enter any other scene positions under **Scene positions**.
+  - Optionally, in each vehicle's **Named Positions** list (the Event Designer's Positions stage), open **Impact**, tick **Set** (which sets **Final/Rest** with it) and enter the impact and rest positions; set and enter any other named position the same way.
   - Optionally, enter each vehicle's damage (CDC, PDOF, stiffness and **Measured Crush**).
   - Optionally, enter the Wheel Data for each vehicle (**Event › Driver Controls**).
 - Execute the reconstruction with **Run** on the playback bar.

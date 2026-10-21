@@ -178,7 +178,7 @@ Vehicles panel docked on the left and the 3-D viewport on the right.*
   take effect as you edit them: there is usually no **OK** or **Cancel**. Undo a
   change with **Edit › Undo** (Ctrl+Z).
 - **Viewport** — the 3-D view, used in every editor. The view cube in its
-  top-right corner sets a preset view (click a face for that view, orthographic;
+  top-right corner, drawn as the HVE cube, sets a preset view (click a face for that view, orthographic;
   drag the cube to orbit), and the buttons under it zoom, pan, look through the
   scene camera and switch between perspective and orthographic. A line of hints across
   the top lists the keys that apply. In the Event editor the **playback bar**

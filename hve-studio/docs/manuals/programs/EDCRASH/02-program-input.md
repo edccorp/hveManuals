@@ -309,26 +309,31 @@ Each vehicle is positioned relative to the earth-fixed coordinate system by supp
 
 !!! note "HVE Studio"
     For an EDCRASH event the scene positions are entered in the **Event
-    Information** panel, **Vehicle Impact Setup** section, for each vehicle
-    (Event › Position / Velocity is not used by EDCRASH and is greyed):
+    Information** panel, **Vehicle Impact Setup** section (the Event
+    Designer's Positions stage), for each vehicle (Event › Position /
+    Velocity is not used by EDCRASH and is greyed):
 
-    - Tick **Scene positions known (impact + rest)** and enter **Impact X**,
-      **Impact Y**, **Impact heading**, **Rest X**, **Rest Y** and **Rest
-      heading**. The impact position can also be dragged in the viewport
-      (G to move, R to rotate). With the box unticked the event is a
+    - The **Named Positions** list holds HVE's eight named positions, one
+      collapsed node each; its header shows where the position is, or *not
+      set*. Open a node and tick **Set** to set it and enter its **X**,
+      **Y** and **Heading (deg)**. A *Read by* note in each says what
+      EDCRASH does with it. **Impact** and **Final/Rest** are set together
+      (ticking either sets both); with neither set the event is a
       damage-only reconstruction: delta-V from the crush alone, no impact
       speed.
-    - Open **Scene positions** to see all eight of HVE's named positions.
-      Impact and Rest are listed there read-only (they are edited in the
-      fields above); tick any other position to enter its X, Y and heading.
-      Every position that is set is outlined in the viewport (View › Scene
-      Display › Scene Ghosts).
+    - Each node also has **Auto Position (on the ground)**, on by default.
+      Turned off, its **Z Height** (the CG above ground), **Roll (deg)** and
+      **Pitch (deg)** place the outline. EDCRASH does not read them: they
+      are drawn only. For **Impact** they are the event's own impact
+      elevation and attitude.
+    - Every position that is set is outlined in the viewport (View › Scene
+      Display › Scene Ghosts) and can be dragged there.
     - X and Y are in the length unit set in Tools › Preferences; headings
       are in degrees.
 
 ![Scene positions in HVE Studio](images/hvn-edcrash-scene-positions.png)
 
-*The Ford Escort's scene positions in the EDCRASH Tutorial case: Begin Braking is ticked and entered here; Impact and Final/Rest are shown read-only and entered in the fields below.*
+*The Ford Escort's scene positions in the EDCRASH Tutorial case: Begin Braking, Impact and Final/Rest are set.*
 
 > **NOTE:** In EDCRASH, +230 degrees is not the same as −130 degrees because the relative magnitude between two angles implies the rotation direction! For example, if the impact heading angle is 180 degrees and the rest heading angle is 230 degrees, the change in heading angle between impact and rest is +50 degrees clockwise; if the rest heading angle is −130 degrees, the change in heading angle is −310 degrees and the direction of rotation is counter-clockwise. Refer to the HVE or HVE-2D User's Manual for more information.
 
@@ -361,9 +366,9 @@ Positions are not required. However, if an estimate of impact speed is desired, 
     Rotation is entered.
 
 !!! note "HVE Studio"
-    - **Impact sideslip** and **Velocity at rest** are fields under the
-      impact and rest positions in the Event Information panel (shown when
-      *Scene positions known* is ticked). Both are read from an HVE case.
+    - **Impact sideslip (deg)** and **Velocity at rest** are fields below
+      the **Named Positions** list in the Event Information panel (shown
+      when Impact and Final/Rest are set). Both are read from an HVE case.
       The sideslip is the angle from where the vehicle points to where it is
       travelling at impact (0 = straight ahead); it moves both vehicles'
       Delta-V and PDOF. The velocity at rest is the speed EDCRASH's spinout

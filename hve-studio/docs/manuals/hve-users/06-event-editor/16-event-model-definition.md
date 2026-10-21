@@ -207,8 +207,8 @@ pitch and yaw positions and velocities are required.
 
 Human and vehicle positions may be deleted from an event. In HVE Studio a
 vehicle or human is removed from the event with **Remove** on its row in
-the Event Information panel, and an EDCRASH scene position by clearing its
-check box in the **Scene positions** list.
+the Event Information panel, and a named position by clearing its
+**Set** check box in the vehicle's **Named Positions** list.
 
 #### Rotation Direction
 
@@ -895,7 +895,7 @@ The Vehicle Mesh Event Set-up parameters are defined in Table 16-9.
     this event or left at the vehicle's own values. **Friction** and
     **Relaxation Length** are on the **DyMESH Options** dialog, under
     *Inter-Vehicle Contact (fallback)*, with a per-pair override for each
-    pair of vehicles. Restitution Energy is shown disabled there because no
+    pair of vehicles. HVE's Restitution Energy is not offered because no
     engine reads it.
 
 The Vehicle Mesh Event Set-up options are:

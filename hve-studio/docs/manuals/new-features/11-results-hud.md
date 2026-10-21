@@ -40,7 +40,18 @@ plays.
 ## The Results HUD window
 
 Choose **View › Results HUD**. The window is available in every editor and
-docks like any other panel. It edits the boxes of the open case.
+docks like any other panel. It edits every box of the open case.
+
+The Event view and Playback have **different HUDs**: each box is shown in the
+**Event** view (over the Event editor's run), in **Playback** (while a playback
+sequence plays), or in both. The same editor is a tab in each place that owns
+one, listing only that view's boxes, and a box added there belongs to that
+view:
+
+- the **Results HUD** tab of the Event Designer's **Results** stage, beside Key Results and the Output Graph (Event view);
+- the **Results HUD** tab of the **Playback Sequence** panel (Playback).
+
+A box from a case saved before this is in both views, as every box was.
 
 ![The Results HUD window](images/hvn-results-hud-window.png)
 
@@ -74,8 +85,9 @@ Under the tabs:
 | --- | --- |
 | **Name** | The box's name, shown on its tab. It is not drawn on screen. |
 | **Remove box** | Deletes the box |
+| **Shown in** | **Event and Playback**, **Event** or **Playback**: the view the box is drawn in |
 | **Show in the 3-D view** | Draws the box over the viewport (on for a new box) |
-| **Burn into recorded movies** | Draws the box into every frame recorded with **File › Record Animation...** (on for a new box). A box is burned in only while **Show in the 3-D view** is also on. |
+| **Burn into movies and renders** | Draws the box into every frame recorded with **File › Record Animation...** and over a picture made with **File › Render Image (Ray Traced)...** (its **Results HUD** box, on by default) -- on for a new box. A box is burned in only while **Show in the 3-D view** is also on, and only in its own view. |
 
 ### Rows
 
@@ -212,10 +224,10 @@ of the event placing the vehicle.
 when its **Burn in key results (Results HUD)** switch is ticked. That switch
 acts on every box of the case at once:
 
-- **Ticking it** turns on **Burn into recorded movies** and **Show in the 3-D
+- **Ticking it** turns on **Burn into movies and renders** and **Show in the 3-D
   view** for every box. If the case has no box, it first adds the *Key results*
   box (Time, then Speed and Delta-V for each vehicle of the active event).
-- **Unticking it** turns **Burn into recorded movies** off for every box. The
+- **Unticking it** turns **Burn into movies and renders** off for every box. The
   boxes stay in the viewport.
 - It shows as ticked when at least one box with rows is both shown and burned
   in.

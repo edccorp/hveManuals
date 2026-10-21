@@ -49,6 +49,27 @@ tables. **Apply Tire** replaces the tire data and all four tables of the wheels
 chosen in **Apply to** (All wheels, or one axle) with the database tire's; each
 wheel keeps its own dual setup.
 
+## Used by
+
+In the Vehicle Designer, **Used by** (on the line under the stage name, see
+[Vehicle Designer](../hve-users/04-vehicle-editor/12-vehicle-designer.md#used-by))
+picks a calculation method, and the rows it does not read are dimmed and stay
+editable; this window, opened on its own, is not dimmed. **All programs** dims nothing. A method
+marked **(in an event)** is one this vehicle's events run. Hover a row's name
+for what the chosen method does with it, and the source line that reads it. An
+amber **\*** marks a row the method reads only part of — for a table, which
+row and speed it takes. A row printed in the method's report but not read by
+its simulation is dimmed too, and says so.
+
+Some rows count only under an option of the run, and their note says which:
+pneumatic trail and steer inertia need the steer degree of freedom, tread
+width, tread depth and nominal pressure feed the hydroplaning model, and the
+TMeasy rows are read by SIMON's tire model 3 only.
+
+!!! note "HVE Studio"
+    New in HVE Studio. Each claim is checked against the engine source by the
+    test suite, so the filter cannot drift from what the programs read.
+
 ## Link Group
 
 The row of **–  A  B  C** buttons at the top of every column. Columns in the same

@@ -4,7 +4,7 @@ HVE's Position/Velocity dialog assigned positions and velocities to each human
 and vehicle at up to eight named path locations. In HVE Studio that information is
 split between a small **Position / Velocity** dialog for the starting state, the
 initial-conditions section of the [Event Information](EventInfo.md) panel, and
-the EDCRASH scene positions in the same panel.
+the **Named Positions** list in the same section.
 
 ## The Position / Velocity dialog
 
@@ -34,39 +34,46 @@ also be placed with the viewport gizmo (G move, R rotate).
 
 ## Path locations
 
-HVE's Path Location list is kept for **EDCRASH**, as the **Scene positions**
-list in each vehicle's block of the [Event Information](EventInfo.md) panel
-(*Vehicle Impact Setup*). Each position that is set is drawn as a ghost
-vehicle in the viewport (View › Scene Display › Scene Ghosts). What EDCRASH does with each:
+HVE's Path Location list is kept as the **Named Positions** list in each
+vehicle's block of the [Event Information](EventInfo.md#named-positions) panel
+(also on the Event Designer's Positions stage): one collapsible node per named
+position, each with a **Set** check box, **X**, **Y**, **Heading (deg)**, **Auto
+Position (on the ground)** with **Z Height**, **Roll (deg)** and **Pitch
+(deg)**, and a *Read by* note saying what reads it under the event's
+calculation method. Each position that is set is outlined in the viewport (View
+› Scene Display › Scene Ghosts) and can be dragged there. What EDCRASH does
+with each:
 
-- **Initial** and **Begin Perception** — documentation only; they do not change
-  a result.
+- **Initial** and **Begin Perception** — drawn only; they do not change a
+  result.
 - **Begin Braking** — EDCRASH back-calculates the speed at Begin Braking from
   this position and the pre-impact drag (Driver Controls › Wheel Data,
   *Total Lock-up*).
 - **Impact** and **Final/Rest** — the scene the impact speeds are solved from.
-  Both are needed for every vehicle; without them the run is a damage-only
-  reconstruction. They are edited in the *Impact* and *Rest* fields of the
-  same block (tick **Scene positions known**), with the sideslip at impact and
-  the velocity at rest.
-- **Separation** — the position where the vehicles separated. Unset, EDCRASH
-  assumes they separated where they met.
-- **Point On Curve** — makes the post-impact path a curve through this point
+  They are set together (ticking either sets both); without them the run is a
+  damage-only reconstruction. **Impact sideslip (deg)** and **Velocity at
+  rest** are entered below the list when they are set.
+- **Separation** — the position where the vehicles separated (the separation
+  velocity). Unset, EDCRASH assumes they separated where they met.
+- **Point On Curve** — makes the post-impact path an arc through this point
   instead of a straight chord (see the *Curved Path* options in
   [Calculation Options for EDCRASH](../10-calculation-options/CalcOptEDCRASHDlg.md)).
 - **End of Rotation** — ends the spinout at this position and treats the rest of
   the path to rest as a separate rollout.
 
-Each listed position has an **X**, **Y** and **Heading (deg)**; HVE's Z, roll
-and pitch fields are not offered for these positions, nor a velocity except the
+EDSMAC4 reads **Final/Rest**; unset, it defaults a rest position and says so.
+For every simulation method, EDGEN included (its path comes from the Path
+Follower waypoints), the other named positions are drawn only, to compare with
+the run. A simulation's **Initial** is the start of the run: the same values as
+the Initial Position fields and the event's initial conditions, so editing one
+edits the other.
+
+Each position also has HVE's Z, roll and pitch, entered with **Auto Position (on
+the ground)** off. Except at a simulation's Initial they are drawn only (they
+place the outline). No velocity is offered for these positions except EDCRASH's
 velocity at rest.
 
 !!! warning "Not in HVE Studio"
-    - Path locations for the simulation methods (everything but EDCRASH) other
-      than the initial one. (EDSMAC4 also reads a measured rest position,
-      entered under *Measured rest position* in Event Information.) Other
-      positions read from an imported HVE case are shown as ghosts but do not
-      drive a simulation.
     - Editing a **human's** positions and velocities, except for EDGEN: on an
       EDGEN event the human's eight named positions (position, orientation,
       sideslip and speed) are edited in Event Information, *Humans in Event*.

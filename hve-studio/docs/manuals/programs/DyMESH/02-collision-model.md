@@ -297,8 +297,8 @@ accelerations and the crush-depth (general damage profile) simulation.
     **Friction** and **Relaxation Length** under *Inter-Vehicle Contact
     (fallback)* apply only to a pair that states 0. HVE's own cases fill the
     per-pair values, so on an imported case the fallback values are usually not
-    used. The grid's **Restitution Energy** column is shown disabled because no
-    engine reads it.
+    used. HVE's third per-pair value, Restitution Energy, is not offered
+    because no engine reads it; an imported case keeps it.
 
     The **Restitution Model** selector (Unloading slope / Energy / Relaxation
     length) does not reach the contact model in HVE's engine or in HVE Studio: the

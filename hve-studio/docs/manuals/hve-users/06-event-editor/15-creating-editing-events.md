@@ -89,8 +89,10 @@ vehicles directly:
   angle exactly, and Ctrl snaps.
 - A move in the Viewport edits the same starting position the Position /
   Velocity dialog and the Event Information panel show.
-- For EDCRASH, each surveyed scene position (Impact, Rest, ...) is drawn as a
-  ghost of the vehicle; selecting a ghost moves that position.
+- Each named position that is set (Impact, Final/Rest, ...) is outlined as a
+  ghost of the vehicle; dragging the outline moves that position. **Only the
+  selected vehicle** in Event Information limits the outlines to the selected
+  vehicle.
 - To see one vehicle where another stands, hide a vehicle in the view: **H**
   hides the selected vehicle, **Shift+H** hides the others, and **Alt+H** shows
   them all (also **View › Scene Display › Vehicles Shown** and the **Shown**
@@ -117,9 +119,17 @@ panel, which also holds the rest of the starting state:
   site. The planar engines always do; for the 3-D engines it may be turned
   off to enter a **Z Height** above the ground.
 - **Speed**, **Sideslip β** and **Yaw rate**.
-- **Measured rest position** — the rest position, if known.
 - **Advanced initial state** — **Vertical vel w**, **Roll angle**, **Pitch
   angle**, **Roll rate** and **Pitch rate**.
+- **Named Positions** — HVE's eight named positions (Initial, Begin
+  Perception, Begin Braking, Impact, Separation, Point On Curve, End of
+  Rotation, Final/Rest), each a collapsed node whose header shows where it is
+  (or *not set*). Opened, a node has a **Set** checkbox, **X**, **Y**,
+  **Heading (deg)**, **Auto Position (on the ground)** (turn it off to enter
+  **Z Height**, **Roll (deg)** and **Pitch (deg)**), and a *Read by* note
+  saying what reads it under the event's calculation method. For a
+  simulation, **Initial** is the starting state above: the same values, so
+  editing either edits both.
 
 A trailer hitched to another vehicle is positioned by its **Articulation**
 relative to the tow vehicle; its X and Y follow from the hitch.
@@ -131,10 +141,9 @@ relative to the tow vehicle; its X and Y follow from the hitch.
 
     - A simulation's **initial** state is in the Position / Velocity dialog
       and the Event Information panel, as above.
-    - EDCRASH's scene positions are in the panel's **Vehicle Impact Setup**
-      section: the Impact position, heading and speed, the measured rest
-      position, and a **Scene positions** list holding HVE's eight named
-      path locations, each drawn as a ghost in the Viewport.
+    - The eight path locations are the **Named Positions** list in each
+      vehicle's block of the panel (for EDCRASH, in **Vehicle Impact
+      Setup**), each set one outlined in the Viewport.
     - The path positions of the HVE Driver (path follower) are entered in
       the **Path Follower** dialog (see
       [Chapter 16](16-event-model-definition.md)).
@@ -379,8 +388,8 @@ Information panel. If results are on screen, click **Reset** first.
 
 A vehicle is removed from the current event with **Remove** on its row in
 the **Vehicles in Event** section (after confirmation). For EDCRASH, a
-surveyed scene position is removed by clearing its check box in the
-**Scene positions** list of the Vehicle Impact Setup section.
+surveyed scene position is removed by opening it in the vehicle's **Named
+Positions** list and clearing its **Set** check box.
 
 ---
 

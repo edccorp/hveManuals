@@ -115,13 +115,13 @@ All three are entered in the **Vehicle Impact Setup** section of the Event Infor
 
 The Escort skidded for a short distance before impact. Its positions are entered under its name in Vehicle Impact Setup:
 
-1. Open **Scene positions** and tick **Begin Braking**. Enter X = 18.0 m, Y = 15.0 m and a heading of 180 degrees.
-2. Tick **Scene positions known (impact + rest)**. Enter the impact position, **Impact X** = 6.0 m, **Impact Y** = 13.75 m, **Impact heading** = 195.0 degrees.
-3. Enter the rest position, **Rest X** = 3.5 m, **Rest Y** = 12.75 m, **Rest heading** = 230 degrees.
+1. In the **Named Positions** list, open **Begin Braking** and tick **Set**. Enter X = 18.0 m, Y = 15.0 m and a heading of 180 degrees.
+2. Open **Impact** and tick **Set** (which sets **Final/Rest** with it). Enter the impact position, **X** = 6.0 m, **Y** = 13.75 m, **Heading (deg)** = 195.0 degrees.
+3. Open **Final/Rest** and enter the rest position, **X** = 3.5 m, **Y** = 12.75 m, **Heading (deg)** = 230 degrees.
 
-   > **NOTE:** The impact position can also be dragged in the viewport (select the vehicle, then G to move or R to rotate). Typing the coordinates is usually easier.
+   > **NOTE:** A set position can also be dragged by its outline in the viewport. Typing the coordinates is usually easier.
 
-4. Enter the Escort's sideslip angle at impact, **Impact sideslip** = −4.35 degrees. (It is under **Impact heading**; Key Results shows it as *Impact Side Slip*.)
+4. Enter the Escort's sideslip angle at impact, **Impact sideslip (deg)** = −4.35 degrees. (It is below the **Named Positions** list; Key Results shows it as *Impact Side Slip*.)
 
 > **NOTE:** In HVE and in HVE Studio, +230 degrees is not the same as −130 degrees because the relative magnitude between two angles implies the rotation direction! For example, if the impact heading angle is 180 degrees and the rest heading angle is 230 degrees, the change in heading angle between impact and rest is +50 degrees clockwise; if the rest heading angle is −130 degrees, the change in heading angle is −310 degrees and the direction of rotation is counter-clockwise.
 
@@ -214,9 +214,9 @@ Event set-up for the Ford Escort is now complete.
 
 Let's set up the Nissan Sentra, under its name in Vehicle Impact Setup. We'll start by assigning its impact and rest positions:
 
-1. Tick **Scene positions known (impact + rest)**.
-2. Enter the impact position, **Impact X** = 3.5 m, **Impact Y** = 13.0 m, **Impact heading** = −90 degrees.
-3. Enter the rest position, **Rest X** = 0.5 m, **Rest Y** = 2.25 m, **Rest heading** = 70 degrees.
+1. In the **Named Positions** list, open **Impact** and tick **Set** (which sets **Final/Rest** with it).
+2. Enter the impact position, **X** = 3.5 m, **Y** = 13.0 m, **Heading (deg)** = −90 degrees.
+3. Open **Final/Rest** and enter the rest position, **X** = 0.5 m, **Y** = 2.25 m, **Heading (deg)** = 70 degrees.
 
    > **NOTE:** In HVE and in HVE Studio, +70 degrees is not the same as −290 degrees because the relative magnitude between two angles implies the rotation direction!
 

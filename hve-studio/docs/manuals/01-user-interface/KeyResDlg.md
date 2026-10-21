@@ -1,6 +1,6 @@
 # Key Results Dialog Box
 
-HVE displays a separate Key Results window, titled *Key Results-\<object name\>*, for each human and vehicle in the event. HVE Studio has **one Key Results panel** for the active event, with a column per vehicle. Open it with **View › Key Results** or **Output › Key Results...** in the Event or Playback editor; it is not available in the Human, Vehicle or Environment editors. Like every panel it can be docked or floated. Values are shown in the units set in Preferences.
+HVE displays a separate Key Results window, titled *Key Results-\<object name\>*, for each human and vehicle in the event. HVE Studio has **one Key Results panel** for the active event, with a column per vehicle. Open it with **View › Key Results** or **Output › Key Results...** in the Event or Playback editor; it is not available in the Human, Vehicle or Environment editors. Like every panel it can be docked or floated. The same panel is the **Key Results** tab of the Event Designer's **Results** stage, beside the Output Graph and the Results HUD. Values are shown in the units set in Preferences.
 
 The panel has three collapsible sections. Their order can be changed and is remembered.
 

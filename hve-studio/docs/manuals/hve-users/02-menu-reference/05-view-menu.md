@@ -131,14 +131,14 @@ Body and the DyMESH overlay table are in **Vehicle**.
 | **Humans Through Bodywork** | Draws the occupant figure over the vehicle, so a seated occupant can be seen from outside. A human that draws nothing with this on has no body yet: generate one in the Human editor |
 | **Vehicle Extents** | A translucent box at the CG-to-front, CG-to-rear, width and height the engine is given, to compare with the drawn body |
 | **See-Through Body** | Draws every vehicle body translucent (at most 30%), in every editor, so the axles, wheels, CGs, occupants and DyMESH overlays inside it can be seen. The vehicles' own opacity is unchanged |
-| **DyMESH overlay** | A table with two rows, **DyMESH Body** and **DyMESH Wheel**, and two columns, **Mesh** and **Nodes**. The **DyMESH Wheel** row is greyed until a SIMON event with DyMESH and at least one wheel's DyMESH contact on has been run; point at a row's **(?)** to see why it is greyed |
+| **DyMESH overlay** | A table with two rows, **DyMESH Body** and **DyMESH Wheel**, and two columns, **Mesh** and **Nodes**. Before a run, **DyMESH Wheel** draws every wheel's mesh as the run would build it (its loaded radius estimated); after one, only the wheels the event switched on, deformed. A row greyed in a build with no solver says why at its **(?)** |
 
 The DyMESH overlay table:
 
 | Row | Mesh | Nodes |
 |---|---|---|
 | **DyMESH Body** | The body DyMESH collides, drawn as a wireframe over the vehicle. After a run it is deformed by the run's crush at the playback time; an edge with a crushed node is red | The body's nodes (its mesh vertices, where the contact forces act); a node the run crushed is red |
-| **DyMESH Wheel** | The DyMESH contact body built for each wheel whose DyMESH contact is on, drawn deformed by the run; a displaced vertex is red | Every vertex of that wheel mesh as a small cross, red where the run displaced it, and a label naming the wheel's contact model and the event's tire law |
+| **DyMESH Wheel** | The DyMESH contact body for each wheel: before a run every wheel's, undeformed; after one, each wheel whose DyMESH contact is on, drawn deformed by the run; a displaced vertex is red | Every vertex of that wheel mesh as a small cross, red where the run displaced it, and a label naming the wheel's contact model and the event's tire law |
 
 ---
 
@@ -214,10 +214,13 @@ only: no engine reads it.
 The viewport's toolbar also carries the Scene Display switches that matter in
 the editor on screen, each the same switch as its Scene Display row (greyed,
 with the reason, where its row is): in the Vehicle editor **Extents**,
-**Axes**, **Sprung CG**, **Total CG** and **Lamp gizmos**; in the Environment
+**Axes**, **Sprung CG**, **Total CG**, **Lamp gizmos**, **DyMESH body**,
+**DyMESH wheels** (the Mesh column of Scene Display's DyMESH overlay) and
+**Occ. Eq.** (occupant equipment); in the Environment
 editor **Axes**, **North arrow**, the scene light and the lamps; in the Event
-editor the extents, **CG path**, **Skid marks**, **Axes**, the velocity vector
-and occupant equipment; in Playback the CG path, skid marks, the velocity and
+editor the extents, **CG path**, **Skid marks**, **Axes**, the velocity vector,
+**DyMESH body**, **DyMESH wheels** and **Occ. Eq.** (occupant equipment: contact
+surfaces, airbags and belts); in Playback the CG path, skid marks, the velocity and
 PDOF vectors and the lamps; in the Human editor **Axes** and occupant
 equipment. The row wraps when the viewport is narrow. **Phong** (smooth shading, the default), **Flat** (one normal
 per face, showing the real tessellation) and **Wireframe** (edges only, depth
@@ -269,6 +272,9 @@ eye to show only that vehicle. This is the view-only setting described under
 (Initial, Begin Perception, Begin Braking, Impact, Separation, Point On Curve, End
 of Rotation, Rest) — HVE's *targets* (Options › Show Targets). The positions are
 entered in Event Information (see [Chapter 4](04a-setup-menu.md#target-positions)).
+A ghost stands on the ground, or at the Z height, roll and pitch entered for that
+position when its Auto Position is off. A simulation's Initial has no ghost: the
+vehicle itself stands there.
 
 ---
 

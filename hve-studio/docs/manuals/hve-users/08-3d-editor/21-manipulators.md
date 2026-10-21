@@ -22,7 +22,7 @@ A click on the body only selects it; a left drag that does not start on a handle
 
 Hold **Ctrl** while dragging to snap: 0.5 m steps for position, 0.25 m for Z lift, 15° for heading and 5° for pitch and roll.
 
-A **scene ghost** (a measured position such as Impact or Rest, drawn when **View › Scene Display › Scene Ghosts** is on) can be clicked and moved the same way. A scene position stores only x, y and heading, so a ghost has no Z, pitch or roll knobs.
+A **scene ghost** (a measured position such as Impact or Rest, drawn when **View › Scene Display › Scene Ghosts** is on) can be clicked and moved the same way. The gizmo moves a ghost's x, y and heading only, so a ghost has no Z, pitch or roll knobs; a position's Z height, roll and pitch are entered in its node of the vehicle's **Named Positions** list in Event Information.
 
 The fields of **Event › Position / Velocity** and the **Vehicle Initial Conditions** section of Event Information show the same values and change with the gizmo.
 

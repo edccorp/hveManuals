@@ -169,8 +169,9 @@ can be drawn into every frame.
 3. Set the **Output File** (default `output.avi`), or choose it with **...**.
    A name without a folder is written to the folder HVE Studio was started from,
    not beside the case, so give a full path to put the video somewhere else.
-4. Under **Video Settings**, set the frame **Width** and **Height** (64 to 4096
-   pixels, rounded to even numbers; default 1280 × 720), the **FPS** (1 to
+4. Under **Video Settings**, pick a **Size** from the list (HD, Full HD, QHD,
+   4K UHD, square, portrait, 4:3, VGA) or set the frame **Width** and **Height**
+   (64 to 4096 pixels, rounded to even numbers; default 1280 × 720), the **FPS** (1 to
    1000; default 30) and the **JPEG Quality** (1 to 100; default 85).
 
    Tick **Slow motion** to take frames from the run faster than the video
@@ -267,12 +268,23 @@ window opens the file just written.
 camera, the playback instant, the case's sun and sky, the vehicles' lamps as
 the run switched them, and every site light that is on (Environment panel ›
 Lights). You get soft shadows from a sun disc of real size,
-reflections, and light bounced off the road. Set the **Width** (the height
-follows the view), the **Samples** (64–256 for a clean picture) and the
-**Bounces**, then press **Render**. The picture sharpens pass by pass; **Stop**
+reflections, and light bounced off the road. Pick a **Size** from the list
+(HD, Full HD, QHD, 4K UHD, square, portrait, 4:3, or the 3-D view's shape at
+this width) or set the **Width** and **Height**, then the **Samples** (64–256
+for a clean picture) and the **Bounces**, and press **Render**. A size of
+another shape than the view shows all of the view and more at the sides (or
+above and below); it is never stretched. The picture sharpens pass by pass; **Stop**
 at any point and **Save PNG**. **Denoise**, on by default, smooths the remaining
 noise out of the lighting while keeping paint, photographs and shadow edges
 sharp, so 16–32 samples already give a clean picture.
+**Results HUD** (on by default) burns the HUD boxes marked **Burn into movies
+and renders**, of the view on screen (Event or Playback), over the picture and
+into the saved PNG, as a recorded movie carries them; it is greyed when no such
+box exists.
+
+The tracer runs on the processor, on every core the machine has; it does not
+use the graphics card. A finer picture costs time in proportion to its pixels
+and samples.
 
 A still can also be made without opening the app:
 `HVEStudio --render-traced case.hvex picture.png 128 1920` traces the case at the
@@ -281,7 +293,7 @@ another instant, and `--no-denoise` for the raw samples).
 
 | Control | Default | Range |
 | --- | --- | --- |
-| **Width** (pixels) | 960 | 64–7680 |
+| **Width** × **Height** (pixels) | 1920 × 1080 | 64–7680 each |
 | **Samples** | 128 | 1–16384 |
 | **Bounces** | 6 | 0–32 |
 
