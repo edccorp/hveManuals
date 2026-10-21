@@ -1,6 +1,6 @@
 # Dual Wedge Brake Dialog Box
 
-HVE has one Brake Designer dialog per brake type. HVE Studio has a single **Brake Designer** dialog: open it in the Vehicle Editor (**Vehicle (F3)**) with **Vehicle › Editors › Brakes › Brake Designer...**, choose the wheel with **Axle** and **Side**, and choose **Dual-Wedge (Air)** in the **Brake Design** list. The wheel selection, the **Lining Friction Properties** section, the **Results** (Brake Factor, Actuation Factor, Torque Ratio, recomputed continuously) and the **Apply to Wheel** / **Apply to All Wheels** buttons are the same for every type and are described on the [Disk Brake Dialog Box](DiskBreakDlg.md) page. Lengths, areas and pressures are shown in the units set in Preferences; angles are in degrees.
+HVE has one Brake Designer dialog per brake type. HVE Studio has a single **Brake Designer** dialog: open it in the Vehicle Editor (**Vehicle (F3)**) with **Vehicle › Editors › Brakes › Brake Designer...**, choose the wheel with the **Wheel:** buttons (**A1 Left**, **A1 Right**, ...), and choose **Dual-Wedge (Air)** in the **Brake Design** list. The wheel selection, the **Lining Friction Properties** section, the **Results** (Brake Factor, Actuation Factor, Torque Ratio, recomputed continuously) and the **Apply to Wheel** / **Apply to All Wheels** buttons are the same for every type and are described on the [Disk Brake Dialog Box](DiskBreakDlg.md) page. Lengths, areas and pressures are shown in the units set in Preferences; angles are in degrees.
 
 The **Dual-Wedge (Air)** design parameters are:
 

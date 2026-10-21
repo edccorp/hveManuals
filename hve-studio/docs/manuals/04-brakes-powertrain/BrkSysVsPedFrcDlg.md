@@ -5,7 +5,7 @@ The brake system parameters for the current vehicle are displayed and edited usi
 This dialog contains the following items:
 
 ## Axle
-Selects the axle (Axle 1 up to the vehicle's number of axles) whose System Type is displayed. Pedal Ratio is per vehicle and is shown only with Axle 1 selected.
+One button per axle (**Axle 1** up to the vehicle's number of axles) selects the axle whose System Type is displayed. Pedal Ratio is per vehicle and is shown only with Axle 1 selected.
 
 ## System Type
 Radio buttons: **Hydraulic** or **Air (Pneumatic)**.

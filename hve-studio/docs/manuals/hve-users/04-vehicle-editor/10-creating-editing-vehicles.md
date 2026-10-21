@@ -66,10 +66,35 @@ sections. Each input has one place in it:
   overhang), **CG to Right** and **CG to Left** (the stored CG-to-side
   distances), **CG to Top** (sets the Overall Height) and **CG to Bottom**
   (grayed: it equals the CG Height). The axle count is not set here
-  but under Configuration. **Wheel Positions (from CG)** follows: the
-  per-wheel x, y, z table, each axle left then right, where a value typed
-  overrides the derived one; when the wheels carry their own X positions, CG
-  to Front and CG to Rear are grayed with the overhangs and the wheelbase.
+  but under Configuration.
+
+  **Which value moves when you type one.** The fields are tied together, and
+  each edit keeps the values an analyst usually has and moves the rest:
+
+  - **CG to Front**, **CG to Rear** and **CG to Axle 1 / 2** are inputs: a
+    CG-to-axle distance keeps CG to Front and CG to Rear (the overhang on
+    that end takes the difference), and the wheelbase follows.
+  - **Front Overhang**, **Rear Overhang**, **Wheelbase** and the weight
+    distribution set the CG position: the wheelbase keeps both overhangs and
+    the weight split, and the overall length follows; the weight distribution
+    moves the CG (as Move CG does), not the body or the wheels.
+  - **CG Height** moves the CG up or down, as Move CG does: the body and the
+    wheels stay where they are.
+  - **Overall Width** sets CG to Right and CG to Left, keeping the CG's
+    offset from the centerline; typing CG to Right or CG to Left sets the
+    width.
+  - **Overall Length** changes the overhangs, split between front and rear.
+
+  **Wheel Positions (from CG)** follows: the per-wheel x, y, z table, each
+  axle left then right, where a value typed overrides the derived one. The
+  **Linked L/R** row has a box per axle, ticked by default when that axle's
+  two wheels are a mirrored pair: while it is ticked the axle's left and
+  right wheels move together (the same X and Z, opposite Y), and the
+  wheelbase, overhangs, axle distances and track width stay editable and
+  move the wheels. Untick it to place one wheel on its own; ticking it again
+  mirrors the right wheel onto the left. With an axle unlinked and its wheels
+  carrying their own X positions, CG to Front and CG to Rear are grayed with
+  the overhangs and the wheelbase.
   Under the table, a warning appears when a loaded 3-D model does not reach
   the declared front and rear extents.
 - **Inertia** — One line of totals (weight, and yaw, pitch and roll inertia)
@@ -164,7 +189,9 @@ databases HVE Studio has found — HVE's classic `.db` files and HVE Studio's ow
 - **Filter** — Shows only the vehicles whose make, model, year or name
   contains the text typed. **Clear** clears it; **Generics** shows HVE's
   generic vehicles (Generic.db: one per class of car, sport-utility, pickup,
-  truck, van and trailer). The filter is empty each time the dialog opens.
+  truck, van and trailer). The filter is empty each time the dialog opens,
+  and when a case is opened or a new one started; so is the Vehicle Geometry
+  Library's.
 - **Database** — Shows the vehicles of one database file only (*All
   databases*, or a file with its vehicle count). While the filter or a
   database is set, a line reads *Showing N of M*.

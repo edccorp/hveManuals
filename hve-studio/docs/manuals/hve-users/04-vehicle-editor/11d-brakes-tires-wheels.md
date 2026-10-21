@@ -11,8 +11,13 @@ properties, the Wheel Location and the Wheel Image.
     HVE Studio edits the brakes and tires of every wheel at once, in tables
     with a column per wheel (A1 Left, A1 Right, …). As in the suspension
     dialogs, a **Link Group** row replaces HVE's Copy To Other Side: columns
-    in the same group receive each other's edits. Values are shown in the
-    units set in Preferences, and changes apply as they are made.
+    in the same group receive each other's edits. Brake Assembly, the Brake
+    Designer and ABS share the brakes' groups, and a vehicle starts with
+    wheels whose brakes are identical in the same group: the first kind of
+    brake in wheel order is **A**, the next **B**, the third **C**, and any
+    further kind is **–** (so a truck whose axle 1 differs from axles 2 and 3
+    starts as A, B, B). Values are shown in the units set in Preferences, and
+    changes apply as they are made.
 
 ## Brake Assembly Parameters
 
@@ -131,7 +136,7 @@ a predefined suite of maneuvers or compliance test simulations. The HVE
 Brake Designer also includes a detailed tool for simulating ABS.
 
 In HVE Studio the Brake Designer is **Vehicle › Editors › Brakes › Brake Designer**: choose the
-wheel (**Axle**, **Side**) and the **Brake Design**, enter the Design
+wheel (the **Wheel:** buttons, **A1 Left**, **A1 Right**, ...) and the **Brake Design**, enter the Design
 Parameters, read the **Results**, and press **Apply to group**, which writes the
 design to every wheel of the wheel's brake link group (**Apply to this wheel**
 for a wheel outside any group). The Brake Designer also opens on a wheel from the Brake

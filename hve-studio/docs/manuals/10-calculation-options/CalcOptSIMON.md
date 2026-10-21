@@ -117,7 +117,7 @@ they are still touching.
 **Connection constraint** — **Use both vehicles**, **Use heavier vehicle**
 (default) or **Use tow vehicle properties**. The first two derive the hitch spring
 and damper rates from the two units' sprung masses; the third takes them from
-the tow vehicle's *Vehicle Connections › Properties* stiffness and damping.
+the tow vehicle's *Vehicle Connections › Rear connection properties* stiffness and damping.
 
 **Connection failure start (s)** — the hitch is held together for this long
 whatever the load (default 0.1 s). It has an effect only when the hitch has a

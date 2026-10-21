@@ -47,7 +47,7 @@ hosted and the 3-D view beside it.*
    **Path Follower**, **Lights**, **Wheels**, **Accelerometers** (SIMON, EDSMAC4,
    EDVDS and EDVSM), and for EDSMAC and EDSMAC4 **Handling Parameters** and
    **Move CG**. Accelerometers belong to the vehicle: the tab edits the same
-   devices as the Vehicle Designer's Exterior stage, so one placed in
+   devices as the Vehicle Designer's Accelerometers stage, so one placed in
    either is in every event the vehicle runs in. Airbags and belts are edited in
    the Vehicle Designer's Occupant Protection stage.
 6. **Run**: **Run this event** starts the active event on the current physics,

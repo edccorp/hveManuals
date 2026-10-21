@@ -36,7 +36,7 @@ To use the Brake Designer in HVE Studio, perform the following steps:
 2. Select the vehicle (in the vehicle list, or with the vehicle selector at the top of each brake dialog).
 3. Choose **Vehicle › Editors › Brakes › Brake System Pressure…** and confirm or edit the **Pedal Ratio** and the pressure vs pedal force curve.
 4. If the vehicle is fitted with ABS, choose **Vehicle › Editors › Brakes › ABS / Brake Design…**, press **ABS System…** and tick **ABS Installed**, then edit the ABS System and ABS Designer (wheel) properties. Tick **Antilock (ABS)** in **Vehicle › Editors › Brakes › Brake Assembly…** for the wheels that have it.
-5. Choose **Vehicle › Editors › Brakes › Brake Designer…**, select the **Axle** and **Side**, and choose the **Brake Design** (e.g., Disc, Duo-Servo Drum, S-Cam).
+5. Choose **Vehicle › Editors › Brakes › Brake Designer…**, press the wheel's button under **Wheel** (**A1 Left**, **A1 Right**, ...), and choose the **Brake Design** (e.g., Disc, Duo-Servo Drum, S-Cam).
 6. Edit the design parameters; the brake factor, actuation factor and torque ratio are recalculated as you type.
 7. Press **Apply to group** (or **Apply to this wheel** for a wheel outside any link group) to write the torque ratio and pushout pressure into the Brake Assembly.
 8. Design the remaining wheels as desired, and check the result in **Vehicle › Editors › Brakes › Brake Assembly…**.

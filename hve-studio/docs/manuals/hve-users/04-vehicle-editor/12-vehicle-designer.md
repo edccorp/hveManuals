@@ -34,9 +34,9 @@ and which stage is open.
 
 ## The stages
 
-The stage bar lists the sixteen stages, left to right, in the order a vehicle
+The stage bar lists the eighteen stages, left to right, in the order a vehicle
 is usually set up; the line above the stage says which one is open ("Stage 4
-of 16: Stiffness"). The designer opens on the first,
+of 18: Stiffness"). The designer opens on the first,
 **Vehicle**; every other stage edits a vehicle, so it opens once the case has
 one (until then its button is unavailable and says so).
 
@@ -57,10 +57,12 @@ vehicle's own data and are usually left as they are.
 10. **Transmission** — gear ratios, final drive, shift logic, drive type, differential.
 11. **Steering** — steer ratio, column and geometry per axle.
 12. **Connections** — how this unit couples to another (hitch, fifth wheel or pintle) and the frame's torsional stiffness, which only a coupled rig uses.
-13. **Exterior** — the lamps, aerodynamic drag and accelerometers.
-14. **Occupant Protection** — the contact surfaces, airbags and belts an occupant meets, per seat.
-15. **Test Track** — three canned runs on the current physics, each on SIMON and on EDSMAC4, read back as numbers (stage 15 below).
-16. **Summary** (stage 16 below) — the spec sheet, the whole warnings list and the provenance tally.
+13. **Lights** — the vehicle's lamps, placed on the body.
+14. **Aerodynamics** — the aerodynamic drag coefficients.
+15. **Accelerometers** — the accelerometers mounted on the vehicle.
+16. **Occupant Protection** — the contact surfaces, airbags and belts an occupant meets, per seat.
+17. **Test Track** — three canned runs on the current physics, each on SIMON and on EDSMAC4, read back as numbers (stage 17 below).
+18. **Summary** (stage 18 below) — the spec sheet, the whole warnings list and the provenance tally.
 
 Every stage hosts the editors that hold its inputs, the same windows the
 Vehicle menu opens; each editor's **Open in its own window** opens its window.
@@ -75,7 +77,9 @@ is pointed at one.
 **Vehicles in this case** lists the case's vehicles, one row each with its
 **Type**, where it came **From** (its database, or *(entered)*) and how many
 **Events** use it. Click a row to work on that vehicle: the designer, the
-Vehicle editor and the 3-D view all follow it. **Duplicate** copies the selected
+Vehicle editor and the 3-D view all follow it. **Name** under the list renames
+the selected vehicle (reports, channels and event slots show it; two vehicles of
+a case may not share one). **Duplicate** copies the selected
 vehicle with every setting, as a new vehicle after it in no event (the Vehicles
 panel's **Dup**); it is unavailable while results are on screen, because the copy
 renumbers the vehicles after it.
@@ -113,8 +117,8 @@ The Size & Weight stage holds the dimensions a solve reads. It opens with **Axle
 loads**, the static load on each axle from the mass and the weight split, and
 where the CG sits along the wheelbase. On a vehicle with more than two axles
 the rear axles share the rear load equally (a tandem's equalizer at rest), one
-bar each, and the headline says so. Under it are two tabs. **Size & Weight**
-holds the two sections the Vehicles panel has: **Configuration** (number of axles, driver
+bar each, and the headline says so. Under it are the two sections the Vehicles
+panel has: **Configuration** (number of axles, driver
 location, engine location and drive axles, with HVE's rules applied as you
 change one) and **Size & Weight** (HVE's Vehicle Wizard form, applied as you
 type: weights, the overall dimensions, the CG height, the body's distance from
@@ -122,17 +126,9 @@ the CG to its front, rear, right, left, top and bottom, the wheelbase,
 overhangs and CG-to-axle distances, and the tracks, with the wheelbase check).
 They are the panel's own sections, not copies: a field has one editor. Size &
 Weight ends with **Wheel Positions (from CG)**, each wheel's X, Y and Z, each
-axle left then right.
-The Vehicle Connections window marks them the same way. **Vehicle Package** is
-the wizard that **Tools › Vehicle Package...** opens, pinned to the designer's
-vehicle: **1. Identify** (the VIN
-and what decoding it says, or the year, make, model and trim), **2.
-Specifications** (weight, front axle share, wheelbase, front and rear track,
-length, width, height and CG height, each marked Stated or Looked up with its
-source) and **3. Save with the case**, with **Scale the vehicle to these specs**
-for a generic vehicle. The window's vehicle picker and its path for building a
-new vehicle are not drawn here: the frame's vehicle line is the picker, and a new
-vehicle is the window's job, reached by **Open in its own window**.
+axle left then right. The Vehicle Package wizard (identity and stated
+specifications) is not part of the designer; **Tools › Vehicle Package...**
+opens it.
 
 ![Figure 12-12: the Size & Weight stage](../images/hvn-04-vehicle-designer-packaging.png)
 
@@ -363,7 +359,7 @@ The rules, by stage:
 | Note | Transmission | Top speed is set by the redline in top gear, below the drag limit from engine power, drag coefficient, frontal area and rolling resistance. |
 | Consider | Transmission | An upshift at the redline lands under the automatic shift window's minimum rpm. |
 | Note | Engine | The full-throttle torque curve ends below the redline; the engine holds the last row's torque beyond it. |
-| Note | Exterior | The front drag coefficient or frontal area is 0, so the vehicle has no aerodynamic drag. |
+| Note | Aerodynamics | The front drag coefficient or frontal area is 0, so the vehicle has no aerodynamic drag. |
 | Fix | Suspension | Test Track (SIMON or EDSMAC4): the measured understeer gradient is negative, so the rear tires reach their limit before the front (oversteer). |
 | Consider | Tires | Test Track (SIMON or EDSMAC4): the measured understeer gradient is over 5 deg/g (passenger cars run 1 to 4). |
 | Consider | Brakes | Test Track (SIMON): the mean deceleration of the stop from 100 km/h is under 70% of the Brakes chart's grip limit, so the brakes and not the tires limit the stop. |
@@ -458,7 +454,8 @@ stage.
 
 How this unit couples to another, one editor per tab. **Connections** is the
 Vehicle Connections editor: the front and rear connection points (hitch, fifth
-wheel or pintle) with their **Properties...** window. While the tab is open the
+wheel or pintle), with the rear connection's properties (radius, friction,
+articulation limits, stiffness, damping and breakaway strength) below the table. While the tab is open the
 3-D view marks the front connection point in cyan and the rear one in orange,
 each with a line down to the ground; a point whose type is None is drawn dim.
 **Body Torsion** is the frame's torsional stiffness and axis: SIMON uses it in
@@ -467,21 +464,34 @@ vehicle ignores it.
 
 ![Figure 12-20: the Connections stage](../images/hvn-04-vehicle-designer-connections.png)
 
-### Stage 13: Exterior
+### Stage 13: Lights
 
-The Exterior stage opens with the same **Vehicle view** as the Geometry stage,
-here for placing what the vehicle carries: click a light to select it in the
-Lights editor below and in the 3-D view, or an accelerometer to select it in
-the Accelerometers editor. Under it are three editors, one tab each: **Lights**
-(the Vehicle Lights editor with its Lamp parts and Light sources tabs),
-**Aerodynamic Drag** (the drag coefficients of the four surfaces) and
-**Accelerometers** (the vehicle's accelerometer list). Each editor tab's **Open
-in its own window** opens that editor's window. The lamps are display only;
-drag and the accelerometers are the vehicle's own data, usually left as it says.
+The Lights stage opens with the same **Vehicle view** as the Geometry stage,
+here for placing the lamps: click a light to select it in the editor below and
+in the 3-D view. **Shift**-click adds a light to the selection or takes it out
+(here, in the editor's light list and on the 3-D view's lamp gizmos); dragging
+any selected light's gizmo in the 3-D view moves them all by the same amount. Under it is the Vehicle Lights editor, with its Lamp parts and
+Light sources tabs. The lamps are display only: no simulation reads a lamp.
 
-![Figure 12-11: the Exterior stage with its three editors as tabs](../images/hvn-04-vehicle-designer-exterior.png)
+![Figure 12-11: the Lights stage](../images/hvn-04-vehicle-designer-exterior.png)
 
-### Stage 14: Occupant Protection
+### Stage 14: Aerodynamics
+
+The Aerodynamic Drag editor: the drag coefficients of the four surfaces and the
+areas they act on. Drag is the vehicle's own data, usually left as it says.
+
+### Stage 15: Accelerometers
+
+The Accelerometers stage opens with the same **Vehicle view**: click an
+accelerometer to select it in the editor below. Under it is the vehicle's
+accelerometer list. Accelerometers belong to the vehicle, so one placed here is
+in every event the vehicle runs in; the Event Designer's Equipment stage edits
+the same devices.
+
+Each of these three stages' **Open in its own window** opens its editor's window.
+Until 2026-10-20 the three were tabs of one **Exterior** stage.
+
+### Stage 16: Occupant Protection
 
 The Occupant Protection stage hosts the three editors of what an occupant
 meets in this vehicle, one tab each: **Contact Surfaces** (the panels an
@@ -495,7 +505,7 @@ window** opens that editor's window.
 
 ![Figure 12-16: the Occupant Protection stage](../images/hvn-04-vehicle-designer-occupants.png)
 
-### Stage 15: Test Track
+### Stage 17: Test Track
 
 The Test Track runs the vehicle, alone, on a flat surface, in three canned
 events, and reads the numbers back. Each event is solved twice, on **SIMON**
@@ -553,7 +563,7 @@ unrun track is not a finding.
 
 ![Figure 12-14: the Test Track stage before its runs](../images/hvn-04-vehicle-designer-track.png)
 
-### Stage 16: Summary
+### Stage 18: Summary
 
 The Summary is the design on one page. It opens with the vehicle's identity (the
 Vehicle Package's year, make, model and trim, and its VIN when kept; otherwise

@@ -32,7 +32,15 @@ it. Edits apply immediately; **Edit › Undo** (Ctrl+Z) takes one back.
 
 The **Wheel:** row of buttons (**A1 Left**, **A1 Right**, **A2 Left**, ...)
 chooses the wheel whose tables are shown, on every tab. The selected wheel's
-button is highlighted.
+button is highlighted. The Brake Designer picks its wheel with the same
+buttons, and Brake System Pressure its axle with an **Axle:** row.
+
+## List rows by
+
+**Load** (the default) lists the Friction, Cornering and Camber rows by load,
+then speed; **Speed** lists them by speed, then load, so each speed's loads
+read together. Only the listing changes: the table is kept in load order, as
+HVE and the simulations keep it. The row numbers (**#**) are the listed order.
 
 The wheel's **Link Group** (the row at the top of the Tire Properties grid)
 decides how far an edit reaches: a change to this wheel's tables is copied to

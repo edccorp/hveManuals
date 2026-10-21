@@ -163,7 +163,9 @@ for a spot, its cone. A switched-off lamp is grey and the selected one orange.
 **Click** a lamp to select it; **drag** it to move it. It moves in the plane
 facing you through where you grabbed it, as Blender's G does, and holding
 **Ctrl** snaps it to 5 cm. The position is stored in the vehicle's own frame, so
-the lamp rides with the vehicle.
+the lamp rides with the vehicle. **Shift**-click adds a lamp of the same vehicle
+to the selection or takes it out; dragging any selected lamp moves every
+selected one by the same amount, so a pair of headlamps moves as a pair.
 
 **Light settings in the Shader Editor.** Picking a lamp switches the Shader
 Editor to **Light** (beside Object and World). There you can set its type

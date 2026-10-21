@@ -10,7 +10,7 @@ velocity.
 !!! note "HVE Studio"
     In the Vehicle editor (F3) choose **Vehicle › Editors › Brakes › Brake Designer...** and expand
     the **Lining Friction Properties** section of the **Brake Designer**
-    window. It edits the brake design of the wheel (**Axle**, **Side**) and
+    window. It edits the brake design of the wheel (the **Wheel:** button) and
     **Brake Design** type selected in that window, and appears only for a
     design type other than **Generic (torque ratio)**.
 

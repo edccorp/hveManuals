@@ -111,7 +111,7 @@ run leaves behind, and the case's axes.
 | **Sprung CG** | Each vehicle's sprung-mass CG, the point every "CG to ..." distance is measured from. On by default, independent of Axes |
 | **Total CG** | Each vehicle's total-mass CG (sprung and unsprung masses together), labelled with its offset from the sprung CG. On by default |
 | **CG Weights** | Adds to each CG label the weight it carries: the sprung weight at the Sprung CG, the total weight at the Total CG, in the units set in Preferences. Off by default |
-| **Lamp Gizmos** | Each vehicle lamp drawn as a ring, a line along its aim and, for a spot, its cone; click one to select it, drag it to move it. Off by default |
+| **Lamp Gizmos** | Each vehicle lamp drawn as a ring, a line along its aim and, for a spot, its cone; click one to select it, drag it to move it; Shift-click adds or removes a lamp, and dragging one of several selected moves them all. Off by default |
 | **North Arrow** | A compass in the corner of the viewport pointing to the case's north, which is set in the Shader Editor's Sun & Sky panel or read from an imported `.hve` |
 | **Skidmarks** | The contact-patch path, only where the tire was marking. SIMON grades the mark's opacity; EDSMAC4, EDVSM, EDSVS and EDVDS report a tire as skidding or not, so their marks are all-or-nothing (HVE: Show Skidmarks) |
 | **CG Path** | Each vehicle's CG path up to the current playback time, in its paint colour (HVE: Show CG Paths) |
@@ -209,7 +209,17 @@ force that moment would be at R. The arcs' radius is the vehicle's half width.
 **Description:** **Ground Plane** (on by default) draws the flat plane and grid
 where there is no imported site; an imported site is drawn either way. The
 **Ground** checkbox on the viewport's toolbar is the same switch. It is display
-only: no engine reads it. **Phong** (smooth shading, the default), **Flat** (one normal
+only: no engine reads it.
+
+The viewport's toolbar also carries the Scene Display switches that matter in
+the editor on screen, each the same switch as its Scene Display row (greyed,
+with the reason, where its row is): in the Vehicle editor **Extents**,
+**Axes**, **Sprung CG**, **Total CG** and **Lamp gizmos**; in the Environment
+editor **Axes**, **North arrow**, the scene light and the lamps; in the Event
+editor the extents, **CG path**, **Skid marks**, **Axes**, the velocity vector
+and occupant equipment; in Playback the CG path, skid marks, the velocity and
+PDOF vectors and the lamps; in the Human editor **Axes** and occupant
+equipment. The row wraps when the viewport is narrow. **Phong** (smooth shading, the default), **Flat** (one normal
 per face, showing the real tessellation) and **Wireframe** (edges only, depth
 tested — what HVE calls Hidden Line). **Light Sources On** turns the sun's
 contribution off and on; with it off, the ambient light is raised so the scene

@@ -28,17 +28,26 @@ the grid; see [Tire Friction Data](TireFrictDataDlg.md)), and they seed the tabl
 - **Slide Friction** — F<sub>x</sub>/F<sub>z</sub> at 100 percent longitudinal slip.
 - **Slip at Peak (frac)** — longitudinal slip at which the peak occurs.
 
+When every wheel has a friction table, these rows show each wheel's table
+values read-only, at the table's middle load row and lowest speed (the values
+EDSMAC4 and the other single-value programs use), each with its table's
+row count beside it ("3 rows"); hover a value for the row's load.
+Edit them in the table. When only some wheels have a table, the row stays
+editable and is greyed on those wheels.
+
 **Velocity Dependence** — the change in friction per unit speed (s/in or s/m).
 It is the field of HVE's 2-D Tire Data dialog, and as in HVE a non-zero value
 is turned into a second speed column of the friction table, moving peak and
 slide friction together; HVE Studio does this when the event is run. It is
-greyed for a wheel whose friction table already has two or more speeds.
+greyed for a wheel whose friction table already has two or more speeds, and
+not shown when every wheel's table does.
 
 ## Cornering Stiffness
 
 Slope of the F<sub>y</sub> vs slip-angle curve at zero slip, entered per degree
 in US units. It is used when the tire has no cornering table, and seeds one
-when it is created.
+when it is created. When every wheel has a cornering table, the row shows each
+wheel's table value read-only, at its middle load row and middle speed.
 
 Camber stiffness has no scalar field: it exists only as the load × speed table
 on the **Camber** tab of the **Load & Speed Tables** panel below the grid.

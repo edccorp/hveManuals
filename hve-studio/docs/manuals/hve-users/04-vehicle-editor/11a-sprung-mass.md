@@ -325,7 +325,12 @@ Vehicle Mesh window holds the rest, in four tabs.
 **File & Placement**
 
 - **Mesh File** — the 3-D model. **…** browses for a file; **Library…**
-  searches the vehicle geometry library by name. HVE's `.h3d` files, Open
+  searches the vehicle geometry library by name. The library lists the
+  vehicle databases' bodies first, by the vehicle they belong to (year, make
+  and model, with the database under **From**), then the files in its search
+  folders; a body file a database already lists is not listed again. A body
+  from a database shows in Mesh File by that name, with the stored reference
+  in its tooltip, and is changed with **…**, **Library…** or **Clear**. HVE's `.h3d` files, Open
   Inventor/VRML (`.iv`, `.wrl`), `.obj`, glTF (`.gltf`, `.glb`) and
   point-cloud scans (`.las`, `.ply`, `.e57`, `.xyz`, `.pts`) are read. With a
   display mesh set (Display tab), this section is headed **Collision Mesh
@@ -863,7 +868,8 @@ following steps:
 1. In the Vehicles panel, open **Components** and press
    **Connections…**. The Vehicle Connections dialog will be displayed. It is
    a table with a **Front** and a **Rear** column and the rows **Type**,
-   **X**, **Y**, **Z**, **Height above ground** and **Properties**.
+   **X**, **Y**, **Z** and **Height above ground**, with the rear
+   connection's properties below it.
    While it is open the 3-D view marks the front connection point (cyan) and
    the rear one (orange), each with a line down to the ground, so you can see
    where the coupling is on the body; a point whose type is None is drawn dim.
@@ -874,21 +880,21 @@ following steps:
 3. To put a connection on the rear of a tow vehicle (e.g., a passenger car
    or truck tractor), choose a **Type** in the **Rear** column (*None, Ball,
    5th Wheel* or *Pintle Hook*) and enter its coordinates.
-4. Press **Properties…** in the Rear column to edit the rear connection's
-   properties in the Connection Properties dialog.
+4. Edit the rear connection's properties under **Rear connection
+   properties**, below the table.
 5. Press **Close** to close the dialog.
 
 Both type lists offer all the connector types, each labelled *(trailer)* or
 *(tow)*. The connection properties belong to the towing end, so they are
-set on the tow vehicle's rear connection; the Front column's Properties row
-says so. The **Height above ground** row shows each connection's height,
+set on the tow vehicle's rear connection; a front connection has none of
+its own. The **Height above ground** row shows each connection's height,
 which must match the mating connector's to within about 0.1 in (0.003 m).
 
-Edits take effect as they are made; **Edit › Undo** takes one back. The
-Connection Properties dialog also has a single **Close** button.
+Edits take effect as they are made; **Edit › Undo** takes one back.
 
 !!! note "HVE Studio"
-    The Connection Properties dialog carries HVE's full set: **Radius**,
+    The **Rear connection properties** carry HVE's full Connection
+    Properties set: **Radius**,
     **Friction**; Linear: **Free Play**, **Stiffness**, **Damping**,
     **Breakaway Force**; Angular: **Max Articulation** Roll, Pitch and Yaw,
     **Stiffness**, **Damping**, **Breakaway Torque**. Yaw is the

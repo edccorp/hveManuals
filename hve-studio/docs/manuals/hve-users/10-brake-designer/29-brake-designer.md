@@ -45,7 +45,7 @@ braking capacity of heavy trucks on long downhill grades.
 To use the Brake Designer in HVE Studio, perform the following steps:
 
 1. Select the **Vehicle (F3)** editor and the vehicle (the vehicle selector at the top of each brake dialog).
-2. Choose **Vehicle › Editors › Brakes › Brake Designer…**. Under **Wheel**, choose the **Axle** and **Side** (Right is listed first, as in the Brake Assembly table).
+2. Choose **Vehicle › Editors › Brakes › Brake Designer…**. Under **Wheel**, press the wheel's button (**A1 Left**, **A1 Right**, ...), the same buttons the tire tables use.
 3. Choose the **Brake Design**: Generic (torque ratio), Disc, Duo-Servo Drum, Duplex Drum, Single-Piston Drum, Dual-Piston Drum, S-Cam (Air Drum), Single-Wedge (Air), Dual-Wedge (Air) or Air Disc. The **Design Parameters** for that type are displayed (see the sections for each type, below), with a collapsible **Lining Friction Properties** section for every type except Generic.
 4. Edit the parameters. The **Results** — Brake Factor, Actuation Factor and Torque Ratio — are recalculated as you type.
 5. Press **Apply to group** to write the torque ratio and pushout pressure (and the matching brake type) into the Brake Assembly of every wheel in the selected wheel's **Link Group**, copying the design to them (the line above the button names them); a wheel outside any group gets **Apply to this wheel** and is written alone to each.

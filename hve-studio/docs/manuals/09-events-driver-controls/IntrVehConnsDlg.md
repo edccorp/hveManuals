@@ -54,13 +54,12 @@ options (EDSMAC4 *Inter-Vehicle Connection*).
     *(tow)*. Choose a front type for a towed unit and a rear type for a towing
     unit.
 
-## Properties...
+## Rear connection properties
 
-The connection properties belong to the **towing** end, so **Properties...**
-in the Rear column opens **Connection Properties** for the vehicle's rear
-connection (the Front column says *set on the towing end*). Its edits also take
-effect as they are made and undo with **Edit › Undo**; it has a single
-**Close** button:
+The connection properties belong to the **towing** end, so they are listed
+under **Rear connection properties**, below the table, for the vehicle's rear
+connection; a front connection has none of its own. Their edits also take
+effect as they are made and undo with **Edit › Undo**:
 
 - **Radius** — the moment arm at which the frictional torque acts at the
   connection (HVE's *Radius*).
@@ -83,7 +82,8 @@ Hover a field for what reads it. Notably:
 !!! note "HVE Studio"
     The free play, stiffness, damping, breakaway and roll/pitch fields are those
     of HVE's own Connection Properties dialog, which this help page did not
-    describe. HVE Studio groups them as HVE does.
+    describe. HVE Studio groups them as HVE does, below the connections table
+    rather than in a dialog of their own.
 
 <!-- NAV -->
 

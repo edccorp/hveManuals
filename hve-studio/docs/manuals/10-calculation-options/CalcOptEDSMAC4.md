@@ -76,7 +76,7 @@ Default: **Use heavier vehicle**. Selects how the connection (hitch) constraint 
 
 - **Use both vehicles** — Spring rate and damping are derived from the *lighter* of the two vehicles' weights.
 - **Use heavier vehicle** — Spring rate and damping are derived from the heavier vehicle's weight.
-- **Use tow vehicle properties** — The tow vehicle's hitch stiffness and damping (Vehicle Connections › Properties) are used directly.
+- **Use tow vehicle properties** — The tow vehicle's hitch stiffness and damping (Vehicle Connections › Rear connection properties) are used directly.
 
 It applies only to an articulated pair. EDSMAC4 has no connection failure time (SIMON's options have one).
 

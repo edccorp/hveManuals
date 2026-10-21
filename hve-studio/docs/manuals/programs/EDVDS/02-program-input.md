@@ -138,7 +138,7 @@ Dollys may be either *fixed* or *converter* dollys. A fixed dolly is permanently
 !!! note "HVE Studio"
     In the Vehicle editor, open the **Vehicles** panel's **Components** section and click **Connections…**. The **Vehicle Connections** dialog has a **Front Connection** and a **Rear Connection**, each with a type and X / Y / Z coordinates (relative to the CG; Z is measured down from the CG). Below each Z the dialog shows the connection's height above ground.
 
-    **Properties…** (under Rear Connection) opens **Connection Properties**: Radius, Friction, Free Play, Stiffness, Damping and Breakaway Force, and the Max Articulation Roll, Pitch and Yaw. EDVDS uses the **Yaw** limit: a run in which a trailer exceeds it stops with the maximum-articulation message (see [Chapter 6](06-messages.md)).
+    **Rear connection properties**, below the table, are the Connection Properties: Radius, Friction, Free Play, Stiffness, Damping and Breakaway Force, and the Max Articulation Roll, Pitch and Yaw. EDVDS uses the **Yaw** limit: a run in which a trailer exceeds it stops with the maximum-articulation message (see [Chapter 6](06-messages.md)).
 
     **Connection heights must match.** EDVDS does not adjust connection heights: when the tow vehicle's rear connection and the trailer's front connection differ in height above ground by more than 0.1 in, the event is refused. HVE Studio reports this before running and names both vehicles and both heights.
 
