@@ -321,7 +321,7 @@ To view it, click the **PROGRAM DATA** tab of the HVE Reports window.
 
 #### Variable Output
 
-The Variable Output table displays the time-dependent results computed by EDGEN. In HVE Studio the table of chosen channels is the **Key Results** panel (**Output › Key Results**, its *Trajectory* section), which lists the chosen channels at every output step.
+The Variable Output table displays the time-dependent results computed by EDGEN. In HVE Studio the table of chosen channels is the **Key Results** panel (**Output › Key Results**, its *Variable Output* section), which lists the chosen channels at every output step.
 
 ##### Variable Selection
 

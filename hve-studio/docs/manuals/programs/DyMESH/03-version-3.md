@@ -53,10 +53,10 @@ loop.
 **Sprung Mass loop** — for each pair of vehicles:
 
 1. Collision Test → if no collision, skip.
-2. Swap Vehicles (assign Master / Slave).
+2. Swap Vehicles (assign Primary / Secondary).
 3. Get Vehicle Matrices.
-4. **DyMESH (Master, Slave)** — the body-to-body collision.
-5. **DyMESH Wheels (Master, Slave)** — the wheel collisions.
+4. **DyMESH (Primary, Secondary)** — the body-to-body collision.
+5. **DyMESH Wheels (Primary, Secondary)** — the wheel collisions.
 6. Smooth Collision Pulse.
 7. Separation Test.
 
@@ -68,7 +68,7 @@ loop.
 1. Collision? → if no, skip.
 2. Get Wheel Matrices.
 3. Update Wheel Mesh (apply location/steer/camber/spin transform).
-4. **DyMESH (Master, Slave)** — run the contact algorithm on the wheel mesh.
+4. **DyMESH (Primary, Secondary)** — run the contact algorithm on the wheel mesh.
 5. Add Wheel Force to Sprung Mass.
 6. Update Wheel Mesh Damage.
 7. Calculate Wheel Displacement.
@@ -90,7 +90,7 @@ Options**, the per-wheel **Set-up**, and the **Output vs. Time** results.
 
 The DyMESH Options dialog (Options menu) as shown in the deck contains:
 
-- **Use DyMESH** (master enable).
+- **Use DyMESH** (main switch).
 - **Include Environment** — also run DyMESH contact against the environment
   (see [Wheel vs. Environment](05-wheel-environment.md) for the wheel side of
   this feature and the tire-model handoff).
@@ -125,9 +125,9 @@ The DyMESH Options dialog (Options menu) as shown in the deck contains:
       After, Search Method, Inside-Vehicle Test, Inside-Polygon Test and the
       stored struct version.
 
-    **Smoothing** shows HVE's labels with the value each stores, because HVE's
-    labels are one ahead of the stored number: *Version 1 (stored 0)*, *Version 2
-    (stored 1)*, *Version 3 (stored 2)*. The engine detects contact at stored 0
+    **Smoothing** is shown only when a case is not on HVE's *Version 2* (stored
+    1), which every new event uses: HVE's labels are one ahead of the stored
+    number (*Version 1* is stored 0). The engine detects contact at stored 0
     and 1 only; a case that states 2 (or anything else) would register no
     collision at all, so the solver runs it with 1 and the run status says so.
 
@@ -151,7 +151,7 @@ checkbox, and separate **DyMESH start time** and
 renamed to "**Version 1 and 2**" and "**Version 3 and Later**". The stand-alone
 **Timesteps** group shown in the deck is no longer present in the current
 dialog. An **Advanced** tab exposes the low-level search controls — Stop After
-one/two/all vertices, inside-vehicle test (master normal vs. CG), inside-polygon
+one/two/all vertices, inside-vehicle test (primary normal vs. CG), inside-polygon
 test (sub-areas vs. cross product), pushback method, "don't deform a single
 vertex", and "don't restore a large distance".)*
 

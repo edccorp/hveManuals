@@ -9,13 +9,14 @@ In Event Information, with a SIMON event active, press **Method Options...**
 under Calculation Method. The **SIMON Options** window opens. Changes take
 effect immediately and are locked while the event's results are on screen.
 
-## Time Settings
+## Duration, time steps and termination
 
-- **Duration (s)** and **Output Interval (s)** — the same values as *Duration*
-  and *Output Timestep* in the [Simulation panel](../09-events-driver-controls/SimuCtrlDlg.md);
-  editing either place changes both. An event that carries its own simulation
-  controls (an imported HVE case does) runs with the Simulation panel's values,
-  so edit them there.
+SIMON Options does not edit the duration, the output interval or the
+termination velocities: they are in Simulation Controls (the
+[Simulation panel](../09-events-driver-controls/SimuCtrlDlg.md), also hosted on
+the Event Designer's **Run** stage), which writes the values the run uses. The
+window says so where its **Time Settings** and **Termination Velocity** sections
+used to be.
 
 ## Integration
 
@@ -74,8 +75,7 @@ Simulation panel.
 
 ## Hydroplaning
 
-**Off** (default), **NASA**, **NASA-TTI**, **Gallaway** or **Blythe-Day (refuses
-the run)**. Each model replaces each tire's friction multiplier with the
+**Off** (default), **NASA**, **NASA-TTI** or **Gallaway**. Each model replaces each tire's friction multiplier with the
 hydroplaning model's output every timestep; the models differ in the speed at
 which each tire is predicted to hydroplane. See
 [SIMON — Hydroplaning Model](../programs/SIMON/04-calculation-method.md#hydroplaning-model).
@@ -86,10 +86,10 @@ own, on the Environment panel's Default surface material. The window warns
 when no surface states any standing water.
 
 !!! warning "Refused by the engine"
-    **Blythe-Day** is listed by HVE but not implemented by SIMON (in HVE either).
-    An event that selects it does not run: SIMON refuses it at input with stop
-    code −5520. HVE Studio offers it, marked, so that an imported case stating it
-    shows why the run refused.
+    **Blythe-Day** is listed by HVE but not implemented by SIMON (in HVE either),
+    so HVE Studio does not offer it. An imported case that states it does not
+    run: SIMON refuses it at input with stop code −5520, and the window says so
+    under the list.
 
 ## Solid Axle Inertia
 
@@ -134,21 +134,25 @@ are in that state.
 
 With DyMESH enabled:
 
-- **Smoothing** — **Version 1** or **Version 2**, HVE's names; both detect
-  contact. Version 1 cannot be used with DyMESH wheel contact (**Event ›
-  Wheels**): such a run is refused. A case that stores a value HVE would also
-  print as Version 2 but at which DyMESH finds no contact is run as Version 2,
-  and the window and the run status say so.
+- **Smoothing** — not shown for a new event, which always uses HVE's Version 2.
+  It appears only for an imported case that states **Version 1** (run as HVE
+  ran it; it cannot be used with DyMESH wheel contact, **Event › Wheels**, and
+  such a run is refused) or a stored value at which DyMESH finds no contact,
+  which is run as Version 2 and said so in the window and the run status.
 - **Search option** — **Automatic (size from the mesh)** or **Set box size**;
   **Search box** is the box size, read only with *Set box size*. A box that is
   too large for a detailed mesh makes the run refuse to start; Automatic
   cannot overflow.
-- **Contact friction**, **Relaxation length**.
+- **Inter-vehicle friction** — the friction between two vehicles' bodies in
+  contact (HVE's default 0.55), and **Inter-vehicle relaxation length (%/100)**
+  — how much of the crush springs back as they separate (HVE's default 0.05).
+  Both apply to every vehicle pair that does not state its own.
 - **Force contact to the XY plane**, **Include the environment**.
 - **Contact a vehicle's own trailer** — off (HVE's default) skips the pair of a
   tow vehicle and its own trailer.
-- **Start time (s)**, **Environment start time (s)** — before these times DyMESH
-  does not detect contact.
+- **DyMESH start time (s)**, **DyMESH environment start time (s)** — before these
+  times DyMESH does not detect contact (vehicle to vehicle, and with the
+  environment).
 
 The complete DyMESH settings, including per-pair friction and relaxation
 overrides, are in **Event › DyMESH Options...**.
@@ -173,9 +177,3 @@ overrides, are in **Event › DyMESH Options...**.
     processor cores the calculation runs on: SIMON's DyMESH sweeps use every
     core of the machine and give the same answer on any count.
 
-## Termination Velocity
-
-**Linear** (units set in Preferences) and **Angular (rad/s)** — SIMON's stored
-termination velocities. They are used only when the
-[Simulation panel's](../09-events-driver-controls/SimuCtrlDlg.md) *Termination*
-values are not set; the Simulation panel's values take precedence.

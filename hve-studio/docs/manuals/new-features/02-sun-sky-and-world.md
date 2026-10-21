@@ -198,8 +198,9 @@ The 3-D view lights the scene with up to **32 lamps at once**, site lights and
 vehicle lamps together. Site lights take at most 16 of them — the ones nearest
 the middle of the view — so the vehicles' lamps always have the rest. A
 ray-traced render and the glTF export carry every light. While the Environment
-is selected, each light is marked by a yellow star (grey when off) with a
-dotted line to the ground. Site lights are display only: no engine reads them.
+is selected, each light is marked by a yellow sphere (grey when off, orange
+when selected) with a dotted line to the ground; Shift-click selects several,
+which G / R / S move together. Site lights are display only: no engine reads them.
 See [Environment Information › Lights](../08-environment/EnvtInfoDlg.md#lights).
 
 ## The Sky Texture node

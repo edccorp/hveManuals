@@ -361,6 +361,13 @@ type, default values (Friction Factor = 1.0, Type = Road) will be assigned
 and used: in HVE Studio, every polygon with no material of its own uses the
 **Default material**, whose Friction Multiplier is 1.0.
 
+Those polygons are listed together in the Outliner as one surface, **Untyped
+surfaces**, typed Road. Set its **Surface Type** (Road, Friction Zone, Curb,
+Water or Other) and its **Drive** switch like any surface's, and the setting is
+kept with the case and applied each time the file is read again. Its friction,
+stiffness, water and texture stay the Default material's; its surface editor
+says so and **Edit the Default surface material** opens that material.
+
 To load 3-D files from other modeling programs and edit the default surface
 attributes, perform the following steps:
 

@@ -209,7 +209,7 @@ The Program Data report includes the simulation control parameters and other run
 
 ### Variable Output
 
-The time-dependent results are shown in **Output › Key Results** (a summary, and in its *Trajectory* section each selected variable at every output step, with the row at the current playback time highlighted; it docks under the viewport) and plotted in **Output › Output Graph**.
+The time-dependent results are shown in **Output › Key Results** (a summary, and in its *Variable Output* section each selected variable at every output step, with the row at the current playback time highlighted; it docks under the viewport) and plotted in **Output › Output Graph**.
 
 #### Variable Selection
 

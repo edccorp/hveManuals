@@ -8,7 +8,7 @@ This dialog contains the following items:
 
 ## Link Group
 
-Four small buttons per axle: **-**, **A**, **B** and **C**. Axles in the same group (A, B or C) share their values: an edit in one column is copied to every other axle in the group, and moving an axle into a group that already has a member copies that member's values to it. **-** leaves the axle independent. By default axle 1 is in group A and the other axles in group B. This replaces HVE's *Copy to Other Side* and *Copy to Other Axle(s)* check boxes.
+Four small buttons per axle: **-**, **A**, **B** and **C**. Axles in the same group (A, B or C) share their values: an edit in one column is copied to every other axle in the group, and moving an axle into a group that already has a member copies that member's values to it. **-** leaves the axle independent. By default axle 1 starts in group A, the rear axles with single tires in the next group, and the axles with **Dual Tires** in a group of their own, so a car is A, B and a truck with a single tag axle ahead of its duals is A, B, C. The groups are set again when you switch vehicles or change a wheel's **Dual Tires**; a group you choose stays until then. This replaces HVE's *Copy to Other Side* and *Copy to Other Axle(s)* check boxes.
 
 ## Type & Distribution
 

@@ -24,18 +24,22 @@ hosted and the 3-D view beside it.*
 ## The stages
 
 1. **Event**: the **Event Information** panel: the events, the active event's
-   name and start time, the calculation method and its options, the vehicles and
+   name and start time, the calculation method, the vehicles and
    humans in the event, and their initial conditions. Beside it,
    **Start from documents** (Case Intake) and **Start from a sentence** (Quick
    Case) build the event from the case documents or a typed sentence.
-2. **Positions**: **Position / Velocity** for the vehicle chosen in its own
+2. **Method Options**: the options window of the event's calculation method
+   (EDCRASH, EDSMAC and EDSMAC4, EDGEN, EDHIS, SIMON, EDVSM, GATB or the
+   single-track model), the one **Method Options...** in Event Information opens.
+   A method with no options says so.
+3. **Positions**: **Position / Velocity** for the vehicle chosen in its own
    **Vehicle** picker, which is the same selection as the 3-D view's.
-3. **Driver Controls**: **Driver Controls** (throttle, brake, steer and gear
+4. **Driver Controls**: **Driver Controls** (throttle, brake, steer and gear
    against time) for the chosen vehicle, and **From the EDR** (EDR Import): the
    vehicle's event data recorder record, and for SIMON a driver solved so the run
    follows the recorded speed. The solve keeps running while another stage or tab
    is shown.
-4. **Collision**: a tab for each dialog the calculation method reads, as the
+5. **Collision**: a tab for each dialog the calculation method reads, as the
    Event menu greys the rest: **Collision Pulse**, **DyMESH Options** and
    **Contacts** (EDSMAC4's vehicle contacts, or EDHIS and GATB's occupant
    contacts). Only EDCRASH reads a crush profile: for it, **Damage Profiles
@@ -43,18 +47,20 @@ hosted and the 3-D view beside it.*
    stage, and **Crush from Scan** (Crush Profile from Scan) measures the crush
    depths off a scan. The vehicle's mesh and crush stiffness are edited in the
    Vehicle Designer.
-5. **Equipment**: the same for what each vehicle carries and does: **Payload**,
+6. **Equipment**: the same for what each vehicle carries and does: **Payload**,
    **Path Follower**, **Lights**, **Wheels**, **Accelerometers** (SIMON, EDSMAC4,
    EDVDS and EDVSM), and for EDSMAC and EDSMAC4 **Handling Parameters** and
    **Move CG**. Accelerometers belong to the vehicle: the tab edits the same
    devices as the Vehicle Designer's Accelerometers stage, so one placed in
    either is in every event the vehicle runs in. Airbags and belts are edited in
    the Vehicle Designer's Occupant Protection stage.
-6. **Run**: **Run this event** starts the active event on the current physics,
-   exactly as the Simulation panel's **Run** does, with **Cancel** while it runs.
-   A solved event is locked until **Reset Run to Edit** in Event Information, and
-   the stage says so. Fix warnings do not stop a run; the stage counts them.
-7. **Summary**: the event's spec sheet with its was column, **Set as baseline**
+7. **Run** (Simulation Controls & Run): the Simulation panel, hosted. Duration,
+   the trajectory, collision, separation, curb-impact and human time steps the
+   method reads, the **Output Timestep**, **Termination** and **Stopped Vehicle**,
+   then **Run** with its progress, **Reset** and the **Last Result**. A solved
+   event is locked until it is reset, and the stage says so. Fix warnings do not
+   stop a run; the stage counts them.
+8. **Summary**: the event's spec sheet with its was column, **Set as baseline**
    (kept for this case across sessions) and **Copy spec sheet**, the warnings,
    **Provenance** (where each value an automatic tool set came from) and the
    event's **Notes**.

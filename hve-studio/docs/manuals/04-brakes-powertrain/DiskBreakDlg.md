@@ -58,17 +58,16 @@ Calculated wheel brake torque per unit of system pressure, in N·m/kPa (SI) or i
 
 **Design...** in Brake Assembly opens this window on that wheel, on any axle of the vehicle.
 
-## Drum data slots / Disc data slots
-
-A collapsed section with the drum (S-cam) or disc hardware table for the selected wheel — whichever matches its type. It is recorded with the case and read by nothing, as the note in it says: the engine's brake-data block is filled from the design above it. It is kept so that a case can record the hardware. Until 2026-10-09 these were two all-wheel tables opened from Brake Assembly.
-
 !!! note "HVE Studio"
-    The engines compute brake torque from the Brake Assembly's **Torque Ratio** and **Pushout**; the design parameters themselves are not passed to them. The Brake Designer is the calculator that produces those two numbers.
+    A wheel whose design is not **Generic** has its brake torque recomputed at every step of a simulation from this design: the brake factor at the simulated lining temperature and sliding speed, the actuation factor, and for S-cam, wedge and air disc brakes the stroke factor (see [Chapter 29](../hve-users/10-brake-designer/29-brake-designer.md)). A **Generic** wheel runs on the Brake Assembly's **Torque Ratio** and **Pushout**.
+
+!!! note "Removed in HVE Studio 2026-10-21"
+    The **Drum data slots** / **Disc data slots** section, the old S-Cam Brake and Disc Brake tables' values for the selected wheel, is gone. Nothing read those values; the engine's brake data comes from the design above. A case saved before then loads normally and the old values are dropped.
 
 !!! warning "Not in HVE Studio"
     - The schematic preview drawing of the brake.
     - A separate **Friction ...** dialog (it is a collapsible section here).
-    - **Rotor Thickness**, the pad thicknesses and the **Material ...** dialog (see [Brake Designer Material Properties](BrkMatPropDlg.md)): no engine reads them and the Brake Designer's results do not use them.
+    - A separate **Material ...** dialog: it is the **Material Properties** section here (see [Brake Designer Material Properties](BrkMatPropDlg.md)).
 
 <!-- NAV -->
 

@@ -15,7 +15,7 @@ In HVE Studio, after running the event:
 | Report | Where in HVE Studio |
 |---|---|
 | Alpha-numeric reports (Messages, Accident History, Program Data) | **Output › HVE Reports...** — one tab per page, as EDGEN built it |
-| Variable output | **Key Results** (its *Trajectory* section: the chosen channels at every output step, with **Select Variables...**) and **Output › Output Graph...** (graphs) |
+| Variable output | **Key Results** (its *Variable Output* section: the chosen channels at every output step, with **Select Variables...**) and **Output › Output Graph...** (graphs) |
 | Trajectory simulation | The viewport itself, driven by the playback bar |
 
 !!! note "HVE Studio"

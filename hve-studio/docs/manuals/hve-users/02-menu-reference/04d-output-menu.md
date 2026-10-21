@@ -17,7 +17,7 @@ before that they say there is nothing to show.
 
 | Item | What it does | HVE equivalent |
 |---|---|---|
-| **Key Results...** | The Key Results panel — key results, and in its *Trajectory* section the selected variables at each output time | Options › Show Key Results; Key Results windows; Variable Output Table |
+| **Key Results...** | The Key Results panel — key results, and in its *Variable Output* section the selected variables at each output time | Options › Show Key Results; Key Results windows; Variable Output Table |
 | **Output Graph...** | The Output Graph panel — variables plotted against time | Variable Graphing window |
 | **Variable Selection...** | Select Output Variables, for Key Results | Variable Selection dialog |
 | **HVE Reports...** | The report pages the engine itself builds, among them its ACCIDENT HISTORY page | the engine's report windows, including the Accident History numeric report |

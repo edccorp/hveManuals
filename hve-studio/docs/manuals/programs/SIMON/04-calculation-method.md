@@ -2421,7 +2421,7 @@ attempt to request it is rejected with a fatal error, so the event will not run.
 > model. Selecting both produces a fatal error and the event will not run.
 
 !!! note "HVE Studio"
-    HVE Studio offers Blythe-Day, marked "(refuses the run)", so that a case stating it is shown as it is: the run stops at setup with stop code −5520. In HVE Studio the water polygons are generated from each surface's **Water Depth** (the surface's HVE Surface node in the Shader Editor, or the **Default surface material** in Environment › Environment... › Terrain for ground with no surface of its own) rather than from environment objects of type Water. See [Chapter 2, Event Calculation Options](02-program-input.md#event-calculation-options).
+    HVE Studio does not offer Blythe-Day. An imported case that states it is shown as it is: the run stops at setup with stop code −5520, and the SIMON Options window says why.
 
 ### Required input data
 
@@ -3310,10 +3310,10 @@ SIMON uses HVE's DyMESH collision model to compute 3-dimensional forces and mome
 - *DyMESH wheel contact and wheel damage. Each wheel can carry its own collision mesh. Collision forces acting on a wheel mesh are added to the sprung mass, and forces exceeding the wheel's user-entered damage thresholds (Max No-Damage Force/Moment, Deformation Rate and Max Force/Moment — see the Event Editor's Vehicle Wheels dialog; in HVE Studio, Event › Wheels... › Wheel Damage) produce permanent wheel displacement and reorientation, which in turn affect the wheel kinematics of Eqs. 58–62.*
 - *Wheel displacement capping. The collision-induced x-y displacement of a wheel during a timestep is tracked against the maximum contact movement of the wheel mesh vertices for that timestep; the computed force-based displacement is capped so it can never exceed the actual contact motion, and no displacement is produced when there is no mesh contact movement. This prevents overprediction of wheel set-back or track-width change in severe impacts.*
 
-### Master and slave vehicles
+### Primary and secondary vehicles
 
 DyMESH evaluates a collision between a pair of objects, treating one as the
-master and the other as the slave. The two roles are not symmetric, so SIMON
+primary and the other as the secondary. The two roles are not symmetric, so SIMON
 alternates them from timestep to timestep, and averages the resulting forces
 and moments over successive timesteps so that both treatments contribute to
 every step:
@@ -3329,9 +3329,9 @@ a vehicle involved in two simultaneous collisions does not mix the two.
 Wheel collision forces and moments are averaged in the same way.
 
 Alternation is suspended where the roles are not interchangeable: a fixed
-barrier or the environment is always the master, because neither deforms.
+barrier or the environment is always the primary, because neither deforms.
 
-*(updated: master/slave alternation and collision force smoothing were not
+*(updated: primary/secondary alternation and collision force smoothing were not
 described in earlier editions. The smoothing model is selectable in the DyMESH
 Options dialog; see Chapter 2.)*
 

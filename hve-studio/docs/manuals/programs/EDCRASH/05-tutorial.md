@@ -417,7 +417,7 @@ HVE Studio does not print. To keep a report:
 1. In the HVE Reports window, click the report's tab.
 2. Enter a file name in the field at the bottom (default `hve_report.txt`) and click **Save This Page**, or click **Save All Pages** to write every page to that one file. It is saved beside the case file unless the name includes a folder; the line under the buttons shows where.
 
-The file is plain text and can be printed from any text editor. The table in the **Trajectory** section of the Key Results panel can be exported with **Export CSV...** or copied with **Copy CSV**.
+The file is plain text and can be printed from any text editor. The table in the **Variable Output** section of the Key Results panel can be exported with **Export CSV...** or copied with **Copy CSV**.
 
 ---
 

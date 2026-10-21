@@ -85,6 +85,8 @@ so a field has one editor and nothing is reachable in one and not the other.
    settle; a friction zone drawn beside the ramp has no ground under it.*
 7. **Summary**: the site's name and file, **Set as baseline** (kept for this case
    across sessions), **Copy spec sheet** (tab-separated text on the clipboard),
+   **Save Environment As...** and **Load Environment...** (the Environment
+   menu's: the environment as a file of its own, to load into another case),
    the spec sheet with its baseline and change, and every warning.
 
 ## Everything in one place

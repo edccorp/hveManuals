@@ -69,7 +69,7 @@ The detailed per-wheel ABS data (HVE's **ABS Designer...** button) are in **Vehi
     All wheels in one table, Link Groups, the Temperature Model row, and the note on a proportioning ratio of 1.0.
 
 !!! note "Changed in HVE Studio 2026-10-09"
-    The **S-Cam Brake** and **Disc Brake** tables are no longer opened from here: they were offered for every brake at once. The one that matches a wheel's type is in the Brake Designer, for that wheel, as **Drum data slots** or **Disc data slots**. Those values reach no engine output.
+    The **S-Cam Brake** and **Disc Brake** tables are no longer opened from here: they were offered for every brake at once. Nothing read their values, and the section that kept them in the Brake Designer was removed on 2026-10-21. A wheel's brake is designed in the Brake Designer, whose design the engine uses.
 
 <!-- NAV -->
 

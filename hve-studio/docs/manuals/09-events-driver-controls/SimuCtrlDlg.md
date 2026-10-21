@@ -4,7 +4,9 @@ In HVE Studio the simulation controls are the **Simulation Controls** group at t
 top of the **Simulation** panel, which also holds the **Run** controls and a
 summary of the last result. Open it from **View › Simulation**, or with
 **Output › Run Simulation...**; by default it is docked beside Event
-Information.
+Information. The same panel is hosted on the Event Designer's **Run** stage
+(Simulation Controls & Run), so an event can be set up and run without leaving
+the designer.
 
 The values belong to the active event. *Event-owned* is shown when the event
 (for example an imported HVE case) states its own duration or timesteps. The
@@ -76,7 +78,10 @@ Shown only for the methods that read these (EDSVS, EDVDS, EDVTS and EDHIS):
 
 Below the controls, **Run** starts the active event (with progress, cancel and
 **Reset**), and **Last Result** shows the run status and each vehicle's delta-V
-and PDOF.
+and PDOF, with the **window** they were taken over. That window is the primary
+collision-force pulse: from the force's peak outward while it stays at or above
+5% of the peak, so contact that goes on after the impact (one vehicle pushing
+the other) is not counted as delta-V. A dip shorter than 10 ms does not end it.
 
 <!-- NAV -->
 

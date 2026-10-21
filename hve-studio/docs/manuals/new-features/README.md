@@ -35,7 +35,7 @@ chapter 12 set vehicle, event and driver-control inputs.
 | [8 — Analysis Tools](08-analysis-tools.md) | Quick Case, Monte Carlo Analysis, Motorcycle Analysis, Audit Log, Limits Editor |
 | [9 — Motorcycles](09-motorcycles.md) | The Motorcycle vehicle type and the SINGLETRACK method |
 | [10 — Survey Point Clouds](10-point-clouds.md) | Showing a laser scan or photogrammetry cloud behind the simulation |
-| [11 — Results HUD](11-results-hud.md) | Boxes of solved numbers (time, speed, heading, Delta-V, any output channel) over the viewport and burned into recorded videos, saved with the case |
+| [11 — Results HUD](11-results-hud.md) | Boxes of solved numbers (time, speed, any output channel) over the viewport and burned into recorded videos, saved with the case |
 | [12 — Case Intake and Vehicle Data](12-case-intake-and-vehicle-data.md) | Vehicle Package (VIN, database match, stated specifications, occupants and cargo), Case Intake, Provenance, the Aboard list, crush stiffness from crash tests and NHTSA test files, EDR Import |
 
 ## Where these features live

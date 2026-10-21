@@ -55,8 +55,11 @@ The row of **–  A  B  C** buttons at the top of every column. Columns in the s
 group (A, B or C) are edited together: changing a value in one changes it in all
 the others of that group, and moving a column into a group copies that group's
 current values into it, its four **Load & Speed Tables** included. **–** makes a
-wheel independent. All wheels start in group A. The tables panel below the grid
-follows the same groups.
+wheel independent. Wheels with single tires start in group A and wheels with
+**Dual Tires** in group B, so a value typed for the steer tires does not change
+the duals. The groups are set again from the tires when you switch vehicles or
+change a wheel's **Dual Tires**; a group you choose stays until then. The
+tables panel below the grid follows the same groups.
 
 !!! note "HVE Studio"
     The link groups replace HVE's **Copy to Other Side** and **Copy to Other

@@ -198,8 +198,8 @@ can be drawn into every frame.
    look, where a spinning wheel blurs and an impact smears.
 7. Tick **Burn in key results (Results HUD)** to draw the case's Results HUD
    boxes into every frame. Ticking it switches every box on for the movie (and
-   in the viewport), and adds a *Key results* box — Time, then Speed and
-   Delta-V for each vehicle — if the case has none; unticking it takes every
+   in the viewport), and adds a *Key results* box — Time, then Speed for
+   each vehicle — if the case has none; unticking it takes every
    box out of the movie. Choose the rows, style and placement in **View ›
    Results HUD** (see [Results HUD](11-results-hud.md#in-a-recorded-movie)).
    Under motion blur the HUD is drawn once over the blurred frame, so it stays

@@ -208,8 +208,13 @@ softness**; then its **Color** and **Intensity** (1 is about a headlamp).
 
 A site light comes on as the sky darkens, as a vehicle's lamps do, unless **On
 in daylight too** is ticked. While the Environment is selected, the Viewport
-marks each light with a yellow star (grey when switched off), a dotted line
-down to the ground and, for a spot, a short line along its aim. The 3-D view
+marks each light with a yellow sphere (grey when switched off, orange when
+selected), a dotted line down to the ground and, for a spot, a short line along
+its aim. Click a sphere to select its light; **Shift**-click (in the view, the
+Lights list or the Outliner) adds a light to the selection or takes it out, and
+keeps any selected surfaces, so **G**, **R** and **S** move the lights and the
+surfaces together about their common middle. R turns each selected light's aim
+by the same angle. The 3-D view
 lights the scene with up to 32 lamps at a time, shared with the vehicles; the
 site takes at most 16 of them, the ones nearest the middle of the view. The
 ray-traced render and the glTF export carry every light. The lights move with
@@ -305,6 +310,14 @@ panel's **Terrain** section:
 - **Import** and **Clear** — read the file, or remove the geometry. Both
   also discard a site the case carries (see *Embedding the environment*), so
   **Import** always reads the file.
+- **Add Geometry...** — read another file into the site instead of replacing
+  it, with the **Scale Factor** and orientation options above. The site keeps
+  everything it had (surface types, materials, layers and moves), the new
+  file's surfaces are added to the Outliner, and its faces with no surface of
+  their own become **Untyped surfaces**. A site put together from several
+  files is carried in the case and names no file: the panel says so, the
+  site is kept in the case even with embedding switched off, and **Clear**
+  removes it. A site taken from an HVE case cannot have files added to it.
 
 After an import, a summary line gives the number of surfaces and lines and
 the site's X, Y and Z extents.
@@ -538,7 +551,10 @@ The Environment panel's **Selected Surface** section shows the surface
 selected in the Viewport or the Outliner: its name, type and friction, its
 **Placement**, and the buttons **Edit in Shader Editor** and **Deselect**.
 **Open Outliner** opens the Outliner. **Default material** edits the material
-used by any drivable polygon that has no material of its own.
+used by any drivable polygon that has no material of its own. Those polygons
+(every face of a DXF, a mesh file without materials, a vehicle `.h3d` loaded as
+a site) are one surface in the Outliner, **Untyped surfaces**, whose type and
+Drive switch are set like any other's.
 
 To edit a surface's contact material:
 

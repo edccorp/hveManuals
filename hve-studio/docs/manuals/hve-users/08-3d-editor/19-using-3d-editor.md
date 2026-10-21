@@ -25,11 +25,18 @@ HVE's 3-D Editor shows four viewers (Perspective, X-Y, Y-Z and X-Z). The HVE Stu
 - **Pan** — drag to pan.
 - **Camera** — look through the scene camera; click again to go back to the free view. Right-click it for **Camera Properties**. With no saved camera it opens Camera Properties.
 - **Perspective/Orthographic** — switch the projection, as key **5** does.
+- **Lock Camera to View** (the padlock) — what moving the view does while you
+  look through a camera. **Off** (the default, open padlock): orbiting,
+  panning or zooming leaves the camera's view and carries on from where the
+  camera was, and the camera stays where it is, so it cannot be moved by
+  accident. **On** (closed padlock): the view moves the camera, as a *Current*
+  working copy that **Tools › Cameras** saves as a new camera or over the one it
+  came from.
 
 The camera can also be set to a top, front, rear, left, right or bottom view with the number keys, and switched to orthographic projection with **5** (below).
 
 !!! note "HVE Studio"
-    HVE Studio has no separate 2-D views and does not draw a momentum diagram. For a plan, click the view cube's Top face (or press **7**, then **5** for orthographic). Each vehicle's impact speed, Delta-V and PDOF are reported in **Output › Key Results...** (for an EDCRASH reconstruction, the separation speed too).
+    HVE Studio has no separate 2-D views and does not draw a momentum diagram. For a plan, click the view cube's Top face (or press **7**, then **5** for orthographic). Each impact's Delta-V and PDOF are on **HVE Reports** › **Damage Data**; an EDCRASH reconstruction's impact speed, Delta-V, PDOF and separation speed are in **Output › Key Results...**.
 
 ### Navigating the 3-D view
 

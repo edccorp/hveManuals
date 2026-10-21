@@ -46,15 +46,15 @@ HVE displays the results of each event in Report Windows of several kinds. In HV
     - **Output › HVE Reports...** shows the report pages the program built for the last run (HVE's Messages, Program Data, Event Data, Vehicle Data, Environment Data and the other pages the program produces). Each page is its own window, docked as a tab in HVE Reports; drag a tab beside another page to read the two side by side, above or below it to stack them, or out of the window to float it, and **Reset Layout** puts them back. **Save This Page** and **Save All Pages** write them to text files, **Save Page as HTML** and **Save All Pages as HTML** to an HTML file a browser can print, in the order and with the pages set in **Print Order...**; **Export Run Report (HTML)** writes HVE Studio's own printable summary of the run (inputs, key results, plan view of the trajectories). If the event has not been run, or the program refused it, the window says so. See [Common Reports](../../11-reports-output/CommRepDlg.md).
     - The **ACCIDENT HISTORY** page of HVE Reports is the engine's own table of important positions and velocities during the event (see [Accident History](../../11-reports-output/AcciHistDlg.md)).
     - **Output › Key Results...** shows the important results for each vehicle — for example impact and separation speeds, delta-V, PDOF, energy, and the final position, heading change and peak accelerations.
-    - **View › Results HUD** draws chosen numbers — time, and each vehicle's speed, heading, Delta-V or any output channel — in boxes over the Viewport itself as the event plays, and into recorded videos (see [Results HUD](../../new-features/11-results-hud.md)).
+    - **View › Results HUD** draws chosen numbers — time, and each vehicle's speed or any output channel — in boxes over the Viewport itself as the event plays, and into recorded videos (see [Results HUD](../../new-features/11-results-hud.md)).
 - **Graphic output**:
     - **Damage** — the crushed vehicles are shown in the Viewport. **Output › Damage Studio Report...** gives a table, per vehicle, of the key results chosen in **Output › Damage Studio Options...** (by default impact velocity, delta-V, PDOF, separation velocity and damage energy) and the **Max Crush** the program recorded on the vehicle's mesh (see the note below).
-    - **Momentum Diagram** — not produced by HVE Studio. Each vehicle's impact speed, Delta-V and PDOF are in **Output › Key Results...**.
+    - **Momentum Diagram** — not produced by HVE Studio. Each impact's Delta-V and PDOF are on **HVE Reports** › **Damage Data**.
     - **Site Drawing** — the view cube's **Top** face (or key **7**) gives a plan of the vehicles at their positions; for EDCRASH, the surveyed scene positions are drawn as ghosts.
 - **Variable output** — the output tracks (see [Chapter 16](../06-event-editor/16-event-model-definition.md)):
     - **Output › Variable Selection...** chooses the channels to show.
     - **Output › Output Graph...** plots the selected channels against time (**Select Variables...**, **Format...**).
-    - **Output › Key Results...** lists them at each output step in its *Trajectory* section (**Export CSV...**, **Copy CSV**).
+    - **Output › Key Results...** lists them at each output step in its *Variable Output* section (**Export CSV...**, **Copy CSV**).
     - **Output › Export Variables...** writes the selected channels of the event on screen to a file (CSV, tab-separated text or MATLAB), at a chosen interval and in SAE or Traditional signs.
 - **Trajectory simulation** — the Viewport itself.
 

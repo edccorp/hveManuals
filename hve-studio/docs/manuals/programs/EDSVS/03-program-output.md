@@ -103,7 +103,7 @@ EDSVS produces a Variable Output table containing the time-based simulation resu
 A detailed listing of each Variable Output parameter produced by EDSVS is found in Table 3-1. For more information about Variable Output parameters, refer to the User's Manual, Chapter 16, Event Model.
 
 !!! note "HVE Studio"
-    In HVE Studio the table is **Output › Key Results** (its *Trajectory* section); choose its columns with **Output › Variable Selection** (the *Filter* box accepts HVE's own variable names, such as Delta or V-tot); position (X, Y), heading and speed are among them, and **Export CSV...** writes the table to a file.
+    In HVE Studio the table is **Output › Key Results** (its *Variable Output* section); choose its columns with **Output › Variable Selection** (the *Filter* box accepts HVE's own variable names, such as Delta or V-tot); position (X, Y), heading and speed are among them, and **Export CSV...** writes the table to a file.
 
 **Table 3-1: Vehicle Variable Output Data**
 

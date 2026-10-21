@@ -2,8 +2,8 @@
 
 !!! tip "New in HVE Studio"
     The Results HUD draws boxes of solved numbers over the 3-D viewport while a
-    run plays back: the time, and for any vehicle its speed, heading, Delta-V
-    or any output channel. The same boxes can be burned into a movie recorded
+    run plays back: the time, and for any vehicle its speed or any output
+    channel. The same boxes can be burned into a movie recorded
     with **File › Record Animation...**, so the video carries the numbers. A
     case can hold any number of boxes, each with its own rows, style and place
     on the screen, and they are saved with the case.
@@ -47,10 +47,10 @@ docks like any other panel. It edits the boxes of the open case.
 *The Results HUD window with two boxes, Key results open.*
 
 If the case has no box yet, the window says *This case has no HUD box* and
-offers **Add a box (Time, then each vehicle's Speed and Delta-V)**. That box is
-named *Key results* and has a **Time** row followed by a **Speed** and a
-**Delta-V** row for each vehicle of the active event (every vehicle of the
-case if there is no event).
+offers **Add a box (Time, then each vehicle's Speed)**. That box is
+named *Key results* and has a **Time** row followed by a **Speed** row for
+each vehicle of the active event (every vehicle of the case if there is no
+event).
 
 The window has a row of box tabs at the top, the box's name and switches under
 them, and four sections: **Rows**, **Add Rows**, **Box Style** and
@@ -65,7 +65,7 @@ The **+** at the right end of the tabs adds a box:
 | Item | Adds |
 | --- | --- |
 | **Copy of this box** | A copy of the selected box, rows and style included, named *name copy* and placed a tenth of the frame height below it, so it does not cover the original |
-| **Time, Speed and Delta-V** | A new box with the same rows as the first box above: Time, then Speed and Delta-V for each vehicle of the active event |
+| **Time and Speed** | A new box with the same rows as the first box above: Time, then Speed for each vehicle of the active event |
 | **Blank** | An empty box named *HUD n*, with no rows |
 
 Under the tabs:
@@ -100,7 +100,7 @@ A row is one of five kinds:
 | **Time** | The playback time, plus the box's **Time offset** (see [Box Style](#box-style)). Playing one event, the time is on that event's clock: its **Start time** (Event editor) is added | s |
 | **Speed** | The vehicle's speed | mph or km/h |
 | **Heading** | The vehicle's heading, between −180 and 180 degrees | deg |
-| **Delta-V** | The vehicle's collision Delta-V, as it develops through the impact (below) | mph or km/h |
+| **Delta-V** | Only in a box saved before 2026-10-20, which still shows it: the vehicle's collision Delta-V, as it develops through the impact (below). It is no longer offered: one number per vehicle is not always the Delta-V an analyst would report; **HVE Reports** › **Damage Data** gives each impact's. | mph or km/h |
 | An output channel | The value of that channel for the vehicle, the same value the Output Graph and Key Results show | the channel's own display unit |
 
 The default label of a vehicle row starts with the vehicle's name: *Ford Taurus
@@ -153,22 +153,13 @@ never shows a number the run did not produce. It happens when:
 
 ### Add Rows
 
-**Add Rows** lists every quantity a row can show, as a tree with a checkbox for
-each one. Ticking a box adds that row to the bottom of the list; unticking it
-removes the row.
-
-- **Time** is at the top.
-- Under it is one branch for each vehicle of the case. A branch's heading shows
-  how many rows the box already has for that vehicle. Inside, **Speed**,
-  **Heading** and **Delta-V** come first, then every output channel, grouped
-  under the same group names the Output Graph and Variable Selection use.
-  Output channels are listed once the event has been run; before that the
-  section says so.
-- The **filter** field shows only the quantities whose name or group contains
-  the text typed (upper or lower case alike), and opens the branches that
-  hold them.
-- **Ticked only** shows only the quantities the box already has.
-- **Untick all** removes every row from the box.
+**Add Rows** has the **Time** checkbox, which adds or removes the Time row,
+and **Choose Variables...**, which opens **Select Output Variables** — the
+same picker Key Results and the Output Graph use, with its presets, filter,
+Vehicle / Wheel / Tire scope and a column per vehicle — on this box. A tick
+there adds that vehicle's row for that variable to the bottom of the box; an
+untick removes it. Output channels are listed once the event has been run;
+before that the section says so. Occupant variables have no HUD row.
 
 ### Box Style
 

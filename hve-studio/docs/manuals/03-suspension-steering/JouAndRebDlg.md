@@ -8,7 +8,7 @@ Where HVE edits one wheel at a time and switches between the jounce and the rebo
 
 ## Link Group
 
-Four small buttons per wheel: **-**, **A**, **B** and **C**. Wheels in the same group share their values: an edit in one column is copied to the others in the group, and moving a wheel into a group that already has a member copies that member's values to it. By default both wheels of axle 1 are in group A and all other wheels in group B. This replaces HVE's *Copy To Other Side*.
+Four small buttons per wheel: **-**, **A**, **B** and **C**. Wheels in the same group share their values: an edit in one column is copied to the others in the group, and moving a wheel into a group that already has a member copies that member's values to it. By default both wheels of an axle are in the same group: axle 1 starts in group A, the rear axles with single tires in the next group, and the axles with **Dual Tires** in a group of their own, so a car is A, B and a truck with a single tag axle ahead of its duals is A, B, C. The groups are set again when you switch vehicles or change a wheel's **Dual Tires**; a group you choose stays until then. This replaces HVE's *Copy To Other Side*.
 
 ## Jounce (Compression)
 

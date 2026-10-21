@@ -43,7 +43,7 @@ the **active event** (the one selected in Event Information):
 |---|---|
 | Numeric reports (Accident History, Key Results and other numeric output) | **Output › Key Results...**, **Output › HVE Reports...** (Accident History is its ACCIDENT HISTORY page) |
 | Graphic reports | **Output › Output Graph...** |
-| Variable Output Table | **Output › Key Results...** (its *Trajectory* section), with **Select Variables...** |
+| Variable Output Table | **Output › Key Results...** (its *Variable Output* section), with **Select Variables...** |
 | Trajectory Simulation | the Event editor's viewport |
 | Damage reports | **Output › Damage Studio Report...** |
 
@@ -70,7 +70,7 @@ appearance.
 
 ### Variable Output Table
 
-The **Key Results** panel's *Trajectory* section (Output › Key Results...) lists
+The **Key Results** panel's *Variable Output* section (Output › Key Results...) lists
 the selected variables at each output time. **Select Variables...** (or **Output ›
 Variable Selection...**) chooses the variables (HVE's Variable Selection
 dialogs); **Copy CSV** and **Export CSV...** take the table out.

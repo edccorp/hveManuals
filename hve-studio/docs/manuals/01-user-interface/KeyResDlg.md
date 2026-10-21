@@ -6,13 +6,13 @@ The panel has three collapsible sections. Their order can be changed and is reme
 
 ## Summary
 
-The event's headline results, one column per vehicle: for example impact speed, initial velocity, Delta-V (acceleration based and velocity based), PDOF, impact duration and force, collision energy loss, damage energy, separation speed, final speed, maximum speed, distance traveled, heading change, maximum accelerations, yaw rate and side slip, final position, time to rest, occupant peak accelerations and HIC exceedance, and the number of damaged vertices. Which rows appear depends on the event's calculation method: a reconstruction shows its reconstruction results, a simulation its trajectory results.
+The event's headline results, one column per vehicle: for example impact speed, initial velocity, Delta-V (acceleration based and velocity based), PDOF, impact duration and force, collision energy loss, damage energy, separation speed, final speed, maximum speed, distance traveled, heading change, maximum accelerations, yaw rate and side slip, final position, time to rest, occupant peak accelerations and HIC exceedance, and the number of damaged vertices. Which rows appear depends on the event's calculation method: a reconstruction shows its reconstruction results, a simulation its trajectory results. A simulation's collision results -- Delta-V, PDOF, the pulse's duration and force, the energy and the damaged vertices -- are not in this table: a run can have several impacts, and the simulation reports each one, with its pulse start and end, peak acceleration and force, Delta-V and PDOF, on **HVE Reports** › **Damage Data**.
 
 ## vs. original HVE
 
 When the case was opened from an HVE file that carries HVE's own saved results, this section compares HVE Studio's results with HVE's: **Vehicle / quantity**, **Ours**, **Original HVE**, **Difference** and **at t** (the time compared).
 
-## Trajectory
+## Variable Output
 
 A table of the variables chosen for this event, one row per output time step. It is HVE's key variable grid, shown for the whole run rather than for one instant.
 
@@ -34,7 +34,7 @@ With a playback sequence selected, the panel follows the **sequence** rather tha
 
 - **The columns are the sequence's vehicles**, in the order they first appear over its tracks, so a vehicle that only a later event moves still has a column.
 - **Summary** shows one block per event on the timeline, headed with the event's name and the time it starts on the master clock. An event that has not been solved says so; run it with **Run All Events** in Playback, or in the Event editor.
-- **Trajectory** is sampled on the sequence's master clock, and its time column is that clock: the same time the transport, the playback cursor and **Follow playback time** use. Each vehicle's value comes from the event that places that vehicle at that instant, exactly as the 3-D view draws it, so a row can hold values from two events.
+- **Variable Output** is sampled on the sequence's master clock, and its time column is that clock: the same time the transport, the playback cursor and **Follow playback time** use. Each vehicle's value comes from the event that places that vehicle at that instant, exactly as the 3-D view draws it, so a row can hold values from two events.
 - Occupant variables are read from the active event, at that event's own time on its track, and are blank where the active event is not on the timeline.
 - **vs. original HVE** compares one event with HVE's saved run, so it is not shown here; open the event in the Event editor to see it.
 

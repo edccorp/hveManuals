@@ -161,9 +161,9 @@ no options dialog in HVE Studio.
 
 !!! note "HVE Studio"
     Some HVE options are offered with a note that the engine refuses them — for
-    example SIMON's **Blythe-Day (refuses the run)** hydroplaning model, which
-    HVE's own SIMON does not implement. Such an option is kept because HVE offers
-    it, and the dialog says the run will stop. The program manuals describe the
+    example SIMON's ABS Algorithms 3, 5 and 6 — and the dialog says the run will
+    stop. SIMON's Blythe-Day hydroplaning model, which HVE's own SIMON does not
+    implement either, is not offered; an imported case that states it is told so. The program manuals describe the
     options themselves.
 
 See the dialog reference: [Calculation Options](../../10-calculation-options/README.md).

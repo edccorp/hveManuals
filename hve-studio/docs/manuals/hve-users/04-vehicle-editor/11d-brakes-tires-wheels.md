@@ -16,7 +16,8 @@ properties, the Wheel Location and the Wheel Image.
     wheels whose brakes are identical in the same group: the first kind of
     brake in wheel order is **A**, the next **B**, the third **C**, and any
     further kind is **–** (so a truck whose axle 1 differs from axles 2 and 3
-    starts as A, B, B). Values are shown in the units set in Preferences, and
+    starts as A, B, B). A wheel with **Dual Tires** is never started in a
+    group with single-tire wheels, even when their brakes are identical. Values are shown in the units set in Preferences, and
     changes apply as they are made.
 
 ## Brake Assembly Parameters

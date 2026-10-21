@@ -124,7 +124,7 @@ EDVSM produces a Variable Output table containing the time-based simulation resu
 A detailed listing of each Variable Output parameter produced by EDVSM is found in Table 3-1. For more information about HVE Variable Output parameters, refer to the HVE Operations Manual, Chapter 16, Event Model.
 
 !!! note "HVE Studio"
-    In HVE Studio the table is **Output › Key Results** (its *Trajectory* section); choose its columns with **Output › Variable Selection** (the *Filter* box accepts HVE's own variable names, such as Delta, Spin or V-tot); position (X, Y), heading and speed are among them, and **Export CSV...** writes the table to a file. Channel names follow HVE's. One thing to know when reading them:
+    In HVE Studio the table is **Output › Key Results** (its *Variable Output* section); choose its columns with **Output › Variable Selection** (the *Filter* box accepts HVE's own variable names, such as Delta, Spin or V-tot); position (X, Y), heading and speed are among them, and **Export CSV...** writes the table to a file. Channel names follow HVE's. One thing to know when reading them:
 
     - EDVSM does not compute brake temperatures. A brake-temperature channel holds no number after the first sample, so HVE Studio shows it as blank (`--`) rather than as a flat line, and the run status says how many such channels there are. (SIMON's brake temperature model does run; its inputs are the Brake Designer's Material Properties.)
 
