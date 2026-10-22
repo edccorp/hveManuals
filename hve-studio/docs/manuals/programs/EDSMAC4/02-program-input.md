@@ -362,7 +362,7 @@ EDSMAC4 uses the following event set-up options:
 | Driver Controls, Brake Table | Brake Table Option; Wheel Force vs Time or Percent Available Friction vs Time |
 | Driver Controls, Throttle Table | Throttle Table Option; Wheel Force vs Time or Percent Available Friction vs Time |
 | Vehicle Mesh | Maximum Side Length (Tessellation), Inter-vehicle Friction |
-| Wheels, Tire Blowout | Start time, duration, stiffness factor, and rolling resistance factor; available for each tire |
+| Wheels, Tire Blowout | Start time, duration, cornering and radial stiffness factors, and rolling resistance factor; available for each tire |
 | Wheels, Displacement | Start time, duration, change in x,y,z coordinates, change in camber; available for each tire |
 | Accelerometers | The x,y coordinates of up to 5 accelerometers |
 
@@ -498,7 +498,7 @@ The Collision Pulse data are not used by EDSMAC4.
 
 EDSMAC4 supports the Tire Blowout Model [26] and Wheel Displacement option. These options allow the user to study event-related phenomena at each wheel.
 
-- **Tire Blowout** — The start time, deflation duration, deflated stiffness factor, and deflated rolling resistance factor for a blown tire.
+- **Tire Blowout** — The start time, deflation duration, deflated cornering and radial stiffness factors, and deflated rolling resistance factor for a blown tire. EDSMAC4 applies the cornering factor to the tire's cornering stiffness and the radial factor to the drop in its rolling radius.
 - **Wheel Displacement** — The start time, displacement duration, change in x,y,z coordinates (z is available only in HVE) of the wheel center, and change in camber due to a wheel displacement.
 
 > **NOTE:** This option is particularly useful for collisions in which a wheel was struck and displaced during impact.

@@ -6,7 +6,7 @@ HVE Studio has **no Options menu**. HVE's Options menu mixes display switches, t
 |---|---|
 | Create DB | Not in HVE Studio. Vehicle databases are read as they are; **Save Vehicle As** writes a vehicle into a database file (see [Saving Vehicles](../02-vehicles/VehSaveAs.md)). |
 | Show Key Results | **View › Key Results** or **Output › Key Results...** (Event and Playback editors) — see [Key Results Dialog Box](KeyResDlg.md). |
-| Show Axes | **View › Scene Display › Axes**: the case's X, Y and Z at the origin and each vehicle's own axes at its CG, turning and tilting with it (red X forward, green Y right, blue Z up; on by default). |
+| Show Axes | **View › Scene Display › Axes**: the case's X, Y and Z at the origin and each vehicle's own axes at its CG, turning and tilting with it (red X forward, green Y right, blue Z down, as SAE and HVE; on by default). |
 | Show Contacts | **View › Scene Display › Occupant Equipment** draws the active vehicle's contact surfaces, airbags and belts; **View › Scene Display › Occupant Equipment Through Bodywork** draws them over the body. |
 | Show Belt Anchors | **View › Scene Display › Occupant Equipment** (as above). |
 | Show Velocity Vectors | **View › Scene Display › Vectors › Velocity**. The same table in the Scene Display window has **Acceleration**, **Collision force**, **Collision moments**, **Tire Fx', Fy'**, **Tire Fz'** and **Tire Fz' (nodes)**, with **Collision load at the CG**, **Collision load at impact (line of action)** and **Draw Vectors Through Bodywork** below it. HVE's *Long Velocity Vectors* preference has no equivalent. |

@@ -85,7 +85,7 @@ Results that are easy to miss:
 
 - **Stiffness**: EDSMAC4 reads the crush **A** and **B**, EDSMAC and EDVSM read
   **Kv** (EDSMAC only the front's, for every side), and SIMON reads the DyMESH
-  node stiffness. **Max Crush** reaches no program, and **Conversion Height** is
+  node stiffness. **Max Crush** reaches no program (it sets the graph's span), and **Conversion Height** is
   printed in SIMON's report only.
 - **Brakes**: SIMON, EDVSM and EDVDS read the brake model only when the event's
   brake input is *At Driver*; under *% of Friction* they read none of this stage
@@ -173,10 +173,15 @@ opens it.
 
 ### Stage 3: Mass & Inertia
 
-The Mass & Inertia stage opens with **Stated against estimated inertia**: the roll, pitch
-and yaw inertias the vehicle states against EDC's estimate from mass alone (its
-power-law fits), the estimate drawn hatched because it is a regression, not
-this vehicle; a stated value far from the fit is worth a look. Under it the
+The Mass & Inertia stage opens with **Stated against estimated inertia**: the vehicle's
+TOTAL roll, pitch and yaw inertias (the **Total** column below: the sprung
+inertia plus the wheels, tires and axles) against EDC's estimate from total
+mass alone (power-law fits in lb and lb-s²-in: roll $0.0783\,W^{1.3629}$,
+pitch $0.0711\,W^{1.5637}$, yaw $0.1291\,W^{1.4942}$), the estimate drawn
+hatched because it is a regression, not this vehicle; a stated value far from
+the fit is worth a look. **Auto Update Inertia When Weight Changes**, under
+**Rotational Inertia**, scales the total inertias with the total mass when a
+weight is typed, as HVE's checkbox does. Under it the
 stage hosts the **Inertia / Mass** editor that the Vehicles panel's
 Inertia **Edit...** opens: total and sprung mass, the CG location, the roll,
 pitch and yaw inertias and the product of inertia, each in the stored basis and
@@ -199,8 +204,8 @@ What the body does in an impact, one editor per tab:
   event's damage profile instead; Top and Bottom have none, since the 2-D
   programs are planar). The **3-D** rows follow, read by SIMON's DyMESH contact:
   the node pressure's **Constant**, **Linear**, **Quadratic** and **Cubic**
-  terms, **Conversion Height**, **Saturation Crush** and **Max Crush (not
-  read)**. A face whose four 3-D terms are all zero is tinted red: a DyMESH
+  terms, **Conversion Height**, **Saturation Crush** and **Max Crush (graph
+  extent)**. A face whose four 3-D terms are all zero is tinted red: a DyMESH
   contact there meets no resistance. Above the table a graph shows the selected
   column — click a column's header, or edit one of its cells, to select it; it
   opens on **Front**. **2-D (per unit width)** plots A + B C and Kv C against
@@ -525,14 +530,21 @@ here for placing the lamps: click a light to select it in the editor below and
 in the 3-D view. **Shift**-click adds a light to the selection or takes it out
 (here, in the editor's light list and on the 3-D view's lamp gizmos); dragging
 any selected light's gizmo in the 3-D view moves them all by the same amount. Under it is the Vehicle Lights editor, with its Lamp parts and
-Light sources tabs. The lamps are display only: no simulation reads a lamp.
+Light sources tabs. A vehicle from the database already knows its lamps: on
+**Lamp parts** each lens its body file tags is a row of its own, with the kind
+of lamp and its side (Left, Right or Center) read from the tag, and both can be
+changed in the list (see [Light Editor Dialog Box](../../01-user-interface/LightEdDlg.md)).
+The lamps are display only: no simulation reads a lamp.
 
 ![Figure 12-11: the Lights stage](../images/hvn-04-vehicle-designer-exterior.png)
 
 ### Stage 14: Aerodynamics
 
-The Aerodynamic Drag editor: the drag coefficients of the four surfaces and the
-areas they act on. Drag is the vehicle's own data, usually left as it says.
+The Aerodynamic Drag editor: the coefficients of HVE's eight surfaces and the
+areas they act on, in two tables (**Body Surfaces**, then **Top, Bottom and
+Devices**), each surface marked with the programs that read it. Drag is the
+vehicle's own data, usually left as it says. See the
+[Aerodynamic Drag dialog](../../02-vehicles/VehDragDlg.md).
 
 ### Stage 15: Accelerometers
 

@@ -27,7 +27,9 @@ them. Each value is typed or dragged; there are no sliders.
 - **Collision Timestep (s)** — integration timestep for the collision phase
   (HVE's *Vehicle Collisions*). EDSMAC and EDSMAC4 use it for the collision and
   separation phases; SIMON switches to it for any step in which an impact is
-  detected. 0 means use the Trajectory Timestep. Shown for SIMON, EDSMAC and EDSMAC4.
+  detected. 0 means use the Trajectory Timestep, but no coarser than 0.001 s:
+  a 0.01 s trajectory step resolves its collisions at 0.001 s. Shown for SIMON,
+  EDSMAC and EDSMAC4.
 - **Separation Timestep (s)** — integration timestep for the start of the
   post-impact phase (HVE's *Vehicle Separation*). 0 means use the collision
   timestep. Shown for EDSMAC and EDSMAC4.

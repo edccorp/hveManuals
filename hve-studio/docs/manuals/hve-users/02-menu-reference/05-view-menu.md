@@ -111,7 +111,9 @@ run leaves behind, and the case's axes.
 | **Sprung CG** | Each vehicle's sprung-mass CG, the point every "CG to ..." distance is measured from. On by default, independent of Axes |
 | **Total CG** | Each vehicle's total-mass CG (sprung and unsprung masses together), labelled with its offset from the sprung CG. On by default |
 | **CG Weights** | Adds to each CG label the weight it carries: the sprung weight at the Sprung CG, the total weight at the Total CG, in the units set in Preferences. Off by default |
-| **Lamp Gizmos** | Each vehicle lamp drawn as a ring, a line along its aim and, for a spot, its cone; click one to select it, drag it to move it; Shift-click adds or removes a lamp, and dragging one of several selected moves them all. Off by default |
+| **Lamp Gizmos** | Each vehicle lamp drawn as a ring, a line along its aim and, for a spot, its cone; click one to select it, drag it to move it; Shift-click adds or removes a lamp, and dragging one of several selected moves them all. Selecting a lamp takes the selection off the vehicle body (its move gizmo goes), and a click on empty space deselects both. Off by default |
+| **Accelerometers** | Each vehicle's installed accelerometers, a small orange three-axis cross where the device sits on the body, turning with it. A device stated in the inertial frame is not on the body and is not drawn. Off by default |
+| **Connections** | Each vehicle's front and rear connection points (hitch, ball, fifth wheel, king pin), a cyan ring with a cross, where Vehicle Connections places them; a connection of type None is not drawn. Off by default |
 | **North Arrow** | A compass in the corner of the viewport pointing to the case's north, which is set in the Shader Editor's Sun & Sky panel or read from an imported `.hve` |
 | **Skidmarks** | The contact-patch path, only where the tire was marking. SIMON grades the mark's opacity; EDSMAC4, EDVSM, EDSVS and EDVDS report a tire as skidding or not, so their marks are all-or-nothing (HVE: Show Skidmarks) |
 | **CG Path** | Each vehicle's CG path up to the current playback time, in its paint colour (HVE: Show CG Paths) |
@@ -213,16 +215,20 @@ only: no engine reads it.
 
 The viewport's toolbar also carries the Scene Display switches that matter in
 the editor on screen, each the same switch as its Scene Display row (greyed,
-with the reason, where its row is): in the Vehicle editor **Extents**,
-**Axes**, **Sprung CG**, **Total CG**, **Lamp gizmos**, **DyMESH body**,
-**DyMESH wheels** (the Mesh column of Scene Display's DyMESH overlay) and
-**Occ. Eq.** (occupant equipment); in the Environment
-editor **Axes**, **North arrow**, the scene light and the lamps; in the Event
-editor the extents, **CG path**, **Skid marks**, **Axes**, the velocity vector,
-**DyMESH body**, **DyMESH wheels** and **Occ. Eq.** (occupant equipment: contact
-surfaces, airbags and belts); in Playback the CG path, skid marks, the velocity and
-PDOF vectors and the lamps; in the Human editor **Axes** and occupant
-equipment. The row wraps when the viewport is narrow. **Phong** (smooth shading, the default), **Flat** (one normal
+with the reason, where its row is). In the Vehicle, Event and Playback editors:
+**Ground**, **Axes**, **North arrow**, **Scene lighting**, **See-through body**,
+**Extents**, **Sprung CG**, **Total CG**, **Accelerometer path** and **Tire
+paths**. The Vehicle and Event editors add **Accelerometers**, **Connections**,
+**DyMESH body** and **DyMESH wheels** (the Mesh column of Scene Display's DyMESH
+overlay) and **Occ. Eq.** (occupant equipment: contact surfaces, airbags and
+belts); the Vehicle editor adds **Lamp gizmos**; the Event editor adds **Point
+cloud**, **CG path**, **Skidmarks** and the velocity vector; Playback adds the CG
+path, skidmarks, the velocity and collision-force vectors and the lamps. In the
+Environment editor: **Ground**, **Axes**, **North arrow**, **Scene lighting**,
+**Lamps** and **Point cloud**; in the Human editor **Ground**, **Axes**, **Scene
+lighting** and **Occ. Eq.**. **Point cloud** shows or hides the case's point
+cloud (the same switch as the eye on its row in the Outliner, saved with the
+case; greyed when the case has none). The row wraps when the viewport is narrow. **Phong** (smooth shading, the default), **Flat** (one normal
 per face, showing the real tessellation) and **Wireframe** (edges only, depth
 tested — what HVE calls Hidden Line). **Light Sources On** turns the sun's
 contribution off and on; with it off, the ambient light is raised so the scene
@@ -249,9 +255,14 @@ A loaded point cloud has a row of its own: its file name, its point count and an
 eye that shows or hides it. It has no drive switch, because a point cloud is a
 picture, never a surface.
 
-In the Environment editor the Outliner also has a **Lights** group, one row per
-light of the site. Click one to select it; in the 3-D view **G** moves it and
-**R** turns its aim.
+In the Environment and Event editors the Outliner also has a **Site lights**
+group, one row per light of the site. Each row's eye switches the light on or
+off (the same switch as **On** in Sky & Lights): off, it lights nothing in the
+view or the renders, and its mark stays, grayed. The group's eye switches them
+all. In the Environment editor, click a row to select the light; in the 3-D view
+**G** moves it and **R** turns its aim. The Event editor's viewport bar has
+**Lamps** (the lamps' light) and **Lamp gizmos**, which draws each site light's
+mark there too.
 
 In the Vehicle editor it also lists the selected vehicle's **Vehicle Lights** and
 **Vehicle Cameras** (cameras mounted on it); right-click Vehicle Cameras for

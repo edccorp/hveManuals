@@ -311,9 +311,10 @@ Now, let's set up the HVE Tire Blow-out Model.
 - In the *A1-R* column, check **Blown**.
 - Enter the *Blowout time (s)*, `3.0`.
 - Enter the *Deflation time (s)*, `0.2`.
-- Enter the *Stiffness factor*, `0.10`.
+- Enter the *Cornering stiffness factor*, `0.10`.
+- Enter the *Radial stiffness factor*, `0.10`.
 
-> **NOTE:** The Stiffness Factor reduces the tire's radial tire stiffness, cornering stiffness and camber stiffness.
+> **NOTE:** The Cornering Stiffness Factor reduces the tire's cornering and camber stiffness, and the Radial Stiffness Factor its radial stiffness. HVE has one Stiffness Factor for all three, so the tutorial gives both the same value.
 
 - Enter the *Rolling resist. factor*, `10`.
 

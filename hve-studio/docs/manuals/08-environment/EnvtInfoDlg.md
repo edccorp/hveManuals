@@ -35,6 +35,10 @@ N/S, E/W).
 
 **Elevation** — The site's elevation.
 
+**North offset (°)** — The compass bearing of the case's +X axis (0 = north,
+90 = east): HVE's *Angle of X-Axis*. It turns the North arrow and the sun;
+positions are unchanged.
+
 **Set from a pasted coordinate** — Paste a coordinate in decimal degrees, in
 degrees-minutes-seconds, or a map link; the box shows how it reads, and
 **Apply** sets Latitude and Longitude. A pair given longitude-first is

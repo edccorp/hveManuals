@@ -121,7 +121,11 @@ its inputs, but the site draws as flat ground and a vehicle whose geometry is
 missing draws — and, in DyMESH, collides — as a box. Put the files back beside
 the case, or add their folder under **Search folders** in the **Vehicle
 Geometry Library** (Vehicle › Editors › Vehicle Mesh › **Library...**). Its **Rescan**
-button re-reads the folders.
+button re-reads the folders and the vehicle databases, and **Where loose files
+come from** lists every folder it searches and why: `$HVE_VEHICLE_PATH`, a
+folder you added, or one built into the program. The same window lists the
+meshes stored inside the vehicle databases (`.hvedb`), by vehicle and by file
+name, so a mesh can be searched for and picked without a file on disk.
 
 The message lists each vehicle whose geometry is missing with a **Locate...**
 button to pick its file. **Add Search Folder...** adds a folder to the vehicle

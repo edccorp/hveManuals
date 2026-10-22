@@ -539,11 +539,14 @@ down). Left and right may differ.
 !!! note "HVE Studio"
     - A field left at 0 is derived from the vehicle's dimensions (wheelbase,
       CG to axle, track and CG height).
-    - Once the wheels carry their own X, the wheelbase, CG-to-axle
+    - An axle whose **Linked L/R** box is ticked (the default for a mirrored
+      pair) follows the dimensions: typing the wheelbase, an axle distance or
+      a track width moves its wheels, and nothing is greyed. Once an axle is
+      unlinked and its wheels carry their own X, the wheelbase, CG-to-axle
       distances, axle spacing and overhangs follow from them, as HVE derives
-      them, and are greyed in Size & Weight, showing the wheels' values; once
-      a wheel carries its own Y, that axle's track width is greyed the same
-      way. A note above them says so. Moving an end axle's wheels keeps the
+      them, and are greyed in Size & Weight, showing the wheels' values; an
+      unlinked axle whose wheels carry their own Y has its track width greyed
+      the same way. A note above them says so, and only then. Moving an end axle's wheels keeps the
       body's ends where they were: the overhang takes up the move. Overall
       Length still sets the body's length, and a typed weight split or axle
       weight moves the CG (as Move CG does) rather than the axles.

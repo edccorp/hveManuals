@@ -27,7 +27,7 @@ own window and afterwards in **Tools › Automatic Tools › Provenance**:
 | Kind | Means |
 | --- | --- |
 | **Stated** | You typed it, or a document you supplied states it |
-| **Looked up** | Taken from a named source: a vehicle database record, NHTSA's VIN decoder, a spec sheet, an NHTSA crash test file, an EDR report |
+| **Looked up** | Taken from a named source: a vehicle database record, NHTSA's VIN decoder, Canadian Vehicle Specifications, an NHTSA crash test file, an EDR report |
 | **Estimated** | Worked out by a named rule from named inputs, for example GEBOD's 50th-percentile body for an occupant whose weight nobody stated |
 | **Generic default** | The generic vehicle's own value, which the tool could not replace with this vehicle's |
 | **Unknown** | Nothing stated it. A placeholder stands in the case until you set it |
@@ -38,33 +38,17 @@ recorded as **Unknown**, and the window says which.
 
 ## Case documents stay on your computer
 
-Case Intake, the spec-sheet reader in Vehicle Package and EDR Import read
-documents through **your own AI tool**, not through HVE Studio:
+Case Intake and EDR Import share one row of buttons for getting their data in:
+**Enter it by hand**, **Open a file...** where the window reads files, and, in
+EDR Import, **Paste tables**. Press **Paste tables** and it opens a box with
+**Read** below it; pressing it again folds the box away and keeps what you
+pasted. In Vehicle Package the specifications are typed into their table.
 
-1. Each of these windows has the same row of buttons for getting its data in:
-   **Enter it by hand**, **Open a file...** where the window reads files, and
-   **Paste AI answer**. Press **Paste AI answer**: it opens a box, with
-   **Copy prompt for your AI tool** above it and **Read** below. Pressing it
-   again folds the box away and keeps what you pasted. **Copy prompt for your
-   AI tool** puts the prompt on the clipboard. It tells the tool exactly what to return (one JSON object), to
-   give every value with its place in the document, and to leave out anything
-   the document does not state.
-2. Give the prompt and the documents (a police report, a spec sheet, a CDR
-   report) to the AI tool you use.
-3. Paste its whole answer into the box and press **Read**. Text around the
-   answer, such as a sentence before it or code-fence marks, does no harm: the
-   window reads from the first `{` to the last `}`.
-
-HVE Studio calls no AI service and sends nothing anywhere; the documents go only
-where your own tool sends them. Vehicle Package has two network actions, each
-only when you press it: **Decode with NHTSA (online)**, which sends the VIN
-alone, and **Look up Canadian Vehicle Specifications (online)**, which sends the
-year, make and model.
-
-!!! warning "Check the answer"
-    An AI tool can misread a document. Each window shows every value beside
-    the citation the tool gave for it, so that it can be checked against the
-    page it names before it goes into the case.
+HVE Studio reads the documents you give it on your own computer and sends
+nothing anywhere. Vehicle Package has two network actions, each only when you
+press it: **Decode with NHTSA (online)**, which sends the VIN alone, and **Look
+up Canadian Vehicle Specifications (online)**, which sends the year, make and
+model.
 
 ## Vehicle Package
 
@@ -184,18 +168,11 @@ not use. Four things can fill the rows:
   but no wheelbase, so for a file fetched from it the share needs the
   **Wheelbase** row filled first (stated, or from vPIC); the note says so when
   it is missing. Load the file again once it is filled.
-- **Paste AI answer**, which opens **Copy prompt for your AI tool**, a box and
-  **Read**: give the prompt and the spec sheet (a manufacturer's sheet, a brochure, a Canadian
-  Vehicle Specifications page) to your AI tool and paste its answer. Each value
-  arrives with its unit and its place in the document, and the window converts
-  inches, millimeters, centimeters, meters and feet, and pounds and kilograms.
-  A front share may be given as a percentage, a fraction, or front and rear
-  axle weights. A value in a unit the window does not know, or one that cannot
-  be right for a road vehicle (a length of 189.5 m because the unit was
-  misread), is left out and named.
+- The table itself: type each value from a spec sheet, a brochure or a weigh
+  ticket, with where it is from in **Source**. A value typed is **Stated**.
 
-The NHTSA test file and the spec sheet replace any row they give a value for;
-the VIN decoder only fills empty rows.
+The NHTSA test file replaces any row it gives a value for; the VIN decoder only
+fills empty rows.
 
 **What stated specifications do.** A **database** vehicle keeps its own values:
 the specifications are recorded as *not applied*, and reconciling them is left
@@ -404,8 +381,8 @@ to the other axle; EDC's sheet takes the distance to the axle's own end.
 ## Case Intake
 
 **Tools › Automatic Tools › Case Intake...** builds one new event from a structured description
-of the case that your own AI tool extracted from the case documents (see
-[Case documents stay on your computer](#case-documents-stay-on-your-computer)).
+of the case, typed in from the case documents with where each value is stated
+(see [Case documents stay on your computer](#case-documents-stay-on-your-computer)).
 
 ### Case material
 
@@ -435,51 +412,25 @@ A number is never reused, even after its document is removed.
 Documents are not a solver input: adding one does not make saved results
 stale. Open is not available in the browser version.
 
-### Pasting the description
+### Entering the description
 
-Under **1. The case description** the window offers two routes.
-**Enter it by hand** starts from an empty description that you fill in under
-Review, value by value with where each is stated, and needs no AI tool. Or:
-
-1. Press **Paste AI answer**, then **Copy prompt for your AI tool**, and give
-   the prompt, with the police report, diagram, statements and inspection
-   notes, to your AI tool.
-2. Paste its answer into the box and press **Read** (enabled once the box
-   holds a `{ ... }` object). If it is not the answer the prompt asks for, the
-   window says why.
-
-When the case has documents, the prompt ends with their list by number, so
-the tool cites each value as the case does. The prompt asks for one JSON
-object holding the case ID; the road surface,
-friction, grade and conditions; each vehicle's label, type, year, make and
-model, weight, CG height, length, width and wheelbase, and its starting x, y,
-heading and speed; and the event sequence. It tells the tool to:
-
-- use only what the documents state, and give **null** for anything they do
-  not;
-- give every value with its source (*"Police report p. 2"*), and mark a value
-  **uncertain** where a document is unclear or two documents disagree;
-- give meters, kilograms, meters per second and degrees, saying in the source
-  when it converted mph, km/h or feet;
-- place x forward along the first vehicle's direction of travel and y to its
-  right, with the origin at the area of impact unless the diagram gives a
-  reference point, and headings with 0 along +x and positive turning right.
+Under **1. The case description**, **Enter it by hand** starts from an empty
+description with two vehicles, which you fill in under **Enter and review**,
+value by value with where each is stated (*"D2 p.3"*, *"Police report p. 2"*).
 
 ### Reviewing it
 
-The **Review** section shows how many values were stated and how many the
-source marked uncertain, and the **Engine** the event will use: the first
-method named anywhere in the event sequence, looked for in the order EDSMAC4,
-EDSMAC, EDCRASH, EDGEN, EDHIS, GATB, SIMON; with none named, SIMON. The line
-says which.
+The **Enter and review** section shows how many values are stated, and the
+**Engine** the event will use: the one chosen in its list, or SIMON when none
+is chosen. The line beside it says which.
 
 Then one table for the environment (**Road surface**, **Road friction (mu)**,
 **Road grade (%)**, **Weather / light**) and one per vehicle (**Year make
 model**, **Start x**, **Start y**, **Heading (deg)**, **Speed**, **Weight**,
 **Length**, **Width**, **Wheelbase**, **CG height**). Each row gives the value
-in the units set in Preferences or *not stated*, its kind (**Stated**,
-**Stated, uncertain**, **Entered** or **Unknown**) and its **Source**, the
-citation the tool gave. A row that sets nothing in the case, and is only kept
+in the units set in Preferences or *not stated*, its kind (**Entered** for a
+value typed, **Unknown** for one left empty) and its **Source**, where the
+value is stated. A row that sets nothing in the case, and is only kept
 with it as what the documents say, is tagged **(record)**: Road surface, Road
 grade and Weather / light always, and a vehicle's Weight, Length, Width,
 Wheelbase and CG height when a database vehicle is chosen for it. Hover over a
@@ -489,17 +440,15 @@ For each vehicle:
 
 - the check box before its label includes it, or leaves it out of the build;
 - **Vehicle data** chooses its data: the database records that match the year,
-  make and model the tool read (matched as in
+  make and model in its row (matched as in
   [Vehicle Package](#2-vehicle-data); hover over one for why it matched), or
-  the generic of its type. After correcting the year, make and model in its
-  row, press **Find in the database** beside the list to match the records
-  again;
-- its **type** is the one the answer states (car, pickup, SUV, van, truck,
-  trailer); with none it is a passenger car. The type is never guessed from the
-  make and model.
+  the generic of its type. After typing or correcting the year, make and model,
+  press **Find in the database** beside the list to match the records;
+- its **Type**, in the list beside its label (passenger car, pickup, van,
+  truck and the rest), is a passenger car until another is chosen. The type is
+  never guessed from the make and model.
 
-A value can be corrected in its row; a value typed there is marked
-**Entered**. Emptying a row makes it *not stated*.
+Emptying a row makes it *not stated*.
 
 ### Building
 
@@ -513,7 +462,7 @@ tool *Vehicle Package*). Nothing is built, and the status line says why, when
 no vehicle is included or the case has no room for another event or for these
 vehicles.
 
-| What the answer states | What happens |
+| What the description states | What happens |
 | --- | --- |
 | A starting position, heading or speed | Set in the event. One not stated is entered as **0** and recorded **Unknown**, and a red line under **Build** counts these placeholders: set them before running |
 | Weight, length, width, wheelbase, CG height | Stated specifications: they **scale a generic** vehicle as in [Vehicle Package](#stated-specifications). On a database vehicle (the review tags the rows **(record)**) they are recorded and not applied |
@@ -562,7 +511,7 @@ event and every engine. The list is in the **Aboard** section of the
 [Inertia / Mass dialog](../02-vehicles/VehInerDlg.md#aboard-occupants-and-cargo)
 (Vehicles panel › **Inertia** › **Edit...**), where each
 item has a name, a kind (occupant or cargo), a weight and a position from the
-vehicle's sprung-mass CG (x forward, y right, z up). Vehicle Package fills it
+vehicle's sprung-mass CG (x forward, y right, z down). Vehicle Package fills it
 when *Put the occupants and cargo aboard the vehicle* is ticked.
 
 The vehicle's own weight, CG and inertia stay those of the **empty** vehicle.
@@ -813,20 +762,16 @@ and event when either is renumbered, and goes when either is deleted.
 There are three ways in, in one row of buttons:
 
 - **Enter it by hand** — an empty record to type the report's pre-crash table
-  and delta-V into, row by row, as the report prints them, with no AI tool and
-  nothing to paste.
+  and delta-V into, row by row, as the report prints them.
 - **Open a file...** — the report as a PDF (a Bosch CDR report or a
-  manufacturer's), whose text is read and its tables rebuilt; a CSV,
+  manufacturer's), whose text is read and its tables rebuilt; or a CSV,
   tab-separated or text file holding its pre-crash and delta-V tables, each
   under its own header row (a CDR report's CSV export included; UTF-8 or
-  UTF-16 text); or a saved AI answer (`.json`). The CDR tool's own `.cdr` and
-  `.cdrx` files are not read: their data is encrypted. A PDF whose tables are
-  pictures has no text to read; read them by eye or with your AI tool.
-- **Paste AI answer** — opens a box: paste the report's tables, each with its
-  header row, or your AI tool's answer, and press **Read**. **Copy prompt for
-  your AI tool**, above the box, copies a prompt to give the tool with the report; it asks for one JSON answer
-  with the numbers copied exactly as printed (no interpolating, no unit
-  conversion, no sign change, no filled gaps).
+  UTF-16 text). The CDR tool's own `.cdr` and `.cdrx` files are not read: their
+  data is encrypted. A PDF whose tables are pictures has no text to read; read
+  them by eye and type them in with **Enter it by hand**.
+- **Paste tables** — opens a box: paste the report's tables, each with its
+  header row (comma, tab, pipe or `;` between the columns), and press **Read**.
 
 When the report holds several recorded events, a **Recorded event** list
 (each with its pre-crash and delta-V sample counts) chooses the one this crash

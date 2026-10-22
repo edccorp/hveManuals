@@ -509,7 +509,7 @@ The Collision Pulse data are not used by EDVSM.
 EDVSM supports the HVE Tire Blow-out Model. The inputs are the tire and duration for the blowout and stiffness and rolling resistance multipliers for the blown tire. The HVE Tire Blow-out Model is described in the HVE User's Manual (see Event Set-up options) and in reference 9.
 
 !!! note "HVE Studio"
-    The blow-out is set in **Event › Wheels**, *Tire Blowout* tab: one column per wheel, with *Blown*, *Blowout time (s)*, *Deflation time (s)*, *Stiffness factor* and *Rolling resist. factor*. The Wheels window notes that EDVSM reads the blow-out but not wheel damage. HVE Studio passes the blow-out to EDVSM, and the four blow-out events of the HVE tutorial reproduce HVE's own results ([Chapter 5](05-tutorial.md)). Wheel damage is not used by EDVSM.
+    The blow-out is set in **Event › Wheels**, *Tire Blowout* tab: one column per wheel, with *Blown*, *Blowout time (s)*, *Deflation time (s)*, *Cornering stiffness factor*, *Radial stiffness factor* and *Rolling resist. factor*. The Wheels window notes that EDVSM reads the blow-out but not wheel damage. HVE Studio passes the blow-out to EDVSM, and the four blow-out events of the HVE tutorial reproduce HVE's own results ([Chapter 5](05-tutorial.md)). Wheel damage is not used by EDVSM.
 
 EDVSM also supports the HVE Brake Designer. When the Brake Designer is used, the user can specify initial temperatures for the brake linings and drum. Refer to the HVE Brake Designer Manual for more information.
 

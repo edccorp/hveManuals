@@ -103,7 +103,7 @@ back or sides of the vehicle.
     **2-D** rows are **A**, **B** and **Kv** (Top and Bottom show "--") and
     whose **3-D** rows are HVE's 3-D node stiffness: **Constant**, **Linear**,
     **Quadratic** and **Cubic**, **Conversion Height**, **Saturation Crush**
-    and **Max Crush (not read)**; the 3-D columns are DyMESH's Front, Back,
+    and **Max Crush (graph extent)**; the 3-D columns are DyMESH's Front, Back,
     Top, Undercarriage, Left and Right zones. A graph above the table plots the
     selected column (click its header), per unit width (2-D) or per unit area
     (3-D). It says which engine reads each part: A and B are read by EDSMAC4,

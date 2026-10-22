@@ -113,17 +113,13 @@ The DyMESH Options dialog (Options menu) as shown in the deck contains:
       seconds; DyMESH registers no contact of that kind before the time.
     - *Contact Search*: **Search Option** (Automatic box size / Set box size /
       Search all vertices, which refuses the run) and **Box Size**.
-    - *Contact Model*: **Smoothing**, **Restitution Model**, **Pushback
-      Direction** and **DyMESH Version** (1–4; 4 turns pushback reduction on).
-    - *Restoration*: **Force contact forces into the XY plane** and four
-      restoration checkboxes.
+    - *Contact Model*: **Smoothing**, **Restitution Model** and **DyMESH
+      Version** (1–4; 4 turns pushback reduction on).
+    - *Restoration*: **Force contact forces into the XY plane**.
     - *Inter-Vehicle Contact (fallback)* and the *Per-pair override* grid
       (Friction and Relaxation Length for each ordered pair,
       then a *vehicle vs Environment* row for each vehicle: HVE's last slot,
       the vehicle's body against the ground and site).
-    - *Carried, not consumed by this engine revision* (collapsed): Stop Search
-      After, Search Method, Inside-Vehicle Test, Inside-Polygon Test and the
-      stored struct version.
 
     **Smoothing** is shown only when a case is not on HVE's *Version 2* (stored
     1), which every new event uses: HVE's labels are one ahead of the stored
@@ -131,11 +127,11 @@ The DyMESH Options dialog (Options menu) as shown in the deck contains:
     and 1 only; a case that states 2 (or anything else) would register no
     collision at all, so the solver runs it with 1 and the run status says so.
 
-    Settings marked *Carried, not consumed* (Pushback Direction, the four
-    restoration checkboxes, Large pushback and the collapsed group) are stored
-    and handed to the engine but read by no code in HVE's DyMESH source or in
-    HVE Studio, so they do not change a result. **Restitution Model** only labels
-    the report. **Tow Vehicle / Trailer Contact** is **Contact a vehicle's own
+    HVE's pushback direction, its four restoration checkboxes, the large
+    pushback distance, its four search selectors and the struct version are
+    not offered: each is handed to the engine and read by no code, in HVE's
+    DyMESH source as here, so none changes a result. **Restitution Model** only
+    labels the report. **Tow Vehicle / Trailer Contact** is **Contact a vehicle's own
     trailer** in Event Information › Method Options (SIMON Options), off by
     default as in HVE. There is no *Timesteps* group here: the
     **Collision Timestep** is set in the **Simulation** panel.

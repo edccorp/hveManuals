@@ -519,7 +519,7 @@ The specific Event Set-up data used by SIMON are defined in Table 2-7.
 | Vehicle Mesh (DyMESH Only) | Weld Distance, Tessellation Length, Water-tight Status, Inter-vehicle Friction, Restitution |
 | Payload | Location, Weight and roll, pitch and yaw moments of inertia of payload |
 | Accelerometers | Vehicle-fixed x, y, z coordinates for up to five accelerometers |
-| Wheels, Blow-out | Start time and Duration, stiffness factor, and rolling resistance factor for tire blow-out model |
+| Wheels, Blow-out | Start time and Duration, cornering and radial stiffness factors, and rolling resistance factor for tire blow-out model |
 | Wheels, Damage | Start time and Duration, Vehicle-fixed change in Wheel Coordinates and Camber, Percent of Lock-up Torque |
 | Wheels, Brake | Initial Lining/Drum Temperatures, Stroke, and Start Time, Duration and Percent of Brake Failure |
 | Wheels, Tire-Terrain | Tire-Terrain Model, Radial Spring Parameters, Sidewall Impact Parameters |
@@ -601,7 +601,7 @@ SIMON supports a user-entered collision pulse table, available from **Event › 
 *(updated: the Fifth Edition manual described only the force and moment table type.)*
 
 !!! warning "Not in HVE Studio"
-    HVE Studio passes only the **force and moment** table to SIMON. In the Collision Pulse dialog this is the **Impulse** entry of the **Pulse type** list, with the **Impulse centre X/Y/Z** (the vehicle-fixed point the force acts at; all zero applies it at the CG, producing no moment from the force). A **Position** or **Velocity** table is kept in the case but is not handed to SIMON, and the dialog says so; such a pulse does not move the vehicle. A pulse can also be generated from another event that contains the same vehicle.
+    HVE Studio passes only the **force and moment** table to SIMON. In the Collision Pulse dialog this is the **Impulse** entry of the **Pulse type** list, with the **Impulse centre X/Y/Z** (the vehicle-fixed point the force acts at; all zero applies it at the CG, producing no moment from the force). On a SIMON event the other three types (**Position**, **Velocity**, **Acceleration**) are greyed in the list, since SIMON reads the impulse table only; one stored by an older case is kept but not handed to SIMON, and the dialog says so. A pulse can also be generated from another event that contains the same vehicle.
 
 #### Vehicle Mesh
 
@@ -713,7 +713,7 @@ The DyMESH Options dialog contains the following options:
     **Smoothing.** A new event always uses HVE's *Version 2* (stored 1), so HVE Studio shows no Smoothing line for it. The line appears only for an imported case that states *Version 1* (stored 0), which runs as HVE ran it, or a stored value at which DyMESH finds no contact, which runs as Version 2 and is said so in the window and the run status.
 
 !!! note "HVE Studio"
-    **Options that reach no engine.** Several DyMESH options are stored and travel with the case but are not read by this revision of the DyMESH source — in HVE or in HVE Studio. HVE Studio labels each in the dialog "Carried, not consumed": **Pushback Direction**; **Do not restore toward the OTHER vehicle's CG**, **Do not restore toward THIS vehicle's CG** and **Do not deform a single vertex**; **Do not restore over a large distance** and its **Large pushback** distance; and the search-related settings grouped under **Carried, not consumed by this engine revision** at the bottom of the dialog. In the per-pair grid, **Restitution Energy** is shown disabled for the same reason. **Restitution Model** only labels the run in the Program Data report. The event-level **Friction** and **Relaxation Length** under *Inter-Vehicle Contact (fallback)* are used only by a vehicle pair that states no values of its own in the per-pair grid below them; HVE's cases fill that grid, so on an imported case the per-pair values are the ones that count.
+    **Options that reach no engine.** HVE's DyMESH dialog has several options that this revision of the DyMESH source does not read, in HVE or in HVE Studio: the pushback direction, the three "do not restore / deform" restoration checkboxes, "do not restore over a large distance" and its distance, and the four search selectors. HVE Studio does not offer them, and an imported case's values for them are not kept. **Restitution Model** only labels the run in the Program Data report. The event-level **Friction** and **Relaxation Length** under *Inter-Vehicle Contact (fallback)* are used only by a vehicle pair that states no values of its own in the per-pair grid below them; HVE's cases fill that grid, so on an imported case the per-pair values are the ones that count.
 
 ### Simulation Controls
 

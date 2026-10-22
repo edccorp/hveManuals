@@ -18,7 +18,7 @@ One table with a column per face: **Front**, **Rear**, **Top**, **Bottom**, **Le
 | 2-D: **A** and **B** | EDSMAC4 |
 | 2-D: **Kv** | EDSMAC; EDVSM, for the body against the ground |
 | 3-D: **Constant**, **Linear**, **Quadratic**, **Cubic**, **Conversion Height**, **Saturation Crush** | SIMON (DyMESH) only |
-| 3-D: **Max Crush (not read)** | no engine |
+| 3-D: **Max Crush (graph extent)** | no engine (the graph's span) |
 
 SIMON does not read A, B or Kv; EDCRASH reads none of this window (it takes A and B from the event's damage profile).
 
@@ -37,8 +37,8 @@ A face whose four terms are all zero has its **Constant** cell tinted red, and i
 ### Conversion Height
 The conversion height HVE uses for the zone when relating its 2-D (A/B) stiffness to the 3-D form.
 
-### Saturation Crush, Max Crush (not read)
-Saturation Crush caps each node's deflection in DyMESH; 0 means none. **Max Crush (not read)** is recorded with the vehicle but no engine reads it, as in HVE's own source, and the note under the table says so: it does not limit the crush.
+### Saturation Crush, Max Crush (graph extent)
+Saturation Crush caps each node's **force** in DyMESH: past it the pressure stays at its value there while the node keeps crushing (the deflection is not limited); 0 means none. **Max Crush (graph extent)** is recorded with the vehicle and sets how far the graph above the table runs, as it does in HVE's own dialog; no engine reads it, as in HVE's own source, and the note under the table says so: it does not limit the crush.
 
 ## The graph
 

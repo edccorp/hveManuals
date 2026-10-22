@@ -80,6 +80,7 @@ and **Import** reads it.
 | Field | Meaning |
 | --- | --- |
 | **Colour** | **Auto (file colour, else intensity, else elevation)**, **File colour**, **Intensity**, **Elevation**, **Flat grey**, or **Classification** (the file's own point classes in the usual survey colours: ground brown, vegetation green, buildings red). A mode the file cannot provide falls back visibly. |
+| **Edit in Shader Editor** | Opens the Shader Editor on the cloud, to adjust its colors with a node tree — hue, saturation, brightness and contrast, gamma, invert, a color ramp — starting from the color chosen in **Colour** (see *Coloring the points with nodes* below). When the cloud has a material the panel names it. |
 | **Point size (px)** | The size of each dot on screen |
 | **Visible** | Show or hide the cloud |
 | **Eye-dome lighting (shade by depth)** | Darkens each point where its neighbours on screen are nearer the camera, so kerbs, steps and edges read as shape instead of flat colour. **Strength** sets how dark. Drawing only, and a setting of this computer rather than of the case. |
@@ -87,6 +88,25 @@ and **Import** reads it.
 
 Points are drawn as fixed-size dots: they do not get denser as you approach.
 They are lit by the scene's sun, sky and lamps, but not shadowed.
+
+### Coloring the points with nodes
+
+The cloud can wear a **node material**, as a vehicle or a road surface can
+(see *Point clouds* in [Materials and the Shader Editor](01-materials-and-shader-editor.md)).
+Press **Edit in Shader Editor**, or choose **Point cloud** under *Survey scan*
+in the Shader Editor's object list, then **+ New**: the new material passes the
+point's color straight through, so nothing changes until a node is added. Put
+a **Hue/Saturation/Value** node between the **Color Attribute** and the
+Principled BSDF's **Base Color** to shift the hue or wash the colors out; a
+**Brightness/Contrast**, **Gamma** or **Invert Color** node works the same way.
+The **Point Info** node gives each point's **Intensity**, its **Elevation**
+across the cloud (0 lowest, 1 highest) and its **Height** in meters, to drive a
+**Color Ramp** of your own.
+
+The node tree starts from the color **Colour** gives the point, so the two work
+together: choose *Intensity*, then ramp it; or keep the file's colors and lift
+their contrast. With no material the cloud draws exactly as before. Display
+only, like every material; it is saved with the case.
 
 ## Measuring on the scan
 

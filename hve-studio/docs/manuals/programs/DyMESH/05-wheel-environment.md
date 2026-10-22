@@ -82,6 +82,25 @@ During initialization one mesh is built per selected wheel:
 | Near-rim rings | average of rim and tread stiffness | 0.75 | 0.05 | 0.05 | wheel width |
 | Tread ring | tire *Initial Ride Rate* ÷ contact-patch area | 0.75 | 0.05 | **1.00** | static loaded radius ÷ 4 |
 
+!!! note "HVE Studio"
+    HVE Studio builds the wheel as a **tire section** rather than HVE's six-ring
+    cylinder: **120 slices** around (3° apart), and across them a hub ring, a
+    rim ring, three sidewall rings bulging to 1.15 × the half-width and three
+    rounded shoulder rings on each side, and five rings across the tread --
+    2306 vertices and 4608 triangles a wheel. Each vertex is marked rim,
+    sidewall or tread, and that role sets its material.
+
+    The tread is at the tire's **unloaded radius**, the size of the tire
+    itself. HVE built it at 0.98 × the static loaded radius, a workaround so
+    the mesh did not meet the road until the tire was compressed past its static
+    deflection. HVE Studio does not need it: a DyMESH wheel's tread on the
+    ground is carried by the tire's **tread springs** (Tire Contact Model 4), and
+    the environment neither pushes on nor moves a mesh node that the tread
+    springs carry (the tread everywhere, and the sidewall on a road-like
+    surface). So the mesh can be the tire's own size where it meets a curb face
+    or another vehicle, which with HVE's radius it was not (1.1 in smaller on a
+    typical passenger-car tire).
+
 Restitution here controls **permanent deformation**: a coefficient of 1.0
 springs the vertex fully back each step (elastic), while 0.05 retains ~95% of
 the crush (plastic). Against the environment the tread is therefore fully
@@ -147,7 +166,13 @@ as the last collision partner of every vehicle, in this order:
      the wheel mesh (contact search, penetration, node force
      $F = \left(A + B\,\delta + C\,\delta^{2} + D\,\delta^{3}\right) A_v$,
      restitution, friction), with two wheel-specific rules:
-     - a blown tire's stiffness multiplier is applied to the wheel mesh;
+     - a blown tire's stiffness multiplier is applied to the wheel mesh: the
+       sidewall vertices at the multiplier, the tread at half of it, the rim
+       unchanged. In HVE Studio it is the tire's **radial** stiffness factor,
+       ramped over the deflation time as the tire's own radial stiffness is;
+       HVE used its one stiffness factor and applied it in full at the
+       blow-out time. The tread springs that carry a DyMESH wheel's ground
+       load take the same radial factor, so a blown DyMESH tire sinks;
      - **hub, rim, and near-rim vertices produce no vertical force** — their
        earth-fixed z force component is zeroed, so only the tread ring carries
        vertical load. Longitudinal and lateral forces still come from every
@@ -301,9 +326,9 @@ tread/rim contact takes over the shear loads through its own friction model.
 
 | Parameter | Value / source | Meaning |
 |---|---|---|
-| Angular slices | 80 | Angular increments in the wheel mesh |
-| Wheel mesh size | 482 verts / 960 triangles | Per wheel |
-| Tread radius | 0.98 × static loaded radius | Outer ring radius |
+| Angular slices | 80 (HVE Studio: 120) | Angular increments in the wheel mesh |
+| Wheel mesh size | 482 verts / 960 triangles (HVE Studio: 2306 / 4608) | Per wheel |
+| Tread radius | 0.98 × static loaded radius (HVE Studio: the unloaded radius) | Outer ring radius |
 | Tread restitution vs. environment | 1.0 | Fully elastic (no permanent tire crush) |
 | Rim restitution | 0.05 | Plastic (permanent rim deformation) |
 | Wheel contact friction | 0.75 (tread/near-rim), 0.55 (rim disks) | Fixed values |

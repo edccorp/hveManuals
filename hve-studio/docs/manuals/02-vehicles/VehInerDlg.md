@@ -66,7 +66,7 @@ One row per item, shown once there is one:
 - **x / y / z** — the item's position from the vehicle's CG (its sprung-mass CG): x forward, y right, **z up**.
 - **Remove** — deletes the item.
 
-**Add occupant** and **Add cargo** add a row (named *Occupant n* or *Cargo n*). Each item is a point mass. A line under the list gives the number of items and their weight, the **loaded** weight, and how far the CG moves (x, y and z, z up) when the load is added to the vehicle.
+**Add occupant** and **Add cargo** add a row (named *Occupant n* or *Cargo n*). Each item is a point mass. A line under the list gives the number of items and their weight, the **loaded** weight, and how far the CG moves (x, y and z, z down) when the load is added to the vehicle.
 
 ## Close
 
@@ -74,9 +74,10 @@ Values take effect as they are typed, so the dialog has a single **Close** butto
 
 If the sprung mass comes out zero or negative (the total mass is less than the tire weights), the dialog says so in orange and the Total columns show the sprung values until it is corrected.
 
+**Auto Update Inertia When Weight Changes** (a checkbox under **Rotational Inertia**, off by default and kept as your own setting, not the vehicle's, as in HVE): a typed weight or mass, total or sprung, here or as **Total Weight** in **Size & Weight**, multiplies the **total** roll, pitch and yaw inertias by the new total mass over the old one; the sprung values follow by the parallel axis theorem and the XZ product is kept. An axis with nothing stated uses the estimate, which follows the mass anyway.
+
 !!! warning "Not in HVE Studio"
     - **Basic... / Complex...**: both columns are always shown.
-    - **Auto Update When Weight Changes**: inertias are not rescaled when the weight changes. A vehicle without stated inertias uses the estimate described above, which follows the mass.
     - Weight and mass are converted with standard gravity (9.80665 m/s²), not with the gravity set in the Environment Editor.
 
 !!! tip "New in HVE Studio"

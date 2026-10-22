@@ -14,7 +14,7 @@ Check this box if the vehicle has a payload. When unchecked, all remaining field
 ## Location
 
 ### X, Y, Z
-The X, Y and Z distances from the vehicle's center of gravity to the payload's center of gravity: +X forward, +Y right and **+Z up**. Unlike the SAE vehicle frame, Z is measured upward, so a load above the CG has a positive Z.
+The X, Y and Z distances from the vehicle's center of gravity to the payload's center of gravity, in the SAE vehicle frame: +X forward, +Y right and **+Z down** (the field reads **Z down**), as in HVE. A load above the CG has a negative Z.
 
 ## Mass / Weight
 

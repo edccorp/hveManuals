@@ -28,12 +28,12 @@ last:
 
 | Item | What it does |
 |---|---|
-| **Case Intake...** | Builds an event from the case documents, read by your own AI tool |
+| **Case Intake...** | Builds an event from the case documents, typed in with where each value is stated |
 | **Quick Case (Text)...** | Builds a case from a typed sentence |
 | **Vehicle Package...** | Builds a case vehicle from its VIN or year, make and model, its stated specifications, and who and what it carried |
 | **Crush Stiffness from Crash Tests...** | CRASH3 A, B and G for the active vehicle from staged barrier tests, typed in, read from an NHTSA test file, or found with **Search NHTSA (online)** or fetched by test number from NHTSA's database; shows the side's stiffness now beside the tests' before you apply it. Also opened by **From crash tests...** in Crush Stiffness |
 | **Crush Profile from Scan...** | The crush depths C1..Cn, damage width and damage offset of a vehicle of the active event (chosen with the vehicle picker at the top), measured off a scan of the damaged vehicle against the vehicle's own 3-D body (the default), an exemplar scan, a string line across the face's undamaged ends, or a plane at the vehicle's exterior extent. Enabled only while the active event is EDCRASH, the one method that reads a crush profile. Also opened by **Measure from a scan...** under Measured Crush in the Event editor, which selects its own vehicle |
-| **EDR Import...** | An event data recorder's pre-crash record (a CDR report PDF, its tables as CSV or text, typed in by hand, or your AI tool's answer) into a vehicle of the active event; for SIMON, a driver solved so the run follows the recorded speed; and the recorded yaw rate, accelerations and delta-V against the run's |
+| **EDR Import...** | An event data recorder's pre-crash record (a CDR report PDF, its tables as CSV or text, pasted, or typed in by hand) into a vehicle of the active event; for SIMON, a driver solved so the run follows the recorded speed; and the recorded yaw rate, accelerations and delta-V against the run's |
 | **Provenance...** | Where each value set by those tools came from |
 
 Automatic Tools, Monte Carlo Analysis and Motorcycle Analysis are not in the
@@ -75,11 +75,10 @@ is listed with where it came from. See
 
 **Menu Option:** Tools › Automatic Tools › Case Intake...
 
-**Description:** Copy the prompt, give it with the case documents to your own
-AI tool, and paste its answer. Every value is listed with its citation and
-whether it was stated; choose each vehicle's data, then **Build** adds one new
-event with those vehicles and their starting conditions. HVE Studio sends
-nothing anywhere. See
+**Description:** Type in what the case documents state (the engine, the
+road, each vehicle), with where each value is stated; choose each vehicle's
+data, then **Build** adds one new event with those vehicles and their starting
+conditions. HVE Studio sends nothing anywhere. See
 [Case Intake](../../new-features/12-case-intake-and-vehicle-data.md#case-intake).
 
 ---
@@ -102,7 +101,7 @@ field has been changed by hand since. The records are saved with the case. See
 **Menu Option:** Tools › Automatic Tools › EDR Import...
 
 **Description:** Read an EDR report's pre-crash record (open the report's PDF,
-or its tables as CSV or text; paste its tables or your AI tool's answer; or
+or its tables as CSV or text; paste its tables; or
 enter it by hand) for the vehicle chosen at the top of the window, in the
 active event, and set its initial speed and its throttle, brake and steering
 tables from it, with the recorder time the simulation starts at. For a SIMON

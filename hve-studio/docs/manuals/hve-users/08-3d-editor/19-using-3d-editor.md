@@ -45,6 +45,7 @@ The mouse controls follow Blender's conventions:
 | Action | Result |
 |---|---|
 | Left-button drag on empty space | Orbit the camera about its target |
+| Left click on empty space | Deselect: the selected vehicle body, lamp, ghost or surface is no longer selected (the vehicle stays the one the editor shows) |
 | Right-button drag | Pan |
 | Mouse wheel | Zoom in and out |
 | Middle-button drag | Orbit |

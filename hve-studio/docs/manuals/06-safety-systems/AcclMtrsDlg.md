@@ -35,20 +35,12 @@ A name for the accelerometer, used in the list.
 
 ## Mount Position X / Y / Z
 
-Coordinates of the accelerometer relative to the vehicle CG: X forward,
-Y right, **Z up**.
+Coordinates of the accelerometer relative to the vehicle CG, in the
+vehicle-fixed SAE frame: X forward, Y right, **Z down** (the field reads
+**Z down**). A point above the CG has a negative Z.
 
-!!! note "HVE Studio"
-    HVE's vehicle-fixed z axis points down; this dialog's Z is measured
-    **upward** from the CG and is converted to HVE's frame for the run. A point
-    above the CG has a positive Z here.
-
-## Reference Frame
-
-!!! tip "New in HVE Studio"
-    **Reference Frame** (Vehicle Body or Global (Inertial)) is stored with the
-    accelerometer, but no physics program or output reads it: every
-    accelerometer is passed to the run with its position only.
+An accelerometer is a point on the vehicle body: the programs report the
+motion of that point. There is no reference-frame choice, as in HVE.
 
 !!! warning "Not in HVE Studio"
     - **Device In Use**: an accelerometer in the list is in use.

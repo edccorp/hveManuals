@@ -70,10 +70,10 @@ With **View From** set to a vehicle, the list is **Aim** instead:
 Below these:
 
 - **Onboard Mount** (View From cameras) — **Mount X fwd**, **Mount Y right**,
-  **Mount Z up**: where the camera sits, measured from the vehicle's CG in the
-  vehicle's own frame. On an onboard camera the mouse wheel dollies by editing
+  **Mount Z down**: where the camera sits, measured from the vehicle's CG in the
+  vehicle's own frame (SAE: z down, so a mount above the CG is negative). On an onboard camera the mouse wheel dollies by editing
   these rows.
-- **Aim Point** — **Aim X fwd / Y right / Z up**: where the camera looks,
+- **Aim Point** — **Aim X fwd / Y right / Z down**: where the camera looks,
   offset from the CG of the Look At vehicle (or of its own vehicle, for an
   onboard camera). **Look ahead** sets 30 m ahead at about eye height; **Aim at
   the vehicle** sets the CG, 0.7 m up.

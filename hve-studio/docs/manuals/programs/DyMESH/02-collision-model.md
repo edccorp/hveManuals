@@ -88,13 +88,11 @@ best-of-two, or best-of-all candidates. These are exposed on the **Advanced**
 tab of the DyMESH Options dialog.
 
 !!! note "HVE Studio"
-    These selectors — **Stop Search After**, **Search Method**,
-    **Inside-Vehicle Test** and **Inside-Polygon Test** — are under *Carried,
-    not consumed by this engine revision* at the bottom of **Event › DyMESH
-    Options**. Each is passed to the engine and stored in an engine variable
-    that no code reads, so changing it does not change a result. This is
-    faithful to HVE: HVE's own DyMESH source behaves the same way. They are
-    kept so that a case round-trips unchanged.
+    These selectors (HVE's Stop Search After, Search Method, Inside-Vehicle
+    Test and Inside-Polygon Test) are not offered. HVE passes each to the
+    engine, where it is stored in a variable no code reads, so none of them
+    changes a result, in HVE's DyMESH source or here. HVE Studio hands the
+    engine HVE's own defaults for them.
 
 ### Restoration (pushback)
 
@@ -110,18 +108,15 @@ selected. Under Version 3 the reduction is not applied.)*
 
 !!! note "HVE Studio"
     Pushback reduction follows the **DyMESH Version** field in Event › DyMESH
-    Options (on only at 4). The restoration options in the same dialog do not
-    change the restoration, in HVE's engine or in HVE Studio:
-
-    - **Pushback Direction** and **Do not restore over a large distance** (with
-      its **Large pushback** distance) are stored in engine variables that no
-      code reads back.
-    - **Do not restore toward the OTHER vehicle's CG**, **Do not restore toward
-      THIS vehicle's CG** and **Do not deform a single vertex** are read only by
-      a routine that is commented out in its entirety in HVE's DyMESH source.
-
-    The dialog marks all of them *Carried, not consumed*; they are kept so a
-    case round-trips.
+    Options (on only at 4). The *Restoration* section holds one setting,
+    **Force contact forces into the XY plane**. HVE's other restoration
+    options are not offered, because none changes the restoration in HVE's
+    engine either: the pushback direction and "do not restore over a large
+    distance" (with its distance) are stored in engine variables that no code
+    reads, and "do not restore toward the other / this vehicle's CG" and "do
+    not deform a single vertex" are read only by a routine that is commented
+    out in its entirety in HVE's DyMESH source. An imported case's values for
+    them are not kept.
 
 !!! note "HVE Studio: a wheel is pushed back by its true depth"
     HVE uses one restoration direction for the whole contact pair: the
@@ -224,7 +219,8 @@ third-order curve fit.
     **Crush Stiffness** dialog (Vehicle › Editors › Crush Stiffness...), one
     collapsible block per body zone — Front, Right, Back, Left, Top and
     Undercarriage — each with **Constant**, **Linear**, **Quadratic**,
-    **Cubic**, **Conversion Height**, **Saturation Crush** and **Max Crush**.
+    **Cubic**, **Conversion Height**, **Saturation Crush** and **Max Crush**
+    (the graph's span only: no engine reads it, as in HVE's source).
     There is no $K_v$ field in this section (the four CRASH3 side blocks above
     it carry $A$, $B$ and $K_v$ for the 2-D engines, and DyMESH does not read
     them). The four coefficients and the lengths are shown in the units set in

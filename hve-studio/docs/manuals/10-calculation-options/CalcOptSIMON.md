@@ -161,10 +161,10 @@ overrides, are in **Event › DyMESH Options...**.
     In the DyMESH Options dialog the third search option, *Search all vertices
     (refuses the run)*, stops the run at setup (stop code −5400), in HVE as
     well. Several
-    of HVE's DyMESH selectors — *Stop Search After*, *Search Method*,
-    *Inside-Vehicle Test*, *Inside-Polygon Test*, the pushback direction and
-    some restoration options — are carried to the engine but read by nothing,
-    in HVE as well; the dialog labels them *Carried, not consumed*.
+    of HVE's DyMESH selectors (Stop Search After, Search Method, the
+    inside-vehicle and inside-polygon tests, the pushback direction and some
+    restoration options) are read by nothing in HVE's engine, so the dialog
+    does not offer them.
 
 !!! note "HVE Studio"
     The DyMESH collision model has been updated in HVE Studio: every

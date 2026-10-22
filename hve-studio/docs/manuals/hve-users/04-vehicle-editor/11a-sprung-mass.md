@@ -67,11 +67,10 @@ HVE's Inertial Properties dialog also includes a feature that automatically
 updates the rotational inertias when the weight is changed (described
 below).
 
-!!! warning "Not in HVE Studio"
-    HVE Studio has no **Auto Update When Weight Changes** option: a stated
-    rotational inertia is left unchanged when the weight is edited. Scale
-    the inertias yourself if the mass distribution is to be kept (an
-    *estimated* inertia follows the mass automatically).
+!!! note "HVE Studio"
+    **Auto Update Inertia When Weight Changes** (a checkbox under **Rotational Inertia**, off by default and kept as your own setting, not the vehicle's, as in HVE): a typed weight or mass, total or sprung, here or as **Total Weight** in **Size & Weight**, multiplies the **total** roll, pitch and yaw inertias by the new total mass over the old one; the sprung values follow by the parallel axis theorem and the XZ product is kept. An axis with nothing stated uses the estimate, which follows the mass anyway.
+    Unticked, a stated rotational inertia is left unchanged when the weight
+    is edited.
 
 ![Figure 11-2](../images/hvn-04-inertia-mass.png)
 *Figure 11-2: Inertia / Mass dialog, with its Total and Sprung columns.*
@@ -114,7 +113,9 @@ $I_{Sx}$, $I_{Sy}$ or $I_{Sz}$, is updated using the parallel axis theorem:
     I_S = I_T − Σ(n=1..NumAxles) (I_U + m_U * r_U²)
 
 In HVE, if the *Auto Update When Weight Changes* checkbox is checked, the
-rotational inertias are updated as follows (not in HVE Studio):
+rotational inertias are updated as follows. (HVE's own code does (b) for
+either weight -- it always scales the totals by the total-mass ratio and
+re-derives the sprung values -- and so does HVE Studio.)
 
 a) If the sprung weight is edited, the updated sprung rotational inertias
 are:
@@ -325,12 +326,31 @@ Vehicle Mesh window holds the rest, in four tabs.
 **File & Placement**
 
 - **Mesh File** — the 3-D model. **…** browses for a file; **Library…**
-  searches the vehicle geometry library by name. The library lists the
-  vehicle databases' bodies first, by the vehicle they belong to (year, make
-  and model, with the database under **From**), then the files in its search
-  folders; a body file a database already lists is not listed again. A body
-  from a database shows in Mesh File by that name, with the stored reference
-  in its tooltip, and is changed with **…**, **Library…** or **Clear**. HVE's `.h3d` files, Open
+  opens the **Vehicle Geometry Library**, one list with a filter box that
+  matches a vehicle's year, make and model, a file name, a database or a
+  folder. The list has three groups:
+    - *Database bodies, by vehicle* — the body of every vehicle in the vehicle
+      databases, `EDCVehicles.hvedb` and your own `.hvedb` files included,
+      named by year, make and model, with the database under **From**.
+    - *Database geometry, by file name* — every mesh stored inside a `.hvedb`,
+      including meshes that no vehicle uses, with the database under **From**.
+    - *Loose files in the search folders* — the geometry files in the folders
+      the library searches. A file with the same name as a mesh a database
+      stores is not listed, because that name always opens the database's
+      mesh.
+
+    Picking a database body or a database mesh stores a reference to that exact
+    stored mesh (its database and content hash), as a vehicle picked from the
+    database does. A body from a database shows in Mesh File by that name, with
+    the stored reference in its tooltip, and is changed with **…**, **Library…**
+    or **Clear**. The line above the list counts each group. When the license
+    refuses a database, or withholds some of its vehicles, the window says which
+    database and why instead of showing a count of zero. **Rescan** re-reads the
+    vehicle databases and the search folders. Under **Search folders** you add or
+    remove folders, and **Where loose files come from** lists every folder
+    searched, in order, with where it came from: `$HVE_VEHICLE_PATH`, a folder
+    you added, or a folder built into the program. (HVE keeps all vehicle
+    geometry in one folder, `SupportFiles\Images\Vehicles`.) HVE's `.h3d` files, Open
   Inventor/VRML (`.iv`, `.wrl`), `.obj`, glTF (`.gltf`, `.glb`) and
   point-cloud scans (`.las`, `.ply`, `.e57`, `.xyz`, `.pts`) are read. With a
   display mesh set (Display tab), this section is headed **Collision Mesh
@@ -970,23 +990,25 @@ steps:
 1. Choose **Vehicle › Editors › Aerodynamic Drag** (or Vehicles panel › Components ›
    Aerodynamic Drag…). The Aerodynamic Drag dialog will be
    displayed.
-2. The four surfaces, **Front**, **Rear**, **Left** and **Right**, are the
-   table's columns (by default, the front surface has already been assigned
-   those properties associated with velocity-dependent air drag).
+2. HVE's eight surfaces are the columns of two tables: **Body Surfaces**
+   (**Front**, **Back**, **Left** and **Right**) and **Top, Bottom and
+   Devices** (**Top**, **Bottom**, **Front Device** and **Back Device**). By
+   default, the front surface has already been assigned those properties
+   associated with velocity-dependent air drag. The **Read By** row under each
+   surface names the programs that read it (SIMON every installed surface;
+   EDVSM only the Front surface's drag coefficient and area), and **Air From**
+   the air it answers to (Top and Bottom act only while the vehicle rises or
+   falls).
 3. View and/or edit the desired properties, one row each: **Drag Device
    Installed**, **Drag Coef**, **Lift Coef**, **Side Coef**, **Surface
    Area** and **Center of Pressure X**, **Y** and **Z**.
 4. Press **Close**.
 
-!!! warning "Not in HVE Studio"
-    HVE Studio offers four surfaces — Front, Rear, Left and Right. HVE's Top,
-    Bottom, Front Device and Back Device surfaces have no control.
-
 The Aerodynamic Drag parameters are described below.
 
 - **Surface Option List** — In HVE, assigns the selected surface (*Front,
   Right, Back, Left, Top, Bottom, Front Device, Back Device*). HVE Studio has no
-  surface selector: its four surfaces are the dialog's columns.
+  surface selector: its eight surfaces are the dialog's columns.
 - **Device Installed** — Switch that activates the selected surface.
 - **Drag Coefficient** — Assigns the properties resisting motion due to
   dynamic air pressure acting on the selected surface in the direction of

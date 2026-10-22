@@ -33,7 +33,9 @@ hosted and the 3-D view beside it.*
    (EDCRASH, EDSMAC and EDSMAC4, EDGEN, EDHIS, SIMON, EDVSM, GATB or the
    single-track model), the one **Method Options...** in Event Information opens.
    A method with no options says so. Pressing **Method Options...** on the Event
-   stage brings you here.
+   stage brings you here. For SIMON, once **Enable DyMESH** is ticked, the stage
+   has two tabs: **SIMON Options** and **DyMESH Options** (the same window as
+   **Event › DyMESH Options...**).
 3. **Positions**: Event Information's vehicle section by itself (no
    collapsing header): each vehicle's start state (position, velocity, Auto
    Position, advanced initial state), its **Named Positions** list, and for
@@ -46,14 +48,14 @@ hosted and the 3-D view beside it.*
    vehicle's event data recorder record, and for SIMON a driver solved so the run
    follows the recorded speed. The solve keeps running while another stage or tab
    is shown.
-5. **Collision**: a tab for each dialog the calculation method reads, as the
-   Event menu greys the rest: **Collision Pulse**, **DyMESH Options** and
-   **Contacts** (EDSMAC4's vehicle contacts, or EDHIS and GATB's occupant
-   contacts). Only EDCRASH reads a crush profile: for it, **Damage Profiles
-   (Positions stage)** opens the Positions stage, where Vehicle Impact Setup
-   is, and **Crush from Scan** (Crush Profile from Scan) measures the crush
-   depths off a scan. The vehicle's mesh and crush stiffness are edited in the
-   Vehicle Designer.
+5. **Collision Pulse**: a tab for each dialog the calculation method reads, as
+   the Event menu greys the rest: **Collision Pulse** and **Contacts** (EDSMAC4's
+   vehicle contacts, or EDHIS and GATB's occupant contacts). A method that takes
+   no pulse says so. DyMESH's options are on the Method Options stage. Only
+   EDCRASH reads a crush profile: for it, **Damage Profiles (Positions stage)**
+   opens the Positions stage, where Vehicle Impact Setup is, and
+   **Crush from Scan** (Crush Profile from Scan) measures the crush depths off a
+   scan. The vehicle's mesh and crush stiffness are edited in the Vehicle Designer.
 6. **Equipment**: the same for what each vehicle carries and does: **Payload**,
    **Path Follower**, **Lights**, **Wheels**, **Accelerometers** (SIMON, EDSMAC4,
    EDVDS and EDVSM), and for EDSMAC and EDSMAC4 **Handling Parameters** and

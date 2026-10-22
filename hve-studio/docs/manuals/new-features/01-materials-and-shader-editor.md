@@ -3,8 +3,8 @@
 !!! tip "New in HVE Studio"
     HVE draws every object in the colour its file or its paint gives it. HVE Studio
     lets you give vehicles, vehicle parts, road surfaces, human figures, the
-    default ground plane and the sky a **node material**, edited the way
-    Blender's material editor works.
+    default ground plane, a survey point cloud and the sky a **node material**,
+    edited the way Blender's material editor works.
 
 ## What it is for
 
@@ -55,8 +55,9 @@ of two ways — the two are the same selection:
   body in the Human or Event editor, a road surface in the Environment editor.
 - **Pick it from the list beside Object/World.** The list groups *Vehicles*,
   *Humans* (when a body can be selected in the current editor), *Road
-  surfaces* and, when no environment is loaded, *Ground (no environment
-  loaded)*. Picking a road surface switches to the Environment editor, as a
+  surfaces*, when no environment is loaded, *Ground (no environment
+  loaded)*, and, when the case has a survey scan, *Survey scan* with its
+  **Point cloud**. Picking a road surface switches to the Environment editor, as a
   click on the ground does.
 
 **World** edits the sky behind everything and the light it casts.
@@ -74,6 +75,7 @@ Editor until you click it.
 | A human | **(whole)**, then the fifteen body segments, `Pelvis` to `Lt Lower Arm` |
 | A road surface | one slot, named after the surface |
 | The ground plane | one slot |
+| The point cloud | one slot |
 
 Each row shows what the slot wears. A part with no material of its own shows
 in brackets what it draws in instead: the whole vehicle's material, or
@@ -185,7 +187,7 @@ reason.
 | --- | --- |
 | Output | Material Output, World Output |
 | Shader | Principled BSDF, Emission, Background (world), Transparent BSDF, Mix Shader, Add Shader |
-| Input | **Object Color** (the object's own look — no Blender equivalent), Texture Coordinate, Geometry, Light Path (world), Value, RGB, Fresnel, Layer Weight |
+| Input | **Object Color** (the object's own look — no Blender equivalent), **Color Attribute** (the color the mesh carries per vertex; a point's own color), **Point Info** (a survey point's color, intensity, elevation and height — below), Texture Coordinate, Geometry, Light Path (world), Value, RGB, Fresnel, Layer Weight |
 | Texture | Image Texture, Environment Texture (world; equirectangular, `.hdr` supported), Sky Texture (world), Noise, Voronoi, Checker, Gradient, Wave, Brick |
 | Color | Mix Color (ten blend modes), Color Ramp (2–4 stops, linear or constant), Invert Color, Hue/Saturation/Value, Brightness/Contrast, Gamma |
 | Vector | Mapping, Bump, Normal Map, Vector Math, Separate/Combine XYZ |
@@ -378,6 +380,51 @@ world X and Z in metres, so a checker or a noise stays fixed to the ground as
 the camera moves. A case with a site draws no ground plane, so the entry is not
 offered there; a material already assigned to it is kept. The ground plane is
 not exported to glTF or sent to Blender.
+
+## Point clouds
+
+A survey point cloud (see [Survey Point Clouds](10-point-clouds.md)) takes a
+material too, so its colors can be adjusted with nodes — the hue, the
+saturation, the brightness and contrast, a gamma, an inverted or a
+re-ramped scan.
+
+1. Choose **Point cloud** under *Survey scan* in the object list, or press
+   **Edit in Shader Editor** under **Colour** in **Survey Point Cloud (scan)**
+   (**Environment › Environment...**). The slot list shows one slot, **Point cloud**.
+2. **+ New** makes *Color Attribute → Principled BSDF → Material Output*: the
+   point's own color passed straight through, so the cloud draws exactly as
+   before.
+3. Add a **Hue/Saturation/Value**, **Brightness/Contrast**, **Gamma**,
+   **Invert Color**, **Color Ramp** or **Mix Color** node (Shift+A) and link it
+   between the Color Attribute and the Base Color. Dragging a value redraws the
+   cloud at once.
+
+What the nodes start from:
+
+- **Color Attribute** is the point's color as the point cloud's **Colour**
+  setting makes it — the file's own color, its intensity, its elevation, its
+  classification or flat gray — so the node tree works on whichever of those
+  you chose.
+- **Point Info** adds the point's own data: **Color** (the same color),
+  **Intensity** (the file's return intensity, 0 to 1 of the scan's strongest; 0
+  when the file has none), **Elevation** (0 at the lowest drawn point, 1 at the
+  highest — feed it into a Color Ramp for a height map in colors of your
+  choosing) and **Height** (that point's height in meters, up). On anything
+  that is not a point, the last three read 0.
+- **Texture Coordinate › Object** is the point's position in the case's frame
+  (x forward, y right, z up, meters).
+
+A point has no surface, so only three things of the material are used: the
+**Base Color** of a Principled BSDF, lit by the sun, sky and lamps as the points
+always are; **Emission**, added unlit (an Emission node colors the points
+regardless of the light); and **Alpha** — a point below 0.5 is not drawn unless
+the Material Output is *Opaque*. Metallic, roughness, coat and normals do
+nothing on a point.
+
+With no material the cloud is drawn exactly as it always was. A case that names
+a point cloud keeps its material while the scan is not loaded. The point cloud
+is not exported to glTF or sent to Blender, so neither is its material; both
+say so.
 
 ## Saving
 

@@ -87,7 +87,7 @@ Next, the Escort's weight:
     > **NOTE:** The weight is entered as a force; the mass is calculated and displayed beside it. The value may show extra digits, because the weight is stored as mass and multiplied by the gravity constant for display.
 
     !!! note "HVE Studio"
-        HVE Studio has no *Auto Update Inertia When Weight Changes* checkbox. When you change a weight, check the **Yaw** row of **Rotational Inertia** in the same window and enter the yaw inertia you intend.
+        HVE Studio's *Auto Update Inertia When Weight Changes* checkbox is under **Rotational Inertia** in **Mass & Inertia**, off unless you tick it. Either way, after changing a weight check the **Yaw** row in the same section and enter the yaw inertia you intend.
 
 The Ford Escort is now ready for use in our tutorial. In the viewport, orbit, pan and zoom to look at the vehicle (the keys are listed along the top of the viewport).
 
@@ -249,14 +249,14 @@ Let's attach a camera to the Ford:
 1. Choose **Tools › Cameras...**. The **Cameras** window is displayed.
 2. On the **Saved Cameras** tab, click **Add** to add a camera, and **Rename** it `Ford driver`.
 3. Under **Attachment**, choose the Ford Escort in **View From**.
-4. Under **Onboard Mount**, enter **Mount X fwd** = 0.0 m, **Mount Y right** = 0.5 m and **Mount Z up** = 0.9 m.
+4. Under **Onboard Mount**, enter **Mount X fwd** = 0.0 m, **Mount Y right** = 0.5 m and **Mount Z down** = −0.9 m.
 
     > **NOTE:** These coordinates are relative to the Ford Escort's CG, in the vehicle's own axes. They place the camera over the (right-hand) driver's seat, just above the roof. We place the camera outside the car because the windshield is tinted and difficult to see through.
 
     !!! note "HVE Studio"
-        The Cameras window measures **Z up**, where HVE's camera coordinates use the vehicle's SAE axes with z down; x and y are the same. The original tutorial gives z = −0.6 m, i.e. **Mount Z up** = 0.6 m. For this car that is about 1.16 m above the ground (the CG is 0.56 m high and the car 1.41 m tall), which in HVE Studio puts the eye inside the body shell and shows only the car's own body; 0.9 m clears the roof.
+        The Cameras window uses the vehicle's SAE axes, z down, as HVE's camera coordinates do. The original tutorial gives z = −0.6 m. For this car that is about 1.16 m above the ground (the CG is 0.56 m high and the car 1.41 m tall), which in HVE Studio puts the eye inside the body shell and shows only the car's own body; −0.9 m clears the roof.
 
-5. Choose the Ford Escort in **Look At** as well, leave **Aim** at **Rides with the vehicle** (the default for a new camera), and under **Aim Point** enter **Aim X fwd** = 10.0 m, **Aim Y right** = −2.5 m and **Aim Z up** = 0.9 m.
+5. Choose the Ford Escort in **Look At** as well, leave **Aim** at **Rides with the vehicle** (the default for a new camera), and under **Aim Point** enter **Aim X fwd** = 10.0 m, **Aim Y right** = −2.5 m and **Aim Z down** = −0.9 m.
 
     > **NOTE:** These coordinates are also relative to the Ford Escort, and define a view angle looking forward and to the left, as shown in Figure 5-10 (whose z values are HVE's, positive down).
 
@@ -283,8 +283,8 @@ Next, we can repeat the above steps for the driver of the Nissan Sentra:
 
 1. In the Cameras window, **Add** a second camera and name it `Nissan driver`.
 2. Choose the Nissan Sentra in **View From** and in **Look At**.
-3. The mount coordinates used for the Ford Escort are acceptable for the Nissan as well: **Mount X fwd** 0.0, **Mount Y right** 0.5, **Mount Z up** 0.9 m.
-4. Enter the aim point **Aim X fwd** = 10.0 m, **Aim Y right** = 10.0 m, **Aim Z up** = 0.9 m.
+3. The mount coordinates used for the Ford Escort are acceptable for the Nissan as well: **Mount X fwd** 0.0, **Mount Y right** 0.5, **Mount Z down** −0.9 m.
+4. Enter the aim point **Aim X fwd** = 10.0 m, **Aim Y right** = 10.0 m, **Aim Z down** = −0.9 m.
 
     > **NOTE:** These coordinates are relative to the Nissan Sentra, and define a view angle looking forward and to the right.
 

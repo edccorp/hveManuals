@@ -33,10 +33,10 @@ tire–terrain model.
 ## Tire Blowout
 
 The HVE Tire Blow-out Model varies tire performance while the simulation is
-running: the tire's radial, cornering and camber stiffness are ramped to
-(stiffness factor) × intact, and its rolling resistance to (rolling factor) ×
-intact, linearly over the deflation time. A factor of 1.0 leaves the value
-unchanged.
+running: the tire's cornering and camber stiffness are ramped to (cornering
+stiffness factor) × intact, its radial stiffness to (radial stiffness factor) ×
+intact, and its rolling resistance to (rolling factor) × intact, linearly over
+the deflation time. A factor of 1.0 leaves the value unchanged.
 
 ### Blown
 
@@ -56,10 +56,26 @@ Simulation time at which the blow-out starts. HVE's *Start Time*.
 
 Duration over which the air loss occurs. HVE's *Duration*.
 
-### Stiffness factor
+### Cornering stiffness factor
 
-Multiplier applied to the tire's radial, cornering and camber stiffness once the
-tire is fully deflated.
+Multiplier applied to the tire's cornering and camber stiffness once the tire is
+fully deflated. HVE's *Stiffness Factor*.
+
+### Radial stiffness factor
+
+Multiplier applied to the tire's radial (vertical) stiffness once the tire is
+fully deflated. Only the inflation part of the stiffness is reduced, up to the
+tire's second-stage deflection; past it the sidewall folded onto the rim keeps its
+intact stiffness. A factor of 0 is a completely flat tire carried on its folded
+sidewall.
+
+!!! tip "New in HVE Studio"
+    HVE has one *Stiffness Factor* for the cornering, camber and radial
+    stiffness. HVE Studio separates them so that a **flat** (the air is gone: a
+    low radial factor) and a **tread delamination** (the tread no longer grips
+    the road while the carcass still holds air: a low cornering factor, a radial
+    factor near 1) can be modeled apart. A case saved before the split, or
+    imported from HVE, uses its one factor for both.
 
 ### Rolling resist. factor
 
@@ -71,6 +87,19 @@ Multiplier for the tire rolling resistance of the blown tire.
     - EDSMAC4 **divides** by the rolling factor, so a value above 1 reduces
       rolling drag there; SIMON multiplies. HVE feeds both the same number, and
       so does HVE Studio.
+    - In SIMON the radial factor reaches every tire-terrain model: point
+      contact, the radial spring, and a DyMESH wheel's tread and wheel mesh.
+      HVE applied the blow-out to the radial stiffness only under point
+      contact, so a blown tire on the radial spring model, or on a DyMESH
+      wheel, carried its load fully inflated. HVE also stepped a DyMESH wheel
+      mesh to the deflated stiffness at the blow-out time; HVE Studio ramps it
+      over the deflation time like the tire.
+    - EDVSM applies the radial factor to its tire spring rate, and EDSMAC4 to
+      the drop in the tire's rolling radius (the factor's complement of the
+      tire's maximum deflection); the cornering factor to their cornering
+      stiffness.
+    - With **HVE-reference** physics a radial factor different from the
+      cornering factor is not applied, as in HVE, and the run status says so.
 
 ## Terrain Model
 

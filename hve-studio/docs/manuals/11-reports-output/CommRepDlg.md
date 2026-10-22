@@ -15,7 +15,12 @@ US or SI units set in Preferences, as HVE prints them in its own unit setting.
 
 - A line at the top names the engine, the event and the number of pages, for
   example *SIMON, event 1 -- 9 page(s), built by the engine from its own
-  resource strings*.
+  resource strings*. The pages are the **active event's**: each event keeps its
+  own with its results. In the Playback editor, when more than one event has
+  results, a **Report for event** list under that line picks which; choosing one
+  makes it the active event.
+- A sub-heading row inside a table (*Start of Simulation*, *At Final Rest*)
+  runs across the whole table.
 - **Each page is its own window.** When the window first opens, the pages are
   docked inside it as one row of **tabs**, in print order (below). A tab is
   named from the page, for example *VEHICLE DATA*; if the engine sends the same

@@ -131,6 +131,10 @@ The **Location** section records where and when the accident happened:
   longitude is negative.
 - **Elevation** — the site's elevation, in the length units set in
   Tools › Preferences.
+- **North offset** — the compass bearing the case's +X axis points along
+  (0 = north, 90 = east), HVE's *Angle of X-Axis*. It turns the North arrow
+  and the sun; nothing on the site moves. The same value is **North** in the
+  Shader Editor's Sun & Sky panel.
 
 Two helpers fill in the coordinates:
 

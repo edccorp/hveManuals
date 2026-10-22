@@ -242,7 +242,7 @@ The view of the crash scene from a general perspective shows all the collision a
 
 1. Choose **Tools › Cameras…** and, on the **Saved Cameras** tab, press **Add**.
 2. Set **View From** to the Honda Accord, and **Aim** to *Rides with the vehicle*.
-3. Under **Onboard Mount**, enter a location above and behind the driver's head: **Mount X fwd** −13.0 ft, **Mount Y right** −1.5 ft, **Mount Z up** 5.0 ft.
+3. Under **Onboard Mount**, enter a location above and behind the driver's head: **Mount X fwd** −13.0 ft, **Mount Y right** −1.5 ft, **Mount Z down** −5.0 ft.
 
     > **NOTE:** HVE Studio's camera fields measure Z **up**. HVE's Set Camera dialog measured it down, so HVE's z = −5.0 ft is entered here as 5.0 ft.
 
