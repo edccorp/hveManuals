@@ -8,9 +8,9 @@ Where HVE edits one wheel at a time, HVE Studio shows a table with one column pe
 
 This dialog contains the following parameters.
 
-## Brake Group
+## Link Group
 
-Four small buttons per wheel: **-**, **B1**, **B2** and **B3**. One group per wheel serves the brakes as a whole: the Brake Designer's **Apply to group** writes a design to every wheel of the group, the ABS System and ABS Designer edit the same row, and a wheel that joins a group takes the group's brake design with its assembly. Wheels in the same group share their values: an edit in one column is copied to every other wheel in the group, and moving a wheel into a group that already has a member copies that member's values to it. **By default every wheel is in group B1**, so an edit applies to all wheels until wheels are moved to other groups or to **-**. This replaces HVE's *Copy to Other Side* and *Copy to Other Axles*.
+Four small buttons per wheel: **-**, **A**, **B** and **C**. One group per wheel serves the brakes as a whole: the Brake Designer's **Apply to group** writes a design to every wheel of the group, the ABS System and ABS Designer edit the same row, and a wheel that joins a group takes the group's brake design with its assembly. Wheels in the same group share their values: an edit in one column is copied to every other wheel in the group, and moving a wheel into a group that already has a member copies that member's values to it. **By default every wheel is in group A**, so an edit applies to all wheels until wheels are moved to other groups or to **-**. This replaces HVE's *Copy to Other Side* and *Copy to Other Axles*.
 
 ## Brake Type & Design
 
@@ -21,12 +21,15 @@ HVE's brake type for each wheel, listed with HVE's own labels: **Generic Brake**
 - **A design**: choosing it computes the Pushout and Torque Ratio from the wheel's design (as HVE does on the same change), and they are shown read-only. Edit the design with **Design...**.
 
 ### Design...
-One button per wheel. It opens the **Brake Designer** on that wheel, in its design. It is grayed for a Generic wheel, which has nothing to design.
+One button per wheel. It opens the **Brake Designer** on that wheel, in its design. It is greyed for a Generic wheel, which has nothing to design.
 
 ### Temperature Model
 Shown, not edited: **Drum** or **Disc**, which brake temperature model the engines run. A design sets it; a Generic wheel keeps the case's. The engines take **one per axle, from the right wheel**, and a note says so when the right and left wheels of an axle differ (HVE warns about this too). The brake temperature model's inputs are the Brake Designer's **Material Properties** section.
 
 ## Actuation
+
+### Balance Ratio (unused)
+Shown greyed: it is not one of HVE's brake fields and no engine reads it. The ratios that set brake torque are **Torque Ratio** and, with proportioning on, **Proportion Ratio**.
 
 ### Time Lag (s)
 Time required before the driver's brake pedal inputs reach the wheel.
@@ -63,7 +66,7 @@ The detailed per-wheel ABS data (HVE's **ABS Designer...** button) are in **Vehi
     - The rule that enables the antilock controls only when **ABS Installed** is checked: they are always enabled. ABS Installed is in **Vehicle › Editors › Brakes › ABS / Brake Design... › ABS System...** (see [Brake System Pressure vs Pedal Force](BrkSysVsPedFrcDlg.md)).
 
 !!! tip "New in HVE Studio"
-    All wheels in one table, Brake Groups, the Temperature Model row, and the note on a proportioning ratio of 1.0.
+    All wheels in one table, Link Groups, the Temperature Model row, and the note on a proportioning ratio of 1.0.
 
 !!! note "Changed in HVE Studio 2026-10-09"
     The **S-Cam Brake** and **Disc Brake** tables are no longer opened from here: they were offered for every brake at once. Nothing read their values, and the section that kept them in the Brake Designer was removed on 2026-10-21. A wheel's brake is designed in the Brake Designer, whose design the engine uses.

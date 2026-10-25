@@ -23,7 +23,7 @@ entered; EDCRASH tests the code in upper case. The extent digit is last.
 
 !!! warning "Not in HVE Studio"
     Entering a CDC does not fill in a default PDOF, damage profile or EBS, and
-    an invalid CDC does not gray the profile fields. Enter the profile directly.
+    an invalid CDC does not grey the profile fields. Enter the profile directly.
 
 ## PDOF (deg)
 
@@ -50,7 +50,7 @@ impulse center from the damage profile geometry. Uncheck it to enter
 ## Basis
 
 **EES** / **Damage Profile**, and the **EES** speed when the basis is EES, are
-shown **grayed**, with the stored value.
+shown **greyed**, with the stored value.
 
 !!! warning "Not in HVE Studio"
     EDCRASH always reconstructs from the crush profile: no engine reads the

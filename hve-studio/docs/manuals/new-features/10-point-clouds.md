@@ -2,7 +2,7 @@
 
 !!! tip "New in HVE Studio"
     HVE Studio can show a laser scan or a photogrammetry point cloud of the real
-    scene behind the simulation, so the tire marks, curb lines and damaged
+    scene behind the simulation, so the tire marks, kerb lines and damaged
     roadside objects the scan recorded can be compared with the reconstruction.
 
 !!! warning "A point cloud is a picture, not a surface"
@@ -33,12 +33,9 @@
 | E57 | The scanner exchange standard (ASTM E2807). Every scan in the file is loaded, each placed by its own registration; points the scanner marked invalid are skipped and counted. A damaged file is refused, naming where. |
 | XYZ / PTS / TXT / CSV | `x y z [intensity] [r g b]`, space- or comma-separated |
 
-**LAZ** (compressed LAS) is read directly, LAS 1.0 to 1.4 and every point format
-the USGS publishes (0 and 6 were checked against real 3DEP tiles). The whole file
-is held in memory while it decodes, so a very large tile takes that much RAM. LAZ
-carries no checksum: a damaged file loads the points before the damage and the
-count read says it stopped short, but points decoded just before the damage can
-be wrong. The format is recognized from the file's content, not its extension.
+**LAZ** (compressed LAS) is refused: export it as uncompressed `.las`, or as
+`.ply` or `.xyz`. The format is recognised from the file's content, not its
+extension.
 
 **Clear** removes the cloud.
 
@@ -46,15 +43,15 @@ be wrong. The format is recognized from the file's content, not its extension.
 
 A survey cloud is usually in a projected coordinate system (state plane, UTM, a
 site grid), with coordinates in the millions. HVE Studio re-bases each cloud on
-its own center, at full precision, and reports the offset, so a millimeter scan
-is not rounded to the nearest quarter meter. On a fresh import, a cloud whose
+its own centre, at full precision, and reports the offset, so a millimetre scan
+is not rounded to the nearest quarter metre. On a fresh import, a cloud whose
 coordinates lie within 20 km of the case's origin is put back at its own
-coordinates; one farther away is centered, and the summary says so. A cloud you
+coordinates; one farther away is centred, and the summary says so. A cloud you
 have already placed is never moved by a re-import.
 
 | Field | Meaning |
 | --- | --- |
-| **Scale (source -> m)** | Multiplier from the file's units to meters (a `.xyz` file carries no unit — for example 0.3048 for feet). Applies immediately. |
+| **Scale (source -> m)** | Multiplier from the file's units to metres (a `.xyz` file carries no unit — for example 0.3048 for feet). Applies immediately. |
 | **Source is Y-up**, **Source is Z-down** | The file's axis convention. Applies on the next Import. |
 | **Offset X / Y / Z (m)** | Moves the cloud |
 | **Yaw**, **Pitch**, **Roll (deg)** | Turns it. Pitch and roll are there because a scan is often a degree or two off level, which no amount of yaw fixes |
@@ -82,12 +79,12 @@ and **Import** reads it.
 
 | Field | Meaning |
 | --- | --- |
-| **Color** | **Auto (file color, else intensity, else elevation)**, **File color**, **Intensity**, **Elevation**, **Flat gray**, or **Classification** (the file's own point classes in the usual survey colors: ground brown, vegetation green, buildings red). A mode the file cannot provide falls back visibly. |
-| **Edit in Shader Editor** | Opens the Shader Editor on the cloud, to adjust its colors with a node tree — hue, saturation, brightness and contrast, gamma, invert, a color ramp — starting from the color chosen in **Color** (see *Coloring the points with nodes* below). When the cloud has a material the panel names it. |
+| **Colour** | **Auto (file colour, else intensity, else elevation)**, **File colour**, **Intensity**, **Elevation**, **Flat grey**, or **Classification** (the file's own point classes in the usual survey colours: ground brown, vegetation green, buildings red). A mode the file cannot provide falls back visibly. |
+| **Edit in Shader Editor** | Opens the Shader Editor on the cloud, to adjust its colors with a node tree — hue, saturation, brightness and contrast, gamma, invert, a color ramp — starting from the color chosen in **Colour** (see *Coloring the points with nodes* below). When the cloud has a material the panel names it. |
 | **Point size (px)** | The size of each dot on screen |
 | **Visible** | Show or hide the cloud |
-| **Eye-dome lighting (shade by depth)** | Darkens each point where its neighbors on screen are nearer the camera, so curbs, steps and edges read as shape instead of flat color. **Strength** sets how dark. Drawing only, and a setting of this computer rather than of the case. |
-| **Clip box** | Draws only the scan inside the box (Min / Max x, y, z, in meters; x forward, y right, z up). **Fit to the scan** sets it to the whole cloud, to narrow from. For looking under a canopy, into a building or along one lane. Not saved, and the surface and measurements still use every point. |
+| **Eye-dome lighting (shade by depth)** | Darkens each point where its neighbours on screen are nearer the camera, so kerbs, steps and edges read as shape instead of flat colour. **Strength** sets how dark. Drawing only, and a setting of this computer rather than of the case. |
+| **Clip box** | Draws only the scan inside the box (Min / Max x, y, z, in metres; x forward, y right, z up). **Fit to the scan** sets it to the whole cloud, to narrow from. For looking under a canopy, into a building or along one lane. Not saved, and the surface and measurements still use every point. |
 
 Points are drawn as fixed-size dots: they do not get denser as you approach.
 They are lit by the scene's sun, sky and lamps, but not shadowed.
@@ -106,7 +103,7 @@ The **Point Info** node gives each point's **Intensity**, its **Elevation**
 across the cloud (0 lowest, 1 highest) and its **Height** in meters, to drive a
 **Color Ramp** of your own.
 
-The node tree starts from the color **Color** gives the point, so the two work
+The node tree starts from the color **Colour** gives the point, so the two work
 together: choose *Intensity*, then ramp it; or keep the file's colors and lift
 their contrast. With no material the cloud draws exactly as before. Display
 only, like every material; it is saved with the case.
@@ -125,7 +122,7 @@ one, as the surface uses, so a car on the line is not a hump) of the points
 within **Corridor half-width** of the line. It is drawn as a graph (hover for
 a station's height and how many points stand behind it), with the best-fit
 grade and how far the ground rises above or dips below that line -- a road's
-crown, a dip, a curb. A station with no points is a gap in the graph, not a
+crown, a dip, a kerb. A station with no points is a gap in the graph, not a
 line drawn across it. **Copy as CSV** puts the stations on the clipboard.
 
 Measurements read the points themselves, not the drivable surface, and change

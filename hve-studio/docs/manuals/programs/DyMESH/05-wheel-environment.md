@@ -50,7 +50,7 @@ Notes:
     DyMESH (wheel contact mesh)**, **...also contact the environment**,
     **Start at first contact** and **Damage time (s)**. In HVE Studio the
     *...also contact the environment* row is enabled as soon as the wheel is
-    displaced and uses DyMESH; it does not gray out when the event's
+    displaced and uses DyMESH; it does not grey out when the event's
     environment option is off, but the engine still ignores it then, exactly as
     the table above says. The environment mesh is built from the event's
     terrain geometry when the body or any wheel asks for environment contact;
@@ -282,7 +282,7 @@ wheel, tire forces are simply zeroed when the cosine of the wheel-to-ground
 inclination angle $\gamma_g$ falls below the minimum-inclination threshold
 $c_\mathrm{min} = 0.17365$ (inclination beyond ≈80°). For a DyMESH environment
 wheel they are instead **faded smoothly**: each of the contact-patch forces
-$F_x$, $F_y$ and $F_z$, the plow forces, the slips, and the roll moment is
+$F_x$, $F_y$ and $F_z$, the plough forces, the slips, and the roll moment is
 scaled by
 
 $$

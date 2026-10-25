@@ -71,7 +71,7 @@ include a *Tessellate* toggle, a *Vertex Weld Distance*, and a *Max Side Length*
     event's own are in **Event › DyMESH Options**, section *Contact Mesh
     Preparation (per vehicle)*.
     The mesh is subdivided until no triangle leg exceeds the maximum. The
-    weld distance is shown grayed: HVE stores it and its physics never reads
+    weld distance is shown greyed: HVE stores it and its physics never reads
     it, and neither does HVE Studio, so the collision mesh keeps the file's
     own vertices.
 

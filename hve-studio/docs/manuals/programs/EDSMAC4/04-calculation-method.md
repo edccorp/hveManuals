@@ -247,7 +247,7 @@ the force; and that the friction circle is built on the slide friction rather
 than a peak friction value, so EDSMAC4 has no distinct peak-versus-slide
 behavior.)*
 
-*(updated: when the **Hydroplane Model** calculation option is set to NASA, the available tire friction is further modified at each tire traveling over a water polygon. The NASA model predicts the hydroplaning speed from the tire's inflation pressure ($182.16\sqrt{P}$ in/sec, $P$ in lb/in²); above that speed the tire's friction switches to the water polygon's friction value. The extra drag of displacing water is not modeled. See [EDSMAC4 Calculation Options](../../10-calculation-options/CalcOptEDSMAC4.md#hydroplane-model).)*
+*(updated: when the **Hydroplane Model** calculation option is set to NASA, the available tire friction is further modified at each tire travelling over a water polygon. The NASA model predicts the hydroplaning speed from the tire's inflation pressure ($182.16\sqrt{P}$ in/sec, $P$ in lb/in²); above that speed the tire's friction switches to the water polygon's friction value. The extra drag of displacing water is not modeled. See [EDSMAC4 Calculation Options](../../10-calculation-options/CalcOptEDSMAC4.md#hydroplane-model).)*
 
 !!! note "HVE Studio"
     NASA is the only hydroplaning model EDSMAC4 implements. HVE Studio lists NASA-TTI and Gallaway too, marked "not supported by EDSMAC4"; choosing either refuses the run before it starts (stop code −5520).

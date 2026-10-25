@@ -30,7 +30,7 @@ A **Rev** row, then one row per forward gear: **Gear** (1, 2, ...) and **Ratio**
 The final drive (differential) ratio. HVE enters it in the Differential Data dialog.
 
 ## Efficiency
-Shown grayed: there is no engine field it could be given to.
+Shown greyed: there is no engine field it could be given to.
 
 ## Shift Time (s), Drive Type
 Stored with the vehicle; no engine reads them. The drive axle(s) the engines use are set by **Drive Axle(s)** in the Vehicles panel's Configuration section.

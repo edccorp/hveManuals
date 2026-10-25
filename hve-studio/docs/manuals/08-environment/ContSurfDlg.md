@@ -39,7 +39,7 @@ simulation). HVE's *Location*.
 
 ## Geometry
 
-The panel is edited as a **Center** (X, Y, Z), a **Size** (**Width**,
+The panel is edited as a **Centre** (X, Y, Z), a **Size** (**Width**,
 **Height**) and **Angles** (**Yaw**, **Pitch**, **Roll** in degrees, applied
 yaw, then pitch, then roll), relative to the vehicle CG. A panel whose edges are
 not perpendicular is flagged as skewed; editing it in this form squares it up.

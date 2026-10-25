@@ -53,7 +53,7 @@ Assigns the projected area parallel to the selected surface.
 Vehicle-fixed X, Y and Z coordinates where the effective force from aerodynamic pressure is applied.
 
 !!! warning "Not in HVE Studio"
-    - HVE's rule that grays the coefficients and center of pressure when Device Installed is unchecked.
+    - HVE's rule that greys the coefficients and center of pressure when Device Installed is unchecked.
     - HVE displays the center-of-pressure coordinates relative to the sprung-mass or total-mass CG according to the Vehicle Dimensions Basis preference; HVE Studio has no such preference. HVE Studio shows it from the sprung-mass CG, which is how the vehicle is stored. The preference never changes a result: EDCRASH, EDSMAC, EDSMAC4, EDSVS and EDVTS overwrite it with the total-mass basis when they read their input, in HVE's own source as well.
 
 <!-- NAV -->

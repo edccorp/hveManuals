@@ -6,9 +6,9 @@ Where HVE edits one wheel at a time (the dialog title names the axle and side) a
 
 This dialog contains the following items:
 
-## Suspension Group
+## Link Group
 
-Four small buttons per axle: **-**, **S1**, **S2** and **S3**. Axles in the same group (S1, S2 or S3) share their values: an edit in one column is copied to every other axle in the group, and moving an axle into a group that already has a member copies that member's values to it. **-** leaves the axle independent. By default axle 1 starts in group A, the rear axles with single tires in the next group, and the axles with **Dual Tires** in a group of their own, so a car is A, B and a truck with a single tag axle ahead of its duals is A, B, C. The groups are set again when you switch vehicles or change a wheel's **Dual Tires**; a group you choose stays until then. This replaces HVE's *Copy to Other Side* and *Copy to Other Axle(s)* check boxes.
+Four small buttons per axle: **-**, **A**, **B** and **C**. Axles in the same group (A, B or C) share their values: an edit in one column is copied to every other axle in the group, and moving an axle into a group that already has a member copies that member's values to it. **-** leaves the axle independent. By default axle 1 starts in group A, the rear axles with single tires in the next group, and the axles with **Dual Tires** in a group of their own, so a car is A, B and a truck with a single tag axle ahead of its duals is A, B, C. The groups are set again when you switch vehicles or change a wheel's **Dual Tires**; a group you choose stays until then. This replaces HVE's *Copy to Other Side* and *Copy to Other Axle(s)* check boxes.
 
 ## Type & Distribution
 
@@ -77,13 +77,13 @@ The axle beam's weight and inertia (HVE's Axle Inertia dialog); see [Inertia Dia
 | Roll Steer... | the **Roll Steer** tab of **Vehicle › Editors › Suspension Data...** — see [Roll Steer Dialog](RollSteerDlg.md). |
 
 !!! warning "Not in HVE Studio"
-    - **HVE's enable rules**: HVE Studio does not gray Inter-Tandem Load Transfer for non-tandem types, the Roll Center Height and Lateral Spring Spacing for an independent suspension, the axle inertia for an independent suspension, Anti-Pitch for a solid axle, or Spindle Axis for a non-steerable axle. It offers the tandem types on every axle, where HVE offers them only where a tandem set is possible.
+    - **HVE's enable rules**: HVE Studio does not grey Inter-Tandem Load Transfer for non-tandem types, the Roll Center Height and Lateral Spring Spacing for an independent suspension, the axle inertia for an independent suspension, Anti-Pitch for a solid axle, or Spindle Axis for a non-steerable axle. It offers the tandem types on every axle, where HVE offers them only where a tandem set is possible.
     - **Automatic balancing of the lateral load transfer coefficients** across axles: each axle's Roll Couple Dist is entered independently.
     - **Per-wheel (left/right) suspension data**: the values are per axle.
-    - The **Copy to Other Side** and **Copy to Other Axle(s)** check boxes (use Suspension Group instead).
+    - The **Copy to Other Side** and **Copy to Other Axle(s)** check boxes (use Link Group instead).
 
 !!! tip "New in HVE Studio"
-    All axles in one table, Suspension Groups, the Tandem Axle Spacing row, and the read-only static deflection and natural frequency check.
+    All axles in one table, Link Groups, the Tandem Axle Spacing row, and the read-only static deflection and natural frequency check.
 
 <!-- NAV -->
 

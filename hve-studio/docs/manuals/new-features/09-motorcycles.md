@@ -11,7 +11,7 @@
 1. In the **Vehicle** editor, add a vehicle (or select one) and, in the
    **Vehicles** panel, set **Vehicle Type** to **Motorcycle**.
 2. Changing the type to Motorcycle fills the vehicle with a class-typical
-   mid-size machine plus rider: 200 kg + 80 kg, a 1.32 m wheelbase, a 0.60 m
+   mid-size machine plus rider: 200 kg + 80 kg, a 1.45 m wheelbase, a 0.60 m
    laden CG height, 25° rake, 120/70-17 front and 180/55-17 rear tires,
    telescopic forks and a swingarm, 1:1 steering (the bars are the steering).
    **Seed Generic Motorcycle** in the same panel does it again on demand.
@@ -31,9 +31,9 @@ file is installed it falls back to the generated body, with a warning.
 
 **Drawn as one wheel per axle.** HVE's engines model every axle with two
 wheels. For a motorcycle HVE Studio sets the two wheels of an axle side by side
-across the tire's own width, so they act as one centerline contact patch, and
+across the tire's own width, so they act as one centreline contact patch, and
 the viewport, the glTF export and the Blender link draw **one** wheel per axle,
-on the centerline. In the viewport the tire is drawn with the machine's crown
+on the centreline. In the viewport the tire is drawn with the machine's crown
 radius (a rounded tread), as the model uses it; the exports send plain
 cylinders.
 
@@ -42,7 +42,7 @@ cylinders.
 | Method | What a motorcycle is there | Use it for |
 | --- | --- | --- |
 | **EDCRASH, EDSMAC, EDSMAC4** | A narrow rigid body with two contact patches. These are planar, so lean never arises. | Impacts: impulse-momentum through the collision, then the post-impact slide. This is how most motorcycle reconstructions are done. |
-| **SIMON** | A motorcycle rides the **single-track model** from the start of the event until its first contact, then SIMON and DyMESH take it over from the state the model left it in. Before contact you get the balance, countersteer and lean of the SINGLETRACK method, and the steer table is read the way the Event's single-track options say. The run status says when the machine was handed over (*handed to SIMON at first contact*) or why it was not (*stayed on SIMON's own model*, with the reason, for example steering geometry that is not a motorcycle's). **After** first contact the roll is held by a *rider-control surrogate* (a spring about the roll axis that pulls toward upright), and the run says so: *lateral results are low-lean only*. A roll stiffness you enter yourself replaces the surrogate. | A motorcycle that rides up to an impact with a car or a barrier. The machine follows a site's terrain and can leave a ramp and land back on its tires before it makes contact; the run status gives the number of flights and the time airborne. A machine that goes down is handed to SIMON where it fell. |
+| **SIMON** | The same narrow-track approximation in a 3-D engine built for cars. The roll is held by a *rider-control surrogate* (a spring about the roll axis that pulls toward upright), and every run says so: *lateral results are low-lean only*. A roll stiffness you enter yourself replaces the surrogate. | Straight-line and mild lateral manoeuvres. Not real cornering lean angles. |
 | **SINGLETRACK** | A real single-track model (below) | A machine on its wheels: balance, countersteer, braking, lean |
 
 None of the HVE methods models lean, countersteer, gyroscopic effects, camber
@@ -79,9 +79,9 @@ coefficients and self-stable speed range (4.29–6.02 m/s).
 
 ### What it does not do
 
-- **It is linearized** about upright, straight running: exact for small lean.
+- **It is linearised** about upright, straight running: exact for small lean.
   The run reports the peak lean, says so past 15°, and past 10° reports how far
-  a linearized steer angle would be from the exact one. Use the
+  a linearised steer angle would be from the exact one. Use the
   [Motorcycle Analysis](08-analysis-tools.md#motorcycle-analysis) cornering
   calculator, which is exact at any lean, for real cornering.
 - **No collision.** A motorcycle impact still goes through EDCRASH, EDSMAC or

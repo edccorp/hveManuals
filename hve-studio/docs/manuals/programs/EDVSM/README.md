@@ -8,7 +8,7 @@ Fifth Edition (January 2006) — *converted to Markdown and updated to match the
 
 HVE Studio compiles EDVSM from HVE's own source, so the vehicle model, equations and messages in this manual describe what runs. What changes is how you reach it:
 
-- **Choosing it.** Select **EDVSM** as the **Method** in the event's **Event Information** panel (Event editor, F5). EDVSM runs its own engine, and its results are checked against original HVE's saved runs. Measured on the HVE tutorial case `EdvsmTutorialEDC.hve`, HVE Studio reproduces HVE's saved results for all five events to within about a millimeter and 0.01 degree (see [Chapter 5](05-tutorial.md)).
+- **Choosing it.** Select **EDVSM** as the **Method** in the event's **Event Information** panel (Event editor, F5). EDVSM runs its own engine, and its results are checked against original HVE's saved runs. Measured on the HVE tutorial case `EdvsmTutorialEDC.hve`, HVE Studio reproduces HVE's saved results for all five events to within about a millimetre and 0.01 degree (see [Chapter 5](05-tutorial.md)).
 - **Calculation options.** **Event Information › Method Options…** opens the **EDVSM Options** window: *Vehicle body vs. environment contact* (the rollover model) and *Steering Degree of Freedom* (Off or On). The tire model is always *Normal*. The surface-search method is the **Road Surface Search** section of Event Information.
 - **Simulation controls** (maximum time, integration timestep, output interval, termination velocities) are in the **Simulation** panel, docked beside Event Information.
 - **Running.** **Run** on the playback bar under the viewport, or **Output › Run Simulation**. The result plays back in the same viewport; the **Playback** editor (F6) is for playing several events in sequence.

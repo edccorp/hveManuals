@@ -52,7 +52,7 @@ The HVE Studio menu bar has the following menus:
 - **View** — panels and what the viewport draws (most of HVE's Options menu
   display switches)
 - **Tools** — preferences and units, cameras, the audit log and other tools
-- **Help** — Manual (opens this manual in your browser), License, About HVE Studio
+- **Help** — License, About HVE Studio
 
 Each menu is described in the [Menu Reference](../02-menu-reference/README.md).
 
@@ -127,7 +127,7 @@ Vehicles are created and edited in the Vehicle editor. To create a vehicle:
 2. In the **Vehicles** panel, choose **Add...**. Search the loaded vehicle
    databases, or choose one of HVE's generic vehicles by type and class.
 3. The vehicle's identity (name, type, make, model, year, body style,
-   color), configuration (number of axles, driver location, engine location,
+   colour), configuration (number of axles, driver location, engine location,
    drive axles) and size and weight are shown below the list, in the panel's
    Identity, Configuration and Size & Weight sections, and are edited there.
 
@@ -176,7 +176,7 @@ reference](../../08-environment/EnvtInfoDlg.md).*
 ### 3-D Editor
 
 !!! warning "Not in HVE Studio"
-    HVE's 3-D Editor — a modeling tool with four viewers and manipulators for
+    HVE's 3-D Editor — a modelling tool with four viewers and manipulators for
     building and editing environment geometry and its surface friction — is not
     in HVE Studio. Environment geometry is imported, its surfaces' materials are
     set for the surface selected in the viewport or **View › Outliner** (the
@@ -216,7 +216,7 @@ The choice of calculation models is dependent upon the needs of the study.
 Normally, reconstruction models are executed first, because they provide part or
 all of the initial conditions required to execute simulations. The methods
 HVE Studio can run are listed in [Chapter 1](01-what-is-hve.md#calculation-methods);
-the Method list grays a method the event's vehicles cannot use and says why.
+the Method list greys a method the event's vehicles cannot use and says why.
 
 #### Reconstruction Models
 
@@ -296,7 +296,7 @@ The simulation calculations usually provide some or all of the following results
 
 ![Figure 2-8](../images/hvn-02-event-menu-simon.png)
 *Figure 2-8: The Event menu holds the event set-up options. Items the event's
-calculation method does not use are grayed.*
+calculation method does not use are greyed.*
 
 Events are *set up* after the objects (humans and vehicles) and calculation
 method are selected. Event set-up involves the following steps:
@@ -456,7 +456,7 @@ Under **Scale factors**, each column of the pulse is multiplied by its factor.
 #### Collision Pulse Options
 
 **Start time** and **Threshold (g)**, and for the impulse pulse type the
-**Impulse center** (X, Y, Z from the CG), which only that type reads. The
+**Impulse centre** (X, Y, Z from the CG), which only that type reads. The
 threshold reaches no engine, in HVE or in HVE Studio: every sample of the
 table is applied.
 
@@ -582,7 +582,7 @@ To execute an event:
 
 !!! note "HVE Studio"
     While an event's results are on screen its inputs are **locked**: the
-    set-up dialogs are grayed and show a banner. In HVE, changes made without
+    set-up dialogs are greyed and show a banner. In HVE, changes made without
     pressing Reset were silently ignored; HVE Studio does not let them be made.
     With several events solved, everything a solved event used stays locked
     until that event is reset; the banner says which events.

@@ -1,6 +1,6 @@
 # Driver Controls Filter
 
-The **Filter** tab of the **Path Follower** tab of Driver Controls (**Event › Path Follower...**)
+The **Filter** tab of the **Path Follower** dialog (**Event › Path Follower...**)
 holds the parameters that describe the driver's physiological capabilities. See
 [Driver Controls Path Follower](DriverControls7.md).
 
@@ -8,7 +8,7 @@ holds the parameters that describe the driver's physiological capabilities. See
 
 When checked, the driver model's steering output is passed through a
 neuro-muscular filter defined by the parameters below. When unchecked, the
-parameters are grayed and ignored.
+parameters are greyed and ignored.
 
 ## Neuro-Muscular Filter Parameters
 

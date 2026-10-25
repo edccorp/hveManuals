@@ -9,7 +9,7 @@ SIMON (**SI**mulation **MO**del **N**on-linear) is a dynamic simulation of the r
 Each SIMON vehicle may have up to three axles (six axles for full trailers) and single or dual tires.
 
 !!! tip "New in HVE Studio"
-    HVE Studio's SIMON accepts up to **four** axles per vehicle, so a truck with a tag (self-steering or lift) axle can be modeled as one unit. HVE's SIMON stops at three. See [Chapter 2, Vehicles](02-program-input.md#vehicles).
+    HVE Studio's SIMON accepts up to **four** axles per vehicle, so a truck with a tag (self-steering or lift) axle can be modelled as one unit. HVE's SIMON stops at three. See [Chapter 2, Vehicles](02-program-input.md#vehicles).
 
 Independent and solid axle suspensions are allowed. SIMON may be used for numerous types of simulation studies. Applications for SIMON include:
 

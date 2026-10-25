@@ -18,7 +18,7 @@ This basic procedure is described in detail in this tutorial.
 !!! note "HVE Studio: start from EDC's own tutorial case"
     HVE Studio opens HVE's case files directly. The finished case for this tutorial, `EdvsmTutorialEDC.hve`, is supplied with HVE in its `supportFiles/case` folder. Open it with **File › Open Case…** and the vehicle, the curb site and all five events arrive as EDC set them up, including every edit described below. This chapter follows the original tutorial step by step and shows where each input lives in HVE Studio, so you can either build the case yourself or open EDC's and check each value against the text.
 
-    Run from that case, HVE Studio reproduces the results HVE saved in it: for each of the five events the final position agrees within 1 mm (2 mm on one), the heading change within 0.01 degree and the speed within 0.01 km/h. The one difference in behavior is described under [Rollover Validation Event](#rollover-validation-event).
+    Run from that case, HVE Studio reproduces the results HVE saved in it: for each of the five events the final position agrees within 1 mm (2 mm on one), the heading change within 0.01 degree and the speed within 0.01 km/h. The one difference in behaviour is described under [Rollover Validation Event](#rollover-validation-event).
 
 ## Getting Started
 

@@ -27,7 +27,7 @@ What else is different in HVE Studio:
 - **Where the inputs are.** The body is edited in the **Human (F2)** editor (**Human › Human Information** opens the *Humans* panel, whose bodies are generated with GEBOD); belts, airbags and contact surfaces are vehicle equipment (**Vehicle (F3)** menu); which humans take part, where they sit, what they wear and how they are posed are set per event in **Event Information › Humans in Event**. [Chapter 2](02-program-input.md) gives the full map.
 - **The ATB time step is fixed at 0.002 s**, as in HVE: GATB sets it itself and reads only the Simulation panel's *Duration* and *Output Timestep*.
 - **Belt webbing**: GATB gives ATB its own fixed webbing stress/strain curve, as HVE's GATB does, so the belt *Stiffness*, *Damping* and *Break Strength* (which EDHIS reads) do not change a GATB run.
-- **"Use external ATB input file" is not available** (grayed in the GATB options, with the reason): ATB is fed from the assembled data in memory, so an external `GATB.ain` cannot reach the solver.
+- **"Use external ATB input file" is not available** (greyed in the GATB options, with the reason): ATB is fed from the assembled data in memory, so an external `GATB.ain` cannot reach the solver.
 - **Self contact**: only each segment's first ellipsoid takes part in segment-to-segment contact, exactly as in HVE's GATB; HVE Studio reports any armed pair that names another ellipsoid.
 - **Restraint type and pose are per event**, and a **pedestrian's walking speed** reaches GATB.
 - **Airbag inflation defaults are HVE's own**: Begin Fill Time 0.001 s, Fill Duration 0.05 s.

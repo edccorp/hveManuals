@@ -70,7 +70,7 @@ term vanishes.
 Where tandem axles are present, the rear-axle share of both transfers is split
 equally between the two tandem axles before the inter-tandem term is applied.
 
-> **NOTE:** The accelerations used are those from the **previous** timestep, not the current one. This is inherent to a quasi-static treatment computed alongside the tire forces that produce it — the load transfer at any instant reflects the acceleration that has just occurred. At normal timesteps the difference is immaterial, but it is one reason a very coarse timestep degrades results in hard transient maneuvers.
+> **NOTE:** The accelerations used are those from the **previous** timestep, not the current one. This is inherent to a quasi-static treatment computed alongside the tire forces that produce it — the load transfer at any instant reflects the acceleration that has just occurred. At normal timesteps the difference is immaterial, but it is one reason a very coarse timestep degrades results in hard transient manoeuvres.
 
 ## Tire Forces
 
@@ -216,7 +216,7 @@ $$F_y = -\mu_s F_z (1 + \delta_{dual})\sin(\alpha) + \Delta F_y$$
 *(updated: in the antilock branch the longitudinal force takes the sign of the
 attempted wheel force directly, rather than the vehicle-fixed direction
 $s_{fx}$ used in the non-antilock branch. The two differ only when the tire is
-traveling rearward.)*
+travelling rearward.)*
 
 ## Assumptions
 

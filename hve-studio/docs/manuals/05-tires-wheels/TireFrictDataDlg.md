@@ -42,7 +42,7 @@ then speed; **Speed** lists them by speed, then load, so each speed's loads
 read together. Only the listing changes: the table is kept in load order, as
 HVE and the simulations keep it. The row numbers (**#**) are the listed order.
 
-The wheel's **Tire Group** (the row at the top of the Tire Properties grid)
+The wheel's **Link Group** (the row at the top of the Tire Properties grid)
 decides how far an edit reaches: a change to this wheel's tables is copied to
 every wheel in its group, a line under the wheel buttons names them, and a
 wheel set to **–** edits alone. Moving a wheel into a group gives it that

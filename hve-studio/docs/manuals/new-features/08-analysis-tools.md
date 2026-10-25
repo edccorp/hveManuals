@@ -19,48 +19,22 @@ see [User Preferences](../01-user-interface/PrefDlg.md) and
 
 ![Quick Case](images/hvn-quick-case.png)
 
-### Describe in words
-
-The top of the window reads ordinary English, with no model and nothing sent anywhere.
-Positions are **map coordinates**: +X is **east** and +Y is **north**, and a direction is a
-compass word or bearing (north, west, north-east, "bearing 90"). The case itself stays SAE;
-the sentence is converted at one place, and the review shows both.
-
-*Create a case with a 2020 Honda Accord and a 2016 Ford F-150. Put the Accord at X = 200,
-Y = 0, facing west at 50 mph. Put the F-150 at X = 0, Y = 200, facing south at 45 mph.
-Use SIMON.*
-
-1. Write or edit the sentence. The list under it shows each change in both frames (map X, Y
-   and bearing, and the case's x, y and heading), with the words each value came from.
-   Anything the sentence did not say is listed as **Not stated**, an ambiguity appears as a
-   **Question**, and a value with no unit or an impossible one is **Rejected**: nothing is guessed.
-2. A sentence that creates a case: **Review in Case Intake** opens Case Intake with the
-   vehicles filled in, where you choose each vehicle's data and press Build.
-3. A sentence that changes the vehicles already in the active event ("move the Accord 20 feet
-   north", "face the F-150 east", "use EDSMAC4"): **Apply to the active event** writes it as one
-   undo step, and each value written is recorded in **Tools › Provenance** as stated, with the words
-   it came from.
-4. A sentence that says to run it only shows **Run the active event**: a sentence never
-   starts a run, and never changes the case because it asked for one.
-
-### Fixed-grammar entry
-
 1. Type a description in the text box, for example:
 
     *SIMON event with two vehicles, vehicle 1 at (0, 0) heading 0 speed 50 mph,
     vehicle 2 at (12, -3) heading 180 speed 30 mph*
 
 2. Read the **Preview**, which shows how the sentence was understood: the
-   method, and for each vehicle its position (meters), heading (degrees) and
+   method, and for each vehicle its position (metres), heading (degrees) and
    speed. If the sentence cannot be read, the preview says why.
 3. Press **Build Case**, or **Build & Run** to build and solve it at once.
 
-What it recognizes:
+What it recognises:
 
 | Item | How to write it |
 | --- | --- |
 | Method | One of the words `SIMON`, `EDSMAC`, `EDSMAC4`, `EDCRASH`, `EDGEN`, `EDHIS`, `GATB`. With none, SIMON. |
-| A vehicle | A pair of numbers, its **x y** position in **meters** — `(12, -3)` or `12 -3` — one pair per vehicle, up to 20 |
+| A vehicle | A pair of numbers, its **x y** position in **metres** — `(12, -3)` or `12 -3` — one pair per vehicle, up to 20 |
 | Vehicle type | A word before the position: `car`, `sedan`, `pickup`, `van`, `suv`, `truck`, `semi`, `bus`, `trailer`, `barrier`, ... (default passenger car) |
 | Heading | After the position: `heading`, `hdg`, `facing`, `yaw`, `bearing`, `direction` followed by degrees |
 | Speed | After the position: a number with a unit — `mph`, `km/h` (or `kph`), `m/s` — or `speed`, `spd`, `doing`, `going`, `moving`, ... followed by a number, which is taken as **mph** |
@@ -112,12 +86,12 @@ remove a row:
 
 Each row has a **Distribution** — Normal (mean, std), Uniform (min, max),
 Triangular (min, mode, max) or Lognormal (mu, sigma) — and its parameters.
-The first time the window opens, it offers impact speed (Normal, centered on the
+The first time the window opens, it offers impact speed (Normal, centred on the
 case's own value) and friction (Uniform, ±0.1 around the case's own value).
 
 **Output**
 
-- **Primary result (QoI)** — the result to summarize: delta-V of vehicle 1 or
+- **Primary result (QoI)** — the result to summarise: delta-V of vehicle 1 or
   2 (km/h), final speed of vehicle 1 or 2 (km/h), rest X or Y of vehicle 1 (m),
   or heading change of vehicle 1 (degrees).
 - **Report exceedance** — also report the probability that the result exceeds
@@ -142,7 +116,7 @@ Press **Run Analysis**. The batch runs in the background with a progress bar;
   grows. If the width is still falling steeply at the last run, more runs would
   narrow the answer.
 - **3D outcome cloud** — **Show in 3D viewport** plots every run's rest
-  positions (colored per vehicle) and impact points (red) in the viewport;
+  positions (coloured per vehicle) and impact points (red) in the viewport;
   **Clear cloud** removes them. **Rest positions**, **Impact points** and
   **Point size** choose what is shown.
 
@@ -188,7 +162,7 @@ The window reports:
 - **At the speed in question** — the lateral acceleration and the friction it
   needs; the lean needed (with the point-mass and knife-edge-tire estimates for
   comparison — the tire's width adds several degrees); the steer angle (and what
-  a linearized model would say); and whether the speed **exceeds** the limit or
+  a linearised model would say); and whether the speed **exceeds** the limit or
   is within it, by how much.
 
 ### Slide to rest
@@ -212,7 +186,7 @@ Source them for the surface and the evidence in your own case.
 
 **Tools › Audit Log...** lists, with a timestamp, actions taken in this
 session: a new case, cases opened and saved, simulation runs (including a
-failed or canceled run) and resets, undo and redo, glTF exports (with the
+failed or cancelled run) and resets, undo and redo, glTF exports (with the
 summary of what was written and what could not be carried), published bundles,
 and playback-sequence actions.
 
@@ -245,6 +219,6 @@ dialogs is held within its bounds.
 
 !!! warning "Stored units, not display units"
     The Limits Editor shows every bound in HVE Studio's internal **SI** units
-    (meters, newtons, kilograms, N·m, kPa, ...) regardless of the units set in
+    (metres, newtons, kilograms, N·m, kPa, ...) regardless of the units set in
     Preferences, and without a unit label. A tire radius bound reads 0.127 to
-    0.762 — meters — even when the Tire Data dialog shows inches.
+    0.762 — metres — even when the Tire Data dialog shows inches.

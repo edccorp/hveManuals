@@ -55,7 +55,7 @@ One row per track:
 | Column | Meaning |
 | --- | --- |
 | **On** | Include this track. A track switched off is ignored, and does not count toward the duration. |
-| **Event** | Which event the track plays (with a color key matching the timeline strip) |
+| **Event** | Which event the track plays (with a colour key matching the timeline strip) |
 | **Start (s)** | Where the track starts on the sequence timeline |
 | **End (s)** | Where it ends on the sequence timeline |
 | **Offset (s)** | Where the event's own t = 0 sits on the sequence timeline |
@@ -72,7 +72,7 @@ switched on.
 
 ### The timeline strip
 
-Under the table, each track is a colored bar on the sequence timeline, with
+Under the table, each track is a coloured bar on the sequence timeline, with
 the playback position marked in red.
 
 - **Drag a bar** to slide that event in time (hold **Ctrl** to snap). One drag
@@ -186,7 +186,7 @@ can be drawn into every frame.
    through* (the default) or a saved camera by name — and the **Start (s)** and
    **End (s)** times. **Now** beside each takes the playback bar's current
    time; **End of run** (ticked by default) records to the end whatever the
-   run's length, and grays the End field. Recording through a saved camera
+   run's length, and greys the End field. Recording through a saved camera
    does not change your own view: it is put back when the recording ends.
 6. Under **Rendering**, choose the **Renderer**. **Viewport (fast)** records the
    3-D view's own picture. **Ray traced** traces every frame with the built-in
@@ -284,7 +284,7 @@ by default, traces on the graphics card (see below); the status line beside
 the sample count says what traced the picture.
 **Results HUD** (on by default) burns the HUD boxes marked **Burn into movies
 and renders**, of the view on screen (Event or Playback), over the picture and
-into the saved PNG, as a recorded movie carries them; it is grayed when no such
+into the saved PNG, as a recorded movie carries them; it is greyed when no such
 box exists.
 
 The tracer runs on the graphics card when **Trace on the GPU** is ticked and

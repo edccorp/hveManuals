@@ -11,11 +11,11 @@ in the Event Information panel's *Active Event* list.
 
 ![The Event menu for a SIMON event](../images/hvn-02-event-menu-simon.png)
 *The Event menu for a SIMON event. Items the event's calculation method does not
-use are grayed.*
+use are greyed.*
 
 ## Which items apply to which method
 
-Unlike HVE's Set-up menu, the Event menu grays out the items the active event's
+Unlike HVE's Set-up menu, the Event menu greys out the items the active event's
 **Calculation Method** (Event Information) does not use, and changes its lower
 part by method:
 
@@ -34,12 +34,12 @@ part by method:
 | Restraints › | EDHIS, GATB |
 | Contacts... | EDSMAC4 (the contact surfaces); EDHIS, GATB (Human Contacts) |
 | Lights... | SIMON, EDSMAC4 |
-| Impact Plane / Barrier... | shown for EDCRASH, always grayed — not in HVE Studio |
+| Impact Plane / Barrier... | shown for EDCRASH, always greyed — not in HVE Studio |
 | Handling Parameters..., Move CG... | EDSMAC, EDSMAC4 |
 
 ![The Event menu for an EDCRASH event](../images/hvn-02-event-menu-edcrash.png)
 *The Event menu for an EDCRASH event: Position/Velocity, Payload, Wheels and the
-other simulation inputs are grayed, and Impact Plane / Barrier is added. EDCRASH's
+other simulation inputs are greyed, and Impact Plane / Barrier is added. EDCRASH's
 crush profile is Damage Profiles (Ctrl+M).*
 
 !!! note "HVE Studio"
@@ -56,7 +56,7 @@ not in the active event says so.
 
 **Results lock the inputs.** Once the active event has been run, its inputs are
 locked so they cannot drift away from the results on screen; the dialogs show
-a banner and their fields are grayed. Press **Reset** on the playback bar (or
+a banner and their fields are greyed. Press **Reset** on the playback bar (or
 **Reset Run to Edit** in Event Information) to edit again.
 
 ---
@@ -95,14 +95,14 @@ right-click a section header to move or hide it.
 The **Calculation Method** list shows every method HVE Studio can run. A method
 whose output has not yet been checked against HVE is marked *(unvalidated)*; a
 method the event's vehicles cannot use is marked *N/A for these vehicles*, with
-the reason on hover; and an HVE event whose method HVE Studio does not recognize
+the reason on hover; and an HVE event whose method HVE Studio does not recognise
 keeps its name and is marked *not ported* — it opens and displays but cannot be
 run.
 
 !!! note "HVE Studio"
     Method Options... opens an options dialog for EDCRASH, EDSMAC and EDSMAC4
     (one shared dialog), EDGEN, EDHIS, SIMON, EDVSM, GATB and SINGLETRACK. For
-    EDSVS, EDVDS, EDVTS and ReadDataFile it is grayed. Simulation time and timesteps are
+    EDSVS, EDVDS, EDVTS and ReadDataFile it is greyed. Simulation time and timesteps are
     in the Simulation panel (see [Chapter 6](06-options-menu.md#simulation-controls)).
 
 See the dialog reference: [Event Information](../../09-events-driver-controls/EventInfo.md)
@@ -257,7 +257,7 @@ For an **EDCRASH** event the dialog has a single **Wheel Data** page instead (se
 
 !!! note "HVE Studio"
     For a SINGLETRACK (motorcycle) event the Throttle, Gear and Lean pages are
-    not shown: that engine has no drivetrain model, and only SIMON
+    marked *(not read)*: that engine has no drivetrain model, and only SIMON
     reads the Lean table. Its Steer page is a steering-torque or commanded-lean
     table, chosen in Method Options.
 
@@ -277,14 +277,12 @@ See the dialog reference: [Driver Controls](../../09-events-driver-controls/Driv
 
 **Purpose:** Have the HVE Driver Model steer the selected vehicle along a path.
 
-**Description:** As in HVE, the Path Follower is a page of Driver Controls: this
-item opens **Driver Controls** on its **Path Follower** tab. Tick **Use Path
-Follower**; the tab's pages are **Method** (path method, timing and limits), **Steering** (variable
+**Description:** In HVE the Path Follower was a page of Driver Controls; in
+HVE Studio it is its own Event menu item. Tick **Use Path Follower**; the dialog's
+pages are **Method** (path method, timing and limits), **Steering** (variable
 steer and torque), **Path** (the waypoints), **Speed Follower** and **Filter**
-(the neuromuscular filter). The **Speed** column and the Speed Follower
-settings show only while **Use Speed Follower** is ticked (EDGEN always shows the
-speeds). Waypoints can be picked and moved in the viewport
-while the tab is open; select a waypoint and press **Delete** to remove it.
+(the neuromuscular filter). Waypoints can be picked and moved in the viewport
+while the dialog is open; select a waypoint and press **Delete** to remove it.
 
 The dialog says how the active method uses it:
 

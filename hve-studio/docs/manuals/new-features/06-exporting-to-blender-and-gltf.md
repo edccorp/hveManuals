@@ -30,7 +30,7 @@ use the live link.
 3. Pick the file name and folder.
 4. In Blender: **File › Import › glTF 2.0**, pick the file, and press play.
 
-The menu is grayed until there is a run to export ("Run a simulation first --
+The menu is greyed until there is a run to export ("Run a simulation first --
 the export carries the motion"). A summary of what was written — and every
 item glTF could not carry — is added to **Tools › Audit Log**.
 
@@ -40,9 +40,9 @@ item glTF could not carry — is added to **Tools › Audit Log**.
 | --- | --- |
 | Vehicle bodies | One object per vehicle: its real mesh (`.h3d`/`.iv`/`.wrl`) when it has one, otherwise the same generated body the physics uses |
 | Motion | Position and rotation keys on each body, sampled at 30 frames per second |
-| Wheels | One child object per wheel at its axle position, animated with steer, spin and camber; a motorcycle gets one wheel per axle, on the centerline |
+| Wheels | One child object per wheel at its axle position, animated with steer, spin and camber; a motorcycle gets one wheel per axle, on the centreline |
 | The site | The imported terrain, as a static mesh |
-| Humans | The solved event's occupants and pedestrians, one ellipsoid per body segment, animated in position, rotation and size, each wearing its segment's material or color |
+| Humans | The solved event's occupants and pedestrians, one ellipsoid per body segment, animated in position, rotation and size, each wearing its segment's material or colour |
 | Materials | Each vehicle's paint, its tires, one material per road surface, and node materials **baked** (below) — one material per vehicle part |
 | Texture coordinates | On a body or a surface whose source has them, so an image material travels |
 | Cameras | Every saved camera, keyed per frame when it rides a vehicle or is keyframed |
@@ -53,7 +53,7 @@ active, the export carries the whole sequence: each vehicle the sequence places 
 its occupants ride, as the sequence plays them, whichever event happens to be
 live; a camera riding a vehicle follows it as drawn.
 
-**Baked materials.** glTF has one fixed material model (base color, metallic,
+**Baked materials.** glTF has one fixed material model (base colour, metallic,
 roughness, emission, alpha, a normal map, one image per slot, and a clear coat
 through `KHR_materials_clearcoat`) and no node graphs. The Principled BSDF's
 Coat Weight and Coat Roughness go into the clear coat; a Coat IOR other than
@@ -63,7 +63,7 @@ Math of those, an image texture on the mesh's own texture coordinates, a normal
 map, emission, the Alpha Blend and Alpha Clip modes, Mix and Add Shader — goes
 into the file, with images embedded. **Everything else is named in the export
 status, one sentence each**: a procedural texture (Noise, Voronoi, Checker, ...)
-is exported as the object's own color and said; so is a Bump, an image on a
+is exported as the object's own colour and said; so is a Bump, an image on a
 mesh without texture coordinates, an image that could not be read, a world
 material, the ground plane's material, and a keyframed material (exported at
 t = 0).
@@ -131,7 +131,7 @@ The **HVE** tab's buttons, once connected:
 After you re-run the case in HVE Studio, press the same buttons again. The add-on
 updates the objects it made before — their mesh data and keyframes — instead of
 creating new ones, so the materials, lights, modifiers and constraints you added
-in Blender stay. Objects are recognized by a tag, not by name, so renaming one
+in Blender stay. Objects are recognised by a tag, not by name, so renaming one
 in Blender does not create a duplicate. A vehicle HVE Studio no longer has, or a
 wheel it no longer publishes, is removed.
 
@@ -152,7 +152,7 @@ to stop.
 
 **HVE Studio's look** shows the Blender scene through HVE Studio's own display
 curve and bloom, so a Blender render looks like the HVE Studio viewport. **Scene's
-own view** puts Blender's color management back exactly as it was. It works
+own view** puts Blender's colour management back exactly as it was. It works
 through the compositor (your own compositor nodes are kept) and needs Blender
 4.2's GPU compositor.
 
@@ -165,7 +165,7 @@ through the compositor (your own compositor nodes are kept) and needs Blender
 - **Damage** — the deformed vertices of each crushed body. In Playback mode, each
   vehicle's damage from the event that holds it at that moment.
 - **Humans** — every segment ellipsoid, wearing its segment's material, else the
-  figure's, else the segment's color. In Playback mode, the sequence's bodies,
+  figure's, else the segment's colour. In Playback mode, the sequence's bodies,
   each from its own event.
 
 In Playback mode the link sends the vehicles the sequence places; in Event mode,
@@ -184,7 +184,7 @@ in Blender are the ones the motion and damage that follow are for.
 
 Small differences the add-on reports rather than hides: Blender has no *Alpha
 Clip* mode (it uses dithered), *Lighting only* on the World becomes the World's
-camera visibility (honored by Cycles), and Blender's Math *Modulo* differs from
+camera visibility (honoured by Cycles), and Blender's Math *Modulo* differs from
 HVE Studio's for negative inputs.
 
 ### Limits

@@ -1947,7 +1947,7 @@ S = 1 - \Omega\left(\frac{r_T}{u_{GP}}\right)
 \qquad (\text{Eq. 94})
 $$
 
-$S$ is limited to the range $-1 \le S \le 1$. When the tire is traveling too
+$S$ is limited to the range $-1 \le S \le 1$. When the tire is travelling too
 slowly for Eq. 94 to be meaningful (a forward ground-plane speed below
 approximately 1 in/sec), longitudinal slip is instead set to zero if the wheel
 is also not spinning, or to $\pm 1$ if the wheel is spinning while the vehicle
@@ -2068,8 +2068,8 @@ C_\alpha'\left(1.0 - \dfrac{1}{3}\cdot\dfrac{\left|\alpha\right| - 1^\circ}{4^\c
 \qquad (\text{Eq. 100a})
 $$
 
-The reduction is symmetric about 180 degrees, so that a tire traveling
-rearward sees the same treatment as one traveling forward.
+The reduction is symmetric about 180 degrees, so that a tire travelling
+rearward sees the same treatment as one travelling forward.
 
 *(updated: Eq. 100a describes behavior not documented in earlier editions of
 this manual.)*
@@ -2171,7 +2171,7 @@ F_{y'} = \frac{-C_\alpha T(\alpha)}{1.0 - \left|S\right|}\cdot k_u
 \qquad (\text{Eq. 106})
 $$
 
-where $s_u$ and $k_u$ account for the direction the tire is traveling:
+where $s_u$ and $k_u$ account for the direction the tire is travelling:
 
 $$
 s_u = -\,\mathrm{sgn}\left(u_{GP}\right),\qquad
@@ -2186,10 +2186,10 @@ $$
 $s_u$ orients the longitudinal force so that it always opposes the direction
 of travel for a braking slip and drives the vehicle for a drive slip, whether
 the tire is rolling forward or backward. $k_u$ reverses the lateral force when
-the tire is traveling rearward, so that a slip angle measured relative to the
+the tire is travelling rearward, so that a slip angle measured relative to the
 wheel plane produces a lateral force in the correct direction in reverse.
 Vers. 1 omits this correction, and consequently returns a lateral force of the
-wrong sign for a tire traveling rearward.
+wrong sign for a tire travelling rearward.
 
 *(updated: the direction-of-travel factors in Eq. 106a were not documented in
 earlier editions. $k_u$ is one of the differences between Vers. 1 and the
@@ -2301,7 +2301,7 @@ inclination angle relative to the ground exceeds approximately 80 degrees, the
 model can no longer resolve a meaningful contact patch. In that case:
 
 - If the wheel is being contacted by the 3-D mesh collision model, all tire
-  forces, plowing forces, slip values and the rolling resistance moment are
+  forces, ploughing forces, slip values and the rolling resistance moment are
   faded smoothly toward zero using the blending factor of Eq. 104a, applied to
   the cosine of the inclination angle. This avoids a discontinuity in the
   forces during a wheel impact.
@@ -2360,7 +2360,7 @@ following ways:
    it near $\pm 90^\circ$, preserving the correct small-angle response.
 4. Direction-of-travel factors are applied to the tire forces (Eq. 106a) so
    that both longitudinal and lateral forces act in the correct direction when
-   the vehicle is traveling rearward.
+   the vehicle is travelling rearward.
 5. Cornering stiffness is reduced at large slip angles (Eq. 100a), and, in
    Vers. 3, cornering and camber stiffness are faded at very low wheel speeds
    (Eq. 104b).
@@ -3194,7 +3194,7 @@ $$
 
 The front, right, bottom and front-device surfaces use $q^{-}$; the back, left, top and back-device surfaces use $q^{+}$. Each uses the relative-wind component along its own normal axis — $V_{x_{Wind}}$ for the front, back and both devices, $V_{y_{Wind}}$ for the right and left, and $V_{z_{Wind}}$ for the top and bottom.
 
-This means, for example, that a vehicle traveling forward loads its front surface but not its back surface, and a cross-wind from the right loads the right surface only.
+This means, for example, that a vehicle travelling forward loads its front surface but not its back surface, and a cross-wind from the right loads the right surface only.
 
 ### Force on each surface
 

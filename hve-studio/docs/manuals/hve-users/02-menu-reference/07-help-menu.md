@@ -3,13 +3,13 @@
 *HVE User's Manual — Section Two: Menu Reference, HVE Studio edition. Replaces
 HVE's Chapter 7, Help Menu.*
 
-HVE Studio's Help menu has four items: **Manual**, **License...**, **Check for Vehicle Data
+HVE Studio's Help menu has three items: **License...**, **Check for Vehicle Data
 Updates** and **About HVE Studio...**.
 
 | HVE item | HVE Studio |
 |---|---|
-| Help Topics | Help › **Manual** — see [HELP TOPICS](#help-topics) |
-| User Manuals | Help › **Manual** — see [USER MANUALS](#user-manuals) |
+| Help Topics | Not in HVE Studio — see [HELP TOPICS](#help-topics) |
+| User Manuals | Not in HVE Studio as a menu — see [USER MANUALS](#user-manuals) |
 | Tech Support | Not in HVE Studio — see [TECH SUPPORT](#tech-support) |
 | About | Help › **About HVE Studio...** |
 | Online Licensing | Help › **License...** — see [ONLINE LICENSING](#online-licensing) |
@@ -35,27 +35,21 @@ in brackets. Quote the version when you report a problem. **OK** closes it.
 
 ## HELP TOPICS
 
-**Menu Option:** Help › Manual
-
-**Purpose:** Open this manual set, the reference for HVE Studio, in your web browser.
-
-**Description:** **Manual** opens the published HVE Studio manual
-(manuals.edccorp.com/studio/) in your default browser. HVE Studio has no help
-browser of its own; help in the program is also given in place: hover over a
-control to see its tooltip, and turn on **View › Show Guidance Text** for the
-longer explanations in the dialogs. If no browser can be started, the address
-is copied to the clipboard and the Help menu says so, under the item.
+!!! warning "Not in HVE Studio"
+    HVE Studio has no built-in help browser. Help in the program is given in place:
+    hover over a control to see its tooltip, and turn on **View › Show Guidance
+    Text** for the longer explanations in the dialogs. This manual set is the
+    reference.
 
 ---
 
 ## USER MANUALS
 
-**Menu Option:** Help › Manual
-
-**Description:** There is no User Manuals submenu: the HVE Studio edition of the
-HVE manuals — this User's Manual, the dialog reference and the program manuals
-for each calculation method — is the one manual set that **Help › Manual** opens.
-Start at [What is HVE Studio?](../../getting-started/01-what-is-hve-studio.md).
+!!! warning "Not in HVE Studio"
+    There is no User Manuals submenu. The HVE Studio edition of the HVE manuals —
+    this User's Manual, the dialog reference and the program manuals for each
+    calculation method — is this manual set; start at
+    [What is HVE Studio?](../../getting-started/01-what-is-hve-studio.md).
 
 ---
 

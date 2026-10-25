@@ -86,7 +86,7 @@ each item is available for). The following options are available:
 - Position/Velocity
 - Driver Controls (Throttle, Brakes, Steering, Gear Selection, Wheel Data,
   and — for a motorcycle — Lean), with the HVE Driver path follower on its
-  own Path Follower tab
+  own Path Follower dialog
 - Vehicle Damage (Damage Profile)
 - Vehicle Payload
 - Collision Pulse
@@ -275,9 +275,9 @@ The Driver Controls options are described below.
     Ctrl+D) has **Throttle**, **Brake**, **Steer** and **Gear** tabs for a
     simulation, plus **Lean** for a motorcycle, and a single **Wheel Data**
     tab for EDCRASH. The tables are the current event's own for the
-    selected vehicle. For the single-track model the Throttle, Gear and Lean tabs
-    are not shown, because that model has no drivetrain. The
-    HVE Driver is its own **Path Follower** tab. HVE's Lights page is
+    selected vehicle. For the single-track model the Throttle and Gear tabs
+    are labelled *(not read)*, because that model has no drivetrain. The
+    HVE Driver is on its own **Path Follower** dialog. HVE's Lights page is
     **Event › Lights...** (SIMON and EDSMAC4), not in Driver Controls; the
     lamps themselves are defined under Vehicle › Editors › Vehicle Lights. Each table
     is a list of time/value rows; **Add** adds a row and **Sort by Time**
@@ -480,7 +480,7 @@ positions, or a path table (reserved). See the
 
 !!! note "HVE Studio"
     In HVE Studio the path follower is set per event and per vehicle on the
-    **Path Follower** tab of Driver Controls (Event › Path Follower... opens it): **Use Path
+    **Path Follower** dialog (Event › Path Follower...): **Use Path
     Follower**, then the **Method**, **Steering**, **Path**, **Speed
     Follower** and **Filter** tabs. There is no driver-model version or Path
     Source selector. Its path is the vehicle's initial position plus up to
@@ -988,7 +988,7 @@ point of application of the force in a Force/Moment collision pulse table.
     here (**Add row**, **Import file...**, **Export file...**, **Clear
     pulse**). The **Pulse type** choices are Position, Velocity,
     Acceleration and Impulse (HVE's Force/Moment). It also has the **Start
-    time**, the impulse center and the six **Scale
+    time**, the **Threshold (g)**, the impulse centre and the six **Scale
     factors** (Forward, Lateral, Vertical, Roll, Pitch, Yaw).
 
 ### Wheels

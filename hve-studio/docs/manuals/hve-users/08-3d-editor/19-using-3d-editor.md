@@ -3,7 +3,7 @@
 In HVE, the 3-D Editor is the tool for creating and editing the 3-D objects used to visualize humans, vehicles and environments, and for giving environment surfaces their physical properties (surface type and friction factor). This chapter describes where each of those jobs is done in HVE Studio.
 
 !!! note "HVE Studio"
-    HVE Studio has no separate 3-D Editor. Its **Viewport** panel (**View › Viewport**) is the one 3-D view for all five editor modes (Human F2, Vehicle F3, Environment F4, Event F5, Playback F6). Environment geometry is imported rather than modeled; surface properties, layers and materials are edited on the imported surfaces. The sections below follow the order of HVE's chapter.
+    HVE Studio has no separate 3-D Editor. Its **Viewport** panel (**View › Viewport**) is the one 3-D view for all five editor modes (Human F2, Vehicle F3, Environment F4, Event F5, Playback F6). Environment geometry is imported rather than modelled; surface properties, layers and materials are edited on the imported surfaces. The sections below follow the order of HVE's chapter.
 
 ## Description
 
@@ -19,7 +19,7 @@ The HVE Studio equivalents of the 3-D Editor's components are:
 
 ## Viewers
 
-HVE's 3-D Editor shows four viewers (Perspective, X-Y, Y-Z and X-Z). The HVE Studio Viewport shows one 3-D view at a time. The **view cube** in its top-right corner turns with the camera: click a face (Top, Bottom, Front, Back, Left or Right) and the view goes there in orthographic projection, which is the rendered equivalent of HVE's plan, front and side orthographic viewers; each face shows its key under its name (Top **7**, Front **1**, Right **3**; hold **Ctrl** for the opposite side: Bottom, Back, Left), and the number row works as well as the keypad; drag the cube to orbit. The column of buttons under the cube is:
+HVE's 3-D Editor shows four viewers (Perspective, X-Y, Y-Z and X-Z). The HVE Studio Viewport shows one 3-D view at a time. The **view cube** in its top-right corner turns with the camera: click a face (Top, Bottom, Front, Back, Left or Right) and the view goes there in orthographic projection, which is the rendered equivalent of HVE's plan, front and side orthographic viewers; drag the cube to orbit. The column of buttons under the cube is:
 
 - **Zoom** — drag up or down to zoom.
 - **Pan** — drag to pan.
@@ -164,7 +164,7 @@ HVE's Friction Factor is the **Friction Multiplier** of the selected surface (se
 HVE's Material Color editor sets ambient, diffuse, specular, emissive, shininess and transparency for the selected object.
 
 !!! note "HVE Studio"
-    Appearance is edited in the **Shader Editor** (**View › Shader Editor**), a node material editor modeled on Blender's. A material is a graph of nodes ending in a Material Output; a new surface material is *Object Color → Principled BSDF → Material Output*, which draws the object exactly as it looked without one. Materials apply to vehicles (whole vehicle or each named part of its mesh), to road surfaces and to the world (sky). **Materials are display only — nothing in the Shader Editor reaches an engine**; the *HVE Simulation* node can read friction, speed and time so that a material can visualize them.
+    Appearance is edited in the **Shader Editor** (**View › Shader Editor**), a node material editor modelled on Blender's. A material is a graph of nodes ending in a Material Output; a new surface material is *Object Color → Principled BSDF → Material Output*, which draws the object exactly as it looked without one. Materials apply to vehicles (whole vehicle or each named part of its mesh), to road surfaces and to the world (sky). **Materials are display only — nothing in the Shader Editor reaches an engine**; the *HVE Simulation* node can read friction, speed and time so that a material can visualize them.
 
 ### Texture Editor
 
@@ -197,7 +197,7 @@ HVE's Group tool combines objects into a group, splits groups, and saves and loa
 ![Figure 19-3](../images/hvn-08-viewport-scene.png)
 *Figure 19-3 — The 3-D view of a site read from an HVE case, with scene ghosts in outline style marking measured scene positions.*
 
-Lighting comes from the sun and sky set in **Environment › Environment… › Sky**. **Vehicle › Editors › Vehicle Lights…** keeps a list of lights with each vehicle (type, intensity, direction, position, color); the 3-D view uses them as the vehicle's lamps, which light the scene once the sky darkens. No engine reads them.
+Lighting comes from the sun and sky set in **Environment › Environment… › Sky**. **Vehicle › Editors › Vehicle Lights…** keeps a list of lights with each vehicle (type, intensity, direction, position, colour); the 3-D view uses them as the vehicle's lamps, which light the scene once the sky darkens. No engine reads them.
 
 ---
 *Converted and updated from the legacy HVE User's Manual (Seventh Edition, Jan 2006), Chapter 19; adapted for HVE Studio.*

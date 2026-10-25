@@ -4,13 +4,13 @@ The camber properties of the wheels are displayed and edited in the **Camber vs 
 
 Where HVE edits one wheel at a time, and opens either this table/graph dialog (independent suspension) or a single constant *Camber (deg)* dialog (solid and tandem axles), HVE Studio shows one table with a column per wheel (**A1 Left**, **A1 Right**, **A2 Left**, ...) holding both. Deflections are shown in the units set in Preferences; angles are in degrees.
 
-## Suspension Group
+## Link Group
 
-Four small buttons per wheel: **-**, **S1**, **S2** and **S3**. Wheels in the same group share their values, as in the [Jounce and Rebound Stops Dialog](JouAndRebDlg.md).
+Four small buttons per wheel: **-**, **A**, **B** and **C**. Wheels in the same group share their values, as in the [Jounce and Rebound Stops Dialog](JouAndRebDlg.md).
 
 ## Solid-Axle Const (deg)
 
-The constant camber angle of a solid or tandem axle (HVE's small Camber dialog). Enabled only for wheels on an axle whose suspension type is not Independent; for an independent axle the field is grayed, and its tooltip says that the axle's camber comes from the table.
+The constant camber angle of a solid or tandem axle (HVE's small Camber dialog). Enabled only for wheels on an axle whose suspension type is not Independent; for an independent axle the field is greyed, and its tooltip says that the axle's camber comes from the table.
 
 ## Data Table
 

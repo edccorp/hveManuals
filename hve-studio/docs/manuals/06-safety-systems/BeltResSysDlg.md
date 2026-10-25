@@ -18,7 +18,7 @@ installed in the vehicle editor's Belt Restraints dialog.
 
 ![Belt Restraint System window](images/hvn-belt-restraint-system.png)
 
-Each belt section is modeled as two belt segments (left and right). One end of
+Each belt section is modelled as two belt segments (left and right). One end of
 each is attached to a body segment; the other end is attached to an anchor
 point on the vehicle.
 

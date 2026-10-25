@@ -15,7 +15,7 @@ Tire vs terrain contact is modeled transparently to the user. At each simulation
 ## Opening the options
 
 EDVDS has no calculation options window in HVE Studio; **Method Options...** in
-Event Information is grayed for an EDVDS event. HVE's one EDVDS option, the
+Event Information is greyed for an EDVDS event. HVE's one EDVDS option, the
 tire model method, is fixed:
 
 ## Tire Model Method

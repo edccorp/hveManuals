@@ -7,10 +7,10 @@ Each wheel's position is normally **derived** from the vehicle's dimensions (the
 This table contains the following parameters:
 
 ## X
-The longitudinal distance from the vehicle CG to the wheel (positive forward). When an unlinked axle's wheels (**Linked L/R** unticked) carry their own X, the wheelbase, CG-to-axle distances, axle spacing and overhangs in **Size & Weight** follow from them and are grayed, and an orange note there says so, with **Use dimensions instead** to type them again.
+The longitudinal distance from the vehicle CG to the wheel (positive forward). When an unlinked axle's wheels (**Linked L/R** unticked) carry their own X, the wheelbase, CG-to-axle distances, axle spacing and overhangs in **Size & Weight** follow from them and are greyed, and an orange note there says so, with **Use dimensions instead** to type them again.
 
 ## Y
-The lateral distance from the vehicle CG to the wheel (positive toward the right side). When a wheel carries its own Y, that axle's **Track Width** follows from the wheels and is grayed.
+The lateral distance from the vehicle CG to the wheel (positive toward the right side). When a wheel carries its own Y, that axle's **Track Width** follows from the wheels and is greyed.
 
 ## Z below CG
 The vertical distance from the vehicle CG to the wheel (positive downward).

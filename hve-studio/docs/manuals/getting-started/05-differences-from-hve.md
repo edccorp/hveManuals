@@ -24,8 +24,8 @@ HVE does.
 | Contact surfaces, airbags, belts | **Vehicle › Editors › Contact Surfaces**, **Airbags**, **Belt Restraint**; per event, **Event › Restraints** |
 | GEBOD Human Information | **Human › Human Information** (the Humans panel) |
 | Damage Studio | **Output › Damage Studio Options** and **Damage Studio Report**; crush is drawn on the vehicle's 3-D body as the run plays |
-| Impact Plane / Barrier (EDCRASH) | Grayed in the Event menu. Model a barrier as a vehicle of type **Fixed Barrier** (Vehicles panel, Identity) |
-| An input a program does not use is grayed | The same, and in addition HVE Studio says **why** where it matters (for example, which program reads a field). Inputs are locked while results are on screen; press **Reset** to edit |
+| Impact Plane / Barrier (EDCRASH) | Greyed in the Event menu. Model a barrier as a vehicle of type **Fixed Barrier** (Vehicles panel, Identity) |
+| An input a program does not use is greyed | The same, and in addition HVE Studio says **why** where it matters (for example, which program reads a field). Inputs are locked while results are on screen; press **Reset** to edit |
 | `.hve` case files | `.hvex` or `.json`; `.hve` files open directly but are not written. Like a `.hve`, a saved case carries its site (geometry and aerial photograph) inside it; **File › Embed the environment in the case** turns that off for a case that should only name its site file. See [Cases and Files](04-cases-and-files.md) |
 
 Most of HVE's dialogs are ported field for field. Where a dialog page in this
@@ -59,7 +59,7 @@ in EDC's corpus is such a case. See the [SIMON](../programs/SIMON/README.md)
 and [EDSMAC4](../programs/EDSMAC4/README.md) manuals.
 
 **3. Differential type (SIMON).** HVE stores a differential type (Open,
-Limited Slip, Locked) but grays the control and solves every differential as
+Limited Slip, Locked) but greys the control and solves every differential as
 open. HVE Studio's **Drivetrain** dialog enables the type, and SIMON applies a
 torque bias for Limited Slip and Locked. **Open** gives HVE's answer, and every
 vehicle imported from HVE is open.
@@ -85,7 +85,7 @@ running something else:
 | Event › DyMESH Options › Search Option | Search all vertices *(refuses the run)* | Automatic box size and Set box size work |
 
 !!! warning "Not in HVE Studio"
-    GATB's **Use external ATB input file** is shown grayed. HVE Studio passes the
+    GATB's **Use external ATB input file** is shown greyed. HVE Studio passes the
     ATB input to the solver directly, not through a `GATB.ain` file, so an
     external file cannot reach it.
 

@@ -68,7 +68,7 @@ updates the rotational inertias when the weight is changed (described
 below).
 
 !!! note "HVE Studio"
-    **Auto Update Inertia When Weight Changes** (a checkbox under **Rotational Inertia**, off by default and kept as your own setting, not the vehicle's, as in HVE): a typed weight or mass, total or sprung, here or in **Size & Weight**, multiplies the **total** roll, pitch and yaw inertias by the new total mass over the old one; the sprung values follow by the parallel axis theorem and the XZ product is kept. An axis with nothing stated uses the estimate, which follows the mass anyway.
+    **Auto Update Inertia When Weight Changes** (a checkbox under **Rotational Inertia**, off by default and kept as your own setting, not the vehicle's, as in HVE): a typed weight or mass, total or sprung, here or as **Total Weight** in **Size & Weight**, multiplies the **total** roll, pitch and yaw inertias by the new total mass over the old one; the sprung values follow by the parallel axis theorem and the XZ product is kept. An axis with nothing stated uses the estimate, which follows the mass anyway.
     Unticked, a stated rotational inertia is left unchanged when the weight
     is edited.
 
@@ -332,26 +332,12 @@ Vehicle Mesh window holds the rest, in four tabs.
     - *Database bodies, by vehicle* — the body of every vehicle in the vehicle
       databases, `EDCVehicles.hvedb` and your own `.hvedb` files included,
       named by year, make and model, with the database under **From**.
-    - *Database geometry, by vehicle* —
-      every mesh stored inside a `.hvedb`, including meshes that no vehicle
-      uses, with the database under **From**. A mesh a vehicle uses is listed
-      by that vehicle's year, make and model, so EDC's and VehicleMetrics'
-      meshes read alike. When several vehicles share a mesh the first, in
-      alphabetical order, is shown with "(+N more)"; the tooltip lists every
-      vehicle that uses it. A mesh no vehicle uses reads as its file name
-      tidied (see below).
+    - *Database geometry, by file name* — every mesh stored inside a `.hvedb`,
+      including meshes that no vehicle uses, with the database under **From**.
     - *Loose files in the search folders* — the geometry files in the folders
-      the library searches, read by a tidied name, with the folder under
-      **From**. A file with the same name as a mesh a database stores is not
-      listed, because that name always opens the database's mesh.
-
-    **The library never shows a raw file name**, in a row or a tooltip. Where
-    there is no vehicle to name a geometry, its file name is tidied: the
-    extension goes, underscores and hyphens become spaces, and a space goes in
-    where the capitals or digits change (`PUFordF150.h3d` reads *PU Ford
-    F150*). Two geometries that tidy alike are numbered "(2)", "(3)". The
-    filter box still matches the real file name, so a name you know still
-    finds its geometry, and a pick stores the real file's reference.
+      the library searches. A file with the same name as a mesh a database
+      stores is not listed, because that name always opens the database's
+      mesh.
 
     Picking a database body or a database mesh stores a reference to that exact
     stored mesh (its database and content hash), as a vehicle picked from the
@@ -400,12 +386,7 @@ Vehicle Mesh window holds the rest, in four tabs.
   closed outer surface (the mesh is sampled to points and rebuilt the way
   a scan is), so interior faces, open edges and loose pieces fall away;
   reduced to the triangle budget (0 = 10 000). The mesh is still drawn.
-  Each wheel well is opened: the rebuild would otherwise bridge a wheel
-  arch with solid, burying the tire, so the surface is cut back to the
-  tire's cylinder plus 3 cm, open outward, and up to the arch's own ceiling
-  (or 15 cm above the tire where the mesh models no liner). The run status
-  says how many wells were opened. A single-track vehicle's wheel has no
-  well and is left alone. Off for every HVE case.
+  Off for every HVE case.
 - **Collides: n of m parts** — a list of the mesh's parts (its material
   names, and any parts made from faces in Edit Mode), each with a tick.
   Untick a part, such as a mirror or an antenna, to leave it out of what
@@ -414,7 +395,7 @@ Vehicle Mesh window holds the rest, in four tabs.
   tools (see [Scan bodies](#scan-bodies)) follow; for a scan used as the
   display mesh they are on the Display tab.
 - **DyMESH Contact Mesh Preparation** — the vehicle's defaults for
-  **Tessellate**, maximum triangle leg and weld distance (shown grayed: it is
+  **Tessellate**, maximum triangle leg and weld distance (shown greyed: it is
   not applied, in HVE or here, so the mesh keeps its own vertices). An event can state
   its own, which then outrank these: **Event › DyMESH Options** (Contact Mesh
   Preparation, per vehicle). A note here says when the active event does.
@@ -431,7 +412,7 @@ instead** (below), nothing on this tab reaches an engine.
   the crush of the run. A display mesh has its own **Scale Factor**, **Center
   on CG**, **Move CG**, **Translate**, **Rotate** and **Scale**. A newly picked
   file is fitted to the collision body; **Align to collision mesh** fits it
-  again: centered on the collision body and scaled uniformly to its length,
+  again: centred on the collision body and scaled uniformly to its length,
   keeping its Rotate, with what is left over in width and height reported.
   **Collide the display mesh instead** makes DyMESH collide the display mesh
   (reduced to the triangle budget, or rebuilt as a closed shell when that is
@@ -451,7 +432,7 @@ instead** (below), nothing on this tab reaches an engine.
 its length and width instead of taking the file's own origin as the CG, and
 that moves the body the run collides with, not only the picture. Leave it off
 for a body authored about its CG, as every HVE vehicle file is: a real body's
-extents are rarely centered on its CG. Use Move CG to correct a known offset.
+extents are rarely centred on its CG. Use Move CG to correct a known offset.
 
 A vehicle picked from a vehicle database names its mesh by the database it came
 from (`<database>#sha256:…/<name>`). Where that database is missing or not
@@ -559,7 +540,7 @@ contact surface, perform the following steps:
    > will occur. (See Event Editor, Contacts Dialog, for more information.)
 
 4. Enter the geometry, in vehicle-fixed coordinates. By default the surface
-   is edited as a rectangle: **Center** (X, Y, Z), **Size** (Width, Height)
+   is edited as a rectangle: **Centre** (X, Y, Z), **Size** (Width, Height)
    and **Angles** (Yaw, Pitch, Roll, in degrees, applied 3-2-1). Check
    **Edit corner points instead** to enter HVE's three corners directly:
    **P2 (corner)**, **P3 (+width)** and **P1 (+height)**.
@@ -924,7 +905,7 @@ following steps:
    properties**, below the table.
 5. Press **Close** to close the dialog.
 
-Both type lists offer all the connector types, each labeled *(trailer)* or
+Both type lists offer all the connector types, each labelled *(trailer)* or
 *(tow)*. The connection properties belong to the towing end, so they are
 set on the tow vehicle's rear connection; a front connection has none of
 its own. The **Height above ground** row shows each connection's height,

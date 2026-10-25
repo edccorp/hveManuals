@@ -37,9 +37,9 @@ Where HVE Studio behaves differently from HVE, the page says so in a box marked 
 
 ## Notes on this edition
 
-This Markdown edition preserves the substance of the Fifth Edition manual and has been checked against the current EDSMAC physics model, then adapted for HVE Studio. Where the original manual was stale, the text follows the current program behavior and is marked with *(updated: ...)* notes. Key updates:
+This Markdown edition preserves the substance of the Fifth Edition manual and has been checked against the current EDSMAC physics model, then adapted for HVE Studio. Where the original manual was stale, the text follows the current program behaviour and is marked with *(updated: ...)* notes. Key updates:
 
-- Calculation option defaults and labels (Vector Spacing default 2.0 deg; the vector force tolerance is now labeled "Max Pressure Error").
+- Calculation option defaults and labels (Vector Spacing default 2.0 deg; the vector force tolerance is now labelled "Max Pressure Error").
 - Corrected descriptions of the two friction options (Inter-vehicle Friction is the friction coefficient; Minimum Velocity for Friction is the minimum relative velocity).
 - The restitution model $e = C_0 - C_1\delta + C_2\delta^2$ with current default coefficients.
 - Terrain search options are set separately from the calculation options; the "By Elevation" method is not supported.

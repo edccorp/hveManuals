@@ -70,7 +70,7 @@ Next, let's change the weight:
 
    > NOTE: Only total weight and total yaw inertia is used by the 3-DOF EDSVS calculations.
 
-2. In the **Weight** row, **Total** column (lbf), enter the measured value, `4405` lb.
+2. In the *Total Weight (lbf)* field, enter the measured value, `4405` lb.
 
    > NOTE: HVE Studio stores the case in SI units, so a value you type may redisplay with a small difference in its last digit after conversion.
 

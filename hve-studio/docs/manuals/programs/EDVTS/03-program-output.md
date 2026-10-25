@@ -40,7 +40,7 @@ Examples of these reports from EDC's EDVTS tutorial case, as HVE Studio shows th
 
 The Accident History Report displays a table of initial and final positions and velocities for the vehicle. A typical Accident History Report is shown in Figure 3-1.
 
-The report includes the Total Distance Traveled and Time, followed by Position (X, Y, PSI — and, for the trailer, GAMMA) and Velocity (V-tot, u-vel, v-vel, Yaw Vel — and, for the trailer, Gam Vel) at the Initial and Final positions.
+The report includes the Total Distance Travelled and Time, followed by Position (X, Y, PSI — and, for the trailer, GAMMA) and Velocity (V-tot, u-vel, v-vel, Yaw Vel — and, for the trailer, Gam Vel) at the Initial and Final positions.
 
 ```text
                                     ACCIDENT HISTORY

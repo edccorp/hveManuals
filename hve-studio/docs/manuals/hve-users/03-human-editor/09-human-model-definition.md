@@ -182,7 +182,7 @@ page](../../07-humans/Human2.md).
     The dialog groups the tolerances under Head, Chest, Lower Extremity and
     Belt Loads. Labels and units differ from HVE's dialog in three places:
     Head Pitch Concussion is entered in rad/s² (HVE's default, 114591.6
-    deg/s², is 2000 rad/s²); Chest SI is labeled **Chest Vertical Accel
+    deg/s², is 2000 rad/s²); Chest SI is labelled **Chest Vertical Accel
     (g)**; and Max Knee Force is **Knee Contact Force**. Forces follow the
     units set in Preferences. The defaults are HVE's: HIC 1000, head side
     46 g, chest 25 g, chest force 1800 lb, chest forward 60 g, knee

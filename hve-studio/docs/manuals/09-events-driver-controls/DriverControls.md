@@ -20,21 +20,16 @@ The tabs depend on the method:
   tabs ([Throttle](DriverControls4.md), [Brake](DriverControls3.md),
   [Gear](DriverControls5.md); Steer is below), plus a **Lean** tab for a
   motorcycle or a vehicle that already has a prescribed lean.
-- For a method that does not read driver tables (EDHIS, GATB) a note at
+- For a method that does not read driver tables (EDGEN, EDHIS, GATB) a note at
   the top says so.
-- For SINGLETRACK the Throttle, Gear and Lean tabs are not shown (that model reads the Brake and Steer tables only).
+- For SINGLETRACK the Throttle and Gear tabs are labelled *(not read)*.
 
 !!! note "HVE Studio"
-    The HVE Driver (path follower) is the **Path Follower** tab of this dialog,
-    as in HVE; **Event › Path Follower...** opens Driver Controls on it. For EDGEN,
-    which has no driver tables but walks the path's waypoints, it is the only tab.
-    See [Driver Controls Path Follower](DriverControls7.md).
+    The HVE Driver (path follower) is a separate dialog in HVE Studio,
+    **Event › Path Follower...** — see
+    [Driver Controls Path Follower](DriverControls7.md).
 
 ### Editing a table
-
-A graph above each table draws it as the engines read it: straight lines between
-rows in time order, the first and last values held beyond the ends. Hover a point
-to read its time and value.
 
 Each row is a **Time (s)** and a value. Double-click or Ctrl+click a cell to
 type a value; drag to change it. **Add** appends a row half a second after the
@@ -77,12 +72,8 @@ by the engines. **Discard per-wheel table** returns to the steering-wheel table.
     **Prescribe the lean angle** drives SIMON's roll degree of freedom from a
     *Time (s) → Lean (deg)* table (+ = leaning right) instead of solving it, for
     a motorcycle simulated in SIMON. It is stored with the vehicle, not the
-    event, and read by SIMON only. Until the machine's first contact, a motorcycle
-    in SIMON rides the single-track model, which reads the table as a lean
-    *command*: the rider balances to it and countersteers, so the machine leans
-    and turns. After first contact SIMON's own roll driver takes over, and there
-    leaning does not steer the vehicle — supply the path as well — and nothing in it
-    computes balance.
+    event, and read by SIMON only. Leaning does not steer the vehicle — supply
+    the path as well — and nothing in it computes balance.
 
 ## Lights
 

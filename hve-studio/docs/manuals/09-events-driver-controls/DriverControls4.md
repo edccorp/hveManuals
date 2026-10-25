@@ -3,8 +3,8 @@
 Applies longitudinal tire forces that attempt to accelerate the vehicle.
 
 The **Throttle** tab of the [Driver Controls](DriverControls.md) dialog
-(**Event › Driver Controls...**). For a SINGLETRACK event the tab is not shown:
-the motorcycle model has no engine or drivetrain.
+(**Event › Driver Controls...**). For a SINGLETRACK event the tab is labelled
+*(not read)*: the motorcycle model has no engine or drivetrain.
 
 ## Input Method
 

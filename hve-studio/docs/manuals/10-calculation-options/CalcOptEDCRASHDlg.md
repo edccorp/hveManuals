@@ -23,7 +23,7 @@ Four check boxes enable or disable individual EDCRASH calculation procedures:
 - **Common Velocity Check** — When checked, EDCRASH tests the computed separation velocities of the two vehicles to be sure they are compatible with the assumption of a common velocity at maximum engagement. Default: checked. This option changes the result substantially; turning it off changes delta-V by several km/h on typical cases.
 - **Modify Departure Angle** — When checked, EDCRASH tests, and possibly modifies, the departure (separation) angles based on the computed post-impact rotation and rollout velocity. Default: checked.
 - **Auto-set Rot/Lat Skidding** — When checked, EDCRASH determines whether each vehicle experienced rotational/lateral skidding during its post-impact trajectory from the length of its spinout path, **overriding** the *Rot / Lat Skidding* flag entered in [Driver Controls › Wheel Data](../09-events-driver-controls/DriverControls2.md). Default: checked.
-- **Include Angular Momentum Solution** — Grayed, as in HVE. EDCRASH reads the flag only to print it in its report; the angular-momentum solution is not implemented. Default: unchecked.
+- **Include Angular Momentum Solution** — Greyed, as in HVE. EDCRASH reads the flag only to print it in its report; the angular-momentum solution is not implemented. Default: unchecked.
 
 !!! note "HVE Studio"
     **Modify Departure Angle** has no effect while **Common Velocity Check** is
@@ -31,7 +31,7 @@ Four check boxes enable or disable individual EDCRASH calculation procedures:
     right after this option adjusts it. With the check off, the option changes
     the reported departure angle; delta-V moves only on the *Trajectory
     Simulation* basis, which starts from that angle. This is HVE's own
-    behavior, and the window says which case applies.
+    behaviour, and the window says which case applies.
 
 ## Separation Velocity Basis
 
@@ -60,7 +60,7 @@ A range of zero is not a tighter check: it turns the PDOF-compatibility and Newt
 
 ## Simulation Convergence Criteria
 
-These entries are read only on the *Trajectory Simulation* basis; they are grayed for the other choices. They control the iteration used to match the simulated post-impact trajectory to the physical evidence:
+These entries are read only on the *Trajectory Simulation* basis; they are greyed for the other choices. They control the iteration used to match the simulated post-impact trajectory to the physical evidence:
 
 - **Number of Runs** — Maximum number of trajectory simulation iterations per vehicle. Default: 5.
 - **Rest Error, X-Y (%/100)** — Allowable error in the simulated rest position. Default: 0.10.
@@ -74,7 +74,7 @@ These entries are read only on the *Trajectory Simulation* basis; they are graye
 !!! note "HVE Studio"
     HVE's *Show Curved Path* options are in this window. They are read only for
     a vehicle that has a **Point On Curve** scene position (Event Information),
-    and are grayed, with a note, when no vehicle in the event has one.
+    and are greyed, with a note, when no vehicle in the event has one.
 
 - **Path Type** — **Circular arc** (default) or **Spiral (spline)**. A spiral takes
   the path length and the departure angle from the spline and switches the

@@ -408,7 +408,7 @@ The purpose of our EDSMAC4 study is to evaluate the avoidability of the accident
     ![Figure 5-23](images/hvn-edsmac4-variable-selection.png)
     *Figure 5-23: The Select Output Variables window.*
 
-2. Type `X`, `Y`, `Yaw`, `V-tot` or `Acc-tot` in the filter box in turn (HVE's own variable names are recognized), and check each variable for both vehicles.
+2. Type `X`, `Y`, `Yaw`, `V-tot` or `Acc-tot` in the filter box in turn (HVE's own variable names are recognised), and check each variable for both vehicles.
 
     > **NOTE:** Feel free to add additional variables.
 

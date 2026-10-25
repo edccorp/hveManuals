@@ -9,7 +9,7 @@ during the event.
     In the Event editor (F5) choose **Event › Wheels...** (Ctrl+W) and the
     **Brake** tab. Each wheel is a column (**A1-R**, **A1-L**, …) instead of
     HVE's Axle No / Side selectors; see [Wheels — Blow-out Page](WheelsDlg.md)
-    for the layout and the wheel groups. Temperatures and the stroke follow the
+    for the layout and the link groups. Temperatures and the stroke follow the
     units set in Tools › Preferences. Only SIMON reads the brake-failure rows.
 
 ## Antilock brakes
@@ -52,7 +52,7 @@ failure rows below are enabled only when it is checked.
 
 HVE's *Auto Start*. It reaches only the report: SIMON starts the failure at
 Failure start whether or not this is checked, so Failure start stays enabled.
-(HVE grays Start Time when Auto Start is checked, yet still uses it.)
+(HVE greys Start Time when Auto Start is checked, yet still uses it.)
 
 ## Failure start (s)
 
