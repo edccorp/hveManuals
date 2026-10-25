@@ -137,7 +137,7 @@ HVE combines several simulations into one recording in its Video Creator, or by 
 - **glTF Binary (.glb) — recommended** — one binary file, about 25% smaller;
 - **glTF Text (.gltf)** — one self-contained text file.
 
-The command is available after a run (it carries the motion) and is greyed before one. The motion is sampled at 30 frames per second. In Blender, choose **File › Import › glTF 2.0**, pick the file, and press play.
+The command is available after a run (it carries the motion) and is grayed before one. The motion is sampled at 30 frames per second. In Blender, choose **File › Import › glTF 2.0**, pick the file, and press play.
 
 > **NOTE:** An import is one-shot. Re-exporting after a re-run and importing again creates new objects, so materials, cameras and modifiers set up on the previous import are left behind. If you will re-run the case, use the live link.
 
@@ -185,11 +185,11 @@ Not applicable.
 
 ## Problem Determination
 
-- **Export Scene for Blender is greyed** — there is no solved run. Run the event first.
+- **Export Scene for Blender is grayed** — there is no solved run. Run the event first.
 - **Blender does not connect** — make sure **Start Link** was pressed in HVE Studio and that the port in the add-on matches the one shown in the Blender Live Link window. If another program uses the port, choose another before starting the link.
 - **A vehicle appears as a box in Blender** — the vehicle has no mesh file, or its named mesh did not load; the export then uses the same generated box the Viewport draws.
-- **Record is greyed** — there is no solved event to play, a simulation is running, or the start time is after the end time; the window states which. Run the event first, or correct the times.
-- **Record Animation produced no file** — the recording was cancelled or stopped; the window states why (a reset or re-run during the recording, a full disk, or the 1 GB limit).
+- **Record is grayed** — there is no solved event to play, a simulation is running, or the start time is after the end time; the window states which. Run the event first, or correct the times.
+- **Record Animation produced no file** — the recording was canceled or stopped; the window states why (a reset or re-run during the recording, a full disk, or the 1 GB limit).
 - **Play Video says the file is not Motion-JPEG** — the file uses another codec; open it in a media player.
 
 ---

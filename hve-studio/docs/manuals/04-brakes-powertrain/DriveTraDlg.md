@@ -35,7 +35,7 @@ Used only for a vehicle that has **no closed-throttle table**: the closed-thrott
 HVE's engine tables, one for each **Throttle Position**:
 
 - **Throttle Position** — **Wide Open** or **Closed**: which of the two tables the grid shows.
-- The grid — one row per point: **Speed (RPM)**, **Torque** (in the torque units set in Preferences) and **Power** (hp or kW). Speed and torque are edited; **Power** is shown greyed and follows torque × speed, because no engine reads it (SIMON, EDVSM and EDVDS read the speed and torque columns only). **X** deletes a row, **Add Row** appends one (up to 15, HVE's limit).
+- The grid — one row per point: **Speed (RPM)**, **Torque** (in the torque units set in Preferences) and **Power** (hp or kW). Speed and torque are edited; **Power** is shown grayed and follows torque × speed, because no engine reads it (SIMON, EDVSM and EDVDS read the speed and torque columns only). **X** deletes a row, **Add Row** appends one (up to 15, HVE's limit).
 
 A table needs at least two rows to be used; with fewer, the engines get the stand-in described under Redline RPM / Max Torque (wide open) or Friction Torque (closed), and a note under the grid says which applies. Speeds must increase down the table (the engines interpolate torque on engine speed); an orange note says so when they do not. The tables act only on the **Pedal** input method in Driver Controls: the %-friction method takes drive torque from tire friction and reads no engine curve.
 

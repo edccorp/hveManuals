@@ -19,7 +19,7 @@ tire–terrain model.
     with **one column per wheel**: **A1-R**, **A1-L**, **A2-R**, … (R = right,
     L = left). When the vehicle has dual tires, the Tire Blowout and Terrain
     Model tabs have one column per tire, suffixed **o** (outer) and **i**
-    (inner). The **Link Group** row (**– A B C**) at the top of each table
+    (inner). The **Wheel Group** row (**– W1 W2 W3**) at the top of each table
     makes columns in the same group change together; **–** edits a wheel on its
     own.
 
@@ -107,7 +107,7 @@ How each tire meets the ground. Only SIMON has a tire–terrain model; with any
 other method the tires use point contact.
 
 **Model** — **Point contact** (the default; a single contact patch), **Soft
-soil** (adds Bekker sinkage and plough forces, with the soil properties taken
+soil** (adds Bekker sinkage and plow forces, with the soil properties taken
 from the surface material — see
 [Environment Material Properties](../08-environment/EnvrMatPropDlg.md)) or
 **Radial spring** (a fan of springs around the tire, so it can climb a curb or
@@ -136,7 +136,7 @@ at half the section width, saturating at the full width, stiffness ratio 1.0);
 the dialog notes when that is happening.
 
 !!! warning "Not in HVE Studio"
-    HVE's **Apply To All Tires** button: use a link group instead.
+    HVE's **Apply To All Tires** button: use a wheel group instead.
 
 <!-- NAV -->
 

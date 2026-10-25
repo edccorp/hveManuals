@@ -50,11 +50,11 @@ The case contains two vehicles: a 1996 Ford Escort 2-Door Hatchback, drawn in bl
 
 ### Editing the Vehicles
 
-In HVE's tutorial the vehicles' colour and weight are edited, and the Nissan's right-side stiffness is changed. In the opened case all of this is already done; here is where each value lives in HVE Studio.
+In HVE's tutorial the vehicles' color and weight are edited, and the Nissan's right-side stiffness is changed. In the opened case all of this is already done; here is where each value lives in HVE Studio.
 
-**Colour.** Each vehicle's colour is the **Color** field (red, green and blue values and a colour swatch) in the **Identity** section of the Vehicles panel.
+**Color.** Each vehicle's color is the **Color** field (red, green and blue values and a color swatch) in the **Identity** section of the Vehicles panel.
 
-**Weight.** The Escort's measured total weight is 11032 N and the Nissan's 11282 N. Open **Size & Weight** in the Vehicles panel; the **Total Weight** field is under **Weight**. The case already carries these values (2480.1 lbf and 2536.3 lbf in Imperial units).
+**Weight.** The Escort's measured total weight is 11032 N and the Nissan's 11282 N. Open **Size & Weight** in the Vehicles panel; the **Weight** row, **Total** column, is under **Weight**. The case already carries these values (2480.1 lbf and 2536.3 lbf in Imperial units).
 
 > **NOTE:** HVE's Inertias dialog has an *Auto Update Inertia When Weight Changes* option. Check the yaw inertia in the same section after changing a weight; only the yaw inertia is used by the 3-DOF EDCRASH calculations.
 
@@ -183,7 +183,7 @@ Let's conclude event set-up for the Escort by supplying a damage profile, under 
 Because we actually measured the damage profile during our vehicle inspection, let's enter the measured width, depth and offset. We measured seven crush depths, so we have six crush zones:
 
 1. Open **Measured Crush (drives Delta-V)** and set **# crush depths** to 7.
-2. Enter the seven crush depths in **C1** to **C7**, beginning on the left end of the damage profile, according to Table 5-2. In Metric units the depths are entered in metres.
+2. Enter the seven crush depths in **C1** to **C7**, beginning on the left end of the damage profile, according to Table 5-2. In Metric units the depths are entered in meters.
 3. Enter **Damage width** 1.6942 m (169.42 cm) and **Damage offset** 0.
 
 **Table 5-2: Crush depths for the front of the Ford Escort 2-Dr Hatchback**
@@ -300,7 +300,7 @@ Now we're ready to execute the event:
 
 Unlike simulation calculations, which are repetitive, reconstruction calculations are executed only once, and thus happen very quickly. The results appear at once in **Key Results**, and the event's inputs are locked until you press **Reset**.
 
-> **NOTE:** HVE Studio then plays a path for each vehicle drawn through its scene positions at the speeds EDCRASH solved, labelled "Showing the reconstruction". It is a picture of the reconstruction, not a simulation.
+> **NOTE:** HVE Studio then plays a path for each vehicle drawn through its scene positions at the speeds EDCRASH solved, labeled "Showing the reconstruction". It is a picture of the reconstruction, not a simulation.
 
 We have now completed the event.
 

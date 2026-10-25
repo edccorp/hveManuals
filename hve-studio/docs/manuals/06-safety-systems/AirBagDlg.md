@@ -26,7 +26,7 @@ surface.
 
 ## Seat
 
-HVE's *Seat Position*: the seat whose bag is edited, labelled with who sits
+HVE's *Seat Position*: the seat whose bag is edited, labeled with who sits
 there in the active event and whether a bag is installed. The window opens on
 the seat of the occupant selected in the Humans panel, or of the vehicle's
 first occupant.
@@ -56,7 +56,7 @@ none, the section warns that GATB will refuse the run.
 ## Offset on the Reaction Panel
 
 X, Y, Z of the deploy point **in the reaction panel's frame** (0 = the panel's
-centre). Used by GATB.
+center). Used by GATB.
 
 !!! note "HVE Studio"
     HVE's vehicle-fixed *Deploy Coords* — the point EDHIS deploys the bag from —

@@ -39,7 +39,7 @@ Where:
 | **As Loaded** | The file's own normals (or the loader's, when the mesh is loaded with smooth normals). This is how every case drew before the option existed, and the default. A file whose panels carry their own normals can show a crease where they meet. |
 | **Flat** | One normal per triangle: every facet shows. |
 | **Smooth** | Normals averaged across every edge. Removes the seams, but also rounds off edges that should be sharp, such as the wheel arches. |
-| **Auto Smooth** | Smooth across edges whose faces meet within **Auto Smooth Angle (deg)**; sharper edges stay creased. Faces are joined by **position**, so separately modelled body panels smooth into each other. |
+| **Auto Smooth** | Smooth across edges whose faces meet within **Auto Smooth Angle (deg)**; sharper edges stay creased. Faces are joined by **position**, so separately modeled body panels smooth into each other. |
 
 **Auto Smooth Angle (deg)** is available only with Auto Smooth selected. Its
 default is **60°**, not Blender's 30°: HVE vehicle bodies are low-polygon, and
@@ -62,7 +62,7 @@ To remove panel creases from a vehicle:
 
 Details:
 
-- The body and each wheel the mesh models are shaded separately — a modelled
+- The body and each wheel the mesh models are shaded separately — a modeled
   wheel is never smoothed into the body.
 - After a run, the shading is re-applied over the **crushed** body.
 - The change is applied live; the mesh is not reloaded.
@@ -83,7 +83,7 @@ Where:
 | --- | --- |
 | **Flat** | One normal per face, as the file gives it. The default. |
 | **Smooth** | The normals of every face meeting at a point are averaged, so a graded road stops showing its triangles. |
-| **Auto Smooth** | Averaged only between faces within **Auto Smooth Angle (deg)**, so kerbs and building edges stay sharp. |
+| **Auto Smooth** | Averaged only between faces within **Auto Smooth Angle (deg)**, so curbs and building edges stay sharp. |
 
 The site's Auto Smooth angle defaults to **30°** (Blender's own default).
 

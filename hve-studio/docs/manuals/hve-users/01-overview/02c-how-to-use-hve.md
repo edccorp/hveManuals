@@ -90,7 +90,7 @@ The positions themselves are entered in Event Information (see
 
 !!! warning "Not in HVE Studio"
     The viewport draws a ground grid, but there is no Grid dialog to set its
-    spacing, colour or extent.
+    spacing, color or extent.
 
 ### Selecting Units
 
@@ -197,7 +197,7 @@ event: start times, contact search, contact model, restoration, inter-vehicle
 contact with a per-pair override, and each vehicle's contact mesh preparation
 for this event (tessellate, maximum triangle leg, weld distance), which
 outranks the vehicle's own defaults. An option the engine stores but does not read
-is labelled so in the dialog.
+is labeled so in the dialog.
 
 ![Figure 2-71](../images/hvn-01-dymesh-options.png)
 *Figure 2-71: The DyMESH Options dialog.*
@@ -212,11 +212,11 @@ is labelled so in the dialog.
 ### User Preferences
 
 **Tools › Preferences...** holds the date format, the units, the background
-colour, the diagnostic level and auto-save; **Tools › Style Editor...** holds the
+color, the diagnostic level and auto-save; **Tools › Style Editor...** holds the
 interface's theme and style, including text size.
 
 !!! note "HVE Studio"
-    Diagnostic Level is greyed (it has nothing to control). Date Format sets how
+    Diagnostic Level is grayed (it has nothing to control). Date Format sets how
     dates are shown, and Auto-Save writes a recovery copy beside the case while
     there are unsaved changes, without touching the case file.
 

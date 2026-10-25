@@ -101,9 +101,9 @@ Click a row to open its details (click it again to close them):
 
 | Control | Does |
 | --- | --- |
-| **Label** | Replaces the row's label. Leave it blank for the default, which is shown greyed in the field (for example *Ford Taurus Speed*). The unit is always added after the label, in the unit system set in Preferences. |
+| **Label** | Replaces the row's label. Leave it blank for the default, which is shown grayed in the field (for example *Ford Taurus Speed*). The unit is always added after the label, in the unit system set in Preferences. |
 | **Decimals** | The number of decimal places, from **default** to 6. The default is 3 for Time, 1 for Speed, Heading and Delta-V, and 2 for an output channel. |
-| **Own colour** | Draws this row in its own colour instead of the box's text colour; the colour swatch beside it sets the colour |
+| **Own color** | Draws this row in its own color instead of the box's text color; the color swatch beside it sets the color |
 
 A row is one of five kinds:
 
@@ -183,11 +183,11 @@ before that the section says so. Occupant variables have no HUD row.
 | **Frame** | Draws a frame around the box |
 | **Column divider** | Draws a line between the label and value columns |
 | **Row lines** | Draws a line between rows (off by default) |
-| **Text**, **Background**, **Frame** | The three colours, each with its opacity. The column divider and row lines are drawn in the frame colour. |
-| **Light box** | Dark text on a light grey plate with a dark frame: the look of a new box |
-| **Dark box** | Light text on a dark, partly transparent plate with a grey frame |
+| **Text**, **Background**, **Frame** | The three colors, each with its opacity. The column divider and row lines are drawn in the frame color. |
+| **Light box** | Dark text on a light gray plate with a dark frame: the look of a new box |
+| **Dark box** | Light text on a dark, partly transparent plate with a gray frame |
 | **Time offset (s)** | Added to the **Time** row only. Enter minus the impact time, for example, to read time from impact. |
-| **Zero at impact** | Sets the time offset so that **Time** reads 0 at the first contact of the run on screen, and negative before it. In a playback sequence it is the first contact the sequence plays, on the sequence's timeline. Greyed when there is no collision. |
+| **Zero at impact** | Sets the time offset so that **Time** reads 0 at the first contact of the run on screen, and negative before it. In a playback sequence it is the first contact the sequence plays, on the sequence's timeline. Grayed when there is no collision. |
 | **Show event name** | In a playback sequence, each row's label names the event its numbers come from (see [In a playback sequence](#in-a-playback-sequence)). On by default. |
 
 ### Placement
@@ -195,7 +195,7 @@ before that the section says so. Occupant variables have no HUD row.
 | Control | Does |
 | --- | --- |
 | **Anchor** | The corner or edge the box is placed against: **Top left**, **Top center**, **Top right**, **Bottom left**, **Bottom center** or **Bottom right** |
-| **Offset X**, **Offset Y** | Move the box from its anchor, as a fraction of the frame's width (X, positive to the right) and height (Y, positive **up**), from −1 to 1 |
+| **Offset X**, **Offset Y** | Move the box from its anchor, as a fraction of the frame's width (X, positive to the right) and height (Y, positive **up**), from −1 to 1. Drag the field, or click it and type a number |
 | **Reset offset** | Puts both offsets back to 0 |
 
 Because the offsets are fractions of the frame, a box stays in the same place

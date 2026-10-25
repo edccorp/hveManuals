@@ -352,7 +352,7 @@ To create an EDVTS event:
 > NOTE: If you choose a vehicle that is not compatible with EDVTS, or if the tow vehicle connections are incompatible with the trailer, the panel shows **Cannot run:** and the reason, and the Method list marks EDVTS "N/A for these vehicles". The event can still be edited; it cannot be run until the problem is fixed.
 
 !!! note "HVE Studio"
-    EDVTS runs its own engine; on HVE's EDVTS tutorial and validation cases its tracks end within a centimetre of HVE's saved runs. The **Method Options…** button is greyed for EDVTS, which has no options in HVE Studio.
+    EDVTS runs its own engine; on HVE's EDVTS tutorial and validation cases its tracks end within a centimeter of HVE's saved runs. The **Method Options…** button is grayed for EDVTS, which has no options in HVE Studio.
 
 ### Setting Up an Event
 
@@ -365,7 +365,7 @@ EDVTS uses the following *event set-up* options:
 The specific Event Set-up data used by EDVTS are defined in Table 2-5.
 
 ![Figure 2-4](images/hvn-edvts-event-editor.png)
-*Figure 2-4: The HVE Studio Event editor with EDC's EDVTS tutorial case loaded. In Vehicle Initial Conditions the trailer (V2) shows a greyed, derived position and an Articulation angle.*
+*Figure 2-4: The HVE Studio Event editor with EDC's EDVTS tutorial case loaded. In Vehicle Initial Conditions the trailer (V2) shows a grayed, derived position and an Articulation angle.*
 
 !!! note "HVE Studio"
     In HVE Studio:
@@ -398,7 +398,7 @@ The tow vehicle is positioned relative to the earth-fixed coordinate system by s
 The trailer is positioned relative to the tow vehicle by supplying the initial articulation angle, $\gamma$. The default articulation angle is 0.0 degrees.
 
 !!! note "HVE Studio"
-    The tow vehicle (V1) has X and Y Position, Heading, an **Auto Position (settle onto terrain)** checkbox, Z Height, Speed, Sideslip and Yaw rate, with roll, pitch and the other rates under **Advanced initial state**. For the trailer (V2) the X and Y Position are greyed: EDVTS does not read a trailer position, so HVE Studio computes it from the tow vehicle's position and heading and the two connections, and draws the trailer there. The trailer's angle is entered as **Articulation (deg)**, relative to the tow vehicle (0 = in line). In the viewport, select the tow vehicle and press **G** to move it or **R** to rotate it; the trailer follows.
+    The tow vehicle (V1) has X and Y Position, Heading, an **Auto Position (settle onto terrain)** checkbox, Z Height, Speed, Sideslip and Yaw rate, with roll, pitch and the other rates under **Advanced initial state**. For the trailer (V2) the X and Y Position are grayed: EDVTS does not read a trailer position, so HVE Studio computes it from the tow vehicle's position and heading and the two connections, and draws the trailer there. The trailer's angle is entered as **Articulation (deg)**, relative to the tow vehicle (0 = in line). In the viewport, select the tow vehicle and press **G** to move it or **R** to rotate it; the trailer follows.
 
 The tow vehicle linear velocities are supplied in the form of a total velocity and sideslip angle.
 
@@ -513,7 +513,7 @@ The default surface-search method is *From Previous Polygon*. This results in fa
 
 To execute an EDVTS event, use the playback bar under the viewport (Figure 2-6) or **Output › Run Simulation…** (Ctrl+R). The playback bar's buttons have the following functions:
 
-- **Run** — Execute the event (greyed while the event's results are on screen)
+- **Run** — Execute the event (grayed while the event's results are on screen)
 - **Reset** — Clear the results so the event can be edited and run again
 - **|<** — Jump to the start of the simulation
 - **<<** / **>>** — Step back / forward one output step

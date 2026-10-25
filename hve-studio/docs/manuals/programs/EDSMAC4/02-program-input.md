@@ -542,9 +542,9 @@ The output time interval is the interval at which output results (positions, vel
 | Min Linear Velocity | The linear velocity used to terminate the run (if the linear and angular velocities for both vehicles are simultaneously less than these termination velocities, the run terminates) |
 | Min Angular Velocity | The angular velocity used to terminate the run (if the linear and angular velocities for both vehicles are simultaneously less than these termination velocities, the run terminates) |
 
-> **NOTE:** For analyses of gross vehicle motion, damage, and rest position, an output interval of 0.10 sec is generally sufficiently small.
+> **NOTE:** For analyzes of gross vehicle motion, damage, and rest position, an output interval of 0.10 sec is generally sufficiently small.
 
-> **NOTE:** For analyses of vehicle accelerations or collision pulses, smaller output intervals are recommended.
+> **NOTE:** For analyzes of vehicle accelerations or collision pulses, smaller output intervals are recommended.
 
 > **NOTE:** The output time interval should be an even multiple of the vehicle trajectory integration timestep. For example, if the integration timestep is 0.02, the output interval might be 5 × 0.02, or 0.10.
 
@@ -572,7 +572,7 @@ EDSMAC4 has the following calculation option parameters. For the dialog referenc
 
 - **Inter-Vehicle Connection** *(new)* — Selects how mismatched hitch heights between connected vehicles are reconciled at event initialization (hitch z-coordinates are adjusted, not vehicle positions). HVE Studio offers **Manual (User-Adjusted)**, **Adjust Tow Vehicle**, **Adjust Trailer** and **Adjust Both Equally**. The choice applies only when the two connection heights differ by more than the engine's tolerance, and **Manual** then ends the run with a bad-connection error rather than leaving the mismatch in place.
 - **Connection Model** *(new)* — Selects how connection (hitch) constraint stiffness and damping are derived: Use Both Vehicles (derives them from the *lighter* vehicle's weight), Use Heavier Vehicle (default), or Use Tow Veh Properties. In HVE Studio: **Use both vehicles**, **Use heavier vehicle**, **Use tow vehicle properties**. EDSMAC4 has no connection failure time.
-- **Hydroplane Model** *(new)* — Off or NASA; applies the NASA hydroplaning model at tires travelling over water polygons.
+- **Hydroplane Model** *(new)* — Off or NASA; applies the NASA hydroplaning model at tires traveling over water polygons.
 
     !!! note "HVE Studio"
         HVE Studio lists **Off**, **NASA**, **NASA-TTI (not supported by EDSMAC4)** and **Gallaway (not supported by EDSMAC4)**. EDSMAC4 implements only Off and NASA: either of the other two **refuses the run** before it starts (stop code −5520, hydroplane model not supported). They are listed because an imported case can carry one and the refusal needs to be visible. SIMON accepts all four.

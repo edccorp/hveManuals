@@ -118,7 +118,7 @@ The Human Ellipsoid Data used by GATB are shown in Table 2-4. HVE allows up to 3
 !!! note "HVE Studio"
     **Which ellipsoid takes part in a contact.** HVE's armed contact pairs name an ellipsoid on each body segment, and GATB uses them as follows — identically in HVE and in HVE Studio:
 
-    - **Segment-to-segment (self) contact:** GATB writes ATB only each segment's **first** ellipsoid ("does not look at additional ellipsoids", in GATB's own source). An armed pair whose body ellipsoid is not the first is not tested at all, and one whose target ellipsoid is not the first is tested against the first. HVE Studio keeps that behaviour and says how many such pairs the case has, both under the human in Event Information and in the run status.
+    - **Segment-to-segment (self) contact:** GATB writes ATB only each segment's **first** ellipsoid ("does not look at additional ellipsoids", in GATB's own source). An armed pair whose body ellipsoid is not the first is not tested at all, and one whose target ellipsoid is not the first is tested against the first. HVE Studio keeps that behavior and says how many such pairs the case has, both under the human in Event Information and in the run status.
     - **Segment-to-vehicle-panel contact:** the ellipsoid index is carried and not used; every pair is tested with the segment's contact geometry as ATB builds it.
 
 | Parameter | Description |
@@ -222,7 +222,7 @@ Vehicle contact surfaces are the surfaces that interact with human ellipsoids to
 **Table 2-6: HVE contact surface information used in GATB**
 
 !!! note "HVE Studio"
-    Contact surfaces are edited in **Vehicle › Editors › Contact Surfaces**: by centre, size and yaw/pitch/roll angles, or with *Edit corner points instead* by the three corner points; the dialog shows each surface's normal and can **Flip** it, and the panels are drawn in the 3-D view while it is open. *Side* (Interior/Exterior) is stored with the surface. The dialog also offers **Derive from Mesh**, **Seed Standard Interior**, a **Pedestrian preset**, interior templates and **Save/Load Interior…**.
+    Contact surfaces are edited in **Vehicle › Editors › Contact Surfaces**: by center, size and yaw/pitch/roll angles, or with *Edit corner points instead* by the three corner points; the dialog shows each surface's normal and can **Flip** it, and the panels are drawn in the 3-D view while it is open. *Side* (Interior/Exterior) is stored with the surface. The dialog also offers **Derive from Mesh**, **Seed Standard Interior**, a **Pedestrian preset**, interior templates and **Save/Load Interior…**.
 
     The stiffness GATB actually uses for a human against a surface is the event's **combined** material (Event Information › *Combined Contact Materials*), which a case imported from HVE states per surface; a surface with none stated uses the surface's own material.
 
@@ -248,7 +248,7 @@ A belt restraint system may be supplied for up to nine seat positions. Although 
 **Table 2-7: HVE belt restraint data used in GATB**
 
 !!! note "HVE Studio"
-    **The belt's force law does not reach GATB, in HVE or in HVE Studio.** GATB writes ATB its own fixed eight-point webbing stress/strain table and harness friction constants, so the belt's stretch rates, damping and breaking strength do not change a GATB run. The geometry does: the vehicle anchors, the attachment points on the body and the slack. In HVE Studio belts are edited in **Vehicle › Editors › Belt Restraint**, whose *Properties* section is labelled "EDHIS reads these. GATB does not". The torso belt attaches to the chest and the lap belt to the pelvis.
+    **The belt's force law does not reach GATB, in HVE or in HVE Studio.** GATB writes ATB its own fixed eight-point webbing stress/strain table and harness friction constants, so the belt's stretch rates, damping and breaking strength do not change a GATB run. The geometry does: the vehicle anchors, the attachment points on the body and the slack. In HVE Studio belts are edited in **Vehicle › Editors › Belt Restraint**, whose *Properties* section is labeled "EDHIS reads these. GATB does not". The torso belt attaches to the chest and the lap belt to the pelvis.
 
 *(Note: each belt system has separate left and right lap and torso sections; the human's belt injury tolerances are likewise carried as separate left lap, left torso, right lap and right torso values.)*
 
@@ -407,7 +407,7 @@ GATB uses the following *event set-up* options:
 - Calculation Options
 
 !!! note "HVE Studio"
-    In HVE Studio: vehicle position and velocity are under Event Information › *Vehicle Initial Conditions* (or **Event › Position / Velocity**); each human's vehicle, seat X/Y and **Restraint (this event)** under *Humans in Event*, with its orientation and velocity in the **Pose** dialog; the collision pulse in **Event › Collision Pulse**; the calculation options under **Method Options…**. **Driver Controls**, **Damage Profiles**, **Payload**, **Wheels** and **Accelerometers** on the Event menu are greyed for a GATB event; **Contacts** and **Restraints** are available.
+    In HVE Studio: vehicle position and velocity are under Event Information › *Vehicle Initial Conditions* (or **Event › Position / Velocity**); each human's vehicle, seat X/Y and **Restraint (this event)** under *Humans in Event*, with its orientation and velocity in the **Pose** dialog; the collision pulse in **Event › Collision Pulse**; the calculation options under **Method Options…**. **Driver Controls**, **Damage Profiles**, **Payload**, **Wheels** and **Accelerometers** on the Event menu are grayed for a GATB event; **Contacts** and **Restraints** are available.
 
 The specific Event Set-up data used by GATB are defined in Table 2-9.
 
@@ -560,12 +560,12 @@ GATB uses the current simulation control parameters in the Simulation Controls d
 There are several calculation options available in GATB. Each of these options allows for special situations where the default data may not sufficiently model the event being analyzed.
 
 !!! note "HVE Studio"
-    In HVE Studio these options are in the *GATB Options* dialog: Event Information › *Calculation Method* › **Method Options…**. It has *Use external ATB input file* (greyed), *Use pulse file* with the *Pulse File* name and *Type of Pulse* (Position, Velocity, Acceleration), and *Belt Contacts* (All, Some or No belts slide on segments).
+    In HVE Studio these options are in the *GATB Options* dialog: Event Information › *Calculation Method* › **Method Options…**. It has *Use external ATB input file* (grayed), *Use pulse file* with the *Pulse File* name and *Type of Pulse* (Position, Velocity, Acceleration), and *Belt Contacts* (All, Some or No belts slide on segments).
 
 **Use External File** — This option is used when the user wants to make detailed changes to the existing input file (gatb.ain) and have this input file used again without regenerating all the data. This is useful when very specific data in the input file needs to be changed, but the GATB implementation does not allow the user a dialog to enter it. It is also useful when running someone else's .ain file. Use this option with extreme care; there is no error checking on the input values outside of the ATB model and unexpected results may cause computational errors that are not handled by HVE. Before making any changes to a .ain file or using this option, the user must be very familiar with ATB and all the options available in the base version of ATB.
 
 !!! warning "Not in HVE Studio"
-    *Use external ATB input file* is shown greyed, with the reason. HVE Studio feeds ATB from the assembled data in memory rather than from a `gatb.ain` file, so there is no path by which an external input file could reach the solver. Ticking it would leave the answer unchanged; a case that has it set is run as though it were not, and the run says so.
+    *Use external ATB input file* is shown grayed, with the reason. HVE Studio feeds ATB from the assembled data in memory rather than from a `gatb.ain` file, so there is no path by which an external input file could reach the solver. Ticking it would leave the answer unchanged; a case that has it set is run as though it were not, and the run says so.
 
 **Use Pulse File** — This option is available to allow users to utilize an external pulse file. This allows someone to produce a pulse file using a non-HVE program and then to use it in the GATB run. The basic format of the pulse file is: Time, X, Y, Z, Yaw, Pitch, Roll for position-based pulse in seconds, inches, and degrees; Time, V-x, V-y, V-z, Roll velocity, Pitch velocity, Yaw velocity for velocity-based pulse in seconds, in/sec, deg/sec; Time, A-x, A-y, A-z, Roll acceleration, Pitch acceleration, Yaw acceleration in seconds, g's, and deg/sec².
 
@@ -579,7 +579,7 @@ There are several calculation options available in GATB. Each of these options a
 
 To execute a GATB event in HVE Studio, use the playback bar under the viewport (or **Output › Run Simulation**, Ctrl+R):
 
-- **Run** — Execute the active event. Greyed once the event is solved; press Reset to run it again.
+- **Run** — Execute the active event. Grayed once the event is solved; press Reset to run it again.
 - **Reset** — Clear the results so the event can be edited and run again.
 - **|<** — Jump to the start.
 - **<<** — Step back one output step.

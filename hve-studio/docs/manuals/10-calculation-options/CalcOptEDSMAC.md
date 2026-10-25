@@ -61,7 +61,7 @@ Restitution is applied only while δ is less than c1/(2·c2) (the vertex of the 
 - **Restitution Quadratic Coef (1/in²)** — Default: 0.000016711 1/in².
 
 !!! note "HVE Studio"
-    The two coefficients are shown per inch or per centimetre, following the
+    The two coefficients are shown per inch or per centimeter, following the
     length unit set in Preferences, as HVE shows them in its vehicle length
     unit.
 

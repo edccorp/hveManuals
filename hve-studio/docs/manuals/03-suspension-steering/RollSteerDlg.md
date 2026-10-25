@@ -4,9 +4,9 @@ The roll steer properties of the wheels are displayed and edited in the **Roll S
 
 Where HVE edits one wheel at a time, and opens either this polynomial dialog (independent suspension) or the single-coefficient [Roll Steer Properties](RollSteerNewDlg.md) dialog (solid and tandem axles), HVE Studio shows one table with a column per wheel (**A1 Left**, **A1 Right**, **A2 Left**, ...) holding both the polynomial and the solid-axle coefficient.
 
-## Link Group
+## Suspension Group
 
-Four small buttons per wheel: **-**, **A**, **B** and **C**. Wheels in the same group share their values, as in the [Jounce and Rebound Stops Dialog](JouAndRebDlg.md).
+Four small buttons per wheel: **-**, **S1**, **S2** and **S3**. Wheels in the same group share their values, as in the [Jounce and Rebound Stops Dialog](JouAndRebDlg.md).
 
 ## Constant
 Initial steer angle at zero suspension deflection (constant term of the polynomial).

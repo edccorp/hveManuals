@@ -1,9 +1,9 @@
 # Chapter 16a — Event Designer
 
 The Event Designer is the Vehicle Designer's frame turned on the event: a stage
-bar along the bottom, a **Key figures** strip on the left that remembers what
+bar (along the bottom; **Bar position** moves it to the top, left or right), a **Key figures** strip on the left that remembers what
 each number was, the event's own dialogs hosted on the stage that asks their
-question, and a **Warnings & Suggestions** panel on the right whose rows name the
+question, and a **Guidance** panel on the right whose rows name the
 fix and the stage that owns it. It is the Event editor's panel: switching to the
 Event editor (F5) opens it where the Event Information panel used to open, and
 **Event › Event Designer...** (the first item) opens it too. **Event › Event
@@ -12,7 +12,7 @@ Information...** still opens that panel.
 Like the other designers it is an ordinary docked window, on the left with the 3-D
 view beside it, where the vehicles stand: drag its tab to move it, float it, or dock
 it anywhere, and the arrangement is kept. Docked narrow, the **Key figures** and
-**Warnings & Suggestions** fold into the top of the stage. A dialog on a stage is the same
+**Guidance** fold into the top of the stage. A dialog on a stage is the same
 dialog the Event menu opens, drawn in the stage instead of its own window, so a
 field has one editor and nothing is reachable in one and not the other.
 
@@ -49,7 +49,7 @@ hosted and the 3-D view beside it.*
    follows the recorded speed. The solve keeps running while another stage or tab
    is shown.
 5. **Collision Pulse**: a tab for each dialog the calculation method reads, as
-   the Event menu greys the rest: **Collision Pulse** and **Contacts** (EDSMAC4's
+   the Event menu grays the rest: **Collision Pulse** and **Contacts** (EDSMAC4's
    vehicle contacts, or EDHIS and GATB's occupant contacts). A method that takes
    no pulse says so. DyMESH's options are on the Method Options stage. Only
    EDCRASH reads a crush profile: for it, **Damage Profiles (Positions stage)**
@@ -94,7 +94,7 @@ vehicles' start speeds; the distance between their CGs at the start; their
 closing speed (positive when the gap shrinks); and when their CGs would meet at
 those speeds.
 
-## Warnings & Suggestions
+## Guidance
 
 | Grade | Stage | Rule |
 |---|---|---|

@@ -2,15 +2,15 @@
 
 **CG To Front (Exterior Dimensions)**
 
-HVE edits the vehicle's exterior dimensions in six Vehicle Dimensions dialogs, one per face (CG to Front, Back, Top, Left, Right and Bottom), each with a Stiffness button. HVE Studio has no per-face dialogs. The exterior dimensions are entered in the Vehicle Editor (**Vehicle (F3)**), in the **Vehicles** panel under **Size & Weight › Geometry**, where six fields right after **CG Height** give the distance from the CG to each face that the engines receive: **CG to Front**, **CG to Rear**, **CG to Right**, **CG to Left**, **CG to Top** and **CG to Bottom**. All values are in the units set in Preferences.
+HVE edits the vehicle's exterior dimensions in six Vehicle Dimensions dialogs, one per face (CG to Front, Back, Top, Left, Right and Bottom), each with a Stiffness button. HVE Studio has no per-face dialogs. The exterior dimensions are entered in the Vehicle Editor (**Vehicle (F3)**), in the **Vehicles** panel under **Size & Weight › Geometry**, where six fields below **Overall Height** give the distance from the CG to each face that the engines receive: **CG to Front**, **CG to Rear**, **CG to Right**, **CG to Left**, **CG to Top** and **CG to Bottom**. All values are in the units set in Preferences.
 
 ![Vehicles panel, Size & Weight](images/hvn-vehicles-panel.png)
 
 ## x Coord
-Vehicle-fixed distance from the CG to the front of the vehicle. In HVE Studio this is the **CG to Front** field under **Geometry**, and it is editable. It is **CG to Axle 1** plus **Front Overhang**: typing it sets **Front Overhang** (to the value less CG to Axle 1, never below zero) and keeps **Overall Length** in step. When the wheels carry their own X positions (the **Wheel Positions** table), CG to Front is grayed, showing the wheels' value, along with the overhangs and the wheelbase.
+Vehicle-fixed distance from the CG to the front of the vehicle. In HVE Studio this is the **CG to Front** field under **Geometry**, and it is editable. It is **CG to Front Axle** plus **Front Overhang**: typing it sets **Front Overhang** (to the value less CG to Front Axle, never below zero) and keeps **Overall Length** in step. When the wheels carry their own X positions (the **Wheel Positions** table), CG to Front is grayed, showing the wheels' value, along with the overhangs and the wheelbase.
 
 ### Front Overhang
-Distance from the front axle to the front of the vehicle. In HVE Studio it is stored as an **input** (under **Geometry**); **CG to Front** is CG to Axle 1 plus it, and typing **CG to Front** sets it.
+Distance from the front axle to the front of the vehicle. In HVE Studio it is stored as an **input** (under **Geometry**); **CG to Front** is CG to Front Axle plus it, and typing **CG to Front** sets it.
 
 ### Overall Length
 Shown under **Geometry**; the length the solver uses is **CG to Front** plus **CG to Rear**. If the entered Overall Length disagrees with the length the axle distances and overhangs describe, an orange note says so; the solver uses the derived figure. Typing or dragging **Overall Length** moves each overhang by half the change. An overhang cannot go below zero: a shortfall one overhang cannot take goes to the other, so the shortest length is the axle span, with no overhang at either end, and the panel says so.

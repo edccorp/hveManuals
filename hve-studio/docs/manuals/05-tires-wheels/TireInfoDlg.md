@@ -70,20 +70,20 @@ TMeasy rows are read by SIMON's tire model 3 only.
     New in HVE Studio. Each claim is checked against the engine source by the
     test suite, so the filter cannot drift from what the programs read.
 
-## Link Group
+## Tire Group
 
 The row of **–  A  B  C** buttons at the top of every column. Columns in the same
-group (A, B or C) are edited together: changing a value in one changes it in all
+group (T1, T2 or T3) are edited together: changing a value in one changes it in all
 the others of that group, and moving a column into a group copies that group's
 current values into it, its four **Load & Speed Tables** included. **–** makes a
-wheel independent. Wheels with single tires start in group A and wheels with
-**Dual Tires** in group B, so a value typed for the steer tires does not change
+wheel independent. Wheels with single tires start in group T1 and wheels with
+**Dual Tires** in group T2, so a value typed for the steer tires does not change
 the duals. The groups are set again from the tires when you switch vehicles or
 change a wheel's **Dual Tires**; a group you choose stays until then. The
 tables panel below the grid follows the same groups.
 
 !!! note "HVE Studio"
-    The link groups replace HVE's **Copy to Other Side** and **Copy to Other
+    The tire groups replace HVE's **Copy to Other Side** and **Copy to Other
     Axles** check boxes.
 
 ## Size Designation and Tire Type
@@ -102,7 +102,7 @@ Check box indicating that this wheel position uses dual tires.
 ## Dual Spacing
 
 Lateral distance between the centerlines of the two tires of a dual pair.
-Greyed for a wheel whose Dual Tires box is unchecked.
+Grayed for a wheel whose Dual Tires box is unchecked.
 
 ## Tire Name, Manufacturer, Model
 
@@ -122,7 +122,7 @@ and lateral friction, slide friction, slip at peak, velocity dependence) are
 not shown: those values are entered in the tables, even when a table has one
 load and one speed, and the Friction section says so in one line. The same goes
 for **Cornering Stiffness** when every wheel has a cornering table. When only
-some wheels have a table, the row stays, greyed on those wheels.
+some wheels have a table, the row stays, grayed on those wheels.
 
 The HVE buttons **Friction...**, **Fy vs Slip Angle...**, **Fy vs Inclination
 Angle...** and **Slip vs Roll-Off...** are the **Friction Table**, **Cornering

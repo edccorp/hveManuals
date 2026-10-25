@@ -37,7 +37,7 @@ A note beside the method says what the values mean.
   **pedal force** table, *Time (s) → Pedal force* in the units set in
   Preferences; it is used as entered and replaces the 0–1 table.
   **Discard pedal-force table** converts it back to a 0–1 table. A pedal-force
-  table whose entries are all zero is labelled as a driver who never braked —
+  table whose entries are all zero is labeled as a driver who never braked —
   it is real data and is sent to the engine.
 - Under **Wheel Force**, the per-wheel force table, with **Add** and an **X**
   per row. With no rows entered, the run falls back to % of friction.

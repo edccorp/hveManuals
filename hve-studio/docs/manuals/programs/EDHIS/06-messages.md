@@ -111,7 +111,7 @@ No messages were produced; no action is necessary.
 
 *Torso Restraint System Failure!*
 
-(Informative) *(updated: not produced by the current release. Belt rupture is not modelled: the Belt Breaking Strength acts as a limit on tension, above which the belt unloads along the entered slope and is left permanently stretched. To judge whether a belt would have failed, compare the belt tension in the Variable Output against the entered breaking strength.)*
+(Informative) *(updated: not produced by the current release. Belt rupture is not modeled: the Belt Breaking Strength acts as a limit on tension, above which the belt unloads along the entered slope and is left permanently stretched. To judge whether a belt would have failed, compare the belt tension in the Variable Output against the entered breaking strength.)*
 
 ---
 

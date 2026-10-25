@@ -54,8 +54,8 @@ This places the sun the way Blender's *Sun Position* add-on does.
 | Address search | See [Finding the place by address](#finding-the-place-by-address) |
 | **Latitude** | Degrees, positive north |
 | **Longitude** | Degrees, positive east (west is negative) |
-| **Date** | `mm/dd/yyyy` (HVE's form) or `yyyy-mm-dd`. A two-digit year below 50 is read as 20yy. An unreadable date is reported in orange beneath the field. |
-| **Time** | Drag it to scrub the sun through the day, one minute per pixel from where it is, or click it without dragging to type a time: `14:30`, `1430` or `7:05:30`. Enter keeps what you typed; Escape keeps the old time. It writes the case's own time of day. |
+| **Date** | `mm/dd/yyyy` (HVE's form) or `yyyy-mm-dd`, or pick it from the **Calendar** beside the field. A two-digit year below 50 is read as 20yy. An unreadable date is reported in orange beneath the field. Left empty, the sun uses today's date, and the orange note says so. |
+| **Time** | Drag it to scrub the sun through the day, one minute per pixel from where it is, or click it without dragging to type a time: `14:30`, `1430` or `7:05:30`. Enter keeps what you typed; Escape keeps the old time. It writes the case's own time of day. Left empty, the sun is placed at 12:00 local standard time and the orange note says so; the case's own Date and Time stay blank. |
 | **UTC offset** | Local clock time = UTC + this offset, in hours, for **standard** time (Akron, Ohio is −5) |
 | **Daylight saving** | Tick when the case's date and place were on daylight saving time |
 | **North** | The compass bearing the case's +X axis points along: 0 = north, 90 = east. This is HVE's *angle of X axis* and Blender's *North Offset* |
@@ -90,6 +90,9 @@ address*):
    **Search** (or Enter).
 2. Pick the right result from the list. Hovering a result shows its latitude
    and longitude. Picking it sets **Latitude** and **Longitude**.
+   Choosing a place also switches a case that was on **Set by hand** over to
+   **From location and time**, so the sun is the place's own; **Set by hand**
+   is one click away.
 3. HVE Studio then looks up the time zone at that point and sets the **UTC
    offset** (standard time) and **Daylight saving** for the case's date. The
    status line names the zone and what it decided, for example *UTC−5.00
@@ -159,7 +162,7 @@ where, comes from the first of these that applies:
 
 **Lamp gizmos.** Scene Display › Paths & Overlays › **Lamp Gizmos** draws every
 lamp as Blender draws a light: a ring where it is, a line along its aim and,
-for a spot, its cone. A switched-off lamp is grey and the selected one orange.
+for a spot, its cone. A switched-off lamp is gray and the selected one orange.
 **Click** a lamp to select it; **drag** it to move it. It moves in the plane
 facing you through where you grabbed it, as Blender's G does, and holding
 **Ctrl** snaps it to 5 cm. The position is stored in the vehicle's own frame, so
@@ -169,7 +172,7 @@ selected one by the same amount, so a pair of headlamps moves as a pair.
 
 **Light settings in the Shader Editor.** Picking a lamp switches the Shader
 Editor to **Light** (beside Object and World). There you can set its type
-(spot or point), colour, strength, cone and softness, aim, position, and
+(spot or point), color, strength, cone and softness, aim, position, and
 switch it on or off. The same fields are in Vehicle Lights. You can also choose
 any vehicle's lamp from the list at the top, and the **Lamp gizmos in the
 viewport** box turns the gizmos on or off from there.
@@ -189,7 +192,7 @@ results on screen.
 The site can have lights of its own — street lights, work lights, a floodlight
 — made in the Environment Editor (F4), in the Environment panel's **Lights**
 section. Each is a **Point** light (every way) or a **Spot** (a cone with an
-aim, a downward tilt and a soft edge), with a colour, an intensity (1 is about
+aim, a downward tilt and a soft edge), with a color, an intensity (1 is about
 a headlamp) and a height above the ground. Like vehicle lamps they come on as
 the sky darkens; tick **On in daylight too** for one that should also light
 the scene by day.
@@ -198,7 +201,7 @@ The 3-D view lights the scene with up to **32 lamps at once**, site lights and
 vehicle lamps together. Site lights take at most 16 of them — the ones nearest
 the middle of the view — so the vehicles' lamps always have the rest. A
 ray-traced render and the glTF export carry every light. While the Environment
-is selected, each light is marked by a yellow sphere (grey when off, orange
+is selected, each light is marked by a yellow sphere (gray when off, orange
 when selected) with a dotted line to the ground; Shift-click selects several,
 which G / R / S move together. Site lights are display only: no engine reads them.
 See [Environment Information › Lights](../08-environment/EnvtInfoDlg.md#lights).
@@ -210,7 +213,7 @@ three-colour gradient, the sun's disc, and haze. It has these inputs:
 
 | Input | Default | Effect |
 | --- | --- | --- |
-| **Haze** | 0 | A milky veil over the whole sky, thickest at the horizon, plus a glow around the sun. 0 leaves the sky clear; 1 is a clear haze; 3 nearly white. There is no upper limit. With **View › Scene Display › Sky & Reflections › Distance Haze** on (the default), the same amount also fades far geometry toward the horizon colour; at 0 nothing is faded. Display only. |
+| **Haze** | 0 | A milky veil over the whole sky, thickest at the horizon, plus a glow around the sun. 0 leaves the sky clear; 1 is a clear haze; 3 nearly white. There is no upper limit. With **View › Scene Display › Sky & Reflections › Distance Haze** on (the default), the same amount also fades far geometry toward the horizon color; at 0 nothing is faded. Display only. |
 | **Sun Size** | 0.545 | The angular size of the sun's disc, in degrees |
 | **Sun Intensity** | 20 | The sun's brightness |
 | **Ambient** | 1.00 | A field, not a socket: how much light the sky gives the scene, the fill in the shadows and the sky's reflection. 1.00 is the viewport's own; 0 leaves only the sun and the lamps. The drawn sky is unchanged. |
@@ -242,7 +245,7 @@ sun's disc alone.
 ### Other worlds
 
 A world can be any graph ending in a *World Output*: a **Background** with a
-plain colour, an **Environment Texture** with an equirectangular image (a
+plain color, an **Environment Texture** with an equirectangular image (a
 `.hdr` photograph of the sky, for example), or a mix. World Output's option
 chooses whether the world is drawn behind the scene or used for **lighting
 only**.

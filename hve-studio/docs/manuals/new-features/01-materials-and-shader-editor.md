@@ -1,7 +1,7 @@
 # Materials and the Shader Editor
 
 !!! tip "New in HVE Studio"
-    HVE draws every object in the colour its file or its paint gives it. HVE Studio
+    HVE draws every object in the color its file or its paint gives it. HVE Studio
     lets you give vehicles, vehicle parts, road surfaces, human figures, the
     default ground plane, a survey point cloud and the sky a **node material**,
     edited the way Blender's material editor works.
@@ -12,14 +12,14 @@ A material changes how something **looks** in the 3-D viewport: paint that
 catches the light, tinted glass, lamps that glow, a road that reads as worn
 asphalt, a sky with haze. It is also a way to **see a result**: a material can
 read the run's time, a vehicle's speed, a road surface's friction or the crush
-depth at each point of a body, and colour the object by it.
+depth at each point of a body, and color the object by it.
 
 !!! warning "Display only"
     No material reaches any engine. The Shader Editor says so across the top of
     its window: *a material changes what the viewport SHOWS, never what any
     engine solves.* Editing or assigning a material never invalidates a solved
     run. The one exception on these pages is the **HVE Surface** node (below),
-    which is a view of a road surface's physics and is labelled as such.
+    which is a view of a road surface's physics and is labeled as such.
 
 ## Opening the Shader Editor
 
@@ -79,8 +79,8 @@ Editor until you click it.
 
 Each row shows what the slot wears. A part with no material of its own shows
 in brackets what it draws in instead: the whole vehicle's material, or
-**(file colour)** — the colour the mesh file gives it. A body segment with no
-material shows **(segment colour)**, the colour set in Human › Body Segments.
+**(file color)** — the color the mesh file gives it. A body segment with no
+material shows **(segment color)**, the color set in Human › Body Segments.
 
 **One material per part (N)** (for a human, **One material per segment (N)**)
 appears under the slots when some parts have no material of their own. It
@@ -104,10 +104,10 @@ on screen changes until you edit one.
   per segment**.
 
 !!! note "A part material starts as that part's own look"
-    The materials made on read-in draw each part in **its own** file colour.
+    The materials made on read-in draw each part in **its own** file color.
     So linking `LIGHT_RED_HI - ...` onto the GLASS slot changes nothing visible
     until that material is edited — unlike Blender, where an imported lamp
-    material carries its red. To give a part a colour of its own, press
+    material carries its red. To give a part a color of its own, press
     **+ New** on its slot and edit the new material.
 
 ## The row under the slots
@@ -125,7 +125,7 @@ These buttons act on the **active** slot (the highlighted row):
 
 A new **surface** material is *Object Color → Principled BSDF → Material
 Output*. It draws the object exactly as it looked with no material: the paint,
-vertex colours, texture, metallic and roughness pass straight through the
+vertex colors, texture, metallic and roughness pass straight through the
 **Object Color** node. A new **world** is *Sky Texture → Background → World
 Output*, the viewport's own sky, which lights the scene exactly as no world
 does.
@@ -134,7 +134,7 @@ does.
 in, each named part gets a material carrying what the part is made of as values
 on its Principled BSDF: the paint is lacquered (**Coat Weight** 0.5, **Coat
 Roughness** 0.06), glass and lenses are smooth, chrome is polished metal, and
-trim and tyres are rough. To change a finish, edit those values in the Shader
+trim and tires are rough. To change a finish, edit those values in the Shader
 Editor. The Principled BSDF's **Coat** inputs (Weight, Roughness, IOR, Tint)
 are Blender's: a clear glossy layer over the base, reflecting the sky. A part
 with no material at all is drawn with the same finish.
@@ -158,14 +158,14 @@ with the reason.
 
 **Values.** Every number is one kind of field, as in Blender: drag to change
 it, double-click or **Ctrl**+click to type it. A factor (Fac, Metallic,
-Roughness, Alpha, a colour channel) is limited to 0–1 and shows a fill for
+Roughness, Alpha, a color channel) is limited to 0–1 and shows a fill for
 where it sits. A **Strength** shows the same fill but has no limit; you can
-type any value, including a negative one. Colours are entered as you see them
+type any value, including a negative one. Colors are entered as you see them
 and converted for lighting. The small diamond in front of a value keys it
 (see [Keyframes and the Dope Sheet](04-keyframes-and-dope-sheet.md)).
 
-**Links.** Socket types convert as Blender's do: a number feeds a colour or a
-vector input, a colour feeds a number input by its brightness, a colour or a
+**Links.** Socket types convert as Blender's do: a number feeds a color or a
+vector input, a color feeds a number input by its brightness, a color or a
 number feeding a shader input becomes an emission, and a shader output only
 goes into a shader input. A link that would make a loop is refused, with the
 reason.
@@ -195,7 +195,7 @@ reason.
 | HVE | **HVE Simulation** — reads the run (below) |
 
 **Object Color** outputs what the object looks like with no material: its
-colour (paint, file colour, texture or surface colour), alpha, metallic and
+color (paint, file color, texture or surface color), alpha, metallic and
 roughness. It is what makes a new material change nothing, and the usual
 starting point for tinting or darkening an object rather than replacing its
 look.
@@ -208,7 +208,7 @@ found as given, then relative to the case's own folder.
 
 ### The HVE Simulation node
 
-Read-only views of the run, for colouring an object by a result:
+Read-only views of the run, for coloring an object by a result:
 
 | Output | Value |
 | --- | --- |
@@ -216,7 +216,7 @@ Read-only views of the run, for colouring an object by a result:
 | **Speed** | The vehicle's horizontal ground speed, in m/s (0 for anything that is not a vehicle, and for the first 50 ms) |
 | **Friction** | The road surface's own friction (0 off a surface) |
 | **Object Index**, **Random** | A per-object number, and a per-object random value, for variation between objects |
-| **Crush** | How far the run's crush moved each point of a vehicle body from the undamaged mesh, in **metres**; 0 where it did not, and on anything that is not a crushed vehicle |
+| **Crush** | How far the run's crush moved each point of a vehicle body from the undamaged mesh, in **meters**; 0 where it did not, and on anything that is not a crushed vehicle |
 
 Nothing flows the other way: the node reads the run and writes nothing to it.
 
@@ -282,7 +282,7 @@ run.
     vehicle already has. **H** hides the selected faces while you edit,
     **Shift+H** hides the rest, and **Alt+H** shows them all again. See
     [Creating and Editing Vehicles](../hve-users/04-vehicle-editor/10-creating-editing-vehicles.md).
-    A mesh's own modelled wheels are not offered.
+    A mesh's own modeled wheels are not offered.
 
 Faces the file left unnamed, and a mesh that names no parts, wear the
 whole-vehicle material. An opaque vehicle with a see-through part (glass on a
@@ -364,19 +364,19 @@ A body is a material target with its fifteen segments as its parts.
    segment), or in the **Event** editor click a body in the scene.
 2. The Shader Editor lists **(whole)** and the fifteen segments. The slot
    clicked in the editor is the segment picked in the Human editor, both ways.
-3. **+ New** on a segment starts from that segment's own colour, so it draws as
+3. **+ New** on a segment starts from that segment's own color, so it draws as
    before — now lit by the sun the way the vehicles beside it are.
 
 A segment's own material wins; otherwise the figure's whole material; otherwise
-the segment's colour from Human › Body Segments. A body with no materials draws
-exactly as it always has, in its segment colours.
+the segment's color from Human › Body Segments. A body with no materials draws
+exactly as it always has, in its segment colors.
 
 ## The ground plane
 
 With **no environment loaded**, the viewport draws a ground plane under the
 vehicles, and the object list offers **Ground plane** under *Ground (no
 environment loaded)*. It takes a surface material. Its texture coordinates are
-world X and Z in metres, so a checker or a noise stays fixed to the ground as
+world X and Z in meters, so a checker or a noise stays fixed to the ground as
 the camera moves. A case with a site draws no ground plane, so the entry is not
 offered there; a material already assigned to it is kept. The ground plane is
 not exported to glTF or sent to Blender.
@@ -389,7 +389,7 @@ saturation, the brightness and contrast, a gamma, an inverted or a
 re-ramped scan.
 
 1. Choose **Point cloud** under *Survey scan* in the object list, or press
-   **Edit in Shader Editor** under **Colour** in **Survey Point Cloud (scan)**
+   **Edit in Shader Editor** under **Color** in **Survey Point Cloud (scan)**
    (**Environment › Environment...**). The slot list shows one slot, **Point cloud**.
 2. **+ New** makes *Color Attribute → Principled BSDF → Material Output*: the
    point's own color passed straight through, so the cloud draws exactly as
@@ -401,7 +401,7 @@ re-ramped scan.
 
 What the nodes start from:
 
-- **Color Attribute** is the point's color as the point cloud's **Colour**
+- **Color Attribute** is the point's color as the point cloud's **Color**
   setting makes it — the file's own color, its intensity, its elevation, its
   classification or flat gray — so the node tree works on whichever of those
   you chose.

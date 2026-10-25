@@ -6,7 +6,7 @@ coordinates, reversing a face normal, and decimating or tessellating the mesh.
 
 !!! warning "Not in HVE Studio"
     HVE Studio has no surface editor and does not edit environment geometry.
-    Build or edit the site in a CAD or modelling program and import it in
+    Build or edit the site in a CAD or modeling program and import it in
     **Environment › Environment...**, Terrain (DXF, `.h3d`, `.iv`, `.wrl`, OBJ
     or glTF).
 

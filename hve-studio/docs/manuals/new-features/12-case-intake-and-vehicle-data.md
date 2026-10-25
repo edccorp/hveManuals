@@ -21,7 +21,7 @@ published bundle) has none of them.
 
 ## Where each value came from
 
-Every value these tools set is labelled with one of five kinds, in the tool's
+Every value these tools set is labeled with one of five kinds, in the tool's
 own window and afterwards in **Tools › Automatic Tools › Provenance**:
 
 | Kind | Means |
@@ -280,7 +280,7 @@ the vehicle, as HVE does it. Ticked, they go on the vehicle's
 [Aboard](#aboard-occupants-and-cargo-on-the-vehicle) list instead and travel
 with it into every event: each occupant as its GEBOD (or stated) weight at its
 seat position, or at the CG when no seat position is given; each cargo item as
-itself. Two more controls appear, **Applied** and **On the centreline (ignore
+itself. Two more controls appear, **Applied** and **On the centerline (ignore
 sideways offsets)**, with the meanings given under
 [Aboard](#aboard-occupants-and-cargo-on-the-vehicle). Aboard occupants are
 weights only: no human body is added to the case for them.
@@ -349,7 +349,7 @@ There is no matching table, no occupants, no cargo and no **Add to Case**.
   specifications by the rules under
   [Stated specifications](#stated-specifications), with the same refusals, and
   saves them with the case. It is meant for a generic vehicle; a vehicle with
-  a body mesh is refused. It is greyed while no specification is entered, and
+  a body mesh is refused. It is grayed while no specification is entered, and
   while the vehicle's results are on screen.
 - **Close** closes the window.
 
@@ -364,7 +364,7 @@ at 0 when it was not measured:
 
 **Calculate from measurements** sets the vehicle's values by EDC's formulas,
 from what was entered only. Each value set is listed on the sheet with its
-formula and numbers, and stored in Provenance. It is greyed while nothing is
+formula and numbers, and stored in Provenance. It is grayed while nothing is
 entered, and while the vehicle's results are on screen.
 
 | Value | EDC's formula |
@@ -373,7 +373,7 @@ entered, and while the vehicle's results are on screen.
 | Ride rate, per wheel | the axle's measured rate / 2 |
 | Damping, per wheel | √(k / m), with k the ride rate per wheel and m the axle's own share of the weight per wheel: (x / wheelbase) × W × 0.5 / 386.4, where x is the CG's distance to the *other* axle |
 | Anti-roll bar roll stiffness | (π/32) × d⁴ × G / L × (r2/r1)² × T² / r3², with G = 11.5 × 10⁶ psi and T the axle's track |
-| Roll centre (solid axle) | (sprung CG height − tire radius) − 3 in, below the CG. For an independent suspension it is listed as not applied, because the engines take a roll centre for a solid axle only |
+| Roll center (solid axle) | (sprung CG height − tire radius) − 3 in, below the CG. For an independent suspension it is listed as not applied, because the engines take a roll center for a solid axle only |
 
 The damping uses each axle's own share of the weight, from the CG's distance
 to the other axle; EDC's sheet takes the distance to the axle's own end.
@@ -526,7 +526,7 @@ editing.
 | **Added to the vehicle (every engine)** | The vehicle's weight, CG and rotational inertia with the load combined in, before any engine runs: the hand method, the same in SIMON, EDSMAC4 and every other engine. The CG moves fore and aft, sideways and in height, and every position measured from it (axles and wheels, CG height, the CG-to-side and CG-to-underside distances, roll centers, steer axes, hitch points, accelerometers) moves with it, so the vehicle's geometry stays where it was. The sprung inertias gain the load by the parallel-axis theorem. The springs are the vehicle's own, so SIMON starts it at its entered ride height |
 | **As payload in SIMON and EDVDS (the suspension sags)** | In SIMON and EDVDS, the load as the event's payload, combined with any payload the event already states. SIMON then lowers the body on each suspension by the extra static load and moves the wheels by the CG shift, as HVE does with a payload. Every other engine, and a dolly in any engine, gets the load added to the vehicle instead, and the run status says so |
 
-**On the centreline (ignore sideways offsets)** counts each item's weight and
+**On the centerline (ignore sideways offsets)** counts each item's weight and
 its fore-and-aft and height position, but not its sideways offset. A lone
 driver then does not pull the vehicle off a straight line on a flat road, so no
 steering correction is needed.
@@ -866,7 +866,7 @@ length units set in Preferences) and **Heading (deg)**:
 - **Start position** — where the vehicle's CG is when the simulation starts,
   at the start time chosen in section 2. It is the event's own start position
   (**Event › Position / Velocity**), editable here too. With the impact
-  position ticked it is labelled **Start position (first guess)**: the solve
+  position ticked it is labeled **Start position (first guess)**: the solve
   starts from it and moves it. It is locked while the event's results are on
   screen (Reset the run to edit it here) and while a solve is running.
 - **Impact position (target)** — tick it to give the place the vehicle's CG

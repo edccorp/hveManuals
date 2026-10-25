@@ -293,7 +293,7 @@ EDVSM uses the Kv Stiffness value for roll-over simulations. The other Vehicle E
 EDVSM uses the steering gear ratio if the *At Driver* Steering Table option is used during Event set-up. See Table 2-5. In addition, if the Steer Degree of Freedom option is selected (see Event Set-up), the Steering Column Inertia and Friction are also used.
 
 !!! note "HVE Studio"
-    These values are in **Vehicle › Editors › Steering System** (*Gear Ratio*, *Column Inertia*, *Column Friction*). The per-axle row labelled **Steer DOF (SIMON)** in that dialog is SIMON's setting and is not read by EDVSM; EDVSM's steer degree of freedom is chosen per event in the **EDVSM Options** window (see [Calculation Options](#steer-degree-of-freedom)).
+    These values are in **Vehicle › Editors › Steering System** (*Gear Ratio*, *Column Inertia*, *Column Friction*). The per-axle row labeled **Steer DOF (SIMON)** in that dialog is SIMON's setting and is not read by EDVSM; EDVSM's steer degree of freedom is chosen per event in the **EDVSM Options** window (see [Calculation Options](#steer-degree-of-freedom)).
 
     EDVSM applies the steer angle as the wheel's angle about the vehicle's vertical axis. Unlike SIMON, it does not project the table angle through the caster and kingpin inclination, so the same steer table produces a somewhat larger road-wheel yaw angle in EDVSM than in SIMON on a vehicle with large caster.
 
@@ -496,7 +496,7 @@ The Damage Profile Data are not used by EDVSM.
 The Payload Data are not used by EDVSM. Payload inertias may be added to the vehicle inertias and the CG may be moved longitudinally and/or vertically using the Move CG dialog.
 
 !!! note "HVE Studio"
-    **Event › Payload** is greyed for an EDVSM event. To account for a load, edit the vehicle's weight, CG and inertias in the *Inertia / Mass* dialog (**Edit…** in the Vehicles panel's *Inertia* section).
+    **Event › Payload** is grayed for an EDVSM event. To account for a load, edit the vehicle's weight, CG and inertias in the *Inertia / Mass* dialog (**Edit…** in the Vehicles panel's *Inertia* section).
 
 > **NOTE:** Lateral relocation of the CG is not supported by EDVSM.
 

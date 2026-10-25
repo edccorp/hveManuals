@@ -6,7 +6,7 @@ Output Graph...** (or **View › Output Graph**) in the Event (F5) or Playback (
 
 Before a run the panel says *Run simulation to see output graph*. After a run it
 plots the selected variables against simulation time, in the units set in
-Preferences, each trace in its own colour with a legend entry.
+Preferences, each trace in its own color with a legend entry.
 
 Drag the legend to move it within the graph. Right-click it to put it in a
 corner (**Top left**, **Top right**, **Bottom left**, **Bottom right**) or
@@ -19,18 +19,18 @@ again.
 - A line gives the number of traces and the sampling interval (the run's output
   step, or a coarser one if the graph is thinning a long run).
 - **Format...** — the graph's formatting:
-  - **Traces** — each trace's colour (with **Reset**), and **Vehicle name in the
-    legend**. A trace colour is remembered for the session only.
+  - **Traces** — each trace's color (with **Reset**), and **Vehicle name in the
+    legend**. A trace color is remembered for the session only.
   - **Value axis** — automatic or a fixed range, with **Fit**.
   - **Time axis** — the whole run or a chosen range, with **Whole run**.
-  - **Gridlines and colour**, and **Reset formatting**.
+  - **Gridlines and color**, and **Reset formatting**.
 - **Close** closes the panel.
 
 In the Playback editor, with a playback sequence selected, the graph follows
 the **sequence**: its time axis is the master clock, from 0 to the end of the
 sequence, and each vehicle's trace comes from whichever event places that
 vehicle at each instant, as the 3-D view draws it. A dotted vertical line
-labelled with the vehicle and the event's name marks where a vehicle passes
+labeled with the vehicle and the event's name marks where a vehicle passes
 from one event to the next. Occupant traces come from the active event on its
 own track. Overlaying other events is not offered there, because the sequence
 already puts its events on one timeline. With no sequence selected the graph

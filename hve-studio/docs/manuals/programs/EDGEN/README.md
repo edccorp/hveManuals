@@ -62,7 +62,7 @@ messages are the ones this manual describes. The program around it differs:
 
 ## Source
 
-Converted from the legacy printed manual (~88 pages). Screenshots of HVE's windows have been replaced by captures of HVE Studio (file names beginning `hvn-`) or removed where HVE Studio has no equivalent. Where the printed manual differed from the current release, the text follows the current program behaviour and is marked with *(updated: ...)* notes.
+Converted from the legacy printed manual (~88 pages). Screenshots of HVE's windows have been replaced by captures of HVE Studio (file names beginning `hvn-`) or removed where HVE Studio has no equivalent. Where the printed manual differed from the current release, the text follows the current program behavior and is marked with *(updated: ...)* notes.
 
 <!-- NAV -->
 

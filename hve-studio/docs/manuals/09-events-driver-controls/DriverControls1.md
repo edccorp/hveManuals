@@ -1,7 +1,7 @@
 # Driver Controls Path Follower Method
 
 The path correction method is chosen on the **Method** tab of the
-**Path Follower** dialog (**Event › Path Follower...**), and its parameters are
+**Path Follower** tab of Driver Controls (**Event › Path Follower...**), and its parameters are
 entered on the **Steering** tab. See
 [Driver Controls Path Follower](DriverControls7.md) for the dialog as a whole.
 

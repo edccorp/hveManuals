@@ -22,7 +22,7 @@ The minimum resultant acceleration for a sample to be treated as part of the
 crash (HVE's *Threshold Accel*). It is an acceleration whatever the pulse type,
 so it stays in g.
 
-## Impulse centre X / Y / Z
+## Impulse center X / Y / Z
 
 Shown only when the pulse type is **Impulse**, because no other type reads it.
 The point where the force acts, measured from the CG in the vehicle's own frame

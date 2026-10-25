@@ -50,7 +50,7 @@ says what is wrong. The two mating connection heights must agree to within about
 options (EDSMAC4 *Inter-Vehicle Connection*).
 
 !!! note "HVE Studio"
-    HVE Studio offers all eight types in both lists, labelled *(trailer)* or
+    HVE Studio offers all eight types in both lists, labeled *(trailer)* or
     *(tow)*. Choose a front type for a towed unit and a rear type for a towing
     unit.
 
@@ -66,15 +66,14 @@ effect as they are made and undo with **Edit › Undo**:
 - **Friction** — the friction coefficient at the connection.
 - **Linear** — **Free Play**, **Stiffness**, **Damping**, **Breakaway Force**
   (0 = cannot fail).
-- **Angular** — **Max Articulation** **Roll (deg)**, **Pitch (deg)** and
-  **Yaw (deg)**, then **Stiffness**, **Damping** and **Breakaway Torque**
-  (0 = cannot fail).
+- **Angular** — **Max Articulation** **Yaw (deg)**, then **Stiffness**,
+  **Damping** and **Breakaway Torque** (0 = cannot fail).
 
 Hover a field for what reads it. Notably:
 
 - **Max Articulation Yaw** is HVE's *Max Articulation Angle*, the jackknife
   limit read by EDSMAC4, EDVDS, SIMON and EDVTS; exceeding it ends an EDVDS run.
-  The roll and pitch limits are stored but not read.
+  HVE's roll and pitch limits are not shown: no engine reads them.
 - The linear and angular **Stiffness** and **Damping** are read by SIMON only
   when the event's connection model is *Use tow vehicle properties*; otherwise
   the constraint is built from the two units' masses and these values are inert.

@@ -2,10 +2,10 @@
 
 **CG To Back (Exterior Dimensions)**
 
-HVE edits the vehicle's exterior dimensions in six Vehicle Dimensions dialogs, one per face (CG to Front, Back, Top, Left, Right and Bottom), each with a Stiffness button. HVE Studio has no per-face dialogs. The exterior dimensions are entered in the Vehicle Editor (**Vehicle (F3)**), in the **Vehicles** panel under **Size & Weight › Geometry**, where six fields right after **CG Height** give the distance from the CG to each face that the engines receive: **CG to Front**, **CG to Rear**, **CG to Right**, **CG to Left**, **CG to Top** and **CG to Bottom**. All values are in the units set in Preferences.
+HVE edits the vehicle's exterior dimensions in six Vehicle Dimensions dialogs, one per face (CG to Front, Back, Top, Left, Right and Bottom), each with a Stiffness button. HVE Studio has no per-face dialogs. The exterior dimensions are entered in the Vehicle Editor (**Vehicle (F3)**), in the **Vehicles** panel under **Size & Weight › Geometry**, where six fields below **Overall Height** give the distance from the CG to each face that the engines receive: **CG to Front**, **CG to Rear**, **CG to Right**, **CG to Left**, **CG to Top** and **CG to Bottom**. All values are in the units set in Preferences.
 
 ## x Coord
-Vehicle-fixed distance from the CG to the back of the vehicle. In HVE Studio this is the **CG to Rear** field under **Geometry**, and it is editable. It is **CG to Axle 2**, plus any spacing to the rearmost axle, plus **Rear Overhang** (measured from the rearmost axle): typing it sets **Rear Overhang** (never below zero) and keeps **Overall Length** in step. When the wheels carry their own X positions (the **Wheel Positions** table), CG to Rear is grayed, showing the wheels' value, along with the overhangs and the wheelbase.
+Vehicle-fixed distance from the CG to the back of the vehicle. In HVE Studio this is the **CG to Rear** field under **Geometry**, and it is editable. It is **CG to Rear Axle**, plus any spacing to the rearmost axle, plus **Rear Overhang** (measured from the rearmost axle): typing it sets **Rear Overhang** (never below zero) and keeps **Overall Length** in step. When the wheels carry their own X positions (the **Wheel Positions** table), CG to Rear is grayed, showing the wheels' value, along with the overhangs and the wheelbase.
 
 ### Rear Overhang
 Distance from the rearmost axle to the back of the vehicle, stored as an **input** under **Geometry**; typing **CG to Rear** sets it.

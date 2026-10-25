@@ -10,7 +10,7 @@ An extremely useful feature of EDSVS is the ability to quickly and accurately re
 
 EDSVS has no calculation options window in HVE Studio (as in current HVE, it reads
 no calculation-option values from the event). **Method Options...** in Event
-Information is greyed for an EDSVS event.
+Information is grayed for an EDSVS event.
 
 ## Roll Couple Distribution
 

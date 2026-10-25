@@ -41,7 +41,7 @@ different solver, not a refinement.
     and the value entered here is overridden. Turn that option off to use it.
 
 For each axle (Axle 1, Axle 2 and Axle 3; axles the vehicle does not have are
-greyed), the following post-impact values are entered:
+grayed), the following post-impact values are entered:
 
 **Axle n - Right Lock-up (%/100)**
 The wheel lock-up is multiplied by the available friction force to determine

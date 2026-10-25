@@ -78,7 +78,7 @@ Below these:
   onboard camera). **Look ahead** sets 30 m ahead at about eye height; **Aim at
   the vehicle** sets the CG, 0.7 m up.
 - **Camera Coordinates** (the eye) and **Picture Center** (the point looked
-  at), and **Roll (deg)**. These are greyed where an attachment sets them.
+  at), and **Roll (deg)**. These are grayed where an attachment sets them.
 
 Lengths are shown in the units set in Preferences. Before a run, an attached
 camera tracks the vehicles' **start** positions, so it can be aimed before
@@ -87,7 +87,7 @@ anything is solved; after a run it follows the motion.
 ## Lens, Camera and Viewport Display
 
 These are Blender's camera settings, under Blender's names, and the 3-D view
-honours them while you look through the camera:
+honors them while you look through the camera:
 
 | Section | Field | Meaning |
 | --- | --- | --- |

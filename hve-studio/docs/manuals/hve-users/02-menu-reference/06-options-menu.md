@@ -72,7 +72,7 @@ in [Appendix III](../11-appendices/appendix-03-coordinate-systems.md).
 
 !!! warning "Not in HVE Studio"
     The viewport draws a ground grid, but there is no Grid dialog for its
-    spacing, colour or extent. (The Output Graph has its own
+    spacing, color or extent. (The Output Graph has its own
     gridline settings under **Format...**.)
 
 ---
@@ -203,10 +203,10 @@ stores an option but does not read it, the dialog says so beside the control.
 
 | HVE preference | HVE Studio |
 |---|---|
-| Diagnostic Level | **Diagnostic Level** — greyed: nothing to control (a run's status always says what it assumed) |
+| Diagnostic Level | **Diagnostic Level** — grayed: nothing to control (a run's status always says what it assumed) |
 | Auto Backup | **Enable Auto-Save** and **Interval (min)** — a recovery copy, `<case>.autosave.hvex`, written beside the case while there are unsaved changes |
 | Date Style | **Date Format** — how dates are shown in the Audit Log, the file browser and the run report |
-| Background Color | **Background Color** — the colour of the main window behind the panels |
+| Background Color | **Background Color** — the color of the main window behind the panels |
 | Skidmark Height | Not in HVE Studio |
 | Font Size | **Tools › Style Editor** (the interface's live style settings) |
 | *(units)* | **Units** — see [UNITS](#units) |

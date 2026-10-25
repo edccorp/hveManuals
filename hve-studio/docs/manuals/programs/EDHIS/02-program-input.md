@@ -141,7 +141,7 @@ The Human Injury Tolerance Data used by EDHIS are shown in Table 2-2. These valu
 *(updated: in the current HVE human model the belt injury tolerances are entered as four separate values — left lap, left torso, right lap and right torso — rather than the single combined torso and lap values described in the original manual.)*
 
 !!! note "HVE Studio"
-    The tolerances are in the *Humans* panel › **Injury Tolerances…**, labelled by the quantity each is compared against rather than by its traditional name: *HIC*, *Head Pitch Accel*, *Head Side Accel*, *Chest Vertical Accel* (the "Chest Severity Index"), *Chest Forward Accel*, *Chest Contact Force*, *Knee Contact Force* (the "Femur Load") and the four belt maxima. [Chapter 4](04-calculation-method.md#injury-measures) explains each.
+    The tolerances are in the *Humans* panel › **Injury Tolerances…**, labeled by the quantity each is compared against rather than by its traditional name: *HIC*, *Head Pitch Accel*, *Head Side Accel*, *Chest Vertical Accel* (the "Chest Severity Index"), *Chest Forward Accel*, *Chest Contact Force*, *Knee Contact Force* (the "Femur Load") and the four belt maxima. [Chapter 4](04-calculation-method.md#injury-measures) explains each.
 
 ## Vehicles
 
@@ -224,7 +224,7 @@ The geometry file plays no role in the EDHIS calculations. However, there are so
 Vehicle contact surfaces are the surfaces that interact with human ellipsoids to produce forces on the human. Up to 25 contact surfaces are allowed by EDHIS, the properties for which are shown in Table 2-3.
 
 !!! note "HVE Studio"
-    Contact surfaces are edited in **Vehicle › Editors › Contact Surfaces**. A surface is entered either by centre, size and yaw/pitch/roll angles or, with *Edit corner points instead*, by its three corner points; the dialog shows the surface normal and has a **Flip** button to reverse it. The panels are drawn in the 3-D view, with an arrow on each normal, while the dialog is open. Its *Material Properties* section holds the surface's own force-deflection data, and *Side* (Interior/Exterior) is stored with the surface.
+    Contact surfaces are edited in **Vehicle › Editors › Contact Surfaces**. A surface is entered either by center, size and yaw/pitch/roll angles or, with *Edit corner points instead*, by its three corner points; the dialog shows the surface normal and has a **Flip** button to reverse it. The panels are drawn in the 3-D view, with an arrow on each normal, while the dialog is open. Its *Material Properties* section holds the surface's own force-deflection data, and *Side* (Interior/Exterior) is stored with the surface.
 
     The dialog also offers **Derive from Mesh**, **Seed Standard Interior**, a **Pedestrian preset**, interior templates and **Save/Load Interior…** for building a set of panels quickly.
 
@@ -263,7 +263,7 @@ A belt restraint system may be supplied for up to nine seat positions. Although 
 | Belt Quadratic Stretch Rate | Second-order stretch rate of the belt material |
 | Belt Cubic Stretch Rate | Third-order stretch rate of the belt material |
 | Belt Damping Constant | Velocity-dependent contribution |
-| Belt Breaking Strength | Maximum strength of the belt material, acting as a limit on the tension. Once reached, the tension is held at this value; when the belt then begins to shorten it unloads along the entered unloading slope, leaving it permanently stretched. *(updated: belt rupture is not modelled — compare the belt tension in the Variable Output against this value to judge whether a belt would have failed)* |
+| Belt Breaking Strength | Maximum strength of the belt material, acting as a limit on the tension. Once reached, the tension is held at this value; when the belt then begins to shorten it unloads along the entered unloading slope, leaving it permanently stretched. *(updated: belt rupture is not modeled — compare the belt tension in the Variable Output against this value to judge whether a belt would have failed)* |
 | Belt Unloading Slope | Linear elastic property during unloading (should be greater than the loading rate) |
 
 #### Airbag Restraints
@@ -434,7 +434,7 @@ The specific Event Set-up data used by EDHIS are defined in Table 2-6.
     - **Collision pulse** — **Event › Collision Pulse**.
     - **Contacts** — **Event › Contacts...**; see [Contacts](#contacts).
 
-    **Driver Controls**, **Damage Profiles**, **Payload**, **Wheels** and **Accelerometers** on the Event menu are greyed for an EDHIS event. **Contacts** and **Restraints** are available; Restraints opens the vehicle's belt and airbag restraints.
+    **Driver Controls**, **Damage Profiles**, **Payload**, **Wheels** and **Accelerometers** on the Event menu are grayed for an EDHIS event. **Contacts** and **Restraints** are available; Restraints opens the vehicle's belt and airbag restraints.
 
 ![Figure 2-4](images/hvn-edhis-event-info.png)
 *Figure 2-4: Event Information panel set up for an EDHIS occupant event (EDHIS tutorial, "Buick Occupant").*
@@ -486,7 +486,7 @@ EDHIS is a 3-mass, 2-joint model. Articulation angular positions and velocities 
 
 #### Driver Controls
 
-The Driver Controls Data are not used by EDHIS. (In HVE Studio, **Event › Driver Controls** is greyed for an EDHIS event.)
+The Driver Controls Data are not used by EDHIS. (In HVE Studio, **Event › Driver Controls** is grayed for an EDHIS event.)
 
 #### Damage Profile
 
@@ -630,7 +630,7 @@ EDHIS has the following user-selectable simulation model options (see [Calculati
 
 To execute an EDHIS event in HVE Studio, use the playback bar under the viewport (or **Output › Run Simulation**, Ctrl+R):
 
-- **Run** — Execute the active event. Greyed once the event is solved; press Reset to run it again.
+- **Run** — Execute the active event. Grayed once the event is solved; press Reset to run it again.
 - **Reset** — Clear the results so the event can be edited and run again.
 - **|<** — Jump to the start
 - **<<** — Step back one output step
