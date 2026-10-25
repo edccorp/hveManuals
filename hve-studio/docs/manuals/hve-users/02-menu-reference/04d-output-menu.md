@@ -7,7 +7,7 @@ Output menu.*
 
 The Output menu is in every editor. **Key Results...**, **Output Graph...**
 and **HVE Reports...** show the results of a run, so they open only in the
-**Event** (F5) and **Playback** (F6) editors; elsewhere they are greyed, and
+**Event** (F5) and **Playback** (F6) editors; elsewhere they are grayed, and
 their tooltip says where they are. They show the **active event** after it has
 been run (in Playback, the selected sequence where a panel follows one);
 before that they say there is nothing to show.
@@ -40,7 +40,7 @@ default.
 
 **Description:** A table of the active event's key results, one column per
 vehicle — for a collision, for example, Delta-V, PDOF, impact duration and
-force, energy, maximum speed, distance travelled and heading change. With
+force, energy, maximum speed, distance traveled and heading change. With
 **Follow playback time** ticked, time-dependent values follow the playback bar.
 **Select Variables...** chooses what is listed, **Group columns by** arranges
 the columns, **Vehicle name in column titles** labels them, and **Export CSV...**
@@ -64,9 +64,9 @@ See the dialog reference: [Key Results](../../01-user-interface/KeyResDlg.md).
 **Description:** Plots output variables against time. **Select Variables...**
 chooses the variables; **Fit**, **Reset** and **Whole run** set the axes;
 **Format...** and **Reset formatting** change the appearance (gridlines,
-colours); **Vehicle name in the legend** labels the traces. **Other Events...**
+colors); **Vehicle name in the legend** labels the traces. **Other Events...**
 draws the same traces from up to four other events that have results, dashed
-in each trace's colour over the active event's solid ones -- for instance an
+in each trace's color over the active event's solid ones -- for instance an
 event and a copy of it (the **Copy** button beside **+** and **−** on the
 Events row) with one input changed. Vehicle and occupant traces alike; a
 trace is matched by its vehicle slot or occupant.
@@ -131,7 +131,7 @@ played rather than solved).
 |---|---|
 | **Shown (the run on screen)** | The event's own physics: the same setting as Event Information › **Physics**, used by **Run** and saved with the case. Locked while the event holds results |
 | **Compared against (the ghost)** | *the other physics* (the default), or one of the three; the one shown cannot also be the ghost |
-| **Compare Runs** | Solves the event with the comparison first, then with its own physics. Greyed, with the reason, while a run is in progress, when the event is already solved (press **Reset** first) or when the comparison cannot run |
+| **Compare Runs** | Solves the event with the comparison first, then with its own physics. Grayed, with the reason, while a run is in progress, when the event is already solved (press **Reset** first) or when the comparison cannot run |
 
 When both runs are done the window names the event and the two physics, and
 shows the differences between the two runs for each vehicle, and for each
@@ -253,12 +253,24 @@ The dialog's sections:
   interval. The rows run from 0 to the end of the run:
   *floor(duration / interval) + 1* of them. Values between saved output steps
   are interpolated.
-- **Coordinate System** — **SAE (x forward, y right, z down)** writes the
-  values as solved. **Traditional (HVE's sign convention)** multiplies by −1
-  the variables HVE's own export flips — for example CG Y and Z, pitch and
-  yaw, the lateral and vertical velocities, most kinetics forces and moments,
-  and the tire contact-patch y and z. Every other variable is written
-  unchanged. The tooltip on each choice says the same.
+- **Coordinate System** — three choices; the default follows
+  **Preferences > Coordinates**.
+    - **SAE (x forward, y right, z down)** writes the values as solved.
+    - **Conventional (x forward, y left, z up)** writes what the screen shows
+      under the Conventional setting: the SAE frame turned 180 degrees about x,
+      so the y and z components of every vector (position, velocity,
+      acceleration, force, moment), yaw and pitch change sign, while x
+      components, roll, scalars, counts and magnitudes do not. Occupant
+      segment, belt and airbag positions and orientations follow the same rule;
+      an occupant joint's own angles and moments stay in the segment's axes.
+    - **Traditional (HVE's sign convention)** multiplies by −1 the variables
+      HVE's own export flips, exactly as HVE does, so the file matches one
+      HVE wrote. That list is not the Conventional rule: it also negates two
+      values that are not geometric (the differential gear number and the
+      torque split), some x components and roll moments, and it keeps some y and
+      z components. Every other variable is written unchanged.
+
+    The tooltip on each choice says the same.
 
 CSV and ASCII files start with four header rows — vehicle, output group,
 variable and units (in parentheses) — then the data rows, with time in

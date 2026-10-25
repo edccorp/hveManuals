@@ -53,8 +53,8 @@ Installed or copied, the program is one folder. Keep its contents together:
 | `HVESolver.exe` | The physics solver. On Windows every **Run** is solved by this program in a separate process, so it must stay in the same folder as `HVEStudio.exe` |
 | `SDL2.dll` | A library the program needs for its window, keyboard and mouse |
 | `hve-solver-reference.exe` | Where present: the HVE-reference physics, used when an event's **Physics** is *HVE-reference* (Event Information) and by **Output › Compare Runs...**. Without it, an HVE-reference event says it cannot run |
-| `db\` | HVE's vehicle databases. An installed release carries `Generic.db` only; EDC's vehicle data (`EDCVehicles.hvedb`, with its meshes and wheel images inside it) is licensed separately and installed in its own folder (below). A preview folder from EDC may carry `EDCVehicles.hvedb` here as well |
-| `vehicles\` | 3-D vehicle geometry files that the classic `.db` databases in `db\` name, and the program's own (such as the generic motorcycle's) |
+| `db\` | The vehicle databases. An installed release carries `Generic.hvedb` only (HVE's generic vehicles and the generic motorcycle, with its mesh inside); EDC's vehicle data (`EDCVehicles.hvedb`, with its meshes and wheel images inside it) is licensed separately and installed in its own folder (below). A preview folder from EDC may carry `EDCVehicles.hvedb` here as well |
+| `vehicles\` | 3-D vehicle geometry files that classic `.db` databases name. An installed release carries none: the generic motorcycle's mesh is inside `Generic.hvedb` |
 
 EDC's vehicle data is a separate download, installed once per computer in
 **`%ProgramData%\EDC\HVE\data`**, outside every version's folder: every

@@ -311,7 +311,7 @@ Each vehicle is positioned relative to the earth-fixed coordinate system by supp
     For an EDCRASH event the scene positions are entered in the **Event
     Information** panel, **Vehicle Impact Setup** section (the Event
     Designer's Positions stage), for each vehicle (Event › Position /
-    Velocity is not used by EDCRASH and is greyed):
+    Velocity is not used by EDCRASH and is grayed):
 
     - The **Named Positions** list holds HVE's eight named positions, one
       collapsed node each; its header shows where the position is, or *not
@@ -370,7 +370,7 @@ Positions are not required. However, if an estimate of impact speed is desired, 
       the **Named Positions** list in the Event Information panel (shown
       when Impact and Final/Rest are set). Both are read from an HVE case.
       The sideslip is the angle from where the vehicle points to where it is
-      travelling at impact (0 = straight ahead); it moves both vehicles'
+      traveling at impact (0 = straight ahead); it moves both vehicles'
       Delta-V and PDOF. The velocity at rest is the speed EDCRASH's spinout
       and rollout analysis runs down to (0 = the vehicle stopped).
     - **Impact Speed field.** The *Impact Speed* shown for each vehicle in
@@ -519,11 +519,11 @@ instead of a tape.
   on the same CG. **Exemplar scan** reads an undamaged vehicle of the same model the same way,
   so a curved bumper's bow is not counted as crush. **String line** draws a
   straight line across the face's two undamaged ends, as a tape line does in
-  the field; on a bowed bumper it lies behind the centre and misses the bow's
+  the field; on a bowed bumper it lies behind the center and misses the bow's
   depth. **Plane** uses the vehicle's own exterior extent.
 - **Measure**: where in height the crush is read. EDCRASH takes no height;
   this is how the measurement is taken.
-  - **At one height**: a 5 cm slice centred on a **Height above ground** (a
+  - **At one height**: a 5 cm slice centered on a **Height above ground** (a
     bumper's, a sill's).
   - **Deepest crush in a height band** (the default): the band is cut into
     5 cm slices, and at each place across the face the deepest crush of any
@@ -544,13 +544,13 @@ outermost surface of the scan in the band, read in 2 cm slices. The damaged
 width is the longest stretch crushed more than the smallest crush, and the
 stations are spaced equally across it in EDCRASH's own order: C1 is the LEFT
 end of a front or back and the REAR end of a side, and the offset is the
-centre of the width from the CG (positive to the right for a front or back,
+center of the width from the CG (positive to the right for a front or back,
 forward for a side). **Apply to the event** writes the depths, width and
 offset into Measured Crush; it is locked while results are on screen.
 
 #### Payload
 
-The Payload Data are not used by EDCRASH. Payload inertias may be added to the vehicle inertias and the CG may be moved longitudinally using the Move CG dialog. *(In HVE Studio, Event › Payload is greyed for EDCRASH.)*
+The Payload Data are not used by EDCRASH. Payload inertias may be added to the vehicle inertias and the CG may be moved longitudinally using the Move CG dialog. *(In HVE Studio, Event › Payload is grayed for EDCRASH.)*
 
 > **NOTE:** Lateral and vertical relocation of the CG are not supported by EDCRASH.
 
@@ -583,7 +583,7 @@ In HVE Studio the options are in the **EDCRASH Options** window, opened with **M
 
 ![Figure 2-5](images/hvn-edcrash-options.png)
 
-*Figure 2-5: The EDCRASH Options window in HVE Studio. The Curved Path group is below the convergence criteria (scroll down); the convergence criteria are greyed because the basis is Normal.*
+*Figure 2-5: The EDCRASH Options window in HVE Studio. The Curved Path group is below the convergence criteria (scroll down); the convergence criteria are grayed because the basis is Normal.*
 
 #### Program Options
 
@@ -605,7 +605,7 @@ During execution of an EDCRASH event, certain features may be turned on or off. 
 
   > **NOTE:** The Auto-set Rot/Lat Skidding feature is not included in CRASH3.
 
-- **Include Angular Momentum Solution** (default = FALSE) — When checked, EDCRASH includes a conservation of angular momentum solution in addition to the standard linear momentum solution. *(updated: this fourth check box appears in the current Calculation Options dialog but is disabled (grayed out) and cannot be changed.)* *(HVE Studio: greyed as in HVE. EDCRASH only prints the setting in the Program Data report; no angular-momentum solution is implemented.)*
+- **Include Angular Momentum Solution** (default = FALSE) — When checked, EDCRASH includes a conservation of angular momentum solution in addition to the standard linear momentum solution. *(updated: this fourth check box appears in the current Calculation Options dialog but is disabled (grayed out) and cannot be changed.)* *(HVE Studio: grayed as in HVE. EDCRASH only prints the setting in the Program Data report; no angular-momentum solution is implemented.)*
 
 If all of the above options are turned off, EDCRASH performs a simplistic analysis comparable to what is traditionally done on a hand-held calculator.
 
@@ -651,11 +651,11 @@ For the simulation to successfully converge, each error must be less than that s
 
 The default convergence tolerances are: Rest Error X-Y = 0.10, Rest Error Heading = 0.10, EOR Error X-Y = 0.15, EOR Error Heading = 0.15, POC Error X-Y = 0.15 (all as fraction, %/100). See [Calculation Options for EDCRASH](../../10-calculation-options/CalcOptEDCRASHDlg.md) for details.
 
-In HVE Studio the **Number of Runs** and the five error tolerances are greyed unless the basis is Trajectory Simulation, because EDCRASH reads them only then.
+In HVE Studio the **Number of Runs** and the five error tolerances are grayed unless the basis is Trajectory Simulation, because EDCRASH reads them only then.
 
 #### Curved Path
 
-*(HVE Studio.)* When a vehicle has a **Point on Curve** position, EDCRASH draws its post-impact path through that point using HVE's curved-path settings, which HVE Studio shows in the EDCRASH Options window under **Curved Path (through a Point On Curve)**. The group is greyed when no vehicle in the event has a Point on Curve.
+*(HVE Studio.)* When a vehicle has a **Point on Curve** position, EDCRASH draws its post-impact path through that point using HVE's curved-path settings, which HVE Studio shows in the EDCRASH Options window under **Curved Path (through a Point On Curve)**. The group is grayed when no vehicle in the event has a Point on Curve.
 
 - **Path Type** — **Circular arc** or **Spiral (spline)**. A spiral takes the path length and the departure angle from the spline and switches Modify Departure Angle off; a circular arc uses the arc geometry and leaves it on. The choice can change the result substantially.
 - **Tangent** — **Heading vector** or **Velocity vector**. It is passed to the engine; on the one reference case that has a Point on Curve it did not change the result.

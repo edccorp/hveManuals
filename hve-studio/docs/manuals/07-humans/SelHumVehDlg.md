@@ -26,7 +26,7 @@ Shown for the occupant calculation methods, for EDGEN, and for SIMON (where
 occupants are bookkeeping only — SIMON does not solve occupant biomechanics).
 One row per human slot (H1, H2, …):
 
-- the **human** list — a human already in another slot is greyed;
+- the **human** list — a human already in another slot is grayed;
   pedestrians are marked. "no body" warns that the human has no body model yet.
 - **Remove** and **Pose** (opens the human's
   [Body Pose](HumanInfoDlg.md#body-pose) window for this event).

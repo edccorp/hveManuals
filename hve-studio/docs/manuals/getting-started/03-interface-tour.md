@@ -49,7 +49,7 @@ The main entries:
   Payload, Lights, Wheels, Accelerometers, Contacts, Restraints (Airbags / Belt
   Restraint), Notes, and items that appear only for the event's program
   (EDCRASH: Crush Profile; EDSMAC and EDSMAC4: Handling Parameters, Move CG,
-  Crush Profile). An item the event's program does not use is greyed rather
+  Crush Profile). An item the event's program does not use is grayed rather
   than hidden.
 - **Output** — Key Results, Output Graph, Variable
   Selection, HVE Reports, Compare Runs, Playback Options, Run Simulation, Damage Studio Options, Damage Studio Report, Export
@@ -119,7 +119,7 @@ Every panel and dialog is a window that can be docked or float:
 
 - Drag a panel by its tab or title bar to move it. Drop it on one of the
   docking targets that appear to dock it beside, above or below another panel,
-  or in its centre to make it a tab of that panel.
+  or in its center to make it a tab of that panel.
 - Drag it away from the dock to make it float. Floating windows have rounded
   corners and a drop shadow; docked ones are square.
 - The window layout is saved when the program closes and restored when it
@@ -130,7 +130,7 @@ Every panel and dialog is a window that can be docked or float:
 **View › Panels Outside the Main Window** lets a panel be dragged out of the
 main window to become a window of its own — for example the Shader Editor on a
 second monitor. A panel outside stays in front of the main window, as a tool
-window does: clicking the main window no longer hides it, and it is minimised
+window does: clicking the main window no longer hides it, and it is minimized
 with the main window. The setting takes effect the next time the program starts
 (the menu item says "restart to apply" until then). It is not available in the
 browser build.
@@ -197,7 +197,7 @@ pointer over the viewport:
 | **G** | Move (grab) the selected object; it follows the pointer |
 | **R** | Rotate it about the vertical axis |
 | **X**, **Y**, **Z** (during G or R) | Lock the move to that axis; press the same key again for the object's own (local) axis, and a third time to release the lock. **Z** applies only to a vehicle that can leave the ground |
-| A number (during G or R) | Move by exactly that many **metres** along the locked axis (whatever the unit setting), or rotate by exactly that many degrees. **-** changes the sign, **Backspace** deletes a digit |
+| A number (during G or R) | Move by exactly that many **meters** along the locked axis (whatever the unit setting), or rotate by exactly that many degrees. **-** changes the sign, **Backspace** deletes a digit |
 | **Enter** or left-click | Accept |
 | **Esc** or right-click | Cancel and put the object back |
 | Hold **Ctrl** | Snap: positions to 0.5 m, heading to 15° |
@@ -254,7 +254,7 @@ Information) carries the same controls plus a status line and a progress bar.
     and humans it used and the site — are read-only, and Undo is disabled, so a
     result can never be shown beside inputs it was not computed from. Display
     settings (materials, cameras, what is drawn) stay editable. Press **Reset**
-    to edit the inputs again. **Run** is greyed for an event that is already
+    to edit the inputs again. **Run** is grayed for an event that is already
     solved.
 
 ## Outliner
@@ -312,7 +312,7 @@ a text field, is one entry. Click any entry to go straight to that state. An
 edit made after stepping back discards the entries above it. Undo restores the
 whole case, so while results are on screen it only steps over changes to the
 view -- the sun and sky, the location, cameras -- which no program
-reads; a step that changes an input of the solved run is greyed (hover it for
+reads; a step that changes an input of the solved run is grayed (hover it for
 why) until you press **Reset**.
 
 Undo also restores what is LOADED from the case, not only the case itself: a
@@ -351,7 +351,7 @@ message appears as the case opens; see
   km/h, kg, N)*. This changes what every converted field shows and accepts; the
   case itself is always stored in SI units, so switching never changes the
   data. A few fields still carry a fixed SI label, as the dialog notes.
-- **Background Color** — the colour behind the viewport.
+- **Background Color** — the color behind the viewport.
 
 - **Date Format** — how dates are shown in the file browser, the Audit Log
   and the run report.
@@ -360,12 +360,12 @@ message appears as the case opens; see
   never overwrites the case; opening a case with a newer recovery copy offers
   to open the copy, and saving the case removes it.
 
-**Diagnostic Level** is greyed: what a run assumed or repaired is always in
+**Diagnostic Level** is grayed: what a run assumed or repaired is always in
 its run status.
 
-**Tools › Style Editor** chooses the base colour theme (**HVE**, the default —
+**Tools › Style Editor** chooses the base color theme (**HVE**, the default —
 the HVE cube's maroons on a dark ground — **Dark**, **Light** or **Classic**;
-remembered between sessions) and gives live control over colours,
+remembered between sessions) and gives live control over colors,
 sizes, rounding and spacing. Only the base theme is saved.
 
 **Tools › Cameras** keeps the saved cameras (with a **Viewport View** tab for

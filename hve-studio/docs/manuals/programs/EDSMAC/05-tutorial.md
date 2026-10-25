@@ -319,7 +319,7 @@ The Variable Output table displays the time-dependent results computed by EDSMAC
 The purpose of our EDSMAC study is to evaluate the avoidability of the accident based on speeds and visibility. To document the path positions as a function of time, let's select the position, velocity and acceleration.
 
 1. Click **Select Variables...** at the top of the Key Results panel (or choose **Output › Variable Selection...**). The **Select Output Variables** window is displayed, as shown in Figure 5-16.
-2. Type `X`, `Y`, `Yaw`, `V-tot` or `Acc-tot` in the filter box in turn (HVE's own variable names are recognised), and check each variable for both vehicles.
+2. Type `X`, `Y`, `Yaw`, `V-tot` or `Acc-tot` in the filter box in turn (HVE's own variable names are recognized), and check each variable for both vehicles.
 
     > NOTE: Feel free to add additional variables.
 

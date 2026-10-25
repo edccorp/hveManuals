@@ -511,11 +511,11 @@ parameters:
     HVE Studio does not model visibility. Fog Type and Maximum Sight Distance
     have no control, and a value imported from an HVE case is only kept with
     the case. The viewport's **Distance Haze** (View › Scene Display ›
-    Sky & Reflections) fades far geometry toward the sky's horizon colour by the
+    Sky & Reflections) fades far geometry toward the sky's horizon color by the
     **Haze** of the World material's Sky Texture node (nothing while Haze is
     0, with no World material, or with Scene Lighting off); it is a picture,
     not a visibility distance. The rest of this
-    section describes HVE's model. The sky's colour is part of the world
+    section describes HVE's model. The sky's color is part of the world
     material in the Shader Editor
     ([Materials and the Shader Editor](../../new-features/01-materials-and-shader-editor.md)).
 

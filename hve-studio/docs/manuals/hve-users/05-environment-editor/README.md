@@ -21,7 +21,7 @@ following information:
   exteriors).
 
 !!! warning "Not in HVE Studio"
-    Fog, haze and smoke visibility is not modelled; HVE Studio cannot be used for HVE's
+    Fog, haze and smoke visibility is not modeled; HVE Studio cannot be used for HVE's
     visibility studies. See
     [Chapter 12](12-creating-editing-environments.md).
 

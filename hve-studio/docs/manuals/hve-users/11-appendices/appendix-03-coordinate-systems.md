@@ -122,6 +122,28 @@ articulation angles for the upper leg are relative to the pelvis, the
 articulation angles for the lower leg are relative to the upper leg, and so
 on).
 
+## Your Coordinate Convention
+
+!!! tip "New in HVE Studio"
+    **Preferences > Coordinates** chooses how positions, headings and angles are shown and typed, and you can leave it on one choice for good. It changes what you see and enter, never what is stored: the case, its files and every calculation stay SAE, so switching it cannot change a result.
+
+    | | SAE (default) | Conventional |
+    |---|---|---|
+    | x | forward | forward |
+    | y | right | **left** |
+    | z | down | **up** |
+    | Heading / yaw | clockwise from above | **counter-clockwise** from +x |
+    | Pitch | nose up positive | **nose down** positive |
+    | Roll | right side down positive | right side down positive |
+
+    Conventional is the SAE frame turned 180 degrees about x, so x and roll are the same in both. Exact zeros stay zero, and the values stored in the case are identical whichever you pick.
+
+    - **Follows the setting:** event start position and heading (X, Y, Heading, Articulation, Sideslip, Yaw rate, Pitch), the Named Positions table, the driver and human path tables, wheel and connection positions, accelerometer, airbag, light, aboard and cargo positions, camera positions, targets, mounts and aim points, environment placement and light positions, the numbers typed into the viewport's G and R tools, and the output channels (the key results, graph, timestep table and CSVs of those panels). The channels follow the rule above: the y and z components of every vector, yaw and pitch change sign, and x components, roll, scalars and magnitudes do not. A reverse gear stays negative. **Output > Export Variables > Coordinate System** offers the same rule as **Conventional**, whose choice follows this setting by default, and keeps HVE's own sign list as **Traditional**; the two differ on about two dozen variables, described under Export Variables.
+    - **Heights stay heights:** Z Height (the CG above the ground), site elevation, light height and crush depths are positive up in both conventions.
+    - **Labels:** a field that states a direction ("Y right", "Z down") shows the direction the current setting uses.
+    - **Always SAE:** the engine report pages and the **Plan View** in the run report keep SAE and say so.
+    - **Imported site files** keep their fixed frame rules (below); only the offsets and placement you type follow the setting. A Z-up site file already uses the Conventional axes, so its coordinates read the same on screen under **Conventional**.
+
 ## Display and Export Frames
 
 !!! tip "New in HVE Studio"
@@ -129,8 +151,8 @@ on).
 
     | Where | Frame |
     |---|---|
-    | Case data, Event Information, Position / Velocity, all outputs and reports | Earth-fixed and vehicle-fixed SAE: x forward, y right, z **down** |
-    | Cameras (eye, target, onboard mount and aim point); Viewport View camera target | x forward, y right, z **up** (height above the ground) |
+    | Case data, all stored values, and the engine report pages | Earth-fixed and vehicle-fixed SAE: x forward, y right, z **down**. Event Information, Position / Velocity and the output channels show this by default and follow **Preferences > Coordinates** |
+    | Cameras (eye, target, onboard mount and aim point); Viewport View camera target | stored x forward, y right, z **up**; shown in the convention chosen in **Preferences > Coordinates** |
     | Environment geometry imported from DXF, OBJ or glTF | read as z **up** (or Y-up with **File is Y-up**) and converted |
     | Environment `.h3d` | converted from the file's own frame (**Flip About X-Axis** corrects a file whose vertical sense is reversed) |
     | Vehicle `.h3d` meshes | z **down**, as in HVE |

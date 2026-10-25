@@ -62,7 +62,7 @@ event.
   *— N/A for these vehicles*; hover it for the reason. If the active event's
   method cannot run, a red *Cannot run:* line gives the reason.
 - An event imported from an HVE case that uses a program HVE Studio does not have
-  shows that method greyed and marked *— not ported*; it can be opened and
+  shows that method grayed and marked *— not ported*; it can be opened and
   saved but not run.
 
 Unlike HVE, the method of an existing event can be changed at any time.
@@ -86,7 +86,7 @@ the event with two of them and compares the runs (see
 
 **Method Options...** opens the active method's calculation options window
 (see [Calculation Options](../10-calculation-options/README.md)). EDSVS, EDVDS,
-EDVTS and READDATAFILE have no options window; the button is greyed for them.
+EDVTS and READDATAFILE have no options window; the button is grayed for them.
 
 !!! warning "Not in HVE Studio"
     HVE located the calculation-method programs in its calcMethods directory.
@@ -194,7 +194,7 @@ name*:
 - **Named Positions** — the vehicle's named positions (see
   [Named Positions](#named-positions) below).
 
-For an EDVTS trailer the X and Y positions are shown greyed (EDVTS derives them
+For an EDVTS trailer the X and Y positions are shown grayed (EDVTS derives them
 from the hitch) and **Articulation (deg)** relative to the tow vehicle replaces
 the heading.
 
@@ -221,7 +221,7 @@ and the scene positions from its Position/Velocity dialog:
 - **CDC**, **PDOF (deg)** and **Auto-calculate PDOF (from the other vehicle)**.
   Only one vehicle may auto-calculate; if both do, EDCRASH refuses the event
   (stop code −5443).
-- **Basis** (EES / Damage Profile) shown greyed, with the EES value: EDCRASH
+- **Basis** (EES / Damage Profile) shown grayed, with the EES value: EDCRASH
   always reconstructs from the crush profile, and no engine reads the basis or
   the EES speed.
 - **A Stiffness**, **B Stiffness**, and **Derive impulse center from damage
@@ -254,7 +254,7 @@ it:
   the ground at that position. Off, the entered **Z Height** (the CG's height
   above ground), **Roll (deg)** and **Pitch (deg)** are used, so a position can
   be rolled, pitched or airborne. Turning it off starts the three from where
-  the ground puts the vehicle; with it on they are greyed.
+  the ground puts the vehicle; with it on they are grayed.
 - **Read by:** — a note saying what reads that position under the event's
   calculation method:
     - EDCRASH: **Begin Braking** (the speed before braking), **Impact** and
@@ -284,7 +284,7 @@ Position**, **Z Height** and Advanced initial state's **Roll angle** and **Pitch
 angle** fields of [Vehicle Initial Conditions](#vehicle-initial-conditions).
 Editing one edits the other, and moving a tow vehicle there carries its trailer.
 For a planar method the node shows *Auto Position: always on (method is a
-planar engine)* in place of the check box and **Z Height** is greyed; roll and
+planar engine)* in place of the check box and **Z Height** is grayed; roll and
 pitch stay editable, as in Advanced initial state. No outline is drawn at a
 simulation's Initial: the vehicle itself stands there. For EDCRASH, Initial is
 an ordinary named position.

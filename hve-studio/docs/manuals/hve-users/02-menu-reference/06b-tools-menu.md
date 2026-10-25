@@ -14,7 +14,7 @@ The Tools menu is on the menu bar in every editor.
 | **Automatic Tools ›** | The tools that fill a case from a source, in one submenu (below) | *(new)* |
 | **Monte Carlo Analysis...** | Uncertainty analysis by repeated runs with sampled inputs | *(new)* |
 | **Motorcycle Analysis...** | Cornering and slide-to-stop calculations for a motorcycle | *(new)* |
-| **Preferences...** | Units, date format, background colour, diagnostics, auto-save | Options › Units, Options › Preferences |
+| **Preferences...** | Units, date format, background color, diagnostics, auto-save | Options › Units, Options › Preferences |
 | **Report Text...** | Your own wording for any string of the programs' report pages, kept with your settings — see [Report Text](../../11-reports-output/ReportText.md) | *(new; HVE kept these strings in each program's `.rsc` file)* |
 | **Style Editor...** | The look of the interface: base theme and live style settings | *(new; Options › Preferences › Font Size)* |
 | **Cameras...** | The case's named cameras | View › Set Camera |
@@ -29,7 +29,7 @@ last:
 | Item | What it does |
 |---|---|
 | **Case Intake...** | Builds an event from the case documents, typed in with where each value is stated |
-| **Quick Case (Text)...** | Builds a case from a typed sentence |
+| **Quick Case (Text)...** | Builds or edits a case from a typed sentence (map coordinates, +Y north) |
 | **Vehicle Package...** | Builds a case vehicle from its VIN or year, make and model, its stated specifications, and who and what it carried |
 | **Crush Stiffness from Crash Tests...** | CRASH3 A, B and G for the active vehicle from staged barrier tests, typed in, read from an NHTSA test file, or found with **Search NHTSA (online)** or fetched by test number from NHTSA's database; shows the side's stiffness now beside the tests' before you apply it. Also opened by **From crash tests...** in Crush Stiffness |
 | **Crush Profile from Scan...** | The crush depths C1..Cn, damage width and damage offset of a vehicle of the active event (chosen with the vehicle picker at the top), measured off a scan of the damaged vehicle against the vehicle's own 3-D body (the default), an exemplar scan, a string line across the face's undamaged ends, or a plane at the vehicle's exterior extent. Enabled only while the active event is EDCRASH, the one method that reads a crush profile. Also opened by **Measure from a scan...** under Measured Crush in the Event editor, which selects its own vehicle |
@@ -171,7 +171,7 @@ Preferences*
 - **Auto-Save** — **Enable Auto-Save** and **Interval (min)**
 
 !!! note "HVE Studio"
-    **Diagnostic Level** is greyed (it has nothing to control). **Date Format**
+    **Diagnostic Level** is grayed (it has nothing to control). **Date Format**
     sets how dates are shown. **Enable Auto-Save** (on by default) and **Interval (min)** write a recovery copy of the case, `<case>.autosave.hvex` beside it, while there are unsaved changes; the case file itself is never written. Saving the case removes the copy, and opening a case whose recovery copy is newer offers to open the copy.
 
 ![The Preferences dialog](../images/hvn-01-preferences.png)
@@ -187,7 +187,7 @@ Preferences dialog.
 **Menu Option:** Tools › Style Editor...
 
 **Description:** **Base Theme** (a preset, kept between sessions) and **Live
-Style** — the interface's colours, sizes, spacing and fonts, which apply at once
+Style** — the interface's colors, sizes, spacing and fonts, which apply at once
 but are not saved.
 
 ---

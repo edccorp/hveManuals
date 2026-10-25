@@ -16,7 +16,7 @@ Changes take effect when **Apply** is pressed.
     primitive objects in the environment. Instead:
 
     - Build curbs, walls, buildings and other box-shaped objects in a CAD or
-      modelling program and import them as part of the site: a DXF, `.h3d`,
+      modeling program and import them as part of the site: a DXF, `.h3d`,
       `.iv`, OBJ or glTF file, with **Environment › Environment... › Terrain ›
       Scene Geometry**. Set the type of their surfaces on their material (see
       [Environment Material Properties](EnvrMatPropDlg.md)).

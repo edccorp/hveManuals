@@ -4,7 +4,7 @@
 
 The Payload dialog allows the user to add a payload to a vehicle. The payload may be any object adding inertia to a vehicle that is not accounted for in the vehicle's inertial properties. As in HVE, the payload belongs to the **event**: each vehicle in each event has its own.
 
-Open it in the Event Editor (**Event (F5)**) with **Event › Payload...**. The menu item is enabled when the active event's method reads a payload: **SIMON**, **EDSMAC4**, **EDSVS**, **EDVDS** or **EDVTS**; for other methods it is greyed and an open Payload dialog closes. The **Vehicle** list at the top selects which of the event's vehicles is edited; a line under it names the event. If the event has no vehicles the dialog says so and shows no fields. While the event's results are on screen the fields are locked; reset the run to edit them.
+Open it in the Event Editor (**Event (F5)**) with **Event › Payload...**. The menu item is enabled when the active event's method reads a payload: **SIMON**, **EDSMAC4**, **EDSVS**, **EDVDS** or **EDVTS**; for other methods it is grayed and an open Payload dialog closes. The **Vehicle** list at the top selects which of the event's vehicles is edited; a line under it names the event. If the event has no vehicles the dialog says so and shows no fields. While the event's results are on screen the fields are locked; reset the run to edit them.
 
 All lengths, weights and inertias are shown in the units set in Preferences.
 

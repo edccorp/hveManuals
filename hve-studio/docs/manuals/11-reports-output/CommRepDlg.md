@@ -76,7 +76,7 @@ page last clicked.* Click inside a page to make it this page.
 they leave out.
 
 - The **tick** beside a page writes it; untick it to leave the page out. A page
-  left out is greyed.
+  left out is grayed.
 - The **up** and **down** arrows move a page one place; a page can also be
   dragged up or down the list.
 - **Engine Order, Every Page** goes back to the order the engine built the
@@ -94,7 +94,7 @@ next to it on paper.
 When pages are left out, the window says so beside **Print Order...**, for
 example
 *Save All writes 7 of 9 page(s).* If every page is left out, the two **Save
-All** buttons are greyed.
+All** buttons are grayed.
 
 ## Saving the pages
 

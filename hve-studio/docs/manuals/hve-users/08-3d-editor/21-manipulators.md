@@ -47,7 +47,7 @@ G and R work on the active vehicle even before it has been clicked, and on a sel
 | Esc or right click | Cancel and return the vehicle to where it was |
 
 !!! note "HVE Studio"
-    A typed distance is in **metres** whatever unit system is set in Preferences (the readout says *m*); a typed angle is in degrees.
+    A typed distance is in **meters** whatever unit system is set in Preferences (the readout says *m*); a typed angle is in degrees.
 
 ## HVE Manipulators
 
@@ -64,10 +64,10 @@ The seven HVE manipulators and their HVE Studio counterparts:
 | TabBox | Scale by tabs on the faces | Not available |
 
 !!! note "HVE Studio"
-    In the Environment Editor, **G**, **R** and **S** move, turn and scale the whole **site**, or the selected **surface**, with the same axis keys and typed numbers (with **S**, **X**, **Y** or **Z** scales that axis alone, a typed number is the factor, and **Ctrl** steps by 0.1); the Environment panel's **Site Placement** fields and the selected surface's **Placement** fields, including **Scale (x, y, z)**, hold the numbers. The solver drives on the moved ground. A surface turns and scales about its own centre and the site about the middle of its box. Several surfaces selected together (Ctrl or Shift in the Outliner, a click on a layer's row, or Shift-clicks in the 3-D view) move, turn and scale as one about their common centre; the move is refused if any of them moves only with the whole site. On a site taken from an HVE case the road moves only with the whole site; its scenery moves on its own.
+    In the Environment Editor, **G**, **R** and **S** move, turn and scale the whole **site**, or the selected **surface**, with the same axis keys and typed numbers (with **S**, **X**, **Y** or **Z** scales that axis alone, a typed number is the factor, and **Ctrl** steps by 0.1); the Environment panel's **Site Placement** fields and the selected surface's **Placement** fields, including **Scale (x, y, z)**, hold the numbers. The solver drives on the moved ground. A surface turns and scales about its own center and the site about the middle of its box. Several surfaces selected together (Ctrl or Shift in the Outliner, a click on a layer's row, or Shift-clicks in the 3-D view) move, turn and scale as one about their common center; the move is refused if any of them moves only with the whole site. On a site taken from an HVE case the road moves only with the whole site; its scenery moves on its own.
 
 !!! note "HVE Studio"
-    In the **Vehicle Editor**, **G**, **R** and **S** move, rotate and scale the vehicle's **mesh** (its picture and the body DyMESH collides). **G** moves it (**X** or **Y** locks an axis, **Z** lifts it), **R** turns it about the vertical (with **X** or **Y**, rolls or pitches it as the mouse moves up or down), and **S** scales it (**X**, **Y** or **Z**: one axis). A typed number is exact (metres, degrees or a factor), **Enter** or a left click keeps it, and **Esc** or a right click puts it back. They edit the same **Translate**, **Rotate** and **Scale** rows as the Vehicle Mesh window (File & Placement tab), as one undo step, and are refused while results are on screen. With a display mesh set, they move the display mesh and the collision mesh stays.
+    In the **Vehicle Editor**, **G**, **R** and **S** move, rotate and scale the vehicle's **mesh** (its picture and the body DyMESH collides). **G** moves it (**X** or **Y** locks an axis, **Z** lifts it), **R** turns it about the vertical (with **X** or **Y**, rolls or pitches it as the mouse moves up or down), and **S** scales it (**X**, **Y** or **Z**: one axis). A typed number is exact (meters, degrees or a factor), **Enter** or a left click keeps it, and **Esc** or a right click puts it back. They edit the same **Translate**, **Rotate** and **Scale** rows as the Vehicle Mesh window (File & Placement tab), as one undo step, and are refused while results are on screen. With a display mesh set, they move the display mesh and the collision mesh stays.
 
 ## Cameras
 
@@ -83,7 +83,7 @@ The seven HVE manipulators and their HVE Studio counterparts:
     - **Look At** — aim at a vehicle, as **Fixed** (the camera does not move), **Follow** (the offset stays in world axes — a tracking shot) or **Chase** (the offset turns with the vehicle's heading — a riding-along shot).
     - **Aim Point** — an offset from the aimed-at vehicle's CG, so a camera can look ahead of a vehicle rather than at its CG (**Look ahead** and **Aim at the vehicle** set it).
 
-    Attached cameras follow the solved trajectory during playback, or the start layout before a run. **Camera Coordinates** (the eye) and **Picture Center** (the target), with **Roll**, place a camera that is not attached; for an attached camera they show where it is. The **Lens** (perspective/orthographic, millimetres or field of view, shift), **Camera** (sensor fit and size) and **Viewport Display** (show the camera, its name and its clip limits in the view) sections complete the camera.
+    Attached cameras follow the solved trajectory during playback, or the start layout before a run. **Camera Coordinates** (the eye) and **Picture Center** (the target), with **Roll**, place a camera that is not attached; for an attached camera they show where it is. The **Lens** (perspective/orthographic, millimeters or field of view, shift), **Camera** (sensor fit and size) and **Viewport Display** (show the camera, its name and its clip limits in the view) sections complete the camera.
 
 ### Keyframed cameras
 

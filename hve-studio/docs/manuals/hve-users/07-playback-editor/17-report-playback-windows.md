@@ -55,7 +55,7 @@ HVE displays the results of each event in Report Windows of several kinds. In HV
     - **Output › Variable Selection...** chooses the channels to show.
     - **Output › Output Graph...** plots the selected channels against time (**Select Variables...**, **Format...**).
     - **Output › Key Results...** lists them at each output step in its *Variable Output* section (**Export CSV...**, **Copy CSV**).
-    - **Output › Export Variables...** writes the selected channels of the event on screen to a file (CSV, tab-separated text or MATLAB), at a chosen interval and in SAE or Traditional signs.
+    - **Output › Export Variables...** writes the selected channels of the event on screen to a file (CSV, tab-separated text or MATLAB), at a chosen interval and in SAE, Conventional or Traditional signs.
 - **Trajectory simulation** — the Viewport itself.
 
 > **NOTE:** The Damage Studio Report's *Max Crush* column is the largest

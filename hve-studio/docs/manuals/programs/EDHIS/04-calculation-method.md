@@ -28,7 +28,7 @@ reference using the parallel axis theorem:
 
 $$I = \sum_i \left(I_{i} + m_i\,d_i^2\right)$$
 
-where $d_i$ is the distance from each contributing segment's centre of mass to
+where $d_i$ is the distance from each contributing segment's center of mass to
 the EDHIS segment reference. The transfer is applied to the pitch and roll axes;
 the yaw axis is left as the direct sum of the contributing inertias.
 
@@ -246,7 +246,7 @@ expressed as angles.
 ## Airbag Model
 
 When an airbag is specified, its inflation is **solved** alongside the occupant
-equations rather than prescribed. A driver bag is modelled as a sphere and a
+equations rather than prescribed. A driver bag is modeled as a sphere and a
 passenger bag as a cylinder of the entered length. The bag carries two state
 variables of its own — its internal pressure and its radius — and they are
 integrated on their own sub-step within each occupant timestep.
@@ -316,7 +316,7 @@ solved each sub-step for the rate of change of pressure and of radius.
 Contact begins when the torso, head or hip reaches the bag surface, allowing for
 half the occupant's chest depth. From that instant the bag is treated as
 flattened against the occupant: its radius is reduced by half the distance the
-torso has travelled since contact, and the diameter of the flattened patch
+torso has traveled since contact, and the diameter of the flattened patch
 becomes the second state variable in place of the free radius. The volume is
 then a sphere with a spherical cap replaced by a flat disc,
 

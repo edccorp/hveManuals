@@ -57,7 +57,7 @@ Default: 0.55. EDSMAC4 takes the collision friction coefficient **per vehicle pa
 
 ## Restitution
 
-**Restitution Constant** (default 0.04606), **Restitution Linear Coef** (default 0.0017547 1/in) and **Restitution Quadratic Coef** (default 0.000016711 1/in²) — the constant, linear and quadratic terms of the parametric restitution model, e(δ) = c0 − c1·δ + c2·δ². Restitution is applied only below the crush depth c1/(2·c2), which the window shows. The coefficients are shown per inch or per centimetre, following the length unit set in Preferences.
+**Restitution Constant** (default 0.04606), **Restitution Linear Coef** (default 0.0017547 1/in) and **Restitution Quadratic Coef** (default 0.000016711 1/in²) — the constant, linear and quadratic terms of the parametric restitution model, e(δ) = c0 − c1·δ + c2·δ². Restitution is applied only below the crush depth c1/(2·c2), which the window shows. The coefficients are shown per inch or per centimeter, following the length unit set in Preferences.
 
 ## Inter-Vehicle Connection
 
@@ -85,7 +85,7 @@ It applies only to an articulated pair. EDSMAC4 has no connection failure time (
 Default: **Off**. Choices:
 
 - **Off** — No hydroplaning effects.
-- **NASA** — The NASA (Horne) hydroplaning model is applied at each tire travelling over a water polygon. The model predicts the hydroplaning speed from the tire's inflation pressure alone: a tire hydroplanes when its forward ground-plane speed exceeds $182.16\sqrt{P}$ in/sec, with $P$ in lb/in² (equivalently $10.35\sqrt{P}$ mph). Above that speed the tire's friction multiplier switches from the surface friction to the friction assigned to the water polygon, sharply reducing the available longitudinal and lateral tire forces.
+- **NASA** — The NASA (Horne) hydroplaning model is applied at each tire traveling over a water polygon. The model predicts the hydroplaning speed from the tire's inflation pressure alone: a tire hydroplanes when its forward ground-plane speed exceeds $182.16\sqrt{P}$ in/sec, with $P$ in lb/in² (equivalently $10.35\sqrt{P}$ mph). Above that speed the tire's friction multiplier switches from the surface friction to the friction assigned to the water polygon, sharply reducing the available longitudinal and lateral tire forces.
 
   The friction multiplier is applied to both the peak and sliding friction coefficients taken from the tire's friction tables, so hydroplaning reduces the tire force available longitudinally *and* laterally — braking, drive traction and cornering capability are all lost together.
 
@@ -116,13 +116,13 @@ In both cases the vehicles' perimeters must also overlap before impact can be de
 
 !!! note "HVE Studio"
     The same option exists for SIMON, but the two engines store it with
-    **opposite** meanings. Each window is labelled for its own engine, so choose
+    **opposite** meanings. Each window is labeled for its own engine, so choose
     by the label, not by the position in the list.
 
 !!! warning "HVE report defect"
     EDSMAC4's own report prints the **opposite** basis to the one used in the
     *Accident History Basis* row of its Collision Parameters table. This is
-    HVE's behaviour and is reproduced. The *Coll Accel Threshold* row, which is
+    HVE's behavior and is reproduced. The *Coll Accel Threshold* row, which is
     printed only on the Acceleration basis, is the row to trust.
 
 See [EDSMAC4 — Impact and Separation Times](../programs/EDSMAC4/04-calculation-method.md#impact-and-separation-times) for the full description.

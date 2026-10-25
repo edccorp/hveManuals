@@ -124,7 +124,7 @@ speed of 1 in/sec, so that a stationary vehicle is not pushed backwards.
 The equations of motion are advanced with a fixed-step method: a fourth-order
 Runge-Kutta start followed by a fixed-step Adams-Moulton predictor-corrector.
 
-> **NOTE:** Unlike EDVDS, EDSVS and EDVTS, which halve the timestep when the predictor and corrector disagree, EDVSM's step is fixed — there is no automatic bisection and no convergence criterion to exceed. A manoeuvre that would cause those programs to subdivide will instead be integrated at the entered timestep, so the Vehicle Trajectory Integration Timestep matters more here. Reduce it and confirm the result is unchanged before relying on a run with rapid transients, curb strikes or large suspension excursions.
+> **NOTE:** Unlike EDVDS, EDSVS and EDVTS, which halve the timestep when the predictor and corrector disagree, EDVSM's step is fixed — there is no automatic bisection and no convergence criterion to exceed. A maneuver that would cause those programs to subdivide will instead be integrated at the entered timestep, so the Vehicle Trajectory Integration Timestep matters more here. Reduce it and confirm the result is unchanged before relying on a run with rapid transients, curb strikes or large suspension excursions.
 
 ### Driver inputs
 
@@ -141,7 +141,7 @@ vertical force, and is what allows the vehicle to climb a curb or drop into a
 pothole: the tire is represented as a ring of radial springs, and the vertical
 force is the assembled reaction of every spring in contact with the terrain, so
 the force depends on the shape of the ground beneath the tire and not merely on
-the height of the wheel centre. The spring rate increases beyond a user-entered
+the height of the wheel center. The spring rate increases beyond a user-entered
 deflection to represent the tire bottoming on its rim.
 
 The **shear forces** — longitudinal and lateral — are computed from the friction
@@ -169,7 +169,7 @@ $$F_{s,max} = \sqrt{\left(\mu_y F_z\right)^2 - \varepsilon\,F_x^2},
   \qquad
   \varepsilon = \left(\frac{\mu_y}{\mu_x}\right)^2$$
 
-> **NOTE:** This is an *ellipse*, not the friction circle used by EDSMAC, EDSVS and EDVTS. The factor $\varepsilon$ is the squared ratio of the lateral to the longitudinal friction coefficient, so the envelope is circular only where the two coefficients are equal. Where a tire's longitudinal and lateral friction differ — which is the normal case — EDVSM will not give the same combined-slip behaviour as the friction-circle programs for otherwise identical tire data.
+> **NOTE:** This is an *ellipse*, not the friction circle used by EDSMAC, EDSVS and EDVTS. The factor $\varepsilon$ is the squared ratio of the lateral to the longitudinal friction coefficient, so the envelope is circular only where the two coefficients are equal. Where a tire's longitudinal and lateral friction differ — which is the normal case — EDVSM will not give the same combined-slip behavior as the friction-circle programs for otherwise identical tire data.
 
 The Fiala model is then applied to that remaining capacity through the
 non-dimensional sideslip parameter $\bar\beta$, formed from the tire's cornering

@@ -34,7 +34,7 @@ plays straight away when the case is opened again, without **Run All Events**.
 Each event's results carry a fingerprint of the inputs that event was solved
 from. When the case is opened again:
 
-- an event whose inputs are unchanged comes back solved, labelled with when it
+- an event whose inputs are unchanged comes back solved, labeled with when it
   was computed and by which build — nothing is run;
 - an event that was edited since is opened unsolved, and the program names it,
   so a case can never show results that do not belong to it. Editing one event
@@ -143,18 +143,26 @@ mesh library and looks for every missing name in it (in the browser build,
 
 ## Vehicle databases
 
-HVE Studio reads HVE's classic vehicle database files (`.db`), such as
-`Generic.db`, and its own databases (`.hvedb`), which carry each vehicle's mesh
-and wheel images inside them:
+HVE Studio reads HVE's classic vehicle database files (`.db`) and its own
+databases (`.hvedb`), which carry each vehicle's mesh and wheel images inside
+them:
 
+- `Generic.hvedb` — the generic vehicles: HVE's one per class of passenger
+  car, pickup, sport-utility, van, truck and trailer, the dollies and the two
+  SAE barriers (the vehicles and tires of HVE's `Generic.db`), and HVE
+  Studio's generic motorcycle, whose mesh (`MCYamaha650.h3d`) is stored inside
+  it. It needs no license. Where it is present, the classic `Generic.db` is
+  listed as superseded and not read.
 - `EDCVehicles.hvedb` — EDC's licensed vehicle data, installed as a separate
   data pack (see below). Where it is present, the classic `EDC.db` and
-  `VMSTANDARD_7_00.db` it replaces are listed as superseded and not read.
+  `VMSTANDARD_7_00.db` it replaces are listed as superseded and not read. It
+  also carries the generic motorcycle's mesh, which is not licensed data and
+  opens without the license.
 - `MyVehicles.hvedb` and any other database you name — your own vehicles,
   written by **Vehicle › Save to My Vehicles...** (see
   [Save to My Vehicles](../hve-users/04-vehicle-editor/10-creating-editing-vehicles.md#save-to-my-vehicles)).
 
-A program package carries only `Generic.db`.
+A program package carries only `Generic.hvedb`.
 
 - **Adding a vehicle.** In the Vehicle editor, **Add...** on the Vehicles panel
   opens a search of every vehicle in the loaded databases, plus HVE's generic
@@ -265,7 +273,7 @@ cannot be edited, re-run or saved, and its geometry cannot be exported.
 
 - **Every event must be solved first**, with results that still match its
   inputs, because a sealed case can never be re-run. The dialog lists the
-  events and greys **Seal...** until they all are; run an unsolved event or
+  events and grays **Seal...** until they all are; run an unsolved event or
   delete it.
 - **Licensed vehicle data stays out.** Each vehicle keeps only what it takes
   to draw it; its weights, inertias, suspension, tires, brakes, drivetrain and
@@ -295,7 +303,7 @@ with it, every event is solved first.
 
 **File › Open Recent** lists the last 12 cases opened or saved, newest first,
 by file name; hover over an entry for its full path. **Clear Recent** empties
-the list. The menu is greyed while the list is empty. If the open case has
+the list. The menu is grayed while the list is empty. If the open case has
 unsaved changes, opening another one (by any route) first asks whether to
 discard them.
 

@@ -201,7 +201,7 @@ perform the following steps:
    **Calculation Method** section.
 
    > **NOTE:** A method that cannot run the event's vehicles is shown
-   > greyed, with the reason in its tooltip. A method whose output has not
+   > grayed, with the reason in its tooltip. A method whose output has not
    > yet been checked against HVE is marked *(unvalidated)*.
 
 4. In **Vehicles in Event**, click **Add Vehicle** once for each vehicle and
@@ -265,7 +265,7 @@ To set up the event, perform the following steps:
 1. Select the vehicle to set up — click it in the Viewport or choose it in
    the dialog's vehicle list.
 2. Choose the set-up item from the **Event** menu. Items the current
-   method does not read are greyed:
+   method does not read are grayed:
 
    | Event menu item | Available for |
    |---|---|
@@ -298,7 +298,7 @@ To set up the event, perform the following steps:
 5. Repeat the above steps for each human and vehicle in the event.
 
 !!! warning "Not in HVE Studio"
-    **Event › Impact Plane / Barrier...** (EDCRASH) is shown greyed: HVE Studio
+    **Event › Impact Plane / Barrier...** (EDCRASH) is shown grayed: HVE Studio
     does not have it. Model a barrier as a Fixed Barrier vehicle in Vehicle
     Information.
 

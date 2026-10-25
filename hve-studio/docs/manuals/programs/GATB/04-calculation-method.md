@@ -53,7 +53,7 @@ ellipsoid:
 
 $$a = a_{Abdomen}, \qquad b = b_{Abdomen}, \qquad c = 2\,c_{Pelvis}$$
 
-It is centred on the pelvis ellipsoid, offset downward by the pelvis semi-axis:
+It is centered on the pelvis ellipsoid, offset downward by the pelvis semi-axis:
 
 $$z = z_{Pelvis} - c_{Pelvis}$$
 

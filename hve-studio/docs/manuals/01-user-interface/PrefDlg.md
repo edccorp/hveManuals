@@ -9,6 +9,14 @@ Choosing **Tools › Preferences...** displays the **Preferences** window. Setti
 ### Date Format
 **US (MM/DD/YYYY)** or **ISO (YYYY-MM-DD)**.
 
+### Coordinates
+**SAE** or **Conventional**. This is how x, y, z and headings are shown and typed; the case, its files and the engines always store SAE, so changing it never changes a result.
+
+- **SAE**: x forward, y right, z down, heading clockwise from above.
+- **Conventional**: the SAE frame turned 180 degrees about x. X is the same; y is positive to the left, z is positive up, and a heading is counter-clockwise from +x.
+
+A field that states a direction in its label shows the direction the current setting uses; heights (Z Height, elevations) stay positive up. See [Coordinate Systems](../hve-users/11-appendices/appendix-03-coordinate-systems.md).
+
 ### Units
 **Metric (m, km/h, kg, N)** or **Imperial (ft/in, mph, lb, lbf)**. Every dialog and output that shows a converted value follows this setting at once; see [Units Dialog Box](UnitsDlg.md). A note says that fields still carrying a fixed SI label are being converted.
 
@@ -31,7 +39,7 @@ A switch and an interval in minutes (at least 1).
     - These settings are saved between sessions.
 
 !!! warning "Not in HVE Studio"
-    - **Diagnostic Level** is greyed: it has nothing to control in HVE Studio, where what a run assumed or repaired is always in its run status.
+    - **Diagnostic Level** is grayed: it has nothing to control in HVE Studio, where what a run assumed or repaired is always in its run status.
     - **Hide Date/Time From Printed Reports**, **Key Results** (Use Default / Use Previous / Use Custom, Copy to Variable Output), **Vehicle Dimensions Basis** (the Vehicles panel and the Inertia / Mass dialog show the sprung and total bases side by side instead; in HVE it changes no result, because every engine that reads it overwrites it with the total-mass basis), **Skidmark Height**, **Font Size**, **Physical Monitor Width**, **Long Velocity Vectors**, **Cycle Vehicle Colors**, **Resolution Setting** and **Reload language.rsc file on dialog exit**.
     - **Store Vehicle Geometries in case file**: not a preference in HVE Studio. **File › Embed vehicle meshes in the case** (off by default) stores each vehicle's own mesh inside the case at the next save; EDC's licensed meshes are never stored. A saved case also carries the site's geometry and photograph inside it (**File › Embed the environment in the case**, on by default), and **File › Publish Bundle...** writes the case, the meshes it names and its results into one folder.
 

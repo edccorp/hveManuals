@@ -50,7 +50,7 @@ A typical Messages Report is shown in Figure 3-1. For a complete listing of mess
 *Figure 3-1: The Messages page for EDC's tutorial event, as shown by Output › HVE Reports in HVE Studio.*
 
 !!! note "HVE Studio"
-    Problems HVE Studio finds in a case before or after the run (a refused vehicle combination, a payload dropped from a dolly, an option it does not honour) are reported in the run status shown on the playback bar under the viewport, not on this page.
+    Problems HVE Studio finds in a case before or after the run (a refused vehicle combination, a payload dropped from a dolly, an option it does not honor) are reported in the run status shown on the playback bar under the viewport, not on this page.
 
 ### Accident History
 

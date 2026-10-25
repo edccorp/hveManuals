@@ -52,7 +52,7 @@ shows the full path of the file written.
     [EDSMAC4](../10-calculation-options/CalcOptEDSMAC4.md#accident-history) and
     [SIMON](../10-calculation-options/CalcOptSIMON.md#collision-history-and-connections));
     the two engines store that option with opposite meanings, and each options
-    window is labelled for its own engine.
+    window is labeled for its own engine.
 
 !!! note "HVE Studio"
     Delta-V and the other results in the units set in Preferences are in

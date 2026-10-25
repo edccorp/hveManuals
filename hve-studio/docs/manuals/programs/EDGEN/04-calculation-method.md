@@ -88,7 +88,7 @@ When the **3-D Spline Interpolation** path model is selected instead, EDGEN:
 
 - Fits a 3-D spline through the user-entered positions, producing a smooth, continuous path that is tangent-continuous at each node.
 - Computes each segment's path length along the curve and uses it (instead of the straight-line distance) to determine the segment time: $t_i = 2\,\Delta s / (v_{0,total} + v_{1,total}) + t_{i-1}$ and constant total acceleration $a_{total}$.
-- At each timestep, evaluates the current distance travelled along the curve, then walks along the spline (using de Casteljau evaluation at up to 2000 sample points per segment, in 1-inch increments) to locate the current position $X, Y, Z$ directly on the curve.
+- At each timestep, evaluates the current distance traveled along the curve, then walks along the spline (using de Casteljau evaluation at up to 2000 sample points per segment, in 1-inch increments) to locate the current position $X, Y, Z$ directly on the curve.
 - Computes the course and zenith angles from the local path tangent vector, $\nu = \mathrm{atan2}(T_y, T_x)$ and $\alpha = \mathrm{atan2}(T_z, \sqrt{T_x^2 + T_y^2})$, rather than from the straight chord between positions.
 - Applies the same velocity/acceleration resolutions ($v_x, v_y, v_z, a_x, a_y, a_z$ via $\beta$ and $\alpha$) and the same constant-angular-velocity treatment as the linear model, with one difference: in spline mode the user-entered sideslip angle is added to each node's yaw orientation before interpolation, for both vehicles and humans. The linear model does not apply this offset.
 
@@ -97,7 +97,7 @@ When the **3-D Spline Interpolation** path model is selected instead, EDGEN:
     Method**), for a vehicle and for a human. The sideslip added under the
     spline model is the **Slip** column of a vehicle's waypoints (Event ›
     Path Follower, Path tab) and the **Sideslip** field of each position of
-    a human's path (Event Information, Humans in Event); both are greyed
+    a human's path (Event Information, Humans in Event); both are grayed
     under Linear Interpolation.
 
 See [Calculation Options](02-program-input.md#calculation-options) and the dialog reference [Calculation Options for EDGEN](../../10-calculation-options/CalcOptEDGENDlg.md).

@@ -57,10 +57,12 @@ sections. Each input has one place in it:
 - **Configuration** — **Number of Axles**, **Driver Location**, **Engine
   Location** and **Drive Axle(s)**, with HVE's rules (see
   [Adding New Vehicles](#adding-new-vehicles)).
-- **Size & Weight** — HVE's Vehicle Wizard, applied as you type: total
-  weight and its front/rear distribution and axle weights, the overall length,
-  width and height, wheelbase, overhangs, CG height, CG to axle distances,
-  axle spacings and the track of each axle. Right after **CG Height**, six
+- **Size & Weight** — HVE's Vehicle Wizard, applied as you type: the
+  **Weight** and **CG Height** rows, each with a **Total** and a **Sprung**
+  column (type in either: the other follows), the front/rear distribution and
+  axle weights, the overall length, width and height, wheelbase, overhangs,
+  CG to axle distances, axle spacings and the track of each axle. Below
+  **Overall Height**, six
   fields give the CG-to-exterior distances the solver receives: **CG to
   Front** (typing it sets the front overhang), **CG to Rear** (sets the rear
   overhang), **CG to Right** and **CG to Left** (the stored CG-to-side
@@ -71,9 +73,10 @@ sections. Each input has one place in it:
   **Which value moves when you type one.** The fields are tied together, and
   each edit keeps the values an analyst usually has and moves the rest:
 
-  - **CG to Front**, **CG to Rear** and **CG to Axle 1 / 2** are inputs: a
-    CG-to-axle distance keeps CG to Front and CG to Rear (the overhang on
-    that end takes the difference), and the wheelbase follows.
+  - **CG to Front** and **CG to Rear** are inputs: the overhang on that end
+    takes the difference. **CG to Front Axle** and **CG to Rear Axle** (in
+    the Weight table, Total and Sprung) move the CG, as Move CG does: the body,
+    wheels and overhangs stay where they are, so the wheelbase is unchanged.
   - **Front Overhang**, **Rear Overhang**, **Wheelbase** and the weight
     distribution set the CG position: the wheelbase keeps both overhangs and
     the weight split, and the overall length follows; the weight distribution
@@ -187,9 +190,10 @@ databases HVE Studio has found — HVE's classic `.db` files and HVE Studio's ow
   type and class, with their own **Add** button. These are available even
   when no database is installed.
 - **Filter** — Shows only the vehicles whose make, model, year or name
-  contains the text typed. **Clear** clears it; **Generics** shows HVE's
-  generic vehicles (Generic.db: one per class of car, sport-utility, pickup,
-  truck, van and trailer). The filter is empty each time the dialog opens,
+  contains the text typed. **Clear** clears it; **Generics** shows the
+  generic vehicles (`Generic.hvedb`: HVE's one per class of car,
+  sport-utility, pickup, truck, van and trailer, and HVE Studio's generic
+  motorcycle). The filter is empty each time the dialog opens,
   and when a case is opened or a new one started; so is the Vehicle Geometry
   Library's.
 - **Database** — Shows the vehicles of one database file only (*All
@@ -221,7 +225,7 @@ Event Information panel (Event editor).
 
 > **NOTE:** Without the EDC vehicle-data license, EDC's vehicle geometry is not
 > drawn, solved or exported — the original files, and copies of them that the
-> program recognises by their shape (re-saved, moved, turned, resized, mirrored,
+> program recognizes by their shape (re-saved, moved, turned, resized, mirrored,
 > converted to OBJ or glTF, or with part cut away). Such a vehicle uses the
 > generic body instead, and the status says why.
 

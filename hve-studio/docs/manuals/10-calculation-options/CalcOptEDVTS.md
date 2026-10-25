@@ -10,7 +10,7 @@ An extremely useful feature of EDVTS is the ability to quickly and accurately re
 
 EDVTS has no calculation options window in HVE Studio (as in current HVE, it reads
 no calculation-option values from the event). **Method Options...** in Event
-Information is greyed for an EDVTS event.
+Information is grayed for an EDVTS event.
 
 ## Roll Couple Distribution
 

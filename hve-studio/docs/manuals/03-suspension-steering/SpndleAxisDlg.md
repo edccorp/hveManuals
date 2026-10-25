@@ -2,7 +2,7 @@
 
 HVE edits the spindle (steer) axis geometry of one wheel in the Spindle Axis dialog, opened from the Suspension Data dialog and available only for steerable axles. HVE Studio has no separate dialog: the same properties are in the **Steering System** dialog (**Vehicle › Editors › Steering System...** in the Vehicle Editor, or **Steering...** under Components in the Vehicles panel). See [Steering System Dialog](SteerSysDlg.md).
 
-The alignment values are rows of the dialog's main table, one column per axle (both wheels of the axle share them); the steering stops and steer-axis friction are in the **Steer-Axis Mechanics (per wheel)** table below it, one column per wheel (**A1-R**, **A1-L**, ...). Every field of an axle is greyed unless the axle's **Steerable Axle** box is checked. Lengths and torques are shown in the units set in Preferences.
+The alignment values are rows of the dialog's main table, one column per axle (both wheels of the axle share them); the steering stops and steer-axis friction are in the **Steer-Axis Mechanics (per wheel)** table below it, one column per wheel (**A1-R**, **A1-L**, ...). Every field of an axle is grayed unless the axle's **Steerable Axle** box is checked. Lengths and torques are shown in the units set in Preferences.
 
 ## Alignment (main table, per axle)
 
@@ -35,8 +35,7 @@ How far the wheel can turn right, and left, of straight ahead. Both are entered 
 **Stop Stiffness**
 The mechanical stiffness of the steering stops (N·m/deg in SI, ft·lb/deg in US units). Additional steering beyond the stop angle is resisted by a torque that attempts to return the wheel towards zero steer. 0 means no stops at all.
 
-**Stop Damping**
-Greyed: SIMON does not use a steering stop damping term.
+HVE's **Stop Damping** is not shown: SIMON does not use a steering stop damping term.
 
 These steer-axis values matter only when the wheel's steer angle is free: SIMON's steer degree of freedom, set per axle by **Steer DOF (SIMON)** in the Steering System dialog or for the whole event in the event's SIMON options. A prescribed steer angle cannot be resisted. When no axle has its own Steer DOF set, a note in the dialog says so.
 

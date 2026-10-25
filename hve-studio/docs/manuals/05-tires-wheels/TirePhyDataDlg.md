@@ -8,7 +8,7 @@ drag field: drag it, or double-click (Ctrl+click) and type. Values follow the
 units set in Tools › Preferences; the unit is shown in each row label.
 
 !!! note "HVE Studio"
-    Columns that share a link group (the **– A B C** buttons at the top of the
+    Columns that share a tire group (the **– T1 T2 T3** buttons at the top of the
     table) change together. See [Tire Information](TireInfoDlg.md) for the link
     groups and the **Build from Tire Size** section, which fills the radius,
     widths, tread depth and pressure from a size designation.
@@ -33,13 +33,13 @@ values read-only, at the table's middle load row and lowest speed (the values
 EDSMAC4 and the other single-value programs use), each with its table's
 row count beside it ("3 rows"); hover a value for the row's load.
 Edit them in the table. When only some wheels have a table, the row stays
-editable and is greyed on those wheels.
+editable and is grayed on those wheels.
 
 **Velocity Dependence** — the change in friction per unit speed (s/in or s/m).
 It is the field of HVE's 2-D Tire Data dialog, and as in HVE a non-zero value
 is turned into a second speed column of the friction table, moving peak and
 slide friction together; HVE Studio does this when the event is run. It is
-greyed for a wheel whose friction table already has two or more speeds, and
+grayed for a wheel whose friction table already has two or more speeds, and
 not shown when every wheel's table does.
 
 ## Cornering Stiffness
@@ -73,7 +73,7 @@ Read by SIMON only: the rolling distance over which a slip angle builds the
 tire's side force, in the length units set in Preferences. Each wheel has a
 **default** checkbox; ticked (the default), the relaxation length is one
 unloaded radius of that tire (car tires measure about one to two radii), and
-the field shows that value greyed. Untick it to enter a length. **0** gives
+the field shows that value grayed. Untick it to enter a length. **0** gives
 HVE's own instant side force for that tire.
 
 !!! tip "New in HVE Studio"

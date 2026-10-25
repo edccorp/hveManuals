@@ -6,7 +6,7 @@ HVE's Render dialog sets various options that affect the visual appearance of al
 
 - **Phong** — Smooth shading from the mesh's own vertex normals. The default.
 - **Flat** — One normal per face, taken from the surface actually being drawn, so it shows the real tessellation. Useful for judging how coarse an imported mesh is. Unlike HVE's Flat, lighting is still applied.
-- **Wireframe** — Edges only, with the depth test still on, which is also what HVE calls *Hidden*; so Hidden is not listed separately. (Wireframe is greyed in the browser build, which cannot draw it.)
+- **Wireframe** — Edges only, with the depth test still on, which is also what HVE calls *Hidden*; so Hidden is not listed separately. (Wireframe is grayed in the browser build, which cannot draw it.)
 
 ## Light Sources On (View › Scene Display › Rendering)
 

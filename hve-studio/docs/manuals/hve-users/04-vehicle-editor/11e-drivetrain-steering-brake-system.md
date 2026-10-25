@@ -41,7 +41,7 @@ In HVE Studio the Engine section contains **Name**, **Idle RPM**, **Redline
 RPM**, **Max Torque**, **Max Power**, **Inertia** and **Friction Torque**,
 then **Engine Tables**: a **Throttle Position** selection (Wide Open /
 Closed) and a grid of **Speed (RPM)**, **Torque** and **Power** for the
-selected table. Speed and torque are edited; Power is shown greyed and
+selected table. Speed and torque are edited; Power is shown grayed and
 follows torque × speed, because no engine reads the power column (SIMON,
 EDVSM and EDVDS read speed and torque).
 
@@ -136,7 +136,7 @@ In HVE Studio the differential is the **Differential** section of the
 Drivetrain dialog: **Diff Type** (Open, Limited Slip, Locked), **Locking
 Coeff**, **Preload Torque**, and **Gears** (1-Speed, 2-Speed, 3-Speed) with
 the **High** ratio (the Final Drive Ratio of the Transmission section, shown
-greyed) and the **Medium**/**Low** ratios. The other ratios are selected
+grayed) and the **Medium**/**Low** ratios. The other ratios are selected
 only by the event's Differential schedule in Driver Controls Gear; without
 one the engines use High throughout, and EDVSM refuses a multi-speed
 differential.
@@ -199,7 +199,7 @@ axle, so there is no Current Axle selector:
 
 Below the table, **Steer-Axis Mechanics (per wheel)** has a column per wheel
 of a steerable axle: Stub Axle Length, Kingpin Friction, Stop Angle Right and
-Left, Stop Stiffness, and Stop Damping (disabled; no simulation reads it).
+Left and Stop Stiffness (HVE's Stop Damping is not shown: no simulation reads it).
 
 !!! note "HVE Studio"
     - Column Friction, Column Inertia and Friction Lag, and the steer-axis

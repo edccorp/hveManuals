@@ -101,7 +101,7 @@ re-runs it.
 **Purpose:** Re-open a recently used case.
 
 **Description:** Lists recent cases by file name (hover over one to see its full
-path). **Clear Recent** empties the list. The item is greyed when the list is
+path). **Clear Recent** empties the list. The item is grayed when the list is
 empty. This replaces HVE's recent-file list at the bottom of the File menu.
 
 ---
@@ -202,7 +202,7 @@ case back but cannot run one. The **Publish Bundle** box offers:
 - **Include the per-channel output capture** — also carry the full output
   channels, not just the trajectories
 
-The item is greyed while a simulation is running.
+The item is grayed while a simulation is running.
 
 !!! note "HVE Studio"
     This takes the place of HVE's **Export Preview Case**, which wrote a case
@@ -225,7 +225,7 @@ The **Seal Case for Handoff** box says this before anything is written, and
 that licensed vehicle data stays out: each vehicle keeps only what it takes to
 draw it, and the meshes are encrypted. It then lists every event of the case
 with its program, as *solved* or *NOT SOLVED -- run it or delete it first*.
-**Seal...** is greyed until every event is solved; it then asks for a file
+**Seal...** is grayed until every event is solved; it then asks for a file
 name, suggesting the case's own name ending `.hves`. **Cancel** closes the
 box.
 
@@ -269,7 +269,7 @@ seen, but the band turns red and says *THIS SEALED CASE HAS BEEN MODIFIED
 SINCE IT WAS SEALED -- its contents cannot be trusted*, with what did not
 match. Opening any other case, or a new one, leaves sealed mode.
 
-The item is greyed while a simulation is running, and in a case that is
+The item is grayed while a simulation is running, and in a case that is
 already sealed. The viewer product has no Seal item.
 
 !!! note "HVE Studio"
@@ -290,7 +290,7 @@ already sealed. The viewer product has no Seal item.
 **Purpose:** Export the solved scene, with its motion, for rendering.
 
 **Description:** Writes the environment, the vehicles and their animated motion
-as a glTF file that Blender (and other 3-D programs) can import. It is greyed
+as a glTF file that Blender (and other 3-D programs) can import. It is grayed
 until the event has been run, because the export carries the motion.
 
 !!! note "HVE Studio"

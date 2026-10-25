@@ -82,11 +82,11 @@ with the case. They reach no calculation.
 
 **Method-specific items**
 
-- EDCRASH: **Impact Plane / Barrier...** (greyed — see below).
+- EDCRASH: **Impact Plane / Barrier...** (grayed — see below).
 - EDSMAC and EDSMAC4: **Handling Parameters...** and **Move CG...**.
 
 !!! warning "Not in HVE Studio"
-    **Impact Plane / Barrier** is shown greyed for EDCRASH events: the dialog is
+    **Impact Plane / Barrier** is shown grayed for EDCRASH events: the dialog is
     not implemented. Model a barrier as a vehicle whose type is Fixed Barrier
     (Vehicle Type, in the Vehicles panel's Identity section).
 

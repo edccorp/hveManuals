@@ -6,7 +6,7 @@ In HVE Studio the same job is done by **layers** in the **Outliner**: **View ›
 
 ## Draw and Drive switches
 
-Each layer and each surface has an **eye** switch (**Draw**: show it in the picture) and a **road** switch (**Drive**: include it in the surfaces the engines drive on). Turning both off removes a surface from the picture and from the solver; this is reversible, because the geometry is rebuilt from its file on every load. A greyed eye means the surface's own switch is on and its layer is what hides it.
+Each layer and each surface has an **eye** switch (**Draw**: show it in the picture) and a **road** switch (**Drive**: include it in the surfaces the engines drive on). Turning both off removes a surface from the picture and from the solver; this is reversible, because the geometry is rebuilt from its file on every load. A grayed eye means the surface's own switch is on and its layer is what hides it.
 
 - Ctrl-click an eye to show only that layer or surface; Shift-click a layer's eye to switch its surfaces too.
 - Drag down a column of switches to set several at once.

@@ -169,7 +169,7 @@ wheel force-deflection and moment-deflection parameters:
 
 !!! note "HVE Studio"
     The set-up is the **Wheel Damage** tab of **Event › Wheels**, a table with
-    one column per wheel (A1-R, A1-L, A2-R, …) and link groups so one edit can
+    one column per wheel (A1-R, A1-L, A2-R, …) and wheel groups so one edit can
     set several wheels. HVE's fields map as follows: *Wheel is Damaged* →
     **Displaced / damaged**; *Auto Start* → **Start at first contact**; *Start
     Time* → **Damage time (s)**; *Duration* → **Displacement time (s)**; *Peak

@@ -37,7 +37,7 @@ Size).
     *Contact Search* (and in the DyMESH section of Event Information › Method
     Options). *Automatic* sizes the box from the mesh's own longest triangle
     edge and ignores the box size. A box that is large for a finely meshed
-    vehicle can overflow DyMESH's fixed per-vertex neighbour list, and the run
+    vehicle can overflow DyMESH's fixed per-vertex neighbor list, and the run
     then stops before it starts with a message naming the search box;
     *Automatic* avoids that.
 
@@ -225,7 +225,7 @@ third-order curve fit.
     it carry $A$, $B$ and $K_v$ for the 2-D engines, and DyMESH does not read
     them). The four coefficients and the lengths are shown in the units set in
     Preferences. A zone whose four coefficients are all zero is
-    labelled *(no resistance)*: nodes there meet no contact force and the
+    labeled *(no resistance)*: nodes there meet no contact force and the
     bodies pass through each other. The stiffnesses belong to the vehicle and
     are read from HVE vehicle and case files.
 

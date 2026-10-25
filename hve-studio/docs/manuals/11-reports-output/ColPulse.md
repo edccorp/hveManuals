@@ -55,7 +55,7 @@ The dialog warns when the selected type does not suit the event's method.
     deg/s²; **Position** in the length unit and degrees; **Velocity** per second;
     **Impulse** in the force unit and lbf·in (N·m in SI).
 
-## Start time, Threshold, Impulse centre, Scale factors
+## Start time, Threshold, Impulse center, Scale factors
 
 See [Collision Pulse Options](ColPulOptDlg.md) and
 [Collision Pulse In-Use Factors](ColPulFact.md).

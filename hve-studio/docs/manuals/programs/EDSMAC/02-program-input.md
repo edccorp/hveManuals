@@ -413,9 +413,9 @@ EDSMAC uses the Vehicle Collision, Separation and Trajectory integration timeste
 
 The output time interval is the interval at which output results (positions, velocities, accelerations, forces) are reported. This has a direct effect on the tabular results (see [Chapter 3 — Output, Variable Output](03-program-output.md#variable-output-table)).
 
-> NOTE: For analyses of gross vehicle motion, damage, and rest position, an output interval of 0.10 is generally sufficiently small.
+> NOTE: For analyzes of gross vehicle motion, damage, and rest position, an output interval of 0.10 is generally sufficiently small.
 
-> NOTE: For analyses of vehicle accelerations or collision pulses, smaller output intervals are recommended.
+> NOTE: For analyzes of vehicle accelerations or collision pulses, smaller output intervals are recommended.
 
 > NOTE: The output time interval should be an even multiple of the vehicle trajectory integration timestep. For example, if the integration timestep is 0.02, the output interval might be 5 x 0.02, or 0.10.
 

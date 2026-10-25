@@ -49,7 +49,7 @@ designer stage, so the submenu is for a reader who wants one dialog alone.
 | **Editors ›** **Body Torsion...** | Body Torsion | [Body Torsion](../../02-vehicles/BodyTorDlg.md) |
 | **Editors ›** **Crush Stiffness...** | Crush Stiffness: one table with a column per face, A, B and Kv (2-D) and the 3-D node stiffness, with a graph of the selected column and **From crash tests...** (CRASH3 A and B from staged barrier tests) | [Stiffness Coefficient Dialog](../../02-vehicles/StiffCoeffDlg.md) |
 | **Editors ›** **Vehicle Mesh...** | Vehicle Mesh, in four tabs: **File & Placement**, **Collision**, **Display** and **Wheel Images** (see [Chapter 4, Part B](04b-setup-menu.md#vehicle-mesh)) | — |
-| **Editors ›** **Vehicle Lights...** | Vehicle Lights: each light's type, intensity, direction, spot parameters, position and colour | — |
+| **Editors ›** **Vehicle Lights...** | Vehicle Lights: each light's type, intensity, direction, spot parameters, position and color | — |
 | **Editors ›** **Accelerometers...** | Accelerometers | [Accelerometers](../../06-safety-systems/AcclMtrsDlg.md) |
 | **Editors ›** **Contact Surfaces...** | Contact Surfaces: the vehicle's interior surfaces for occupant simulations | [Contact Surfaces](../../08-environment/ContSurfDlg.md) |
 | **Editors ›** **Airbags...** | Airbags | [Airbag System](../../06-safety-systems/AirBagSysDlg.md) |

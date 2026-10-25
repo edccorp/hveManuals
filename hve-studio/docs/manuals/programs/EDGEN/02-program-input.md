@@ -237,7 +237,7 @@ Position/Velocity data used by EDGEN are shown in Table 2-1.
       row that states none takes the initial position's, and with Auto
       Position on they are the vehicle settled on the ground at that point.
       **Slip** is the sideslip at the waypoint, which EDGEN adds to the yaw
-      under *3-D Spline Interpolation* only (the column is greyed otherwise).
+      under *3-D Spline Interpolation* only (the column is grayed otherwise).
       The speed is a forward speed: a waypoint has no vertical velocity or
       angular velocity of its own.
     - Every position needs a speed. A speed of zero at the last position
@@ -271,7 +271,7 @@ Position/Velocity data used by EDGEN are shown in Table 2-1.
       has a negative Z.
     - **Yaw**, **Pitch** and **Roll** in degrees.
     - **Sideslip** in degrees. EDGEN adds it to the yaw under the *3-D
-      Spline Interpolation* path model only, so it is greyed under *Linear
+      Spline Interpolation* path model only, so it is grayed under *Linear
       Interpolation*.
     - **Speed stated** and **Speed**: the total velocity at the position, in
       the speed unit set in Preferences. EDGEN stops on a position with no

@@ -35,7 +35,7 @@ is where the file is named and how a bad file is treated:
   not a number, a time block cut short, times that do not increase, a first
   time after 0, a vehicle count that differs from the event's, an axle count
   larger than the vehicle has, or a tire-data key the program does not
-  recognise when the file has tire lines. HVE's program does not check these:
+  recognize when the file has tire lines. HVE's program does not check these:
   it keeps the last values it read and reports the run as complete.
 - **Humans are replayed.** Each human the file declares must be selected in
   the event (the counts must match, as in HVE) and must have a body. Its

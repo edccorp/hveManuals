@@ -164,7 +164,7 @@ The user-entered pre-impact sideslip angle BETA may result in lateral separation
 
 **(Level 3 — Informative)**
 
-The above message is displayed to remind the user that this option was selected. Certain analyses which normally follow, such as the trajectory simulation, are not allowed with this option. No response by the user is necessary; this is simply a reminder.
+The above message is displayed to remind the user that this option was selected. Certain analyzes which normally follow, such as the trajectory simulation, are not allowed with this option. No response by the user is necessary; this is simply a reminder.
 
 ---
 

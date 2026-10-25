@@ -190,7 +190,7 @@ EDVDS allows the user to choose from three tire models:
 
 - **Linear** — A simplified model, useful for non-limit maneuvers
 - **Tire Model (Semi-Empirical)** — A good, general purpose tire modeling method
-- **Tire Table** — The most sophisticated tire modeling technique *(updated: the **Table Look-Up** method is not currently available; it is greyed out in the Calculation Options dialog, and if it is ever selected the event terminates with a fatal error.)*
+- **Tire Table** — The most sophisticated tire modeling technique *(updated: the **Table Look-Up** method is not currently available; it is grayed out in the Calculation Options dialog, and if it is ever selected the event terminates with a fatal error.)*
 
 The modeling technique selected is dependent upon the particular needs of the analysis. The desired tire model is an EDVDS calculation option (see [Event](#calculation-options)).
 
@@ -481,7 +481,7 @@ To create an EDVDS event:
    > **NOTE:** If you choose a vehicle that is not compatible with EDVDS, or if the tow vehicle connections are incompatible with the trailer, the panel shows **Cannot run:** and the reason, and the Method list marks EDVDS "N/A for these vehicles". The event can still be edited; it cannot be run until the problem is fixed.
 
 !!! note "HVE Studio"
-    EDVDS runs its own engine; on HVE's tractor-semitrailer validation cases its tracks end within about 2 cm of HVE's saved runs. The **Method Options…** button is greyed for EDVDS, which has no options in HVE Studio.
+    EDVDS runs its own engine; on HVE's tractor-semitrailer validation cases its tracks end within about 2 cm of HVE's saved runs. The **Method Options…** button is grayed for EDVDS, which has no options in HVE Studio.
 
 **Table 2-7: Event Set-up Parameters Used By EDVDS**
 
@@ -598,7 +598,7 @@ EDVDS uses the current simulation control parameters. The Simulation parameters 
 
 EDVDS has one calculation option; for full details see [EDVDS Calculation Options](../../10-calculation-options/CalcOptEDVDS.md):
 
-- **Tire Model Method** — Select from three methods: **Linear** (the default; to be used only for simple, non-limit maneuvers), **Semi-Empirical** (the most robust method) and **Table Look-Up** (not currently implemented; the choice is greyed out in the dialog, and selecting it produces a fatal error and the event will not run).
+- **Tire Model Method** — Select from three methods: **Linear** (the default; to be used only for simple, non-limit maneuvers), **Semi-Empirical** (the most robust method) and **Table Look-Up** (not currently implemented; the choice is grayed out in the dialog, and selecting it produces a fatal error and the event will not run).
 
 > **NOTE:** EDVDS will terminate with an error message if you select the Linear tire model method for an event that results in tire longitudinal or lateral slip beyond the linear range.
 
@@ -616,7 +616,7 @@ This option determines how EDVDS selects the current terrain properties from the
 
 To execute an EDVDS event, use the playback bar under the viewport (Figure 2-7) or **Output › Run Simulation…** (Ctrl+R). The playback bar's buttons have the following functions:
 
-- **Run** — Execute the event (greyed while the event's results are on screen)
+- **Run** — Execute the event (grayed while the event's results are on screen)
 - **Reset** — Clear the results so the event can be edited and run again
 - **|<** — Jump to the start of the simulation
 - **<<** / **>>** — Step back / forward one output step

@@ -31,13 +31,50 @@ previous time kept.
 
 **Latitude (°)** / **Longitude (°)** — The site's latitude and longitude in
 decimal degrees, north and east positive (HVE enters them as dd.mm.ss with
-N/S, E/W).
+N/S, E/W). They are stored to full double precision (about a millimeter on the
+ground); older versions kept them to roughly half a meter, and a case saved
+that way reads back with the same numbers it showed. Typing in either field
+marks the case as georeferenced.
 
 **Elevation** — The site's elevation.
 
 **North offset (°)** — The compass bearing of the case's +X axis (0 = north,
 90 = east): HVE's *Angle of X-Axis*. It turns the North arrow and the sun;
 positions are unchanged.
+
+### Coordinate system
+
+A case is either georeferenced (it has a place on the Earth) or not. **Not
+georeferenced** is an ordinary state: the case has no geographic coordinates,
+and nothing in HVE Studio needs them. A case saved before this was recorded is
+georeferenced when its latitude or longitude is not zero. A latitude and
+longitude of exactly 0, 0 is a valid place and is kept when it is set.
+
+**Treat as not georeferenced** — Marks the case as having no geographic
+coordinates. The latitude and longitude stay as typed (the sun still uses them)
+and nothing is moved.
+
+**Horizontal CRS (EPSG)** — The EPSG code of the coordinate system the site's
+own data are in, for example 26917 for NAD83 / UTM zone 17N; 0 means not
+stated. **UTM, WGS 84** and **UTM, NAD83** fill in the UTM zone the location
+falls in. For a UTM system the panel shows the origin's easting and northing,
+how far grid north is from true north there, the grid bearing of the case's +X
+axis, and the point scale. The code is a record: nothing already in the case is
+moved or converted on its account. Codes this version can convert are WGS 84,
+Web Mercator, UTM on WGS 84, NAD83 (zones 1–23) and ETRS89 (zones 28–38); any
+other code is recorded and the panel says it cannot convert it.
+
+NAD83 and ETRS89 are treated as the same as WGS 84. They are not: NAD83 differs
+from WGS 84 by about 1–2 m across the contiguous US. No shift is applied, and
+the panel says so whenever one of those systems is chosen.
+
+**Vertical CRS (EPSG)** / **Vertical datum** — The datum the site's elevations
+are in (5703 NAVD88, 5702 NGVD29, 4979 WGS 84 ellipsoidal, or a name such as
+local). Elevations are recorded in that datum and never converted between
+datums: this version has no geoid model.
+
+!!! tip "New in HVE Studio"
+    The coordinate system section.
 
 **Set from a pasted coordinate** — Paste a coordinate in decimal degrees, in
 degrees-minutes-seconds, or a map link; the box shows how it reads, and
@@ -55,19 +92,65 @@ the result) sets the case's Latitude and Longitude to it and looks up its time
 zone. **Clear results** empties the list. On the map, drag to pan, use the
 wheel to zoom, and double-click anywhere to put the case's location there.
 
-Under the map, choose the tile source. When it is an aerial source, choose a
-size (50 to 800 m square) and press **Download aerial image**: the yellow
-square on the map, centred on the map's centre and aligned to the case's axes,
-is downloaded and laid on the ground as the case's aerial site image
-(**Environment › Aerial Image...**). It is placed assuming the case origin is at
-this location and +X points along its North angle. The button needs the case's
-location to be set first.
+Under the map, choose the tile source. When it is an aerial source, choose the
+area to download and press **Download aerial image**: the yellow rectangle on
+the map, aligned to the case's axes, is downloaded and laid on the ground as the
+case's aerial site image (**Environment › Aerial Image...**). It is placed
+assuming the case origin is at this location and +X points along its North
+angle. The button needs the case's location to be set first.
+
+The area is a square about the map's center (50 to 800 m), or, with **Select
+area** on, a rectangle you drag on the map; dragging then draws the area
+instead of panning, and **Clear area** returns to the square. The orange
+rectangle is what you dragged; the yellow one is what is downloaded, the
+smallest rectangle aligned to the case's axes that covers it, so it is larger
+than the selection whenever the North offset turns the case away from the
+screen. The panel states
+the area's size, the image size and the resolution in meters per pixel; a very
+large area gives a coarse image, and the panel says when it is too coarse for a
+scene. **Cancel** stops a download under way and writes nothing to the case.
+
+Imagery is kept in the case only from sources whose terms allow it. The USGS
+source (US government imagery, published without restriction) can be
+downloaded. The street map, Mapbox and Esri sources are for looking at only:
+their terms do not let a case keep a copy, so **Download aerial image** is
+unavailable for them and the panel says why. To use other imagery, import your
+own image (**Environment › Aerial Image...**).
+
+For the USGS source, **Download aerial image** asks USGS's orthoimagery image
+service first: the finest imagery The National Map holds at the place (NAIP and
+the high-resolution orthoimagery), drawn at the flight's own pixel size, 0.3 or
+0.6 m in the places checked. That is much sharper than the map tiles, where cars,
+sidewalks and lane lines can be read. The service names the flight and its
+resolution, and states its acquisition date: the status line and the record show
+the flight's name, its date and its native pixel. A date is kept only when it
+agrees with the date in the flight's own name; if the catalog cannot be read, or
+the two disagree, the record says "not stated" rather than guess. If the service
+cannot be reached the download falls back to the map tiles below, and the status
+says so. The dataset in the record names which one the picture came from. The
+service holds one flight per place, the latest, so an earlier date needs another
+source.
+
+A provider does not have imagery at every level of detail everywhere: USGS
+map-tile imagery, for example, stops at level 16 (about 1.8 m per pixel) over much of the
+US. Where a level is missing the map shows the coarser tiles that exist and says
+"no imagery this deep here: a coarser level is shown", and a download is
+enlarged from the coarsest level it had to use. The download status says so,
+with the source's real resolution against the resolution written, so a sharp
+looking file is never taken for sharp imagery.
+
+A downloaded image carries its source with it: the provider, dataset, credit
+line, the coarsest level of detail any of its pixels was taken at, the UTC date and time of the
+download, and the geographic edges of the area. The panel shows them under the
+download, and they are saved and reopened with the case. An image you picked
+yourself carries none of this.
 
 The location is recorded with the case; it does not position or scale the
 scene geometry. It places the sun (see **Sky**).
 
 !!! tip "New in HVE Studio"
-    The coordinate paste box and the address search.
+    The coordinate paste box and the address search, the area selection and
+    the source record on a downloaded aerial image.
 
 !!! warning "Not in HVE Studio"
     HVE's location database (**Current Location**, **New Location**, **Add New
@@ -100,7 +183,7 @@ edges stay sharp. Display only.
 The terrain geometry file, typed or chosen with **Browse...**: DXF, HVE geometry
 (`.h3d`), Inventor (`.iv`), VRML (`.wrl`), OBJ or glTF (`.gltf`, `.glb`).
 
-**Scale Factor** — scale applied to the imported geometry, to metres. For an
+**Scale Factor** — scale applied to the imported geometry, to meters. For an
 `.h3d` the field is **Extra Scale**, since an `.h3d` states its own units
 (inches) and frame, which are applied automatically.
 
@@ -152,18 +235,94 @@ scene; here it is ignored, and the run status says how many the site has.
       material (below).
     - DWG files.
 
+### Geographic terrain (USGS 3DEP)
+
+!!! tip "New in HVE Studio"
+    Terrain from the US Geological Survey's 3D Elevation Program (3DEP), placed
+    against the case's location.
+
+The section needs the case to be **georeferenced** (see *Coordinate system*
+under *Location*): the terrain is placed against the case origin, with the
+case's North offset. A case with no location says so and offers nothing. The
+section also says what it does with the network: it sends the area's
+coordinates to USGS (`tnmaccess.nationalmap.gov` and
+`elevation.nationalmap.gov`) and nothing else leaves the machine. The web
+version cannot do this yet and says so.
+
+The section sits on the **Site** stage, under the **Map**, because it takes the
+same area as **Download aerial image**: the rectangle dragged under **Select
+area** on the map, or the square of the size chosen beside it (turned by the
+North offset like the case itself). There is no second area to choose here.
+The size lists show round numbers in the units you work in (feet or meters).
+
+**Cell size** — The grid the terrain is resampled to: 1 to 100 ft, or 0.5 to
+30 m. Under the choices the section states the area, the number of cells and the
+number of road polygons the solver would search (two per quad). Over 200,000
+quads it says the site is heavy for the solver; over 500,000 it refuses.
+
+**Find elevation data** — Lists the elevation surveys USGS has under the area
+(under the heading **Surveys under the area**), finest first, each with its resolution, its vertical datum (NAVD 88 for USGS
+data) and its publication date. Nothing is downloaded. Each survey has a
+selection button: **Best available** (the default) takes the terrain from
+USGS's blend of every survey, which is the finest one wherever it reaches;
+choosing a survey asks for the terrain from that survey alone, and the record
+then names only it. USGS's own "acquisition
+date" in its catalog is a build date, not a survey date, so it is never shown:
+the section says the acquisition date is not stated and the survey's record
+(linked once a terrain is downloaded) has it.
+
+**Download and add to the site** — Downloads the terrain and adds it to the
+site as one more surface. The site keeps everything it had (surface types,
+materials, layers and moves); the terrain's surface is named
+`USGS_terrain_` and the download's time, so it can be given a type or hidden or
+deleted on its own in the Outliner, and a second download is a second surface.
+Where it overlaps a drivable surface already in the site, the engines use their
+own rule (the first surface in the list). On a site that came from an HVE
+case, the **Add Geometry...** button for files stays unavailable, but the
+terrain can still be added here: the case then stops naming its `.hve` and
+carries the merged site itself, the HVE site's surfaces keep their names, types
+and friction, and the added terrain is still there after the case is saved and
+reopened. With no site at all, the terrain simply becomes the site.
+
+**Download and replace the site** — Downloads the terrain and makes it the
+site. When the site has content a confirmation asks first (**Replace the
+site?** with **Replace the site** and **Cancel**): the site's surfaces and the
+edits made to them are replaced. **Edit › Undo** restores them.
+
+Unless one survey is chosen, the terrain is USGS's seamless blend of the surveys
+listed, resampled to the cell size, so it is one interpretation of several
+surveys. Its heights are made
+**relative to the elevation at the case origin** (z = 0 there), because the
+engines and Auto Position work on a site whose ground is at 0; the offset is
+stated. A site with a download in progress, or with results on screen, is
+locked like the rest of the geometry: the download finishes and waits for the
+results to be discarded.
+
+**Where the site came from** — One entry per download, kept in the case: the
+surface's name, whether it was added or replaced the site, the provider and
+dataset, the surveys, the vertical datum, the height offset, the grid, the
+finest survey's resolution, the publication date, the acquisition date ("not
+stated" unless known), the download's time, the coordinate system, and the link
+to the survey's record. An entry whose surface is no longer in the site says
+so. **Remove this record** deletes the note only; the surface stays until it is
+deleted in the Outliner.
+
+Accuracy is as the survey states it: nothing here labels the data
+"approximate", and nothing improves it. NAD83 and WGS 84 are treated as the same
+(see *Coordinate system*), and no vertical datum is converted.
+
 ### Survey Point Cloud (scan)
 
 !!! tip "New in HVE Studio"
-    A collapsed section that loads a survey scan (LAS, PLY, E57, XYZ, PTS, TXT or
-    CSV; a LAZ file must first be exported as LAS) as a picture of the scene.
+    A collapsed section that loads a survey scan (LAS, LAZ, PLY, E57, XYZ, PTS, TXT or
+    CSV) as a picture of the scene.
     A point cloud is **display only**: vehicles cannot drive on it, settle onto
     it or collide with it. Import a site surface for that, or build one from
     the scan with **Drivable Surface from Scan**. The section has the
     file, **Scale (source -> m)**, **Source is Y-up**, **Source is Z-down**,
     **Points loaded (for the surface)**, **Points drawn per frame**, **More detail
-    near the camera**, **Shown (%)**, **Colour** (Auto, File colour,
-    Intensity, Elevation, Flat grey), **Point size (px)**, **Visible**, a
+    near the camera**, **Shown (%)**, **Color** (Auto, File color,
+    Intensity, Elevation, Flat gray), **Point size (px)**, **Visible**, a
     **Placement** offset and rotation (to level a scan), and **Import** /
     **Clear**.
 

@@ -285,7 +285,7 @@ $$\text{if} \begin{Bmatrix} F_z > F_{z,min} \\ \text{and} \\ X_s/L < \tau \end{B
 
 #### Table Look-up Tire Model
 
-The table look-up tire model is not implemented in EDVDS. *(This remains true in the current version: the **Table Look-Up** option is greyed out in the Calculation Options dialog, and if it is selected the event terminates with a fatal error.)*
+The table look-up tire model is not implemented in EDVDS. *(This remains true in the current version: the **Table Look-Up** option is grayed out in the Calculation Options dialog, and if it is selected the event terminates with a fatal error.)*
 
 !!! note "HVE Studio"
     The refusal is in EDVDS's own input processing (message code −5504), before any tire force is calculated, so it applies to HVE Studio exactly as to HVE. The table look-up code that remains in the program is never reached.

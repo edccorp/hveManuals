@@ -144,7 +144,7 @@ may be supported. The interface is divided into two sections:
 The interface, dialogs and associated variables are described below.
 
 !!! note "HVE Studio"
-    Choose **Vehicle › Editors › Brakes › ABS / Brake Design…**. The window has two buttons: **ABS System…** opens the **ABS System** dialog (the system variables, for the whole vehicle) and **ABS Designer…** opens the **ABS Designer** (the wheel variables, one column per wheel: A1 Right, A1 Left, A2 Right, …). In the ABS Designer, the **Link Group** buttons (–, A, B, C) above each column tie wheels together: editing a value in one column copies it to every column in the same group. All wheels start in group A. Like every vehicle dialog, both are read-only while a run's results are on screen, until **Reset**.
+    Choose **Vehicle › Editors › Brakes › ABS / Brake Design…**. The window has two buttons: **ABS System…** opens the **ABS System** dialog (the system variables, for the whole vehicle) and **ABS Designer…** opens the **ABS Designer** (the wheel variables, one column per wheel: A1 Right, A1 Left, A2 Right, …). In the ABS Designer, the **Brake Group** buttons (–, B1, B2, B3) above each column tie wheels together: editing a value in one column copies it to every column in the same group. All wheels start in group B1. Like every vehicle dialog, both are read-only while a run's results are on screen, until **Reset**.
 
     The window also notes that S-cam brake geometry is edited in **Vehicle › Editors › Brakes › Brake Designer** ([Chapter 29](29-brake-designer.md)).
 
@@ -365,7 +365,7 @@ Two ABS algorithms are currently implemented. These are Tire Slip and Bosch
 Version 1. These algorithms are described below.
 
 !!! note "HVE Studio"
-    The engine implements a third, listed as **Algorithm 4** (see Other ABS Algorithms). Two behaviours to know when choosing an algorithm:
+    The engine implements a third, listed as **Algorithm 4** (see Other ABS Algorithms). Two behaviors to know when choosing an algorithm:
 
     - **Bosch Version 1** enters regulation on the wheel's **Accel Min** (spin acceleration minimum) and **Algorithm 4** on its **Accel Max**. If the wheels never reach that threshold the run is identical to one without ABS — so "I selected Bosch and nothing changed" usually means the threshold is out of reach for the case, not that the algorithm is inactive. The dialog notes this when either is selected.
     - The **Cycle Rate** is a frequency (Hz).
@@ -556,14 +556,15 @@ ABS systems.
 
 ### Invoking the ABS Model
 
-Vehicles in the EDC Generic Database (Generic.db) and the EDC Custom Vehicle
-Database (EDC.db) are currently created with the ABS model turned off.
+Vehicles in the EDC Generic Database (Generic.db; `Generic.hvedb` in HVE
+Studio) and the EDC Custom Vehicle Database (EDC.db) are currently created with
+the ABS model turned off.
 
 To model an ABS system in HVE Studio, perform the following steps:
 
 1. Select the **Vehicle (F3)** editor and the vehicle.
 2. Choose **Vehicle › Editors › Brakes › ABS / Brake Design…**, press **ABS System…** and tick **ABS Installed**.
-3. Choose **Vehicle › Editors › Brakes › Brake Assembly…** and tick **Antilock (ABS)** for each wheel fitted with ABS (link groups copy the tick across the wheels in the same group), and set **ABS Efficiency** if required.
+3. Choose **Vehicle › Editors › Brakes › Brake Assembly…** and tick **Antilock (ABS)** for each wheel fitted with ABS (brake groups copy the tick across the wheels in the same group), and set **ABS Efficiency** if required.
 
 Which of the two switches an engine reads differs. SIMON regulates **every** wheel when ABS Installed, or any wheel's Antilock (ABS) box, is ticked; it does not read the per-wheel box itself. EDSVS and EDVTS read only the per-wheel boxes. EDVDS has no ABS model. A vehicle read from an HVE case keeps HVE's own ABS settings, both of them. For one event only, **Event › Wheels…** has an **Antilock brakes** choice per vehicle: *Use the vehicle's setting*, *Force OFF for this event* or *Force ON for this event*.
 
@@ -575,7 +576,7 @@ Which of the two switches an engine reads differs. SIMON regulates **every** whe
 ### Editing ABS Wheel Parameters
 
 1. Choose **Vehicle › Editors › Brakes › ABS / Brake Design…** and press **ABS Designer…**.
-2. Edit each wheel's parameters in its column. To give several wheels the same values, put them in the same **Link Group** before editing.
+2. Edit each wheel's parameters in its column. To give several wheels the same values, put them in the same **Brake Group** before editing.
 
 Any event that supports the HVE ABS model (e.g., SIMON) will now include the
 effects of the ABS system when the event is executed.

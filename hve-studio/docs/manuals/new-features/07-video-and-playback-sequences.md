@@ -55,7 +55,7 @@ One row per track:
 | Column | Meaning |
 | --- | --- |
 | **On** | Include this track. A track switched off is ignored, and does not count toward the duration. |
-| **Event** | Which event the track plays (with a colour key matching the timeline strip) |
+| **Event** | Which event the track plays (with a color key matching the timeline strip) |
 | **Start (s)** | Where the track starts on the sequence timeline |
 | **End (s)** | Where it ends on the sequence timeline |
 | **Offset (s)** | Where the event's own t = 0 sits on the sequence timeline |
@@ -72,7 +72,7 @@ switched on.
 
 ### The timeline strip
 
-Under the table, each track is a coloured bar on the sequence timeline, with
+Under the table, each track is a colored bar on the sequence timeline, with
 the playback position marked in red.
 
 - **Drag a bar** to slide that event in time (hold **Ctrl** to snap). One drag
@@ -166,9 +166,9 @@ can be drawn into every frame.
 1. Run the event (or, for a sequence, press **Run All** in the Playback editor).
 2. Choose **File › Record Animation...**. The **Record Animation (AVI)** window
    opens.
-3. Set the **Output File** (default `output.avi`), or choose it with **...**.
-   A name without a folder is written to the folder HVE Studio was started from,
-   not beside the case, so give a full path to put the video somewhere else.
+3. Set the **Output File**, or choose it with **...**. It starts as
+   `output.avi` in the open case's folder (in `Documents\HVE Studio` when no case is open),
+   never in the program's install folder, which an uninstall removes.
 4. Under **Video Settings**, pick a **Size** from the list (HD, Full HD, QHD,
    4K UHD, square, portrait, 4:3, VGA) or set the frame **Width** and **Height**
    (64 to 4096 pixels, rounded to even numbers; default 1280 × 720), the **FPS** (1 to
@@ -186,7 +186,7 @@ can be drawn into every frame.
    through* (the default) or a saved camera by name — and the **Start (s)** and
    **End (s)** times. **Now** beside each takes the playback bar's current
    time; **End of run** (ticked by default) records to the end whatever the
-   run's length, and greys the End field. Recording through a saved camera
+   run's length, and grays the End field. Recording through a saved camera
    does not change your own view: it is put back when the recording ends.
 6. Under **Rendering**, choose the **Renderer**. **Viewport (fast)** records the
    3-D view's own picture. **Ray traced** traces every frame with the built-in
@@ -284,7 +284,7 @@ by default, traces on the graphics card (see below); the status line beside
 the sample count says what traced the picture.
 **Results HUD** (on by default) burns the HUD boxes marked **Burn into movies
 and renders**, of the view on screen (Event or Playback), over the picture and
-into the saved PNG, as a recorded movie carries them; it is greyed when no such
+into the saved PNG, as a recorded movie carries them; it is grayed when no such
 box exists.
 
 The tracer runs on the graphics card when **Trace on the GPU** is ticked and
@@ -313,8 +313,8 @@ another instant, and `--no-denoise` for the raw samples).
 | **Bounces** | 6 | 0–32 |
 
 The settings are locked while a render runs. The file box beside **Save PNG**
-starts as `render.png`; a name without a folder is saved in the folder the
-program was started from, and the status line names the file. Closing the
+starts as `render.png` in the open case's folder (in `Documents\HVE Studio` when no case is
+open), and the status line names the file. Closing the
 window stops a render in progress.
 
 !!! note "HVE Studio"

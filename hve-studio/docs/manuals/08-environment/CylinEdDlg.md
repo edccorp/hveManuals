@@ -7,7 +7,7 @@ In HVE the Cylinder Object Tool creates and edits 3-D cylinders — telephone po
     primitive objects in the environment. Instead:
 
     - For an object the vehicles **interact with** — a pole, post, curb or
-      barrier — build it in a CAD or modelling program and import it as part
+      barrier — build it in a CAD or modeling program and import it as part
       of the environment's terrain geometry (Environment › Environment...,
       Terrain: DXF, `.h3d`, `.iv`, `.wrl`, OBJ or glTF), then set its surface
       type on its material (see

@@ -30,7 +30,7 @@ by an **HVE Studio**, **Not in HVE Studio** or **New in HVE Studio** box.
 
 - Menu paths are written **Menu › Item**, exactly as they appear in the
   program.
-- Keyboard keys are written as they are labelled: **F5**, **Ctrl+Z**, **G**.
+- Keyboard keys are written as they are labeled: **F5**, **Ctrl+Z**, **G**.
 - Lengths, speeds and forces are shown in the unit system chosen in
   **Tools › Preferences** (Imperial or Metric). Where this section quotes a
   field it does not hard-code a unit unless the dialog does.

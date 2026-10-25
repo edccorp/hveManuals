@@ -20,7 +20,7 @@ EDSVS produces three types of output reports:
 
     The reports describe the event that was last run. Running another event replaces them.
 
-    The values on these pages follow the unit system set in **Tools › Preferences**. Two differences from HVE's printed pages: some single-value rows (for example *Total Distance Travelled* or *Max Simulation Time*) omit the unit label HVE prints beside them, and the header fields HVE fills from its installation (HVE and EDSVS version, date and time of execution, the geometry file name) are blank or read *(Unknown)*.
+    The values on these pages follow the unit system set in **Tools › Preferences**. Two differences from HVE's printed pages: some single-value rows (for example *Total Distance Traveled* or *Max Simulation Time*) omit the unit label HVE prints beside them, and the header fields HVE fills from its installation (HVE and EDSVS version, date and time of execution, the geometry file name) are blank or read *(Unknown)*.
 
 ## Alpha-Numeric Reports
 
@@ -40,7 +40,7 @@ The Accident History Report displays a table of initial and final positions and 
 ![Figure 3-1](images/hvn-edsvs-report-accident-history.png)
 *Figure 3-1: The ACCIDENT HISTORY page of Output › HVE Reports for the tutorial's Steering Maneuver event.*
 
-The report shows the Total Distance Travelled and Time, along with Initial and Final rows containing Position (X, Y, PSI) and Velocity (V-tot, u-vel, v-vel, Yaw Vel) values. *(updated: the current report layout also supports a "Rest" row.)*
+The report shows the Total Distance Traveled and Time, along with Initial and Final rows containing Position (X, Y, PSI) and Velocity (V-tot, u-vel, v-vel, Yaw Vel) values. *(updated: the current report layout also supports a "Rest" row.)*
 
 ### Messages
 

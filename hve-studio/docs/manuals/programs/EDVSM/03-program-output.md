@@ -21,7 +21,7 @@ EDVSM produces three types of output reports:
 
     The reports describe the event that was last run. Running another event replaces them.
 
-    The values on these pages follow the unit system set in **Tools › Preferences**. Two differences from HVE's printed pages: some single-value rows (for example *Total Distance Travelled* or *Max Simulation Time*) omit the unit label HVE prints beside them, and the header fields HVE fills from its installation (HVE and EDVSM version, date and time of execution, the geometry file name) are blank or read *(Unknown)*.
+    The values on these pages follow the unit system set in **Tools › Preferences**. Two differences from HVE's printed pages: some single-value rows (for example *Total Distance Traveled* or *Max Simulation Time*) omit the unit label HVE prints beside them, and the header fields HVE fills from its installation (HVE and EDVSM version, date and time of execution, the geometry file name) are blank or read *(Unknown)*.
 
 ## Alpha-Numeric Reports
 
