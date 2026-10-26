@@ -147,8 +147,25 @@ agrees with the date in the flight's own name; if the catalog cannot be read, or
 the two disagree, the record says "not stated" rather than guess. If the service
 cannot be reached the download falls back to the map tiles below, and the status
 says so. The dataset in the record names which one the picture came from. The
-service holds one flight per place, the latest, so an earlier date needs another
-source.
+service holds one flight per place, the latest. An earlier date comes from the
+next control.
+
+**Find older flights** — Appears under the USGS source. It asks Microsoft's
+Planetary Computer (`planetarycomputer.microsoft.com`), which holds every NAIP
+flight since 2009, which flights cover the center of the area, and lists them
+newest first with their dates and pixel sizes. The area's coordinates are sent
+there, and the panel says so. Choose one in the list that appears (the first
+entry, **Latest available (USGS image service)**, is the default) and press
+**Download aerial image**: the picture is cropped from that flight's own raster
+at its own pixel size and placed in the case frame exactly as the USGS picture
+is, and the case's record names the flight, its date and the Planetary
+Computer. A flight's date is kept only when the date in its own name agrees, as
+for the USGS service; otherwise the list says "date not stated" and the year.
+A flight that covers only part of the area leaves the rest of the picture
+transparent. If an older flight cannot be drawn, the download stops with the
+reason and writes nothing: it never substitutes a picture of another date.
+NAIP imagery is US Department of Agriculture imagery published without
+restriction, so the case keeps it like the USGS picture.
 
 A provider does not have imagery at every level of detail everywhere: USGS
 map-tile imagery, for example, stops at level 16 (about 1.8 m per pixel) over much of the
@@ -274,8 +291,13 @@ square about that location at the size chosen in **Area** at the top of the
 section; a dragged rectangle is not available. While USGS answers, the window
 pauses (the message says so, and it can take up to about half a minute). And the
 download is allowed only because USGS's services let a web page read them; if
-the network is blocked the section says the browser could not fetch it. LiDAR
-point-cloud tiles are not fetched by the app in either version.
+the network is blocked the section says the browser could not fetch it. The
+aerial image works there too: with a location set, the same panel offers **Area**,
+**Find older flights** and **Download aerial image**, for the USGS source only
+(the map tiles need background threads), and the page pauses while the picture
+comes in, up to about a minute. LiDAR tiles are a desktop feature: USGS's
+lidar server does not let a web page read its files, so there the section says to
+download the tile yourself and load it under **Survey Point Cloud (scan)** in the Environment dialog's Terrain section.
 
 The section sits on the **Site** stage, under the **Map**, because it takes the
 same area as **Download aerial image**: the rectangle dragged under **Select
@@ -298,6 +320,20 @@ then names only it. USGS's own "acquisition
 date" in its catalog is a build date, not a survey date, so it is never shown:
 the section says the acquisition date is not stated and the survey's record
 (linked once a terrain is downloaded) has it.
+
+**Lidar point cloud (USGS 3DEP)** — Below the terrain controls, in the desktop
+version. **Find lidar tiles** asks USGS's catalog (`tnmaccess.nationalmap.gov`)
+for the point-cloud tiles under the same area and lists them newest publication
+first, each with its survey project, its publication date and its size
+(3 to 30 MB or more); nothing is downloaded. **Use** beside a tile downloads it
+from `rockyweb.usgs.gov`, keeps it (beside the case in a `usgs-lidar` folder once
+the case is saved, otherwise in the program's cache) and makes it the case's
+survey point cloud, replacing any there. The window stays usable while it
+downloads; a tile already on disk at the catalog's size is not fetched twice. The
+case's survey point cloud holds one file, so on a site that spans several tiles
+the tile you choose is the one drawn; the others can be fetched and chosen in
+turn. A point cloud is a picture and changes no result: turn it into a drivable
+surface with **Drivable Surface from Scan** in the Environment dialog's **Survey Point Cloud (scan)** section.
 
 **Download and add to the site** — Downloads the terrain and adds it to the
 site as one more surface. The site keeps everything it had (surface types,
