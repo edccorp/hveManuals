@@ -25,6 +25,8 @@ To place an occupant in a SIMON event, open **Event › Event Information...** i
 
 > **NOTE:** SIMON is not a human simulator. During simulation, the human occupants do not move relative to the vehicle.
 
+To see how the occupant responds, run the event first, then click **Add occupant event (GATB) from this run** under **Humans in Event**. HVE Studio appends a new GATB event for the vehicle the humans ride in and those humans, with an acceleration pulse taken from the SIMON run's solved motion (see **Take pulse from this event** in the Collision Pulse dialog to choose position or velocity instead). The SIMON event is not changed, and SIMON does not feel the occupant: the route is one-way. The button is unavailable until the event has a solved run, and the vehicle needs interior surfaces, which GATB requires.
+
 The following human parameters are used by SIMON:
 
 - Inertia

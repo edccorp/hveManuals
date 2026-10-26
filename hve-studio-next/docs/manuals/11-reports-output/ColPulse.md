@@ -28,9 +28,21 @@ A line says where the current pulse came from: *Generated from event n*,
 
 The drop-down lists every **other** event in the case that includes this
 vehicle. **Take pulse from this event** builds the pulse from that event's
-solved run: forward and lateral acceleration from the run, and yaw acceleration
-from differentiating its yaw rate. Vertical, roll and pitch are left at zero
-because the stored run holds none of them. The result is an Acceleration pulse.
+solved run, as a Position, Velocity or Acceleration table (the list beside the
+button; EDHIS takes Acceleration only). Each column comes from the run's stored
+output, so a six-degree-of-freedom run (SIMON) fills all six axes. A planar
+engine records no vertical, roll or pitch motion and those columns are zero; the
+message under the button names every axis that is zero throughout. Position is
+the CG displacement from the run's first instant in that instant's body axes with the
+attitude relative to it, Velocity is body-axis velocity and angular velocity, and
+Acceleration is body-axis acceleration and angular acceleration, taken by
+differencing the run's recorded velocity (which carries the rotating-axes term, so
+a turning or pitching vehicle is not under-driven) rather than from its
+acceleration output. Velocity is the running integral of that acceleration, so all
+three types move the vehicle the same way. A run with more steps than ATB's table
+holds (800 rows) is thinned to fit. A planar engine's vertical, roll and pitch
+columns are zero for all three types, whatever noise the road-following pose
+carries.
 If the chosen event has no stored run, the dialog says why it cannot.
 
 ## Pulse type

@@ -48,7 +48,7 @@ GATB inputs include at least one human (up to four), one vehicle, and an optiona
 *Figure 1-2: GATB pedestrian event in HVE Studio at t = 0 (HVE's `GATB-PedImpact` case).*
 
 !!! note "HVE Studio"
-    HVE Studio's Collision Pulse dialog (**Event › Collision Pulse**) takes a pulse from another event of the case that runs the same vehicle. Such a pulse carries the forward and lateral acceleration and the yaw acceleration of that run; vertical, roll and pitch are left at zero, because the stored run holds none of them.
+    HVE Studio's Collision Pulse dialog (**Event › Collision Pulse**) takes a pulse from another event of the case that runs the same vehicle. Any event that solved the vehicle can supply it, and the pulse can be taken as **Position**, **Velocity** or **Acceleration**. Each column comes from what that run recorded: a six-degree-of-freedom engine such as SIMON supplies all six axes, while a planar engine such as EDSMAC4 records no vertical, roll or pitch motion and those columns are zero. The dialog's message names every axis that is zero throughout. A run longer than ATB's table allows is thinned to fit, and the message says so.
 
 ## Model Outputs
 

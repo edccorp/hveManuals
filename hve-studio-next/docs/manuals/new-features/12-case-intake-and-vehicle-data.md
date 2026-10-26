@@ -150,13 +150,18 @@ not use. Four things can fill the rows:
   width when vPIC states them for this VIN (it often does not for cars), into
   rows that are still empty. vPIC gives one track width, which is used for both
   axles. A model sold in two wheelbases gives a range, which is not used.
-- **Look up Canadian Vehicle Specifications (online)** sends the year, make
-  and model to NHTSA's vPIC, which serves Transport Canada's Canadian Vehicle
-  Specifications, and lists one row per body and trim: weight, front share,
+- **Look up Canadian Vehicle Specifications** asks NHTSA's vPIC, which serves
+  Transport Canada's Canadian Vehicle Specifications, for the year, make and
+  model. An answer is kept on this machine, so the same look-up works offline
+  afterwards; the note says it came from the cache and when it was retrieved,
+  and **Refresh online** (shown when there is a kept answer) asks the service
+  again and keeps the new one. Only an answer that could be read is kept. It
+  lists one row per body and trim: weight, front share,
   wheelbase, front and rear track, length, width and height. Press **Use** on
   the row that is this vehicle. It fills the rows that are empty or were looked
   up; a value you typed is kept, and an implausible value is left out and
-  named. The button needs the **Year**, **Make** and **Model**. If nothing is
+  named. Each value's source records the service and the date it was
+  retrieved, as read back in the Provenance window. The button needs the **Year**, **Make** and **Model**. If nothing is
   found, try a shorter model name: the table names models its own way.
 - **NHTSA test file** box and **Load NHTSA test**: type the path of a test
   file from NHTSA's Vehicle Crash Test Database (see

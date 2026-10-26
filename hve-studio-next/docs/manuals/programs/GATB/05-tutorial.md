@@ -296,7 +296,7 @@ The first part is to set up the initial speed of the vehicle to match that of th
 - Press **Reset**, and under *Vehicle Initial Conditions* set the Caprice's Speed to 30 mph.
 - Open **Event › Collision Pulse**, select *Acceleration* as the *Pulse type*, choose *Frontal Impact* in the *Source* list and click **Take pulse from this event**.
 
-> **NOTE:** A pulse taken from an EDSMAC4 run carries the forward and lateral acceleration and the yaw acceleration; vertical, roll and pitch are zero, since EDSMAC4 is a planar model.
+> **NOTE:** A pulse taken from an EDSMAC4 run carries the forward and lateral acceleration and the yaw acceleration; vertical, roll and pitch are zero, since EDSMAC4 is a planar model. The dialog's message names every axis that is zero throughout, and why.
 
 You can now execute the event, which demonstrates occupant motion in a frontal car crash.
 

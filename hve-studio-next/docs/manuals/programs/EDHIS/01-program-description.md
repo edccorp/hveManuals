@@ -20,7 +20,7 @@ The motion and forces resulting from human vs vehicle interactions are recorded 
 EDHIS inputs include one human, one vehicle, and an optional environment. Event set-up parameters include initial position and velocity for the human and vehicle, a collision pulse (the source may be a user-entered table or taken directly from another HVE event, such as EDSMAC4 [5]), an optional inhibition of selected human ellipsoid vs vehicle contacts, and restraint system in-use factors.
 
 !!! note "HVE Studio"
-    In HVE Studio the collision pulse is entered or imported in **Event › Collision Pulse**, or taken from another event of the same case that runs the same vehicle (*Take pulse from this event*). A pulse taken from another event carries that run's forward and lateral acceleration and its yaw acceleration; vertical, roll and pitch are left at zero because the stored run holds none of them. EDHIS reads an **acceleration** pulse only. See [Chapter 2](02-program-input.md#collision-pulse).
+    In HVE Studio the collision pulse is entered or imported in **Event › Collision Pulse**, or taken from another event of the same case that runs the same vehicle (*Take pulse from this event*). A pulse taken from another event is an acceleration table built from what that run recorded: all six axes from a six-degree-of-freedom engine such as SIMON, and zero on the axes a planar engine such as EDSMAC4 does not record (the dialog's message names them). EDHIS reads an **acceleration** pulse only. See [Chapter 2](02-program-input.md#collision-pulse).
 
 ## Model Outputs
 

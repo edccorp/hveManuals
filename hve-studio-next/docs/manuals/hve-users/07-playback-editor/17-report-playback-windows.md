@@ -21,7 +21,7 @@ This chapter describes how each of these is done in HVE Studio, beginning with t
 
 In Event mode (the **Event (F5)** tab), the following components take the place of HVE's Playback Editor:
 
-- **Viewport** — displays the current event's motion in 3-D, from any view: click a face of the view cube in its top-right corner for a preset view, or use a saved camera. It replaces HVE's Trajectory Simulation report windows.
+- **Viewport** — displays the current event's motion in 3-D, from any view: click a face of the view cube in its top-right corner for a preset view, or use a saved camera. The vectors switched on in the Viewport's overlay row (**Velocity**, **Collision force**) and in Preferences are drawn in **Playback** mode too, on each vehicle from the event that holds it. It replaces HVE's Trajectory Simulation report windows.
 - **Playback bar** — along the bottom of the Viewport: it plays the results forward, steps through them and jumps to any time. It replaces the Playback Controller.
 - **Output panels** — the Key Results and Output Graph panels, which dock beside the Viewport like any other panel; they replace HVE's Report Windows.
 - **Output menu** — opens the output panels and reports and the Playback Options. (The Playback Sequence is on the **Playback** menu, in Playback mode.)

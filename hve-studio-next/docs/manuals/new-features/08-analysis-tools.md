@@ -45,6 +45,12 @@ Use SIMON.*
    and heading), taken from the same numbers that are then written. **Apply to the active event**
    writes it as one undo step, and each value written is recorded in **Tools › Provenance** as
    stated, with the words it came from.
+   The reader knows which vehicles the active event has. A vehicle is found by its name, by "vehicle 2"
+   or "V2", or as "the first / second vehicle". "The other car" is the one that was not named just before,
+   when there are exactly two. "Both vehicles" or "all the cars" applies one change to each (a position
+   is refused for several at once: they would land on the same point). If the case has only one vehicle,
+   a sentence that names none means that one, and the list says it assumed so. Anything it cannot tie to
+   exactly one vehicle becomes a **Question**.
 4. A sentence that says to run it only shows **Run the active event**: a sentence never
    starts a run, and never changes the case because it asked for one.
 

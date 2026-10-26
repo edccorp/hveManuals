@@ -76,8 +76,10 @@ shows where the pulse came from (entered or imported here, or generated from
 another event's run), and offers:
 
 - **Pulse source** — choose another event of the case that runs this vehicle and
-  **Take pulse from this event**: the forward and lateral acceleration and the
-  yaw come from that run (HVE's *Pulse Data Source*)
+  **Take pulse from this event**: the table is built from that run's stored
+  motion as a Position, Velocity or Acceleration table (choose beside the
+  button); axes the run did not record are zero and the message names them
+  (HVE's *Pulse Data Source*)
 - **Pulse type** — how the table is interpreted (HVE's *Pulse Type*); **Clear
   pulse** removes it
 - **Start time** and **Threshold (g)**, and for the impulse pulse type the

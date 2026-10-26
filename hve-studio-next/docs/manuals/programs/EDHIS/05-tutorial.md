@@ -287,7 +287,7 @@ Now, let's set up the occupant simulation event:
 - Under *Vehicle Initial Conditions*, assign the same initial position as the one used in the previous EDSMAC4 event, X = `24` ft, Y = `75` ft and Heading = `-90` deg, with a Speed of `0` mph.
 - Open **Event › Collision Pulse**. In the *Source* list choose *Event 1 - Buick vs Ford* and click **Take pulse from this event**. The collision pulse (acceleration vs time history) for the Buick during the low-speed impact is displayed numerically, in an editable table, and graphically. Make sure the *Pulse type* is *Acceleration*.
 
-  > **NOTE:** The pulse taken from an EDSMAC4 run carries forward and lateral acceleration and the yaw acceleration; vertical, roll and pitch are zero, since EDSMAC4 is a planar model.
+  > **NOTE:** The pulse taken from an EDSMAC4 run carries forward and lateral acceleration and the yaw acceleration; vertical, roll and pitch are zero, since EDSMAC4 is a planar model. The dialog's message names every axis that is zero throughout.
 
 ![Figure 5-12](images/hvn-collision-pulse.png)
 *Figure 5-12: Collision Pulse dialog for the Buick Skylark.*

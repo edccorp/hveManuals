@@ -38,7 +38,7 @@ A check box for each of the occupant's fifteen body segments — **Pelvis**,
 **Lower Leg** and **Foot**, and the right and left **Upper Arm** and **Lower
 Arm** — the segments that may contact the bag. Only the selected segments
 develop contact forces with the bag. Read by GATB, which takes at most ten per
-bag: once ten are ticked the others grey, and a case that states more (an
+bag: once ten are ticked the others gray, and a case that states more (an
 imported one can) is refused for GATB, in words. With none selected, the run
 status notes it. EDHIS reads none of them: its bag acts on its own torso.
 

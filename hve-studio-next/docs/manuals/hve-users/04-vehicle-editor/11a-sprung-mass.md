@@ -793,7 +793,7 @@ Rebound and Bottom-out Moduli); and an **ATB Gas Dynamics (GATB)** section.
     Duration are read by EDHIS, the Begin Fill Time by EDHIS and GATB, and
     the Contact Segments and reaction panels by GATB (EDHIS's bag acts on its
     own torso and reads no contact selection). GATB takes at most ten contact
-    segments per bag: once ten are ticked the rest grey, and a case that
+    segments per bag: once ten are ticked the rest gray, and a case that
     states more is refused for GATB, in words. An occupant uses the bag at
     their seat (the human's Location) in the event's vehicle, and only when
     the occupant wears the **Airbag** in the event -- its own switch, with or
