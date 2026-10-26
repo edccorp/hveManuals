@@ -1,9 +1,9 @@
 # Chapter 14 — Environment Designer
 
 The Environment Designer is the Vehicle Designer's frame turned on the site:
-a stage bar (along the bottom; **Bar position** moves it to the top, left or right), a **Key figures** strip on the left that
+a stage bar along the bottom, a **Key figures** strip on the left that
 remembers what each number was, the site's panels hosted on the stage that
-asks their question, and a **Guidance** panel on the right whose
+asks their question, and a **Warnings & Suggestions** panel on the right whose
 rows name the fix and the stage that owns it. Open it with **Environment ›
 Environment Designer...** (the first item), and it is the Environment editor's
 panel: switching to the Environment editor (F4) opens it where the Environment
@@ -11,26 +11,23 @@ window used to open. **Environment › Environment...** still opens that window.
 
 It is an ordinary docked window, on the left with the 3-D view beside it by
 default: drag its tab to move it, float it, or dock it anywhere, and the
-arrangement is kept. Docked narrow, the **Key figures** and **Guidance** fold into the top of the stage; wider than about 1000 pixels they
+arrangement is kept. Docked narrow, the **Key figures** and **Warnings &
+Suggestions** fold into the top of the stage; wider than about 1000 pixels they
 are columns on either side. Every panel it hosts is the same panel the **Environment** window draws,
 so a field has one editor and nothing is reachable in one and not the other.
 
 ![Figure 14-1](../images/hvn-05-environment-designer.png)
 
-*Figure 14-1: The Environment Designer on its Site Files stage, filling the left of the work area with the 3-D view beside it.*
+*Figure 14-1: The Environment Designer on its Geometry stage, filling the left of the work area with the 3-D view beside it.*
 
 ## The stages
 
-1. **Site**: Location (placement, address, coordinates), the **Map**, and the data
-   for the area you choose on it: the **Download aerial image** button and the
-   **Geographic terrain (USGS 3DEP)** section both take the same area, so you
-   choose it once. **Aerial Image...** (the backdrop, in its own window) is
-   where you also place a picture of your own. The aerial is a backdrop and
-   reaches no solve; the terrain you download becomes drivable ground.
-2. **Site Files**: the files you bring in yourself: the scene geometry file, its
-   import frame and the survey point cloud — the Terrain section. The drivable
-   triangles here are what every vehicle runs on. (This stage was called
-   Geometry; downloaded data now lives under Site.)
+1. **Site**: Location (placement, address, coordinates) and **Aerial Image...**
+   (the backdrop, in its own window). Scene description; nothing here reaches
+   a solve.
+2. **Geometry**: the scene geometry file, its import frame and the survey point
+   cloud — the Terrain section. The drivable triangles here are what every
+   vehicle runs on.
 3. **Surfaces**: the Outliner's tree hosted on the stage (layers, surfaces and
    objects with their eye and Drive switches and each surface's **Type**;
    **Open the Outliner** puts the
@@ -101,8 +98,7 @@ Every section of the **Environment** window and every item of the
 |---|---|
 | Location | Site |
 | Aerial Image... | Site (opens its own window) |
-| Terrain: scene geometry, site placement, survey point cloud | Site Files |
-| Geographic terrain (USGS 3DEP), the aerial download | Site |
+| Terrain: scene geometry, site placement, survey point cloud | Geometry |
 | Terrain: Selected Surface | Surfaces |
 | Surface Generator | Surfaces |
 | Edit Mode (materials per face) | Surfaces |
@@ -122,12 +118,12 @@ triangles and the stated grade of a graded terrain; gravity, ambient
 temperature and site lights. **Set as baseline** under the strip
 keeps the current values as the "was" column for this case.
 
-## Guidance
+## Warnings & Suggestions
 
 | Grade | Stage | Rule |
 |---|---|---|
 | Fix | Surfaces | A drivable surface, or a generated surface applied to the run, has a friction multiplier of 0, which every tire reads as no friction. |
-| Fix | Site Files | The site names a geometry file but no triangle is drivable, so vehicles run on the default plane. |
+| Fix | Geometry | The site names a geometry file but no triangle is drivable, so vehicles run on the default plane. |
 | Note | Site | The site reaches more than 2 km from the origin, where single precision coarsens. |
 | Note | Weather | The stated gravity differs from 9.80665 m/s² by more than 1%. |
 | Consider | Surfaces | The drivable surface is more than one patch and the smallest is under 2% of the area, so its edge drops a wheel onto the default plane. |
@@ -135,10 +131,6 @@ keeps the current values as the "was" column for this case.
 | Fix | Site Check | The probe vehicle's CG ended at or below the ground, or sank more than 0.3 m: a hole or a seam there. |
 | Consider | Site Check | The probe vehicle's CG height above the ground changed by more than 0.1 m in 1 s: a step, a ramp edge or a bump. |
 | Consider | Site Check | The probe vehicle started off the drivable triangles or left them within its 2 m: a generated surface over no ground, or a patch too small to hold it. |
-| Consider | Surfaces | A downloaded terrain lies over other drivable surfaces. A wheel there finds one of them by the engines' own search (the first polygon in the list, or the one last used), not the higher one and not the Outliner's order. The message gives the shared area and the vertical gap. |
-| Note | Site Check | A note about where the site came from names a surface the site no longer has (removed, or the site was replaced). |
-| Consider | Site Check | The site's sources state different vertical datums, or one that disagrees with the Location's. Heights are never converted between datums. |
-| Note | Site Check | A downloaded terrain was resampled to a cell finer than the data's own spacing, so the surface is smoother than the survey. |
 
 A rule that lacks its input stays silent, and the count beside the panel's
 title lists what is checked on hover.

@@ -4,30 +4,25 @@ The HVE Driver model lets the simulation determine the steering, throttle and
 braking inputs required to follow a user-defined path (and, optionally,
 user-defined speeds along it).
 
-In HVE Studio this is the **Path Follower** tab of **Driver Controls** (Event
-editor, F5; **Event › Path Follower...** opens Driver Controls on it). It is
-stored per event per vehicle; the vehicle header at the top picks one of the
-event's vehicles. Inputs are locked while the event's results are on screen.
-
-The speeds are shown only when they are used: the **Speed (…)** column of the
-waypoint table and the **Speed Follower** tab's settings appear once **Use Speed
-Follower** is ticked (EDGEN, which has no driver, always shows the speeds, as it
-takes them as path data).
+In HVE Studio this is the **Path Follower** dialog: **Event › Path Follower...**
+in the Event editor (F5). It is stored per event per vehicle; the vehicle header
+at the top picks one of the event's vehicles. Inputs are locked while the
+event's results are on screen.
 
 ![Path Follower dialog](images/hvn-path-follower.png)
 
 !!! note "HVE Studio"
-    As in HVE, this is a page of the Driver Controls dialog. A line at
-    the top of the tab says what the active event's method does
+    In HVE this was the HVE Driver page of the Driver Controls dialog. A line at
+    the top of the HVE Studio dialog says what the active event's method does
     with it:
 
     - **SIMON**, **EDSMAC4** — run the HVE Driver model for each vehicle.
     - **EDVSM** — one vehicle, so this page is that vehicle's.
     - **EDVDS** — reads only the **tow unit's** page and steers the tow unit; a
-      trailer's page reaches no engine (and is grayed).
+      trailer's page reaches no engine (and is greyed).
     - **EDGEN** — generates its path through the waypoints but does not run the
       driver model; the gains, limits and filter have no effect.
-    - Every other method does not read the path follower, so the tab is not shown for it (nor for a trailer under EDVDS).
+    - Every other method does not read the path follower.
 
 ## Use Path Follower
 
@@ -38,7 +33,7 @@ and Throttle tables.
 ## Keep following through an impact
 
 !!! tip "New in HVE Studio"
-    Off (the default, and HVE's behavior), the path and speed follower stop at
+    Off (the default, and HVE's behaviour), the path and speed follower stop at
     this vehicle's first collision and never resume; steering reverts to the
     driver steer table. On, the follower keeps steering and pedalling toward its
     path through and after the impact. This is a deliberate departure from HVE —
@@ -88,7 +83,7 @@ only; the path follower of the other programs ignores it, as HVE's does.
 
 - With the vehicle's **Auto Position** on (Event panel), the program settles
   the vehicle on the ground at each node when it runs, so Z, Roll and Pitch are
-  shown grayed. With it off, they are what you enter.
+  shown greyed. With it off, they are what you enter.
 - A node that states no pose (a case saved by an earlier version) takes the
   initial position's.
 - **Add positions by clicking the 3-D viewport** — each click on the site's

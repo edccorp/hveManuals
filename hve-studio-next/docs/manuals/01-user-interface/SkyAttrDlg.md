@@ -1,0 +1,26 @@
+# Sky Attributes Dialog Box
+
+Sky attributes determine the appearance of the background and the lighting of the scene. In HVE Studio the sky and its lighting are part of the scene's **world**, edited in the **Shader Editor** (**View › Shader Editor**). The Environment Editor's **Environment** panel has a **Sky** section that summarizes the sun (azimuth, elevation, whether it comes from the location and time or is set by hand, its strength), with an **Edit the sun and sky...** button that opens the Shader Editor on the world.
+
+## Ambient Light Intensity
+**Ambient** and **Night Light**, fields on the world's **Sky Texture** node in the Shader Editor. **Ambient** scales the light the sky gives the scene (1.00 is the viewport's own); **Night Light** is the fraction of the daytime fill that stays once the sky is dark. Together they may be used for visualizing various levels of daylight, dusk/dawn and darkness.
+
+## Set Sky Color
+The sky's color and brightness come from the world's shader nodes (a sky texture or a background color) in the Shader Editor.
+
+## The sun (Sun & Sky section)
+Not in HVE's Sky Attributes dialog, but part of the sky in HVE Studio: **Set by hand** (**Sun Rotation**, **Sun Elevation**) or **From location and time** (latitude, longitude, date and time, UTC offset, daylight saving, north direction, with a choice of sun-position method and refraction), **Sun Light** (strength) and **Reset sun to default**.
+
+!!! warning "Not in HVE Studio"
+    **Fog Type** (None, Haze, Fog, Smoke), **Visibility** and **Set Fog Color**: there is no distance fog. The sky texture node's *Haze* setting veils the sky, and with **View › Scene Display › Sky & Reflections › Distance Haze** on it also fades far geometry toward the horizon color in the viewport. It is a picture only, not a visibility distance.
+
+!!! note "HVE Studio"
+    The sky and the sun are display only: they change the picture, not a result.
+
+<!-- NAV -->
+
+---
+
+← Previous: [Set Grid Dialog Box](SetGridDlg.md)  |  [Index](README.md)  |  Next: [Text Editor Dialog Box](TextEdDlg.md) →
+
+<!-- /NAV -->

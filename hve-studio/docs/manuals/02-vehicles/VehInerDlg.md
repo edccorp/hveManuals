@@ -54,7 +54,7 @@ engine receives the load is described in
 - **Added to the vehicle (every engine)** — the vehicle's weight, CG and rotational inertia are combined with the load before any engine runs, the same way in every engine.
 - **As payload in SIMON and EDVDS (the suspension sags)** — SIMON and EDVDS receive the load as the event's payload, combined with any payload the event states; every other engine gets it added to the vehicle, and the run status says so.
 
-### On the centerline (ignore sideways offsets)
+### On the centreline (ignore sideways offsets)
 Counts each item's weight and its fore-and-aft and height position, but not its sideways offset, so that a lone driver does not pull the vehicle off a straight line.
 
 ### The list
@@ -74,7 +74,7 @@ Values take effect as they are typed, so the dialog has a single **Close** butto
 
 If the sprung mass comes out zero or negative (the total mass is less than the tire weights), the dialog says so in orange and the Total columns show the sprung values until it is corrected.
 
-**Auto Update Inertia When Weight Changes** (a checkbox under **Rotational Inertia**, off by default and kept as your own setting, not the vehicle's, as in HVE): a typed weight or mass, total or sprung, here or in **Size & Weight**, multiplies the **total** roll, pitch and yaw inertias by the new total mass over the old one; the sprung values follow by the parallel axis theorem and the XZ product is kept. An axis with nothing stated uses the estimate, which follows the mass anyway.
+**Auto Update Inertia When Weight Changes** (a checkbox under **Rotational Inertia**, off by default and kept as your own setting, not the vehicle's, as in HVE): a typed weight or mass, total or sprung, here or as **Total Weight** in **Size & Weight**, multiplies the **total** roll, pitch and yaw inertias by the new total mass over the old one; the sprung values follow by the parallel axis theorem and the XZ product is kept. An axis with nothing stated uses the estimate, which follows the mass anyway.
 
 !!! warning "Not in HVE Studio"
     - **Basic... / Complex...**: both columns are always shown.

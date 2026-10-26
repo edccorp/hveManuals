@@ -73,8 +73,8 @@ Selecting faces:
 | **Shift**+click | Adds a face to the selection, or removes it |
 | **A** | Selects every face of the clicked face's surface that is not hidden (**Shift+A** adds them to the selection) |
 | **Alt+A** | Selects no face |
-| **B** | Drag a box in the Viewport: every face whose center is inside it is added (**Ctrl**+drag removes). The box sees through the site, so hidden faces are taken too |
-| **L** | Grows the selection across edges to faces of the same surface that lie flat with it (within 1 degree): the polygon the importer split into triangles, or a flat run of road up to its curb |
+| **B** | Drag a box in the Viewport: every face whose centre is inside it is added (**Ctrl**+drag removes). The box sees through the site, so hidden faces are taken too |
+| **L** | Grows the selection across edges to faces of the same surface that lie flat with it (within 1 degree): the polygon the importer split into triangles, or a flat run of road up to its kerb |
 | **H** | Hides the selected faces |
 | **Shift+H** | Hides every other face |
 | **Alt+H** | Shows every hidden face again |
@@ -94,7 +94,7 @@ them a material of their own:
   wear several, or their surface's. Choose another from the list.
 - **+ New** — a new material for the selected faces alone, drawing them as
   they are now.
-- **Edit in Shader Editor** — opens the material the faces wear. Grayed until
+- **Edit in Shader Editor** — opens the material the faces wear. Greyed until
   they wear one of their own.
 - **Clear** — the selected faces wear their surface's material again.
 
@@ -126,9 +126,6 @@ The **Location** section records where and when the accident happened:
 
 - **Name** — a name for the environment (the site).
 - **Date** and **Time** — the date and the local time of the crash or test.
-  An empty field shows its form as a placeholder, **mm/dd/yyyy** and
-  **hh:mm**. A date also reads as mm/dd/yy or yyyy-mm-dd, and a time as 14:30,
-  1430 or 7:05:30.
 - **Latitude** and **Longitude** — the site's coordinates in decimal
   degrees. North latitude and east longitude are positive; a west
   longitude is negative.
@@ -215,7 +212,7 @@ softness**; then its **Color** and **Intensity** (1 is about a headlamp).
 
 A site light comes on as the sky darkens, as a vehicle's lamps do, unless **On
 in daylight too** is ticked. While the Environment is selected, the Viewport
-marks each light with a yellow sphere (gray when switched off, orange when
+marks each light with a yellow sphere (grey when switched off, orange when
 selected), a dotted line down to the ground and, for a spot, a short line along
 its aim. Click a sphere to select its light; **Shift**-click (in the view, the
 Lights list or the Outliner) adds a light to the selection or takes it out, and
@@ -273,7 +270,7 @@ Environment panel's Sky section or the Event panel's Lighting section). The
     are not available. A value imported from an HVE case is kept with the
     case, but there is no control for it, so HVE Studio cannot be used for
     HVE's visibility studies. The viewport's **Distance Haze** (View › Scene
-    Display › Sky & Reflections) fades far geometry toward the sky's horizon color by
+    Display › Sky & Reflections) fades far geometry toward the sky's horizon colour by
     the **Haze** of the World material's Sky Texture node; it is a picture,
     not a visibility distance, and draws nothing while Haze is 0 (the
     default sky), with no World material, or with Scene Lighting off. HVE's
@@ -304,7 +301,7 @@ panel's **Terrain** section:
 
 - **Geometry File** and **Browse...** — the geometry file to import.
 - **Scale Factor** — multiplies the file's coordinates to convert its units
-  to meters (for example 0.3048 for a drawing in feet, 0.0254 for one in
+  to metres (for example 0.3048 for a drawing in feet, 0.0254 for one in
   inches). For an `.h3d` file this is **Extra Scale**, applied on top of
   the file's own units.
 - **File is Y-up (rotate to Z-up)** and **File is Z-down (Flip About
@@ -398,7 +395,7 @@ ground the vehicles drive on and its picture together:
 - **Move X (forward)**, **Move Y (right)** and **Move Z (up)** — how far the
   site is moved, in the length units of **Preferences**.
 - **Turn (deg)** — how far it is turned about the vertical through its
-  center; a positive turn is to the right.
+  centre; a positive turn is to the right.
 - **Scale (x, y, z)** — a factor along each of the site's own axes, about
   the middle of its box (1 = as read). The scale is applied first, then the
   turn, then the move.
@@ -406,12 +403,12 @@ ground the vehicles drive on and its picture together:
 
 A selected surface has the same fields under **Placement** in the
 **Selected Surface** section. A surface turns and scales about its own
-center, and the site's placement then carries it with everything else.
+centre, and the site's placement then carries it with everything else.
 
 In the Viewport, **G** moves, **R** turns and **S** scales the selected
 surface, or the whole site when no surface is selected. **X**, **Y** or
 **Z** locks the motion to an axis (with **S**, scales that axis alone), a
-typed number gives an exact distance (meters), angle (degrees) or scale
+typed number gives an exact distance (metres), angle (degrees) or scale
 factor, **Enter** or a left click keeps it, and **Esc** or a right click
 puts it back. **Ctrl** steps by 0.5 m, 15 degrees or a factor of 0.1.
 
@@ -419,7 +416,7 @@ Several surfaces can be selected at once: **Ctrl**- or **Shift**-click rows
 in **View › Outliner**, click a layer's row there (it selects every surface
 in the layer), or **Shift**-click surfaces in the Viewport. **G**, **R** and
 **S** then move, turn and scale them together as one body about their common
-center; each keeps its own placement. If any of them moves only with the
+centre; each keeps its own placement. If any of them moves only with the
 whole site (see the note below), the move is refused and the Viewport says
 how many to deselect.
 
@@ -458,7 +455,7 @@ Blender's Shade Flat / Shade Smooth does:
 - **Smooth** — the normals of all faces meeting at a point are averaged, so
   a graded road stops showing its triangles.
 - **Auto Smooth** — averaged only between faces within the **Auto Smooth
-  Angle** of each other, so curbs and building edges stay sharp.
+  Angle** of each other, so kerbs and building edges stay sharp.
 
 > **NOTE:** Shading is display only; no engine reads it. A photographed site
 > drawn self-lit is not affected.
@@ -468,7 +465,7 @@ Blender's Shade Flat / Shade Smooth does:
 !!! tip "New in HVE Studio"
     The **Survey Point Cloud (scan)** part of the Terrain section shows a
     laser scan or photogrammetry point cloud (LAS, PLY, E57, XYZ/PTS/TXT/CSV)
-    behind the simulation, with its own scale, axis options, color mode,
+    behind the simulation, with its own scale, axis options, colour mode,
     point size and placement (offset, yaw, pitch, roll). A point cloud is a
     picture, not a surface: vehicles cannot drive on it, settle onto it or
     collide with it. Import a site surface for what the vehicle drove on, or
@@ -483,10 +480,10 @@ Toolkit's *Create Roadway Surface* in Blender:
 | Setting | Meaning |
 |---|---|
 | **Cell size** | The grid spacing (default 0.305 m, one foot). |
-| **Use the file's ground class** | Drape only the points the scan file classifies as ground (class 2). Survey processing software usually separates ground from cars, curbs and trees better than the percentile alone can. Offered only when the file has ground-classified points (LAS and PLY can carry classes; E57 and text files cannot). The settings below still apply to what is left. |
+| **Use the file's ground class** | Drape only the points the scan file classifies as ground (class 2). Survey processing software usually separates ground from cars, kerbs and trees better than the percentile alone can. Offered only when the file has ground-classified points (LAS and PLY can carry classes; E57 and text files cannot). The settings below still apply to what is left. |
 | **Ground percentile** | Each grid point takes this low percentile of the scan heights within half a cell of it, so the road under a parked car is kept and the car is not. |
-| **Fill holes / Max fill** | Grid points with no scan data are filled from their neighbors, up to this distance from measured ground (0 = any distance), and smoothed to follow the slope of the ground around them. Ground further away is left as a hole. |
-| **Below-grade reject** | A single return this far below *all* its neighbors is ignored. |
+| **Fill holes / Max fill** | Grid points with no scan data are filled from their neighbours, up to this distance from measured ground (0 = any distance), and smoothed to follow the slope of the ground around them. Ground further away is left as a hole. |
+| **Below-grade reject** | A single return this far below *all* its neighbours is ignored. |
 | **Spike reject above / Spike width max** | Anything rising this far above the local ground and no wider than this (a vehicle, a pole) is removed and filled. |
 
 Click **Create Drivable Surface...** and choose where to save the surface (an
@@ -499,11 +496,11 @@ settings used.
 **Texture the surface** (on by default) paints the surface. **Shows** picks
 what with:
 
-- **Scan color** -- the scan's own colors, or its intensity in gray if it
-  has no color. Points more than **Color height tolerance** above or below
-  the surface are left out, so a parked car does not color the road.
+- **Scan colour** -- the scan's own colours, or its intensity in grey if it
+  has no colour. Points more than **Colour height tolerance** above or below
+  the surface are left out, so a parked car does not colour the road.
 - **Coverage (measured / filled)** -- green where the height came from scan
-  points, amber where it was filled in from the neighbors (under a car, in a
+  points, amber where it was filled in from the neighbours (under a car, in a
   scan shadow), red where points were removed as a spike and the gap filled.
 - **Fit (distance from the scan)** -- how far the scan's ground points lie from
   the surface: green at 0, yellow at 5 cm, red at 10 cm and over; blue-grey
@@ -511,7 +508,7 @@ what with:
   mean and the 95th percentile.
 
 The two quality maps are for checking a surface before running on it; build it
-again with **Scan color** for the finished site. **Texture size** sets the
+again with **Scan colour** for the finished site. **Texture size** sets the
 image's resolution. The image is saved beside the surface as a `.png`, with a
 `.mtl` file that names it.
 
@@ -604,67 +601,11 @@ under the site. Choose **Environment › Aerial Image...** to display the
   (**UL X**, **UL Y**) and lower-right (**LR X**, **LR Y**) corners, which
   fix its position and scale. **Default** restores ±100 m.
 
-### Place a picture on the ground
-
-!!! tip "New in HVE Studio"
-    The **Place a picture on the ground** section of the same dialog places a
-    picture of your own by what it knows about where it is, or by points you
-    give, and writes it as the case's aerial image. It is resampled to the
-    case's axes, so a picture that is north-up in a map projection lands
-    correctly on a case whose +X points elsewhere.
-
-Type or choose the **Picture** (PNG, JPEG, BMP, TGA, or an 8-bit RGB or RGBA
-GeoTIFF) and press **Open**. The dialog says how big it is and whether it found
-a georeference: the GeoTIFF's own tags, or a world file beside it (`.pgw` for a
-PNG, `.jgw` for a JPEG, `.tfw` for a TIFF, `.bpw` for a BMP, or `.wld`).
-
-**By its georeference.** A world file states no coordinate system, so give its
-EPSG code in **EPSG**; **Location's** fills in the one set under Coordinate
-system. **Place by georeference** needs the case's Location (a place on the
-Earth) because the picture is placed relative to it. Rotated world files are
-read. Systems this build carries: WGS 84, Web Mercator, and UTM on WGS 84, NAD83
-or ETRS89. No datum shift is applied (NAD83 is treated as WGS 84).
-
-**By control points.** Use this when the picture has no georeference. The
-picture is shown above the point rows. **Click** it to mark a point: the click
-fills in that point's **col** and **row** (to a tenth of a pixel) and a numbered
-cross shows where it is. The radio button beside a row picks which point the
-next click moves; with none picked, a click adds a new point. **View** zooms the
-picture (**Fit**, **2x**, **4x**) so a corner can be picked to the pixel; hover
-to read the pixel under the pointer. Opening another picture clears the points.
-**Add point** adds a row by hand: the point's pixel position in the picture (**col**, **row**
-from its top-left corner) against its place on the ground in case coordinates
-(**x**, **y**). **Remove** deletes a row and **Clear points** all of them. Two
-points fix a **Similarity** fit (rotate, scale, move); three fix an **Affine**
-fit, which also stretches and shears. With more points than that the dialog
-shows the root-mean-square residual and each point's own residual in meters, so
-a mistyped point stands out. With exactly the minimum the residuals are zero by
-construction and the dialog says they tell you nothing. A fit that would lay the
-picture down mirrored is refused: it means two points are swapped.
-**Place by control points** applies the fit.
-
-Either way the image is written as a PNG next to the case file (a temporary
-folder for a case not yet saved) and the dialog reports where. The record shows
-the file, how it was placed and, for control points, the residuals. A picture
-you chose is yours: the record does not claim any provider's terms.
-
 ![Figure 12-6](../images/hvn-05-aerial-image.png)
 *Figure 12-6: Aerial Image Options dialog.*
 
 > **NOTE:** An aerial image is a picture. It provides no elevation, slope or
 > friction to the engines.
-
-> **NOTE:** In the 3-D view the picture follows the ground exactly: over a site
-> with terrain it is drawn on the terrain's own triangles, so it cannot cut across
-> a bump or float over a dip (a tire resting on the ground is not sliced by it).
-> Where there is no ground under it, it lies at ground level. This is a display;
-> it changes no surface the engines drive on.
-
-The picture's visibility and **Opacity** can also be changed without opening
-this dialog: in the Outliner, click the percentage on the aerial image's row (it
-is the opacity) to open a slider, and the eye shows or hides it; in the Shader
-Editor, the **Aerial image** checkbox and **Opacity** slider at the top do the
-same. All three change the one setting.
 
 > **NOTE:** Confirm the image's scale against two landmarks a known
 > distance apart before relying on it.

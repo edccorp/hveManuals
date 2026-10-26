@@ -30,6 +30,10 @@ jobs:
       # hve-studio/mkdocs.yml.
       - name: Build the HVE Studio manuals into /studio/
         run: mkdocs build --strict -f hve-studio/mkdocs.yml -d ../site/studio
+      # The DEVELOPMENT preview of the same manuals: what hve-next's main describes, ahead of the release, under /studio/next/.
+      # Built after /studio/ (mkdocs empties its output directory first). Nightly syncs write only hve-studio-next/.
+      - name: Build the HVE Studio development manuals into /studio/next/
+        run: mkdocs build --strict -f hve-studio-next/mkdocs.yml -d ../site/studio/next
       # They were under /2027/ until the product was named HVE Studio
       # (2026-10-20): an old link to any page there lands on the new home.
       - name: Send /2027/ to /studio/

@@ -81,7 +81,7 @@ another event's run), and offers:
 - **Pulse type** — how the table is interpreted (HVE's *Pulse Type*); **Clear
   pulse** removes it
 - **Start time** and **Threshold (g)**, and for the impulse pulse type the
-  **Impulse center X, Y, Z**, which only that type reads (HVE's *Collision
+  **Impulse centre X, Y, Z**, which only that type reads (HVE's *Collision
   Pulse Options*). The threshold reaches no engine, in HVE or in HVE Studio.
 - **Scale factors** — a factor for each column (HVE's *Collision Pulse
   Factors*)
@@ -153,8 +153,8 @@ vehicle)**: for each vehicle in the active event, **This event states its own
 preparation** and, when it is ticked, that event's **Tessellate**, maximum
 triangle leg and weld distance, which outrank the vehicle's defaults (Vehicle
 Mesh › Collision). They are read by SIMON's DyMESH, and by EDSMAC4 when it
-initializes its rho vectors from the vehicle mesh. Options that the engine
-carries but does not read are labeled as such in the dialog, with the
+initialises its rho vectors from the vehicle mesh. Options that the engine
+carries but does not read are labelled as such in the dialog, with the
 reason.
 
 ![The DyMESH Options dialog](../images/hvn-01-dymesh-options.png)
@@ -328,7 +328,7 @@ not affect the run.
 
 ## IMPACT PLANE / BARRIER
 
-**Menu Option:** Event › Impact Plane / Barrier... (shown for EDCRASH, grayed)
+**Menu Option:** Event › Impact Plane / Barrier... (shown for EDCRASH, greyed)
 
 !!! warning "Not in HVE Studio"
     Not implemented. Model a barrier as a **Fixed Barrier** vehicle (vehicle type

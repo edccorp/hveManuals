@@ -38,10 +38,10 @@ A camera mounted this way is a **vehicle camera**: the Vehicle editor's Outliner
 Shown when the camera is aimed at a vehicle. **Aim X fwd**, **Aim Y right**, **Aim Z down**: the point the camera looks at, relative to the aimed-at vehicle's CG; it turns with the vehicle, so a point ahead stays ahead through a turn. **Look ahead** and **Aim at the vehicle** set typical values.
 
 ### Camera Coordinates
-**Eye X fwd**, **Eye Y right**, **Eye Z up**: the camera position in the scene (grayed when the camera rides on a vehicle).
+**Eye X fwd**, **Eye Y right**, **Eye Z up**: the camera position in the scene (greyed when the camera rides on a vehicle).
 
 ### Picture Center
-**Center X fwd**, **Center Y right**, **Center Z up**: the point at the center of the view (grayed when the camera is aimed at a vehicle).
+**Center X fwd**, **Center Y right**, **Center Z up**: the point at the center of the view (greyed when the camera is aimed at a vehicle).
 
 ### Roll (deg)
 Rotates the camera about its viewing axis, tilting (banking) the picture. 0 keeps the horizon level. HVE's *Camera Tilt Angle*.

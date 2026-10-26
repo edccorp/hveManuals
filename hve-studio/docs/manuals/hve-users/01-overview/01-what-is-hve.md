@@ -145,7 +145,7 @@ methods HVE Studio can run are HVE's, plus one new one:
 
 The Method list marks a method whose output has not yet been checked against HVE
 as *(unvalidated)*, and a method the event's vehicles cannot use as *N/A for
-these vehicles*. An HVE event that uses a program HVE Studio does not recognize
+these vehicles*. An HVE event that uses a program HVE Studio does not recognise
 opens and displays but cannot be run. The program manuals
 describe each method: see the [program manuals](../../programs/README.md).
 

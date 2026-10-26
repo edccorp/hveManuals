@@ -83,7 +83,7 @@ All of them are listed in
 ## What to expect if you know HVE
 
 - **The inputs are HVE's inputs.** Vehicle, human, environment and event data
-  are organized the way HVE organises them, under HVE's names, and most dialogs
+  are organised the way HVE organises them, under HVE's names, and most dialogs
   are ports of HVE's own dialogs. A few are merged, moved or split; the
   [Differences](05-differences-from-hve.md#user-interface-differences) page
   lists them.

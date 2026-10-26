@@ -50,7 +50,7 @@ To add the same vehicle to a new case instead:
 The one vehicle feature this tutorial is about is the ABS system. In HVE Studio antilock is fitted per wheel, or for the whole vehicle with **ABS Installed** in **Vehicle › Editors › Brakes › ABS / Brake Design... › ABS System...**; SIMON regulates every wheel when either is set:
 
 1. Choose **Vehicle › Editors › Brakes › Brake Assembly...**. The *Brake Assembly* dialog is displayed, one column per wheel (Figure 5-2).
-2. The **Antilock (ABS)** row has a checkbox for each wheel. Wheels in the same brake group change together.
+2. The **Antilock (ABS)** row has a checkbox for each wheel. Wheels in the same link group change together.
 
 ![Figure 5-2](images/hvn-tut-brake-assembly.png)
 *Figure 5-2: The Brake Assembly dialog. The Antilock (ABS) row fits ABS per wheel; the ABS controller itself is set up in Vehicle › Editors › Brakes › ABS / Brake Design... › ABS System....*

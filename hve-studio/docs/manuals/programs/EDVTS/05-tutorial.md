@@ -68,7 +68,7 @@ Choose **File › Save Case As…** to save your working copy as an HVE Studio c
 The event simulates a tractor-trailer leaving the freeway onto the off-ramp, to determine whether the ramp is negotiable at the posted speed. Choose the **Event (F5)** editor tab (Figure 5-2).
 
 ![Figure 5-2](images/hvn-edvts-event-editor.png)
-*Figure 5-2: The tutorial event in the HVE Studio Event editor. The trailer's position (V2) is grayed because it is derived from the tractor and the hitch; only its Articulation is entered.*
+*Figure 5-2: The tutorial event in the HVE Studio Event editor. The trailer's position (V2) is greyed because it is derived from the tractor and the hitch; only its Articulation is entered.*
 
 In the **Event Information** panel:
 

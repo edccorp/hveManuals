@@ -7,9 +7,9 @@ HVE Studio shows one table with a column per wheel (**A1 Left**, **A1 Right**, *
 !!! note "HVE Studio"
     An orange note at the top of the dialog says which engines use the table: **EDVSM** reads it, in each wheel's suspension force; SIMON only prints it on a report page; no other engine reads it. This is HVE's own behavior.
 
-## Suspension Group
+## Link Group
 
-Four small buttons per wheel: **-**, **S1**, **S2** and **S3**. Wheels in the same group share their values, as in the [Jounce and Rebound Stops Dialog](JouAndRebDlg.md).
+Four small buttons per wheel: **-**, **A**, **B** and **C**. Wheels in the same group share their values, as in the [Jounce and Rebound Stops Dialog](JouAndRebDlg.md).
 
 ## Data Table
 

@@ -91,7 +91,7 @@ Now we have our humans, so let's add the vehicles. First, the two vehicles invol
 
 Next, we edit the vehicles: the Buick and the Plymouth van need contact surfaces for the human simulations. The contact surfaces are the *physical* surfaces that interact with the human ellipsoids to produce forces.
 
-> **NOTE:** HVE's tutorial also changes each vehicle's color. Color is display only and is not needed for the simulation; it is not covered here.
+> **NOTE:** HVE's tutorial also changes each vehicle's colour. Colour is display only and is not needed for the simulation; it is not covered here.
 
 Let's start with the Buick. This vehicle was struck from the rear, and we wish to simulate its occupant during the low-speed impact.
 

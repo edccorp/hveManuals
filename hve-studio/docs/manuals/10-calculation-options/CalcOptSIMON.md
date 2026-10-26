@@ -20,7 +20,7 @@ used to be.
 
 ## Integration
 
-**Method** is shown grayed at *Fixed Runge-Kutta* and marked *(inert)*. SIMON
+**Method** is shown greyed at *Fixed Runge-Kutta* and marked *(inert)*. SIMON
 always integrates with a fixed-step Runge-Kutta method, in HVE as well as in
 HVE Studio, whatever a case stores; an imported case's stored value is left as
 the file has it. To change the step size, use *Trajectory Timestep* in the
@@ -69,7 +69,7 @@ Simulation panel.
   **+** in Event Information or built by Case Intake. A case imported from HVE
   keeps the model its file states. G. Rill's TMeasy tire model: a force
   curve in each direction (initial slope, peak, sliding) built from the tire
-  inputs, with braking and cornering combined on one normalized slip. It uses
+  inputs, with braking and cornering combined on one normalised slip. It uses
   three shape inputs of its own, the **TMeasy** rows of the Tire Properties
   table (see [TMeasy rows](../05-tires-wheels/TirePhyDataDlg.md#tmeasy-rows)).
 
@@ -112,7 +112,7 @@ they are still touching.
 
 !!! note "HVE Studio"
     EDSMAC4 has the same option, stored with the **opposite** meaning. Each
-    window is labeled for its own engine; choose by the label.
+    window is labelled for its own engine; choose by the label.
 
 **Connection constraint** — **Use both vehicles**, **Use heavier vehicle**
 (default) or **Use tow vehicle properties**. The first two derive the hitch spring

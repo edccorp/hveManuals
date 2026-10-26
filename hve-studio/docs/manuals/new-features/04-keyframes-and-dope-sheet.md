@@ -2,7 +2,7 @@
 
 !!! tip "New in HVE Studio"
     Any value on a material node, and any saved camera, can be animated against
-    **playback time** — a lamp that flashes, a paint that changes color at the
+    **playback time** — a lamp that flashes, a paint that changes colour at the
     moment of impact, a camera that flies in. The **Dope Sheet** shows every
     animated value in the case on one time axis and lets you edit the keys.
 
@@ -21,14 +21,14 @@ playback scrubber's.
 ## Keying a material value
 
 In the [Shader Editor](01-materials-and-shader-editor.md), every value on a
-node that is **not linked** — a number, a color, a vector — has a small
+node that is **not linked** — a number, a colour, a vector — has a small
 diamond in front of it.
 
 | Diamond | Means |
 | --- | --- |
 | Filled | There is a key at the current playback time |
 | Yellow outline | The value is animated, but has no key at this time |
-| Gray | Not animated |
+| Grey | Not animated |
 
 To animate a value:
 
@@ -74,7 +74,7 @@ effect at the start), **Ease Out** (at the end), **Ease In and Out** (both), or
 **Automatic** — Ease In, except Back and Bounce, which are Ease Out. This is
 Blender's rule. Blender's *Elastic* is not offered.
 
-Colors are interpolated in linear light, as Blender interpolates them.
+Colours are interpolated in linear light, as Blender interpolates them.
 
 ## Extrapolation and cycles — per channel
 
@@ -116,7 +116,7 @@ currently wears, which the Shader Editor cannot reach.
 ![The Dope Sheet](images/hvn-dope-sheet.png)
 
 **Rows.** A header per material (or *Camera: name*), its summary diamonds (one
-per key time), then one row per animated channel. A gray bar between two keys
+per key time), then one row per animated channel. A grey bar between two keys
 is a Constant hold. The span of the run is shaded. A channel that cycles or
 extrapolates linearly says so after its name, and a cycled channel's repeats
 are drawn as faint diamonds (they cannot be picked).
@@ -166,7 +166,7 @@ how many keys are selected and the current time.
 ### The Curves view
 
 **Curves** (beside **Dope Sheet** at the top) shows each channel's value over
-time — the Graph Editor of Blender. A color or a vector draws three curves,
+time — the Graph Editor of Blender. A colour or a vector draws three curves,
 red, green and blue. The curves are drawn as evaluated, so repeats and
 extrapolated ends show as the curve itself.
 

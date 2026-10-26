@@ -10,7 +10,7 @@ properties, the Wheel Location and the Wheel Image.
 !!! note "HVE Studio"
     HVE Studio edits the brakes and tires of every wheel at once, in tables
     with a column per wheel (A1 Left, A1 Right, …). As in the suspension
-    dialogs, a group row (**Tire Group**, **Brake Group** or **Wheel Group**, by editor) replaces HVE's Copy To Other Side: columns
+    dialogs, a **Link Group** row replaces HVE's Copy To Other Side: columns
     in the same group receive each other's edits. Brake Assembly, the Brake
     Designer and ABS share the brakes' groups, and a vehicle starts with
     wheels whose brakes are identical in the same group: the first kind of
@@ -31,8 +31,8 @@ Components › Brakes… › Brake Assembly…). See also the reference page,
 *Figure 11-36: Brake Assembly dialog (HVE Studio), one column per wheel.*
 
 The dialog's rows are: **Brake Type**; **Design…** (a button per wheel that
-opens the Brake Designer on that wheel; grayed for a Generic brake);
-Actuation — **Time Lag (s)**, **Time Rise (s)**,
+opens the Brake Designer on that wheel; greyed for a Generic brake);
+Actuation — **Balance Ratio** (greyed, unused), **Time Lag (s)**, **Time Rise (s)**,
 **P-Start**, **Pushout** and **Torque Ratio**; Options — **Proportioning**,
 **Proportion Ratio**, **Antilock (ABS)** and **ABS Efficiency**.
 
@@ -139,7 +139,7 @@ Brake Designer also includes a detailed tool for simulating ABS.
 In HVE Studio the Brake Designer is **Vehicle › Editors › Brakes › Brake Designer**: choose the
 wheel (the **Wheel:** buttons, **A1 Left**, **A1 Right**, ...) and the **Brake Design**, enter the Design
 Parameters, read the **Results**, and press **Apply to group**, which writes the
-design to every wheel of the wheel's **Brake Group** (**Apply to this wheel**
+design to every wheel of the wheel's brake link group (**Apply to this wheel**
 for a wheel outside any group). The Brake Designer also opens on a wheel from the Brake
 Assembly dialog's Design… row, and a design's lining friction is in its
 **Lining Friction Properties** section. HVE's Brake Material Properties
@@ -191,7 +191,7 @@ the Tire Information dialog in HVE. See also the reference page,
     - The **Load & Speed Tables** panel under the grid — the tables of one
       wheel at a time (chosen with the **Wheel:** buttons, **A1 Left**,
       **A1 Right**, ...), on four tabs: **Friction**, **Cornering**,
-      **Camber** and **Fy Roll-off**. The wheel's **Tire Group** carries an
+      **Camber** and **Fy Roll-off**. The wheel's **Link Group** carries an
       edit to every wheel of its group, and a line names them. A drag bar between
       the grid and the panel resizes them. Edits apply immediately and
       **Edit › Undo** takes them back.
@@ -541,11 +541,11 @@ down). Left and right may differ.
       CG to axle, track and CG height).
     - An axle whose **Linked L/R** box is ticked (the default for a mirrored
       pair) follows the dimensions: typing the wheelbase, an axle distance or
-      a track width moves its wheels, and nothing is grayed. Once an axle is
+      a track width moves its wheels, and nothing is greyed. Once an axle is
       unlinked and its wheels carry their own X, the wheelbase, CG-to-axle
       distances, axle spacing and overhangs follow from them, as HVE derives
-      them, and are grayed in Size & Weight, showing the wheels' values; an
-      unlinked axle whose wheels carry their own Y has its track width grayed
+      them, and are greyed in Size & Weight, showing the wheels' values; an
+      unlinked axle whose wheels carry their own Y has its track width greyed
       the same way. A note above them says so, and only then. Moving an end axle's wheels keeps the
       body's ends where they were: the overhang takes up the move. Overall
       Length still sets the body's length, and a typed weight split or axle

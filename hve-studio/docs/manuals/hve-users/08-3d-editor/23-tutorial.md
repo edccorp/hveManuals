@@ -20,7 +20,7 @@ If the site was built in HVE's 3-D Editor, open the case directly:
 
 1. Select the **Environment (F4)** tab and choose **Environment › Environment…**.
 2. Open the **Terrain** section. Under **Scene Geometry (DXF / .h3d / .iv / OBJ / glTF)**, type the file name in **Geometry File** or press **Browse…**.
-3. Set the **Scale Factor** (an **Extra Scale** for `.h3d`) and, if the file was modeled Y-up, tick **File is Y-up (rotate to Z-up)**.
+3. Set the **Scale Factor** (an **Extra Scale** for `.h3d`) and, if the file was modelled Y-up, tick **File is Y-up (rotate to Z-up)**.
 4. Tick **Use surfaces as terrain (physics)** if vehicles are to drive on the site; leave it clear for geometry that is only a backdrop. (For DXF, OBJ and glTF files, check the elevation range in the summary against the site you expect: nothing in such a file says which way is up, and **File is Z-down (Flip About X-Axis)** corrects one that is inverted.)
 5. Press **Import**. The panel reports the number of surfaces and the extents of the site, and the site is drawn in the Viewport.
 
@@ -48,7 +48,7 @@ Each surface's physical properties take the place of HVE's Object Type and Frict
 
 ### Assigning Material and Texture Attributes
 
-The Shader Editor's material graph controls only what the surface looks like. Leave the default *Object Color → Principled BSDF → Material Output* graph to keep the file's own colors, or add an **Image Texture** node to apply a photograph. Nothing in the material changes a result.
+The Shader Editor's material graph controls only what the surface looks like. Leave the default *Object Color → Principled BSDF → Material Output* graph to keep the file's own colours, or add an **Image Texture** node to apply a photograph. Nothing in the material changes a result.
 
 ### Assigning an Overlay Name
 
@@ -68,13 +68,13 @@ This lesson has no counterpart in HVE's 3-D Editor tutorial; it uses the gizmo t
 1. Select the **Event (F5)** tab and make sure the event has the vehicle (**Vehicles in Event** in Event Information).
 2. Click the vehicle in the 3-D view. The gizmo appears on it.
 3. Drag the **forward** or **lateral** arrow to slide it, or the **ring** to turn it. Hold **Ctrl** to snap to 0.5 m and 15°.
-4. For an exact placement, press **G**, then **X**, type a distance (in meters) and press **Enter**; press **R**, type an angle in degrees and press **Enter**.
+4. For an exact placement, press **G**, then **X**, type a distance (in metres) and press **Enter**; press **R**, type an angle in degrees and press **Enter**.
 5. Check the result in the **Vehicle Initial Conditions** section of Event Information.
 
 ## Lessons from HVE Not Available in HVE Studio
 
 !!! warning "Not in HVE Studio"
-    - **Editing a surface** (HVE's Lesson 2): moving vertices, reversing surface normals and changing object hierarchy. Edit the geometry in HVE or a modeling program and import it again.
+    - **Editing a surface** (HVE's Lesson 2): moving vertices, reversing surface normals and changing object hierarchy. Edit the geometry in HVE or a modelling program and import it again.
     - **Using groups** (HVE's Lesson 3): creating, ungrouping, saving and reusing grouped objects in the Highway Furnishings Library. There is no grouping or object library.
 
 ### Summary

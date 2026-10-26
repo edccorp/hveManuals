@@ -30,13 +30,13 @@ choosing Inertias from the popup.
 
 ## Segment Color
 
-The color the segment is drawn in — HVE's **Color...** item of the segment
-popup — with **Apply to all segments** to give the whole body that color.
-Display only. The color stored in an HVE case is imported.
+The colour the segment is drawn in — HVE's **Color...** item of the segment
+popup — with **Apply to all segments** to give the whole body that colour.
+Display only. The colour stored in an HVE case is imported.
 
 !!! tip "New in HVE Studio"
     A segment can also wear a node material (View › Shader Editor); it is then
-    drawn in that material instead of this color.
+    drawn in that material instead of this colour.
 
 ## Segment Weight
 

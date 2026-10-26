@@ -34,7 +34,7 @@ plays straight away when the case is opened again, without **Run All Events**.
 Each event's results carry a fingerprint of the inputs that event was solved
 from. When the case is opened again:
 
-- an event whose inputs are unchanged comes back solved, labeled with when it
+- an event whose inputs are unchanged comes back solved, labelled with when it
   was computed and by which build — nothing is run;
 - an event that was edited since is opened unsolved, and the program names it,
   so a case can never show results that do not belong to it. Editing one event
@@ -273,7 +273,7 @@ cannot be edited, re-run or saved, and its geometry cannot be exported.
 
 - **Every event must be solved first**, with results that still match its
   inputs, because a sealed case can never be re-run. The dialog lists the
-  events and grays **Seal...** until they all are; run an unsolved event or
+  events and greys **Seal...** until they all are; run an unsolved event or
   delete it.
 - **Licensed vehicle data stays out.** Each vehicle keeps only what it takes
   to draw it; its weights, inertias, suspension, tires, brakes, drivetrain and
@@ -303,7 +303,7 @@ with it, every event is solved first.
 
 **File › Open Recent** lists the last 12 cases opened or saved, newest first,
 by file name; hover over an entry for its full path. **Clear Recent** empties
-the list. The menu is grayed while the list is empty. If the open case has
+the list. The menu is greyed while the list is empty. If the open case has
 unsaved changes, opening another one (by any route) first asks whether to
 discard them.
 

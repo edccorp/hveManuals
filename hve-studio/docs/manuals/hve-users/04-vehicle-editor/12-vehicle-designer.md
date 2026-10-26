@@ -12,19 +12,16 @@ editor (the **Vehicle (F3)** button or F3) opens it where the Vehicles panel use
 open, docked on the left with the 3-D view beside it; **Vehicle › Vehicle
 Designer...** opens it too. It is an ordinary docked window: drag its tab to move it,
 float it, or dock it anywhere, as you would the 3-D view, and the arrangement is
-kept. Docked narrow, the **Key figures** and **Guidance** fold into
+kept. Docked narrow, the **Key figures** and **Warnings & Suggestions** fold into
 the top of the stage so the stage keeps its width; wider than about 1000 pixels
 they are columns on either side. The Vehicles panel is one item away, **Vehicle ›
 Editors › Vehicles Panel**. (Key Results and the Output Graph are in the Event and
 Playback editors.) A session that starts in the
 Vehicle editor opens it the first time you switch back to it. It has one
 frame and thirteen stages. The frame is the same on every stage: the **Key figures**
-and **Guidance** panels stacked in a column on the left (drag its edge to set its
-width), the stage's own controls and views beside it, and a stage bar with every
-stage reachable. The bar is along the bottom until you move it: **Bar position**,
-at the right end of the line that names the stage, puts it at the top, left or right
-instead (one setting for the Vehicle, Event and Environment Designers, remembered
-between sessions); docked left or right the buttons stack in a column. The first line names the case vehicle and where it came from,
+column on the left, the stage's own controls and views in the center, a **Warnings &
+Suggestions** panel on the right, and a stage bar along the bottom with every
+stage reachable. The first line names the case vehicle and where it came from,
 and which stage is open.
 
 ![Figure 12-1: the Vehicle Designer frame on stage 1, Vehicle, with Key figures, the case's vehicles, the database list, the picked vehicle drawn and the warnings panel](../images/hvn-04-vehicle-designer-frame.png)
@@ -37,7 +34,7 @@ and which stage is open.
 
 ## The stages
 
-The stage bar lists the eighteen stages, in order, in the order a vehicle
+The stage bar lists the eighteen stages, left to right, in the order a vehicle
 is usually set up; the line above the stage says which one is open ("Stage 4
 of 18: Stiffness"). The designer opens on the first,
 **Vehicle**; every other stage edits a vehicle, so it opens once the case has
@@ -83,13 +80,6 @@ says so. Several rows count only under an option of the run (the steer degree
 of freedom, the *At Driver* brake or throttle method, hydroplaning), and their
 note names it. The dimming applies in the designer only: an editor opened in
 its own window is never dimmed.
-
-The **Hide unused** checkbox beside **Used by** hides those rows instead of
-dimming them, so only what the chosen method reads is left on screen. The
-heading over a group goes when everything under it is hidden, and a stage none of
-whose inputs the method reads has no button in the stage bar (the stage you are on
-keeps its button and says the method reads nothing there). It is available once a
-method is chosen. Hidden inputs keep their values; clear the box to see them again.
 
 Results that are easy to miss:
 
@@ -400,7 +390,7 @@ rather than entered, and read `--` until the Test Track stage fills them.
 The snapshot is otherwise taken each time a different stage is opened, and kept
 when the same stage is re-opened.
 
-### Guidance
+### Warnings & Suggestions
 
 Each entry is one sentence naming the symptom, the stat it costs and the fix,
 graded **Fix**, **Consider** or **Note**, with a **Go to** button for the stage
@@ -525,11 +515,8 @@ How this unit couples to another, one editor per tab. **Connections** is the
 Vehicle Connections editor: the front and rear connection points (hitch, fifth
 wheel or pintle), with the rear connection's properties (radius, friction,
 articulation limits, stiffness, damping and breakaway strength) below the table. While the tab is open the
-3-D view shows both connection points, each as a ring and cross with a ball at its origin, whatever
-**Scene Display** says, and picks only them: click a ball to select it (orange) and drag it to move it in
-the plane facing the camera (**Ctrl** snaps to 5 cm). A point whose type is None is drawn dim, so it can still be found and placed.
-A connection point has no angle, so it does not rotate. Moving one on a vehicle the run holds is refused, like any
-other edit of an input.
+3-D view marks the front connection point in cyan and the rear one in orange,
+each with a line down to the ground; a point whose type is None is drawn dim.
 **Body Torsion** is the frame's torsional stiffness and axis: SIMON uses it in
 the coupling moment of a tow and trailer, EDVDS only reports it, and a single
 vehicle ignores it.
@@ -542,11 +529,7 @@ The Lights stage opens with the same **Vehicle view** as the Geometry stage,
 here for placing the lamps: click a light to select it in the editor below and
 in the 3-D view. **Shift**-click adds a light to the selection or takes it out
 (here, in the editor's light list and on the 3-D view's lamp gizmos); dragging
-any selected light's gizmo in the 3-D view moves them all by the same amount. While this stage is open the
-3-D view shows every lamp gizmo whatever **Scene Display** says, larger and with a ball at each lamp's
-origin, and picks only lamps: the vehicle body and its move handles do not take a click. A spot or directional
-lamp that is selected also has a ball at the tip of its aim line; drag it to turn the lamp (**Ctrl** snaps to
-5 degrees). Under it is the Vehicle Lights editor, with its Lamp parts and
+any selected light's gizmo in the 3-D view moves them all by the same amount. Under it is the Vehicle Lights editor, with its Lamp parts and
 Light sources tabs. A vehicle from the database already knows its lamps: on
 **Lamp parts** each lens its body file tags is a row of its own, with the kind
 of lamp and its side (Left, Right or Center) read from the tag, and both can be
@@ -566,11 +549,8 @@ vehicle's own data, usually left as it says. See the
 ### Stage 15: Accelerometers
 
 The Accelerometers stage opens with the same **Vehicle view**: click an
-accelerometer to select it in the editor below. While this stage is open the
-3-D view shows every accelerometer as a cross with a ball at its origin, whatever **Scene Display** says,
-and picks only accelerometers: click a ball to select it in the list and drag it to move it in the plane
-facing the camera (**Ctrl** snaps to 5 cm). An accelerometer has no angle, so it does not rotate.
-Moving one on a vehicle the run holds is refused. Under it is the vehicle's accelerometer list. Accelerometers belong to the vehicle, so one placed here is
+accelerometer to select it in the editor below. Under it is the vehicle's
+accelerometer list. Accelerometers belong to the vehicle, so one placed here is
 in every event the vehicle runs in; the Event Designer's Equipment stage edits
 the same devices.
 
@@ -638,7 +618,7 @@ has no roll). They are filled from these runs and stay "--"
 until the track has been run for the vehicle; they clear when a different
 vehicle is picked. A run the solver refuses shows the solver's own reason.
 
-The measurements also feed five rules in **Guidance** (the
+The measurements also feed five rules in **Warnings & Suggestions** (the
 `Test Track` rows of the table below): oversteer measured, heavy understeer, a
 stop well under the Brakes chart's grip limit, lateral grip within 15% of the
 static stability factor, and a soft roll gradient. The first two and the
@@ -668,7 +648,7 @@ its baseline and the change, in the current display units, the measured rows
 from the Test Track stage among them. **Provenance** counts the case's records
 for this vehicle by kind, Stated, Looked up, Estimated or Generic default, so a
 reader sees how much of the vehicle is documented; a vehicle with no records is
-told so. **Guidance** is the whole list from the right-hand panel,
+told so. **Warnings & Suggestions** is the whole list from the right-hand panel,
 each with its stage to go to.
 
 ![Figure 12-15: the Summary stage](../images/hvn-04-vehicle-designer-summary.png)

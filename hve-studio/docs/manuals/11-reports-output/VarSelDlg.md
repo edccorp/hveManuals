@@ -63,7 +63,7 @@ carries the occupant's own output, as HVE's human output groups do:
 
 The occupants get check-box columns of their own after the vehicles' — **H1**,
 **H2**, ... with each human's name — and their columns in Key Results, the
-Output Graph and the exported files are labeled *H1* likewise (for example
+Output Graph and the exported files are labelled *H1* likewise (for example
 *Head Acc Tot H1*). Names and units are HVE's own (accelerations in g,
 segment velocities in in/s or km/h, positions in in or cm). A position is
 relative to the vehicle for an occupant (*x*, *y*, *z*) and to the earth for an

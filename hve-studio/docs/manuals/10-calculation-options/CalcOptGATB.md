@@ -11,7 +11,7 @@ effect immediately and are locked while the event's results are on screen.
 
 ## Input Source
 
-**Use external ATB input file** — shown grayed, with the reason.
+**Use external ATB input file** — shown greyed, with the reason.
 
 !!! warning "Not in HVE Studio"
     In HVE this option makes GATB skip assembling its input deck and read an

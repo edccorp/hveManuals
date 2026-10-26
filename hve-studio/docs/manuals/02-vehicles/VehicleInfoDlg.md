@@ -88,7 +88,7 @@ Use **Vehicle › Save Vehicle As...** (see [Save Vehicle As dialog](VehSaveAs.m
     All of HVE's Vehicle Information fields are in the Vehicles panel, in its Identity and Configuration sections. The type list says *Multi-Purpose* where HVE's says *Sport-Utility*.
 
 !!! tip "New in HVE Studio"
-    - Vehicle types **Other** and **Motorcycle**, and a fourth axle. A Motorcycle always has two axles; under Vehicle Type a **Seed Generic Motorcycle** button fills class-typical data, and a note explains that a single-track vehicle is modeled by a narrow-track approximation.
+    - Vehicle types **Other** and **Motorcycle**, and a fourth axle. A Motorcycle always has two axles; under Vehicle Type a **Seed Generic Motorcycle** button fills class-typical data, and a note explains that a single-track vehicle is modelled by a narrow-track approximation.
     - The Components section opens every vehicle data dialog from one place.
 
 <!-- NAV -->

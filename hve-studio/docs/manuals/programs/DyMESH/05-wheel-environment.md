@@ -50,7 +50,7 @@ Notes:
     DyMESH (wheel contact mesh)**, **...also contact the environment**,
     **Start at first contact** and **Damage time (s)**. In HVE Studio the
     *...also contact the environment* row is enabled as soon as the wheel is
-    displaced and uses DyMESH; it does not gray out when the event's
+    displaced and uses DyMESH; it does not grey out when the event's
     environment option is off, but the engine still ignores it then, exactly as
     the table above says. The environment mesh is built from the event's
     terrain geometry when the body or any wheel asks for environment contact;
@@ -96,35 +96,10 @@ During initialization one mesh is built per selected wheel:
     deflection. HVE Studio does not need it: a DyMESH wheel's tread on the
     ground is carried by the tire's **tread springs** (Tire Contact Model 4), and
     the environment neither pushes on nor moves a mesh node that the tread
-    springs carry. So the mesh can be the tire's own size where it meets a curb
-    face or another vehicle, which with HVE's radius it was not (1.1 in smaller
-    on a typical passenger-car tire).
-
-    The **rim** ring is at the unloaded radius less the tire's **Maximum
-    Deflection**, where the tire's own data says it bottoms ("deflection beyond
-    the maximum indicates wheel rim deformation", SIMON calculation method),
-    and where the tire's own radial force stops growing. HVE put it at the
-    wheel radius from the size designation, which on a typical passenger-car
-    tire left 1.4 in between the two with nothing carrying more load. Where the
-    stated deflection would put the rim inside half the wheel radius or
-    outside the shoulder, the size designation's radius is kept.
-
-    **One model per surface.** Each environment face the tire meets is carried
-    by one model, chosen by how the face meets the **wheel**: a face square to
-    the tread -- the road under an upright wheel, a curb's face met rolling
-    into it -- by the tread springs, on the tire's own radial law; a face square
-    to the sidewall -- a curb's face met sliding sideways, the road under a
-    wheel lying on its side -- by the mesh's tread and sidewall. Between 35°
-    and 55° off the wheel's plane the two share the face in proportion, so the
-    force does not jump as a wheel tilts. The rim always meets the environment
-    through the mesh. Until 2026-10-22 HVE Studio split the faces by gravity
-    instead: the springs on every face and the mesh's sidewall on every face
-    but a road-like one, so a curb's face was pressed by both at once and, by
-    the same rule, a wheel lying on its side was met by neither but its rim.
-    On a car sliding sideways into a 0.15 m curb the face now settles with the
-    timestep: across steps from 1 to 0.0625 ms the leading wheel's lateral
-    impulse stays within 0.9%, where with both models on the face it rose
-    6.3%, faster at each halving.
+    springs carry (the tread everywhere, and the sidewall on a road-like
+    surface). So the mesh can be the tire's own size where it meets a curb face
+    or another vehicle, which with HVE's radius it was not (1.1 in smaller on a
+    typical passenger-car tire).
 
 Restitution here controls **permanent deformation**: a coefficient of 1.0
 springs the vertex fully back each step (elastic), while 0.05 retains ~95% of
@@ -307,7 +282,7 @@ wheel, tire forces are simply zeroed when the cosine of the wheel-to-ground
 inclination angle $\gamma_g$ falls below the minimum-inclination threshold
 $c_\mathrm{min} = 0.17365$ (inclination beyond ≈80°). For a DyMESH environment
 wheel they are instead **faded smoothly**: each of the contact-patch forces
-$F_x$, $F_y$ and $F_z$, the plow forces, the slips, and the roll moment is
+$F_x$, $F_y$ and $F_z$, the plough forces, the slips, and the roll moment is
 scaled by
 
 $$
@@ -354,8 +329,6 @@ tread/rim contact takes over the shear loads through its own friction model.
 | Angular slices | 80 (HVE Studio: 120) | Angular increments in the wheel mesh |
 | Wheel mesh size | 482 verts / 960 triangles (HVE Studio: 2306 / 4608) | Per wheel |
 | Tread radius | 0.98 × static loaded radius (HVE Studio: the unloaded radius) | Outer ring radius |
-| Rim radius | Wheel radius from the size designation (HVE Studio: unloaded radius − Maximum Deflection) | Where the tire bottoms |
-| Surface split (HVE Studio) | Tread springs where a face meets the tread, the mesh where it meets the sidewall, shared 35°–55° off the wheel's plane | One model per surface |
 | Tread restitution vs. environment | 1.0 | Fully elastic (no permanent tire crush) |
 | Rim restitution | 0.05 | Plastic (permanent rim deformation) |
 | Wheel contact friction | 0.75 (tread/near-rim), 0.55 (rim disks) | Fixed values |

@@ -39,7 +39,7 @@ HVE's View menu items map as follows:
 
 Key Results and Output Graph are drawn only in the Event and Playback
 editors, and Simulation only in the Event editor; elsewhere their items are
-grayed. Panels dock: drag a panel's tab to move it to another dock position
+greyed. Panels dock: drag a panel's tab to move it to another dock position
 or to float it.
 
 !!! tip "New in HVE Studio"
@@ -63,7 +63,7 @@ Path thickness), **Vehicle**
 (with the arrow scales), **Scene Ghosts**, **Light & Shadow** (Scene Lighting,
 **Lamps**, the shadow coverage, Site Shadows, Contact Shadows, Ambient
 Occlusion), **Sky & Reflections** (Default Sky, Sky Reflections, Distance Haze,
-Wet Ground, Ground Reflections) and **Rendering**. Click a group's header to fold it away. A grayed switch says why
+Wet Ground, Ground Reflections) and **Rendering**. Click a group's header to fold it away. A greyed switch says why
 when you point at it.
 
 The sections below describe each group.
@@ -109,15 +109,14 @@ run leaves behind, and the case's axes.
 | **Tire Contact Patch Paths** | Where each tire actually touched the ground, one path per wheel (HVE: Show Tracks) |
 | **Axes** | The case's axes at the origin, and each vehicle's own axes at its CG (X red, Y green, Z blue, drawn up). On by default |
 | **Sprung CG** | Each vehicle's sprung-mass CG, the point every "CG to ..." distance is measured from. On by default, independent of Axes |
-| **Total CG** | Each vehicle's total-mass CG (sprung and unsprung masses together), labeled with its offset from the sprung CG. On by default |
+| **Total CG** | Each vehicle's total-mass CG (sprung and unsprung masses together), labelled with its offset from the sprung CG. On by default |
 | **CG Weights** | Adds to each CG label the weight it carries: the sprung weight at the Sprung CG, the total weight at the Total CG, in the units set in Preferences. Off by default |
-| **Vehicle Labels** | Each vehicle's name over it in the scene, so two similar cars can be told apart in the Event and Playback views; follows the vehicles hidden in the view. Display only; off by default |
 | **Lamp Gizmos** | Each vehicle lamp drawn as a ring, a line along its aim and, for a spot, its cone; click one to select it, drag it to move it; Shift-click adds or removes a lamp, and dragging one of several selected moves them all. Selecting a lamp takes the selection off the vehicle body (its move gizmo goes), and a click on empty space deselects both. Off by default |
 | **Accelerometers** | Each vehicle's installed accelerometers, a small orange three-axis cross where the device sits on the body, turning with it. A device stated in the inertial frame is not on the body and is not drawn. Off by default |
 | **Connections** | Each vehicle's front and rear connection points (hitch, ball, fifth wheel, king pin), a cyan ring with a cross, where Vehicle Connections places them; a connection of type None is not drawn. Off by default |
 | **North Arrow** | A compass in the corner of the viewport pointing to the case's north, which is set in the Shader Editor's Sun & Sky panel or read from an imported `.hve` |
 | **Skidmarks** | The contact-patch path, only where the tire was marking. SIMON grades the mark's opacity; EDSMAC4, EDVSM, EDSVS and EDVDS report a tire as skidding or not, so their marks are all-or-nothing (HVE: Show Skidmarks) |
-| **CG Path** | Each vehicle's CG path up to the current playback time, in its paint color (HVE: Show CG Paths) |
+| **CG Path** | Each vehicle's CG path up to the current playback time, in its paint colour (HVE: Show CG Paths) |
 | **Path thickness (m)** | A slider: the thickness of the CG and accelerometer paths; 0 draws hairlines. Skidmarks are drawn at the width of the tire |
 
 ---
@@ -134,7 +133,7 @@ Body and the DyMESH overlay table are in **Vehicle**.
 | **Humans Through Bodywork** | Draws the occupant figure over the vehicle, so a seated occupant can be seen from outside. A human that draws nothing with this on has no body yet: generate one in the Human editor |
 | **Vehicle Extents** | A translucent box at the CG-to-front, CG-to-rear, width and height the engine is given, to compare with the drawn body |
 | **See-Through Body** | Draws every vehicle body translucent (at most 30%), in every editor, so the axles, wheels, CGs, occupants and DyMESH overlays inside it can be seen. The vehicles' own opacity is unchanged |
-| **DyMESH overlay** | A table with two rows, **DyMESH Body** and **DyMESH Wheel**, and two columns, **Mesh** and **Nodes**. Before a run, **DyMESH Wheel** draws every wheel's mesh as the run would build it (its loaded radius estimated); after one, only the wheels the event switched on, deformed. A row grayed in a build with no solver says why at its **(?)** |
+| **DyMESH overlay** | A table with two rows, **DyMESH Body** and **DyMESH Wheel**, and two columns, **Mesh** and **Nodes**. Before a run, **DyMESH Wheel** draws every wheel's mesh as the run would build it (its loaded radius estimated); after one, only the wheels the event switched on, deformed. A row greyed in a build with no solver says why at its **(?)** |
 
 The DyMESH overlay table:
 
@@ -161,7 +160,7 @@ The DyMESH overlay table:
 **Description:** **Vehicles (sharp)** fits the shadow to the vehicles, so their
 shadows are as sharp as possible but site geometry outside that region casts
 none. **Whole scene** lets everything cast a shadow, with softer edges. The panel
-shows the current shadow resolution in centimeters per texel.
+shows the current shadow resolution in centimetres per texel.
 
 ---
 
@@ -215,7 +214,7 @@ where there is no imported site; an imported site is drawn either way. The
 only: no engine reads it.
 
 The viewport's toolbar also carries the Scene Display switches that matter in
-the editor on screen, each the same switch as its Scene Display row (grayed,
+the editor on screen, each the same switch as its Scene Display row (greyed,
 with the reason, where its row is). In the Vehicle, Event and Playback editors:
 **Ground**, **Axes**, **North arrow**, **Scene lighting**, **See-through body**,
 **Extents**, **Sprung CG**, **Total CG**, **Accelerometer path** and **Tire
@@ -229,7 +228,7 @@ Environment editor: **Ground**, **Axes**, **North arrow**, **Scene lighting**,
 **Lamps** and **Point cloud**; in the Human editor **Ground**, **Axes**, **Scene
 lighting** and **Occ. Eq.**. **Point cloud** shows or hides the case's point
 cloud (the same switch as the eye on its row in the Outliner, saved with the
-case; grayed when the case has none). The row wraps when the viewport is narrow. **Phong** (smooth shading, the default), **Flat** (one normal
+case; greyed when the case has none). The row wraps when the viewport is narrow. **Phong** (smooth shading, the default), **Flat** (one normal
 per face, showing the real tessellation) and **Wireframe** (edges only, depth
 tested — what HVE calls Hidden Line). **Light Sources On** turns the sun's
 contribution off and on; with it off, the ambient light is raised so the scene
@@ -255,13 +254,6 @@ material and placement, and its **Open Outliner** button opens this panel.
 A loaded point cloud has a row of its own: its file name, its point count and an
 eye that shows or hides it. It has no drive switch, because a point cloud is a
 picture, never a surface.
-
-So does the case's aerial image, when it has one: its file name, its opacity and
-an eye that is the picture's own **Visible** switch (the same one as in
-**Environment › Aerial Image...**; it stays in the case). It has no drive switch
-either. The picture is laid on the site's drawn surfaces, so hiding a terrain
-with its eye flattens the picture with it; hide the aerial itself with its own
-eye.
 
 In the Environment and Event editors the Outliner also has a **Site lights**
 group, one row per light of the site. Each row's eye switches the light on or

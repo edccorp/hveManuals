@@ -165,15 +165,9 @@ Vehicles panel docked on the left and the 3-D viewport on the right.*
 ![The menu bar](../images/hvn-02-menu-bar.png)
 *The menu bar and the editor tabs.*
 
-- **Toolbar** — under the menu bar, a row of icon buttons, each with its name.
-  At the left, **New**, **Open** and **Save** do what **File › New Case**, **Open Case...** and
-  **Save Case** do (with the same unsaved-changes question, and **Save** grayed for a sealed
-  case), then **Undo** and **Redo** as in the **Edit** menu (grayed when there is nothing to
-  step to; with results on screen a step that would change the solved inputs asks to clear them
-  first). Hover a button for its key.
-- **Editor tabs** — at the right of the toolbar: **Human (F2)**, **Vehicle (F3)**,
-  **Environment (F4)**, **Event (F5)** and **Playback (F6)**, each with an icon. They replace HVE's mode
-  buttons and Mode menu. Each editor shows its own panels.
+- **Editor tabs** — **Human (F2)**, **Vehicle (F3)**, **Environment (F4)**,
+  **Event (F5)** and **Playback (F6)**, under the menu bar. They replace HVE's mode buttons and Mode
+  menu. Each editor shows its own panels.
 - **Panels** — the editors' contents (Vehicles, Occupants, Environment, Event
   Information, Simulation, Key Results, and so on) are panels docked around the
   viewport. Drag a panel's tab to dock it elsewhere or float it; close it with

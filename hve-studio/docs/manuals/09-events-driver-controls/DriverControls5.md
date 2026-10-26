@@ -4,7 +4,8 @@ Applies gear selections that change the current transmission ratio, and range
 shifts that change the current differential ratio.
 
 The **Gear** tab of the [Driver Controls](DriverControls.md) dialog
-(**Event › Driver Controls...**). For a SINGLETRACK event the tab is not shown.
+(**Event › Driver Controls...**). For a SINGLETRACK event the tab is labelled
+*(not read)*.
 
 ## Gear table
 

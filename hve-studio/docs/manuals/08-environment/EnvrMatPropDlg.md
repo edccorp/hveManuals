@@ -93,7 +93,7 @@ Terrain Model tab).
 
 ## Standing water
 
-**Water Depth**, **Wet Friction** and **Texture Depth** for this surface, read only by SIMON's hydroplaning models (Event Information › SIMON Options › Hydroplaning). A depth above 0 puts a layer of water over this surface — HVE's own water polygon, with the wet friction as its friction — and the texture depth is the pavement's, read wherever a tire is on this surface. A depth of 0 means no water here. Ground with no surface of its own takes these from the Environment panel's **Default surface material**.
+**Water Depth**, **Wet Friction** and **Texture Depth** for this surface, read only by SIMON's hydroplaning models (Event Information › SIMON Options › Hydroplaning). A depth above 0 puts a layer of water over this surface — HVE's own water polygon, with the wet friction as its friction — and the texture depth is the pavement's, read wherever a tyre is on this surface. A depth of 0 means no water here. Ground with no surface of its own takes these from the Environment panel's **Default surface material**.
 
 A surface imported from an HVE case or `.h3d` arrives with its own **Texture Depth**: the twelfth term of HVE's environment material, which HVE's program reads as the pavement texture depth in inches (0.025 in for *Asphalt, New*). **Apply material** from the library fills it too, from the file's twelfth line — *Microtexture* on a pavement, and on a soil the line HVE labels *Clay Content*, which HVE hands its physics as the same texture depth.
 

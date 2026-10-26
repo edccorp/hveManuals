@@ -27,7 +27,7 @@ scoped to that wheel.
     The spindle axis (alignment and steering stops) is in the **Steering
     System** dialog (see [Part E](11e-drivetrain-steering-brake-system.md)).
     In place of HVE's Copy To Other Side / Copy To Other Axle(s), each table
-    has a **Suspension Group** row: give two or more columns the same group and an
+    has a **Link Group** row: give two or more columns the same group and an
     edit in one is copied to the others. Values are shown in the units set in
     Preferences, and changes apply as they are made.
 
@@ -278,7 +278,8 @@ Both stop angles are entered as positive numbers.
     The steer-axis friction and the stops are read only when the axle's
     **Steer DOF** is not Off — a prescribed steer angle cannot be resisted.
     A Stop Stiffness of 0 means no stops. HVE's Stop Energy Ratio has no
-    control, and there is no Stop Damping row because no engine reads it.
+    control; the Stop Damping row is shown disabled because no engine reads
+    it.
 
 The Spindle Axis Alignment properties are described below.
 
