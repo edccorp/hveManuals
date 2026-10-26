@@ -49,8 +49,20 @@ Use SIMON.*
    or "V2", or as "the first / second vehicle". "The other car" is the one that was not named just before,
    when there are exactly two. "Both vehicles" or "all the cars" applies one change to each (a position
    is refused for several at once: they would land on the same point). If the case has only one vehicle,
-   a sentence that names none means that one, and the list says it assumed so. Anything it cannot tie to
-   exactly one vehicle becomes a **Question**.
+   a sentence that names none means that one, and the list says it assumed so. "It" or "that one" means
+   the vehicle the previous sentence was about (with nothing before it, that is a question). A type word,
+   "the truck", "the SUV" or "the sedan", is matched against the model names of the vehicles in the case and
+   used only when exactly one fits; the list says which vehicle it chose. A color ("the red car") is never
+   matched, because the case holds no colors, and neither is a sentence that names two vehicles by type.
+   Anything it cannot tie to exactly one vehicle becomes a **Question**.
+   A placement can also be measured from another vehicle, in that vehicle's own frame: "put the F-150 30
+   feet behind the Accord", "place the Accord 50 feet to the left of the F-150", "12 feet in front of" or
+   "ahead of". Behind and ahead run along the reference's heading, left and right across it. The reference's
+   position and heading are read at the moment the change is applied, after the other changes in the same
+   sentence, so "put the Accord at X = 200, facing west, and the F-150 30 feet behind it" lands behind where the
+   Accord will be. When a case is being created the reference must have stated its position and heading, since
+   "behind" has no meaning without a heading; otherwise the sentence is refused and says what is missing. A
+   vehicle cannot be placed relative to itself, and a placement and an explicit position together are refused.
 4. A sentence that says to run it only shows **Run the active event**: a sentence never
    starts a run, and never changes the case because it asked for one.
 

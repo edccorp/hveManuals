@@ -517,7 +517,7 @@ what with:
   points, amber where it was filled in from the neighbors (under a car, in a
   scan shadow), red where points were removed as a spike and the gap filled.
 - **Fit (distance from the scan)** -- how far the scan's ground points lie from
-  the surface: green at 0, yellow at 5 cm, red at 10 cm and over; blue-grey
+  the surface: green at 0, yellow at 5 cm, red at 10 cm and over; blue-gray
   where there is no ground point to check against. The result line gives the
   mean and the 95th percentile.
 

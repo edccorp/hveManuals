@@ -40,7 +40,7 @@ validation cases, because none of them uses the situation they change; the
 first is active on every EDVDS tandem-axle event.
 
 **1. EDVDS tandem-axle load equalizer.** On a tandem axle with a
-load-equalizing (four-spring) suspension, HVE applies the whole load-levelling
+load-equalizing (four-spring) suspension, HVE applies the whole load-leveling
 correction at every evaluation. HVE Studio does the same at ordinary time steps,
 but below a 5 ms step it spreads the correction over 5 ms, because at very
 small steps HVE's form oscillates until the run aborts. On EDC's tandem-axle

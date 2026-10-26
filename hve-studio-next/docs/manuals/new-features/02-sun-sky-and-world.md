@@ -209,7 +209,7 @@ See [Environment Information › Lights](../08-environment/EnvtInfoDlg.md#lights
 ## The Sky Texture node
 
 The default world's **Sky Texture** node is HVE Studio's own analytic sky: a
-three-colour gradient, the sun's disc, and haze. It has these inputs:
+three-color gradient, the sun's disc, and haze. It has these inputs:
 
 | Input | Default | Effect |
 | --- | --- | --- |
