@@ -1,9 +1,11 @@
 # Chapter 16a — Event Designer
 
 The Event Designer is the Vehicle Designer's frame turned on the event: a stage
-bar (along the bottom; **Bar position** moves it to the top, left or right), a **Key figures** strip on the left that remembers what
+bar (along the bottom; **Bar position** moves it to the top, left or right; the open
+stage is drawn as a selected tab, with the accent line along its top edge), a **Key figures** strip on the left that remembers what
 each number was, the event's own dialogs hosted on the stage that asks their
-question, and a **Guidance** panel on the right whose rows name the
+question (the stage's title on a band of the title-bar color, the event's name at
+its right end; the dialogs' own tabs carry the same accent line), and a **Guidance** panel under Key figures whose rows name the
 fix and the stage that owns it. It is the Event editor's panel: switching to the
 Event editor (F5) opens it where the Event Information panel used to open, and
 **Event › Event Designer...** (the first item) opens it too. **Event › Event

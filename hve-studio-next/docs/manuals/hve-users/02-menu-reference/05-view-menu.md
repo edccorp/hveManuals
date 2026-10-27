@@ -256,12 +256,16 @@ A loaded point cloud has a row of its own: its file name, its point count and an
 eye that shows or hides it. It has no drive switch, because a point cloud is a
 picture, never a surface.
 
-So does the case's aerial image, when it has one: its file name, its opacity and
-an eye that is the picture's own **Visible** switch (the same one as in
-**Environment › Aerial Image...**; it stays in the case). It has no drive switch
-either. The picture is laid on the site's drawn surfaces, so hiding a terrain
-with its eye flattens the picture with it; hide the aerial itself with its own
-eye.
+So does the case's aerial image, when it has one: its name (or file name), its
+opacity and an eye that is the picture's own **Visible** switch (the same one as
+in **Environment › Aerial Image...**; it stays in the case). It has no drive
+switch either. The picture is laid on the site's drawn surfaces, so hiding a
+terrain with its eye flattens the picture with it; hide the aerial itself with
+its own eye. The pictures layered above the base image have a row each, in
+drawing order; a layer's right-click menu moves it up or down the stack
+(**Move layer up**, **Move layer down**) or deletes it (**Delete Aerial
+Layer**). Hovering a row shows the picture's record: its source, the date it was
+flown, its pixel, the system it was placed from and the terms it is kept under.
 
 In the Environment and Event editors the Outliner also has a **Site lights**
 group, one row per light of the site. Each row's eye switches the light on or

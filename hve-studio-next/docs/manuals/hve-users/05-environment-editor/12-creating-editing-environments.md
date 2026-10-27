@@ -606,14 +606,36 @@ in the panel itself; **Deselect** under it closes it.
 ## Aerial Images
 
 An aerial photograph (or any scaled site image) can be laid on the ground
-under the site. Choose **Environment › Aerial Image...** to display the
-**Aerial Image Options** dialog:
+under the site, and more pictures can be layered above it. Choose
+**Environment › Aerial Image...** to display the **Aerial Image Options**
+dialog:
 
-- **Image File** — the image (SGI `.rgb`, TIFF, JPEG, BMP or PNG).
+- **Picture** — which picture the dialog edits: the **Base image**, or one of
+  the layers above it, listed in drawing order (the last draws on top).
+  **New layer** adds an empty layer above the others (up to sixteen) and
+  selects it, so the file, download or placement that follows goes into it;
+  **Delete layer** removes the selected layer. The Outliner lists the base
+  image and every layer, each with its own eye and opacity; a layer's
+  right-click menu has **Move layer up**, **Move layer down** and **Delete
+  Aerial Layer** (the base image's has **Delete Aerial Image**).
+- **Name** — how the Outliner and the Picture list name it; empty, the file's
+  name is used.
+- **Image File** — the image (PNG, JPEG, BMP or TGA).
 - **Visible** and **Opacity**.
 - **World Bounds** — the X and Y coordinates of the image's upper-left
   (**UL X**, **UL Y**) and lower-right (**LR X**, **LR Y**) corners, which
   fix its position and scale. **Default** restores ±100 m.
+- **Record** — whose picture it is and what it is, written by a download from
+  the Location map or by a placement below and never by hand: the source and
+  its dataset, the credit line, the acquisition date the source confirmed
+  (or "not stated"), the pixel as stored and the source's own pixel, the
+  coordinate system it was placed from (an EPSG code, or "control points or
+  the file's own frame"), the terms it is kept under in words, and when it
+  was written. A picture chosen by file carries no record: it is your own.
+
+The Location map's **Download aerial image** has an **Add as a new layer**
+switch: on, the download becomes a new layer above the base image (an older
+flight under a newer one, for instance) instead of replacing it.
 
 ### Place a picture on the ground
 

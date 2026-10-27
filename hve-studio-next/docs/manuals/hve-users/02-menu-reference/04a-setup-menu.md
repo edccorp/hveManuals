@@ -247,7 +247,7 @@ time.
 | **Brake** | brake vs time | *Pedal Force* → **At Driver**; *Wheel Force* → **Wheel Force**; *Percent Available Friction* → **% of Friction** |
 | **Steer** | steering-wheel angle vs time | *At Steering Wheel* is the table here. A table *At Axle* (road-wheel angles) that came with an imported case is shown, and overrides the steering-wheel table |
 | **Gear** | gear vs time (0 = neutral, 1 = reverse, 2 = first, …) | as HVE |
-| **Lean** | lean angle vs time | motorcycles (single-track vehicles) only; read by SIMON; new in HVE Studio |
+| **Lean** | the rider's lean command vs time | motorcycles (single-track vehicles) only; read while the machine rides the single-track model in a SIMON event; new in HVE Studio |
 
 For an **EDCRASH** event the dialog has a single **Wheel Data** page instead (see
 [Wheel Data](#wheel-data)).
@@ -257,8 +257,8 @@ For an **EDCRASH** event the dialog has a single **Wheel Data** page instead (se
 
 !!! note "HVE Studio"
     For a SINGLETRACK (motorcycle) event the Throttle, Gear and Lean pages are
-    not shown: that engine has no drivetrain model, and only SIMON
-    reads the Lean table. Its Steer page is a steering-torque or commanded-lean
+    not shown: that engine has no drivetrain model, and the Lean table is
+    read only by the single-track phase of a SIMON event. Its Steer page is a steering-torque or commanded-lean
     table, chosen in Method Options.
 
 !!! note "HVE Studio"

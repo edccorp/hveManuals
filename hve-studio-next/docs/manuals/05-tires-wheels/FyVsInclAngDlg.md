@@ -32,6 +32,20 @@ press **Add Row**. The row is inserted in load-then-speed order. A new row
 starts at a small placeholder stiffness (500 N/rad, about 2 lb/deg); enter the
 real value.
 
+## Fy vs Camber Angle Points
+
+Below the table, for the **selected** row (click its **#**), the measured
+lateral force at each camber angle: columns **#**, **Camber Angle (deg)**,
+**Fy** and **x** (delete), with **Add Point** adding one 5 degrees past the
+last at the stiffness' linear force. Up to nine points, as HVE's per-row data
+grid holds them; a vehicle imported from the database carries them already.
+
+Only the SINGLETRACK **nonlinear** dynamics model reads these points
+([SINGLETRACK calculation options](../10-calculation-options/CalcOptSINGLETRACK.md)):
+where the row has them, the camber thrust follows the stated curve point for
+point instead of the stiffness. No other engine reads them; with no points the
+stiffness alone is used.
+
 ## Seed from Tire Data scalar
 
 **Seed This Wheel** / **Seed All Wheels** create three load rows, at one half,
@@ -45,8 +59,6 @@ has a mass.
     the table is derived from the cornering stiffness.
 
 !!! warning "Not in HVE Studio"
-    - The **data grid** of camber angle vs F<sub>y</sub> points for each
-      load/speed is not available; each row carries its stiffness only.
     - **In-Use Factor**: the camber table has none in HVE Studio.
     - The **Fy vs Camber Angle** plot.
     - **Print...**, **Apply** and **OK / Cancel** (edits apply immediately;

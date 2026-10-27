@@ -232,6 +232,7 @@ nav:
       - "Common Reports Dialog Box": 11-reports-output/CommRepDlg.md
       - "Common Scene Report Dialog": 11-reports-output/CommSceDlg.md
       - "Damage Data": 11-reports-output/DamageData.md
+      - "Output Settings": 11-reports-output/OutputSettings.md
       - "Report Text": 11-reports-output/ReportText.md
       - "Trajectory Report": 11-reports-output/TrajRepDlg.md
       - "Variable Output Edit Dialog": 11-reports-output/VarOutEdDlg.md

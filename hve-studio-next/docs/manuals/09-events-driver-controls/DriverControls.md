@@ -19,10 +19,13 @@ The tabs depend on the method:
 - **Every other method** — **Throttle**, **Brake**, **Steer** and **Gear**
   tabs ([Throttle](DriverControls4.md), [Brake](DriverControls3.md),
   [Gear](DriverControls5.md); Steer is below), plus a **Lean** tab for a
-  motorcycle or a vehicle that already has a prescribed lean.
+  motorcycle (the single-track rider's lean command, below).
 - For a method that does not read driver tables (EDHIS, GATB) a note at
   the top says so.
-- For SINGLETRACK the Throttle, Gear and Lean tabs are not shown (that model reads the Brake and Steer tables only).
+- For SINGLETRACK the Gear and Lean tabs are not shown. The **Throttle** tab is shown only when the event's
+  **Dynamics model** is **Nonlinear**, which reads the throttle as a fraction of the rear tire's grip
+  (see [Driver Controls Throttle](DriverControls4.md)); the Whipple model holds its speed and reads the
+  Brake and Steer tables only.
 
 !!! note "HVE Studio"
     The HVE Driver (path follower) is the **Path Follower** tab of this dialog,
@@ -74,15 +77,16 @@ by the engines. **Discard per-wheel table** returns to the steering-wheel table.
 ## Lean
 
 !!! tip "New in HVE Studio"
-    **Prescribe the lean angle** drives SIMON's roll degree of freedom from a
-    *Time (s) → Lean (deg)* table (+ = leaning right) instead of solving it, for
-    a motorcycle simulated in SIMON. It is stored with the vehicle, not the
-    event, and read by SIMON only. Until the machine's first contact, a motorcycle
-    in SIMON rides the single-track model, which reads the table as a lean
-    *command*: the rider balances to it and countersteers, so the machine leans
-    and turns. After first contact SIMON's own roll driver takes over, and there
-    leaning does not steer the vehicle — supply the path as well — and nothing in it
-    computes balance.
+    **Use the Lean table as the rider's lean command** gives a motorcycle's rider
+    a *Time (s) → Lean (deg)* table (+ = leaning right) to hold while the machine
+    rides the single-track model inside a SIMON event, which it does from the
+    start of the event until its first contact: the rider balances to the table
+    and countersteers into it, so the machine leans and turns. It is stored with
+    the vehicle, not the event, and read only in a SIMON event. After first contact
+    SIMON carries the machine and reads no lean table: its rider-control
+    surrogate holds the roll toward upright, and leaning does not steer the vehicle
+    there. SIMON has no forced lean angle: a forced roll could neither balance nor
+    steer, and it was removed in favor of the single-track model.
 
 ## Lights
 

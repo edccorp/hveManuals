@@ -13,7 +13,9 @@ An extremely useful feature of EDCRASH is the ability to quickly and accurately 
 !!! note "HVE Studio"
     In HVE Studio a solved event is locked while its results are on screen.
     Press **Reset** on the playback bar, change the input, and press **Run**
-    again.
+    again. **Reset** is available only once the event has been run (or a run is under
+    way, failed or was canceled); on an event that has never been executed it is
+    grayed out.
 
 ![Figure 1-1](images/hvn-edcrash-event.png)
 

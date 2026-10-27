@@ -73,7 +73,7 @@
 | HVE Studio: HVE Reports (report pages) | [Chapter 3 — Overview](03-program-output.md#overview) |
 | HVE Studio: path follower through impact | [Chapter 2 — Driver Controls](02-program-input.md#driver-controls) |
 | HVE Studio: per-axle Steer DOF | [Chapter 2 — Steering System Data](02-program-input.md#steering-system-data) |
-| HVE Studio: prescribed lean | [Chapter 2 — Driver Controls](02-program-input.md#driver-controls) |
+| HVE Studio: lean command (motorcycle) | [Chapter 2 — Driver Controls](02-program-input.md#driver-controls) |
 | HVE Studio: SIMON Options dialog | [Chapter 2 — Event Calculation Options](02-program-input.md#event-calculation-options) |
 
 <!-- NAV -->

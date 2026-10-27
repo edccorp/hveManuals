@@ -1,9 +1,11 @@
 # Chapter 14 — Environment Designer
 
 The Environment Designer is the Vehicle Designer's frame turned on the site:
-a stage bar (along the bottom; **Bar position** moves it to the top, left or right), a **Key figures** strip on the left that
+a stage bar (along the bottom; **Bar position** moves it to the top, left or right; the
+open stage is drawn as a selected tab, with the accent line along its top edge), a **Key figures** strip on the left that
 remembers what each number was, the site's panels hosted on the stage that
-asks their question, and a **Guidance** panel on the right whose
+asks their question (the stage's title on a band of the title-bar color, the site's
+name at its right end), and a **Guidance** panel under Key figures whose
 rows name the fix and the stage that owns it. Open it with **Environment ›
 Environment Designer...** (the first item), and it is the Environment editor's
 panel: switching to the Environment editor (F4) opens it where the Environment

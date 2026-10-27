@@ -121,15 +121,27 @@ panel, which also holds the rest of the starting state:
 - **Speed**, **Sideslip β** and **Yaw rate**.
 - **Advanced initial state** — **Vertical vel w**, **Roll angle**, **Pitch
   angle**, **Roll rate** and **Pitch rate**.
-- **Named Positions** — HVE's eight named positions (Initial, Begin
-  Perception, Begin Braking, Impact, Separation, Point On Curve, End of
-  Rotation, Final/Rest), each a collapsed node whose header shows where it is
-  (or *not set*). Opened, a node has a **Set** checkbox, **X**, **Y**,
-  **Heading (deg)**, **Auto Position (on the ground)** (turn it off to enter
-  **Z Height**, **Roll (deg)** and **Pitch (deg)**), and a *Read by* note
-  saying what reads it under the event's calculation method. For a
-  simulation, **Initial** is the starting state above: the same values, so
-  editing either edits both.
+- **Named Positions** (an EDCRASH event) — HVE's eight named positions
+  (Initial, Begin Perception, Begin Braking, Impact, Separation, Point On
+  Curve, End of Rotation, Final/Rest), each a collapsed node whose header
+  shows where it is (or *not set*). Opened, a node has a **Set** checkbox,
+  **X**, **Y**, **Heading (deg)**, **Auto Position (on the ground)** (turn it
+  off to enter **Z Height**, **Roll (deg)** and **Pitch (deg)**), and a *Read
+  by* note saying what the reconstruction reads it for.
+- **Markers** (every other method) — a simulation starts from the state above
+  and reads no other position, so the section lists only what you have
+  surveyed to compare the run against: a point from a reconstruction, a
+  witness mark. **Add marker** sets the next marker at the start pose:
+  **Marker 1** to **Marker 7** first, then **Marker 8**, **Marker 9** and on,
+  up to 64 in all. Open one to move it (the same X, Y, heading and elevation
+  fields as above) or drag its outline in the 3-D view, and **Remove marker**
+  takes it off the list; from Marker 8 on the ones after it move up a number
+  (Marker 9 becomes Marker 8), and a selected one is also removed with the
+  **Delete** key in the Viewport, as a path waypoint is. Markers 1 to 7 keep
+  HVE's own storage, so a case switched to EDCRASH shows the same points under
+  HVE's names, with any past them still listed as markers. No simulation reads
+  a marker: not EDSMAC4's Final/Rest (measured: a rest moved 13 m leaves every
+  result identical), and not EDGEN, whose path comes from the Path Follower.
 
 A trailer hitched to another vehicle is positioned by its **Articulation**
 relative to the tow vehicle; its X and Y follow from the hitch.
@@ -141,9 +153,10 @@ relative to the tow vehicle; its X and Y follow from the hitch.
 
     - A simulation's **initial** state is in the Position / Velocity dialog
       and the Event Information panel, as above.
-    - The eight path locations are the **Named Positions** list in each
-      vehicle's block of the panel (for EDCRASH, in **Vehicle Impact
-      Setup**), each set one outlined in the Viewport.
+    - The eight path locations are the **Named Positions** list in an
+      EDCRASH vehicle's block of the panel (in **Vehicle Impact Setup**), and
+      the **Markers** list in any other event's, each set one outlined in the
+      Viewport.
     - The path positions of the HVE Driver (path follower) are entered in
       the **Path Follower** dialog (see
       [Chapter 16](16-event-model-definition.md)).

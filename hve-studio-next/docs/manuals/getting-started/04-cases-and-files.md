@@ -204,7 +204,7 @@ comes in with an imported `.hve` case.
 | Vehicle body | `.h3d`, `.iv`, `.wrl`, `.obj`, `.gltf`, `.glb`, and point-cloud scans `.las`, `.ply`, `.e57`, `.xyz`, `.pts` (drawn as points, collided as a closed surface rebuilt from them) | The Mesh File of the Vehicles panel's 3D Geometry section, or the Vehicle Mesh window (Vehicle › Editors › Vehicle Mesh, also on the Event menu); the Library... button lists the geometry folders |
 | Site (terrain and scene) | `.dxf`, `.h3d`, `.iv`, `.wrl`, `.obj`, `.gltf`, `.glb` | Environment panel › Terrain › Geometry File; with scale factor, Y-up / Z-down options and **Use surfaces as terrain (physics)** |
 | Survey point cloud | `.las`, `.ply`, `.e57`, `.xyz`, `.pts`, `.txt`, `.csv` | Environment panel › Survey Point Cloud (scan) |
-| Aerial photograph | image file | Environment › Aerial Image (with its world-bounds corners) |
+| Aerial photograph, and each layer above it | image file | Environment › Aerial Image (with its world-bounds corners, and the picture's record) |
 | Material textures | `.png`, `.jpg`, `.bmp`, `.tga`, `.hdr` | View › Shader Editor |
 
 An `.h3d` file is read in HVE's own frame (inches, Z down) automatically.

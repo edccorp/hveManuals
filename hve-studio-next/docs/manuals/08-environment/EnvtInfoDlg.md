@@ -111,7 +111,8 @@ wheel to zoom, and double-click anywhere to put the case's location there.
 Under the map, choose the tile source. When it is an aerial source, choose the
 area to download and press **Download aerial image**: the yellow rectangle on
 the map, aligned to the case's axes, is downloaded and laid on the ground as the
-case's aerial site image (**Environment › Aerial Image...**). It is placed
+case's aerial site image (**Environment › Aerial Image...**), or, with **Add as
+a new layer** on, as a layer above it. It is placed
 assuming the case origin is at this location and +X points along its North
 angle. The button needs the case's location to be set first.
 

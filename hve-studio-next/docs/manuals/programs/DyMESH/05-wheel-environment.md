@@ -162,6 +162,16 @@ value is not used for wheels.
   carries the default material set in the Environment editor's **Terrain** section. If that material
   has no force-deflection terms, the run status says the contact produces no
   force.
+- A **site surface** that states no force-deflection terms at all — every site
+  read from an OBJ, DXF or glTF file, and every terrain downloaded from USGS,
+  since none of them carries a contact material — takes the **Terrain**
+  section's terms for contact, and keeps its own friction. The run status says
+  so (`surface "…" states no force-deflection terms; contact uses the
+  Environment > Terrain material's`). Before this, such a surface had zero
+  stiffness: DyMESH found the body in the ground and produced no force, and the
+  vehicle fell through. A surface that states terms of its own keeps them. If
+  the Terrain section has none either, the status says the contact produces no
+  force.
 - Because the environment never deforms, its share of a contact's overlap is
   the part the body has not yet taken. HVE judged that share from the
   environment's own vertex damage, which is always zero. A terrain whose

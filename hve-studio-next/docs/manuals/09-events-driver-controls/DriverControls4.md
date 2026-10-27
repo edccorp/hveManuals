@@ -44,6 +44,20 @@ torque at idle and can barely pull away.
       not be represented.
     - HVE's **Copy Cell** and **Copy Row** buttons.
 
+## For a SINGLETRACK event (nonlinear dynamics model)
+
+With the event's **Dynamics model** set to **Nonlinear** the tab shows only the
+table: there is no engine or drivetrain in that model, so there is no **Input
+Method** and no **Use Clutch / Torque Converter**. Each value is a fraction of
+the rear tire's grip at that instant -- its peak friction at its load and speed,
+times the surface's Friction Multiplier, at its effective radius -- so 0 is
+closed and 1 asks for all the grip the rear tire has. Whether the wheel then
+spins is the tire's business. A per-wheel table's rear wheel drives the rear
+tire. A case that states **At Driver** has its table read the same way, and the
+run says so. Leaving the table as a new event has it (one point at 0) states no
+throttle: a cruise torque then holds the start speed, as the Whipple model's
+constant speed does, and the run says so.
+
 <!-- NAV -->
 
 ---

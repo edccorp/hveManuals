@@ -22,7 +22,7 @@ HVE Studio compiles HVE's own SIMON source, so the vehicle dynamics, tire, suspe
 - **Antilock can be switched per event** without editing the vehicle — [Chapter 2, Vehicle Wheels](02-program-input.md#vehicle-wheels).
 - **Options HVE lists but SIMON refuses** (ABS Algorithms 3, 5 and 6, DyMESH's "search all vertices") are offered and marked -- the Blythe-Day hydroplaning model is not offered at all, and an imported case stating it is told -- rather than silently replaced — [Chapter 2, Event Calculation Options](02-program-input.md#event-calculation-options).
 - **Options that reach no engine** (integration method, several DyMESH restoration options, *Include Free Space*) are marked or absent — [Chapter 2](02-program-input.md#dymesh-options).
-- **Prescribed lean** for a single-track vehicle (motorcycle) — [Chapter 2, Driver Controls](02-program-input.md#driver-controls).
+- **Lean command** for a single-track vehicle (motorcycle), read while it rides the single-track model — [Chapter 2, Driver Controls](02-program-input.md#driver-controls).
 - **Output** is reached from the **Output** menu and the viewport instead of the Playback Editor's report windows — [Chapter 3](03-program-output.md).
 
 ## How to Use This Manual

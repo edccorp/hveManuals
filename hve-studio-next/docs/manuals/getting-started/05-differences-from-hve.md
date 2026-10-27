@@ -98,7 +98,7 @@ running something else:
 | Feature | Where | What it does |
 | --- | --- | --- |
 | Single-track (motorcycle) program | Calculation Method **SINGLETRACK**; **Tools › Motorcycle Analysis** | A motorcycle model with lean as a degree of freedom, countersteer, load transfer and pitch-over, validated against the published benchmark. HVE's programs can only approximate a two-wheeler as a narrow four-wheeled vehicle |
-| Prescribed lean (SIMON) | **Event › Driver Controls › Lean** tab (shown for a motorcycle) | Makes SIMON's body follow a lean-angle table, for a motorcycle that would otherwise fall over |
+| Lean command (SIMON motorcycle) | **Event › Driver Controls › Lean** tab (shown for a motorcycle) | The lean the single-track rider holds while the machine rides the single-track model, until its first contact; SIMON has no forced lean |
 | Path follower through impact (SIMON, EDSMAC4) | **Event › Path Follower › Keep following through an impact** | Keeps a vehicle's path follower active after it collides. Off by default, and always off in a case imported from HVE |
 | Per-axle steer degree of freedom (SIMON) | **Vehicle › Editors › Steering System**, Steer DOF (SIMON) | Sets SIMON's steer degree of freedom — Normal (free), Append (free after the table) or Auto start (free at contact) — for each axle separately, instead of one setting for the whole event; for example, a free castoring axle |
 | Limited-slip and locked differentials (SIMON) | **Vehicle › Editors › Drivetrain** | See [Physics differences](#physics-differences-by-design) |

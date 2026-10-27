@@ -364,9 +364,13 @@ message appears as the case opens; see
 its run status.
 
 **Tools › Style Editor** chooses the base color theme (**HVE**, the default —
-the HVE cube's maroons on a dark ground — **Dark**, **Light** or **Classic**;
-remembered between sessions) and gives live control over colors,
-sizes, rounding and spacing. Only the base theme is saved.
+the HVE cube's maroons on a dark ground, with window, panel, field and button
+each a step lighter than the one it sits on — **Dark**, **Light** or
+**Classic**; remembered between sessions) and gives live control over colors,
+sizes, rounding and spacing. The whole style is remembered. When a release
+changes the HVE theme's colors, a remembered style made under the older
+theme takes the new colors on the next start and keeps its sizes, rounding
+and font scale; choose another theme to keep your own colors.
 
 **Tools › Cameras** keeps the saved cameras (with a **Viewport View** tab for
 the live view); **Tools › Limits Editor** edits the allowed input ranges.

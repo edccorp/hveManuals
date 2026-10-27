@@ -98,6 +98,11 @@ says why.
   license on its own when it is due and the server can be reached), **Computers
   on this license**, and **Release this computer**, which frees its seat after
   asking you to confirm.
+- **Replace.** If EDC has changed the key it signs licenses with (it does so
+  only after a security incident), a license signed with the old key stops
+  working once the program has seen the new one, and the window says so. The
+  program replaces it on its own the next time it reaches the license server;
+  **Refresh now** does it immediately. No new activation or seat is needed.
 
 !!! note "HVE Studio"
     An installed release needs a license covering the program of the event you

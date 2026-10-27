@@ -18,10 +18,15 @@ they are columns on either side. The Vehicles panel is one item away, **Vehicle 
 Editors › Vehicles Panel**. (Key Results and the Output Graph are in the Event and
 Playback editors.) A session that starts in the
 Vehicle editor opens it the first time you switch back to it. It has one
-frame and thirteen stages. The frame is the same on every stage: the **Key figures**
+frame and eighteen stages. The frame is the same on every stage: the **Key figures**
 and **Guidance** panels stacked in a column on the left (drag its edge to set its
 width), the stage's own controls and views beside it, and a stage bar with every
-stage reachable. The bar is along the bottom until you move it: **Bar position**,
+stage reachable. The stage that is open is drawn in the bar the way the selected
+tab of a window is: the tab color with the accent line along its top edge; the
+others are plain. Inside the stage its title sits on a band of the title-bar
+color (the vehicle's name at the band's right end), and each section of a stage
+begins with a heading on a tinted strip, so where one block ends and the next
+begins is seen before it is read. The bar is along the bottom until you move it: **Bar position**,
 at the right end of the line that names the stage, puts it at the top, left or right
 instead (one setting for the Vehicle, Event and Environment Designers, remembered
 between sessions); docked left or right the buttons stack in a column. The first line names the case vehicle and where it came from,

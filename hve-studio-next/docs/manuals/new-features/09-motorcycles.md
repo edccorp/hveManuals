@@ -49,7 +49,7 @@ cylinders.
 | Method | What a motorcycle is there | Use it for |
 | --- | --- | --- |
 | **EDCRASH, EDSMAC, EDSMAC4** | A narrow rigid body with two contact patches. These are planar, so lean never arises. | Impacts: impulse-momentum through the collision, then the post-impact slide. This is how most motorcycle reconstructions are done. |
-| **SIMON** | A motorcycle rides the **single-track model** from the start of the event until its first contact, then SIMON and DyMESH take it over from the state the model left it in. Before contact you get the balance, countersteer and lean of the SINGLETRACK method, and the steer table is read the way the Event's single-track options say. The run status says when the machine was handed over (*handed to SIMON at first contact*) or why it was not (*stayed on SIMON's own model*, with the reason, for example steering geometry that is not a motorcycle's). **After** first contact the roll is held by a *rider-control surrogate* (a spring about the roll axis that pulls toward upright), and the run says so: *lateral results are low-lean only*. A roll stiffness you enter yourself replaces the surrogate. With **Prescribe the lean angle** (Event › Driver Controls, Lean tab), what the table does depends on the phase. **Before** first contact it is the rider's lean **command**: the rider countersteers to reach it and the machine turns, as in SINGLETRACK. **After** first contact SIMON sets the roll from the table, the wheels lean with the body, and leaning does **not** steer the machine, so supply the path as well. The run status says which phases happened. A run with no contact says the table was the rider's lean command throughout. A run that meets something says it was the command until the hand-over and drove the roll after it. | A motorcycle that rides up to an impact with a car or a barrier. The machine follows a site's terrain and can leave a ramp and land back on its tires before it makes contact; the run status gives the number of flights and the time airborne. A machine that goes down is handed to SIMON where it fell. |
+| **SIMON** | A motorcycle rides the **single-track model** from the start of the event until its first contact, then SIMON and DyMESH take it over from the state the model left it in. Before contact you get the balance, countersteer and lean of the SINGLETRACK method, and the steer table is read the way the Event's single-track options say. The run status says when the machine was handed over (*handed to SIMON at first contact*) or why it was not (*stayed on SIMON's own model*, with the reason, for example steering geometry that is not a motorcycle's). **After** first contact the roll is held by a *rider-control surrogate* (a spring about the roll axis that pulls toward upright), and the run says so: *lateral results are low-lean only*. A roll stiffness you enter yourself replaces the surrogate. With **Use the Lean table as the rider's lean command** (Event › Driver Controls, Lean tab), the rider holds the table's lean while the machine rides the single-track model: the rider countersteers to reach it and the machine turns, as in SINGLETRACK. **After** first contact SIMON reads no lean table (it has no forced lean angle); the surrogate holds the roll toward upright and leaning does **not** steer the machine there. The run status says which phases happened: a run with no contact says the table was the rider's lean command throughout; a run that meets something says it was the command until the hand-over and that SIMON read no lean after it. | A motorcycle that rides up to an impact with a car or a barrier. The machine follows a site's terrain and can leave a ramp and land back on its tires before it makes contact; the run status gives the number of flights and the time airborne. A machine that goes down is handed to SIMON where it fell. |
 | **SINGLETRACK** | A real single-track model (below) | A machine on its wheels: balance, countersteer, braking, lean |
 
 None of the HVE methods models lean, countersteer, gyroscopic effects, camber
@@ -73,6 +73,7 @@ coefficients and self-stable speed range (4.29–6.02 m/s).
 
     | Section | Field | Meaning |
     | --- | --- | --- |
+    | Dynamics model | **Dynamics model** | **Whipple (linearized benchmark)** — the published model, exact for small lean. **Nonlinear (four-body, slip tires)** — the same bodies with nine rigid degrees of freedom and slip-based tires: lean exact at any angle, braking, load transfer and wheel lift solved; reads the throttle, the per-wheel and wheel force brake tables, the steering stops and each surface's friction; no hard-point ground contact yet |
     | Steer table | **Table means** | **Steer torque (N.m)** — what the rider's arms apply; the machine finds its own lean (a torque pulse is fought back upright, so use it for a disturbance, not a corner). **Commanded lean (deg)** — what the machine ended up doing; the rider countersteers to establish and hold it. Use this when the evidence is a lean angle, which is usual. |
     | Machine | **Steering damper (N.m.s/rad)** | 0 = none fitted |
     | | **Tire crown radius** | Negative = derive it from the front tire's width. At lean the contact point moves inboard round the rounded tread, so the machine leans several degrees further than the textbook angle |
@@ -85,6 +86,13 @@ coefficients and self-stable speed range (4.29–6.02 m/s).
     capture. Every run says what the steer table meant.
 
 ### What it does not do
+
+The limits below are the Whipple model's. With **Dynamics model** set to
+**Nonlinear**, the first and third no longer apply: lean is exact at any angle
+and braking goes through slip-based tires, with load transfer and wheel lift
+solved. The nonlinear model has no hard-point ground contact yet, so a fall
+still ends the run, and a motorcycle in a SIMON event still rides the Whipple
+model.
 
 - **It is linearized** about upright, straight running: exact for small lean.
   The run reports the peak lean, says so past 15°, and past 10° reports how far
