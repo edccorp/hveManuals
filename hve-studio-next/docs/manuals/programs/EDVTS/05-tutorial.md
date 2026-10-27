@@ -149,7 +149,7 @@ The original tutorial sets the Roll Couple Distribution to `0.2`, a value repres
 
 ### Simulation controls
 
-The event lasts more than 5 seconds, so its maximum simulation time is 20 seconds: **Duration** in the **Simulation** panel (a tab beside Event Information).
+The event lasts more than 5 seconds, so its maximum simulation time is 20 seconds: **Duration** on the **Run** stage of the **Event Designer** (**Event › Event Designer...**).
 
 ### Key Results
 

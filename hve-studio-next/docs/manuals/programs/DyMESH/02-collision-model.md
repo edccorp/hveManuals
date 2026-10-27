@@ -144,6 +144,27 @@ selected. Under Version 3 the reduction is not applied.)*
     timestep in which the wheel closes no more than about 0.05 in per step,
     roughly 0.3 ms at 4 m/s.
 
+!!! note "HVE Studio: a wheel face is pushed no further than the contact is deep"
+    The other direction of a wheel contact is a **body** node inside the
+    wheel. HVE moves the wheel face that the node's search ray meets, and
+    moves it the whole length of the ray. The ray runs along the body's shared
+    restoration direction. Where that direction points across the wheel, the
+    first face the ray meets is on the wheel's **far** side. On
+    CityBlockAccident an Audi node 0.26 in inside the F150's front wheel met a
+    face 17.66 in away and moved it 14.6 in in one 3 ms step. The wheel ended
+    14.5 in out of shape, scrambled across its own hub.
+
+    HVE Studio checks whether the face the ray met is the wheel's **nearest**
+    face to the node. If it is, the ray met it at an angle, and the push along
+    the ray is what clears the node, so it is kept. If it is farther than the
+    nearest face, the ray crossed the wheel, and the push is cut to the node's
+    real depth (its distance to that nearest face). On the same case the
+    wheel ends 7.3 in out of shape where HVE's push leaves it 10.8 in, and it
+    no longer jumps across its own hub. The run
+    status reports **DyMESH wheel push capped at the contact depth**, with the
+    wheel and the number of pushes cut. Running with the environment variable
+    `HVE_DYMESH_WHEEL_PUSH_UNCAPPED=1` restores HVE's push.
+
 ## 3. Node force–deflection law
 
 A central design point is that **any force-deflection relationship can be used**;
@@ -311,6 +332,20 @@ unloading line (see the $K_u$ line in the force-per-area plot).
 
 DyMESH Version 2 "greatly improved" the restitution model together with the
 accelerations and the crush-depth (general damage profile) simulation.
+
+!!! note "HVE Studio: reloading is continuous"
+    In HVE a node pushed back in past its sprung-back position $(1-e)\,\delta_\mathrm{max}$
+    takes its full threshold force $A \cdot \mathrm{Area}$ at once, and none just
+    short of it. HVE Studio reloads it on the same short rise that first loading
+    climbs, with damping, so the force is continuous. Two bodies resting against
+    each other -- a car on its roof on the ground, or two vehicles wedged together
+    after a crash -- otherwise switch that force on and off from one step to the
+    next, which adds energy: two cars at rest after a collision could drive each
+    other apart at speed. Because reloading also happens during a crash, this
+    changes crash results slightly compared with HVE: delta-V by up to about 5%
+    on the cases measured, and a contact that HVE's law kept chattering for over a
+    second ends in under 0.1 s. Setting the environment variable
+    `HVE_DYMESH_RELOAD_VEHICLES=0` restores HVE's law between vehicles.
 
 !!! note "HVE Studio"
     The inter-vehicle restitution DyMESH uses is the **Relaxation Length**. In

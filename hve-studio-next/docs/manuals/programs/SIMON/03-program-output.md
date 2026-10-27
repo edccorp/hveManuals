@@ -22,7 +22,7 @@ In HVE Studio, after the event has been run (Chapter 2, *Executing An Event*):
 
 Results are exported with **Export CSV...** (or **Copy**) in the result panels and with **Output › Export Variables...**. HVE Studio does not print; save a report page or export a table and print it from another program.
 
-> **NOTE:** The engine's own report pages are built only when the run completes. A refused or aborted run shows no pages in HVE Reports and says so; read the run status in the *Simulation* panel and the Messages page, if any, for the reason.
+> **NOTE:** The engine's own report pages are built only when the run completes. A refused or aborted run shows no pages in HVE Reports and says so; read the run status on the Event Designer's *Run* stage and the Messages page, if any, for the reason.
 
 !!! note "HVE Studio"
     A solved case keeps its results: **File › Save Case** writes the last run's results beside the case, and opening the case restores them as long as its inputs are unchanged. Opening a case never re-runs it.

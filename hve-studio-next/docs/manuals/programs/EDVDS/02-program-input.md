@@ -578,7 +578,7 @@ The Restraints data are not used by EDVDS.
 EDVDS uses the current simulation control parameters. The Simulation parameters used by EDVDS are shown in Table 2-8.
 
 !!! note "HVE Studio"
-    The simulation controls are in the **Simulation** panel, a tab beside **Event Information**: **Duration**, **Trajectory Timestep** and **Output Timestep**, a **Termination** section (linear and angular termination velocities, each with an **On** checkbox) and an **Integrator Convergence** section (**Maximum Bisections**, **Velocity Convergence**). The collision and separation timesteps are hidden for EDVDS, which does not use them. The values belong to the event.
+    The simulation controls are on the **Run** stage of the **Event Designer** (**Event › Event Designer...**): **Duration**, **Trajectory Timestep** and **Output Timestep**, a **Termination** section (linear and angular termination velocities, each with an **On** checkbox) and an **Integrator Convergence** section (**Maximum Bisections**, **Velocity Convergence**). The collision and separation timesteps are hidden for EDVDS, which does not use them. The values belong to the event.
 
 **Table 2-8: Simulation Control Parameters Used By EDVDS**
 

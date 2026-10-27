@@ -6,7 +6,7 @@ Messages may be issued by the operating system, HVE-2D or HVE, or by EDCRASH. So
     The messages are EDCRASH's own and are listed on the **MESSAGES** tab of
     **Output › HVE Reports** after a run. When EDCRASH refuses an event, the
     run produces no reports; the reason is stated in words, with EDCRASH's
-    stop code, in the **Status** line of the **Simulation** panel. Two
+    stop code, in the **Status** line on the Event Designer's **Run** stage. Two
     refusals that are specific to choices in HVE Studio's dialogs:
 
     - **Iterate on Sideslip** as the Separation Velocity Basis is not

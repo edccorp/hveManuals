@@ -577,7 +577,7 @@ SIMON uses the following Driver Controls. In HVE Studio the four tables are the 
   > **NOTE:** The %WOT (Pedal) option is recommended (see Chapter 4, Calculation Method).
 
 - **Gears** — A table of instructions for shifting gears as a function of time (0 = neutral, 1 = reverse, 2 = first gear, and so on).
-- **HVE Driver Model** — Options for using the Path Follower, Speed Follower, and Neuro-muscular Filter. The HVE Driver Model is a closed-loop driver simulator which calculates driver input as a function of time (see Chapter 4 and [4]). In HVE Studio it is **Event › Path Follower...**: **Use Path Follower**, then the **Method**, **Steering**, **Path**, **Speed Follower** and **Filter** tabs. The target path is entered on the **Path** tab as a table of points (X, Y, heading and speed), or by clicking points in the 3-D viewport; the vehicle's initial position is the first point. HVE's *Driver Comfort Level* is **Driver Comfort Level (g)** on the Method tab.
+- **HVE Driver Model** — Options for using the Path Follower, Speed Follower, and Neuro-muscular Filter. The HVE Driver Model is a closed-loop driver simulator which calculates driver input as a function of time (see Chapter 4 and [4]). In HVE Studio it is **Event › Path Follower...**: **Use Path Follower**, then its **Timing / Limits**, **Steering**, **Path**, **Speed Follower** and **Filter** sections, one page top to bottom. The target path is entered in the **Path** section as a table of points (X, Y, heading and speed), or by clicking points in the 3-D viewport; the vehicle's initial position is the first point. HVE's *Driver Comfort Level* is **Driver Comfort Level (g)** in the Timing / Limits section.
 
 !!! note "HVE Studio"
     **The driver model stops per vehicle at an impact.** HVE's SIMON switches every vehicle's driver model off at the first collision anywhere in the event. HVE Studio switches off only the driver model of a vehicle that is itself in the collision, so a following vehicle that is not involved keeps following its path. For a vehicle that is in the collision the result is the same as HVE's. (EDC's case library has no event where the two differ.)
@@ -626,6 +626,8 @@ In HVE Studio these are the tabs of **Event › Wheels...**, one column per whee
 
 !!! tip "New in HVE Studio"
     **Antilock per event.** HVE keeps antilock on the vehicle, so running the same vehicle with and without ABS means editing the vehicle between runs, and a saved case remembers only the last setting. The **Brake** tab of HVE Studio's Wheels dialog has an **Antilock brakes** list for this event only: *Use the vehicle's setting*, *Force OFF for this event* or *Force ON for this event*. When HVE's saved run of an imported case shows ABS active although the saved vehicle has it off (EDC's own SIMON tutorial case is one), HVE Studio restores it for that event and says so.
+
+    **TCS and YSC per event.** The same tab has **Traction control (TCS)** and **Yaw stability control (YSC)** lists with the same three choices, overriding the vehicle's own switches (**Vehicle › Drivetrain › Electronic Stability**) for this event only. Only the switch changes: the thresholds and rates stay the vehicle's, so a system forced on over a vehicle whose rate is 0 adjusts nothing, and the dialog and the run status say so. They appear only on SIMON events, because SIMON is the only program that implements either system.
 
 !!! note "HVE Studio"
     **Brake failure needs an extent.** A failed brake's line pressure is reduced by the failure *extent* (a fraction from 0 to 1) ramped over the failure duration; an extent of 0 — the default — reduces nothing, so ticking the failure alone changes nothing. This is HVE's model.
@@ -685,7 +687,7 @@ SIMON's Calculation Options include:
     HVE Studio has no *Include Free Space* control; the Damage Data report is produced with the option's default (crush depth excluding free space).
 
 !!! note "HVE Studio"
-    The *SIMON Options* dialog also shows an **Integration** method list, disabled and marked "(inert)". SIMON's input processing always selects fixed-step Runge-Kutta whatever the case states — in HVE as in HVE Studio — so the list only shows what runs. The step size is set in the *Simulation* panel (see [Simulation Controls](#simulation-controls)). The dialog's **Time Settings** and **Termination Velocity** are the same values as the *Simulation* panel's.
+    The *SIMON Options* dialog also shows an **Integration** method list, disabled and marked "(inert)". SIMON's input processing always selects fixed-step Runge-Kutta whatever the case states — in HVE as in HVE Studio — so the list only shows what runs. The step size is set on the Event Designer's *Run* stage (see [Simulation Controls](#simulation-controls)). The dialog's **Time Settings** and **Termination Velocity** are the same values as the *Run* stage's.
 
 ### DyMESH Options
 
@@ -724,7 +726,7 @@ The DyMESH Options dialog contains the following options:
 
 ### Simulation Controls
 
-SIMON uses the current simulation control parameters. In HVE Studio they are in the *Simulation* panel (**View › Simulation**, docked beside Event Information), under **Simulation Controls**: **Duration (s)**, **Trajectory Timestep (s)**, **Collision Timestep (s)**, **Output Timestep (s)** and the linear and angular termination velocities. The panel shows only the fields the selected method reads; SIMON does not read the separation timestep or the integrator convergence controls. The Simulation Parameters used by SIMON are shown in Table 2-8.
+SIMON uses the current simulation control parameters. In HVE Studio they are on the *Run* stage of the *Event Designer* (**Event › Event Designer...**), under **Simulation Controls**: **Duration (s)**, **Trajectory Timestep (s)**, **Collision Timestep (s)**, **Output Timestep (s)** and the linear and angular termination velocities. The stage shows only the fields the selected method reads; SIMON does not read the separation timestep or the integrator convergence controls. The Simulation Parameters used by SIMON are shown in Table 2-8.
 
 > **NOTE:** The output time interval should be an even multiple of the vehicle trajectory integration timestep. For example, if the integration timestep is 0.02, the output interval might be 5 × 0.02, or 0.10.
 
@@ -748,7 +750,7 @@ When the Sidewall Impact Tire-Terrain Model is used, the Search Direction Z comp
 
 ### Executing An Event
 
-To execute a SIMON event in HVE Studio, click **Run** on the playback bar under the viewport (Figure 2-6), or choose **Output › Run Simulation...**, which also opens the *Simulation* panel with the run's progress. The playback bar's controls are:
+To execute a SIMON event in HVE Studio, click **Run** on the playback bar under the viewport (Figure 2-6), or choose **Output › Run Simulation...**, which also opens the Event Designer on its *Run* stage with the run's progress. The playback bar's controls are:
 
 - **Run** — Execute the event (while it runs, press **Esc** to cancel it)
 - **Reset** — Discard the results so the event can be edited and run again

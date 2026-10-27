@@ -11,7 +11,7 @@ the [HVE Manual](../README.md).
     and the **Event Information** panel replace HVE's Event Set-up menu and its
     Event Information dialog. Inputs for an event that has results on screen
     are read-only until the run is reset (press **Reset** under the viewport or
-    in the Simulation panel); every one of these dialogs shows a banner saying
+    on the Event Designer's Run stage); every one of these dialogs shows a banner saying
     so.
 
 ## Pages

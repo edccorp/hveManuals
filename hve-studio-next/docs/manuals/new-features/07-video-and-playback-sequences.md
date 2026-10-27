@@ -317,6 +317,12 @@ starts as `render.png` in the open case's folder (in `Documents\HVE Studio` when
 open), and the status line names the file. Closing the
 window stops a render in progress.
 
+A site's own **sky dome**, a shell drawn high over the whole site, is left out
+of a traced picture, because the tracer draws its own sky and would otherwise
+meet the dome as a roof over every vehicle. The window's notes name the
+surfaces left out. Each surface's **In Renders** setting (Environment panel ›
+the surface's properties) changes that choice.
+
 !!! note "HVE Studio"
     HVE has no built-in ray tracer. This one reads its scene from the same
     description the glTF export writes and lights it the way the viewport

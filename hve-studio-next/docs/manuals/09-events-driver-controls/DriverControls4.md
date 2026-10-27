@@ -10,9 +10,10 @@ the motorcycle model has no engine or drivetrain.
 
 Selects the type of throttle table:
 
-A vehicle added to a SIMON, EDVDS or EDVSM event, or an event switched to one of
-them, starts with **At Driver** for both throttle and brake until its tables are
-edited; the other methods have no pedal path and start with **% of Friction**.
+A vehicle added to a SIMON, EDVDS or EDVSM event, however it is added (Event
+Information, Quick Case, the vehicle library or Case Intake), or an event switched
+to one of them, starts with **At Driver** for both throttle and brake until its
+tables are edited; the other methods have no pedal path and start with **% of Friction**.
 
 - **At Driver** — HVE's *Wide-open Throttle*: throttle position from
   0 (closed) to 1 (wide open) versus time. The drivetrain model converts it to

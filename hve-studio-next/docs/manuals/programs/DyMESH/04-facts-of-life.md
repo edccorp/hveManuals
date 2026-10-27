@@ -33,7 +33,7 @@ unexpected behavior. Let the run proceed rather than clicking through the
 interface while DyMESH is working.
 
 !!! note "HVE Studio"
-    Progress is shown in the **Simulation** panel. Once an event has results on
+    Progress is shown on the Event Designer's **Run** stage. Once an event has results on
     screen its inputs are read-only until you press **Reset**, so a click during
     or after a run cannot change the case the results describe.
 

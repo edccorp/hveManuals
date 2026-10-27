@@ -530,7 +530,7 @@ The Restraints data are not used by EDVSM.
 
 ### Simulation Controls
 
-EDVSM uses the event's simulation control parameters. In HVE Studio these are in the **Simulation** panel, docked beside Event Information (also **View › Simulation**): *Duration (s)* is the Maximum Simulation Time, *Trajectory Timestep (s)* the Vehicle Trajectory Integration Timestep and *Output Timestep (s)* the Output Interval; the termination velocities are under *Termination*, each with an **On** switch. The Simulation parameters used by EDVSM are shown in Table 2-8.
+EDVSM uses the event's simulation control parameters. In HVE Studio these are on the **Run** stage of the **Event Designer** (**Event › Event Designer...**): *Duration (s)* is the Maximum Simulation Time, *Trajectory Timestep (s)* the Vehicle Trajectory Integration Timestep and *Output Timestep (s)* the Output Interval; the termination velocities are under *Termination*, each with an **On** switch. The Simulation parameters used by EDVSM are shown in Table 2-8.
 
 **Table 2-8 Simulation Control Parameters used by EDVSM**
 

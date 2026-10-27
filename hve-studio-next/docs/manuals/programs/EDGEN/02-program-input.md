@@ -224,7 +224,7 @@ Position/Velocity data used by EDGEN are shown in Table 2-1.
       Information panel, or **Event › Position / Velocity...**. The
       vehicle can also be dragged in the viewport.
     - **Positions 2 to 8** are the waypoints in **Event › Path Follower**,
-      on the **Path** tab: one row per position with **X**, **Y**, **Z**,
+      in the **Path** section: one row per position with **X**, **Y**, **Z**,
       **Yaw**, **Roll**, **Pitch**, **Speed** and **Slip**, in order (the
       **#** column numbers them 2 to 8). Tick
       **Use** on each row you need; unticked rows are skipped. Waypoints
@@ -288,9 +288,9 @@ Position/Velocity data used by EDGEN are shown in Table 2-1.
     the site length unit (ft, or m in metric), so the two show the same
     number for the same point.
 
-![Path Follower, Path tab](images/hvn-edgen-path-tab.png)
+![Path Follower, Path section](images/hvn-edgen-path-tab.png)
 
-*The Path tab of Event › Path Follower for the school bus of the EDGEN tutorial case: after its initial position the bus passes through two waypoints, imported into rows 3 and 8; the second is at rest.*
+*The Path section of Event › Path Follower for the school bus of the EDGEN tutorial case: after its initial position the bus passes through two waypoints, imported into rows 3 and 8; the second is at rest.*
 
 **Table 2-1: Event Position/Velocity Parameters used by EDGEN**
 
@@ -303,7 +303,7 @@ Position/Velocity data used by EDGEN are shown in Table 2-1.
 
 ### Simulation Controls
 
-EDGEN uses the current simulation control parameters in the Simulation Controls dialog. *(In HVE Studio these are in the **Simulation** panel, docked beside Event Information, and belong to the event: **Duration (s)** is the maximum simulation time, **Trajectory Timestep (s)** the vehicle integration timestep and **Output Timestep (s)** the output interval.)*
+EDGEN uses the current simulation control parameters in the Simulation Controls dialog. *(In HVE Studio these are on the **Run** stage of the **Event Designer** (**Event › Event Designer...**), and belong to the event: **Duration (s)** is the maximum simulation time, **Trajectory Timestep (s)** the vehicle integration timestep and **Output Timestep (s)** the output interval.)*
 
 The Simulation parameters used by EDGEN are shown in Table 2-2.
 
@@ -311,7 +311,7 @@ The Simulation parameters used by EDGEN are shown in Table 2-2.
 
 | Parameter | Description |
 |---|---|
-| Human Integration Timestep | The calculation timestep used for events involving a human. *(HVE Studio: **Human Collision Timestep (s)** in the Simulation panel, shown for EDGEN and EDHIS events; 0 uses the Output Timestep.)* |
+| Human Integration Timestep | The calculation timestep used for events involving a human. *(HVE Studio: **Human Collision Timestep (s)** on the Event Designer's Run stage, shown for EDGEN and EDHIS events; 0 uses the Output Timestep.)* |
 | Vehicle Integration Timestep | The calculation timestep used for events involving a vehicle |
 | Output Interval | The timestep used to send output results back to HVE |
 | Maximum Simulation Time | Maximum length of the run |

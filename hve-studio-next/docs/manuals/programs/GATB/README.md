@@ -25,7 +25,7 @@ What else is different in HVE Studio:
 
 - **Running GATB.** Choose *GATB* as the event's **Calculation Method** in Event Information (Event editor, F5), then **Run** on the playback bar or **Output › Run Simulation**. The solved event plays back in the same viewport, and reports, graphs and tables are on the **Output** menu.
 - **Where the inputs are.** The body is edited in the **Human (F2)** editor (**Human › Human Information** opens the *Humans* panel, whose bodies are generated with GEBOD); belts, airbags and contact surfaces are vehicle equipment (**Vehicle (F3)** menu); which humans take part, where they sit, what they wear and how they are posed are set per event in **Event Information › Humans in Event**. [Chapter 2](02-program-input.md) gives the full map.
-- **The ATB time step is fixed at 0.002 s**, as in HVE: GATB sets it itself and reads only the Simulation panel's *Duration* and *Output Timestep*.
+- **The ATB time step is fixed at 0.002 s**, as in HVE: GATB sets it itself and reads only the *Duration* and *Output Timestep* on the Event Designer's Run stage.
 - **Belt webbing**: GATB gives ATB its own fixed webbing stress/strain curve, as HVE's GATB does, so the belt's webbing rows -- *Linear*, *Quadratic* and *Cubic Stretch Rate*, *Damping Constant*, *Breaking Strength* and *Unloading Slope*, left and right (which EDHIS reads) -- do not change a GATB run.
 - **"Use external ATB input file" is not available** (grayed in the GATB options, with the reason): ATB is fed from the assembled data in memory, so an external `GATB.ain` cannot reach the solver.
 - **Self contact**: only each segment's first ellipsoid takes part in segment-to-segment contact, exactly as in HVE's GATB; HVE Studio reports any armed pair that names another ellipsoid.

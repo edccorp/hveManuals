@@ -65,7 +65,7 @@ hosted and the 3-D view beside it.*
    devices as the Vehicle Designer's Accelerometers stage, so one placed in
    either is in every event the vehicle runs in. Airbags and belts are edited in
    the Vehicle Designer's Occupant Protection stage.
-7. **Run**: the Simulation panel, hosted. Duration, the trajectory, collision,
+7. **Run**: the simulation controls and the run. Duration, the trajectory, collision,
    separation, curb-impact and human time steps the method reads, the **Output
    Timestep**, **Termination** and **Stopped Vehicle**, then **Run** with its
    progress, **Reset** and the **Last Result**. A solved event is locked until
@@ -91,7 +91,7 @@ opens, drawn in the stage, for the vehicle chosen in its own **Vehicle** picker.
 ## Key figures
 
 The vehicles and humans in the active event; its duration and output step (--
-when the event leaves them to the Simulation panel); the first and second
+when the event leaves them to the Run stage); the first and second
 vehicles' start speeds; the distance between their CGs at the start; their
 closing speed (positive when the gap shrinks); and when their CGs would meet at
 those speeds.

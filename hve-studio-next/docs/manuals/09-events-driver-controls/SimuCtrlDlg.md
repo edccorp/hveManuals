@@ -1,11 +1,10 @@
 # Simulation Controls Dialog Box
 
 In HVE Studio the simulation controls are the **Simulation Controls** group at the
-top of the **Simulation** panel, which also holds the **Run** controls and a
-summary of the last result. Open it from **View › Simulation**, or with
-**Output › Run Simulation...**; by default it is docked beside Event
-Information. The same panel is hosted on the Event Designer's **Run** stage
-(Simulation Controls & Run), so an event can be set up and run without leaving
+top of the Event Designer's **Run** stage, which also holds the **Run** controls
+and a summary of the last result. Open it with **Event › Event Designer...** and
+choose the **Run** stage; **Output › Run Simulation...** (**Ctrl+R**) opens the
+same stage and runs the event. An event can be set up and run without leaving
 the designer.
 
 The values belong to the active event. *Event-owned* is shown when the event

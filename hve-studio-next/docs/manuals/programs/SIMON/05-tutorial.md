@@ -96,8 +96,8 @@ Because the ISO lane-change maneuver has a pre-defined path, the tutorial uses t
 Open **Event › Path Follower...** (Figure 5-5):
 
 1. **Use Path Follower** is checked.
-2. On the **Method** tab, **Driver Comfort Level (g)** is 1.00.
-3. On the **Path** tab, the path is the table in Table 5-1. The vehicle's initial position is the first point; the others are the HVE case's Begin Perception, Begin Braking and Impact positions.
+2. In the **Timing / Limits** section, **Driver Comfort Level (g)** is 1.00.
+3. In the **Path** section, the path is the table in Table 5-1. The vehicle's initial position is the first point; the others are the HVE case's Begin Perception, Begin Braking and Impact positions.
 
 **Table 5-1 Position and heading angle for each target position.**
 
@@ -109,9 +109,9 @@ Open **Event › Path Follower...** (Figure 5-5):
 | 4 | 325.0 | −11.5 | 0.0 |
 
 ![Figure 5-5](images/hvn-tut-path-follower.png)
-*Figure 5-5: The Path Follower dialog for the Cadillac in the first event (Method tab). The target points are on the Path tab.*
+*Figure 5-5: The Path Follower dialog for the Cadillac in the first event. The target points are in its Path section.*
 
-> **NOTE:** In HVE Studio the path follower's target points are entered on the Path tab (or by clicking **Add positions by clicking the 3-D viewport**) rather than as named path positions in the Position/Velocity dialog.
+> **NOTE:** In HVE Studio the path follower's target points are entered in its Path section (or by clicking **Add positions by clicking the 3-D viewport**) rather than as named path positions in the Position/Velocity dialog.
 
 #### Brake Input
 
@@ -124,7 +124,7 @@ The brake input is a large pedal force (120 lb) applied at the start of the stee
 | 1.5 | 0.0 |
 | 1.6 | 120.0 |
 
-Because the ABS system modulates the brake pressure at a relatively high frequency, the output interval is 0.01 seconds rather than 0.10, so that the output captures the wheel brake pressure modulation. In HVE Studio this is the **Output Timestep (s)** in the *Simulation* panel (the tab beside Event Information); the case also states a **Trajectory Timestep** of 0.0025 s and a **Duration** of 5 s.
+Because the ABS system modulates the brake pressure at a relatively high frequency, the output interval is 0.01 seconds rather than 0.10, so that the output captures the wheel brake pressure modulation. In HVE Studio this is the **Output Timestep (s)** on the *Run* stage of the *Event Designer* (**Event › Event Designer...**); the case also states a **Trajectory Timestep** of 0.0025 s and a **Duration** of 5 s.
 
 > **NOTE:** The smaller output interval increases the size of the results, not the integration effort.
 
@@ -181,7 +181,7 @@ The engine's report pages are shown in **Output › HVE Reports...** (Figure 5-9
 
 ### Messages
 
-SIMON produces a number of messages, depending on the outcome of the event. For a complete listing and explanation of the messages, refer to Chapter 6. They are on the **MESSAGES** tab of HVE Reports, when the run produced any; the run's status line in the *Simulation* panel also names the first one.
+SIMON produces a number of messages, depending on the outcome of the event. For a complete listing and explanation of the messages, refer to Chapter 6. They are on the **MESSAGES** tab of HVE Reports, when the run produced any; the run's status line on the Event Designer's *Run* stage also names the first one.
 
 ### Accident History
 

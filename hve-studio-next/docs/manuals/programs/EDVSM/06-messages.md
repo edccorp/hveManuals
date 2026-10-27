@@ -15,7 +15,7 @@ All messages issued by EDVSM are listed below. Each message includes a descripti
 *(updated: This catalog has been brought into line with the messages issued by the current version of EDVSM. All messages from the original manual are still present. One message has been added since the Fifth Edition — the second Integration Error, concerning the Velocity Convergence Criterion — and the GetSurfaceInfo() Error text has been shortened; both are noted below.)*
 
 !!! note "HVE Studio"
-    In HVE Studio, EDVSM's messages are on the *MESSAGES* page of **Output › HVE Reports**. The run status (under **Run** on the playback bar, and in the **Simulation** panel) also says whether the run completed or stopped, and lists anything HVE Studio supplied or changed on the way to the engine. The simulation controls these messages refer to are in the **Simulation** panel, and the Path Follower parameters in **Event › Path Follower**.
+    In HVE Studio, EDVSM's messages are on the *MESSAGES* page of **Output › HVE Reports**. The run status (under **Run** on the playback bar, and on the Event Designer's **Run** stage) also says whether the run completed or stopped, and lists anything HVE Studio supplied or changed on the way to the engine. The simulation controls these messages refer to are on the same **Run** stage, and the Path Follower parameters in **Event › Path Follower**.
 
 ---
 

@@ -103,7 +103,7 @@ run.
     Method Options... opens an options dialog for EDCRASH, EDSMAC and EDSMAC4
     (one shared dialog), EDGEN, EDHIS, SIMON, EDVSM, GATB and SINGLETRACK. For
     EDSVS, EDVDS, EDVTS and ReadDataFile it is grayed. Simulation time and timesteps are
-    in the Simulation panel (see [Chapter 6](06-options-menu.md#simulation-controls)).
+    on the Event Designer's Run stage (see [Chapter 6](06-options-menu.md#simulation-controls)).
 
 See the dialog reference: [Event Information](../../09-events-driver-controls/EventInfo.md)
 and the per-method [Calculation Options](../../10-calculation-options/README.md).

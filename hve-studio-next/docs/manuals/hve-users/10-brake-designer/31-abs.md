@@ -592,7 +592,7 @@ Model:
   you wish to evaluate detailed results from an ABS event, you should reduce
   the output interval (see Simulation Controls dialog) to 0.0100 seconds (or
   less). *(In HVE Studio the output interval is the **Output Timestep** in the
-  **Simulation** panel's Simulation Controls.)* Otherwise, the (rather large) output interval will act as a filter,
+  Simulation Controls on the Event Designer's **Run** stage.)* Otherwise, the (rather large) output interval will act as a filter,
   and the details of the pressure modulation will be lost.
 - To monitor results from an ABS simulation, use the Variable Selection
   dialog and choose the desired output parameters. The most interesting

@@ -118,7 +118,7 @@ With no face selected, the keys do nothing in Edit Mode.
     button: an edit takes effect when you leave the field, and Edit › Undo
     (Ctrl+Z) steps it back. While the results of a run are on screen,
     the fields the engines read (Terrain, Physical) are locked; press
-    **Reset** on the playback bar or in the Simulation panel to edit them.
+    **Reset** on the playback bar or on the Event Designer's Run stage to edit them.
 
 ### Location
 

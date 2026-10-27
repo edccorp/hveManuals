@@ -40,7 +40,7 @@ The menu bar holds **File**, **Edit**, the menus of the current editor (**Vehicl
 - **Vehicle**, **Environment**, **Event**, **Human** — the dialogs for setting up vehicles, the environment, events and humans (HVE's Set-up menu and Object Info dialogs).
 - **Output** — Key Results, Output Graph, Variable Selection, reports, Playback Options and Run Simulation (HVE's Playback Editor).
 - **Playback** — Playback Sequence, Playback Options and Run All Events, in the Playback editor.
-- **View** — the panels (Viewport, Shader Editor, Dope Sheet, Key Results, Output Graph, Simulation, Outliner) and what the 3-D view draws.
+- **View** — the panels (Viewport, Shader Editor, Dope Sheet, Key Results, Output Graph, Outliner) and what the 3-D view draws.
 - **Tools** — Quick Case, Vehicle Package, Case Intake, Provenance, EDR Import, Monte Carlo Analysis, Motorcycle Analysis, Preferences, Style Editor, Cameras, Audit Log and Limits Editor (HVE's Options menu).
 - **Help** — License, About.
 
@@ -168,7 +168,7 @@ To set up the event:
 
 > **NOTE:** Only the set-up options the chosen calculation method uses are offered on the **Event** menu.
 
-Execute the event with the **playback bar** under the Viewport: **Run** solves the event; **Reset** discards the results so the inputs can be edited again; the transport buttons go to the start, step back, **Play**, step forward and go to the end, and the slider moves through the run. **Output › Run Simulation…** also runs the event, and the **Simulation** panel shows its progress, its status, and its **Duration** and timesteps.
+Execute the event with the **playback bar** under the Viewport: **Run** solves the event; **Reset** discards the results so the inputs can be edited again; the transport buttons go to the start, step back, **Play**, step forward and go to the end, and the slider moves through the run. **Output › Run Simulation…** also runs the event, and opens the Event Designer on its **Run** stage, which shows its progress, its status, and its **Duration** and timesteps.
 
 > **NOTE:** Inputs are locked while results are on screen. To change the event after a run, press **Reset**, edit, and **Run** again.
 
@@ -176,7 +176,7 @@ Press **Run**. The Charger moves according to the vehicle model, the terrain, th
 
 **Key Results.** Numeric results for the current playback time are shown in the **Key Results** panel (**Output › Key Results…**). To add tire forces, choose **Output › Variable Selection…**, select the Fx', Fy' and Fz' channels of the right front tire, and play the event again.
 
-> **NOTE:** Like all events, this EDVSM event produces several output reports (Accident History, Messages, Vehicle Data and others). They are pages of **Output › HVE Reports…**. Read the run status in the **Simulation** panel too: it says how the run ended and lists anything HVE Studio assumed ([Appendix II](appendix-02-messages.md#run-status-and-disclosures)).
+> **NOTE:** Like all events, this EDVSM event produces several output reports (Accident History, Messages, Vehicle Data and others). They are pages of **Output › HVE Reports…**. Read the run status on the Event Designer's **Run** stage too: it says how the run ended and lists anything HVE Studio assumed ([Appendix II](appendix-02-messages.md#run-status-and-disclosures)).
 
 ## Lesson 3 — Combining Multiple Events
 

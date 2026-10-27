@@ -109,6 +109,30 @@ A surface imported from an HVE case or `.h3d` arrives with its own **Texture Dep
     earlier version that overrode a surface's base color keeps that color and
     says so under the physics rows, with **Clear Override** to drop it.
 
+## In Renders
+
+!!! tip "New in HVE Studio"
+    **In Renders** decides whether **File › Render Image (Ray Traced)** (and a
+    ray-traced video) draws this surface. The 3-D view always draws it, and it
+    reaches no physics program.
+
+    - **Automatic** (the default) leaves a surface out when it is the site's
+      **sky**: it spans the whole of the rest of the site and lies, on
+      average, 50 m or more above its highest point (a sky dome or a sky box),
+      or it is named for the sky and lies wholly above everything else. The
+      list says which way Automatic decided for this surface.
+    - **Sky: left out** always leaves it out.
+    - **Kept** always draws it.
+
+    A ray-traced picture draws its own sky from the case's sun and sky. A
+    site's sky dome drawn as geometry would be a roof over every vehicle: it
+    blocks the sun and the sky, and the picture comes out black. A canopy, an
+    overpass or a tunnel roof covers only part of the site, or sits only a few
+    meters above it, so Automatic keeps it. When a surface is left out, the
+    render window's notes name it. The glTF export carries the sky's surfaces
+    in a node of their own, **Environment_Sky**, so Blender still receives the
+    whole site.
+
 ## Reset to File Value
 
 Discards the edits to this surface and restores what the geometry file states.

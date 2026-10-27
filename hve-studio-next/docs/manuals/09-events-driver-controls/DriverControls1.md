@@ -1,16 +1,13 @@
 # Driver Controls Path Follower Method
 
-The path correction method is chosen on the **Method** tab of the
-**Path Follower** tab of Driver Controls (**Event › Path Follower...**), and its parameters are
-entered on the **Steering** tab. See
+The path follower corrects the vehicle's path by **steering**: HVE's Variable
+Steering method. Its parameters are the **Steering** section of the **Path
+Follower** tab of Driver Controls (**Event › Path Follower...**). See
 [Driver Controls Path Follower](DriverControls7.md) for the dialog as a whole.
-
-**Path Method** (Method tab) — **Variable Steer** or **Variable Torque**.
 
 ## Variable Steering
 
-The path correction is accomplished by means of a steering correction. On the
-**Steering** tab:
+The path correction is accomplished by means of a steering correction:
 
 - **Initial Steer (deg)** — initial steering-wheel angle at driver start time.
 - **Max Steer Vel (deg/s)** — limit on steering-wheel velocity (how fast the
@@ -20,25 +17,15 @@ The path correction is accomplished by means of a steering correction. On the
 - **Steering Correction Damping (deg)** — steering correction damping, used to
   limit steering activity.
 
-## Variable Torque
-
-The path correction is accomplished by means of a torque applied at the
-steering wheel. On the **Steering** tab:
-
-- **Initial Torque** — initial steering-wheel torque at driver start time.
-- **Max Steer Torque** — limit on steering-wheel torque.
-- **Torque Correction (in-lb/in)** — amount of steering torque correction per
-  unit of path error.
-- **Torque Damping (in-lb-sec/in)** — torque correction damping, used to limit
-  steering activity.
-
-Initial Torque and Max Steer Torque are shown in the units set in Preferences;
-the correction and damping are in the units their labels state.
-
-!!! note "HVE Studio"
-    **Variable Torque** can be selected in HVE Studio (HVE disabled it). Its
-    **Initial Torque** is carried to the engine but no engine reads it — in HVE
-    either; the dialog says so. The other three torque parameters are read.
+!!! warning "Not in HVE Studio: Variable Torque"
+    HVE's second method, Variable Torque, corrects the path with a
+    steering-wheel torque. HVE's own dialog disables it, and it does not work
+    in the engine: the torque the driver model computes is handed to the
+    vehicle as a steer *angle*. Measured on a SIMON path follower at 13 m/s,
+    every torque setting tried turned the front wheels 15° to 154° within
+    0.1 s and stopped the run on the driver comfort level. HVE Studio does not
+    offer it. A case imported from HVE that chose it runs as Variable Steering,
+    and the import notes say so.
 
 <!-- NAV -->
 

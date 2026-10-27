@@ -34,13 +34,13 @@ HVE's View menu items map as follows:
 | **Key Results** | The Key Results panel (Event and Playback editors) |
 | **Results HUD** | The Results HUD window: boxes of solved numbers drawn over the viewport and into recorded videos, saved with the case (every editor) — see [Results HUD](../../new-features/11-results-hud.md) |
 | **Output Graph** | The Output Graph panel (Event and Playback editors) |
-| **Simulation** | The Simulation panel: simulation controls, Run / Reset and the last result (Event editor) |
 | **Outliner** | The site's layers and surfaces — see [OUTLINER](#outliner) |
 
 Key Results and Output Graph are drawn only in the Event and Playback
-editors, and Simulation only in the Event editor; elsewhere their items are
-grayed. Panels dock: drag a panel's tab to move it to another dock position
-or to float it.
+editors; elsewhere their items are grayed. The simulation controls and Run
+are on the Event Designer's **Run** stage (**Event › Event Designer...**).
+Panels dock: drag a panel's tab to move it to another dock position or to
+float it.
 
 !!! tip "New in HVE Studio"
     The Shader Editor, Dope Sheet and Results HUD are new in HVE Studio. They
@@ -314,7 +314,7 @@ vehicle itself stands there.
 
 !!! warning "Not in HVE Studio"
     There is no status bar. The case name (with `*` when modified) is at the
-    right of the menu bar; the run status is in the Simulation panel and on the
+    right of the menu bar; the run status is on the Event Designer's Run stage and on the
     playback bar; hovering over most controls shows a tooltip; and **Tools ›
     Audit Log** keeps a record of what was done.
 

@@ -95,7 +95,7 @@ The bus's path has three positions. The first is its initial position and speed,
 
    > **NOTE:** A waypoint that states no elevation, roll and pitch of its own takes this first position's (with Auto Position on, each is the vehicle settled on the ground there). In the opened case the positions' CG heights come from the HVE case.
 
-The other two positions are waypoints, in **Event › Path Follower**, **Path** tab, with *V1 International School Bus* chosen in the **Vehicle** list:
+The other two positions are waypoints, in **Event › Path Follower**, **Path** section, with *V1 International School Bus* chosen in the **Vehicle** list:
 
 1. Make sure **Use Path Follower** is ticked; the waypoint table can be edited only then. (EDGEN uses the waypoints either way; it does not use the rest of this dialog.)
 2. The *Begin Braking* position of HVE's tutorial: X = −72 ft, Y = 25 ft, Yaw 0, Speed 25 mph.
@@ -105,9 +105,9 @@ The other two positions are waypoints, in **Event › Path Follower**, **Path** 
 
 ![Figure 5-3](images/hvn-edgen-path-tab.png)
 
-*Figure 5-3: The school bus's waypoints on the Path tab of Event › Path Follower, as imported (rows 3 and 8).*
+*Figure 5-3: The school bus's waypoints in the Path section of Event › Path Follower, as imported (rows 3 and 8).*
 
-The required positions and velocities have now been entered; however, this event lasts more than 5 seconds. In the **Simulation** panel (beside Event Information), **Duration (s)** is 15 in the opened case. For an event of your own, raise it from its default in the same place.
+The required positions and velocities have now been entered; however, this event lasts more than 5 seconds. On the **Run** stage of the **Event Designer** (**Event › Event Designer...**), **Duration (s)** is 15 in the opened case. For an event of your own, raise it from its default in the same place.
 
 > **NOTE:** EDGEN is not a simulation program in that it does not use tire forces or other forces to calculate the object's motion. Therefore, Driver Controls, Damage Profiles and other event-related inputs are not used.
 
@@ -227,7 +227,7 @@ The sequence described above requires eight positions, summarized in Table 5-1. 
 | End-of-rot'n | -44.0 | 29.0 | -2.5 | 270.0 | 10.0 |
 | Final/Rest | -44.0 | 14.0 | -3.0 | 270.0 | 10.0 |
 
-In the opened case the event's **Duration (s)** is 15 and its **Output Timestep (s)** 0.10 (Simulation panel).
+In the opened case the event's **Duration (s)** is 15 and its **Output Timestep (s)** 0.10 (the Event Designer's **Run** stage).
 
 We're now ready to execute our next event:
 
@@ -246,7 +246,7 @@ We have now completed the second event.
 Make *EDGEN, Taurus* the active event. To create such an event yourself: click **+**, choose **EDGEN**, add *Ford Taurus 4-Dr* and name the event *Taurus*. Its two positions are in Table 5-2:
 
 1. The **Initial** position and speed in **Vehicle Initial Conditions (EDGEN)**: X = 500 ft, Y = 13 ft, heading 180 degrees, speed 35 mph.
-2. The **Final/Rest** position as a waypoint in **Event › Path Follower**, **Path** tab: X = −38.5 ft, Y = 13 ft, Yaw 180, Speed 35 mph.
+2. The **Final/Rest** position as a waypoint in **Event › Path Follower**, **Path** section: X = −38.5 ft, Y = 13 ft, Yaw 180, Speed 35 mph.
 
 **Table 5-2: Position and velocity entries for EDGEN Taurus event**
 

@@ -52,7 +52,7 @@ response by the user. These conditions are described below.
 ### Inter-process Communication
 
 !!! note "HVE Studio"
-    These two messages do not occur. HVE Studio runs an event either inside the application or in a child solver process (`HVESolver`). If the solver fails, the **Simulation** panel's run status reads **RUN FAILED** followed by the reason the solver gave (or *the solver reported no reason*); a run you stop reads **Canceled**.
+    These two messages do not occur. HVE Studio runs an event either inside the application or in a child solver process (`HVESolver`). If the solver fails, the run status on the Event Designer's **Run** stage reads **RUN FAILED** followed by the reason the solver gave (or *the solver reported no reason*); a run you stop reads **Canceled**.
 
 - **'Event' Died Unexpectedly!** — The current calculation model stopped
   running before it returned. The abnormal termination may be caused by a
@@ -375,7 +375,7 @@ Event termination and warning messages:
 ## Run Status and Disclosures
 
 !!! tip "New in HVE Studio"
-    After every run, the **Simulation** panel shows two status lines: the run job's (**Complete**, **Canceled**, **RUN FAILED – …**) and, under **Last Result**, the solver's own report on the last completed run. The playback bar repeats the essentials (duration, method and, for a collision, the delta-V).
+    After every run, the Event Designer's **Run** stage shows two status lines: the run job's (**Complete**, **Canceled**, **RUN FAILED – …**) and, under **Last Result**, the solver's own report on the last completed run. The playback bar repeats the essentials (duration, method and, for a collision, the delta-V).
 
     - **A run that ended early says so.** A model that stops with an error code reads, for example, *SIMON stopped early at t=2.537s: engine abort at V1 axle 1 right outer (code -5230); results are for the partial run*. The code is the model's own termination code; the results on screen are kept, but they cover only the part of the run that completed.
     - **Every assumption is disclosed.** When HVE Studio has to supply, substitute or ignore something to run the case — a default for an input the case does not state, an input this engine does not read, a feature it does not support — the Last Result line ends with a bracketed **[defaulted: …]** list naming each one. Examples: *no tire Fy roll-off table (unity assumed)*, *no vehicle interior contact surfaces: occupant strikes nothing*, *hydroplaning OFF: no standing water*, *this case states a disc or S-cam brake DESIGN, and it …* (the design does not reach the engine; [Chapter 29](../10-brake-designer/29-brake-designer.md)). A list too long for the line ends in an explicit *...* rather than being cut silently.

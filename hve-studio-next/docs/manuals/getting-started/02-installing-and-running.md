@@ -128,7 +128,8 @@ for where databases are found.
 
 To run an event, switch to the Event editor (**F5**) and press **Run** on the
 playback bar under the viewport, or choose **Output › Run Simulation**
-(**Ctrl+R**). The [Interface Tour](03-interface-tour.md) describes the window.
+(**Ctrl+R**), which opens the Event Designer on its **Run** stage. The
+[Interface Tour](03-interface-tour.md) describes the window.
 
 ## Where the program keeps its settings
 

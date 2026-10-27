@@ -528,7 +528,7 @@ EDSMAC4 uses the Vehicle Collision, Separation and Trajectory integration timest
 The output time interval is the interval at which output results (positions, velocities, accelerations, forces) are reported. This has a direct effect on the tabular results (see [Chapter 3 — Output, Variable Output](03-program-output.md#variable-output-table)).
 
 !!! note "HVE Studio"
-    The simulation controls are in the **Simulation** panel (the tab beside Event Information, or **View › Simulation**), section **Simulation Controls**: **Duration** (maximum simulation time), **Trajectory Timestep**, **Collision Timestep**, **Separation Timestep** and **Output Timestep**, with the termination velocities under **Termination** (**Linear** and **Angular**, each with an **On** box). They are stored per event. EDSMAC4 uses the trajectory step exactly as entered.
+    The simulation controls are on the **Run** stage of the **Event Designer** (**Event › Event Designer...**), section **Simulation Controls**: **Duration** (maximum simulation time), **Trajectory Timestep**, **Collision Timestep**, **Separation Timestep** and **Output Timestep**, with the termination velocities under **Termination** (**Linear** and **Angular**, each with an **On** box). They are stored per event. EDSMAC4 uses the trajectory step exactly as entered.
 
 **Table 2-9: Simulation Control Parameters used by EDSMAC4**
 
@@ -611,7 +611,7 @@ To execute an EDSMAC4 event, use the playback bar under the viewport. Its button
 - **>>** — Step forward one output step
 - **>|** — Jump to the end of the simulation
 
-**Output › Run Simulation** (Ctrl+R) also runs the active event. The Simulation panel shows the run's progress and its status line.
+**Output › Run Simulation** (Ctrl+R) also runs the active event, opening the Event Designer on its **Run** stage, which shows the run's progress and its status line.
 
 ![Figure 2-5](images/hvn-edsmac4-playback-bar.png)
 *Figure 2-5: The playback bar under the viewport: Run, Reset, the playback buttons and the camera list.*

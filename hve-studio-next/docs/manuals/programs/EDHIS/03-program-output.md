@@ -50,7 +50,7 @@ An example of each of these numeric output reports from EDHIS is shown below.
 A typical Messages Report simply lists any messages produced by the run (often "No Messages"). For a complete listing of messages issued by EDHIS, see [Chapter 6](06-messages.md).
 
 !!! note "HVE Studio"
-    The run's outcome is also summarized in the run status shown in the Simulation panel and Key Results — for an EDHIS run, the peak head and torso accelerations and the number of injury tolerances exceeded — together with any input HVE Studio had to supply or could not pass on (for example, a missing collision pulse or occupant contact pairs that were left untested).
+    The run's outcome is also summarized in the run status shown on the Event Designer's Run stage and in Key Results — for an EDHIS run, the peak head and torso accelerations and the number of injury tolerances exceeded — together with any input HVE Studio had to supply or could not pass on (for example, a missing collision pulse or occupant contact pairs that were left untested).
 
 ### Accident History
 

@@ -266,7 +266,7 @@ Now, we're ready to set up the first event.
   > **NOTE:** A vehicle can also be moved in the viewport with the gizmo (G to move, R to rotate, X/Y/Z to lock an axis; or type a number and press Enter), but it is often easier to type the coordinates.
 
 - Give the Ford: X Position = `24` ft, Y Position = `91` ft, Heading = `-90` degrees, Speed = `10` mph.
-- In the **Simulation** panel, change the **Output Timestep** from `0.1` sec to `0.005` sec.
+- On the Event Designer's **Run** stage, change the **Output Timestep** from `0.1` sec to `0.005` sec.
 
   > **NOTE:** We reduced the output interval because we're going to use the acceleration output from this simulation as the collision pulse for our occupant simulation, so we want more detail; selecting the smaller output interval provides the acceleration at 0.005 second increments, rather than the default value, 0.1 second. Note the entire duration of a collision is only about 0.1 second, so the default interval might actually skip the entire collision!
 
@@ -370,7 +370,7 @@ The final step in HVE's event set-up is to set up contacts and assign combined m
 
 The pedestrian impact is now set up and ready to execute.
 
-- In the **Simulation** panel, set the **Duration**, then click **Run** on the playback bar.
+- On the Event Designer's **Run** stage, set the **Duration**, then click **Run** on the playback bar.
 
   > **NOTE:** EDHIS is designed to simulate human occupant or pedestrian motion up to the point of first impact. We should therefore terminate the event no later than 0.15 seconds.
 

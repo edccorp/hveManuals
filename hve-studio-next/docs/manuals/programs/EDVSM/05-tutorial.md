@@ -231,7 +231,7 @@ The driver control inputs are now complete.
 
 This event lasts more than 5 seconds. To prevent premature termination, let's increase the maximum simulation time.
 
-- Choose the **Simulation** tab beside Event Information (or **View › Simulation**).
+- Open the **Event Designer** (**Event › Event Designer...**) and choose its **Run** stage.
 - Set *Duration (s)* to `15`.
 
 The tutorial uses a *Trajectory Timestep* of 0.0025 s and an *Output Timestep* of 0.1 s.

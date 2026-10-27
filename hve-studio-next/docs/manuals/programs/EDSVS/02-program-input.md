@@ -434,7 +434,7 @@ The Payload Data used by EDSVS include the payload coordinates relative to the v
 
 ### Simulation Controls
 
-EDSVS uses the event's simulation control parameters. In HVE Studio these are in the **Simulation** panel, docked beside Event Information (also **View › Simulation**): *Duration (s)* is the Maximum Simulation Time, *Trajectory Timestep (s)* the Vehicle Trajectory Integration Timestep and *Output Timestep (s)* the Output Interval; the termination velocities are under *Termination*, each with an **On** switch. *Integrator Convergence* holds the *Maximum Bisections* and *Velocity Convergence* that EDSVS's integrator uses (see [Chapter 6](06-messages.md)). The Simulation parameters used by EDSVS are shown in Table 2-8.
+EDSVS uses the event's simulation control parameters. In HVE Studio these are on the **Run** stage of the **Event Designer** (**Event › Event Designer...**): *Duration (s)* is the Maximum Simulation Time, *Trajectory Timestep (s)* the Vehicle Trajectory Integration Timestep and *Output Timestep (s)* the Output Interval; the termination velocities are under *Termination*, each with an **On** switch. *Integrator Convergence* holds the *Maximum Bisections* and *Velocity Convergence* that EDSVS's integrator uses (see [Chapter 6](06-messages.md)). The Simulation parameters used by EDSVS are shown in Table 2-8.
 
 > NOTE: The output time interval should be an even multiple of the vehicle trajectory integration timestep. For example, if the integration timestep is 0.02, the output interval might be 5 x 0.02, or 0.10.
 

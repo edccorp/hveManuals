@@ -10,7 +10,7 @@ GATB reports problems in two ways:
 The verbosity of the Message report is governed by the diagnostic level set in the HVE user options (Fatal Errors only; Fatal Errors + Diagnostics; Fatal Errors + Diagnostics + Informative).
 
 !!! note "HVE Studio"
-    In HVE Studio GATB's messages are on the *Messages* page of **Output › HVE Reports**, and a run that is refused or stops shows its reason in the run status (Simulation panel). Where a note below says *Set-up → Position/Velocity*, use Event Information (*Vehicle Initial Conditions*, and *Humans in Event* with its **Pose** button). *Set-up → Contacts* is **Event › Contacts...** (the Human Contacts dialog), where armed pairs are un-ticked to reduce the number of interactions ([Chapter 2, Contacts](02-program-input.md#contacts)).
+    In HVE Studio GATB's messages are on the *Messages* page of **Output › HVE Reports**, and a run that is refused or stops shows its reason in the run status (the Event Designer's **Run** stage). Where a note below says *Set-up → Position/Velocity*, use Event Information (*Vehicle Initial Conditions*, and *Humans in Event* with its **Pose** button). *Set-up → Contacts* is **Event › Contacts...** (the Human Contacts dialog), where armed pairs are un-ticked to reduce the number of interactions ([Chapter 2, Contacts](02-program-input.md#contacts)).
 
     One message is HVE Studio's own: *GATB is not built into this binary* — it appears only in a copy of the program built without GATB; HVE Studio includes GATB, so it should not appear. Note also that GATB refuses an event whose vehicles carry no contact surfaces at all (code -5204, bad vehicle contact data).
 

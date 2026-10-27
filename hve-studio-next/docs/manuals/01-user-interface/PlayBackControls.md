@@ -36,7 +36,7 @@ Type a time in seconds and press Enter to jump there.
 After the playback time: the run's duration, the event's calculation method and, for a run with a result, a headline Delta-V; or why the run stopped or failed. Before a run it reads *[method] Press Run to execute*.
 
 !!! note "HVE Studio"
-    The times HVE shows on its toolbar (maximum simulation time, integration time step, output time interval) are in the **Simulation** panel (**View › Simulation**), where they are also edited. The current frame number is not shown.
+    The times HVE shows on its toolbar (maximum simulation time, integration time step, output time interval) are on the **Run** stage of the **Event Designer** (**Event › Event Designer...**), where they are also edited. The current frame number is not shown.
 
 !!! warning "Not in HVE Studio"
     **Reverse** (playing the event backwards).

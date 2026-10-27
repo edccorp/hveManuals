@@ -132,7 +132,7 @@ When there are no pages the window says why:
 
 - *No run yet* — run the event first.
 - *ran and built no pages* — what a refused or aborted run looks like; read the
-  run status in the Simulation panel.
+  run status on the Event Designer's Run stage.
 - SINGLETRACK (HVE Studio's motorcycle model) is not an HVE engine and has no
   report pages.
 - If an engine's report resource file is missing, the window names the folder

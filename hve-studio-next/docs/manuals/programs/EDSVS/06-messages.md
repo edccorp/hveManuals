@@ -15,7 +15,7 @@ All messages issued by EDSVS are listed below. Each message includes a descripti
 *(updated: the current EDSVS message catalog contains exactly the four messages listed below; none have been added or removed since the Sixth Edition, and all four are Level 1 (Fatal) run-termination messages.)*
 
 !!! note "HVE Studio"
-    In HVE Studio, EDSVS's messages are on the *MESSAGES* page of **Output › HVE Reports**. The run status (under **Run** on the playback bar, and in the **Simulation** panel) also says whether the run completed or stopped. The Velocity Convergence and Maximum Bisections referred to below are under *Integrator Convergence* in the **Simulation** panel; HVE Studio's defaults are HVE's, 0.12 and 12. The surface-search method is the **Road Surface Search** section of Event Information.
+    In HVE Studio, EDSVS's messages are on the *MESSAGES* page of **Output › HVE Reports**. The run status (under **Run** on the playback bar, and on the Event Designer's **Run** stage) also says whether the run completed or stopped. The Velocity Convergence and Maximum Bisections referred to below are under *Integrator Convergence* on the same **Run** stage; HVE Studio's defaults are HVE's, 0.12 and 12. The surface-search method is the **Road Surface Search** section of Event Information.
 
 ## Message Catalog
 

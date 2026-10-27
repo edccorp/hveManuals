@@ -43,6 +43,12 @@ and one group per wheel and tire, ...). Each group header shows how many of its
 variables are selected. There is one check-box column per vehicle in the event,
 so a variable is selected per vehicle.
 
+The **Drivetrain** header says when nothing in the event computes it: *(not
+modeled: throttle is % of Friction)* when no vehicle of a SIMON, EDVDS or EDVSM
+event uses the **At Driver** throttle method, and *(not modeled by this engine)*
+for every other method. Its variables then read zero by construction (see
+[Driver Controls Gear](../09-events-driver-controls/DriverControls5.md)).
+
 ### Occupant variables
 
 After an **EDHIS** or **GATB** run (or any run that moves a human) the list also

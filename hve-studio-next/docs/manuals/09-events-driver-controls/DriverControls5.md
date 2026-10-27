@@ -6,6 +6,13 @@ shifts that change the current differential ratio.
 The **Gear** tab of the [Driver Controls](DriverControls.md) dialog
 (**Event › Driver Controls...**). For a SINGLETRACK event the tab is not shown.
 
+!!! note "HVE Studio"
+    The gear schedule is used only when the engine and transmission run: in a
+    SIMON, EDVDS or EDVSM event, under the **At Driver** throttle method. Under
+    **% of Friction** the tab says so above the table: the schedule and the
+    Drivetrain outputs (engine speed, torque, power, gear ratios) stay zero.
+    Every other method has no engine model, and the tab says that instead.
+
 ## Gear table
 
 A table of *Time (s) → Gear*, one row per gear selection. Each row's gear is

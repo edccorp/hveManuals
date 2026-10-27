@@ -155,13 +155,13 @@ The steer angles are applied at the front wheels (HVE's *At Axle* table):
 
 This event lasts more than 5 seconds. To prevent premature termination, let's increase the maximum simulation time.
 
-1. Choose the **Simulation** tab beside Event Information (or **View › Simulation**).
+1. Open the **Event Designer** (**Event › Event Designer...**) and choose its **Run** stage.
 2. Set *Duration (s)* to `20`.
 
 The tutorial uses a *Trajectory Timestep* of 0.02 s and an *Output Timestep* of 0.1 s (Figure 5-6).
 
 ![Figure 5-6](images/hvn-edsvs-simulation.png)
-*Figure 5-6: The Simulation panel for the Steering Maneuver event.*
+*Figure 5-6: The simulation controls for the Steering Maneuver event.*
 
 Since our goal for this event is to follow a desired path, let's look at some Key Results during execution:
 

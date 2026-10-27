@@ -110,7 +110,7 @@ The **playback bar** under the viewport is HVE's Playback Controller:
 - the time slider, with **<** and **>** to step one frame
 - the camera list (**Free view** or a saved camera)
 
-The Simulation panel carries the same buttons. Playback speed, frame step and
+The Event Designer's **Run** stage carries the same buttons. Playback speed, frame step and
 looping are in **Output › Playback Options...**.
 
 ### Combining and Editing Multiple Events

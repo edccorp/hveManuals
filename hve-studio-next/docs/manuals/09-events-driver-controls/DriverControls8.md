@@ -1,8 +1,8 @@
 # Driver Controls Speed Follower
 
-The **Speed Follower** tab of the **Path Follower** dialog
+The **Speed Follower** section of the **Path Follower** dialog
 (**Event › Path Follower...**) controls the speed follower. The speeds entered
-for the waypoints on the **Path** tab define an attempted speed at each point on
+for the waypoints in the **Path** section define an attempted speed at each point on
 the path; the driver model applies throttle and brake pedal inputs to achieve
 them. See [Driver Controls Path Follower](DriverControls7.md).
 

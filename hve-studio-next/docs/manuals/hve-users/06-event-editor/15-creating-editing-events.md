@@ -188,8 +188,8 @@ other output panels.
 ### Playback Bar
 
 The current event is executed with the playback bar along the bottom of the
-Viewport (the same controls are in the **Simulation** panel, View ›
-Simulation):
+Viewport (the same controls are on the **Run** stage of the **Event Designer**,
+Event › Event Designer...):
 
 - **Run** — execute the current event. It is not offered for an event that
   is already solved; press Reset first.
@@ -266,7 +266,7 @@ results are on screen too, so you can see which options were run; its fields
 are then read-only until **Reset**.
 
 The integration and output timesteps, the duration and the termination
-criteria are in the **Simulation** panel (View › Simulation), under
+criteria are on the Event Designer's **Run** stage, under
 **Simulation Controls**. Only the timesteps the selected engine reads are
 shown.
 
@@ -324,7 +324,8 @@ After the event is set up, the next step is to execute it. To execute the
 current event, perform the following steps:
 
 1. Click **Run** on the playback bar (or Output › Run Simulation..., Ctrl+R).
-   The Simulation panel shows the progress.
+   The Event Designer's **Run** stage shows the progress (Output › Run
+   Simulation... opens it).
 
    > **NOTE:** If the current calculation model is a reconstruction, it
    > will finish almost instantly.

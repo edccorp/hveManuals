@@ -50,7 +50,7 @@ A typical Messages Report is shown in Figure 3-2. For a complete listing of mess
 *Figure 3-2: The MESSAGES page of Output › HVE Reports.*
 
 !!! note "HVE Studio"
-    The run status line under the Run button (and in the **Simulation** panel) also says how the run ended and lists anything HVE Studio supplied or changed on the way to the engine. Read it together with the Messages page.
+    The run status line under the Run button (and on the Event Designer's **Run** stage) also says how the run ended and lists anything HVE Studio supplied or changed on the way to the engine. Read it together with the Messages page.
 
 ### Program Data
 

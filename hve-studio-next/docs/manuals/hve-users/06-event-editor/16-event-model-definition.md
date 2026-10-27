@@ -481,10 +481,10 @@ positions, or a path table (reserved). See the
 !!! note "HVE Studio"
     In HVE Studio the path follower is set per event and per vehicle on the
     **Path Follower** tab of Driver Controls (Event › Path Follower... opens it): **Use Path
-    Follower**, then the **Method**, **Steering**, **Path**, **Speed
-    Follower** and **Filter** tabs. There is no driver-model version or Path
+    Follower**, then its **Timing / Limits**, **Steering**, **Path**,
+    **Speed Follower** and **Filter** sections, one page top to bottom. There is no driver-model version or Path
     Source selector. Its path is the vehicle's initial position plus up to
-    seven waypoints entered on the Path tab — typed in, or added by clicking
+    seven waypoints entered in the Path section — typed in, or added by clicking
     the ground in the Viewport — rather than the Position/Velocity path
     locations.
 
@@ -540,9 +540,10 @@ Two methods are available in the HVE Path Follower. These are:
 > method.
 
 !!! note "HVE Studio"
-    Both **Variable Steer** and **Variable Torque** can be chosen on the
-    Method tab. The Steering tab notes the one Variable Torque field that
-    no engine reads.
+    Only **Variable Steering** is offered, as in HVE's own dialog: Variable
+    Torque does not work in the engine (its torque reaches the vehicle as a
+    steer angle). See
+    [Driver Controls Path Follower Method](../../09-events-driver-controls/DriverControls1.md).
 
 **Table 16-6: HVE Path Follower Parameters**
 
@@ -602,15 +603,15 @@ To use the path follower in HVE Studio, perform the following steps:
 
 1. Select the vehicle and choose **Event › Path Follower...**.
 2. Check **Use Path Follower**.
-3. On the **Path** tab, enter the waypoints, or check **Add points by
+3. In the **Path** section, enter the waypoints, or check **Add points by
    clicking the 3-D viewport** and click the ground at each node. Each
    node has X, Y, Z, Yaw, Roll, Pitch and Speed; the Yaw at a node is the
    path's tangent there, and Z and Pitch its height and climb. A clicked node
    is settled on the ground; with **Auto Position** on, every node is settled
    on the ground when the event runs. **Ghost vehicle at each node** draws the
    vehicle at every node so you can see whether the path fits.
-4. Set the **Method**, **Steering**, **Speed Follower** and **Filter**
-   parameters.
+4. Set the **Timing / Limits**, **Steering**, **Speed Follower** and
+   **Filter** parameters.
 
 ![Figure 16-8](../images/hvn-06-path-follower.png)
 *Figure 16-8: The HVE Studio Path Follower dialog, Method tab.*

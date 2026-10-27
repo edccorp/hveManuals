@@ -149,11 +149,11 @@ site's in the Environment panel. Shadows are set with **View › Scene Display �
 
 ### Simulation Controls
 
-The simulation controls are at the top of the **Simulation** panel (View ›
-Simulation, docked beside Event Information), and belong to the active event.
+The simulation controls are at the top of the **Run** stage of the **Event
+Designer** (Event › Event Designer...), and belong to the active event.
 
 ![Figure 2-68](../images/hvn-01-simulation-panel.png)
-*Figure 2-68: The Simulation panel.*
+*Figure 2-68: The simulation controls on the Event Designer's Run stage.*
 
 #### Integration Timesteps
 

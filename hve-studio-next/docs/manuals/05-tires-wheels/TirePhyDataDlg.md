@@ -174,13 +174,29 @@ load).
 
 Tire rolling resistance linear, velocity-dependent force coefficient.
 
-## Max Width
-
-Maximum section width of the tire. Filled by **Build from Tire Size**; editable.
-
 ## Tread Width
 
-Width of the tire tread.
+Width of the tire tread. Filled by **Build from Tire Size** (0.8 × the size's
+section width for a passenger-car or light-truck tire); editable.
+
+## Max Width
+
+Maximum section width of the tire. It is **calculated**, as in HVE: 1.25 × the
+**Tread Width**, set whenever the Tread Width is edited. It is shown but not
+typed in.
+
+!!! note "HVE Studio: the stored width is the tire's width"
+    A tire's width is stored twice: in its size string (`P315/80R17` says
+    315 mm) and in its Tread Width and Max Width. SIMON's tire model reads the
+    stored widths. HVE's DyMESH built its contact wheel from the size string
+    instead, so a tire whose Tread Width was set apart from its size collided
+    at one width and was drawn at another. HVE Studio builds the DyMESH wheel
+    from the stored widths too. When the size string's width differs from the
+    stored Max Width by more than 5%, the run status says so: for example
+    *V3 tire P315/80R17 is 315 mm wide by its size; its stored width, 245 mm,
+    is used*. To make the two agree, use **Build from Tire Size** or edit the
+    Tread Width. Running with the environment variable
+    `HVE_DYMESH_WHEEL_WIDTH_FROM_SIZE=1` restores HVE's DyMESH wheel width.
 
 ## Tread Depth
 

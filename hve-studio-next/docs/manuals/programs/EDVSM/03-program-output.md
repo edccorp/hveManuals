@@ -45,7 +45,7 @@ A typical Messages Report is shown in Figure 3-1. For a complete listing of mess
 *Figure 3-1: The MESSAGES page of Output › HVE Reports for the tutorial's Curb-tripped Rollover event.*
 
 !!! note "HVE Studio"
-    In HVE Studio the run status line under the Run button (and in the **Simulation** panel) also says how the run ended, and lists anything HVE Studio supplied or changed on the way to the engine, such as a seeded cornering-stiffness table or body vertices that found no terrain. Read it together with the Messages page.
+    In HVE Studio the run status line under the Run button (and on the Event Designer's **Run** stage) also says how the run ended, and lists anything HVE Studio supplied or changed on the way to the engine, such as a seeded cornering-stiffness table or body vertices that found no terrain. Read it together with the Messages page.
 
 ### Accident History
 

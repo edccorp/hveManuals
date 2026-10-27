@@ -134,7 +134,7 @@ The DyMESH Options dialog (Options menu) as shown in the deck contains:
     labels the report. **Tow Vehicle / Trailer Contact** is **Contact a vehicle's own
     trailer** in Event Information › Method Options (SIMON Options), off by
     default as in HVE. There is no *Timesteps* group here: the
-    **Collision Timestep** is set in the **Simulation** panel.
+    **Collision Timestep** is set on the Event Designer's **Run** stage.
 
 ![Figure: HVE Studio DyMESH Options dialog](images/hvn-dymesh-options.png)
 *Figure: Event › DyMESH Options in HVE Studio (SimonDyMeshValidSuite3_8, Test 8 / RICSAC 6).*

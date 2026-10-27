@@ -12,9 +12,9 @@ effect immediately and are locked while the event's results are on screen.
 ## Duration, time steps and termination
 
 SIMON Options does not edit the duration, the output interval or the
-termination velocities: they are in Simulation Controls (the
-[Simulation panel](../09-events-driver-controls/SimuCtrlDlg.md), also hosted on
-the Event Designer's **Run** stage), which writes the values the run uses. The
+termination velocities: they are in
+[Simulation Controls](../09-events-driver-controls/SimuCtrlDlg.md), on the Event
+Designer's **Run** stage, which writes the values the run uses. The
 window says so where its **Time Settings** and **Termination Velocity** sections
 used to be.
 
@@ -23,8 +23,8 @@ used to be.
 **Method** is shown grayed at *Fixed Runge-Kutta* and marked *(inert)*. SIMON
 always integrates with a fixed-step Runge-Kutta method, in HVE as well as in
 HVE Studio, whatever a case stores; an imported case's stored value is left as
-the file has it. To change the step size, use *Trajectory Timestep* in the
-Simulation panel.
+the file has it. To change the step size, use *Trajectory Timestep* on the
+Event Designer's Run stage.
 
 !!! note "HVE Studio"
     The simulation clock is the exact sum of the steps taken, accumulated in

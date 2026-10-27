@@ -207,7 +207,7 @@ Next, the driver controls:
 
 This event lasts more than 5 seconds, so the maximum simulation time is increased from 5 to 10 seconds. In HVE Studio:
 
-1. Click the **Simulation** tab beside Event Information (or choose **View › Simulation**).
+1. Open the **Event Designer** (**Event › Event Designer...**) and choose its **Run** stage.
 2. Under **Simulation Controls**, **Duration** is 10 s. The case also states **Trajectory Timestep** 0.02 s, **Collision Timestep** 0.001 s, **Separation Timestep** 0.01 s and **Output Timestep** 0.1 s.
 
 ### Setting the View and Running
@@ -233,7 +233,7 @@ Watch as the vehicles approach each other, collide, and roll to their rest posit
 
 > **NOTE:** Remember to pay attention to the Key Results; in this case, you might be interested in the position and velocity of each vehicle at initial visibility.
 
-The run status in the Simulation panel reads *EDSMAC4 complete*, with two engine messages (see [Messages](#messages) below). The vehicles collide at t = 2.65 s, the Ford at about 31 km/h and the Nissan at about 35 km/h; they separate at t = 2.72 s, and the Ford comes to rest at t = 3.42 s and the Nissan at t = 6.11 s, after mounting the curb.
+The run status on the Event Designer's Run stage reads *EDSMAC4 complete*, with two engine messages (see [Messages](#messages) below). The vehicles collide at t = 2.65 s, the Ford at about 31 km/h and the Nissan at about 35 km/h; they separate at t = 2.72 s, and the Ford comes to rest at t = 3.42 s and the Nissan at t = 6.11 s, after mounting the curb.
 
 ![Figure 5-8a](images/hvn-edsmac4-impact.png)
 *Figure 5-8a: The vehicles at separation, t = 2.72 s.*
@@ -344,7 +344,7 @@ For this event the report gives, in round figures:
 
 The Damage Data report displays the collision results for each vehicle (**DAMAGE DATA** tab). This event is stored with the **Collision Data** damage data format, so the report gives the collision pulses with their start and end times, peak acceleration, peak force, delta-V and PDOF, followed by the CDC, damage width and offset and the crush table for each vehicle. (With the **Traditional** format it would give the table of collision vectors, in cylindrical (RHO, PSI) and Cartesian (x,y) coordinates, followed by the damage ranges with their CDC, PDOF, delta-V and peak acceleration.) See [Chapter 3 — Damage Data](03-program-output.md#damage-data).
 
-The run's delta-V and PDOF also appear in the Simulation panel's **Last Result** and in **Output › Key Results...**: about 20.0 km/h for the Ford and 12.3 km/h for the Nissan.
+The run's delta-V and PDOF also appear in the Run stage's **Last Result** and in **Output › Key Results...**: about 20.0 km/h for the Ford and 12.3 km/h for the Nissan.
 
 ### Damage Profiles
 

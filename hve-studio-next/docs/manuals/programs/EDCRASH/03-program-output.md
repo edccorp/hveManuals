@@ -35,8 +35,8 @@ The pages are EDCRASH's own, built from its resource strings in HVE's layout and
       EDCRASH page described below. Save it with
       **Save This Page** or **Save Page as HTML**.
     - If the run is refused, the HVE Reports window says so, and the reason
-      (with the EDCRASH stop code) is in the run status on the Simulation
-      panel.
+      (with the EDCRASH stop code) is in the run status on the Event Designer's
+      **Run** stage.
 
 ## Alpha-Numeric Reports
 

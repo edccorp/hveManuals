@@ -96,7 +96,7 @@ When the **3-D Spline Interpolation** path model is selected instead, EDGEN:
     Both path models run in HVE Studio (EDGEN Options, **Interpolation
     Method**), for a vehicle and for a human. The sideslip added under the
     spline model is the **Slip** column of a vehicle's waypoints (Event ›
-    Path Follower, Path tab) and the **Sideslip** field of each position of
+    Path Follower, Path section) and the **Sideslip** field of each position of
     a human's path (Event Information, Humans in Event); both are grayed
     under Linear Interpolation.
 

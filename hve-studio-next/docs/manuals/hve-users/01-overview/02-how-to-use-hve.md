@@ -557,10 +557,10 @@ and velocity changes.
 ### Event Controller
 
 HVE's Event Controller is replaced by the **playback bar** under the viewport and
-the **Simulation** panel:
+the **Run** stage of the **Event Designer** (**Event › Event Designer...**):
 
 - **Run** — execute the active event (HVE's Play, the first time). Output ›
-  Run Simulation... does the same.
+  Run Simulation... (Ctrl+R) does the same, and opens the Run stage.
 - **Pause** / **Resume** and **Cancel** — while a run is in progress (Pause where
   the method allows it). **Esc** also cancels.
 - **Reset** — discard the results and return to editing (HVE's Reset).
@@ -570,8 +570,8 @@ the **Simulation** panel:
   current time follow.
 
 ![Figure 2-31](../images/hvn-01-simulation-panel.png)
-*Figure 2-31: The Simulation panel: the simulation controls, the Run controls and
-the last result.*
+*Figure 2-31: The Run stage's contents: the simulation controls, the Run controls
+and the last result.*
 
 To execute an event:
 

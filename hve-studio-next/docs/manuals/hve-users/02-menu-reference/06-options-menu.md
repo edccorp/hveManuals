@@ -30,7 +30,7 @@ what it affects. This chapter takes HVE's Options menu item by item.
 | Shadows | **View › Scene Display › Light & Shadow** (Shadow coverage); the sun is set in the Shader Editor's Sun & Sky panel and Event Information › Lighting |
 | Render | **View › Scene Display › Rendering** ([details](#render)) |
 | Playback | **Output › Playback Options...** |
-| Simulation Controls | the **Simulation** panel (View › Simulation) ([details](#simulation-controls)) |
+| Simulation Controls | the **Run** stage of the **Event Designer** (Event › Event Designer...) ([details](#simulation-controls)) |
 | Calculation Options | **Method Options...** in Event Information › Calculation Method ([details](#calculation-options)) |
 | DyMESH | **Event › DyMESH Options...** ([details](#dymesh)) |
 | Get Surface Information | Not in HVE Studio as a probe ([details](#get-surface-information)) |
@@ -112,17 +112,17 @@ Vehicle Mesh window (Display tab), and the site's in the Environment panel's Ter
 
 ## SIMULATION CONTROLS
 
-**HVE:** Options › Simulation Controls · **HVE Studio:** the Simulation panel
-(View › Simulation; docked beside Event Information)
+**HVE:** Options › Simulation Controls · **HVE Studio:** the Event Designer's Run stage
+(Event › Event Designer..., stage **Run**)
 
-The **Simulation Controls** at the top of the Simulation panel belong to the
+The **Simulation Controls** at the top of the Run stage belong to the
 active event:
 
 - **Duration (s)**, **Trajectory Timestep (s)**, **Collision Timestep (s)**,
   **Separation Timestep (s)**, **Curb Impact Timestep (s)** (EDVSM), **Human
   Collision Timestep (s)** (EDHIS and EDGEN) and **Output Timestep (s)** —
   HVE's integration timesteps. A timestep the active method does not use is not shown, and the
-  panel says so.
+  stage says so.
 - **Termination** — linear and angular speed limits, each with an **On** switch;
   the run ends once every vehicle is below both armed limits. With both off the
   run integrates to the full duration.
@@ -135,8 +135,8 @@ active event:
 Below them are the **Run** controls (status, progress, Run / Reset / Close and the
 playback slider) and the **Last Result**.
 
-![The Simulation panel](../images/hvn-01-simulation-panel.png)
-*The Simulation panel.*
+![The simulation controls](../images/hvn-01-simulation-panel.png)
+*The simulation controls and the Run controls.*
 
 !!! note "HVE Studio"
     Some methods' option dialogs (for example SIMON Options) also carry the
@@ -180,7 +180,7 @@ page with **Start Times**, **Contact Search**, **Contact Model**,
 **Restoration**, **Inter-Vehicle Contact (fallback)**, a **Per-pair
 override** and **Contact Mesh Preparation (per vehicle)** (the event's own
 tessellate, maximum triangle leg and weld distance for each vehicle, which in
-HVE are set per event and vehicle with the mesh). The collision timestep is in the Simulation panel. Where the engine
+HVE are set per event and vehicle with the mesh). The collision timestep is on the Event Designer's Run stage. Where the engine
 stores an option but does not read it, the dialog says so beside the control.
 
 !!! warning "Not in HVE Studio"

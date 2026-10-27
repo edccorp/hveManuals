@@ -10,8 +10,8 @@ stored per event per vehicle; the vehicle header at the top picks one of the
 event's vehicles. Inputs are locked while the event's results are on screen.
 
 The speeds are shown only when they are used: the **Speed (…)** column of the
-waypoint table and the **Speed Follower** tab's settings appear once **Use Speed
-Follower** is ticked (EDGEN, which has no driver, always shows the speeds, as it
+waypoint table and the **Speed Follower** section's settings appear once **Use
+Speed Follower** is ticked (EDGEN, which has no driver, always shows the speeds, as it
 takes them as path data).
 
 ![Path Follower dialog](images/hvn-path-follower.png)
@@ -31,8 +31,8 @@ takes them as path data).
 
 ## Use Path Follower
 
-When checked, the HVE Driver model is enabled for this vehicle and the tabs
-become available. When unchecked, the driver inputs come from the Steer, Brake
+When checked, the HVE Driver model is enabled for this vehicle and the
+sections below become available. When unchecked, the driver inputs come from the Steer, Brake
 and Throttle tables.
 
 ## Keep following through an impact
@@ -47,12 +47,21 @@ and Throttle tables.
     applies only to SIMON and EDSMAC4 (the methods with a vehicle-to-vehicle
     collision model), and only to this vehicle.
 
-## Method tab
+## One page
 
-**Path Method** — **Variable Steer** or **Variable Torque**. See
-[Driver Controls Path Follower Method](DriverControls1.md).
+The parts of the path follower are sections of one page, top to bottom:
+**Timing / Limits**, **Steering**, **Path**, **Speed Follower** and **Filter**.
+Each starts open; click a section's header to collapse it.
 
-**Timing / Limits** (HVE's Driver tab):
+!!! note "HVE Studio"
+    HVE splits these across tabs. There is no **Path Method** choice: the
+    driver always corrects the path by steering (HVE's Variable Steer). See
+    [Driver Controls Path Follower Method](DriverControls1.md) for why
+    Variable Torque is not offered.
+
+## Timing / Limits
+
+HVE's Driver tab:
 
 - **Driver Start Time (s)** — time at which the driver model begins acting.
 - **Driver Sample Interval (s)** — interval at which the driver model samples
@@ -67,12 +76,12 @@ and Throttle tables.
 - **Driver Comfort Level (g)** — the maximum lateral acceleration the driver
   will tolerate.
 
-## Steering tab
+## Steering
 
-The parameters of the selected path method — see
+The steering correction's parameters — see
 [Driver Controls Path Follower Method](DriverControls1.md).
 
-## Path tab
+## Path
 
 The target path (HVE's *Path Source*). The vehicle's initial position is the
 first path node; up to **7** further waypoints follow, each with **Use**,
@@ -107,15 +116,15 @@ The **Speed** column is the attempted speed at each node, used by the
 !!! warning "Not in HVE Studio"
     - The **Model** choice (Ver. 1 / Ver. 2).
     - Taking the path from the Position/Velocity dialog: the path is the
-      waypoint table on this tab.
-    - **Max Speed Error** is not on this tab; it is **Max Velocity Error** on
-      the Speed Follower tab.
+      waypoint table in this section.
+    - **Max Speed Error** is not in this section; it is **Max Velocity Error**
+      in the Speed Follower section.
 
-## Speed Follower tab
+## Speed Follower
 
 See [Driver Controls Speed Follower](DriverControls8.md).
 
-## Filter tab
+## Filter
 
 See [Driver Controls Filter](DriverControls6.md).
 

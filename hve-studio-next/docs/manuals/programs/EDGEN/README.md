@@ -20,7 +20,7 @@ messages are the ones this manual describes. The program around it differs:
   first path position is its initial position and speed (the panel's
   **Vehicle Initial Conditions (EDGEN)** section, or **Event › Position /
   Velocity**); the remaining positions are up to seven waypoints in **Event ›
-  Path Follower**, **Path** tab. See [Chapter 2](02-program-input.md).
+  Path Follower**, **Path** section. See [Chapter 2](02-program-input.md).
 - **A human subject.** An EDGEN event that selects one human and no vehicle
   moves that pedestrian along its path, as HVE's tutorial does with the
   child. The human's path is entered under the human in the Event

@@ -556,7 +556,7 @@ The Payload Data are not used by EDCRASH. Payload inertias may be added to the v
 
 ### Simulation Controls
 
-If the Trajectory Simulation option is selected, EDCRASH uses the Vehicle Trajectory integration timestep and the maximum simulation time parameters in the Simulation Controls dialog. *(In HVE Studio these are in the **Simulation** panel, docked beside Event Information: **Duration (s)**, **Trajectory Timestep (s)**, **Output Timestep (s)** and the termination velocities. They belong to the event.)*
+If the Trajectory Simulation option is selected, EDCRASH uses the Vehicle Trajectory integration timestep and the maximum simulation time parameters in the Simulation Controls dialog. *(In HVE Studio these are on the **Run** stage of the **Event Designer** (**Event › Event Designer...**): **Duration (s)**, **Trajectory Timestep (s)**, **Output Timestep (s)** and the termination velocities. They belong to the event.)*
 
 **Table 2-8: Simulation Control Parameters Used By EDCRASH**
 

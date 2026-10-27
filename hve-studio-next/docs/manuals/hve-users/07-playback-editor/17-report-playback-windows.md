@@ -87,7 +87,7 @@ HVE's Playback Window shows several events in one viewer. In HVE Studio the View
 
 ### Playback Controller
 
-The playback bar along the bottom of the Viewport, in Event mode, replaces HVE's Playback Controller. The same controls are in the **Simulation** panel (View › Simulation):
+The playback bar along the bottom of the Viewport, in Event mode, replaces HVE's Playback Controller. The same controls are on the **Run** stage of the **Event Designer** (**Event › Event Designer...**):
 
 - **Run** / **Reset** — execute the current event, or discard its results (see [Chapter 15](../06-event-editor/15-creating-editing-events.md)).
 - **Jump to start** — return to the start of the simulation.

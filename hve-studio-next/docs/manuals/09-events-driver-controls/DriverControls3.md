@@ -9,9 +9,10 @@ The **Brake** tab of the [Driver Controls](DriverControls.md) dialog
 
 Selects the type of brake table (HVE's *Table* choice):
 
-A vehicle added to a SIMON, EDVDS or EDVSM event, or an event switched to one of
-them, starts with **At Driver** for both throttle and brake until its tables are
-edited; the other methods have no pedal path and start with **% of Friction**.
+A vehicle added to a SIMON, EDVDS or EDVSM event, however it is added (Event
+Information, Quick Case, the vehicle library or Case Intake), or an event switched
+to one of them, starts with **At Driver** for both throttle and brake until its
+tables are edited; the other methods have no pedal path and start with **% of Friction**.
 
 - **At Driver** — HVE's *Pedal Force*. The vehicle's brake system model
   converts the pedal input to brake torque, and thus longitudinal force, at

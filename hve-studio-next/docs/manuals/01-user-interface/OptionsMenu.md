@@ -24,9 +24,9 @@ HVE Studio has **no Options menu**. HVE's Options menu mixes display switches, t
 | Grid | A datum grid is drawn when no site is loaded; it has no settings. See [Set Grid Dialog Box](SetGridDlg.md). |
 | Units | **Tools › Preferences... › Units** — see [Units Dialog Box](UnitsDlg.md). |
 | Shadows | **View › Scene Display › Light & Shadow** (Shadow coverage): **Vehicles (sharp)** fits the shadows to the vehicles, **Whole scene** to the site as well. HVE's shadow radius, quality, precision and intensity are not offered. |
-| Render (Ctrl+R) | **View › Scene Display › Rendering** — see [Render Dialog Box](RendOptDlg.md). (In HVE Studio **Ctrl+R** is **Output › Run Simulation...**, in the Event Editor.) |
+| Render (Ctrl+R) | **View › Scene Display › Rendering** — see [Render Dialog Box](RendOptDlg.md). (In HVE Studio **Ctrl+R** is **Output › Run Simulation...**, in the Event Editor: it opens the Event Designer's **Run** stage and runs the event.) |
 | Playback | **Output › Playback Options...** (Event Editor) |
-| Simulation Controls (Ctrl+Y) | The **Simulation** panel (**View › Simulation**), *Simulation Controls* section: duration, time steps, termination velocities and the integrator convergence controls the event's method uses. |
+| Simulation Controls (Ctrl+Y) | The **Run** stage of the **Event Designer** (**Event › Event Designer...**), *Simulation Controls* section: duration, time steps, termination velocities and the integrator convergence controls the event's method uses. |
 | Calculation Options (Ctrl+J) | **Method Options...** in the **Calculation Method** section of the **Event Information** panel opens the options window for the event's method (EDCRASH, EDSMAC/EDSMAC4, EDGEN, EDHIS, SIMON, EDVSM, GATB, ...). See the Calculation Options chapter. |
 | DyMESH | **Event › DyMESH Options...** |
 | Get Surface Info | The **Road Surface Search** section of the **Event Information** panel. |

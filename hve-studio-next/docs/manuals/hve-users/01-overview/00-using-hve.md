@@ -128,7 +128,7 @@ Before deciding a result is wrong, or that the program has a fault:
   will refuse). Hover over a control for its tooltip, and turn on **View › Show
   Guidance Text** for the longer explanations. A message about a problem with
   the case is shown whatever that switch is set to.
-- **Check the Simulation panel** — after a run, its status line says how the run
+- **Check the Event Designer's Run stage** — after a run, its status line says how the run
   ended; an engine's own error message appears there.
 - **Read the Audit Log** — **Tools › Audit Log** keeps a time-stamped record of
   what was opened, saved, run and changed.
@@ -175,7 +175,7 @@ Vehicles panel docked on the left and the 3-D viewport on the right.*
   **Environment (F4)**, **Event (F5)** and **Playback (F6)**, each with an icon. They replace HVE's mode
   buttons and Mode menu. Each editor shows its own panels.
 - **Panels** — the editors' contents (Vehicles, Occupants, Environment, Event
-  Information, Simulation, Key Results, and so on) are panels docked around the
+  Information, Key Results, and so on) are panels docked around the
   viewport. Drag a panel's tab to dock it elsewhere or float it; close it with
   its **×** and re-open it from the menus. With **View › Panels Outside the Main
   Window** (after a restart) a panel can be dragged out of the main window onto

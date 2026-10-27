@@ -536,8 +536,8 @@ its fore-and-aft and height position, but not its sideways offset. A lone
 driver then does not pull the vehicle off a straight line on a flat road, so no
 steering correction is needed.
 
-The run status (under **Run** on the playback bar, and in the **Simulation**
-panel) ends with an **Aboard:** note naming each vehicle that carries
+The run status (under **Run** on the playback bar, and on the Event Designer's
+**Run** stage) ends with an **Aboard:** note naming each vehicle that carries
 anything: its load in kilograms and how many items, and how it was applied
 (with the CG shift, in meters, when added to the vehicle). It also says when:
 

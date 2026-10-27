@@ -174,7 +174,7 @@ and for the Chevrolet Caprice:
 - Heading (deg) = 0
 - Speed (mph) = 30
 
-In the **Simulation** panel, change the following:
+On the Event Designer's **Run** stage, change the following:
 
 - Separation Timestep (s) = 0.001
 - Trajectory Timestep (s) = 0.001
@@ -231,7 +231,7 @@ Let's attach a camera to the vehicle to better see the human.
 ![Figure 5-23](images/hvn-gatb-driver-start.png)
 *Figure 5-23: A GATB occupant seated at t = 0 in HVE Studio (the driver of `GATB.hve`).*
 
-In the **Simulation** panel set:
+On the Event Designer's **Run** stage set:
 
 - Output Timestep (sec) = 0.002
 - Duration (sec) = 0.25
@@ -271,7 +271,7 @@ The basic procedure for establishing equilibrium is:
 - Set the initial velocity of the vehicle to zero.
 - Run the event for a short time.
 
-> **NOTE:** The exact termination time is not critical. In HVE Studio the shortest *Duration* the Simulation panel accepts is 0.1 sec.
+> **NOTE:** The exact termination time is not critical. In HVE Studio the shortest *Duration* the Run stage accepts is 0.1 sec.
 
 - Choose **Output › HVE Reports** and click the **Results** tab. The Results page lists the linear and angular accelerations of every segment.
 
@@ -373,7 +373,7 @@ Choose the following human attributes:
 - In the **Event (F5)** editor, add an event, name it `Pickup/Pedestrian Impact`, and choose **GATB** as the *Method*.
 - Under *Vehicles in Event*, choose the pickup; under *Humans in Event*, add the pedestrian.
 
-In the **Simulation** panel, change the following:
+On the Event Designer's **Run** stage, change the following:
 
 - Output Timestep (sec) = 0.002
 - Duration (sec) = 1.0

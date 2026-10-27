@@ -7,7 +7,7 @@ Messages produced by HVE or HVE-2D are described in the User's Manual, Appendix 
 !!! note "HVE Studio"
     The messages are EDGEN's own and appear on the **MESSAGES** tab of
     **Output › HVE Reports** after a run. When an event is refused, the
-    reason is stated in the **Status** line of the **Simulation** panel. A
+    reason is stated in the **Status** line on the Event Designer's **Run** stage. A
     vehicle path entered in HVE Studio always gives every position a speed,
     so the "zero velocity" message below arises only from two consecutive
     positions entered with a speed of zero. A human EDGEN event with no

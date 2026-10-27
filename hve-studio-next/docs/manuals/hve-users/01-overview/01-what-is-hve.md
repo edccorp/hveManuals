@@ -108,8 +108,8 @@ it; the event's name; its **Calculation Method**; the vehicles and humans in it;
 and their initial conditions or measured scene data. The **Event** menu holds the
 event set-up dialogs (HVE's Set-up menu). HVE's Event Controller becomes the
 **playback bar** under the viewport, with **Run** to execute the event and
-**Reset** to return to editing, and the **Simulation** panel, which also holds
-the simulation controls.
+**Reset** to return to editing, and the Event Designer's **Run** stage, which also
+holds the simulation controls.
 
 ![The Event editor](../images/hvn-01-event-editor.png)
 *The Event editor (F5): Event Information on the left, the viewport and playback

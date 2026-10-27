@@ -193,7 +193,7 @@ Now let's look at how the vehicles are placed in the environment and what the dr
 
 ### Simulation Controls
 
-This event lasts more than 5 seconds, so the maximum simulation time is increased from 5 to 10 seconds. In HVE Studio, click the **Simulation** tab beside Event Information (or choose **View › Simulation**): under **Simulation Controls**, **Duration** is 10 s, with a **Trajectory Timestep** of 0.02 s, **Collision Timestep** 0.001 s, **Separation Timestep** 0.01 s and **Output Timestep** 0.1 s.
+This event lasts more than 5 seconds, so the maximum simulation time is increased from 5 to 10 seconds. In HVE Studio, open the **Event Designer** (**Event › Event Designer...**) and choose its **Run** stage: under **Simulation Controls**, **Duration** is 10 s, with a **Trajectory Timestep** of 0.02 s, **Collision Timestep** 0.001 s, **Separation Timestep** 0.01 s and **Output Timestep** 0.1 s.
 
 ### Running the Event
 
@@ -215,7 +215,7 @@ Watch as the vehicles approach each other, collide, and roll to their rest posit
 
 > NOTE: Remember to pay attention to the Key Results; in this case, you might be interested in the position and velocity of each vehicle at initial visibility.
 
-The run status in the Simulation panel reads *EDSMAC complete*. The vehicles collide at t = 2.66 s, the Ford at about 30 km/h and the Nissan at about 35 km/h; they separate at t = 2.74 s, and the Ford comes to rest at t = 3.61 s and the Nissan at t = 6.04 s.
+The run status on the Event Designer's Run stage reads *EDSMAC complete*. The vehicles collide at t = 2.66 s, the Ford at about 30 km/h and the Nissan at about 35 km/h; they separate at t = 2.74 s, and the Ford comes to rest at t = 3.61 s and the Nissan at t = 6.04 s.
 
 ![Figure 5-8](images/hvn-edsmac-impact.png)
 
@@ -273,7 +273,7 @@ The collision vectors are displayed both in cylindrical coordinates (RHO, PSI) a
 
 Following the table of collision vectors, the Damage Ranges are displayed. The Damage Ranges report includes the beginning and ending point for each damaged region on the exterior (up to 10 regions may be displayed for each vehicle), followed by the CDC, PDOF, Delta-V and Peak Acceleration for each damage region.
 
-The run's delta-V and PDOF also appear in the Simulation panel's **Last Result** and in **Output › Key Results...**: about 17.7 km/h for the Ford and 13.1 km/h for the Nissan.
+The run's delta-V and PDOF also appear in the Run stage's **Last Result** and in **Output › Key Results...**: about 17.7 km/h for the Ford and 13.1 km/h for the Nissan.
 
 ### Damage Profiles
 

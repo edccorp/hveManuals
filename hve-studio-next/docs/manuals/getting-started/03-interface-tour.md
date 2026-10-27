@@ -8,9 +8,8 @@ edge in the Event editor.
 ![The HVE Studio main window in the Event editor, with a SIMON case open](images/hvn-main-window-event.png)
 
 *The main window in the Event editor (F5) with a two-vehicle SIMON/DyMESH case
-open. Left: the Event Information panel (with the Simulation panel as a second
-tab). Right: the Viewport, in its 3D view, with the playback bar along its
-bottom edge. The open file's name is at the right end of the menu bar.*
+open. Left: the Event Information panel. Right: the Viewport, in its 3D view,
+with the playback bar along its bottom edge. The open file's name is at the right end of the menu bar.*
 
 ## Menu bar
 
@@ -58,7 +57,7 @@ The main entries:
 - **Human** — Human Information.
 - **View** — which panels are shown, in three groups: the scene (Viewport,
   **Outliner**, **Scene Display**, Shader Editor, Dope Sheet), the run and its
-  results (Simulation, Key Results, **Results HUD**, Output Graph, Timestep
+  results (Key Results, **Results HUD**, Output Graph, Timestep
   Table), and the
   app's two preferences (**Panels Outside the Main Window**, **Show Guidance
   Text**). What the viewport draws — paths, North Arrow, Skidmarks, occupant
@@ -226,7 +225,7 @@ Typing into a text field never triggers these keys.
     **Event › Position / Velocity**. While an event's results are on screen the
     gizmo is not offered: press **Reset** first (see below).
 
-## Playback bar and the Simulation panel
+## Playback bar and the Run stage
 
 In the Event editor the bottom of the Viewport carries the playback bar:
 
@@ -245,8 +244,9 @@ In the Event editor the bottom of the Viewport carries the playback bar:
 - At the right, the duration, the program that solved the event and its
   headline result — or, if the run was refused or failed, the reason in red.
 
-The **Simulation** panel (View › Simulation, or the tab beside Event
-Information) carries the same controls plus a status line and a progress bar.
+The **Run** stage of the **Event Designer** (Event › Event Designer..., or
+**Output › Run Simulation...**) carries the same controls plus the simulation
+controls, a status line and a progress bar.
 
 !!! note "HVE Studio"
     **The results lock the inputs.** While a solved event's results are on
@@ -327,8 +327,8 @@ Inside a text field, Ctrl+Z undoes typing in that field only.
 
 HVE Studio reports in three places:
 
-- the **playback bar** and **Simulation** panel: the state of the run, and the
-  reason when a program refuses or stops a run;
+- the **playback bar** and the Event Designer's **Run** stage: the state of the
+  run, and the reason when a program refuses or stops a run;
 - **dialogs** that show notes about the open case (for example, a value an HVE
   import could not represent, or an input the event's program does not read).
   Notes that read the same on every case are hidden unless **View › Show

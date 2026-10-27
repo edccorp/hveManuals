@@ -23,12 +23,12 @@ before that they say there is nothing to show.
 | **HVE Reports...** | The report pages the engine itself builds, among them its ACCIDENT HISTORY page | the engine's report windows, including the Accident History numeric report |
 | **Compare Runs...** | Runs the active event with two physics (HVE, HVE-reference, or HVE's own saved run) and shows the differences — see [COMPARE RUNS](#compare-runs) | *(new)* |
 | **Playback Options...** | Playback speed, frame step, loop, CG path | Options › Playback |
-| **Run Simulation...** | Opens the Simulation panel and runs the active event | the Event Controller's execute button |
+| **Run Simulation...** | Opens the Event Designer on its Run stage and runs the active event | the Event Controller's execute button |
 | **Damage Studio Options...** | What the Damage Studio displays | Damage Studio |
 | **Damage Studio Report...** | The Damage Studio report | Damage Studio |
 | **Export Variables...** | Export output to a file | File › Export |
 
-The panels — Key Results, Output Graph and Simulation — can also
+The panels — Key Results and Output Graph — can also
 be shown and hidden from the **View** menu, and dock below the viewport by
 default.
 
@@ -205,9 +205,9 @@ A timeline strip shows each event as a bar that can be dragged.
 
 **Menu Option:** Output › Run Simulation...
 
-**Description:** Brings up the **Simulation** panel and runs the active event —
-the same as pressing **Run** on the playback bar under the viewport or in the
-Simulation panel. While it runs, the progress bar advances and **Pause** /
+**Description:** Opens the **Event Designer** on its **Run** stage and runs the
+active event — the same as pressing **Run** on the playback bar under the
+viewport or on that stage. While it runs, the progress bar advances and **Pause** /
 **Resume** (where the method allows) and **Cancel** are offered; **Esc** also
 cancels. When it finishes, the event plays back in the viewport and its inputs
 are locked until **Reset**.

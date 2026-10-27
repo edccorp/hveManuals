@@ -95,7 +95,7 @@ The Event Data report displays event-specific information for each vehicle:
 The Messages report lists the messages produced during execution of the current event. For a complete listing of messages issued by EDSMAC4, see [Chapter 6](06-messages.md).
 
 !!! note "HVE Studio"
-    The run status in the Simulation panel also counts the engine's messages and quotes the first ("2 engine message(s), see the Messages report -- first: ..."), and adds any note HVE Studio itself made about the inputs, such as a substituted driver input method.
+    The run status on the Event Designer's Run stage also counts the engine's messages and quotes the first ("2 engine message(s), see the Messages report -- first: ..."), and adds any note HVE Studio itself made about the inputs, such as a substituted driver input method.
 
 
 ### Program Data

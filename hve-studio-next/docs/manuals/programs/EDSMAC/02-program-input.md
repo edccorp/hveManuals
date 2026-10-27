@@ -397,7 +397,7 @@ EDSMAC does not support accelerometers. (In HVE Studio, accelerometers are store
 EDSMAC uses the Vehicle Collision, Separation and Trajectory integration timesteps and the maximum simulation time parameters in the Simulation Controls. The Simulation parameters used by EDSMAC are shown in Table 2-8.
 
 !!! note "HVE Studio"
-    The simulation controls are in the **Simulation** panel (the tab beside Event Information, or **View › Simulation**), section **Simulation Controls**: **Duration** (maximum simulation time), **Trajectory Timestep**, **Collision Timestep**, **Separation Timestep** and **Output Timestep**, with the termination velocities under **Termination** (**Linear** and **Angular**, each with an **On** box). They are stored per event.
+    The simulation controls are on the **Run** stage of the **Event Designer** (**Event › Event Designer...**), section **Simulation Controls**: **Duration** (maximum simulation time), **Trajectory Timestep**, **Collision Timestep**, **Separation Timestep** and **Output Timestep**, with the termination velocities under **Termination** (**Linear** and **Angular**, each with an **On** box). They are stored per event.
 
 **Table 2-8. Simulation Control Parameters used by EDSMAC.**
 
@@ -463,7 +463,7 @@ To execute an EDSMAC event, use the playback bar under the viewport (Figure 2-5)
 - **>>** — Step forward one output step
 - **>|** — Jump to the end of the simulation
 
-**Output › Run Simulation** (Ctrl+R) also runs the active event. The Simulation panel shows the run's progress and its status line.
+**Output › Run Simulation** (Ctrl+R) also runs the active event, opening the Event Designer on its **Run** stage, which shows the run's progress and its status line.
 
 > NOTE: A solved event's inputs are locked while its results are on screen. To change any vehicle, environment or event set-up input, press **Reset** first, then **Run** again.
 

@@ -18,7 +18,7 @@ the [HVE Manual](../README.md).
     | Variable Selection... | **Select Output Variables** ([Selecting Variables](VarSelDlg.md)) |
     | HVE Reports... | the report pages built by the engine itself — among them its own [Accident History](AcciHistDlg.md) — as tabs that can be placed side by side, stacked or floated, and saved as text or HTML in an order you set ([Common Reports](CommRepDlg.md)) |
     | Playback Options... | playback settings (multi-event playback is the Playback (F6) editor) |
-    | Run Simulation... | runs the active event (Simulation panel) |
+    | Run Simulation... | runs the active event (the Event Designer's Run stage) |
     | Damage Studio Options..., Damage Studio Report... | crush and damage display and report |
     | Export Variables... | writes the run's selected variables to a file, with a choice of format, interval and coordinate system |
 

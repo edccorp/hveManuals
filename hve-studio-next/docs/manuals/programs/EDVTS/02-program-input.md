@@ -474,7 +474,7 @@ The Payload Data used by EDVTS include the payload coordinates relative to the v
 EDVTS uses the current simulation control parameters. The Simulation parameters used by EDVTS are shown in Table 2-6.
 
 !!! note "HVE Studio"
-    The simulation controls are in the **Simulation** panel, a tab beside **Event Information**: **Duration**, **Trajectory Timestep** and **Output Timestep**, a **Termination** section (linear and angular termination velocities, each with an **On** checkbox) and an **Integrator Convergence** section (**Maximum Bisections**, **Velocity Convergence**, both read by EDVTS). The collision and separation timesteps are hidden for EDVTS, which does not use them.
+    The simulation controls are on the **Run** stage of the **Event Designer** (**Event › Event Designer...**): **Duration**, **Trajectory Timestep** and **Output Timestep**, a **Termination** section (linear and angular termination velocities, each with an **On** checkbox) and an **Integrator Convergence** section (**Maximum Bisections**, **Velocity Convergence**, both read by EDVTS). The collision and separation timesteps are hidden for EDVTS, which does not use them.
 
 > NOTE: The output time interval should be an even multiple of the vehicle trajectory integration timestep. For example, if the integration timestep is 0.02, the output interval might be 5 x 0.02, or 0.10.
 

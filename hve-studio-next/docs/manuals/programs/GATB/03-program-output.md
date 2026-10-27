@@ -66,7 +66,7 @@ The report echoes the ATB "Crash Victim" input cards (Cards B.1–B.3): for each
 The Injury Data Report includes the HIC (Head Injury Criterion), HSI (Head Severity Index) and CSI (Chest Severity Index) results for each human: the HIC value with its time duration and average head resultant acceleration, the HSI value with the maximum head resultant acceleration and its time, and the CSI value with the maximum chest resultant acceleration and its time.
 
 !!! note "HVE Studio"
-    The run status (Simulation panel) also reports the occupant's peak head and torso accelerations.
+    The run status (the Event Designer's **Run** stage) also reports the occupant's peak head and torso accelerations.
 
 ### Message
 

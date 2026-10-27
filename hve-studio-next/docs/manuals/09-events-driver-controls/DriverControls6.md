@@ -1,6 +1,6 @@
 # Driver Controls Filter
 
-The **Filter** tab of the **Path Follower** tab of Driver Controls (**Event › Path Follower...**)
+The **Filter** section of the **Path Follower** tab of Driver Controls (**Event › Path Follower...**)
 holds the parameters that describe the driver's physiological capabilities. See
 [Driver Controls Path Follower](DriverControls7.md).
 

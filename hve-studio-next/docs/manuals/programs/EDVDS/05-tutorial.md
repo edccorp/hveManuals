@@ -237,7 +237,7 @@ Maximum Bisections:                  12
 ```
 *Figure 5-7: Program Data page for EDVDS, Controllability on Grade. In HVE Studio the version, date and time lines are blank, and the Tire Model Method is always Semi-empirical.*
 
-The simulation controls themselves are in the **Simulation** panel (a tab beside Event Information).
+The simulation controls themselves are on the **Run** stage of the **Event Designer** (**Event › Event Designer...**).
 
 ### Variable Output
 

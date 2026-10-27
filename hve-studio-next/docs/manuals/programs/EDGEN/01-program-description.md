@@ -35,7 +35,7 @@ The resulting motion is recorded as EDGEN human or vehicle output tracks; the mo
 
 ## Model Inputs
 
-EDGEN inputs include one human or one vehicle, and an optional environment. Event set-up parameters include at least two and up to eight positions and velocities for the human or vehicle. The current integration interval for humans or vehicles is used to calculate motion for each timestep, and the output timestep is used for the output interval. These time intervals are set using the Simulation Controls dialog *(in HVE Studio, the **Simulation** panel beside Event Information)*.
+EDGEN inputs include one human or one vehicle, and an optional environment. Event set-up parameters include at least two and up to eight positions and velocities for the human or vehicle. The current integration interval for humans or vehicles is used to calculate motion for each timestep, and the output timestep is used for the output interval. These time intervals are set using the Simulation Controls dialog *(in HVE Studio, the **Run** stage of the **Event Designer**)*.
 
 ## Model Outputs
 
@@ -68,7 +68,7 @@ The procedure for using EDGEN is substantially the same as using any reconstruct
 
 4. Use the Event editor (F5) to set up and execute the EDGEN calculation model by performing the following steps:
    - In the Event Information panel, choose the **EDGEN** method and add one vehicle (or, for a pedestrian, one human and no vehicle).
-   - Position the vehicle at its initial position and enter its initial speed, then add the further positions and speeds as waypoints in **Event › Path Follower** (Path tab). A human's positions are entered under the human in **Humans in Event**.
+   - Position the vehicle at its initial position and enter its initial speed, then add the further positions and speeds as waypoints in **Event › Path Follower** (Path section). A human's positions are entered under the human in **Humans in Event**.
    - Execute the EDGEN event with **Run** on the playback bar.
 5. Press **Reset**, edit and re-execute the event, if necessary, to achieve the desired accelerations between each position.
 6. Finally, review the results (Key Results, Output Graph, HVE Reports) and play the motion back in the viewport. *(File › Record Animation writes the playback to an AVI video; for a rendered movie, export the scene with File › Export Scene for Blender.)*

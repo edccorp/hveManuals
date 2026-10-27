@@ -19,7 +19,7 @@ This chapter defines the objects (humans, vehicles and environment) and the even
     | Collision pulse | **Event › Collision Pulse** |
     | Combined contact materials | Event Information › *Combined Contact Materials* |
     | Calculation options | Event Information › *Calculation Method* › **Method Options…** |
-    | Simulation controls | the **Simulation** panel |
+    | Simulation controls | the Event Designer's **Run** stage |
 
 ## Objects Overview
 
@@ -576,10 +576,10 @@ For airbag restraint systems, the following in-use parameters may be supplied:
 
 ### Simulation Controls
 
-EDHIS uses the current simulation control parameters in the Simulation Controls dialog (in HVE, Options Menu › Simulation Controls; in HVE Studio, the **Simulation** panel). The Simulation parameters used by EDHIS are shown in Table 2-7.
+EDHIS uses the current simulation control parameters in the Simulation Controls dialog (in HVE, Options Menu › Simulation Controls; in HVE Studio, the **Run** stage of the **Event Designer**). The Simulation parameters used by EDHIS are shown in Table 2-7.
 
 !!! note "HVE Studio"
-    In HVE Studio these are in the **Simulation** panel (**View › Simulation**): *Duration*, *Human Collision Timestep*, *Output Timestep*, *Maximum Bisections*, *Velocity Convergence*, *Velocity Change Limit* and *Acceleration Change Limit*. The panel shows the two change limits only for EDHIS, the only engine that reads them.
+    In HVE Studio these are on the **Run** stage of the **Event Designer** (**Event › Event Designer...**): *Duration*, *Human Collision Timestep*, *Output Timestep*, *Maximum Bisections*, *Velocity Convergence*, *Velocity Change Limit* and *Acceleration Change Limit*. The stage shows the two change limits only for EDHIS, the only engine that reads them.
 
     The **Human Collision Integration Timestep** is **Human Collision Timestep (s)**, shown for EDHIS and EDGEN events. A case opened from HVE carries the step it stores; 0 uses the output timestep.
 
