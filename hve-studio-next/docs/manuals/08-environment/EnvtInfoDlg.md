@@ -60,20 +60,26 @@ this offset plus 90, so an opened HVE case whose X axis points north shows
 
 ### Coordinate system
 
+**Optional.** Fill this in only when you will bring in survey points, LiDAR or a
+georeferenced picture by their own coordinates; the section says so at its top.
+Downloads from the map (aerial image, terrain, lidar) need only the Latitude and
+Longitude above. If unsure, leave both codes at 0.
+
 A case is either georeferenced (it has a place on the Earth) or not. **Not
 georeferenced** is an ordinary state: the case has no geographic coordinates,
 and nothing in HVE Studio needs them. A case saved before this was recorded is
 georeferenced when its latitude or longitude is not zero. A latitude and
 longitude of exactly 0, 0 is a valid place and is kept when it is set.
 
-**Treat as not georeferenced** — Marks the case as having no geographic
-coordinates. The latitude and longitude stay as typed (the sun still uses them)
-and nothing is moved.
+**Treat as not georeferenced** — At the end of the section. Marks the case as
+having no geographic coordinates. The latitude and longitude stay as typed (the
+sun still uses them) and nothing is moved.
 
 **Horizontal CRS (EPSG)** — The EPSG code of the coordinate system the site's
 own data are in, for example 26917 for NAD83 / UTM zone 17N; 0 means not
-stated. **UTM, WGS 84** and **UTM, NAD83** fill in the UTM zone the location
-falls in. For a UTM system the panel shows the origin's easting and northing,
+stated (the panel says "Horizontal: not stated (0)").
+**UTM, WGS 84** and **UTM, NAD83** fill in the UTM zone the location falls in,
+which is shown beside them. For a UTM system the panel shows the origin's easting and northing,
 how far grid north is from true north there, the grid bearing of the case's +X
 axis, and the point scale. The code is a record: nothing already in the case is
 moved or converted on its account. Codes this version can convert are WGS 84,
@@ -86,8 +92,11 @@ the panel says so whenever one of those systems is chosen.
 
 **Vertical CRS (EPSG)** / **Vertical datum** — The datum the site's elevations
 are in (5703 NAVD88, 5702 NGVD29, 4979 WGS 84 ellipsoidal, or a name such as
-local). Elevations are recorded in that datum and never converted between
-datums: this version has no geoid model.
+local). **NAVD88**, **NGVD29** and **WGS 84 ellipsoid** fill in both. NAVD88 is
+what USGS terrain and lidar in the US are in. Elevations are recorded in that
+datum and never converted between datums: this version has no geoid model. The
+code is checked against a downloaded terrain's own datum; the name is a record
+only.
 
 !!! tip "New in HVE Studio"
     The coordinate system section.
@@ -105,7 +114,7 @@ online services (OpenStreetMap's Nominatim and timeapi.io).
 The results are a numbered list beside numbered pins on the **Map** below it.
 Choosing a result shows it on the map; **Use this place** (or a double-click on
 the result) sets the case's Latitude and Longitude to it and looks up its time
-zone. **Clear results** empties the list. On the map, drag to pan, use the
+zone. **Clear results** empties the list. On the map, drag (or middle-drag) to pan, use the
 wheel to zoom, and double-click anywhere to put the case's location there.
 
 Under the map, choose the tile source. When it is an aerial source, choose the
@@ -118,7 +127,8 @@ angle. The button needs the case's location to be set first.
 
 The area is a square about the map's center (50 to 800 m), or, with **Select
 area** on, a rectangle you drag on the map; dragging then draws the area
-instead of panning, and **Clear area** returns to the square. When the case
+instead of panning (middle-drag still pans, and the wheel still zooms), and
+**Clear area** returns to the square. When the case
 has no location yet, drawing the area also sets it, at the area's center, so
 the download buttons work at once; a case that already has a location is never
 moved by drawing. The orange

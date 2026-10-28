@@ -343,7 +343,9 @@ scene camera, click again for the free view; right-click for Camera Properties)
 and **Perspective/Orthographic**. The number keys (or keypad) also set standard
 views: **1** front (Ctrl+1 rear), **3** right (Ctrl+3 left), **7** top (Ctrl+7
 bottom), **9** the opposite side, **5** perspective/orthographic, **4**/**6**
-and **8**/**2** orbit in 15° steps, and **.** frames the selection. Double-click the viewport,
+and **8**/**2** orbit in 15° steps, and **.** frames the selection (a vehicle, a human, or a
+surface). Choosing or adding a vehicle or human in the Event editor's lists, or a human in the
+Human editor, brings the view to it; a click in the view does not move the camera. Double-click the viewport,
 or right-click › **Reset Camera**, to reset the view.
 
 See the dialog reference: [Camera Set-up](../../01-user-interface/CameraSetDlg.md).

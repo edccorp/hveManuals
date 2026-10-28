@@ -697,7 +697,8 @@ The picture's visibility and **Opacity** can also be changed without opening
 this dialog: in the Outliner, click the percentage on the aerial image's row (it
 is the opacity) to open a slider, and the eye shows or hides it; in the Shader
 Editor, the **Aerial image** checkbox and **Opacity** slider at the top do the
-same. All three change the one setting.
+same. All three change the one setting. A new picture or layer starts fully
+opaque (100%); a case saved with another opacity keeps it.
 
 > **NOTE:** Confirm the image's scale against two landmarks a known
 > distance apart before relying on it.
