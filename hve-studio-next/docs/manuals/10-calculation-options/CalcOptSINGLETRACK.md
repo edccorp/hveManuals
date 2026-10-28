@@ -24,16 +24,23 @@ event's results are on screen.
   Lean is exact at any angle; braking, load transfer, wheel lift and flight are
   solved rather than imposed. The run reports the slip angles and slip ratios
   reached, the range of each wheel's load and the peak lateral acceleration.
-  It has no hard-point ground contact yet, so a fall ends the run as the
-  Whipple model's does; the drag-factor slide stays available.
+  A machine that goes down lands on its **hard points** (the axle ends,
+  footpegs, engine, bar ends, seat, tank, tail and mirrors, placed from the
+  machine's geometry and disclosed) and slides on them, at the machine drag
+  factor, until it comes to rest; the run ends there and says when it went
+  down, how far it slid and when it stopped. The rider lets go once the lean
+  passes 70°: the steering controller and the speed hold stop, and the rider's
+  own slide to rest is the rider drag factor's result.
 
 The nonlinear model reads the tire data the Whipple model does not: the
 cornering and camber stiffness tables (a stated camber curve is used point for
 point), the lateral peak friction, the tire's spring rates, rolling resistance,
 pneumatic trail and relaxation length, and the steering head's friction. Where
 the tires state no camber table, a camber stiffness of 0.9 per radian of the
-static load is assumed and disclosed. In a SIMON event a motorcycle still rides
-the Whipple model whichever is selected, and the run says so.
+static load is assumed and disclosed. In a SIMON event the nonlinear model owns
+the motorcycle for the whole run and SIMON's contact force is a load on it (see
+[Motorcycles](../new-features/09-motorcycles.md)); the Whipple model hands the
+machine to SIMON at its first contact.
 
 It also reads more of the driver controls and the vehicle: the **Throttle** table
 as a fraction of the rear tire's grip, the **Brake** tab's per-wheel **% of
@@ -78,5 +85,8 @@ Pitch-over may limit braking before friction does, and the run says which.
 
 **Machine drag factor** and **Rider drag factor** — if the machine goes down, it
 and the rider slide to rest independently at these drag factors. Left at zero, no
-slide is computed. Values commonly cited on asphalt: machine 0.40–0.60, rider
+slide is computed. With the **Nonlinear** dynamics model the machine's slide is
+solved on its hard points instead, with the machine drag factor as their friction
+(0.5 where none is stated, disclosed); the rider's slide is still the rider drag
+factor's. Values commonly cited on asphalt: machine 0.40–0.60, rider
 0.60–0.80.
