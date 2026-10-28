@@ -84,6 +84,18 @@ include a *Tessellate* toggle, a *Vertex Weld Distance*, and a *Max Side Length*
     settings; EDC's DyMESH validation cases ask for a 20 in leg and a 0.2 in
     weld.
 
+    **Advanced Mesh Options**, under each vehicle in the same section, are
+    HVE's: **Super-Tessellation** splits every edge that passes within
+    **Radius** of the point (**Center X**, **Center Y**), measured from above,
+    down to **Max Side Length**. Use it to resolve one region finely, such as the
+    corner of a trailer that strikes, without tessellating the whole body. It
+    refines a mesh that is tessellated, so **Tessellate** must be on.
+    **Culling** limits the contact to a vertical column: a face whose corners
+    are all outside the cull **Radius** is not subdivided, and a vertex outside
+    it is not a DyMESH contact node. The centers are in the mesh file's frame
+    (+X forward, +Y right), as HVE stores them. An imported HVE case brings its
+    own values for each event vehicle.
+
     This is physics, not display: it changes how finely contact is resolved and
     how much area each node carries, so it can change the answer. The *Damage
     Display* section on the Vehicle Mesh window's Display tab (**Smooth crush
