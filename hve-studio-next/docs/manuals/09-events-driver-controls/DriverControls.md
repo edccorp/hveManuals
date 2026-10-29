@@ -18,11 +18,10 @@ The tabs depend on the method:
   [Driver Controls Wheel Data](DriverControls2.md).
 - **Every other method** — **Throttle**, **Brake**, **Steer** and **Gear**
   tabs ([Throttle](DriverControls4.md), [Brake](DriverControls3.md),
-  [Gear](DriverControls5.md); Steer is below), plus a **Lean** tab for a
-  motorcycle (the single-track rider's lean command, below).
+  [Gear](DriverControls5.md); Steer is below).
 - For a method that does not read driver tables (EDHIS, GATB) a note at
   the top says so.
-- For SINGLETRACK the Gear and Lean tabs are not shown. The **Throttle** tab is shown only when the event's
+- For SINGLETRACK the Gear tab is not shown. The **Throttle** tab is shown only when the event's
   **Dynamics model** is **Nonlinear**, which reads the throttle as a fraction of the rear tire's grip
   (see [Driver Controls Throttle](DriverControls4.md)); the Whipple model holds its speed and reads the
   Brake and Steer tables only.
@@ -70,23 +69,17 @@ by the engines. **Discard per-wheel table** returns to the steering-wheel table.
     - The **Use Ackermann Steering** check box.
 
 !!! note "HVE Studio"
-    For a **SINGLETRACK** (motorcycle) event the steer table is not a steering
-    angle: depending on the event's Method Options it is the **steer torque**
-    at the bars (N·m) or the **commanded lean** (deg). The tab says which.
-
-## Lean
-
-!!! tip "New in HVE Studio"
-    **Use the Lean table as the rider's lean command** gives a motorcycle's rider
-    a *Time (s) → Lean (deg)* table (+ = leaning right) to hold while the machine
-    rides the single-track model inside a SIMON event, which it does from the
-    start of the event until its first contact: the rider balances to the table
-    and countersteers into it, so the machine leans and turns. It is stored with
-    the vehicle, not the event, and read only in a SIMON event. After first contact
-    SIMON carries the machine and reads no lean table: its rider-control
-    surrogate holds the roll toward upright, and leaning does not steer the vehicle
-    there. SIMON has no forced lean angle: a forced roll could neither balance nor
-    steer, and it was removed in favor of the single-track model.
+    For a **motorcycle** -- a SINGLETRACK event, or a SIMON event with a
+    Motorcycle in it -- the steer table is not a steering angle. **Table means**
+    on the Steer tab (the same option as in Method Options) says what it is: the
+    **steer torque** at the bars (N·m), or the **commanded lean** (deg, + =
+    leaning right) that the rider countersteers into and holds, so the machine
+    leans and turns. It is the motorcycle's one rider table: a case saved before
+    this version with a separate **Lean** table has it moved into the SIMON
+    event's steer table, read as a commanded lean, when it is opened. In SIMON the
+    rider reads it while the single-track model carries the machine; SIMON itself
+    never reads it as a steering angle, and after a hand-back it steers straight
+    ahead (the run status says so).
 
 ## Lights
 

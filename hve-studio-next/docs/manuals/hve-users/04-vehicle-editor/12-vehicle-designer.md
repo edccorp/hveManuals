@@ -69,7 +69,7 @@ vehicle's own data and are usually left as they are.
 14. **Aerodynamics** — the aerodynamic drag coefficients.
 15. **Accelerometers** — the accelerometers mounted on the vehicle.
 16. **Occupant Protection** — the contact surfaces, airbags and belts an occupant meets, per seat.
-17. **Test Track** — three canned runs on the current physics, each on SIMON and on EDSMAC4, read back as numbers (stage 17 below).
+17. **Test Track** — three canned runs on the current physics, each on SIMON and on EDSMAC4, read back as numbers (stage 17 below). They are car tests, so a motorcycle is not offered them: the stage says to run a SINGLETRACK event and points to the Motorcycle Analysis tool instead.
 18. **Summary** (stage 18 below) — the spec sheet, the whole warnings list and the provenance tally.
 
 Every stage hosts the editors that hold its inputs, the same windows the
@@ -429,6 +429,8 @@ The rules, by stage:
 | Consider | Mass | The static stability factor, front track over twice the CG height, is under 1.1. |
 | Note | Mass | Roll, pitch or yaw inertia is 0 in both its fields, so the run uses the mass-basis estimate the editor shows. |
 | Note | Steering | A steerable axle's steer ratio is 0, which HVE reads as no steering gear. |
+| Consider | Stiffness | A motorcycle's A, B and Kv are still the generic passenger car's defaults on every side, so the machine states no crush stiffness of its own, and the 3-D law derived from them is a car's too. (A car with these values is not flagged: they are the passenger car's.) |
+| Consider | Stiffness | A face's 3-D pressure law (Const + Linear d + Quad d² + Cubic d³) drops below zero before its Max Crush; DyMESH holds it at zero. |
 | Consider | Packaging | The body design's wheelbase and the vehicle's differ by more than 5 mm. |
 | Note | Transmission | Top speed is set by the redline in top gear, below the drag limit from engine power, drag coefficient, frontal area and rolling resistance. |
 | Consider | Transmission | An upshift at the redline lands under the automatic shift window's minimum rpm. |

@@ -49,6 +49,19 @@ Above the table is a graph of the **selected** column. Click a column header, or
 
 The **Top** and **Bottom** columns have only the 3-D graph.
 
+A 3-D law with a negative term (most often a negative **Linear**) can make the
+pressure go below zero at some crush: a contact there would pull the two surfaces
+together. The **Linear** cell of such a face is marked, and its tooltip gives the
+crush at which the pressure turns negative (checked up to **Max Crush**, or 60 in
+where none is stated). A negative term is acceptable in a curve fit only if the
+other terms keep the pressure positive over the crush the face will see.
+
+!!! note "HVE Studio"
+    HVE applies a negative pressure as entered. HVE Studio's DyMESH holds a node's
+    pressure at zero instead (a contact pushes, it never pulls), and a run in which
+    that happened says so in its status, naming the faces and the crush at which
+    their law goes negative.
+
 !!! tip "New in HVE Studio"
     The graph of the selected face.
 

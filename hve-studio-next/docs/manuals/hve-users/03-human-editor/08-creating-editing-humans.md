@@ -15,10 +15,16 @@ case. This chapter describes how to use it, beginning with its components.
 To use the Human Editor, select the **Human (F2)** tab under the menu bar, or
 press **F2**. The Human Editor has two components:
 
+- **Human Designer** — A staged panel docked on the left: the Humans panel on
+  its first stage, then the human's segments, joints, pose and injury
+  tolerances, each on a stage of its own (see [Chapter 8a — Human
+  Designer](08a-human-designer.md)). It opens when you switch to the Human
+  editor; **Human › Human Designer...** reopens it.
 - **Humans panel** — Used for adding humans to the case, removing them,
   selecting the current human and editing its basic attributes. It takes the
   place of HVE's Human Editor dialog and its GEBOD Human Information dialog.
-  If it has been closed, reopen it with **Human › Human Information**.
+  It is the Human Designer's **Human** stage; **Human › Human Information**
+  also opens it as a window of its own.
 - **Viewport** — Displays the current human. Clicking a body segment in the
   viewport selects that segment in the Body Segments dialog (see Selecting
   and Editing Humans, below).
@@ -44,8 +50,10 @@ The Humans panel manages all the humans in the current case. It contains:
 - **Anthropometry** — The GEBOD inputs: Subject Type, Age Group, Weight
   Percentile, Height Percentile, and the **Regenerate GEBOD Body** button.
 - **Anthropometric** — The human's total Weight and Mass.
-- **Injury Tolerances…, Body Segments…, Joint Properties…, Body Pose…** —
-  Buttons that open the human's data dialogs.
+- **Body Segments…, Joint Properties…, Body Pose…, Injury Tolerances…** —
+  When the panel is open as its own window, buttons that open the Human
+  Designer on that stage. On the designer's Human stage they are not shown:
+  the stage bar is right there.
 
 > **NOTE:** Removing a human removes it only from the current case. Events
 > that used it are updated so that their remaining humans keep their
@@ -67,9 +75,8 @@ The Humans panel manages all the humans in the current case. It contains:
 !!! note "HVE Studio"
     Which vehicle a human rides in is set in the Event Editor, in Event
     Information's **Humans in Event** section. That section's **Pose** button
-    opens the Body Pose dialog for the event; the same dialog opens from the
-    Humans panel's **Body Pose…** button and edits the pose in the active
-    event. A human's pose and the restraint it wears are stored per event.
+    opens the Body Pose dialog for the event; the same dialog is the Human
+    Designer's **Body Pose** stage, which edits the pose in the active event. A human's pose and the restraint it wears are stored per event.
 
 ## Adding New Humans
 
@@ -193,24 +200,24 @@ human:
    viewport.
 2. If desired, change its Identity and Anthropometry in the panel, as
    described above.
-3. If desired, edit the human's properties with the buttons at the bottom of
-   the panel. These replace HVE's segment pop-up menu (see the [Human CG
-   Dialog reference page](../../07-humans/HumCGDlg.md)):
-   - **Body Segments…** — Inertial properties, segment color, contact
+3. If desired, edit the human's properties on the Human Designer's stages.
+   These replace HVE's segment pop-up menu (see the [Human CG Dialog
+   reference page](../../07-humans/HumCGDlg.md)):
+   - **Body Segments** — Inertial properties, segment color, contact
      ellipsoids and joint locations of each segment. Select the segment in
-     the dialog's **Segment** list, or click the segment in the viewport.
-   - **Joint Properties…** — The physical properties of each of the 14
+     the stage's **Segment** list, or click the segment in the viewport.
+   - **Joint Properties** — The physical properties of each of the 14
      joints.
-   - **Injury Tolerances…** — The injury tolerances of the current human.
-   - **Body Pose…** — The human's pose in the active event: an angle for
+   - **Body Pose** — The human's pose in the active event: an angle for
      each segment, and the initial velocity (a pedestrian's walking speed).
+   - **Injury Tolerances** — The injury tolerances of the current human.
 
 Each of these data categories is described in detail in the following
 chapter, [Human Model Definition](09-human-model-definition.md).
 
 !!! tip "New in HVE Studio"
     In the Human editor a click on a body segment in the viewport selects it,
-    both in the Body Segments dialog and in the **Shader Editor** (View ›
+    both on the Body Segments stage and in the **Shader Editor** (View ›
     Shader Editor), where each of the 15 segments can be given its own
     display material.
 
@@ -218,6 +225,6 @@ chapter, [Human Model Definition](09-human-model-definition.md).
 
 ---
 
-← Previous: [Section Three: Human Editor](README.md)  |  [Index](README.md)  |  Next: [Chapter 9 — Human Model Definition](09-human-model-definition.md) →
+← Previous: [Section Three: Human Editor](README.md)  |  [Index](README.md)  |  Next: [Chapter 8a — Human Designer](08a-human-designer.md) →
 
 <!-- /NAV -->

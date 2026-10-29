@@ -273,10 +273,11 @@ The Driver Controls options are described below.
 !!! note "HVE Studio"
     HVE Studio's **Driver Controls** dialog (Event › Driver Controls...,
     Ctrl+D) has **Throttle**, **Brake**, **Steer** and **Gear** tabs for a
-    simulation, plus **Lean** for a motorcycle, and a single **Wheel Data**
-    tab for EDCRASH. The tables are the current event's own for the
-    selected vehicle. For the single-track model the Throttle, Gear and Lean tabs
-    are not shown, because that model has no drivetrain. The
+    simulation and a single **Wheel Data** tab for EDCRASH. The tables are the
+    current event's own for the selected vehicle. For the single-track model the
+    Gear tab is not shown (and Throttle only for the Nonlinear model), because
+    that model has no drivetrain; a motorcycle's Steer tab is a steer torque or a
+    commanded lean, by its **Table means**. The
     HVE Driver is its own **Path Follower** tab. HVE's Lights page is
     **Event › Lights...** (SIMON and EDSMAC4), not in Driver Controls; the
     lamps themselves are defined under Vehicle › Editors › Vehicle Lights. Each table

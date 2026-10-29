@@ -279,6 +279,6 @@ page](../../07-humans/HumJntPropDlg.md).
 
 ---
 
-← Previous: [Chapter 8 — Creating and Editing Humans](08-creating-editing-humans.md)  |  [Index](README.md)
+← Previous: [Chapter 8a — Human Designer](08a-human-designer.md)  |  [Index](README.md)
 
 <!-- /NAV -->

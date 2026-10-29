@@ -262,6 +262,7 @@ nav:
     - Human Editor:
       - Overview: hve-users/03-human-editor/README.md
       - "Chapter 8 — Creating and Editing Humans": hve-users/03-human-editor/08-creating-editing-humans.md
+      - "Chapter 8a — Human Designer": hve-users/03-human-editor/08a-human-designer.md
       - "Chapter 9 — Human Model Definition": hve-users/03-human-editor/09-human-model-definition.md
     - Vehicle Editor:
       - Overview: hve-users/04-vehicle-editor/README.md

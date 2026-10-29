@@ -43,6 +43,7 @@ To use the Human Editor, perform the following steps:
 ## Overview of Section Three
 
 - [Chapter 8 — Creating and Editing Humans](08-creating-editing-humans.md)
+- [Chapter 8a — Human Designer](08a-human-designer.md)
   describes the process of creating and editing humans.
 - [Chapter 9 — Human Model Definition](09-human-model-definition.md) provides
   a detailed overview of the human model.

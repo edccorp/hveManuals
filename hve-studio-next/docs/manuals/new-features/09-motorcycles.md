@@ -44,12 +44,53 @@ results. In the viewport the tire is drawn with the machine's crown
 radius (a rounded tread), as the model uses it; the exports send plain
 cylinders.
 
+**The mesh's own wheels.** A motorcycle mesh that models its wheels (the
+generic machine's `MCYamaha650.h3d` names them FTIRE and RTIRE) has them found
+and turned with the run: they steer, roll and lean with the solved wheel, and
+no second wheel is drawn over them. Where a mesh's wheels cannot be separated
+from its frame -- no part is named for a tire, or the whole machine is one
+shape, as in `06.106209_Motorcycle.h3d` -- they are drawn fixed to the body and
+do not turn. The Vehicle Mesh dialog says which, under **Draw wheels (tire
+radius)**; tick it for drawn wheels that turn.
+
+**Tire forces.** The tire channels (Tire Fx', Fy', Fz') and the viewport's tire force
+vectors show the forces of the model that carries the machine, on its one wheel per
+axle (the other half of the pair reads zero), and each vector starts at that tire's
+contact on the drawn wheel. The Nonlinear model's are its tires'. The
+Whipple model has rolling contacts rather than tires, so its are derived from its motion:
+the load is the weight with the transfer of the machine's own braking or acceleration,
+the side force is what the turn needs (split between the wheels by the yaw
+acceleration), and the braking force is split by the brake balance. They are the forces
+the motion needs, to first order, not a tire model's output. In a SIMON event this holds
+while the single-track model carries the machine; after a hand-back the channels are
+SIMON's own tires again.
+
+**The case's CG is the machine's.** The CG position and height entered for a motorcycle are the whole
+machine's, rider included, and the model places its four bodies so their combined CG is exactly there. A
+SINGLETRACK run's positions and its rest position are the CG's.
+
+**The rider.** Both single-track models ride with the same rider: a regulator
+designed from the machine's own equations at each speed, which sees the lean,
+the steer, both rates and the torque already in the rider's arms, and reacts
+through a 0.1 s lag. It holds the machine upright and holds a commanded lean
+from walking pace (2 m/s) up, on the motorcycle and on a bicycle; a commanded
+lean the machine can hold is held to within about a degree on the nonlinear
+model, where the friction in the steering head leaves a small, steady
+oscillation. Below 0.5 m/s no rider balances a machine on its wheels, and the
+model does not try.
+
+**Crush stiffness.** The generic motorcycle carries the passenger car's crush
+coefficients, the only generic values there are; its 3-D (DyMESH) stiffness
+is derived from them as HVE derives a vehicle's that states none (the 2-D
+A and B over a 30 in reference height). Replace both with measured values for
+a motorcycle where you have them.
+
 ## Which method to use
 
 | Method | What a motorcycle is there | Use it for |
 | --- | --- | --- |
 | **EDCRASH, EDSMAC, EDSMAC4** | A narrow rigid body with two contact patches. These are planar, so lean never arises. | Impacts: impulse-momentum through the collision, then the post-impact slide. This is how most motorcycle reconstructions are done. |
-| **SIMON** | A motorcycle rides the **single-track model** from the start of the event until its first contact, then SIMON and DyMESH take it over from the state the model left it in. Before contact you get the balance, countersteer and lean of the SINGLETRACK method, and the steer table is read the way the Event's single-track options say. The run status says when the machine was handed over (*handed to SIMON at first contact*) or why it was not (*stayed on SIMON's own model*, with the reason, for example steering geometry that is not a motorcycle's). **After** first contact the roll is held by a *rider-control surrogate* (a spring about the roll axis that pulls toward upright), and the run says so: *lateral results are low-lean only*. A roll stiffness you enter yourself replaces the surrogate. With **Use the Lean table as the rider's lean command** (Event › Driver Controls, Lean tab), the rider holds the table's lean while the machine rides the single-track model: the rider countersteers to reach it and the machine turns, as in SINGLETRACK. **After** first contact SIMON reads no lean table (it has no forced lean angle); the surrogate holds the roll toward upright and leaning does **not** steer the machine there. The run status says which phases happened: a run with no contact says the table was the rider's lean command throughout; a run that meets something says it was the command until the hand-over and that SIMON read no lean after it. With the Event's single-track **Dynamics model** set to **Nonlinear**, nothing is handed over: the nonlinear model owns the machine for the **whole run**, and SIMON and DyMESH compute the contact force and moment on the motorcycle's mesh at every step and hand them to the model as a **load**. The rider lets go at the first contact (or once the lean passes 70°), and a machine that goes down slides on its hard points at the machine drag factor; DyMESH's contact with the site is not used for the motorcycle. The run status says it *rode the nonlinear model the whole run*, from when the contact acted on it, for how many steps and at what peak force, when the rider let go, and when it went down, how far it slid and when it came to rest. A single-track wheel is one wheel: where a case gives a motorcycle DyMESH wheel meshes on both sides of an axle, the right side's is used and the run says so. | A motorcycle that rides up to an impact with a car or a barrier. The machine follows a site's terrain and can leave a ramp and land back on its tires before it makes contact; the run status gives the number of flights and the time airborne. A machine that goes down is handed to SIMON where it fell. |
+| **SIMON** | A motorcycle rides the **single-track model** from the start of the event until its first contact, then SIMON and DyMESH take it over from the state the model left it in. Before contact you get the balance, countersteer and lean of the SINGLETRACK method, and the steer table is read the way the Event's single-track options say. The run status says when the machine was handed over (*handed to SIMON at first contact*) or why it was not (*stayed on SIMON's own model*, with the reason, for example steering geometry that is not a motorcycle's). **After** first contact the roll is held by a *rider-control surrogate* (a spring about the roll axis that pulls toward upright), and the run says so: *lateral results are low-lean only*. A roll stiffness you enter yourself replaces the surrogate. The motorcycle's one rider table is its **steer table**, read as a steer torque or a **commanded lean** by **Table means** (on the Driver Controls Steer tab, or under Motorcycle in SIMON Options), exactly as in SINGLETRACK: read as a lean, the rider holds it while the machine rides the single-track model, countersteering to reach it, and the machine turns. SIMON never reads a motorcycle's steer table as a steering angle: **after** first contact it steers straight ahead, has no forced lean angle, the surrogate holds the roll toward upright, and leaning does **not** steer the machine there. (A case saved with the separate **Lean** table of earlier versions has it moved into the SIMON event's steer table, read as a commanded lean, when it is opened.) The run status says which phases happened: a run with no contact says the table was the rider's lean command throughout; a run that meets something says it was the command until the hand-over and that SIMON read no lean after it. With **Dynamics model** set to **Nonlinear** in SIMON Options (Event Information › Method Options, shown when the event has a motorcycle), nothing is handed over: the nonlinear model owns the machine for the **whole run**, and SIMON and DyMESH compute the contact force and moment on the motorcycle's mesh at every step and hand them to the model as a **load**. The rider lets go at the first contact (or once the lean passes 70°), and a machine that goes down slides on its hard points at the machine drag factor; DyMESH's contact with the site is not used for the motorcycle. The run status says it *rode the nonlinear model the whole run*, from when the contact acted on it, for how many steps and at what peak force, when the rider let go, and when it went down, how far it slid and when it came to rest. A single-track wheel is one wheel: where a case gives a motorcycle DyMESH wheel meshes on both sides of an axle, the right side's is used and the run says so. | A motorcycle that rides up to an impact with a car or a barrier. The machine follows a site's terrain and can leave a ramp and land back on its tires before it makes contact; the run status gives the number of flights and the time airborne. A machine that goes down is handed to SIMON where it fell. |
 | **SINGLETRACK** | A real single-track model (below) | A machine on its wheels: balance, countersteer, braking, lean |
 
 None of the HVE methods models lean, countersteer, gyroscopic effects, camber

@@ -256,10 +256,10 @@ For an **EDCRASH** event the dialog has a single **Wheel Data** page instead (se
 *The Driver Controls dialog for a SIMON vehicle.*
 
 !!! note "HVE Studio"
-    For a SINGLETRACK (motorcycle) event the Throttle, Gear and Lean pages are
-    not shown: that engine has no drivetrain model, and the Lean table is
-    read only by the single-track phase of a SIMON event. Its Steer page is a steering-torque or commanded-lean
-    table, chosen in Method Options.
+    For a SINGLETRACK (motorcycle) event the Gear page is not shown, and the
+    Throttle page only for the Nonlinear model: that engine has no drivetrain
+    model. A motorcycle's Steer page, in SINGLETRACK or SIMON, is a steering-torque
+    or commanded-lean table, chosen by **Table means** on the page itself.
 
 !!! note "HVE Studio"
     HVE's Driver Controls dialog also had a **Lights** page. In HVE Studio it is
