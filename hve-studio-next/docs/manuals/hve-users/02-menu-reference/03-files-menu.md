@@ -97,6 +97,13 @@ The browser's left column lists **Places** (Home, HVE Studio Cases, your **Docum
 **Recent folders**; **+ Add current** puts the folder you are in among the favorites.
 A Windows shortcut (`.lnk`) to a folder, or a symbolic link to one, is listed with the folders
 and opens the folder it points at.
+The **View** list at the top right of the file list switches between **Details** (name,
+size and date, sortable by column) and **Medium icons** or **Large icons**, which show the
+folders and files together as icons: a folder opens on a double-click, a file is selected
+with a click and opened with a double-click. Each file's icon is colored by its kind (case,
+vehicle mesh or site geometry, image, database) and labeled with its extension; hold the
+pointer over one for its full name, size and date. The view you choose is kept for the next
+time the browser opens.
 
 ---
 
