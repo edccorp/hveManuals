@@ -77,13 +77,12 @@ The seven HVE manipulators and their HVE Studio counterparts:
     - **Viewport View** — the live camera: **Orbit** or **Free (Euler)** control; view presets **Top**, **Front**, **Rear**, **Left**, **Right**, **Persp**; azimuth, elevation, distance and target point (orbit) or eye position and pitch/yaw/roll (free); **Perspective** or **Orthographic** projection with focal length or field of view; **Reset Camera**.
     - **Saved Cameras** — the case's named cameras (up to 16). **Add** captures the current view as a new camera; **Delete** and **Rename** act on the selected one; **Activate** looks through it (only the active camera drives the view); **Capture Current View** stores the current framing in it. Re-framing an active camera in the view makes it *Current*, with **Save as New**, **Overwrite** and **Revert**.
 
-    A saved camera can be attached to the event's vehicles:
+    A saved camera is set up as a Blender camera is, with two independent settings:
 
-    - **View From** — mount the camera on a vehicle (an onboard camera: **Onboard Mount** x forward, y right, z up from the CG); it either **rides with the vehicle** or **stays on a fixed world point**.
-    - **Look At** — aim at a vehicle, as **Fixed** (the camera does not move), **Follow** (the offset stays in world axes — a tracking shot) or **Chase** (the offset turns with the vehicle's heading — a riding-along shot).
-    - **Aim Point** — an offset from the aimed-at vehicle's CG, so a camera can look ahead of a vehicle rather than at its CG (**Look ahead** and **Aim at the vehicle** set it).
+    - **Position** — **Carried by** nothing (placed in the scene, at its **Eye**) or a vehicle, at an **Offset** from its CG; **Inherit** says how much of the vehicle's motion it takes (position only — a tracking shot; position and heading — a chase shot; or position, heading, pitch and roll — bolted on).
+    - **Aim** — **Points at** its own direction (**Heading** and **Tilt**), a vehicle (an **Aim** offset from its CG, so a camera can look ahead of a vehicle rather than at its CG; **Look ahead** and **Aim at the vehicle** set it), or a fixed point (the **Center**, HVE's Picture Center).
 
-    Attached cameras follow the solved trajectory during playback, or the start layout before a run. **Camera Coordinates** (the eye) and **Picture Center** (the target), with **Roll**, place a camera that is not attached; for an attached camera they show where it is. The **Lens** (perspective/orthographic, millimeters or field of view, shift), **Camera** (sensor fit and size) and **Viewport Display** (show the camera, its name and its clip limits in the view) sections complete the camera.
+    Cameras on vehicles follow the solved trajectory during playback, or the start layout before a run. **Roll** turns the picture. The **Lens** (perspective/orthographic, millimeters or field of view, shift), **Camera** (sensor fit and size) and **Viewport Display** (show the camera, its name and its clip limits in the view) sections complete the camera.
 
 ### Keyframed cameras
 

@@ -30,13 +30,14 @@ Move CG does (the body, wheels and overhangs stay). Below **Overall Height**, si
 bottom distances the solver receives: **CG to Front**, **CG to Rear**, **CG to
 Right**, **CG to Left**, **CG to Top** and **CG to Bottom**. When a loaded 3-D
 model does not reach the declared front and rear extents, a warning says so
-directly under the **Wheel Positions** table.
+directly under the **Wheel Positions** table, with **Fit to geometry**, which
+sets the overhangs and the overall length from the model's front and rear.
 
 When the **Wheelbase** does not match where the axles are (CG to Front Axle /
 CG to Rear Axle; on a vehicle with three or more axles, to the tandem center), the
 section says so with both numbers. **Use the axle positions** sets the
 wheelbase to the figure the axle positions give; to go the other way, type the
-CG-to-axle distances you want (which moves the CG between the axles), since the engines place the wheels from them.
+CG-to-axle distances you want (which moves that axle; the body stays with the CG), since the engines place the wheels from them.
 
 ![Figure 11-19](../images/hvn-04-vehicles-panel.png)
 *Figure 11-19: The Vehicles panel. Its Size & Weight section edits the overall dimensions and, under Geometry, the CG-to-exterior distances (CG to Front ... CG to Bottom).*
@@ -52,7 +53,9 @@ CG-to-axle distances you want (which moves the CG between the axles), since the 
       − CG height). **CG to Bottom** is shown grayed: it equals the CG Height,
       since the extents run to the ground. When the wheels carry their own X
       positions (**Wheel Positions**), CG to Front and CG to Rear are grayed
-      along with the overhangs and the wheelbase. Edits apply as you type, and
+      along with the overhangs and the wheelbase. With a 3-D geometry, CG to
+      Front, CG to Rear, the overhangs and Overall Length are grayed: the
+      geometry sets them. Edits apply as you type, and
       Edit › Undo reverses them.
     - The dimensions are measured from the sprung-mass CG. The **Inertia /
       Mass** dialog (Vehicles panel › Inertia › **Edit…**) shows the CG to

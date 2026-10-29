@@ -13,35 +13,32 @@ A drop-down list of the saved cameras; *(active)* marks the one driving the View
 
 When the active camera has been re-framed in the Viewport, the window shows it as *Current -- re-framed from "<name>", not saved*, with **Save as New**, **Overwrite "<name>"** and **Revert** buttons.
 
-### Attachment
+### Position
+**Carried by**
+**None (placed in the scene)**, or the vehicle the camera rides on (Blender's *parent*). A vehicle carries the camera through playback, and holds it at its start layout before a run.
 
-**View From**
-The vehicle the camera rides on, or **Fixed** for a camera that does not ride on a vehicle. Attaching the camera to a vehicle makes the view move with it.
+**Inherit** (shown when a vehicle carries the camera)
+**Position only** — the camera travels with the vehicle and its offset stays in world axes (a tracking shot); **Position and heading** — the offset turns with the vehicle's heading, so *behind* stays behind through a turn, and the horizon stays level (a chase shot); **Position, heading, pitch and roll** — bolted to the vehicle, the picture banking with it.
 
-**Look At**
-The vehicle at which the camera is aimed, or **Fixed**. The camera can, for example, ride on one vehicle while aimed at another.
+**Eye X fwd**, **Eye Y right**, **Eye Z up** (placed in the scene): where the camera stands — HVE's *Camera Coordinates*.
 
-**Follow** (camera not riding on a vehicle, aimed at one)
-**Fixed** — the camera does not move, and turns to keep the vehicle in view (a tripod shot); the vehicle drives through the shot. **Follow** — the camera keeps its offset in world axes (a tracking or panning shot). **Chase** — the offset turns with the vehicle's heading, so *behind* stays behind through a turn, and when the start heading is edited.
+**Offset X fwd**, **Offset Y right**, **Offset Z down** (carried): where the camera sits, from the vehicle's CG, in its own frame (+X forward, +Y right, +Z down, SAE), or in world axes for **Position only**. For example, 0, 0, 0 views the scene from the vehicle's CG, wherever the vehicle is.
 
-**Aim** (camera riding on a vehicle)
-**Rides with the vehicle** — the camera pitches and rolls with the vehicle, and the picture banks with it; **Rides with the vehicle, level horizon** — it turns with the vehicle's heading only, so the horizon stays level; **Stays on a fixed world point**.
+A camera carried by a vehicle is a **vehicle camera**: the Vehicle editor's Outliner lists it under the vehicle (**Vehicle Cameras**), and right-clicking that group adds one at the driver's eye (**Add Driver's-Eye Camera**). Before a run, a vehicle the active event does not place is taken at the origin heading forward, where the Vehicle editor draws it.
+
+### Aim
+**Points at**
+What the camera looks at (Blender's *Track To* target): **Its own direction**, a vehicle, or **A fixed point**. Position and Aim are independent: the camera can ride one vehicle while aimed at another.
+
+- **Its own direction**: **Heading (deg)** — from the vehicle's nose for a carried camera, in the scene for one placed there — and **Tilt (deg, + up)**. It turns with whatever carries it. With its own direction the eye is fixed, so the mouse wheel dollies along the view axis by editing the Offset rows.
+- A vehicle: **Aim X fwd**, **Aim Y right**, **Aim Z down** — the point looked at, from that vehicle's CG in its own frame, so a point ahead stays ahead through a turn. **Look ahead** and **Aim at the vehicle** set typical values.
+- **A fixed point**: **Center X fwd**, **Center Y right**, **Center Z up** — HVE's *Picture Center*.
+
+For a camera placed in the scene the dialog shows the aim both ways, kept in step: with its own direction, the point it is **Looking at**; with a fixed point, the **Heading**, **Tilt** and **Distance** from the eye. Editing either leaves the eye where it is.
+
+Changing Carried by, Inherit or Points at keeps the camera where it is and looking where it looks at the playback time, as far as the new setting allows.
 
 An orange note reminds that only the **active** camera drives the Viewport.
-
-### Onboard Mount (vehicle frame)
-Shown when View From is a vehicle. **Mount X fwd**, **Mount Y right**, **Mount Z down**: the camera's position relative to that vehicle's CG (+X forward, +Y right, +Z down, SAE). The camera rotates with the vehicle. For example, 0, 0, 0 views the scene from the vehicle's CG, wherever the vehicle is.
-
-A camera mounted this way is a **vehicle camera**: the Vehicle editor's Outliner lists it under the vehicle (**Vehicle Cameras**), and right-clicking that group adds one at the driver's eye (**Add Driver's-Eye Camera**). Before a run, a vehicle the active event does not place is taken at the origin heading forward, where the Vehicle editor draws it.
-
-### Aim Point
-Shown when the camera is aimed at a vehicle. **Aim X fwd**, **Aim Y right**, **Aim Z down**: the point the camera looks at, relative to the aimed-at vehicle's CG; it turns with the vehicle, so a point ahead stays ahead through a turn. **Look ahead** and **Aim at the vehicle** set typical values. Grayed for an onboard camera set to **Stays on a fixed world point**, which looks at the Picture Center instead.
-
-### Camera Coordinates
-**Eye X fwd**, **Eye Y right**, **Eye Z up**: the camera position in the scene (grayed when the camera rides on a vehicle).
-
-### Picture Center
-**Center X fwd**, **Center Y right**, **Center Z up**: the point at the center of the view (grayed when the Aim Point sets it: a Look At vehicle, or an onboard camera aiming down its own vehicle).
 
 ### Roll (deg)
 Rotates the camera about its viewing axis, tilting (banking) the picture. 0 keeps the horizon level. HVE's *Camera Tilt Angle*.
@@ -68,12 +65,12 @@ Controls for the live Viewport camera, without saving it: **View Controls** (**O
 In Orbit mode, **Eye / Orientation** (linked) shows, read-only, the eye position and the pitch and yaw that the orbit settings give, as the Free mode would show them.
 
 !!! warning "Not in HVE Studio"
-    - **View From / Look At a human or the environment**: a camera rides on, or aims at, a vehicle or nothing (Fixed).
+    - **A human or the environment** as what carries a camera or what it points at: a camera is carried by, and points at, a vehicle or the scene.
     - **Use Vehicle's Vertical** and **Make Glass Clear**.
     - **OK / Cancel / Apply**: changes take effect as they are made.
 
 !!! tip "New in HVE Studio"
-    Follow and Chase modes, orthographic cameras, lens shift and sensor fit, camera keyframe animation, drawing cameras in the Viewport, and the quick camera list on the playback bar.
+    Cameras set up as Blender's are — a parent (Carried by, Inherit) and a target (Points at) — orthographic cameras, lens shift and sensor fit, camera keyframe animation, drawing cameras in the Viewport, and the quick camera list on the playback bar.
 
 <!-- NAV -->
 

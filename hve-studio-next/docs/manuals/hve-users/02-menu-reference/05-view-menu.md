@@ -332,10 +332,11 @@ vehicle itself stands there.
 right-click the viewport › Camera Properties...
 
 **Description:** The **Cameras** dialog keeps the case's named cameras. Its
-**Saved Cameras** page adds, deletes and renames them; its **Viewport View** page
-sets the view through the current camera — **View From** and **Look At** (each
-attached to the earth or to an object, so a camera can ride with a vehicle), roll,
-and the **Lens**. **Save as New** keeps the current view as a named camera. The
+**Saved Cameras** page adds, deletes and renames them and sets each one up —
+what **carries** it and what it **points at** (each the earth or a vehicle, so a
+camera can ride with a vehicle and watch it or another), roll, and the **Lens**;
+its **Viewport View** page frames the live view. **Save as New** keeps the
+current view as a named camera. The
 camera list on the playback bar switches between *Free view* and the saved
 cameras; **C** and **Shift+C** step through them.
 

@@ -290,9 +290,9 @@ keys give standard views (see [Window Basics](00-using-hve.md#keyboard)).
 ### Object-based Cameras
 
 **Tools › Cameras...** (or right-click the viewport › **Camera Properties...**)
-keeps named cameras. A camera's **View From** and **Look At** can each be
-attached to the earth or to an object, so a camera can ride with a vehicle during
-playback. The camera list on the playback bar switches between **Free view** and
+keeps named cameras. What **carries** a camera and what it **points at** can each
+be the earth or a vehicle, so a camera can ride with a vehicle during playback
+and watch it or another. The camera list on the playback bar switches between **Free view** and
 the saved cameras; **C** and **Shift+C** step through them.
 
 ![Figure 2-54](../images/hvn-01-cameras.png)

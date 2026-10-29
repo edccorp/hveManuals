@@ -439,7 +439,7 @@ payback. You'll also know the exact position of the view at each timestep
 (this information is available from the camera car's Variable Output Window).
 
 !!! note "HVE Studio"
-    A camera car needs no extra vehicle in HVE Studio. In **Tools › Cameras…**, give a saved camera a **View From** vehicle (an onboard camera that rides with it) or a **Look At** vehicle with **Follow** or **Chase**, or keyframe the camera over time with **Insert Key (I)**. See [Chapter 21](../08-3d-editor/21-manipulators.md#cameras). Saved cameras, animated ones included, are carried to Blender by the glTF export and the live link.
+    A camera car needs no extra vehicle in HVE Studio. In **Tools › Cameras…**, have a vehicle carry a saved camera (**Carried by**, inheriting its position, its heading, or all of its motion) and point it at that vehicle or another (**Points at**), or keyframe the camera over time with **Insert Key (I)**. See [Chapter 21](../08-3d-editor/21-manipulators.md#cameras). Saved cameras, animated ones included, are carried to Blender by the glTF export and the live link.
 
 ### Sizing Issue (TV will crop)
 

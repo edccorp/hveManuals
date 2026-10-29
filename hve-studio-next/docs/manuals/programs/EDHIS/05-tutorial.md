@@ -296,7 +296,7 @@ Before we position the human, it helps to attach a camera to the vehicle.
 
 > **NOTE:** This tip really helps while positioning occupants because it allows you to move the camera relative to the vehicle, thus you can quickly focus on the interaction between the human and the seat cushion, an important part of placing the human in an equilibrium position.
 
-In HVE Studio, open **Tools › Cameras**, add a camera, and under *Attachment* set *View From* and *Look At* to the Buick, so the camera rides with the vehicle. HVE's tutorial places it at vehicle-fixed x = `0`, y = `-20`, z = `0`, looking at 0, 0, 0.
+In HVE Studio, open **Tools › Cameras**, add a camera, and set *Carried by* and *Points at* to the Buick, so the camera rides with the vehicle and watches it. HVE's tutorial places it at vehicle-fixed x = `0`, y = `-20`, z = `0`, looking at 0, 0, 0.
 
 Now we're ready to position the driver in the Buick.
 

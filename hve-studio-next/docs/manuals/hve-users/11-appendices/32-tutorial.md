@@ -241,12 +241,12 @@ If you just finished Lesson 3, proceed directly in the **Playback (F6)** editor.
 The view of the crash scene from a general perspective shows all the collision action, but not what each driver saw. Viewing the sequence as seen by each driver makes it obvious how the crash occurred and which driver made the first mistake. To attach a camera to a vehicle:
 
 1. Choose **Tools › Cameras…** and, on the **Saved Cameras** tab, press **Add**.
-2. Set **View From** to the Honda Accord, and **Aim** to *Rides with the vehicle*.
-3. Under **Onboard Mount**, enter a location above and behind the driver's head: **Mount X fwd** −13.0 ft, **Mount Y right** −1.5 ft, **Mount Z down** −5.0 ft.
+2. Under **Position**, set **Carried by** to the Honda Accord, and **Inherit** to *Position, heading, pitch and roll*.
+3. Enter a location above and behind the driver's head: **Offset X fwd** −13.0 ft, **Offset Y right** −1.5 ft, **Offset Z down** −5.0 ft.
 
     > **NOTE:** HVE Studio's camera fields measure Z **up**. HVE's Set Camera dialog measured it down, so HVE's z = −5.0 ft is entered here as 5.0 ft.
 
-4. Set **Look At** to the Chevrolet Suburban, and the **Aim Point** to 0, 0, 0 (the Suburban's CG) — or press **Aim at the vehicle**.
+4. Under **Aim**, set **Points at** to the Chevrolet Suburban, and the **Aim** offset to 0, 0, 0 (the Suburban's CG) — or press **Aim at the vehicle**.
 5. Press **Activate**. The scene is viewed from the Honda driver's perspective.
 6. Press **Play** on the playback bar. The Viewport displays the sequence as seen by the driver of the Honda.
 

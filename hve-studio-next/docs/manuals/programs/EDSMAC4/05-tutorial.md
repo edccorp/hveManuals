@@ -248,15 +248,15 @@ Let's attach a camera to the Ford:
 
 1. Choose **Tools › Cameras...**. The **Cameras** window is displayed.
 2. On the **Saved Cameras** tab, click **Add** to add a camera, and **Rename** it `Ford driver`.
-3. Under **Attachment**, choose the Ford Escort in **View From**.
-4. Under **Onboard Mount**, enter **Mount X fwd** = 0.0 m, **Mount Y right** = 0.5 m and **Mount Z down** = −0.9 m.
+3. Under **Position**, choose the Ford Escort in **Carried by**, and leave **Inherit** at **Position, heading, pitch and roll**, so the camera is bolted to the car.
+4. Enter **Offset X fwd** = 0.0 m, **Offset Y right** = 0.5 m and **Offset Z down** = −0.9 m.
 
     > **NOTE:** These coordinates are relative to the Ford Escort's CG, in the vehicle's own axes. They place the camera over the (right-hand) driver's seat, just above the roof. We place the camera outside the car because the windshield is tinted and difficult to see through.
 
     !!! note "HVE Studio"
         The Cameras window uses the vehicle's SAE axes, z down, as HVE's camera coordinates do. The original tutorial gives z = −0.6 m. For this car that is about 1.16 m above the ground (the CG is 0.56 m high and the car 1.41 m tall), which in HVE Studio puts the eye inside the body shell and shows only the car's own body; −0.9 m clears the roof.
 
-5. Choose the Ford Escort in **Look At** as well, leave **Aim** at **Rides with the vehicle** (the default for a new camera), and under **Aim Point** enter **Aim X fwd** = 10.0 m, **Aim Y right** = −2.5 m and **Aim Z down** = −0.9 m.
+5. Under **Aim**, choose the Ford Escort in **Points at** as well, and enter **Aim X fwd** = 10.0 m, **Aim Y right** = −2.5 m and **Aim Z down** = −0.9 m.
 
     > **NOTE:** These coordinates are also relative to the Ford Escort, and define a view angle looking forward and to the left, as shown in Figure 5-10 (whose z values are HVE's, positive down).
 
@@ -282,8 +282,8 @@ Allow the event to run to completion.
 Next, we can repeat the above steps for the driver of the Nissan Sentra:
 
 1. In the Cameras window, **Add** a second camera and name it `Nissan driver`.
-2. Choose the Nissan Sentra in **View From** and in **Look At**.
-3. The mount coordinates used for the Ford Escort are acceptable for the Nissan as well: **Mount X fwd** 0.0, **Mount Y right** 0.5, **Mount Z down** −0.9 m.
+2. Choose the Nissan Sentra in **Carried by** and in **Points at**.
+3. The offset used for the Ford Escort is acceptable for the Nissan as well: **Offset X fwd** 0.0, **Offset Y right** 0.5, **Offset Z down** −0.9 m.
 4. Enter the aim point **Aim X fwd** = 10.0 m, **Aim Y right** = 10.0 m, **Aim Z down** = −0.9 m.
 
     > **NOTE:** These coordinates are relative to the Nissan Sentra, and define a view angle looking forward and to the right.
@@ -292,7 +292,7 @@ Next, we can repeat the above steps for the driver of the Nissan Sentra:
 
 Watch for the moment the Ford becomes visible — in the original tutorial, at about t = 1.3 seconds. Because there was no pre-impact skidding of the Nissan, we cannot draw any conclusions regarding the Nissan driver's perception/reaction time (other than there was a lack of driver response).
 
-You may wish to view the sequence from other perspectives, or to choose one vehicle in **View From** and the other in **Look At**. Doing so allows the view to follow the other vehicle throughout the simulation. To return to the ordinary view, choose **Free view** in the camera list on the playback bar.
+You may wish to view the sequence from other perspectives, or to choose one vehicle in **Carried by** and the other in **Points at**. Doing so allows the view to follow the other vehicle throughout the simulation. To return to the ordinary view, choose **Free view** in the camera list on the playback bar.
 
 We have now completed the event.
 
@@ -382,7 +382,7 @@ The Trajectory Simulation is the playback of the event in the viewport, controll
 
 > **NOTE:** No calculations take place during playback; the run is solved once, when you press Run.
 
-During the camera exercise above, the active camera was attached to the Nissan. To view the trajectory simulation from the street again, choose **Free view** in the camera list on the playback bar (or, in **Tools › Cameras...**, add a camera with **View From** and **Look At** both **Fixed**, set its **Camera Coordinates** and **Picture Center**, and click **Activate**).
+During the camera exercise above, the active camera was attached to the Nissan. To view the trajectory simulation from the street again, choose **Free view** in the camera list on the playback bar (or, in **Tools › Cameras...**, add a camera with **Carried by** **None (placed in the scene)** and **Points at** **A fixed point**, set its **Eye** and **Center**, and click **Activate**).
 
 To visualize the motion:
 

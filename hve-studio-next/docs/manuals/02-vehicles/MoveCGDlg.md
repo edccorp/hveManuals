@@ -4,6 +4,8 @@
 
 The default CG (center of gravity) location of the vehicle is determined from raw data (e.g., measured or table values). HVE's Move CG dialog moves the CG relative to the vehicle's 3-D geometry. HVE Studio has two places that do related jobs.
 
+Move CG is the only edit that moves the CG relative to the body. The dimension fields in Size & Weight (CG to Front Axle, CG to Rear Axle, the wheelbase, the weight distribution and the CG height) move the axles or raise the body with the CG instead, since the body and its geometry are tied to the sprung-mass CG; they never change Move CG.
+
 ## Move CG in the Vehicle Mesh window
 
 Open **Vehicle › Editors › Vehicle Mesh...** in the Vehicle Editor (also on the Event menu, and opened by **Vehicle Mesh...** in the Vehicles panel's **3D Geometry** section). On the **File & Placement** tab, in the section **Move, Rotate and Scale the Model**, the row **Move CG** holds three values, X, Y and Z, in the units set in Preferences. They state where the CG sits in the geometry file's own coordinates, in the SAE vehicle frame (+x forward, +y right, +z down). This is the value HVE's Move CG dialog stores, and it is read from an HVE case when one is opened.

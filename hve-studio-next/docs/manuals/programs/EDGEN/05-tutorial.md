@@ -371,8 +371,8 @@ Enter `3.2145` in the Offset of *EDGEN, Taurus* (HVE's printed tutorial, with it
 HVE's tutorial attaches the camera to the Ford Taurus so we can assess the driver's opportunity to observe and react to the child crossing the street. In HVE Studio:
 
 1. Choose **Tools › Cameras...** and add a camera.
-2. Under **Attachment**, set **View From** to the Ford Taurus (and **Look At** to the Ford Taurus, or leave it, to aim along the car).
-3. Adjust the camera's mount position on the car — for example just outside the driver's door glass — in the same window.
+2. Under **Position**, set **Carried by** to the Ford Taurus, and under **Aim** set **Points at** to **Its own direction** (heading 0, to look along the car) — or to the Ford Taurus, to aim at a point on it.
+3. Adjust the camera's **Offset** on the car — for example just outside the driver's door glass — in the same window.
 
 Now, play the sequence and watch as the Taurus approaches the school bus. View › Scene Display › Scene Ghosts set to **None** shows the sequence as the Taurus driver would have seen it, without the outlines of other positions.
 

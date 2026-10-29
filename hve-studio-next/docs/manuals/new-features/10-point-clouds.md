@@ -33,6 +33,17 @@
 | E57 | The scanner exchange standard (ASTM E2807). Every scan in the file is loaded, each placed by its own registration; points the scanner marked invalid are skipped and counted. A damaged file is refused, naming where. |
 | XYZ / PTS / TXT / CSV | `x y z [intensity] [r g b]`, space- or comma-separated |
 
+**Gaussian splats.** A Gaussian-splat `.ply`, such as one exported by 3D Gaussian
+Splatting software or a scanner's "GS" mode, loads as the splats' center points
+in each splat's base color. Splats below 1% opacity, which cannot be seen, are
+left out, and the summary line says how many. The splats' shapes and their
+color changes with viewing angle are not drawn. A splat model is fitted to
+photographs, so treat it as a picture of the scene. Measure from the scanner's
+own point cloud where you have one. A splat model's size is only as good as its
+scale: unless the capture recorded real-world scale, the dimensions are in whatever
+units the training software chose. Models made by common training software can
+also arrive upside down.
+
 **LAZ** (compressed LAS) is read directly, LAS 1.0 to 1.4 and every point format
 the USGS publishes (0 and 6 were checked against real 3DEP tiles). The whole file
 is held in memory while it decodes, so a very large tile takes that much RAM. LAZ

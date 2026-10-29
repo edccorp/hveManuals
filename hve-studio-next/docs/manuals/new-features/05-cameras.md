@@ -2,8 +2,9 @@
 
 !!! tip "New in HVE Studio"
     HVE saves named camera views, which can ride on a vehicle and be aimed at
-    one. HVE Studio keeps up to 16 named cameras in the case, each of which can
-    stand still, follow or chase a vehicle, or ride on one, and adds what HVE
+    one. HVE Studio keeps up to 16 named cameras in the case, each carried by
+    nothing or by a vehicle and aimed where it points, at a vehicle or at a
+    fixed point, and adds what HVE
     does not have: cameras animated with keyframes, set up the way a Blender
     camera is — the same lens, sensor and display settings — and carried to
     Blender and glTF.
@@ -43,42 +44,70 @@ panning, dollying or zooming the viewport does **not** silently rewrite it. The
 dialog shows the working view as **Current — re-framed from "name", not
 saved**, with three buttons: **Save as New**, **Overwrite "name"**, **Revert**.
 
-## Attachment: what the camera follows
+## Position and Aim
+
+A camera is set up the way a Blender camera is, with two independent settings:
+**what carries it** (Blender's *parent*) and **what it points at** (Blender's
+*Track To* target). Each can be anything, so a camera can ride one car and watch
+another, stand on a tripod and watch a car, or ride a car looking where it points.
+
+### Position
 
 | Field | Meaning |
 | --- | --- |
-| **View From** | **Fixed**, or a vehicle the camera is mounted **on** (an onboard camera) |
-| **Look At** | **Fixed**, or a vehicle the camera aims **at** |
+| **Carried by** | **None (placed in the scene)**, or the vehicle the camera rides on. A vehicle carries it through playback, and holds it at its start layout before a run |
+| **Inherit** | How much of the vehicle's motion the camera takes (shown when a vehicle carries it) |
+| **Eye X fwd / Y right / Z up** | Where a camera placed in the scene stands |
+| **Offset X fwd / Y right / Z down** | Where a carried camera sits, from the vehicle's CG |
 
-With **Look At** set to a vehicle (and View From Fixed), the **Follow** list
-chooses what happens to the camera's offset from that vehicle as it moves:
-
-| Follow | Effect |
+| Inherit | Effect |
 | --- | --- |
-| **Fixed - do not move the camera** | The camera stays put and turns to watch, like a camera on a tripod; the vehicle drives through the shot |
-| **Follow - keep the offset in world axes** | The camera travels with the vehicle but keeps its compass direction from it — a tracking or panning shot. After a right turn you are watching the vehicle's left side. |
-| **Chase - keep the offset behind the vehicle** | The offset turns with the vehicle's heading, so behind stays behind through a turn — a riding-along shot. Its angle is stored from the vehicle's heading, so it also stays behind when the start heading is edited, and a camera switched on part-way through a run, the exported camera and the view all agree |
+| **Position only** | The camera travels with the vehicle; its offset stays in world axes, so it keeps its compass direction from the vehicle — a tracking shot. After a right turn you are watching the vehicle's left side |
+| **Position and heading** | The offset turns with the vehicle's heading, so *behind* stays behind through a turn — a chase shot. The horizon stays level |
+| **Position, heading, pitch and roll** | Bolted to the vehicle: it pitches and rolls with it, and the picture banks with it |
 
-With **View From** set to a vehicle, the list is **Aim** instead:
+The **Offset** is in the vehicle's own frame (SAE: z down, so a camera above the
+CG is negative), or in world axes for **Position only**.
 
-| Aim | Effect |
-| --- | --- |
-| **Rides with the vehicle** | The camera looks at its **Aim Point**, in the vehicle's own frame, so it turns, pitches and rolls with the vehicle, and the picture banks with it — the view from a camera bolted to the car |
-| **Rides with the vehicle, level horizon** | The same, turning with the vehicle's heading only: the mount and aim stay level and the horizon stays horizontal through a pitch or a roll |
-| **Stays on a fixed world point** | The camera rides the vehicle but keeps looking at a fixed point in the scene |
+### Aim
 
-Below these:
+| Points at | The camera looks | Fields |
+| --- | --- | --- |
+| **Its own direction** | where it is pointed, turning with what carries it | **Heading** (from the vehicle's nose, or in the scene for a camera placed there) and **Tilt (+ up)** |
+| A vehicle | at a point on that vehicle, which travels and turns with it | **Aim X fwd / Y right / Z down**, from that vehicle's CG in its own frame; **Look ahead** sets 30 m ahead at about eye height, **Aim at the vehicle** the CG, 0.7 m up |
+| **A fixed point** | at a point in the scene (HVE's *Picture Center*) | **Center X fwd / Y right / Z up** |
 
-- **Onboard Mount** (View From cameras) — **Mount X fwd**, **Mount Y right**,
-  **Mount Z down**: where the camera sits, measured from the vehicle's CG in the
-  vehicle's own frame (SAE: z down, so a mount above the CG is negative). On an onboard camera the mouse wheel dollies by editing
-  these rows.
-- **Aim Point** — **Aim X fwd / Y right / Z down**: where the camera looks,
-  offset from the CG of the Look At vehicle (or of its own vehicle, for an
-  onboard camera). **Look ahead** sets 30 m ahead at about eye height; **Aim at
-  the vehicle** sets the CG, 0.7 m up.
-- **Camera Coordinates** (the eye) and **Picture Center** (the point looked
-  at), and **Roll (deg)**. These are grayed where an attachment sets them.
+For a camera **placed in the scene** both ways of aiming it are shown and kept
+in step: with its own direction, the point it is **Looking at**; with a fixed
+point, the **Heading**, **Tilt** and **Distance** from the eye to it. Editing
+either moves the aim and leaves the eye where it is — HVE's *Camera Coordinates*
+and *Picture Center*, alongside Blender's location and rotation.
+
+**Roll (deg)** turns the picture about the view axis, on top of any bank from
+the vehicle.
+
+Changing **Carried by**, **Inherit** or **Points at** keeps the camera where it
+is and looking where it looks at the playback time, as far as the new setting
+allows; a newly chosen vehicle target is aimed at its body.
+
+**Dragging in the view** while you look through a camera (with Lock Camera to
+View on) edits the same fields: aimed at a vehicle or a point, the view orbits
+about the target and the eye it leaves is the new position, and a pan moves the
+target; with its own direction the eye stays fixed, a drag turns the camera,
+and the mouse wheel dollies along the view axis by editing the Offset.
+
+A camera carried by a vehicle is a **vehicle camera**: the Vehicle editor's
+Outliner lists it under the vehicle (**Vehicle Cameras**), and right-clicking
+that group adds one at the driver's eye looking straight ahead (**Add
+Driver's-Eye Camera**).
+
+A case saved before these settings existed (View From, Look At and a Follow,
+Chase or Aim mode) opens with each camera converted to the same shot: a Look At
+camera in Follow or Chase is carried by its vehicle (position only, or position
+and heading) and aimed at it, an onboard camera aiming down its own vehicle has
+its own direction, and a Look At camera in Fixed is placed in the scene and aimed
+at the vehicle. A Follow camera whose aim point was off the vehicle's vertical
+axis is exact at heading 0 and close elsewhere.
 
 An edit in the dialog to the **active** camera shows in the view at once, and
 the camera stays active and keeps its name: only moving the view itself leaves
@@ -133,17 +162,16 @@ the attachment:
 
 | Camera | Keys |
 | --- | --- |
-| Not attached, or Look At with Follow set to Fixed | the Picture Center (look-at point) and the orbit (azimuth, polar angle, distance) |
-| Look At a vehicle, Follow or Chase | the Aim Point and the orbit |
-| View From a vehicle | the Mount, and the Aim Point (or the Picture Center when the aim stays on a fixed world point) |
+| Placed in the scene, aimed at a fixed point | the Picture Center (look-at point) and the orbit (azimuth, polar angle, distance) |
+| Any other camera | the Eye or Offset, and the aim: the point, the Aim offset, or the heading and tilt |
 
 Every camera also keys its field of view and roll; the orthographic scale when
 orthographic; the shift when it is not zero; and every channel already keyed.
 Angles are keyed the short way round, so a pan past 180° does not spin the long
 way.
 
-- **A keyed camera is still attached.** A keyed Chase camera still turns with
-  its car; the keys animate its offset.
+- **A keyed camera is still carried and still aimed.** A keyed camera carried
+  with the heading still turns with its car; the keys animate its offset.
 - **Re-framing without keying is temporary.** If you re-frame an animated camera
   and do not press I, the change lasts until the playback time moves, then the
   camera returns to its curve — as in Blender.

@@ -226,7 +226,7 @@ Let's attach a camera to the vehicle to better see the human.
 
 > **NOTE:** This tip really helps while positioning occupants because it allows you to move the camera relative to the vehicle; thus you can quickly focus on the interaction between the human and the seat cushion, an important part of placing the human in an equilibrium position.
 
-- Open **Tools › Cameras**, click **Add**, and under *Attachment* set *View From* and *Look At* to the Chevrolet Caprice, so the camera rides with the vehicle. HVE's tutorial uses camera coordinates x = -1.0, y = -10.0, z = -1.0 (ft) and picture center x = 0.0, y = 0.0, z = -1.0.
+- Open **Tools › Cameras**, click **Add**, and set *Carried by* and *Points at* to the Chevrolet Caprice, so the camera rides with the vehicle and watches it. HVE's tutorial uses camera coordinates x = -1.0, y = -10.0, z = -1.0 (ft) and picture center x = 0.0, y = 0.0, z = -1.0.
 
 ![Figure 5-23](images/hvn-gatb-driver-start.png)
 *Figure 5-23: A GATB occupant seated at t = 0 in HVE Studio (the driver of `GATB.hve`).*

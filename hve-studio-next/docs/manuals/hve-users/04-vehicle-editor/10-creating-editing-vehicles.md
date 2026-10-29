@@ -73,16 +73,31 @@ sections. Each input has one place in it:
   **Which value moves when you type one.** The fields are tied together, and
   each edit keeps the values an analyst usually has and moves the rest:
 
+  - The body, and its 3-D geometry, are tied to the sprung-mass CG. A
+    dimension edit therefore moves the **axles**, never the CG within the body,
+    and never fills **Move CG**. Only the Move CG dialog moves the CG relative
+    to the body.
+  - **CG to Front Axle** and **CG to Rear Axle** (in the Weight table, Total
+    and Sprung) move that axle: the wheelbase and the overhang on that end
+    change, the body and the other axle stay.
+  - The **weight distribution** (and the axle weights) slide both axles
+    together under the CG: the wheelbase stays and the overhangs change.
+  - **Wheelbase** moves both axles about the CG, keeping the weight
+    distribution; the overhangs take up the change and the length does not
+    change.
+  - **CG Height** raises or lowers the CG with the body; the wheels stay on
+    the ground.
   - **CG to Front** and **CG to Rear** are inputs: the overhang on that end
-    takes the difference. **CG to Front Axle** and **CG to Rear Axle** (in
-    the Weight table, Total and Sprung) move the CG, as Move CG does: the body,
-    wheels and overhangs stay where they are, so the wheelbase is unchanged.
-  - **Front Overhang**, **Rear Overhang**, **Wheelbase** and the weight
-    distribution set the CG position: the wheelbase keeps both overhangs and
-    the weight split, and the overall length follows; the weight distribution
-    moves the CG (as Move CG does), not the body or the wheels.
-  - **CG Height** moves the CG up or down, as Move CG does: the body and the
-    wheels stay where they are.
+    takes the difference.
+  - **With a 3-D geometry** loaded, the geometry sets the length:
+    **Overall Length**, **Front Overhang**, **Rear Overhang**, **CG to Front**
+    and **CG to Rear** are grayed, the overhangs running from each axle to
+    the geometry's end. An axle edit that would put an axle beyond the end of
+    the geometry is refused, and the reason is shown under the weight fields.
+    Without a geometry these stay editable and size the generic body, which
+    grows to hold an axle moved past its end.
+  - On a trailer or dolly, the CG-to-axle distances and the CG height still
+    move the CG, as Move CG does.
   - **Overall Width** sets CG to Right and CG to Left, keeping the CG's
     offset from the centerline; typing CG to Right or CG to Left sets the
     width.
@@ -99,7 +114,8 @@ sections. Each input has one place in it:
   carrying their own X positions, CG to Front and CG to Rear are grayed with
   the overhangs and the wheelbase.
   Under the table, a warning appears when a loaded 3-D model does not reach
-  the declared front and rear extents.
+  the declared front and rear extents; **Fit to geometry** beside it sets the
+  overhangs and the overall length from the model's front and rear.
 - **Inertia** — One line of totals (weight, and yaw, pitch and roll inertia)
   and **Edit...**, which opens the **Inertia / Mass** dialog: weight and
   inertias on both the total and the sprung basis, the CG location, the XZ
