@@ -154,8 +154,12 @@ sections. Each input has one place in it:
       only one is left. HVE's rule that a vehicle used in an event cannot be
       deleted does not apply: HVE Studio removes it from those events.
     - While the results of a simulation are on screen, the data of the
-      vehicles that run used is read-only, and Add, Replace, Dup, Del and
+      vehicles that run used is read-only, and Replace, Dup, Del and
       reordering are disabled as they would change it. Reset the run to edit.
+      **Add...** stays available: a new vehicle is added to the case and joins
+      no event, so the results on screen, and the results saved with the case,
+      stay valid. Put it in an event that has not been run with that event's
+      **Add Vehicle**, or in a new event.
     - Edit › Undo (Ctrl+Z) undoes vehicle edits.
     - Many vehicle dialogs carry explanatory notes — which simulation reads a
       field, what convention a number is in. They are shown with **View ›

@@ -53,7 +53,7 @@ be deleted); **Sort by Time** puts the rows in time order. A per-wheel table
 Applies steer angles that attempt to steer the vehicle.
 
 **Steering-wheel table** — *Time (s) → Angle (deg)*: steering-wheel angle, +right
-(clockwise) / −left, from −540 to +540 degrees. The engine divides it by each
+(clockwise) / −left, from −1800 to +1800 degrees (five turns each way; HVE states no limit). The engine divides it by each
 axle's steering gear ratio to get the nominal road-wheel angle. This is HVE's
 *At Steering Wheel* table.
 

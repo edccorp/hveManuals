@@ -92,6 +92,12 @@ re-runs it.
 ![The file browser](../images/hvn-02-open-case.png)
 *Open Case uses HVE Studio's own two-pane file browser.*
 
+The browser's left column lists **Places** (Home, HVE Studio Cases, your **Documents**,
+**Desktop** and **Downloads**, and on Windows each drive), your **Favorites** and the
+**Recent folders**; **+ Add current** puts the folder you are in among the favorites.
+A Windows shortcut (`.lnk`) to a folder, or a symbolic link to one, is listed with the folders
+and opens the folder it points at.
+
 ---
 
 ## OPEN RECENT
@@ -223,7 +229,11 @@ meshes. It opens read only and can never be re-run.
 
 The **Seal Case for Handoff** box says this before anything is written, and
 that licensed vehicle data stays out: each vehicle keeps only what it takes to
-draw it, and the meshes are encrypted. It then lists every event of the case
+draw it, and the meshes are encrypted. It also says who will vouch for the
+file: either that it will be signed by the configured signer, or, in amber,
+that no signing key is configured on this computer and the case will be
+**UNSIGNED** -- a recipient will see it marked *NOT AUTHENTICATED* and its
+results will not load. It then lists every event of the case
 with its program, as *solved* or *NOT SOLVED -- run it or delete it first*.
 **Seal...** is grayed until every event is solved; it then asks for a file
 name, suggesting the case's own name ending `.hves`. **Cancel** closes the
@@ -262,15 +272,37 @@ What the recipient cannot do:
   or start the Blender live link;
 - seal it again.
 
-A band along the bottom of the window says *Sealed case -- read only, cannot
-be re-run* and when it was sealed, and that the seal verifies. If the file has
-been changed since it was sealed it still opens, so that the change can be
-seen, but the band turns red and says *THIS SEALED CASE HAS BEEN MODIFIED
-SINCE IT WAS SEALED -- its contents cannot be trusted*, with what did not
-match. Opening any other case, or a new one, leaves sealed mode.
+A band along the bottom of the window, the title bar and the case name in the
+menu bar say whether anyone vouches for the case. Only a signature by a signer
+this copy of HVE trusts does, and the three states never read alike:
+
+- **Green** -- *Sealed case -- read only, cannot be re-run. Authenticated:
+  signed by (the signer), sealed (when).* The signature verifies and every
+  part of the file still matches it. The title shows *[Sealed - authenticated]*.
+- **Amber** -- *NOT AUTHENTICATED sealed case*, with the reason: the file
+  carries no signature (every `.hves` made before signing existed, and every
+  one made on a computer with no signing key), or it is signed by a signer
+  this copy of HVE does not trust. The case opens so that it can be
+  inspected, but its **results are not loaded** (the run status says so):
+  nothing in the file shows they are the run's. The title shows
+  *[SEALED - NOT AUTHENTICATED]*.
+- **Red** -- *THIS SEALED CASE HAS BEEN MODIFIED, OR ITS SIGNATURE IS INVALID*,
+  with what did not match. It still opens so that the change can be seen, and
+  its results are not loaded. The title shows *[SEALED - MODIFIED OR
+  INVALID]*.
+
+Recomputing the file's hashes after an edit does not turn a case green: only
+the signer can sign. Opening any other case, or a new one, leaves sealed mode.
 
 The item is grayed while a simulation is running, and in a case that is
 already sealed. The viewer product has no Seal item.
+
+!!! note "HVE Studio"
+    Until EDC provides a signing key or service, sealed cases are written
+    unsigned. That is deliberate: a key built into the program could be
+    extracted by anyone, and a file signed with it would prove nothing. See
+    `docs/SEALED_CASE_SIGNING.md` in the HVE-Next repository for what is
+    needed.
 
 !!! note "HVE Studio"
     The mesh encryption keeps a recipient from copying a vehicle's geometry

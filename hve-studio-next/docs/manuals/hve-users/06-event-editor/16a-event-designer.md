@@ -70,7 +70,13 @@ hosted and the 3-D view beside it.*
    Timestep**, **Termination** and **Stopped Vehicle**, then **Run** with its
    progress, **Reset** and the **Last Result**. A solved event is locked until
    it is reset, and the stage says so. Fix warnings do not stop a run; the
-   stage counts them.
+   stage counts them. The run status lists, in brackets, every warning the run
+   raised and every assumption HVE Studio made, each with its count. It is one
+   line, so a run with many warnings can fill it: the line then ends with
+   *[+N more: see the Messages report]*, and the **MESSAGES** tab of
+   **Output › HVE Reports...** lists every one of them under *HVE STUDIO RUN
+   NOTES*, after the engine's own messages. The list is kept with the event's
+   results and saved with the case.
 8. **Results**: what the run gave, in three tabs -- **Key Results**, the
    **Output Graph** and the **Results HUD** (the boxes drawn over the event's
    run; see [Results HUD](../../new-features/11-results-hud.md)). Each is the

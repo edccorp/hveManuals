@@ -35,7 +35,13 @@ HVE's 3-D exterior stiffness: the contact pressure on each mesh node as a functi
 A face whose four terms are all zero has its **Constant** cell tinted red, and its tooltip warns that a node there meets no resistance: a DyMESH collision on that face passes straight through the bodywork.
 
 ### Conversion Height
-The conversion height HVE uses for the zone when relating its 2-D (A/B) stiffness to the 3-D form.
+The conversion height HVE uses for the zone when relating its 2-D (A/B) stiffness to the 3-D form: 30 in (0.762 m) unless the face states another.
+
+## Calculate 3-D from 2-D
+
+Under the table. It sets the **Front**, **Rear**, **Left** and **Right** columns' 3-D terms from their 2-D ones over each column's Conversion Height: **Constant** = A / height, **Linear** = B / height, **Quadratic** and **Cubic** zero (A in lbf/in over inches gives lbf/in², B in lbf/in² gives lbf/in³). That is HVE's own conversion, the one it applies to a vehicle that states no 3-D values. It replaces those four columns' 3-D values; **Top** and **Bottom** keep what they hold. The button is disabled while a run's results hold this vehicle, as the other edits are.
+
+**Top and Bottom always have values.** They have no 2-D data (the 2-D programs are planar), so a vehicle that states none left them all-zero, and anything landing on a roof or a floor met no resistance. When the editor opens on a vehicle whose Top or Bottom 3-D terms are all zero, they are filled with the mean of the Left and Right columns (from their A and B over the height, or from their 3-D terms where those are stated), and a note says so. A face that already holds a law is never changed.
 
 ### Saturation Crush, Max Crush (graph extent)
 Saturation Crush caps each node's **force** in DyMESH: past it the pressure stays at its value there while the node keeps crushing (the deflection is not limited); 0 means none. **Max Crush (graph extent)** is recorded with the vehicle and sets how far the graph above the table runs, as it does in HVE's own dialog; no engine reads it, as in HVE's own source, and the note under the table says so: it does not limit the crush.
@@ -67,7 +73,7 @@ other terms keep the pressure positive over the crush the face will see.
 
 ## From crash tests...
 
-Under the table, in the Crush Stiffness editor only. It opens **Crush Stiffness from Crash Tests**, which works out CRASH3 A and B (and G, for reference) from one or more staged tests into a full-width rigid barrier, typed in or read from an NHTSA crash test file, and puts them on one side of this vehicle and, optionally, on this vehicle's EDCRASH events with damage on that side. See [Crush Stiffness from Crash Tests](../new-features/12-case-intake-and-vehicle-data.md#crush-stiffness-from-crash-tests).
+Under the table, in the Crush Stiffness editor only. It opens **Crush Stiffness from Crash Tests**, which works out CRASH3 A and B (and G, for reference) from one or more staged tests into a full-width rigid barrier, typed in or read from an NHTSA crash test file, and puts them on one side of this vehicle (and sets that side's 3-D terms from them over the Conversion Height, as **Calculate 3-D from 2-D** does) and, optionally, on this vehicle's EDCRASH events with damage on that side. See [Crush Stiffness from Crash Tests](../new-features/12-case-intake-and-vehicle-data.md#crush-stiffness-from-crash-tests).
 
 !!! tip "New in HVE Studio"
     The **From crash tests...** calculation and its NHTSA test-file reader.

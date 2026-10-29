@@ -85,7 +85,7 @@ Using the tutorial case, select each tab in turn. The Human editor shows the cas
 ### Using Dialogs
 
 !!! note "HVE Studio"
-    Every HVE Studio dialog is modeless, and a value takes effect as soon as it is entered — there is no OK, Apply or `<Enter>` step. Drag a numeric field left or right to change it, or double-click (or Ctrl+click) it to type a value. Units follow **Tools › Preferences…**. While a run's results are on screen, the inputs they were computed from are read-only, with a banner saying so; press **Reset** on the playback bar to edit them.
+    Every HVE Studio dialog is modeless, and a value takes effect as soon as it is entered — there is no OK, Apply or `<Enter>` step. Drag a numeric field left or right to change it, or double-click (or Ctrl+click) it to type a value; a double-click selects the whole number. Units follow **Tools › Preferences…**. While a run's results are on screen, the inputs they were computed from are read-only, with a banner saying so; press **Reset** on the playback bar to edit them.
 
 The most important example is **Event › Position / Velocity…**, the Event Editor's Position/Velocity dialog.
 

@@ -61,7 +61,7 @@ Arrow, Skidmarks, occupant equipment, the two Through Bodywork switches and
 Path thickness), **Vehicle**
 (Vehicle Extents, See-Through Body and the DyMESH overlay table), **Vectors**
 (with the arrow scales), **Scene Ghosts**, **Light & Shadow** (Scene Lighting,
-**Lamps**, the shadow coverage, Site Shadows, Contact Shadows, Ambient
+**Lamps**, Shadow cascades, Contact Shadows, Ambient
 Occlusion), **Sky & Reflections** (Default Sky, Sky Reflections, Distance Haze,
 Wet Ground, Ground Reflections) and **Rendering**. Click a group's header to fold it away. A grayed switch says why
 when you point at it.
@@ -154,14 +154,20 @@ The DyMESH overlay table:
 
 ---
 
-## SHADOW COVERAGE
+## SHADOW CASCADES
 
-**Menu Option:** View › Scene Display › Light & Shadow › Vehicles (sharp) · Whole scene
+**Menu Option:** View › Scene Display › Light & Shadow › Shadow cascades
 
-**Description:** **Vehicles (sharp)** fits the shadow to the vehicles, so their
-shadows are as sharp as possible but site geometry outside that region casts
-none. **Whole scene** lets everything cast a shadow, with softer edges. The panel
-shows the current shadow resolution in centimeters per texel.
+**Description:** A slider from 1 to 4 (3 by default). The sun's shadow is a
+picture of the scene from the sun with a fixed number of dots, so the more ground
+it covers, the coarser its dots. The shadow is therefore drawn in nested layers
+around the vehicles: the first is as tight as it can be, so the vehicles' shadows
+are sharp, the last covers the whole site so every pole and building casts one
+too, and each point takes its shadow from the finest layer that holds it. With 1
+there is a single layer over everything and the edges are softer. The panel shows
+each layer's smallest detail in centimeters per texel, for example *Now: 1.4 /
+4.6 / 15 cm per shadow texel*. More layers draw the scene more often per frame.
+Display only.
 
 ---
 

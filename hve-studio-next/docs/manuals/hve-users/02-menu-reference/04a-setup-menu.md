@@ -187,7 +187,7 @@ for the 3-D methods the gizmo also has handles that lift, pitch and roll the
 vehicle. From the keyboard, **G** moves
 and **R** rotates; then **X**, **Y** or **Z** locks an axis (press it again for
 the vehicle's own axis), or type a number and press **Enter**. Hold **Ctrl** to
-snap (0.5 m steps, 15° steps). The hint across the top of the viewport repeats
+snap (0.5 m steps, or 1 ft in imperial units; 15° steps). The hint across the top of the viewport repeats
 these keys.
 
 HVE's separate human and vehicle manipulators (its Figures 4-3 and 4-4) are

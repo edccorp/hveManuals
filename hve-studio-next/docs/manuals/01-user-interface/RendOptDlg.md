@@ -14,7 +14,7 @@ When off, the sun stops contributing to the picture; the ambient light is raised
 
 ## Shadows (View › Scene Display › Light & Shadow)
 
-**Vehicles (sharp)** fits the shadow-casting light to the vehicles, so their shadows are sharp; **Whole scene** fits it to the site as well.
+**Shadow cascades** sets how many nested layers the sun's shadow is drawn in, from 1 to 4 (3 by default). The first layer is as tight around the vehicles as it can be, so their shadows are sharp; the last covers the whole site, so every pole and building casts one too; each point takes its shadow from the finest layer that holds it. One layer is a single shadow over everything, with softer edges. The panel shows the size of each layer's smallest detail as *Now: N cm per shadow texel*.
 
 !!! warning "Not in HVE Studio"
     - **Show As** (Actual / Simple) for humans and vehicles. A vehicle with no 3-D geometry file is drawn with a generic body built from its dimensions; one with a file is drawn with it.

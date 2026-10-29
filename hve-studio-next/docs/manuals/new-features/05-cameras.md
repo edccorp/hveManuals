@@ -80,6 +80,10 @@ Below these:
 - **Camera Coordinates** (the eye) and **Picture Center** (the point looked
   at), and **Roll (deg)**. These are grayed where an attachment sets them.
 
+An edit in the dialog to the **active** camera shows in the view at once, and
+the camera stays active and keeps its name: only moving the view itself leaves
+the camera (or, with Lock Camera to View on, makes it **Current**).
+
 Lengths are shown in the units set in Preferences. Before a run, an attached
 camera tracks the vehicles' **start** positions, so it can be aimed before
 anything is solved; after a run it follows the motion.
@@ -101,7 +105,9 @@ honors them while you look through the camera:
 | | **Size / Width / Height (mm)** | The sensor size the focal length is measured against. Vertical 24 mm is the 35 mm-equivalent HVE Studio has always used; Blender's default is Auto, 36 mm |
 | Viewport Display | **Show in Viewport**, **Size**, **Show Name**, **Show Limits** | How the camera is drawn in the 3-D view (Show Limits draws the clip range) |
 
-Depth of field and panoramic lenses are not offered: nothing in HVE Studio renders
+**Depth of Field** (with **Focus Distance** and **F-Stop**) blurs what is nearer
+or farther than the focus distance while you look through the camera; it is
+display only. Panoramic lenses are not offered: nothing in HVE Studio renders
 them.
 
 ## Keyframed cameras

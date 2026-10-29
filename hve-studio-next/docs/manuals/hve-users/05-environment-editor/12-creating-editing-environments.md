@@ -424,7 +424,7 @@ surface, or the whole site when no surface is selected. **X**, **Y** or
 **Z** locks the motion to an axis (with **S**, scales that axis alone), a
 typed number gives an exact distance (meters), angle (degrees) or scale
 factor, **Enter** or a left click keeps it, and **Esc** or a right click
-puts it back. **Ctrl** steps by 0.5 m, 15 degrees or a factor of 0.1.
+puts it back. **Ctrl** steps by 0.5 m (1 ft in imperial units), 15 degrees or a factor of 0.1.
 
 Several surfaces can be selected at once: **Ctrl**- or **Shift**-click rows
 in **View › Outliner**, click a layer's row there (it selects every surface

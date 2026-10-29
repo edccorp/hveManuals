@@ -172,7 +172,11 @@ it reports to **`hve-next.log`** in `%APPDATA%\EDC\HVE Studio`, beside the
 settings above. The file is started afresh each time the program starts, so
 copy it before restarting if you need it. A line near the top beginning
 `[hve] build` names the build. What the physics program itself reported during
-the last run is in `hve-solver.log` in the same folder.
+each run is added to the same file when the run ends, on lines beginning
+`[solver]`, so runs started together keep their own messages. (While a run is
+going the physics program writes them to a file of its own in that folder,
+`hve-solver-` followed by a long identifier; the program removes it when the run
+ends, and deletes one a crash left behind the next time you run something.)
 
 If the program crashes it also writes **`hve-next.crash.txt`** in the same
 folder.

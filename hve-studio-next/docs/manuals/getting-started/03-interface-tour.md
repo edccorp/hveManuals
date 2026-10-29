@@ -199,7 +199,7 @@ pointer over the viewport:
 | A number (during G or R) | Move by exactly that many **meters** along the locked axis (whatever the unit setting), or rotate by exactly that many degrees. **-** changes the sign, **Backspace** deletes a digit |
 | **Enter** or left-click | Accept |
 | **Esc** or right-click | Cancel and put the object back |
-| Hold **Ctrl** | Snap: positions to 0.5 m, heading to 15° |
+| Hold **Ctrl** | Snap: positions to 0.5 m (1 ft in imperial units), heading to 15° |
 | **Delete** or **X** (no move in progress) | Delete the selected path waypoint |
 | **Esc** (no move in progress) | Clear the selection |
 | **Tab** (Vehicle editor) | Toggle Edit Mode — click a part of the vehicle to give it a material |

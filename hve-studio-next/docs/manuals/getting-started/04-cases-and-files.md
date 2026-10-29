@@ -281,10 +281,17 @@ cannot be edited, re-run or saved, and its geometry cannot be exported.
   placeholders. The values the run used are on **Output › HVE Reports**. The
   vehicle meshes are encrypted, so they cannot be copied out of the file with
   a zip tool or a file manager.
-- **A sealed case says if it has been changed.** A band along the bottom of
-  the window says the case is sealed, when, and that the seal verifies. A
-  file changed since it was sealed still opens, but the band turns red and
-  says it has been modified and cannot be trusted.
+- **A sealed case says whether anyone vouches for it.** Only a **signature**
+  by a signer your copy of HVE trusts authenticates a sealed case; the file's
+  hashes cannot, because anyone who holds the file can recompute them. A band
+  along the bottom of the window is **green** for an authenticated case,
+  **amber** for one that is *NOT AUTHENTICATED* (it carries no signature, or
+  it is signed by a signer your copy does not trust) and **red** when the file
+  has been modified or its signature is invalid. All three still open, so the
+  contents can be inspected, but an amber or red case does not load its
+  results: nothing shows they are the run's. **If no signing key is
+  configured on the computer that seals the case, the file is written
+  unsigned**, and the Seal dialog says so before it writes anything.
 
 The recipient opens it with **File › Open Case...** and can play it back and
 save images, videos, channel data and report pages. Opening another case

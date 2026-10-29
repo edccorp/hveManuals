@@ -27,7 +27,7 @@ what it affects. This chapter takes HVE's Options menu item by item.
 | AutoPosition | **Auto Position (settle onto terrain)**, per vehicle, in Event Information's Vehicle Initial Conditions |
 | Grid | Not in HVE Studio ([details](#grid)) |
 | Units | **Tools › Preferences** › Units ([details](#units)) |
-| Shadows | **View › Scene Display › Light & Shadow** (Shadow coverage); the sun is set in the Shader Editor's Sun & Sky panel and Event Information › Lighting |
+| Shadows | **View › Scene Display › Light & Shadow** (**Shadow cascades**); the sun is set in the Shader Editor's Sun & Sky panel and Event Information › Lighting |
 | Render | **View › Scene Display › Rendering** ([details](#render)) |
 | Playback | **Output › Playback Options...** |
 | Simulation Controls | the **Run** stage of the **Event Designer** (Event › Event Designer...) ([details](#simulation-controls)) |

@@ -67,7 +67,7 @@ This lesson has no counterpart in HVE's 3-D Editor tutorial; it uses the gizmo t
 
 1. Select the **Event (F5)** tab and make sure the event has the vehicle (**Vehicles in Event** in Event Information).
 2. Click the vehicle in the 3-D view. The gizmo appears on it.
-3. Drag the **forward** or **lateral** arrow to slide it, or the **ring** to turn it. Hold **Ctrl** to snap to 0.5 m and 15°.
+3. Drag the **forward** or **lateral** arrow to slide it, or the **ring** to turn it. Hold **Ctrl** to snap to 0.5 m (1 ft in imperial units) and 15°.
 4. For an exact placement, press **G**, then **X**, type a distance (in meters) and press **Enter**; press **R**, type an angle in degrees and press **Enter**.
 5. Check the result in the **Vehicle Initial Conditions** section of Event Information.
 

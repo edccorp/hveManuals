@@ -257,13 +257,16 @@ The viewport draws shadows from the key light (the sun).
 - **Low sun.** A low sun throws long shadows; HVE Studio extends the shadow
   calculation down the light to the ground, so a long shadow is not cut off
   short of where it lands.
-- **View › Scene Display › Light & Shadow** (Shadow coverage) chooses what the shadow calculation covers:
-  - **Vehicles (sharp)** — fitted to the vehicles, so their shadows are as sharp
-    as possible, but site geometry outside that region casts nothing.
-  - **Whole scene** — fitted to the site too, so everything that can cast a
-    shadow does, with softer edges because the same detail covers more ground.
+- **View › Scene Display › Light & Shadow** (**Shadow cascades**, 1 to 4, 3 by
+  default) splits the shadow into nested layers. A shadow is a picture from the
+  sun with a fixed number of dots, so the more ground it covers the coarser its
+  dots: sharp over two cars means soft over a site. The first layer is fitted
+  tightly to the vehicles and the last covers the whole site, so the vehicles
+  keep sharp shadows and every pole and building still casts one. Each point
+  takes its shadow from the finest layer that holds it, so nothing is shadowed
+  twice. With 1 layer the whole scene is one soft shadow.
 
-  The panel shows the current resolution as *Now: N cm per shadow texel*.
+  The panel shows each layer's resolution as *Now: N / N / N cm per shadow texel*.
 - **At night** no shadow falls (above).
 
 ## In Blender and glTF

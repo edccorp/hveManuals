@@ -20,7 +20,7 @@ Click a vehicle in the 3-D view of the Event editor. The vehicle is selected and
 
 A click on the body only selects it; a left drag that does not start on a handle orbits the view. The middle mouse button never moves a vehicle — it always moves the view.
 
-Hold **Ctrl** while dragging to snap: 0.5 m steps for position, 0.25 m for Z lift, 15° for heading and 5° for pitch and roll.
+Hold **Ctrl** while dragging to snap: 0.5 m steps for position (1 ft when Preferences shows imperial units), 0.25 m for Z lift (6 in), 15° for heading and 5° for pitch and roll.
 
 A **scene ghost** (a measured position such as Impact or Rest, drawn when **View › Scene Display › Scene Ghosts** is on) can be clicked and moved the same way. The gizmo moves a ghost's x, y and heading only, so a ghost has no Z, pitch or roll knobs; a position's Z height, roll and pitch are entered in its node of the vehicle's **Named Positions** list in Event Information.
 
@@ -42,7 +42,7 @@ G and R work on the active vehicle even before it has been clicked, and on a sel
 | digits, `.` | Type an exact distance or angle — **G X 50** moves exactly 50 along X, **R 30** turns exactly 30°. Once a number is typed the mouse is ignored. A typed distance needs an X or Y axis lock; without one, G keeps following the mouse |
 | `-` | Flip the sign of the typed number |
 | Backspace | Delete the last typed character |
-| Ctrl (held) | Snap: 0.5 m steps or 15° |
+| Ctrl (held) | Snap: 0.5 m steps (1 ft in imperial) or 15° |
 | Enter or left click | Apply |
 | Esc or right click | Cancel and return the vehicle to where it was |
 

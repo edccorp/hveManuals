@@ -112,7 +112,12 @@ back or sides of the vehicle.
     Kv by EDSMAC (and by EDVSM for the body against the ground), and the 3-D
     node stiffness by SIMON (DyMESH); EDCRASH takes its A and B from the
     event's damage profile (Event Information › Vehicle Impact Setup).
-    **From crash tests...** computes CRASH3 A and B from staged barrier tests.
+    **From crash tests...** computes CRASH3 A and B from staged barrier tests
+    and sets that side's 3-D terms from them. **Calculate 3-D from 2-D** does the
+    same for all four sides from the A and B in the table: 3-D Constant = A /
+    Conversion Height and Linear = B / Conversion Height (30 in unless a face
+    states another), Quadratic and Cubic zero. Top and Bottom, which have no 2-D
+    values, are filled with the mean of Left and Right when they are empty.
 
     There is no stiffness for the top and bottom in the A/B/Kv form, as in
     HVE. Coefficients are shown in the units set in Preferences (A in lb/in
