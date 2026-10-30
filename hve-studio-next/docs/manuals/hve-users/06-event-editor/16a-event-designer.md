@@ -28,7 +28,9 @@ hosted and the 3-D view beside it.*
 1. **Event**: the **Event Information** panel: the events, the active event's
    name and start time, the calculation method, and the vehicles and
    humans in the event. The vehicles' initial conditions are on the
-   Positions stage. Beside it,
+   Positions stage. **Copy this event**, above it, adds a copy of the event
+   (vehicles, positions, driver inputs, options) at the end with no results and
+   opens it, also while results are on screen. Beside it,
    **Start from documents** (Case Intake) and **Start from a sentence** (Quick
    Case) build the event from the case documents or a typed sentence.
 2. **Method Options**: the options window of the event's calculation method
@@ -52,8 +54,9 @@ hosted and the 3-D view beside it.*
    is shown.
 5. **Collision Pulse**: a tab for each dialog the calculation method reads, as
    the Event menu grays the rest: **Collision Pulse** and **Contacts** (EDSMAC4's
-   vehicle contacts, or EDHIS and GATB's occupant contacts). A method that takes
-   no pulse says so. DyMESH's options are on the Method Options stage. Only
+   vehicle contacts, or EDHIS and GATB's occupant contacts). A method with
+   nothing here (EDVDS, EDSVS, EDVSM, ...) has no Collision Pulse stage: the
+   stage bar leaves it out. DyMESH's options are on the Method Options stage. Only
    EDCRASH reads a crush profile: for it, **Damage Profiles (Positions stage)**
    opens the Positions stage, where Vehicle Impact Setup is, and
    **Crush from Scan** (Crush Profile from Scan) measures the crush depths off a

@@ -206,7 +206,7 @@ panel.
 The **Lights** section holds the site's own lights — street lights, work
 lights, a floodlight on a pole — that are not attached to any vehicle (HVE
 made these with the 3-D Editor's Light tool). **Add Light** puts one 8 m above
-the ground at the middle of the view; **Duplicate** and **Delete** manage the
+the ground at the middle of the view; **Copy** and **Delete** manage the
 list. For the selected light set its **Name**, **On**, **On in daylight too**,
 **Type** (**Point** or **Spot**), its position — **X (forward)**, **Y
 (right)** and **Height above the ground**, which keeps it on its pole when you
@@ -702,6 +702,39 @@ opaque (100%); a case saved with another opacity keeps it.
 
 > **NOTE:** Confirm the image's scale against two landmarks a known
 > distance apart before relying on it.
+
+### The picture as an object
+
+!!! tip "New in HVE Studio"
+    Each picture -- the base image and every layer -- is an object of its own:
+    it can be selected, and it takes a material, as a vehicle or a road surface
+    does.
+
+**Selecting it.** In the Environment editor, click the picture in the 3-D view:
+an orange box marks it, and **.** (frame selected) frames it. Clicking the
+**same spot again** selects the road surface under the picture, so the surfaces
+stay one click away even where a picture covers the whole site; something above
+the picture (a wall, a vehicle) is selected first as usual. Clicking the
+picture's row in the Outliner selects it too. A hidden picture, or one at 0%
+opacity, cannot be clicked.
+
+With a picture selected, the Environment window (and the Environment Designer's
+Surfaces stage) shows **Selected Aerial Picture** where the selected surface
+would be: the picture's **Visible** switch and **Opacity**, its **Material**,
+**Edit Material** (the Shader Editor, on this picture) and **Corners and record**
+(this dialog).
+
+**Its material.** The dialog shows the selected picture's **Material** with an
+**Edit in Shader Editor** button, and the picture's row in the Outliner has
+**Edit Material...** on its right-click menu. **+ New** in the Shader Editor
+makes *Object Color → Principled BSDF*, where Object Color is the photograph's
+own pixel and its opacity, so the picture draws exactly as before; put a
+**Hue/Saturation/Value**, **Brightness/Contrast**, **Gamma**, **Invert Color** or
+**Mix Color** node between them to change it (see the Shader Editor's *Aerial
+pictures*). The material belongs to the picture's place in the stack, not to
+its file: downloading a new picture into the same layer keeps the material,
+moving a layer up or down takes its material with it, and deleting a picture
+deletes its material assignment. Like every material it is display only.
 
 !!! warning "Not in HVE Studio"
     HVE's **Sky Image** — a scanned photograph fixed behind the scene as a

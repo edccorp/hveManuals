@@ -192,6 +192,7 @@ long.
 | **Tire Fx', Fy'** | Each tire's Fx' (red, longitudinal) and Fy' (green, lateral) at the contact patch |
 | **Tire Fz'** | The normal load, drawn up from the patch on the same scale as Fx' and Fy' |
 | **Tire Fz' (nodes)** | For a DyMESH wheel with tread springs (Tire Contact Model 4), the force of each loaded tread node, drawn from where it meets the surface on the tire scale. Their sum is the wheel's Tire Fz' on a flat road. Nothing is drawn for a wheel running point contact |
+| **Tire friction circle** | SIMON events only. A circle at each tire's contact patch, in the road plane: the rim is the tire's **peak** grip at that instant (its load and speed, on that surface), and a dot joined to the center shows the share in use, in the direction of the tire's horizontal force. It is drawn from the wheel channel **% Avail Mu** (see [SIMON Program Output](../../programs/SIMON/03-program-output.md)). Green under 70% of the peak, amber from 70% to 95%, red at the peak or while the tire slides (its Skid flag is set) — a sliding tire's dot sits inside the rim, because slide friction is below the peak. **Value** prints the share as a percent. The circle has a fixed size, so it has no scale |
 
 Below the table:
 
@@ -218,7 +219,9 @@ force that moment would be at R. The arcs' radius is the vehicle's half width.
 **Description:** **Ground Plane** (on by default) draws the flat plane and grid
 where there is no imported site; an imported site is drawn either way. The
 **Ground** checkbox on the viewport's toolbar is the same switch. It is display
-only: no engine reads it.
+only: no engine reads it. While a site is drawn it is grayed, since the site is
+the ground and there is no plane to hide. With no site and Ground off, the gray
+that still reaches the horizon is the sky's own lower half, not a ground.
 
 The viewport's toolbar also carries the Scene Display switches that matter in
 the editor on screen, each the same switch as its Scene Display row (grayed,

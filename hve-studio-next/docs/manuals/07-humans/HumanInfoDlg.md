@@ -15,7 +15,7 @@ seating location and body description, from which the body model is generated.
 ## Add Human / Remove
 
 **Add Human** adds a human ("Human 1", "Human 2", …) and builds its body
-with GEBOD at once. **Remove** deletes the selected human from the case and from
+with GEBOD at once. **Delete** deletes the selected human from the case and from
 every event that holds it.
 
 Which vehicle a human rides in, and where, is set per event in Event

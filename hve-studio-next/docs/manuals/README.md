@@ -69,6 +69,7 @@ HVE Studio differs:
 - [DyMESH](programs/DyMESH/README.md)
 - [GATB](programs/GATB/README.md)
 - [RDF](programs/RDF/README.md)
+- [GBF](programs/GBF/README.md)
 - [Damage Studio](programs/DamageStudio/README.md)
 
 ## HVE User's Manual

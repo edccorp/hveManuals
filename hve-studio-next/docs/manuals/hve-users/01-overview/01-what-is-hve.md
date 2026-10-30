@@ -62,7 +62,7 @@ human: it is set in Event Information's **Humans in Event**.
 
 **Vehicle (F3).** The **Vehicles** panel lists the case's vehicles, with
 **Add...** (from the vehicle databases, or one of HVE's generic vehicles),
-**Replace...**, **Dup** and **Del**, and shows the selected vehicle's
+**Replace...**, **Copy** and **Delete**, and shows the selected vehicle's
 information below the list. The **Vehicle** menu opens the detailed dialogs —
 suspension, steering, tires, brakes, drivetrain, mesh, contact surfaces and
 restraints. The vehicle is shown in the viewport.
@@ -142,6 +142,7 @@ methods HVE Studio can run are HVE's, plus one new one:
 | GATB | articulated occupant and pedestrian simulation (ATB) |
 | SINGLETRACK | motorcycle simulation — new in HVE Studio |
 | READDATAFILE | replays a trajectory data file (`.dat`); solves nothing |
+| GBF | heavy-truck air-brake stopping calculation (S-cam brakes) |
 
 The Method list marks a method whose output has not yet been checked against HVE
 as *(unvalidated)*, and a method the event's vehicles cannot use as *N/A for

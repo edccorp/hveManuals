@@ -8,7 +8,7 @@
     **Identity** and **Configuration** sections; the fields below are
     described as they appear there.
 
-New vehicles are added to the case in the Vehicle Editor (**Vehicle (F3)** tab): the **Vehicles** panel lists every vehicle in the case, and its **Add...**, **Replace...**, **Dup** and **Del** buttons add a vehicle from a database or from HVE's generic vehicles, replace the selected vehicle's data with a database record, copy it, or remove it. Below the list the panel is the selected vehicle's editor: **Identity**, **Configuration**, **Size & Weight**, **Inertia**, **Components** and **3D Geometry** (see [Creating & Editing Vehicles](../hve-users/04-vehicle-editor/10-creating-editing-vehicles.md#vehicles-panel)).
+New vehicles are added to the case in the Vehicle Editor (**Vehicle (F3)** tab): the **Vehicles** panel lists every vehicle in the case, and its **Add...**, **Replace...**, **Copy** and **Delete** buttons add a vehicle from a database or from HVE's generic vehicles, replace the selected vehicle's data with a database record, copy it, or remove it. Below the list the panel is the selected vehicle's editor: **Identity**, **Configuration**, **Size & Weight**, **Inertia**, **Components** and **3D Geometry** (see [Creating & Editing Vehicles](../hve-users/04-vehicle-editor/10-creating-editing-vehicles.md#vehicles-panel)).
 
 ![Vehicles panel](images/hvn-vehicles-panel.png)
 
@@ -82,7 +82,7 @@ The vehicle's property dialogs are buttons in the Vehicles panel's **Components*
 Use **Vehicle › Save Vehicle As...** (see [Save Vehicle As dialog](VehSaveAs.md)) or **Vehicle › Save to My Vehicles...**.
 
 ### Delete
-**Delete from database...**, in the Identity section, removes the vehicle's record from its database file after a confirmation prompt. It is shown only when the record is in one of your own, writable databases (for example *My Vehicles*). The record is permanently removed from the database file; the vehicle in the case is kept (use **Del** in the Vehicles panel to remove it from the case).
+**Delete from database...**, in the Identity section, removes the vehicle's record from its database file after a confirmation prompt. It is shown only when the record is in one of your own, writable databases (for example *My Vehicles*). The record is permanently removed from the database file; the vehicle in the case is kept (use **Delete** in the Vehicles panel to remove it from the case).
 
 !!! note "HVE Studio"
     All of HVE's Vehicle Information fields are in the Vehicles panel, in its Identity and Configuration sections. The type list says *Multi-Purpose* where HVE's says *Sport-Utility*.

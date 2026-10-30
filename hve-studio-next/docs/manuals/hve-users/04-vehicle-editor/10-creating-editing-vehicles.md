@@ -36,9 +36,11 @@ manage all the vehicles in the case:
   HVE Studio's built-in generic vehicles (see Adding New Vehicles, below).
 - **Replace…** — Replaces the current vehicle's data with a database record,
   keeping its place in the case and in its events.
-- **Dup** — Adds a copy of the current vehicle with every setting, named
-  "*name* (copy)". The copy is not added to any event.
-- **Del** — Removes the current vehicle from the case.
+- **Copy** — Adds a copy of the current vehicle with every setting, named
+  "*name* (copy)", at the end of the list, and makes it the current vehicle so it
+  can be edited at once. The copy is not added to any event. It is available
+  while results are on screen: the copy renumbers no other vehicle.
+- **Delete** — Removes the current vehicle from the case.
 - **Vehicle list** — The names of all the vehicles in the case, each with
   its color swatch. Click a name to make it the current vehicle. Drag a name
   to reorder the list.
@@ -166,7 +168,7 @@ sections. Each input has one place in it:
 > from the database! Events that used it are updated.
 
 !!! note "HVE Studio"
-    - A case always holds at least one vehicle, so **Del** is disabled when
+    - A case always holds at least one vehicle, so **Delete** is disabled when
       only one is left. HVE's rule that a vehicle used in an event cannot be
       deleted does not apply: HVE Studio removes it from those events.
     - While the results of a simulation are on screen, the data of the
@@ -232,10 +234,18 @@ databases HVE Studio has found — HVE's classic `.db` files and HVE Studio's ow
   motorcycle). The filter is empty each time the dialog opens,
   and when a case is opened or a new one started; so is the Vehicle Geometry
   Library's.
-- **Database** — Shows the vehicles of one database file only (*All
-  databases*, or a file with its vehicle count). While the filter or a
-  database is set, a line reads *Showing N of M*.
-- **Vehicle table** — Name, Make, Model, Year, Body, Type and Database. Click
+- **Vehicle table** — Type, Make, Model, Year, Body, Name and Database, in
+  the order HVE's Vehicle Information dialog asks for them. Under each heading
+  is that column's **filter** (*All* until a value is picked): pick a
+  **Type**, then a **Make**, **Model**, **Year** and **Body** as in HVE, and
+  each column lists only the values (with how many vehicles each) that the
+  search, the database and the other columns' picks leave, so the list narrows
+  as you go. They can be picked in any order; picking one that rules out an
+  earlier pick (a Type of Truck after a Make of Acura) clears that pick. The
+  **Database** column's filter shows one database file only (*All databases*,
+  or a file with its vehicle count). While any filter is set, a line above the
+  table reads *Showing N of M*, with **Clear filters**, which clears the
+  search and every column's filter. Click
   a column heading to sort by it; click again to reverse; Shift-click a second
   heading to add a tie-break. Drag a column's edge to resize it, drag a
   heading to move the column, and right-click the headings to hide or show
@@ -390,7 +400,7 @@ The vehicle in the case is kept.
     HVE Studio has no Previous Vehicle Selection dialog (HVE's Mode › Vehicle ›
     Add › Previous). To reuse a vehicle from another case, open that case
     with File › Open Case... (an HVE `.hve` case or an HVE Studio case); to vary a
-    vehicle within a case, use **Dup**.
+    vehicle within a case, use **Copy**.
 
 ## Selecting and Editing Vehicles
 

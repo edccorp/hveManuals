@@ -21,7 +21,7 @@ on screen; press **Reset** in the Event editor to edit it.
 The Vehicle editor's **Vehicles** panel lists the case's vehicles, with **Add...**
 (choose a vehicle from the loaded databases or one of HVE's generic vehicles),
 **Replace...** (replace the selected vehicle's data with a database record),
-**Dup** (copy the selected vehicle) and **Del**, and below the list the selected
+**Copy** (copy the selected vehicle) and **Delete**, and below the list the selected
 vehicle's editor: **Identity**, **Configuration**, **Size & Weight**,
 **Inertia** (with **Edit...** for the Inertia / Mass dialog), **Components**
 (a button for each dialog below) and **3D Geometry** (see
@@ -113,7 +113,7 @@ See the dialog reference: [Environment](../../08-environment/README.md),
 | **Human Information...** | The **Humans** panel, if it has been closed (it opens by itself when you enter the Human editor) |
 
 The Humans panel holds what HVE's Human Editor and Human Information dialog
-held: **Add Human** and **Remove**, the human list, **Identity**
+held: **Add Human** and **Delete**, the human list, **Identity**
 (Location), **Anthropometry** (subject type, age group, weight and height
 percentiles, and **Regenerate GEBOD Body**), and buttons for **Injury
 Tolerances...**, **Body Segments...**, **Joint Properties...** and **Body

@@ -24,12 +24,15 @@ so a field has one editor and nothing is reachable in one and not the other.
 ## The stages
 
 1. **Site**: Location (placement, address, coordinates), the **Map**, and the data
-   for the area you choose on it: the **Download aerial image** button and the
-   **Geographic terrain (USGS 3DEP)** section both take the same area, so you
-   choose it once. **Aerial Image...** (the backdrop, in its own window) is
+   for the area you choose on it: **Download for this area**, two tabs right
+   under the map — **Aerial image** and **Terrain (3-D)** (Geographic terrain,
+   USGS 3DEP) — both take the same area, so you choose it once. **Aerial Image...** (the backdrop, in its own window) is
    where you also place a picture of your own. The aerial is a backdrop and
    reaches no solve; the terrain you download becomes drivable ground.
-2. **Site Files**: the files you bring in yourself: the scene geometry file, its
+2. **Site Files**: at the top, the environment as a file — **Save Environment
+   As...**, **Load Environment...** (one saved from another case) and **Open
+   Example** (HVE's example sites, each opened as a new, untitled case), the
+   Environment menu's commands; then the files you bring in yourself: the scene geometry file, its
    import frame and the survey point cloud — the Terrain section, with **Add
    Object...** (HVE's barriers, walls, poles, trees and curb). The drivable
    triangles here are what every vehicle runs on. (This stage was called
@@ -40,7 +43,10 @@ so a field has one editor and nothing is reachable in one and not the other.
    same tree in its own window), the **Selected Surface** section for the
    surface picked in the tree or the 3-D view, **Edit Mode (Tab)** to pick
    faces in the viewport and give them a material or split a surface by them,
-   and the Surface Generator. The Key figures strip's **Drivable patches** row
+   and the Surface Generator. A click on an aerial picture in the 3-D view (or on
+   its Outliner row) selects the picture instead, and the stage shows **Selected
+   Aerial Picture** with its visibility, opacity and material; clicking the same
+   spot again selects the surface under it. The Key figures strip's **Drivable patches** row
    counts the drivable surface's connected pieces: more than one means a wheel
    can run off an edge onto the default plane. **Color the site by** recolors
    the 3-D view while this stage is open: **Friction** runs from red at 0
@@ -102,10 +108,9 @@ so a field has one editor and nothing is reachable in one and not the other.
    settle; a friction zone drawn beside the ramp has no ground under it.*
 7. **Summary**: the site's name and file, **Set as baseline** (kept for this case
    across sessions), **Copy spec sheet** (tab-separated text on the clipboard),
-   **Save Environment As...** and **Load Environment...** (the Environment
-   menu's: the environment as a file of its own, to load into another case),
-   **Open Example** (HVE's example sites, each opened as a new, untitled case),
-   the spec sheet with its baseline and change, and every warning.
+   **Save Environment As...** (the environment as a file of its own, to load
+   into another case), the spec sheet with its baseline and change, and every
+   warning.
 
 ## Everything in one place
 
@@ -123,7 +128,7 @@ Every section of the **Environment** window and every item of the
 | Edit Mode (materials per face) | Surfaces |
 | Physical | Weather |
 | Sky, Lights | Sky & Lights |
-| Open Example | Summary |
+| Open Example, Load Environment..., Save Environment As... | Site Files (Save also on Summary) |
 
 The Environment window stays available while the designer is new.
 

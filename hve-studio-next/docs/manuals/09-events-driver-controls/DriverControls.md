@@ -41,23 +41,32 @@ curve editor, like Blender's Graph Editor: each row is a **key** on the curve.
 - **Click** a key to select it; **Shift+click** adds it to or removes it from
   the selection. Selected keys are orange, and their rows are highlighted in
   the table (selecting rows in the table selects the keys).
-- **Drag** a selected key to move every selected key in time and value. While
-  dragging, **X** locks the move to time and **Y** to the value (press again to
-  free it); hold **Ctrl** to snap the time to 0.01 s and the value to a round
-  step. A value stays inside the column's allowed range. When you let go the
-  rows are put in time order.
+- **Drag** a selected key to move every selected key in time and value, or,
+  as in Blender, press **G** over the graph to pick the selected keys up: they
+  follow the mouse with no button held, and a **click** or **Enter** puts them
+  down (**Esc** or a right click puts them back). While moving, **X** keeps the
+  move to time only and **Y** to the value only (press again to free it); the
+  line under the graph says which. A value stays inside the column's allowed
+  range. When the keys are put down the rows are put in time order.
+- **Snap** (above the graph, on by default) lands a moved key on round steps
+  of time and value that follow the zoom, about a fortieth of the view (0.05 s
+  across a 2 s view); hold **Ctrl** while moving to do the opposite. The choice
+  applies to every graph.
 - **Drag on empty space** to select the keys inside a box (**Shift** adds to
   the selection).
-- **Double-click empty space** to add a key there.
-- **Delete** or **X** removes the selected keys (the last row stays).
+- **Double-click** or **Ctrl+click** empty space to add a key there.
+- **Delete** or **X** removes the selected keys (the last row stays); X
+  removes only when no move is under way.
 - **Mouse wheel** zooms the time axis about the pointer, **Ctrl+wheel** zooms
-  the value axis, a **middle-button drag** pans, and **Home** or **Fit** shows
-  every key again.
+  the value axis, a **middle-button drag** pans, and **Home** or **Fit** (above
+  the graph, beside Snap) shows every key again.
 - Faint lines mark the column's usual range. Hover a key to read its time and
   value.
 
 Each row is a number (**#**), a **Time (s)** and a value. Click a cell to
-type a value; drag to change it. **Add** appends a row at the table's own time
+type a value; drag to change it. A time typed out of order puts its row where
+it belongs in time when you leave the cell, and the rows are numbered again.
+**Add** appends a row at the table's own time
 step after the last (half a second for a first step); **X** at the end of a row
 deletes that row (the last remaining row cannot be deleted); **Sort by Time**
 puts the rows in time order. A per-wheel table (one column per wheel, headed

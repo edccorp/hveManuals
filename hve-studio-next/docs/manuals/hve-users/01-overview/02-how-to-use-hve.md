@@ -135,7 +135,7 @@ The vehicle is now displayed in the viewport. At this point you may edit its
 properties with the Vehicle menu or the panel's Components section (see the
 [Vehicle Editor](../04-vehicle-editor/10-creating-editing-vehicles.md) section
 of this manual).
-Repeat for each vehicle; **Dup** copies the selected vehicle and **Del** removes
+Repeat for each vehicle; **Copy** copies the selected vehicle and **Delete** removes
 it.
 
 > **NOTE:** A multi-vehicle train (e.g., a tractor-trailer) is created by
@@ -568,6 +568,9 @@ the **Run** stage of the **Event Designer** (**Event › Event Designer...**):
   play back from the start, step back and forward by output steps, play, and go
   to the end (HVE's Rewind, Play and Advance To End). A time slider and the
   current time follow.
+- **Speed** (beside **>|**) — **1x real time** plays one second of the run per
+  second; 0.1x to 0.5x is slow motion, 2x and 4x faster. Any other speed is set
+  in Output › Playback Options.
 
 ![Figure 2-31](../images/hvn-01-simulation-panel.png)
 *Figure 2-31: The Run stage's contents: the simulation controls, the Run controls

@@ -19,7 +19,7 @@ stage). A click on a body in the 3-D view also selects it.
 
 ## The stages
 
-1. **Human**: the **Humans** panel: **Add Human**, **Remove**, the list of the
+1. **Human**: the **Humans** panel: **Add Human**, **Delete**, the list of the
    case's humans, and the selected one's Identity, Anthropometry (the GEBOD
    inputs) and Anthropometric weight and mass.
 2. **Body Segments**: the 15 segments' mass, inertia, color, contact ellipsoids

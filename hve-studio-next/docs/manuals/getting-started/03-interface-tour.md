@@ -102,7 +102,7 @@ The five buttons under the menu bar replace HVE's separate editors:
 *The Vehicle editor (F3). The Vehicles panel lists every vehicle in the case
 with **Add...** (search the vehicle databases or pick a generic vehicle),
 **Replace...** (replace the selected vehicle's data from a database),
-**Dup** and **Del**, and below it the selected vehicle's editor (Identity,
+**Copy** and **Delete**, and below it the selected vehicle's editor (Identity,
 Configuration, Size & Weight, Inertia, Components and 3D Geometry). The
 viewport shows only the selected vehicle. Note the banner at the bottom of the
 viewport: the vehicle shown is not in the active event.*

@@ -23,13 +23,14 @@ part by method:
 |---|---|
 | Event Designer... | every event: the staged Event Designer beside the 3-D view (see [Chapter 16a](../06-event-editor/16a-event-designer.md)) |
 | Event Information... | every event |
+| Copy Event | every event: a copy of the active event at the end, with no results (Event Information's **Copy**) |
 | Position / Velocity... | every method that starts from initial conditions — all except EDCRASH and READDATAFILE |
 | Driver Controls... | EDSMAC, EDSMAC4, SIMON, EDSVS, EDVDS, EDVTS, EDVSM, SINGLETRACK; and EDCRASH, where it shows the Wheel Data page |
 | Damage Profiles... | EDCRASH (it opens Event Information's Vehicle Impact Setup) |
 | Collision Pulse... | EDCRASH, SIMON, EDHIS, GATB |
 | Vehicle Mesh..., DyMESH Options..., Path Follower..., Notes | every event |
-| Payload... | SIMON, EDSMAC4, EDSVS, EDVDS, EDVTS |
-| Wheels... | the methods that use driver controls (not EDCRASH, EDGEN, EDHIS, GATB or READDATAFILE) |
+| Payload... | SIMON, EDSMAC4, EDSVS, EDVDS, EDVTS, GBF |
+| Wheels... | the methods that use driver controls (not EDCRASH, EDGEN, EDHIS, GATB or READDATAFILE), and GBF, which reads each brake's measured stroke and drum temperature there |
 | Accelerometers... | SIMON, EDSMAC4, EDVDS, EDVSM (the methods that compute accelerometer output) |
 | Restraints › | EDHIS, GATB |
 | Contacts... | EDSMAC4 (the contact surfaces); EDHIS, GATB (Human Contacts) |

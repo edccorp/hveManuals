@@ -82,6 +82,7 @@ Sequentially** lays end to end.
 
 Below the table, each event is drawn as a bar on a **timeline**. Drag a bar to slide that event in time (Ctrl snaps); click elsewhere on the timeline to move the current time there. Two buttons set the timing for you:
 
+- **Start All at 0** — every track plays its event from the beginning, starting at time 0: no offset and no trimmed start (the ends are kept).
 - **Stack Sequentially** — lays every enabled event end to end, in table order. A new sequence starts this way.
 - **Align at Impact** — slides every event so that its impact instant falls at the same time on the timeline, for comparing two reconstructions of the same collision. Events with no known impact time stay where they are.
 
@@ -147,3 +148,5 @@ HVE Studio applies the following rules:
 ← Previous: [Chapter 17 — Creating Report and Playback Windows](17-report-playback-windows.md)  |  [Index](README.md)
 
 <!-- /NAV -->
+
+When the panel is narrow the table gives way in this order, so the event names stay readable: the **Result** column is hidden first (an unsolved event then says so when you hover its name), then the **Start**, **End** and **Offset** columns narrow.

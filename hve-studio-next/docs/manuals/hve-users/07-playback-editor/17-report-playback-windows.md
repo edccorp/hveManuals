@@ -103,7 +103,7 @@ The playback bar along the bottom of the Viewport, in Event mode, replaces HVE's
 
 **Output › Playback Options...** sets how the playback runs:
 
-- **Speed** — the playback rate (0.1× to 10× real time).
+- **Speed** — the playback rate (0.1× to 10× real time); 1× is real time. The playback bar under the Viewport has the common speeds too, beside **>|**. Like every slider, it takes a typed value on a double-click (or Ctrl+click).
 - **Frame Step** — how many output steps the step buttons move.
 - **Loop** — restart from the beginning at the end.
 - **CG Path** — draw each vehicle's CG path up to the current time (also in View › Scene Display).

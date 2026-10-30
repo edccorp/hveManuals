@@ -36,7 +36,8 @@ Either may be left empty. When the sun is placed from the location, an empty
 **Date** is taken as March 20 (the equinox, which lights a site the same in
 either hemisphere) and an empty **Time** as noon. Only the sun uses these
 stand-ins: the case keeps the fields empty, so no report shows a date or time
-that was never stated.
+that was never stated. An empty field shows its stand-in in gray,
+*03/20/2025 (default)* and *12:00 (default)*; typing replaces it.
 
 **Latitude (°)** / **Longitude (°)** — The site's latitude and longitude in
 decimal degrees, north and east positive (HVE enters them as dd.mm.ss with
@@ -60,7 +61,7 @@ this offset plus 90, so an opened HVE case whose X axis points north shows
 
 ### Coordinate system
 
-**Optional.** Fill this in only when you will bring in survey points, LiDAR or a
+A closed section at the foot of the page. **Optional.** Fill this in only when you will bring in survey points, LiDAR or a
 georeferenced picture by their own coordinates; the section says so at its top.
 Downloads from the map (aerial image, terrain, lidar) need only the Latitude and
 Longitude above. If unsure, leave both codes at 0.
@@ -106,19 +107,28 @@ degrees-minutes-seconds, or a map link; the box shows how it reads, and
 **Apply** sets Latitude and Longitude. A pair given longitude-first is
 reordered, and the box says so.
 
+Below the fields the page runs in the order the work goes: **Search an address**,
+the **Map**, **Download for this area**, then **Set from a pasted coordinate**, and
+last, closed, **Coordinate system**.
+
 **Search an address** — Type an address or place and press **Search**; pick a
-result to set Latitude and Longitude. **Set UTC offset from location** looks up
-the time zone of the coordinate. Both send what you type, or the coordinate, to
-online services (OpenStreetMap's Nominatim and timeapi.io).
+result to set Latitude and Longitude. Both the search and the time zone send what
+you type, or the coordinate, to online services (OpenStreetMap's Nominatim and
+timeapi.io).
 
 The results are a numbered list beside numbered pins on the **Map** below it.
 Choosing a result shows it on the map; **Use this place** (or a double-click on
 the result) sets the case's Latitude and Longitude to it and looks up its time
-zone. **Clear results** empties the list. On the map, drag (or middle-drag) to pan, use the
+zone. Beside it, **Set UTC offset from location** looks up the time zone of the
+coordinate the case holds now (typed, pasted or picked) and sets the UTC offset
+and daylight saving for the case's date; the line under the buttons says what it
+found. **Clear results** empties the list. On the map, drag (or middle-drag) to pan, use the
 wheel to zoom, and double-click anywhere to put the case's location there.
 
-Under the map, choose the tile source. When it is an aerial source, choose the
-area to download and press **Download aerial image**: the yellow rectangle on
+Under the map, choose the tile source, and the area every download takes (below).
+**Download for this area** is two tabs: **Aerial image** and **Terrain (3-D)**
+(*Geographic terrain*, under *Terrain*). On **Aerial image**, with an aerial source
+chosen, press **Download aerial image**: the yellow rectangle on
 the map, aligned to the case's axes, is downloaded and laid on the ground as the
 case's aerial site image (**Environment › Aerial Image...**), or, with **Add as
 a new layer** on, as a layer above it. It is placed
@@ -131,7 +141,17 @@ instead of panning (middle-drag still pans, and the wheel still zooms), and
 **Clear area** returns to the square. When the case
 has no location yet, drawing the area also sets it, at the area's center, so
 the download buttons work at once; a case that already has a location is never
-moved by drawing. The orange
+moved by drawing. When the area does not hold the case origin, the line under
+it says how far away the origin is. With nothing yet placed against the location
+(no aerial picture, no downloaded terrain), a download moves the location to the
+area's center first and says so, so the picture and the terrain lie at the
+origin rather than however far off the area was drawn (an origin set by **Use
+this place** on a town is the town's center; past 2000 m the 3-D view does not
+draw at all). With something already placed, **Move the Location to this area**
+does it on request: downloaded pictures move with it and stay where they are on
+the earth, while vehicles, the site geometry and a downloaded terrain keep their
+place in the case's axes. After a download the 3-D view frames the new picture.
+The orange
 rectangle is what you dragged; the yellow one is what is downloaded, the
 smallest rectangle aligned to the case's axes that covers it, so it is larger
 than the selection whenever the North offset turns the case away from the
@@ -310,8 +330,9 @@ comes in, up to about a minute. LiDAR tiles are a desktop feature: USGS's
 lidar server does not let a web page read its files, so there the section says to
 download the tile yourself and load it under **Survey Point Cloud (scan)** in the Environment dialog's Terrain section.
 
-The section sits on the **Site** stage, under the **Map**, because it takes the
-same area as **Download aerial image**: the rectangle dragged under **Select
+The section is the **Terrain (3-D)** tab of **Download for this area**, under the
+**Map**, beside the **Aerial image** tab, because it takes the same area as
+**Download aerial image**: the rectangle dragged under **Select
 area** on the map, or the square of the size chosen beside it (turned by the
 North offset like the case itself). There is no second area to choose here.
 The size lists show round numbers in the units you work in (feet or meters).
@@ -456,7 +477,7 @@ only, like the rest of the world.
 
 Lights of the site itself — street lights, work lights, a floodlight on a
 pole — not attached to any vehicle. **Add Light** places one 8 m above the
-ground at the middle of the view; **Duplicate** and **Delete** manage the list.
+ground at the middle of the view; **Copy** and **Delete** manage the list.
 
 For the selected light: **Name**; **On**; **On in daylight too**; **Type**
 (**Point (every way)** or **Spot (a cone)**); **X (forward)** and **Y (right)**
@@ -536,7 +557,7 @@ Its **Type** decides what it does in a run:
 | **Water** | Water standing on the ground. The ground keeps its own material; the hydroplaning models of SIMON and EDSMAC4 read the depth and the wet friction. |
 
 The list shows each surface's **On** switch, name, **Type**, **Layer** and
-status. Pick a type and click **Add Surface** to make one; **Duplicate** and
+status. Pick a type and click **Add Surface** to make one; **Copy** and
 **Delete** manage the list. For the selected surface:
 
 While results are on screen the site's physical properties (these surfaces and

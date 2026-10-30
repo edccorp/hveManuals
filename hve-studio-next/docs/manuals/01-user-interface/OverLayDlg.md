@@ -10,7 +10,7 @@ Each layer and each surface has an **eye** switch (**Draw**: show it in the pict
 
 - Ctrl-click an eye to show only that layer or surface; Shift-click a layer's eye to switch its surfaces too.
 - Drag down a column of switches to set several at once.
-- Right-click a layer or surface for a menu; the commands offered include **Show Only This**, **Show All**, **Hide**, **Hide All**, **Make All Drivable** / **Make None Drivable**, **Move to Layer**, **New Layer**, **Rename**, **Duplicate**, **Delete** and **Delete Layer**.
+- Right-click a layer or surface for a menu; the commands offered include **Show Only This**, **Show All**, **Hide**, **Hide All**, **Make All Drivable** / **Make None Drivable**, **Move to Layer**, **New Layer**, **Rename**, **Copy**, **Delete** and **Delete Layer**.
 - Drag surfaces onto a layer to move them to it. The **Search** box filters the list.
 - The **Type** column gives each surface's HVE type (**Road**, **Friction Zone**, **Curb**, **Water**, **Other**) and changes it; with several surfaces selected, the choice applies to all of them. **Other** is scenery that no vehicle drives on, so choosing it switches **Drive** off. A site read from an HVE geometry file (`.h3d`) takes each surface's type from the file.
 

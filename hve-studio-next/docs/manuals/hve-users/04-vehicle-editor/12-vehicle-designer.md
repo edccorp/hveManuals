@@ -133,28 +133,33 @@ is pointed at one.
 **Events** use it. Click a row to work on that vehicle: the designer, the
 Vehicle editor and the 3-D view all follow it. **Name** under the list renames
 the selected vehicle (reports, channels and event slots show it; two vehicles of
-a case may not share one). **Duplicate** copies the selected
-vehicle with every setting, as a new vehicle after it in no event (the Vehicles
-panel's **Dup**); it is unavailable while results are on screen, because the copy
-renumbers the vehicles after it.
+a case may not share one). **Copy** copies the selected
+vehicle with every setting, as a new vehicle at the end of the list in no event
+(the Vehicles panel's **Copy**), and selects it so it can be edited at once. It is
+available while results are on screen: the copy renumbers no other vehicle, so
+the run keeps its own.
 
 **Add or replace from a database** is the **Add Vehicle** window's own list (see
 Vehicle › Add...): **Built in (no database needed)**, HVE's generic vehicles by
 type and class, for a vehicle that is in no database, then the search
-(**Filter**, **Clear**, **Generics**, **Database**) and the sortable table of
-every vehicle in the loaded databases. Clicking a vehicle — in the table or in
-the built-in list — **picks** it, and the four views below draw the picked vehicle
-before anything is added: its body from its own mesh file (or its extents box,
-with the reason, when it has no mesh or the mesh cannot be opened), its tires,
-lights and CG. With nothing picked they draw the case vehicle selected above.
-
-The stage fits the window without scrolling: the vehicles, the list and the
-buttons on the left, and on the right the four views, sized to the height
-there is. **Hide the four views** (top left) gives the vehicle list and the
-database table the stage's whole width, for their columns; **Show the four
-views** brings them back. The choice is remembered. The views are **Side (from the right)**, **Top**, **Front** and **3-D**, two by
-two. The 3-D view turns with a left-button drag and returns to its starting
+(**Filter**, **Clear**, **Generics**) and the sortable table of every vehicle in
+the loaded databases, with a filter under each column heading — pick **Type**,
+**Make**, **Model**, **Year** and **Body** in turn, as in HVE, and each lists only
+what the picks before it leave (see the Add Vehicle window). Clicking a vehicle —
+in the table or in the built-in list — **picks** it, and the **3-D preview**
+draws the picked vehicle before anything is added: its body from its own mesh
+file (or its extents box, with the reason, when it has no mesh or the mesh
+cannot be opened) and its tires. With nothing picked it draws the case vehicle
+selected above. It turns with a left-button drag and returns to its starting
 angle on a double-click; the angle is kept as you change vehicles.
+
+The stage fits the window without scrolling: the vehicles in the case and the
+3-D preview side by side across the top, then the database table the stage's
+whole width, as tall as the window allows, with the buttons under it. **Hide the
+3-D preview** (top left) gives the vehicles in the case the top's whole width;
+**Show the 3-D preview** brings it back. The choice is remembered. The side, top
+and front views with the lights, accelerometers and CG marked are on the
+**Geometry**, **Lights** and **Accelerometers** stages, where they are used.
 
 - **Add to case** adds the picked vehicle to the case and selects it, so the
   other twelve stages open on it with its data. It joins no event until an

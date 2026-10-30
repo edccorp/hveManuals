@@ -31,7 +31,8 @@ DamageStudio provides the following information about a collision:
     | Simulated damage in a 3-D viewer | The crushed vehicle in the main viewport, following the playback time |
     | Impulse number, CDC, PDOF, width, offset, height, crush table per impulse | The *DAMAGE DATA* page of **Output › HVE Reports** (end of run, per impulse) |
     | PDOF vector | **View › Scene Display › Vectors › Collision force**, drawn while in contact |
-    | Crush vectors, impulse-center sphere | Not available |
+    | Number of Zones, Elevation/Dist, crush table (Crush Depth, Free Space, Total Depth), crush vectors | **Output › Crush Profile...**, measured on the crushed vehicle at the playback time |
+    | Impulse-center sphere | Not available |
     | Crush depth over the body | A crush heat map through the Shader Editor (*HVE Simulation* › **Crush**) |
     | Undamaged / From File / User-entered views, Multiple Views | Not available |
 
@@ -102,8 +103,11 @@ The 3-D viewer displays the current impulse center and PDOF vector, as well as a
     collision force sample by sample. The arrow points into the CG from the
     direction the force came from, which is HVE's PDOF convention. The per-impulse
     CDC, PDOF, damage width and offset and crush tables are on the *DAMAGE DATA*
-    page of **Output › HVE Reports**. Crush vectors and the impulse-center
-    sphere are not drawn.
+    page of **Output › HVE Reports**. **Output › Crush Profile...** measures the
+    crushed vehicle as DamageStudio does -- Number of Zones, up to five
+    elevations, Crush Depth / Free Space / Total Depth, and the crush vectors
+    drawn on the vehicle ([Output menu](../../hve-users/02-menu-reference/04d-output-menu.md#crush-profile)).
+    The impulse-center sphere is not drawn.
 
 ![Figure: crushed vehicle in the HVE Studio viewport](images/hvn-crush-playback.png)
 *Figure: the struck vehicle of the CityBlockAccident T-bone case (SIMON with DyMESH) at the end of the run in HVE Studio.*

@@ -37,9 +37,11 @@ Size).
     *Contact Search* (and in the DyMESH section of Event Information › Method
     Options). *Automatic* sizes the box from the mesh's own longest triangle
     edge and ignores the box size. A box that is large for a finely meshed
-    vehicle can overflow DyMESH's fixed per-vertex neighbor list, and the run
-    then stops before it starts with a message naming the search box;
-    *Automatic* avoids that.
+    vehicle (or a vertex near a dense DyMESH wheel) can put more than 5000
+    polygons within one vertex's box, more than DyMESH's per-vertex neighbor
+    list holds. HVE stops the run there (-6292); HVE Studio widens the list
+    and goes on, and the run status says how wide it grew. The list only
+    decides which polygons are tested, so the contact is the same.
 
 !!! warning "Not in HVE Studio"
     HVE lists a third search option, *Search all vertices*. HVE's DyMESH engine

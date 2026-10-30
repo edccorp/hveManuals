@@ -54,7 +54,7 @@ options are read by SIMON.
 Displays the [Path Follower](DriverControls7.md) dialog (HVE's HVE Driver page).
 
 **Payload...**
-Displays the Payload dialog. Enabled for the methods that read a payload: SIMON, EDSMAC4, EDSVS, EDVDS and EDVTS.
+Displays the Payload dialog. Enabled for the methods that read a payload: SIMON, EDSMAC4, EDSVS, EDVDS, EDVTS and GBF.
 
 **Lights...**
 Displays the event Lights window: which of each vehicle's lamps the run may
@@ -62,7 +62,7 @@ switch on, and how (see [Driver Controls](DriverControls.md#lights)). Enabled
 for SIMON and EDSMAC4.
 
 **Wheels...**
-Displays the event Wheels dialog. Enabled for the simulation methods.
+Displays the event Wheels dialog. Enabled for the simulation methods, and for GBF, which reads each brake's measured stroke and drum temperature there.
 
 **Accelerometers...**
 Displays the Accelerometers dialog. Enabled for the methods that compute accelerometer output: SIMON, EDSMAC4, EDVDS and EDVSM. (EDSMAC, EDSVS, EDVTS and EDGEN produce no accelerometer output, as in HVE.)

@@ -43,7 +43,7 @@ The Humans panel manages all the humans in the current case. It contains:
 
 - **Add Human** — Adds a new human to the case and generates its body with
   GEBOD (see Adding New Humans, below).
-- **Remove** — Removes the current human from the case.
+- **Delete** — Deletes the current human from the case.
 - **Human** — A list of the names of all the humans in the case. Select a
   different name to make it the current human.
 - **Identity** — Name and Location (see below).

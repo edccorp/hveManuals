@@ -56,8 +56,9 @@ of two ways — the two are the same selection:
 - **Pick it from the list beside Object/World.** The list groups *Vehicles*,
   *Humans* (when a body can be selected in the current editor), *Road
   surfaces*, when no environment is loaded, *Ground (no environment
-  loaded)*, and, when the case has a survey scan, *Survey scan* with its
-  **Point cloud**. Picking a road surface switches to the Environment editor, as a
+  loaded)*, when the case has a survey scan, *Survey scan* with its
+  **Point cloud**, and *Aerial pictures* with each aerial picture the case
+  has. Picking a road surface switches to the Environment editor, as a
   click on the ground does.
 
 **World** edits the sky behind everything and the light it casts.
@@ -76,6 +77,7 @@ Editor until you click it.
 | A road surface | one slot, named after the surface |
 | The ground plane | one slot |
 | The point cloud | one slot |
+| An aerial picture | one slot, named **Aerial image** (the base picture) or **Aerial layer N** |
 
 Each row shows what the slot wears. A part with no material of its own shows
 in brackets what it draws in instead: the whole vehicle's material, or
@@ -119,7 +121,7 @@ These buttons act on the **active** slot (the highlighted row):
 | **▼** (browse) | Links any material of the right kind into the slot. Each is listed with the number of slots that wear it. The last entry, **Purge unused (N)**, deletes every material no slot wears. |
 | Name field | Renames the material, for every slot that wears it. |
 | **N users** | Shown when more than one slot wears the material, so an edit changes all of them. Click to give this slot a copy of its own. With one user it reads **1 user**. |
-| **Duplicate** | Gives the slot a copy of its material. |
+| **Copy** | Gives the slot a copy of its material. |
 | **X Unlink** | Takes the material off the slot. The material stays in the case until purged, if nothing else wears it. |
 | **+ New** | Shown on an empty slot. Makes a new material for it. |
 
@@ -444,6 +446,31 @@ With no material the cloud is drawn exactly as it always was. A case that names
 a point cloud keeps its material while the scan is not loaded. The point cloud
 is not exported to glTF or sent to Blender, so neither is its material; both
 say so.
+
+## Aerial pictures
+
+Each aerial picture (the base image and every layer above it, see *Aerial
+Images* in Creating and Editing Environments) takes a material, so a
+photograph can be made grayer, brighter, warmer or more contrasted without
+editing the file.
+
+1. Click the picture in the 3-D view (Environment editor), click its row in the
+   Outliner, choose it under *Aerial pictures* in the object list, or press
+   **Edit in Shader Editor** in **Environment › Aerial Image...** (or **Edit
+   Material...** on its Outliner row). The slot list shows one slot.
+2. **+ New** makes *Object Color → Principled BSDF → Material Output*. Object
+   Color is the photograph's own pixel and its **Opacity**, so the picture draws
+   exactly as before.
+3. Add a **Hue/Saturation/Value**, **Brightness/Contrast**, **Gamma**,
+   **Invert Color** or **Mix Color** node (Shift+A) between the Object Color and
+   the Base Color. Dragging a value redraws the picture at once.
+
+The picture is drawn by the same lit shader as the site, so a material's
+roughness, emission and alpha act on it as on a road surface. The material
+stays with the picture's place in the stack: a new download into the same
+layer keeps it, and moving or deleting a layer takes it along. Aerial pictures
+are not exported to glTF or sent to Blender, so neither are their materials;
+both say so.
 
 ## Saving
 

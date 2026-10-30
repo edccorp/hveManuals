@@ -38,7 +38,7 @@ As in HVE, the start position you enter is where the loaded CG goes. So before a
     Results saved by a build before 2026-10-28 (SIMON) or 2026-10-29 (EDVDS) do not record the loaded CG. Such a vehicle is drawn displaced by the CG shift (a loaded trailer drawn forward of its king pin) until the event is run again.
 
 !!! note "HVE Studio"
-    Both **Mass** and **Weight** are editable (HVE's mass field is read-only). The dialog is offered for the methods whose program reads a payload (SIMON, EDSMAC4, EDSVS, EDVDS, EDVTS); HVE enables or disables individual fields according to the calculation method instead. There is no payload orientation: no engine reads one.
+    Both **Mass** and **Weight** are editable (HVE's mass field is read-only). The dialog is offered for the methods whose program reads a payload (SIMON, EDSMAC4, EDSVS, EDVDS, EDVTS, GBF); HVE enables or disables individual fields according to the calculation method instead. There is no payload orientation: no engine reads one.
 
 !!! tip "New in HVE Studio"
     The point-mass warning. A vehicle can also carry occupants and cargo into every event on its own **Aboard** list (**Inertia / Mass** dialog). In SIMON and EDVDS such a load can be handed over as payload, and is then combined with the payload entered here when the event runs; this dialog shows only the event's own payload. See [Aboard: occupants and cargo on the vehicle](../new-features/12-case-intake-and-vehicle-data.md#aboard-occupants-and-cargo-on-the-vehicle).

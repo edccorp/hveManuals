@@ -68,9 +68,13 @@ sections are:
   (EDCRASH) — each vehicle's starting state or scene data.
 - **Lighting** — a summary of the sun and sky, with a button to edit them.
 
-!!! warning "Not in HVE Studio"
-    HVE's **Copy Event** is not available. **+** adds a new, empty event
-    that uses the current event's calculation method.
+**+** adds a new, empty event that uses the current event's calculation method.
+**Copy** (beside **−**; **Copy this event** at the top of the Event Designer's
+Event stage; **Event › Copy Event**) adds a copy of the current
+event — its vehicles, positions, driver inputs and options, named "*name* copy" —
+at the end, with no results, and makes it the current event, so it can be
+changed and run beside the original. Both are available while the results of a
+run are on screen; neither touches the solved event.
 
 > **NOTE:** **−** deletes the current event. It is not available while the
 > results of a run are on screen, because deleting an event renumbers the

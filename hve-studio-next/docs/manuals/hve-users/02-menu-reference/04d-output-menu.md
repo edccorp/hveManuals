@@ -27,6 +27,7 @@ before that they say there is nothing to show.
 | **Run Simulation...** | Opens the Event Designer on its Run stage and runs the active event | the Event Controller's execute button |
 | **Damage Studio Options...** | What the Damage Studio displays | Damage Studio |
 | **Damage Studio Report...** | The Damage Studio report | Damage Studio |
+| **Crush Profile...** | DamageStudio's crush table, measured on the crushed vehicle: Number of Zones, elevations, Crush Depth / Free Space / Total Depth, crush vectors in the view — see [CRUSH PROFILE](#crush-profile) | DamageStudio's Damage Profile group |
 | **Export Variables...** | Export output to a file | File › Export |
 
 The panels — Key Results and Output Graph — can also
@@ -229,6 +230,40 @@ are locked until **Reset**.
 **Description:** **Damage Studio Options** chooses how the PDOF and the crush
 vectors are displayed and which key results to show. **Damage Studio Report**
 shows the report; **Save...** writes it to a text file.
+
+---
+
+## CRUSH PROFILE
+
+**Menu Option:** Output › Crush Profile... · *HVE: DamageStudio's Damage Profile group and crush table*
+
+**Description:** Measures the crush of a vehicle the run crushed, the way HVE's DamageStudio does, on the body
+as the viewport shows it at the playback time -- scrub the playback and it measures again.
+
+- **Vehicle** (with **Prev** and **Next**): a vehicle of the event whose results are loaded.
+- **Face**: the damaged face. **Auto** picks the face with the most crush; **Front**, **Back**, **Right** or
+  **Left** measures that one.
+- **Number of Zones** (1 to 9): zones across the damage width; the crush is measured at zones + 1 stations,
+  C1 to Cn. C1 is at the left end of front or back damage and at the rear end of side damage (EDCRASH's order).
+- **Elevations** (1 to 5): heights across the damage height at which the stations are measured, spread from its
+  top to its bottom. **Elevation No** picks one; its **Elevation** (above the CG) can be moved, and **Even** puts
+  it back.
+- **Show crush vectors** draws the chosen elevation's measurement on the vehicle: blue from the vehicle's overall
+  box in to the undamaged surface (free space), red on in to the damaged surface (crush), a yellow tick at the
+  damaged surface.
+- **Measure again** measures the body as it is drawn now.
+
+The **Damage Profile** lines give the face, the damage **Width** and its **Offset** from the CG along the face,
+the **Damage Height** and its **Height Offset** above the CG, and the **Maximum Crush**. The **Crush Table** lists,
+for the chosen elevation, each station's **Crush Depth**, **Free Space** (from the vehicle's overall box in to the
+undamaged surface) and **Total Depth** (in to the damaged surface): HVE's definitions. **Every Elevation** shows
+the crush depth at every elevation and station, and **Copy Table** copies the profile and that grid,
+tab-separated, for a spreadsheet.
+
+The measurement is the drawn body's: with **Smooth crush deformation** on (Event › Vehicle Mesh) it is the
+smoothed shape. A vehicle drawn as a box has no surface to measure, and a time before the impact says nothing is
+crushed. The engine's own end-of-run crush tables, at its fixed four zones, stay on the *DAMAGE DATA* page of
+**Output › HVE Reports**.
 
 ---
 
