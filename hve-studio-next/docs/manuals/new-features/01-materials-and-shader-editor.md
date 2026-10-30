@@ -223,17 +223,36 @@ Nothing flows the other way: the node reads the run and writes nothing to it.
 #### A crush heat map
 
 1. Solve an event with crush (for example a DyMESH collision).
-2. Select the struck vehicle and its **(whole)** slot (or its BODY slot), and
-   press **+ New** if the slot is empty. The new material is *Object Color →
-   Principled BSDF → Material Output*.
-3. Add an **HVE Simulation** node, a **Map Range** node and a **Color Ramp**
-   node. Link **Crush → Map Range Value**, **Map Range Result → Color Ramp
-   Fac**, and **Color Ramp Color → Principled BSDF Emission Color**.
-4. Set Map Range's **From Max** to the depth that should read fully hot (0.25 m
-   in the figure), choose a three-stop ramp (black, red, yellow), and set the
-   Principled BSDF's **Emission Strength** (4 in the figure).
-5. Scrub the playback bar. The heat follows the crush as it forms; at t = 0,
-   before the impact, the body draws exactly as it would with Crush unlinked.
+2. Select the struck vehicle and its body slot (or its **(whole)** slot), and
+   press **+ New** if the slot is empty.
+3. Press **Crush Heat Map...** beside **X Unlink**, choose a **Gradient**, set
+   **Full color at** (the crush depth that reaches the gradient's last color;
+   0.25 m by default), and press **Apply**.
+4. Scrub the playback bar. The heat follows the crush as it forms; at t = 0,
+   before the impact, the body draws exactly as it did before.
+
+The body keeps its own paint where nothing was crushed, and crushed metal is
+colored by its depth. The color is the surface's own (Base Color), so it is lit
+and shaded like the rest of the body rather than glowing. The gradients:
+
+- **Engineering (blue-green-yellow-red)**, the default: the look of an FEA
+  contour plot, shallow crush blue and the deepest red.
+- **Viridis (purple-teal-yellow)**: even steps of brightness, so it still reads
+  in grayscale and for most color-blind readers.
+- **Yellow-red**, **Grayscale (light-dark)**, and **Heat (black-red-yellow)**
+  (the earlier, fire-like look).
+
+**Crush Heat Map...** again on the same material changes that heat map's
+gradient and depth instead of adding a second one.
+
+Everything it adds is ordinary nodes, so all of it can be changed in the graph:
+*HVE Simulation* **Crush** → **Map Range** (From Max = the full-color depth) →
+**Color Ramp** → **Mix Color** B, with a second Map Range (Crush from 0 to
+5 mm) as the Mix factor and the paint on A, into the Principled BSDF's **Base
+Color**. Each **Color Ramp** has a **Preset...** list with the same gradients,
+and each of its stops has its own position and color picker. For a glowing map
+instead, link the Color Ramp to the Principled BSDF's **Emission Color** and
+raise **Emission Strength**.
 
 ![A crush heat map on the struck vehicle of a solved T-bone](images/hvn-crush-heatmap.png)
 

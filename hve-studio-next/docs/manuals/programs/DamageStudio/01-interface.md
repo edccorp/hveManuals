@@ -112,15 +112,17 @@ The 3-D viewer displays the current impulse center and PDOF vector, as well as a
     **Crush heat map.** In the **Shader Editor** (View › Shader Editor), the
     *HVE Simulation* node has a **Crush** output: how far the run's crush moved
     each vertex of the vehicle body from the undamaged mesh, in meters (0 where
-    it did not move). Feed it through a Map Range and a Color Ramp, or straight
-    into an Emission strength, to color a vehicle by its crush depth. It follows
+    it did not move). **Crush Heat Map...** beside the material's name builds the
+    whole map in one step, with a choice of gradient (engineering blue-to-red by
+    default); or feed Crush through a Map Range and a Color Ramp yourself, to
+    color a vehicle by its crush depth. It follows
     the playback time. It is a display of the deformed mesh: with **Smooth crush
     deformation** on (Event › Vehicle Mesh), it shows the smoothed shape, not
     only the vertices the solver crushed. It is not sent through the Blender
     live link or baked into glTF.
 
 ![Figure: crush heat map](images/hvn-crush-heatmap.png)
-*Figure: the same vehicle wearing a material whose emission strength is the Crush output; the bright region is where the body was crushed.*
+*Figure: the same vehicle with a crush heat map (Engineering gradient, full color at 0.25 m): its own paint where nothing was crushed, blue to red over the crush.*
 
 ### Damage, User-entered ("User-entered")
 
