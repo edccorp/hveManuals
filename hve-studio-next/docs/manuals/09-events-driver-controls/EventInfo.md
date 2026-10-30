@@ -31,8 +31,9 @@ back once every section is hidden), or for **Show all** and **Reset order**.
 *name [method]*. Choosing one makes it the active event; every Event-menu
 dialog edits the active event.
 
-**+** adds a new event (named *Event n*, with the active event's calculation
-method) and makes it active. **−** deletes the active event; the remaining
+**Add** adds a new event (named *Event n*, with the active event's calculation
+method, or in a case with no events the method you used last) and makes it
+active. **Delete** deletes the active event; the remaining
 events are renumbered. An event cannot be deleted while results for it are on
 screen.
 

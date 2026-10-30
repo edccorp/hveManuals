@@ -416,7 +416,7 @@ when the same stage is re-opened.
 
 Each entry is one sentence naming the symptom, the stat it costs and the fix,
 graded **Fix**, **Consider** or **Note**, with a **Go to** button for the stage
-that owns the input. A stage with an open Fix carries a red marker on the stage
+that owns the input (none when that stage is already open). A stage with an open Fix carries a red marker on the stage
 bar. The count beside the panel's title says how many rules are checked; hover
 it for the list. A rule that lacks one of its inputs stays silent rather than
 firing on a default, and a vehicle that trips no rule is told so.

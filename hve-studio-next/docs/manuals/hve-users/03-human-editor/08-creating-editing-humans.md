@@ -121,8 +121,11 @@ to the anthropometry shown. **Regenerate GEBOD Body** regenerates it on
 demand, which discards any edits made to the segment and joint data. The text
 beside the button reports whether the human has a body. The Body Segments
 dialog offers the same as **Re-seed GEBOD**, and **Re-seed from occupant
-mass**, which builds a simplified body from standard segment mass fractions
-scaled by the human's mass (a fallback, not GEBOD).
+mass**, which runs GEBOD with the human's weight stated as the occupant mass
+instead of a weight percentile, so the whole body (segment sizes, masses and
+joints) follows that weight. Both keep the segment colors. Only if GEBOD cannot
+run does it fall back to a simplified body from standard segment mass fractions,
+and it says so.
 
 !!! warning "Not in HVE Studio"
     HVE's GEBOD Human Information dialog offers a **Basis** selector, age in

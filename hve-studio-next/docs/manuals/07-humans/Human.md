@@ -21,7 +21,8 @@ the window offers **Seed GEBOD Body** (build the body from the occupant's
 subject type, age and percentiles with the GEBOD regression, as HVE does) and
 **Seed Standard Body** (a simple body scaled to the occupant's mass). Once a body
 exists, **Re-seed GEBOD** and **Re-seed from occupant mass** rebuild it,
-replacing any edits.
+replacing any edits but keeping the segment colors; the second runs GEBOD with
+the occupant mass as the stated weight.
 
 ## Segment
 

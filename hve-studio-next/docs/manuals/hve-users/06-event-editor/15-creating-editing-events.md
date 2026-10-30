@@ -216,8 +216,10 @@ Event › Event Designer...):
 New events are added in the Event Information panel. To add a new event,
 perform the following steps:
 
-1. Click **+** in the **Events** section. A new event named *Event n* is
-   added and becomes the current event.
+1. Click **Add** in the **Events** section. A new event named *Event n* is
+   added and becomes the current event. It starts on the active event's
+   calculation method; the first event of a case starts on the method you used
+   last (EDCRASH only until you have chosen one).
 2. Enter a **Name** in the **Event** section.
 3. Choose the calculation method from the **Method** list in the
    **Calculation Method** section.
@@ -402,7 +404,7 @@ To select and edit an event, perform the following steps:
 
 !!! warning "Not in HVE Studio"
     HVE's Edit › Copy for events is not available. To study a change to one
-    parameter, add a new event with **+**, select the same vehicles and set
+    parameter, add a new event with **Add**, select the same vehicles and set
     it up, or save the case under a new name (File › Save Case As...) and
     change the copy.
 

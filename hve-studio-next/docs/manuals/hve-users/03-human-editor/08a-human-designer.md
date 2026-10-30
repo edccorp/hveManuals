@@ -25,10 +25,27 @@ stage). A click on a body in the 3-D view also selects it.
 2. **Body Segments**: the 15 segments' mass, inertia, color, contact ellipsoids
    and joint locations. A click on a body part in the 3-D view selects that
    segment here.
-3. **Joint Properties**: the 14 joints' stops, stiffness and damping.
+3. **Joint Properties**: the 14 joints' stops, stiffness and damping. A click
+   on a body part in the 3-D view shows the joint above it (the pelvis shows the
+   lumbar joint), and choosing a joint selects its body part in the view.
 4. **Body Pose**: the body's posture and initial velocity in the **active**
    event. HVE states a pose per event, so the same human can sit differently
    in each; the Events stage makes another of its events active.
+
+   **Turning a body part in the 3-D view.** Click the part, then press **R**,
+   as in Blender: moving the mouse sideways turns it about the view axis, half
+   a degree a pixel. **X**, **Y** or **Z** lock the turn to the body's axis
+   (forward, right, down); the same key again turns it about the part's own
+   axis, and a third time goes back to the view axis. Type a number for an exact
+   angle in degrees (**-** makes it negative, Backspace edits it); hold **Ctrl**
+   to snap to 5°. **Enter** or a click keeps the turn, **Esc** or a right click
+   puts the body back. The part turns about the joint that carries it, so
+   everything below it follows (turning the upper leg carries the lower leg and
+   the foot), and the pelvis turns the whole body. The angles written are the
+   Body Pose stage's own, relative to the parent segment, and posing is switched
+   on if it was off. The human must be in the active event, and the pose is
+   locked while that event's results are on screen; the 3-D view says so if R
+   cannot start.
 5. **Injury Tolerances**: the limits EDHIS tests the run's head, chest, knee
    and belt loads against.
 6. **Events**: every event that lists the human, its calculation method, what
@@ -57,7 +74,7 @@ in US units. In parentheses, what each was when the stage was opened, or at
 | Note | Events | The case has events and none lists the human. |
 | Note | Events | The human is in some event but not the active one, whose pose the Body Pose stage edits. |
 
-Each row's **Go to** button opens the stage that owns the input.
+Each row's **Go to** button opens the stage that owns the input (a row about the stage already open has none).
 
 <!-- NAV -->
 
