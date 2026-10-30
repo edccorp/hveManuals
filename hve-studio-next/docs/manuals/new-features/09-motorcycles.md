@@ -100,6 +100,34 @@ a motorcycle where you have them.
 None of the HVE methods models lean, countersteer, gyroscopic effects, camber
 thrust at large lean, the rider as a separate body, or a fall.
 
+## The rider in a SIMON event
+
+To model the rider, add a human to the SIMON event (**Event Information ›
+Humans in Event**) and seat it on the motorcycle: **Occupies** the
+motorcycle, **Seat X from CG**, **Seat Y from CG** and **Seat Z from CG** where
+the rider sits, and **Pose** for its riding posture. The rider
+rides the machine, drawn on its seat, until it **leaves** it -- when the
+motorcycle first contacts something (or, on the nonlinear model, leans past
+70°). From that instant the rider is solved as a **GATB body of its own**
+(experimental):
+
+- It starts where it sat, in the posture you gave it, moving as the seat moved.
+- It meets the **vehicle nearest the motorcycle** at that instant -- that
+  vehicle's mesh, as the run crushed it -- and the **road**. With no other
+  vehicle in the event it meets its own machine.
+- The run status gives the moment it left, what it met, its **head and torso
+  peak accelerations** and how far its pelvis ended from where it left the seat;
+  the peaks are also the run's occupant results. Playback draws it seated, then
+  thrown.
+
+What it is not: it is **one way** -- the rider moves no vehicle, and after it
+leaves the motorcycle it does not meet the motorcycle again when another vehicle
+is what it met. A vehicle with no contact surfaces of its own is given a ground
+and a body surface in HVE's default vehicle material, and the status says so.
+The motorcycle's weight should include its rider (the seeded motorcycle's does).
+Nothing about the rider's injury response has been validated against a
+measurement.
+
 ## The SINGLETRACK method
 
 SINGLETRACK is the **Whipple bicycle model** in the published benchmark form
@@ -152,7 +180,42 @@ impact.
   rather than simulated.
 - **No wobble.** Front-end wobble needs frame flexibility this rigid model does
   not have; a run that stays upright here is not evidence a real machine would.
+  (The Nonlinear model has a tire-driven wobble; see below.)
 - **The bridge from the case is an assumption.** The case's mass, wheelbase, CG
   height, rake and tire radii are mapped onto the benchmark's four bodies using
   published class proportions. A lean result depends on them; measured values
   should replace them.
+
+### How far the Nonlinear model has been checked
+
+The **Nonlinear** model is the default. What it has been checked against, and
+where its answers stop being supported:
+
+- **Small lean, against the published benchmark.** On stiff tires its balance
+  and steer behavior is the Whipple benchmark's: the same four modes and the
+  same self-stable speed range (4.30 to 6.01 m/s against the benchmark's 4.29
+  to 6.02).
+- **Turning.** On measured motorcycle tires, a steady turn has the radius the
+  exact calculation gives for its lean and speed, within 2%, up to 30° of lean
+  (about 0.5 g), from 5 to 40 m/s. The rider holds turns to about 45° (0.8 g).
+  At 50° and beyond the run is at the tires' grip limit: whether it holds or
+  goes down depends on the rider model as much as on the machine.
+- **Weave and wobble.** The machine's slow sway (weave, 1 to 3 Hz) and the
+  front end's shake (wobble, 7 to 12 Hz) have the frequencies the published
+  studies describe. Without frame flex the wobble becomes unstable above about
+  25 m/s, as published work says a stiff frame does.
+- **Steering-head friction matters.** With the head bearings' friction the
+  seeded motorcycle carries (8 N·m), straight running at 20 to 60 m/s settles
+  after a disturbance. With no friction and no steering damper the front end
+  can shake itself loose above about 20 m/s and the machine goes down, so a
+  case that states neither is told so in the run status.
+- **A leaning machine falls faster than the Whipple model says.** The tires'
+  rounded profile and their aligning moment make the slow fall when nobody
+  steers (capsize) quicker than the linear model's. The rider catches it in
+  every run; it matters for a machine with nobody steering.
+- **Not validated:** any number against a real motorcycle's measured response,
+  and frame flex, suspension and the rider's own body movement, which the real
+  machine's weave and wobble depend on.
+
+The measurements behind each line are in the developer documentation,
+`docs/MOTORCYCLE.md` section 9.

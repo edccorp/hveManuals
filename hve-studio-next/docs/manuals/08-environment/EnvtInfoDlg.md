@@ -338,9 +338,15 @@ North offset like the case itself). There is no second area to choose here.
 The size lists show round numbers in the units you work in (feet or meters).
 
 **Cell size** — The grid the terrain is resampled to: 1 to 100 ft, or 0.5 to
-30 m. Under the choices the section states the area, the number of cells and the
-number of road polygons the solver would search (two per quad). Over 200,000
-quads it says the site is heavy for the solver; over 500,000 it refuses.
+30 m. Under the list the section states the chosen cell, the area, the number of
+cells and the number of road polygons the solver would search (two per quad).
+Over 200,000 quads it says the site is heavy for the solver. A size that would
+put the area over the 500,000-quad limit of one terrain is grayed in the list
+and marked *too fine for this area*. If the chosen size is over the limit the
+section says so, the two download buttons are grayed, and a **Use 5 ft cells**
+button (naming the finest size that fits) switches to it; if no size fits, draw
+a smaller area on the map. The test keeps 5% in hand, because the grid USGS
+returns is the area's bounding box in UTM and a little larger than the area.
 
 **Find elevation data** — Lists the elevation surveys USGS has under the area
 (under the heading **Surveys under the area**), finest first, each with its resolution, its vertical datum (NAVD 88 for USGS
