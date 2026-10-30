@@ -56,7 +56,7 @@ After the events are selected, they normally must be edited so each event occurs
 
 Each row of the Playback Sequence table has three times, entered in seconds:
 
-- **Start** and **End** — the times, on the sequence's own timeline, between which the event plays. Setting them shows only a portion of the event (HVE's Tstart and Tend).
+- **Start** and **End** — the times, on the sequence's own timeline, between which the event plays. Setting them shows only a portion of the event (HVE's Tstart and Tend). A Start earlier than the event's own beginning moves the event there instead (its Offset changes and any trim is kept), so an event dragged later on the timeline can be typed back to an earlier start.
 - **Offset** — where the event's own time zero falls on the sequence's timeline (HVE's Tdelay).
 
 !!! note "HVE Studio: Separate copy"
@@ -75,6 +75,10 @@ Each row of the Playback Sequence table has three times, entered in seconds:
 !!! note "HVE Studio"
     As in HVE's dialog, Start and End are shown and entered on the
     sequence's timeline, while the case stores them relative to the event.
+
+To change the order of the events, drag a row by its colored square (left of
+the event's name) up or down onto another row. The order is what **Stack
+Sequentially** lays end to end.
 
 Below the table, each event is drawn as a bar on a **timeline**. Drag a bar to slide that event in time (Ctrl snaps); click elsewhere on the timeline to move the current time there. Two buttons set the timing for you:
 

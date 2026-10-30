@@ -32,14 +32,15 @@ A note beside the method says what the values mean.
 
 ## Data Grid
 
-- Under **Pedal**, a case authored in HVE Studio has a *Time (s) → Brake* table
-  from 0 (released) to 1 (full apply), scaled to the vehicle's brake-pressure
-  curve (its full-pedal force). A case imported from HVE carries HVE's real
-  **pedal force** table, *Time (s) → Pedal force* in the units set in
-  Preferences; it is used as entered and replaces the 0–1 table.
-  **Discard pedal-force table** converts it back to a 0–1 table. A pedal-force
-  table whose entries are all zero is labeled as a driver who never braked —
-  it is real data and is sent to the engine.
+- Under **At Driver**, the table is HVE's **pedal force** table,
+  *Time (s) → Pedal force* in the units set in Preferences, used as entered. A
+  note above it gives the full-pedal force of the vehicle's brake system (the
+  top of its brake-pressure curve). A case that has only a 0–1 brake table (one
+  made in an earlier version, or a vehicle that has not had its table edited
+  yet) shows it as the force it stands for, each value times the full-pedal
+  force; the first edit stores the pedal-force table. A pedal-force table whose
+  entries are all zero is labeled as a driver who never braked — it is real
+  data and is sent to the engine.
 - Under **Wheel Force**, the per-wheel force table, with **Add** and an **X**
   per row. With no rows entered, the run falls back to % of friction.
 - Under **% of Friction**, a single *Time (s) → Brake* table (0–1) applied to

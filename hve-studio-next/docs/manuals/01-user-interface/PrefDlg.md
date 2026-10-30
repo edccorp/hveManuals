@@ -25,6 +25,28 @@ Some fields keep a fixed frame and say so beside the field: an occupant segment'
 ### Background Color
 The color behind the 3-D scene. Click the swatch for a color picker, or type the values.
 
+## Language
+
+### Language
+The language the windows are shown in: **English (as written)**, each language pack found, and **Pseudo (coverage check)**. It changes at once and is saved between sessions.
+
+Only what is shown changes. Every label keeps its place, a case file, a report and the physics never see a translation, and your own wording for a label (**Tools › Output Settings... › Terms**) is kept over a language's. A pack that brings its own font (for a script the default font lacks) uses it from the next start.
+
+**Pseudo (coverage check)** is not a language: every label is shown with accents and in brackets. Text that stays plain is text a translation does not reach, and a label whose closing bracket is cut off is one a longer translation would cut off too.
+
+### Import Language Pack...
+Reads a language pack and copies it into your languages folder (the note under these buttons names it); choose it in **Language** afterwards. A pack is a JSON file:
+
+```json
+{ "language": "Español", "code": "es", "font": "NotoSans-Regular.ttf",
+  "strings": [ { "key": "Brake", "text": "Freno" } ] }
+```
+
+`key` is the label as the window shows it in English; `font` is optional, a TTF file beside the pack. A pack in which every `text` is empty is refused. Packs are also read from a `languages` folder beside the program.
+
+### Export Translation Template..., Collect labels for a template, Rescan
+To make a pack: tick **Collect labels for a template**, open the windows to be translated, then **Export Translation Template...**. The file lists every label collected (and every label the Terms tab lists) with an empty `text` to fill in, or with the current language's text when one is chosen, to revise a pack. The count beside the checkbox is how many labels have been collected. **Rescan** looks for packs again after a file is dropped into a languages folder.
+
 ## Diagnostics
 
 ### Diagnostic Level
@@ -39,6 +61,7 @@ A switch and an interval in minutes (at least 1).
     - **Date Format** sets how dates are shown in the Audit Log, the file browser and the run report.
     - **Enable Auto-Save** (on by default) and **Interval (min)** write a recovery copy of the case, `<case>.autosave.hvex` beside it, while there are unsaved changes; the case file itself is never written. Saving the case removes the copy, and opening a case whose recovery copy is newer offers to open the copy.
     - These settings are saved between sessions.
+    - **Language**: HVE's wording comes from its `Language.rsc` and `language_overrides.rsc` files. HVE Studio's language packs translate every window at once, and the Terms tab can read HVE's two files as well.
 
 !!! warning "Not in HVE Studio"
     - **Diagnostic Level** is grayed: it has nothing to control in HVE Studio, where what a run assumed or repaired is always in its run status.

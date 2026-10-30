@@ -113,7 +113,13 @@ column. EDHIS interpolates its table in straight lines, so for an EDHIS event
 the graph is what runs.
 
 The grid has one row per time point: **#**, **t (s)**, and the six
-degree-of-freedom columns for the selected type; **X** deletes a row.
+degree-of-freedom columns for the selected type; **X** deletes a row. It edits
+like the driver-control tables (see [Driver Controls](../09-events-driver-controls/DriverControls.md#editing-a-table)):
+**Paste** replaces the table with rows copied from a spreadsheet, report or
+text file (time first, then the six columns, in the units the columns show),
+Ctrl+V in a cell pastes from that cell, Tab out of the last cell adds a row,
+and rows selected on their numbers are removed together by **Delete selected**
+or the Delete key.
 
 !!! warning "Not in HVE Studio"
     - **Print...** — there is no print; use **Export file...**.

@@ -19,7 +19,13 @@ section, so a change in either place shows in both:
 
 - **Initial Position** — **X**, **Y** (units set in Preferences) and
   **Heading (deg)**.
-- **Initial Velocity** — **Speed** (units set in Preferences).
+- **Initial Velocity** — **Speed** (units set in Preferences). HVE's own ranges
+  apply by default: above 200 mph (322 km/h) a note under the field asks you to
+  check it, and above 400 mph (644 km/h) the entry is not accepted — the field
+  keeps its value and says why. A run whose vehicle starts past the allowed
+  limit however the speed got into the case (an imported file, for example) is
+  not run, and the run status names the vehicle. Both limits can be changed:
+  right-click the field and choose **Edit limits...**.
 
 Everything else about the starting state — Z height, sideslip, yaw rate, roll,
 pitch and their rates, Auto Position — is entered in the

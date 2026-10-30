@@ -2882,6 +2882,19 @@ where
 - *Use Tow Veh Properties — the tow vehicle's user-entered rear-connection stiffness and damping values are used directly instead of a mass-derived rate.*
 *)*
 
+!!! note "HVE Studio: the static connection force carries the trailer's kingpin load"
+    Before the run, each unit's static axle loads are computed **from the rear unit
+    forward**, so a trailer's front (kingpin) load is passed to the vehicle towing it:
+    it becomes part of that vehicle's static axle loads and suspension preload, and is
+    $\vec F_{C_0}$, the connection's static load. A rig standing still therefore starts
+    at rest, on the ride height its static loads give it. Current HVE builds compute
+    each unit front to back and lose the kingpin load on the towing vehicle, so the
+    connection starts near zero and the trailer settles onto it during the first
+    half second (on a 27 900 lb kingpin load: a 43 600 lb peak, and the tractor's CG
+    moving 3.6 in), and the rig comes to rest about an inch lower. HVE Studio follows
+    the original order, which HVE's own static axle-load report also uses; an event
+    run with **HVE-reference** physics keeps HVE's.
+
 Calculation of connection earth-fixed position, $\vec R$, employs the $A$ matrix defined in Eq. 53,
 
 $$

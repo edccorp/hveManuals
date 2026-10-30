@@ -19,6 +19,7 @@ before that they say there is nothing to show.
 |---|---|---|
 | **Key Results...** | The Key Results panel — key results, and in its *Variable Output* section the selected variables at each output time | Options › Show Key Results; Key Results windows; Variable Output Table |
 | **Output Graph...** | The Output Graph panel — variables plotted against time | Variable Graphing window |
+| **New Output Graph** | Another Output Graph beside the first, with its own variables, X axis and format (up to six); grayed when all six are open | *(new)* |
 | **Variable Selection...** | Select Output Variables, for Key Results | Variable Selection dialog |
 | **HVE Reports...** | The report pages the engine itself builds, among them its ACCIDENT HISTORY page | the engine's report windows, including the Accident History numeric report |
 | **Compare Runs...** | Runs the active event with two physics (HVE, HVE-reference, or HVE's own saved run) and shows the differences — see [COMPARE RUNS](#compare-runs) | *(new)* |
@@ -59,9 +60,13 @@ See the dialog reference: [Key Results](../../01-user-interface/KeyResDlg.md).
 
 ## OUTPUT GRAPH
 
-**Menu Option:** Output › Output Graph... · View › Output Graph
+**Menu Option:** Output › Output Graph... · View › Output Graph ·
+Output › New Output Graph
 
-**Description:** Plots output variables against time. **Select Variables...**
+**Description:** Plots output variables against time, or against one of them
+(**X axis**). **Output › New Output Graph** (or a graph's **New Graph**
+button) opens another graph — *Output Graph 2*, *3* and so on, up to six — so
+several can be on screen at once. **Select Variables...**
 chooses the variables; **Fit**, **Reset** and **Whole run** set the axes;
 **Format...** and **Reset formatting** change the appearance (gridlines,
 colors); **Vehicle name in the legend** labels the traces. **Other Events...**

@@ -87,7 +87,15 @@ the case when you move it.
 When a case was saved together with its results, those results are restored on
 opening — but only if the case's inputs have not changed since they were
 solved. Otherwise they are discarded and the panel says so. Opening a case never
-re-runs it.
+re-runs it. A part of the saved results that cannot be read (an event's crush,
+for example) is named in the same message.
+
+A restored crush is put on each vehicle's drawn body point by point. If the
+body is drawn somewhere other than where the run's body was — another copy of
+its 3-D file, or a body a newer HVE Studio places differently — the crush is
+carried over by its overall shape instead, and the 3-D view's status line says
+*V*n*'s damage is drawn approximately*. If the vehicle's 3-D body did not load,
+it says the damage is not drawn. Re-running the event draws the crush exactly.
 
 ![The file browser](../images/hvn-02-open-case.png)
 *Open Case uses HVE Studio's own two-pane file browser.*
@@ -104,6 +112,12 @@ with a click and opened with a double-click. Each file's icon is colored by its 
 vehicle mesh or site geometry, image, database) and labeled with its extension; hold the
 pointer over one for its full name, size and date. The view you choose is kept for the next
 time the browser opens.
+
+**New folder** (beside the **Folders** heading) makes a folder inside the one you are in: type a
+name and press **Enter**. A name Windows could not hold (an empty name, one with `/ \ : * ? " < > |`,
+a trailing dot or space, or a device name such as `CON`) is refused with the reason, and a name
+that already exists is never overwritten. Right-click a file or a folder, in any view, and choose
+**Rename...** to rename it the same way; a shortcut folder cannot be renamed here.
 
 ---
 

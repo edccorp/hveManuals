@@ -50,13 +50,26 @@ limits:
 - **On** + **Linear** — minimum linear velocity (units set in Preferences).
 - **On** + **Angular (deg/s)** — minimum angular velocity.
 
-With both off the run always integrates to the full duration.
+With both off the run always integrates to the full duration. The defaults are
+HVE's, 0.1 m/s (about 0.22 mph) and 0.57 deg/s, except for a SIMON event, below.
 
 !!! tip "New in HVE Studio"
     **Stopped Vehicle** (collapsible) sets the **Linear** and **Angular (deg/s)**
     speeds below which a vehicle is *reported* at rest. These are separate from
     the termination limits; left at zero they track the termination limits
-    plus HVE's margin.
+    plus the method's margin.
+
+!!! note "HVE Studio: SIMON's defaults"
+    HVE Studio's SIMON does not freeze a vehicle at rest (its tires and its
+    body's contact with the ground hold it), so these values only decide when the
+    run ends, and with it the reported rest position, and when a vehicle is
+    reported at rest. A new SIMON event therefore defaults to **Termination**
+    0.5 in/s and 0.25 deg/s and **Stopped Vehicle** 1 in/s and 0.5 deg/s: past
+    them a vehicle moves at most about 0.1 in and 0.25 deg further, where HVE's
+    0.1 m/s and 0.57 deg/s left up to 0.4 in and 0.4 deg of pitch to come. A
+    vehicle at rest still rings at about 0.03 in/s, so values much below these
+    only make the run longer. A case that states its own values keeps them, and an
+    event run with **HVE-reference** physics keeps HVE's.
 
 ## Integrator Convergence
 

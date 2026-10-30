@@ -24,15 +24,17 @@ Shown only when the event has a Motorcycle-type vehicle. **Dynamics model**
 chooses which single-track model rides the motorcycle (the same setting as in
 [SINGLETRACK Options](CalcOptSINGLETRACK.md)):
 
-- **Whipple (linearized benchmark)** (default) — the motorcycle rides the
+- **Whipple (linearized benchmark)** — the motorcycle rides the
   Whipple model until its first contact, then SIMON's own model carries it,
   with a rider-control surrogate holding the roll.
-- **Nonlinear (four-body, slip tires)** — the nonlinear model owns the
+- **Nonlinear (four-body, slip tires)** (default) — the nonlinear model owns the
   motorcycle for the whole run. Nothing is handed over at contact: DyMESH's
   force and moment on the motorcycle's mesh act on the model as a load every
   step. The rider lets go at the first contact, and a machine that goes down
   slides on its hard points at the machine drag factor (DyMESH's contact with
   the site is not used for the motorcycle).
+
+A case saved before the Dynamics model setting existed keeps the Whipple model, as it was solved then; a new event, and a case imported from HVE, uses the nonlinear model.
 
 The run status says which model rode it: *rode the nonlinear model the whole
 run* for the nonlinear model, *until first contact* for the Whipple model. See

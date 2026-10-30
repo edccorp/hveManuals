@@ -37,10 +37,35 @@ on a row and **Reset all variables** put HVE's name and the default back.
 
 ## Limits
 
-The soft minimum and maximum each numeric field is held to in the dialogs, by
-section. **Save to File** keeps them for the next session; a preset keeps them
-too. This is the same editor as **Tools › Limits Editor...**, which now opens
-this tab.
+The ranges numeric fields are held to, by section, each in the units set in
+Preferences. Every row has two ranges, as HVE's own fields do:
+
+- **Usual min / Usual max** — a value outside this range is accepted, with a
+  note beside the field or under the table asking you to check it (HVE's
+  "out of usual range" warning).
+- **Allowed min / Allowed max** — a value outside this range is not accepted:
+  the field keeps its value and says why, and a pasted block holding one is not
+  pasted. **none** means nothing is refused on that side; click it to set a
+  limit, and **x** beside a limit removes it.
+
+The rows with both ranges start at HVE's own values (HVE's `Language.rsc`):
+the initial speed (usual up to 200 mph, allowed up to 400 mph; a run whose
+vehicle starts past the allowed limit is not run), the steering-wheel angle
+(±900° / ±3600°), the steer angle at the tires (±45° / ±90°), the brake pedal
+force (400 lb / 1000 lb), a wheel brake or traction force (10,000 lb /
+100,000 lb) and the 0–1 throttle, brake and friction fractions. Times and
+positions have no limit. The older rows (tire, suspension, brake assembly,
+steering) carry a usual range their fields are held to when dragged.
+
+A changed row is marked `*` and has a **Reset** to HVE's value; **Reset
+Defaults** puts every row back. **Save to File** keeps them for the next
+session; a preset keeps them too.
+
+**Right-click a limited value** — a cell of a driver-control table, an initial
+speed, or the name of a tire, suspension, brake or steering field — and choose
+**Edit limits...** to open this tab with that row found and marked. The same
+menu's **Rename this label...** opens the Terms tab with the label found. This
+is the same editor as **Tools › Limits Editor...**, which opens this tab.
 
 ## Report Text
 
@@ -56,6 +81,11 @@ the program started (open a window and its labels appear in the list), with a
 key, so a reworded field keeps its place in every list and every test, and the
 physics, the case file and the reports never see the wording. Output variables
 are not here: they have the **Variables** tab.
+
+A wording is shown wherever that label is drawn -- every window, menu, tab and
+table header that shows the same text, not only the one it was typed for. It
+is kept over the language chosen in **Tools › Preferences... › Language**, so
+a pack never undoes a wording you set by hand.
 
 - **Changed only** lists the terms you have reworded (marked `*`); **Reset** on
   a row and **Reset all terms** put the original labels back.

@@ -89,7 +89,12 @@ attributes in the panel:
   the human in each event as well as in all output reports.
 - **Location** — The seat position the human occupies: Front Right, Front
   Center, Front Left (driver), Rear Right, Rear Center, Rear Left, Back Right,
-  Back Center, Back Left, or Pedestrian.
+  Back Center, Back Left, or Pedestrian. A human added to an event starts at
+  this seat of the event's vehicle (HVE's default seat positions) in HVE's
+  seated posture. Changing the Location moves the human to the new seat in
+  every event where it is still at the old one; a seat that was moved by hand
+  in an event stays where it was put, and the panel says how many events
+  moved.
 
   > **NOTE:** If a seat position is selected, the human is a vehicle occupant
   > and its motion is defined relative to the vehicle. If Pedestrian is
@@ -210,6 +215,9 @@ human:
      joints.
    - **Body Pose** — The human's pose in the active event: an angle for
      each segment, and the initial velocity (a pedestrian's walking speed).
+     **Whole body pitch (deg)** pitches the whole body about the pelvis, every
+     segment at once (+ leans it back): each segment's angles are relative to
+     its parent, so the posture is kept.
    - **Injury Tolerances** — The injury tolerances of the current human.
 
 Each of these data categories is described in detail in the following

@@ -107,7 +107,9 @@ vehicles directly:
 starting position and speed in the current event:
 
 - **Initial Position** — **X**, **Y** and **Heading**.
-- **Initial Velocity** — **Speed**.
+- **Initial Velocity** — **Speed**, held to HVE's range by default (a note
+  above 200 mph; above 400 mph not accepted, and not run); right-click it for
+  **Edit limits...**.
 
 ![Figure 15-2](../images/hvn-06-position-velocity.png)
 *Figure 15-2: Position / Velocity dialog.*
@@ -220,17 +222,21 @@ perform the following steps:
    > grayed, with the reason in its tooltip. A method whose output has not
    > yet been checked against HVE is marked *(unvalidated)*.
 
-4. In **Vehicles in Event**, click **Add Vehicle** once for each vehicle and
-   choose the vehicle for each slot from the case's vehicles. **Remove**
-   takes a vehicle out of the event (after confirmation).
+4. In **Vehicles in Event**, click **Add Vehicle** and click each vehicle the
+   event uses, in slot order: the list stays open, ticks each vehicle as it
+   joins its slot, and closes with **Done**. **Remove** takes a vehicle out of
+   the event (after confirmation).
 
    > **NOTE:** The order of the slots may be important. For example, for a
    > tractor-trailer simulation, the first vehicle is the tow vehicle and
    > the next is towed by it.
 
 5. For an occupant or pedestrian study (EDHIS, GATB), click **Add Human** in
-   **Humans in Event** and choose the human; for an occupant, choose the
-   vehicle it **Occupies**.
+   **Humans in Event** and click each human (the list stays open until
+   **Done**); for an occupant, choose the vehicle it **Occupies**. An occupant
+   starts at the seat its **Location** names in the Human editor, in HVE's
+   seated posture; changing the Location later moves it in every event where
+   it still sits at the old seat.
 
 ![Figure 15-5](../images/hvn-06-event-information.png)
 *Figure 15-5: Event Information panel.*

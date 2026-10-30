@@ -15,10 +15,10 @@ event's results are on screen.
 
 **Dynamics model** — which equations the method solves:
 
-- **Whipple (linearized benchmark)** (default) — the published Whipple model,
+- **Whipple (linearized benchmark)** — the published Whipple model,
   exact for small lean about upright straight running and validated against
   its benchmark. Braking is a deceleration limited by the friction available.
-- **Nonlinear (four-body, slip tires)** — the same four bodies and parameters
+- **Nonlinear (four-body, slip tires)** (default) — the same four bodies and parameters
   with nine rigid degrees of freedom and slip-based tires (TMeasy, with camber
   thrust inside the friction ellipse and the rounded tread's contact point).
   Lean is exact at any angle; braking, load transfer, wheel lift and flight are
@@ -31,6 +31,8 @@ event's results are on screen.
   down, how far it slid and when it stopped. The rider lets go once the lean
   passes 70°: the steering controller and the speed hold stop, and the rider's
   own slide to rest is the rider drag factor's result.
+
+A case saved before the Dynamics model setting existed keeps the Whipple model, as it was solved then; a new event, and a case imported from HVE, uses the nonlinear model.
 
 The nonlinear model reads the tire data the Whipple model does not: the
 cornering and camber stiffness tables (a stated camber curve is used point for
