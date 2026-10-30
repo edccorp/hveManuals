@@ -433,6 +433,7 @@ nav:
       - "Chapter 1 — Program Description": programs/RDF/01-program-description-and-input.md
       - "Chapter 3 — Calculation Method": programs/RDF/02-calculation-method.md
       - "Chapter 4 — Data File Format": programs/RDF/03-data-file-format.md
+    - GBF: programs/GBF/README.md
     - DamageStudio:
       - Overview: programs/DamageStudio/README.md
       - "Chapter 32 — The DamageStudio Interface": programs/DamageStudio/01-interface.md

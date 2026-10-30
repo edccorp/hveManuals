@@ -17,4 +17,5 @@ Updated Markdown editions of the per-model program manuals, updated to match the
 - [DyMESH](DyMESH/README.md) — 3-D dynamic-mesh collision & damage model (used by SIMON / EDSMAC4)
 - [GATB](GATB/README.md) — articulated total-body human model
 - [RDF](RDF/README.md) — import external time-position data as an event
+- [GBF](GBF/README.md) — heavy-truck air-brake stopping calculation (S-cam brakes)
 - [DamageStudio](DamageStudio/README.md) — damage profile / crush visualization

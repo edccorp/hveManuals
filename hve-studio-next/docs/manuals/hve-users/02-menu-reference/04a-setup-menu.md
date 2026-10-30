@@ -28,8 +28,8 @@ part by method:
 | Damage Profiles... | EDCRASH (it opens Event Information's Vehicle Impact Setup) |
 | Collision Pulse... | EDCRASH, SIMON, EDHIS, GATB |
 | Vehicle Mesh..., DyMESH Options..., Path Follower..., Notes | every event |
-| Payload... | SIMON, EDSMAC4, EDSVS, EDVDS, EDVTS |
-| Wheels... | the methods that use driver controls (not EDCRASH, EDGEN, EDHIS, GATB or READDATAFILE) |
+| Payload... | SIMON, EDSMAC4, EDSVS, EDVDS, EDVTS, GBF |
+| Wheels... | the methods that use driver controls (not EDCRASH, EDGEN, EDHIS, GATB or READDATAFILE), and GBF, which reads each brake's measured stroke and drum temperature there |
 | Accelerometers... | SIMON, EDSMAC4, EDVDS, EDVSM (the methods that compute accelerometer output) |
 | Restraints › | EDHIS, GATB |
 | Contacts... | EDSMAC4 (the contact surfaces); EDHIS, GATB (Human Contacts) |

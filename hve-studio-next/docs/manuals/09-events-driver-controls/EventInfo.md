@@ -50,9 +50,9 @@ integrates from 0. *(New in HVE Studio.)*
 ## Calculation Method
 
 **Method** — a drop-down list of the calculation methods: EDCRASH, EDSMAC, EDGEN,
-EDHIS, SIMON, EDSMAC4, GATB, EDSVS, EDVDS, EDVTS, SINGLETRACK, EDVSM and
-READDATAFILE. The calculation method selects the physics engine that runs the
-event.
+EDHIS, SIMON, EDSMAC4, GATB, EDSVS, EDVDS, EDVTS, SINGLETRACK, EDVSM,
+READDATAFILE and GBF. The calculation method selects the physics engine that
+runs the event.
 
 - A method whose output has not yet been validated end to end in HVE Studio is
   marked *(unvalidated)*, and a line under the list says so for the active
@@ -86,7 +86,20 @@ the event with two of them and compares the runs (see
 
 **Method Options...** opens the active method's calculation options window
 (see [Calculation Options](../10-calculation-options/README.md)). EDSVS, EDVDS,
-EDVTS and READDATAFILE have no options window; the button is grayed for them.
+EDVTS, READDATAFILE and GBF have no options window; the button is grayed for them.
+
+**GBF's inputs.** For a GBF event, the panel shows GBF's own inputs under the
+method (see the [GBF manual](../programs/GBF/README.md)):
+
+- **Chamber pressure**: the air pressure at every brake chamber, in psi or kPa.
+  A value outside 0–110 psi is refused.
+- **Antilock (simple ABS)**, with its **Pressure drop**: each brake is held
+  that far below the pressure that would lock its wheel.
+- **Find the initial speed**, with its **Stopping distance**: GBF finds the
+  initial speed that stops the truck in that distance.
+
+HVE read the pressure and the antilock drop from the brake pedal table.
+*(New in HVE Studio.)*
 
 !!! warning "Not in HVE Studio"
     HVE located the calculation-method programs in its calcMethods directory.

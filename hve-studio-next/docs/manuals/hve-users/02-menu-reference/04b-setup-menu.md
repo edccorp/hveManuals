@@ -169,7 +169,7 @@ Options dialog.
 
 ## PAYLOAD
 
-**Menu Option:** Event › Payload... (SIMON, EDSMAC4, EDSVS, EDVDS, EDVTS)
+**Menu Option:** Event › Payload... (SIMON, EDSMAC4, EDSVS, EDVDS, EDVTS, GBF)
 
 **Purpose:** Add a load to the selected vehicle for this event.
 

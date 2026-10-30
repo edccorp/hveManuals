@@ -142,6 +142,7 @@ methods HVE Studio can run are HVE's, plus one new one:
 | GATB | articulated occupant and pedestrian simulation (ATB) |
 | SINGLETRACK | motorcycle simulation — new in HVE Studio |
 | READDATAFILE | replays a trajectory data file (`.dat`); solves nothing |
+| GBF | heavy-truck air-brake stopping calculation (S-cam brakes) |
 
 The Method list marks a method whose output has not yet been checked against HVE
 as *(unvalidated)*, and a method the event's vehicles cannot use as *N/A for
