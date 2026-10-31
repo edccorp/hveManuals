@@ -410,6 +410,48 @@ Vehicle Mesh window holds the rest, in four tabs.
   names, and any parts made from faces in Edit Mode), each with a tick.
   Untick a part, such as a mirror or an antenna, to leave it out of what
   DyMESH collides; it is still drawn.
+- **Part contact materials: n** — the same parts, each with **Stiffness x**
+  and **Friction x**: a part that contacts differently from the rest of the
+  body, such as a door edge, a bumper corner or a wheel lip. Each value is a
+  **multiplier**, and applies only while its tick is on:
+    - **Stiffness x** multiplies the 3-D crush stiffness (all four
+      coefficients) of the face DyMESH assigns the part's vertices to (Front,
+      Right, Back, Left, Top or Undercarriage). Saturation crush is the
+      face's own. Allowed range 0.01 to 100; to make a part carry no force,
+      untick it in **Collides** instead.
+    - **Friction x** multiplies the contact friction DyMESH would otherwise
+      use at that contact: the vehicle pair's, or the vehicle's against the
+      environment. Allowed range 0 to 20; 0 is a frictionless part. Where
+      two named parts touch, their multipliers **multiply**: with a contact
+      friction of 0.55, x0.5 on one part gives 0.275 against any surface, and
+      x0.5 on both touching parts gives 0.1375.
+    - Friction acts at each node in proportion to the load pressing that
+      node against the other body, so a part's friction matters only where the
+      part is in contact. In a sideswipe, DyMESH crushes two sliding sides
+      across the slide, and friction is what resists it: a part that sticks out
+      does not catch by its shape alone, but raising its friction, or the
+      friction of the section of a flat side that carries the contact, raises
+      that resistance. Measured on two cars side by side, friction x4 on the
+      touching section raised the along-slide resistance about 2.4 times; on a
+      section of the same side that carried no load it changed nothing.
+    - **Max combined friction x** — the largest friction multiplier one
+      contact may reach once the two sides are multiplied (two x4 parts would
+      be x16). 1 to 400, default 20. Where two vehicles touch, the lower of
+      their two maximums applies.
+    - A vertex on the edge of a part takes the area-weighted blend of the
+      part's value and the rest of the body's, so a part's effect fades
+      across one ring of triangles rather than stopping at a line.
+    - The part follows the mesh through tessellation exactly. A reduced
+      collision mesh or a closed outer shell is built from new triangles,
+      and each takes the material of the nearest original triangle; the
+      run status says so, and how many vertices carry a material.
+    - A name the mesh does not have, or a part excluded from collision,
+      applies to nothing, and the run status says so.
+
+    Part contact materials are read by SIMON with DyMESH only. They are an
+    extension of this program, not something HVE has, so an imported HVE
+    case has none and keeps HVE's answer; the HVE-reference physics does not
+    apply them and says so in the run status. Changes the run.
 - A note says what DyMESH collides. When the drawn file is a scan, the scan
   tools (see [Scan bodies](#scan-bodies)) follow; for a scan used as the
   display mesh they are on the Display tab.

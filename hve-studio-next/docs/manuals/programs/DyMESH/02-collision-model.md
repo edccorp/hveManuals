@@ -377,6 +377,20 @@ very low relative sliding velocity.
     override* grid of **Event › DyMESH Options**, falling back to the
     event-level **Friction** (default 0.55, HVE's own) for a pair that states 0.
 
+!!! note "HVE Studio: friction always opposes the slide"
+    The friction at a node is $\mu$ times the node's normal force on the surface
+    it touches, directed against the two bodies' relative sliding there. HVE takes
+    that normal force with its sign, which gives the right direction on most
+    contacts and the wrong one where the node force lies on the far side of the
+    touched polygon's normal: a triangle wound inward, or a node crushed along the
+    pair's one damage direction into a polygon steeper than 90° to it. There HVE's
+    friction pushes the slide along instead of resisting it. HVE Studio uses the
+    normal force's size with the contact's own direction, so friction always
+    resists the slide; the results are identical wherever HVE's sign was already
+    right. Measured over HVE's own validation cases, 22 of 27 DyMESH events meet
+    the wrong sign at some node, and it amounts to at most 0.16% of the energy
+    friction removes; most results move by about their own numerical noise.
+
 ## 8. Coupling to the equations of motion
 
 For each interacting pair, DyMESH sums the node forces and moments into a
