@@ -121,9 +121,12 @@ motorcycle first contacts something (or, on the nonlinear model, leans past
   the peaks are also the run's occupant results. Playback draws it seated, then
   thrown.
 
-By default it is **one way**: the rider moves no vehicle. Check **Couple the
-occupants two-way (experimental)** under **Humans in Event** and the rider's push on
-the vehicle it strikes goes back into the run. **Coupling method** says how:
+By default the rider is **two way**: its push goes back into the vehicle it
+strikes and into its own motorcycle (**Couple the rider two-way
+(experimental)** under **Humans in Event**, on for a new event). Clear it for
+**one way**: the rider is still solved as a body, but it moves no vehicle -- the
+vehicles are solved as if it had no body of its own. **Coupling method** says
+how two way is solved:
 
 - **Lockstep (one run)**, the default: SIMON and the rider are solved together in
   one run, the rider's push reaching the vehicle a step or two late. It takes
