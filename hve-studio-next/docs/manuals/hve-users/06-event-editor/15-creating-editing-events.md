@@ -80,6 +80,44 @@ run are on screen; neither touches the solved event.
 > results of a run are on screen, because deleting an event renumbers the
 > others; press **Reset** first.
 
+### Starting an event part-way through a run
+
+**Event › New Event From This Instant** adds a copy of the solved event that
+starts at the current playback instant. Use it for avoidance studies: play the
+run to the moment of interest, choose the item, change what the driver does
+from there (brake earlier, steer less) and run the new event. *(New in HVE Studio.)*
+
+The new event, named "*name* from *time* s":
+
+- starts each vehicle where the run had it at that instant: its position,
+  heading, speed, sideslip and yaw rate. **Auto Position** settles it onto its
+  wheels there, so the body takes up its roll and pitch again;
+- has every driver table — throttle, brake, steer, gear — and every timed input
+  (a blowout, a wheel displacement, a brake failure, lamp times, the path
+  follower's start, a collision pulse) moved to start at that instant, each
+  table beginning with the value it had then;
+- is shorter by the time already run, and its clock reads on from the
+  original's, so its results show the same times;
+- states in its **Notes** (**Event › Notes**, which open when it is made) what
+  was carried over and what was not.
+
+**What is not carried over.** A new event starts as any run does for what an
+event cannot state: suspension travel (settled again), wheel spin, tire slip,
+brake pressure already built up, engine speed, brake temperatures and crush. Its
+first moments therefore differ a little from the original. Measured on a
+steering-and-braking SIMON case, a copy started with nothing changed stayed within
+0.02 to 0.11 m of the original over the rest of the run when started at 1, 2 or 4 s,
+and within 0.58 m when started at 3 s, during hard braking, where the brakes have
+to build their pressure again. **To see what a change does, compare it with a
+second copy from the same instant left unchanged**: both start the same way, so
+the difference between them is the change.
+
+It is available for SIMON, EDSMAC4, EDSMAC, EDSVS, EDVDS, EDVTS and EDVSM
+events with no humans, when the event's own results are on screen, and not at
+the very start or end of the run. Otherwise the menu says why. A vehicle that was
+already in contact before the instant starts the new event undamaged, and its
+Notes say so.
+
 ### Viewport
 
 The Viewport displays the current event: the environment, and each human and

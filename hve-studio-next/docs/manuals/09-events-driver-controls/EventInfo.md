@@ -223,7 +223,10 @@ not saved with the case).
     were in a solved event — at the end of the run or at a **Handoff time** you
     choose — and writes that as this event's starting position, heading and
     speed (**Seed Initial Conditions**). Vehicles are matched by vehicle, not by
-    slot. Nothing else is copied.
+    slot. Nothing else is copied. To start a copy of the solved event at an
+    instant, with its driver inputs moved to match, use **Event › New Event From
+    This Instant** instead (see
+    [Chapter 15](../hve-users/06-event-editor/15-creating-editing-events.md#starting-an-event-part-way-through-a-run)).
 
 ## Vehicle Impact Setup (EDCRASH)
 
