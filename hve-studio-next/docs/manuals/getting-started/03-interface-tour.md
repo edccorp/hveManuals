@@ -193,7 +193,7 @@ pointer over the viewport:
 
 | Key | Does |
 | --- | --- |
-| **G** | Move (grab) the selected object; it follows the pointer |
+| **G** or **M** | Move (grab) the selected object; it follows the pointer |
 | **R** | Rotate it about the vertical axis |
 | **X**, **Y**, **Z** (during G or R) | Lock the move to that axis; press the same key again for the object's own (local) axis, and a third time to release the lock. **Z** applies only to a vehicle that can leave the ground |
 | A number (during G or R) | Move by exactly that many **meters** along the locked axis (whatever the unit setting), or rotate by exactly that many degrees. **-** changes the sign, **Backspace** deletes a digit |

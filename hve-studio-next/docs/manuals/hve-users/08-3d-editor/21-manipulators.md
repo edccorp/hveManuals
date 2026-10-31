@@ -30,8 +30,12 @@ The fields of **Event › Position / Velocity** and the **Vehicle Initial Condit
 
 With the mouse pointer over the 3-D view of the Event editor, press:
 
-- **G** — move (grab) the selected vehicle; it follows the mouse over the ground.
+- **G** or **M** — move (grab) the selected vehicle; it follows the mouse over the ground.
 - **R** — rotate it about its CG.
+
+**M** is the same key as **G** wherever G moves something in the 3-D view -- a
+vehicle, a vehicle's mesh or lamps, a site, a surface, faces or a site light --
+for those used to HVE's **M** for move (Ctrl+M is still Event › Damage Profiles).
 
 G and R work on the active vehicle even before it has been clicked, and on a selected ghost. While the operation runs, a line at the top of the view states what is armed (for example *Move: global X*), and:
 
