@@ -80,43 +80,42 @@ run are on screen; neither touches the solved event.
 > results of a run are on screen, because deleting an event renumbers the
 > others; press **Reset** first.
 
-### Starting an event part-way through a run
+### Branching a SIMON run from an instant
 
-**Event › New Event From This Instant** adds a copy of the solved event that
-starts at the current playback instant. Use it for avoidance studies: play the
-run to the moment of interest, choose the item, change what the driver does
-from there (brake earlier, steer less) and run the new event. *(New in HVE Studio.)*
+**Event › Branch From This Instant** (a SIMON event) adds a new event that
+**continues** the run from the current playback instant, as though the run had
+been paused there. Use it for avoidance studies: play the run to the moment of
+interest, choose the item, change what the driver does from there (brake
+earlier, steer less) and run the branch. *(New in HVE Studio.)*
 
-The new event, named "*name* from *time* s":
+The branch, named "*name* branch at *time* s":
 
-- starts each vehicle where the run had it at that instant: its position,
-  heading, speed, sideslip and yaw rate. **Auto Position** settles it onto its
-  wheels there, so the body takes up its roll and pitch again;
-- has every driver table — throttle, brake, steer, gear — and every timed input
-  (a blowout, a wheel displacement, a brake failure, lamp times, the path
-  follower's start, a collision pulse) moved to start at that instant, each
-  table beginning with the value it had then;
-- is shorter by the time already run, and its clock reads on from the
-  original's, so its results show the same times;
-- states in its **Notes** (**Event › Notes**, which open when it is made) what
-  was carried over and what was not.
+- is the original run up to that instant, and from then on carries **every
+  state the run had there**: suspension travel, wheel spin, tire slip, brake
+  pressure, engine and gear, the path follower's state, contact already under
+  way and the crush so far. Nothing is approximated, so a branch left unchanged
+  reproduces the original run exactly;
+- follows **its own driver tables** (throttle, brake, steer, gear) from the
+  instant on. Edit them after the instant in the usual editors: the tables keep
+  the original's times, and the branch's results show the whole run;
+- states in its **Notes** (**Event › Notes**, which open when it is made) what it
+  continues and what may be changed.
 
-**What is not carried over.** A new event starts as any run does for what an
-event cannot state: suspension travel (settled again), wheel spin, tire slip,
-brake pressure already built up, engine speed, brake temperatures and crush. Its
-first moments therefore differ a little from the original. Measured on a
-steering-and-braking SIMON case, a copy started with nothing changed stayed within
-0.02 to 0.11 m of the original over the rest of the run when started at 1, 2 or 4 s,
-and within 0.58 m when started at 3 s, during hard braking, where the brakes have
-to build their pressure again. **To see what a change does, compare it with a
-second copy from the same instant left unchanged**: both start the same way, so
-the difference between them is the change.
+**What a branch may change.** Only the rows of its driver tables and its run
+time. Rows before the instant have no effect, because the run up to then is the
+original's; the run status says so when there are any. Anything else changed in
+the branch (a vehicle, a position, an option, a table's method) stops the run
+with the reason, because the state at the instant came from those inputs. Event
+Information shows which event the branch continues and from when, and
+**Make Independent** turns it into an ordinary event that starts at t = 0 from
+its own Position / Velocity.
 
-It is available for SIMON, EDSMAC4, EDSMAC, EDSVS, EDVDS, EDVTS and EDVSM
-events with no humans, when the event's own results are on screen, and not at
-the very start or end of the run. Otherwise the menu says why. A vehicle that was
-already in contact before the instant starts the new event undamaged, and its
-Notes say so.
+Running a branch first runs the original to the instant to obtain its state.
+That state is kept, so the branch's later runs, and other branches of the same
+event at the same instant, start straight from it. Changing the original event
+makes the state again from the changed event. A branch cannot be made from a
+branch, from an event with humans, or from one with a motorcycle. Deleting the
+original makes its branches ordinary events.
 
 ### Viewport
 
