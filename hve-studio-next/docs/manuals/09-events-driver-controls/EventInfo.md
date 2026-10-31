@@ -229,11 +229,21 @@ not saved with the case).
 
 For EDCRASH the section is titled **Vehicle Impact Setup**, with one block per
 vehicle. It carries the damage data that HVE entered in its Damage Data dialog
-and the scene positions from its Position/Velocity dialog:
+and the scene positions from its Position/Velocity dialog. In the
+[Event Designer](../hve-users/06-event-editor/16a-event-designer.md) the two
+halves are separate stages, one vehicle at a time: the scene on **Positions**,
+the damage on **Damage Profiles**.
 
 ![Vehicle Impact Setup for an EDCRASH event](images/hvn-event-info-edcrash.png)
 
-- **Impact Speed**.
+- **Time shown before impact (s)** (for the event) — how much of the approach the
+  drawn playback shows before the impact, the same for every vehicle. 0 reads
+  *automatic*: from the first surveyed position before the impact, or 2 s when
+  there is none. Display only; it takes effect on the next run.
+- **Drawn approach speed** — only for a vehicle with no rest position (a
+  damage-only study). EDCRASH does not read an impact speed: with a scene it
+  solves the impact speed from the positions, and this sets only how fast the
+  playback approaches when there is no scene to solve it from.
 - **CDC**, **PDOF (deg)** and **Auto-calculate PDOF (from the other vehicle)**.
   Only one vehicle may auto-calculate; if both do, EDCRASH refuses the event
   (stop code −5443).
@@ -241,15 +251,49 @@ and the scene positions from its Position/Velocity dialog:
   always reconstructs from the crush profile, and no engine reads the basis or
   the EES speed.
 - **A Stiffness**, **B Stiffness**, and **Derive impulse center from damage
-  profile** (uncheck to enter **Impulse Center X / Y**).
+  profile** (uncheck to enter **Impulse Center X / Y**). These are EDCRASH's
+  own, per event, and they are the pair EDCRASH reads: a case that states A and B
+  per zone (an imported HVE case does) shows the zones' pair here, and zones that
+  differ are edited under **Per-zone A/B**. As in HVE, entering a CDC that names
+  a damaged face (its 3rd character F, B, L or R) copies the vehicle's own
+  stiffness for that face (the Vehicle editor's Stiffness) into every zone. A
+  note under the fields says whether they are the vehicle's; when they are not,
+  it shows the vehicle's values and **Use the vehicle's ... stiffness** copies
+  them.
 - **Named Positions** — the vehicle's named positions (see
   [Named Positions](#named-positions) below). EDCRASH reads Impact and
   Final/Rest together: ticking either sets both, and with neither set the run is
   a damage-only reconstruction (delta-V from crush alone).
 - **Impact sideslip (deg)** and **Velocity at rest** — below the list, shown
   when Impact and Final/Rest are set.
-- **Measured Crush** — number of crush depths, **C1**...**Cn**, **Damage width**,
-  **Damage offset**, and per-zone A/B stiffness.
+- **Measured Crush** — **# crush depths** (typed, or stepped with - and +),
+  **C1**...**Cn**, **Damage width**, **Damage offset**, and per-zone A/B
+  stiffness.
+- **Damage Profile Drawing** — see below.
+
+### The damage profile (EDCRASH)
+
+**Damage Profile Drawing** draws the vehicle from above, front up, with the
+profile as EDCRASH reads it (the engine's own geometry, so a mistake in the
+measurement shows):
+
+- the crush depths, each drawn in from the damaged face, and the crushed line
+  through them, with **C1** and **Cn** named. EDCRASH puts **C1 at the left end**
+  of front and back damage and **at the rear end** of side damage, centered on
+  the damage offset; a reversed order or a wrong offset shows as a profile on the
+  wrong side;
+- the force: the PDOF drawn as an arrow into the impulse center (the derived one,
+  or the entered one), and its **moment arm** from the CG, dashed;
+- in words under it: which end C1 is, the PDOF and the impulse center, and which
+  way the force turns the vehicle (clockwise or counterclockwise seen from above).
+
+When the vehicle has a surveyed Impact and End of Rotation (or Final/Rest), the
+drawing compares that turn with the scene's. If the force turns the vehicle one
+way and the scene has it turning the other, a note says so and names the inputs
+to check: the PDOF, the damage offset and the order of the crush depths. A turn
+of more than half a revolution, or one the tires made after separation, can set
+it off when nothing is wrong. With no measured profile (fewer than 2 crush
+depths) it says EDCRASH takes the CDC's default profile.
 
 See [Damage Data](../11-reports-output/DamageData.md) for how these map to
 HVE's Damage Data dialog, and [Position/Velocity](PosVelDlg.md) for what each
@@ -307,7 +351,10 @@ an ordinary named position.
 
 Every other set position is outlined in the 3-D view (**View › Scene Display ›
 Scene Ghosts**), on the ground or at its entered height and attitude, and can be
-dragged there.
+dragged there. The outline is the vehicle's footprint, a chevron at its nose and
+**each tire's footprint** (its diameter by its width, where the vehicle's wheels
+are), so a position can be laid on the tire marks the vehicle left. The
+**Translucent vehicle** style draws the whole vehicle there instead.
 
 ## Lighting
 

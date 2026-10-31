@@ -42,26 +42,45 @@ hosted and the 3-D view beside it.*
    **Event › DyMESH Options...**).
 3. **Positions**: Event Information's vehicle section by itself (no
    collapsing header): each vehicle's start state (position, velocity, Auto
-   Position, advanced initial state), its **Named Positions** list, and for
-   EDCRASH the impact setup and damage profiles. **Only the selected vehicle**
-   limits the list and the 3-D view's named-position outlines to the vehicle
-   selected in the 3-D view. See
+   Position, advanced initial state) and its **Named Positions** list.
+   **Only the selected vehicle** limits the list and the 3-D view's
+   named-position outlines to the vehicle selected in the 3-D view. For EDCRASH
+   the stage holds the scene only, **one vehicle at a time**: a tab per vehicle
+   (the tab and the 3-D view's selection are one choice), its named positions,
+   **Impact sideslip** and **Velocity at rest**, and for the event
+   **Time shown before impact (s)**, how much of the approach the drawn playback
+   shows (*automatic* by default: from the first surveyed position, or 2 s).
+   The damage is the Damage Profiles stage. See
    [Event Information](../../09-events-driver-controls/EventInfo.md#vehicle-initial-conditions).
 4. **Driver Controls**: **Driver Controls** (throttle, brake, steer and gear
    against time) for the chosen vehicle, and **From the EDR** (EDR Import): the
    vehicle's event data recorder record, and for SIMON a driver solved so the run
    follows the recorded speed. The solve keeps running while another stage or tab
-   is shown.
+   is shown. EDCRASH, a reconstruction, has no driver: the stage bar leaves it out.
 5. **Collision Pulse**: a tab for each dialog the calculation method reads, as
    the Event menu grays the rest: **Collision Pulse** and **Contacts** (EDSMAC4's
    vehicle contacts, or EDHIS and GATB's occupant contacts). A method with
    nothing here (EDVDS, EDSVS, EDVSM, ...) has no Collision Pulse stage: the
-   stage bar leaves it out. DyMESH's options are on the Method Options stage. Only
-   EDCRASH reads a crush profile: for it, **Damage Profiles (Positions stage)**
-   opens the Positions stage, where Vehicle Impact Setup is, and
-   **Crush from Scan** (Crush Profile from Scan) measures the crush depths off a
-   scan. The vehicle's mesh and crush stiffness are edited in the Vehicle Designer.
-6. **Equipment**: the same for what each vehicle carries and does: **Payload**,
+   stage bar leaves it out. DyMESH's options are on the Method Options stage. The
+   vehicle's mesh and crush stiffness are edited in the Vehicle Designer.
+
+   For EDCRASH this stage is **Damage Profiles**, the damage it reconstructs from,
+   one vehicle at a time (a tab per vehicle): the **CDC**, **PDOF** and
+   **Auto-calculate PDOF**, the **A Stiffness** and **B Stiffness**, the impulse
+   center, **Measured Crush** (**# crush depths** is typed, or stepped with its
+   - and + buttons) and the **Damage Profile Drawing**; **Crush from Scan**
+   (Crush Profile from Scan) beside it measures the crush depths off a scan.
+   **Event › Damage Profiles...** (Ctrl+M) opens this stage. See
+   [the damage profile](../../09-events-driver-controls/EventInfo.md#the-damage-profile-edcrash).
+
+   ![Figure 16a-2](../images/hvn-06-event-designer-damage.png)
+
+   *Figure 16a-2: EDCRASH's Damage Profiles stage on the EDCRASH tutorial: V1's
+   front damage, its stiffness the vehicle's own front values, and the drawing --
+   C1 at the left end, the PDOF into the impulse center, its moment arm, and the
+   scene agreeing that the force turns the car clockwise.*
+6. **Equipment**: the same for what each vehicle carries and does (a method
+   none of them applies to, EDCRASH among them, has no Equipment stage): **Payload**,
    **Path Follower**, **Lights**, **Wheels**, **Accelerometers** (SIMON, EDSMAC4,
    EDVDS and EDVSM), and for EDSMAC and EDSMAC4 **Handling Parameters** and
    **Move CG**. Accelerometers belong to the vehicle: the tab edits the same
@@ -79,7 +98,9 @@ hosted and the 3-D view beside it.*
    *[+N more: see the Messages report]*, and the **MESSAGES** tab of
    **Output › HVE Reports...** lists every one of them under *HVE STUDIO RUN
    NOTES*, after the engine's own messages. The list is kept with the event's
-   results and saved with the case.
+   results and saved with the case. Under the Last Result, **Messages** lists
+   that page in full -- every message the engine raised and every run note --
+   so a second warning is on this stage too, not only on the report.
 8. **Results**: what the run gave, in three tabs -- **Key Results**, the
    **Output Graph** and the **Results HUD** (the boxes drawn over the event's
    run; see [Results HUD](../../new-features/11-results-hud.md)). Each is the

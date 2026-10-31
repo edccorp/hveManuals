@@ -113,16 +113,35 @@ motorcycle first contacts something (or, on the nonlinear model, leans past
 
 - It starts where it sat, in the posture you gave it, moving as the seat moved.
 - It meets the **vehicle nearest the motorcycle** at that instant -- that
-  vehicle's mesh, as the run crushed it -- and the **road**. With no other
-  vehicle in the event it meets its own machine.
+  vehicle's mesh, as the run crushed it -- its **own motorcycle's** mesh, as
+  the machine moves on after it, and the **road**. With no other vehicle in the
+  event it meets its own machine only.
 - The run status gives the moment it left, what it met, its **head and torso
   peak accelerations** and how far its pelvis ended from where it left the seat;
   the peaks are also the run's occupant results. Playback draws it seated, then
   thrown.
 
-What it is not: it is **one way** -- the rider moves no vehicle, and after it
-leaves the motorcycle it does not meet the motorcycle again when another vehicle
-is what it met. A vehicle with no contact surfaces of its own is given a ground
+By default it is **one way**: the rider moves no vehicle. Check **Couple the
+occupants two-way (experimental)** under **Humans in Event** and the rider's push on
+the vehicle it strikes goes back into the run. **Coupling method** says how:
+
+- **Lockstep (one run)**, the default: SIMON and the rider are solved together in
+  one run, the rider's push reaching the vehicle a step or two late. It takes
+  about as long as the one-way run twice over. Before trusting its own start,
+  the run checks that SIMON up to the moment the rider left is exactly the
+  one-way run; if it is not, the event is solved by passes and the status says
+  why.
+- **Passes (iterated to convergence)**: SIMON and the rider are solved again
+  and again, the push each time a load on that vehicle. Where a thrown rider
+  lands changes a lot with small changes in the car's motion, so the vehicle
+  carries the **average** of the pushes solved so far, and the passes stop when
+  that average settles. The status says how many passes that took, whether it
+  settled, the average impulse and the range the passes spread over. It takes
+  several times as long as lockstep.
+
+Either way, read the push as a range, not as one number: the two methods agree
+to within the spread the passes show. The motorcycle itself gets no
+push back from its rider after the rider leaves it. A vehicle with no contact surfaces of its own is given a ground
 and a body surface in HVE's default vehicle material, and the status says so.
 The motorcycle's weight should include its rider (the seeded motorcycle's does).
 Nothing about the rider's injury response has been validated against a
