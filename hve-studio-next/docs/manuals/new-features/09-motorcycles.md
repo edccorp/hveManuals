@@ -140,8 +140,8 @@ the vehicle it strikes goes back into the run. **Coupling method** says how:
   several times as long as lockstep.
 
 Either way, read the push as a range, not as one number: the two methods agree
-to within the spread the passes show. The motorcycle itself gets no
-push back from its rider after the rider leaves it. A vehicle with no contact surfaces of its own is given a ground
+to within the spread the passes show. The rider's push reaches its own motorcycle too, after it leaves it, whichever
+**Dynamics model** the machine rides. A vehicle with no contact surfaces of its own is given a ground
 and a body surface in HVE's default vehicle material, and the status says so.
 The motorcycle's weight should include its rider (the seeded motorcycle's does).
 Nothing about the rider's injury response has been validated against a

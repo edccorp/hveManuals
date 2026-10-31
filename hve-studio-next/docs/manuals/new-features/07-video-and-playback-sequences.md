@@ -83,7 +83,7 @@ the playback position marked in red.
 
 | Button | Does |
 | --- | --- |
-| **Add Event** | A new track (for the first event; change it in the Event column) |
+| **Add Event** | A new track: the active event if the sequence lacks it, else the first event it lacks, else the active event again (change it in the Event column) |
 | **Add All Events** | A track for every event not already in the sequence |
 | **Stack Sequentially** | Lays every track that is switched on end to end, in table order |
 | **Align at Impact** | Slides every track so its impact instant falls at the same sequence time — for comparing reconstructions. Tracks with no known impact time stay put. |

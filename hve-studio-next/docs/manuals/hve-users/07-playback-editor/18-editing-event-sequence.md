@@ -39,7 +39,7 @@ To create a sequence and select its events, perform the following steps:
 1. Click the **Playback (F6)** tab, or press **F6**. The **Playback Sequence** panel opens with the other editors' panels (**Playback › Playback Sequence...** reopens it if it was closed). While the case has no sequence the **Sequence** list reads *(none yet)*, and the Viewport and its header say there is nothing to play.
 2. Click **New**. A sequence named *Sequence n* is created with every event of the case in it, laid end to end, and becomes the active sequence. **Delete** removes the active sequence.
 3. Enter a **Name** for the sequence (optional). The **Duration** of the whole sequence is shown beside it.
-4. In the table, check the **On** box of each event to include, and clear it for the others. **Add Event** adds a row and **Add All Events** adds every event not yet in the table; **Remove** takes a row out.
+4. In the table, check the **On** box of each event to include, and clear it for the others. **Add Event** adds a row (the active event, or the first event not yet in the table) and **Add All Events** adds every event not yet in the table; **Remove** takes a row out.
 5. Click **Run All Events** (also **Run All** on the playback bar, and **Playback › Run All Events**) to solve every event the sequence uses, one after another. The **Result** column shows whether each event has been solved; an event with no result contributes nothing to the timeline.
 
    > **NOTE:** The window is busy until all the events have run. If a
