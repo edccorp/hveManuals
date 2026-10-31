@@ -24,7 +24,7 @@ part by method:
 | Event Designer... | every event: the staged Event Designer beside the 3-D view (see [Chapter 16a](../06-event-editor/16a-event-designer.md)) |
 | Event Information... | every event |
 | Copy Event | every event: a copy of the active event at the end, with no results (Event Information's **Copy**) |
-| Branch From This Instant | a SIMON event with no humans: a new event that continues the run from the playback instant with every state it had there, following its own driver tables from then on (see [Chapter 15](../06-event-editor/15-creating-editing-events.md#branching-a-simon-run-from-an-instant)) |
+| Branch From This Instant | a SIMON or EDSMAC4 event with no humans: a new event that continues the run from the playback instant with every state it had there, following its own driver tables from then on (see [Chapter 15](../06-event-editor/15-creating-editing-events.md#branching-a-run-from-an-instant)) |
 | Position / Velocity... | every method that starts from initial conditions — all except EDCRASH and READDATAFILE |
 | Driver Controls... | EDSMAC, EDSMAC4, SIMON, EDSVS, EDVDS, EDVTS, EDVSM, SINGLETRACK; and EDCRASH, where it shows the Wheel Data page |
 | Damage Profiles... | EDCRASH (it opens Event Information's Vehicle Impact Setup) |

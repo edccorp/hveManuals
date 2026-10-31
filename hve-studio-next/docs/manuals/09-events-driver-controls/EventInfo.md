@@ -223,10 +223,10 @@ not saved with the case).
     were in a solved event — at the end of the run or at a **Handoff time** you
     choose — and writes that as this event's starting position, heading and
     speed (**Seed Initial Conditions**). Vehicles are matched by vehicle, not by
-    slot. Nothing else is copied. To continue a solved SIMON run from an instant
+    slot. Nothing else is copied. To continue a solved SIMON or EDSMAC4 run from an instant
     with every state it had there, use **Event › Branch From This Instant**
     instead (see
-    [Chapter 15](../hve-users/06-event-editor/15-creating-editing-events.md#branching-a-simon-run-from-an-instant)).
+    [Chapter 15](../hve-users/06-event-editor/15-creating-editing-events.md#branching-a-run-from-an-instant)).
 
 ## Vehicle Impact Setup (EDCRASH)
 

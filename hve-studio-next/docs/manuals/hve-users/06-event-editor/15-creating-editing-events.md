@@ -80,9 +80,9 @@ run are on screen; neither touches the solved event.
 > results of a run are on screen, because deleting an event renumbers the
 > others; press **Reset** first.
 
-### Branching a SIMON run from an instant
+### Branching a run from an instant
 
-**Event › Branch From This Instant** (a SIMON event) adds a new event that
+**Event › Branch From This Instant** (a SIMON or EDSMAC4 event) adds a new event that
 **continues** the run from the current playback instant, as though the run had
 been paused there. Use it for avoidance studies: play the run to the moment of
 interest, choose the item, change what the driver does from there (brake
@@ -91,9 +91,9 @@ earlier, steer less) and run the branch. *(New in HVE Studio.)*
 The branch, named "*name* branch at *time* s":
 
 - is the original run up to that instant, and from then on carries **every
-  state the run had there**: suspension travel, wheel spin, tire slip, brake
-  pressure, engine and gear, the path follower's state, contact already under
-  way and the crush so far. Nothing is approximated, so a branch left unchanged
+  state the run had there**: in SIMON, suspension travel, wheel spin, tire slip,
+  brake pressure, engine and gear; in both, the path follower's state, contact
+  already under way and the crush so far. Nothing is approximated, so a branch left unchanged
   reproduces the original run exactly;
 - follows **its own driver tables** (throttle, brake, steer, gear) from the
   instant on. Edit them after the instant in the usual editors: the tables keep
