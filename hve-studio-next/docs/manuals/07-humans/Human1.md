@@ -48,6 +48,11 @@ The i, j and k semi-axis lengths of the ellipsoid.
 The roll, pitch and yaw angles of the ellipsoid axis system relative to the
 segment axis system.
 
+In GATB these angles set the segment's **principal axes of inertia**; the
+contact ellipsoid stays aligned with the segment, and the 3-D view, the glTF
+export and the ray tracer draw it that way -- as the run solves it -- so the
+angles do not tilt the drawn ellipsoid.
+
 !!! note "Additional ellipsoids"
     As in HVE, GATB uses only each segment's **first** ellipsoid when it builds
     its contacts. A segment-to-segment contact pair that names a later

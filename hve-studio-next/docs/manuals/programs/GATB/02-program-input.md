@@ -115,6 +115,9 @@ The Human Ellipsoid Data used by GATB are shown in Table 2-4. HVE allows up to 3
 
 > **NOTE:** If principal axes are rotated and you choose to show contact surfaces, you will not be looking at a true picture of the human-vehicle interaction. However, the forces will be correctly calculated according to the inputs being considered.
 
+!!! note "HVE Studio: the true picture"
+    HVE Studio draws every ellipsoid oriented by its segment alone -- the way GATB solves it -- so what you see is the contact geometry the run uses. GATB hands an ellipsoid's **Principal Axes** to ATB as the segment's principal-axis rotation: they orient the segment's inertia, and the contact ellipsoid itself stays aligned with the segment. (Drawn with those angles, a head with a 42-degree pitch was shown 42 degrees off from the head that meets the vehicle.)
+
 !!! note "HVE Studio"
     **Which ellipsoid takes part in a contact.** HVE's armed contact pairs name an ellipsoid on each body segment, and GATB uses them as follows — identically in HVE and in HVE Studio:
 
