@@ -137,6 +137,13 @@ numbering the engine uses; for EDVTS and EDVDS slot V1 is the tow vehicle.
 - The drop-down in each row chooses which case vehicle occupies the slot.
   Changing it **keeps** every input on the slot (position, speed, crush, tire
   blowout, wheel damage, tire-terrain settings) — use it for a what-if swap.
+  Per-wheel inputs are kept for every axle, so a vehicle with **fewer axles**
+  than the one it replaces leaves the inputs on the missing axles stored but
+  not applied; the run status names them ("V2 has 2 axles: per-wheel input on
+  axle it lacks is kept in the case but NOT applied (axle 3: blowout)"), and
+  swapping the original vehicle back applies them again. Axles the new vehicle
+  has that the old one did not start from whatever those entries hold, usually
+  the defaults.
 - **Remove** drops the slot after a confirmation; its inputs are discarded.
 - **Add Vehicle** adds a case vehicle to a new slot. It is disabled once the
   method's maximum number of vehicles is reached. Below the method's minimum

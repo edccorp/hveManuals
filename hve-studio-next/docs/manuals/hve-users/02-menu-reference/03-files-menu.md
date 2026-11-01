@@ -96,6 +96,9 @@ its 3-D file, or a body a newer HVE Studio places differently — the crush is
 carried over by its overall shape instead, and the 3-D view's status line says
 *V*n*'s damage is drawn approximately*. If the vehicle's 3-D body did not load,
 it says the damage is not drawn. Re-running the event draws the crush exactly.
+The same happens, and is said the same way, when most of the crushed points are
+not on the drawn body at all because the run collided a different surface for
+it (the generic body, when its own mesh was not available to the solver).
 
 ![The file browser](../images/hvn-02-open-case.png)
 *Open Case uses HVE Studio's own two-pane file browser.*
