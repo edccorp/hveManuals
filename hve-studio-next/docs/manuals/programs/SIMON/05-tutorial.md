@@ -140,9 +140,9 @@ The vehicle negotiates the lane change, even with a heavy brake application, and
 The second event repeats the test with ABS disabled. In the tutorial case it already exists: choose **ISO Lane-Change, w/o ABS [SIMON]** in the **Active Event** list.
 
 !!! note "HVE Studio"
-    HVE disables ABS by editing the vehicle's brake system and then copying the first event (Edit › Copy). HVE Studio has no event copy command, and does not need the vehicle edit: open **Event › Wheels...**, choose the **Brake** tab, and set **Antilock brakes** for the event. In the tutorial case the first event reads *Force ON for this event* (recovered from HVE's saved run) and the second *Use the vehicle's setting*, which is off. To build the second event yourself, click **+** beside **Active Event** and enter the same initial conditions, path follower and brake table as the first.
+    HVE disables ABS by editing the vehicle's brake system and then copying the first event (Edit › Copy). In HVE Studio, click **Copy** beside **Active Event** (or **Event › Copy Event**) to copy the first event; it does not need the vehicle edit. In the copy, open **Event › Wheels...**, choose the **Brake** tab, and set **Antilock brakes** for the event. In the tutorial case the first event reads *Force ON for this event* (recovered from HVE's saved run) and the second *Use the vehicle's setting*, which is off. The copy already carries the first event's initial conditions, path follower and brake table.
 
-*(HVE's Figure 5-7, its Copy Event dialog, has no HVE Studio equivalent and is not reproduced.)*
+*(HVE's Figure 5-7, its Copy Event dialog, is not reproduced: HVE Studio's Copy has no dialog -- the copy is named after the original and can be renamed in **Name**.)*
 
 Click **Run** to execute the event with ABS disabled.
 

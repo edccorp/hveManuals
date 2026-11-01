@@ -73,7 +73,7 @@ chooses the variables; **Fit**, **Reset** and **Whole run** set the axes;
 colors); **Vehicle name in the legend** labels the traces. **Other Events...**
 draws the same traces from up to four other events that have results, dashed
 in each trace's color over the active event's solid ones -- for instance an
-event and a copy of it (the **Copy** button beside **+** and **−** on the
+event and a copy of it (the **Copy** button beside **Add** and **Delete** on the
 Events row) with one input changed. Vehicle and occupant traces alike; a
 trace is matched by its vehicle slot or occupant.
 

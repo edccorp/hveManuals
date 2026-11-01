@@ -22,8 +22,8 @@ back once every section is hidden), or for **Show all** and **Reset order**.
     and also carries the initial conditions that HVE kept in the
     Position/Velocity dialog. While the active event's results are on screen
     its inputs are locked (a banner says so); **Reset** the run to edit them.
-    Choosing a different event, adding an event and collapsing sections stay
-    available while locked.
+    Choosing a different event, adding or copying an event and collapsing
+    sections stay available while locked.
 
 ## Events
 
@@ -36,6 +36,12 @@ method, or in a case with no events the method you used last) and makes it
 active. **Delete** deletes the active event; the remaining
 events are renumbered. An event cannot be deleted while results for it are on
 screen.
+
+**Copy** adds a copy of the active event (its vehicles, positions, driver
+inputs and options) as a new event at the end, named *name copy*, with no
+results, and makes it active. It is available on an executed event, so you can
+change one input and run the copy beside the original. **Event › Copy Event**
+does the same.
 
 ## Event (Event Name)
 
