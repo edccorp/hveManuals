@@ -280,6 +280,10 @@ An airbag restraint system may be supplied for up to nine seat positions. Like b
 
     The bag deploys only in an event where the occupant at that seat wears the **Airbag** -- its own switch, with or without belts (see Restraints).
 
+    **The bag inflates and acts (since November 2026).** In ATB as HVE runs it, a bag never inflates: a gas-pressure value in the input deck that no bag can fill from, a loop that never ends once the bag is full, and several places where single- and double-precision numbers are mixed up all stop it, so the occupant runs as if belted only. HVE Studio repairs these, so the bag fills, takes its shape, and pushes on the occupant's contact segments. One more limit is handled: when ATB's estimate of how much of the bag is pushed into its panels and the occupant exceeds the bag itself (on a vented bag driven into a thin steering-wheel panel it reaches several times the bag), the gas law has no answer, so the gas volume is held at 10% of the bag -- for a vented bag that means no pressure, as ATB gives once the gas is spent. The run status says from when, and how far over the estimate went. The occupant's response to a bag is not validated against HVE or a test: no reference case has a bag that acts.
+
+    **The bag is drawn.** From the moment it deploys, the bag is drawn with the occupant whose seat it serves -- an off-white shaded ellipsoid at the size, place and orientation GATB holds it each output step, growing as it inflates and moving with the vehicle. It appears in the 3-D view, in a glTF export and the Blender link (as a node named after the occupant, *_Airbag*), and so in the ray-traced render. A results file saved with the case keeps it; a result from before November 2026 carries no bag to draw.
+
 *(Note: the printed manual labeled the vent-area row "Bag Penetration for Force"; the description — area of the vent — identifies it as the bag vent area.)*
 
 ### Inter-vehicle Connections
