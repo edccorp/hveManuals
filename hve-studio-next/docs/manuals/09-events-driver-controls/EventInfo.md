@@ -139,11 +139,21 @@ numbering the engine uses; for EDVTS and EDVDS slot V1 is the tow vehicle.
   blowout, wheel damage, tire-terrain settings) — use it for a what-if swap.
   Per-wheel inputs are kept for every axle, so a vehicle with **fewer axles**
   than the one it replaces leaves the inputs on the missing axles stored but
-  not applied; the run status names them ("V2 has 2 axles: per-wheel input on
-  axle it lacks is kept in the case but NOT applied (axle 3: blowout)"), and
+  not applied. A run's status and reports do not mention them (they describe
+  what was run); this row and the prompt below do, and
   swapping the original vehicle back applies them again. Axles the new vehicle
   has that the old one did not start from whatever those entries hold, usually
   the defaults.
+- **After a swap** (here, or **Vehicles > Replace...** on a vehicle events use),
+  if the new vehicle has fewer axles than inputs were set for, a box titled
+  **Inputs on axles the vehicle lacks** lists them by event, slot and axle.
+  **Keep them** leaves them for a later swap back; **Clear them** sets them back
+  to their defaults. The vehicle's own axles are never touched.
+- **Later**, the slot's row says the same thing in amber with a **Clear**
+  button beside it. Clearing is allowed on an event that has already been run:
+  no engine read those inputs and they are not part of what decides whether
+  saved results still describe the event, so the results stay valid. It is
+  refused only while a run is in progress or the case is sealed.
 - **Remove** drops the slot after a confirmation; its inputs are discarded.
 - **Add Vehicle** adds a case vehicle to a new slot. It is disabled once the
   method's maximum number of vehicles is reached. Below the method's minimum
