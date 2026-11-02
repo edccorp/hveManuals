@@ -205,7 +205,7 @@ Enter **Seat X from CG** (in) = `-14` and **Seat Y from CG** (in) = `16`. The hu
 
 > **NOTE:** The legs may be embedded in the floor and the human not in a normal seated position, where the torso is approximately parallel with the seat back.
 
-Click **Pose** beside the human. In the *Body Pose* dialog, tick **Pose this body**, then:
+Click **Body Pose...** beside the human's position (*Vehicle Initial Conditions* › *Humans*). In the *Body Pose* dialog, tick **Pose this body**, then:
 
 - Change the pitch angle of the pelvis to 25 degrees.
 - Set the pitch of the Left Upper Leg to 80 degrees and of the Left Lower Leg to -50 degrees.
@@ -395,7 +395,7 @@ Next, position the pedestrian. Under *Humans in Event*, set **Occupies** to *Ped
 HVE's tutorial enters the pedestrian at x = 7.15 ft, y = -1.5 ft, z = -1.0 ft, yaw = 120 degrees, with an initial velocity of 1.0 mph:
 
 - Enter **X from vehicle CG** = 85.8 in (7.15 ft) and **Y from vehicle CG** = -18 in (-1.5 ft). These fields are measured from the vehicle's CG, so they are in inches, like the seat positions.
-- Click **Pose**, tick **Pose this body**, and set the pelvis yaw to `120` degrees.
+- Click **Body Pose...** (beside the human's position), tick **Pose this body**, and set the pelvis yaw to `120` degrees.
 - In the same dialog, under *Initial velocity (segment frame, u/v/w)*, enter u = `1.0` mph.
 
 !!! note "HVE Studio"

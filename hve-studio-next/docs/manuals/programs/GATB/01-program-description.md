@@ -77,7 +77,7 @@ The procedure for using GATB in HVE Studio is:
 - In the **Event (F5)** editor, set up the GATB event in the Event Information panel:
   - Add an event and choose **GATB** as the Calculation Method.
   - Under *Vehicles in Event* and *Humans in Event*, choose the vehicle and at least one human.
-  - Position the vehicle (*Vehicle Initial Conditions*) and each human (*Humans in Event*: the vehicle it occupies, seat X/Y, **Pose**, **Restraints (this event)**).
+  - Choose each human and what it wears (*Humans in Event*: the vehicle it occupies, **Restraints (this event)**), and position the vehicle and each human (*Vehicle Initial Conditions*; under *Humans*, seat X/Y and **Body Pose...**).
   - Enter or select an acceleration pulse (**Event › Collision Pulse**).
   - Run the event (**Run** on the playback bar, or **Output › Run Simulation**).
 - Modify the inputs as required to achieve the desired match between the simulation results and the actual event; a solved event's inputs are read-only until you press **Reset**.

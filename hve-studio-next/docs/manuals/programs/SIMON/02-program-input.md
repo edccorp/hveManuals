@@ -50,6 +50,9 @@ The following human parameters are used by SIMON:
 
 SIMON uses the total weight of the human in order to adjust the inertial properties of the vehicle sprung mass. The weights of all ellipsoids are added together to compute the total human weight. The total weight is applied to the vehicle at the vehicle-fixed coordinates of the pelvis CG. Neither the rotational segment inertias nor the body configuration is used by SIMON.
 
+!!! note "HVE Studio"
+    Because the occupant's weight moves the vehicle's loaded CG, and a vehicle's start position is that CG, the vehicle is drawn before a run where SIMON will put it: shifted from the start position by the occupant's share. **Dragging an occupant** in the 3-D view moves the vehicle's start position by the same amount (since November 2026), so the car stays where it is on screen and only the occupant moves; it used to slide a little the opposite way. Typing a new seat position moves the loaded CG as before.
+
 ## Vehicles
 
 SIMON uses vehicles created in HVE Studio's Vehicle editor (**Vehicle (F3)**). Vehicles come from the vehicle databases (HVE's classic `.db` databases, HVE Studio's own `.hvedb` databases such as `EDCVehicles.hvedb` and your own **My Vehicles**, and the generic vehicles), as well as vehicles carried in an opened `.hve` case. SIMON supports all vehicle types: *Passenger Car, Pickup, Van, Sport-Utility, Truck, Trailer, Dolly, Fixed Barrier* and *Movable Barrier*.
@@ -506,7 +509,7 @@ If the event cannot be run as set up (for example, a vehicle with more axles tha
 SIMON uses the following event set-up options. In HVE Studio each is on the **Event** menu of the Event editor and edits the vehicle selected in its *Vehicle* list (or the vehicle selected in the viewport):
 
 - Position/Velocity — Vehicles (*Vehicle Initial Conditions (SIMON)* in Event Information, or **Event › Position / Velocity...**)
-- Position/Velocity — Humans (the occupant's vehicle, position and **Pose**, under **Humans in Event** in Event Information)
+- Position/Velocity — Humans (the occupant's vehicle under **Humans in Event**; its position and **Body Pose...** under *Vehicle Initial Conditions* › *Humans*, in Event Information)
 - Driver Controls (**Event › Driver Controls...** and **Event › Path Follower...**)
 - Collision Pulse (**Event › Collision Pulse...**)
 - Vehicle Mesh (**Event › Vehicle Mesh...** and **Event › DyMESH Options...**)
