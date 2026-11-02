@@ -183,9 +183,9 @@ A program package carries only `Generic.hvedb`.
   on Windows (`~/Library/Application Support/EDC/HVE/data` on macOS,
   `~/.local/share/hve/data` on Linux). Uninstalling a version does not touch
   it. Among the folders that come with the program it is searched first, ahead
-  of the program's own `db` folder. **Help › Check for Vehicle Data Updates**
+  of the program's own `db` folder. **Help › Check for Updates**
   installs a newer edition there (see
-  [Help menu](../hve-users/02-menu-reference/07-help-menu.md#check-for-vehicle-data-updates)).
+  [Help menu](../hve-users/02-menu-reference/07-help-menu.md#check-for-updates)).
 - **Saving a vehicle.** **Vehicle › Save Vehicle As** sets the name, type,
   make, model, year and body style and either writes a copy of the database
   record the vehicle was loaded from into a `.db` file under those keys

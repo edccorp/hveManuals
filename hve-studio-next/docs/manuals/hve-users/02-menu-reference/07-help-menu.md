@@ -3,8 +3,8 @@
 *HVE User's Manual — Section Two: Menu Reference, HVE Studio edition. Replaces
 HVE's Chapter 7, Help Menu.*
 
-HVE Studio's Help menu has four items: **Manual**, **License...**, **Check for Vehicle Data
-Updates** and **About HVE Studio...**.
+HVE Studio's Help menu has four items: **Manual**, **License...**, **Check for Updates**
+and **About HVE Studio...**.
 
 | HVE item | HVE Studio |
 |---|---|
@@ -13,7 +13,7 @@ Updates** and **About HVE Studio...**.
 | Tech Support | Not in HVE Studio — see [TECH SUPPORT](#tech-support) |
 | About | Help › **About HVE Studio...** |
 | Online Licensing | Help › **License...** — see [ONLINE LICENSING](#online-licensing) |
-| — | Help › **Check for Vehicle Data Updates** — see [CHECK FOR VEHICLE DATA UPDATES](#check-for-vehicle-data-updates) |
+| — | Help › **Check for Updates** — see [CHECK FOR UPDATES](#check-for-updates) |
 
 ---
 
@@ -113,20 +113,38 @@ says why.
 
 ---
 
-## CHECK FOR VEHICLE DATA UPDATES
+## CHECK FOR UPDATES
 
-**Menu Option:** Help › Check for Vehicle Data Updates
+**Menu Option:** Help › Check for Updates
 
-**Purpose:** Install a newer edition of EDC's vehicle data.
+**Purpose:** Find a newer version of HVE Studio, and install a newer edition of
+EDC's vehicle data.
 
-**Description:** EDC's licensed vehicle data (`EDCVehicles.hvedb`, with its
+**Description:** This item asks EDC whether a newer version of the program, or a
+newer edition of EDC's vehicle data, is available to your license. The program
+also checks by itself, in the background, a few seconds after it starts and at
+most once a day. EDC signs the list of updates; a list that does not verify is
+ignored and the notice says so.
+
+**A newer version of HVE Studio.** A notice at the top right of the window names
+the new version, the version you have, its release date and its download size.
+**Download** saves its installer for your computer's platform in your Downloads
+folder, with a progress bar, and keeps it only if it matches EDC's signed list.
+Nothing is installed for you: **Show in Folder** opens the folder, and you run the
+installer when you choose. The new version installs beside the one you have,
+which stays installed and opens your cases as before. **Release Notes** opens the
+release's notes in your browser; **Later** hides the notice for this session.
+A test version (an alpha or beta) is offered only to a copy that is itself a test
+version, never to a release.
+
+The versions offered are the ones released on or before the maintenance date of
+your license. When the only newer version was released after it, the notice says
+that version *requires a maintenance renewal*; the version you have keeps working.
+
+**EDC vehicle data.** EDC's licensed vehicle data (`EDCVehicles.hvedb`, with its
 meshes and wheel images inside it) is a separate download from the program,
 installed once per computer in the EDC vehicle data folder (see
 [Vehicle databases](../../getting-started/04-cases-and-files.md#vehicle-databases)).
-This item asks EDC whether a newer edition that your license covers is
-available. The program also checks by itself, in the background, at most once
-a day.
-
 When an update is available, a notice in the bottom-right corner of the window
 names the version, the version installed and the download size. **Install**
 downloads it, with a progress bar, then checks and unpacks it; **Later** hides
@@ -135,11 +153,10 @@ installed and how many vehicles the library now holds; **OK** closes it. If any
 step fails, the notice says why and the vehicle data already installed is left
 exactly as it was.
 
-Vehicle data updates come with an activated license (see
+Updates come with an activated license (see
 [ONLINE LICENSING](#online-licensing)); without one, the check says so. A check
 asked for from this menu always reports its result, including that there is no
-update. This item checks for vehicle data only, not for new versions of the
-program.
+update.
 
 <!-- NAV -->
 

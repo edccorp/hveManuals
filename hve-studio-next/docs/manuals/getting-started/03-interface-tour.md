@@ -69,8 +69,8 @@ The main entries:
 - **Tools** — Quick Case (Text), Vehicle Package, Case Intake, Provenance,
   EDR Import, Monte Carlo Analysis, Motorcycle Analysis, Preferences, Style
   Editor, Cameras, Audit Log, Limits Editor.
-- **Help** — License (this computer's license), Check for Vehicle Data
-  Updates, About HVE Studio.
+- **Help** — License (this computer's license), Check for Updates (a newer
+  HVE Studio and EDC vehicle data), About HVE Studio.
 
 The name of the open case file is shown at the right end of the menu bar,
 with a `*` in front of it when the case has unsaved changes. Hover over it to

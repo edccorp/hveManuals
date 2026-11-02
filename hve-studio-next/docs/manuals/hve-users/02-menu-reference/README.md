@@ -59,7 +59,7 @@ appear only here; in the Vehicle editor the Vehicle menu takes their place.*
 | [5](05-view-menu.md) | View — panels, paths, vectors, rendering, Outliner, Scene Ghosts | View Menu |
 | [6](06-options-menu.md) | *Where HVE's Options menu went* — item-by-item map | Options Menu |
 | [6B](06b-tools-menu.md) | Tools — Quick Case, Vehicle Package, Case Intake, Provenance, EDR Import, Monte Carlo, Motorcycle Analysis, Preferences, Style Editor, Cameras, Audit Log, Limits Editor | *(new)* |
-| [7](07-help-menu.md) | Help — License, Check for Vehicle Data Updates, About HVE Studio | Help Menu |
+| [7](07-help-menu.md) | Help — License, Check for Updates, About HVE Studio | Help Menu |
 
 For a first look at the window, panels and viewport, see the
 [interface tour](../../getting-started/03-interface-tour.md); for what is different from

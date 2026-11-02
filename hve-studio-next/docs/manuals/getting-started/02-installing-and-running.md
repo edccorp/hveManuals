@@ -38,10 +38,11 @@ Run the installer, **`HVEStudio-<version>-setup.exe`**.
     An installed release needs a **license** that covers the program of the
     event you run: activate it under **Help › License...** with your EDC
     Software secret (see [Help › License](../hve-users/02-menu-reference/07-help-menu.md#online-licensing)).
-    Without one, **Run** is refused and the run status says why. The program
-    does not check for new versions of itself. With an activated license it
-    does check, at most once a day, for a newer edition of EDC's vehicle data
-    (see [Help › Check for Vehicle Data Updates](../hve-users/02-menu-reference/07-help-menu.md#check-for-vehicle-data-updates)).
+    Without one, **Run** is refused and the run status says why. With an
+    activated license the program checks, at most once a day, for a newer
+    version of itself that your license covers and for a newer edition of EDC's
+    vehicle data, and offers either in a notice; it installs nothing without
+    your click (see [Help › Check for Updates](../hve-users/02-menu-reference/07-help-menu.md#check-for-updates)).
 
 ## What is in the program folder
 
@@ -60,7 +61,7 @@ EDC's vehicle data is a separate download, installed once per computer in
 **`%ProgramData%\EDC\HVE\data`**, outside every version's folder: every
 installed version reads it, and uninstalling a version does not touch it. Among
 the folders that come with the program it is searched first. **Help › Check for
-Vehicle Data Updates** installs a newer edition there (see
+Updates** installs a newer edition there (see
 [Vehicle databases](04-cases-and-files.md#vehicle-databases)).
 
 The program file is `HVEStudio.exe` and the solver `HVESolver.exe` (in a
