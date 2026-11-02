@@ -18,6 +18,7 @@ The Tools menu is on the menu bar in every editor.
 | **Report Text...** | Your own wording for any string of the programs' report pages, kept with your settings — see [Report Text](../../11-reports-output/ReportText.md) | *(new; HVE kept these strings in each program's `.rsc` file)* |
 | **Style Editor...** | The look of the interface: base theme and live style settings | *(new; Options › Preferences › Font Size)* |
 | **Cameras...** | The case's named cameras | View › Set Camera |
+| **Measure...** | Distances, path lengths, angles and areas clicked in the 3-D view, kept in the case | *(new)* |
 | **Audit Log...** | A time-stamped record of what was done in this session | *(new; HVE's Audit Trail is a different thing — see [Audit Trail](../01-overview/02b-how-to-use-hve.md#audit-trail))* |
 | **Limits Editor...** | The minimum and maximum accepted by input fields | *(new)* |
 
@@ -198,6 +199,72 @@ but are not saved.
 Properties... · *HVE: View › Set Camera*
 
 See [Chapter 5, Set Camera](05-view-menu.md#set-camera).
+
+---
+
+## MEASURE
+
+**Menu Option:** Tools › Measure...
+
+**Description:** Measures in the 3-D view and keeps each measurement in the
+case, so whoever the case is sent to sees the same measurements on the same
+points. **Measure a** picks what the clicks measure:
+
+| Kind | Points | What it gives |
+|---|---|---|
+| **Distance** | 2 (finishes at the second click) | The straight-line distance; its plan distance, rise and grade |
+| **Path** | 2 or more (Enter or **Finish** ends it) | The length along the points in order, e.g. a skid or yaw mark; its plan length and rise |
+| **Angle** | 3 (finishes at the third click): an end, the corner, the other end | The angle at the corner; also as seen from above |
+| **Area** | 3 or more (Enter or **Finish** closes it) | The area inside the outline seen from above; its perimeter, and its area on the surface the points lie on |
+
+The **Measurements** window lists them; each one is also drawn in the 3-D view
+in orange with its name and value (the selected one in yellow): a distance or a
+path as a line through its points, an angle as its two legs with an arc at the
+corner, an area as its closed outline over a light fill.
+
+![The Measurements window over the Event editor, with three measurements listed and drawn in the 3-D view](../images/hvn-02-tools-measure.png)
+
+Press **Measure**, then click points in the 3-D view. The one being taken is
+drawn in blue, with a dashed line to the cursor and its running value. A
+distance and an angle finish by themselves; a path and an area end with
+**Enter** or **Finish**. **Backspace** takes back the last point, **Esc** drops
+the one being taken, and **Esc** again stops measuring. The tool stays armed for
+the next one until **Measuring... (click to stop)** is pressed. Changing the
+kind drops a half-taken measurement. Closing the window stops measuring too;
+the measurements stay on screen while **Show in view** is ticked.
+
+**Where a click lands.** On the nearest thing the cursor visibly touches:
+
+- the site's surfaces (the road, curbs, an imported drawing or model);
+- a vehicle's body, where it is drawn at that moment — during playback, where
+  it is at the time on screen;
+- the survey point cloud, on the front surface of the points under the cursor;
+- the ground plane, only where the cursor touches none of these.
+
+On a site surface or a body the click **snaps to a corner** of the surface
+(a mesh vertex) within about 10 pixels, so the corner of a curb or a bumper is
+taken exactly. A square on the cursor says a corner will be taken, a ring that
+the point under the cursor will be.
+
+**The list.** One row a measurement, in the display units:
+
+| Column | What it is |
+|---|---|
+| **Name** | Edit it in place (M1, M2, ... by default) |
+| **Kind** | Distance, Path, Angle or Area |
+| **Value** | The length, the angle (deg) or the area (sq ft or m^2) |
+| **Details** | A distance's plan distance, rise (the last point's height above the first) and grade; a path's plan length, rise and point count; an angle seen from above; an area's perimeter, its area on the surface and its point count |
+| **Taken on** | What the points were taken on: *site*, *V2 ... body*, *point cloud* or *ground*, with *corner* when one snapped. Hover it for each point, and for the run time when one was on a vehicle |
+
+**Delete** removes one measurement and **Delete All...** every one, after a
+confirmation. **Copy** puts the whole list on the clipboard as tab-separated
+text, with each measurement's points (x forward, y right, z down), for a
+spreadsheet or a report. Measuring is a display tool: no
+calculation reads a measurement, so it is available while results are on
+screen, and Edit › Undo takes back an added, renamed or deleted one.
+
+A measurement on a vehicle is taken where the body was drawn when you clicked
+and does not follow the vehicle afterward.
 
 ---
 

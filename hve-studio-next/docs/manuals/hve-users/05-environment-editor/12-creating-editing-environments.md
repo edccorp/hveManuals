@@ -307,6 +307,12 @@ panel's **Terrain** section:
   to meters (for example 0.3048 for a drawing in feet, 0.0254 for one in
   inches). For an `.h3d` file this is **Extra Scale**, applied on top of
   the file's own units.
+- **File units** — buttons that set the Scale Factor for the unit the file
+  was drawn in, in one click: **m**, **cm**, **mm**, **ft** (international
+  feet, 0.3048), **US ft** (US survey feet, 0.3048006 — most US state-plane
+  surveys and county GIS) and **in**. The one matching the field is shown
+  pressed; a typed factor that matches none lights none. Not shown for an
+  `.h3d`, which states its units.
 - **File is Y-up (rotate to Z-up)** and **File is Z-down (Flip About
   X-Axis)** — corrections for a file whose vertical axis is not what the
   importer assumes; both are rotations about the file's x axis, as HVE's

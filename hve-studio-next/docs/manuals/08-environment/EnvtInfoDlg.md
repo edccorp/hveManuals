@@ -254,6 +254,13 @@ The terrain geometry file, typed or chosen with **Browse...**: DXF, HVE geometry
 `.h3d` the field is **Extra Scale**, since an `.h3d` states its own units
 (inches) and frame, which are applied automatically.
 
+**File units** — one click sets the Scale Factor for the unit the file was drawn
+in: **m** (1), **cm** (0.01), **mm** (0.001), **ft** (0.3048, international
+feet), **US ft** (0.3048006, US survey feet, the unit of most US state-plane
+surveys and county GIS) or **in** (0.0254). The button that matches the field is
+shown pressed. It applies on the next **Import** (or **Add File**). Not shown for
+an `.h3d`.
+
 **File is Y-up (rotate to Z-up)** — for a file whose vertical axis is Y.
 
 **File is Z-down (Flip About X-Axis)** — for a file whose vertical axis points
@@ -424,7 +431,8 @@ Accuracy is as the survey states it: nothing here labels the data
     A point cloud is **display only**: vehicles cannot drive on it, settle onto
     it or collide with it. Import a site surface for that, or build one from
     the scan with **Drivable Surface from Scan**. The section has the
-    file, **Scale (source -> m)**, **Source is Y-up**, **Source is Z-down**,
+    file, **Scale (source -> m)** with its **File units** buttons (m, cm, mm,
+    ft, US ft, in; they set the scale and apply at once), **Source is Y-up**, **Source is Z-down**,
     **Points loaded (for the surface)**, **Points drawn per frame**, **More detail
     near the camera**, **Shown (%)**, **Color** (Auto, File color,
     Intensity, Elevation, Flat gray), **Point size (px)**, **Visible**, a

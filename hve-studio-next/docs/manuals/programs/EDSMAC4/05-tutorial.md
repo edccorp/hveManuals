@@ -382,7 +382,7 @@ The Trajectory Simulation is the playback of the event in the viewport, controll
 
 > **NOTE:** No calculations take place during playback; the run is solved once, when you press Run.
 
-During the camera exercise above, the selected camera was attached to the Nissan. To view the trajectory simulation from the street again, choose **Free view** in the camera list on the playback bar (or, in **Tools › Cameras...**, add a camera with **Carried by** **None (placed in the scene)** and **Points at** **A fixed point**, set its **Eye** and **Center**, and click **Activate**).
+During the camera exercise above, the selected camera was attached to the Nissan. To view the trajectory simulation from the street again, choose **Free view** in the camera list on the playback bar (or, in **Tools › Cameras...**, add a camera with **Carried by** **None (placed in the scene)** and **Points at** **A fixed point**, set its **Eye** and **Center**, and click **Select**).
 
 To visualize the motion:
 
