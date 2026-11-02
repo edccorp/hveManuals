@@ -527,14 +527,17 @@ image's resolution. The image is saved beside the surface as a `.png`, with a
 `.mtl` file that names it.
 
 To surface only part of the scan, use **Region to surface**: tick **Click
-corners in the 3-D view**, then click around the area, ideally looking straight
-down. The outline is drawn in yellow. **Undo corner** removes the last corner
-and **Clear region** removes them all. With fewer than three corners the whole
-scan is used. Pressing the create or replace button turns corner clicking off,
-so looking around the result does not add corners.
+points in the 3-D view**, and the view turns to look straight down,
+orthographically, so each point lands where you click it whatever the scan's
+height there. Click points around the area; they make a polygon, drawn as a
+thick bright green outline (the edge that closes it is dashed while you are
+still clicking). **Undo point** removes the last point and **Clear region**
+removes them all. With fewer than three points the whole scan is used, and the
+area is given in the display units. Pressing the create or replace button turns
+point clicking off, so looking around the result does not add points.
 
 **Make a friction zone from the region** adds a friction zone with the same
-outline (up to 16 corners), for a patch of the scan that is gravel, a wet stain
+outline (up to 16 points), for a patch of the scan that is gravel, a wet stain
 or a painted area. Set its friction multiplier under **Surface Generator**.
 
 If the case already has site geometry, the button reads **Replace Site with

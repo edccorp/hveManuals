@@ -263,7 +263,7 @@ Let's attach a camera to the Ford:
     ![Figure 5-10](images/p085-fig5-10.png)
     *Figure 5-10: Relationship between the camera position and picture center coordinates, in the vehicle's SAE axes (z down).*
 
-6. Click **Activate**. Only the active camera drives the viewport; the camera list on the playback bar switches between it and **Free view**.
+6. Click **Select**. Only the selected camera drives the viewport; the camera list on the playback bar switches between it and **Free view**.
 
 ![Figure 5-9](images/hvn-edsmac4-cameras.png)
 *Figure 5-9: The Cameras window with the Ford driver camera of this tutorial, shown in US units (0.5 m = 1.64 ft, 0.9 m = 2.95 ft, 10 m = 32.81 ft, 2.5 m = 8.20 ft).*
@@ -288,7 +288,7 @@ Next, we can repeat the above steps for the driver of the Nissan Sentra:
 
     > **NOTE:** These coordinates are relative to the Nissan Sentra, and define a view angle looking forward and to the right.
 
-5. Click **Activate**, press **|<**, and press **Play**.
+5. Click **Select**, press **|<**, and press **Play**.
 
 Watch for the moment the Ford becomes visible — in the original tutorial, at about t = 1.3 seconds. Because there was no pre-impact skidding of the Nissan, we cannot draw any conclusions regarding the Nissan driver's perception/reaction time (other than there was a lack of driver response).
 
@@ -382,7 +382,7 @@ The Trajectory Simulation is the playback of the event in the viewport, controll
 
 > **NOTE:** No calculations take place during playback; the run is solved once, when you press Run.
 
-During the camera exercise above, the active camera was attached to the Nissan. To view the trajectory simulation from the street again, choose **Free view** in the camera list on the playback bar (or, in **Tools › Cameras...**, add a camera with **Carried by** **None (placed in the scene)** and **Points at** **A fixed point**, set its **Eye** and **Center**, and click **Activate**).
+During the camera exercise above, the selected camera was attached to the Nissan. To view the trajectory simulation from the street again, choose **Free view** in the camera list on the playback bar (or, in **Tools › Cameras...**, add a camera with **Carried by** **None (placed in the scene)** and **Points at** **A fixed point**, set its **Eye** and **Center**, and click **Activate**).
 
 To visualize the motion:
 

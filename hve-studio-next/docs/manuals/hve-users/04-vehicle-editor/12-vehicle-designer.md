@@ -32,7 +32,7 @@ instead (one setting for the Vehicle, Event and Environment Designers, remembere
 between sessions); docked left or right the buttons stack in a column. The first line names the case vehicle and where it came from,
 and which stage is open.
 
-![Figure 12-1: the Vehicle Designer frame on stage 1, Vehicle, with Key figures, the case's vehicles, the database list, the picked vehicle drawn and the warnings panel](../images/hvn-04-vehicle-designer-frame.png)
+![Figure 12-1: the Vehicle Designer frame on stage 1, Vehicle: Key figures, the case's vehicles (blue), the 3-D preview of the picked vehicle, and the database section (green) with Add to case and Replace above its search and list](../images/hvn-04-vehicle-designer-frame.png)
 
 !!! warning "A shape is not a vehicle model"
     A body shape cannot determine a vehicle's mass, center of gravity, inertia,
@@ -139,8 +139,14 @@ vehicle with every setting, as a new vehicle at the end of the list in no event
 available while results are on screen: the copy renumbers no other vehicle, so
 the run keeps its own.
 
-**Add or replace from a database** is the **Add Vehicle** window's own list (see
-Vehicle › Add...): **Built in (no database needed)**, HVE's generic vehicles by
+The two halves of the stage are framed apart: **Vehicles in this case** on a blue
+ground, **Add or replace from a database** on a green one, so what is already in
+the case is never confused with what can be added.
+
+**Add or replace from a database** opens with its buttons, **Add to case** and
+**Replace V*n* with it...** (below), and the name of the vehicle **Picked** in
+the list, so a pick is added without scrolling. Under them is the **Add Vehicle**
+window's own list (see Vehicle › Add...): **Built in (no database needed)**, HVE's generic vehicles by
 type and class, for a vehicle that is in no database, then the search
 (**Filter**, **Clear**, **Generics**) and the sortable table of every vehicle in
 the loaded databases, with a filter under each column heading — pick **Type**,
@@ -155,7 +161,7 @@ angle on a double-click; the angle is kept as you change vehicles.
 
 The stage fits the window without scrolling: the vehicles in the case and the
 3-D preview side by side across the top, then the database table the stage's
-whole width, as tall as the window allows, with the buttons under it. **Hide the
+whole width, as tall as the window allows. **Hide the
 3-D preview** (top left) gives the vehicles in the case the top's whole width;
 **Show the 3-D preview** brings it back. The choice is remembered. The side, top
 and front views with the lights, accelerometers and CG marked are on the
@@ -404,7 +410,9 @@ overall length and height, yaw inertia (the sprung value, as HVE stores it),
 the static stability factor (track over twice the CG height), the front drag
 coefficient and frontal area. Beside each value, in parentheses, is the value it
 had **when the stage was opened**; a value that has moved since is shown in
-amber. A row marked `--` is one the vehicle does not state; the strip never
+amber. Both are shown to the precision of the field that edits the value (CG
+height to four decimals, the other lengths to three, a weight in lb to two), so
+an edit in the last digit shows in the numbers too. A row marked `--` is one the vehicle does not state; the strip never
 substitutes a number. The rows under **From test track** are measured by a run
 rather than entered, and read `--` until the Test Track stage fills them.
 

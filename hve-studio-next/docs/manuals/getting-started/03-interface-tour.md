@@ -165,9 +165,10 @@ Properties...** and **Reset Camera**.
 | Double-click | Return to the default view |
 | **1**, **3**, **7** (top row or keypad) | Front, right, top view; with **Ctrl**, rear, left, bottom |
 | **9** | The opposite view |
-| **5** | Switch between perspective and orthographic |
+| **5** | Switch between perspective and orthographic (the hint line names the one it switches to) |
 | **.** | Frame the selected object (in the Human editor, the selected body segment, else the whole figure) |
-| **2**, **4**, **6**, **8** | Orbit in 15° steps |
+| **Home** | Frame everything: every vehicle drawn, the site's geometry and the point cloud (to find a scan that loaded far away) |
+| **2**, **4**, **6**, **8** | Orbit in 15° steps: **2** up, **8** down, **4** left, **6** right (the hint line shows them with arrows) |
 | **C** / **Shift+C** | Look through the next / previous saved camera |
 | **I** | Insert a keyframe on the camera you are looking through, at the current playback time |
 

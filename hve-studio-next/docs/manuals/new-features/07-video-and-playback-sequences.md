@@ -303,7 +303,7 @@ traced the picture.
 
 A still can also be made without opening the app:
 `HVEStudio --render-traced case.hvex picture.png 128 1920` traces the case at the
-end of its run through its active camera (add a time after the width for
+end of its run through its selected camera (add a time after the width for
 another instant, and `--no-denoise` for the raw samples). Several pictures from
 one run: repeat `--shot <time> <phi> <radius> <theta> <picture.png>`, each an
 instant and an orbit about the first vehicle (phi from straight down and theta

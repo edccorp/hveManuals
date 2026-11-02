@@ -28,14 +28,14 @@ Open **Tools › Cameras...**. The dialog has two tabs:
 
 | Control | Does |
 | --- | --- |
-| Camera list | Chooses which saved camera the dialog edits. The camera being looked through is marked *(active)*. |
+| Camera list | Chooses which saved camera the dialog edits. The camera being looked through is marked *(selected)*. |
 | **Add** | A new camera, framed as the viewport is now |
 | **Delete**, **Rename** | Act on the selected camera |
-| **Activate** / **Deactivate** | Look through the selected camera (it drives the viewport), or stop |
-| **Capture Current View** | Copy the viewport's current framing into the selected camera |
+| **Select** / **Deselect** | Look through this camera (it drives the viewport), or stop. At the top of the tab, under the camera list |
+| **Copy Viewport View** | Put the viewport's current view (position, aim and lens) into this camera, replacing what it had |
 
-**Looking through a camera.** Only the **active** camera drives the viewport.
-Press **Activate** in the dialog, pick the camera in the viewport bar's camera
+**Looking through a camera.** Only the **selected** camera drives the viewport.
+Press **Select** in the dialog, pick the camera in the viewport bar's camera
 list, or press **C** (next camera) or **Shift+C** (previous) when no text field
 is being edited. In the Dope Sheet, double-click a camera's header.
 
@@ -132,7 +132,7 @@ honors them while you look through the camera:
 | | **Clip Start**, **Clip End** | The nearest and farthest distances drawn |
 | Camera | **Sensor Fit** | Auto, Horizontal or Vertical |
 | | **Size / Width / Height (mm)** | The sensor size the focal length is measured against. Vertical 24 mm is the 35 mm-equivalent HVE Studio has always used; Blender's default is Auto, 36 mm |
-| Viewport Display | **Show in Viewport**, **Size**, **Show Name**, **Show Limits** | How the camera is drawn in the 3-D view (Show Limits draws the clip range) |
+| Viewport Display | **Show in Viewport**, **Size**, **Show Name**, **Show Limits** | How the camera is drawn in the 3-D view (Show Limits draws what it can see: frames at Clip Start and Clip End, and the edges between them) |
 
 **Depth of Field** (with **Focus Distance** and **F-Stop**) blurs what is nearer
 or farther than the focus distance while you look through the camera; it is
@@ -143,7 +143,7 @@ them.
 
 A saved camera can be animated over playback time.
 
-1. **Activate** the camera (look through it).
+1. **Select** the camera (look through it).
 2. Set the playback time, frame the view — orbit, pan, dolly, zoom, roll — and
    press **I** (when no text field is being edited), or **Insert Key (I)** in the dialog's
    **Keyframes** section.

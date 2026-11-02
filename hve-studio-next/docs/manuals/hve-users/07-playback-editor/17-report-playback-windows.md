@@ -94,7 +94,7 @@ The playback bar along the bottom of the Viewport, in Event mode, replaces HVE's
 - **Step back** / **Step forward** — move one output step.
 - **Play** / **Pause** — run the playback forward, or pause it.
 - **Jump to end** — advance to the end of the simulation.
-- **Camera** — the active camera (C and Shift+C cycle through the cameras).
+- **Camera** — the selected camera (C and Shift+C cycle through the cameras).
 - **Time slider** — drag to any time; the current time is shown, and a time can be typed into the box beside it to jump there.
 
 !!! warning "Not in HVE Studio"

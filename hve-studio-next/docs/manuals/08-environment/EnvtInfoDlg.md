@@ -589,8 +589,9 @@ event that has them (hover it for the list). The case itself is untouched.
 - A **Rectangle** (**Center X**, **Center Y**, **Length**, **Width**,
   **Heading (deg)**, and **Set Outline to Rectangle**, which replaces the
   outline with that rectangle; length runs along the heading, 0 = +x) and its
-  **Corners** (up to 16): **Click corners in the 3-D view**, **Clear Corners**,
-  the corners' X and Y, and **Add Corner**.
+  **Points** (up to 16): **Click points in the 3-D view** (the view turns to look
+  straight down, so each point lands where it is clicked), **Clear Points**, the
+  points' X and Y, and **Add Point**.
 
 A surface the run cannot apply says why. The 3-D view draws each surface where
 the run put it; one switched off for the run is drawn faint.

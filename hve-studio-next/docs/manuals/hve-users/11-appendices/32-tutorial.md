@@ -247,7 +247,7 @@ The view of the crash scene from a general perspective shows all the collision a
     > **NOTE:** HVE Studio's camera fields measure Z **up**. HVE's Set Camera dialog measured it down, so HVE's z = −5.0 ft is entered here as 5.0 ft.
 
 4. Under **Aim**, set **Points at** to the Chevrolet Suburban, and the **Aim** offset to 0, 0, 0 (the Suburban's CG) — or press **Aim at the vehicle**.
-5. Press **Activate**. The scene is viewed from the Honda driver's perspective.
+5. Press **Select**. The scene is viewed from the Honda driver's perspective.
 6. Press **Play** on the playback bar. The Viewport displays the sequence as seen by the driver of the Honda.
 
 Repeat with a new camera for each driver; switch between the saved cameras with the camera list on the playback bar, or with **C**.

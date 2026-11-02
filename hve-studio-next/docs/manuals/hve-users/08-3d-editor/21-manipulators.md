@@ -79,7 +79,7 @@ The seven HVE manipulators and their HVE Studio counterparts:
     **Tools › Cameras…** (also a right-click on the **Camera** button under the view cube, or **Camera Properties…** on the view's right-click menu) has two tabs:
 
     - **Viewport View** — the live camera: **Orbit** or **Free (Euler)** control; view presets **Top**, **Front**, **Rear**, **Left**, **Right**, **Persp**; azimuth, elevation, distance and target point (orbit) or eye position and pitch/yaw/roll (free); **Perspective** or **Orthographic** projection with focal length or field of view; **Reset Camera**.
-    - **Saved Cameras** — the case's named cameras (up to 16). **Add** captures the current view as a new camera; **Delete** and **Rename** act on the selected one; **Activate** looks through it (only the active camera drives the view); **Capture Current View** stores the current framing in it. Re-framing an active camera in the view makes it *Current*, with **Save as New**, **Overwrite** and **Revert**.
+    - **Saved Cameras** — the case's named cameras (up to 16). **Add** captures the current view as a new camera; **Delete** and **Rename** act on the selected one; **Select** looks through it (only the selected camera drives the view); **Copy Viewport View** puts the current view into it. Both sit at the top of the tab with the keyframe controls. Re-framing a selected camera in the view makes it *Current*, with **Save as New**, **Overwrite** and **Revert**.
 
     A saved camera is set up as a Blender camera is, with two independent settings:
 

@@ -116,6 +116,10 @@ vehicle mesh or site geometry, image, database) and labeled with its extension; 
 pointer over one for its full name, size and date. The view you choose is kept for the next
 time the browser opens.
 
+A click in the **Path** box selects the whole path, so typing or pasting replaces it. **Enter**
+in the **File** box, or with no box being typed in, does what the **Open** (or **Save**) button
+does; that button is drawn in the accent color as the browser's default.
+
 **New folder** (beside the **Folders** heading) makes a folder inside the one you are in: type a
 name and press **Enter**. A name Windows could not hold (an empty name, one with `/ \ : * ? " < > |`,
 a trailing dot or space, or a device name such as `CON`) is refused with the reason, and a name

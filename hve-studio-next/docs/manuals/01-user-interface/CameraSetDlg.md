@@ -9,9 +9,9 @@ In HVE Studio the same job is done by the **Cameras** window: **Tools › Camera
 ## Saved Cameras tab
 
 ### Camera
-A drop-down list of the saved cameras; *(active)* marks the one driving the Viewport and *(modified)* one that has been re-framed in the Viewport without being saved. **Add** creates a new camera from the current view, **Delete** deletes the selected camera, and **Rename** renames it.
+A drop-down list of the saved cameras; *(selected)* marks the one driving the Viewport and *(modified)* one that has been re-framed in the Viewport without being saved. **Add** creates a new camera from the current view, **Delete** deletes the selected camera, and **Rename** renames it.
 
-When the active camera has been re-framed in the Viewport, the window shows it as *Current -- re-framed from "<name>", not saved*, with **Save as New**, **Overwrite "<name>"** and **Revert** buttons.
+When the selected camera has been re-framed in the Viewport, the window shows it as *Current -- re-framed from "<name>", not saved*, with **Save as New**, **Overwrite "<name>"** and **Revert** buttons.
 
 ### Position
 **Carried by**
@@ -38,7 +38,7 @@ For a camera placed in the scene the dialog shows the aim both ways, kept in ste
 
 Changing Carried by, Inherit or Points at keeps the camera where it is and looking where it looks at the playback time, as far as the new setting allows.
 
-An orange note reminds that only the **active** camera drives the Viewport.
+An orange note reminds that only the **selected** camera drives the Viewport.
 
 ### Roll (deg)
 Rotates the camera about its viewing axis, tilting (banking) the picture. 0 keeps the horizon level. HVE's *Camera Tilt Angle*.
@@ -50,13 +50,13 @@ Rotates the camera about its viewing axis, tilting (banking) the picture. 0 keep
 **Sensor Fit** (Auto, Horizontal or Vertical) and the sensor size, which only change how a field of view reads as a focal length.
 
 ### Viewport Display
-**Show in Viewport** draws the camera in the 3-D view, at the given **Size**; **Show Name** labels it and **Show Limits** draws its clip range.
+**Show in Viewport** draws the camera in the 3-D view, at the given **Size**; **Show Name** labels it and **Show Limits** draws what it can see: a frame at its **Clip Start**, a frame at its **Clip End**, and the edges between them.
+
+### Select / Deselect, Copy Viewport View
+At the top of the tab, under the camera list. **Select** makes the camera drive the Viewport, so the Viewport looks through it (**Deselect** releases it); only the selected camera drives the Viewport. **Copy Viewport View** puts the Viewport's current view (position, aim and lens) into this camera, replacing what it had; on a keyed camera the keyed values are keyed at the playback time. **C** and **Shift+C** in the Viewport step through the saved cameras without opening this window.
 
 ### Keyframes
-Animates the camera over the playback time: step to the previous or next key, set the time, **Insert Key (I)**, **Delete Key** and **Clear Keys**, and choose each key's interpolation and easing and the camera's extrapolation and cycling.
-
-### Activate / Deactivate, Capture Current View
-**Activate** makes the selected camera drive the Viewport (**Deactivate** releases it). **Capture Current View** copies the Viewport's current view into the selected camera.
+Under those buttons. Animates the camera over the playback time: step to the previous or next key, set the time, **Insert Key (I)**, **Delete Key** and **Clear Keys**, and choose each key's interpolation and easing and the camera's extrapolation and cycling.
 
 ## Viewport View tab
 
