@@ -27,7 +27,7 @@ To place an occupant in a SIMON event, open **Event › Event Information...** i
 
 To see how the occupant responds, run the event first, then click **Add occupant event (GATB) from this run** under **Humans in Event**. HVE Studio appends a new GATB event for the vehicle the humans ride in and those humans, with an acceleration pulse taken from the SIMON run's solved motion (see **Take pulse from this event** in the Collision Pulse dialog to choose position or velocity instead). The SIMON event is not changed, and SIMON does not feel the occupant: the route is one-way. The button is unavailable until the event has a solved run, and the vehicle needs interior surfaces, which GATB requires.
 
-**Couple the occupants two-way (experimental)**, under **Humans in Event**, solves the car and its occupants together on every run of the event. The occupants are GATB bodies instead of rigid mass: SIMON runs the car without their mass, GATB runs the occupants on the car's motion, and what they push on the car (their seat, belt and interior contacts) goes back to SIMON as a force and moment on the sprung mass. The occupants' vehicle needs interior surfaces; if the coupling cannot run, the event is solved as an ordinary SIMON run and the status says why. A human riding a **motorcycle** is coupled differently, and **two way by default**: the box reads **Couple the rider two-way (experimental)**, the rider rides the machine until it leaves it, and from then its push on the vehicle it strikes and on its own machine goes back to SIMON (see the motorcycles page, *The rider in a SIMON event*).
+**Couple the occupants two-way**, under **Humans in Event**, solves the car and its occupants together on every run of the event. The occupants are GATB bodies instead of rigid mass: SIMON runs the car without their mass, GATB runs the occupants on the car's motion, and what they push on the car (their seat, belt and interior contacts) goes back to SIMON as a force and moment on the sprung mass. The occupants' vehicle needs interior surfaces; if the coupling cannot run, the event is solved as an ordinary SIMON run and the status says why. A human riding a **motorcycle** is coupled differently, and **two way by default**: the box reads **Couple the rider two-way**, the rider rides the machine until it leaves it, and from then its push on the vehicle it strikes and on its own machine goes back to SIMON (see the motorcycles page, *The rider in a SIMON event*).
 
 **Coupling method** chooses how:
 
@@ -36,8 +36,8 @@ To see how the occupant responds, run the event first, then click **Add occupant
 
 In either method the result shows the car's run with the occupants as GATB moved them.
 
-!!! warning "Experimental"
-    The coupling is checked against simple physics, not against measurements: a coupled car carries its occupant like the rigid rider does (within 0.03 m/s through a braking stop), the forward push it receives equals the occupant's momentum change, and its answer moves with the integration step no more than SIMON's own. It is not a substitute for an occupant analysis validated against tests, and the occupant motion inherits GATB's own limits.
+!!! note "What the coupling is checked against"
+    HVE has no two-way coupling, so there is no HVE result to compare it with, and it has not been compared with measured tests. It is checked against simple physics: a coupled car carries its occupant like the rigid rider does (within 0.03 m/s through a braking stop), the forward push it receives equals the occupant's momentum change, and its answer moves with the integration step no more than SIMON's own. It is not a substitute for an occupant analysis validated against tests, and the occupant motion inherits GATB's own limits.
 
 The following human parameters are used by SIMON:
 

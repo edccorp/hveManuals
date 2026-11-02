@@ -108,8 +108,7 @@ motorcycle, **Seat X from CG**, **Seat Y from CG** and **Seat Z from CG** where
 the rider sits, and **Pose** for its riding posture. The rider
 rides the machine, drawn on its seat, until it **leaves** it -- when the
 motorcycle first contacts something (or, on the nonlinear model, leans past
-70°). From that instant the rider is solved as a **GATB body of its own**
-(experimental):
+70°). From that instant the rider is solved as a **GATB body of its own**:
 
 - It starts where it sat, in the posture you gave it, moving as the seat moved.
 - It meets the **vehicle nearest the motorcycle** at that instant -- that
@@ -122,8 +121,8 @@ motorcycle first contacts something (or, on the nonlinear model, leans past
   thrown.
 
 By default the rider is **two way**: its push goes back into the vehicle it
-strikes and into its own motorcycle (**Couple the rider two-way
-(experimental)** under **Humans in Event**, on for a new event). Clear it for
+strikes and into its own motorcycle (**Couple the rider two-way**
+under **Humans in Event**, on for a new event). Clear it for
 **one way**: the rider is still solved as a body, but it moves no vehicle -- the
 vehicles are solved as if it had no body of its own. **Coupling method** says
 how two way is solved:
