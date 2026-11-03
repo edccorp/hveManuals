@@ -4,11 +4,13 @@ The properties of a terrain surface material: its friction, its force–deflecti
 law (for contact with the ground) and its soil properties (for sinkage).
 
 !!! note "HVE Studio"
-    A road surface's type and physical properties are edited on the **HVE
-    Surface** node of the surface's material in the **Shader Editor**. Select
-    the surface — click it in the 3-D view of the Environment editor (F4), or
-    pick its row in **Environment › Environment...**, Terrain, **Surface
-    Materials** — and press **Edit in Shader Editor**. The node, with an orange
+    A road surface's type and physical properties are edited under
+    **Selected Surface** › **Surface Type and Friction** in the Environment
+    Designer, or on the **HVE Surface** node of the surface's material in the
+    **Shader Editor** -- the same rows. Select the surface — click it in the
+    3-D view of the Environment editor (F4), or pick its row in the Outliner
+    or in **Environment › Environment...**, Terrain, **Surface Materials** —
+    and edit it there, or press **Edit in Shader Editor**. The node, with an orange
     title bar reading **HVE Surface -- <surface name>**, sits on the material's
     canvas beside the nodes that set how the surface looks. Its upper rows are
     headed **PHYSICS -- these change the result**.

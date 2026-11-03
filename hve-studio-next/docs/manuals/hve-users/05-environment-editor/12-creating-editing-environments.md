@@ -575,19 +575,32 @@ or hides it; it has no Drive switch, because a point cloud is never a
 surface.
 
 The Environment panel's **Selected Surface** section shows the surface
-selected in the Viewport or the Outliner: its name, type and friction, its
-**Placement**, and the buttons **Edit in Shader Editor** and **Deselect**.
+selected in the Viewport or the Outliner: its name, type and friction, the
+buttons **Edit in Shader Editor** and **Deselect**, its **Surface Type and
+Friction** (open by default: the surface type, **Friction Multiplier**,
+stiffness, soil and standing water -- the same rows as the Shader Editor's HVE
+Surface node, so the two always agree) and its **Placement**.
 **Open Outliner** opens the Outliner. **Default material** edits the material
 used by any drivable polygon that has no material of its own. Those polygons
 (every face of a DXF, a mesh file without materials, a vehicle `.h3d` loaded as
 a site) are one surface in the Outliner, **Untyped surfaces**, whose type and
 Drive switch are set like any other's.
 
+A VRML (`.wrl`) or Inventor (`.iv`) site file that carries none of HVE's own
+surface tags comes in **one surface per shape** -- each `Separator` with its
+own material and face set -- named after the file and numbered in file order
+(`US_12 1`, `US_12 2`, ...). Each can be selected, typed, hidden and given its
+own friction. Each starts with the Default surface material's friction,
+stiffness and water, so a run is unchanged until a part is edited. A file with
+a single shape is still one **Untyped surfaces**; an HVE `.h3d` or a site
+embedded in an HVE case keeps HVE's own surfaces.
+
 To edit a surface's contact material:
 
 1. Click the surface in the Viewport, or select its row in the Outliner.
-2. Click **Edit in Shader Editor**. The surface's material opens in the
-   Shader Editor with its **HVE Surface** node, which holds the surface
+2. Edit it in **Surface Type and Friction** under **Selected Surface**, or
+   click **Edit in Shader Editor**: the surface's material opens in the
+   Shader Editor with its **HVE Surface** node, which holds the same surface
    type and every physical property the engines read (see
    [Chapter 13](13-environment-model-definition.md)).
 3. Optionally pick an HVE material file from the material list and click
