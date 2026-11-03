@@ -76,7 +76,6 @@ See [Collision Pulse Options](ColPulOptDlg.md) and
 
 **Table: n point(s)**, then:
 
-- **Add row** — appends a row 5 ms after the last.
 - **Import file...** — reads a text file of 7 numbers a line (time, then the
   six degrees of freedom); lines that are not 7 numbers are skipped and
   counted.
@@ -112,9 +111,13 @@ is not reported: HVE's own EDHIS tutorial pulse has such a spike in its yaw
 column. EDHIS interpolates its table in straight lines, so for an EDHIS event
 the graph is what runs.
 
-The grid has one row per time point: **#**, **t (s)**, and the six
-degree-of-freedom columns for the selected type; **X** deletes a row. It edits
-like the driver-control tables (see [Driver Controls](../09-events-driver-controls/DriverControls.md#editing-a-table)):
+Above the grid are **Add** (a row after the last, at the table's own time step,
+5 ms for a first step), **Sort by Time**, **Delete selected**, **Delete to end**
+and **Paste**. The grid has one row per time point: **#**, **t (s)**, and the
+six degree-of-freedom columns for the selected type; **X** deletes a row, and a
+blank row marked **+** at its foot becomes a row when a value is typed into it
+(**Enter** moves down a row). It edits like the driver-control tables (see
+[Driver Controls](../09-events-driver-controls/DriverControls.md#editing-a-table)):
 **Paste** replaces the table with rows copied from a spreadsheet, report or
 text file (time first, then the six columns, in the units the columns show),
 Ctrl+V in a cell pastes from that cell, Tab out of the last cell adds a row,

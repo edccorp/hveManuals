@@ -66,14 +66,23 @@ curve editor, like Blender's Graph Editor: each row is a **key** on the curve.
 Each row is a number (**#**), a **Time (s)** and a value. Click a cell to
 type a value; drag to change it. A time typed out of order puts its row where
 it belongs in time when you leave the cell, and the rows are numbered again.
-**Add** appends a row at the table's own time
-step after the last (half a second for a first step); **X** at the end of a row
-deletes that row (the last remaining row cannot be deleted); **Sort by Time**
-puts the rows in time order. A per-wheel table (one column per wheel, headed
-*A1-R*, *A1-L*, ...) has its own **Add** and **Discard per-wheel table**
-buttons. Side **R** is the right wheel.
+The buttons are **above** the table: **Add** appends a row at the table's own
+time step after the last (half a second for a first step); **Sort by Time** puts
+the rows in time order; **Delete selected** removes the rows selected on their
+numbers; **Delete to end** removes the first selected row and every row after
+it; **Paste** is described below. **X** at the end of a row deletes that row (the last
+remaining row cannot be deleted). A per-wheel table (one column per wheel,
+headed *A1-R*, *A1-L*, ...) has the same buttons above it, and its own
+**Discard per-wheel table**. Side **R** is the right wheel.
 
 The tables edit like a spreadsheet:
+
+- **The blank row** — every table ends in an empty row marked **+**. Type a
+  value into it and it becomes a row (its time continues the table's step when
+  you type the value first). **Enter** moves down to the same column of the
+  next row -- the blank row after the last -- so a column of values is typed as
+  value, Enter, value, Enter. The blank row is never stored, so there is nothing
+  to remove afterward. Escape leaves a cell without changing it.
 
 - **Paste** — copy the rows from a spreadsheet, a report (a CDR report's
   pre-crash table, for example) or a text file, and either press Ctrl+V while
@@ -86,7 +95,8 @@ The tables edit like a spreadsheet:
   typed row after row without the mouse.
 - **Select rows** on their numbers: click one, Shift+click for a range,
   Ctrl+click to add one, or drag down the numbers. **Delete selected** or the
-  Delete key removes them together.
+  Delete key removes them together; **Delete to end** truncates the table from
+  the first selected row.
 - **Limits** — each value column has HVE's two ranges (Output Settings ›
   Limits). A value outside the **usual** range (a pedal force over 400 lb, a
   steering-wheel angle past ±900°) is accepted with a note under the table

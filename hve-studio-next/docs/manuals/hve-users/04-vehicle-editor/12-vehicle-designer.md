@@ -73,7 +73,8 @@ vehicle's own data and are usually left as they are.
 18. **Summary** (stage 18 below) — the spec sheet, the whole warnings list and the provenance tally.
 
 Every stage hosts the editors that hold its inputs, the same windows the
-Vehicle menu opens; each editor's **Open in its own window** opens its window.
+Vehicle menu opens. To work an editor beside another stage, open its window
+from the Vehicle menu.
 
 ### Used by
 
@@ -216,8 +217,7 @@ pitch and yaw inertias and the product of inertia, each in the stored basis and
 the other basis side by side, and what is aboard (occupants and cargo). A
 vehicle is usually set up from total-mass data: type the **Total** column and
 the sprung values follow (the unsprung masses stay at their wheels). One
-editor serves the window and the stage; **Open in its own window** opens the
-window.
+editor serves the window and the stage.
 
 ![Figure 12-10: the Mass & Inertia stage hosting the Inertia / Mass editor](../images/hvn-04-vehicle-designer-mass.png)
 
@@ -396,9 +396,9 @@ Pressure** the Brake System Pressure editor with its pedal-force curve, and
 Design window otherwise opens. They are the same editors as the windows, not
 copies: a field has one editor, drawn here or in the window. Under the designer,
 a **Design...** click in the Assembly tab selects the Designer tab on that wheel
-instead of opening a second window. Each tab's **Open in its own window** button
-opens that editor as its separate window, to work it beside another stage; the
-two ABS tabs open the ABS / Brake Design window.
+instead of opening a second window. Each tab's editor is also its own window on
+the Vehicle menu, to work it beside another stage; the two ABS tabs share the
+ABS / Brake Design window.
 
 ![Figure 12-7: the Brakes stage with the brake editors under the chart](../images/hvn-04-vehicle-designer-brakes-editors.png)
 
@@ -481,8 +481,8 @@ Dampers** table and the four advanced tabs that **Vehicle › Editors › Suspen
 opens, drawn in the stage's center under the frame's vehicle line, so an edit
 here is the edit, with Key figures and the warnings panel updating beside it.
 The window and the stage draw one editor, so they can never disagree.
-**Open in its own window** opens the same editor as a separate window, to work
-it beside another stage. A solved run's inputs are read-only here as everywhere, until
+The same editor is a separate window on the Vehicle menu, to work it beside
+another stage. A solved run's inputs are read-only here as everywhere, until
 the run is reset.
 
 ![Figure 12-4: the Suspension stage hosting the suspension editor](../images/hvn-04-vehicle-designer-suspension.png)
@@ -501,8 +501,7 @@ maximum torque and power, rotational inertia, friction torque, and the **Engine
 Tables** (the wide-open
 and closed-throttle torque curves, with the power each row implies). Nothing is copied: the stage
 and the window draw the same editor, and the Transmission stage holds the rest
-of that window. The **Open in its own window** button opens the whole
-Drivetrain window.
+of that window; the whole Drivetrain window is on the Vehicle menu.
 
 ![Figure 12-8: the Engine stage hosting the Drivetrain editor's Engine section](../images/hvn-04-vehicle-designer-engine.png)
 
@@ -520,8 +519,8 @@ The Transmission stage hosts the other three sections of the Drivetrain editor:
 gears and their ratios with reverse, the final drive ratio, efficiency, shift
 time and drive type), **Differential** (the differential type, locking
 coefficient, preload torque and its speeds) and **Electronic Stability (ESS)**
-(traction and yaw stability control with their rates). The **Open in its own window** button
-opens the whole Drivetrain window.
+(traction and yaw stability control with their rates). The whole Drivetrain
+window is on the Vehicle menu.
 
 ![Figure 12-9: the Transmission stage hosting the Drivetrain editor's driveline sections](../images/hvn-04-vehicle-designer-transmission.png)
 
@@ -596,7 +595,7 @@ Moving one on a vehicle the run holds is refused. Under it is the vehicle's acce
 in every event the vehicle runs in; the Event Designer's Equipment stage edits
 the same devices.
 
-Each of these three stages' **Open in its own window** opens its editor's window.
+Each of these three stages' editors is also a window on the Vehicle menu.
 Until 2026-10-20 the three were tabs of one **Exterior** stage.
 
 ### Stage 16: Occupant Protection
