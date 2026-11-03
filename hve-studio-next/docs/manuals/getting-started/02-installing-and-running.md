@@ -27,6 +27,15 @@ Run the installer, **`HVEStudio-<version>-setup.exe`**.
   Start menu entry, **HVE Studio <version>**, and its own entry in Windows'
   installed-apps list. **HVE Studio** in the Start menu, and double-clicking an
   `.hvex` case, open the version installed last.
+- **Removing earlier versions.** When other versions are installed, the
+  installer shows a page after the folder, with one box per version, **Remove
+  HVE Studio <version>**, all unticked. The versions you tick are uninstalled
+  once the new one is in place, each exactly as uninstalling it from the
+  installed-apps list would; your license, settings, saved vehicles and cases
+  are kept. Installing without asking (**`/S`**), add **`/REMOVEOLD`** to remove
+  every earlier version. Only versions installed the same way are listed: a
+  per-user install cannot remove an every-user one, which needs an
+  administrator.
 - **Classic HVE is left alone.** The installer never takes over `.hve` files;
   they stay with HVE.
 - **Uninstalling** a version (from Windows' installed-apps list) removes that
@@ -39,10 +48,13 @@ Run the installer, **`HVEStudio-<version>-setup.exe`**.
     event you run: activate it under **Help › License...** with your EDC
     Software secret (see [Help › License](../hve-users/02-menu-reference/07-help-menu.md#online-licensing)).
     Without one, **Run** is refused and the run status says why. With an
-    activated license the program checks, at most once a day, for a newer
-    version of itself that your license covers and for a newer edition of EDC's
-    vehicle data, and offers either in a notice; it installs nothing without
-    your click (see [Help › Check for Updates](../hve-users/02-menu-reference/07-help-menu.md#check-for-updates)).
+    activated license the program checks, once a day, for a newer version of
+    itself that your license covers and for a newer edition of EDC's vehicle
+    data, and offers either in a notice; it installs nothing without your click.
+    It also checks as soon as you activate the license, at the first start of a
+    newly installed version, and whenever your license covers EDC vehicle data
+    that is not installed yet, so a new computer is offered the vehicle data
+    without asking (**Tools › Preferences... › Updates** sets how often; see [Help › Check for Updates](../hve-users/02-menu-reference/07-help-menu.md#check-for-updates)).
 
 ## What is in the program folder
 

@@ -57,9 +57,15 @@ To make a pack: tick **Collect labels for a template**, open the windows to be t
 ### Enable Auto-Save, Interval (min)
 A switch and an interval in minutes (at least 1).
 
+## Updates
+
+### Check for updates when HVE Studio opens
+**Once a day** (the default), **Every time it opens** or **Only when I ask**.
+
 !!! note "HVE Studio"
     - **Date Format** sets how dates are shown in the Audit Log, the file browser and the run report.
     - **Enable Auto-Save** (on by default) and **Interval (min)** write a recovery copy of the case, `<case>.autosave.hvex` beside it, while there are unsaved changes; the case file itself is never written. Saving the case removes the copy, and opening a case whose recovery copy is newer offers to open the copy.
+    - **Check for updates when HVE Studio opens**: with an activated license, the program looks for a newer version of itself and for EDC vehicle data your license covers, a few seconds after it starts, and shows a notice only when there is something to install; nothing downloads without your click. **Once a day** still checks at the next start after a new version is installed and whenever your license covers EDC vehicle data that is not installed yet; activating a license checks at once unless this is **Only when I ask**. **Help › Check for Updates** asks at any time (see [Check for Updates](../hve-users/02-menu-reference/07-help-menu.md#check-for-updates)).
     - These settings are saved between sessions.
     - **Language**: HVE's wording comes from its `Language.rsc` and `language_overrides.rsc` files. HVE Studio's language packs translate every window at once, and the Terms tab can read HVE's two files as well.
 

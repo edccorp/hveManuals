@@ -121,10 +121,17 @@ says why.
 EDC's vehicle data.
 
 **Description:** This item asks EDC whether a newer version of the program, or a
-newer edition of EDC's vehicle data, is available to your license. The program
-also checks by itself, in the background, a few seconds after it starts and at
-most once a day. EDC signs the list of updates; a list that does not verify is
-ignored and the notice says so.
+newer edition of EDC's vehicle data, is available to your license. EDC signs the
+list of updates; a list that does not verify is ignored and the notice says so.
+
+The program also checks by itself, in the background, a few seconds after it
+starts: once a day by default, or every time it opens, or never (**Tools ›
+Preferences... › Updates**, *Check for updates when HVE Studio opens*). On the
+once-a-day setting it still checks at the next start after a **new version is
+installed**, and whenever your license covers EDC vehicle data that is **not
+installed yet** -- so on a newly set-up computer the vehicle data is offered
+without asking. **Activating a license** (or importing a license file) checks at
+once. These checks show a notice only when there is something to install.
 
 **A newer version of HVE Studio.** A notice at the top right of the window names
 the new version, the version you have, its release date and its download size.
