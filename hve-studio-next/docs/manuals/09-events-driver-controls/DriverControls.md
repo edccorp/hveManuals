@@ -47,7 +47,15 @@ curve editor, like Blender's Graph Editor: each row is a **key** on the curve.
   down (**Esc** or a right click puts them back). While moving, **X** keeps the
   move to time only and **Y** to the value only (press again to free it); the
   line under the graph says which. A value stays inside the column's allowed
-  range. When the keys are put down the rows are put in time order.
+  range. When the keys are put down the rows are put in time order. **Type a
+  number** while moving with G to move by exactly that much -- in value, or in
+  time after **X** (G, X, 0.25, Enter moves the keys 0.25 s later); Backspace
+  takes a digit back.
+- **Typed values**: with keys selected, a row above the graph shows how many,
+  a choice of **Set to** or **Move by**, and **Time** and **Value** fields. Type
+  a number and press **Enter**: under Set to every selected key takes that time
+  or value exactly; under Move by each moves by it (a negative number moves it
+  earlier or down). A field left empty changes nothing.
 - **Snap** (above the graph, on by default) lands a moved key on round steps
   of time and value that follow the zoom, about a fortieth of the view (0.05 s
   across a 2 s view); hold **Ctrl** while moving to do the opposite. The choice
