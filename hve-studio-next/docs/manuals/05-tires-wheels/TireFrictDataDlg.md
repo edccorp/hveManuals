@@ -56,8 +56,9 @@ group's tables as well as its scalars. There are no copy buttons.
 
 Every point of the selected wheel's table is a row: a load and a speed with its
 own set of friction parameters. The columns are **#**, **Load**, **Speed**,
-**Peak Long.**, **Peak Lat.**, **Slide**, **Slip at Peak**, **Long. Stiffness**,
-**In-Use** and an **x** button that deletes the row. Every cell is editable.
+**Peak Long.**, **Peak Lat.**, **Slide**, **Slip at Peak**, **Long. Stiffness**
+and an **x** button that deletes the row. Every cell is editable. The table's
+**In-Use Factor** is one field above it.
 After a **Load** or **Speed** is changed the table re-sorts by load, then
 speed. Clicking a row's number selects it for the plot below.
 
@@ -106,12 +107,14 @@ reached.
 **Long. Stiffness** — Slope of the Friction vs. Slip curve at the origin, as a
 force per unit slip.
 
-**In-Use** — The In-Use Factor: multiplier for the dependent values (peak and slide
-friction, longitudinal stiffness).
+**In-Use Factor** — above the table: one multiplier for the whole table's dependent
+values (peak and slide friction, longitudinal stiffness), as in HVE.
 
 !!! note "HVE Studio"
-    In HVE the In-Use Factor applies to the whole table. In HVE Studio it is
-    stored with each point.
+    The case keeps the factor with each point, and the field writes it to every
+    row; a row added later takes it. A case whose rows hold different factors
+    (only a hand edit in an older build could make that) shows *rows differ*
+    beside the field until the field is edited.
 
 ## Friction vs. Longitudinal Slip
 
@@ -129,8 +132,8 @@ button. It shows the longitudinal curve only.
 
 HVE's *F<sub>y</sub> vs Slip Angle* dialog. Cornering stiffness is stored per
 load/speed point, in the same way as the friction table. Each point is a row
-with columns **#**, **Load**, **Speed**, **Cornering Stiffness**, **In-Use** and
-**x** (delete); every cell is editable and the table re-sorts by load, then
+with columns **#**, **Load**, **Speed**, **Cornering Stiffness** and **x**
+(delete), and the table's one **In-Use Factor** above it; every cell is editable and the table re-sorts by load, then
 speed. Add rows with **Load**, **Speed** and **Add Row**; a new row starts at
 the wheel's scalar Cornering Stiffness. **Seed This Wheel** / **Seed All
 Wheels** create three load rows from the scalar. Clicking a row's number

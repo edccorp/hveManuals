@@ -447,6 +447,14 @@ Vehicle Mesh window holds the rest, in four tabs.
       run status says so, and how many vertices carry a material.
     - A name the mesh does not have, or a part excluded from collision,
       applies to nothing, and the run status says so.
+    - **From the file**: a glTF body can state a part's multipliers itself
+      (`extras.hve.contact` on the part's material, as EDCHVEToolkit and
+      HVE Studio write it). Such a row is marked *(from the file)* and its
+      ticks and values are the file's until you change one; then the row is
+      yours, marked *(file's tag replaced)* -- clearing both ticks there
+      switches the file's value off -- and **Use file's** gives the part back
+      to the file. The run status counts the parts whose values came from
+      the file.
 
     Part contact materials are read by SIMON with DyMESH only. They are an
     extension of this program, not something HVE has, so an imported HVE

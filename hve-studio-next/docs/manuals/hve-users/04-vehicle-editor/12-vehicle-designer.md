@@ -149,7 +149,7 @@ the case is never confused with what can be added.
 the list, so a pick is added without scrolling. Under them is the **Add Vehicle**
 window's own list (see Vehicle › Add...): **Built in (no database needed)**, HVE's generic vehicles by
 type and class, for a vehicle that is in no database, then the search
-(**Filter**, **Clear**, **Generics**) and the sortable table of every vehicle in
+(**Search**, **Clear**, **Generics**; any words, matched against every column) and the sortable table of every vehicle in
 the loaded databases, with a filter under each column heading — pick **Type**,
 **Make**, **Model**, **Year** and **Body** in turn, as in HVE, and each lists only
 what the picks before it leave (see the Add Vehicle window). Clicking a vehicle —
@@ -269,7 +269,9 @@ select it in the Accelerometers editor.
 
 ![Figure 12-13: the Geometry stage: the vehicle view -- side, top, front and 3-D -- with the tires, lights and CG marked, and the Mesh editor under it](../images/hvn-04-vehicle-designer-geometry.png)
 
-**DyMESH mesh** (off by default) draws, over the body, what DyMESH collides:
+**DyMESH mesh** (off by default) draws what DyMESH collides -- through the body
+while **Through body** (beside it) is ticked, the far side too; clear it and the
+body hides what is behind it, so only the side facing you shows:
 the **body** as the run builds it (cyan wireframe) -- from the vehicle's mesh and
 its **Mesh › Collision** options (parts excluded from collision, the triangle
 budget, the closed outer shell) and the active event's mesh preparation

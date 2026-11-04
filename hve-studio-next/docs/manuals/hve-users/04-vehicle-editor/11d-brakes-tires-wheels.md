@@ -328,13 +328,13 @@ To display or edit a wheel's tire frictional properties:
    wheel's **Friction Table** button in the grid's Load & Speed Dependence
    rows).
 2. On the **Friction** tab every table point (load and speed) is a row.
-   To add one, enter its **Load** and **Speed** under the table and press
+   To add one, enter its **Load** and **Speed** above the table and press
    **Add Row**; the **x** at the end of a row deletes it. Load and speed
    are editable, and the table re-sorts by load, then speed.
 3. In each row, view and/or edit the friction values: **Peak Long.**,
-   **Peak Lat.**, **Slide**, **Slip at Peak**, **Long. Stiffness** and
-   **In-Use** (the In-Use Factor). The In-use Factor acts as a modifier
-   that multiplies the current dependent tire data.
+   **Peak Lat.**, **Slide**, **Slip at Peak** and **Long. Stiffness**. The
+   table's **In-Use Factor**, one field above it, acts as a modifier that
+   multiplies the current dependent tire data of every row.
 
    > **NOTE:** For example, let's say you believe a given tire's frictional
    > properties are only 90 percent of the values displayed in the dialog.

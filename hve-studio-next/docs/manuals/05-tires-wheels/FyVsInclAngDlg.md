@@ -17,6 +17,12 @@ table defaults to zero.
 
 ## Table
 
+**In-Use Factor** — above the table: one multiplier for the whole camber table, as in
+HVE. It multiplies the camber stiffness of every row (and a stated curve's force);
+1.000 is the table as measured, 0 switches camber thrust off. SIMON, EDVDS and EDVSM
+read it. A vehicle comes in with it at 1.000: HVE's factor is already in the
+stiffness HVE Studio imports, and a stated 0 is read as 1.
+
 Each point of the camber table is a row with columns **#**, **Load**,
 **Speed**, **Camber Stiffness** and **x** (delete). Every cell is editable;
 after a **Load** or **Speed** is changed the table re-sorts by load, then
@@ -59,7 +65,6 @@ has a mass.
     the table is derived from the cornering stiffness.
 
 !!! warning "Not in HVE Studio"
-    - **In-Use Factor**: the camber table has none in HVE Studio.
     - The **Fy vs Camber Angle** plot.
     - **Print...**, **Apply** and **OK / Cancel** (edits apply immediately;
       **Edit › Undo**, Ctrl+Z, takes one back).

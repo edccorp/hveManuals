@@ -227,13 +227,18 @@ databases HVE Studio has found — HVE's classic `.db` files and HVE Studio's ow
 - **Built in (no database needed)** — HVE Studio's generic vehicles, grouped by
   type and class, with their own **Add** button. These are available even
   when no database is installed.
-- **Filter** — Shows only the vehicles whose make, model, year or name
-  contains the text typed. **Clear** clears it; **Generics** shows the
-  generic vehicles (`Generic.hvedb`: HVE's one per class of car,
-  sport-utility, pickup, truck, van and trailer, and HVE Studio's generic
-  motorcycle). The filter is empty each time the dialog opens,
-  and when a case is opened or a new one started; so is the Vehicle Geometry
-  Library's.
+- **Search** — the box across the top, and the quickest way to a vehicle:
+  type any words, in any order, and the list shows only the vehicles in which
+  every word appears somewhere in the type, make, model, year, body, name or
+  database. *toyota rav* and *rav toyota* find the same vehicles; *pickup 2015*
+  finds every 2015 pickup; *dolly* every dolly. The cursor is in the box when
+  the dialog opens, so you can start typing. **Clear** clears the search and
+  every column's filter; **Generics** shows the generic vehicles
+  (`Generic.hvedb`: HVE's one per class of car, sport-utility, pickup, truck,
+  van and trailer, and HVE Studio's generic motorcycle). The search and the
+  filters are empty each time the dialog opens, after a vehicle is added to
+  the case, and when a case is opened or a new one started; so is the Vehicle
+  Geometry Library's.
 - **Vehicle table** — Type, Make, Model, Year, Body, Name and Database, in
   the order HVE's Vehicle Information dialog asks for them. Under each heading
   is that column's **filter** (*All* until a value is picked): pick a
