@@ -376,6 +376,33 @@ Your own databases, and the databases brought in with **Import database…**, ar
 kept in your `userdb` folder (see
 [Vehicle databases](../../getting-started/04-cases-and-files.md#vehicle-databases)).
 
+### Saving the Body as glTF
+
+**Vehicle › Save Body as glTF (.glb)...** writes the selected vehicle's body, as
+the 3-D view draws it, to a glTF binary (`.glb`) that HVE Studio, EDCHVEToolkit
+(Blender) and any glTF viewer open:
+
+- **Parts** — each part of the body (a material of the vehicle's file, or a
+  part made from faces) is a glTF material of the same name, in its color.
+  A part with **Part contact materials** (Event Editor, vehicle, Collision)
+  carries its stiffness and friction multipliers with it, as the run applies
+  them (the case's rows over the file's own).
+- **Lamps** — each row of the lamp table is a node holding its lens, tagged
+  with HVE's light names (`HVE_LIGHT_HEADLIGHT_LEFT_Low`, ...). A lens whose
+  row you have not changed keeps the names its file gave it, exactly (a
+  combined brake and turn lens stays its running, signal, flasher and brake
+  lamps); a row you set in the table is written for its function, side and
+  end as the table has them, and a row switched **Off** as plain geometry. A
+  low-beam headlamp is written as its low and high beam, a tail and brake lamp
+  as its running and brake lamp, a turn signal with its hazard flasher, the way
+  HVE's own vehicles tag them.
+- The body is in meters, about the CG, the front facing glTF's +Z and up +Y.
+
+Opened as a vehicle's mesh file, the `.glb` brings its parts, its lamps and its
+part contact multipliers back (docs/SURFACE_TAGS.md in the source describes
+the tags). The lamp colors are those HVE's lamp materials draw in for each
+function, not a color set in the table.
+
 ### Save-As New Vehicle
 
 To add the current vehicle to a database, choose **Vehicle › Save Vehicle
