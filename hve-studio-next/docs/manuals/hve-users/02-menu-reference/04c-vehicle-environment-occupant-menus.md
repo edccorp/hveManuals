@@ -19,8 +19,9 @@ on screen; press **Reset** in the Event editor to edit it.
 *The Vehicle menu (Vehicle editor).*
 
 The Vehicle editor's **Vehicles** panel lists the case's vehicles, with **Add...**
-(choose a vehicle from the loaded databases or one of HVE's generic vehicles),
-**Replace...** (replace the selected vehicle's data with a database record),
+(choose a vehicle from the loaded databases, HVE's generic vehicles among them,
+on the Vehicle Designer's **Vehicle** page), **Replace...** (the same page, to
+replace the selected vehicle's data with a database record),
 **Copy** (copy the selected vehicle) and **Delete**, and below the list the selected
 vehicle's editor: **Identity**, **Configuration**, **Size & Weight**,
 **Inertia** (with **Edit...** for the Inertia / Mass dialog), **Components**
@@ -59,7 +60,7 @@ designer stage, so the submenu is for a reader who wants one dialog alone.
     - There is no **Vehicle Information** dialog: the Vehicles panel is the
       vehicle's editor ([Vehicle Information](../../02-vehicles/VehicleInfoDlg.md)
       says where each of its fields is). To search the databases, use the
-      **Filter** of the dialog opened by **Add...** or **Replace...**.
+      **Search** on the Vehicle Designer's **Vehicle** page, which **Add...** and **Replace...** open.
     - There is no **Brake Material Props** dialog: HVE's lining and rotor
       friction library was read by no engine (see
       [Brake Material Properties](../../04-brakes-powertrain/BrkMatPropDlg.md)).

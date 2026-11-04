@@ -42,7 +42,7 @@ When a vehicle database is loaded, **Make**, **Model**, **Year**, **Body Style**
 
 When no database is loaded, Make, Model, Year and Body Style are plain text fields so the vehicle can be identified by hand, and the source database is shown read-only.
 
-To search the databases by free text (for example *honda accord*), use the **Filter** of the vehicle database dialog opened by **Add...** or **Replace...**.
+To search the databases by free text (for example *honda accord*), use the **Search** on the Vehicle Designer's **Vehicle** page, which **Add...** and **Replace...** open.
 
 ### Vehicle Color
 The body color used to draw the vehicle. Click the swatch for a color picker, or type the red, green and blue values.

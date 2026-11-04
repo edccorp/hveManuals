@@ -209,12 +209,17 @@ in the top-right corner; the hints along the top of the viewport list the keys).
 
 ## Adding New Vehicles
 
-To add a new vehicle, press **Add…** in the Vehicles panel. The Add Vehicle
-dialog is displayed (Figure 10-3). It lists every vehicle in the vehicle
-databases HVE Studio has found — HVE's classic `.db` files and HVE Studio's own
-`.hvedb` databases — and contains:
+To add a new vehicle, press **Add…** in the Vehicles panel. The Vehicle
+Designer opens on its **Vehicle** page (Figure 10-3; see
+[The Vehicle Designer](12-vehicle-designer.md)), with the search empty and the
+cursor in it. **Replace…** opens the same page, to replace the selected
+vehicle's data. Its **Add or replace from a database** section lists every
+vehicle in the vehicle databases HVE Studio has found — HVE's classic `.db`
+files and HVE Studio's own `.hvedb` databases — and contains:
 
-- **Database folders** — The database files found, each with its vehicle
+- **Add to case** / **Replace V*n* with it...** and the name of the vehicle
+  **Picked**, at the top, so a pick is added without scrolling.
+- **Database folders** (closed until opened) — The database files found, each with its vehicle
   count (*[writable]* marks one of your own; *[not licensed]* one the license
   does not cover). The databases installed with HVE Studio and EDC's vehicle
   data are found without any setup. To use other databases, type or
@@ -235,12 +240,12 @@ databases HVE Studio has found — HVE's classic `.db` files and HVE Studio's ow
   type any words, in any order, and the list shows only the vehicles in which
   every word appears somewhere in the type, make, model, year, body, name or
   database. *toyota rav* and *rav toyota* find the same vehicles; *pickup 2015*
-  finds every 2015 pickup; *dolly* every dolly. The cursor is in the box when
-  the dialog opens, so you can start typing. **Clear** clears the search and
+  finds every 2015 pickup; *dolly* every dolly. **Add…** and **Replace…** put
+  the cursor in the box, so you can start typing. **Clear** clears the search and
   every column's filter; **Generics** shows the generic vehicles
   (`Generic.hvedb`: HVE's one per class of car, sport-utility, pickup, truck,
   van and trailer, and HVE Studio's generic motorcycle). The search and the
-  filters are empty each time the dialog opens, after a vehicle is added to
+  filters are emptied by **Add…** and **Replace…**, after a vehicle is added to
   the case, and when a case is opened or a new one started; so is the Vehicle
   Geometry Library's.
 - **Vehicle table** — Make, Model, Year, Body, Name and Database, in
@@ -261,18 +266,19 @@ databases HVE Studio has found — HVE's classic `.db` files and HVE Studio's ow
   heading to move the column, and right-click the headings to hide or show
   columns. The line under the table summarizes the selected vehicle (mass,
   weight, axles, yaw inertia, CG location). For a vehicle in one of your own
-  databases, the dialog also shows its mesh and its private note (see
+  databases, the page also shows its mesh and its private note (see
   [Save to My Vehicles](#save-to-my-vehicles)).
-- **Add Vehicle** / **Cancel**.
+- **The 3-D preview** of the picked vehicle, before it is added.
 
 If the license keeps a database, or some of its vehicles, out of the list, a
 line above the folders says which and why.
 
 ![Figure 10-3](../images/hvn-04-vehicle-database.png)
-*Figure 10-3: The vehicle database dialog. Opened with Add… it is titled Add Vehicle; opened with Replace… (shown) it is titled Load Vehicle from Database and replaces the current vehicle's data.*
+*Figure 10-3: The Vehicle Designer's Vehicle page, where Add… and Replace… open: Add to case and Replace at the top, the database folders, the Type filter, the search (here "civic") and the vehicle table.*
 
-Select a vehicle and press **Add Vehicle**. The vehicle is added to the case
-and becomes the current vehicle. It is **not** added to any event: to use it in
+Select a vehicle and press **Add to case**. The vehicle is added to the case
+and becomes the current vehicle; **Replace V*n* with it...** instead replaces
+the selected vehicle's data, after asking. It is **not** added to any event: to use it in
 an event, press **Add Vehicle** in the **Vehicles in Event** section of the
 Event Information panel (Event editor).
 
@@ -360,7 +366,7 @@ vehicle you built yourself carries no tag and opens everywhere. The tag is a
 gate, not secrecy: a printed vehicle report still shows the vehicle's values.
 
 The EDC databases themselves are never written. When a vehicle from one of
-your own databases is selected in the Add Vehicle dialog, its mesh is shown
+your own databases is selected on the Vehicle Designer's **Vehicle** page, its mesh is shown
 under the table, with **Edit externally...** (for a stored mesh: write it to a
 *Meshes* folder beside your databases and link it), **Update saved copy** (for
 a linked file that changed since it was saved), **Store in database** (for a

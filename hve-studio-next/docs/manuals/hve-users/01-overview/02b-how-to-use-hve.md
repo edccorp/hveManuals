@@ -210,12 +210,12 @@ GEBOD Body**. Humans in an imported HVE case come with the case.
 
 ### Vehicle Database
 
-**Add...** in the Vehicles panel opens the **Add Vehicle** dialog. It reads every
-`.db` vehicle database in the folders configured there (**Add** or **Browse...**
+**Add...** in the Vehicles panel opens the Vehicle Designer's **Vehicle** page. It reads every
+`.db` vehicle database in the folders configured under its **Database folders** (**Add** or **Browse...**
 a folder, **Remove** one; the list is kept between sessions), and lists their
 vehicles with a **Type** filter and a **Search**; **Generics** shows HVE's generic
-vehicles, and with no database loaded a **Built in** list offers them instead. **Replace...** fills the
-selected vehicle from a database record.
+vehicles, and with no database loaded a **Built in** list offers them instead. **Add to case** adds the picked vehicle;
+**Replace...** opens the same page to fill the selected vehicle from a database record.
 
 ### Tire Database
 
@@ -228,7 +228,7 @@ Speed Tables** panel below it.
 
 ### Generic Databases
 
-HVE's generic vehicles are offered in the Add Vehicle dialog (**Generics**).
+HVE's generic vehicles are in the vehicle list on the Vehicle Designer's **Vehicle** page (**Generics**).
 
 ### Custom Databases
 
@@ -247,7 +247,7 @@ own databases are kept in your `userdb` folder and listed in the Add Vehicle
 dialog without any setup, as is a database written with Save Vehicle As into
 that folder. A database someone else gives you (a classic `.db` or an `.hvedb`)
 is copied into the same folder with **Import database...** under **Database
-folders** in the Add Vehicle dialog; a database in another folder is read once
+folders** on the Vehicle Designer's **Vehicle** page; a database in another folder is read once
 that folder is added to the list (see
 [Save to My Vehicles](../04-vehicle-editor/10-creating-editing-vehicles.md#save-to-my-vehicles)).
 

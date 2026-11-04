@@ -94,9 +94,9 @@ that is not the make NHTSA decoded the VIN as.
 ### 2. Vehicle data
 
 The vehicle databases are searched for the make and model. They are the same
-databases the vehicle database dialog reads (**Add...** or **Replace...** on
-the Vehicles panel; the folders searched are listed under its **Database
-folders**; see [Adding New Vehicles](../hve-users/04-vehicle-editor/10-creating-editing-vehicles.md#adding-new-vehicles)).
+databases the Vehicle Designer's **Vehicle** page lists (**Add...** or
+**Replace...** on the Vehicles panel opens it; the folders searched are listed
+under its **Database folders**; see [Adding New Vehicles](../hve-users/04-vehicle-editor/10-creating-editing-vehicles.md#adding-new-vehicles)).
 If no database is loaded, the generic vehicle is the only choice and the
 window says so.
 

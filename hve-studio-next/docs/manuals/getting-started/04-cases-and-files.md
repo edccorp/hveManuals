@@ -165,10 +165,11 @@ them:
 A program package carries only `Generic.hvedb`.
 
 - **Adding a vehicle.** In the Vehicle editor, **Add...** on the Vehicles panel
-  opens a search of every vehicle in the loaded databases, plus HVE's generic
-  vehicles by type and class (the **Generics** button) and a few built-in
-  vehicles that need no database. **Replace...** replaces the selected
-  vehicle's data with a database record.
+  opens the Vehicle Designer's **Vehicle** page: a search of every vehicle in
+  the loaded databases, HVE's generic vehicles among them (the **Generics**
+  button), and **Add to case**. With no database loaded, a **Built in** list
+  offers the generic vehicles instead. **Replace...** opens the same page, to
+  replace the selected vehicle's data with a database record.
 - **Where databases are found.** Any folders added under **Database folders**
   in the same dialog; your own `userdb` folder (on Windows, in
   `%APPDATA%\EDC\HVE Studio`);

@@ -65,7 +65,7 @@ The case contains the two vehicles of our study. The first vehicle is a white 19
 ![Figure 5-1](images/hvn-edsmac4-vehicle-info.png)
 *Figure 5-1: The Vehicles panel for the Ford Escort.*
 
-> **NOTE:** To build the case from scratch, click **Add...** at the top of the Vehicles panel. The **Add Vehicle** dialog searches the vehicle databases in the folders listed under **Database folders**; add the folder holding HVE's `Tutorial.db`, choose the vehicle, and click **Add Vehicle**. Then set **Driver Location** to **Right**.
+> **NOTE:** To build the case from scratch, click **Add...** at the top of the Vehicles panel. The Vehicle Designer's **Vehicle** page searches the vehicle databases in the folders listed under **Database folders**; add the folder holding HVE's `Tutorial.db`, choose the vehicle, and click **Add to case**. Then set **Driver Location** to **Right**.
 
 ### Editing the Vehicles
 

@@ -167,7 +167,7 @@ program starts.
 
 Your own vehicle databases are kept in its `userdb` folder: `MyVehicles.hvedb`
 and any other database written by **Vehicle › Save to My Vehicles...**, the
-databases copied in with **Import database...** in the Add Vehicle dialog, and,
+databases copied in with **Import database...** on the Vehicle Designer's **Vehicle** page, and,
 unless you choose another file, `user.db`, written by **Vehicle › Save Vehicle
 As**. They appear in the vehicle database picker of every version.
 
@@ -223,8 +223,8 @@ What is different in a browser:
 - **Opening files** uses the browser's file picker. Select the case **and its
   geometry files** (`.h3d` and so on) together, since a browser has no folder
   to look in for them. Vehicle databases and whole geometry folders are
-  uploaded from the **Load Vehicle from Database** and **Vehicle Geometry
-  Library** dialogs (**Upload database files...** and
+  uploaded from **Database folders** on the Vehicle Designer's **Vehicle**
+  page and the **Vehicle Geometry Library** dialog (**Upload database files...** and
   **Upload a whole db folder...**; **Upload mesh files...** and
   **Upload a whole folder...**). Uploading geometry does not reach a case that
   is already open, because it found its geometry when it was loaded: when the
