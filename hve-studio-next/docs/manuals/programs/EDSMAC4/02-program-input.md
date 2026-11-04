@@ -43,7 +43,7 @@ To add a vehicle to the current case:
 
 1. Choose the **Vehicle (F3)** editor tab (or press F3). The Vehicles panel and the viewport are displayed.
 2. Click **Add...** at the top of the Vehicles panel. The **Add Vehicle** dialog is displayed.
-3. Search the loaded databases (open **Database folders** to add a folder holding HVE `.db` files), or choose one of HVE's built-in generic vehicles under **Built in (no database needed)**, and click **Add**.
+3. Search the loaded databases (open **Database folders** to add a folder holding HVE `.db` files), or pick a **Type** (the generic vehicles are in the list: **Generics**), select a vehicle, and click **Add Vehicle**.
 4. If desired, modify the Driver Location, Engine Location, Number of Axles and Drive Axle(s) in the **Configuration** section.
 5. Edit the vehicle's **Name**. The name does not affect calculations.
 

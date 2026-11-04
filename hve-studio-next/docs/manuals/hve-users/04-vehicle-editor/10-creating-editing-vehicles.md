@@ -224,9 +224,13 @@ databases HVE Studio has found — HVE's classic `.db` files and HVE Studio's ow
   HVE Studio `.db` or `.hvedb`) into your own vehicle folder, where it is listed
   from then on. A copy whose name is that of a shipped database is renamed
   *(imported)*, and a second copy of the same name is numbered.
-- **Built in (no database needed)** — HVE Studio's generic vehicles, grouped by
-  type and class, with their own **Add** button. These are available even
-  when no database is installed.
+- **Type** — the first line: show only one type of vehicle (Passenger Car,
+  Pickup, Truck, Trailer, Dolly, Fixed Barrier, ...), each with how many
+  vehicles the search and the other filters leave. *All* shows every type.
+- **Built in (no database needed)** — only when no vehicle database is
+  loaded: HVE Studio's generic vehicles, grouped by type and class, with
+  their own **Add** button. With a database loaded they are in the list
+  (`Generic.hvedb`; **Generics**).
 - **Search** — the box across the top, and the quickest way to a vehicle:
   type any words, in any order, and the list shows only the vehicles in which
   every word appears somewhere in the type, make, model, year, body, name or
@@ -239,8 +243,9 @@ databases HVE Studio has found — HVE's classic `.db` files and HVE Studio's ow
   filters are empty each time the dialog opens, after a vehicle is added to
   the case, and when a case is opened or a new one started; so is the Vehicle
   Geometry Library's.
-- **Vehicle table** — Type, Make, Model, Year, Body, Name and Database, in
-  the order HVE's Vehicle Information dialog asks for them. Under each heading
+- **Vehicle table** — Make, Model, Year, Body, Name and Database, in
+  the order HVE's Vehicle Information dialog asks for them (the type is the
+  **Type** filter above). Under each heading
   is that column's **filter** (*All* until a value is picked): pick a
   **Type**, then a **Make**, **Model**, **Year** and **Body** as in HVE, and
   each column lists only the values (with how many vehicles each) that the

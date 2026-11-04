@@ -147,13 +147,13 @@ the case is never confused with what can be added.
 **Add or replace from a database** opens with its buttons, **Add to case** and
 **Replace V*n* with it...** (below), and the name of the vehicle **Picked** in
 the list, so a pick is added without scrolling. Under them is the **Add Vehicle**
-window's own list (see Vehicle › Add...): **Built in (no database needed)**, HVE's generic vehicles by
-type and class, for a vehicle that is in no database, then the search
+window's own list (see Vehicle › Add...): the **Type** filter, then the search
 (**Search**, **Clear**, **Generics**; any words, matched against every column) and the sortable table of every vehicle in
-the loaded databases, with a filter under each column heading — pick **Type**,
-**Make**, **Model**, **Year** and **Body** in turn, as in HVE, and each lists only
-what the picks before it leave (see the Add Vehicle window). Clicking a vehicle —
-in the table or in the built-in list — **picks** it, and the **3-D preview**
+the loaded databases, with a filter under each of its column headings — pick **Type**
+above, then **Make**, **Model**, **Year** and **Body**, as in HVE, and each lists only
+what the picks before it leave (see the Add Vehicle window). The generic vehicles are
+in the table (**Generics**); with no database loaded, a **Built in (no database needed)**
+list offers them instead. Clicking a vehicle **picks** it, and the **3-D preview**
 draws the picked vehicle before anything is added: its body from its own mesh
 file (or its extents box, with the reason, when it has no mesh or the mesh
 cannot be opened) and its tires. With nothing picked it draws the case vehicle

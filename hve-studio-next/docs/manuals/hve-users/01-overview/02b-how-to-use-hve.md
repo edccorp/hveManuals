@@ -213,8 +213,8 @@ GEBOD Body**. Humans in an imported HVE case come with the case.
 **Add...** in the Vehicles panel opens the **Add Vehicle** dialog. It reads every
 `.db` vehicle database in the folders configured there (**Add** or **Browse...**
 a folder, **Remove** one; the list is kept between sessions), and lists their
-vehicles with a **Filter**; **Generics** shows HVE's generic vehicles, and a
-**Built in** list offers vehicles that need no database. **Replace...** fills the
+vehicles with a **Type** filter and a **Search**; **Generics** shows HVE's generic
+vehicles, and with no database loaded a **Built in** list offers them instead. **Replace...** fills the
 selected vehicle from a database record.
 
 ### Tire Database
