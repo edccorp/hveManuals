@@ -312,10 +312,10 @@ around it, in radians; radius in meters); the case is solved once.
 | Control | Default | Range |
 | --- | --- | --- |
 | **Width** × **Height** (pixels) | 1920 × 1080 | 64–7680 each |
-| **Samples** | 128 | 1–16384 |
+| **Samples** | 16 (with **Denoise** on, usually clean; raise it for a final picture) | 1–16384 |
 | **Bounces** | 6 | 0–32 |
 
-The settings are locked while a render runs. The file box beside **Save PNG**
+The settings are locked while a render runs. **Stop** ends a render at once and keeps the samples traced so far: on the GPU each sample is traced a band of rows at a time between frames, so the window stays live even when one sample of a large picture takes seconds. The file box beside **Save PNG**
 starts as `render.png` in the open case's folder (in `Documents\HVE Studio` when no case is
 open), and the status line names the file. Closing the
 window stops a render in progress.

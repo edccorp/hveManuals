@@ -9,7 +9,7 @@ owns it. It is the Human editor's panel: switching to the Human editor (F2)
 opens it, and **Human › Human Designer...** opens it too.
 
 Like the other designers it is an ordinary docked window, on the left with the
-3-D view beside it, where the body is drawn. A dialog on a stage is the same
+3-D view beside it, where the body is drawn. Docked narrow, the **Key figures** and **Guidance** become one summary row at the top of the stage, as in the Vehicle Designer: a button for each (Guidance reads how many items there are to fix and to consider), and while Guidance is closed the first item to fix on one line with its **Go to** button. Where they go is yours to choose: **Bar position** (on the stage line) also has **Key figures and Guidance** › **Automatic (by width)**, **Beside the stage** (always the column) or **Above the stage, folded** (always the summary row, closed until you open it). One choice for all four designers, kept between sessions. A dialog on a stage is the same
 dialog drawn in the stage instead of its own window, so a field has one editor.
 Body Segments, Joint Properties, Body Pose and Injury Tolerances used to open as
 four separate windows over the view; they are stages now.

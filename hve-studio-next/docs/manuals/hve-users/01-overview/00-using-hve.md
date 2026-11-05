@@ -187,9 +187,12 @@ Vehicles panel docked on the left and the 3-D viewport on the right.*
   top-right corner, drawn as the HVE cube, sets a preset view (click a face for that view, orthographic;
   drag the cube to orbit), and the buttons under it zoom, pan, look through the
   scene camera and switch between perspective and orthographic. A line of hints across
-  the top lists the keys that apply. In the Event editor the **playback bar**
-  under the viewport carries **Run**, **Reset**, the playback buttons, the camera
-  list and the run status.
+  the top lists the keys that apply. The toolbar above it has the switches used
+  most (**Ground**, **See-through body**), the **Display**, **Overlays** and
+  **Physics** menus with the rest, and **Frame selected** and **Fit**. In the
+  Event editor the **playback bar** under the viewport carries the run's state
+  (click it for the Run stage, where the run is started), the playback buttons,
+  the camera list and the run status.
 
 ![The viewport](../images/hvn-01-viewport.png)
 *The viewport in the Event editor, with the playback bar along its bottom edge.*

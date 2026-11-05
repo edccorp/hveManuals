@@ -614,7 +614,7 @@ To execute an EDSMAC4 event, use the playback bar under the viewport. Its button
 **Output › Run Simulation** (Ctrl+R) also runs the active event, opening the Event Designer on its **Run** stage, which shows the run's progress and its status line.
 
 ![Figure 2-5](images/hvn-edsmac4-playback-bar.png)
-*Figure 2-5: The playback bar under the viewport: Run, Reset, the playback buttons and the camera list.*
+*Figure 2-5: The playback bar under the viewport: the playback buttons and the camera list. Since 2026-11-04 the bar shows the run's state where Run and Reset were; the run is started on the Run stage.*
 
 > **NOTE:** A solved event's inputs are locked while its results are on screen. To change any vehicle, environment or event set-up input, press **Reset** first, then **Run** again.
 

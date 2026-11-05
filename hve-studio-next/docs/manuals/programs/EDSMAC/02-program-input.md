@@ -453,7 +453,7 @@ To execute an EDSMAC event, use the playback bar under the viewport (Figure 2-5)
 
 ![Figure 2-5](images/hvn-edsmac-playback-bar.png)
 
-*Figure 2-5: The playback bar under the viewport: Run, Reset, the playback buttons and the camera list.*
+*Figure 2-5: The playback bar under the viewport: the playback buttons and the camera list. Since 2026-11-04 the bar shows the run's state where Run and Reset were; the run is started on the Run stage.*
 
 - **Run** — Execute the event. Once the event is solved, Run is disabled until you press Reset.
 - **Reset** — Discard the results so the inputs can be edited and the event run again

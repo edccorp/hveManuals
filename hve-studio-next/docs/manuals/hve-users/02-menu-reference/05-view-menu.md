@@ -55,16 +55,44 @@ the scene draws, so they can be left on screen beside the Viewport. It is in
 every editor, docks like any other panel, and remembers whether it was open.
 These switches are only in this panel, not on the View menu.
 
-Its groups are **Vehicles Shown** (see [VEHICLES SHOWN](#vehicles-shown)),
-**Paths & Overlays** (the paths, Axes, the CG markers, Lamp Gizmos, North
-Arrow, Skidmarks, occupant equipment, the two Through Bodywork switches and
-Path thickness), **Vehicle**
-(Vehicle Extents, See-Through Body and the DyMESH overlay table), **Vectors**
-(with the arrow scales), **Scene Ghosts**, **Light & Shadow** (Scene Lighting,
-**Lamps**, Shadow cascades, Contact Shadows, Ambient
-Occlusion), **Sky & Reflections** (Default Sky, Sky Reflections, Distance Haze,
-Wet Ground, Ground Reflections) and **Rendering**. Click a group's header to fold it away. A grayed switch says why
-when you point at it.
+The panel is in three sections, the same three as the viewport toolbar's menus:
+**Display** (how the scene is drawn: Ground, See-Through Body, Axes, North Arrow,
+the Through Bodywork switches, **Light & Shadow**, **Sky & Reflections** and
+**Rendering**), **Overlays** (what is drawn over it: the paths, Skidmarks, Lamp
+Gizmos, vehicle labels, Path thickness, **Vectors** with the arrow scales, and
+**Scene Ghosts**) and **Physics** (the model's own geometry: Vehicle Extents, the
+CG markers and CG Weights, Accelerometers, Connections, occupant equipment and the
+DyMESH overlay table). Inside each, the switches keep their group headings. Each
+section's header says how many of its switches are on — **Overlays (2 on)** — and
+its **Hide all** turns every one of them off. Click a section's header to fold it
+away. A grayed switch says why when you point at it, and is not counted.
+**Vehicles Shown** (see [VEHICLES SHOWN](#vehicles-shown)) is above the sections,
+folded until you open it.
+
+The line at the top of the panel:
+
+- **Search switches** — type part of a switch's name; only the switches that match
+  are shown, in their sections. A vector is shown as its own checkbox
+  (**Velocity (vector)**), and the tables and sliders are hidden while you search.
+- **Only what's on** — show only the switches that are on (and the option
+  selected in each group of options), to see at a glance what the view is drawing.
+- **Switches on the bar** — untick it to take every switch off the viewport's
+  toolbar: the bar then has only a **Scene Display** button (which opens this
+  panel), **Frame selected** and **Fit**. Tick it to bring them back. Kept between
+  sessions.
+- **Reset layout** — put the toolbar of the editor on screen back as it came
+  (below); grayed until you have changed it.
+- **Dock above the 3-D view** — docks the panel in a strip across the top of the
+  Viewport. Docked wide and short like that, the three sections are drawn side by
+  side as columns.
+
+**Right-click a switch** (in this panel or on the toolbar) for where it goes on the
+toolbar of the editor on screen: **Pin to the bar** (drawn on the bar itself, beside
+Ground), **Move to the bar's Display / Overlays / Physics menu**, or
+**Take off the bar**, and **Reset layout (this editor)**. A switch you move here also moves to
+that section in this panel. Each editor keeps its own layout, in the user folder
+with your other preferences, so the Vehicle editor's bar can carry the CGs while the
+Event editor's carries the paths.
 
 The sections below describe each group.
 
@@ -72,7 +100,7 @@ The sections below describe each group.
 
 ## VEHICLES SHOWN
 
-The first group of the Scene Display panel lists the case's vehicles, each with a
+**Vehicles Shown**, above the Scene Display panel's three sections, lists the case's vehicles, each with a
 checkbox. Untick a vehicle to take it out of the 3-D view of the Event and
 Playback editors, for example to see one vehicle's damage where the other stands.
 **Show all** puts every vehicle back. A hidden vehicle's ghosts and tire marks are
@@ -93,7 +121,7 @@ hidden vehicles, with a **Show all** button.
 Hiding a vehicle is a view setting only: the case, its results and the run are
 unchanged, nothing is saved, and opening another case shows every vehicle again.
 The Vehicle editor always draws the vehicle it edits. Panels, **Outliner**, **Panels Outside
-the Main Window** and **Show Guidance Text** stay on the View menu, because they
+the Main Window**, **Show Guidance Text** and **UI Size** stay on the View menu, because they
 do not change the scene.
 
 ---
@@ -151,6 +179,7 @@ The DyMESH overlay table:
 |---|---|
 | **Panels Outside the Main Window** | Lets a panel dragged out of the main window become a window of its own (for example, the Shader Editor on a second monitor). Takes effect the next time HVE Studio starts. Not available in the browser build |
 | **Show Guidance Text** | Shows the longer explanatory notes in the dialogs. Off by default. A message about a problem with the open case is always shown, whatever this is set to |
+| **UI Size (*n*%)** | How big the whole interface is: text, controls, padding and spacing together. **Larger** (**Ctrl+=**, or **Ctrl** and the keypad **+**) and **Smaller** (**Ctrl+-**) step it by 10 %, from 75 % to 200 %; **Reset to 100%** (**Ctrl+0**) puts it back; **100%**, **125%**, **150%** and **175%** pick a size directly. The shortcuts do nothing while you are typing in a field or a menu is open. Kept between sessions. It is the same setting as the font scale and sizes in **Tools › Style Editor**, which shows it at the top with its own **Smaller**, **Larger** and **Reset** |
 
 ---
 
@@ -225,20 +254,34 @@ that still reaches the horizon is the sky's own lower half, not a ground.
 
 The viewport's toolbar also carries the Scene Display switches that matter in
 the editor on screen, each the same switch as its Scene Display row (grayed,
-with the reason, where its row is). In the Vehicle, Event and Playback editors:
-**Ground**, **Axes**, **North arrow**, **Scene lighting**, **See-through body**,
-**Extents**, **Sprung CG**, **Total CG**, **Accelerometer path** and **Tire
-paths**. The Vehicle and Event editors add **Accelerometers**, **Connections**,
-**DyMESH body** and **DyMESH wheels** (the Mesh column of Scene Display's DyMESH
-overlay) and **Occ. Eq.** (occupant equipment: contact surfaces, airbags and
-belts); the Vehicle editor adds **Lamp gizmos**; the Event editor adds **Point
-cloud**, **CG path**, **Skidmarks** and the velocity vector; Playback adds the CG
-path, skidmarks, the velocity and collision-force vectors and the lamps. In the
-Environment editor: **Ground**, **Axes**, **North arrow**, **Scene lighting**,
-**Lamps** and **Point cloud**; in the Human editor **Ground**, **Axes**, **Scene
-lighting** and **Occ. Eq.**. **Point cloud** shows or hides the case's point
-cloud (the same switch as the eye on its row in the Outliner, saved with the
-case; grayed when the case has none). The row wraps when the viewport is narrow. **Phong** (smooth shading, the default), **Flat** (one normal
+with the reason, where its row is). The ones used on most cases are on the bar
+itself: **Ground**, and **See-through body** in the Vehicle, Event and Playback
+editors, and **Point cloud** in the Environment and Event editors. The rest are
+in three menus beside them:
+
+- **Display** — how the scene is drawn: **Axes**, **North arrow**, **Scene
+  lighting**, and **Lamps** in the Environment, Event and Playback editors.
+- **Overlays** — what is drawn over it: **Accelerometer path** and **Tire
+  paths**; **CG path**, **Skidmarks** and **Velocity** in the Event and
+  Playback editors; **Collision force** in Playback; **Lamp gizmos** in the
+  Vehicle and Event editors.
+- **Physics** — the model's own geometry: **Extents**, **Sprung CG**, **Total
+  CG**; in the Vehicle and Event editors **Accelerometers**, **Connections**,
+  **DyMESH body** and **DyMESH wheels** (the Mesh column of Scene Display's
+  DyMESH overlay) and **Occupant equipment** (contact surfaces, airbags and
+  belts). The Human editor's toolbar has **Ground**, Display's **Axes** and
+  **Scene lighting**, and Physics' **Occupant equipment**.
+
+A menu's button says how many of its switches are on — **Overlays (2 on)** —
+and is drawn in the header color while any is, so an active overlay is seen
+without opening it. **Hide all** in a menu turns every one of its switches off,
+**Scene Display...** opens the panel, and **Reset layout** (once you have moved a
+switch) puts this editor's bar back as it came. Right-click a switch on the bar or in
+a menu to pin it, move it, take it off the bar or **Hide the bar's switches**; see
+[SCENE DISPLAY](#scene-display).
+**Point cloud** shows or hides the case's point cloud (the same switch as the
+eye on its row in the Outliner, saved with the case; grayed when the case has
+none). The bar wraps when the viewport is narrow. **Phong** (smooth shading, the default), **Flat** (one normal
 per face, showing the real tessellation) and **Wireframe** (edges only, depth
 tested — what HVE calls Hidden Line). **Light Sources On** turns the sun's
 contribution off and on; with it off, the ambient light is raised so the scene
@@ -314,8 +357,9 @@ vehicle itself stands there.
 
 !!! warning "Not in HVE Studio"
     HVE Studio has no toolbar. Its commands are on the menus; the editors are the
-    tabs under the menu bar, and Run, Reset and the playback buttons are on the
-    playback bar under the viewport.
+    tabs under the menu bar. A run is started on the Event Designer's Run stage
+    (**Run simulation**, **Reset**), and the playback buttons and the run's state
+    are on the playback bar under the viewport.
 
 ---
 
@@ -357,6 +401,20 @@ and **8**/**2** orbit in 15° steps, **.** frames the selection (a vehicle, a hu
 surface), and **Home** frames everything (every vehicle, the site and the point cloud). Choosing or adding a vehicle or human in the Event editor's lists, or a human in the
 Human editor, brings the view to it; a click in the view does not move the camera. Double-click the viewport,
 or right-click › **Reset Camera**, to reset the view.
+
+The viewport's toolbar has the same two as buttons: **Frame selected** (the **.**
+key) and **Fit** — **Fit event** in the Event and Playback editors (every vehicle of
+the event), **Fit site** in the Environment editor and **Fit all** elsewhere (the
+**Home** key). Both keep the direction you are looking from and leave a margin
+around what they frame, fitting the narrower side of the view.
+
+**The view follows the editor.** Opening a case, or switching to another editor,
+frames what that editor is about: the vehicle being edited in the Vehicle editor,
+the event's vehicles in the Event and Playback editors, the site in the
+Environment editor and the figure in the Human editor. Once you have turned or
+zoomed the view in an editor, that editor keeps your view: switching away and back
+puts it back rather than framing again. A case whose active saved camera drives
+the view is not reframed.
 
 See the dialog reference: [Camera Set-up](../../01-user-interface/CameraSetDlg.md).
 

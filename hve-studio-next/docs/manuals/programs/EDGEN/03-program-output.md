@@ -103,7 +103,7 @@ The trajectory simulation is controlled using the playback bar under the viewpor
 
 The playback bar's controls have the following functions:
 
-- **Run** and **Reset** — Execute the event, and discard its results so it can be edited and run again
+- **Run state** — Whether the event has been run (Not run, Running, Completed, Failed, Canceled, Saved results); click it for the Run stage, whose **Run simulation** and **Reset** execute the event and discard its results so it can be edited and run again
 - **|<** — Rewind to the start of the simulation
 - **<<** and **>>** — Step back or forward one output step
 - **Play** / **Pause** — Play the simulation forwards, or pause it

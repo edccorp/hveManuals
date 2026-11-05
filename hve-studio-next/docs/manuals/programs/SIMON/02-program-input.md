@@ -502,7 +502,7 @@ To create a SIMON event:
 If the event cannot be run as set up (for example, a vehicle with more axles than SIMON allows), the *Calculation Method* section says "Cannot run:" and gives the reason.
 
 ![Figure 2-4](images/hvn-event-editor.png)
-*Figure 2-4: The HVE Studio Event editor with a SIMON event: the Event Information panel (left) and the viewport (right), with Run, Reset and the playback controls under the viewport.*
+*Figure 2-4: The HVE Studio Event editor with a SIMON event: the Event Information panel (left) and the viewport (right), with the playback controls under the viewport (the run itself is started on the Run stage).*
 
 ### Setting Up an Event
 

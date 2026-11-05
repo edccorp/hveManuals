@@ -13,7 +13,7 @@ window used to open. **Environment › Environment...** still opens that window.
 
 It is an ordinary docked window, on the left with the 3-D view beside it by
 default: drag its tab to move it, float it, or dock it anywhere, and the
-arrangement is kept. Docked narrow, the **Key figures** and **Guidance** fold into the top of the stage; wider than about 1000 pixels they
+arrangement is kept. Docked narrow, the **Key figures** and **Guidance** become one summary row at the top of the stage: a **Key figures** button and a **Guidance** button that reads how many items there are to fix and to consider. Each opens its panel under the row. While Guidance is closed, the first item to fix is shown on one line after it, with its **Go to** button; point at the line for the whole text. Where they go is yours to choose: **Bar position** (on the stage line) also has **Key figures and Guidance** › **Automatic (by width)**, **Beside the stage** (always the column) or **Above the stage, folded** (always the summary row, closed until you open it). One choice for all four designers, kept between sessions. Wider than about 1000 pixels they
 are columns on either side. Every panel it hosts is the same panel the **Environment** window draws,
 so a field has one editor and nothing is reachable in one and not the other.
 

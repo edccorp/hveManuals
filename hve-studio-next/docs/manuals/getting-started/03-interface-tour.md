@@ -172,6 +172,8 @@ Properties...** and **Reset Camera**.
 | **C** / **Shift+C** | Look through the next / previous saved camera |
 | **I** | Insert a keyframe on the camera you are looking through, at the current playback time |
 
+The **hint line** at the top left of the view lists these keys for its first 10 seconds in each editor, then folds to a small **View keys** box; point at the box to read the full line again. When the line carries something else (a move in progress, the selected vehicle, a run), it is never folded.
+
 ### Hiding a vehicle in the view
 
 In the Event and Playback editors a vehicle can be taken out of the 3-D view,

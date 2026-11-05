@@ -57,7 +57,7 @@ Not available in HVE Studio. Every recording is Motion-JPEG, with its **JPEG Qua
 In HVE the Playback Controller selects a Video Source (the Playback Window or a saved movie) and a Video Destination (a video file or the Playback Window).
 
 !!! note "HVE Studio"
-    A solved event plays back in the **Viewport**, with the **playback bar** beneath it: **Run** and **Reset**, the transport buttons (go to start, step back, **Play**, step forward, go to end), and a camera menu that looks through **Free view** or any saved camera. **Output › Playback Options…** sets the playback **Speed** (0.1× to 10×, real time at 1×), a **Frame Step**, **Loop** and **CG Path**. There is no separate Playback Window, and the destination is always the screen.
+    A solved event plays back in the **Viewport**, with the **playback bar** beneath it: the run's state, the transport buttons (go to start, step back, **Play**, step forward, go to end), and a camera menu that looks through **Free view** or any saved camera. **Output › Playback Options…** sets the playback **Speed** (0.1× to 10×, real time at 1×), a **Frame Step**, **Loop** and **CG Path**. There is no separate Playback Window, and the destination is always the screen.
 
 ### Video Source
 

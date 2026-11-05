@@ -12,8 +12,7 @@ editor (the **Vehicle (F3)** button or F3) opens it where the Vehicles panel use
 open, docked on the left with the 3-D view beside it; **Vehicle › Vehicle
 Designer...** opens it too. It is an ordinary docked window: drag its tab to move it,
 float it, or dock it anywhere, as you would the 3-D view, and the arrangement is
-kept. Docked narrow, the **Key figures** and **Guidance** fold into
-the top of the stage so the stage keeps its width; wider than about 1000 pixels
+kept. Docked narrow, the **Key figures** and **Guidance** become one summary row at the top of the stage: a **Key figures** button and a **Guidance** button that reads how many items there are to fix and to consider. Each opens its panel under the row. While Guidance is closed, the first item to fix is shown on one line after it, with its **Go to** button; point at the line for the whole text. With nothing to fix it shows the first item to consider, or **Nothing to fix or consider.**, so the row is one line whatever the guidance says, and an open Key figures or Guidance is a panel of fixed height that scrolls: editing a field that changes the guidance never moves the stage under you. Where they go is yours to choose: **Bar position** (on the stage line) also has **Key figures and Guidance** › **Automatic (by width)**, **Beside the stage** (always the column) or **Above the stage, folded** (always the summary row, closed until you open it). One choice for all four designers, kept between sessions. Wider than about 1000 pixels
 they are columns on either side. The Vehicles panel is one item away, **Vehicle ›
 Editors › Vehicles Panel**. (Key Results and the Output Graph are in the Event and
 Playback editors.) A session that starts in the
@@ -134,11 +133,22 @@ is pointed at one.
 **Events** use it. Click a row to work on that vehicle: the designer, the
 Vehicle editor and the 3-D view all follow it. **Name** under the list renames
 the selected vehicle (reports, channels and event slots show it; two vehicles of
-a case may not share one). **Copy** copies the selected
+a case may not share one: a name another vehicle already has is refused when you
+leave the field, and the old name comes back, with a line saying so). **Copy** copies the selected
 vehicle with every setting, as a new vehicle at the end of the list in no event
 (the Vehicles panel's **Copy**), and selects it so it can be edited at once. It is
 available while results are on screen: the copy renumbers no other vehicle, so
-the run keeps its own.
+the run keeps its own. **Remove from case...** takes the selected vehicle out of
+the case after asking, and says how many events lose it; the vehicles after it move
+up one number. The database record is not changed. It is grayed while results are
+on screen (removing renumbers the vehicles the run was solved with; **Reset** first)
+and when the case has only one vehicle. A vehicle added from the database whose
+name the case already has is given its own: the second **Acura 3.2TL 4-Dr** is
+**Acura 3.2TL 4-Dr (2)**.
+
+The 3-D preview draws the body in the color the 3-D view gives it (its own color,
+or its place's: V1 blue, V2 orange, V3 green, V4 yellow, then again), lit, and
+fitted to the body itself so it fills the preview.
 
 The two halves of the stage are framed apart: **Vehicles in this case** on a blue
 ground, **Add or replace from a database** on a green one, so what is already in
