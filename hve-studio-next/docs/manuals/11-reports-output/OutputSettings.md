@@ -1,14 +1,14 @@
-# Output Settings (Tools › Output Settings...)
+# Output Settings (Options › Output Settings...)
 
 HVE Studio only. One window for the conventions your output is shown with, in
-four tabs, with a **Preset** list at the top to switch between saved sets.
+three tabs, with a **Preset** list at the top to switch between saved sets.
 
 ## Presets
 
-A preset is a saved copy of all four tabs under a name. **Save as preset**
+A preset is a saved copy of all three tabs under a name. **Save as preset**
 writes the current settings under the name typed beside it; choosing a name in
 the list replaces the current settings with that preset's; **HVE defaults**
-removes every change on all four tabs (your saved presets are kept).
+removes every change on all three tabs (your saved presets are kept).
 **Delete preset** removes the chosen one, leaving the current settings as they
 are.
 
@@ -31,6 +31,10 @@ variable:
 - **Decimals** — how many decimal places Key Results prints a value with and
   its CSV writes. The default is 4. **Export Variables** is unaffected: an
   export is data and keeps every digit.
+
+A variable every wheel has (Steer Angle, a tire force) is one row, its group
+shown as, for example, **Wheel (every wheel)**: as in HVE, a label or decimals
+set there applies to that variable at every wheel.
 
 **Changed only** lists the variables you have edited (marked `*`); **Reset**
 on a row and **Reset all variables** put HVE's name and the default back.
@@ -64,13 +68,7 @@ session; a preset keeps them too.
 **Right-click a limited value** — a cell of a driver-control table, an initial
 speed, or the name of a tire, suspension, brake or steering field — and choose
 **Edit limits...** to open this tab with that row found and marked. The same
-menu's **Rename this label...** opens the Terms tab with the label found. This
-is the same editor as **Tools › Limits Editor...**, which opens this tab.
-
-## Report Text
-
-HVE's report wording, editable per string: see [Report Text](ReportText.md).
-**Tools › Report Text...** opens this tab.
+menu's **Rename this label...** opens the Terms tab with the label found.
 
 ## Terms
 
@@ -84,7 +82,7 @@ are not here: they have the **Variables** tab.
 
 A wording is shown wherever that label is drawn -- every window, menu, tab and
 table header that shows the same text, not only the one it was typed for. It
-is kept over the language chosen in **Tools › Preferences... › Language**, so
+is kept over the language chosen in **Options › Preferences... › Language**, so
 a pack never undoes a wording you set by hand.
 
 - **Changed only** lists the terms you have reworded (marked `*`); **Reset** on

@@ -37,7 +37,7 @@ chapter.
     is opened from the **Vehicle** menu or the **Vehicles** panel. The map
     from HVE's components to HVE Studio's dialogs is in [Chapter 10, Selecting
     and Editing Vehicles](10-creating-editing-vehicles.md#selecting-and-editing-vehicles).
-    Every value is shown in the units set in Tools › Preferences; the case
+    Every value is shown in the units set in Options › Preferences; the case
     stores SI.
 
 ## Inertial Properties
@@ -192,8 +192,8 @@ reference page, [Move CG dialog](../../02-vehicles/MoveCGDlg.md).
       is read-only. The CG location may also be edited directly in the Vehicles
       panel's Size & Weight section (CG to axle, CG height) and in the
       Inertia / Mass dialog.
-    - **Vehicle › Editors › Vehicle Mesh › Move CG** (on the Vehicle Mesh window's File &
-      Placement tab) — where the CG sits in the 3-D model file's own
+    - **Move CG** on the Vehicle Designer's Size, Mass & CG stage (under
+      **CG in the body**) — where the CG sits in the 3-D model file's own
       coordinates. Typing a new value moves the CG the same way: the body and
       the wheels stay, and the CG distances change (see
       [Geometry File](#geometry-file)).
@@ -325,7 +325,7 @@ Vehicle Mesh window holds the rest, in four tabs.
 
 **File & Placement**
 
-- **Mesh File** — the 3-D model. **…** browses for a file; **Library…**
+- **Mesh File** — the 3-D model. **Load File...** browses for a file; **Library…**
   opens the **Vehicle Geometry Library**, one list with a filter box that
   matches a vehicle's year, make and model, a file name, a database or a
   folder. The list has three groups:
@@ -353,10 +353,15 @@ Vehicle Mesh window holds the rest, in four tabs.
     filter box still matches the real file name, so a name you know still
     finds its geometry, and a pick stores the real file's reference.
 
-    Picking a database body or a database mesh stores a reference to that exact
+    **Pick, look, then use.** A click on a row selects it and shows its body
+    below the list, colored and lit, on this vehicle's own dimensions and
+    wheels; **Use this geometry** (or a double-click on the row) sets it, and
+    **Clear selection** puts the preview away. Nothing changes until then.
+
+    Using a database body or a database mesh stores a reference to that exact
     stored mesh (its database and content hash), as a vehicle picked from the
     database does. A body from a database shows in Mesh File by that name, with
-    the stored reference in its tooltip, and is changed with **…**, **Library…**
+    the stored reference in its tooltip, and is changed with **Load File...**, **Library…**
     or **Clear**. The line above the list counts each group. When the license
     refuses a database, or withholds some of its vehicles, the window says which
     database and why instead of showing a count of zero. **Rescan** re-reads the
@@ -386,6 +391,11 @@ Vehicle Mesh window holds the rest, in four tabs.
   In the Vehicle editor's 3-D view, **G**, **R** and **S** move, rotate and
   scale the mesh and edit the same Translate, Rotate and Scale rows (see
   [Chapter 21](../08-3d-editor/21-manipulators.md)).
+  Each change rebuilds the model from its file. A model that takes more than
+  about a tenth of a second to rebuild (a detailed mesh or a scan) is rebuilt
+  once, when you release the drag or press Enter, instead of at every step,
+  and a line under the rows says so with the time it takes; **G**, **R** and
+  **S** then show the result when the move is finished.
 
 **Collision** — what DyMESH collides; these settings change the run.
 
@@ -455,6 +465,14 @@ Vehicle Mesh window holds the rest, in four tabs.
       switches the file's value off -- and **Use file's** gives the part back
       to the file. The run status counts the parts whose values came from
       the file.
+
+    **What a run reports.** The run status counts the vertices that carry a
+    part's stiffness and friction. The run's **Messages** report page lists,
+    for each vehicle, every part the run applied: its **Stiffness x** and
+    **Friction x** (a dash where the tick is off), how many collided triangles
+    carry it, whether the value came from the body file's own tags, and the
+    vehicle's **Max combined friction x**. The page travels with the event's
+    results, so it is there whenever the run is reopened.
 
     Part contact materials are read by SIMON with DyMESH only. They are an
     extension of this program, not something HVE has, so an imported HVE
@@ -980,7 +998,7 @@ following steps:
    connection's properties below it.
    While it is open the 3-D view marks the front connection point (cyan) and
    the rear one (orange), each with a line down to the ground, so you can see
-   where the coupling is on the body; a point whose type is None is drawn dim.
+   where the coupling is on the body; a point whose type is None is not drawn.
 2. To put a connection on the front of a towed vehicle (e.g., a trailer),
    choose a **Type** in the **Front** column (*None, Hitch, King Pin, Pintle
    Eye, Fixed* or *Pintle Eye, Hinged*) and enter the vehicle-fixed X, Y and
@@ -989,7 +1007,8 @@ following steps:
    or truck tractor), choose a **Type** in the **Rear** column (*None, Ball,
    5th Wheel* or *Pintle Hook*) and enter its coordinates.
 4. Edit the rear connection's properties under **Rear connection
-   properties**, below the table.
+   properties**, below the table. They are shown only while the rear has a
+   connection (a **Type** other than *None*).
 5. Press **Close** to close the dialog.
 
 Both type lists offer all the connector types, each labeled *(trailer)* or

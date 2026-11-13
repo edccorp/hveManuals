@@ -11,7 +11,7 @@ Rt/Lt Foot, Rt/Lt Upper Arm and Rt/Lt Lower Arm.
     three tabs: **Inertia** (this page), **Ellipsoids**
     ([Contact Ellipsoids](Human1.md)) and **Joints** ([Joint Data](Human3.md)).
     Click a body part in the 3-D view to select that segment in the list.
-    Values follow the units set in Tools › Preferences. While a solved run is on
+    Values follow the units set in Options › Preferences. While a solved run is on
     screen the window is read-only.
 
 ## Body model
@@ -20,9 +20,12 @@ A human needs a body model before its segments can be edited. When it has none,
 the window offers **Seed GEBOD Body** (build the body from the occupant's
 subject type, age and percentiles with the GEBOD regression, as HVE does) and
 **Seed Standard Body** (a simple body scaled to the occupant's mass). Once a body
-exists, **Re-seed GEBOD** and **Re-seed from occupant mass** rebuild it,
-replacing any edits but keeping the segment colors; the second runs GEBOD with
-the occupant mass as the stated weight.
+exists, **Regenerate GEBOD Body** rebuilds it from the Human stage's size,
+replacing any edits but keeping the segment colors.
+
+A line at the top says what the body was built from (subject type, age group,
+and the percentiles or the stated weight and height). The size is set on the
+Human stage, which rebuilds the body; it is not repeated here (2026-11-10).
 
 ## Segment
 
@@ -34,6 +37,12 @@ choosing Inertias from the popup.
 The color the segment is drawn in — HVE's **Color...** item of the segment
 popup — with **Apply to all segments** to give the whole body that color.
 Display only. The color stored in an HVE case is imported.
+
+**Color scheme** offers ready-made colors for the whole body, and **Apply scheme** gives them to all 15 segments
+(each can still be changed afterwards): Skin (HVE's default), Crash test dummy (yellow, with black at the abdomen,
+neck, lower limbs and feet so each joint reads), Clothed (a shirt, trousers and shoes), High-visibility (a jacket
+over dark trousers), Right green and left red (to tell the sides apart in a tumble), Every segment its own (to see
+which segment made a contact) and Gray. They are choices of appearance only.
 
 !!! tip "New in HVE Studio"
     A segment can also wear a node material (View › Shader Editor); it is then

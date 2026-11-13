@@ -8,7 +8,7 @@ This dialog contains the following items:
 
 ## Suspension Group
 
-Four small buttons per axle: **-**, **S1**, **S2** and **S3**. Axles in the same group (S1, S2 or S3) share their values: an edit in one column is copied to every other axle in the group, and moving an axle into a group that already has a member copies that member's values to it. **-** leaves the axle independent. By default axle 1 starts in group A, the rear axles with single tires in the next group, and the axles with **Dual Tires** in a group of their own, so a car is A, B and a truck with a single tag axle ahead of its duals is A, B, C. The groups are set again when you switch vehicles or change a wheel's **Dual Tires**; a group you choose stays until then. This replaces HVE's *Copy to Other Side* and *Copy to Other Axle(s)* check boxes.
+A button per group above each axle, numbered **S1**, **S2**, ... up to the number of axles. Axles in the same group share their values: an edit in one column is copied to every other axle in the group, and moving an axle into a group that already has a member copies that member's values to it. An axle alone in its group edits alone. By default axle 1 starts in group S1, the rear axles with single tires in the next group, and the axles with **Dual Tires** in a group of their own, so a car is S1, S2 and a truck with a single tag axle ahead of its duals is S1, S2, S3. The groups are set again when a wheel's **Dual Tires** or the number of axles changes; a group you choose stays until then. The groups are saved with the case, and **Undo** reverses a group change. This replaces HVE's *Copy to Other Side* and *Copy to Other Axle(s)* check boxes.
 
 ## Type & Distribution
 

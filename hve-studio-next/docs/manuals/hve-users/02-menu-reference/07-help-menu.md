@@ -42,8 +42,9 @@ in brackets. Quote the version when you report a problem. **OK** closes it.
 **Description:** **Manual** opens the published HVE Studio manual
 (manuals.edccorp.com/studio/) in your default browser. HVE Studio has no help
 browser of its own; help in the program is also given in place: hover over a
-control to see its tooltip, and turn on **View › Show Guidance Text** for the
-longer explanations in the dialogs. If no browser can be started, the address
+control to see its tooltip (with **View › Show Guidance Text** off, the
+longer explanations are in those tooltips, or behind a dim **(?)**), and turn
+the option on to show them in the dialogs. If no browser can be started, the address
 is copied to the clipboard and the Help menu says so, under the item.
 
 ---
@@ -125,7 +126,7 @@ newer edition of EDC's vehicle data, is available to your license. EDC signs the
 list of updates; a list that does not verify is ignored and the notice says so.
 
 The program also checks by itself, in the background, a few seconds after it
-starts: once a day by default, or every time it opens, or never (**Tools ›
+starts: once a day by default, or every time it opens, or never (**Options ›
 Preferences... › Updates**, *Check for updates when HVE Studio opens*). On the
 once-a-day setting it still checks at the next start after a **new version is
 installed**, and whenever your license covers EDC vehicle data that is **not

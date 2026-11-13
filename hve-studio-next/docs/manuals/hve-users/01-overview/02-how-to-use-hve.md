@@ -334,9 +334,11 @@ Velocity...** edits the initial position and speed in a small dialog of its own.
 
 A vehicle can also be positioned by direct manipulation: click it in the
 viewport and drag it, or use the gizmo — drag an arrow to move along that axis
-or the rotation handle to turn it; press **G** to move or **R** to rotate,
+or the rotation handle to turn it, or drag the small blue square between the
+two arrows to move it in X and Y together; press **G** to move or **R** to rotate,
 optionally **X**, **Y** or **Z** to lock an axis, and type a value and **Enter**.
-Hold **Ctrl** to snap.
+Hold **Ctrl** to snap. The selected vehicle is outlined in gold on the ground,
+around its body's front, rear and side extents.
 
 ![Figure 2-9](../images/hvn-01-position-velocity.png)
 *Figure 2-9: The Position / Velocity dialog.*

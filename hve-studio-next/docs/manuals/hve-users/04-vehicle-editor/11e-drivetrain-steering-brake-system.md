@@ -97,7 +97,8 @@ and the Upshift and Downshift throttle thresholds lo/hi, when checked),
 **Num Gears** (1 to 12, as in HVE) and a table of the **Ratio** of reverse (**Rev**, negative
 as HVE stores it) and of each forward gear,
 **Final Drive Ratio**, **Efficiency** (disabled: no simulation reads it),
-**Shift Time (s)** and **Drive Type** (FWD, RWD, AWD).
+**Shift Time (s)** (grayed: no engine models a shift duration) and **Drive
+Axle(s)**, the same setting as the Vehicles panel's Configuration section.
 
 !!! note "HVE Studio"
     With a manual transmission the gear comes from the event's Driver
@@ -134,7 +135,8 @@ reference page,
 
 In HVE Studio the differential is the **Differential** section of the
 Drivetrain dialog: **Diff Type** (Open, Limited Slip, Locked), **Locking
-Coeff**, **Preload Torque**, and **Gears** (1-Speed, 2-Speed, 3-Speed) with
+Coeff** (shown for Limited Slip only), **Preload Torque** (shown for Limited
+Slip and Locked; an Open differential reads neither), and **Gears** (1-Speed, 2-Speed, 3-Speed) with
 the **High** ratio (the Final Drive Ratio of the Transmission section, shown
 grayed) and the **Medium**/**Low** ratios. The other ratios are selected
 only by the event's Differential schedule in Driver Controls Gear; without
@@ -191,20 +193,21 @@ axle, so there is no Current Axle selector:
 - **Has steering column** — Off for a castoring axle with no steering
   linkage.
 - Alignment: **Caster Angle**, **Kingpin Inclination**, **Camber Angle**,
-  **Kingpin Offset** (see [Spindle
+  **Steering Offset** (see [Spindle
   Axis](11c-suspension.md#spindle-axis)). There is no toe row: HVE's
   per-wheel toe-in, a length, is kept with the vehicle but no engine reads
   it.
 - **Column Friction**, **Column Inertia**, **Friction Lag (rad/s)**.
 
 Below the table, **Steer-Axis Mechanics (per wheel)** has a column per wheel
-of a steerable axle: Stub Axle Length, Kingpin Friction, Stop Angle Right and
+of a steerable axle: Stub Axle Length, Steer Axis Friction Torque, Stop Angle Right and
 Left and Stop Stiffness (HVE's Stop Damping is not shown: no simulation reads it).
 
 !!! note "HVE Studio"
     - Column Friction, Column Inertia and Friction Lag, and the steer-axis
       friction and stops, are read only when an axle's Steer DOF is not Off:
-      a prescribed steer angle cannot be resisted. The dialog says so.
+      a prescribed steer angle cannot be resisted. Hovering over the rows
+      and the section heading says so.
     - HVE's Column Stiffness and Linkage Stiffness are kept with the vehicle
       but have no control: EDVDS receives them and the calculation that would
       use them is disabled in HVE's own source. Linkage Mass, Steering Linkage
@@ -267,8 +270,9 @@ Force). See also the reference page,
 To display or edit the current vehicle's brake master cylinder pressure
 ratio, choose **Vehicle › Editors › Brakes › Brake System Pressure**. The dialog contains an
 **Axle** selector, **System Type** (Hydraulic, Air (Pneumatic)), **Pedal
-Ratio** (per vehicle; 0 derives the slope from the curve below), **Pressure
-Ratio**, and a table of pedal force against pressure with **Add Point**.
+Ratio** (per vehicle; 0 takes the slope of the vehicle's own pedal force table
+where its data has one, else 6.67 kPa/N). HVE's table of
+pressure against pedal force is not shown: a vehicle that carries one keeps it.
 
 !!! note "HVE Studio"
     The Brake System Pressure dialog has **System Type**, which reaches
@@ -351,8 +355,8 @@ the Brake Type option list and Edit Brake pushbutton — see
 (system-level ABS data). In HVE Studio it is **Vehicle › Editors › Brakes › Brake
 Designer** (see [Part D](11d-brakes-tires-wheels.md#hve-brake-designer)), with
 the ABS data under **Vehicle › Editors › Brakes › ABS / Brake Design**. HVE's Brake
-Material Properties dialog is the Brake Designer's **Material Properties**
-section (see [Part D](11d-brakes-tires-wheels.md#hve-brake-designer)). The individual Brake Designer dialogs
+Material Properties dialog is the Brake Designer's **Material** and
+**Thicknesses** rows (see [Part D](11d-brakes-tires-wheels.md#hve-brake-designer)). The individual Brake Designer dialogs
 are documented in the HVE reference pages in
 [Brakes and Powertrain](../../04-brakes-powertrain/README.md):
 [Disc Brake](../../04-brakes-powertrain/DiskBreakDlg.md),

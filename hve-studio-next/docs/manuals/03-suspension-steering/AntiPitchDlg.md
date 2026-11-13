@@ -5,11 +5,14 @@ The anti-pitch properties of the wheels are displayed and edited in the **Anti-P
 HVE Studio shows one table with a column per wheel (**A1 Left**, **A1 Right**, **A2 Left**, ...), where HVE edits one wheel at a time.
 
 !!! note "HVE Studio"
-    An orange note at the top of the dialog says which engines use the table: **EDVSM** reads it, in each wheel's suspension force; SIMON only prints it on a report page; no other engine reads it. This is HVE's own behavior.
+    The line at the top of the dialog ends *EDVSM only*; pointing at it says which engines use the table: **EDVSM** reads it, in each wheel's suspension force; SIMON only prints it on a report page; no other engine reads it. This is HVE's own behavior.
 
 ## Suspension Group
 
-Four small buttons per wheel: **-**, **S1**, **S2** and **S3**. Wheels in the same group share their values, as in the [Jounce and Rebound Stops Dialog](JouAndRebDlg.md).
+A button per group above each wheel (**S1**, **S2**, ...; every wheel is in a group). Wheels in the same group share their values, as in the [Jounce and Rebound Stops Dialog](JouAndRebDlg.md).
+
+
+**Layout...** sets the groups in one step and copies a wheel's values once, as in the [Jounce and Rebound Stops Dialog](JouAndRebDlg.md).
 
 ## Data Table
 

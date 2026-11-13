@@ -23,7 +23,13 @@ Opens the [Variable Selection Dialog Box](../11-reports-output/VarSelDlg.md) to 
 Write the table to a CSV file, or copy it to the clipboard. The export includes every selected variable even when the table shows only the first ones.
 
 ### Follow playback time
-Highlights the row at the current playback time and keeps it in view.
+Highlights the row at the current playback time and brings it into view whenever the
+time moves to another row (playback, the scrubber, the keys). While it is on, the mouse
+wheel scrolls the table and the time follows the row in the middle of the view, so the
+3-D view and the scrubber show the same instant without the table jumping; the
+scrollbar scrolls the table alone, so you can scroll to a row and click it to go there.
+**Shift**+wheel scrolls the columns sideways. With it off, the wheel scrolls the table
+without changing the time.
 
 ### Group columns by Variable / Vehicle, Vehicle name in column titles
 Arrange the columns by variable or by vehicle, and prefix each column title with its vehicle.

@@ -5,7 +5,7 @@ HVE Studio the same parameters are rows of the **Tire Properties** table (Vehicl
 editor, **Vehicle › Editors › Tires...**), with one column per wheel, so
 every wheel of the vehicle is visible and editable at once. Each value is a
 drag field: drag it, or double-click (Ctrl+click) and type. Values follow the
-units set in Tools › Preferences; the unit is shown in each row label.
+units set in Options › Preferences; the unit is shown in each row label.
 
 !!! note "HVE Studio"
     Columns that share a tire group (the **– T1 T2 T3** buttons at the top of the
@@ -74,7 +74,10 @@ tire's side force, in the length units set in Preferences. Each wheel has a
 **default** checkbox; ticked (the default), the relaxation length is one
 unloaded radius of that tire (car tires measure about one to two radii), and
 the field shows that value grayed. Untick it to enter a length. **0** gives
-HVE's own instant side force for that tire.
+HVE's own instant side force for that tire. For a motorcycle the default is
+**0.15 m** instead, a motorcycle tire's measured length (about half its radius):
+the nonlinear single-track model reads it, and a run that used the default
+says so ("relaxation length 0.15 m (none stated)").
 
 !!! tip "New in HVE Studio"
     HVE's tire data has no relaxation length, and HVE's SIMON applies the side
@@ -111,6 +114,11 @@ shows *auto*. With **auto** ticked:
 
 Untick **auto** to enter a value (0.01 to 5). The semi-empirical tire models
 do not read these rows.
+
+TMeasy also reads the tire's **camber stiffness**: camber enters its lateral
+slip (camber stiffness over cornering stiffness, times the sine of the camber),
+so the camber thrust is held inside the same friction limit as the cornering
+and braking forces rather than added on top of them.
 
 !!! tip "New in HVE Studio"
     HVE has no TMeasy tire model, and its tire data has no lateral peak slip
@@ -207,7 +215,7 @@ Depth of the tire tread.
 Nominal (rated) inflation pressure of the tire.
 
 !!! note "HVE Studio"
-    Each value is clamped to the range set for it in **Tools › Limits Editor**
+    Each value is clamped to the range set for it in **Options › Output Settings... › Limits**
     as you edit it, instead of being range-checked when the dialog is closed.
     There is no OK/Cancel: edits apply immediately, and **Edit › Undo** (Ctrl+Z)
     takes one back.

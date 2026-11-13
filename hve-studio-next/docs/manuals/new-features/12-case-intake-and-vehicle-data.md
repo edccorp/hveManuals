@@ -32,6 +32,26 @@ own window and afterwards in **Tools › Automatic Tools › Provenance**:
 | **Generic default** | The generic vehicle's own value, which the tool could not replace with this vehicle's |
 | **Unknown** | Nothing stated it. A placeholder stands in the case until you set it |
 
+A vehicle picked from the vehicle database brings the provenance of its own
+numbers with it (2026-11-11). EDC built each vehicle from an inspection
+workbook whose CALCS sheet names the source of every value: measured at the
+inspection, an MVMA specification sheet, the NHTSA inertia database, the Tire
+and Rim Association yearbook, EDC's class template, or a formula in the sheet;
+VehicleMetrics' data sheets carry a Source column (measured, specification,
+generic, calculated) and color their numbers the same way. Those lines are
+written into the database records (`scripts/veh_provenance.py`, run against
+the SharePoint folders) and come into the case as *Looked up* (measured or
+specified), *Generic default* or *Estimated* (calculated) records, tool
+*Vehicle database*, with the document and cell or page as the source. The
+library's own revisions, applied to every EDC and VehicleMetrics car, pickup,
+MPV and van picked from the database (never to an imported case): the damper
+is set to a body-mode damping ratio of 0.30 from the spring rate and the
+corner's sprung mass, and the rear proportioning valve's knee is set from the
+vehicle's own brake chart so the front locks first with a 10% pedal margin,
+each recorded as *Estimated* with the value it replaced. **Copy** puts the shown
+records on the clipboard, tab-separated; **Export CSV...** writes them to a
+file.
+
 Nothing is guessed and then presented as a fact. A value no source states is
 left out, estimated by a rule the sheet names, or entered as a placeholder
 recorded as **Unknown**, and the window says which.

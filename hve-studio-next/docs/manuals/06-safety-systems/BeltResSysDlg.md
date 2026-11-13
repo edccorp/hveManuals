@@ -14,7 +14,7 @@ installed in the vehicle editor's Belt Restraints dialog.
     HVE keeps it, so it applies to every event the vehicle appears in and to
     whoever sits in that seat; the window warns when the vehicle shown is not
     in the active event. What the occupant wears is stated per event. Lengths,
-    stretch rates, damping and force follow the units set in Tools ›
+    stretch rates, damping and force follow the units set in Options ›
     Preferences. While a solved run is on screen the window is read-only.
 
 ![Belt Restraint System window](images/hvn-belt-restraint-system.png)
@@ -82,7 +82,12 @@ For the left and right belt segments:
 
 **Veh I L**, **Veh J L**, **Veh K L**, **Veh I R**, **Veh J R**, **Veh K R** —
 the vehicle end of the left and right webbing, relative to the vehicle CG
-(HVE's anchor locations from the vehicle Belt Restraints dialog).
+(HVE's anchor locations from the vehicle Belt Restraints dialog). A vehicle
+from the database carries HVE's own anchors for every seat: for a 3-point belt
+the torso section runs from the shoulder D-ring (outboard, above the seat) to
+the buckle (inboard, at the seat), and the lap section from the outboard lap
+anchor to the same buckle -- three points, drawn in the 3-D view when the
+section is installed.
 
 ## Webbing Properties
 

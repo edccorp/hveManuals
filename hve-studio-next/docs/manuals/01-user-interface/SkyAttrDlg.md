@@ -9,7 +9,7 @@ Sky attributes determine the appearance of the background and the lighting of th
 The sky's color and brightness come from the world's shader nodes (a sky texture or a background color) in the Shader Editor.
 
 ## The sun (Sun & Sky section)
-Not in HVE's Sky Attributes dialog, but part of the sky in HVE Studio: **Set by hand** (**Sun Rotation**, **Sun Elevation**) or **From location and time** (latitude, longitude, date and time, UTC offset, daylight saving, north direction, with a choice of sun-position method and refraction), **Sun Light** (strength) and **Reset sun to default**.
+Not in HVE's Sky Attributes dialog, but part of the sky in HVE Studio: **Set by hand** (**Sun Rotation**, **Sun Elevation**) or **From location and time** (latitude, longitude, date and time, UTC offset, daylight saving, north direction, with a choice of sun-position method and refraction), **Sun Intensity** (strength: the Sky Texture's own) and **Reset sun to default**.
 
 !!! warning "Not in HVE Studio"
     **Fog Type** (None, Haze, Fog, Smoke), **Visibility** and **Set Fog Color**: there is no distance fog. The sky texture node's *Haze* setting veils the sky, and with **View › Scene Display › Sky & Reflections › Distance Haze** on it also fades far geometry toward the horizon color in the viewport. It is a picture only, not a visibility distance.

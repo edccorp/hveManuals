@@ -1,17 +1,18 @@
 # Analysis Tools
 
 !!! tip "New in HVE Studio"
-    The first seven tools on the **Tools** menu are HVE Studio's own: **Quick
+    The analysis tools are HVE Studio's own: on the **Tools** menu **Quick
     Case (Text)**, **Vehicle Package**, **Case Intake**, **Provenance**, **EDR
-    Import**, **Monte Carlo Analysis** and **Motorcycle Analysis**. This
-    chapter describes Quick Case, Monte Carlo Analysis and Motorcycle Analysis;
-    the other four are in
+    Import** and **Motorcycle Analysis**, and on the Event Designer's
+    **Results** stage the event's **Monte Carlo** analyses. This chapter
+    describes Quick Case, Monte Carlo Analysis and Motorcycle Analysis; the
+    other four are in
     [Case Intake and Vehicle Data](12-case-intake-and-vehicle-data.md). **Audit
-    Log** and **Limits Editor** take the place of similar HVE facilities.
+    Log** and the input **Limits** (Output Settings) take the place of similar HVE facilities.
 
-The Tools menu also holds **Preferences**, **Style Editor** and **Cameras**;
-see [User Preferences](../01-user-interface/PrefDlg.md) and
-[Cameras](05-cameras.md).
+The Tools menu also holds **Cameras**, **Measure** and **Audit Log**;
+**Preferences** and **Style Editor** are on the **Options** menu. See
+[User Preferences](../01-user-interface/PrefDlg.md) and [Cameras](05-cameras.md).
 
 ## Quick Case (Text)
 
@@ -108,18 +109,43 @@ with the vehicle's **Aboard** list and **Crush Stiffness from Crash Tests**, in
 
 ## Monte Carlo Analysis
 
-**Tools › Monte Carlo Analysis...** propagates the uncertainty in a few inputs
-through the **active event**, solving it many times, to put bounds on a result.
+**Event › Monte Carlo...** opens the **Monte Carlo** tab of the Event Designer's
+**Results** stage. A Monte Carlo analysis propagates the uncertainty in a few
+inputs through the **active event**, solving it many times, to put bounds on a
+result. Each event keeps a **list** of its analyses, saved with the case: run
+one for speed and another for friction, and show one, the other or both in the
+3-D view, each in its own colors.
 
 ![Monte Carlo Analysis](images/hvn-monte-carlo.png)
 
-### Setting it up
+### The list of analyses
+
+**Analyses of this event** has one row per analysis:
+
+| Column | Meaning |
+| --- | --- |
+| **Show** | Draw this analysis's points in the 3-D view |
+| **Rest** | Draw each vehicle's rest position for every run, in the color beside it (click the swatch to change it) |
+| **Impact** | Draw every run's impact point, in the color beside it |
+| **Name** | The analysis's name; type to rename it |
+| **Runs** | How many runs it holds (*partial* when its batch was canceled); click to show its results below |
+| **Result** | The result it reports |
+| **X** | Delete the analysis. **Edit › Undo** brings it back |
+
+**Point size** sets how large the points are drawn. The points of every shown
+analysis of the active event stay in the view whatever panel is open.
+
+### Setting up a new analysis
+
+**New analysis** holds the setup of the next one. **Name** is its name
+(*Analysis 2*, and so on); **Copy setup from the selected one** fills the setup
+from the analysis selected in the list.
 
 **Sampling**
 
 | Field | Meaning |
 | --- | --- |
-| **Runs (N)** | How many solves (1–100 000; default 2000) |
+| **Runs (N)** | How many solves (1–100 000; default 200) |
 | **Seed** | The random seed (default 12345). The same seed and settings give the same batch, run for run. |
 | **Method** | **Random** sampling, or **Latin Hypercube** (default), which covers each input's range more evenly for the same N |
 | **Parallel workers** | How many solves run at the same time (1–64; default 1) |
@@ -135,27 +161,31 @@ remove a row:
 
 Each row has a **Distribution** — Normal (mean, std), Uniform (min, max),
 Triangular (min, mode, max) or Lognormal (mu, sigma) — and its parameters.
-The first time the window opens, it offers impact speed (Normal, centered on the
-case's own value) and friction (Uniform, ±0.1 around the case's own value).
+The first setup offers impact speed (Normal, centered on the case's own value)
+and friction (Uniform, ±0.1 around the case's own value).
 
-**Output**
+**Output** — **Primary result (QoI)**: the result to summarize: delta-V of
+vehicle 1 or 2 (km/h), final speed of vehicle 1 or 2 (km/h), rest X or Y of
+vehicle 1 (m), or heading change of vehicle 1 (degrees).
 
-- **Primary result (QoI)** — the result to summarize: delta-V of vehicle 1 or
-  2 (km/h), final speed of vehicle 1 or 2 (km/h), rest X or Y of vehicle 1 (m),
-  or heading change of vehicle 1 (degrees).
-- **Report exceedance** — also report the probability that the result exceeds
-  a threshold **t**.
-
-Press **Run Analysis**. The batch runs in the background with a progress bar;
-**Cancel** stops it and keeps the runs completed so far (marked as partial).
+Press **Run as a new analysis**. The batch runs in the background with a
+progress bar; **Cancel** stops it and keeps the runs completed so far (marked
+as partial). When it finishes it is **added** to the list in new colors:
+nothing already in the list is changed or replaced.
 
 !!! warning "Each run is a full solve"
     Every run solves the event with the real engine, in its own solver process.
-    2000 runs of a slow event take a long time; start with a few hundred and
-    watch the **Convergence** section to see whether more are needed.
+    Thousands of runs of a slow event take a long time; start with a few hundred
+    and watch the **Convergence** section to see whether more are needed.
 
 ### Reading the results
 
+**Results:** *name* shows the analysis selected in the list: its setup in one
+line, then
+
+- **Result** — which result to summarize (any the runs carry), and **Report
+  exceedance** — also report the probability that it exceeds a threshold **t**.
+  Both are kept with the analysis.
 - **Confidence intervals** — N, mean, median, standard deviation, minimum and
   maximum, the 90% interval (5th to 95th percentile), the 95% interval (2.5th to
   97.5th), and the exceedance probability if asked for.
@@ -164,10 +194,6 @@ Press **Run Analysis**. The batch runs in the background with a progress bar;
 - **Convergence** — the running mean and the width of its 95% interval as N
   grows. If the width is still falling steeply at the last run, more runs would
   narrow the answer.
-- **3D outcome cloud** — **Show in 3D viewport** plots every run's rest
-  positions (colored per vehicle) and impact points (red) in the viewport;
-  **Clear cloud** removes them. **Rest positions**, **Impact points** and
-  **Point size** choose what is shown.
 
 ### Export and audit
 
@@ -249,14 +275,14 @@ and playback-sequence actions.
     The log is kept for the session only: it is not saved with the case or to a
     file, and the *User* column always reads *analyst*.
 
-## Limits Editor
+## Limits (Output Settings)
 
-**Tools › Limits Editor...** edits the lower and upper bounds that several
+**Options › Output Settings... › Limits** edits the lower and upper bounds that several
 vehicle dialogs use for their fields — Tire Data, Steering System, Advanced
 Suspension and Brake Assembly. A value dragged or typed in one of those
 dialogs is held within its bounds.
 
-![Limits Editor](images/hvn-limits-editor.png)
+![The Limits tab](images/hvn-limits-editor.png)
 
 - Fields are grouped by section (Tire, Susp, SuspData, RollSteer, Brake, SCam,
   Disc, Steer, ...); **Search** filters by name.
@@ -267,7 +293,7 @@ dialogs is held within its bounds.
   saved).
 
 !!! warning "Stored units, not display units"
-    The Limits Editor shows every bound in HVE Studio's internal **SI** units
+    The Limits tab shows every bound in HVE Studio's internal **SI** units
     (meters, newtons, kilograms, N·m, kPa, ...) regardless of the units set in
     Preferences, and without a unit label. A tire radius bound reads 0.127 to
     0.762 — meters — even when the Tire Data dialog shows inches.

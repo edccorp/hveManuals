@@ -11,7 +11,7 @@ velocity and acceleration. HVE assigns up to five per vehicle, in event mode.
     window. Accelerometers are mounted on the **vehicle**, so they apply to
     every event the vehicle appears in; the window warns when the vehicle shown
     is not in the active event. Coordinates follow the units set
-    in Tools › Preferences. While a solved run is on screen the window is
+    in Options › Preferences. While a solved run is on screen the window is
     read-only.
 
 ![Accelerometers window](images/hvn-accelerometers.png)

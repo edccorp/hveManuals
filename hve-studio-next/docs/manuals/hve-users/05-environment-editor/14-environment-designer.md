@@ -13,34 +13,58 @@ window used to open. **Environment › Environment...** still opens that window.
 
 It is an ordinary docked window, on the left with the 3-D view beside it by
 default: drag its tab to move it, float it, or dock it anywhere, and the
-arrangement is kept. Docked narrow, the **Key figures** and **Guidance** become one summary row at the top of the stage: a **Key figures** button and a **Guidance** button that reads how many items there are to fix and to consider. Each opens its panel under the row. While Guidance is closed, the first item to fix is shown on one line after it, with its **Go to** button; point at the line for the whole text. Where they go is yours to choose: **Bar position** (on the stage line) also has **Key figures and Guidance** › **Automatic (by width)**, **Beside the stage** (always the column) or **Above the stage, folded** (always the summary row, closed until you open it). One choice for all four designers, kept between sessions. Wider than about 1000 pixels they
+arrangement is kept. The **Key figures** and **Guidance** are one summary row at the top of the stage: a **Key figures** button and a **Guidance** button that reads how many items there are to fix and to consider. Each opens its panel under the row. While Guidance is closed, the first item to fix is shown on one line after it, with its **Go to** button; point at the line for the whole text. Where they go is yours to choose: **Bar position** (on the stage line) also has **Key figures and Guidance** › **Automatic (beside when wide)**, **Beside the stage** (always the column) or **Above the stage, folded (default)** (always the summary row, closed until you open it; the default since 2026-11-09, so they stay at the top however wide the designer is). One choice for all four designers, kept between sessions. **Standard** | **Extended**, beside **Bar position**, chooses how many stages the bar offers: Extended (the default) shows them all, Standard the ones most analyses change, keeping the stage on screen and any stage with something to fix (see the Vehicle Designer, *Standard and Extended*, for each designer's stages). With **Automatic**, wider than about 1000 pixels they
 are columns on either side. Every panel it hosts is the same panel the **Environment** window draws,
 so a field has one editor and nothing is reachable in one and not the other.
 
 ![Figure 14-1](../images/hvn-05-environment-designer.png)
 
-*Figure 14-1: The Environment Designer on its Site Files stage, filling the left of the work area with the 3-D view beside it.*
+*Figure 14-1: The Environment Designer on its Import stage, filling the left of the work area with the 3-D view beside it.*
 
 ## The stages
 
+What a stage covers is a tooltip on its title band (the colored bar naming it): hover over the band to read it.
+
 1. **Site**: Location (placement, address, coordinates), the **Map**, and the data
-   for the area you choose on it: **Download for this area**, two tabs right
-   under the map — **Aerial image** and **Terrain (3-D)** (Geographic terrain,
-   USGS 3DEP) — both take the same area, so you choose it once. **Aerial Image...** (the backdrop, in its own window) is
-   where you also place a picture of your own. The aerial is a backdrop and
-   reaches no solve; the terrain you download becomes drivable ground.
-2. **Site Files**: at the top, the environment as a file — **Save Environment
-   As...**, **Load Environment...** (one saved from another case) and **Open
-   Example** (HVE's example sites, each opened as a new, untitled case), the
-   Environment menu's commands; then the files you bring in yourself: the scene geometry file, its
-   import frame and the survey point cloud — the Terrain section, with **Add
-   Object...** (HVE's barriers, walls, poles, trees and curb). The drivable
-   triangles here are what every vehicle runs on. (This stage was called
-   Geometry; downloaded data now lives under Site.)
+   for the area you choose on it: **Download for this area**, three tabs right
+   above the map — **Aerial image**, **Terrain (3DEP)** (Geographic terrain,
+   USGS 3DEP) and **LiDAR** (the USGS lidar point cloud) — all take the same
+   area, so you choose it once: the yellow rectangle on the map, a square about
+   the case's location unless you draw one (**Select area**) or press **Area
+   here**. Moving the map does not move it. Under **Download aerial image**,
+   **Your own picture** places a picture of your own (by its georeference or by
+   control points). Either way the picture is laid as ground at once: drivable
+   flat ground where the site is not, and the photograph in the material of every
+   surface under it (see *The picture is ground*). The terrain you download
+   becomes drivable ground too.
+2. **Import** (named *Site Files* before 2026-11-09): at the top, the environment as a file — **Save Environment
+   As...** (the site — its geometry, surfaces, sky and lights — as a
+   `.hveenv.json` file of its own, to use in another case) and **Load
+   Environment...** (one saved that way; the page then says what was loaded
+   and the view frames it; to bring in a site drawn elsewhere use Import >
+   **Import...**), the
+   Environment menu's commands (its **Open Example** opens one of HVE's example
+   sites as a new case); then one tab for each way into the site:
+   - **3-D models**: the **Imported files** list of the site's 3-D model files
+     (DXF, `.h3d`, Inventor, VRML, OBJ, glTF), the scene geometry with
+     **Import...** / **Add...** / **Clear** (a geometry file's scale and frame are
+     asked in the **Import Scene Geometry** window when you choose it),
+     **Add Object...** (HVE's barriers, walls, poles, trees and curb), and
+     **Site Placement**.
+   - **Point cloud**: the survey scan, drawn and measured on, never driven on.
+     Its file is named at the top of the tab, with **Import...** and **Clear**;
+     its scale, frame and drawing are in **Survey Point Cloud (scan)** below.
+   - **Aerial image**, **Terrain (3DEP)** and **LiDAR**: the downloads for the
+     map's area, each with the map under it (the same downloads and map as the
+     Site stage's).
+
+   The drivable triangles here are what every vehicle runs on. (This stage was
+   called Geometry, then Site Files.)
 3. **Surfaces**: the Outliner's tree hosted on the stage (layers, surfaces and
    objects with their eye and Drive switches and each surface's **Type**;
    **Open the Outliner** puts the
-   same tree in its own window), the **Selected Surface** section for the
+   same tree in its own window), the site-wide **Use surfaces as terrain
+   (physics)** and **Ground beyond the site geometry** under it, the **Selected Surface** section for the
    surface picked in the tree or the 3-D view, **Edit Mode (Tab)** to pick
    faces in the viewport and give them a material or split a surface by them,
    and the Surface Generator. A click on an aerial picture in the 3-D view (or on
@@ -58,10 +82,14 @@ so a field has one editor and nothing is reachable in one and not the other.
 
    **Deleting what you loaded.** Select one or more surfaces in the tree and
    press **Delete** beside **New Layer** (or right-click a surface and choose
-   **Delete Surface**). A window asks first, **Delete Surface** or **Cancel**; the
+   **Delete Surface**), or click an object in the 3-D view and press the
+   **Delete** key on the keyboard. A window asks first, **Delete Surface** or
+   **Cancel** (**Enter** deletes, **Escape** cancels); the
    surfaces' triangles are removed from what the solver drives on and from the
    3-D view, a downloaded terrain's source record goes with it, and **Edit ›
-   Undo** brings them back. It is held, like Drive, while a run's results are on
+   Undo** brings them back. Deleting the last surface the site has clears the
+   site, as **Clear** on the Import stage does: the vehicles then run on the
+   ground outside the site. It is held, like Drive, while a run's results are on
    screen, because the site is a solver input. The aerial image and the point
    cloud have their own rows: right-click the row and choose
    **Delete Aerial Image** or **Delete Point Cloud**. Those are pictures only, so
@@ -79,9 +107,10 @@ so a field has one editor and nothing is reachable in one and not the other.
 
 4. **Weather**: gravity, the ambient air and wind — the Physical section.
    Standing water and texture depth are each surface's own (Surfaces stage,
-   the surface's HVE Surface node), and rolling resistance is each tire's.
-5. **Sky & Lights**: the sun, the sky (with **Sky Preset**, a shipped sky as
-   the world) and the site's lights. Display only, and the stage says so.
+   under Surface Type and Friction), and rolling resistance is each tire's.
+5. **Sky & Lights**: the sun, the sky (**Edit the sun and sky...** opens the
+   Shader Editor's World, which has **Sky Preset**, a shipped sky as the world)
+   and the site's lights. Display only, and the stage says so.
 6. **Site Check**: does a vehicle stand on this ground? **Run the Site Check**
    places the case's own vehicle (the first one SIMON drives on its wheels: not a
    motorcycle, trailer, dolly or barrier) by Auto Position at a point of each of
@@ -121,14 +150,14 @@ Every section of the **Environment** window and every item of the
 |---|---|
 | Location | Site |
 | Aerial Image... | Site (opens its own window) |
-| Terrain: scene geometry, site placement, survey point cloud | Site Files |
+| Terrain: scene geometry, site placement, survey point cloud | Import |
 | Geographic terrain (USGS 3DEP), the aerial download | Site |
 | Terrain: Selected Surface | Surfaces |
 | Surface Generator | Surfaces |
 | Edit Mode (materials per face) | Surfaces |
 | Physical | Weather |
 | Sky, Lights | Sky & Lights |
-| Open Example, Load Environment..., Save Environment As... | Site Files (Save also on Summary) |
+| Load Environment..., Save Environment As... | Import (Save also on Summary); Open Example is on the Environment menu |
 
 The Environment window stays available while the designer is new.
 
@@ -148,7 +177,7 @@ keeps the current values as the "was" column for this case.
 | Grade | Stage | Rule |
 |---|---|---|
 | Fix | Surfaces | A drivable surface, or a generated surface applied to the run, has a friction multiplier of 0, which every tire reads as no friction. |
-| Fix | Site Files | The site names a geometry file but no triangle is drivable, so vehicles run on the default plane. |
+| Fix | Import | The site names a geometry file but no triangle is drivable, so vehicles run on the default plane. |
 | Note | Site | The site reaches more than 2 km from the origin, where single precision coarsens. |
 | Note | Weather | The stated gravity differs from 9.80665 m/s² by more than 1%. |
 | Consider | Surfaces | The drivable surface is more than one patch and the smallest is under 2% of the area, so its edge drops a wheel onto the default plane. |

@@ -19,9 +19,9 @@ tire–terrain model.
     with **one column per wheel**: **A1-R**, **A1-L**, **A2-R**, … (R = right,
     L = left). When the vehicle has dual tires, the Tire Blowout and Terrain
     Model tabs have one column per tire, suffixed **o** (outer) and **i**
-    (inner). The **Wheel Group** row (**– W1 W2 W3**) at the top of each table
-    makes columns in the same group change together; **–** edits a wheel on its
-    own.
+    (inner). The **Wheel Group** row (**W1**, **W2**, ...) at the top of each table
+    makes columns in the same group change together; a wheel alone in its group
+    changes on its own. (The event's wheel groups are not saved with the case.)
 
     SIMON and EDSMAC4 read tire blow-out and wheel damage, and EDVSM reads the
     blow-out; a note at the top says when the event's calculation method does

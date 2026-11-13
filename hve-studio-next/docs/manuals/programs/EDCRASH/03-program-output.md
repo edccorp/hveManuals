@@ -26,7 +26,7 @@ The pages are EDCRASH's own, built from its resource strings in HVE's layout and
       under the buttons shows the full path.
     - **Key Results.** The **Key Results** panel (View › Key Results, docked
       under the viewport by default) lists the principal results for both
-      vehicles in the units set in Tools › Preferences: impact speed,
+      vehicles in the units set in Options › Preferences: impact speed,
       initial (begin braking) velocity, delta-V, PDOF, impact force, damage
       energy, separation speed and angular velocity, brake deceleration and
       impact sideslip. **Select Variables...**, **Export CSV...** and

@@ -116,7 +116,7 @@ See the dialog reference: [Environment](../../08-environment/README.md),
 
 The Humans panel holds what HVE's Human Editor and Human Information dialog
 held: **Add Human** and **Delete**, the human list, **Identity**
-(Location), **Anthropometry** (subject type, age group, weight and height
+(Location), **Size (GEBOD)** (subject type, age group, weight and height
 percentiles, and **Regenerate GEBOD Body**), and buttons for **Injury
 Tolerances...**, **Body Segments...**, **Joint Properties...** and **Body
 Pose...**. A seat's airbag belongs to the vehicle (Vehicle › Editors › Airbags...). Which vehicle an occupant rides in, and

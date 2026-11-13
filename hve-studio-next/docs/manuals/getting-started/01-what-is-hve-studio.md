@@ -97,7 +97,7 @@ All of them are listed in
   **Vehicle** menu in the Vehicle editor, the **Event** and **Output** menus in
   the Event editor, and so on.
 - **A single event plays back where it is set up.** Press **Run** on the
-  playback bar under the viewport (or **Output › Run Simulation**) and the
+  playback controls in the toolbar (or **Output › Run Simulation**) and the
   solved event plays back in the Event editor's own viewport. Reports, graphs
   and tables are on the **Output** menu. Several events on one timeline — HVE's
   Video Creator — is the **Playback (F6)** editor (see
@@ -105,7 +105,7 @@ All of them are listed in
 - **A solved event is locked.** While results are on screen, the inputs they
   were computed from are read-only, so the results and the inputs shown can
   never disagree. Press **Reset** to edit again.
-- **Units.** The display is US customary or SI, set in **Tools › Preferences**.
+- **Units.** The display is US customary or SI, set in **Options › Preferences**.
   There is no custom unit mix.
 - **HVE Studio tells you when it had to assume something.** When an import could
   not represent a value, an engine was handed a default, or an option is not

@@ -12,7 +12,7 @@ The fore-aft angle of the spindle axis. This angle is largely responsible for th
 **Kingpin Inclination (deg)**
 The sideways angle of the spindle axis. This angle, along with the caster angle, is responsible for the self-aligning properties of the steerable axle. Editing it sets both wheels; a note reports a left/right difference, as for caster.
 
-**Kingpin Offset** (HVE: Steering Offset)
+**Steering Offset**
 The distance from the center of the tire contact patch to the point where the steering axis intersects the ground at equilibrium conditions. This distance produces a steering torque (positive or negative, depending on the sign of the scrub radius) due to longitudinal tire force (either braking or driving).
 
 **Camber Angle (deg)**
@@ -24,9 +24,12 @@ Not in HVE Studio's Steering System dialog. HVE's per-wheel toe-in, a length, is
 ## Steer-Axis Mechanics (per wheel)
 
 **Stub Axle Length**
-The length of the stub axle (spindle) from the steering axis to the wheel plane.
+The length of the stub axle (spindle) from the steering axis to the wheel plane. For a steerable wheel of a vehicle taken from a vehicle database it is HVE's own derivation from the Steering
+Offset, the kingpin inclination, the camber at rest and the tire radius -- the number HVE's Spindle Axis dialog shows
+and its programs use -- because the classic databases store 0 or an older value there. A vehicle read from an HVE case
+keeps the value the case stores.
 
-**Kingpin Friction** (HVE: Steer Axis Friction Torque)
+**Steer Axis Friction Torque**
 Constant (Coulomb) friction torque about the steer axis, opposing the steer rate. Rotation of the wheel about the steering axis is resisted by this torque, which must be overcome before the wheel steers. 0 is a free axis with nothing damping it.
 
 **Stop Angle Right (deg)**, **Stop Angle Left (deg)**

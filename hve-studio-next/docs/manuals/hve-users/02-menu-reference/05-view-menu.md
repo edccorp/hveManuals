@@ -28,6 +28,7 @@ HVE's View menu items map as follows:
 | Item | Shows or hides |
 |---|---|
 | **Viewport** | The 3-D viewport |
+| **New 3-D View** | Another view of the same scene in a window of its own, up to four views with the Viewport — see [NEW 3-D VIEW](#new-3-d-view) |
 | **Scene Display** | The panel holding every switch that changes what the scene draws — see [SCENE DISPLAY](#scene-display) |
 | **Shader Editor** | The node-material editor for vehicles, road surfaces and the world (display only) |
 | **Dope Sheet** | Every keyframed material and camera value on one time axis |
@@ -48,6 +49,31 @@ float it.
 
 ---
 
+## NEW 3-D VIEW
+
+**View › New 3-D View** opens another view of the scene in a window of its
+own, beside the Viewport. Up to three can be open, four views in all, and the
+item is grayed while all three are. The first opens as the plan (**Top**),
+the second as the **Front** elevation and the third as the **Right** side, all
+orthographic, which with the Viewport's perspective gives the usual four-view
+layout. Dock each window where you want it, like any panel.
+
+- Each view shows the same scene, at the same time and with the same Scene
+  Display settings as the Viewport, from its own camera.
+- The list at the top of the window sets the view: **Perspective**, **Top**,
+  **Front**, **Rear**, **Left** or **Right**. **Same as Viewport** copies the
+  Viewport's camera into the view.
+- In the picture, left drag orbits, right or middle drag pans and the wheel
+  zooms.
+- Select and edit in the Viewport. The extra views only show the scene; they
+  have no picking, handles or keys of their own.
+- The views are drawn with the Viewport. With the Viewport closed they keep
+  their last picture. They are not saved with the case.
+
+Each extra view costs one more drawing of the scene per frame.
+
+---
+
 ## SCENE DISPLAY
 
 **View › Scene Display** opens the panel that holds every switch changing what
@@ -64,7 +90,7 @@ Gizmos, vehicle labels, Path thickness, **Vectors** with the arrow scales, and
 CG markers and CG Weights, Accelerometers, Connections, occupant equipment and the
 DyMESH overlay table). Inside each, the switches keep their group headings. Each
 section's header says how many of its switches are on — **Overlays (2 on)** — and
-its **Hide all** turns every one of them off. Click a section's header to fold it
+its **Hide all** turns every one of them off and **Show all** every one on. Click a section's header to fold it
 away. A grayed switch says why when you point at it, and is not counted.
 **Vehicles Shown** (see [VEHICLES SHOWN](#vehicles-shown)) is above the sections,
 folded until you open it.
@@ -135,12 +161,12 @@ run leaves behind, and the case's axes.
 |---|---|
 | **Accelerometer Path** | One path per installed accelerometer, at the device's own position (HVE: Show Accelerometer Paths) |
 | **Tire Contact Patch Paths** | Where each tire actually touched the ground, one path per wheel (HVE: Show Tracks) |
-| **Axes** | The case's axes at the origin, and each vehicle's own axes at its CG: X red forward, Y green, Z blue. Y points right and Z down under the SAE setting, left and up under Conventional (Preferences > Coordinates). On by default |
+| **Axes** | The case's axes at the origin, and each vehicle's own axes at its CG: X red forward, Y green, Z blue. Y points right and Z down (SAE). On by default |
 | **Sprung CG** | Each vehicle's sprung-mass CG, the point every "CG to ..." distance is measured from. On by default, independent of Axes |
 | **Total CG** | Each vehicle's total-mass CG (sprung and unsprung masses together), labeled with its offset from the sprung CG. On by default |
 | **CG Weights** | Adds to each CG label the weight it carries: the sprung weight at the Sprung CG, the total weight at the Total CG, in the units set in Preferences. Off by default |
 | **Vehicle Labels** | Each vehicle's name over it in the scene, so two similar cars can be told apart in the Event and Playback views; follows the vehicles hidden in the view. Display only; off by default |
-| **Lamp Gizmos** | Each vehicle lamp drawn as a ring, a line along its aim and, for a spot, its cone; click one to select it, drag it to move it; Shift-click adds or removes a lamp, and dragging one of several selected moves them all. Selecting a lamp takes the selection off the vehicle body (its move gizmo goes), and a click on empty space deselects both. Off by default |
+| **Lamp Gizmos** | Each vehicle lamp drawn as a ring, a line along its aim and, for a spot, its cone; click one to select it, then **G** (or **M**) moves it and **R** aims it, as on the body (a drag orbits the view); Shift-click adds or removes a lamp, and **G** moves every selected lamp together. Selecting a lamp takes the selection off the vehicle body (its move gizmo goes), and a click on empty space deselects both. Off by default |
 | **Accelerometers** | Each vehicle's installed accelerometers, a small orange three-axis cross where the device sits on the body, turning with it. A device stated in the inertial frame is not on the body and is not drawn. Off by default |
 | **Connections** | Each vehicle's front and rear connection points (hitch, ball, fifth wheel, king pin), a cyan ring with a cross, where Vehicle Connections places them; a connection of type None is not drawn. Off by default |
 | **North Arrow** | A compass in the corner of the viewport pointing to the case's north, which is set in the Shader Editor's Sun & Sky panel or read from an imported `.hve` |
@@ -178,8 +204,10 @@ The DyMESH overlay table:
 | Item | Does |
 |---|---|
 | **Panels Outside the Main Window** | Lets a panel dragged out of the main window become a window of its own (for example, the Shader Editor on a second monitor). Takes effect the next time HVE Studio starts. Not available in the browser build |
-| **Show Guidance Text** | Shows the longer explanatory notes in the dialogs. Off by default. A message about a problem with the open case is always shown, whatever this is set to |
-| **UI Size (*n*%)** | How big the whole interface is: text, controls, padding and spacing together. **Larger** (**Ctrl+=**, or **Ctrl** and the keypad **+**) and **Smaller** (**Ctrl+-**) step it by 10 %, from 75 % to 200 %; **Reset to 100%** (**Ctrl+0**) puts it back; **100%**, **125%**, **150%** and **175%** pick a size directly. The shortcuts do nothing while you are typing in a field or a menu is open. Kept between sessions. It is the same setting as the font scale and sizes in **Tools › Style Editor**, which shows it at the top with its own **Smaller**, **Larger** and **Reset** |
+| **Playback Controls in Toolbar** | In the Event and Playback editors, the run's state, **Reset**, the playback buttons and the time slider sit in the toolbar at the top, after the editor buttons (on a row of their own when the window is too narrow). Off puts them in a strip at the foot of the 3-D view. On by default |
+| **Playback Controls in a Window** | Moves the toolbar's pickers (the active event and its vehicles, or the active vehicle, human or sequence, by editor) and the playback controls into a window of their own, **Playback Controls**, instead of the toolbar. The window opens docked above the 3-D view and docks like any other: drag its tab to put it below the view or anywhere else, or right-click an empty part of it for **Dock Above the 3-D View**, **Dock Below the 3-D View** and **Back to the Toolbar**. Closing the window puts the controls back in the toolbar. Kept between sessions. Off by default |
+| **Show Guidance Text** | Shows the longer explanatory notes in the dialogs. Off by default: each note is then kept off the form and shown as a tooltip when you rest the pointer on the control it explains, or on the dim **(?)** left beside it. A message about a problem with the open case is always shown, whatever this is set to |
+| **UI Size (*n*%)** | How big the whole interface is: text, controls, padding and spacing together. **Larger** (**Ctrl+=**, or **Ctrl** and the keypad **+**) and **Smaller** (**Ctrl+-**) step it by 10 %, from 75 % to 200 %; **Reset to 100%** (**Ctrl+0**) puts it back; **100%**, **125%**, **150%** and **175%** pick a size directly. The shortcuts do nothing while you are typing in a field or a menu is open. Kept between sessions. It is the same setting as the font scale and sizes in **Options › Style Editor**, which shows it at the top with its own **Smaller**, **Larger** and **Reset** |
 
 ---
 
@@ -206,7 +234,7 @@ Display only.
 
 The Vectors group is a table with one row per vector. All are off by default.
 Each row has a **Show** checkbox (draw the arrows), a **Value** checkbox (print
-each arrow's value at its end, in the units set in Tools › Preferences), **Dec**
+each arrow's value at its end, in the units set in Options › Preferences), **Dec**
 (decimal places, 0 to 4), the arrow scale (**1 m =** or **1 ft =**, how much one
 length unit of arrow stands for) and, where the row has its own scale, a
 **Fit** button that sets the scale so the run's largest value draws about 5 m
@@ -248,9 +276,15 @@ force that moment would be at R. The arcs' radius is the vehicle's half width.
 **Description:** **Ground Plane** (on by default) draws the flat plane and grid
 where there is no imported site; an imported site is drawn either way. The
 **Ground** checkbox on the viewport's toolbar is the same switch. It is display
-only: no engine reads it. While a site is drawn it is grayed, since the site is
-the ground and there is no plane to hide. With no site and Ground off, the gray
-that still reaches the horizon is the sky's own lower half, not a ground.
+only: no engine reads it. While a site with a road is drawn it is grayed, since
+the site is the ground and there is no plane to hide. A site with no road — no
+Road-type surface with its Drive switch on, such as scenery alone, a building,
+or a friction zone with nothing under it — is not the ground, so the plane is
+still offered there. It is drawn where the engines find ground outside the
+site: at the datum, or at the elevation entered for **Flat ground** under
+**Ground beyond the site geometry**; with that set to **Nothing (vehicles fall)** there is no
+ground and the switch is grayed. With no site and Ground off, the gray that
+still reaches the horizon is the sky's own lower half, not a ground.
 
 The viewport's toolbar also carries the Scene Display switches that matter in
 the editor on screen, each the same switch as its Scene Display row (grayed,
@@ -274,11 +308,22 @@ in three menus beside them:
 
 A menu's button says how many of its switches are on — **Overlays (2 on)** —
 and is drawn in the header color while any is, so an active overlay is seen
-without opening it. **Hide all** in a menu turns every one of its switches off,
+without opening it. **Hide all** in a menu turns every one of its switches off and **Show all** every one on,
 **Scene Display...** opens the panel, and **Reset layout** (once you have moved a
 switch) puts this editor's bar back as it came. Right-click a switch on the bar or in
 a menu to pin it, move it, take it off the bar or **Hide the bar's switches**; see
 [SCENE DISPLAY](#scene-display).
+**Home** and the camera list sit at the end of the bar. **Home** (also the **Home** key, or a double-click in
+the view) goes to the editor's **home camera**: in the Event editor the event's, in Playback the playback
+sequence's (else its first event's), in the Environment editor the site's. With none set it fits the event's
+vehicles or the site; in the Vehicle and Human editors it frames the vehicle or the human. The arrow beside Home
+opens its menu: **Set Home to this view** makes what you see the home (looking through a camera that you have not
+moved, that camera becomes home; otherwise the view is saved as a camera, a new one named "Home: ..." when another
+event shares the current home, so that event's view never moves), then **None (fit)** and every camera of the case
+to pick one. A home camera is an ordinary camera, saved with the case: it is in the Cameras window and in the list
+beside Home, which looks through any camera of the case or the **Free view**, each labeled with what it is home
+for ("home of Event 2"). Several events can share one. Deleting a home camera leaves those events without one.
+
 **Point cloud** shows or hides the case's point cloud (the same switch as the
 eye on its row in the Outliner, saved with the case; grayed when the case has
 none). The bar wraps when the viewport is narrow. **Phong** (smooth shading, the default), **Flat** (one normal
@@ -310,8 +355,14 @@ picture, never a surface.
 
 So does the case's aerial image, when it has one: its name (or file name), its
 opacity and an eye that is the picture's own **Visible** switch (the same one as
-in **Environment › Aerial Image...**; it stays in the case). It has no drive
-switch either. The picture is laid on the site's drawn surfaces, so hiding a
+in **Environment › Aerial Image...**; it stays in the case). A picture still on a
+row of its own is not drivable yet: its **Drive** wheel (or **Lay as Ground** in its
+right-click menu) lays it as ground -- drivable flat ground (Road, friction 1)
+wherever the site is not under it, with the photograph in the material of every
+surface under it -- and the row goes, since the ground's material now draws it. A
+picture downloaded or placed in HVE Studio is laid as ground at once; one from an
+older case, or one whose laying was refused, keeps its row, and a click on the wheel
+says why when it cannot lay it. The picture is laid on the site's drawn surfaces, so hiding a
 terrain with its eye flattens the picture with it; hide the aerial itself with
 its own eye. The pictures layered above the base image have a row each, in
 drawing order; a layer's right-click menu moves it up or down the stack
@@ -359,7 +410,7 @@ vehicle itself stands there.
     HVE Studio has no toolbar. Its commands are on the menus; the editors are the
     tabs under the menu bar. A run is started on the Event Designer's Run stage
     (**Run simulation**, **Reset**), and the playback buttons and the run's state
-    are on the playback bar under the viewport.
+    are on the playback controls in the toolbar.
 
 ---
 

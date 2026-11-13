@@ -16,13 +16,14 @@
 
 ## Loading a cloud
 
-1. In the **Environment** editor, open **Environment › Environment...**, and in
-   its *Terrain* section expand **Survey Point Cloud (scan)**.
-2. Type the path in **Point Cloud File**, or press **Browse...**.
-3. Press **Import**. While the file is read the window is busy, and the panel
-   says so.
-4. Check the summary line below the buttons: how many points were read and
-   kept, and the offset applied (below).
+1. In the **Environment** editor, open **Environment › Environment...** (or the
+   Environment Designer's **Import** stage).
+2. Open the **Point cloud** tab. On the *Point cloud* row at its top, press
+   **Import...** and choose the file. While it is read the window is busy, and
+   the row says so.
+3. In **Survey Point Cloud (scan)**, under the row, check its summary line: how many
+   points were read and kept, and the offset applied (below). Its scale and
+   frame settings are there too, and apply as you change them.
 
 **Formats:**
 

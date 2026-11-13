@@ -13,7 +13,7 @@ Information...** still opens that panel.
 
 Like the other designers it is an ordinary docked window, on the left with the 3-D
 view beside it, where the vehicles stand: drag its tab to move it, float it, or dock
-it anywhere, and the arrangement is kept. Docked narrow, the **Key figures** and **Guidance** become one summary row at the top of the stage: a **Key figures** button and a **Guidance** button that reads how many items there are to fix and to consider. Each opens its panel under the row. While Guidance is closed, the first item to fix is shown on one line after it, with its **Go to** button; point at the line for the whole text. Where they go is yours to choose: **Bar position** (on the stage line) also has **Key figures and Guidance** › **Automatic (by width)**, **Beside the stage** (always the column) or **Above the stage, folded** (always the summary row, closed until you open it). One choice for all four designers, kept between sessions. A dialog on a stage is the same
+it anywhere, and the arrangement is kept. The **Key figures** and **Guidance** are one summary row at the top of the stage: a **Key figures** button and a **Guidance** button that reads how many items there are to fix and to consider. Each opens its panel under the row. While Guidance is closed, the first item to fix is shown on one line after it, with its **Go to** button; point at the line for the whole text. Where they go is yours to choose: **Bar position** (on the stage line) also has **Key figures and Guidance** › **Automatic (beside when wide)**, **Beside the stage** (always the column) or **Above the stage, folded (default)** (always the summary row, closed until you open it; the default since 2026-11-09, so they stay at the top however wide the designer is). One choice for all four designers, kept between sessions. **Standard** | **Extended**, beside **Bar position**, chooses how many stages the bar offers: Extended (the default) shows them all, Standard the ones most analyses change, keeping the stage on screen and any stage with something to fix (see the Vehicle Designer, *Standard and Extended*, for each designer's stages). A dialog on a stage is the same
 dialog the Event menu opens, drawn in the stage instead of its own window, so a
 field has one editor and nothing is reachable in one and not the other.
 
@@ -23,6 +23,8 @@ field has one editor and nothing is reachable in one and not the other.
 hosted and the 3-D view beside it.*
 
 ## The stages
+
+What a stage covers is a tooltip on its title band (the colored bar naming it): hover over the band to read it.
 
 1. **Event**: the **Event Information** panel: the events, the active event's
    name and start time, the calculation method, and the vehicles and
@@ -36,9 +38,9 @@ hosted and the 3-D view beside it.*
    (EDCRASH, EDSMAC and EDSMAC4, EDGEN, EDHIS, SIMON, EDVSM, GATB or the
    single-track model), the one **Method Options...** in Event Information opens.
    A method with no options says so. Pressing **Method Options...** on the Event
-   stage brings you here. For SIMON, once **Enable DyMESH** is ticked, the stage
-   has two tabs: **SIMON Options** and **DyMESH Options** (the same window as
-   **Event › DyMESH Options...**).
+   stage brings you here. For SIMON the stage has two tabs: **SIMON Options** and
+   **DyMESH Options** (the same window as **Event › DyMESH Options...**), which
+   holds **Enable DyMESH (vehicle-to-vehicle)** and every DyMESH setting.
 3. **Positions**: Event Information's vehicle section by itself (no
    collapsing header): each vehicle's start state (position, velocity, Auto
    Position, advanced initial state) and its **Named Positions** list.
@@ -100,10 +102,13 @@ hosted and the 3-D view beside it.*
    results and saved with the case. Under the Last Result, **Messages** lists
    that page in full -- every message the engine raised and every run note --
    so a second warning is on this stage too, not only on the report.
-8. **Results**: what the run gave, in three tabs -- **Key Results**, the
-   **Output Graph** and the **Results HUD** (the boxes drawn over the event's
-   run; see [Results HUD](../../new-features/11-results-hud.md)). Each is the
-   window the View and Output menus open, hosted here.
+8. **Results**: what the run gave, in four tabs -- **Key Results**, the
+   **Output Graph**, the **Results HUD** (the boxes drawn over the event's
+   run; see [Results HUD](../../new-features/11-results-hud.md)) and **Monte
+   Carlo**, the event's list of uncertainty analyses, each with its own colors
+   in the 3-D view and saved with the case (**Event › Monte Carlo...** opens it;
+   see [Analysis Tools](../../new-features/08-analysis-tools.md#monte-carlo-analysis)).
+   The first three are the windows the View and Output menus open, hosted here.
 9. **Summary**: the event's spec sheet with its was column, **Set as baseline**
    (kept for this case across sessions) and **Copy spec sheet**, the warnings,
    **Provenance** (where each value an automatic tool set came from) and the

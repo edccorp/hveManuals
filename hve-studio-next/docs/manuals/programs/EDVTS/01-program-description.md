@@ -58,7 +58,7 @@ The procedure for using EDVTS is substantially the same as using any simulator i
     - **Event:** in the Event editor's **Event Information** panel, add an event with **+**, choose **EDVTS** as the **Calculation Method**, and use **Add Vehicle** for the tow vehicle (slot V1) and then the trailer (V2).
     - **Initial conditions:** in **Event Information › Vehicle Initial Conditions**. The trailer's position follows from the tow vehicle and the hitch; only its articulation angle is entered.
     - **Driver controls:** **Event › Driver Controls…** (Ctrl+D).
-    - **Executing:** **Run** on the playback bar under the viewport, or **Output › Run Simulation…** (Ctrl+R).
+    - **Executing:** **Run** on the playback controls in the toolbar, or **Output › Run Simulation…** (Ctrl+R).
     - **Results:** the solved event plays back in the Event editor's own viewport, and the reports are on its **Output** menu (see [Chapter 3](03-program-output.md)); the **Playback (F6)** editor plays several events in sequence. **File › Record Animation…** writes a video.
 
 ---

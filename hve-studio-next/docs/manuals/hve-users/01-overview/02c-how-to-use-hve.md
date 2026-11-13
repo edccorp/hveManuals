@@ -17,7 +17,7 @@ Part B: [Reports, Playback, Case Files, Databases, Printing, View](02b-how-to-us
 ## Selecting User Options
 
 HVE's user options were on its Options menu. In HVE Studio the display options are
-switches on the **View** menu, units and preferences are in **Tools ›
+switches on the **View** menu, units and preferences are in **Options ›
 Preferences**, and the calculation settings are with the event they belong to.
 The complete map is in
 [Where HVE's Options menu went](../02-menu-reference/06-options-menu.md).
@@ -94,14 +94,14 @@ The positions themselves are entered in Event Information (see
 
 ### Selecting Units
 
-**Tools › Preferences › Units** chooses **Metric (m, km/h, kg, N)** or **Imperial
+**Options › Preferences › Units** chooses **Metric (m, km/h, kg, N)** or **Imperial
 (ft/in, mph, lb, lbf)**. Dialogs and reports follow the setting (the Preferences
 dialog notes that a few fields still carry a fixed SI label); the case is stored
 in SI units either way, so changing units does not change a stored value. HVE's
 per-quantity unit selection is not reproduced.
 
 ![Figure 2-66](../images/hvn-01-preferences.png)
-*Figure 2-66: Tools › Preferences, with the Units setting.*
+*Figure 2-66: Options › Preferences, with the Units setting.*
 
 ### Render Options
 
@@ -211,8 +211,8 @@ is labeled so in the dialog.
 
 ### User Preferences
 
-**Tools › Preferences...** holds the date format, the units, the background
-color, the diagnostic level and auto-save; **Tools › Style Editor...** holds the
+**Options › Preferences...** holds the date format, the units, the background
+color, the diagnostic level and auto-save; **Options › Style Editor...** holds the
 interface's theme and style, including text size.
 
 !!! note "HVE Studio"

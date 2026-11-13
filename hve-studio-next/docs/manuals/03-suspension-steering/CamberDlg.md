@@ -2,35 +2,40 @@
 
 The camber properties of the wheels are displayed and edited in the **Camber vs Deflection** dialog. Open it in the Vehicle Editor as the **Camber vs Deflection** tab of **Vehicle › Editors › Suspension Data...**. The **Vehicle** list at the top selects the vehicle.
 
-Where HVE edits one wheel at a time, and opens either this table/graph dialog (independent suspension) or a single constant *Camber (deg)* dialog (solid and tandem axles), HVE Studio shows one table with a column per wheel (**A1 Left**, **A1 Right**, **A2 Left**, ...) holding both. Deflections are shown in the units set in Preferences; angles are in degrees.
+Where HVE opens either this table/graph dialog (independent suspension) or a single constant *Camber (deg)* dialog (solid and tandem axles), HVE Studio shows both: a grid with a column per wheel (**A1 Left**, **A1 Right**, **A2 Left**, ...) for the values each wheel has one of, and under it one wheel's camber table with its graphs, as HVE's dialog has them. Deflections and half-track changes are shown in the units set in Preferences; angles are in degrees.
 
 ## Suspension Group
 
-Four small buttons per wheel: **-**, **S1**, **S2** and **S3**. Wheels in the same group share their values, as in the [Jounce and Rebound Stops Dialog](JouAndRebDlg.md).
+A button per group above each wheel (**S1**, **S2**, ...; a drop-down where the column is too narrow for the buttons). Every wheel is in a group; wheels in the same group share their values, the camber table and half-track change included, as in the [Jounce and Rebound Stops Dialog](JouAndRebDlg.md).
+
+**Layout...** sets the groups in one step and copies a wheel's values once, as in the [Jounce and Rebound Stops Dialog](JouAndRebDlg.md).
 
 ## Solid-Axle Const (deg)
 
-The constant camber angle of a solid or tandem axle (HVE's small Camber dialog). Enabled only for wheels on an axle whose suspension type is not Independent; for an independent axle the field is grayed, and its tooltip says that the axle's camber comes from the table.
+The constant camber angle of a solid or tandem axle (HVE's small Camber dialog). Enabled only for wheels on an axle whose suspension type is not Independent. Pointing at the row's name says which value a run reads: a solid axle takes this constant and ignores its table, an independent axle reads its table and ignores this.
 
-## Data Table
+## Camber Table
 
-**Num Points**
-The number of rows in the wheel's camber table, 3 to 15.
+Each wheel's table size (*3 points*, ...; *(not read)* on a solid axle). Click a wheel's cell to edit its table below.
 
-**Pt *n* Deflect**
-Suspension deflection of row *n* (jounce negative, rebound positive).
+## Camber vs deflection: the wheel's table
 
-**Pt *n* Angle (deg)**
+The wheel shown is picked with the **Wheel** buttons, or by clicking its cell in the **Camber Table** row. A line under them names the wheels of its suspension group, which every edit here also changes. The table has a row per point:
+
+**Deflection**
+Suspension deflection of the point (jounce negative, rebound positive). The rows are kept in order of deflection: a changed deflection moves its row when you finish typing.
+
+**Camber (deg)**
 Wheel camber angle at that deflection.
 
-A wheel with fewer points than the longest table shows *--* in the rows it does not use. Type into a cell, or Ctrl+click it, to enter a value.
+**Half-Track Change**
+How far the wheel center moves sideways at that deflection. SIMON reads it for the wheel's lateral position and the suspension's jacking force. (It used to be read from an HVE file and passed to the engine with no way to see or change it.)
 
-An orange note under the table states which entry the solver reads: a solid axle reads the constant row and an independent axle reads the table. When every axle is solid the note says that the table is ignored.
+**x** removes a point (a table keeps at least 3); **Add Point** adds one a step past the last deflection, up to 15. Under the table, two graphs draw **camber** and **half-track change** against deflection, and follow every edit.
 
 !!! warning "Not in HVE Studio"
-    - The **Camber vs. Jounce/Rebound** and **Half-track Change vs. Jounce/Rebound** graphs, and **Apply** and **Print**.
-    - The **Half-track Change** column. A half-track table read from an HVE file is kept with the vehicle and passed to the engine, but it cannot be viewed or edited.
-    - HVE's validation on Apply/OK (sorting the rows by deflection, removing empty rows, rejecting incomplete rows and duplicate deflections): enter the rows in order of deflection.
+    - **Apply** and **Print**.
+    - HVE's other checks on Apply/OK (removing empty rows, rejecting duplicate deflections).
 
 <!-- NAV -->
 

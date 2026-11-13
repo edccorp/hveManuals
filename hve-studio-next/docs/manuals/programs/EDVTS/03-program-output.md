@@ -138,7 +138,7 @@ EDVTS produces a Variable Output table containing the time-based simulation resu
 A detailed listing of each Variable Output parameter produced by EDVTS is found in Table 3-1. For more information about Variable Output parameters, refer to the User's Manual, Chapter 16, Event Model.
 
 !!! note "HVE Studio"
-    The same variables are chosen in **Output › Variable Selection…** (the **Select Output Variables** dialog, searchable by name or group) and shown in **Output › Key Results…**; **Output › Output Graph…** plots variables chosen with its own **Select Variables…** button. Values follow the units set in **Tools › Preferences**. A channel that EDVTS does not compute carries "(not computed)" in its name.
+    The same variables are chosen in **Output › Variable Selection…** (the **Select Output Variables** dialog, searchable by name or group) and shown in **Output › Key Results…**; **Output › Output Graph…** plots variables chosen with its own **Select Variables…** button. Values follow the units set in **Options › Preferences**. A channel that EDVTS does not compute carries "(not computed)" in its name.
 
 **Table 3-1: Vehicle Variable Output Data**
 
@@ -162,7 +162,7 @@ EDVTS produces a trajectory simulation of the current event. The trajectory simu
 
 ### Displaying a Trajectory Simulation
 
-In HVE Studio the trajectory is played back in the Event editor's viewport as soon as the event has been run. It is controlled with the playback bar under the viewport (Figure 3-7):
+In HVE Studio the trajectory is played back in the Event editor's viewport as soon as the event has been run. It is controlled with the playback controls in the toolbar (Figure 3-7):
 
 - **|<** — Jump to the start of the simulation
 - **<<** / **>>** — Step back / forward one output step

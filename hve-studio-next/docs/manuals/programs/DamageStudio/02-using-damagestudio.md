@@ -13,7 +13,7 @@
 1. Set up and run a collision event — SIMON with DyMESH enabled (Event ›
    DyMESH Options), or EDSMAC4. Run it with **Output › Run Simulation** or
    **Run** on the playback bar.
-2. Move through the event with the playback bar under the viewport. Before
+2. Move through the event with the playback controls in the toolbar. Before
    contact the vehicles are undamaged; through the collision the meshes
    deform; after it they keep their final crush.
 3. Turn on **View › Scene Display › Vectors › Collision force** to draw the collision

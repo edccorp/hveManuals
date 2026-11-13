@@ -30,7 +30,7 @@ This basic procedure is described in detail in this tutorial.
 As in other tutorials, before we get started, let's set the user options so we're all starting on the same page.
 
 1. Choose **File › Open Case...** and open **EdcrashTutorialEDC.hve**.
-2. Choose **Tools › Preferences...** and set **Units** to **Metric (m, km/h, kg, N)**.
+2. Choose **Options › Preferences...** and set **Units** to **Metric (m, km/h, kg, N)**.
 
    > **NOTE:** As we'll see when we look at the environment, our EDCRASH Tutorial studies a crash that took place in Australia; thus we use metric units.
 
@@ -81,7 +81,7 @@ The case carries its environment, the intersection from HVE's tutorial site *Edc
 
 > **NOTE:** The latitude, longitude, date, time and angle from true north are used to position the sun in the scene. This is, of course, important because the sun is the primary light source for the scene.
 
-To load a different site into a case of your own, use **Scene Geometry › Browse...** and **Import** in the same dialog.
+To load a different site into a case of your own, use **Import...** beside **Scene geometry** on the Environment Designer's **Import** stage (**3-D models** tab).
 
 ## Creating the Event
 
@@ -296,7 +296,7 @@ Due to the effect of the energy magnification factor, the change to the PDOF cha
 
 Now we're ready to execute the event:
 
-1. Press **Run** on the playback bar under the viewport.
+1. Press **Run** on the playback controls in the toolbar.
 
 Unlike simulation calculations, which are repetitive, reconstruction calculations are executed only once, and thus happen very quickly. The results appear at once in **Key Results**, and the event's inputs are locked until you press **Reset**.
 

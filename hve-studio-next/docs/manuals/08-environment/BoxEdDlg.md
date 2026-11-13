@@ -17,8 +17,8 @@ Changes take effect when **Apply** is pressed.
 
     - Build curbs, walls, buildings and other box-shaped objects in a CAD or
       modeling program and import them as part of the site: a DXF, `.h3d`,
-      `.iv`, OBJ or glTF file, with **Environment › Environment... › Terrain ›
-      Scene Geometry**. Set the type of their surfaces on their material (see
+      `.iv`, OBJ or glTF file, with **Import...** on the Environment Designer's
+      **Import** stage (**3-D models** tab). Set the type of their surfaces on their material (see
       [Environment Material Properties](EnvrMatPropDlg.md)).
     - Draw a drivable region or a friction zone over the site with the
       **Surface Generator** (Environment window, *Surface Generator* section;

@@ -265,10 +265,10 @@ A case in HVE Studio always has exactly one environment; there is nothing to add
 - Choose the **Environment (F4)** editor tab.
 - The **Environment** panel is displayed (**Environment › Environment…** reopens it).
 - In **Location**, set the location (search an address, paste a coordinate, or enter latitude and longitude) and the date and time of the event.
-- In **Terrain › Scene Geometry**, open the site's 3-D geometry (`.h3d`, DXF, `.iv`, OBJ or glTF) with **Browse…** and **Import**.
+- On the Environment Designer's **Import** stage (**3-D models** tab), open the site's 3-D geometry (`.h3d`, DXF, `.iv`, OBJ or glTF) with **Import...** beside **Scene geometry**.
 - In **Physical**, enter the ambient temperature and pressure, the wind and the **Gravity**.
 
-Values are shown in the units set in **Tools › Preferences**. A case with no site geometry still has a flat ground plane for the tires to run on.
+Values are shown in the units set in **Options › Preferences**. A case with no site geometry still has a flat ground plane for the tires to run on.
 
 *Figure 2-3 of the printed manual, a screenshot of HVE's Environment Editor, is not reproduced; the HVE Studio Environment editor is shown in the [EDVDS manual](../EDVDS/02-program-input.md#creating-an-environment).*
 
@@ -400,6 +400,8 @@ The trailer is positioned relative to the tow vehicle by supplying the initial a
 !!! note "HVE Studio"
     The tow vehicle (V1) has X and Y Position, Heading, an **Auto Position (settle onto terrain)** checkbox, Z Height, Speed, Sideslip and Yaw rate, with roll, pitch and the other rates under **Advanced initial state**. For the trailer (V2) the X and Y Position are grayed: EDVTS does not read a trailer position, so HVE Studio computes it from the tow vehicle's position and heading and the two connections, and draws the trailer there. The trailer's angle is entered as **Articulation (deg)**, relative to the tow vehicle (0 = in line). In the viewport, select the tow vehicle and press **G** to move it or **R** to rotate it; the trailer follows.
 
+    > **NOTE:** With **Auto Position** off, the **Z Height** is the CG's height above the ground and the engine takes it as entered. Turning Auto Position off keeps the vehicle where Auto Position had put it: an empty height is filled in with that height, roll and pitch. A height of 0 would start the CG on the ground with the tires crushed; the panel says so, the viewport draws the vehicle there, and the run status says how far below its ride height it starts.
+
 The tow vehicle linear velocities are supplied in the form of a total velocity and sideslip angle.
 
 > NOTE: The vehicle-fixed u (forward) and v (side) velocity components are calculated using the total velocity and sideslip angle. Vertical velocity is set to zero.
@@ -511,7 +513,7 @@ The default surface-search method is *From Previous Polygon*. This results in fa
 
 ### Executing An Event
 
-To execute an EDVTS event, use the playback bar under the viewport (Figure 2-6) or **Output › Run Simulation…** (Ctrl+R). The playback bar's buttons have the following functions:
+To execute an EDVTS event, use the playback controls in the toolbar (Figure 2-6) or **Output › Run Simulation…** (Ctrl+R). The playback bar's buttons have the following functions:
 
 - **Run** — Execute the event (grayed while the event's results are on screen)
 - **Reset** — Clear the results so the event can be edited and run again

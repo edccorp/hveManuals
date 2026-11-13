@@ -12,7 +12,7 @@ surface.
     per seat location. The same window also holds the deploy timing and
     contact segments of HVE's event
     [Airbag Restraint System](AirBagSysDlg.md) dialog. Lengths, areas,
-    volumes, pressures, density and force follow the units set in Tools ›
+    volumes, pressures, density and force follow the units set in Options ›
     Preferences; the unit is shown in each label. While a solved run is on
     screen the window is read-only.
 

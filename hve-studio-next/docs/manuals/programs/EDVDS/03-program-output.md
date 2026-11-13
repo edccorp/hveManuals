@@ -50,7 +50,7 @@ A typical Messages Report is shown in Figure 3-1. For a complete listing of mess
 *Figure 3-1: The Messages page for EDC's tutorial event, as shown by Output › HVE Reports in HVE Studio.*
 
 !!! note "HVE Studio"
-    Problems HVE Studio finds in a case before or after the run (a refused vehicle combination, a payload dropped from a dolly, an option it does not honor) are reported in the run status shown on the playback bar under the viewport, not on this page.
+    Problems HVE Studio finds in a case before or after the run (a refused vehicle combination, a payload dropped from a dolly, an option it does not honor) are reported in the run status shown on the playback controls in the toolbar, not on this page.
 
 ### Accident History
 
@@ -213,7 +213,7 @@ EDVDS produces a Variable Output table containing the time-based simulation resu
 A detailed listing of each Variable Output parameter produced by EDVDS is found in Table 3-1. For more information about HVE Variable Output parameters, refer to the HVE User's Manual, Chapter 16, Event Model.
 
 !!! note "HVE Studio"
-    The same variables are chosen in **Output › Variable Selection…** (the **Select Output Variables** dialog, searchable by name or group, for example "Kinematics" or "Tire") and shown in **Output › Key Results…**; **Output › Output Graph…** plots variables chosen with its own **Select Variables…** button. Values follow the units set in **Tools › Preferences**. A channel that EDVDS does not compute carries "(not computed)" in its name.
+    The same variables are chosen in **Output › Variable Selection…** (the **Select Output Variables** dialog, searchable by name or group, for example "Kinematics" or "Tire") and shown in **Output › Key Results…**; **Output › Output Graph…** plots variables chosen with its own **Select Variables…** button. Values follow the units set in **Options › Preferences**. A channel that EDVDS does not compute carries "(not computed)" in its name.
 
 **Table 3-1: Vehicle Variable Output Data**
 
@@ -239,7 +239,7 @@ EDVDS produces a trajectory simulation of the current event. The trajectory simu
 
 ### Displaying a Trajectory Simulation
 
-In HVE Studio the trajectory is played back in the Event editor's viewport as soon as the event has been run. It is controlled with the playback bar under the viewport (Figure 3-9):
+In HVE Studio the trajectory is played back in the Event editor's viewport as soon as the event has been run. It is controlled with the playback controls in the toolbar (Figure 3-9):
 
 - **|<** — Jump to the start of the simulation
 - **<<** / **>>** — Step back / forward one output step

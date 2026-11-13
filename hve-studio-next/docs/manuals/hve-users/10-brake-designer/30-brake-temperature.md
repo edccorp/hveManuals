@@ -28,7 +28,7 @@ material. Therefore, the HVE Brake Designer (see
 this model as an independent input to the equations for brake torque.
 
 !!! note "HVE Studio"
-    The brake temperature model runs in HVE Studio for every pedal-braked wheel of a SIMON vehicle. Its inputs — the rotor/drum and pad/lining density, specific heat, conduction and convection, and the rotor, pad, drum and lining thicknesses and drum width — are the Brake Designer's **Material Properties** section ([Chapter 29](29-brake-designer.md)), kept with the vehicle and imported from HVE's vehicle database. The six temperature output channels carry the model's values, and a wheel with a brake design reads them back: its lining friction follows the **Lining Friction Properties** table at the simulated temperature and, for S-cam, wedge and air disc brakes, its stroke factor follows the drum temperature, which is brake fade ([Chapter 29](29-brake-designer.md)). A **Generic** wheel keeps a constant torque ratio.
+    The brake temperature model runs in HVE Studio for every pedal-braked wheel of a SIMON vehicle. Its inputs — the rotor/drum and pad/lining density, specific heat, conduction and convection, and the rotor, pad, drum and lining thicknesses and drum width — are the Brake Designer's **Material** and **Thicknesses** rows ([Chapter 29](29-brake-designer.md)), kept with the vehicle and imported from HVE's vehicle database. The six temperature output channels carry the model's values, and a wheel with a brake design reads them back: its lining friction follows the **Lining Friction Properties** table at the simulated temperature and, for S-cam, wedge and air disc brakes, its stroke factor follows the drum temperature, which is brake fade ([Chapter 29](29-brake-designer.md)). A **Generic** wheel keeps a constant torque ratio.
 
 ## Modeling Technique
 
@@ -131,7 +131,7 @@ Designer dialogs (see Figures 29-10 through 29-17) and HVE's Brake Material
 Properties dialog.
 
 !!! note "HVE Studio"
-    The material properties of Table 30-1 are the Brake Designer's **Material Properties** section in HVE Studio (see above).
+    The material properties of Table 30-1 are the Brake Designer's **Material** rows in HVE Studio (see above).
 
     HVE's Brake Material Properties dialog is not in HVE Studio. No engine reads its material library, so HVE Studio does not have it.
 

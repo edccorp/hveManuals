@@ -135,7 +135,7 @@ EDSMAC produces a trajectory simulation of the current event. The trajectory sim
 
 ### Displaying a Trajectory Simulation
 
-In HVE Studio the trajectory simulation is the playback of the solved event in the 3-D viewport; nothing is calculated during playback. It is controlled with the playback bar under the viewport (see [Chapter 2 — Executing An Event](02-program-input.md#executing-an-event)):
+In HVE Studio the trajectory simulation is the playback of the solved event in the 3-D viewport; nothing is calculated during playback. It is controlled with the playback controls in the toolbar (see [Chapter 2 — Executing An Event](02-program-input.md#executing-an-event)):
 
 - **|<** — Jump to the start of the simulation
 - **<<** — Step back one output step

@@ -449,11 +449,11 @@ The default method for Get Surface Information is *From Previous Polygon, Sorted
 
 ### Executing An Event
 
-To execute an EDSMAC event, use the playback bar under the viewport (Figure 2-5). Its buttons have the following functions:
+To execute an EDSMAC event, use the playback controls in the toolbar (Figure 2-5). Its buttons have the following functions:
 
 ![Figure 2-5](images/hvn-edsmac-playback-bar.png)
 
-*Figure 2-5: The playback bar under the viewport: the playback buttons and the camera list. Since 2026-11-04 the bar shows the run's state where Run and Reset were; the run is started on the Run stage.*
+*Figure 2-5: The playback controls in the toolbar: the playback buttons and the camera list. Since 2026-11-04 the bar shows the run's state where Run and Reset were; the run is started on the Run stage.*
 
 - **Run** — Execute the event. Once the event is solved, Run is disabled until you press Reset.
 - **Reset** — Discard the results so the inputs can be edited and the event run again

@@ -605,7 +605,7 @@ This option determines how the tire model searches for polygons beneath the tire
 
 ### Executing An Event
 
-To execute an EDVSM event, use the playback bar under the viewport (Figure 2-5). Its controls have the following functions:
+To execute an EDVSM event, use the playback controls in the toolbar (Figure 2-5). Its controls have the following functions:
 
 - **Run** - Execute the event (also **Output › Run Simulation**)
 - **Reset** - Discard the results so the event can be edited and run again
@@ -617,7 +617,7 @@ To execute an EDVSM event, use the playback bar under the viewport (Figure 2-5).
 
 ![Figure 2-5](images/hvn-playback-bar.png)
 
-*Figure 2-5: The playback bar under the viewport, used for running an event and replaying its results.*
+*Figure 2-5: The playback controls in the toolbar, used for running an event and replaying its results.*
 
 > **NOTE:** A solved event's inputs are locked while its results are on screen. Press **Reset** to edit them; the event must then be run again.
 

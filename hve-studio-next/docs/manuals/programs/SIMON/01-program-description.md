@@ -94,7 +94,7 @@ The procedure for using SIMON is the same as for any simulation model in HVE Stu
   - Optionally, assign a payload (**Event › Payload...**).
   - Optionally, assign tire blow-out, wheel damage, brake failure and temperature, and tire-terrain data (**Event › Wheels...**).
   - Optionally, assign locations for one or more accelerometers (**Event › Accelerometers...**).
-- Execute the simulation: **Run** on the playback bar under the viewport, or **Output › Run Simulation...**.
+- Execute the simulation: **Run** on the playback controls in the toolbar, or **Output › Run Simulation...**.
 - Modify the initial conditions, driver controls and other parameters as required to achieve the desired match between simulation and test conditions. Press **Reset** before editing an event that has results on screen: a solved event's inputs are read-only until it is reset.
 - Review the results from the **Output** menu and by playing the event back in the viewport.
 - If desired, record a movie of the simulation (**File › Record Animation...**).

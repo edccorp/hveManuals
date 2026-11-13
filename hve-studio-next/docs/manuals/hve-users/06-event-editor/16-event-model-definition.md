@@ -427,11 +427,13 @@ steered through slightly different angles. See the
 [Steer page](../../09-events-driver-controls/DriverControls.md).)*
 
 !!! note "HVE Studio"
-    The Steer tab holds a table of steering-wheel angle versus time (+ is
-    right, clockwise). A table of steer angles at the tires is shown, above
-    it, only when the case carries one (for example, from an imported HVE
-    case); it then overrides the steering-wheel table, bypassing the gear
-    ratio and Ackermann geometry. For a single-track (motorcycle) event the
+    The Steer tab's **Table** chooses, as HVE's does, **At Steering Wheel**
+    (steering-wheel angle versus time, + is right, clockwise, through the gear
+    ratio and Ackermann geometry) or **At Axle** (the road-wheel angle at each
+    wheel, Right and Left per axle, given directly, so the gear ratio and
+    Ackermann are bypassed; a non-steerable axle's columns are ignored).
+    Choosing At Steering Wheel clears the At Axle table (Edit › Undo brings it
+    back). For a single-track (motorcycle) event the
     Steer table is a commanded lean or a steer torque instead, chosen in
     the SINGLETRACK Options.
 

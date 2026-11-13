@@ -11,7 +11,7 @@ and a tire is picked from HVE's databases in its **Tire Database** section.
     The window shows the current vehicle (chosen in the **Vehicle** list at the
     top) with one column per wheel: **A1 Left**, **A1 Right**, **A2 Left**,
     **A2 Left**, and so on. All values are shown in the units set in
-    Tools › Preferences. The same window holds the fields of HVE's
+    Options › Preferences. The same window holds the fields of HVE's
     [Tire Physical Data dialog](TirePhyDataDlg.md) and the scalar friction and
     cornering values; the load/speed tables are in the **Load & Speed Tables**
     panel under the grid (see [Tire Friction Data](TireFrictDataDlg.md)).
@@ -26,7 +26,7 @@ it. A note at the top says when the vehicle shown is not in the active event.
 HVE Studio's counterpart of choosing a tire by size. Type a size designation in
 **Tire Size** (for example P215/65R15, 8R19.5 or 31x10.50R15LT), choose the tire
 **Type** (Passenger Car, Light Truck, Heavy Truck, Mobile Home) and the wheels to
-change in **Apply to** (All wheels, or one axle), then press **Apply Tire Size**.
+change in **Apply to** (All wheels, one axle, or one wheel: A1 Left, A1 Right, ...), then press **Apply Tire Size**.
 The size string is parsed to fill the outer (unloaded) radius, maximum width,
 tread width, tread depth and nominal pressure. Friction, cornering stiffness and
 spring rates are left unchanged. An unrecognized string, or an obsolete
@@ -40,13 +40,15 @@ first wheel.
 HVE Studio's counterpart of choosing a tire by Type, Manufacturer, Model, Size and
 Source Database. The collapsed **Tire Database** section lists the tires in the
 HVE vehicle databases HVE Studio finds (the same folders the vehicle database
-picker reads), each as manufacturer, model and size with its source database in
-brackets. **Type** narrows the list, **Database** shows only the tires of one
-database file (*All databases*, or a file with its tire count), and **Search**
-filters it by manufacturer, model or size. While the list is narrowed, a line
-under it reads *Showing N of M*. Selecting a tire shows its radius, ride rate and the size of its
-tables. **Apply Tire** replaces the tire data and all four tables of the wheels
-chosen in **Apply to** (All wheels, or one axle) with the database tire's; each
+picker reads) in a table laid out like the vehicle database picker's:
+**Manufacturer**, **Model**, **Size**, **Type** and **Database** columns, an
+**All** filter under each heading (each offers what the other filters leave), a
+click on a heading to sort by it, **Search** across manufacturer, model, size and
+database, and **Clear filters**. While the list is narrowed, a line under it reads
+*Showing N of M*. Selecting a tire shows its radius and the size of its tables (a
+tire kept inside EDCVehicles.hvedb is read from the database for this line).
+**Apply Tire** replaces the tire data and all four tables of the wheels chosen in
+**Apply to** (All wheels, one axle, or one wheel) with the database tire's; each
 wheel keeps its own dual setup.
 
 ## Used by
@@ -72,19 +74,38 @@ TMeasy rows are read by SIMON's tire model 3 only.
 
 ## Tire Group
 
-The row of **–  A  B  C** buttons at the top of every column. Columns in the same
-group (T1, T2 or T3) are edited together: changing a value in one changes it in all
+The row of group buttons at the top of every column, numbered **T1**, **T2**, ... up
+to the number of wheels (a drop-down when there are more than four). Columns in the same
+group are edited together: changing a value in one changes it in all
 the others of that group, and moving a column into a group copies that group's
-current values into it, its four **Load & Speed Tables** included. **–** makes a
-wheel independent. Wheels with single tires start in group T1 and wheels with
-**Dual Tires** in group T2, so a value typed for the steer tires does not change
-the duals. The groups are set again from the tires when you switch vehicles or
-change a wheel's **Dual Tires**; a group you choose stays until then. The
+current values into it, its four **Load & Speed Tables** included. A wheel
+alone in its group edits alone. The groups start from the tires themselves: wheels
+carrying the same tire (the same name, size, type, dual setting, physical values and
+friction table) share a group, numbered in wheel order, so a vehicle imported with
+one tire in front and another at the rear starts with the front pair in **T1** and
+the rear pair in **T2**, and a value typed for the front tires does not change the
+rear ones. Applying a size or a database tire to only some wheels puts them in a
+group of their own the same way. The groups are set again from the tires when a
+wheel's **Dual Tires** or the number of axles changes; a group you choose stays until then. The groups
+are saved with the case, and **Undo** reverses a group change. The
 tables panel below the grid follows the same groups.
 
 !!! note "HVE Studio"
     The tire groups replace HVE's **Copy to Other Side** and **Copy to Other
     Axles** check boxes.
+
+
+**Layout...**, beside the group row's name, sets the usual arrangements in one step: **Same both sides** (each axle's left and right wheels in a group of their own), **Same on every wheel** (one group), and **Each wheel its own** (every wheel in a group of its own, so an edit changes only that wheel). A new group takes the values of its first wheel, A1 Left first. Under **Copy once** it does what HVE's *Copy to Other Side* and *Copy to Other Axles* do: pick a wheel under **From**, then **To the other side**, **To the other axles** (the same side of every other axle) or **To every wheel**. The copy changes no group, and a wheel copied to takes its group mates with it. Pointing at a column outlines it and tints the wheels in its group, the ones an edit there will change; they stay marked while the field is being edited.
+
+## Tire and Size
+
+The two rows under the group row say which tire each wheel carries. **Tire** is
+its manufacturer and model (point at it for the tire's name). **Size** is a
+drop-down of the sizes the Tire Database has for that same manufacturer, model and
+type, so changing only the size is one choice, as in HVE's Tire Information
+dialog; a tire whose manufacturer and model the database does not have lists the
+**Generic** tires of its type instead. Choosing a size applies that database tire
+to the wheel and to the other wheels of its group, and **Undo** takes it back.
 
 ## Size Designation and Tire Type
 
@@ -130,7 +151,8 @@ Table**, **Camber Table** and **Fy Roll-off** rows of the table's **Load &
 Speed Dependence** section: each wheel's button shows the size of its table
 (hover it for the contents) and selects that wheel and that table's tab in the
 **Load & Speed Tables** panel below the grid; the button for the table on
-screen is highlighted. A drag bar between the grid and the panel resizes them.
+screen is highlighted. In the Vehicle Designer's Tires stage the button scrolls
+the page down to that panel rather than opening the Tire Properties window. A drag bar between the grid and the panel resizes them.
 **Physical Data...** has no counterpart: the physical data are in the same
 table.
 

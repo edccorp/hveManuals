@@ -34,7 +34,7 @@ HVE Studio groups surfaces into **layers**, shown in **View › Outliner**; see 
 The surface's name and its appearance (color, texture, roughness) are edited in the **Shader Editor**. Appearance is display only.
 
 !!! warning "Not in HVE Studio"
-    - **Dynamic** water depth (a water surface whose depth follows the terrain under it): standing water is a **static** depth per surface, on the surface's **HVE Surface** node (Shader Editor).
+    - **Dynamic** water depth (a water surface whose depth follows the terrain under it): standing water is a **static** depth per surface, under the surface's **Surface Type and Friction** (Environment Designer › Surfaces).
     - **Group / UnGroup / Load / Save** of objects, and the Highway Furnishings Library.
     - **Apply**: changes take effect as they are made (they are locked while results are on screen).
 

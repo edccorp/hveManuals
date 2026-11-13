@@ -9,7 +9,7 @@ connects.
     editor (F2) open the **Humans** panel (**Occupant › Human
     Information...**), select the human, press **Body Segments...**, choose the
     segment in the **Segment** list (or click it in the 3-D view) and open the
-    **Joints** tab. Lengths follow the units set in Tools › Preferences.
+    **Joints** tab. Lengths follow the units set in Options › Preferences.
 
 The tab lists every joint attached to the selected segment, each under its own
 heading (for example **Lumbar (Pelvis-Abdomen)**, **Rt Hip**, **Lt Elbow**),

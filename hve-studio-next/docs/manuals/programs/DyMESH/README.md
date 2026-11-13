@@ -27,9 +27,9 @@ runs. What differs is where the controls are and how the results are shown:
 - **Settings.** **Event › DyMESH Options** holds the event's DyMESH settings
   (enable, environment contact, start times, search option, smoothing,
   version, restoration options and the per-pair friction and relaxation
-  length). The same core settings, plus **Contact a vehicle's own trailer**,
-  also appear in the DyMESH section of **Event Information › Method Options**
-  (SIMON Options). No license is needed.
+  length) and **Contact a vehicle's own trailer**. It is the one place they are
+  set: the SIMON Options window only says whether DyMESH is on. No license is
+  needed.
 - **Options carried but not used.** Several DyMESH Options settings are kept
   with the case but reach no code in the engine — in HVE's own engine source as
   well as in HVE Studio. The dialog marks each one; see

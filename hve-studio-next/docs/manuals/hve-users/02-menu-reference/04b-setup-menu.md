@@ -1,4 +1,4 @@
-# Chapter 4: Event Menu (Part B — Damage Profiles through Notes)
+# Chapter 4: Event Menu (Part B — Damage Profiles through Monte Carlo)
 
 *HVE User's Manual — Section Two: Menu Reference, HVE Studio edition. Replaces
 HVE's Chapter 4, Set-up Menu, Part B. Which items are available for which
@@ -22,6 +22,7 @@ screen; press **Reset** to edit.
 | Signals | Not in HVE Studio — see [SIGNALS](#signals) |
 | Driver Controls › Lights page | Event › **Lights...** (SIMON, EDSMAC4) — see [LIGHTS](#lights) |
 | Notes | Event › **Notes** |
+| — (new) | Event › **Monte Carlo...** — see [MONTE CARLO](#monte-carlo) |
 
 ---
 
@@ -116,7 +117,7 @@ See the dialog reference: [Collision Pulse](../../11-reports-output/ColPulse.md)
 **Description:** The Vehicle Mesh window has four tabs:
 
 - **File & Placement** — the mesh file (OBJ, glTF, Open Inventor, `.h3d` or a
-  point-cloud scan) with **...** and **Library...**, its import options,
+  point-cloud scan) with **Load File...** and **Library...**, its import options,
   **Load 3D File** and **Clear** with the load status, and moving, rotating and
   scaling the model to the vehicle (Move CG, Translate, Rotate, Scale).
 - **Collision** — what DyMESH collides (a triangle budget, a closed outer
@@ -375,6 +376,25 @@ to the body; the wheels, equipment and occupants stay put, and every distance
 measured from the CG follows. CG Height is read-only and shows the result.
 
 See the dialog reference: [Move CG](../../02-vehicles/MoveCGDlg.md).
+
+---
+
+## MONTE CARLO
+
+**Menu Option:** Event › Monte Carlo...
+
+**Purpose:** Bound a result of the active event by solving it many times with
+sampled inputs.
+
+**Description:** Opens the **Monte Carlo** tab of the Event Designer's
+**Results** stage: the event's list of analyses, saved with the case, each with
+its own Show switch and colors in the 3-D view, and the setup of the next one.
+**Run as a new analysis** adds to the list and never replaces an analysis already
+there; **X** deletes one, and **Edit › Undo** brings it back. See
+[Analysis Tools](../../new-features/08-analysis-tools.md#monte-carlo-analysis).
+
+!!! tip "New in HVE Studio"
+    HVE has no Monte Carlo analysis.
 
 <!-- NAV -->
 

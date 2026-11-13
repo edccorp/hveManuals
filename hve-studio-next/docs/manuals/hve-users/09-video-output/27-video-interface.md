@@ -13,18 +13,22 @@ This chapter describes what HVE Studio does offer for each part of HVE's video i
 
 HVE's Video Options dialog sets the video format (movie and/or single frames), compressor, video size, recording frame rate and output directory.
 
-**File › Record Animation…** opens the **Record Animation (AVI)** dialog, with:
+**File › Record Animation…** opens the **Record Animation** window (resizable; the preview grows with it), with:
 
 - **Output File** (default `output.avi` in the open case's folder, or in
   `Documents\HVE Studio` when no case is open) and a **…** browse button. On Windows the
   program never offers its own install folder, which an uninstall removes.
-- **Video Settings** — **Width** and **Height** in pixels (64 to 4096, rounded
+- **Video Settings** — **Show output frame** (on by default: see *The output
+  frame* below), **Width** and **Height** in pixels (64 to 4096, rounded
   to even numbers; default 1280 × 720), **FPS** (1 to 1000; default 30), the
   **Slow motion** switch with its **Capture rate (frames per s of the run)**
-  (1 to 10000; default 1000), and **JPEG Quality** (1 to 100; default 85).
+  (1 to 10000; default 1000), the **Format** (AVI, PNG images or MP4 — on
+  Windows and macOS by the system's own encoder, elsewhere through FFmpeg) and, for AVI, **JPEG Quality** (1 to 100; default 95).
 - **Camera and Time** — the **Camera** (*The view you are looking through*, or
   any saved camera), **Start (s)** and **End (s)**, each with **Now** (the
-  playback bar's current time), and **End of run**.
+  playback's current time), and **End of run**; and the same range as
+  **Start frame** and **End frame** — frames of the run at the FPS (or, in slow
+  motion, the capture rate), frame 0 being the run's start.
 - **Rendering** — the **Renderer** (**Viewport (fast)** or **Ray traced**, with
   its **Samples**) and **Motion blur** (with **Steps** and **Shutter**).
 - **Burn in key results (Results HUD)** — draws the case's
@@ -33,16 +37,35 @@ HVE's Video Options dialog sets the video format (movie and/or single frames), c
   (with the slow-motion factor when the capture rate differs from the FPS), a
   warning when frames will fall between the run's saved states, or the reason
   Record is unavailable.
+- **Preview** — draws the frame at the playback bar's current time as the
+  video will hold it (this camera, this frame), shown small under the button
+  with its time.
 - **Record** and **Close**; while recording, a progress bar and **Cancel**.
 
+### The output frame
+
+While the dialog is open with **Show output frame** ticked, and always while a
+recording runs, the 3-D view draws the video's frame: an outline labeled with
+the video's size, with the view outside it dimmed. The video is exactly what is
+inside the outline. The frame is the view fitted to the video's shape — as wide
+as the view for a video wider than the window, as tall as the view for a
+narrower one — so a video never shows anything the view did not. Frame the shot
+by moving the view until what you want is inside the outline, then
+**Preview** to check it.
+
+!!! tip "New in HVE Studio"
+    The output frame and **Preview**, after HVE's Video Creator, which shows the
+    view that will be exported, and Blender's camera frame. The preview is drawn
+    with the viewport renderer even when **Ray traced** is chosen.
+
 ![Figure 27-1](../images/hvn-09-record-animation.png)
-*Figure 27-1 — The Record Animation (AVI) dialog.*
+*Figure 27-1 — The Record Animation window.*
 
 Each setting is described step by step in
 [Recording a video](../../new-features/07-video-and-playback-sequences.md#recording-a-video).
 
 !!! note "HVE Studio"
-    The settings belong to the session, not to the case. There is no codec selection, no single-frame image output and no separate output directory: the output file names the directory. HVE's *Include UI Overlay* is not offered — the 3-D scene is recorded, with the Results HUD when it is burned in, and no panels or dialogs — and an existing output file is overwritten only after **Record** asks (**Overwrite** / **Keep**).
+    The video's **Width** and **Height** are saved with the case, so its framing comes back when the case is opened; the other settings belong to the session. The formats are AVI (Motion JPEG), a folder of PNG images, or MP4 (on Windows and macOS by the system's own encoder, elsewhere by your own copy of FFmpeg), and there is no separate output directory: the output file names the directory. HVE's *Include UI Overlay* is not offered — the 3-D scene is recorded, with the Results HUD when it is burned in, and no panels or dialogs — and an existing output file is overwritten only after **Record** asks (**Overwrite** / **Keep**).
 
 ### Video Devices *(legacy)*
 
@@ -82,7 +105,9 @@ The Viewport, or an AVI file with **File › Record Animation…** ([below](#rec
 5. Optionally choose the **Ray traced** renderer or **Motion blur**, and tick
    **Burn in key results (Results HUD)** to carry the case's HUD boxes into
    the video.
-6. Press **Record**.
+6. Check the framing: the outline in the 3-D view is the video's frame, and
+   **Preview** draws the current instant as it will be recorded.
+7. Press **Record**.
 
 HVE Studio steps through the playback from the start time to the end time at
 intervals of 1/FPS of the run (1/capture rate under slow motion), the last

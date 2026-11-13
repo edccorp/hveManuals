@@ -22,7 +22,7 @@ In HVE Studio, after running the event:
     HVE Studio does not print. In HVE Reports, **Save This Page** and **Save
     All Pages** write the pages to a text file; Key Results exports CSV
     (**Export CSV...**). The report pages
-    are in HVE's units; the other outputs follow Tools › Preferences.
+    are in HVE's units; the other outputs follow Options › Preferences.
 
 ## Alpha-Numeric Reports
 
@@ -95,7 +95,7 @@ EDGEN produces a trajectory simulation. A trajectory simulation is a 3-D visuali
 
 ### Displaying a Trajectory Simulation
 
-The trajectory simulation is controlled using the playback bar under the viewport.
+The trajectory simulation is controlled using the playback controls in the toolbar.
 
 ![Figure 3-6](images/hvn-playback-bar.png)
 

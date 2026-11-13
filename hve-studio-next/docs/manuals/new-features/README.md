@@ -16,9 +16,7 @@ section changes a result. A material, a sun position, a camera or a keyframe
 changes what the viewport **shows**, never what an engine **solves**, and the
 windows that edit them say so at the top.
 
-The exceptions are stated where they occur: the HVE Surface node on a road
-surface's material edits that surface's physics (its type and friction), the
-analysis tools in chapter 8 run the engines, and the case-intake tools in
+The exceptions are stated where they occur: the analysis tools in chapter 8 run the engines, and the case-intake tools in
 chapter 12 set vehicle, event and driver-control inputs.
 
 ## Contents
@@ -32,7 +30,7 @@ chapter 12 set vehicle, event and driver-control inputs.
 | [5 — Cameras](05-cameras.md) | Saved cameras, attaching a camera to a vehicle, lens settings, keyframed cameras |
 | [6 — Exporting to Blender and glTF](06-exporting-to-blender-and-gltf.md) | The glTF export and the Blender Live Link, and what each carries |
 | [7 — Video and Playback Sequences](07-video-and-playback-sequences.md) | Combining several solved events on one timeline; recording the playback to a video (camera, start and end times, slow motion, ray tracing, motion blur); playing a video; a ray-traced picture |
-| [8 — Analysis Tools](08-analysis-tools.md) | Quick Case, Monte Carlo Analysis, Motorcycle Analysis, Audit Log, Limits Editor |
+| [8 — Analysis Tools](08-analysis-tools.md) | Quick Case, Monte Carlo Analysis (Event Designer > Results), Motorcycle Analysis, Audit Log, Limits (Output Settings) |
 | [9 — Motorcycles](09-motorcycles.md) | The Motorcycle vehicle type and the SINGLETRACK method |
 | [10 — Survey Point Clouds](10-point-clouds.md) | Showing a laser scan or photogrammetry cloud behind the simulation |
 | [11 — Results HUD](11-results-hud.md) | Boxes of solved numbers (time, speed, any output channel) over the viewport and burned into recorded videos, saved with the case |

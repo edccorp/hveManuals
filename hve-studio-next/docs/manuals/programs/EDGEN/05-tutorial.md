@@ -32,7 +32,7 @@ This study involves both a human and vehicles, and it involves 3-dimensional mot
 As in other tutorials, before we get started, let's set the user options so we're all starting on the same page.
 
 1. Choose **File › Open Case...** and open **EdgenTutorialEDC.hve**.
-2. Choose **Tools › Preferences...** and set **Units** to **Imperial (ft/in, mph, lb, lbf)**, the units this tutorial uses.
+2. Choose **Options › Preferences...** and set **Units** to **Imperial (ft/in, mph, lb, lbf)**, the units this tutorial uses.
 3. On the **View** menu, make sure **Key Results** is shown.
 
 Each position of a vehicle's path carries its own elevation, roll and pitch (see the First Event). We're now ready to proceed with the tutorial.
@@ -41,7 +41,7 @@ Each position of a vehicle's path carries its own elevation, roll and pitch (see
 
 The case contains the male child pedestrian. Choose the **Human** editor tab (F2): the **Humans** panel lists *Male Child Pedestrian*, with **Location** *Pedestrian*, **Subject Type** male, a 12-year-old **Age Group** and the 50th **Weight Percentile** and **Height Percentile**.
 
-> **NOTE:** To add such a human yourself, click **Add Human** in the Humans panel and choose those values under **Identity** and **Anthropometry**.
+> **NOTE:** To add such a human yourself, click **Add Human** in the Humans panel and choose those values under **Identity** and **Size (GEBOD)**.
 
 ## Creating the Vehicles
 
@@ -113,7 +113,7 @@ The required positions and velocities have now been entered; however, this event
 
 To execute the event:
 
-1. Press **Run** on the playback bar under the viewport. The run status reads *EDGEN complete*.
+1. Press **Run** on the playback controls in the toolbar. The run status reads *EDGEN complete*.
 2. Press **Play** to watch the bus come to rest at the curb.
 
 > **NOTE:** While the event plays, you can watch the current position, velocity and acceleration in **Key Results**.
@@ -334,7 +334,7 @@ Key Results now shows those channels for the Ford Taurus; with **Follow playback
 
 #### Trajectory Simulation Report
 
-In HVE Studio the trajectory simulation is the viewport itself: after an event has run, the playback bar under the viewport plays its motion.
+In HVE Studio the trajectory simulation is the viewport itself: after an event has run, the playback controls in the toolbar plays its motion.
 
 > **NOTE:** As in HVE's Playback Editor, no calculations take place during playback.
 

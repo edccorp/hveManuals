@@ -28,10 +28,13 @@ Rear Axle** and **CG Height** are in the **Weight** table above them, with a
 **Total** and a **Sprung** column; typing in either column moves the CG, as
 Move CG does (the body, wheels and overhangs stay). Below **Overall Height**, six fields give the CG to front, back, right, left, top and
 bottom distances the solver receives: **CG to Front**, **CG to Rear**, **CG to
-Right**, **CG to Left**, **CG to Top** and **CG to Bottom**. When a loaded 3-D
-model does not reach the declared front and rear extents, a warning says so
-directly under the **Wheel Positions** table, with **Fit to geometry**, which
-sets the overhangs and the overall length from the model's front and rear.
+Right**, **CG to Left**, **CG to Top** and **CG to Bottom** (HVE's CG to the
+body's underside; **Ground Clearance** beside it is what it leaves under the CG
+height). When a loaded 3-D model does not reach the declared front and rear
+extents, a warning says so directly under the **Wheel Positions** table, with
+**Fit to geometry**, which sets the overhangs and the overall length from the
+model's front and rear, the CG to each side (and the width) from its sides, and
+the overall height from its top.
 
 When the **Wheelbase** does not match where the axles are (CG to Front Axle /
 CG to Rear Axle; on a vehicle with three or more axles, to the tandem center), the

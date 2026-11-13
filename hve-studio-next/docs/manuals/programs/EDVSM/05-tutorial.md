@@ -24,9 +24,9 @@ This basic procedure is described in detail in this tutorial.
 
 Before starting, set the display options so that we're all starting on the same page.
 
-> **NOTE:** Most options simply affect the appearance of the viewport. One affects the analysis: **Auto Position** (a checkbox under *Vehicle Initial Conditions* in Event Information) settles the vehicle onto the terrain; with it off, the vehicle starts at the Z, roll and pitch you enter. The resulting difference in initial conditions could substantially change the event.
+> **NOTE:** Most options simply affect the appearance of the viewport. One affects the analysis: **Auto Position** (a checkbox under *Vehicle Initial Conditions* in Event Information) settles the vehicle onto the terrain; with it off, the vehicle starts at the Z, roll and pitch you enter. Turning it off fills an empty Z with the height Auto Position had found, since a Z of 0 would start the CG on the ground. The resulting difference in initial conditions could substantially change the event.
 
-- **Tools › Preferences**: set *Units* to **Imperial (ft/in, mph, lb, lbf)**, HVE's US units.
+- **Options › Preferences**: set *Units* to **Imperial (ft/in, mph, lb, lbf)**, HVE's US units.
 - **View › Key Results**: on.
 - **View › Scene Display**: turn on *Skidmarks*; leave the vectors off.
 
@@ -88,7 +88,7 @@ Finally, let's disable the left front brake by setting its brake torque ratio to
 - Open **Vehicle › Editors › Brakes › Brake Assembly**. The dialog has one column per wheel (*A1 Right* is the right front, *A1 Left* the left front).
 - In the *Torque Ratio* row, *A1 Left* column, replace the existing value with `0.0` (Figure 5-3).
 
-> **NOTE:** The wheel columns are linked in groups (the *- A B C* selector at the top of each column), and an edit in one column is copied to every column in the same group. A vehicle usually arrives with all four columns in group *A*, so click **-** at the top of the *A1 Left* column to unlink it before you enter the zero.
+> **NOTE:** The wheel columns are linked in groups (the group buttons at the top of each column), and an edit in one column is copied to every column in the same group. If the *A1 Left* column shares its group with another wheel, put it in a group of its own (a group number no other column uses) before you enter the zero.
 
 ![Figure 5-3](images/hvn-edvsm-brake-assembly.png)
 
@@ -223,7 +223,7 @@ To enter the brake input:
 | 10.40 | 10.75 |
 
 !!! note "HVE Studio"
-    In EDC's case this table arrives as a *Pedal force* table, in pounds when Preferences are set to Imperial units. A pedal table typed into a new HVE Studio event is a 0 to 1 pedal *position* instead, scaled by the vehicle's brake pressure curve (**Vehicle › Editors › Brakes › Brake System Pressure**).
+    In EDC's case this table arrives as a *Pedal force* table, in pounds when Preferences are set to Imperial units. A pedal table typed into a new HVE Studio event is a 0 to 1 pedal *position* instead, scaled by the vehicle's full pedal force (600 N, 135 lbf, unless the vehicle's data carries a pressure vs pedal force table).
 
 The driver control inputs are now complete.
 
@@ -265,7 +265,7 @@ The vehicle kinematics are already selected. Let's add the tire forces *Fx', Fy'
 
 Now, we're ready to execute the event.
 
-- Press **Run** on the playback bar under the viewport. When the run is complete, press **Play** to watch the vehicle strike the curb.
+- Press **Run** on the playback controls in the toolbar. When the run is complete, press **Play** to watch the vehicle strike the curb.
 
 The EDVSM event is shown in Figure 5-8.
 
@@ -458,7 +458,7 @@ Key Results for the *Curb-tripped Rollover* event now includes the selected resu
 
 ### Trajectory Simulation
 
-The trajectory plays back in the Event editor's viewport (see Figure 5-16). To visualize the motion, use the playback bar under the viewport:
+The trajectory plays back in the Event editor's viewport (see Figure 5-16). To visualize the motion, use the playback controls in the toolbar:
 
 - Click **Play**. The simulation plays at the current playback speed.
 - Click **Pause**. The simulation stops.

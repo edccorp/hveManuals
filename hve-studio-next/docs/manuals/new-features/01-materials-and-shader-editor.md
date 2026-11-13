@@ -18,8 +18,8 @@ depth at each point of a body, and color the object by it.
     No material reaches any engine. The Shader Editor says so across the top of
     its window: *a material changes what the viewport SHOWS, never what any
     engine solves.* Editing or assigning a material never invalidates a solved
-    run. The one exception on these pages is the **HVE Surface** node (below),
-    which is a view of a road surface's physics and is labeled as such.
+    run. A road surface's physics (its type and friction) are not edited
+    here: the editor names them on one read-only line (below).
 
 ## Opening the Shader Editor
 
@@ -141,10 +141,14 @@ Editor. The Principled BSDF's **Coat** inputs (Weight, Roughness, IOR, Tint)
 are Blender's: a clear glossy layer over the base, reflecting the sky. A part
 with no material at all is drawn with the same finish.
 
-When an assignment cannot be applied — the vehicle was renamed, a surface no
-longer exists, a mesh has no part of that name — it is not silently moved to
-whatever now sits in that place. The column lists it under **Not applied**,
-with the reason.
+A vehicle's materials follow it: renaming it keeps them, moving it in the
+list moves them with it, deleting it deletes them, and replacing it with
+another vehicle (**Replace V*n* with it...**) clears them, since they named the
+old vehicle's parts. When an assignment still cannot be applied — a surface no
+longer exists, a mesh has no part of that name, a case saved before these rules
+— it is not silently moved to whatever now sits in that place. The column lists
+it under **Not applied**, with the reason, and **Remove these** deletes the
+listed assignments (the materials themselves stay).
 
 ## Working with nodes
 
@@ -190,7 +194,7 @@ reason.
 | Output | Material Output, World Output |
 | Shader | Principled BSDF, Emission, Background (world), Transparent BSDF, Mix Shader, Add Shader |
 | Input | **Object Color** (the object's own look — no Blender equivalent), **Color Attribute** (the color the mesh carries per vertex; a point's own color), **Point Info** (a survey point's color, intensity, elevation and height — below), Texture Coordinate, Geometry, Light Path (world), Value, RGB, Fresnel, Layer Weight |
-| Texture | Image Texture, Environment Texture (world; equirectangular, `.hdr` supported), Sky Texture (world), Noise, Voronoi, Checker, Gradient, Wave, Brick |
+| Texture | Image Texture, Environment Texture (world; Equirectangular, `.hdr` supported, or Backdrop -- a flat picture repeated around the horizon), Sky Texture (world), Noise, Voronoi, Checker, Gradient, Wave, Brick |
 | Color | Mix Color (ten blend modes), Color Ramp (2–4 stops, linear or constant), Invert Color, Hue/Saturation/Value, Brightness/Contrast, Gamma |
 | Vector | Mapping, Bump, Normal Map, Vector Math, Separate/Combine XYZ |
 | Converter | Math, Map Range, Clamp, RGB to BW, Separate/Combine Color |
@@ -260,6 +264,41 @@ raise **Emission Strength**.
 
 The Crush value is not sent to Blender (it reads 0 there) and is not baked
 into a glTF export.
+
+#### An aerial photograph in a surface's material
+
+An aerial picture (Environment > **Aerial Image**) can be worn by a road
+surface's own material instead of lying over the ground as a layer of its
+own. The photograph is then part of the surface: it lies on the surface's own
+triangles, so on a downloaded terrain it follows every bank and dip exactly,
+and it can be mixed with the rest of the graph (darkened, tinted, blended with
+a friction map).
+
+1. Select the surface (for a terrain, any of its surfaces), and press
+   **+ New** if its slot is empty.
+2. Press **Aerial Photo...** beside **X Unlink**, choose the **Picture** (the
+   base **Aerial image** or an **Aerial layer**), and press **Apply**.
+3. **Hide the picture's own layer** is on by default, because the layer would
+   draw the same photograph a second time; show it again with its eye in the
+   Outliner.
+
+![The City Block site's road surfaces wearing a USGS aerial photograph; beyond the picture's corners they keep the material's green](images/hvn-aerial-in-material.png)
+
+The picture is placed by its own corners, wherever they are: move or re-place
+the picture and the material's photograph moves with it. Beyond the corners
+the surface keeps its material's own color. What it adds is ordinary nodes:
+an **Image Texture** whose file reads `hve-aerial:0` (the base picture;
+`hve-aerial:1` is layer 1, and so on), its **Color** into a **Mix Color**'s B
+and its **Alpha** (0 beyond the corners) into the Mix's Factor, with what fed
+the Base Color before on the Mix's A. Leave the Image Texture's **Vector**
+unlinked: unlinked, it is the picture's placement. **Aerial Photo...** again
+with the same picture adds nothing. Reordering or deleting aerial layers moves
+the material's reference with its picture; a deleted picture leaves the node
+with no file (magenta).
+
+The photograph in a material is display only, like every material. It is not
+baked into a glTF export or sent to Blender, because it is placed by the
+picture's corners rather than by the mesh's own texture coordinates.
 
 ## The preview
 
@@ -349,30 +388,17 @@ which is how a face under another is reached. Hiding lasts only while Edit
 Mode is on, is not saved, and changes nothing the simulation sees. Press
 **Tab** or **Esc** to leave.
 
-### The HVE Surface node
+### A road surface's physics
 
-A road surface's material shows an extra node with an orange title bar,
-**HVE Surface — <surface name>**. It carries the surface's **type and
-physics** — Surface Type, Friction Multiplier, the force and damping rows and
-the soil terms — under the heading **PHYSICS -- these change the result**. The
-surface's look is the material's own: the node no longer carries display copies
-of roughness, metallic or a base color. A surface whose base color was
-overridden in an earlier version says so, with **Clear Override**.
-
-- It is a **view of the surface, not part of the material.** Its physics rows
-  edit the surface itself, exactly as the Environment panel did. A material
-  worn by three surfaces shows each one **its own** friction.
-- It has no sockets, cannot be linked or deleted, and only its position on the
-  canvas is remembered (for the session). To use friction in a graph, use the
-  **HVE Simulation** node's Friction output.
-- A surface whose slot is empty still shows its physics rows, under the
-  canvas's "no material" note.
-- Like every physics input, the rows are locked while results are on screen.
-
-The Environment panel's own per-surface editor is now a single line (the
-surface's type and friction) and the **Edit in Shader Editor** button. The
-**Default** material, which belongs to no surface, is still edited in the
-Environment panel.
+A road surface's **type and physics** — Surface Type, Friction Multiplier, the
+force and damping rows and the soil terms — are what the engines are given, and
+they are edited in the Environment Designer's **Surfaces** stage, under
+**Selected Surface › Surface Type and Friction**. The Shader Editor names them
+for the surface picked on one read-only line (*Physics: Road, friction x1.000 --
+not edited here*), with **Edit in Environment Designer**, which switches to the
+Environment editor and opens the Surfaces stage on that surface. Until
+2026-11-06 they were the **HVE Surface** node on the surface's material canvas.
+To use friction in a graph, use the **HVE Simulation** node's Friction output.
 
 The surface's **Shading** controls (Flat / Smooth / Auto Smooth) also appear
 under its slot; see [Shading Vehicles and Sites](03-shading-vehicles-and-sites.md).
@@ -449,28 +475,26 @@ say so.
 
 ## Aerial pictures
 
-Each aerial picture (the base image and every layer above it, see *Aerial
-Images* in Creating and Editing Environments) takes a material, so a
-photograph can be made grayer, brighter, warmer or more contrasted without
-editing the file.
+An aerial picture is laid as part of the ground when it is added (see *The
+picture is ground* under *Aerial Images* in Creating and Editing Environments):
+the photograph goes into the material of every surface under it. Each of those
+materials gets an **Image Texture** of the picture, an **Opacity** node (a
+**Math** *Multiply*: its **B** is the picture's opacity, 1 the photograph as it
+is, 0 the surface's own color through it) and a **Mix Color** into the
+**Principled BSDF**'s **Base Color**, so the surface keeps its own color beyond
+the picture's corners.
 
-1. Click the picture in the 3-D view (Environment editor), click its row in the
-   Outliner, choose it under *Aerial pictures* in the object list, or press
-   **Edit in Shader Editor** in **Environment › Aerial Image...** (or **Edit
-   Material...** on its Outliner row). The slot list shows one slot.
-2. **+ New** makes *Object Color → Principled BSDF → Material Output*. Object
-   Color is the photograph's own pixel and its **Opacity**, so the picture draws
-   exactly as before.
-3. Add a **Hue/Saturation/Value**, **Brightness/Contrast**, **Gamma**,
-   **Invert Color** or **Mix Color** node (Shift+A) between the Object Color and
-   the Base Color. Dragging a value redraws the picture at once.
+To change how the photograph looks, select the surface (click it in the 3-D
+view, or its row in the Outliner) and edit its material: add a
+**Hue/Saturation/Value**, **Brightness/Contrast**, **Gamma**, **Invert Color**
+or **Mix Color** node (Shift+A) after the Image Texture, or change the Opacity
+node's **B** to fade it. **Aerial Photo...** in the material's slot row puts a
+picture into any other surface material the same way.
 
-The picture is drawn by the same lit shader as the site, so a material's
-roughness, emission and alpha act on it as on a road surface. The material
-stays with the picture's place in the stack: a new download into the same
-layer keeps it, and moving or deleting a layer takes it along. Aerial pictures
-are not exported to glTF or sent to Blender, so neither are their materials;
-both say so.
+A case saved before pictures were ground keeps its picture drawn on its own; it
+keeps its own material (*Aerial pictures* in the object list) until it is laid
+as ground. Aerial pictures are not exported to glTF or sent to Blender, so
+neither are their materials; both say so.
 
 ## Saving
 

@@ -8,10 +8,10 @@ This section contains the following items:
 **Open**, **Limited Slip** or **Locked**.
 
 ## Locking Coeff
-For **Limited Slip** only (grayed otherwise): the fraction (0 to 1) of the axle's own torque the clutch pack can transfer to the slower wheel. Locked uses 1.0.
+Shown for **Limited Slip** only (an Open differential reads neither field, so neither is shown): the fraction (0 to 1) of the axle's own torque the clutch pack can transfer to the slower wheel. Locked uses 1.0.
 
 ## Preload Torque
-For **Limited Slip** and **Locked** (grayed for Open), in the torque units set in Preferences.
+Shown for **Limited Slip** and **Locked**, in the torque units set in Preferences.
 
 ## Gears
 **1-Speed**, **2-Speed** or **3-Speed**: HVE's multi-speed differential. Below it:

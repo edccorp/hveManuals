@@ -3,11 +3,11 @@
 In HVE this dialog displays the material properties used by the Brake Designer for thermal calculations, and is opened by the **Material ...** button of any Brake Designer dialog. The properties are divided into two groups, Rotor/Drum and Lining, each with a density, a specific heat, a conduction coefficient, a convection coefficient and the velocity dependence of the convection.
 
 !!! note "In HVE Studio"
-    These properties are the Brake Designer's **Material Properties** section
-    (**Vehicle › Editors › Brakes › Brake Designer...**), with **Rotor / Drum** and
-    **Pad / Lining** groups and the rotor, pad, drum and lining
-    **Thicknesses** beside them, rather than a separate dialog behind a
-    **Material ...** button. They are the inputs of SIMON's brake temperature
+    These properties are rows of the Brake Designer's table
+    (**Vehicle › Editors › Brakes › Brake Designer...**), one column per wheel,
+    under **Material: Rotor / Drum** and **Material: Pad / Lining**, with the
+    rotor, pad, drum and lining **Thicknesses** after them, rather than a
+    separate dialog behind a **Material ...** button. They are the inputs of SIMON's brake temperature
     model (the Drum, Lining, Rotor and Pad temperature output channels) and
     are kept with the vehicle; they do not change the brake torque. In the US
     unit system they are shown in HVE's own units (lb/in³, in-lb/lb-°F,

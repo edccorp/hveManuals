@@ -16,7 +16,8 @@ different, and part of it changes with the editor you are in:
 | **Playback** | Playback editor (F6) | Playback Editor's Playback Window and Video Creator table, Options › Playback |
 | **Human** | Human editor (F2) | Human Editor's dialogs |
 | **View** | always | View, and the display toggles of the Options menu |
-| **Tools** | always | Options › Units, Options › Preferences, View › Set Camera |
+| **Tools** | always | View › Set Camera, and HVE Studio's own utilities |
+| **Options** | always | Options › Units, Options › Preferences |
 | **Help** | always | Help |
 
 HVE's **Mode** menu has no menu in HVE Studio: the five editors are the tabs
@@ -40,7 +41,7 @@ appear only here; in the Vehicle editor the Vehicle menu takes their place.*
 
 !!! note "HVE Studio"
     The viewer product (the playback-only build that opens a published bundle)
-    has only the File, View, Tools and Help menus: no Edit, Vehicle,
+    has only the File, View, Tools, Options and Help menus: no Edit, Vehicle,
     Environment, Event, Output or Human menu, and no Quick Case, Vehicle
     Package, Case Intake, Provenance, EDR Import, Monte Carlo or Motorcycle
     Analysis on the Tools menu. This section describes the full
@@ -57,8 +58,8 @@ appear only here; in the Vehicle editor the Vehicle menu takes their place.*
 | [4C](04c-vehicle-environment-occupant-menus.md) | Vehicle, Environment and Human menus | *(new; HVE's editor dialogs)* |
 | [4D](04d-output-menu.md) | Output — reports, graphs, tables, Compare Runs, playback, Run Simulation, Damage Studio, Export Variables | *(new; HVE's Playback Editor)* |
 | [5](05-view-menu.md) | View — panels, paths, vectors, rendering, Outliner, Scene Ghosts | View Menu |
-| [6](06-options-menu.md) | *Where HVE's Options menu went* — item-by-item map | Options Menu |
-| [6B](06b-tools-menu.md) | Tools — Quick Case, Vehicle Package, Case Intake, Provenance, EDR Import, Monte Carlo, Motorcycle Analysis, Preferences, Style Editor, Cameras, Audit Log, Limits Editor | *(new)* |
+| [6](06-options-menu.md) | Options — Preferences, Output Settings (and its Limits tab), Style Editor, and where the rest of HVE's Options menu went | Options Menu |
+| [6B](06b-tools-menu.md) | Tools — Quick Case, Vehicle Package, Case Intake, Provenance, EDR Import, Monte Carlo, Motorcycle Analysis, Preferences, Style Editor, Cameras, Audit Log, Limits (Output Settings) | *(new)* |
 | [7](07-help-menu.md) | Help — License, Check for Updates, About HVE Studio | Help Menu |
 
 For a first look at the window, panels and viewport, see the

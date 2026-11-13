@@ -54,7 +54,7 @@ Run the installer, **`HVEStudio-<version>-setup.exe`**.
     It also checks as soon as you activate the license, at the first start of a
     newly installed version, and whenever your license covers EDC vehicle data
     that is not installed yet, so a new computer is offered the vehicle data
-    without asking (**Tools › Preferences... › Updates** sets how often; see [Help › Check for Updates](../hve-users/02-menu-reference/07-help-menu.md#check-for-updates)).
+    without asking (**Options › Preferences... › Updates** sets how often; see [Help › Check for Updates](../hve-users/02-menu-reference/07-help-menu.md#check-for-updates)).
 
 ## What is in the program folder
 
@@ -140,7 +140,7 @@ imported from a `.hve` and [Vehicle databases](04-cases-and-files.md#vehicle-dat
 for where databases are found.
 
 To run an event, switch to the Event editor (**F5**) and press **Run** on the
-playback bar under the viewport, or choose **Output › Run Simulation**
+playback controls in the toolbar, or choose **Output › Run Simulation**
 (**Ctrl+R**), which opens the Event Designer on its **Run** stage. The
 [Interface Tour](03-interface-tour.md) describes the window.
 
@@ -156,11 +156,11 @@ it), beside your license (`license.json`):
 | `imgui.ini` | The window and panel layout |
 | `hvenext.panels` | Which panels are open, the editor last used, and most display settings |
 | `hvenext.recent` | The recent-files list |
-| `hvenext.style` | The settings made in **Tools › Style Editor** |
-| `hve_prefs.ini` | Other preferences, such as **Tools › Preferences › Auto-Save** |
+| `hvenext.style` | The settings made in **Options › Style Editor** |
+| `hve_prefs.ini` | Other preferences, such as **Options › Preferences › Auto-Save** |
 | `hvenext.meshlib`, `hvenext.vdblib` | Geometry and database folders you have added |
-| `hve_limits.ini` | Written when the **Limits Editor** saves to a file |
-| `hve_report_text.json` | Your own wording for report strings, set in **Tools › Report Text...** |
+| `hve_limits.ini` | Written when **Output Settings › Limits** saves to a file |
+| `hve_report_text.json` | Your own wording for report strings (no window edits it at present; a file kept from an earlier version still applies) |
 
 Deleting `imgui.ini` restores the default panel layout the next time the
 program starts.

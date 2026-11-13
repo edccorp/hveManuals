@@ -32,8 +32,11 @@ The final drive (differential) ratio. HVE enters it in the Differential Data dia
 ## Efficiency
 Shown grayed: there is no engine field it could be given to.
 
-## Shift Time (s), Drive Type
-Stored with the vehicle; no engine reads them. The drive axle(s) the engines use are set by **Drive Axle(s)** in the Vehicles panel's Configuration section.
+## Shift Time (s)
+Shown grayed and marked *(not used)*: stored with the vehicle, as its data states it, and read by no engine. No engine models a shift duration (SIMON, EDVSM and EDVDS change gear at once, as HVE's do).
+
+## Drive Axle(s)
+Which axle(s) the engine drives: the vehicle's **Drive Axle(s)**, the same setting as in the Vehicles panel's Configuration section, offered here beside the driveline. Its choices follow the number of axles, and it is grayed for a vehicle with no powertrain of its own (trailer, dolly, barrier, no driver). It replaces a *Drive Type* (FWD, RWD, AWD) box that no engine read and that showed FWD for every database vehicle whatever it was; a value stored there stays with the vehicle.
 
 !!! warning "Not in HVE Studio"
     - Upshift and downshift points entered in %WOT (HVE Studio uses fractions 0 to 1).

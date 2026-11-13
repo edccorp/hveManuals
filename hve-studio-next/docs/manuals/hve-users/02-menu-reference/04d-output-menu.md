@@ -67,7 +67,10 @@ Output › New Output Graph
 **Description:** Plots output variables against time, or against one of them
 (**X axis**). **Output › New Output Graph** (or a graph's **New Graph**
 button) opens another graph — *Output Graph 2*, *3* and so on, up to six — so
-several can be on screen at once. **Select Variables...**
+several can be on screen at once. Each one made is listed in the **View** menu
+under **Output Graph** (*Output Graph 2*, ...), to show or hide it; a hidden graph
+keeps its traces and axes, and **New Output Graph** uses an unused slot first.
+**Select Variables...**
 chooses the variables; **Fit**, **Reset** and **Whole run** set the axes;
 **Format...** and **Reset formatting** change the appearance (gridlines,
 colors); **Vehicle name in the legend** labels the traces. **Other Events...**
@@ -104,7 +107,7 @@ units set in Preferences.
   contents); a browser prints the HTML or saves it as PDF. **Export Run Report
   (HTML)** writes `run_report.html`, HVE Studio's own printable summary of the
   run (inputs, key results, plan view of the trajectories), in the units set in
-  Tools › Preferences, with an EDR delta-V section for each EDR record kept for
+  Options › Preferences, with an EDR delta-V section for each EDR record kept for
   a vehicle of the event.
 - A file name without a folder is saved beside the case file, and the window
   shows the full path of every file written.
@@ -293,11 +296,10 @@ The dialog's sections:
   interval. The rows run from 0 to the end of the run:
   *floor(duration / interval) + 1* of them. Values between saved output steps
   are interpolated.
-- **Coordinate System** — two choices; the default follows
-  **Preferences > Coordinates**.
+- **Coordinate System** — two choices; SAE by default.
     - **SAE (x forward, y right, z down)** writes the values as solved.
-    - **Conventional (x forward, y left, z up)** writes what the screen shows
-      under the Conventional setting: the SAE frame turned 180 degrees about x,
+    - **Conventional (x forward, y left, z up)** writes the values in the SAE
+      frame turned 180 degrees about x,
       so the y and z components of every vector (position, velocity,
       acceleration, force, moment), yaw and pitch change sign, while x
       components, roll, scalars, counts and magnitudes do not. A reverse gear

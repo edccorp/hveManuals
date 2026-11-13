@@ -12,12 +12,12 @@ editor (the **Vehicle (F3)** button or F3) opens it where the Vehicles panel use
 open, docked on the left with the 3-D view beside it; **Vehicle › Vehicle
 Designer...** opens it too. It is an ordinary docked window: drag its tab to move it,
 float it, or dock it anywhere, as you would the 3-D view, and the arrangement is
-kept. Docked narrow, the **Key figures** and **Guidance** become one summary row at the top of the stage: a **Key figures** button and a **Guidance** button that reads how many items there are to fix and to consider. Each opens its panel under the row. While Guidance is closed, the first item to fix is shown on one line after it, with its **Go to** button; point at the line for the whole text. With nothing to fix it shows the first item to consider, or **Nothing to fix or consider.**, so the row is one line whatever the guidance says, and an open Key figures or Guidance is a panel of fixed height that scrolls: editing a field that changes the guidance never moves the stage under you. Where they go is yours to choose: **Bar position** (on the stage line) also has **Key figures and Guidance** › **Automatic (by width)**, **Beside the stage** (always the column) or **Above the stage, folded** (always the summary row, closed until you open it). One choice for all four designers, kept between sessions. Wider than about 1000 pixels
+kept. The **Key figures** and **Guidance** are one summary row at the top of the stage: a **Key figures** button and a **Guidance** button that reads how many items there are to fix and to consider. Each opens its panel under the row. While Guidance is closed, the first item to fix is shown on one line after it, with its **Go to** button; point at the line for the whole text. With nothing to fix it shows the first item to consider, or **Nothing to fix or consider.**, so the row is one line whatever the guidance says, and an open Key figures or Guidance is a panel of fixed height that scrolls: editing a field that changes the guidance never moves the stage under you. Where they go is yours to choose: **Bar position** (on the stage line) also has **Key figures and Guidance** › **Automatic (beside when wide)**, **Beside the stage** (always the column) or **Above the stage, folded (default)** (always the summary row, closed until you open it; the default since 2026-11-09, so they stay at the top however wide the designer is). One choice for all four designers, kept between sessions. With **Automatic**, wider than about 1000 pixels
 they are columns on either side. The Vehicles panel is one item away, **Vehicle ›
 Editors › Vehicles Panel**. (Key Results and the Output Graph are in the Event and
 Playback editors.) A session that starts in the
 Vehicle editor opens it the first time you switch back to it. It has one
-frame and eighteen stages. The frame is the same on every stage: the **Key figures**
+frame and seventeen stages. The frame is the same on every stage: the **Key figures**
 and **Guidance** panels stacked in a column on the left (drag its edge to set its
 width), the stage's own controls and views beside it, and a stage bar with every
 stage reachable. The stage that is open is drawn in the bar the way the selected
@@ -31,6 +31,29 @@ instead (one setting for the Vehicle, Event and Environment Designers, remembere
 between sessions); docked left or right the buttons stack in a column. The first line names the case vehicle and where it came from,
 and which stage is open.
 
+### Standard and Extended
+
+**Standard** | **Extended**, beside **Bar position**, chooses how many stages the bar
+offers. **Extended**, the default, shows every stage. **Standard** shows the stages most
+analyses change and hides the rest:
+
+| Designer | Stages in Standard |
+|---|---|
+| Vehicle | Vehicle, Size & Mass, Stiffness, Geometry, Tires, Connections, Accelerometers, Summary |
+| Event | every stage but Collision Pulse and Equipment (for EDCRASH, whose stage there is Damage Profiles, every stage but Equipment) |
+| Human | Human, Body Pose, Events, Summary |
+| Environment | Site, Import, Surfaces, Site Check, Summary |
+
+Standard changes nothing about the case: a hidden stage keeps its values, they still
+reach the run, and the Summary and the reports still show them. Two kinds of stage
+stay in the bar whatever the setting: the stage on screen, and any stage with
+something **to fix** (its button carries the red count), so Standard never hides what
+holds a design back. One setting for all four designers, kept between sessions; click
+the other half to switch at any time.
+
+!!! tip "New in HVE Studio"
+    HVE has no reduced layout.
+
 ![Figure 12-1: the Vehicle Designer frame on stage 1, Vehicle: Key figures, the case's vehicles (blue), the 3-D preview of the picked vehicle, and the database section (green) with Add to case and Replace above its search and list](../images/hvn-04-vehicle-designer-frame.png)
 
 !!! warning "A shape is not a vehicle model"
@@ -41,9 +64,11 @@ and which stage is open.
 
 ## The stages
 
-The stage bar lists the eighteen stages, in order, in the order a vehicle
-is usually set up; the line above the stage says which one is open ("Stage 4
-of 18: Stiffness"). The designer opens on the first,
+What a stage covers is a tooltip on its title band (the colored bar naming it): hover over the band to read it.
+
+The stage bar lists the seventeen stages, in order, in the order a vehicle
+is usually set up; the line above the stage says which one is open ("Stage 3
+of 17: Stiffness"). The designer opens on the first,
 **Vehicle**; every other stage edits a vehicle, so it opens once the case has
 one (until then its button is unavailable and says so).
 
@@ -53,27 +78,94 @@ stiffness, then check that its geometry lines up. The stages after them hold the
 vehicle's own data and are usually left as they are.
 
 1. **Vehicle** — which vehicle the designer works on: the case's vehicles, and the Add Vehicle list to add or replace one from (Stage 1 below).
-2. **Size & Weight** — axles from the CG, length, overhangs, width, track and weight, and the axle layout.
-3. **Mass & Inertia** — total and sprung mass, the CG, roll, pitch and yaw inertia.
-4. **Stiffness** — crush stiffness for an impact: A, B and Kv per side, DyMESH's node stiffness per face, and crush stiffness from crash tests.
-5. **Geometry** — the body drawn against the wheels and the CG, and the mesh's file, placement and collision options.
-6. **Tires** — size, friction, cornering and camber stiffness and their tables.
-7. **Brakes** — the assemblies, the Brake Designer, system pressure and ABS.
-8. **Suspension** — spring and damping rates, anti-roll, roll center and roll couple.
-9. **Engine** — idle and redline, the torque and power curves, engine braking.
-10. **Transmission** — gear ratios, final drive, shift logic, drive type, differential.
-11. **Steering** — steer ratio, column and geometry per axle.
-12. **Connections** — how this unit couples to another (hitch, fifth wheel or pintle) and the frame's torsional stiffness, which only a coupled rig uses.
-13. **Lights** — the vehicle's lamps, placed on the body.
-14. **Aerodynamics** — the aerodynamic drag coefficients.
-15. **Accelerometers** — the accelerometers mounted on the vehicle.
-16. **Occupant Protection** — the contact surfaces, airbags and belts an occupant meets, per seat.
-17. **Test Track** — three canned runs on the current physics, each on SIMON and on EDSMAC4, read back as numbers (stage 17 below). They are car tests, so a motorcycle is not offered them: the stage says to run a SINGLETRACK event and points to the Motorcycle Analysis tool instead.
-18. **Summary** (stage 18 below) — the spec sheet, the whole warnings list and the provenance tally.
+2. **Size, Mass & CG** (**Size & Mass** in the bar) — axles from the CG, length, overhangs, width and track, the body's distance from the CG to each side and each wheel's position, each from the total-mass CG and from the sprung one; the weights, the axle layout, the inertias and what is aboard.
+3. **Stiffness** — crush stiffness for an impact: A, B and Kv per side, DyMESH's node stiffness per face, and crush stiffness from crash tests.
+4. **Geometry** — the body drawn against the wheels and the CG, and the mesh's file, placement and collision options.
+5. **Tires** — size, friction, cornering and camber stiffness and their tables.
+6. **Brakes** — the assemblies, the Brake Designer, system pressure and ABS.
+7. **Suspension** — spring and damping rates, anti-roll, roll center and roll couple.
+8. **Engine** — idle and redline, the torque and power curves, engine braking.
+9. **Transmission** — gear ratios, final drive, shift logic, drive axle(s), differential.
+10. **Steering** — steer ratio, column and geometry per axle.
+11. **Connections** — how this unit couples to another (hitch, fifth wheel or pintle) and the frame's torsional stiffness, which only a coupled rig uses.
+12. **Lights** — the vehicle's lamps, placed on the body.
+13. **Aerodynamics** — the aerodynamic drag coefficients.
+14. **Accelerometers** — the accelerometers mounted on the vehicle.
+15. **Occupant Protection** — the contact surfaces, airbags and belts an occupant meets, per seat.
+16. **Test Track** — three canned runs on the current physics, each on SIMON and on EDSMAC4, read back as numbers (stage 16 below). They are car tests, so a motorcycle is not offered them: the stage says to run a SINGLETRACK event and points to the Motorcycle Analysis tool instead.
+17. **Summary** (stage 17 below) — the spec sheet, the whole warnings list and the provenance tally.
 
 Every stage hosts the editors that hold its inputs, the same windows the
 Vehicle menu opens. To work an editor beside another stage, open its window
 from the Vehicle menu.
+
+A stage with a chart shows it in a region of fixed height under a heading that folds, so nothing under it moves
+when an input changes what the chart draws. **Move below** (or **Move above**) on the chart's heading puts every
+stage's chart below its editors, or back above them; the choice is kept between sessions. The chart's one line sums it
+up; hover over that line for the whole reading.
+
+### Click handles in the 3-D view
+
+In the Vehicle editor the 3-D view draws a small ring at the center of each
+wheel (blue), at the center of gravity (yellow), at the middle of each of the
+body's six sides (green) and at each connection the vehicle has (orange). Point
+at one to see what it is; click it (without dragging) and a small panel opens
+beside it:
+
+- **A wheel** names its axle and side, its tire size and radius, and where the
+  axle is from the CG with its track width. Its rows open the Vehicle Designer
+  at that wheel: **Tire...**, **Suspension...**, **Brake...**,
+  **Wheel position...** (Size, Mass & CG, where the axles and tracks are set) and
+  **Steering...**. Its **Wheelbase** field types the wheelbase (two or more
+  axles). In the stage's per-wheel tables the wheel's column heading is marked
+  with **>** and filled with the active-header color for a few seconds.
+- **The CG** gives its distance behind the front axle and its height, and the
+  weight with what the front axle and the rear axle(s) carry at rest. Its rows
+  open **Size & Mass...**.
+- **A side** (front, right, rear, left, top, underside) gives its distance from
+  the CG, its 2-D crush stiffness (A, B and Kv; the top and underside have none)
+  and its 3-D DyMESH pressure law, with that side's own dimensions as fields:
+  the front's **CG to front**, **Front overhang** and **Overall length**, the
+  rear's **CG to rear**, **Rear overhang** and **Overall length** (CG to front
+  and rear are the "inches from front / rear bumper" of a spec sheet such as
+  Expert AutoStats; each sets its overhang, the axles and the CG staying), the
+  top's **Overall height**, and the right and left sides' **CG to right side** /
+  **CG to left side** (the overall width follows). The underside has **CG to
+  bottom (underside)**, HVE's CG to Bottom, and the **Ground clearance** it
+  leaves under the CG height, either typed, and the CG height itself. Its rows open **Stiffness...** and
+  **Size & Mass...**; the front's also **Aerodynamics...**. The left and right
+  sides have **Copy to the right side** / **Copy to the left side**, which
+  copies this side's distance from the CG and its 2-D and 3-D stiffness to the
+  other; it is grayed while results are on screen.
+
+  A wheel's panel also has HVE's **Wheel Location**: the wheel's **x** (ahead),
+  **y** (right) and **z** (below) from the CG, in a **Sprung** column (from the
+  sprung CG, which is what the engines read) and a **Total** column (the same
+  point from the total-mass CG); type either. A value marked * comes from the
+  vehicle's dimensions (axle position, track width, CG height less the tire
+  radius) until you type one. **Copy to other side** gives the other wheel of
+  the axle this location with y mirrored, and **From the dimensions** clears
+  the wheel's own. **Copy to the left wheel** / **Copy to the right wheel**
+  copies the wheel's tire (and its tables), brake, ABS and suspension inputs to
+  the other wheel of the axle.
+- **A connection** names its type and where it is from the CG, with its **X**, **Y** and **Z** from the CG as fields
+  (X forward, Y right, Z down, as on the Connections stage), dragged or typed and applied when the field is left; its
+  row opens **Connections...**.
+
+  A dimension typed in a panel takes effect when you press **Enter** or leave
+  the field, and makes exactly the edit the same field makes in **Size &
+  Weight**: a length is split between the two overhangs, an overhang changes the
+  length, and a wheelbase moves the axles about the CG, keeping the weight split
+  and the length. A field the Size, Mass & CG stage grays is grayed here too, with
+  the same reason (Dimensions from geometry on, wheels placed one by one, a
+  towed unit), and every field is locked while the vehicle's results are on
+  screen.
+- **A connection** gives its type and where it is from the CG; **Connections...**
+  opens its stage.
+
+A drag that starts on a ring still turns the view. The rings are not drawn
+while a move (**G**) is in progress or in Edit Mode, and not in a recorded
+video.
 
 ### Used by
 
@@ -108,8 +200,8 @@ Results that are easy to miss:
   and efficiency.
 - **Engine** and **Transmission**: only SIMON, EDVSM and EDVDS have a
   drivetrain, and they read it under the *At Driver* throttle method. **Max
-  Power**, **Efficiency**, **Shift Time** and **Drive Type** reach no program
-  (the driven axle comes from the vehicle's drive axle).
+  Power**, **Efficiency** and **Shift Time** reach no program. The driven
+  axle is the vehicle's **Drive Axle(s)**, shown on this stage too.
 - **Suspension**: of the 2-D programs, EDSMAC4, EDSVS and EDVTS read the front
   axle's **Roll Couple Dist**, and they and EDSMAC and EDCRASH read the
   suspension type and beam mass and inertia (for the CG and yaw inertia); none
@@ -134,17 +226,56 @@ is pointed at one.
 Vehicle editor and the 3-D view all follow it. **Name** under the list renames
 the selected vehicle (reports, channels and event slots show it; two vehicles of
 a case may not share one: a name another vehicle already has is refused when you
-leave the field, and the old name comes back, with a line saying so). **Copy** copies the selected
+leave the field, and the old name comes back, with a line saying so). The color
+swatch beside **Name** sets the vehicle's color in the 3-D view and the preview;
+click it for a color picker, and **Undo** takes a change back. A vehicle drawn from
+a mesh file is painted with it: the color becomes the **Base Color** of the
+Principled BSDF of its paint parts (those named BODY or PAINT) in the Shader
+Editor; a part whose Base Color comes from a picture keeps the picture. The line under
+**Name** says which record the vehicle is: its make, model, year range, body style
+and database, as HVE's Vehicle Information dialog shows them (edited in the
+Vehicles panel's **Identity** section); the list's **Year** column shows the year
+range, and pointing at a vehicle in the list shows all of it. A vehicle added to the
+case from the vehicle database, or with **Copy**, is given a color no other vehicle
+of the case has, from a set of ten, so each new vehicle is told apart at once,
+its paint included. A case that is opened keeps the colors it was saved with. **Copy** copies the selected
 vehicle with every setting, as a new vehicle at the end of the list in no event
 (the Vehicles panel's **Copy**), and selects it so it can be edited at once. It is
 available while results are on screen: the copy renumbers no other vehicle, so
 the run keeps its own. **Remove from case...** takes the selected vehicle out of
-the case after asking, and says how many events lose it; the vehicles after it move
-up one number. The database record is not changed. It is grayed while results are
-on screen (removing renumbers the vehicles the run was solved with; **Reset** first)
-and when the case has only one vehicle. A vehicle added from the database whose
+the case after asking; the vehicles after it move up one number. The database
+record is not changed. It is grayed while any event uses the vehicle, run or not
+(the tooltip says how many: take it out of them in **Event Information**'s vehicle
+list first), while results are on screen (removing renumbers the vehicles the run
+was solved with; **Reset** first). The last vehicle can be removed too: the case is
+then empty, as **File > New** starts one, and is saved and reopened that way. The
+Vehicles panel's **Delete** follows the same rules. Selecting a vehicle in the list
+frames it in the 3-D view. A vehicle added from the database whose
 name the case already has is given its own: the second **Acura 3.2TL 4-Dr** is
 **Acura 3.2TL 4-Dr (2)**.
+
+**Test variant...** tries a change to the selected vehicle in one event only.
+It copies the vehicle as **<name> (variant 1)** at the end of the list, puts the copy
+in that event in place of the original (occupants seated in it ride the copy),
+and selects the copy to edit. The other events, and their results, keep the original.
+It always asks first: the **Event** list in the question offers every event that uses
+the vehicle (the active one is chosen when it uses it), and the question says whether
+that event has results that will be cleared; press **Make variant** to go ahead. To
+copy a vehicle without changing any event, use **Copy**. The button is grayed when no
+event uses the selected vehicle. A variant is marked *(variant of V1)* in the list, and under the buttons a
+line says which vehicle it was copied from and which events use it, with three ways
+to finish:
+
+- **Keep as a new vehicle**: the mark goes and the events keep using it as a vehicle
+  of its own (rename it in **Name**).
+- **Apply to V1...**: the variant's settings are written into the original, which
+  keeps its own name; the events that used the variant use the original again and the
+  variant is removed. It asks first, naming the events whose results are cleared
+  (those that use the original or the variant).
+- **Discard...**: the variant is removed and its events use the original again,
+  unchanged.
+
+The mark is saved with the case. A variant of a variant is a variant of the original.
 
 The 3-D preview draws the body in the color the 3-D view gives it (its own color,
 or its place's: V1 blue, V2 orange, V3 green, V4 yellow, then again), lit, and
@@ -189,49 +320,108 @@ and front views with the lights, accelerometers and CG marked are on the
 
 Figure 12-1 shows the stage with a vehicle picked in the database list.
 
-### Stage 2: Size & Weight
+### Stage 2: Size, Mass & CG
 
-The Size & Weight stage holds the dimensions a solve reads. It opens with **Axle
+The Size, Mass & CG stage (**Size & Mass** in the stage bar) holds the vehicle's
+dimensions, weights, center of gravity and inertias: everything a solve reads
+about where the mass is and where the body is around it. It was two stages,
+Size & Weight and Mass & Inertia, until 2026-11-10. It opens with **Axle
 loads**, the static load on each axle from the mass and the weight split, and
 where the CG sits along the wheelbase. On a vehicle with more than two axles
 the rear axles share the rear load equally (a tandem's equalizer at rest), one
-bar each, and the headline says so. Under it are the two sections the Vehicles
-panel has: **Configuration** (number of axles, driver
-location, engine location and drive axles, with HVE's rules applied as you
-change one) and **Size & Weight** (HVE's Vehicle Wizard form, applied as you
-type: weights, the overall dimensions, the CG height, the body's distance from
-the CG to its front, rear, right, left, top and bottom, the wheelbase,
-overhangs and CG-to-axle distances, and the tracks, with the wheelbase check).
-They are the panel's own sections, not copies: a field has one editor. Size &
-Weight ends with **Wheel Positions (from CG)**, each wheel's X, Y and Z, each
-axle left then right. The Vehicle Package wizard (identity and stated
-specifications) is not part of the designer; **Tools › Vehicle Package...**
-opens it.
+bar each, and the headline says so. Under it, five sections:
 
-![Figure 12-12: the Size & Weight stage](../images/hvn-04-vehicle-designer-packaging.png)
+- **Configuration** — number of axles, driver location, engine location and
+  drive axles, with HVE's rules applied as you change one (the Vehicles
+  panel's own section).
+- **From a spec sheet (AutoStats, CVS)** (closed until you open it) — **Read a spec sheet (PDF)...**
+  reads an Expert AutoStats or a Canadian Vehicle
+  Specifications sheet, as the PDF they send, and lists each number it states
+  beside the vehicle's own, on the **Total** basis the sheets measure on: curb
+  weight, the front weight split, wheelbase, the CG behind the front axle, CG
+  height and CG from the side, the overhangs, length, width, height, the
+  tracks, the roll, pitch and yaw inertias and the steering ratio. Each row
+  has a check box; **Apply the checked values** writes them through the same
+  edits the fields below make (**Edit › Undo** takes them back), and says what
+  it could not apply (an axle whose wheels are placed one by one, a length its
+  overhangs and wheelbase already decide). A CVS sheet that lists several
+  models has a **Model** list; **Close the sheet** puts it away. The sheet's tires, drive and brakes are shown,
+  not applied. The CG from the side is taken from the left side (the sheets do
+  not say which); a centered CG is the same either way.
+- **Size, Weight & CG** — HVE's Vehicle Wizard form, applied as you type: the
+  weights, the CG height and the CG to each axle; the overall dimensions; the
+  body's distance from the CG to its front, rear, right, left, top and bottom
+  (underside); the wheelbase, overhangs and tracks, with the wheelbase check.
+  It ends with **Wheel Positions (from CG)**, each wheel's X, Y and Z, each
+  axle left then right. It is the Vehicles panel's **Size & Weight** section,
+  not a copy: a field has one editor.
+- **Inertia & Aboard** — the roll, pitch and yaw inertias and the product of
+  inertia, and what is aboard (occupants and cargo): the **Inertia / Mass**
+  editor the Vehicles panel's Inertia **Edit...** opens, without its mass and
+  CG tables (they are in the section above). **Auto Update Inertia When Weight
+  Changes**, under **Rotational Inertia**, scales the total inertias with the
+  total mass when a weight is typed, as HVE's checkbox does.
+- **Inertia: stated against estimated** (closed until you open it) — the
+  vehicle's TOTAL roll, pitch and yaw inertias against EDC's estimate from
+  total mass alone (power-law fits in lb and lb-s²-in: roll
+  $0.0783\,W^{1.3629}$, pitch $0.0711\,W^{1.5637}$, yaw
+  $0.1291\,W^{1.4942}$), the estimate drawn hatched because it is a
+  regression, not this vehicle; a stated value far from the fit is worth a
+  look. The formulas are printed under the chart with this vehicle's W.
 
-### Stage 3: Mass & Inertia
+**Total and Sprung.** Every distance from the CG is shown twice: in a
+**Total** column, from the total-mass CG (the vehicle with its wheels, tires
+and axles), and in a **Sprung** column, from the sprung-mass CG, which is what
+the case stores and the engines read. The weights, the CG height and the CG to
+each axle are in the Weight table's two columns; the body's distance to each
+side is in two columns headed **Total** and **Sprung**; the Wheel Positions
+table has **X, total CG**, **Y, total CG** and **Z below total CG** rows under
+the sprung ones; and the inertias are on both bases. Type either column. A
+spec sheet such as Expert AutoStats or Canadian Vehicle Specifications gives
+total-mass values (its "inches from front bumper" is **CG to Front**,
+**Total**; its CG height and CG behind the front axle are the Weight table's
+Total ones), so a vehicle is usually set up from the Total column and the
+sprung values follow.
 
-The Mass & Inertia stage opens with **Stated against estimated inertia**: the vehicle's
-TOTAL roll, pitch and yaw inertias (the **Total** column below: the sprung
-inertia plus the wheels, tires and axles) against EDC's estimate from total
-mass alone (power-law fits in lb and lb-s²-in: roll $0.0783\,W^{1.3629}$,
-pitch $0.0711\,W^{1.5637}$, yaw $0.1291\,W^{1.4942}$), the estimate drawn
-hatched because it is a regression, not this vehicle; a stated value far from
-the fit is worth a look. **Auto Update Inertia When Weight Changes**, under
-**Rotational Inertia**, scales the total inertias with the total mass when a
-weight is typed, as HVE's checkbox does. Under it the
-stage hosts the **Inertia / Mass** editor that the Vehicles panel's
-Inertia **Edit...** opens: total and sprung mass, the CG location, the roll,
-pitch and yaw inertias and the product of inertia, each in the stored basis and
-the other basis side by side, and what is aboard (occupants and cargo). A
-vehicle is usually set up from total-mass data: type the **Total** column and
-the sprung values follow (the unsprung masses stay at their wheels). One
-editor serves the window and the stage.
+Moving the body moves no unsprung mass, so a body distance typed in the Total
+column converts exactly. Moving a wheel moves its unsprung mass, and with it
+the total CG the value was measured from: a wheel's total-CG location is
+solved, the wheel moved until its distance from the moved total CG is the one
+you typed (the 3-D view's wheel panel does the same). A wheel position typed
+in a Total row is **kept**: its cell is tinted, and typing another wheel's
+total position re-solves every kept one together, so the first stays exactly
+as typed. Typing that wheel's own (sprung) value, or **From the dimensions**
+in the 3-D view's wheel panel, lets it go, and so does anything that moves the
+wheel away from its kept value: **Undo** of the typed value, or another edit. The
+kept values last for the session. The total CG is shown only while the sprung mass is positive; until
+then the Total fields are grayed and say why.
 
-![Figure 12-10: the Mass & Inertia stage hosting the Inertia / Mass editor](../images/hvn-04-vehicle-designer-mass.png)
+**A new CG position** (above the Weight table) chooses what a new weight
+split, CG to an axle or CG height moves:
 
-### Stage 4: Stiffness
+- **Move the CG in the body** — the body, its wheels and its equipment stay
+  and the CG moves, as Move CG does: adjusting a vehicle that is already set
+  up.
+- **Move the axles and body (set up)** — the axles slide under the CG (or the
+  sprung mass and its body rise with it) and the body goes with the CG:
+  setting a vehicle up before its body is fitted.
+- **Automatic** (the default) — the first for a vehicle with a body geometry
+  of its own (every database vehicle, an imported mesh), the second for one
+  without (a generic or new vehicle); the line beside it says which applies.
+
+It is your own setting, for every vehicle and case. The **CG Height** row of
+the Weight table is the CG's height above the ground, Total and Sprung.
+
+**CG in the body** (under the Weight table) is **Move CG**: where the CG sits
+in the body mesh, moving the CG while the body and wheels stay. It used to be
+in the Mesh editor's File & Placement tab.
+
+The Vehicle Package wizard (identity and stated specifications) is not part
+of the designer; **Tools › Vehicle Package...** opens it.
+
+![Figure 12-12: the Size, Mass & CG stage](../images/hvn-04-vehicle-designer-packaging.png)
+
+### Stage 3: Stiffness
 
 What the body does in an impact, one editor per tab:
 
@@ -256,12 +446,12 @@ What the body does in an impact, one editor per tab:
 
 ![Figure 12-19: the Stiffness stage with the Crush Stiffness editor and its graph](../images/hvn-04-vehicle-designer-stiffness.png)
 
-### Stage 5: Geometry
+### Stage 4: Geometry
 
 The last step of the walk: does the body line up with the wheels and the CG?
 The Geometry stage opens with the **Vehicle view**: four drawings of the
 vehicle's body, from the right side, from above, from the front and in 3-D (drag to
-turn it, double-click to reset), with its
+turn it, the mouse wheel to zoom, double-click to reset), with its
 **Tires** drawn at the wheel positions the solver uses (a circle from the side,
 the tread from above and from the front, each at its own radius and width,
 duals as two) and its **Lights**, **Accelerometers** and **CG** marked and named
@@ -297,12 +487,13 @@ only where the event arms it (**Event › Wheels › Wheel Damage › Use DyMESH
 
 Under the view is the **Mesh** editor (the Vehicle Mesh editor with its File &
 Placement, Collision, Display and Wheel Images tabs): the mesh file, and
-**Move CG**, **Translate**, **Rotate** and **Scale** to bring the body onto the
-wheels. The mesh is what DyMESH collides. At the foot of the stage, for a
+**Translate**, **Rotate** and **Scale** to bring the body onto the wheels.
+**Move CG** (where the CG sits in the body) is on the Size, Mass & CG stage,
+under **CG in the body**, since it moves the CG rather than the geometry. The mesh is what DyMESH collides. At the foot of the stage, for a
 vehicle with no 3-D body of its own, is the **body designer** (see *The body
 designer* below).
 
-### Stage 6: Tires
+### Stage 5: Tires
 
 The Tires stage opens with **Peak friction against load**: each axle's peak
 longitudinal friction from zero to twice its static tire load, read from the
@@ -315,7 +506,9 @@ tire-size and database tools and the **Load & Speed Tables** panel that
 **Vehicle › Editors › Tires...** opens, drawn in the stage's center under the frame's
 vehicle line. One editor serves the window and the stage. In the stage the
 table and the Load & Speed Tables follow each other at full height and the
-stage scrolls as one page; the window keeps its divider between the two.
+stage scrolls as one page; the window keeps its divider between the two. Scrolled down the page, the table's column headings (the
+wheels) stay at the top of the stage while any of the table is in view, as a spreadsheet's frozen row does; the window
+freezes them in its own scrolling table.
 
 ![Figure 12-5: the Tires stage hosting the tire editor](../images/hvn-04-vehicle-designer-tires.png)
 
@@ -334,7 +527,7 @@ A few results that are easy to miss:
   becomes a second speed column of the friction table, and EDVDS, EDSVS, EDVTS
   and EDCRASH read the first.
 
-### Stage 7: Brakes
+### Stage 6: Brakes
 
 The Brakes stage answers one question from the vehicle's own inputs: at what
 pedal force does each axle lock, and which locks first. Nothing is solved; the
@@ -348,12 +541,18 @@ transferred forward by the deceleration the brakes themselves produce.
 ![Figure 12-3: the Brakes stage, braking against grip for the front and rear axles](../images/hvn-04-vehicle-designer-brakes.png)
 
 The chart and its readings are under **Braking against grip**, a heading
-that folds away like the Tires stage's chart. The headline names the first axle to lock, the deceleration and pedal force at
-which it locks, the grip-limited deceleration (every tire at its peak) and the
-deceleration at full pedal, then the brake balance by design (the front share
-of torque ratio over radius, before any valve or pushout).
+that folds away like the Tires stage's chart. Its one line names the first axle to lock, the deceleration at which it
+locks, the grip-limited deceleration (every tire at its peak) and the deceleration at full pedal; hovering over it adds
+the pedal force and line pressure at the lock and the brake balance by design (the front share of torque ratio over
+radius, before any valve or pushout). The table of the inputs the chart reads follows, with the brake editors.
 
-**Braking vs grip** plots two curves per axle against pedal force: the brake
+The brake editors start with what belongs to the whole vehicle, under **Brake System (whole vehicle)**: **System
+Type** and **Pedal Ratio** ([Brake System Pressure](../../04-brakes-powertrain/BrkSysVsPedFrcDlg.md)), and the folded
+**ABS System (whole vehicle)**: ABS Installed, the algorithm, the thresholds and the system timing
+([ABS](../10-brake-designer/31-abs.md)). Below them, the per-wheel editors are tabs: **Assembly**, **Designer** and
+**ABS Designer**.
+
+The chart plots two curves per axle against pedal force: the brake
 force the brakes can deliver (solid) and the force the tires can transmit at
 that moment's load (translucent, in the axle's color). Where a brake curve
 crosses above its grip curve that axle locks; a vertical marker names the
@@ -398,19 +597,27 @@ proportioning ratio of 0 (HVE reads it as a pressure limiter), ABS on a wheel
 (the curves past the point where it engages are the brakes as if it were off)
 and a wheel with no torque ratio are **Notes**.
 
-**Edit the brakes** sits under the chart: the brake editors themselves, one tab
-each, so a change to a torque ratio or a proportioning knee redraws the chart
-above it at once. The **Assembly** tab is the Brake Assembly editor (per-wheel
-type, torque ratio, pushout, proportioning and antilock, with its per-wheel
-**Design...** buttons), the **Designer** tab the Brake Designer, **System
-Pressure** the Brake System Pressure editor with its pedal-force curve, and
-**ABS System** and **ABS Designer** the two ABS editors that the ABS / Brake
-Design window otherwise opens. They are the same editors as the windows, not
-copies: a field has one editor, drawn here or in the window. Under the designer,
-a **Design...** click in the Assembly tab selects the Designer tab on that wheel
-instead of opening a second window. Each tab's editor is also its own window on
-the Vehicle menu, to work it beside another stage; the two ABS tabs share the
-ABS / Brake Design window.
+**Edit the brakes** sits under the chart: the brake editors themselves, so a
+change to a torque ratio or a proportioning knee redraws the chart above it at
+once. They come in two groups of tabs:
+
+- **Whole vehicle** -- **Brake System** (the Brake System Pressure editor: the
+  hydraulic or air system, the pedal ratio and the pedal-force curve), **ABS**
+  (the ABS System editor) and **ESS** (Electronic Stability: traction and yaw
+  stability control with their rates, here because both act by applying wheel
+  brakes).
+- **Per wheel**, below them -- **Assembly** (the Brake Assembly editor:
+  per-wheel type, torque ratio, pushout, proportioning and antilock, with its
+  per-wheel **Design...** buttons), **Designer** (the Brake Designer) and **ABS
+  Designer**.
+
+They are the same editors as the windows, not copies: a field has one editor,
+drawn here or in the window. On the stage the Brake Designer table grows down
+the page rather than scrolling inside its own box. A **Design...** click in
+the Assembly tab selects the Designer tab on that wheel instead of opening a
+second window. Each editor is also its own window on the Vehicle menu, to work
+it beside another stage; the two ABS editors share the ABS / Brake Design
+window.
 
 ![Figure 12-7: the Brakes stage with the brake editors under the chart](../images/hvn-04-vehicle-designer-brakes-editors.png)
 
@@ -436,7 +643,10 @@ when the same stage is re-opened.
 
 Each entry is one sentence naming the symptom, the stat it costs and the fix,
 graded **Fix**, **Consider** or **Note**, with a **Go to** button for the stage
-that owns the input (none when that stage is already open). A stage with an open Fix carries a red marker on the stage
+that owns the input (none when that stage is already open). **Go to** opens that stage at the part the entry is
+about, opening it if it is folded and lighting it for a moment: the stage's chart for what its analysis or the Test
+Track measures (brake lock order, roll stiffness split, the stability factor and every Test Track measurement), the
+stage's editor for an input. A stage with an open Fix carries a red marker on the stage
 bar. The count beside the panel's title says how many rules are checked; hover
 it for the list. A rule that lacks one of its inputs stays silent rather than
 firing on a default, and a vehicle that trips no rule is told so.
@@ -448,17 +658,16 @@ The rules, by stage:
 | Fix | Brakes | A rear axle reaches its grip before the front in the braking-against-grip sweep (named on a vehicle with more than two axles). |
 | Consider | Brakes | At full pedal no axle locks and the deceleration is under 85% of the grip limit. |
 | Note | Brakes | A wheel's proportioning is on with a ratio of 0, which HVE reads as a pressure limiter. |
-| Note | Brakes | ABS is on at a wheel; the chart shows lockup as if it were off. |
 | Note | Brakes | A wheel's brake torque ratio is 0. |
 | Note | Brakes | The brake chart cannot be drawn (a towed unit or a single axle, no mass, no wheelbase or CG height, no brake anywhere). |
 | Consider | Suspension | The front share of roll stiffness (spring rate times track squared over two, plus the auxiliary roll stiffness; the rear axles counted together) differs from the front weight share by more than 20 points. |
-| Consider | Suspension | An axle's damping ratio (damping rate over twice the root of spring rate times corner sprung mass) is under 0.2 or over 0.5, on any axle. |
-| Consider | Mass | The static stability factor, front track over twice the CG height, is under 1.1. |
+| Consider | Suspension | An axle's damping ratio (damping rate over twice the root of spring rate times corner sprung mass) is under 0.2 or over 0.5, on any axle. An axle whose Coulomb friction exceeds its damper's force at 0.5 m/s (a leaf-sprung truck axle) is damped by that friction and is not judged. |
+| Consider | Mass | The static stability factor, front track over twice the CG height, is under the low end of NHTSA's measured range for the class: 1.20 for cars, 1.00 for SUVs, 1.05 for pickups and vans. Heavy trucks and towed units are not judged. |
 | Note | Mass | Roll, pitch or yaw inertia is 0 in both its fields, so the run uses the mass-basis estimate the editor shows. |
 | Note | Steering | A steerable axle's steer ratio is 0, which HVE reads as no steering gear. |
 | Consider | Stiffness | A motorcycle's A, B and Kv are still the generic passenger car's defaults on every side, so the machine states no crush stiffness of its own, and the 3-D law derived from them is a car's too. (A car with these values is not flagged: they are the passenger car's.) |
 | Consider | Stiffness | A face's 3-D pressure law (Const + Linear d + Quad d² + Cubic d³) drops below zero before its Max Crush; DyMESH holds it at zero. |
-| Consider | Packaging | The body design's wheelbase and the vehicle's differ by more than 5 mm. |
+| Consider | Size, Mass & CG | The body design's wheelbase and the vehicle's differ by more than 5 mm. |
 | Note | Transmission | Top speed is set by the redline in top gear, below the drag limit from engine power, drag coefficient, frontal area and rolling resistance. |
 | Consider | Transmission | An upshift at the redline lands under the automatic shift window's minimum rpm. |
 | Note | Engine | The full-throttle torque curve ends below the redline; the engine holds the last row's torque beyond it. |
@@ -476,7 +685,7 @@ The understeer gradient and brake fade need a run and arrive with the Test
 Track stage; a rule on a value's provenance (an inertia that is an estimate
 rather than a measurement) arrives with the Mass stage.
 
-### Stage 8: Suspension
+### Stage 7: Suspension
 
 The Suspension stage opens with **Ride and roll**: each axle's ride frequency
 and damping ratio, with the body's response to a unit bump drawn for each
@@ -499,7 +708,7 @@ the run is reset.
 
 ![Figure 12-4: the Suspension stage hosting the suspension editor](../images/hvn-04-vehicle-designer-suspension.png)
 
-### Stage 9: Engine
+### Stage 8: Engine
 
 The Engine stage opens with **Torque and power**: the wide-open torque curve
 and the power it implies against engine speed, from idle to the redline, with
@@ -517,7 +726,7 @@ of that window; the whole Drivetrain window is on the Vehicle menu.
 
 ![Figure 12-8: the Engine stage hosting the Drivetrain editor's Engine section](../images/hvn-04-vehicle-designer-engine.png)
 
-### Stage 10: Transmission
+### Stage 9: Transmission
 
 The Transmission stage opens with **Tractive effort**: the force at the tires
 in each gear against road speed (the wide-open torque through the gear and the
@@ -526,17 +735,21 @@ drag and rolling resistance across it. The markers show the rev limit in top
 gear and where the road load meets the power; the headline says which of the
 two sets the top speed, as the rev-limit rule does.
 
-The Transmission stage hosts the other three sections of the Drivetrain editor:
+The Transmission stage hosts two more sections of the Drivetrain editor:
 **Transmission** (automatic or manual with the shift rpm window, the number of
 gears and their ratios with reverse, the final drive ratio, efficiency, shift
-time and drive type), **Differential** (the differential type, locking
-coefficient, preload torque and its speeds) and **Electronic Stability (ESS)**
-(traction and yaw stability control with their rates). The whole Drivetrain
-window is on the Vehicle menu.
+time and the vehicle's drive axle(s)) and **Differential** (the differential
+type; the locking coefficient for Limited Slip and the preload torque for
+Limited Slip and Locked, each shown only where the type uses it; and its
+speeds). **Electronic Stability (ESS)**
+(traction and yaw stability control with their rates) is on the Brakes stage
+(the ESS tab),
+under the brake editors, because both act by applying wheel brakes. The whole
+Drivetrain window, ESS included, is on the Vehicle menu.
 
 ![Figure 12-9: the Transmission stage hosting the Drivetrain editor's driveline sections](../images/hvn-04-vehicle-designer-transmission.png)
 
-### Stage 11: Steering
+### Stage 10: Steering
 
 The Steering stage opens with **Yaw-rate gain**: the yaw rate per degree at
 the steering wheel against speed, from the steering ratio and the wheelbase.
@@ -552,15 +765,69 @@ stage.
 
 ![Figure 12-6: the Steering stage hosting the steering editor](../images/hvn-04-vehicle-designer-steering.png)
 
-### Stage 12: Connections
+#### A motorcycle's Steering stage
+
+A motorcycle is steered into a lean, not by a steering-wheel ratio, so for a
+Motorcycle-type vehicle the stage is different. Its chart is **Steering into a
+lean**: the bar angle that holds a steady 10, 25 and 40 degree lean at each
+speed, solved exactly at any lean with the tires' crown included. Where the
+machine is stable with no rider input, the speeds where that starts and where it
+capsizes are marked. The chart's line gives the rake and trail; hover over it
+for the fork offset, the fork and bars, and the stable speeds.
+
+Under the chart, **Steering head** holds what decides how the machine steers:
+
+- **Rider**: **Balance (holds it up)**, the default, or **None (hands-off)**.
+  This is axle 1's steer degree of freedom.
+- **Rake (deg)**: the steering axis's tilt back from vertical. It is axle 1's
+  Caster Angle.
+- **Geometry stated as**: **Trail** or **Fork offset**. Enter one, and the
+  other follows from the rake and the front tire's radius. **Assumed (offset
+  0.10 x r)** states neither: the fork offset is taken as a tenth of the tire
+  radius, and the run says so. A trail under 20 mm cannot be ridden, and a run
+  refuses the machine by naming its trail.
+- **Lock right (deg)** and **Lock left (deg)**: how far the bars turn before the
+  stop.
+- **Head friction**: the steering head bearings' friction. These three are
+  axle 1's Stop Angle Right / Left and Steer Axis Friction Torque, written to both sides.
+- **Steering damper**: **The event's** (SIMON Method Options > Motorcycle) or
+  **This motorcycle's**, with its **Damping**.
+- **Fork and bars**: the mass that turns with the bars (forks, clamps, bars, and
+  the lamp if it turns), not the front wheel. Choose **Assumed (6%)** of the
+  machine, or **Stated** and enter it as a **Weight**.
+
+A run's status lists what it assumed: "steering assumed: trail 98 mm, fork and
+bars 16.8 kg". The car table is still there, under **SIMON's steering system**.
+The single-track models read only the Steering head rows. SIMON reads the car
+table once it takes the motorcycle over at first contact.
+
+#### A motorcycle's tires, brakes and suspension: Front and Rear
+
+SIMON models each wheel of a motorcycle as two half-wheels a few centimeters
+apart, so the vehicle stores a right and a left half for every wheel. For a
+Motorcycle-type vehicle the per-wheel tables (Tire Properties and its load and
+speed tables, Brake Assembly, Brake Designer, ABS, and the suspension tables)
+show one column per wheel, **Front** and **Rear**, and the wheel buttons and
+**Apply to** lists read Front and Rear too. There is no group row: whatever is
+entered for a wheel is written to both of its halves. The single-track model
+reads that wheel's values until first contact, and SIMON hands the same values
+to both halves after it takes the motorcycle over. A run always gives both
+halves the Front or Rear values, even if an older case or an imported vehicle
+stored different values for the left half.
+
+### Stage 11: Connections
 
 How this unit couples to another, one editor per tab. **Connections** is the
 Vehicle Connections editor: the front and rear connection points (hitch, fifth
 wheel or pintle), with the rear connection's properties (radius, friction,
 articulation limits, stiffness, damping and breakaway strength) below the table. While the tab is open the
 3-D view shows both connection points, each as a ring and cross with a ball at its origin, whatever
-**Scene Display** says, and picks only them: click a ball to select it (orange) and drag it to move it in
-the plane facing the camera (**Ctrl** snaps to 5 cm). A point whose type is None is drawn dim, so it can still be found and placed.
+**Scene Display** says, and picks only them: click a ball to select it (orange), then press **G** or **M** to move it,
+exactly as the body moves: with the cursor, **X**, **Y** or **Z** to hold it to one of the vehicle's axes, or a typed
+distance (a click or **Enter** keeps it, **Esc** or a right-click puts it back). A press on a ball only selects it: a
+drag that starts there turns the view, as anywhere else. With no point selected (click an empty part
+of the view to let go of one) **G** and **M** move the body, as anywhere else. A
+point whose type is None is not drawn: give it a type to place it.
 A connection point has no angle, so it does not rotate. Moving one on a vehicle the run holds is refused, like any
 other edit of an input.
 **Body Torsion** is the frame's torsional stiffness and axis: SIMON uses it in
@@ -569,17 +836,23 @@ vehicle ignores it.
 
 ![Figure 12-20: the Connections stage](../images/hvn-04-vehicle-designer-connections.png)
 
-### Stage 13: Lights
+### Stage 12: Lights
 
-The Lights stage opens with the same **Vehicle view** as the Geometry stage,
-here for placing the lamps: click a light to select it in the editor below and
+A light, an accelerometer or a connection point selected in the 3-D view belongs to its stage: opening another
+stage deselects it. A click elsewhere that selects one and opens its stage (a marker in another stage's Vehicle
+view, a row of the Outliner) still arrives with it selected.
+
+The Lights stage opens with its editor and has, below it, the same **Vehicle view** as the Geometry stage,
+here for placing the lamps: click a light to select it in the editor above and
 in the 3-D view. **Shift**-click adds a light to the selection or takes it out
-(here, in the editor's light list and on the 3-D view's lamp gizmos); dragging
-any selected light's gizmo in the 3-D view moves them all by the same amount. While this stage is open the
+(here, in the editor's light list and on the 3-D view's lamp gizmos). A click on a
+gizmo only selects it, and a drag that starts there turns the view, as on the body: **G** or **M** moves the selected
+lights together (with the cursor, **X**, **Y** or **Z** for one of the vehicle's axes, or a typed distance), and **R**
+aims a selected spot or directional lamp (moving the cursor across turns its azimuth and up and down its zenith;
+**Z** or a typed number sets the azimuth, **Y** the zenith; **Ctrl** snaps to 5 degrees). A click or **Enter** keeps
+either, **Esc** or a right-click puts it back. While this stage is open the
 3-D view shows every lamp gizmo whatever **Scene Display** says, larger and with a ball at each lamp's
-origin, and picks only lamps: the vehicle body and its move handles do not take a click. A spot or directional
-lamp that is selected also has a ball at the tip of its aim line; drag it to turn the lamp (**Ctrl** snaps to
-5 degrees). Under it is the Vehicle Lights editor, with its Lamp parts and
+origin, and picks only lamps: the vehicle body and its move handles do not take a click. Under it is the Vehicle Lights editor, with its Lamp parts and
 Light sources tabs. A vehicle from the database already knows its lamps: on
 **Lamp parts** each lens its body file tags is a row of its own, with the kind
 of lamp and its side (Left, Right or Center) read from the tag, and both can be
@@ -588,7 +861,7 @@ The lamps are display only: no simulation reads a lamp.
 
 ![Figure 12-11: the Lights stage](../images/hvn-04-vehicle-designer-exterior.png)
 
-### Stage 14: Aerodynamics
+### Stage 13: Aerodynamics
 
 The Aerodynamic Drag editor: the coefficients of HVE's eight surfaces and the
 areas they act on, in two tables (**Body Surfaces**, then **Top, Bottom and
@@ -596,13 +869,13 @@ Devices**), each surface marked with the programs that read it. Drag is the
 vehicle's own data, usually left as it says. See the
 [Aerodynamic Drag dialog](../../02-vehicles/VehDragDlg.md).
 
-### Stage 15: Accelerometers
+### Stage 14: Accelerometers
 
-The Accelerometers stage opens with the same **Vehicle view**: click an
-accelerometer to select it in the editor below. While this stage is open the
+The Accelerometers stage opens with its editor and has, below it, the same **Vehicle view**: click an
+accelerometer to select it in the editor above. While this stage is open the
 3-D view shows every accelerometer as a cross with a ball at its origin, whatever **Scene Display** says,
-and picks only accelerometers: click a ball to select it in the list and drag it to move it in the plane
-facing the camera (**Ctrl** snaps to 5 cm). An accelerometer has no angle, so it does not rotate.
+and picks only accelerometers: click a ball to select it in the list, then press **G** or **M** to move it as the body moves
+(the cursor, **X**, **Y** or **Z** for one of the vehicle's axes, or a typed distance). An accelerometer has no angle, so it does not rotate.
 Moving one on a vehicle the run holds is refused. Under it is the vehicle's accelerometer list. Accelerometers belong to the vehicle, so one placed here is
 in every event the vehicle runs in; the Event Designer's Equipment stage edits
 the same devices.
@@ -610,7 +883,7 @@ the same devices.
 Each of these three stages' editors is also a window on the Vehicle menu.
 Until 2026-10-20 the three were tabs of one **Exterior** stage.
 
-### Stage 16: Occupant Protection
+### Stage 15: Occupant Protection
 
 The Occupant Protection stage hosts the three editors of what an occupant
 meets in this vehicle, one tab each: **Contact Surfaces** (the panels an
@@ -624,7 +897,7 @@ window** opens that editor's window.
 
 ![Figure 12-16: the Occupant Protection stage](../images/hvn-04-vehicle-designer-occupants.png)
 
-### Stage 17: Test Track
+### Stage 16: Test Track
 
 The Test Track runs the vehicle, alone, on a flat surface, in three canned
 events, and reads the numbers back. Each event is solved twice, on **SIMON**
@@ -682,7 +955,7 @@ unrun track is not a finding.
 
 ![Figure 12-14: the Test Track stage before its runs](../images/hvn-04-vehicle-designer-track.png)
 
-### Stage 18: Summary
+### Stage 17: Summary
 
 The Summary is the design on one page. It opens with the vehicle's identity (the
 Vehicle Package's year, make, model and trim, and its VIN when kept; otherwise
@@ -703,6 +976,14 @@ for this vehicle by kind, Stated, Looked up, Estimated or Generic default, so a
 reader sees how much of the vehicle is documented; a vehicle with no records is
 told so. **Guidance** is the whole list from the right-hand panel,
 each with its stage to go to.
+
+Each is a **section** behind a double rule, with a header that opens and closes
+it: the Spec sheet starts open, Provenance and Guidance closed. Every designer's
+pages are laid out this way (Vehicle, Event, Human and Environment): a page's
+main section starts open and the rest closed, except where a page's sections
+are all inputs of the stage (Size, Mass & CG's **Configuration** and **Size,
+Weight & CG**, Geometry's **Vehicle view** and **Mesh**), which start open. A section
+stays as you leave it.
 
 ![Figure 12-15: the Summary stage](../images/hvn-04-vehicle-designer-summary.png)
 

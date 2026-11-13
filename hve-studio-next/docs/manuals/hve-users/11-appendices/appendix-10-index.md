@@ -105,7 +105,7 @@ refer to appendices. Chapter numbers are linked to the chapters of this edition;
 | Installing and running HVE Studio | [Installing and running HVE Studio](../../getting-started/02-installing-and-running.md); [Appendix I](appendix-01-installation.md) |
 | Keyboard quick reference | [Appendix IX](appendix-07-09-reserved.md#appendix-ix-quick-reference) |
 | Layers (overlays), Outliner | [Chapter 19](../08-3d-editor/19-using-3d-editor.md#overlay-name) |
-| Limits Editor (input ranges) | [Appendix II](appendix-02-messages.md#input-parameter-validation) |
+| Limits (input ranges; Output Settings) | [Appendix II](appendix-02-messages.md#input-parameter-validation) |
 | Materials and textures (Shader Editor) | [Chapter 19](../08-3d-editor/19-using-3d-editor.md#materials-editor) |
 | Playback bar, Playback Options, Playback Sequence | [Chapter 27](../09-video-output/27-video-interface.md#playback-controller) |
 | Record Animation / Play Video | [Chapter 27](../09-video-output/27-video-interface.md) |

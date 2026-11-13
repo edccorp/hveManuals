@@ -23,7 +23,7 @@ part by method:
 |---|---|
 | Event Designer... | every event: the staged Event Designer beside the 3-D view (see [Chapter 16a](../06-event-editor/16a-event-designer.md)) |
 | Event Information... | every event |
-| Copy Event | every event: a copy of the active event at the end, with no results (Event Information's **Copy**) |
+| Copy Event | every event: a copy of the active event at the end, its results included when it has been run (Event Information's **Copy**) |
 | Branch From This Instant | a SIMON or EDSMAC4 event with no humans: a new event that continues the run from the playback instant with every state it had there, following its own driver tables from then on (see [Chapter 15](../06-event-editor/15-creating-editing-events.md#branching-a-run-from-an-instant)) |
 | Position / Velocity... | every method that starts from initial conditions — all except EDCRASH and READDATAFILE |
 | Driver Controls... | EDSMAC, EDSMAC4, SIMON, EDSVS, EDVDS, EDVTS, EDVSM, SINGLETRACK; and EDCRASH, where it shows the Wheel Data page |
@@ -147,7 +147,7 @@ manual for that method.
 Positions and velocities are entered according to SAE Recommended Practice
 SAE J670e. In this coordinate system, the Z axis points down (in the direction of
 the gravity vector). See [Appendix III](../11-appendices/appendix-03-coordinate-systems.md)
-for details. Lengths and speeds are shown in the units chosen in Tools ›
+for details. Lengths and speeds are shown in the units chosen in Options ›
 Preferences.
 
 ### Rotation Direction
@@ -247,7 +247,7 @@ time.
 |---|---|---|
 | **Throttle** | throttle vs time | *Percent Wide-Open Throttle* → input method **At Driver** (through the engine curve); *Percent Available Friction* → **% of Friction**. *Tractive Effort* is not offered |
 | **Brake** | brake vs time | *Pedal Force* → **At Driver**; *Wheel Force* → **Wheel Force**; *Percent Available Friction* → **% of Friction** |
-| **Steer** | steering-wheel angle vs time | *At Steering Wheel* is the table here. A table *At Axle* (road-wheel angles) that came with an imported case is shown, and overrides the steering-wheel table |
+| **Steer** | steering-wheel angle vs time | **Table** chooses *At Steering Wheel* or *At Axle* (road-wheel angles at each wheel, the gear ratio and Ackermann bypassed), as in HVE |
 | **Gear** | gear vs time (0 = neutral, 1 = reverse, 2 = first, …) | as HVE |
 | **Lean** | the rider's lean command vs time | motorcycles (single-track vehicles) only; read while the machine rides the single-track model in a SIMON event; new in HVE Studio |
 
@@ -280,13 +280,15 @@ See the dialog reference: [Driver Controls](../../09-events-driver-controls/Driv
 **Purpose:** Have the HVE Driver Model steer the selected vehicle along a path.
 
 **Description:** As in HVE, the Path Follower is a page of Driver Controls: this
-item opens **Driver Controls** on its **Path Follower** tab. Tick **Use Path
-Follower**; the tab's pages are **Method** (path method, timing and limits), **Steering** (variable
-steer and torque), **Path** (the waypoints), **Speed Follower** and **Filter**
-(the neuromuscular filter). The **Speed** column and the Speed Follower
-settings show only while **Use Speed Follower** is ticked (EDGEN always shows the
-speeds). Waypoints can be picked and moved in the viewport
-while the tab is open; select a waypoint and press **Delete** to remove it.
+item opens **Driver Controls** on its **Path Follower** tab. Its three switches
+are together at the top: **Use Path Follower**, **Use Speed Follower** and **Use
+Neuro-Muscular Filter**. Below them the tab's sections are **Timing / Limits**,
+**Steering**, **Path** (the waypoints), and, while their switch is on, **Speed
+Follower** and **Filter** (the neuromuscular filter). The **Speed** column shows
+only while **Use Speed Follower** is ticked (EDGEN always shows the speeds). While the tab is open its waypoints can be picked in the viewport
+(Scene Ghosts on or not): drag the gizmo, or press **G** (or **M**) to move one
+and **R** to turn it, then **X**/**Y** to lock an axis or type a number and
+**Enter**, as for a vehicle; press **Delete** to remove it.
 
 The dialog says how the active method uses it:
 

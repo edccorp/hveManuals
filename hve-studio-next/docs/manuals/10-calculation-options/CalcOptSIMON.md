@@ -91,7 +91,12 @@ Event Designer's Run stage.
   **+** in Event Information or built by Case Intake. A case imported from HVE
   keeps the model its file states. G. Rill's TMeasy tire model: a force
   curve in each direction (initial slope, peak, sliding) built from the tire
-  inputs, with braking and cornering combined on one normalized slip. It uses
+  inputs, with braking and cornering combined on one normalized slip. Camber
+  thrust enters the same slip: the tire's camber stiffness over its cornering
+  stiffness, times the sine of the camber, is added to the lateral slip, so in
+  the linear range it gives the same force as the semi-empirical model's camber
+  term, and near the limit camber shares the tire's grip with slip angle and
+  braking instead of adding to it. It uses
   three shape inputs of its own, the **TMeasy** rows of the Tire Properties
   table (see [TMeasy rows](../05-tires-wheels/TirePhyDataDlg.md#tmeasy-rows)).
 
@@ -103,7 +108,7 @@ which each tire is predicted to hydroplane. See
 [SIMON — Hydroplaning Model](../programs/SIMON/04-calculation-method.md#hydroplaning-model).
 
 The models need standing water: a **Water Depth** stated on a surface (its
-HVE Surface node in the Shader Editor), or, for ground with no surface of its
+Surface Type and Friction, Environment Designer › Surfaces), or, for ground with no surface of its
 own, on the Environment panel's Default surface material. The window warns
 when no surface states any standing water.
 
@@ -149,35 +154,37 @@ Both apply only to an articulated pair and have no effect on a single vehicle.
 
 ## DyMESH (mesh-to-mesh collision)
 
-**Enable DyMESH** collides the vehicles' body meshes instead of using the
-crush-profile model. Every vehicle in the event needs a mesh file; a vehicle
-without one collides as an 8-corner box, and the window says how many vehicles
-are in that state.
+The section says whether DyMESH is on for the event and nothing else: **Enable
+DyMESH (vehicle-to-vehicle)** and every DyMESH setting are in the **DyMESH
+Options** window (**Event › DyMESH Options...**, and the **DyMESH Options** tab
+beside **SIMON Options** on the Event Designer's Method Options stage, which is
+there for every SIMON event). Until November 2026 this window carried its own
+copy of the enable box and eight of the settings.
 
-With DyMESH enabled:
+In DyMESH Options:
 
+- **Enable DyMESH (vehicle-to-vehicle)** collides the vehicles' body meshes
+  instead of using the crush-profile model. Every vehicle in the event needs a
+  mesh file; a vehicle without one collides as HVE's generic body for its type
+  and dimensions, and the window says how many vehicles are in that state.
 - **Smoothing** — not shown for a new event, which always uses HVE's Version 2.
   It appears only for an imported case that states **Version 1** (run as HVE
   ran it; it cannot be used with DyMESH wheel contact, **Event › Wheels**, and
   such a run is refused) or a stored value at which DyMESH finds no contact,
   which is run as Version 2 and said so in the window and the run status.
-- **Search option** — **Automatic (size from the mesh)** or **Set box size**;
-  **Search box** is the box size, read only with *Set box size*. A box that is
-  too large for a detailed mesh makes the run refuse to start; Automatic
-  cannot overflow.
-- **Inter-vehicle friction** — the friction between two vehicles' bodies in
-  contact (HVE's default 0.55), and **Inter-vehicle relaxation length (%/100)**
-  — how much of the crush springs back as they separate (HVE's default 0.05).
-  Both apply to every vehicle pair that does not state its own.
-- **Force contact to the XY plane**, **Include the environment**.
+- **Search Option** and its box size. A box that is too large for a detailed
+  mesh makes the run refuse to start; Automatic cannot overflow.
+- **Friction** and **Relaxation Length** under *Inter-Vehicle Contact
+  (fallback)* — the friction between two vehicles' bodies in contact (HVE's
+  default 0.55) and how much of the crush springs back as they separate (HVE's
+  default 0.05), for every vehicle pair that does not state its own; the
+  per-pair overrides are under them.
+- **Force contact forces into the XY plane**, **Also collide against the
+  ENVIRONMENT**.
 - **Contact a vehicle's own trailer** — off (HVE's default) skips the pair of a
   tow vehicle and its own trailer.
-- **DyMESH start time (s)**, **DyMESH environment start time (s)** — before these
-  times DyMESH does not detect contact (vehicle to vehicle, and with the
-  environment).
-
-The complete DyMESH settings, including per-pair friction and relaxation
-overrides, are in **Event › DyMESH Options...**.
+- **Start Times** — before these times DyMESH does not detect contact (vehicle
+  to vehicle, and with the environment).
 
 !!! note "HVE Studio"
     In the DyMESH Options dialog the third search option, *Search all vertices

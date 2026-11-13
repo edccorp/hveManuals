@@ -76,6 +76,12 @@ The color of each of the 15 segments is user-definable. In HVE Studio the
 the tabs (Figure 9-1). Click the swatch to open a color picker; **Apply to
 all segments** copies the current segment's color to all 15.
 
+**Color scheme** offers ready-made colors for the whole body, and **Apply scheme** gives them to all 15 segments
+(each can still be changed afterwards): Skin (HVE's default), Crash test dummy (yellow, with black at the abdomen,
+neck, lower limbs and feet so each joint reads), Clothed (a shirt, trousers and shoes), High-visibility (a jacket
+over dark trousers), Right green and left red (to tell the sides apart in a tumble), Every segment its own (to see
+which segment made a contact) and Gray. They are choices of appearance only.
+
 !!! note "HVE Studio"
     Segment color is display only. A segment that has been given a material
     in the Shader Editor (View › Shader Editor) is drawn in that material

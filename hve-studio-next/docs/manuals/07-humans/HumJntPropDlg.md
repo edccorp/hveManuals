@@ -10,7 +10,7 @@ and k axes.
     **Joint Properties** window has a **Joint** list of all 14 joints; it needs a
     body model (see [Inertial Data](Human.md)). The properties are a table with
     columns **I (roll)**, **J (pitch)** and **K (yaw)**; unit labels follow the
-    units set in Tools › Preferences where the row has a unit. While a solved
+    units set in Options › Preferences where the row has a unit. While a solved
     run is on screen the window is read-only.
 
 ## Joint type

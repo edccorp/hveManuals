@@ -1,6 +1,6 @@
 # User Preferences Dialog Box
 
-Choosing **Tools › Preferences...** displays the **Preferences** window. Settings take effect as they are changed; close the window with its close button.
+Choosing **Options › Preferences...** displays the **Preferences** window. Settings take effect as they are changed; close the window with its close button.
 
 ![Preferences window](images/hvn-preferences.png)
 
@@ -10,17 +10,15 @@ Choosing **Tools › Preferences...** displays the **Preferences** window. Setti
 **US (MM/DD/YYYY)** or **ISO (YYYY-MM-DD)**.
 
 ### Coordinates
-**SAE** or **Conventional**. This is how x, y, z and headings are shown and typed; the case, its files and the engines always store SAE, so changing it never changes a result.
-
-- **SAE**: x forward, y right, z down, heading clockwise from above.
-- **Conventional**: the SAE frame turned 180 degrees about x. X is the same; y is positive to the left, z is positive up, and a heading is counter-clockwise from +x.
-
-A field that states a direction in its label shows the direction the current setting uses; heights (Z Height, elevations) stay positive up.
+There is no choice here for now: every field shows and takes **SAE** coordinates — x forward, y right, z down, heading clockwise from above — as the case, its files, the engines and the reports do. (The Conventional choice, y left and z up, is withdrawn until the output panels and reports follow it too.) Heights (Z Height, elevations) stay positive up.
 
 Some fields keep a fixed frame and say so beside the field: an occupant segment's own axes (ellipsoid axes, joint positions, belt anchors on the occupant), the vehicle belt anchors (SAE axes about the CG), an airbag's yaw and roll, and a camera's keyframes in the Dope Sheet (the camera's own frame: x forward, y right, z up). See [Coordinate Systems](../hve-users/11-appendices/appendix-03-coordinate-systems.md).
 
 ### Units
 **Metric (m, km/h, kg, N)** or **Imperial (ft/in, mph, lb, lbf)**. Every dialog and output that shows a converted value follows this setting at once; see [Units Dialog Box](UnitsDlg.md). A note says that fields still carrying a fixed SI label are being converted.
+
+### Default lens (mm)
+The 3-D view's lens when HVE Studio starts, and the lens a new camera starts with, as a focal length on the same 35 mm-equivalent scale the Cameras dialog uses: 50 mm is a natural, undistorted view, a smaller number is wider. The field of view it gives is shown beside it, and **50 mm** sets that value in one click. Changing it sets the 3-D view's lens at once; saved cameras keep their own. It is kept with your preferences, for every case. Until you set it the view keeps the 45° vertical field it has always had (about 29 mm).
 
 ### Background Color
 The color behind the 3-D scene. Click the swatch for a color picker, or type the values.
@@ -30,7 +28,7 @@ The color behind the 3-D scene. Click the swatch for a color picker, or type the
 ### Language
 The language the windows are shown in: **English (as written)**, each language pack found, and **Pseudo (coverage check)**. It changes at once and is saved between sessions.
 
-Only what is shown changes. Every label keeps its place, a case file, a report and the physics never see a translation, and your own wording for a label (**Tools › Output Settings... › Terms**) is kept over a language's. A pack that brings its own font (for a script the default font lacks) uses it from the next start.
+Only what is shown changes. Every label keeps its place, a case file, a report and the physics never see a translation, and your own wording for a label (**Options › Output Settings... › Terms**) is kept over a language's. A pack that brings its own font (for a script the default font lacks) uses it from the next start.
 
 **Pseudo (coverage check)** is not a language: every label is shown with accents and in brackets. Text that stays plain is text a translation does not reach, and a label whose closing bracket is cut off is one a longer translation would cut off too.
 
@@ -57,6 +55,13 @@ To make a pack: tick **Collect labels for a template**, open the windows to be t
 ### Enable Auto-Save, Interval (min)
 A switch and an interval in minutes (at least 1).
 
+## Playback
+
+### After a run, show
+**Where the vehicles ended (its last instant)** (the default) or **The start
+(t = 0)**: where the playback sits when a run finishes. A run that is cancelled
+shows what it reached.
+
 ## Updates
 
 ### Check for updates when HVE Studio opens
@@ -75,7 +80,7 @@ A switch and an interval in minutes (at least 1).
     - **Store Vehicle Geometries in case file**: not a preference in HVE Studio. **File › Embed vehicle meshes in the case** (off by default) stores each vehicle's own mesh inside the case at the next save; EDC's licensed meshes are never stored. A saved case also carries the site's geometry and photograph inside it (**File › Embed the environment in the case**, on by default), and **File › Publish Bundle...** writes the case, the meshes it names and its results into one folder.
 
 !!! tip "New in HVE Studio"
-    Related settings live elsewhere: **Tools › Style Editor...** sets the look of the interface; **View › Show Guidance Text** shows or hides the long explanatory notes in the dialogs (off by default; a message about a problem with the open case is always shown); **View › Panels Outside the Main Window** lets panels float as separate windows.
+    Related settings live elsewhere: **Options › Style Editor...** sets the look of the interface; **View › Show Guidance Text** shows or hides the long explanatory notes in the dialogs (off by default; a message about a problem with the open case is always shown); **View › Panels Outside the Main Window** lets panels float as separate windows.
 
 <!-- NAV -->
 

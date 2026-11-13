@@ -8,8 +8,19 @@ the **Named Positions** list in the same section.
 
 ## The Position / Velocity dialog
 
-Open it from **Event › Position / Velocity...**. It is enabled for every method
-except EDCRASH and READDATAFILE.
+Open it from **Event › Position / Velocity...**, or click a vehicle in the Event
+editor's 3-D view: as HVE's *Set Position/Velocity* does, the click opens the same
+fields for that vehicle in a panel beside the vehicle, on the side of the view with more
+room (so the vehicle and its move handles stay clear; in a narrow view the panel reaches over
+the neighboring panel rather than cover the vehicle), which closes when you click elsewhere
+(as the Vehicle editor's handle panels do) -- and a click elsewhere in the 3-D view also
+acts, so clicking the next vehicle closes this panel and opens that vehicle's;
+**Open as a window** at its foot opens this
+dialog instead. Turn the panel off with **Show these when a vehicle is clicked in the
+Event editor** at the bottom of either. The panel does not open while the event's results
+are on screen (its fields are the run's locked inputs); **Event › Position / Velocity...**
+still shows them, read-only. It is enabled for every method except EDCRASH and
+READDATAFILE.
 
 ![Position / Velocity dialog](images/hvn-pos-velocity.png)
 
@@ -18,17 +29,19 @@ dialog edits the same values as the event's **Vehicle Initial Conditions**
 section, so a change in either place shows in both:
 
 - **Initial Position** — **X**, **Y** (units set in Preferences) and
-  **Heading (deg)**.
-- **Initial Velocity** — **Speed** (units set in Preferences). HVE's own ranges
-  apply by default: above 200 mph (322 km/h) a note under the field asks you to
-  check it, and above 400 mph (644 km/h) the entry is not accepted — the field
-  keeps its value and says why. A run whose vehicle starts past the allowed
+  **Heading (deg)**; for a 3-D program **Auto Position (on the ground)** and,
+  with it off, **Z Height**; **Roll** and **Pitch** (grayed while Auto Position
+  takes them from the ground).
+- **Initial Velocity** — **Speed** (units set in Preferences), **Sideslip**,
+  **Vertical w** and the **Roll**, **Pitch** and **Yaw rate**. HVE's own speed
+  ranges apply by default: above 200 mph (322 km/h) a note under the field asks
+  you to check it, and above 400 mph (644 km/h) the entry is not accepted — the
+  field keeps its value and says why. A run whose vehicle starts past the allowed
   limit however the speed got into the case (an imported file, for example) is
   not run, and the run status names the vehicle. Both limits can be changed:
   right-click the field and choose **Edit limits...**.
 
-Everything else about the starting state — Z height, sideslip, yaw rate, roll,
-pitch and their rates, Auto Position — is entered in the
+The named positions (Impact, Rest, the targets) are in the
 [Event Information](EventInfo.md#vehicle-initial-conditions) panel. Vehicles can
 also be placed with the viewport gizmo (G move, R rotate).
 

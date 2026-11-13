@@ -103,10 +103,24 @@ only; the path follower of the other programs ignores it, as HVE's does.
 - **Add positions by clicking the 3-D viewport** — each click on the site's
   ground appends the next waypoint, with yaw set from the segment direction and
   the vehicle settled on the ground there (Z, Roll and Pitch).
-- **Clear all positions** — removes every waypoint.
-- **Ghost vehicle at each node** — draws this vehicle's footprint at each
-  waypoint, at the node's height and tilt, so you can see whether the path
-  fits (display only).
+- **Clear all positions** — removes every waypoint, and so Targets 1 to 7.
+- **The positions are the vehicle's Targets 1 to 7.** As in HVE, where the path
+  follower's nodes are the same seven positions as the vehicle's named
+  positions, there is one list: position 1 is **Target 1** (Event Information ›
+  Targets), position 2 is Target 2, and so on. Moving, adding or removing one
+  here moves the target, and moving, adding or removing a target moves the path,
+  in the 3-D view and in the run. Each position keeps what only a path has: its
+  own **Speed** and **Sideslip**. The path has 7 positions (HVE's limit); a
+  vehicle can have up to 64 targets, and Targets 8 and on are not on the path.
+  A case saved before the two were one keeps its path: any target that stood
+  where the path had a different position is moved to the end of the target
+  list (Target 8 on), not lost.
+- **Ghost vehicle at each node** — draws this vehicle at each waypoint, at the
+  node's height and tilt, so you can see whether the path fits (display only).
+  The list beside it chooses **Outline** (the footprint and a nose line) or
+  **Transparent vehicle** (the vehicle itself, see-through). It is on, as a
+  transparent vehicle, until you change it, and both choices are remembered
+  between sessions.
 - **X** at the end of a row deletes that waypoint and closes the gap. A selected
   waypoint can also be deleted in the viewport with the Delete key.
 

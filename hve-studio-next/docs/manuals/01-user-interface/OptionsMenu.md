@@ -1,6 +1,6 @@
 # Options Menu
 
-HVE Studio has **no Options menu**. HVE's Options menu mixes display switches, tools and settings dialogs; in HVE Studio they are spread over the **View** and **Tools** menus, the Event Editor's **Event** and **Output** menus, and the docked panels. The table lists every item of HVE's Options menu, in HVE's order, and where its function is in HVE Studio.
+HVE Studio's **Options** menu holds the settings for how the program looks and behaves for you: **Preferences...**, **Output Settings...** (whose **Limits** tab holds the input-field limits) and **Style Editor...**. HVE's Options menu mixes display switches, tools and settings dialogs; in HVE Studio the rest of it is spread over the **View** and **Tools** menus, the Event Editor's **Event** and **Output** menus, and the docked panels. The table lists every item of HVE's Options menu, in HVE's order, and where its function is in HVE Studio.
 
 | HVE Options item | HVE Studio |
 |---|---|
@@ -22,7 +22,7 @@ HVE Studio has **no Options menu**. HVE's Options menu mixes display switches, t
 | Show Path | Not in HVE Studio. |
 | Autoposition | Per event and per vehicle: **Auto Position (settle onto terrain)** under the vehicle in the **Vehicle Initial Conditions** section of the **Event Information** panel. It is always on for the planar methods. |
 | Grid | A datum grid is drawn when no site is loaded; it has no settings. See [Set Grid Dialog Box](SetGridDlg.md). |
-| Units | **Tools › Preferences... › Units** — see [Units Dialog Box](UnitsDlg.md). |
+| Units | **Options › Preferences... › Units** — see [Units Dialog Box](UnitsDlg.md). |
 | Shadows | **View › Scene Display › Light & Shadow** (**Shadow cascades**): the sun's shadow is drawn in 1 to 4 nested layers, sharp over the vehicles and coarser out to the whole site. HVE's shadow radius, quality, precision and intensity are not offered. |
 | Render (Ctrl+R) | **View › Scene Display › Rendering** — see [Render Dialog Box](RendOptDlg.md). (In HVE Studio **Ctrl+R** is **Output › Run Simulation...**, in the Event Editor: it opens the Event Designer's **Run** stage and runs the event.) |
 | Playback | **Output › Playback Options...** (Event Editor) |
@@ -30,7 +30,7 @@ HVE Studio has **no Options menu**. HVE's Options menu mixes display switches, t
 | Calculation Options (Ctrl+J) | **Method Options...** in the **Calculation Method** section of the **Event Information** panel opens the options window for the event's method (EDCRASH, EDSMAC/EDSMAC4, EDGEN, EDHIS, SIMON, EDVSM, GATB, ...). See the Calculation Options chapter. |
 | DyMESH | **Event › DyMESH Options...** |
 | Get Surface Info | The **Road Surface Search** section of the **Event Information** panel. |
-| Preferences (Ctrl+F) | **Tools › Preferences...** — see [User Preferences Dialog Box](PrefDlg.md). |
+| Preferences (Ctrl+F) | **Options › Preferences...** — see [User Preferences Dialog Box](PrefDlg.md). |
 
 !!! tip "New in HVE Studio"
     The Scene Display panel (**View › Scene Display**) also has **North Arrow**, **Humans Through Bodywork**, **Vehicle Extents** (a translucent box at the vehicle's declared extents), **See-Through Body**, and a DyMESH overlay table: rows **DyMESH Body** and **DyMESH Wheel**, each with a **Mesh** and a **Nodes** box. **DyMESH Body** draws the body DyMESH collides as a wireframe deformed by the run, crushed edges in red; **Nodes** draws its vertices; **DyMESH Wheel**'s **Nodes** also labels each wheel's contact model and tire law. The View menu itself has **Show Guidance Text** (the long explanatory notes in the dialogs, off by default; messages about a problem with the open case are always shown), **Panels Outside the Main Window**, **Outliner**, **Shader Editor** and **Dope Sheet**.

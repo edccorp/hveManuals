@@ -6,21 +6,19 @@ law (for contact with the ground) and its soil properties (for sinkage).
 !!! note "HVE Studio"
     A road surface's type and physical properties are edited under
     **Selected Surface** › **Surface Type and Friction** in the Environment
-    Designer, or on the **HVE Surface** node of the surface's material in the
-    **Shader Editor** -- the same rows. Select the surface — click it in the
-    3-D view of the Environment editor (F4), or pick its row in the Outliner
-    or in **Environment › Environment...**, Terrain, **Surface Materials** —
-    and edit it there, or press **Edit in Shader Editor**. The node, with an orange
-    title bar reading **HVE Surface -- <surface name>**, sits on the material's
-    canvas beside the nodes that set how the surface looks. Its upper rows are
-    headed **PHYSICS -- these change the result**.
+    Designer's **Surfaces** stage. Select the surface — click it in the 3-D
+    view of the Environment editor (F4), or pick its row in the Outliner or in
+    **Environment › Environment...**, Terrain, **Surface Materials** — and edit
+    it there. The Shader Editor shows a surface's look only: for a surface it
+    names the type and friction on one read-only line, with **Edit in
+    Environment Designer**, which opens the Surfaces stage on that surface.
 
     The material applied to a drivable polygon that has no material of its own
     — HVE's *Default Environment Material* — is edited in the Environment window
     itself: select **Default surface material** in the Outliner (View ›
     Outliner).
 
-    Forces, stiffnesses and damping follow the units set in Tools ›
+    Forces, stiffnesses and damping follow the units set in Options ›
     Preferences. While a solved run is on screen the physics rows are
     read-only.
 
@@ -42,18 +40,28 @@ selected surfaces at once.
 
 ## Material library
 
-A list of HVE's own environment material files (`.matl`) and **Apply material**,
-which fills the fields below from the chosen file. The fields stay editable.
-When no material files are found, the node says where HVE keeps them and that
-setting `HVE_MATERIAL_PATH` to that folder makes them available.
+A list of HVE's own environment material files (`.matl`), followed by any you
+saved yourself (marked *(yours)*), and **Apply material**, which fills **every**
+field of the material from the chosen file: the friction multiplier, the
+force-deflection terms, the soil terms, moisture and texture depth. The fields
+stay editable. When no material files are found, the node says where HVE keeps
+them and that setting `HVE_MATERIAL_PATH` to that folder makes them available.
+
+**Save as material...** asks for a name (30 characters at most, HVE's limit) and
+saves the values on screen as a material of your own: an HVE `.matl` file, in
+HVE's own units, so HVE can open it too. It goes in the `materials` folder of
+your HVE Studio user folder (on Windows `%APPDATA%\EDC\HVE Studio\materials`;
+the button's tooltip shows the folder), and the list offers it at once. Saving
+under a name you already used replaces that file.
 
 !!! note "HVE Studio"
-    This replaces HVE's **Open...** and **New**. There is no **Save As...**.
+    This replaces HVE's **Open...**, **New** and **Save As...**.
 
 ## Condition preset
 
 **Dry (1.00)**, **Wet (0.70)**, **Snow (0.30)** or **Ice (0.15)** — sets the
-Friction Multiplier to that value.
+Friction Multiplier to that value and changes nothing else. **Apply material**,
+by contrast, replaces the whole material.
 
 !!! tip "New in HVE Studio"
     The condition presets.
@@ -64,7 +72,11 @@ Friction multiplier for the surface. 1.0 is the tire's own friction, unreduced:
 it scales the tire friction tables (the Load & Speed Tables panel of
 Vehicle › Editors › Tires).
 
-## Force-deflection properties
+## Force and Stiffness
+
+Folded by default, like **Soil (Bekker)**, **Standing Water and Texture** and
+**Rendering** below: only the type, the library, the condition preset and the
+Friction Multiplier are always shown. Click a heading to open it.
 
 **Force Constant** — Force required to initiate deflection. HVE's *Constant*.
 
@@ -80,7 +92,7 @@ Vehicle › Editors › Tires).
 **Unloading Stiffness** — Linear unloading slope, beginning at maximum
 deflection. HVE's *Unloading Slope*.
 
-## Soil (Bekker) model
+## Soil (Bekker)
 
 **Bekker Constant** — Soil deformation exponent *N* for sinkage calculations.
 
@@ -93,7 +105,7 @@ deflection. HVE's *Unloading Slope*.
 These are read by SIMON's soft-soil tire–terrain model (event Wheels dialog,
 Terrain Model tab).
 
-## Standing water
+## Standing Water and Texture
 
 **Water Depth**, **Wet Friction** and **Texture Depth** for this surface, read only by SIMON's hydroplaning models (Event Information › SIMON Options › Hydroplaning). A depth above 0 puts a layer of water over this surface — HVE's own water polygon, with the wet friction as its friction — and the texture depth is the pavement's, read wherever a tire is on this surface. A depth of 0 means no water here. Ground with no surface of its own takes these from the Environment panel's **Default surface material**.
 
@@ -111,7 +123,7 @@ A surface imported from an HVE case or `.h3d` arrives with its own **Texture Dep
     earlier version that overrode a surface's base color keeps that color and
     says so under the physics rows, with **Clear Override** to drop it.
 
-## In Renders
+## Rendering
 
 !!! tip "New in HVE Studio"
     **In Renders** decides whether **File › Render Image (Ray Traced)** (and a
@@ -122,9 +134,10 @@ A surface imported from an HVE case or `.h3d` arrives with its own **Texture Dep
       **sky**: it spans the whole of the rest of the site and lies, on
       average, 50 m or more above its highest point (a sky dome or a sky box),
       or it is named for the sky and lies wholly above everything else. The
-      list says which way Automatic decided for this surface.
-    - **Sky: left out** always leaves it out.
-    - **Kept** always draws it.
+      list says which way Automatic decided for this surface: **Automatic:
+      drawn**, or **Automatic: left out (looks like a sky dome)**.
+    - **Left out of renders** always leaves it out.
+    - **Drawn in renders** always draws it.
 
     A ray-traced picture draws its own sky from the case's sun and sky. A
     site's sky dome drawn as geometry would be a roof over every vehicle: it
@@ -141,7 +154,7 @@ Discards the edits to this surface and restores what the geometry file states.
 
 !!! warning "Not in HVE Studio"
     - **Macrotexture** is not a separate field: the surface's **Texture Depth**,
-      under **Standing water** on this node with **Water Depth** and **Wet
+      under **Standing Water and Texture** on this node with **Water Depth** and **Wet
       Friction**, is the pavement texture SIMON's hydroplaning models read.
     - The **force–deflection graph**, **Print**, **Apply** and **OK / Cancel**:
       edits apply when a field is left, and **Edit › Undo** (Ctrl+Z) takes one

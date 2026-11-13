@@ -80,7 +80,7 @@ Selecting faces:
 | **Alt+H** | Shows every hidden face again |
 
 The panel repeats the selection keys as buttons: **All of surface (A)**,
-**Linked flat (L)**, **Box (B)** and **None (Alt+A)**; with no face selected
+**Linked (L)** (every face joined to the selection through shared vertices, as Blender's L), **Box (B)** and **None (Alt+A)**; with no face selected
 and some hidden, it shows how many are hidden and a **Show All** button. A
 hidden face cannot be clicked or selected, which is how a face under another
 is reached. Hiding lasts only while Edit Mode is on, is not saved, and changes
@@ -133,7 +133,7 @@ The **Location** section records where and when the accident happened:
   degrees. North latitude and east longitude are positive; a west
   longitude is negative.
 - **Elevation** — the site's elevation, in the length units set in
-  Tools › Preferences.
+  Options › Preferences.
 - **North offset** — the compass bearing the case's +X axis points along
   (0 = north, 90 = east), HVE's *Angle of X-Axis*. It turns the North arrow
   and the sun; nothing on the site moves. The same value is **North** in the
@@ -176,8 +176,8 @@ The **Physical** section holds the environment's physical properties:
 - **Gravity** — the local acceleration of gravity, in in/s² or m/s²
   depending on the units preference.
 - **Standing Water** — no longer here: **Water Depth**, **Wet Friction**
-  and **Texture Depth** are each surface's own, on its **HVE Surface** node
-  in the Shader Editor, and the **Default surface material**'s for ground
+  and **Texture Depth** are each surface's own, under its **Surface Type and
+  Friction** (Environment Designer › Surfaces), and the **Default surface material**'s for ground
   with no surface of its own (including the flat ground of a case with no
   site). They are read only by SIMON's hydroplaning models; a depth of 0
   means no water on that surface.
@@ -255,7 +255,7 @@ Environment panel's Sky section or the Event panel's Lighting section). The
     (0 = north, 90 = east). This is HVE's *Angle of X-Axis*.
   - **Refraction** — NOAA only: the apparent sun, raised by atmospheric
     refraction near the horizon.
-- **Sun Light** — a multiplier on the sunlight that casts the shadows.
+- **Sun Intensity** — the world's Sky Texture's Sun Intensity (20 is the viewport's own): the sun's brightness and the light that casts the shadows.
 - The light that fills the shadows (HVE's *Ambient Intensity*) is the
   world's: the **Sky Texture** node's **Ambient** (default 1.00) and **Night
   Light** fields. The panel says their values and offers **Make the world**
@@ -299,10 +299,34 @@ tire.
 > **NOTE:** If no site geometry is supplied, the engines assume flat,
 > level ground with uniform friction.
 
-Site geometry is set in the **Scene Geometry** part of the Environment
-panel's **Terrain** section:
+Site geometry is brought in from the **Imported files** list at the top of the
+Environment panel's **Terrain** section (the Environment Designer's **Import**
+stage), on its **3-D models** tab; a survey point cloud is brought in on the
+**Point cloud** tab beside it. Its **Scene geometry** row names the file loaded (or says the
+site is carried in the case) and has three buttons:
 
-- **Geometry File** and **Browse...** — the geometry file to import.
+- **Import...** — choose the geometry file; the **Import Scene Geometry**
+  window then asks how to read it, and **Import** replaces the site's
+  geometry with it. **Import** always reads the file, even when the case
+  carries a copy of the site (see *Embedding the environment*).
+- **Add...** — the same, but **Add to site** reads the file into the site
+  instead of replacing it. The site keeps everything it had (surface types,
+  materials, layers and moves), the new file's surfaces are added to the
+  Outliner, and its faces with no surface of their own become **Untyped
+  surfaces**. A site put together from several files is carried in the case
+  and names no file: the list says so, the site is kept in the case even with
+  embedding switched off, and **Clear** removes it. A site taken from an HVE
+  case cannot have files added to it. When adding, the window also has a
+  **Drivable** checkbox: turn it off and the new file's surfaces arrive
+  **display only** (drawn, never driven on), listed under **Display only** in
+  the Outliner. Use it to show a detailed model over the surface the events
+  drive on: add it with Drivable off, hide **Drivable** in the Outliner, and
+  record. While results are on screen the site is locked, so add the file
+  before running, or **Reset** first.
+- **Clear** — remove the geometry.
+
+The **Import Scene Geometry** window asks, for the file just chosen:
+
 - **Scale Factor** — multiplies the file's coordinates to convert its units
   to meters (for example 0.3048 for a drawing in feet, 0.0254 for one in
   inches). For an `.h3d` file this is **Extra Scale**, applied on top of
@@ -310,32 +334,34 @@ panel's **Terrain** section:
 - **File units** — buttons that set the Scale Factor for the unit the file
   was drawn in, in one click: **m**, **cm**, **mm**, **ft** (international
   feet, 0.3048), **US ft** (US survey feet, 0.3048006 — most US state-plane
-  surveys and county GIS) and **in**. The one matching the field is shown
-  pressed; a typed factor that matches none lights none. Not shown for an
-  `.h3d`, which states its units.
+  surveys and county GIS) and **in**. Not shown for an `.h3d`, which states
+  its units.
 - **File is Y-up (rotate to Z-up)** and **File is Z-down (Flip About
   X-Axis)** — corrections for a file whose vertical axis is not what the
   importer assumes; both are rotations about the file's x axis, as HVE's
   Flip About X-Axis is (for an `.h3d` file the second reads **Flip About
   X-Axis (file's vertical sense is reversed)**).
-- **Use surfaces as terrain (physics)** — send the imported surfaces to the
-  engines as the road. Unchecked, the geometry is drawn only.
-- **Import** and **Clear** — read the file, or remove the geometry. Both
-  also discard a site the case carries (see *Embedding the environment*), so
-  **Import** always reads the file.
-- **Add Geometry...** — read another file into the site instead of replacing
-  it, with the **Scale Factor** and orientation options above. The site keeps
-  everything it had (surface types, materials, layers and moves), the new
-  file's surfaces are added to the Outliner, and its faces with no surface of
-  their own become **Untyped surfaces**. A site put together from several
-  files is carried in the case and names no file: the panel says so, the
-  site is kept in the case even with embedding switched off, and **Clear**
-  removes it. A site taken from an HVE case cannot have files added to it.
+
+It starts from the last import's choices.
+
+The page is in **sections**, each behind a double rule with a header that opens
+and closes it: **Imported files** (the list above, with **Add Object...** under it) starts open, and
+**Site Placement** starts closed until you open it. A section stays as you
+leave it. There is no Scene Geometry section any more (2026-11-10): the
+shading of the site is the Shader Editor's, its extent is in the Key figures,
+and **Use surfaces as terrain (physics)** (send the imported surfaces to the
+engines as the road; unchecked, the geometry is drawn only) and **Ground
+beyond the site geometry** are on the Surfaces stage, under the tree whose
+**Drive** switches they qualify. A site carried inside an imported HVE case
+says so under the list, with **Use a geometry file instead** to drop it.
+
+Under the Imported files list:
+
 - **Add Object...** — a list of HVE's scene objects, which ship with HVE
   Studio: Jersey wall, F-shape barrier, 300 ft barrier, road median barrier,
   the movable barriers, walls (plain, angled and slanted), light and
   telephone poles, pole tops and bottoms, trees, a 12 in curb and a test bump
-  plane. Choosing one adds it to the site exactly as **Add Geometry...** adds
+  plane. Choosing one adds it to the site exactly as **Add...** adds
   a file — at the site's origin, in its own units — so it is a surface of the
   site like any other: move it with the gizmo or the Outliner, and set its
   type and **Drive** switch in the Surfaces. With no site loaded the object
@@ -360,7 +386,7 @@ the site's X, Y and Z extents.
 !!! note "HVE Studio"
     HVE Studio imports DXF directly; it does not read DWG. HVE's Geometry File
     Options dialog (flip, scale, "use as default environment") is replaced by
-    the Scale Factor and the two axis check boxes, which stay on the panel.
+    the Import Scene Geometry window's Scale Factor and two axis check boxes.
     Any folder may hold the file — there is no `images\environments`
     directory to copy it into. The geometry is re-read from the file each
     time the case is opened, so keep the file where the case can find it,
@@ -373,13 +399,13 @@ the site's X, Y and Z extents.
 To import site geometry:
 
 1. Click the **Environment (F4)** tab.
-2. In the Environment panel's **Terrain** section, click **Browse...** next
-   to *Geometry File* and choose the file.
-3. Set the **Scale Factor** and the axis check boxes for the file's units
-   and orientation.
+2. In the **Imported files** list at the top of the Environment panel's **Terrain**
+   section, click **Import...** on the *Scene geometry* row and choose the file.
+3. In the **Import Scene Geometry** window, set the **Scale Factor** and the
+   axis check boxes for the file's units and orientation, and click **Import**.
 4. Leave **Use surfaces as terrain (physics)** checked if the vehicles are
    to drive on the site.
-5. Click **Import**.
+5. (Step 3 read the file.)
 6. Check the summary line: the extents should be the size of the site, and
    the Z range should be right side up. Nothing in a DXF, OBJ or glTF file
    says which way is up, so a valley and a hill look the same to the
@@ -409,17 +435,28 @@ under the vehicles.
 
 ### Moving the site, or one of its surfaces
 
-**Site Placement**, under the geometry summary, moves the whole site — the
-ground the vehicles drive on and its picture together:
+The **Site Placement** section places the site in the world, and so sets the
+world's coordinate system on the site: the origin (0, 0, 0) every vehicle and
+event is positioned from, and which way is forward. It moves the whole site —
+the ground the vehicles drive on and its picture together:
 
 - **Move X (forward)**, **Move Y (right)** and **Move Z (up)** — how far the
   site is moved, in the length units of **Preferences**.
-- **Turn (deg)** — how far it is turned about the vertical through its
-  center; a positive turn is to the right.
+- **Yaw (deg)**, **Pitch (deg)** and **Roll (deg)** — how far it is turned
+  about its center, signed as a vehicle's: a positive yaw turns it to the
+  right, a positive pitch lifts its front end and a positive roll lowers its
+  right side. They are applied roll, then pitch, then yaw.
 - **Scale (x, y, z)** — a factor along each of the site's own axes, about
   the middle of its box (1 = as read). The scale is applied first, then the
   turn, then the move.
 - **Reset** — back to where the file put it.
+
+Once the site is moved, the section also says where the world origin lies in
+the site file's own coordinates — the same placement seen from the other side:
+instead of "the site moved this far", "the origin is here on the site". Pitch
+and roll are typed here; **G** and **R** in the Viewport move and yaw the site.
+A point cloud is not moved by the site's placement: its own **Placement**, in
+the **Survey Point Cloud (scan)** section, lays the scan onto the site.
 
 A selected surface has the same fields under **Placement** in the
 **Selected Surface** section. A surface turns and scales about its own
@@ -598,11 +635,10 @@ embedded in an HVE case keeps HVE's own surfaces.
 To edit a surface's contact material:
 
 1. Click the surface in the Viewport, or select its row in the Outliner.
-2. Edit it in **Surface Type and Friction** under **Selected Surface**, or
-   click **Edit in Shader Editor**: the surface's material opens in the
-   Shader Editor with its **HVE Surface** node, which holds the same surface
-   type and every physical property the engines read (see
-   [Chapter 13](13-environment-model-definition.md)).
+2. Edit it in **Surface Type and Friction** under **Selected Surface**: the
+   surface type and every physical property the engines read (see
+   [Chapter 13](13-environment-model-definition.md)). **Edit in Shader
+   Editor** edits only how the surface looks.
 3. Optionally pick an HVE material file from the material list and click
    **Apply material**, or choose a **Condition preset** (Dry 1.00,
    Wet 0.70, Snow 0.30, Ice 0.15), to fill in the fields as a starting
@@ -636,14 +672,13 @@ dialog:
   the layers above it, listed in drawing order (the last draws on top).
   **New layer** adds an empty layer above the others (up to sixteen) and
   selects it, so the file, download or placement that follows goes into it;
-  **Delete layer** removes the selected layer. The Outliner lists the base
-  image and every layer, each with its own eye and opacity; a layer's
-  right-click menu has **Move layer up**, **Move layer down** and **Delete
-  Aerial Layer** (the base image's has **Delete Aerial Image**).
+  **Delete layer** removes the selected layer.
 - **Name** — how the Outliner and the Picture list name it; empty, the file's
   name is used.
-- **Image File** — the image (PNG, JPEG, BMP or TGA).
-- **Visible** and **Opacity**.
+- **Image File** — the image (PNG, JPEG, BMP or TGA). A file chosen here is
+  laid as ground at once (see *The picture is ground*, below).
+- **In the ground** — how many surface materials the photograph is in, and
+  **Lay as ground** (or **Lay as ground again**) to do it now.
 - **World Bounds** — the X and Y coordinates of the image's upper-left
   (**UL X**, **UL Y**) and lower-right (**LR X**, **LR Y**) corners, which
   fix its position and scale. **Default** restores ±100 m.
@@ -662,7 +697,10 @@ flight under a newer one, for instance) instead of replacing it.
 ### Place a picture on the ground
 
 !!! tip "New in HVE Studio"
-    The **Place a picture on the ground** section of the same dialog places a
+    The **Place a picture on the ground** section -- in this dialog, and under
+    **Your own picture** on the Site and Import stages' **Aerial image** tab,
+    where it goes into the base image or, when the case has one, a new layer --
+    places a
     picture of your own by what it knows about where it is, or by points you
     give, and writes it as the case's aerial image. It is resampled to the
     case's axes, so a picture that is north-up in a map projection lands
@@ -706,57 +744,44 @@ you chose is yours: the record does not claim any provider's terms.
 ![Figure 12-6](../images/hvn-05-aerial-image.png)
 *Figure 12-6: Aerial Image Options dialog.*
 
-> **NOTE:** An aerial image is a picture. It provides no elevation, slope or
-> friction to the engines.
+### The picture is ground
 
-> **NOTE:** In the 3-D view the picture follows the ground exactly: over a site
-> with terrain it is drawn on the terrain's own triangles, so it cannot cut across
-> a bump or float over a dip (a tire resting on the ground is not sliced by it).
-> Where there is no ground under it, it lies at ground level. This is a display;
-> it changes no surface the engines drive on.
+!!! tip "New in HVE Studio"
+    A picture is not an object of its own: it is laid as part of the ground the
+    moment it is added -- downloaded from the Location map, chosen as a file
+    here, or placed below -- and from then on it is the material of the surfaces
+    under it.
 
-The picture's visibility and **Opacity** can also be changed without opening
-this dialog: in the Outliner, click the percentage on the aerial image's row (it
-is the opacity) to open a slider, and the eye shows or hides it; in the Shader
-Editor, the **Aerial image** checkbox and **Opacity** slider at the top do the
-same. All three change the one setting. A new picture or layer starts fully
-opaque (100%); a case saved with another opacity keeps it.
+**What is added.** Wherever no site surface already lies under the picture, the
+site gains a surface named *Aerial ground <picture>*: a **Road** at friction
+multiplier 1.00, flat at the ground height beyond the site (the **Ground beyond
+the site geometry** elevation when that is flat ground, otherwise 0). Terrain
+under the picture stays the ground, and the new surface meets its edge. It is a
+surface like any other: it is listed in the Outliner, its type and friction are
+set in the Surfaces stage, its Drive switch takes it out of the run, and
+**Undo** takes it back. Ground is not added to a site that has been moved (its
+**Placement**), which re-centers on its outline: reset the placement, then
+**Lay as ground again**.
+
+**Its material.** The photograph is put in the material of every surface under
+it, the new ground's included: an **Image Texture** of the picture, an
+**Opacity** node (a **Math** *Multiply* whose **B** is the opacity: 1 the
+photograph as it is, 0 the surface's own color through it), and a **Mix Color**
+into the **Principled BSDF**'s **Base Color**, so the surface keeps its own color
+beyond the picture's corners. Select the surface in the 3-D view or the Outliner
+and edit it in the Shader Editor like any material: put a
+**Hue/Saturation/Value**, **Brightness/Contrast** or **Gamma** node after the
+Image Texture, or change the Opacity node's **B**. In the 3-D view the
+photograph follows the ground exactly, over terrain on the terrain's own
+triangles.
+
+**Older cases.** A case saved before this keeps its picture drawn on its own
+over the site, as it was; the picture's row in the Outliner has **Lay as
+Ground** on its right-click menu (beside **Edit Material...**, the picture's
+own material until then), and this dialog has **Lay as ground**.
 
 > **NOTE:** Confirm the image's scale against two landmarks a known
 > distance apart before relying on it.
-
-### The picture as an object
-
-!!! tip "New in HVE Studio"
-    Each picture -- the base image and every layer -- is an object of its own:
-    it can be selected, and it takes a material, as a vehicle or a road surface
-    does.
-
-**Selecting it.** In the Environment editor, click the picture in the 3-D view:
-an orange box marks it, and **.** (frame selected) frames it. Clicking the
-**same spot again** selects the road surface under the picture, so the surfaces
-stay one click away even where a picture covers the whole site; something above
-the picture (a wall, a vehicle) is selected first as usual. Clicking the
-picture's row in the Outliner selects it too. A hidden picture, or one at 0%
-opacity, cannot be clicked.
-
-With a picture selected, the Environment window (and the Environment Designer's
-Surfaces stage) shows **Selected Aerial Picture** where the selected surface
-would be: the picture's **Visible** switch and **Opacity**, its **Material**,
-**Edit Material** (the Shader Editor, on this picture) and **Corners and record**
-(this dialog).
-
-**Its material.** The dialog shows the selected picture's **Material** with an
-**Edit in Shader Editor** button, and the picture's row in the Outliner has
-**Edit Material...** on its right-click menu. **+ New** in the Shader Editor
-makes *Object Color → Principled BSDF*, where Object Color is the photograph's
-own pixel and its opacity, so the picture draws exactly as before; put a
-**Hue/Saturation/Value**, **Brightness/Contrast**, **Gamma**, **Invert Color** or
-**Mix Color** node between them to change it (see the Shader Editor's *Aerial
-pictures*). The material belongs to the picture's place in the stack, not to
-its file: downloading a new picture into the same layer keeps the material,
-moving a layer up or down takes its material with it, and deleting a picture
-deletes its material assignment. Like every material it is display only.
 
 !!! warning "Not in HVE Studio"
     HVE's **Sky Image** — a scanned photograph fixed behind the scene as a

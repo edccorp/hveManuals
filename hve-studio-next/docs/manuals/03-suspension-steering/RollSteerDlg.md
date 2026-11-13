@@ -6,7 +6,10 @@ Where HVE edits one wheel at a time, and opens either this polynomial dialog (in
 
 ## Suspension Group
 
-Four small buttons per wheel: **-**, **S1**, **S2** and **S3**. Wheels in the same group share their values, as in the [Jounce and Rebound Stops Dialog](JouAndRebDlg.md).
+A button per group above each wheel (**S1**, **S2**, ...; every wheel is in a group). Wheels in the same group share their values, as in the [Jounce and Rebound Stops Dialog](JouAndRebDlg.md).
+
+
+**Layout...** sets the groups in one step and copies a wheel's values once, as in the [Jounce and Rebound Stops Dialog](JouAndRebDlg.md).
 
 ## Constant
 Initial steer angle at zero suspension deflection (constant term of the polynomial).

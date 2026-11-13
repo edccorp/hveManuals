@@ -47,9 +47,10 @@ The Humans panel manages all the humans in the current case. It contains:
 - **Human** — A list of the names of all the humans in the case. Select a
   different name to make it the current human.
 - **Identity** — Name and Location (see below).
-- **Anthropometry** — The GEBOD inputs: Subject Type, Age Group, Weight
-  Percentile, Height Percentile, and the **Regenerate GEBOD Body** button.
-- **Anthropometric** — The human's total Weight and Mass.
+- **Size (GEBOD)** — The GEBOD inputs: Subject Type, Age Group, **Basis**
+  (**Percentiles**, or **Weight and height**), then the Weight Percentile and
+  Height Percentile, or a **Weight** and **Standing Height**; the
+  **Regenerate GEBOD Body** button, and the body's own weight beside it.
 - **Body Segments…, Joint Properties…, Body Pose…, Injury Tolerances…** —
   When the panel is open as its own window, buttons that open the Human
   Designer on that stage. On the designer's Human stage they are not shown:
@@ -77,6 +78,9 @@ The Humans panel manages all the humans in the current case. It contains:
     Information's **Humans in Event** section. That section's **Pose** button
     opens the Body Pose dialog for the event; the same dialog is the Human
     Designer's **Body Pose** stage, which edits the pose in the active event. A human's pose and the restraint it wears are stored per event.
+    A human also has **a pose of its own**, given on the Body Pose stage before any
+    event holds it: an event the human is added to starts from that pose, and keeps
+    its own from then on.
 
 ## Adding New Humans
 
@@ -115,24 +119,22 @@ attributes in the panel:
 > smaller; 95 percentile means that only 5 percent of the population is
 > larger.
 
-Changing Subject Type, Age Group or either percentile regenerates the body
-at once, so the segments, inertias, ellipsoids and joints always correspond
-to the anthropometry shown. **Regenerate GEBOD Body** regenerates it on
-demand, which discards any edits made to the segment and joint data. The text
-beside the button reports whether the human has a body. The Body Segments
-dialog offers the same as **Re-seed GEBOD**, and **Re-seed from occupant
-mass**, which runs GEBOD with the human's weight stated as the occupant mass
-instead of a weight percentile, so the whole body (segment sizes, masses and
-joints) follows that weight. Both keep the segment colors. Only if GEBOD cannot
-run does it fall back to a simplified body from standard segment mass fractions,
-and it says so.
+Changing Subject Type, Age Group, the Basis or any size regenerates the body
+at once, as HVE's GEBOD Human Information does at OK, so the segments,
+inertias, ellipsoids and joints always correspond to the size shown. With
+**Weight and height**, a typed **Weight** or **Standing Height** takes effect
+when you press Enter or leave the field; a height left at 0 takes the Height
+Percentile. **Regenerate GEBOD Body** regenerates it on demand, which discards
+any edits made to the segment and joint data; the segment colors are kept. The
+text beside the button gives the body's weight (the sum of its 15 segments).
+Body Segments has the same **Regenerate GEBOD Body** and says what the body was
+built from; the size itself is set only here. Only if GEBOD cannot run does it
+fall back to a simplified body from standard segment mass fractions, and it
+says so.
 
 !!! warning "Not in HVE Studio"
-    HVE's GEBOD Human Information dialog offers a **Basis** selector, age in
-    months or years, weight and standing height entered either as a
-    percentile or directly in pounds and inches, and a User-defined subject
-    file. HVE Studio has none of these: an adult body is always generated from
-    the two percentiles (HVE's "All" basis), and a child from age alone. The
+    HVE's GEBOD Human Information dialog also takes the age in months or years
+    and a User-defined subject file. HVE Studio's age is the Age Group, and the
     percentiles offered are the five listed above.
 
 !!! note "HVE Studio"
@@ -147,11 +149,10 @@ and it says so.
       when these settings change, so its imported segment data is kept.
       Regenerate GEBOD Body replaces it explicitly.
 
-- **Weight** and **Mass** (Anthropometric) — The human's total weight and
-  mass, in the units set in Preferences; either may be edited and the other
-  follows through the case's gravity. Once a body exists this is the sum of
-  the 15 segment masses, which GEBOD recomputes, so a typed value is replaced
-  when the body is regenerated.
+- **Weight** and **Standing Height** (Basis: Weight and height) — the stated
+  weight and height GEBOD builds the body at, in the units set in Preferences.
+  The Weight and Mass fields that were here went on 2026-11-10: a typed weight
+  is this basis, which builds the body at it.
 
 The tables below are HVE's human database keys, kept for reference when
 reading an older HVE case.
@@ -216,11 +217,40 @@ human:
      the stage's **Segment** list, or click the segment in the viewport.
    - **Joint Properties** — The physical properties of each of the 14
      joints.
-   - **Body Pose** — The human's pose in the active event: an angle for
-     each segment, and the initial velocity (a pedestrian's walking speed).
+   - **Body Pose** — The human's posture: an angle for each segment.
      **Whole body pitch (deg)** pitches the whole body about the pelvis, every
      segment at once (+ leans it back): each segment's angles are relative to
      its parent, so the posture is kept.
+
+     *Which pose.* With the human in the active event, **Pose of:** chooses
+     between **This human** — the human's own pose — and **Event:** — the pose
+     that event runs with, together with its initial velocity (a pedestrian's
+     walking speed). With no event holding the human, the stage edits the
+     human's own pose, so a human can be posed before any event exists. Tick
+     **This human has a pose of its own** to state one; an event the human is
+     added to then starts from it. The human's own pose is read by no run, so
+     it can be edited with results on screen. Nothing is copied behind your
+     back: **Copy to its events** gives the human's own pose to every event
+     that holds it (an event with results on screen keeps its pose until it is
+     reset), and on an event's pose **Take the human's own pose** and
+     **Make this the human's own pose** copy one way or the other. The pelvis
+     stays where each event has it.
+
+     *The pose library.* **Pose library** lists the built-in poses —
+     Standing (feet flat and the arms clear of the body; **Zero all angles**
+     is not this: at zero the feet point down the legs and the arms hang
+     through the hips), Seated (HVE's passenger), Driving with the hands on the wheel,
+     and Walking (the measured gait at right heel strike when the human has a
+     body; a plain stride, named as not measured, otherwise) — followed by the
+     poses you have saved. **Apply** gives the chosen pose to the body.
+     **Save pose as...** saves the pose on screen under a name, and
+     **Delete** removes a saved one. **Mirror left / right** swaps the right
+     and left limbs. A saved pose is a small text file (`.hvepose`: one line
+     per segment, roll, pitch and yaw in degrees relative to the parent) in
+     the `poses` folder of your user folder, so poses can be copied between
+     computers; a file that does not state all 15 segments is left out of the
+     list and named with the reason. A pose holds the posture only — no
+     position, velocity or body size — so it applies to any human.
    - **Injury Tolerances** — The injury tolerances of the current human.
 
 Each of these data categories is described in detail in the following

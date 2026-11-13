@@ -2,7 +2,7 @@
 
 HVE's Camera Setup dialog uses a camera metaphor to determine how a scene is viewed: viewing a scene is much like looking through a camera. It also saves and deletes named views, so several views can be defined and re-used.
 
-In HVE Studio the same job is done by the **Cameras** window: **Tools › Cameras...**. It has two tabs, **Saved Cameras** (named cameras stored with the case) and **Viewport View** (the live view of the Viewport). A saved camera can also be chosen from the camera list on the playback bar under the Viewport, and **C** / **Shift+C** cycle through the saved cameras without opening the window. Lengths are shown in the units set in Preferences.
+In HVE Studio the same job is done by the **Cameras** window: **Tools › Cameras...**. It has two tabs, **Saved Cameras** (named cameras stored with the case) and **Viewport View** (the live view of the Viewport). A saved camera can also be chosen from the camera list on the playback controls in the toolbar, and **C** / **Shift+C** cycle through the saved cameras without opening the window. Lengths are shown in the units set in Preferences.
 
 ![Cameras window](images/hvn-cameras.png)
 

@@ -24,11 +24,17 @@ scoped to that wheel.
       Deflection**, **Roll Steer** and **Anti-Pitch** — each a table with a
       column per wheel (A1 Left, A1 Right, …).
 
+    Dragging a rate in the **Suspension Data** and **Jounce / Rebound** tables
+    moves it by about half a percent of its value a pixel, in steps of 1, 2 or 5
+    (a 300 lbf/in spring by 1 lbf/in, a 2000 lbf/in one by 10); hold **Shift**
+    for a tenth of that, or Ctrl+click to type a value.
+
     The spindle axis (alignment and steering stops) is in the **Steering
     System** dialog (see [Part E](11e-drivetrain-steering-brake-system.md)).
     In place of HVE's Copy To Other Side / Copy To Other Axle(s), each table
     has a **Suspension Group** row: give two or more columns the same group and an
-    edit in one is copied to the others. Values are shown in the units set in
+    edit in one is copied to the others (groups S1, S2, ..., saved with the case; **Undo**
+    reverses a group change). **Layout...**, beside the group row's name, sets the usual arrangements in one step: **Same both sides** (each axle's left and right wheels in a group of their own), **Same on every wheel** (one group), and **Each wheel its own** (every wheel in a group of its own, so an edit changes only that wheel). A new group takes the values of its first wheel, A1 Left first. Under **Copy once** it does what HVE's *Copy to Other Side* and *Copy to Other Axles* do: pick a wheel under **From**, then **To the other side**, **To the other axles** (the same side of every other axle) or **To every wheel**. The copy changes no group, and a wheel copied to takes its group mates with it. Pointing at a column outlines it and tints the wheels in its group, the ones an edit there will change; they stay marked while the field is being edited. Values are shown in the units set in
     Preferences, and changes apply as they are made.
 
 ![Figure 11-22](../images/hvn-04-suspension-data.png)
@@ -227,9 +233,9 @@ reference page,
 !!! note "HVE Studio"
     HVE keeps the spindle axis under Suspension › Spindle Axis, per wheel.
     In HVE Studio the per-axle alignment rows (Caster Angle, Kingpin
-    Inclination, Camber Angle, Kingpin Offset) are in the
+    Inclination, Camber Angle, Steering Offset) are in the
     Steering System table, and the per-wheel rows (Stub Axle Length,
-    Kingpin Friction, Stop Angle Right/Left, Stop Stiffness) are in its
+    Steer Axis Friction Torque, Stop Angle Right/Left, Stop Stiffness) are in its
     **Steer-Axis Mechanics (per wheel)** table. They are enabled only for an
     axle marked Steerable. See [Part E](11e-drivetrain-steering-brake-system.md#steering-system-parameters).
 
@@ -258,7 +264,7 @@ System** and edit the steerable axle's column.
     In HVE, Kingpin Inclination, Steering Offset and Stub Axle Length are
     inter-related and editing one recalculates another. HVE Studio stores and
     edits them independently. HVE's Steer Axis Friction Torque is
-    **Kingpin Friction**. HVE's per-wheel Toe-in, a length, is kept with the
+    **Steer Axis Friction Torque**. HVE's per-wheel Toe-in, a length, is kept with the
     vehicle but has no control in HVE Studio: no engine reads it, in HVE or
     here.
 
@@ -353,14 +359,16 @@ The Camber properties of each wheel are displayed and edited using the
 Camber vs Deflection dialog (the **Camber vs Deflection** tab of **Vehicle › Editors › Suspension Data…**). See also the reference page,
 [Camber dialog](../../03-suspension-steering/CamberDlg.md).
 
-The dialog has a column per wheel: a **Num Points** row and a table of
-deflection against camber angle (degrees), and a **Solid-Axle Const (deg)**
-row. Ctrl+click a cell to type a value.
+The dialog has a grid with a column per wheel (the **Suspension Group**,
+the **Solid-Axle Const (deg)** and each wheel's **Camber Table** size) and,
+under it, one wheel's table as HVE has it: a row per point with
+**Deflection**, **Camber (deg)** and **Half-Track Change**, **Add Point**
+and an **x** per row, and graphs of camber and half-track change against
+deflection. Click a value to type it, or drag it.
 
 !!! note "HVE Studio"
     - A solid axle does not use the table; SIMON reads only the constant.
-    - HVE's half-track change column, its graph and Print have no
-      equivalent in this dialog.
+    - Print has no equivalent in this dialog.
 
 The Camber and Half-track Table properties are described below.
 

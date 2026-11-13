@@ -24,7 +24,7 @@ These basic procedures are described in detail in this tutorial.
 
 Before starting, set the display options so that we're all starting on the same page.
 
-- **Tools › Preferences**: set *Units* to **Imperial (ft/in, mph, lb, lbf)**, HVE's US units.
+- **Options › Preferences**: set *Units* to **Imperial (ft/in, mph, lb, lbf)**, HVE's US units.
 - **View › Key Results**: on.
 - **View › Scene Display**: turn on *Skidmarks*; leave the vectors off.
 
@@ -176,7 +176,7 @@ Let's add *Wheel Fx, Fy, Fz* and *Steer Angle* to the Key Results window:
 
 Now, we're ready to execute the event.
 
-- Press **Run** on the playback bar under the viewport. When the run is complete (t = 20 seconds), press **Play** to watch it.
+- Press **Run** on the playback controls in the toolbar. When the run is complete (t = 20 seconds), press **Play** to watch it.
 
 The EDSVS event is shown at time t = 3.10 seconds in Figure 5-7. Note the vehicle travels within 2 feet and 2 degrees of each path position defined in Figure 5-1.
 
@@ -261,7 +261,7 @@ Key Results for the *Steering Maneuver* event now includes the selected results.
 
 ### Trajectory Simulation
 
-The trajectory plays back in the Event editor's viewport. To visualize the motion, use the playback bar under the viewport:
+The trajectory plays back in the Event editor's viewport. To visualize the motion, use the playback controls in the toolbar:
 
 1. Click **Play**. The simulation plays at the current playback speed.
 2. Click **Pause**. The simulation stops.

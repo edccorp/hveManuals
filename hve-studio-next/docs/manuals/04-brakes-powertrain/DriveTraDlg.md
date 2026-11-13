@@ -32,12 +32,11 @@ Rotational inertia of the drivetrain components (HVE's *Drivetrain Inertia*).
 Used only for a vehicle that has **no closed-throttle table**: the closed-throttle (engine braking) torque is then this constant value at every speed.
 
 ### Engine Tables
-HVE's engine tables, one for each **Throttle Position**:
+HVE's engine tables, one for each throttle position, **Wide Open** and **Closed**, both shown: side by side where the panel is wide enough, one above the other where it is not. Beside each title, *(in use)* or *(not used: fewer than 2 rows)*; the tooltip says what stands in for a table that is not used.
 
-- **Throttle Position** — **Wide Open** or **Closed**: which of the two tables the grid shows.
-- The grid — one row per point: **Speed (RPM)**, **Torque** (in the torque units set in Preferences) and **Power** (hp or kW). Speed and torque are edited; **Power** is shown grayed and follows torque × speed, because no engine reads it (SIMON, EDVSM and EDVDS read the speed and torque columns only). **X** deletes a row, **Add Row** appends one (up to 15, HVE's limit).
+- Each grid — one row per point: **Speed (RPM)**, **Torque** (in the torque units set in Preferences) and **Power** (hp or kW). Speed and torque are edited; **Power** is shown grayed and follows torque × speed, because no engine reads it (SIMON, EDVSM and EDVDS read the speed and torque columns only). **X** deletes a row, **Add Row** beside the table's title appends one (up to 15, HVE's limit).
 
-A table needs at least two rows to be used; with fewer, the engines get the stand-in described under Redline RPM / Max Torque (wide open) or Friction Torque (closed), and a note under the grid says which applies. Speeds must increase down the table (the engines interpolate torque on engine speed); an orange note says so when they do not. The tables act only on the **Pedal** input method in Driver Controls: the %-friction method takes drive torque from tire friction and reads no engine curve.
+A table needs at least two rows to be used; with fewer, the engines get the stand-in described under Redline RPM / Max Torque (wide open) or Friction Torque (closed). Speeds must increase down the table (the engines interpolate torque on engine speed); an orange note says so when they do not. The tables act only on the **Pedal** input method in Driver Controls: the %-friction method takes drive torque from tire friction and reads no engine curve.
 
 The tables of a vehicle read from an HVE vehicle or case are imported as HVE stores them.
 

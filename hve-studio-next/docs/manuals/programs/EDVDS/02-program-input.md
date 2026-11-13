@@ -391,10 +391,10 @@ A case in HVE Studio always has exactly one environment; there is nothing to add
 1. Choose the **Environment (F4)** editor tab.
 2. The **Environment** panel is displayed (**Environment › Environment…** reopens it).
 3. In **Location**, set the location (search an address, paste a coordinate, or enter latitude and longitude) and the date and time of the event.
-4. In **Terrain › Scene Geometry**, open the site's 3-D geometry (`.h3d`, DXF, `.iv`, OBJ or glTF) with **Browse…** and **Import**.
+4. On the Environment Designer's **Import** stage (**3-D models** tab), open the site's 3-D geometry (`.h3d`, DXF, `.iv`, OBJ or glTF) with **Import...** beside **Scene geometry**.
 5. In **Physical**, enter the ambient temperature and pressure, the wind and the **Gravity**.
 
-Values are shown in the units set in **Tools › Preferences**.
+Values are shown in the units set in **Options › Preferences**.
 
 ![Figure 2-4](images/hvn-edvds-environment-editor.png)
 *Figure 2-4: The HVE Studio Environment editor showing the Rowena Point site from EDC's EDVDS tutorial case.*
@@ -524,6 +524,8 @@ The tow vehicle is positioned relative to the earth-fixed coordinate system by s
 !!! note "HVE Studio"
     Each vehicle in **Vehicle Initial Conditions** has X and Y Position, Heading, an **Auto Position (settle onto terrain)** checkbox, Z Height, Speed, Sideslip and Yaw rate; roll, pitch and the other rates are under **Advanced initial state**. In the viewport, select the tow vehicle and press **G** to move it or **R** to rotate it; the trailers and dolly move with it as a rigid train. EDVDS reads the position and velocity of the tow vehicle only. For each trailer it reads the roll, pitch and heading (and their rates); for a dolly it reads nothing, because the dolly's pose follows from its two connections.
 
+    > **NOTE:** With **Auto Position** off, the **Z Height** is the CG's height above the ground and the engine takes it as entered. Turning Auto Position off keeps the vehicle where Auto Position had put it: an empty height is filled in with that height, roll and pitch. A height of 0 would start the CG on the ground with the tires crushed; the panel says so, the viewport draws the vehicle there, and the run status says how far below its ride height it starts.
+
 The trailer is positioned relative to the tow vehicle by supplying the initial roll, pitch and yaw articulation angles. The default articulation angles are 0.0 degrees.
 
 The tow vehicle linear velocities are supplied in the form of a total velocity and sideslip angle.
@@ -614,7 +616,7 @@ This option determines how EDVDS selects the current terrain properties from the
 
 #### Event Execution
 
-To execute an EDVDS event, use the playback bar under the viewport (Figure 2-7) or **Output › Run Simulation…** (Ctrl+R). The playback bar's buttons have the following functions:
+To execute an EDVDS event, use the playback controls in the toolbar (Figure 2-7) or **Output › Run Simulation…** (Ctrl+R). The playback bar's buttons have the following functions:
 
 - **Run** — Execute the event (grayed while the event's results are on screen)
 - **Reset** — Clear the results so the event can be edited and run again

@@ -5,7 +5,7 @@
 HVE edits the vehicle's exterior dimensions in six Vehicle Dimensions dialogs, one per face (CG to Front, Back, Top, Left, Right and Bottom), each with a Stiffness button. HVE Studio has no per-face dialogs. The exterior dimensions are entered in the Vehicle Editor (**Vehicle (F3)**), in the **Vehicles** panel under **Size & Weight › Geometry**, where six fields below **Overall Height** give the distance from the CG to each face that the engines receive: **CG to Front**, **CG to Rear**, **CG to Right**, **CG to Left**, **CG to Top** and **CG to Bottom**. All values are in the units set in Preferences.
 
 ## z Coord
-Vehicle-fixed distance from the CG to the bottom of the vehicle. In HVE Studio this is the **CG to Bottom** field under **Geometry**, shown grayed: it equals the **CG Height** entered under **Geometry** (the extents run to the ground). Edit CG Height to change it.
+Vehicle-fixed distance from the CG to the bottom of the vehicle. In HVE Studio this is the **CG to Bottom** field under **Geometry** (the same value as **CG to bottom (underside)** in the 3-D view's underside panel): from the CG down to the body's underside, up to the CG height. **Ground Clearance** beside it is the CG height less it. The engines' exterior extents still run to the ground (the CG height).
 
 ### CG Height
 An **input** under **Geometry** (and on both mass bases in the **Inertia / Mass** dialog); the CG-to-bottom distance is taken from it.

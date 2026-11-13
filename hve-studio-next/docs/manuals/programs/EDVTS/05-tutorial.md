@@ -26,7 +26,7 @@ Open the tutorial case:
 
 The original tutorial set a list of user options before starting. In HVE Studio:
 
-- **Units** — **Tools › Preferences** (U.S. or SI). This chapter quotes U.S. units, as the original does.
+- **Units** — **Options › Preferences** (U.S. or SI). This chapter quotes U.S. units, as the original does.
 - **AutoPosition** — a per-vehicle checkbox, **Auto Position (settle onto terrain)**, in each vehicle's initial conditions in the Event editor.
 - **Key Results** — **Output › Key Results…** (or **View**).
 - **Skidmarks, velocity vectors, rendering options** — **View › Scene Display › Skidmarks**, **View › Scene Display › Vectors**, **View › Scene Display › Rendering**.
@@ -49,7 +49,7 @@ The original walkthrough makes the following edits. Each is already in the finis
 - **Color** — the **Color** field in the **Vehicles** panel's **Identity** section.
 - **Rear axle positions** — the tractor's third axle moved to x = -161.50 in and its second to x = -110.00 in. Wheel positions are in the panel's **Size & Weight › Wheel Positions (from CG)**.
 - **Fifth wheel** — the tractor's rear connection moved to x = -135.75 in, z = -4 in. Connections are edited with **Components › Connections…** in the **Vehicles** panel; the dialog shows the connection's height above ground, which must match the trailer's kingpin to within 0.1 in.
-- **Geometry files** — `TKMackTractor.h3d` for the tractor and `TLGeneric44Van.h3d` for the trailer, in the panel's **3D Geometry** section (**Mesh File**: **...** or **Library...**) or on the File & Placement tab of **Vehicle › Editors › Vehicle Mesh…**, then **Load 3D File** there. HVE Studio opens `.h3d` files directly; the geometry is used for display only.
+- **Geometry files** — `TKMackTractor.h3d` for the tractor and `TLGeneric44Van.h3d` for the trailer, in the panel's **3D Geometry** section (**Mesh File**: **Load File...** or **Library...**) or on the File & Placement tab of **Vehicle › Editors › Vehicle Mesh…**, then **Load 3D File** there. HVE Studio opens `.h3d` files directly; the geometry is used for display only.
 
 ## Creating the Environment
 
@@ -157,7 +157,7 @@ To watch the vertical tire loads while the event runs, open **Output › Key Res
 
 ## Executing the Event
 
-- Click **Run** on the playback bar under the viewport (or **Output › Run Simulation…**, Ctrl+R). Allow the event to run until completion.
+- Click **Run** on the playback controls in the toolbar (or **Output › Run Simulation…**, Ctrl+R). Allow the event to run until completion.
 
 The EDVTS event terminates at time t = 5.29 seconds, because the roll or pitch angle exceeded 15 degrees. The run status on the playback bar says that the run stopped early and quotes the message.
 

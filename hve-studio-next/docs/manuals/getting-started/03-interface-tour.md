@@ -67,8 +67,8 @@ The main entries:
   the viewport and into recorded videos (see
   [Results HUD](../new-features/11-results-hud.md)).
 - **Tools** — Quick Case (Text), Vehicle Package, Case Intake, Provenance,
-  EDR Import, Monte Carlo Analysis, Motorcycle Analysis, Preferences, Style
-  Editor, Cameras, Audit Log, Limits Editor.
+  EDR Import, Motorcycle Analysis, Cameras, Measure, Audit Log.
+- **Options** — Preferences, Keymap, Output Settings (its Limits tab holds the input limits), Style Editor.
 - **Help** — License (this computer's license), Check for Updates (a newer
   HVE Studio and EDC vehicle data), About HVE Studio.
 
@@ -83,7 +83,9 @@ see the full path.
     **Ctrl+U**, **Ctrl+W**, **Ctrl+T**. An Event-menu shortcut works only in
     the Event editor and only when its menu item is offered for the event's
     calculation method. Shortcuts are ignored while you are typing in a text
-    field or a popup menu is open.
+    field or a popup menu is open. Every shortcut can be changed in
+    **Options › Keymap...**, and the menus show the keys you set
+    ([Options Menu, Keymap](../hve-users/02-menu-reference/06-options-menu.md#keymap)).
 
 ## Editor tabs
 
@@ -96,6 +98,15 @@ The five buttons under the menu bar replace HVE's separate editors:
 | Environment | **F4** | Environment | The site: terrain, surfaces and materials, sky, physical data |
 | Event | **F5** | Event Information | The events: which vehicles and humans, the calculation method, positions, driver controls, running and playback |
 | Playback | **F6** | Playback Sequence | Several solved events on one timeline (see [Video and Playback Sequences](../new-features/07-video-and-playback-sequences.md)) |
+
+Beside the five buttons a drop-down shows what the active editor is working on,
+and switches it: the **vehicle** in the Vehicle editor, the **event** in the
+Event editor, the **human** in the Human editor and the **playback sequence** in
+Playback. It is the same choice the editor's own list makes, so it works while
+results are on screen (the event and the sequence only while a run is not in
+progress). The Event editor has a second drop-down beside it listing the active
+event's vehicles: choosing one selects that vehicle, the same as clicking it in
+the viewport. The Environment editor works on the case's one site and has none.
 
 ![The Vehicle editor](images/hvn-main-window-vehicle.png)
 
@@ -112,6 +123,21 @@ viewport: the vehicle shown is not in the active event.*
 *The Environment editor (F4) with an imported HVE case whose site carries
 terrain and an aerial photograph.*
 
+## Number fields
+
+Every number field can be dragged and typed. Drag it left or right and it moves one
+step a pixel; click it, or Ctrl+click, to type a value, which is kept exactly as typed.
+The step follows one rule everywhere:
+
+- about half a percent of the value, on round steps (1, 2 or 5 times a power of ten),
+  so a 300 lbf/in spring moves by 1 and a 2000 lbf/in one by 10, and never finer than
+  ten of the last digit the field shows;
+- a **position** moves by a whole inch, or a centimeter in metric units;
+- hold **Shift** for a tenth of the step.
+
+A dragged value lands on a multiple of its step. The vehicle dimensions edited in the
+3-D view drag the same way and are applied when the field is left, as a typed value is.
+
 ## Panels and docking
 
 Every panel and dialog is a window that can be docked or float:
@@ -125,6 +151,14 @@ Every panel and dialog is a window that can be docked or float:
   starts. Deleting `imgui.ini` (in `%APPDATA%\EDC\HVE Studio`; see
   [Where the program keeps its settings](02-installing-and-running.md#where-the-program-keeps-its-settings))
   restores the default layout.
+
+A long table keeps its column titles in view as you scroll, like frozen panes in
+a spreadsheet. A table with its own scroll bar holds its title row at the top
+of the table. A table that scrolls with the rest of its panel draws a copy of
+its titles at the top of the panel while its rows fill the view. This covers
+the driver, tire, engine, brake and wheel tables, the reports, Key Results,
+Compare Runs, the EDR import and the long lists such as the Outliner, Monte
+Carlo and Output Settings' Limits.
 
 **View › Panels Outside the Main Window** lets a panel be dragged out of the
 main window to become a window of its own — for example the Shader Editor on a
@@ -172,7 +206,7 @@ Properties...** and **Reset Camera**.
 | **C** / **Shift+C** | Look through the next / previous saved camera |
 | **I** | Insert a keyframe on the camera you are looking through, at the current playback time |
 
-The **hint line** at the top left of the view lists these keys for its first 10 seconds in each editor, then folds to a small **View keys** box; point at the box to read the full line again. When the line carries something else (a move in progress, the selected vehicle, a run), it is never folded.
+The **hint line** at the top left of the view lists these keys whenever it has nothing more urgent to say; a move in progress, the selected vehicle or a run takes its place.
 
 ### Hiding a vehicle in the view
 
@@ -230,26 +264,29 @@ Typing into a text field never triggers these keys.
 
 ## Playback bar and the Run stage
 
-In the Event editor the bottom of the Viewport carries the playback bar:
+In the Event and Playback editors the toolbar at the top carries the playback
+controls, after the editor buttons and the event and vehicle lists. A divider
+follows **Playback (F6)**; when the row cannot hold the controls they go on a
+second row, under the event and vehicle lists (across the whole width when the
+window is too narrow for that):
 
-- **Run** solves the active event with its Calculation Method; while it runs
-  the button becomes **Cancel** (and, where the solver supports it,
-  **Pause**/**Resume**).
-- **Reset** clears the results and returns the vehicles to their starting
-  layout.
+- The run's state (**Not run**, **Completed**, ...); before a run **Play** runs
+  the event, and while it runs **Stop** ends it.
+- **Reset**, once the event has run, clears the results and returns the
+  vehicles to their starting layout (HVE's Stop button).
 - **|<**, **<<**, **Play**/**Pause**, **>>**, **>|** — jump to start, step
   back, play, step forward, jump to end. A step is one output interval of the
   run.
-- The **camera** list switches between saved cameras.
-- The time slider, with **<** and **>** buttons either side that step one
-  frame. The mouse wheel over the slider also steps frames. The box to its
+- The time slider. The mouse wheel over it steps frames, as **<<** and **>>**
+  do. The box to its
   right takes a time in seconds: type it and press Enter to jump there.
 - At the right, the duration, the program that solved the event and its
   headline result — or, if the run was refused or failed, the reason in red.
 
 The **Run** stage of the **Event Designer** (Event › Event Designer..., or
-**Output › Run Simulation...**) carries the same controls plus the simulation
-controls, a status line and a progress bar.
+**Output › Run Simulation...**) carries **Run simulation** and **Reset** at its
+top, with a status line and a progress bar, then the simulation controls; its
+playback is the toolbar's.
 
 !!! note "HVE Studio"
     **The results lock the inputs.** While a solved event's results are on
@@ -346,7 +383,7 @@ message appears as the case opens; see
 
 ## Preferences, units and style
 
-**Tools › Preferences**:
+**Options › Preferences**:
 
 ![The Preferences dialog](images/hvn-preferences.png)
 
@@ -366,17 +403,24 @@ message appears as the case opens; see
 **Diagnostic Level** is grayed: what a run assumed or repaired is always in
 its run status.
 
-**Tools › Style Editor** chooses the base color theme (**HVE**, the default —
+These settings are on the **General** tab. The **Keymap** tab (also **Options ›
+Keymap...**) changes any keyboard shortcut: click a key and press the new one.
+See [Options Menu, Keymap](../hve-users/02-menu-reference/06-options-menu.md#keymap).
+
+**Options › Style Editor** chooses the base color theme (**HVE**, the default —
 the HVE cube's maroons on a dark ground, with window, panel, field and button
 each a step lighter than the one it sits on — **Dark**, **Light** or
 **Classic**; remembered between sessions) and gives live control over colors,
 sizes, rounding and spacing. The whole style is remembered. When a release
 changes the HVE theme's colors, a remembered style made under the older
 theme takes the new colors on the next start and keeps its sizes, rounding
-and font scale; choose another theme to keep your own colors.
+and font scale; choose another theme to keep your own colors. On the **Light** theme, quiet text (notes and grayed
+values) is a darker gray than ImGui's own light preset, so it is not read past, and every field has a border, so an
+empty field still reads as a field. On Windows every theme gives fields a border, as Windows' own dialogs do. A
+remembered style keeps its own values: choose the theme again to take these.
 
 **Tools › Cameras** keeps the saved cameras (with a **Viewport View** tab for
-the live view); **Tools › Limits Editor** edits the allowed input ranges.
+the live view); **Options › Output Settings... › Limits** edits the allowed input ranges.
 
 For HVE's own Preferences and Units dialogs, compare
 [User Preferences](../01-user-interface/PrefDlg.md) and

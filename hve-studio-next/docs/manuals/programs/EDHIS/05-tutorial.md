@@ -27,7 +27,7 @@ As in other tutorials, before we get started, let's set the user options so we'r
 
 In HVE Studio, set the following:
 
-- **Tools › Preferences** — Units equals US
+- **Options › Preferences** — Units equals US
 - **View › Key Results** — on
 - **View › Scene Display › Skidmarks** — on
 - **View › Scene Display › Vectors › Velocity** — off
@@ -449,7 +449,7 @@ The Trajectory Simulation provides a 3-dimensional visualization of the vehicle 
 ![Figure 5-28](images/hvn-edhis-pedestrian.png)
 *Figure 5-28: Trajectory simulation for the Plymouth/Pedestrian Impact event at t = 0.12 s.*
 
-To visualize the motion, use the playback bar under the viewport:
+To visualize the motion, use the playback controls in the toolbar:
 
 - Click **Play**. The simulation is played at the current playback rate (**Output › Playback Options**).
 - Click **Pause**. The simulation stops.

@@ -2,7 +2,7 @@
 
 HVE's Units dialog specifies the current system of units. HVE maintains two basic sets of units: program units and user units. Program units are always pounds, inches and seconds (and derivatives of these basic quantities); the user sees user units, converted with the proper conversion factors.
 
-HVE Studio has no separate Units dialog. The system of units is chosen with **Units** in **Tools › Preferences...** (see [User Preferences Dialog Box](PrefDlg.md)):
+HVE Studio has no separate Units dialog. The system of units is chosen with **Units** in **Options › Preferences...** (see [User Preferences Dialog Box](PrefDlg.md)):
 
 ## Metric (m, km/h, kg, N)
 Sets SI (metric) units as the current system of units. HVE's **S.I**.

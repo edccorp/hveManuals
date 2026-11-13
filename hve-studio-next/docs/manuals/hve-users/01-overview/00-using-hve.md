@@ -112,7 +112,7 @@ The following typographical conventions are used in this manual:
   [Appendix VI](../11-appendices/appendix-06-references.md). The first number is
   the material category, the second the reference number.
 
-Values are shown in the units chosen in **Tools › Preferences** (Metric or
+Values are shown in the units chosen in **Options › Preferences** (Metric or
 Imperial). The manual quotes HVE's own units where the physics is described in
 them.
 
@@ -156,7 +156,7 @@ Vehicles panel docked on the left and the 3-D viewport on the right.*
 
 ### Components
 
-- **Menu Bar** — **File, Edit, View, Tools, Help**, plus the menu of the
+- **Menu Bar** — **File, Edit, View, Tools, Options, Help**, plus the menu of the
   current editor: **Human** (Human editor), **Vehicle**, **Environment**,
   **Event** and **Output** (Event editor), or **Playback** (Playback editor).
   The open case's name is at the right, with `*` when it has unsaved changes.
@@ -187,9 +187,11 @@ Vehicles panel docked on the left and the 3-D viewport on the right.*
   top-right corner, drawn as the HVE cube, sets a preset view (click a face for that view, orthographic;
   drag the cube to orbit), and the buttons under it zoom, pan, look through the
   scene camera and switch between perspective and orthographic. A line of hints across
-  the top lists the keys that apply. The toolbar above it has the switches used
-  most (**Ground**, **See-through body**), the **Display**, **Overlays** and
-  **Physics** menus with the rest, and **Frame selected** and **Fit**. In the
+  the top lists the keys that apply. The toolbar above it starts with the view's
+  own controls -- **Home** and its menu, the camera list, **Frame selected** and
+  **Fit** -- and then, after a divider, the switches used most (**Ground**,
+  **See-through body**) and the **Display**, **Overlays** and **Physics** menus
+  with the rest; turning a switch on never moves a button. In the
   Event editor the **playback bar** under the viewport carries the run's state
   (click it for the Run stage, where the run is started), the playback buttons,
   the camera list and the run status.
@@ -213,8 +215,8 @@ In the viewport:
 | Double-click | Reset the view |
 
 Elsewhere, hovering over a control shows its tooltip. A numeric field can be
-dragged left or right to change its value; double-click it (or Ctrl+click it) to
-type a value.
+dragged left or right to change its value; click it (without dragging) to type a
+value.
 
 ### Keyboard
 

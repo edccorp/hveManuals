@@ -108,18 +108,18 @@ environment (see Figure 13-1, Figure 13-2 and Table 13-1):
   Properties dialog](../../08-environment/EnvrMatPropDlg.md).)*
 
 ![Figure 13-2](../images/hvn-05-surface-node.png)
-*Figure 13-2: A surface's contact material in HVE Studio — the HVE Surface node in the Shader Editor, opened with Edit in Shader Editor from the Environment panel's Selected Surface section.*
+*Figure 13-2: A surface's contact material in HVE Studio (until 2026-11-06 the HVE Surface node in the Shader Editor; these rows are now under Surface Type and Friction in the Environment Designer's Surfaces stage).*
 
 !!! note "HVE Studio"
-    In HVE Studio these parameters are edited per surface on the **HVE
-    Surface** node in the Shader Editor (select the surface, then **Edit in
-    Shader Editor**), and for the fallback material on the **Default
+    In HVE Studio these parameters are edited per surface under **Surface
+    Type and Friction** in the Environment Designer's Surfaces stage (select
+    the surface first), and for the fallback material on the **Default
     material** button of the Environment panel's Selected Surface section. The
     labels are: **Friction Multiplier**, **Force Constant**, **Linear
     Stiffness**, **Quadratic Stiffness**, **Cubic Stiffness**, **Damping
     Rate**, **Unloading Stiffness**, **Bekker Constant**, **Kphi**, **Kc**
     and **Moisture (%)**, then **Water Depth**, **Wet Friction** and
-    **Texture Depth** under *Standing water* -- the Macrotexture above, the
+    **Texture Depth** under *Standing Water and Texture* -- the Macrotexture above, the
     same twelfth material term HVE's older dialogs called Clay Content, and
     imported from an HVE site with each surface. The Bekker soil terms (Kphi, Kc) are
     always shown in HVE's English units, because their units depend on the
@@ -196,7 +196,7 @@ or used by the calculation model.
     HVE Studio has no 3-D Editor, and its humans and vehicles are not part of
     the site geometry, so only the environment types apply. A surface's
     **Surface Type** — Road, Friction Zone, Curb, Water or Other — is set on
-    its HVE Surface node in the Shader Editor. A surface an imported file
+    its **Surface Type and Friction** (Environment Designer › Surfaces). A surface an imported file
     declares no type for is shown and treated as Road. To take a surface out
     of the calculation, clear its **Drive** switch in
     View › Outliner; clearing its
@@ -341,9 +341,8 @@ In HVE Studio, a surface's type is assigned as follows:
 1. Click the **Environment (F4)** tab.
 2. Click the surface in the Viewport, or select its row in **View ›
    Outliner**.
-3. Click **Edit in Shader Editor**. The Shader Editor opens on the
-   surface's material, with its **HVE Surface** node.
-4. Choose the **Surface Type**.
+3. Under **Selected Surface** › **Surface Type and Friction**, choose the
+   **Surface Type**.
 
 By default, all environment surfaces will be used by the calculation model.
 To ensure a particular surface is used by a calculation model, assign its
@@ -372,15 +371,15 @@ To load 3-D files from other modeling programs and edit the default surface
 attributes, perform the following steps:
 
 1. Click the **Environment (F4)** tab.
-2. In the Environment panel's **Terrain** section, click **Browse...** next
-   to *Geometry File* and choose the file (see Table 12-1 for the supported
-   formats).
-3. Set the **Scale Factor** and the axis check boxes, leave **Use surfaces
-   as terrain (physics)** checked, and click **Import**. The site is
-   displayed in the Viewport.
+2. In the **Imported files** list at the top of the Environment panel's **Terrain**
+   section, click **Import...** on the *Scene geometry* row and choose the file
+   (see Table 12-1 for the supported formats).
+3. In the **Import Scene Geometry** window, set the **Scale Factor** and the
+   axis check boxes and click **Import**; leave **Use surfaces as terrain
+   (physics)** checked. The site is displayed in the Viewport.
 4. Click the desired surface in the Viewport (or its row in the **Surface
    Materials** list) to select it.
-5. Click **Edit in Shader Editor**, and on the **HVE Surface** node choose
+5. Under **Selected Surface** › **Surface Type and Friction**, choose
    the **Surface Type** — for example *Friction Zone* to increase its
    priority.
 6. Edit the surface's **Friction Multiplier** and other contact properties.
@@ -416,7 +415,7 @@ To edit the gravitational constant, perform the following steps:
 1. Click the **Environment (F4)** tab.
 2. In the Environment panel's **Physical** section, enter the desired
    **Gravity** (see Table 13-2 for selected gravitational constants). It is
-   shown in in/s² or m/s², following the units set in Tools › Preferences.
+   shown in in/s² or m/s², following the units set in Options › Preferences.
 
 The entered value is assigned to the current environment. The default is
 9.80665 m/s² (386.09 in/s²).

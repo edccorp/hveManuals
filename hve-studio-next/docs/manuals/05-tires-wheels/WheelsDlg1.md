@@ -9,7 +9,7 @@ support wheel damage, models wheel lock-up and DyMESH-based wheel damage forces.
     **Wheel Damage** tab. Each wheel is a column (**A1-R**, **A1-L**, …) instead
     of HVE's Axle No / Side selectors; see
     [Wheels — Blow-out Page](WheelsDlg.md) for the layout and the wheel groups.
-    Lengths, forces and moments follow the units set in Tools › Preferences.
+    Lengths, forces and moments follow the units set in Options › Preferences.
     Only SIMON and EDSMAC4 read this tab. EDSMAC4 applies only the X/Y
     displacement and the camber change — no Z displacement and no lock-up
     torque.

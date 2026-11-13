@@ -91,13 +91,19 @@ sections. Each input has one place in it:
     the ground.
   - **CG to Front** and **CG to Rear** are inputs: the overhang on that end
     takes the difference.
-  - **With a 3-D geometry** loaded, the geometry sets the length:
+  - **With a 3-D geometry** loaded, the dimensions stay editable, as in HVE:
+    the geometry is left as it is, and a difference between the two is
+    reported under the **Wheel Positions** table. **Dimensions from geometry**,
+    at the top of **Geometry**, makes the geometry set the length instead:
     **Overall Length**, **Front Overhang**, **Rear Overhang**, **CG to Front**
-    and **CG to Rear** are grayed, the overhangs running from each axle to
-    the geometry's end. An axle edit that would put an axle beyond the end of
-    the geometry is refused, and the reason is shown under the weight fields.
-    Without a geometry these stay editable and size the generic body, which
-    grows to hold an axle moved past its end.
+    and **CG to Rear** are grayed, the overhangs running from each axle to the
+    geometry's end, and they follow the geometry if it is rescaled or
+    replaced. With it on, an axle edit that would put an axle beyond the end
+    of the geometry is refused, and the reason is shown under the weight
+    fields. **Fit to geometry** beside the switch sets the overhangs and the
+    length once from the geometry, leaving them editable. Without a geometry
+    the dimensions size the generic body, which grows to hold an axle moved
+    past its end.
   - On a trailer or dolly, the CG-to-axle distances and the CG height still
     move the CG, as Move CG does.
   - **Overall Width** sets CG to Right and CG to Left, keeping the CG's
@@ -132,7 +138,7 @@ sections. Each input has one place in it:
   **Accelerometers...**) and **Occupant Protection** (**Contact
   Surfaces...**, **Airbags...**, **Belt Restraint...**). Each opens the same
   dialog as the Vehicle menu.
-- **3D Geometry** — The vehicle's 3-D file: **Mesh File** with **...**
+- **3D Geometry** — The vehicle's 3-D file: **Mesh File** with **Load File...**
   (browse) and **Library...**; when the case named a file that was not found,
   a notice says so, with **Locate...**. **Generic Body** (*HVE (original)*,
   *Modern (traced profile)* or *Modern (Kiln model)*) is the body a vehicle
@@ -168,9 +174,9 @@ sections. Each input has one place in it:
 > from the database! Events that used it are updated.
 
 !!! note "HVE Studio"
-    - A case always holds at least one vehicle, so **Delete** is disabled when
-      only one is left. HVE's rule that a vehicle used in an event cannot be
-      deleted does not apply: HVE Studio removes it from those events.
+    - As in HVE, a vehicle an event uses cannot be deleted: take it out of the
+      event first. The last vehicle can be deleted, leaving an empty case like
+      **File > New**.
     - While the results of a simulation are on screen, the data of the
       vehicles that run used is read-only, and Replace, Dup, Del and
       reordering are disabled as they would change it. Reset the run to edit.
@@ -464,7 +470,7 @@ reached in HVE Studio as follows:
 | HVE component and data | HVE Studio |
 |---|---|
 | CG: Inertias | Vehicles panel › Inertia › **Edit…** (the Inertia / Mass dialog) |
-| CG: Move CG | **Vehicle › Editors › Vehicle Mesh** (File & Placement tab, Move CG); for EDSMAC/EDSMAC4 events also **Event › Move CG** |
+| CG: Move CG | **Vehicle Designer › Size, Mass & CG** (CG in the body, Move CG); for EDSMAC/EDSMAC4 events also **Event › Move CG** |
 | CG: Color | Vehicles panel › Identity › **Color** |
 | CG: Geometry File | Vehicles panel › **3D Geometry**; **Vehicle › Editors › Vehicle Mesh** |
 | CG: Contact Surfaces | **Vehicle › Editors › Contact Surfaces** |

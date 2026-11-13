@@ -10,7 +10,7 @@ during the event.
     **Brake** tab. Each wheel is a column (**A1-R**, **A1-L**, …) instead of
     HVE's Axle No / Side selectors; see [Wheels — Blow-out Page](WheelsDlg.md)
     for the layout and the wheel groups. Temperatures and the stroke follow the
-    units set in Tools › Preferences. Only SIMON reads the brake-failure rows.
+    units set in Options › Preferences. Only SIMON reads the brake-failure rows.
 
 ## Antilock brakes
 

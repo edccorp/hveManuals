@@ -12,7 +12,7 @@ fourth is assigned by assuming a parallelogram.
     in the 3-D view — in the Vehicle editor, and in the Event editor where they
     ride with the vehicle to its event position — with an arrow showing each
     panel's normal; click a panel there to select it. Lengths follow the units
-    set in Tools › Preferences. While a solved run is on screen the window is
+    set in Options › Preferences. While a solved run is on screen the window is
     read-only.
 
 ![Contact Surfaces window](images/hvn-contact-surfaces.png)
@@ -77,7 +77,13 @@ selection.
       a pedestrian impact use **Pedestrian preset** ("body", forward of the
       CG), which gives the windshield, hood, hood leading edge and bumper. It
       derives geometry only — check each panel's material — and appends to the
-      list.
+      list. A part made in Edit Mode (**Faces › Make Part**) counts under its own
+      name, so a seat separated into a part called INTERIOR is found by the
+      group "interior". What it did is reported right under the button: how
+      many panels it added from how many triangles, or why none (no matching
+      group, with the groups and parts the mesh does carry, or no flat region
+      in the chosen part of the vehicle). The controls wrap onto further rows
+      when the editor is narrow.
     - **Seed Standard Interior** replaces the list with a generic driver
       compartment (seat, floor, toe pan, instrument panel, wheel, glass, roof,
       doors), fitted to an occupant of the vehicle if there is one. It is

@@ -41,7 +41,7 @@ The menu bar holds **File**, **Edit**, the menus of the current editor (**Vehicl
 - **Output** — Key Results, Output Graph, Variable Selection, reports, Playback Options and Run Simulation (HVE's Playback Editor).
 - **Playback** — Playback Sequence, Playback Options and Run All Events, in the Playback editor.
 - **View** — the panels (Viewport, Shader Editor, Dope Sheet, Key Results, Output Graph, Outliner) and what the 3-D view draws.
-- **Tools** — Quick Case, Vehicle Package, Case Intake, Provenance, EDR Import, Monte Carlo Analysis, Motorcycle Analysis, Preferences, Style Editor, Cameras, Audit Log and Limits Editor (HVE's Options menu).
+- **Tools** — Quick Case, Vehicle Package, Case Intake, Provenance, EDR Import, Motorcycle Analysis, Cameras, Measure and Audit Log; **Options** — Preferences, Output Settings (with the input limits) and Style Editor (HVE's Options menu).
 - **Help** — License, About.
 
 The title of the current case file is shown at the right end of the menu bar.
@@ -85,7 +85,7 @@ Using the tutorial case, select each tab in turn. The Human editor shows the cas
 ### Using Dialogs
 
 !!! note "HVE Studio"
-    Every HVE Studio dialog is modeless, and a value takes effect as soon as it is entered — there is no OK, Apply or `<Enter>` step. Drag a numeric field left or right to change it, or double-click (or Ctrl+click) it to type a value; a double-click selects the whole number. Units follow **Tools › Preferences…**. While a run's results are on screen, the inputs they were computed from are read-only, with a banner saying so; press **Reset** on the playback bar to edit them.
+    Every HVE Studio dialog is modeless, and a value takes effect as soon as it is entered — there is no OK, Apply or `<Enter>` step. Drag a numeric field left or right to change it, or double-click (or Ctrl+click) it to type a value; a double-click selects the whole number. Units follow **Options › Preferences…**. While a run's results are on screen, the inputs they were computed from are read-only, with a banner saying so; press **Reset** on the playback bar to edit them.
 
 The most important example is **Event › Position / Velocity…**, the Event Editor's Position/Velocity dialog.
 
@@ -164,7 +164,7 @@ To set up the event:
    | 4.00 | 0.0 |
 
 ![Figure 32-27](../images/hvn-11-tutorial-event.png)
-*Figure 32-27 — The Lesson 2 event in Event Information: EDVSM, the Dodge Charger at X −70.0 ft, Y 37.5 ft and 25.0 mph, with the playback bar under the Viewport.*
+*Figure 32-27 — The Lesson 2 event in Event Information: EDVSM, the Dodge Charger at X −70.0 ft, Y 37.5 ft and 25.0 mph, with the playback controls in the toolbar.*
 
 > **NOTE:** Only the set-up options the chosen calculation method uses are offered on the **Event** menu.
 

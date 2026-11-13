@@ -621,7 +621,7 @@ EDHIS has the following user-selectable simulation model options (see [Calculati
 
 ### Executing An Event
 
-To execute an EDHIS event in HVE Studio, use the playback bar under the viewport (or **Output › Run Simulation**, Ctrl+R):
+To execute an EDHIS event in HVE Studio, use the playback controls in the toolbar (or **Output › Run Simulation**, Ctrl+R):
 
 - **Run** — Execute the active event. Grayed once the event is solved; press Reset to run it again.
 - **Reset** — Clear the results so the event can be edited and run again.

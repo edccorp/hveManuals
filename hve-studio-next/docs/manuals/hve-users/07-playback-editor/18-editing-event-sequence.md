@@ -66,7 +66,10 @@ Each row of the Playback Sequence table has three times, entered in seconds:
     at the same time, for example two reconstructions of one crash side by
     side. With it off, HVE's rule applies: a vehicle is one car across the
     sequence, and while two events overlap the later-starting one drives it (on
-    an exact tie, the one listed first). The Playback header marks such a row
+    an exact tie, the one listed first). When two rows without **Copy** drive
+    the same vehicles at once, a line under the table names the event whose
+    vehicles are drawn and whose values are the output, and which row to tick
+    **Copy** on to see both. The Playback header marks such a row
     **[separate copy]**. Copies are drawn in the 3-D view; lamp
     beams and trajectory trails show the vehicles' own runs only.
 

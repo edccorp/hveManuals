@@ -200,7 +200,7 @@ In HVE Studio both are shown in the Event editor's **Viewport** once the event h
 
 ### Displaying a Trajectory Simulation
 
-The Trajectory Simulation is controlled with the playback bar under the viewport (Figure 3-12).
+The Trajectory Simulation is controlled with the playback controls in the toolbar (Figure 3-12).
 
 ![Figure 3-12](images/hvn-playback-bar.png)
 *Figure 3-12: The playback bar.*
@@ -213,7 +213,7 @@ The playback bar's controls have the following functions:
 - **>>** — Step forward
 - **>|** — Advance to the end of the simulation
 - The camera list — a free view, or a view that follows a vehicle
-- The time slider, with **<** and **>** to step, and a field to type the time to go to
+- The time slider (the mouse wheel over it steps a frame), and a field to type the time to go to
 
 There is no reverse-play button; step backward with **<<** or drag the time slider.
 

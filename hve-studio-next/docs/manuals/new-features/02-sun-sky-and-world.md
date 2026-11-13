@@ -83,7 +83,9 @@ or the location, so stepping back over them cannot change the run being shown.
 
 ### Finding the place by address
 
-In **From location and time** (and in Environment › Location, *Search an
+In **From location and time**, the place finder is the folded **Find the place
+(address search, map, time zone)** section under the latitude, longitude, date,
+time and UTC offset fields it fills (in Environment › Location it is *Search an
 address*):
 
 1. Type an address or place name in **Search an address or place** and press
@@ -117,8 +119,8 @@ time-zone lookup fails, the status line says so — set the UTC offset by hand.
 
 | Field | Meaning |
 | --- | --- |
-| **Sun Light** | A multiplier on the key light that casts the shadows; 1.00 is the viewport's own. It has no upper limit (Ctrl+click to type a value). |
-| **Reset sun to default** | Back to the manual sun at its default position, Sun Light 1.00 |
+| **Sun Intensity** | The world's Sky Texture's Sun Intensity, the same number as on the node: the sun's brightness in the sky and the key light that casts the shadows (20 is the viewport's own). No upper limit (Ctrl+click to type a value). With no world yet the field is **Sun Light**, a multiplier on the key light (1.00 the viewport's own). |
+| **Reset sun to default** | Back to the manual sun at its default position, Sun Intensity 20 |
 
 The light that fills the shadows is the world's, not the panel's: the **Sky
 Texture** node's **Ambient** and **Night Light** fields (below). The panel says
@@ -163,11 +165,15 @@ where, comes from the first of these that applies:
 **Lamp gizmos.** Scene Display › Paths & Overlays › **Lamp Gizmos** draws every
 lamp as Blender draws a light: a ring where it is, a line along its aim and,
 for a spot, its cone. A switched-off lamp is gray and the selected one orange.
-**Click** a lamp to select it; **drag** it to move it. It moves in the plane
-facing you through where you grabbed it, as Blender's G does, and holding
-**Ctrl** snaps it to 5 cm. The position is stored in the vehicle's own frame, so
-the lamp rides with the vehicle. **Shift**-click adds a lamp of the same vehicle
-to the selection or takes it out; dragging any selected lamp moves every
+**Click** a lamp to select it, then press **G** (or **M**) to move it, as the
+body moves: it follows the cursor in the plane facing you, **X**, **Y** or **Z**
+holds it to one of the vehicle's axes, and a typed number moves it that far. A
+click or **Enter** keeps the move, **Esc** or a right-click puts it back. **R**
+aims a selected spot: moving the cursor across turns its azimuth and up and down
+its zenith, and **Ctrl** snaps to 5 degrees. A press on a lamp only selects it,
+so a drag that starts there turns the view. The position is stored in the
+vehicle's own frame, so the lamp rides with the vehicle. **Shift**-click adds a
+lamp of the same vehicle to the selection or takes it out; **G** moves every
 selected one by the same amount, so a pair of headlamps moves as a pair.
 
 **Light settings in the Shader Editor.** Picking a lamp switches the Shader
@@ -236,7 +242,7 @@ default world gives exactly 1.
 - **Sun Intensity** 40 doubles the key light; 10 halves it.
 - A Sun Intensity or Strength of **0** puts the sun out; a negative value counts
   as 0.
-- **Sun Light** in the panel multiplies the result.
+- **Sun Intensity** in the panel is this same number (until 2026-11-06 the panel had a separate **Sun Light** multiplier; a case that carries one has it folded into the node when the panel is first drawn).
 
 Haze adds sky light (a glossy road reflects the glow and the ambient light it
 adds is real) but does not change the key light, which is measured from the
@@ -248,7 +254,10 @@ A world can be any graph ending in a *World Output*: a **Background** with a
 plain color, an **Environment Texture** with an equirectangular image (a
 `.hdr` photograph of the sky, for example), or a mix. World Output's option
 chooses whether the world is drawn behind the scene or used for **lighting
-only**.
+only**. **Light Path > Is Camera Ray** separates what the camera sees from the
+light the world casts: HVE's backdrop sky presets use it to show a flat picture
+(Environment Texture in **Backdrop** projection) behind the scene while a Sky
+Texture lights it.
 
 ## Shadows
 

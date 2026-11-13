@@ -37,7 +37,7 @@ is displayed in the dialog.
 Warning Range dialog. Figure II-3 — Error Range dialog.*
 
 !!! note "HVE Studio"
-    HVE Studio has no Warning Range or Error Range dialogs. Fields that have a range **clamp** an entry to it as you type, so an out-of-range value cannot be entered. The ranges are listed, searchable and editable in **Tools › Limits Editor…** (one **Min** and **Max** per field; **Save to File** and **Reset Defaults**). Not every field has a range, and `language.rsc` is not read.
+    HVE Studio has no Warning Range or Error Range dialogs. Fields that have a range **clamp** an entry to it as you type, so an out-of-range value cannot be entered. The ranges are listed, searchable and editable in **Options › Output Settings... › Limits** (one **Min** and **Max** per field; **Save to File** and **Reset Defaults**). Not every field has a range, and `language.rsc` is not read.
 
 ## Event-related Messages
 
@@ -81,7 +81,7 @@ user must correct the problem before continuing. The Event Verify error
 messages are listed below.
 
 !!! note "HVE Studio"
-    HVE Studio checks the event whenever it is shown, not when Event Information is closed: the Event Information panel's Calculation Method section shows **Cannot run:** with the reason, and the run (**Output › Run Simulation…** or **Run** on the playback bar) is refused. Before running, the playback bar shows the method and *Press Run to execute*; after a refused run it shows, in red, why the event could not run. An incompatibility found by the calculation model is reported in the run status with the model's own message.
+    HVE Studio checks the event whenever it is shown, not when Event Information is closed: the Event Information panel's Calculation Method section shows **Cannot run:** with the reason, and the run (**Output › Run Simulation…** or **Play** on the playback bar) is refused. Before running, the playback bar shows the method and *Not executed -- Play runs it*; after a refused run it shows, in red, why the event could not run. An incompatibility found by the calculation model is reported in the run status with the model's own message.
 
 #### General Incompatibility
 

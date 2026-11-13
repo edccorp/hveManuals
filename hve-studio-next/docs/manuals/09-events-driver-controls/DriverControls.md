@@ -67,7 +67,12 @@ curve editor, like Blender's Graph Editor: each row is a **key** on the curve.
   removes only when no move is under way.
 - **Mouse wheel** zooms the time axis about the pointer, **Ctrl+wheel** zooms
   the value axis, a **middle-button drag** pans, and **Home** or **Fit** (above
-  the graph, beside Snap) shows every key again.
+  the graph, beside Snap) shows every key again. With Num Lock on, the keypad's
+  **7** (its Home key) fits too.
+- A value typed in the table that falls outside a zoomed view refits the view,
+  so a pedal force typed as 120 lbf into a graph left at 0 to 1 shows the key
+  rather than a vertical line. A key dragged out of the view in the graph itself
+  leaves the view as it is.
 - Faint lines mark the column's usual range. Hover a key to read its time and
   value.
 
@@ -150,6 +155,14 @@ by the engines. **Discard per-wheel table** returns to the steering-wheel table.
     rider reads it while the single-track model carries the machine; SIMON itself
     never reads it as a steering angle, and after a hand-back it steers straight
     ahead (the run status says so).
+
+    A **steer torque** is added to what the rider does to hold the machine up:
+    a pulse leans it briefly the other way (countersteer) and the rider brings
+    it back upright. On the seeded motorcycle at 33 km/h, 5 N·m for 0.3 s leans
+    it 0.6° and 5 N·m held for five seconds about 0.7°, so to make a turn choose
+    **Commanded lean**. With the **Rider** set to **None** (Vehicle Designer ›
+    Steering) the torque alone steers it, and a few N·m held puts it down. The
+    run status names SIMON's roll surrogate only when SIMON carried the machine.
 
 ## Lights
 

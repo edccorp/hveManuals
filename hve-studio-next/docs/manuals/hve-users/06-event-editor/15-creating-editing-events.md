@@ -72,8 +72,9 @@ sections are:
 **Copy** (beside **−**; **Copy this event** at the top of the Event Designer's
 Event stage; **Event › Copy Event**) adds a copy of the current
 event — its vehicles, positions, driver inputs and options, named "*name* copy" —
-at the end, with no results, and makes it the current event, so it can be
-changed and run beside the original. Both are available while the results of a
+at the end and makes it the current event. A copy of an executed event keeps
+its results (its inputs are the same); **Reset** it to change it and run it
+beside the original. Both are available while the results of a
 run are on screen; neither touches the solved event.
 
 > **NOTE:** **−** deletes the current event. It is not available while the
@@ -128,6 +129,14 @@ vehicles directly:
   Viewport; X, Y or Z then locks the motion to an axis (pressed again, to
   the vehicle's own axis), a typed number and Enter sets the distance or
   angle exactly, and Ctrl snaps.
+- The selected vehicle is outlined in gold with a dark border, so the outline
+  shows on light ground, aerial imagery and a dark site alike. The line below
+  the Viewport names it and its slot in the event, for example **Selected
+  vehicle: Audi (V1 in Lifted)**, or **(not in ...)** when it is not in the
+  current event. When the view does not show it, the same line says so:
+  **OUTSIDE THE VIEW, press . to frame it**, or **HIDDEN in the view** (Alt+H
+  shows it). The **V1**, **V2** ... labels in Event Information's Vehicles in
+  Event list select a vehicle too, and the selected one is highlighted there.
 - A move in the Viewport edits the same starting position the Position /
   Velocity dialog and the Event Information panel show.
 - Each named position that is set (Impact, Final/Rest, ...) is outlined as a
@@ -171,20 +180,25 @@ panel, which also holds the rest of the starting state:
   **X**, **Y**, **Heading (deg)**, **Auto Position (on the ground)** (turn it
   off to enter **Z Height**, **Roll (deg)** and **Pitch (deg)**), and a *Read
   by* note saying what the reconstruction reads it for.
-- **Markers** (every other method) — a simulation starts from the state above
+- **Targets** (every other method) — a simulation starts from the state above
   and reads no other position, so the section lists only what you have
   surveyed to compare the run against: a point from a reconstruction, a
-  witness mark. **Add marker** sets the next marker at the start pose:
-  **Marker 1** to **Marker 7** first, then **Marker 8**, **Marker 9** and on,
+  witness mark. **Show in the 3-D view** outlines every set target there (the
+  same switch as View > Scene Display > Scene Ghosts). Targets 1 to 7 are also
+  the vehicle's Path Follower positions, one list as in HVE: moving a target
+  moves the path, and editing the path moves the target. **Add target** sets the next
+  target at the start pose:
+  **Target 1** to **Target 7** first, then **Target 8**, **Target 9** and on,
   up to 64 in all. Open one to move it (the same X, Y, heading and elevation
-  fields as above) or drag its outline in the 3-D view, and **Remove marker**
-  takes it off the list; from Marker 8 on the ones after it move up a number
-  (Marker 9 becomes Marker 8), and a selected one is also removed with the
-  **Delete** key in the Viewport, as a path waypoint is. Markers 1 to 7 keep
+  fields as above) or drag its outline in the 3-D view, and **Remove target**
+  takes it off the list; from Target 8 on the ones after it move up a number
+  (Target 9 becomes Target 8), and a selected one is also removed with the
+  **Delete** key in the Viewport, as a path waypoint is. Targets 1 to 7 keep
   HVE's own storage, so a case switched to EDCRASH shows the same points under
-  HVE's names, with any past them still listed as markers. No simulation reads
-  a marker: not EDSMAC4's Final/Rest (measured: a rest moved 13 m leaves every
-  result identical), and not EDGEN, whose path comes from the Path Follower.
+  HVE's names, with any past them still listed as targets. No simulation reads
+  a target as a target: not EDSMAC4's Final/Rest (measured: a rest moved 13 m
+  leaves every result identical). Where the Path Follower is on, Targets 1 to 7
+  are its path, which the run follows.
 
 A trailer hitched to another vehicle is positioned by its **Articulation**
 relative to the tow vehicle; its X and Y follow from the hitch.
@@ -198,7 +212,7 @@ relative to the tow vehicle; its X and Y follow from the hitch.
       and the Event Information panel, as above.
     - The eight path locations are the **Named Positions** list in an
       EDCRASH vehicle's block of the panel (in **Vehicle Impact Setup**), and
-      the **Markers** list in any other event's, each set one outlined in the
+      the **Targets** list in any other event's, each set one outlined in the
       Viewport.
     - The path positions of the HVE Driver (path follower) are entered in
       the **Path Follower** dialog (see

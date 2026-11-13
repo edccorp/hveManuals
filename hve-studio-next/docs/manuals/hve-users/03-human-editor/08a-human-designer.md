@@ -9,7 +9,7 @@ owns it. It is the Human editor's panel: switching to the Human editor (F2)
 opens it, and **Human › Human Designer...** opens it too.
 
 Like the other designers it is an ordinary docked window, on the left with the
-3-D view beside it, where the body is drawn. Docked narrow, the **Key figures** and **Guidance** become one summary row at the top of the stage, as in the Vehicle Designer: a button for each (Guidance reads how many items there are to fix and to consider), and while Guidance is closed the first item to fix on one line with its **Go to** button. Where they go is yours to choose: **Bar position** (on the stage line) also has **Key figures and Guidance** › **Automatic (by width)**, **Beside the stage** (always the column) or **Above the stage, folded** (always the summary row, closed until you open it). One choice for all four designers, kept between sessions. A dialog on a stage is the same
+3-D view beside it, where the body is drawn. The **Key figures** and **Guidance** are one summary row at the top of the stage, as in the Vehicle Designer: a button for each (Guidance reads how many items there are to fix and to consider), and while Guidance is closed the first item to fix on one line with its **Go to** button. Where they go is yours to choose: **Bar position** (on the stage line) also has **Key figures and Guidance** › **Automatic (beside when wide)**, **Beside the stage** (always the column) or **Above the stage, folded (default)** (always the summary row, closed until you open it; the default since 2026-11-09, so they stay at the top however wide the designer is). One choice for all four designers, kept between sessions. **Standard** | **Extended**, beside **Bar position**, chooses how many stages the bar offers: Extended (the default) shows them all, Standard the ones most analyses change, keeping the stage on screen and any stage with something to fix (see the Vehicle Designer, *Standard and Extended*, for each designer's stages). A dialog on a stage is the same
 dialog drawn in the stage instead of its own window, so a field has one editor.
 Body Segments, Joint Properties, Body Pose and Injury Tolerances used to open as
 four separate windows over the view; they are stages now.
@@ -19,9 +19,12 @@ stage). A click on a body in the 3-D view also selects it.
 
 ## The stages
 
+What a stage covers is a tooltip on its title band (the colored bar naming it): hover over the band to read it.
+
 1. **Human**: the **Humans** panel: **Add Human**, **Delete**, the list of the
-   case's humans, and the selected one's Identity, Anthropometry (the GEBOD
-   inputs) and Anthropometric weight and mass.
+   case's humans, and the selected one's Identity and Size (GEBOD): subject
+   type, age group and the size on a basis, percentiles or a stated weight and
+   height. Changing the size rebuilds the body.
 2. **Body Segments**: the 15 segments' mass, inertia, color, contact ellipsoids
    and joint locations. A click on a body part in the 3-D view selects that
    segment here.
@@ -46,6 +49,13 @@ stage). A click on a body in the 3-D view also selects it.
    on if it was off. The human must be in the active event, and the pose is
    locked while that event's results are on screen; the 3-D view says so if R
    cannot start.
+
+   The same works in the **Event** editor's 3-D view: click a body part of a
+   human in the scene, which selects that human (the line at the top of the
+   view names the part), then press **R**. Dragging the body still moves the
+   whole human, and with a human selected **G** and **R** no longer act on the
+   selected vehicle. A part cannot be moved on its own: it hangs from its joint,
+   so it is turned; move the whole body by dragging it.
 5. **Injury Tolerances**: the limits EDHIS tests the run's head, chest, knee
    and belt loads against.
 6. **Events**: every event that lists the human, its calculation method, what

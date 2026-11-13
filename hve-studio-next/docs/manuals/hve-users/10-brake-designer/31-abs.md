@@ -144,7 +144,7 @@ may be supported. The interface is divided into two sections:
 The interface, dialogs and associated variables are described below.
 
 !!! note "HVE Studio"
-    Choose **Vehicle › Editors › Brakes › ABS / Brake Design…**. The window has two buttons: **ABS System…** opens the **ABS System** dialog (the system variables, for the whole vehicle) and **ABS Designer…** opens the **ABS Designer** (the wheel variables, one column per wheel: A1 Right, A1 Left, A2 Right, …). In the ABS Designer, the **Brake Group** buttons (–, B1, B2, B3) above each column tie wheels together: editing a value in one column copies it to every column in the same group. All wheels start in group B1. Like every vehicle dialog, both are read-only while a run's results are on screen, until **Reset**.
+    Choose **Vehicle › Editors › Brakes › ABS / Brake Design…**. The window has two buttons: **ABS System…** opens the **ABS System** dialog (the system variables, for the whole vehicle) and **ABS Designer…** opens the **ABS Designer** (the wheel variables, one column per wheel: A1 Right, A1 Left, A2 Right, …). In the ABS Designer, the **Brake Group** buttons (B1, B2, ...) above each column tie wheels together: editing a value in one column copies it to every column in the same group. The wheels whose brakes are identical start in the same group. Like every vehicle dialog, both are read-only while a run's results are on screen, until **Reset**.
 
     The window also notes that S-cam brake geometry is edited in **Vehicle › Editors › Brakes › Brake Designer** ([Chapter 29](29-brake-designer.md)).
 
@@ -197,8 +197,8 @@ Table 31-1. A detailed description of each variable follows.
     The HVE Studio **ABS System** dialog has: **ABS Installed**; **Algorithm**; **Control Method** and **Cycle Rate (Hz)**; under *Thresholds*, **Min Pressure** and **Min Velocity**; under *Delays*, **Delay Method**, **Apply Delay (s)** and **Release Delay (s)**. Pressure and velocity follow the units set in Preferences.
 
     - **Control Source**, **Low Surface Friction Threshold** — not offered. Every vehicle is its own ABS source.
-    - **Control Method** (Vehicle-Based, Axle-Based or Wheel-Based) is printed in SIMON's report and is not otherwise used by any engine; the dialog says so.
-    - **Delay Method**: under **Vehicle-Based** the system Apply Delay, Release Delay and Cycle Rate are used for every wheel; under **Axle-Based** or **Wheel-Based** each wheel uses its own Cycle Rate from the ABS Designer and its own delays. The ABS Designer has no delay fields, so a wheel without delays of its own (every wheel of a case built in HVE Studio) falls back to the system delays.
+    - **Control Method** (Vehicle-Based, Axle-Based or Wheel-Based) is printed in SIMON's report and is not otherwise used by any engine; the dialog marks it *(report only)*. SIMON's antilock regulates every wheel on its own slip or spin acceleration whatever is chosen: it has no axle or vehicle grouping (no select-low).
+    - **Delay Method**: under **Vehicle-Based** the system Apply Delay, Release Delay and Cycle Rate are used for every wheel; under **Axle-Based** or **Wheel-Based** each wheel uses its own Cycle Rate from the ABS Designer and its own delays (SIMON treats the two the same: it has no per-axle timing). The ABS Designer has no delay fields, so a wheel without delays of its own (every wheel of a case built in HVE Studio) falls back to the system delays.
 
 - **Controller Source** — This selection defines the location of the ABS
   control unit (ECU; see Typical Hardware, above). For unit vehicles (e.g.,
@@ -576,7 +576,7 @@ Which of the two switches an engine reads differs. SIMON regulates **every** whe
 ### Editing ABS Wheel Parameters
 
 1. Choose **Vehicle › Editors › Brakes › ABS / Brake Design…** and press **ABS Designer…**.
-2. Edit each wheel's parameters in its column. To give several wheels the same values, put them in the same **Brake Group** before editing.
+2. Edit each wheel's parameters in its column. To give several wheels the same values, put them in the same **Brake Group** before editing, or use the row's **Layout...** (**Same both sides**, **Same on every wheel**, **Each wheel its own**, and **Copy once** for HVE's Copy to Other Side / Copy to Other Axles; see [Part D of the Vehicle Editor chapter](../04-vehicle-editor/11d-brakes-tires-wheels.md)).
 
 Any event that supports the HVE ABS model (e.g., SIMON) will now include the
 effects of the ABS system when the event is executed.

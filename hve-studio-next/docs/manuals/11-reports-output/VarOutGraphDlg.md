@@ -47,6 +47,16 @@ again.
   - **Gridlines and color**, and **Reset formatting**.
 - **Close** closes the panel.
 
+**Units.** Each value axis is labeled with its unit at its top. Traces of the
+same quantity are drawn in one unit: the unit of the first of them selected.
+For example, an occupant's speed (shown in in/s in its own tables) is drawn in
+mph beside a vehicle's speed. A second quantity, such as an acceleration in g
+beside a speed, gets a value axis of its own on the right, and its legend
+row says "right". Every further quantity is drawn on a scale of its own,
+fitted to it, and its legend row gives the unit and the range the plot's height
+spans; the right axis's label says so. With two or more quantities every legend
+row names its unit. **Value axis** in **Format...** sets the left axis.
+
 In the Playback editor, with a playback sequence selected, the graph follows
 the **sequence**: its time axis is the master clock, from 0 to the end of the
 sequence, and each vehicle's trace comes from whichever event places that

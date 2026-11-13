@@ -33,7 +33,7 @@ adapted for HVE Studio.*
   disclosures, which replace HVE's message dialogs around the calculation
   models; the models' own messages are unchanged.
 - Appendix III adds the coordinate frames of HVE Studio's dialogs and exports;
-  Appendix IV describes HVE Studio's two unit systems (Tools › Preferences).
+  Appendix IV describes HVE Studio's two unit systems (Options › Preferences).
 - Appendix IV's Environment Units table contained several descriptions
   mis-copied from the Engine table in the original printing; these have
   been corrected.

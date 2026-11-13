@@ -75,8 +75,9 @@ switched on.
 Under the table, each track is a colored bar on the sequence timeline, with
 the playback position marked in red.
 
-- **Drag a bar** to slide that event in time (hold **Ctrl** to snap). One drag
-  is one undo step.
+- **Drag a bar** to slide that event in time. Its start or end **snaps** to another event's start or end when it comes
+  within a few pixels of it, and a line marks where, so one event can follow another exactly; hold **Alt** to drag
+  without snapping. Hold **Ctrl** to step in 0.1 s (**Ctrl+Shift**: 0.01 s). One drag is one undo step.
 - **Click elsewhere** in the strip to scrub.
 
 ### Arranging buttons
@@ -164,15 +165,35 @@ attached or keyframed one. The case's [Results HUD](11-results-hud.md) boxes
 can be drawn into every frame.
 
 1. Run the event (or, for a sequence, press **Run All** in the Playback editor).
-2. Choose **File › Record Animation...**. The **Record Animation (AVI)** window
+2. Choose **File › Record Animation...**. The **Record Animation** window
    opens.
 3. Set the **Output File**, or choose it with **...**. It starts as
    `output.avi` in the open case's folder (in `Documents\HVE Studio` when no case is open),
    never in the program's install folder, which an uninstall removes.
 4. Under **Video Settings**, pick a **Size** from the list (HD, Full HD, QHD,
    4K UHD, square, portrait, 4:3, VGA) or set the frame **Width** and **Height**
-   (64 to 4096 pixels, rounded to even numbers; default 1280 × 720), the **FPS** (1 to
-   1000; default 30) and the **JPEG Quality** (1 to 100; default 85).
+   (64 to 4096 pixels, rounded to even numbers; default 1280 × 720; saved with the case) and the **FPS** (1 to
+   1000; default 30). Choose the **Format**:
+
+   - **AVI (Motion JPEG)** -- one file, each frame a JPEG at the **JPEG Quality** (1 to 100; default 95). An AVI
+     holds at most 1 GB.
+   - **PNG images (lossless)** -- every frame a lossless PNG (`frame_00001.png`, ...) in a folder named after the
+     output (`output_frames` for `output.avi`). The best quality and no size limit; any video editor opens the folder
+     as an image sequence, and a cancelled recording keeps the frames already written.
+   - **MP4 (H.264)** -- a small file that plays everywhere. On Windows it is made by Windows' own H.264 encoder
+     (hardware-accelerated where the graphics card offers it), and on macOS by the Mac's own (AVFoundation: the hardware
+     encoder where the Mac has one, as every Apple Silicon Mac does, in software otherwise), so there is nothing to install.
+     Both write the same kind of file: H.264 at about 12 Mbit/s for 1080p at 30 fps, BT.709 color. On Linux, and on a
+     Windows without an encoder (an N edition without the Media Feature Pack), it is made by FFmpeg and listed as
+     **MP4 (H.264, through FFmpeg)**: offered when an `ffmpeg` is found, on the PATH or at the path given in the
+     **FFmpeg** box (kept with your preferences). HVE Studio does not include FFmpeg; install it from ffmpeg.org.
+
+   The output's extension follows the format (**.avi**, **.mp4**).
+
+   **Show output frame** (ticked by default) outlines the video's frame in the
+   3-D view and dims the view outside it. The video is exactly what is inside:
+   the view fitted to the video's shape, so it never shows anything the view
+   did not. Move the view until the shot is inside the outline.
 
    Tick **Slow motion** to take frames from the run faster than the video
    plays them, as a high-speed camera does. The **Capture rate (frames per s
@@ -186,7 +207,9 @@ can be drawn into every frame.
    through* (the default) or a saved camera by name — and the **Start (s)** and
    **End (s)** times. **Now** beside each takes the playback bar's current
    time; **End of run** (ticked by default) records to the end whatever the
-   run's length, and grays the End field. Recording through a saved camera
+   run's length, and grays the End field. **Start frame** and **End frame** set the
+   same range in frames of the run (at the FPS, or the capture rate in slow
+   motion; frame 0 is the run's start). Recording through a saved camera
    does not change your own view: it is put back when the recording ends.
 6. Under **Rendering**, choose the **Renderer**. **Viewport (fast)** records the
    3-D view's own picture. **Ray traced** traces every frame with the built-in
@@ -213,7 +236,11 @@ can be drawn into every frame.
    4.500 s of 4.50 s -> 136 frames at 30 fps.* With slow motion it also says
    how much slower (or faster) than real time the video plays and how long it
    will last.
-9. Press **Record**. The viewport steps through the playback a frame at a time
+9. Press **Preview** to see the frame at the playback bar's current time as
+   the video will hold it — this camera, this frame — shown small under the
+   button with its time. It is drawn with the viewport renderer even when
+   **Ray traced** is chosen.
+10. Press **Record**. The viewport steps through the playback a frame at a time
    while a progress bar (*frame n / N*) fills; **Cancel** stops and leaves no
    file. When the recording finishes, the window reports the frames written,
    the length, the size and the file, and the playback returns to the time it
@@ -297,6 +324,26 @@ the render runs on the processor, on every core the machine has, and the
 window says why in a note; very large scene textures are reduced to fit the
 card, and the window says that too. A finer picture costs time in proportion
 to its pixels and samples either way.
+
+On a graphics card with ray-tracing hardware (NVIDIA RTX, AMD Radeon RX 6000
+and later, Intel Arc; Windows and Linux, with the card's current driver) the
+tracer uses that hardware through Vulkan: the card itself finds the surface
+each ray meets, which is the slowest part of tracing, and everything else is
+the same tracer. The status line then names the card with **(Vulkan ray
+tracing)**. Any other card traces with OpenGL as above; the picture is the
+same either way, to within its sample noise. If a card with ray-tracing
+hardware refuses a particular scene (too large for its memory), the window says
+so in a note and the render continues with OpenGL. Recorded movies (**Ray
+traced** in Record Animation) use the same choice.
+
+Under the sample count a second line gives the time each sample takes and what
+the scene holds: its triangles and its lamps. That is the line to read when a
+render is slow. A large site or a detailed vehicle mesh shows as triangles. Many
+lamps show in the lamp count. Every bounce traces a shadow ray to each lamp while
+there are 16 or fewer. Past 16, only the first surface a ray meets traces to
+every lamp; a deeper bounce traces to one lamp, chosen by how much it could light
+that point, so a night scene with many vehicle and street lamps renders sooner
+for the same picture.
 
 `--render-traced` (below) uses the graphics card when it can, and prints which
 traced the picture.

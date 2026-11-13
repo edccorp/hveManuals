@@ -11,7 +11,7 @@ site, and its friction zones.
     Zones**. Terrain and Physical — what the solver reads — open by default,
     and Friction Zones when the case has any. All five are always present;
     there is no 2-D/3-D distinction. Lengths, speeds, temperature and pressure
-    follow the units set in Tools › Preferences. While a solved run is on
+    follow the units set in Options › Preferences. While a solved run is on
     screen, Terrain, Physical and Friction Zones are read-only; Location and
     Sky are description and stay editable.
 
@@ -50,7 +50,7 @@ marks the case as georeferenced.
 
 **North offset (°)** — How far the case's axes are turned from the default. At
 **0**, +X points east and north is up the screen in a top view (+X to the right,
-+Y down under SAE, so north is -Y; under Conventional it is +Y), the way an
++Y down, so north is -Y), the way an
 aerial photograph or an online map is drawn, so an aerial image or terrain
 downloaded for the place lines up with the screen the same way. A positive offset
 turns +X clockwise, toward south. It turns the North arrow, the sun and where
@@ -107,16 +107,17 @@ degrees-minutes-seconds, or a map link; the box shows how it reads, and
 **Apply** sets Latitude and Longitude. A pair given longitude-first is
 reordered, and the box says so.
 
-Below the fields the page runs in the order the work goes: **Search an address**,
-the **Map**, **Download for this area**, then **Set from a pasted coordinate**, and
-last, closed, **Coordinate system**.
+Below the fields the page runs in the order the work goes: **Set from a pasted
+coordinate**, **Search an address**, **Download for this area**, the **Map**, and
+last, closed, **Coordinate system** -- the downloads above the map, so they are
+in reach without scrolling.
 
 **Search an address** — Type an address or place and press **Search**; pick a
 result to set Latitude and Longitude. Both the search and the time zone send what
 you type, or the coordinate, to online services (OpenStreetMap's Nominatim and
 timeapi.io).
 
-The results are a numbered list beside numbered pins on the **Map** below it.
+The results are a numbered list beside numbered pins on the **Map** below.
 Choosing a result shows it on the map; **Use this place** (or a double-click on
 the result) sets the case's Latitude and Longitude to it and looks up its time
 zone. Beside it, **Set UTC offset from location** looks up the time zone of the
@@ -126,19 +127,42 @@ found. **Clear results** empties the list. On the map, drag (or middle-drag) to 
 wheel to zoom, and double-click anywhere to put the case's location there.
 
 Under the map, choose the tile source, and the area every download takes (below).
-**Download for this area** is two tabs: **Aerial image** and **Terrain (3-D)**
-(*Geographic terrain*, under *Terrain*). On **Aerial image**, with an aerial source
+**Download for this area**, above the map, is three tabs: **Aerial image**, **Terrain (3DEP)**
+(*Geographic terrain*, under *Terrain*) and **LiDAR** (the lidar point cloud, below it). On **Aerial image**, with an aerial source
 chosen, press **Download aerial image**: the yellow rectangle on
 the map, aligned to the case's axes, is downloaded and laid on the ground as the
-case's aerial site image (**Environment › Aerial Image...**), or, with **Add as
-a new layer** on, as a layer above it. It is placed
+case's aerial site image, or, with **Add as a new layer** on, as a layer above
+it -- as ground: drivable flat ground where the site is not, and the photograph
+in the material of every surface under it. **Your own picture**, under the
+button, places a picture of your own the same way. It is placed
 assuming the case origin is at this location and +X points along its North
 angle. The button needs the case's location to be set first.
 
-The area is a square about the map's center (50 to 800 m), or, with **Select
-area** on, a rectangle you drag on the map; dragging then draws the area
-instead of panning (middle-drag still pans, and the wheel still zooms), and
-**Clear area** returns to the square. When the case
+The picture is a PNG file of its own: the case names it and does not hold its
+pixels. It is written beside the case (in the program's own cache when the case
+has not been saved yet), and saving the case copies a downloaded picture beside
+it if it is not there already, so a case and its picture are moved or sent
+together. When a case is opened, the picture is looked for at the path it names,
+then beside the case. A picture that is found by neither is marked **(not
+found)** in the Outliner, whose tooltip gives the path; put the file beside the
+case, or choose it again under **Environment › Aerial Image... › Image File**.
+A picture of your own, chosen with **Image File**, is left where it is.
+
+The area is a square about the case's location, the origin (50 to 800 m), or,
+with **Select area** on, a rectangle you drag on the map; dragging then draws
+the area instead of panning (middle-drag still pans, and the wheel still
+zooms), and **Clear area** returns to the square. **Area here** makes the area
+the square in the middle of the map, kept like a drawn one. **Area from the aerial** makes the area the ground the
+case's aerial picture covers (the base picture, else its first layer) and moves the map to show it, so a terrain or a
+lidar download taken next matches the picture already in the case. **Use the map's center as the location** (or, with an area
+drawn, **Use the area's center as the location**) sets the case's latitude and longitude there and looks up its time
+zone, as a double-click on the map does at the point clicked. The address search sits above the map in the Import
+stage's **Aerial image**, **Terrain (3DEP)** and **LiDAR** tabs as well as on the Site stage. The yellow
+rectangle on the map is the area, on the street map too; every download (the
+aerial image, the terrain and the lidar) takes it, and it stays where it is
+when you move the map, so a picture and a terrain downloaded one after the
+other cover the same ground. (Until 2026-11-10 the square followed the map's
+center, so moving the map between two downloads moved the second.) When the case
 has no location yet, drawing the area also sets it, at the area's center, so
 the download buttons work at once; a case that already has a location is never
 moved by drawing. When the area does not hold the case origin, the line under
@@ -160,12 +184,16 @@ the area's size, the image size and the resolution in meters per pixel; a very
 large area gives a coarse image, and the panel says when it is too coarse for a
 scene. **Cancel** stops a download under way and writes nothing to the case.
 
-Imagery is kept in the case only from sources whose terms allow it. The USGS
-source (US government imagery, published without restriction) can be
-downloaded. The street map, Mapbox and Esri sources are for looking at only:
+Imagery is kept in the case only from sources whose terms allow it. The three
+USGS sources -- **Aerial: USGS** (orthoimagery), **Map: USGS Topo** (roads,
+names and contours) and **Aerial with labels: USGS** (the orthoimagery with the
+map's labels over it), all US government data published without restriction --
+can be downloaded; for the map the button reads **Download map image**, and the
+map is laid as ground exactly as a photograph is. The street map, Mapbox and Esri
+sources are for looking at only:
 their terms do not let a case keep a copy, so **Download aerial image** is
-unavailable for them and the panel says why. To use other imagery, import your
-own image (**Environment › Aerial Image...**).
+unavailable for them and the panel says why. To use other imagery, place your
+own image under **Your own picture**.
 
 For the USGS source, **Download aerial image** asks USGS's orthoimagery image
 service first: the finest imagery The National Map holds at the place (NAIP and
@@ -245,10 +273,28 @@ edges stay sharp. Display only.
 !!! tip "New in HVE Studio"
     The shading modes.
 
-### Geometry File
+### Sections of the page
 
-The terrain geometry file, typed or chosen with **Browse...**: DXF, HVE geometry
-(`.h3d`), Inventor (`.iv`), VRML (`.wrl`), OBJ or glTF (`.gltf`, `.glb`).
+The Terrain page (the Environment Designer's **Import** stage, named *Site Files* before 2026-11-09) is in
+sections, each behind a double rule with a header that opens and closes it:
+**Imported files** (with **Add Object...** under the list) starts open; **Scene
+Geometry**, **Site Placement** and **Survey Point Cloud (scan)** start closed until opened, and
+each stays as you leave it.
+
+!!! tip "New in HVE Studio"
+    The sections, and a site placed by yaw, pitch and roll (HVE places a site
+    by its file alone).
+
+### Imported files and the Import Scene Geometry window
+
+The **Imported files** list at the top of the **3-D models** tab names the scene
+geometry loaded, with its buttons (the survey point cloud's file, **Import...**
+and **Clear** are at the top of the **Point cloud** tab). On the *Scene geometry*
+row, **Import...** chooses a terrain geometry file -- DXF, HVE geometry
+(`.h3d`), Inventor (`.iv`), VRML (`.wrl`), OBJ or glTF (`.gltf`, `.glb`) -- and
+**Add...** one to read into the site beside what is loaded; **Clear** removes the
+geometry. Choosing a file opens **Import Scene Geometry**, which asks how to read
+it, starting from the last import's choices:
 
 **Scale Factor** — scale applied to the imported geometry, to meters. For an
 `.h3d` the field is **Extra Scale**, since an `.h3d` states its own units
@@ -258,8 +304,7 @@ The terrain geometry file, typed or chosen with **Browse...**: DXF, HVE geometry
 in: **m** (1), **cm** (0.01), **mm** (0.001), **ft** (0.3048, international
 feet), **US ft** (0.3048006, US survey feet, the unit of most US state-plane
 surveys and county GIS) or **in** (0.0254). The button that matches the field is
-shown pressed. It applies on the next **Import** (or **Add File**). Not shown for
-an `.h3d`.
+shown pressed. Not shown for an `.h3d`.
 
 **File is Y-up (rotate to Z-up)** — for a file whose vertical axis is Y.
 
@@ -270,21 +315,50 @@ corrects a file that is not what it claims. For DXF, OBJ and glTF nothing in
 the geometry can tell a valley from a hill, so check the elevation range in the
 summary against the site.
 
-**Use surfaces as terrain (physics)** — the imported surfaces are what the
-vehicles drive on. Unchecked, the geometry is drawn only.
+**Import** (or **Add to site**) reads the file; **Cancel** reads nothing.
 
-**Import** reads the file; **Clear** removes the geometry. After an import the
-section shows the number of surfaces and lines and the X, Y and Z extents, or an
-error.
+An `.h3d` from HVE's environments names its pictures as `EnvTextures/<name>`;
+they are found in an `EnvTextures` folder beside the file or above it, whatever
+the case of the name, and HVE's SGI (`.rgb`) and TIFF pictures are read. A
+picture that is not found is named under the list, and the surface draws in its
+own color.
 
-**Outside the site** — what a tire finds where there is no site surface: past
-the edge of the mesh, or in a hole in it.
+**Use surfaces as terrain (physics)** (on the Surfaces stage, under the tree) —
+the imported surfaces with Drive on are what the vehicles drive on. Unchecked,
+the geometry is drawn only.
 
-- **As HVE** (the default): a point-contact tire rides a flat ground at
-  elevation 0; a radial-spring tire finds nothing, so the vehicle falls.
-- **Flat ground**: every tire model drives on a flat ground at **Ground
-  elevation** (up is positive, in the site's own frame), friction multiplier 1.
+**Add Object...** (under the Imported files list) — HVE's scene objects (barriers,
+walls, poles, trees, a curb) by name, added to the site at its origin, where
+**Add...** adds any file you browse to. An object's surfaces take its name; faces
+it gives no surface of their own start with the Default surface material's
+values. VRML 2.0 (VRML97) files are read as well as Inventor and VRML 1.0 --
+HVE's own 12 in curb is one: Transforms (with center, rotation and scale) and
+Groups, DEF/USE, Switch (its chosen child), LOD (its most detailed level),
+PROTO instances, and Inline files (found beside the file that names them), with
+IndexedFaceSet, IndexedLineSet, Box, Cylinder, Cone, Sphere, ElevationGrid and
+Extrusion geometry, each Shape's material color and any per-vertex or per-face
+colors. Viewpoints, lights, sensors, scripts and animation draw nothing and are
+stepped over; textures are not applied.
+
+**Site Placement** — where the site sits in the world: **Move X**, **Move Y**
+and **Move Z**, **Yaw (deg)**, **Pitch (deg)** and **Roll (deg)** (signed as a
+vehicle's: right turn, front up, right side down) and **Scale (x, y, z)**, with
+the world origin's position in the site file's own coordinates once it is moved.
+
+After an import the **Key figures** give the site's extent and its surface
+counts; an import that fails says why under the list.
+
+**Ground beyond the site geometry** (on the Surfaces stage, under the tree) — what a tire finds where there is no site
+surface: past the edge of the mesh, or in a hole in it.
+
+- **Flat ground** (a new case's choice): every tire model drives on a flat ground
+  at **Ground elevation** (up is positive, in the site's own frame), friction
+  multiplier 1.
 - **Nothing (vehicles fall)**: no tire model finds ground.
+- **As HVE** (a case read from HVE, or saved before this choice existed): a
+  point-contact tire rides a flat ground at elevation 0; a radial-spring tire
+  finds nothing, so the vehicle falls. Different tire models behave differently
+  here, which is why a new case does not start with it.
 
 Whichever is chosen, a tire off the site no longer searches every surface of
 the site on every step, so a run no longer slows to a crawl once a vehicle
@@ -334,11 +408,11 @@ aerial image works there too: with a location set, the same panel offers **Area*
 **Find older flights** and **Download aerial image**, for the USGS source only
 (the map tiles need background threads), and the page pauses while the picture
 comes in, up to about a minute. LiDAR tiles are a desktop feature: USGS's
-lidar server does not let a web page read its files, so there the section says to
+lidar server does not let a web page read its files, so there the **LiDAR** tab says to
 download the tile yourself and load it under **Survey Point Cloud (scan)** in the Environment dialog's Terrain section.
 
-The section is the **Terrain (3-D)** tab of **Download for this area**, under the
-**Map**, beside the **Aerial image** tab, because it takes the same area as
+The section is the **Terrain (3DEP)** tab of **Download for this area**, above the
+**Map**, between the **Aerial image** and **LiDAR** tabs, because it takes the same area as
 **Download aerial image**: the rectangle dragged under **Select
 area** on the map, or the square of the size chosen beside it (turned by the
 North offset like the case itself). There is no second area to choose here.
@@ -366,15 +440,17 @@ date" in its catalog is a build date, not a survey date, so it is never shown:
 the section says the acquisition date is not stated and the survey's record
 (linked once a terrain is downloaded) has it.
 
-**Lidar point cloud (USGS 3DEP)** — Below the terrain controls, in the desktop
-version. **Find lidar tiles** asks USGS's catalog (`tnmaccess.nationalmap.gov`)
+**Lidar point cloud (USGS 3DEP)** — The **LiDAR** tab of **Download for this
+area**, beside **Terrain (3DEP)**, in the desktop version; it takes the same area. **Find lidar tiles** asks USGS's catalog (`tnmaccess.nationalmap.gov`)
 for the point-cloud tiles under the same area and lists them newest publication
 first, each with its survey project, its publication date and its size
 (3 to 30 MB or more); nothing is downloaded. **Use** beside a tile downloads it
 from `rockyweb.usgs.gov`, keeps it (beside the case in a `usgs-lidar` folder once
 the case is saved, otherwise in the program's cache) and makes it the case's
 survey point cloud, replacing any there. The window stays usable while it
-downloads; a tile already on disk at the catalog's size is not fetched twice. The
+downloads, and a bar shows how far along it is: megabytes received of the tile's
+size, the speed and the time left. A tile already on disk at the catalog's size
+is not fetched twice. The
 case's survey point cloud holds one file, so on a site that spans several tiles
 the tile you choose is the one drawn; the others can be fetched and chosen in
 turn. A point cloud is a picture and changes no result: turn it into a drivable
@@ -390,7 +466,7 @@ and the day it was downloaded, so the terrain can be hidden, switched off for
 the solver or moved as one thing; the layer can be renamed in the Outliner.
 Where it overlaps a drivable surface already in the site, the engines use their
 own rule (the first surface in the list). On a site that came from an HVE
-case, the **Add Geometry...** button for files stays unavailable, but the
+case, the **Add...** button for files stays unavailable, but the
 terrain can still be added here: the case then stops naming its `.hve` and
 carries the merged site itself, the HVE site's surfaces keep their names, types
 and friction, and the added terrain is still there after the case is saved and
@@ -450,9 +526,23 @@ the 3-D view, or pick its row in the Outliner, to select it.
 For the selected surface this section shows its name, type and friction, with
 **Edit in Shader Editor** and **Deselect**, and its **Placement** (move, turn
 and scale it on its own). A surface's **type, friction,
-stiffness and soil properties** are edited on its material in the Shader
-Editor, on the **HVE Surface** node — see
-[Environment Material Properties](EnvrMatPropDlg.md).
+stiffness and soil properties** are edited under **Surface Type and
+Friction** in this section — see
+[Environment Material Properties](EnvrMatPropDlg.md). A surface the engines are
+not handed — type **Other**, which is scenery, or one whose Drive switch is off —
+shows no friction, stiffness, water or texture rows, since nothing would read
+them; a line says why.
+
+In the Outliner a surface is listed under its category (Drivable or Display only)
+and under its layer. When a switch above it hides it — its category's eye or its
+layer's — its own eye is drawn grayed in every listing, and the tooltip names the
+switch that is hiding it. Clicking a grayed eye switches that category or layer
+back on, so the surface shows; the surface's own switch is not changed, and a
+line under the tree says what was switched on. A click on an eye or a Drive
+switch acts on that switch only; it does not select the row.
+
+A friction zone or other generated surface is drawn tinted on the ground beneath
+its outline; steep faces under it (a pole's or a barrier's side) are not tinted.
 
 When the surface clicked is stored twice by the case — once as the drivable
 surface and once as the drawn one — the section shows both, each with its own
@@ -468,14 +558,24 @@ A summary of the sun's direction and strength and the ambient light, and
 **Edit the sun and sky...**, which opens the Shader Editor's world, where the
 sun and sky are set.
 
-**Sky Preset** makes the world one of the skies that ship with HVE Studio:
+**Sky Preset**, in the Shader Editor's **World** view (it was here until 2026-11-10), makes the world one of the skies that ship with HVE Studio:
 **Clear sky (HDR)** and **Overcast sky (HDR)** — two CC0 high-dynamic-range
 skies from Poly Haven — or one of HVE's own backdrop images (blue sky, the
-cloud and sky photographs, the hillsides). The world becomes an
+cloud and sky photographs, the hillsides). For an HDR sky the world becomes an
 **Environment Texture** on that image, through a **Background**, to the
-**World Output**; the Shader Editor edits it from there. HVE's backdrops are
-flat photographs rather than panoramas, so they wrap around the view. Display
-only, like the rest of the world.
+**World Output**, and the picture lights the scene (it carries its own sun, so
+the case's sun no longer does). HVE's backdrops are flat photographs rather than
+panoramas, and not light, so they are used as HVE uses them: a picture behind the
+scene. The camera sees the picture -- an **Environment Texture** in **Backdrop**
+projection, four mirrored copies around the horizon, bottom row on the horizon --
+while a **Sky Texture** (taking the world's previous sun and sky settings) still
+lights the scene, the two joined by **Light Path > Is Camera Ray** through a
+**Mix Shader**. The Shader Editor edits either from there. The path-traced render
+lights by the sky and shows the sky, not the backdrop. Display only, like the
+rest of the world.
+
+To remove worlds the case no longer uses, open the world list in the Shader
+Editor's **World** view and choose **Purge unused**.
 
 !!! note "HVE Studio"
     The sun is placed from the location, date, time and UTC offset (or set by
@@ -546,8 +646,8 @@ compute it; display only.
 
 **Gravity** — The local acceleration of gravity (m/s² or in/s²).
 
-Standing water is not on this page: it is set per surface, on each surface's
-HVE Surface node in the Shader Editor, and on the **Default surface material**
+Standing water is not on this page: it is set per surface, under each surface's
+**Surface Type and Friction**, and on the **Default surface material**
 for ground with no surface of its own — see
 [Environment Material Properties](EnvrMatPropDlg.md). Rolling resistance is
 each tire's own (**Vehicle › Editors › Tires...**).
@@ -598,8 +698,9 @@ event that has them (hover it for the list). The case itself is untouched.
   **Heading (deg)**, and **Set Outline to Rectangle**, which replaces the
   outline with that rectangle; length runs along the heading, 0 = +x) and its
   **Points** (up to 16): **Click points in the 3-D view** (the view turns to look
-  straight down, so each point lands where it is clicked), **Clear Points**, the
-  points' X and Y, and **Add Point**.
+  straight down, so each point lands where it is clicked; the points placed so
+  far are outlined in bright green as you click, the closing edge dashed),
+  **Clear Points**, the points' X and Y, and **Add Point**.
 
 A surface the run cannot apply says why. The 3-D view draws each surface where
 the run put it; one switched off for the run is drawn faint.

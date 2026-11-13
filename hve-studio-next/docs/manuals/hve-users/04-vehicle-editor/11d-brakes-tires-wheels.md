@@ -11,7 +11,10 @@ properties, the Wheel Location and the Wheel Image.
     HVE Studio edits the brakes and tires of every wheel at once, in tables
     with a column per wheel (A1 Left, A1 Right, …). As in the suspension
     dialogs, a group row (**Tire Group**, **Brake Group** or **Wheel Group**, by editor) replaces HVE's Copy To Other Side: columns
-    in the same group receive each other's edits. Brake Assembly, the Brake
+    in the same group receive each other's edits. Groups are numbered (T1, T2, ...; B1, B2, ...)
+    up to the number of wheels, every wheel is in one, and a wheel alone in its group edits
+    alone; the tire, brake and suspension groups are saved with the case, and **Undo** reverses
+    a group change. **Layout...**, beside the group row's name, sets the usual arrangements in one step: **Same both sides** (each axle's left and right wheels in a group of their own), **Same on every wheel** (one group), and **Each wheel its own** (every wheel in a group of its own, so an edit changes only that wheel). A new group takes the values of its first wheel, A1 Left first. Under **Copy once** it does what HVE's *Copy to Other Side* and *Copy to Other Axles* do: pick a wheel under **From**, then **To the other side**, **To the other axles** (the same side of every other axle) or **To every wheel**. The copy changes no group, and a wheel copied to takes its group mates with it. Pointing at a column outlines it and tints the wheels in its group, the ones an edit there will change; they stay marked while the field is being edited. Brake Assembly, the Brake
     Designer and ABS share the brakes' groups, and a vehicle starts with
     wheels whose brakes are identical in the same group: the first kind of
     brake in wheel order is **A**, the next **B**, the third **C**, and any
@@ -33,8 +36,9 @@ Components › Brakes… › Brake Assembly…). See also the reference page,
 The dialog's rows are: **Brake Type**; **Design…** (a button per wheel that
 opens the Brake Designer on that wheel; grayed for a Generic brake);
 Actuation — **Time Lag (s)**, **Time Rise (s)**,
-**P-Start**, **Pushout** and **Torque Ratio**; Options — **Proportioning**,
-**Proportion Ratio**, **Antilock (ABS)** and **ABS Efficiency**.
+**Pushout** and **Torque Ratio**; Options — **Proportioning**, **P-Start** and
+**Proportion Ratio** (both grayed on a wheel where Proportioning is off),
+**Antilock (ABS)** and **ABS Efficiency**.
 
 ![Figure 11-37](../images/p405-figB11-37.png)
 *Figure 11-37: Brake System Proportioning.*
@@ -67,12 +71,11 @@ The Brake properties at each wheel are described below.
   > specific design are computed by the Brake Designer.
 
   !!! note "HVE Studio"
-      The simulations read the wheel's **Pushout** and **Torque Ratio**, as
-      HVE's own Generic brake does. A brake design reaches them when its
-      computed torque ratio and pushout pressure are written into the Brake
-      Assembly — by choosing the design's Brake Type here, or with the Brake
-      Designer's **Apply to group** (or **Apply to this wheel** for a wheel
-      outside any group); editing a design parameter alone changes no result.
+      A Generic wheel runs on its **Pushout** and **Torque Ratio**, as HVE's
+      own Generic brake does. A designed wheel's torque is recomputed from its
+      design at every step; its computed torque ratio and pushout pressure are
+      written into the Brake Assembly when the design's Brake Type is chosen
+      here, or with the Brake Designer's **Apply**.
 
 - **Push-out Pressure** — Brake system pressure required to begin causing
   brake torque (any system pressure below this point is simply taking out
@@ -136,14 +139,13 @@ design for each wheel and evaluate the resulting vehicle performance using
 a predefined suite of maneuvers or compliance test simulations. The HVE
 Brake Designer also includes a detailed tool for simulating ABS.
 
-In HVE Studio the Brake Designer is **Vehicle › Editors › Brakes › Brake Designer**: choose the
-wheel (the **Wheel:** buttons, **A1 Left**, **A1 Right**, ...) and the **Brake Design**, enter the Design
-Parameters, read the **Results**, and press **Apply to group**, which writes the
-design to every wheel of the wheel's **Brake Group** (**Apply to this wheel**
-for a wheel outside any group). The Brake Designer also opens on a wheel from the Brake
+In HVE Studio the Brake Designer is **Vehicle › Editors › Brakes › Brake Designer**: a table with one
+column per wheel, as the Brake Assembly is. Choose each wheel's **Brake Design**, enter the design
+parameters, read the **Results** rows, and press the wheel's **Apply** (or **Apply all wheels**), which
+writes the design into the Brake Assembly of every wheel of the wheel's **Brake Group**. The Brake Designer also opens on a wheel from the Brake
 Assembly dialog's Design… row, and a design's lining friction is in its
 **Lining Friction Properties** section. HVE's Brake Material Properties
-dialog is the Brake Designer's **Material Properties** section: the
+dialog is the Brake Designer's **Material** and **Thicknesses** rows: the
 **Rotor / Drum** and **Pad / Lining** density, specific heat, conduction
 coefficient, convection coefficient and convection velocity term, and under
 **Thicknesses** the rotor and pad thicknesses of a disc brake or the drum
@@ -202,13 +204,17 @@ the Tire Information dialog in HVE. See also the reference page,
 !!! note "HVE Studio"
     A tire is chosen from the tire tables of the loaded vehicle databases in
     the **Tire Database** section at the top of the Tire Properties dialog:
-    narrow the list by **Type** (Passenger Car, Light Truck, Heavy Truck or
-    Mobile Home), **Database** (one database file, with its tire count) and
-    **Search** (manufacturer, model or size), with a *Showing N of M* line
-    while it is narrowed, select a
-    tire, choose **Apply to** (all wheels or one axle) and press **Apply
-    Tire**. This replaces the tire's data and all four of its tables; each
-    wheel keeps its own dual setup. **Build from Tire Size** fills only a
+    a table with **Manufacturer**, **Model**, **Size**, **Type** and
+    **Database** columns, an **All** filter under each and sorting by a click
+    on a heading, plus **Search** (with a *Showing N of M* line while it is
+    narrowed). Select a tire, choose **Apply to** (all wheels, one axle or one
+    wheel) and press **Apply Tire**. This replaces the tire's data and all four of its tables; each
+    wheel keeps its own dual setup. HVE's generic tires state a size, radius
+    and rates but no max width, tread width, tread depth or pressure; for
+    those, as for any dimension a tire does not state, the values come from
+    its size designation, as **Build from Tire Size** gives them (a P235/55R20
+    is 235 mm wide). A tire picked before this release kept 215 mm and 180 mm
+    instead: pick it again, or press **Apply Tire Size** with its size. **Build from Tire Size** fills only a
     wheel's dimensions from a size designation: enter the **Tire Size** (for
     example P215/65R15), choose the **Type** and **Apply to**, and press
     **Apply Tire Size**; friction, cornering stiffness and spring rates are
@@ -349,7 +355,11 @@ With no table points the simulations use the scalar friction values of the
 Tire Properties grid. **Seed This Wheel** and **Seed All Wheels** build a
 table from those scalars (three load rows about the vehicle's nominal wheel
 load, and with **with a speed axis (0 / 30 / 60 mph)** checked a speed axis
-too). With **View › Show Guidance Text** on, the panel explains which
+too). The seed **replaces** the wheel's table, rows from the database
+included, so it is meant for a tire that has no measured table; **Undo** takes
+it back. Each seeded row keeps the wheel's own **Long. Stiffness** at its load
+(interpolated between the table's rows), or the default the simulations use
+(10,000 N) when the table stated none. With **View › Show Guidance Text** on, the panel explains which
 simulations read which axis.
 
 The tire friction parameters are described below.

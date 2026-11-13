@@ -25,7 +25,10 @@ in the **Event (F5)** editor for the active event, and in the **Playback (F6)**
 editor for the active playback sequence. The Vehicle editor, which shows one
 vehicle on its own, does not draw them. Each box shows the values at the
 playback bar's current time and updates as the run plays or as you drag the
-time slider.
+time slider. In the Event editor a box shows only the rows of the vehicles in
+the event on screen; a row for a vehicle that event does not carry is left out
+(a playback sequence shows every vehicle it places). Click a box to open the
+Results HUD window with that box selected.
 
 Each box is a table in the style of an HVE text report: a label column and a
 value column, on a plate with a frame. A label carries its unit, and numbers

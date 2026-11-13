@@ -233,7 +233,6 @@ nav:
       - "Common Scene Report Dialog": 11-reports-output/CommSceDlg.md
       - "Damage Data": 11-reports-output/DamageData.md
       - "Output Settings": 11-reports-output/OutputSettings.md
-      - "Report Text": 11-reports-output/ReportText.md
       - "Trajectory Report": 11-reports-output/TrajRepDlg.md
       - "Variable Output Edit Dialog": 11-reports-output/VarOutEdDlg.md
       - "Variable Output: Graph Dialog": 11-reports-output/VarOutGraphDlg.md
@@ -252,11 +251,11 @@ nav:
       - "Chapter 3: File Menu": hve-users/02-menu-reference/03-files-menu.md
       - "Chapter 3B: Edit Menu": hve-users/02-menu-reference/03b-edit-menu.md
       - "Chapter 4: Event Menu (Part A — Event Information through Path Follower)": hve-users/02-menu-reference/04a-setup-menu.md
-      - "Chapter 4: Event Menu (Part B — Damage Profiles through Notes)": hve-users/02-menu-reference/04b-setup-menu.md
+      - "Chapter 4: Event Menu (Part B — Damage Profiles through Monte Carlo)": hve-users/02-menu-reference/04b-setup-menu.md
       - "Chapter 4C: Vehicle, Environment and Human Menus": hve-users/02-menu-reference/04c-vehicle-environment-occupant-menus.md
       - "Chapter 4D: Output Menu": hve-users/02-menu-reference/04d-output-menu.md
       - "Chapter 5: View Menu": hve-users/02-menu-reference/05-view-menu.md
-      - "Chapter 6: Options Menu — Where It Went": hve-users/02-menu-reference/06-options-menu.md
+      - "Chapter 6: Options Menu": hve-users/02-menu-reference/06-options-menu.md
       - "Chapter 6B: Tools Menu": hve-users/02-menu-reference/06b-tools-menu.md
       - "Chapter 7: Help Menu": hve-users/02-menu-reference/07-help-menu.md
     - Human Editor:

@@ -9,7 +9,7 @@ seating location and body description, from which the body model is generated.
     selected one. It replaces both of HVE's dialogs — the classic Human
     Information dialog and the GEBOD Human Information dialog — and also holds
     the buttons that open the human's other windows. Weight and mass follow the
-    units set in Tools › Preferences. While a solved run is on screen the panel
+    units set in Options › Preferences. While a solved run is on screen the panel
     is read-only (the buttons that open other windows stay available).
 
 ## Add Human / Remove
@@ -34,12 +34,16 @@ The human being edited.
 rows with Right, Center and Left seats (Front Left is the driver), or
 **Pedestrian**.
 
-## Anthropometry
+## Size (GEBOD)
 
 **Subject Type** — **Male** or **Female**.
 
 **Age Group** — **Child (0-12)**, **Teen (13-17)**, **Adult (18-64)** or
 **Senior (65+)**.
+
+**Basis** — **Percentiles** (the two below) or **Weight and height** (a
+**Weight** and **Standing Height** typed, as HVE's Weight and Height basis; a
+height of 0 takes the Height Percentile).
 
 **Weight Percentile** / **Height Percentile** — **5th**, **25th**, **50th**,
 **75th** or **95th**.
@@ -58,11 +62,9 @@ if any, is shown below.
     tables cover adults only; the percentiles are not used for them. The
     subject type follows: Child for a child or teen, otherwise Male or Female.
 
-## Anthropometric
-
-**Weight** and **Mass** — the human's total weight and mass; editing either sets
-the other through gravity. Once a body model exists this is the total of the 15
-segment masses, best set through the percentiles above (GEBOD recomputes it).
+The body's weight, the total of its 15 segment masses, is shown beside
+**Regenerate GEBOD Body**. A weight is typed through the **Weight and height**
+basis, which rebuilds the body at it.
 
 ## Injury Output
 

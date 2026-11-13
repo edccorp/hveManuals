@@ -26,7 +26,7 @@ Like all EDSMAC4 events, the procedure involves the following basic steps:
 
 Before we start, let's set the display options so we're all starting on the same page.
 
-1. Choose **Tools › Preferences...** and set **Units** to **Metric (m, km/h, kg, N)**.
+1. Choose **Options › Preferences...** and set **Units** to **Metric (m, km/h, kg, N)**.
 
     > **NOTE:** As we'll see when we look at the environment, our EDSMAC4 Tutorial takes place in Australia; thus, we use metric units. (The figures in this chapter were captured with US units; the values in the text are given in both.)
 
@@ -87,7 +87,7 @@ Next, the Escort's weight:
     > **NOTE:** The weight is entered as a force; the mass is calculated and displayed beside it. The value may show extra digits, because the weight is stored as mass and multiplied by the gravity constant for display.
 
     !!! note "HVE Studio"
-        HVE Studio's *Auto Update Inertia When Weight Changes* checkbox is under **Rotational Inertia** in **Mass & Inertia**, off unless you tick it. Either way, after changing a weight check the **Yaw** row in the same section and enter the yaw inertia you intend.
+        HVE Studio's *Auto Update Inertia When Weight Changes* checkbox is under **Rotational Inertia** in the Vehicle Designer's **Size, Mass & CG** stage, off unless you tick it. Either way, after changing a weight check the **Yaw** row in the same section and enter the yaw inertia you intend.
 
 The Ford Escort is now ready for use in our tutorial. In the viewport, orbit, pan and zoom to look at the vehicle (the keys are listed along the top of the viewport).
 
@@ -225,7 +225,7 @@ Next, the Key Results:
 
 Now, we're ready to execute the event:
 
-- Press **Run** on the playback bar under the viewport.
+- Press **Run** on the playback controls in the toolbar.
 
 Watch as the vehicles approach each other, collide, and roll to their rest positions.
 

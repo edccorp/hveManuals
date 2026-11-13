@@ -12,7 +12,7 @@ set of test loads and road speeds, interpolated by the physics at run time.
     slip angle), **Camber** ([F<sub>y</sub> vs inclination
     angle](FyVsInclAngDlg.md)) and **Fy Roll-off** ([slip vs
     roll-off](SlipVsRollOffDlg.md)). Loads, speeds and stiffnesses are shown in
-    the units set in Tools › Preferences; each column heading carries its unit.
+    the units set in Options › Preferences; each column heading carries its unit.
 
 ![Tire Friction Data window](images/hvn-tire-tables.png)
 
@@ -45,7 +45,7 @@ HVE and the simulations keep it. The row numbers (**#**) are the listed order.
 The wheel's **Tire Group** (the row at the top of the Tire Properties grid)
 decides how far an edit reaches: a change to this wheel's tables is copied to
 every wheel in its group, a line under the wheel buttons names them, and a
-wheel set to **–** edits alone. Moving a wheel into a group gives it that
+wheel alone in its group edits alone. Moving a wheel into a group gives it that
 group's tables as well as its scalars. There are no copy buttons.
 
 !!! note "HVE Studio"

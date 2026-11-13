@@ -10,7 +10,7 @@ stored at a set of test loads and road speeds.
     button in the grid's **Load & Speed Dependence** rows. The **Wheel:**
     buttons at the top of the panel choose the wheel (see the
     [Tire Friction Data](TireFrictDataDlg.md) page). Loads, speeds and the
-    stiffness are shown in the units set in Tools › Preferences.
+    stiffness are shown in the units set in Options › Preferences.
 
 With no camber rows, camber thrust is off for that wheel: the physics' camber
 table defaults to zero.

@@ -20,7 +20,7 @@ Like all SIMON events, the procedures used in the tutorial involve the following
 
 Before you start, set the display so that what you see matches this chapter:
 
-- **Tools › Preferences...**: set **Units** to **Imperial (ft/in, mph, lb, lbf)** (the values below are in US units).
+- **Options › Preferences...**: set **Units** to **Imperial (ft/in, mph, lb, lbf)** (the values below are in US units).
 - **View** menu: show **Key Results**; in **View › Scene Display**, turn on **Skidmarks** (*Paths & Overlays*) and leave the **Velocity** vector (*Vectors*) off.
 - **Output › Playback Options...**: choose a playback speed you are comfortable with.
 
@@ -128,7 +128,7 @@ Because the ABS system modulates the brake pressure at a relatively high frequen
 
 > **NOTE:** The smaller output interval increases the size of the results, not the integration effort.
 
-Now execute the event: click **Run** on the playback bar under the viewport.
+Now execute the event: click **Run** on the playback controls in the toolbar.
 
 The vehicle negotiates the lane change, even with a heavy brake application, and comes to rest about 4.6 seconds into the run at X = 171.4 ft, Y = −11.3 ft — in the second lane — with a heading change of −2.2 degrees. Figure 5-6 shows the vehicle at rest. Click **Play** to watch the maneuver.
 

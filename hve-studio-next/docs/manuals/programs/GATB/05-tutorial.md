@@ -32,7 +32,7 @@ The first step is to set the user options.
 
 In HVE Studio, set the following:
 
-- **Tools › Preferences** — Units equals US
+- **Options › Preferences** — Units equals US
 - **View › Key Results** — on
 - **View › Scene Display › Occupant Equipment** — on, to show the contact panels, belt anchors and airbag
 - **View › Scene Display › Vectors › Velocity** — off

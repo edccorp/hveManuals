@@ -1,6 +1,6 @@
 # Vehicles
 
-Dialog and feature reference for the **Vehicles** area of HVE Studio, page by page against HVE's own help. In HVE Studio vehicles are edited in the Vehicle Editor (**Vehicle (F3)**): the **Vehicles** panel holds the vehicle list, the identification, dimensions and inertias, and the **Vehicle** menu opens the property dialogs. Values are shown in the units set in **Tools › Preferences**. Part of the [HVE Manual](../README.md).
+Dialog and feature reference for the **Vehicles** area of HVE Studio, page by page against HVE's own help. In HVE Studio vehicles are edited in the Vehicle Editor (**Vehicle (F3)**): the **Vehicles** panel holds the vehicle list, the identification, dimensions and inertias, and the **Vehicle** menu opens the property dialogs. Values are shown in the units set in **Options › Preferences**. Part of the [HVE Manual](../README.md).
 
 ## Pages
 

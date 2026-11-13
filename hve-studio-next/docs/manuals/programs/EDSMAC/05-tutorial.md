@@ -24,7 +24,7 @@ This basic procedure is described in detail in this tutorial.
 
 Before we start, let's set the display options so we're all starting on the same page.
 
-1. Choose **Tools › Preferences...** and set **Units** to **Metric (m, km/h, kg, N)**.
+1. Choose **Options › Preferences...** and set **Units** to **Metric (m, km/h, kg, N)**.
 
     > NOTE: As we'll see when we look at the environment, our EDSMAC Tutorial takes place in Australia; thus, we use metric units. One field in this tutorial, the Kv stiffness, is checked in US units; see [Editing the Vehicles](#editing-the-vehicles).
 
@@ -75,7 +75,7 @@ The Ford Escort:
     > NOTE: The weight is entered as a force; the mass is calculated and displayed beside it. The value may show extra digits, because the weight is stored as mass and multiplied by the gravity constant for display.
 
     !!! note "HVE Studio"
-        HVE Studio's *Auto Update Inertia When Weight Changes* checkbox is under **Rotational Inertia** in **Mass & Inertia**, off unless you tick it. Either way, after changing a weight check the **Yaw** row in the same section and enter the yaw inertia you intend.
+        HVE Studio's *Auto Update Inertia When Weight Changes* checkbox is under **Rotational Inertia** in the Vehicle Designer's **Size, Mass & CG** stage, off unless you tick it. Either way, after changing a weight check the **Yaw** row in the same section and enter the yaw inertia you intend.
 
 The Nissan Sentra:
 
@@ -84,7 +84,7 @@ The Nissan Sentra:
 
 Finally, let's change the stiffness of the Nissan. From a previous reconstruction analysis, the A and B stiffnesses were re-calculated in order to balance the forces (the technique is described in references [20] and [21]). Based on this analysis, a new $K_v$ stiffness was calculated, 89.2 N/cm² (129.4 lb/in²). This is the one value we have to enter, because the case was saved for EDSMAC4, which does not use $K_v$.
 
-1. Choose **Tools › Preferences...** and set **Units** to **Imperial (ft/in, mph, lb, lbf)** for this step.
+1. Choose **Options › Preferences...** and set **Units** to **Imperial (ft/in, mph, lb, lbf)** for this step.
 
     !!! note "HVE Studio"
         The Kv field is in lbf/in² in US units and N/m² in metric units (71.8 N/cm² is 718 000 N/m²). See [Chapter 2 — Exterior](02-program-input.md#exterior).
@@ -207,7 +207,7 @@ Next, the Key Results:
 
 Now, we're ready to execute the event.
 
-- Press **Run** on the playback bar under the viewport.
+- Press **Run** on the playback controls in the toolbar.
 
 Watch as the vehicles approach each other, collide, and roll to their rest positions.
 

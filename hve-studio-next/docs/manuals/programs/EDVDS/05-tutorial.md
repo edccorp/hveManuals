@@ -28,7 +28,7 @@ Open the tutorial case:
 
 HVE's tutorial set a list of user options before starting. In HVE Studio:
 
-- **Units** — **Tools › Preferences** (U.S. or SI). This chapter quotes U.S. units, as the original does.
+- **Units** — **Options › Preferences** (U.S. or SI). This chapter quotes U.S. units, as the original does.
 - **AutoPosition** — a per-vehicle checkbox, **Auto Position (settle onto terrain)**, in each vehicle's initial conditions in the Event editor. The tutorial case enters the tractor's Z, roll and pitch itself, so the box is off.
 - **Key Results** — **Output › Key Results…** (or **View**).
 - **Skidmarks, velocity vectors, rendering options** — **View › Scene Display › Skidmarks**, **View › Scene Display › Vectors**, **View › Scene Display › Rendering**.
@@ -51,7 +51,7 @@ To build the same vehicles yourself, use **Add…** on the **Vehicles** panel. T
 HVE's walkthrough makes the following edits. Each is already in the finished case; this is where to find it in HVE Studio.
 
 - **Color** — the **Color** field in the **Vehicles** panel's **Identity** section.
-- **Geometry file** — the trailers use EDC's `TLVdsTutorTrlr45Van.h3d`. It is set in the panel's **3D Geometry** section (**Mesh File**: **...** or **Library...**) or on the File & Placement tab of **Vehicle › Editors › Vehicle Mesh…**, then **Load 3D File** there. HVE Studio opens `.h3d` files directly.
+- **Geometry file** — the trailers use EDC's `TLVdsTutorTrlr45Van.h3d`. It is set in the panel's **3D Geometry** section (**Mesh File**: **Load File...** or **Library...**) or on the File & Placement tab of **Vehicle › Editors › Vehicle Mesh…**, then **Load 3D File** there. HVE Studio opens `.h3d` files directly.
 - **Trailer weight** — 13 135 lb for each trailer, in the panel's **Size & Weight** section, or the **Inertia / Mass** dialog (**Inertia › Edit…**).
 - **Trailer 1 front connection height** — z = 15 in, to match the tractor's fifth wheel. Connections are edited with **Components › Connections…** (Front Connection X / Y / Z). The dialog shows each connection's height above ground; for EDVDS the fifth wheel and kingpin heights must agree to within 0.1 in.
 - **Trailer 2 left rear brake time lag** — 0.305 sec, in **Vehicle › Editors › Brakes › Brake Assembly…** (Time Lag, per wheel).
@@ -144,7 +144,7 @@ To watch the vertical tire loads while the event runs, open **Output › Key Res
 
 ## Executing the Event
 
-- Click **Run** on the playback bar under the viewport (or **Output › Run Simulation…**, Ctrl+R). The event runs to its 5.0 s maximum time.
+- Click **Run** on the playback controls in the toolbar (or **Output › Run Simulation…**, Ctrl+R). The event runs to its 5.0 s maximum time.
 - The solved event then plays back in the viewport; use **Play**, the step buttons and the time slider.
 
 In HVE's original walkthrough the vehicle is leaving the road at about t = 3.5 seconds. Drag the time slider to 3.5 s to see the same instant in HVE Studio. *(The printed manual's Figure 5-21, a screenshot of HVE at that instant, is not reproduced.)*

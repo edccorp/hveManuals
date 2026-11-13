@@ -40,7 +40,7 @@ To add a human to the current case in HVE Studio:
 1. Choose the **Human** editor tab (F2). The **Humans** panel is displayed.
 2. Click **Add Human**.
 3. Under **Identity**, enter a **Name** and choose the **Location** (an occupant position or *Pedestrian*).
-4. Under **Anthropometry**, choose the **Subject Type**, **Age Group**, **Weight Percentile** and **Height Percentile**.
+4. Under **Size (GEBOD)**, choose the **Subject Type**, **Age Group**, **Weight Percentile** and **Height Percentile**.
 
 The name does not affect calculations.
 
@@ -106,7 +106,7 @@ In HVE Studio every case has exactly one environment, so there is nothing to add
 1. Choose the **Environment** editor tab (F4).
 2. Choose **Environment › Environment...**. The Environment dialog is displayed.
 3. Enter the name, date, time, latitude and longitude of the site.
-4. Under **Scene Geometry**, choose a site file with **Browse...** and **Import** it.
+4. On the Environment Designer's **Import** stage (**3-D models** tab), choose a site file with **Import...** beside **Scene geometry**.
 5. The angle of the earth-fixed X axis from true north is the **North** setting of the sun and sky (**Edit the sun and sky...**), shown as the offset from east (HVE's angle minus 90).
 
 See [Environment Information](../../08-environment/EnvtInfoDlg.md) for the dialog. The Visual and Physical attribute groups are defined below.

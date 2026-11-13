@@ -320,7 +320,7 @@ discard them.
 The case file itself is never saved automatically.
 
 !!! note "HVE Studio"
-    HVE's auto-backup is **Tools › Preferences › Auto-Save**. **Enable Auto-Save** (on by default) and **Interval (min)** write a recovery copy of the case, `<case>.autosave.hvex` beside it, while there are unsaved changes; the case file itself is never written. Saving the case removes the copy, and opening a case whose recovery copy is newer offers to open the copy: the **Unsaved Work Found** message offers **Open the Recovery Copy** (then **Save As** to keep its changes) or **Keep the Case**, which leaves the case you opened as it is. **File › Exit**,
+    HVE's auto-backup is **Options › Preferences › Auto-Save**. **Enable Auto-Save** (on by default) and **Interval (min)** write a recovery copy of the case, `<case>.autosave.hvex` beside it, while there are unsaved changes; the case file itself is never written. Saving the case removes the copy, and opening a case whose recovery copy is newer offers to open the copy: the **Unsaved Work Found** message offers **Open the Recovery Copy** (then **Save As** to keep its changes) or **Keep the Case**, which leaves the case you opened as it is. **File › Exit**,
     closing the window, **New Case** and **Open Case** all ask before discarding
     unsaved changes.
 

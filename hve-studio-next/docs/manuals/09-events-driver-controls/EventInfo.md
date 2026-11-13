@@ -38,9 +38,9 @@ events are renumbered. An event cannot be deleted while results for it are on
 screen.
 
 **Copy** adds a copy of the active event (its vehicles, positions, driver
-inputs and options) as a new event at the end, named *name copy*, with no
-results, and makes it active. It is available on an executed event, so you can
-change one input and run the copy beside the original. **Event › Copy Event**
+inputs and options) as a new event at the end, named *name copy*, and makes it
+active. A copy of an executed event keeps its results, since its inputs are the
+same; **Reset** the copy to change an input and run it beside the original. **Event › Copy Event**
 does the same.
 
 ## Event (Event Name)
@@ -53,6 +53,11 @@ that the impact reads near 0. The results, the graphs, exported output, the
 event's playback bar and the Results HUD read the event's clock, and a new
 Playback track is placed at it. The run itself is unchanged: the engine still
 integrates from 0. *(New in HVE Studio.)*
+
+**Home camera** — where **Home** (and a double-click in the 3-D view) goes in this event: **None (fit the
+event)**, which fits the event's vehicles, or any camera of the case. Several events can share one camera. Set it
+from the view with **Set Home to this view** in the Home menu on the viewport bar. Display only: changing it never
+makes the event's results out of date. *(New in HVE Studio.)*
 
 ## Calculation Method
 
@@ -219,11 +224,10 @@ name*:
   height, roll and pitch (or why it fell back to flat ground). Off, **Z Height**
   is entered directly. Planar methods always settle. For SIMON (HVE
   physics), the run also starts 2 s early and settles the vehicle in place on
-  its suspension and tires before the event begins (see
+  its suspension and tires before the event begins. With Auto Position off and a
+  Z Height entered, the body is held exactly where it was put and only the
+  wheels settle onto the ground (see
   [SIMON Program Input](../programs/SIMON/02-program-input.md)).
-- **This height is the SETTLED ride height** — SIMON only, with Auto Position
-  off. Off (the default), SIMON applies its static tire deflection once; on, the
-  entered height is already the settled elevation.
 - **Speed**, **Sideslip β (deg)** and **Yaw rate (deg/s)**.
 - **Advanced initial state** — **Vertical vel w**, **Roll angle (deg)**,
   **Pitch angle (deg)**, **Roll rate (deg/s)**, **Pitch rate (deg/s)**. Roll and
@@ -340,7 +344,12 @@ it:
   the ground at that position. Off, the entered **Z Height** (the CG's height
   above ground), **Roll (deg)** and **Pitch (deg)** are used, so a position can
   be rolled, pitched or airborne. Turning it off starts the three from where
-  the ground puts the vehicle; with it on they are grayed.
+  the ground puts the vehicle; with it on they are grayed. On every position but
+  the start they are **drawn only** (a line above them says so): no program reads
+  a named position's elevation, roll or pitch. EDCRASH is a planar
+  reconstruction and reads only a position's **X**, **Y** and **Heading**, so a
+  rolled or raised Separation or Point On Curve changes the picture, not the
+  answer.
 - **Read by:** — a note saying what reads that position under the event's
   calculation method:
     - EDCRASH: **Begin Braking** (the speed before braking), **Impact** and

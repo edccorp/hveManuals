@@ -4,15 +4,15 @@
 
 The default CG (center of gravity) location of the vehicle is determined from raw data (e.g., measured or table values). HVE's Move CG dialog moves the CG relative to the vehicle's 3-D geometry. HVE Studio has two places that do related jobs.
 
-Move CG is the only edit that moves the CG relative to the body. The dimension fields in Size & Weight (CG to Front Axle, CG to Rear Axle, the wheelbase, the weight distribution and the CG height) move the axles or raise the body with the CG instead, since the body and its geometry are tied to the sprung-mass CG; they never change Move CG.
+Move CG moves the CG relative to the body. The dimension fields of the Size, Mass & CG stage (CG to Front Axle, CG to Rear Axle, the weight distribution and the CG height) do the same when **A new CG position** says *Move the CG in the body* (the default for a vehicle with a body geometry of its own); set to *Move the axles and body*, they move the axles or raise the body with the CG instead, which is how a vehicle is set up before its body is fitted.
 
-## Move CG in the Vehicle Mesh window
+## Move CG on the Size, Mass & CG stage
 
-Open **Vehicle › Editors › Vehicle Mesh...** in the Vehicle Editor (also on the Event menu, and opened by **Vehicle Mesh...** in the Vehicles panel's **3D Geometry** section). On the **File & Placement** tab, in the section **Move, Rotate and Scale the Model**, the row **Move CG** holds three values, X, Y and Z, in the units set in Preferences. They state where the CG sits in the geometry file's own coordinates, in the SAE vehicle frame (+x forward, +y right, +z down). This is the value HVE's Move CG dialog stores, and it is read from an HVE case when one is opened.
+In the Vehicle Designer's **Size, Mass & CG** stage, under **CG in the body**, the row **Move CG** holds three values, X, Y and Z, in the units set in Preferences. They state where the CG sits in the geometry file's own coordinates, in the SAE vehicle frame (+x forward, +y right, +z down). This is the value HVE's Move CG dialog stores, and it is read from an HVE case when one is opened.
 
 Each value is dragged or typed (click to type; Shift drags finely), like every number in HVE Studio, and takes effect when you release it. A new value **moves the CG**, as HVE's Move CG does: the body, the wheels and everything fitted to the vehicle stay where they are, and the CG-to-axle distances, the CG-to-side distances and the CG height change to match. A move that would put the CG at or below the ground is refused, and the reason is shown under the row. To move the picture of the body instead, use **Translate**.
 
-The same section holds **Translate**, **Rotate (deg)** and **Scale** (per axis), which are HVE's Transform Geometry. They are applied as scale, then rotate, then translate, inside the Move CG shift, which is HVE's own order.
+The Vehicle Mesh window's **File & Placement** tab holds **Translate**, **Rotate (deg)** and **Scale** (per axis), which are HVE's Transform Geometry, and a line pointing to the stage. They are applied as scale, then rotate, then translate, inside the Move CG shift, which is HVE's own order.
 
 ## Move CG dialog (EDSMAC and EDSMAC4 events)
 

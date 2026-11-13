@@ -15,7 +15,7 @@ coordinates, reversing a face normal, and decimating or tessellating the mesh.
     - whether each surface is **drawn** and whether it is **driven on** (the
       eye and road switches of the Outliner, View › Outliner);
     - each surface's **type, friction, stiffness and soil properties**, on the
-      HVE Surface node of its material in the Shader Editor (see
+      Environment Designer's Surfaces stage, under **Surface Type and Friction** (see
       [Environment Material Properties](EnvrMatPropDlg.md));
     - how the site is **shaded** (Flat, Smooth, Auto Smooth) and how each
       surface **looks** (its node material in the Shader Editor).

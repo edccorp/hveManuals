@@ -7,7 +7,7 @@ In HVE, clicking the CG of the vehicle in the Vehicle Editor displays the Sprung
 | HVE button | Where it is in HVE Studio |
 |---|---|
 | Inertias... | **Edit...** in the Vehicles panel's **Inertia** section opens the **Inertia / Mass** dialog — see [Vehicle Inertia Dialog](VehInerDlg.md). The section itself shows the total weight and inertias on one line. |
-| Move CG... | **Vehicle › Editors › Vehicle Mesh...** (or **Vehicle Mesh...** in the Vehicles panel's **3D Geometry** section), File & Placement tab, row **Move CG** — see [Moving CG](MoveCGDlg.md). |
+| Move CG... | the Vehicle Designer's **Size, Mass & CG** stage, under **CG in the body**, row **Move CG** — see [Moving CG](MoveCGDlg.md). |
 | Color... | **Color** in the Identity section of the Vehicles panel. |
 | Geometry File... | **Mesh File** in the Vehicles panel's **3D Geometry** section, or on the File & Placement tab of **Vehicle › Editors › Vehicle Mesh...**. |
 | Refresh Geometry File | **Load 3D File** on the Vehicle Mesh window's File & Placement tab reloads the file from disk. |

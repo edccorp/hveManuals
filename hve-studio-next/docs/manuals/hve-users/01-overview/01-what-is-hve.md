@@ -116,7 +116,7 @@ holds the simulation controls.
 bar on the right.*
 
 !!! note "HVE Studio"
-    HVE's Copy Event is the **Copy** button beside **Active Event** (or **Event › Copy Event**); it copies the active event, including an executed one, as a new event with no results.
+    HVE's Copy Event is the **Copy** button beside **Active Event** (or **Event › Copy Event**); it copies the active event as a new event; an executed event's copy keeps its results (the same inputs give the same run), and **Reset** on the copy clears them to change it.
 
 *See also: [Events & Driver Controls](../../09-events-driver-controls/README.md), in
 particular [Event Information Dialog](../../09-events-driver-controls/EventInfo.md),

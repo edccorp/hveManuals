@@ -58,7 +58,7 @@ The procedure for using EDVDS is substantially the same as using any simulator:
     - **Event:** in the Event editor, the **Event Information** panel holds the event list (**+** adds an event), the **Calculation Method**, the **Vehicles in Event** slots (**Add Vehicle**; the slot order V1, V2, … is the train order) and each vehicle's initial conditions.
     - **Driver controls** are on **Event › Driver Controls…** (Ctrl+D).
     - **Payloads:** **Event › Payload…** is not available for EDVDS events in this version. A payload stored in an imported HVE case is used by the run.
-    - **Executing:** **Run** on the playback bar under the viewport, or **Output › Run Simulation…** (Ctrl+R).
+    - **Executing:** **Run** on the playback controls in the toolbar, or **Output › Run Simulation…** (Ctrl+R).
     - **Results:** the solved event plays back in the Event editor's own viewport, and the reports are on its **Output** menu (see [Chapter 3](03-program-output.md)); the **Playback (F6)** editor plays several events in sequence. **File › Record Animation…** writes a video.
 
 <!-- NAV -->

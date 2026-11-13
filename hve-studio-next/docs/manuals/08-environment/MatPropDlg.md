@@ -8,7 +8,7 @@ used when an occupant or pedestrian strikes that surface.
     [Contact Surfaces](ContSurfDlg.md) window (Vehicle editor, **Vehicle ›
     Editors › Contact Surfaces...**): select a surface in the list and expand **Material
     Properties**. The material's name is the **Material** field at the top of
-    the window. Values follow the units set in Tools › Preferences.
+    the window. Values follow the units set in Options › Preferences.
 
 ![Contact Surfaces window](images/hvn-contact-surfaces.png)
 

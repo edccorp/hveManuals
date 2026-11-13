@@ -8,7 +8,7 @@ contact shape. Each segment may have up to 3 contact ellipsoids.
     editor (F2) open the **Humans** panel (**Occupant › Human
     Information...**), select the human, press **Body Segments...**, choose the
     segment in the **Segment** list (or click it in the 3-D view) and open the
-    **Ellipsoids** tab. Lengths follow the units set in Tools › Preferences.
+    **Ellipsoids** tab. Lengths follow the units set in Options › Preferences.
 
 ## Ellipsoid
 

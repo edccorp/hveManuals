@@ -201,7 +201,7 @@ In HVE Studio every case has exactly one environment, so there is nothing to add
 1. Choose the **Environment** editor tab (F4).
 2. Choose **Environment › Environment...**. The Environment dialog is displayed.
 3. Enter the name, date, time, latitude and longitude of the site. (The location can also be set from a pasted coordinate or an address search.)
-4. Under **Scene Geometry**, choose the site file with **Browse...** and **Import** it (DXF, `.h3d`, `.iv`, `.wrl`, OBJ or glTF). A case opened from HVE brings its own site with it.
+4. On the Environment Designer's **Import** stage (**3-D models** tab), choose the site file with **Import...** beside **Scene geometry** (DXF, `.h3d`, `.iv`, `.wrl`, OBJ or glTF). A case opened from HVE brings its own site with it.
 5. Enter the wind and the atmosphere, including the gravity constant, in the **Ambient** and **Atmosphere** sections.
 6. The angle of the earth-fixed X axis from true north is the **North** setting of the sun and sky, opened with **Edit the sun and sky...**, shown as the offset from east (HVE's angle minus 90).
 
@@ -269,7 +269,7 @@ An EDCRASH event is created, set up and executed in the **Event** editor (F5). E
 
 ![Figure 2-3](images/hvn-edcrash-event-information.png)
 
-*Figure 2-3: The Event Information panel for an EDCRASH event (EDCRASH Tutorial case). Units follow Tools › Preferences; this capture is in Imperial units.*
+*Figure 2-3: The Event Information panel for an EDCRASH event (EDCRASH Tutorial case). Units follow Options › Preferences; this capture is in Imperial units.*
 
 ### Creating an Event
 
@@ -328,7 +328,7 @@ Each vehicle is positioned relative to the earth-fixed coordinate system by supp
       elevation and attitude.
     - Every position that is set is outlined in the viewport (View › Scene
       Display › Scene Ghosts) and can be dragged there.
-    - X and Y are in the length unit set in Tools › Preferences; headings
+    - X and Y are in the length unit set in Options › Preferences; headings
       are in degrees.
 
 ![Scene positions in HVE Studio](images/hvn-edcrash-scene-positions.png)
@@ -461,7 +461,10 @@ After entering the CDC, the damage profile may be edited by over-riding the defa
     - **CDC** — the seven-character code. If no usable crush profile is
       entered, EDCRASH derives the default width, offset and depths from it,
       as in HVE. HVE Studio replaces a CDC that is not a valid seven-character
-      code with `12FDEW4` and says so in the run status.
+      code with `12FDEW4` and says so in the run status. Pointing at the field
+      decodes the code typed, character by character (direction of force,
+      general area, horizontal and vertical location, type of damage, extent
+      zone), and **CDC key** beside it lists every column's letters (SAE J224).
     - **PDOF (deg)**.
     - **Auto-calculate PDOF (from the other vehicle)** — HVE's *Use
       Newton's 3rd Law*. While it is ticked the PDOF field is ignored. If it

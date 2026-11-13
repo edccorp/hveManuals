@@ -32,7 +32,7 @@ groups:
 This appendix describes how to assign units to any parameter.
 
 !!! note "HVE Studio"
-    HVE Studio does not have programmable user units. **Tools › Preferences… › Units** selects one of two systems, which every converted field and output follows immediately:
+    HVE Studio does not have programmable user units. **Options › Preferences… › Units** selects one of two systems, which every converted field and output follows immediately:
 
     - **Imperial (ft/in, mph, lb, lbf)** — HVE's US units: for example, scene positions in feet, vehicle dimensions in inches, speeds in mph.
     - **Metric (m, km/h, kg, N)** — HVE's SI units.

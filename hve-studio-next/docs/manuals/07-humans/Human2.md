@@ -7,7 +7,7 @@ as guidelines to estimate when specific injuries might occur.
     In the Human editor (F2), open the **Humans** panel (**Occupant › Human
     Information...**), select the human and press **Injury Tolerances...**. The
     window is titled **Injury Tolerances**; the tolerances belong to the whole
-    human, not to a segment. Forces follow the units set in Tools ›
+    human, not to a segment. Forces follow the units set in Options ›
     Preferences; accelerations are entered in g. While a solved run is on
     screen the window is read-only.
 

@@ -476,9 +476,9 @@ The default surface-search method is *From Previous Polygon*. This results in fa
 ### Executing An Event
 
 ![Figure 2-5](images/hvn-playback-bar.png)
-*Figure 2-5: The playback bar under the viewport, used for running an event and replaying its results.*
+*Figure 2-5: The playback controls in the toolbar, used for running an event and replaying its results.*
 
-To execute an EDSVS event, use the playback bar under the viewport, shown in Figure 2-5. Its controls have the following functions:
+To execute an EDSVS event, use the playback controls in the toolbar, shown in Figure 2-5. Its controls have the following functions:
 
 - **Run** — Execute the event (also **Output › Run Simulation**)
 - **Reset** — Discard the results so the event can be edited and run again

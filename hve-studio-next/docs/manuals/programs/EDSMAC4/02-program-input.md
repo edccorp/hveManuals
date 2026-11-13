@@ -318,7 +318,7 @@ If the elevation changes result in a vehicle roll or pitch angle that exceeds th
 *(updated: the current version can also use water polygons in the terrain, together with the **Hydroplane Model** calculation option, to model reduced tire friction due to hydroplaning; see [EDSMAC4 Calculation Options](../../10-calculation-options/CalcOptEDSMAC4.md).)*
 
 !!! note "HVE Studio"
-    Surface friction and standing water are set per surface material: the **Outliner** (View › Outliner) lists the surfaces and the Environment panel's **Selected Surface** section shows the one picked; each is edited on its HVE Surface node in the Shader Editor (**Edit in Shader Editor**). The **Default surface material** covers ground with no surface of its own.
+    Surface friction and standing water are set per surface material: the **Outliner** (View › Outliner) lists the surfaces and the Environment panel's **Selected Surface** section shows the one picked; each is edited under **Surface Type and Friction** (Environment Designer › Surfaces, *Selected Surface*). The **Default surface material** covers ground with no surface of its own.
 
 ## Event
 
@@ -601,7 +601,7 @@ The default search method is From Previous Polygon, Sorted (friction zones and w
 
 ### Executing An Event
 
-To execute an EDSMAC4 event, use the playback bar under the viewport. Its buttons have the following functions:
+To execute an EDSMAC4 event, use the playback controls in the toolbar. Its buttons have the following functions:
 
 - **Run** — Execute the event. Once the event is solved, Run is disabled until you press Reset.
 - **Reset** — Discard the results so the inputs can be edited and the event run again
@@ -614,7 +614,7 @@ To execute an EDSMAC4 event, use the playback bar under the viewport. Its button
 **Output › Run Simulation** (Ctrl+R) also runs the active event, opening the Event Designer on its **Run** stage, which shows the run's progress and its status line.
 
 ![Figure 2-5](images/hvn-edsmac4-playback-bar.png)
-*Figure 2-5: The playback bar under the viewport: the playback buttons and the camera list. Since 2026-11-04 the bar shows the run's state where Run and Reset were; the run is started on the Run stage.*
+*Figure 2-5: The playback controls in the toolbar: the playback buttons and the camera list. Since 2026-11-04 the bar shows the run's state where Run and Reset were; the run is started on the Run stage.*
 
 > **NOTE:** A solved event's inputs are locked while its results are on screen. To change any vehicle, environment or event set-up input, press **Reset** first, then **Run** again.
 

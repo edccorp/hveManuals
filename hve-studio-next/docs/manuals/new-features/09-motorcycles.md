@@ -29,6 +29,16 @@ in EDC's `EDCVehicles.hvedb`, where it is not licensed data), so it draws on
 every computer without a separate mesh file. Where neither database nor the
 file is installed it falls back to the generated body, with a warning.
 
+When the motorcycle steers, its front end turns the way the models turn it:
+about the **steering axis**, tilted back by the rake and set behind the front
+hub by the fork offset (Vehicle Designer › Steering). The front wheel swings
+about that axis and tips over a little as it turns, and on a mesh the fork,
+fender, headlamp, instruments and bars turn with it. The mesh's file names those
+parts with the frame's material, so they are found by where they sit around the
+steering axis. A part of the frame very close to the steering head may turn with
+them. A wheel drawn by the program, on a motorcycle whose mesh has no wheels of
+its own, still turns about a vertical line through its hub.
+
 **Drawn as one wheel per axle.** HVE's engines model every axle with two
 wheels. For a motorcycle HVE Studio sets the two wheels of an axle side by side
 across the tire's own width, so they act as one centerline contact patch, and
@@ -120,11 +130,13 @@ motorcycle first contacts something (or, on the nonlinear model, leans past
   the peaks are also the run's occupant results. Playback draws it seated, then
   thrown.
 
-By default the rider is **two way**: its push goes back into the vehicle it
-strikes and into its own motorcycle (**Couple the rider two-way**
-under **Humans in Event**, on for a new event). Clear it for
-**one way**: the rider is still solved as a body, but it moves no vehicle -- the
-vehicles are solved as if it had no body of its own. **Coupling method** says
+The rider is solved as a GATB body **with the box below on or off**; the box
+decides only whether its push moves the vehicles. **Rider's push moves the
+vehicles (two-way)**, under **Humans in Event** and on for a new event, sends the
+rider's push back into the vehicle it strikes and into its own motorcycle. Clear
+it for **one way**, the faster run: the rider still leaves the machine and is
+solved as a body, but it moves no vehicle -- the vehicles are solved as if it had
+no body of its own. **Coupling method** says
 how two way is solved:
 
 - **Lockstep (one run)**, the default: SIMON and the rider are solved together in

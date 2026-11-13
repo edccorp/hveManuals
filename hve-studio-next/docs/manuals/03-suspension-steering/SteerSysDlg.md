@@ -25,7 +25,7 @@ Uncheck for a castoring axle with no steering linkage. The free steer axis then 
 
 ## Geometry
 
-### Caster Angle (deg), Kingpin Inclination (deg), Camber Angle (deg), Kingpin Offset
+### Caster Angle (deg), Kingpin Inclination (deg), Camber Angle (deg), Steering Offset
 The axle's alignment; see [Spindle Axis Dialog](SpndleAxisDlg.md). There is no toe row: hVE's per-wheel toe-in, a length, is kept with the vehicle (read from an HVE case or a vehicle database) but has no control in HVE Studio: no engine reads it, in HVE or here.
 
 ### Column Friction

@@ -1,8 +1,8 @@
 # Chapter 6B: Tools Menu
 
 *HVE User's Manual — Section Two: Menu Reference, HVE Studio edition. A new
-chapter: the Tools menu gathers HVE Studio's preferences and utilities, some of
-which were on HVE's Options and View menus.*
+chapter: the Tools menu gathers HVE Studio's utilities. The settings for how the
+program looks and behaves are on the [Options menu](06-options-menu.md).*
 
 The Tools menu is on the menu bar in every editor.
 
@@ -12,15 +12,10 @@ The Tools menu is on the menu bar in every editor.
 | Item | What it does | HVE equivalent |
 |---|---|---|
 | **Automatic Tools ›** | The tools that fill a case from a source, in one submenu (below) | *(new)* |
-| **Monte Carlo Analysis...** | Uncertainty analysis by repeated runs with sampled inputs | *(new)* |
 | **Motorcycle Analysis...** | Cornering and slide-to-stop calculations for a motorcycle | *(new)* |
-| **Preferences...** | Units, date format, background color, diagnostics, auto-save | Options › Units, Options › Preferences |
-| **Report Text...** | Your own wording for any string of the programs' report pages, kept with your settings — see [Report Text](../../11-reports-output/ReportText.md) | *(new; HVE kept these strings in each program's `.rsc` file)* |
-| **Style Editor...** | The look of the interface: base theme and live style settings | *(new; Options › Preferences › Font Size)* |
 | **Cameras...** | The case's named cameras | View › Set Camera |
 | **Measure...** | Distances, path lengths, angles and areas clicked in the 3-D view, kept in the case | *(new)* |
 | **Audit Log...** | A time-stamped record of what was done in this session | *(new; HVE's Audit Trail is a different thing — see [Audit Trail](../01-overview/02b-how-to-use-hve.md#audit-trail))* |
-| **Limits Editor...** | The minimum and maximum accepted by input fields | *(new)* |
 
 **Automatic Tools** holds the tools that fill a case from a source, together
 with the record of where each value came from. The submenu groups them under
@@ -37,7 +32,7 @@ last:
 | **EDR Import...** | An event data recorder's pre-crash record (a CDR report PDF, its tables as CSV or text, pasted, or typed in by hand) into a vehicle of the active event; for SIMON, a driver solved so the run follows the recorded speed; and the recorded yaw rate, accelerations and delta-V against the run's |
 | **Provenance...** | Where each value set by those tools came from |
 
-Automatic Tools, Monte Carlo Analysis and Motorcycle Analysis are not in the
+Automatic Tools and Motorcycle Analysis are not in the
 viewer product.
 
 ---
@@ -92,7 +87,14 @@ conditions. HVE Studio sends nothing anywhere. See
 and Crush Stiffness from Crash Tests: what it was set to, whether it was
 stated, looked up, estimated, a generic's default or unknown, its source, the
 tool and the time, and, where the record is about a single field, whether that
-field has been changed by hand since. The records are saved with the case. See
+field has been changed by hand since. The records are saved with the case. A
+vehicle picked from the vehicle database brings its record's own provenance:
+where each of its numbers came from as EDC's inspection workbook or
+VehicleMetrics' data sheet says it (measured, specification, generic,
+calculated), and the library's own revisions (damping, rear proportioning)
+with the value each replaced. **Copy** puts the shown records on the clipboard,
+tab-separated, for a spreadsheet or a report; **Export CSV...** writes them to
+a file. See
 [Provenance](../../new-features/12-case-intake-and-vehicle-data.md#provenance).
 
 ---
@@ -121,22 +123,10 @@ run's. See
 
 ## MONTE CARLO ANALYSIS
 
-**Menu Option:** Tools › Monte Carlo Analysis...
-
-**Description:** Choose the number of runs, a random seed and a sampling method,
-and a table of uncertain inputs, each bound to a field of the case with a
-distribution. **Run** solves the case that many times, starting from the case's
-own values, and shows a confidence-interval table, a tornado chart of the inputs'
-influence and a convergence reading. **Export** writes the per-run results as CSV
-and a self-contained HTML report.
-
-!!! note "HVE Studio"
-    Every run is solved by the active event's own engine. If the case has no
-    event, no vehicles, or an event whose method has no engine, **Run Analysis**
-    is disabled and the dialog says why.
-
-!!! tip "New in HVE Studio"
-    This tool has no counterpart in HVE's menus.
+Monte Carlo is no longer on this menu: an analysis belongs to its event, so it is
+the **Monte Carlo** tab of the Event Designer's **Results** stage, opened by
+**Event › Monte Carlo...**. See
+[Analysis Tools](../../new-features/08-analysis-tools.md#monte-carlo-analysis).
 
 ---
 
@@ -161,13 +151,14 @@ For simulating the motorcycle itself, use the SINGLETRACK calculation method.
 
 ## PREFERENCES
 
-**Menu Option:** Tools › Preferences... · *HVE: Options › Units, Options ›
+**Menu Option:** Options › Preferences... · *HVE: Options › Units, Options ›
 Preferences*
 
 **Description:**
 
 - **Display** — **Date Format**; **Units**: *Metric (m, km/h, kg, N)* or
-  *Imperial (ft/in, mph, lb, lbf)*; **Background Color**
+  *Imperial (ft/in, mph, lb, lbf)*; **Default lens (mm)** (the 3-D view's lens at startup and every new
+  camera's); **Background Color**
 - **Diagnostics** — **Diagnostic Level**
 - **Auto-Save** — **Enable Auto-Save** and **Interval (min)**
 
@@ -176,7 +167,7 @@ Preferences*
     sets how dates are shown. **Enable Auto-Save** (on by default) and **Interval (min)** write a recovery copy of the case, `<case>.autosave.hvex` beside it, while there are unsaved changes; the case file itself is never written. Saving the case removes the copy, and opening a case whose recovery copy is newer offers to open the copy.
 
 ![The Preferences dialog](../images/hvn-01-preferences.png)
-*Tools › Preferences.*
+*Options › Preferences.*
 
 See [Chapter 6](06-options-menu.md#preferences) for the mapping from HVE's User
 Preferences dialog.
@@ -185,11 +176,17 @@ Preferences dialog.
 
 ## STYLE EDITOR
 
-**Menu Option:** Tools › Style Editor...
+**Menu Option:** Options › Style Editor...
 
 **Description:** **Base Theme** (a preset, kept between sessions) and **Live
 Style** — the interface's colors, sizes, spacing and fonts, which apply at once
-but are not saved.
+but are not saved. The presets are **HVE** (the default), **Dark**, **Light**,
+**Classic**, five more light ones — **Paper** (HVE maroon), **Daylight** (blue),
+**Soft Gray** (teal), **Sand** (warm) and **High Contrast** — and three more dark
+ones — **Graphite** (blue), **Midnight** (navy) and **Forest** (green). Every
+finished change (a drag let go, a color picked, a preset chosen) is one step of
+the editor's own history: **Undo** and **Redo** above Live Style, or **Ctrl+Z** and
+**Ctrl+Y** while the Style Editor has the focus (the case's undo is not touched).
 
 ---
 
@@ -285,7 +282,7 @@ and saved, undo and redo, and exports — each with its time and user. **Clear L
 
 ## LIMITS EDITOR
 
-**Menu Option:** Tools › Limits Editor...
+**Menu Option:** Options › Output Settings... › Limits
 
 **Description:** A searchable table of input fields with the **Min** and **Max**
 value each accepts, for the fields that use it. **Save to File** keeps the edited

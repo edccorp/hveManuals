@@ -52,7 +52,7 @@ To review collision damage in HVE Studio:
 
 1. Set up a collision event (SIMON with DyMESH, or EDSMAC4) and run it
    (**Output › Run Simulation**, or **Run** on the playback bar).
-2. Use the playback bar under the viewport to move through the event. The
+2. Use the playback controls in the toolbar to move through the event. The
    vehicle bodies deform as the collision proceeds.
 3. Turn on **View › Scene Display › Vectors › Collision force** to see the collision
    force on each vehicle while it is in contact.
