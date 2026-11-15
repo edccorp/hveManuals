@@ -59,7 +59,13 @@ carries the occupant's own output, as HVE's human output groups do:
   and acceleration, kinetic energy, plus **Acc Resultant (from Fwd/Lat/Vert)**,
   the resultant of the three acceleration components (EDHIS writes *Acc Tot*
   for its torso only; this resultant is the head acceleration the run's
-  occupant peak is taken from).
+  occupant peak is taken from), and **V-tot over Ground**, the segment's speed
+  over the ground. HVE's own **V-tot** is relative to the vehicle the human is
+  coupled to, so a pedestrian standing in front of a car moving at 20 mph reads
+  20 mph there; V-tot over Ground reads its walking speed. It is the rate of
+  change of the segment's place in the scene (for a body recorded relative to
+  its vehicle, placed by that vehicle's own motion), and reads as absent for a
+  run opened from a file whose vehicle track is not the live one.
 - **Human Joint L5-S1** ... **Human Joint Left Elbow** — joint angles,
   moments and forces.
 - **Human Contacts, Interaction 1-4** — the contact force of each

@@ -2,6 +2,11 @@
 
 Dialog and feature reference for the **User Interface** of HVE Studio, page by page against HVE's own User Interface help. HVE Studio replaces HVE's Windows interface with docked panels: the editor tabs **Human (F2)**, **Vehicle (F3)**, **Environment (F4)**, **Event (F5)** and **Playback (F6)** under the menu bar, a **Viewport** with a playback bar, and the **File**, **Edit**, **View**, **Tools** and **Help** menus plus the menus of the current editor (**Vehicle**; **Environment**; **Event** and **Output**; **Playback**; **Human**). Where an HVE dialog has no HVE Studio equivalent, its page says so and says where the function is instead. Part of the [HVE Manual](../README.md).
 
+**Escape closes a dialog.** With a floating dialog in front (its own window, not docked into the main
+window), **Escape** closes it, as its **X** does -- unless you are typing in one of its boxes or dragging
+one of its values, when Escape first leaves the box. Docked panels and the 3-D views are not closed this
+way: in a 3-D view Escape cancels a move or a turn. The file browser closes on Escape too (as **Cancel**).
+
 ## Pages
 
 - [3-D Editor Menu](3dEditor.md)

@@ -14,7 +14,7 @@ Check this box if the vehicle has a payload. When unchecked, all remaining field
 ## Location
 
 ### X, Y, Z
-The X, Y and Z distances from the vehicle's center of gravity to the payload's center of gravity, in the SAE vehicle frame: +X forward, +Y right and **+Z down** (the field reads **Z down**), as in HVE. A load above the CG has a negative Z.
+The heading reads **Location from the sprung CG**. The X, Y and Z distances from the vehicle's sprung-mass center of gravity with nothing aboard (the vehicle's own origin, which every vehicle position in HVE Studio is measured from) to the payload's center of gravity, in the SAE vehicle frame: +X forward, +Y right and **+Z down** (the field reads **Z down**), as in HVE. A load above the CG has a negative Z.
 
 ## Mass / Weight
 
@@ -32,7 +32,16 @@ The roll, pitch and yaw moments of inertia of the payload about its own CG. An e
 ## The Loaded CG
 A payload moves the vehicle's center of gravity toward it, by the payload's share of the combined mass. Under SIMON and EDVDS the vehicle's path is the path of that loaded CG, and the wheels and suspension (and under SIMON the connections and the DyMESH collision mesh) are measured from it, as in HVE. EDVDS moves the CG forward, back, up and down only: a payload off the vehicle's centerline moves none of its geometry sideways (its equations assume the payload is on the centerline). The body, wheels and connection markers are drawn where they are on the vehicle, so they do not move relative to the vehicle when a payload is added: only the CG does. A loaded trailer stays on its tractor's fifth wheel.
 
-As in HVE, the start position you enter is where the loaded CG goes. So before a run, a vehicle with a payload (or with occupants under SIMON) is drawn with its body offset from that position by the CG shift, which is exactly where SIMON or EDVDS places it when the run starts. A trailer coupled behind it moves with its tow's hitch.
+!!! note "HVE Studio"
+    **Adding a payload does not move the vehicle.** The start position you enter is the vehicle's own origin, its sprung-mass CG with nothing aboard, where the editor draws it. SIMON and EDVDS integrate the loaded CG, so HVE Studio starts that CG at the entered position plus the CG shift; the vehicle, its wheels and a trailer coupled behind it stay exactly where they were placed. The run status says so for each vehicle a load moves (*V1: its load moves the CG 0.152 m, not the vehicle*). In HVE the entered position is where the loaded CG goes, so adding cargo slid the whole vehicle back along itself by the shift. The same holds for occupants under SIMON.
+
+    The **CG X, Y and Z**, velocity and acceleration channels of a SIMON or EDVDS run are reported at that same origin, the unloaded sprung CG, so they start at the position you entered. The engine's own loaded-CG point is the reference the report pages print. EDSMAC4, EDSVS and EDVTS already reported X and Y there, as in HVE; HVE Studio also reads their CG Z and their velocities and accelerations at that origin (they integrate a point offset from it, and with a payload their CG Z was the loaded CG's height).
+
+    The **Total CG (static)** group of Variable Output (CG X, Y and Z, the velocities and the accelerations) gives the same motion at the vehicle's whole-mass CG as loaded for the event: sprung and unsprung masses, the payload, and under SIMON the occupants it adds, with the wheels at their static places, fixed in the body. It is there for a comparison that needs the total CG; the vehicle's position stays the sprung CG's. A run opened from a saved file does not carry this point, and the group reads as absent until the event is run again.
+
+    After a run the report gains a **Reference Points** page, after the program's own pages: for each vehicle, where its origin (the sprung CG with nothing aboard) and its static total CG were at the start, at impact and at rest, in meters and feet, and which point the program's own tables are about (for SIMON and EDVDS with a load, the loaded CG, and how far it sits from the origin).
+
+    An **accelerometer** stays where it is mounted. SIMON and EDVDS place their accelerometers from the loaded CG they integrate, and HVE hands them the coordinate as entered, so with a payload every accelerometer read the motion of a point the CG shift away from its mount. EDSMAC4 does the same by a smaller amount (about 1.5 cm in a typical case). HVE Studio hands each program the coordinate it needs, so the device reports its own mounting point.
 
 !!! note "HVE Studio"
     Results saved by a build before 2026-10-28 (SIMON) or 2026-10-29 (EDVDS) do not record the loaded CG. Such a vehicle is drawn displaced by the CG shift (a loaded trailer drawn forward of its king pin) until the event is run again.

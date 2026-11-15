@@ -19,6 +19,7 @@ One table with a column per face: **Front**, **Rear**, **Top**, **Bottom**, **Le
 | 2-D: **Kv** | EDSMAC; EDVSM, for the body against the ground |
 | 3-D: **Constant**, **Linear**, **Quadratic**, **Cubic**, **Conversion Height**, **Saturation Crush** | SIMON (DyMESH) only |
 | 3-D: **Max Crush (graph extent)** | no engine (the graph's span) |
+| 3-D: **Unloading Stiffness** | SIMON (DyMESH) |
 
 SIMON does not read A, B or Kv; EDCRASH reads none of this window (it takes A and B from the event's damage profile).
 
@@ -45,6 +46,9 @@ Under the table. It sets the **Front**, **Rear**, **Left** and **Right** columns
 
 ### Saturation Crush, Max Crush (graph extent)
 Saturation Crush caps each node's **force** in DyMESH: past it the pressure stays at its value there while the node keeps crushing (the deflection is not limited); 0 means none. **Max Crush (graph extent)** is recorded with the vehicle and sets how far the graph above the table runs, as it does in HVE's own dialog; no engine reads it, as in HVE's own source, and the note under the table says so: it does not limit the crush.
+
+### Unloading Stiffness
+The slope a DyMESH body node unloads along from its peak crush, in the units of **Linear**. A node springs back by its peak pressure divided by this slope and keeps the rest as permanent crush. A node whose peak stays below that recovers fully. 0 means derive the slope from the event's **Relaxation Length**, which keeps HVE's permanent crush. A softer slope gives more rebound and less permanent crush. The DyMESH collision model's page describes the law; the run status names the faces that state a slope.
 
 ## The graph
 

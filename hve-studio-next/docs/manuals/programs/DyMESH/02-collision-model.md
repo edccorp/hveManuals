@@ -335,8 +335,8 @@ unloading line (see the $K_u$ line in the force-per-area plot).
 DyMESH Version 2 "greatly improved" the restitution model together with the
 accelerations and the crush-depth (general damage profile) simulation.
 
-!!! note "HVE Studio: reloading is continuous"
-    In HVE a node pushed back in past its sprung-back position $(1-e)\,\delta_\mathrm{max}$
+!!! note "HVE Studio: reloading is continuous (HVE's unloading law)"
+    With `HVE_DYMESH_UNLOAD=hve`, and before the elastic law above: in HVE a node pushed back in past its sprung-back position $(1-e)\,\delta_\mathrm{max}$
     takes its full threshold force $A \cdot \mathrm{Area}$ at once, and none just
     short of it. HVE Studio reloads it on the same short rise that first loading
     climbs, with damping, so the force is continuous. Two bodies resting against
@@ -348,6 +348,44 @@ accelerations and the crush-depth (general damage profile) simulation.
     on the cases measured, and a contact that HVE's law kept chattering for over a
     second ends in under 0.1 s. Setting the environment variable
     `HVE_DYMESH_RELOAD_VEHICLES=0` restores HVE's law between vehicles.
+
+!!! note "HVE Studio: elastic unloading"
+    HVE Studio unloads a vehicle body node **elastically**. From its peak
+    $(\delta_\mathrm{max}, P_\mathrm{max})$ the node unloads down a straight line of slope
+    $K_u$ (pressure per unit crush) to its permanent crush
+    $\delta_\mathrm{set} = \delta_\mathrm{max} - P_\mathrm{max}/K_u$, and reloads up the same
+    line. The force is continuous, and the node returns
+    $\tfrac{1}{2} P_\mathrm{max}^2 / K_u$ per unit area. A node whose peak stays below
+    $P_\mathrm{max}/K_u$ recovers fully.
+
+    $K_u$ is the face's **Unloading Stiffness** in the Crush Stiffness window.
+    Where a face states none, it is derived from the pair's **Relaxation Length**
+    as $K_u = P_\mathrm{max}/(e\,\delta_\mathrm{max})$. That keeps HVE's permanent crush
+    $(1-e)\,\delta_\mathrm{max}$ exactly, but unloads along a line instead of HVE's shifted
+    curve, whose force drops almost to the constant term the moment unloading begins.
+    A Relaxation Length below 0.01, including 0, is raised to 0.01 for this slope:
+    at 0 a crushed node would carry nothing once it left its peak. The run status
+    names each pair this affects.
+
+    Two other things change with it:
+
+    - **Sharing the overlap.** At each evaluation both vehicles' nodes start
+      from their permanent shapes, and the overlap is shared so that the two
+      sides carry **equal pressure**, each on its own loading curve or unloading
+      line. HVE's sharing used a loading estimate even during rebound, which
+      books one vehicle's springback as crush on the other.
+    - **Crush present at the start of the run is the body's shape.** A body
+      placed inside another, or inside the ground, keeps that crush as permanent
+      and stores no energy from it.
+
+    On the cases measured, HVE's own restitution comes mostly from integration
+    error: on the Acura/BMW validation case it falls from 0.07 to about 0 when
+    the collision step is quartered, while the elastic law's restitution
+    converges. Expect two-vehicle results to differ from HVE's: more rebound
+    where a face states a soft Unloading Stiffness, and more crush on the softer
+    of two vehicles. Setting the environment variable `HVE_DYMESH_UNLOAD=hve`
+    restores HVE's unloading law everywhere. The wheel meshes and the
+    environment keep their own laws.
 
 !!! note "HVE Studio"
     The inter-vehicle restitution DyMESH uses is the **Relaxation Length**. In

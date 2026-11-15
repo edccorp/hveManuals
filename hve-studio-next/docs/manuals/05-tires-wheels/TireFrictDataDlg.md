@@ -25,6 +25,13 @@ select that wheel and that tab in the panel; the button for the table on
 screen is highlighted. The bar between the grid and the panel drags to trade
 height between them.
 
+Under **Friction Table** the grid summarizes each wheel's table: **Loads**, **Speeds**, **Peak Long. vs Load**
+and **Slide vs Load** (at the table's lowest speed), **Peak Long. vs Speed** and **Slide vs Speed** (at its
+middle load). With a program chosen under **Used by** that reads one load row (EDSMAC4, EDSMAC, EDCRASH, EDVDS,
+EDSVS, EDVTS), the load it reads is in brackets in **Loads** and **Slide vs Load**. That row is the middle one;
+with an even number of loads it is the lower of the two middle rows, which is how every one of these programs
+picks it (NumTableLoads/2 - 0.5, truncated).
+
 While a solved run is on screen the panel is read-only; reset the run to edit
 it. Edits apply immediately; **Edit › Undo** (Ctrl+Z) takes one back.
 
@@ -61,6 +68,12 @@ and an **x** button that deletes the row. Every cell is editable. The table's
 **In-Use Factor** is one field above it.
 After a **Load** or **Speed** is changed the table re-sorts by load, then
 speed. Clicking a row's number selects it for the plot below.
+
+With a program chosen under **Used by** that reads only part of the table, a line above it says which cells it
+reads and the rest are dimmed (still editable: another program may read them). EDSMAC4 and EDSMAC read the
+**Slide** column of the middle load row at the lowest speed, and at the highest speed for its slope with speed;
+EDCRASH the **Slide** of the middle load row at its middle speed; EDVDS, EDSVS and EDVTS the middle load row at
+its middle speed, all but **Peak Lat.**. SIMON and EDVSM read the whole table, and nothing is dimmed for them.
 
 To add a point, enter its **Load** and **Speed** under the table and press
 **Add Row**. The new row is seeded from the wheel's scalar friction values (the

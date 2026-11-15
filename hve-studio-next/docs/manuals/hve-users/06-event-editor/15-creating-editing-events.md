@@ -137,6 +137,15 @@ vehicles directly:
   **OUTSIDE THE VIEW, press . to frame it**, or **HIDDEN in the view** (Alt+H
   shows it). The **V1**, **V2** ... labels in Event Information's Vehicles in
   Event list select a vehicle too, and the selected one is highlighted there.
+- Click a **human** to select the whole body: the car's gizmo and outline go,
+  and the line below the Viewport names the human. Press **G** to move the
+  body across the ground (X or Y locks the move to that axis; Enter or a click
+  keeps it, Esc or a right click puts it back) or drag it, and **R** to turn
+  it about the vertical (X or Y turns it about that axis instead; a typed
+  number sets the angle). **Ctrl+click** a body part to pose just that part:
+  **R** then turns it about its joint. The vehicle drop-down on the toolbar
+  lists the event's humans after its vehicles; choosing one selects it the
+  same way.
 - A move in the Viewport edits the same starting position the Position /
   Velocity dialog and the Event Information panel show.
 - Each named position that is set (Impact, Final/Rest, ...) is outlined as a

@@ -103,7 +103,7 @@ it (the generic body, when its own mesh was not available to the solver).
 ![The file browser](../images/hvn-02-open-case.png)
 *Open Case uses HVE Studio's own two-pane file browser.*
 
-The browser's left column lists **Places** (Home, HVE Studio Cases, your **Documents**,
+The browser's left column lists **Places** (Home, HVE Studio Cases unless it is turned off in Preferences, your **Documents**,
 **Desktop** and **Downloads**, and on Windows each drive), your **Favorites** and the
 **Recent folders**; **+ Add current** puts the folder you are in among the favorites.
 A Windows shortcut (`.lnk`) to a folder, or a symbolic link to one, is listed with the folders
@@ -116,9 +116,17 @@ vehicle mesh or site geometry, image, database) and labeled with its extension; 
 pointer over one for its full name, size and date. The view you choose is kept for the next
 time the browser opens.
 
+In every view a folder opens on a **double-click** (in the **Folders** list too, and **.. (up)**);
+a single click only highlights it.
+
 A click in the **Path** box selects the whole path, so typing or pasting replaces it. **Enter**
 in the **File** box, or with no box being typed in, does what the **Open** (or **Save**) button
-does; that button is drawn in the accent color as the browser's default.
+does; that button is drawn in the accent color as the browser's default. **Escape** does what
+**Cancel** does, unless a box is being typed in (Escape then leaves the box first).
+
+Saving over a file that already exists asks first: **Replace** writes over it, **Cancel** (or Escape) goes back to the
+browser with nothing written. Until the name is changed or confirmed, an orange **overwrites existing file** beside the
+buttons says so too.
 
 **New folder** (beside the **Folders** heading) makes a folder inside the one you are in: type a
 name and press **Enter**. A name Windows could not hold (an empty name, one with `/ \ : * ? " < > |`,
@@ -437,7 +445,11 @@ the Event editor. See [Chapter 4D](04d-output-menu.md#export-variables).
 
 **Description:** If the case has unsaved changes, HVE Studio asks **Quit without
 saving?** with **Save**, **Discard** and **Cancel**. Closing the main window
-does the same.
+does the same. **Save** saves the case and then closes HVE Studio; an untitled case first
+opens the Save As browser, and HVE Studio closes once it is saved. If the save does not
+happen (the browser is cancelled), HVE Studio stays open with the case unsaved. The same
+holds for the questions **New Case**, **Open Case** and opening an example ask: **Save**
+saves, then carries on.
 
 <!-- NAV -->
 

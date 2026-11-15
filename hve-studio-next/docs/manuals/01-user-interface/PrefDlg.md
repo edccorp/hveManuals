@@ -9,6 +9,19 @@ Choosing **Options › Preferences...** displays the **Preferences** window. Set
 ### Date Format
 **US (MM/DD/YYYY)** or **ISO (YYYY-MM-DD)**.
 
+### Tooltips
+When the explanation that appears under the pointer shows: **Show at once** (the default), **Show after a pause**, or **Off**. With **Show after a pause**, **Pause before a tooltip (s)** sets how long the pointer rests on a control first (0.1 to 5 s, 0.5 s to start with); once a tooltip is up it stays while the pointer stays on that control. **Off** hides every tooltip; many fields give their units, limits and what reads them only there, so a pause keeps those within reach. The preview of something being dragged always shows. Kept with your preferences, for every case.
+
+### Hover highlight
+How much a button, list row, field or tab changes color while the pointer is over it: **Normal** (the theme's own), **Subtle** (a quarter of the change), or **Off** (no change). For anyone who finds the colors flickering under the pointer tiring as it crosses a screen of controls. A pressed control still shows that it is pressed, and the Style Editor and the themes keep their own hover colors. Kept with your preferences, for every case.
+
+### Keep an HVE Studio folder in Documents
+On (the default): **Documents\HVE Studio\Cases** is where **Open** and **Save As** start when no case is open, the
+file browser lists it under Places as **HVE Studio Cases**, and the folder is made again if it is missing. Off: nothing
+makes that folder; the browser starts in **Documents** itself, does not list the place, and a video, render or export
+made with no case open is offered in Documents. A folder that already exists, and the files in it, are never touched
+either way, so turn this off first and then delete the folder. Kept with your preferences.
+
 ### Coordinates
 There is no choice here for now: every field shows and takes **SAE** coordinates — x forward, y right, z down, heading clockwise from above — as the case, its files, the engines and the reports do. (The Conventional choice, y left and z up, is withdrawn until the output panels and reports follow it too.) Heights (Z Height, elevations) stay positive up.
 

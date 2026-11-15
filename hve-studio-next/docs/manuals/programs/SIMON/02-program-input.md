@@ -51,7 +51,7 @@ The following human parameters are used by SIMON:
 SIMON uses the total weight of the human in order to adjust the inertial properties of the vehicle sprung mass. The weights of all ellipsoids are added together to compute the total human weight. The total weight is applied to the vehicle at the vehicle-fixed coordinates of the pelvis CG. Neither the rotational segment inertias nor the body configuration is used by SIMON.
 
 !!! note "HVE Studio"
-    Because the occupant's weight moves the vehicle's loaded CG, and a vehicle's start position is that CG, the vehicle is drawn before a run where SIMON will put it: shifted from the start position by the occupant's share. **Dragging an occupant** in the 3-D view moves the vehicle's start position by the same amount (since November 2026), so the car stays where it is on screen and only the occupant moves; it used to slide a little the opposite way. Typing a new seat position moves the loaded CG as before.
+    The occupant's weight moves the vehicle's loaded CG, but not the vehicle: the start position is the vehicle's own origin (its sprung-mass CG with nobody aboard), and SIMON is handed the loaded CG's start from it, so adding, moving or removing an occupant leaves the car where it was placed (since 2026-11-13; in HVE the start position is the loaded CG, so the car moved by the occupant's share). **Dragging an occupant** in the 3-D view moves only the occupant. See [Payload](../../02-vehicles/PayLoadDlg.md#the-loaded-cg).
 
 ## Vehicles
 

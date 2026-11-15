@@ -329,7 +329,17 @@ Size & Weight and Mass & Inertia, until 2026-11-10. It opens with **Axle
 loads**, the static load on each axle from the mass and the weight split, and
 where the CG sits along the wheelbase. On a vehicle with more than two axles
 the rear axles share the rear load equally (a tandem's equalizer at rest), one
-bar each, and the headline says so. Under it, five sections:
+bar each, and the headline says so. Under it, three tabs, so nothing needs
+scrolling to reach:
+
+- **Size, Weight & CG** — the Configuration, the spec sheet reader, the size,
+  weight and CG form and the CG in the body.
+- **Wheel Positions** — each wheel's X, Y and Z from the CG.
+- **Inertia & Aboard** — the weights again (the same fields as on the first
+  tab: an edit in either is the same edit), the inertias, what is aboard, and
+  the inertia chart.
+
+In those tabs, five sections:
 
 - **Configuration** — number of axles, driver location, engine location and
   drive axles, with HVE's rules applied as you change one (the Vehicles
@@ -352,13 +362,15 @@ bar each, and the headline says so. Under it, five sections:
   weights, the CG height and the CG to each axle; the overall dimensions; the
   body's distance from the CG to its front, rear, right, left, top and bottom
   (underside); the wheelbase, overhangs and tracks, with the wheelbase check.
-  It ends with **Wheel Positions (from CG)**, each wheel's X, Y and Z, each
-  axle left then right. It is the Vehicles panel's **Size & Weight** section,
-  not a copy: a field has one editor.
-- **Inertia & Aboard** — the roll, pitch and yaw inertias and the product of
-  inertia, and what is aboard (occupants and cargo): the **Inertia / Mass**
-  editor the Vehicles panel's Inertia **Edit...** opens, without its mass and
-  CG tables (they are in the section above). **Auto Update Inertia When Weight
+  The **Wheel Positions** tab holds each wheel's X, Y and Z from the CG, each
+  axle left then right (in the Vehicles panel the same table ends the section,
+  under **Wheel Positions (from CG)**). It is the Vehicles panel's **Size &
+  Weight** section, not a copy: a field has one editor.
+- **Inertia & Aboard** — under **Weight**, the vehicle's weight and mass,
+  Total and Sprung, repeated from the first tab; then the roll, pitch and yaw
+  inertias and the product of inertia, and what is aboard (occupants and
+  cargo): the **Inertia / Mass** editor the Vehicles panel's Inertia
+  **Edit...** opens, without its CG table (it is on the first tab). **Auto Update Inertia When Weight
   Changes**, under **Rotational Inertia**, scales the total inertias with the
   total mass when a weight is typed, as HVE's checkbox does.
 - **Inertia: stated against estimated** (closed until you open it) — the
@@ -382,6 +394,14 @@ total-mass values (its "inches from front bumper" is **CG to Front**,
 **Total**; its CG height and CG behind the front axle are the Weight table's
 Total ones), so a vehicle is usually set up from the Total column and the
 sprung values follow.
+
+**The vehicle stands on its tires.** Typing a wheel's height below the CG (a
+lift kit, a lowered car) raises or lowers the whole vehicle so its tires still
+reach the ground: the CG height becomes the mean, over the wheels whose height
+you typed, of that height plus the tire's unloaded radius, which is the height
+every engine runs the vehicle at. Wheels with no height of their own follow the
+CG. The same happens when you copy a wheel's location to the other side or
+send a wheel back to the dimensions.
 
 Moving the body moves no unsprung mass, so a body distance typed in the Total
 column converts exactly. Moving a wheel moves its unsprung mass, and with it

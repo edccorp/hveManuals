@@ -573,6 +573,16 @@ everything the case measures from that CG: each event's payload for the
 vehicle, and the seat (and pose) of every occupant it carries, so an occupant
 the event seats stays in the seat.
 
+**The vehicle itself does not move** (since 2026-11-13). The start position
+you enter is the vehicle's own origin, its sprung CG with nothing aboard. When
+a load added to the vehicle moves the CG, a simulation (SIMON, EDVSM, EDSMAC4,
+EDSMAC, EDSVS, EDVDS, EDVTS, the motorcycle model) starts the moved CG at the
+entered position plus that shift, so the body and wheels start exactly where
+you placed them. The drawn vehicle and its CG position, velocity and
+acceleration channels stay at that origin for the whole run. A trailer coupled
+behind is placed from its tow's hitch as before. EDCRASH, EDGEN and the
+occupant programs use their positions as entered.
+
 ### A human from the Human editor in the seat
 
 An occupant row can name a human from the **Human** editor (the row's

@@ -35,9 +35,13 @@ A name for the accelerometer, used in the list.
 
 ## Mount Position X / Y / Z
 
-Coordinates of the accelerometer relative to the vehicle CG, in the
-vehicle-fixed SAE frame: X forward, Y right, **Z down** (the field reads
-**Z down**). A point above the CG has a negative Z.
+Coordinates of the accelerometer from the vehicle's **sprung-mass CG with
+nothing aboard** (the heading reads **Mount Position (from the sprung CG)**),
+in the vehicle-fixed SAE frame: X forward, Y right, **Z down** (the field reads
+**Z down**). A point above the CG has a negative Z. That is the vehicle's own
+origin in HVE Studio: wheels, body, lights, connections, payloads and
+accelerometers are all measured from it, and a payload or occupant does not
+move it (see [Payload](../02-vehicles/PayLoadDlg.md#the-loaded-cg)).
 
 An accelerometer is a point on the vehicle body: the programs report the
 motion of that point. There is no reference-frame choice, as in HVE.
