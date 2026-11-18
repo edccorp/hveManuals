@@ -290,8 +290,11 @@ perform the following steps:
 
 4. In **Vehicles in Event**, click **Add Vehicle** and click each vehicle the
    event uses, in slot order: the list stays open, ticks each vehicle as it
-   joins its slot, and closes with **Done**. **Remove** takes a vehicle out of
-   the event (after confirmation).
+   joins its slot, and closes with **Done**. Click a ticked vehicle again, while
+   the list is still open, to take it back out; **Remove** takes out a vehicle
+   added earlier (after confirmation). Add a tractor and then its trailer, and
+   the hitch is mated; if the order was wrong, use the trailer row's **Towed by**
+   drop-down to pick its tractor afterward.
 
    > **NOTE:** The order of the slots may be important. For example, for a
    > tractor-trailer simulation, the first vehicle is the tow vehicle and

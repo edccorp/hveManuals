@@ -152,8 +152,16 @@ When there are no pages the window says why:
     above.
 
 !!! note "HVE Studio"
-    HVE's graphic reports (Site Drawing, Damage Profiles, Momentum Diagrams) are
-    not shown in this window — see [Common Scene Report](CommSceDlg.md). The
+    Two of HVE's graphic reports are drawn in this window as pages of their own,
+    beside the text pages: **Damage Profiles** (one plan-view profile per vehicle
+    of the event that states a CDC or measured crush: the crush, the impulse
+    center and the force line) and **Momentum Diagram** (the vector diagram of the
+    collision: each of the two vehicles' momentum before and after, tip to tail,
+    with a table of the momenta, their directions and the change, and how closely
+    the before and after chains close). They are recreated from the event's own
+    inputs and the run on screen, not read from the engine's report, and they are
+    not part of **Save All Pages** or the print order, which write text. The Site
+    Drawing is not shown here — see [Common Scene Report](CommSceDlg.md). The
     *Event Notes* entered with **Event › Notes** are kept with the case but are
     not a report page.
 

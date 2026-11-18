@@ -178,8 +178,8 @@ third-order polynomial** by adding $C$ and $D$ coefficients together with a
 
 The force on a single node is computed as follows. Let $\delta$ be the
 node's current total deflection (penetration depth), $A_v$ be the area associated
-with the node, and $\delta_0$ be a small **null-band** offset (0.5 in) below
-which only the constant term acts. For increasing penetration
+with the node, and $\delta_0$ be a small **null-band** offset (0.5 in) over
+which the constant term is phased in. For increasing penetration
 ($\delta > \delta_\mathrm{max}$) the node force per unit area follows a cubic:
 
 $$
@@ -189,7 +189,10 @@ $$
 
 where $A$ (constant, lb/in²), $B$ (linear, lb/in³), $C$ (quadratic, lb/in⁴), and
 $D$ (cubic, lb/in⁵) are the four per-node stiffnesses. Below the null band the
-force is simply $F = A\,A_v$. Once the deflection reaches the node's
+constant term rises linearly from zero, $F = A\,(\delta/\delta_0)\,A_v$, reaching $A\,A_v$ at
+$\delta_0$ (`NullBand`, Dymesh.cpp). The linear, quadratic and cubic terms are measured from
+$\delta_0$, not from zero, so past the band a node carries $B\,\delta_0$ less pressure than
+$A + B\,\delta$ would give. Once the deflection reaches the node's
 **saturation crush** $\delta_\mathrm{sat}$, the force is held at its saturation
 value and does not increase further:
 

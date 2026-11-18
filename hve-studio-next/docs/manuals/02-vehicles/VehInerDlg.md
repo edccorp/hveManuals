@@ -95,7 +95,7 @@ Values take effect as they are typed, so the dialog has a single **Close** butto
 
 If the sprung mass comes out zero or negative (the total mass is less than the tire weights), the dialog says so in orange and the Total columns show the sprung values until it is corrected.
 
-**Auto Update Inertia When Weight Changes** (a checkbox under **Rotational Inertia**, off by default and kept as your own setting, not the vehicle's, as in HVE): a typed weight or mass, total or sprung, here or in **Size & Weight**, multiplies the **total** roll, pitch and yaw inertias by the new total mass over the old one; the sprung values follow by the parallel axis theorem and the XZ product is kept. An axis with nothing stated uses the estimate, which follows the mass anyway.
+**Auto Update Inertia When Weight Changes** (a checkbox directly under the **Weight** and **Mass** rows, off by default and kept as your own setting, not the vehicle's, as in HVE): a typed weight or mass, total or sprung, here or in **Size & Weight**, multiplies the **total** roll, pitch and yaw inertias by the new total mass over the old one; the sprung values follow by the parallel axis theorem and the XZ product is kept. An axis with nothing stated uses the estimate, which follows the mass anyway.
 
 !!! warning "Not in HVE Studio"
     - **Basic... / Complex...**: both columns are always shown.

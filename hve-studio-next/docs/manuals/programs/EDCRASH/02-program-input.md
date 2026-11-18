@@ -483,6 +483,15 @@ After entering the CDC, the damage profile may be edited by over-riding the defa
       evenly across the width. **Measure from a scan...** opens *Crush
       Profile from Scan* for this vehicle (below), which fills the depths,
       width and offset from a scan of the damaged vehicle.
+      *(New in HVE Studio.)* Entering a complete **CDC** fills Measured Crush
+      with the default profile EDCRASH takes from the CDC alone (four depths, a
+      width and an offset: the extent digit gives the depth, the fourth
+      character the width, offset and shape), so you can see it and adjust it.
+      It follows later edits of the CDC until you change one of its numbers;
+      after that the numbers are yours. **Start from the CDC's default** puts
+      it back. To enter your own values, type them in **C1** to **Cn**,
+      **Damage width** and **Damage offset** (Ctrl+click a field, or double-click it, to type), or set
+      **# crush depths** to the count you measured.
 
     HVE Studio does not display barrier results while you enter the profile;
     the damage energy and force appear in Key Results and the Damage Data

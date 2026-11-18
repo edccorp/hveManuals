@@ -87,7 +87,9 @@ What a stage covers is a tooltip on its title band (the colored bar naming it): 
    **Cancel** (**Enter** deletes, **Escape** cancels); the
    surfaces' triangles are removed from what the solver drives on and from the
    3-D view, a downloaded terrain's source record goes with it, and **Edit ›
-   Undo** brings them back. Deleting the last surface the site has clears the
+   Undo** brings them back. **Delete All**, beside **Delete**, asks the same question
+   over every surface of the site at once (the aerial image and the point cloud are
+   separate rows and stay). Deleting the last surface the site has clears the
    site, as **Clear** on the Import stage does: the vehicles then run on the
    ground outside the site. It is held, like Drive, while a run's results are on
    screen, because the site is a solver input. The aerial image and the point

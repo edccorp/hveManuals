@@ -100,8 +100,14 @@ on screen changes until you edit one.
 - **Road surfaces.** When a site is read in, every surface gets a default
   material named after it (`Asphalt`, `Grass`, ...), unless the case already
   carries surface materials, which is how a saved case reopens with its own. A
-  site with more than 64 surfaces gets none automatically, and the empty slot
-  says why.
+  site with more than 256 surfaces gets none automatically (it was 64 until
+  2026-11-17), and the empty slot says why. For a **VRML or Inventor** file, the
+  Material the file states for each shape is carried onto its surface's
+  Principled BSDF: **Specular** from the specular color (its brightest channel),
+  **Roughness** from the shininess and specular together (a black specular is
+  matte whatever the shininess), and the file's **ambient** as an **Emission** in
+  the surface's own color, at the ambient's strength. A file that states none of
+  these keeps the defaults. This is a first mapping.
 - **Humans.** Nothing is made automatically; use **+ New** or **One material
   per segment**.
 
@@ -510,3 +516,7 @@ is kept, untouched, when the case is opened by an older one.
   *baked*: constant values and image textures travel, and everything that
   cannot (procedural textures, a world material, keyframes) is listed in the
   export's status.
+
+## Make materials for all surfaces
+
+With a surface of a site selected in the Shader Editor, **Make materials for all surfaces lacking one** gives every surface that has no material one, each made from the surface's own look as when a site is read in (a site with more than 256 surfaces is not given them automatically; the button does it on request). A surface that already has a material is left alone, and **Edit › Undo** takes the new ones back.

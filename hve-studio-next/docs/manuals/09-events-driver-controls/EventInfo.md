@@ -166,8 +166,22 @@ numbering the engine uses; for EDVTS and EDVDS slot V1 is the tow vehicle.
   saved results still describe the event, so the results stay valid. It is
   refused only while a run is in progress or the case is sealed.
 - **Remove** drops the slot after a confirmation; its inputs are discarded.
-- **Add Vehicle** adds a case vehicle to a new slot. It is disabled once the
-  method's maximum number of vehicles is reached. Below the method's minimum
+- **Towed by** appears on a row whose vehicle has a trailer-type front
+  connector (hitch, king pin, pintle eye). The solver couples a trailer to the
+  unit in the slot *before* it, so the slot order is the tow link. Picking a
+  tow here moves the trailer, and anything hitched behind it, to sit right after
+  that tow in the order, and re-mates the hitch; the trailer's heading (the
+  articulation angle) is kept. Use it to fix a rig added in the wrong order,
+  including two tractors with two trailers. A vehicle whose connectors do not
+  mate with the trailer's is listed grayed ("connectors do not mate"); the
+  connectors are set in the Vehicle Designer's **Connections** stage. A note
+  appears under the row when the move leaves another unit behind a vehicle it
+  does not mate with.
+- **Add Vehicle** adds a case vehicle to a new slot. Click vehicles in towing
+  order (tractor, then its trailer): a trailer added right after its tractor
+  has its hitch mated at once. Within one open of the list, clicking a ticked
+  vehicle takes it back out; a vehicle added earlier is removed with **Remove**.
+  It is disabled once the method's maximum number of vehicles is reached. Below the method's minimum
   the event can be edited but not run, and a red line says how many more are
   needed.
 
@@ -267,9 +281,10 @@ the damage on **Damage Profiles**.
 ![Vehicle Impact Setup for an EDCRASH event](images/hvn-event-info-edcrash.png)
 
 - **Time shown before impact (s)** (for the event) — how much of the approach the
-  drawn playback shows before the impact, the same for every vehicle. 0 reads
-  *automatic*: from the first surveyed position before the impact, or 2 s when
-  there is none. Display only; it takes effect on the next run.
+  drawn playback shows before the impact, the same for every vehicle. The
+  **Automatic** checkbox beside it (on by default) draws from the first surveyed
+  position before the impact, or 2 s when there is none; clear it to type a time,
+  and 0 draws only the impact. Display only; it takes effect on the next run.
 - **Drawn approach speed** — only for a vehicle with no rest position (a
   damage-only study). EDCRASH does not read an impact speed: with a scene it
   solves the impact speed from the positions, and this sets only how fast the

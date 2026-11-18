@@ -132,8 +132,13 @@ Under the map, choose the tile source, and the area every download takes (below)
 chosen, press **Download aerial image**: the yellow rectangle on
 the map, aligned to the case's axes, is downloaded and laid on the ground as the
 case's aerial site image, or, with **Add as a new layer** on, as a layer above
-it -- as ground: drivable flat ground where the site is not, and the photograph
-in the material of every surface under it. **Your own picture**, under the
+it -- as ground. The choice beside **Add as a new layer** says how: **Onto the
+3-D surfaces** (the default: drivable flat ground where the site is not, and the
+photograph in the material of every surface under it), **As a flat surface** (one
+flat surface covers the picture, with the photograph in its own material, and
+the site's surfaces are left as they are; over a site it is display only, at the
+site's mean height) or **Both**. The same choice is in **Place a picture on the
+ground**. Opacity is set in the surface's material, in the Shader Editor. **Your own picture**, under the
 button, places a picture of your own the same way. It is placed
 assuming the case origin is at this location and +X points along its North
 angle. The button needs the case's location to be set first.
@@ -292,7 +297,11 @@ geometry loaded, with its buttons (the survey point cloud's file, **Import...**
 and **Clear** are at the top of the **Point cloud** tab). On the *Scene geometry*
 row, **Import...** chooses a terrain geometry file -- DXF, HVE geometry
 (`.h3d`), Inventor (`.iv`), VRML (`.wrl`), OBJ or glTF (`.gltf`, `.glb`) -- and
-**Add...** one to read into the site beside what is loaded; **Clear** removes the
+**Add...** one to read into the site beside what is loaded; **Scale / frame...**
+opens the same window on the site's own file with the options it was read with,
+so a wrong scale or flip is corrected without browsing for the file again (the
+site's surface edits are kept; it needs a site read from one file, not one built
+from several added files or taken from a `.hve`); **Clear** removes the
 geometry. Choosing a file opens **Import Scene Geometry**, which asks how to read
 it, starting from the last import's choices:
 
@@ -342,7 +351,8 @@ stepped over; textures are not applied.
 
 **Site Placement** — where the site sits in the world: **Move X**, **Move Y**
 and **Move Z**, **Yaw (deg)**, **Pitch (deg)** and **Roll (deg)** (signed as a
-vehicle's: right turn, front up, right side down) and **Scale (x, y, z)**, with
+vehicle's: right turn, front up, right side down) and **Scale (x, y, z)** with
+**Flip X**, **Flip Y** and **Flip Z** (a mirror: that axis's scale changes sign), with
 the world origin's position in the site file's own coordinates once it is moved.
 
 After an import the **Key figures** give the site's extent and its surface

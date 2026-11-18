@@ -60,7 +60,8 @@ under a name you already used replaces that file.
 ## Condition preset
 
 **Dry (1.00)**, **Wet (0.70)**, **Snow (0.30)** or **Ice (0.15)** — sets the
-Friction Multiplier to that value and changes nothing else. **Apply material**,
+Friction Multiplier to that value and changes nothing else. The box shows the
+preset the multiplier currently equals, or **Custom** when it matches none. **Apply material**,
 by contrast, replaces the whole material.
 
 !!! tip "New in HVE Studio"

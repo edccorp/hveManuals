@@ -38,7 +38,7 @@ both a wide-open-throttle (WOT) condition and a closed-throttle (CT)
 condition.
 
 In HVE Studio the Engine section contains **Name**, **Idle RPM**, **Redline
-RPM**, **Max Torque**, **Max Power**, **Inertia** and **Friction Torque**,
+RPM**, **Max Torque**, **Max Power** (grayed, the Wide Open table's peaks, while that table has two or more rows), **Inertia** and **Friction Torque**,
 then **Engine Tables**: a **Throttle Position** selection (Wide Open /
 Closed) and a grid of **Speed (RPM)**, **Torque** and **Power** for the
 selected table. Speed and torque are edited; Power is shown grayed and

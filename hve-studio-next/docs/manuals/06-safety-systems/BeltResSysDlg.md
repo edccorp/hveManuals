@@ -80,9 +80,10 @@ For the left and right belt segments:
 
 ## Vehicle Anchor
 
-**Veh I L**, **Veh J L**, **Veh K L**, **Veh I R**, **Veh J R**, **Veh K R** —
-the vehicle end of the left and right webbing, relative to the vehicle CG
-(HVE's anchor locations from the vehicle Belt Restraints dialog). A vehicle
+**Left end: forward of CG**, **Left end: right of CG**, **Left end: below CG**,
+**Right end: forward of CG**, **Right end: right of CG**, **Right end: below CG** (called Veh I L to Veh K R before) —
+the vehicle end of the left and right webbing, relative to the vehicle CG, forward, right and
+down positive (a point above the CG has a negative below); HVE's anchor locations from the vehicle Belt Restraints dialog. A vehicle
 from the database carries HVE's own anchors for every seat: for a 3-point belt
 the torso section runs from the shoulder D-ring (outboard, above the seat) to
 the buckle (inboard, at the seat), and the lap section from the outboard lap

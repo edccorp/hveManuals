@@ -19,8 +19,16 @@ The pages are EDCRASH's own, built from its resource strings in HVE's layout and
 
 !!! note "HVE Studio"
     - **Printing.** HVE Studio does not print. **Save This Page** writes the
-      page shown to the text file named in the field beside it (default
-      `hve_report.txt`); **Save All Pages** writes every page to that file.
+      page shown to the text file named in the field beside it, which fills
+      in with the case's name and the page's (`EDCRASH Case_accident_history.txt`)
+      as you click from page to page; a name you type is kept. **Save All
+      Pages** writes every page to the file named in its own field (default
+      `<case>_report.txt`), or, with **One file per page** ticked, one file
+      per page named `<case>_<page>.txt`. The HTML buttons work the same way,
+      and **Save All Pages as HTML** includes the **Damage Profiles** and
+      **Momentum Diagram** pages as pictures. **Overwrite existing files**
+      (on by default) replaces a file of the same name; off, a save is written
+      as `name (2).ext`, `name (3).ext` and so on and the earlier file stays.
       A name without a folder is saved beside the case file (in the folder
       the program was started from for a case never saved), and the line
       under the buttons shows the full path.

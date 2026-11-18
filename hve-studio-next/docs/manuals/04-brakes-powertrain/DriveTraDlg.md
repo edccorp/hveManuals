@@ -19,11 +19,11 @@ User-editable description of the engine (drivetrain) for the current vehicle.
 ### Idle RPM
 Idle speed of the engine.
 
-### Redline RPM, Max Torque
+### Redline RPM
 Used only for a vehicle that has **no engine table**: HVE Studio then builds a simple three-point wide-open-throttle table from the idle speed, the redline and the maximum torque. A vehicle read from an HVE file carries HVE's own engine tables, which are used instead.
 
-### Max Power
-Stored with the vehicle. No engine reads it.
+### Max Torque, Max Power
+When the **Wide Open** table has two or more rows, these two are the table's peaks (peak torque; peak of torque times speed) and are shown grayed: edit the table and they follow. With fewer rows they are inputs: **Max Torque** builds the stand-in curve described under Redline RPM, and **Max Power** feeds only the Vehicle Designer's top-speed estimate (no engine reads it).
 
 ### Inertia
 Rotational inertia of the drivetrain components (HVE's *Drivetrain Inertia*).

@@ -20,6 +20,8 @@ One table with a column per face: **Front**, **Rear**, **Top**, **Bottom**, **Le
 | 3-D: **Constant**, **Linear**, **Quadratic**, **Cubic**, **Conversion Height**, **Saturation Crush** | SIMON (DyMESH) only |
 | 3-D: **Max Crush (graph extent)** | no engine (the graph's span) |
 | 3-D: **Unloading Stiffness** | SIMON (DyMESH) |
+| 3-D: **Structure Restitution** | SIMON (DyMESH), research only: applied when the solver runs with `HVE_DYMESH_BUMPER=1` or `HVE_DYMESH_CORE=2` |
+| 3-D: **Bumper Stroke**, **Bumper Pressure**, **Bumper Restitution**, **Bumper Band Low**, **Bumper Band High** | SIMON (DyMESH), research only: applied when the solver runs with `HVE_DYMESH_CORE=2` |
 
 SIMON does not read A, B or Kv; EDCRASH reads none of this window (it takes A and B from the event's damage profile).
 
@@ -49,6 +51,23 @@ Saturation Crush caps each node's **force** in DyMESH: past it the pressure stay
 
 ### Unloading Stiffness
 The slope a DyMESH body node unloads along from its peak crush, in the units of **Linear**. A node springs back by its peak pressure divided by this slope and keeps the rest as permanent crush. A node whose peak stays below that recovers fully. 0 means derive the slope from the event's **Relaxation Length**, which keeps HVE's permanent crush. A softer slope gives more rebound and less permanent crush. The DyMESH collision model's page describes the law; the run status names the faces that state a slope.
+
+### Structure Restitution
+**Research; not applied by default.** A number from 0 to 1 for each face: how much of the structure's spring-back energy a DyMESH body node gives back while the vehicles are still in contact. It sets the rebound without changing the permanent crush. The rest of the spring-back is held until the node is out of contact, and the node then creeps back to the same permanent crush. 1 gives back all of it; a smaller value gives a softer rebound. 0 means use the solver's default. Only the bumper model reads it (the solver run with `HVE_DYMESH_BUMPER=1`) and the redesigned contact law (`HVE_DYMESH_CORE=2`); otherwise the value is not applied.
+
+### Bumper Stroke, Bumper Pressure, Bumper Restitution
+
+**Research; not applied by default.** The bumper as a soft spring in front of the structure, on the face's bumper nodes. It compresses first, bottoms out, and the structure behind it then takes the load. It always springs back to its shape: the permanent crush is the structure's.
+
+- **Bumper Stroke**: how far the bumper travels before it bottoms out. 0 means no bumper spring.
+- **Bumper Pressure**: the pressure at full stroke. The bumper's stiffness is this pressure divided by the stroke. 0 means no bumper spring.
+- **Bumper Restitution**: a number from 0 to 1, the share of the bumper's energy it gives back as it springs back. 0 means use the solver's default.
+
+At low speed, where the structure never yields, the whole front springs back and the vehicle keeps no crush. Only the redesigned contact law reads these (the solver run with `HVE_DYMESH_CORE=2`); otherwise they are not applied.
+
+### Bumper Band Low, Bumper Band High
+
+**Research; not applied by default.** The heights above the ground between which the Front and Back faces' foremost vertices are the bumper's, where the mesh has no part named Bumper. Both 0 uses a band for the vehicle type: 16 to 20 in for a passenger car, 16 to 26 in for a pickup, van or multi-purpose vehicle.
 
 ## The graph
 

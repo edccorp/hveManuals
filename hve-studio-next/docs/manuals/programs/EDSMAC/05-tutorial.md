@@ -75,7 +75,7 @@ The Ford Escort:
     > NOTE: The weight is entered as a force; the mass is calculated and displayed beside it. The value may show extra digits, because the weight is stored as mass and multiplied by the gravity constant for display.
 
     !!! note "HVE Studio"
-        HVE Studio's *Auto Update Inertia When Weight Changes* checkbox is under **Rotational Inertia** in the Vehicle Designer's **Size, Mass & CG** stage, off unless you tick it. Either way, after changing a weight check the **Yaw** row in the same section and enter the yaw inertia you intend.
+        HVE Studio's *Auto Update Inertia When Weight Changes* checkbox is directly under the weight rows in the Vehicle Designer's **Size, Mass & CG** stage, off unless you tick it. Either way, after changing a weight check the **Yaw** row in the same section and enter the yaw inertia you intend.
 
 The Nissan Sentra:
 

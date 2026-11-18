@@ -193,7 +193,9 @@ Results that are easy to miss:
 - **Stiffness**: EDSMAC4 reads the crush **A** and **B**, EDSMAC and EDVSM read
   **Kv** (EDSMAC only the front's, for every side), and SIMON reads the DyMESH
   node stiffness. **Max Crush** reaches no program (it sets the graph's span), and **Conversion Height** is
-  printed in SIMON's report only.
+  printed in SIMON's report only. With **Hide unused** on and any method but SIMON chosen, the whole 3-D
+  block goes: its rows, the **3-D** heading, the notes under the table, **Calculate 3-D from 2-D** and the
+  graph's **3-D (per unit area)** choice.
 - **Brakes**: SIMON, EDVSM and EDVDS read the brake model only when the event's
   brake input is *At Driver*; under *% of Friction* they read none of this stage
   but SIMON's **ABS Installed**. EDSVS and EDVTS read only their antilock switch
@@ -371,7 +373,7 @@ In those tabs, five sections:
   inertias and the product of inertia, and what is aboard (occupants and
   cargo): the **Inertia / Mass** editor the Vehicles panel's Inertia
   **Edit...** opens, without its CG table (it is on the first tab). **Auto Update Inertia When Weight
-  Changes**, under **Rotational Inertia**, scales the total inertias with the
+  Changes**, directly under the weight rows, scales the total inertias with the
   total mass when a weight is typed, as HVE's checkbox does.
 - **Inertia: stated against estimated** (closed until you open it) — the
   vehicle's TOTAL roll, pitch and yaw inertias against EDC's estimate from

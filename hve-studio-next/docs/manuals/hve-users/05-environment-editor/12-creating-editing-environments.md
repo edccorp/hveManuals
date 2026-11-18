@@ -448,7 +448,9 @@ the ground the vehicles drive on and its picture together:
   right side. They are applied roll, then pitch, then yaw.
 - **Scale (x, y, z)** — a factor along each of the site's own axes, about
   the middle of its box (1 = as read). The scale is applied first, then the
-  turn, then the move.
+  turn, then the move. A negative factor mirrors: **Flip X**, **Flip Y** and
+  **Flip Z** beside it negate that axis in one click. A mirrored surface keeps
+  facing up (its triangles are re-wound), so the solver still drives on it.
 - **Reset** — back to where the file put it.
 
 Once the site is moved, the section also says where the world origin lies in
@@ -693,6 +695,17 @@ dialog:
 The Location map's **Download aerial image** has an **Add as a new layer**
 switch: on, the download becomes a new layer above the base image (an older
 flight under a newer one, for instance) instead of replacing it.
+
+Beside it, a choice sets how a picture is laid: **Onto the 3-D surfaces** (the
+default: the photograph goes into the material of every surface under the
+picture, with flat drivable ground where there is no site), **As a flat surface**
+(one flat surface covers the whole picture with the photograph in its own
+material, and the site's surfaces are not changed; over a site it is display only,
+at the site's mean height, and drivable when there is no site), or **Both**. The
+flat surface is an ordinary surface in the Outliner (named *Aerial flat* and the
+picture's name), so it can be hidden, moved or deleted, and its opacity is the
+Opacity node in its material. **Place a picture on the ground** has the same
+choice.
 
 ### Place a picture on the ground
 

@@ -68,7 +68,7 @@ updates the rotational inertias when the weight is changed (described
 below).
 
 !!! note "HVE Studio"
-    **Auto Update Inertia When Weight Changes** (a checkbox under **Rotational Inertia**, off by default and kept as your own setting, not the vehicle's, as in HVE): a typed weight or mass, total or sprung, here or in **Size & Weight**, multiplies the **total** roll, pitch and yaw inertias by the new total mass over the old one; the sprung values follow by the parallel axis theorem and the XZ product is kept. An axis with nothing stated uses the estimate, which follows the mass anyway.
+    **Auto Update Inertia When Weight Changes** (a checkbox directly under the **Weight** and **Mass** rows, off by default and kept as your own setting, not the vehicle's, as in HVE): a typed weight or mass, total or sprung, here or in **Size & Weight**, multiplies the **total** roll, pitch and yaw inertias by the new total mass over the old one; the sprung values follow by the parallel axis theorem and the XZ product is kept. An axis with nothing stated uses the estimate, which follows the mass anyway.
     Unticked, a stated rotational inertia is left unchanged when the weight
     is edited.
 
