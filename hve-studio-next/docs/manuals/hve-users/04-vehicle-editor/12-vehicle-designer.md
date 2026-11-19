@@ -192,7 +192,7 @@ Results that are easy to miss:
 
 - **Stiffness**: EDSMAC4 reads the crush **A** and **B**, EDSMAC and EDVSM read
   **Kv** (EDSMAC only the front's, for every side), and SIMON reads the DyMESH
-  node stiffness. **Max Crush** reaches no program (it sets the graph's span), and **Conversion Height** is
+  node stiffness. **Conversion Height** is
   printed in SIMON's report only. With **Hide unused** on and any method but SIMON chosen, the whole 3-D
   block goes: its rows, the **3-D** heading, the notes under the table, **Calculate 3-D from 2-D** and the
   graph's **3-D (per unit area)** choice.
@@ -454,8 +454,7 @@ What the body does in an impact, one editor per tab:
   event's damage profile instead; Top and Bottom have none, since the 2-D
   programs are planar). The **3-D** rows follow, read by SIMON's DyMESH contact:
   the node pressure's **Constant**, **Linear**, **Quadratic** and **Cubic**
-  terms, **Conversion Height**, **Saturation Crush** and **Max Crush (graph
-  extent)**. A face whose four 3-D terms are all zero is tinted red: a DyMESH
+  terms, **Conversion Height** and **Saturation Crush**. A face whose four 3-D terms are all zero is tinted red: a DyMESH
   contact there meets no resistance. Above the table a graph shows the selected
   column — click a column's header, or edit one of its cells, to select it; it
   opens on **Front**. **2-D (per unit width)** plots A + B C and Kv C against
@@ -688,7 +687,7 @@ The rules, by stage:
 | Note | Mass | Roll, pitch or yaw inertia is 0 in both its fields, so the run uses the mass-basis estimate the editor shows. |
 | Note | Steering | A steerable axle's steer ratio is 0, which HVE reads as no steering gear. |
 | Consider | Stiffness | A motorcycle's A, B and Kv are still the generic passenger car's defaults on every side, so the machine states no crush stiffness of its own, and the 3-D law derived from them is a car's too. (A car with these values is not flagged: they are the passenger car's.) |
-| Consider | Stiffness | A face's 3-D pressure law (Const + Linear d + Quad d² + Cubic d³) drops below zero before its Max Crush; DyMESH holds it at zero. |
+| Consider | Stiffness | A face's 3-D pressure law (Const + Linear d + Quad d² + Cubic d³) drops below zero within a tenth past its Saturation Crush (60 in where none is stated); DyMESH holds it at zero. |
 | Consider | Size, Mass & CG | The body design's wheelbase and the vehicle's differ by more than 5 mm. |
 | Note | Transmission | Top speed is set by the redline in top gear, below the drag limit from engine power, drag coefficient, frontal area and rolling resistance. |
 | Consider | Transmission | An upshift at the redline lands under the automatic shift window's minimum rpm. |

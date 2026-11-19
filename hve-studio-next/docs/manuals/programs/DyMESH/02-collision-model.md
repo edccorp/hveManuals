@@ -245,8 +245,9 @@ third-order curve fit.
     **Crush Stiffness** dialog (Vehicle › Editors › Crush Stiffness...), one
     collapsible block per body zone — Front, Right, Back, Left, Top and
     Undercarriage — each with **Constant**, **Linear**, **Quadratic**,
-    **Cubic**, **Conversion Height**, **Saturation Crush** and **Max Crush**
-    (the graph's span only: no engine reads it, as in HVE's source).
+    **Cubic**, **Conversion Height** and **Saturation Crush**. (HVE's own
+    dialog adds a **Max Crush**, its graph's span only, which no engine reads;
+    this editor drops it.)
     There is no $K_v$ field in this section (the four CRASH3 side blocks above
     it carry $A$, $B$ and $K_v$ for the 2-D engines, and DyMESH does not read
     them). The four coefficients and the lengths are shown in the units set in

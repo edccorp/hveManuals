@@ -18,7 +18,6 @@ One table with a column per face: **Front**, **Rear**, **Top**, **Bottom**, **Le
 | 2-D: **A** and **B** | EDSMAC4 |
 | 2-D: **Kv** | EDSMAC; EDVSM, for the body against the ground |
 | 3-D: **Constant**, **Linear**, **Quadratic**, **Cubic**, **Conversion Height**, **Saturation Crush** | SIMON (DyMESH) only |
-| 3-D: **Max Crush (graph extent)** | no engine (the graph's span) |
 | 3-D: **Unloading Stiffness** | SIMON (DyMESH) |
 | 3-D: **Structure Restitution** | SIMON (DyMESH), research only: applied when the solver runs with `HVE_DYMESH_BUMPER=1` or `HVE_DYMESH_CORE=2` |
 | 3-D: **Bumper Stroke**, **Bumper Pressure**, **Bumper Restitution**, **Bumper Band Low**, **Bumper Band High** | SIMON (DyMESH), research only: applied when the solver runs with `HVE_DYMESH_CORE=2` |
@@ -46,8 +45,10 @@ Under the table. It sets the **Front**, **Rear**, **Left** and **Right** columns
 
 **Top and Bottom always have values.** They have no 2-D data (the 2-D programs are planar), so a vehicle that states none left them all-zero, and anything landing on a roof or a floor met no resistance. When the editor opens on a vehicle whose Top or Bottom 3-D terms are all zero, they are filled with the mean of the Left and Right columns (from their A and B over the height, or from their 3-D terms where those are stated), and a note says so. A face that already holds a law is never changed.
 
-### Saturation Crush, Max Crush (graph extent)
-Saturation Crush caps each node's **force** in DyMESH: past it the pressure stays at its value there while the node keeps crushing (the deflection is not limited); 0 means none. **Max Crush (graph extent)** is recorded with the vehicle and sets how far the graph above the table runs, as it does in HVE's own dialog; no engine reads it, as in HVE's own source, and the note under the table says so: it does not limit the crush.
+### Saturation Crush
+Saturation Crush caps each node's **force** in DyMESH: past it the pressure stays at its value there while the node keeps crushing (the deflection is not limited); 0 means none. The graph above the table runs a tenth past it, or 60 in where there is none.
+
+HVE's dialog also has a **Max Crush**, which only sets how far its graph runs; no engine reads it, in HVE's source or here, and it does not limit the crush. It is not in this editor: an imported vehicle's or an older case's Max Crush is read and dropped.
 
 ### Unloading Stiffness
 The slope a DyMESH body node unloads along from its peak crush, in the units of **Linear**. A node springs back by its peak pressure divided by this slope and keeps the rest as permanent crush. A node whose peak stays below that recovers fully. 0 means derive the slope from the event's **Relaxation Length**, which keeps HVE's permanent crush. A softer slope gives more rebound and less permanent crush. The DyMESH collision model's page describes the law; the run status names the faces that state a slope.
@@ -81,7 +82,7 @@ The **Top** and **Bottom** columns have only the 3-D graph.
 A 3-D law with a negative term (most often a negative **Linear**) can make the
 pressure go below zero at some crush: a contact there would pull the two surfaces
 together. The **Linear** cell of such a face is marked, and its tooltip gives the
-crush at which the pressure turns negative (checked up to **Max Crush**, or 60 in
+crush at which the pressure turns negative (checked up to a tenth past **Saturation Crush**, or 60 in
 where none is stated). A negative term is acceptable in a curve fit only if the
 other terms keep the pressure positive over the crush the face will see.
 
