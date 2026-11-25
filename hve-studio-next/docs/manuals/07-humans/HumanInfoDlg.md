@@ -93,7 +93,8 @@ in the Vehicle editor (see [Air Bag Restraints](../06-safety-systems/AirBagDlg.m
     velocity (**u (fwd)**, **v (right)**, **w (down)**, in the segment frame).
     Check **Pose this body (use the angles below)** to use the angles; with it
     off the body is drawn and solved in its default posture (a seated occupant
-    with the upper legs pitched 90° forward, a pedestrian standing). **Reset to
+    in HVE's seated posture -- pelvis pitched 35°, thighs 60°, knees bent 35°,
+    feet 85°, upper arms 20° forward, elbows 45° -- a pedestrian standing). **Reset to
     default posture** and **Zero all angles** reset the table. The velocity is
     zero for an occupant riding in a vehicle (it is relative); a pedestrian's
     walking speed goes here, and EDHIS and GATB read it. A human not in the

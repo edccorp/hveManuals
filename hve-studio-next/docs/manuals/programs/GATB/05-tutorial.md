@@ -64,7 +64,7 @@ Choose the following human attributes (Figure 5-1):
 
 > **NOTE:** The passenger's position is assumed to be on the right side of the vehicle.
 
-> **NOTE:** An occupant is drawn in a seated posture (upper legs pitched 90° forward); a pedestrian is drawn standing.
+> **NOTE:** An occupant with no pose of its own is drawn and solved in HVE's seated posture (pelvis pitched 35°, knees bent 35°, upper arms 20° forward, elbows 45°); a pedestrian is drawn standing.
 
 ### Creating the Vehicles
 
@@ -146,7 +146,7 @@ Create the remaining contact panels in the same manner as the Right Front Seat C
     The Contact Surfaces dialog can also build a set of interior panels for you — **Seed Standard Interior**, **Derive from Mesh**, and interior templates (**Use Template**) — and **Save Interior…** / **Load Interior…** keep a set for reuse.
 
 !!! note "HVE Studio"
-    HVE Studio does not pre-screen surfaces by *Side* (Interior/Exterior) for an event built in HVE Studio: until you edit the list in **Event › Contacts...**, every ellipsoid of the pelvis, abdomen, chest, neck, head and upper legs is tested against every surface of the vehicle. Give the vehicle only the panels the occupant should strike.
+    HVE Studio does not pre-screen surfaces by *Side* (Interior/Exterior) for an event built in HVE Studio: until you edit the list in **Event › Contacts...**, every ellipsoid of every segment except the neck (a pedestrian's neck too) is tested against every surface of the vehicle. Give the vehicle only the panels the occupant should strike.
 
 ### Creating and executing the Events
 
@@ -415,7 +415,7 @@ HVE's tutorial enters the pedestrian at x = 7.15 ft, y = -1.5 ft, z = -1.0 ft, y
 HVE's tutorial next uses the *Contacts* dialog to allow all of the human's ellipsoids to interact with all of the pickup's contact surfaces.
 
 !!! note "HVE Studio"
-    Open **Event › Contacts...** and click **Arm All**: every ellipsoid of every segment is armed against every contact surface of the pickup, which is what this step of the tutorial selects. (An event with nothing stored arms only the pelvis, abdomen, chest, neck, head and upper legs; the dialog says so.) Un-tick any pair you want GATB to ignore — see [Chapter 2, Contacts](02-program-input.md).
+    Open **Event › Contacts...** and click **Arm All**: every ellipsoid of every segment is armed against every contact surface of the pickup, which is what this step of the tutorial selects. (An event with nothing stored arms every segment except the neck; the dialog says so.) Un-tick any pair you want GATB to ignore — see [Chapter 2, Contacts](02-program-input.md).
 
 In HVE the interaction between the pedestrian and the GROUND contact panel is then checked with the Key Results window, showing the total force on each foot ellipsoid against GROUND, and the pedestrian's height adjusted until the two feet together carry about the pedestrian's weight (173.5 lbs in this example; the tutorial moves the pedestrian from z = -1.0 ft to z = -1.053 ft).
 

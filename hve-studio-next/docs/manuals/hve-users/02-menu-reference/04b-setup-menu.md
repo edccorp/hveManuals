@@ -244,8 +244,9 @@ for the event.
 dialog names the human and the vehicle and shows a grid of the human's
 segments (rows) against the vehicle's contact surfaces (columns); a ticked box
 is an armed pair. An imported HVE case shows HVE's own list. An event with no
-stored list shows the default the run generates — every ellipsoid of the
-pelvis, abdomen, chest, neck, head and upper legs against every surface — and
+stored list shows the default the run generates — for EDHIS every ellipsoid
+of the pelvis, abdomen, chest, neck, head and upper legs, for GATB every
+segment except the neck (a pedestrian's neck too), against every surface — and
 says so; the first click stores it. **Arm All**, **Pelvis Only** and **Use
 Run-Time Default** set the whole list at once, and the last armed pair cannot
 be removed. For GATB a second grid arms body segments against each other

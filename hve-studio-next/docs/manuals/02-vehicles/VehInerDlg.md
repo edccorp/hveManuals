@@ -66,7 +66,8 @@ One row per item, shown once there is one:
 - **Seat** — for a linked human only: their seat location (Front Left (driver) … Back Left).
 - **Weight**.
 - **x / y / z** — the item's position from the vehicle's CG (its sprung-mass CG): x forward, y right, **z up**.
-- **Remove** — deletes the item.
+- **Remove** — deletes the item. If the item is a linked human that a SIMON event also lists under **Humans in Event**, seated in this vehicle, a **Remove occupant** box names those events first: SIMON adds the weight of a human it seats itself, so removing the row alone leaves that weight in the run. **Remove from those events too** takes the human out of those events as well, **Remove the row only** keeps them there, and **Cancel** keeps the row.
+- **SIMON also carries ...** — a note under the list for each human a SIMON event seats in this vehicle through its **Humans in Event**. SIMON adds that person's weight itself, whether or not a row here names them, so the list alone does not show everything the vehicle carries in that event. A plain row (one not linked to a human) for the same person counts them twice, because nothing ties a plain weight to a person. **Remove from event** takes that human out of that event's Humans in Event, which takes their weight off; the human and any row here stay.
 
 **Add occupant** and **Add cargo** add a row (named *Occupant n* or *Cargo n*). Each item is a point mass. A line under the list gives the number of items and their weight, the **loaded** weight, and how far the CG moves (x, y and z, z down) when the load is added to the vehicle.
 

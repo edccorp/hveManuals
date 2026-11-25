@@ -521,9 +521,28 @@ instead of a tape.
 - **The damaged vehicle's scan**: the file, read like a scanned vehicle body:
   x forward, y to the LEFT, z up, with the vehicle's CG at the origin. The
   placement starts from the case vehicle's own body placement; **Scale
-  Factor**, **Center on CG**, **CG in the scan** and **Turn about vertical**
-  move it. The line under it gives the scan's size and how far its front is
-  ahead of the CG, to check against the vehicle.
+  Factor**, **Center on CG** (the middle of the scan's length and width put on
+  the CG, as the body's own box does), **CG in the scan** and **Turn about
+  vertical** move it. The line under it gives the scan's size and how far its
+  front is ahead of the CG, to check against the vehicle: a scan whose front
+  stands its whole length ahead of the CG is not on the vehicle yet.
+- **Aligning the scan to the vehicle.** Once loaded, the scan is drawn in the
+  3-D view over the vehicle (**Show in the 3-D view**), the points in the
+  height band in orange and the rest gray, so you can see where it sits
+  against the body. **Move forward, right, up** and **Turn roll, pitch, yaw**
+  move it in the vehicle's own frame on top of the placement, and
+  **Reset alignment** clears them. In the 3-D view, with the window open, **G** (or
+  **M**) moves the scan and **R** turns it instead of the vehicle: X, Y or Z
+  locks an axis, a typed number is exact, Ctrl snaps, Enter or a left click
+  keeps the move, Esc or a right click puts it back, and the readout under the
+  view says what is being moved and by how much. **Fit to the body** finds
+  the last of the placement for you: the scan's undamaged parts are fitted
+  to the vehicle's own 3-D body (the reference below), the damaged face left
+  out so the dent cannot pull the fit into it, and the note under it says how
+  far it moved and turned the scan and how close the body is on average. It
+  needs the scan already roughly in place, within about half a meter and ten
+  degrees, and works on the vehicle's own body only (not an exemplar). The
+  exemplar scan has the same alignment fields of its own.
 - **Undamaged reference**: what the face would have been without damage.
   **The vehicle's own 3-D body** uses the body the case vehicle collides with
   (its mesh, or its generic body when it has none -- the window says which; a
@@ -540,7 +559,10 @@ instead of a tape.
   - **Deepest crush in a height band** (the default): the band is cut into
     5 cm slices, and at each place across the face the deepest crush of any
     slice is used, so a bumper that survived over a crushed rail does not hide
-    it. The result line says at what height the deepest crush was found.
+    it. The result line says at what height the deepest crush was found. A
+    slice that reads more than 1 m of crush somewhere is taken to be looking
+    at the underside or the interior there (a floor pan's edge in the band's
+    bottom slice, say), not at the face, and leaves a gap rather than a depth.
   - **Average crush over a height band**: the same slices, averaged at each
     place across the face -- the practice of averaging crush measured at
     several heights.

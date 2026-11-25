@@ -14,9 +14,10 @@ properties to each pair.
     history (there is no OK or Cancel).
 
     - An imported HVE case shows the pairs it states. An event with **no stored
-      list** shows the default the run generates — every ellipsoid of the
-      pelvis, abdomen, chest, neck, head and upper legs against every surface —
-      and says so; the first click stores that default with the click applied.
+      list** shows the default the run generates — for EDHIS every ellipsoid
+      of the pelvis, abdomen, chest, neck, head and upper legs (the segments
+      EDHIS tests), for GATB every segment except the neck (a pedestrian's neck
+      too), against every surface — and says so; the first click stores that default with the click applied.
     - **Arm All** (every ellipsoid of every segment against every surface, HVE's
       own starting selection), **Pelvis Only** and **Use Run-Time Default** set
       the whole list. The last armed pair cannot be removed.

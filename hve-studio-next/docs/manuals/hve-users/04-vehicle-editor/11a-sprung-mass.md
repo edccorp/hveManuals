@@ -668,8 +668,10 @@ Changes take effect as they are made; Edit › Undo reverses them.
       geometry is derived, not the material.
     - **Seed Standard Interior** replaces the list with a generic driver
       compartment (seat, floor, toe pan, instrument panel, wheel, glass,
-      roof, doors) scaled from the vehicle's dimensions — generic, not
-      measured.
+      roof, doors) scaled from the vehicle's dimensions and fitted to the
+      occupant riding the vehicle, as the active event seats and poses it
+      (the cushion under the pelvis and thighs, the seat back at the torso's
+      angle, no body part starting inside a panel) — generic, not measured.
     - A template list and **Use Template** replace the list with a set of
       surfaces authored in HVE on a real vehicle, with their materials (not
       rescaled).

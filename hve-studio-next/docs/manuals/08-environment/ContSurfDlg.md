@@ -86,8 +86,12 @@ selection.
       when the editor is narrow.
     - **Seed Standard Interior** replaces the list with a generic driver
       compartment (seat, floor, toe pan, instrument panel, wheel, glass, roof,
-      doors), fitted to an occupant of the vehicle if there is one. It is
-      marked as a generic interior, not measured for the vehicle.
+      doors), fitted to an occupant of the vehicle if there is one, as the
+      active event seats and poses it: the compartment goes where the occupant
+      sits, the seat cushion under its pelvis and thighs (sunk by the weight it
+      carries) and ending at the knees, the seat back at the angle of its torso,
+      and any other panel a body part would start inside moves 1 cm clear. It
+      is marked as a generic interior, not measured for the vehicle.
     - An interior **template** list with **Use Template**.
     - **Save Interior...** and **Load Interior...** save the vehicle's surfaces
       to a `.json` file and load them back.

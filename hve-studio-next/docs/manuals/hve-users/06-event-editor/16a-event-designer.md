@@ -70,7 +70,9 @@ What a stage covers is a tooltip on its title band (the colored bar naming it): 
    **Auto-calculate PDOF**, the **A Stiffness** and **B Stiffness**, the impulse
    center, **Measured Crush** (**Damage Profile (zones)** is typed, or stepped with its
    - and + buttons) and the **Damage Profile Drawing**; **Crush from Scan**
-   (Crush Profile from Scan) beside it measures the crush depths off a scan.
+   (Crush Profile from Scan) beside it measures the crush depths off a scan,
+   which it draws over the vehicle in the 3-D view and lets you move and turn
+   there (G and R) or fit to the vehicle's body before measuring.
    **Event › Damage Profiles...** (Ctrl+M) opens this stage. See
    [the damage profile](../../09-events-driver-controls/EventInfo.md#the-damage-profile-edcrash).
 
