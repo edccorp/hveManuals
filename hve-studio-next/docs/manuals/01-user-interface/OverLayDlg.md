@@ -18,7 +18,7 @@ As in HVE, layers serve several purposes: showing the scene before and after the
 
 ## Scanned Image Overlay
 
-An aerial photograph or scanned image of the site is set up with **Environment › Aerial Image...** in the Environment Editor.
+An aerial photograph or scanned image of the site is set up with **Environment › Environment Designer...**, Import stage, **Aerial Pictures** in the Environment Editor.
 
 !!! note "HVE Studio"
     The **Drive** switch is new: an overlay in HVE only affects what is displayed, while a layer in HVE Studio can also remove surfaces from the physics. Removing a drivable surface changes the result of the next run.

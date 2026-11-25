@@ -361,7 +361,7 @@ Each road surface of a loaded site has a material slot. To open it:
 - in the **Environment** editor, click the surface in the viewport and open the
   Shader Editor; or
 - select the surface in the viewport or **View › Outliner**, and in
-  **Environment › Environment...**, *Selected Surface*, press **Edit in Shader
+  **Environment › Environment Designer...**, *Selected Surface*, press **Edit in Shader
   Editor**; or
 - pick it from the Shader Editor's object list.
 
@@ -406,8 +406,8 @@ Environment editor and opens the Surfaces stage on that surface. Until
 2026-11-06 they were the **HVE Surface** node on the surface's material canvas.
 To use friction in a graph, use the **HVE Simulation** node's Friction output.
 
-The surface's **Shading** controls (Flat / Smooth / Auto Smooth) also appear
-under its slot; see [Shading Vehicles and Sites](03-shading-vehicles-and-sites.md).
+The surface's own **Shading** (As the site / Flat / Smooth / Auto Smooth, and
+**Apply to all surfaces**) appears under its slot; see [Shading Vehicles and Sites](03-shading-vehicles-and-sites.md).
 
 ## Humans
 
@@ -443,7 +443,7 @@ re-ramped scan.
 
 1. Choose **Point cloud** under *Survey scan* in the object list, or press
    **Edit in Shader Editor** under **Color** in **Survey Point Cloud (scan)**
-   (**Environment › Environment...**). The slot list shows one slot, **Point cloud**.
+   (**Environment › Environment Designer...**). The slot list shows one slot, **Point cloud**.
 2. **+ New** makes *Color Attribute → Principled BSDF → Material Output*: the
    point's own color passed straight through, so the cloud draws exactly as
    before.

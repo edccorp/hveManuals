@@ -61,7 +61,7 @@ The one vehicle feature this tutorial is about is the ABS system. In HVE Studio 
 
 The environment is the ISO 3888 lane-change course. In HVE it is the geometry file `IsoLaneChangeb.h3d`; in the tutorial case it is carried inside the case file, and HVE Studio loads it from there.
 
-To see it, choose the **Environment (F4)** editor and open **Environment › Environment...** (Figure 5-3). The **Location** section holds the site, date and time; the **Terrain** section the scene geometry; and the **Physical** section the atmosphere and gravity.
+To see it, choose the **Environment (F4)** editor and open **Environment › Environment Designer...** (Figure 5-3). The **Location** section holds the site, date and time; the **Terrain** section the scene geometry; and the **Physical** section the atmosphere and gravity.
 
 ![Figure 5-3](images/hvn-environment-editor.png)
 *Figure 5-3: The environment for the ISO 3888 lane-change maneuver.*

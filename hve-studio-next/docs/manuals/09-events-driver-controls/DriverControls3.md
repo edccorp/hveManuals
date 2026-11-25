@@ -53,8 +53,9 @@ Anti-lock is set on the vehicle, per wheel in Brake Assembly and in the ABS /
 Brake Design dialog (Vehicle menu); the **Brake** tab of **Event › Wheels...**
 can force it on or off for one event.
 
-!!! warning "Not in HVE Studio"
-    HVE's **Copy Cell** and **Copy Row** buttons.
+!!! note "HVE Studio"
+    HVE's **Copy Cell** and **Copy Row** buttons are the **Copy** button and
+    Ctrl+C on a selection of cells or rows (see Throttle above).
 
 <!-- NAV -->
 

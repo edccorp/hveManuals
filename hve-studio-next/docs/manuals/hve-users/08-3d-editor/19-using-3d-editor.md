@@ -97,7 +97,7 @@ HVE's 3-D Editor dialog combines the Current Object tool, the Object Attributes 
 HVE creates surfaces, cones, boxes, spheres, cylinders, text, lights and signals with its object tools.
 
 !!! warning "Not in HVE Studio"
-    HVE Studio does not create or edit environment geometry. A site is imported from a DXF, `.h3d`, `.iv`, OBJ or glTF file (**Environment › Environment… › Terrain › Scene Geometry**), or comes with an HVE `.hve` case. Roads, friction zones and other surfaces are drawn over the site with the **Surface Generator** (Environment panel). See [Chapter 20](20-object-tools.md).
+    HVE Studio does not create or edit environment geometry. A site is imported from a DXF, `.h3d`, `.iv`, OBJ or glTF file (**Environment › Environment Designer… › Terrain › Scene Geometry**), or comes with an HVE `.hve` case. Roads, friction zones and other surfaces are drawn over the site with the **Surface Generator** (Environment panel). See [Chapter 20](20-object-tools.md).
 
 ## Object Dialog
 
@@ -115,7 +115,7 @@ To select a surface, perform one of the following:
 - In the **Environment** editor, click the surface in the 3-D view. (Selection happens when the button is released without the mouse having moved, so an orbit drag does not select anything.) Clicking empty sky clears the selection, as does Esc.
 - Pick its row in the **Outliner** (**View › Outliner**). **Ctrl**-click adds a row to the selection, **Shift**-click extends it, and a click on a layer's row selects every surface in the layer. **Shift**-click in the 3-D view also adds a surface.
 
-The selected surface is highlighted in the view. The Environment panel's **Selected Surface** section (**Environment › Environment…**, **Terrain**) shows *Selected: name — type, friction* with an **Edit in Shader Editor** button and a **Deselect** button.
+The selected surface is highlighted in the view. The Environment panel's **Selected Surface** section (**Environment › Environment Designer…**, **Terrain**) shows *Selected: name — type, friction* with an **Edit in Shader Editor** button and a **Deselect** button.
 
 The physical attributes are edited in the Shader Editor's **Surface** node, headed *PHYSICS — these change the result*:
 
@@ -195,7 +195,7 @@ HVE's Group tool combines objects into a group, splits groups, and saves and loa
     **View › Scene Display** controls what the 3-D view draws. All are view preferences, not case data:
 
     - **Rendering** — **Phong** (smooth), **Flat** (one normal per face) or **Wireframe** shading, and **Light Sources On** (off, the sun stops contributing and the ambient light is raised so shape stays readable).
-    - **Light & Shadow** — **Scene Lighting**, **Lamps** (the vehicles' lamps and the site's lights after dark), **Shadow cascades** (how many nested layers the sun's shadow is drawn in, 1 to 4: sharp over the vehicles, coarser out to the whole site), **Contact Shadows** and **Ambient Occlusion**.
+    - **Light & Shadow** — **Scene Lighting**, **Lamps** (the vehicles' lamps and the site's lights after dark), **Shadows** (off hides every shadow, so none covers evidence on the site), **Shadow cascades** (how many nested layers the sun's shadow is drawn in, 1 to 4: sharp over the vehicles, coarser out to the whole site), **Contact Shadows** and **Ambient Occlusion**.
     - **Sky & Reflections** — **Default Sky**, **Sky Reflections**, **Distance Haze**, **Wet Ground** and **Ground Reflections**. **Anti-Aliasing (FXAA)** is under Rendering.
     - **Vectors** — a table of **Velocity**, **Acceleration**, **Collision force** (drawn only while the vehicles are in contact, its tail on the side the force came from), **Collision moments**, **Tire Fx', Fy'** (red Fx', green Fy'), **Tire Fz'**, **Tire Fz' (nodes)** and **Tire friction circle** (SIMON: how much of each tire's peak grip is in use), each with its own Show and Value switches and scale (the friction circle has a fixed size instead); below it **Collision load at the CG** and **Collision load at impact (line of action)** (two independent switches) and **Draw Vectors Through Bodywork**. Each type of arrow has one fixed scale, so lengths compare between vehicles and between runs.
     - **Scene Ghosts** — how a vehicle is marked at each measured scene position (Initial, Begin Perception, Begin Braking, Impact, Separation, Point On Curve, End of Rotation, Rest): **None**, **Outline**, **Translucent vehicle** or **Both** (HVE's targets).
@@ -206,7 +206,7 @@ HVE's Group tool combines objects into a group, splits groups, and saves and loa
 ![Figure 19-3](../images/hvn-08-viewport-scene.png)
 *Figure 19-3 — The 3-D view of a site read from an HVE case, with scene ghosts in outline style marking measured scene positions.*
 
-Lighting comes from the sun and sky set in **Environment › Environment… › Sky**. **Vehicle › Editors › Vehicle Lights…** keeps a list of lights with each vehicle (type, intensity, direction, position, color); the 3-D view uses them as the vehicle's lamps, which light the scene once the sky darkens. No engine reads them.
+Lighting comes from the sun and sky set in **Environment › Environment Designer… › Sky**. **Vehicle › Editors › Vehicle Lights…** keeps a list of lights with each vehicle (type, intensity, direction, position, color); the 3-D view uses them as the vehicle's lamps, which light the scene once the sky darkens. No engine reads them.
 
 ---
 *Converted and updated from the legacy HVE User's Manual (Seventh Edition, Jan 2006), Chapter 19; adapted for HVE Studio.*

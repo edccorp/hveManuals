@@ -264,14 +264,21 @@ Typing into a text field never triggers these keys.
 
 ## Playback bar and the Run stage
 
-In the Event and Playback editors the toolbar at the top carries the playback
-controls, after the editor buttons and the event and vehicle lists. A divider
-follows **Playback (F6)**; when the row cannot hold the controls they go on a
-second row, under the event and vehicle lists (across the whole width when the
-window is too narrow for that):
+The toolbar at the top has two rows. The first holds **New**, **Open**,
+**Save**, **Undo** and **Redo**, then the active item's lists (the event and its
+vehicle, the vehicle, the human or the sequence, by editor). The second holds the
+editor buttons, **Human (F2)** to **Playback (F6)**, and in the Event and Playback
+editors the playback controls after them, past a divider; when that row cannot
+hold the controls they take a third row of their own:
 
 - The run's state (**Not run**, **Completed**, ...); before a run **Play** runs
   the event, and while it runs **Stop** ends it.
+- **Run Settings...** (and a click on the time readout at the end of the row, as
+  in HVE) opens the run's settings over the view: the Event Designer's Run stage
+  — **Run simulation**, **Reset**, and Simulation Controls (**Duration (s)**, the
+  trajectory, collision and output timesteps, termination and the stopped
+  vehicle). With results on screen they are held until **Reset**. Not in the
+  Playback editor, which plays a sequence of events.
 - **Reset**, once the event has run, clears the results and returns the
   vehicles to their starting layout (HVE's Stop button).
 - **|<**, **<<**, **Play**/**Pause**, **>>**, **>|** — jump to start, step

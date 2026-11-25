@@ -53,7 +53,7 @@ The original walkthrough makes the following edits. Each is already in the finis
 
 ## Creating the Environment
 
-The environment is a freeway off-ramp (*Freeway Offramp, Exit 342*, Denver, Colorado). Choose the **Environment (F4)** editor tab to see it, and **Environment › Environment…** for its location, date, time and physical data.
+The environment is a freeway off-ramp (*Freeway Offramp, Exit 342*, Denver, Colorado). Choose the **Environment (F4)** editor tab to see it, and **Environment › Environment Designer…** for its location, date, time and physical data.
 
 > NOTE: The off-ramp geometry is stored inside the tutorial case; there is no separate `FreewayOfframp.h3d` file to open. A case you save carries its site in the same way (**File › Embed the environment in the case**, on by default).
 

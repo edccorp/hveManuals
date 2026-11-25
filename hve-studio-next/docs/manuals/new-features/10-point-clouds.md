@@ -16,7 +16,7 @@
 
 ## Loading a cloud
 
-1. In the **Environment** editor, open **Environment › Environment...** (or the
+1. In the **Environment** editor, open **Environment › Environment Designer...** (or the
    Environment Designer's **Import** stage).
 2. Open the **Point cloud** tab. On the *Point cloud* row at its top, press
    **Import...** and choose the file. While it is read the window is busy, and

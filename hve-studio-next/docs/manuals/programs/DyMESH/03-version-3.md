@@ -167,6 +167,17 @@ wheel force-deflection and moment-deflection parameters:
 | Moment Displacement Rate | 300 ft-lb/deg | Moment per unit angular change |
 | Max Moment | 30000 ft-lb | Saturation moment |
 
+!!! note "HVE Studio: the defaults"
+    A new event in HVE Studio gives every wheel **Max no-damage force 11,000 lb**, **Displacement rate 1,000 lb/in**
+    and **Max force 100,000 lb** (the moment terms are HVE's). HVE's own class defaults are 100,000 lb, 10,000 lb/in
+    and 1,000,000 lb, which it calls "Very Stiff" and keeps for files too old to carry these values; at 100,000 lb a
+    wheel never moves in a car crash (in 56 km/h barrier tests the peak wheel force is 2,000-49,000 lb). When HVE
+    places a vehicle in an event it scales them with the vehicle's weight instead. An imported HVE case keeps what HVE
+    ran: the values the file carries, or HVE's class defaults where the file carries none. HVE Studio uses one value for every wheel because a suspension's strength does not follow the vehicle's
+    weight: 11,000 lb is where the finite-element 2015 Camry's spindle joint fails fore-aft, inside the published
+    range for passenger-car suspensions. The displacement rate is a placeholder: no published test measures how a
+    wheel moves back once its suspension has failed.
+
 !!! note "HVE Studio"
     The set-up is the **Wheel Damage** tab of **Event › Wheels**, a table with
     one column per wheel (A1-R, A1-L, A2-R, …) and wheel groups so one edit can

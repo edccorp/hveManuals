@@ -263,7 +263,7 @@ EDVTS uses the environment created by the Environment Editor (see Figure 2-3). T
 A case in HVE Studio always has exactly one environment; there is nothing to add. To edit it:
 
 - Choose the **Environment (F4)** editor tab.
-- The **Environment** panel is displayed (**Environment › Environment…** reopens it).
+- The **Environment** panel is displayed (**Environment › Environment Designer…** reopens it).
 - In **Location**, set the location (search an address, paste a coordinate, or enter latitude and longitude) and the date and time of the event.
 - On the Environment Designer's **Import** stage (**3-D models** tab), open the site's 3-D geometry (`.h3d`, DXF, `.iv`, OBJ or glTF) with **Import...** beside **Scene geometry**.
 - In **Physical**, enter the ambient temperature and pressure, the wind and the **Gravity**.

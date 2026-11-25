@@ -230,6 +230,30 @@ the next one until **Measuring... (click to stop)** is pressed. Changing the
 kind drops a half-taken measurement. Closing the window stops measuring too;
 the measurements stay on screen while **Show in view** is ticked.
 
+**Moving a point you have placed.** Rest the cursor on any point of a measurement
+and it gets a white ring and a hand cursor; press and drag to move it. The point
+follows the cursor over whatever it lands on, snapping to a mesh corner the way a
+new click does, and the value and the point's "taken on" text follow it. The case
+is marked changed once, when you let go. A plain click on a point still places a
+new one when **Measure** is armed (the drag starts only once the mouse moves), and
+a half-taken measurement ignores the drag, since its clicks are its next point.
+
+**More labels in the view.** Three tick boxes beside **Show in view** add labels,
+all in the display units and drawn for every measurement, not saved with the case:
+**Segment lengths** puts each segment's own length at its middle, on a path and on
+an area (including its closing edge); **Angles** labels the angle at each inside
+vertex of a path and at each corner of an area, where 180 deg is straight on; and
+**X, Y, Z** labels every point with its x (forward), y (right) and z (down) in the
+case's own axes.
+
+**The selected measurement's positions.** Click a row in the list and a panel under it
+shows its points: x, y and z of each, in the display units and the case's own axes
+(x forward, y right, z down). Type a new number and press **Enter** to move the point.
+For a **Distance** the points are **From** and **To**, and the panel gives, as HVE's
+Distance Tool does, the difference in each axis, the **Total**, the **Azimuth** (the
+direction in the plan view, in degrees from the x axis, positive toward +y) and the
+**Elevation** (degrees from the xy plane, positive upward).
+
 **Where a click lands.** On the nearest thing the cursor visibly touches:
 
 - the site's surfaces (the road, curbs, an imported drawing or model);

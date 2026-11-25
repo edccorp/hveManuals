@@ -33,9 +33,9 @@ Environment Editor's components:
   sections the engines read — are open by default.
 - **Viewport** — the 3-D view of the current environment, with a view cube
   in its top-right corner for the preset views.
-- **Environment menu** — **Environment...** (shows the Environment panel),
-  **Aerial Image...**, described later in this
-  chapter, and **Edit Mode (materials per face)** (**Tab**), which switches
+- **Environment menu** — **Environment Designer...** (the Environment panel's
+  sections, as stages; the aerial pictures are its Import stage's **Aerial Pictures**
+  section, described later in this chapter), and **Edit Mode (materials per face)** (**Tab**), which switches
   the Viewport to selecting single faces of the site (see
   [Edit Mode: faces of the site](#edit-mode-faces-of-the-site)).
 
@@ -507,14 +507,19 @@ move it*.
 
 ### Shading
 
-**Shading** sets how the site's surfaces are shaded in the Viewport, as
-Blender's Shade Flat / Shade Smooth does:
+**Shading** sets how a surface is shaded in the Viewport, as Blender's Shade
+Flat / Shade Smooth does. It is set per surface: select the surface and use the
+**Shading** row in the Shader Editor, under the surface's physics line.
+
+- **As the site** — the site's setting, which every surface without its own takes.
 
 - **Flat** — one normal per face, as the file gives it.
 - **Smooth** — the normals of all faces meeting at a point are averaged, so
   a graded road stops showing its triangles.
 - **Auto Smooth** — averaged only between faces within the **Auto Smooth
   Angle** of each other, so curbs and building edges stay sharp.
+- **Apply to all surfaces** — the selected surface's setting becomes the site's,
+  and no surface keeps a setting of its own.
 
 > **NOTE:** Shading is display only; no engine reads it. A photographed site
 > drawn self-lit is not affected.
@@ -667,8 +672,8 @@ in the panel itself; **Deselect** under it closes it.
 
 An aerial photograph (or any scaled site image) can be laid on the ground
 under the site, and more pictures can be layered above it. Choose
-**Environment › Aerial Image...** to display the **Aerial Image Options**
-dialog:
+the **Aerial Pictures** section of the Environment Designer's **Import** stage
+(**Environment › Environment Designer...**):
 
 - **Picture** — which picture the dialog edits: the **Base image**, or one of
   the layers above it, listed in drawing order (the last draws on top).
@@ -755,7 +760,7 @@ the file, how it was placed and, for control points, the residuals. A picture
 you chose is yours: the record does not claim any provider's terms.
 
 ![Figure 12-6](../images/hvn-05-aerial-image.png)
-*Figure 12-6: Aerial Image Options dialog.*
+*Figure 12-6: The aerial picture's options (now the Aerial Pictures section; the figure shows its earlier window).*
 
 ### The picture is ground
 

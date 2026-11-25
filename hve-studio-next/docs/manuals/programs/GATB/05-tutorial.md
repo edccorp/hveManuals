@@ -257,6 +257,9 @@ Once this has been completed, the occupant is close to equilibrium. We can now e
 
 The basic equilibrium requirement is that any motion caused by being slightly out of equilibrium is negligible compared to the motion caused by the crash.
 
+!!! note "HVE Studio"
+    An occupant **coupled to a SIMON event** (Event Information › *Humans in Event* › **Couple the occupants two-way**) is settled for you: before the event starts it settles into its seat for 0.5 s holding the posture the case states, and holds that posture until the crash loads it. The run status gives its largest segment acceleration at t = 0, the number the procedure below reads off the Results page. See SIMON's manual, *Program Input*, **The occupants settle into their seats before the run**. The procedure below is for a GATB event, which runs on a collision pulse.
+
 As a practical matter, the user will never be able to produce exact equilibrium (i.e., all linear and angular accelerations equal to zero).
 
 Every analysis is different and there are no strict guidelines that define when the human position is close enough to equilibrium. In general, compare the linear acceleration for all the human segments to the linear acceleration of the crash pulse and ensure the human accelerations are much smaller.

@@ -8,7 +8,7 @@ HVE Studio has no separate B Stiffness dialog. The per-zone A and B coefficients
 
 1. Make an EDCRASH event the active event.
 2. In the **Vehicle Impact Setup** section, under the vehicle's name, open **Measured Crush (drives Delta-V)**.
-3. Set **# crush depths** to 2 or more and enter the crush depths, damage width and offset.
+3. Set **Damage Profile (zones)** to 1 or more and enter the crush depths, damage width and offset.
 4. Open **Per-zone A/B (*n* zones)**. There is one zone fewer than the number of crush depths, up to nine zones.
 
 ## Zone 1 - 9 B

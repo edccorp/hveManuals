@@ -121,7 +121,12 @@ for a radial-spring tire:
 
 - **Start time (s)**, **Deflection step**, **Fan half-span (deg)**, **Angle
   between springs (deg)** — when the model starts and how its fan of springs is
-  laid out.
+  laid out. The fan reaches **Fan half-span** either side of straight down: 60°
+  for a new tire, where HVE used 90°. On a road a spring reaches the ground only
+  within about 20° of straight down, and 60° still reaches a curb about half the
+  tire's radius high; the springs past it found nothing unless something stood
+  at axle height. A case imported from HVE keeps the span it was saved with
+  (90° if it states none).
 - **Sidewall Impact** — adds springs down the tire's side so the wheel can load
   against the face of a curb, not only ride over it. When checked it enables
   **Sidewall Slide Friction Coefficient**, **Impact Both Sidewalls (2 Sides)**,

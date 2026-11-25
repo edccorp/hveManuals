@@ -5,7 +5,7 @@ terrain geometry the vehicles drive on, the sky, the physical constants of the
 site, and its friction zones.
 
 !!! note "HVE Studio"
-    In the Environment editor (F4) choose **Environment › Environment...**. The
+    In the Environment editor (F4) choose **Environment › Environment Designer...**. The
     **Environment** window has six collapsible sections in place of HVE's
     tabs: **Location**, **Terrain**, **Sky**, **Lights**, **Physical** and **Friction
     Zones**. Terrain and Physical — what the solver reads — open by default,
@@ -108,9 +108,9 @@ degrees-minutes-seconds, or a map link; the box shows how it reads, and
 reordered, and the box says so.
 
 Below the fields the page runs in the order the work goes: **Set from a pasted
-coordinate**, **Search an address**, **Download for this area**, the **Map**, and
-last, closed, **Coordinate system** -- the downloads above the map, so they are
-in reach without scrolling.
+coordinate**, **Search an address**, the **Map**, and last, closed, **Coordinate
+system**. The downloads for this place (aerial image, terrain, LiDAR) are the
+Environment Designer's **Import** stage tabs, each with the same search and map.
 
 **Search an address** — Type an address or place and press **Search**; pick a
 result to set Latitude and Longitude. Both the search and the time zone send what
@@ -126,8 +126,8 @@ and daylight saving for the case's date; the line under the buttons says what it
 found. **Clear results** empties the list. On the map, drag (or middle-drag) to pan, use the
 wheel to zoom, and double-click anywhere to put the case's location there.
 
-Under the map, choose the tile source, and the area every download takes (below).
-**Download for this area**, above the map, is three tabs: **Aerial image**, **Terrain (3DEP)**
+On the Import stage's download tabs, under the map, choose the tile source and the area every download takes (below).
+The downloads are three tabs: **Aerial image**, **Terrain (3DEP)**
 (*Geographic terrain*, under *Terrain*) and **LiDAR** (the lidar point cloud, below it). On **Aerial image**, with an aerial source
 chosen, press **Download aerial image**: the yellow rectangle on
 the map, aligned to the case's axes, is downloaded and laid on the ground as the
@@ -150,7 +150,7 @@ it if it is not there already, so a case and its picture are moved or sent
 together. When a case is opened, the picture is looked for at the path it names,
 then beside the case. A picture that is found by neither is marked **(not
 found)** in the Outliner, whose tooltip gives the path; put the file beside the
-case, or choose it again under **Environment › Aerial Image... › Image File**.
+case, or choose it again under **Environment › Environment Designer...**, Import stage, **Aerial Pictures › Image File**.
 A picture of your own, chosen with **Image File**, is left where it is.
 
 The area is a square about the case's location, the origin (50 to 800 m), or,
@@ -269,11 +269,14 @@ terrain so a file can be chosen.
 
 ### Shading
 
+Per surface, in the Shader Editor when a surface is selected: **As the site**,
 **Flat**, **Smooth** or **Auto Smooth**, with **Auto Smooth Angle (deg)**
 (enabled for Auto Smooth). Flat uses one normal per face; Smooth averages the
 normals where faces meet, so a graded road stops showing its triangles; Auto
 Smooth averages only between faces within the angle, so curbs and building
-edges stay sharp. Display only.
+edges stay sharp. **As the site** takes the site's setting, which every surface
+without its own uses; **Apply to all surfaces** makes the selected surface's
+setting the site's and clears every surface's own. Display only.
 
 !!! tip "New in HVE Studio"
     The shading modes.
@@ -315,7 +318,7 @@ feet), **US ft** (0.3048006, US survey feet, the unit of most US state-plane
 surveys and county GIS) or **in** (0.0254). The button that matches the field is
 shown pressed. Not shown for an `.h3d`.
 
-**File is Y-up (rotate to Z-up)** — for a file whose vertical axis is Y.
+**File is Y-up (rotate to Z-up)** — for a file whose vertical axis is Y. For an OBJ saved by Blender (its first line reads `# Blender`) the box starts ticked, since Blender's default OBJ export is Y-up; clear it for a Z-up export. An OBJ with two or more objects (`o` lines, or `g` groups where it has no `o`) arrives as one surface per object, named for the object (**object - material** for an object that wears several materials), so each can be hidden, set display-only or given its own properties in the Outliner and the Surfaces stage; a file with one object, or none, is read as before. A `.hvemat.json` sidecar still names a material, and every surface made from it takes those properties. An OBJ polygon with more than three corners is cut into triangles when it is read: a quad along its shorter diagonal (a flat quad comes out as before), a larger polygon by ear clipping, so a concave outline does not overlap itself. A vehicle's OBJ is cut the same way. An OBJ's `.mtl` gives each material's diffuse color (`Kd`), which colors that material's surfaces; an image (`map_Kd`) is read as before.
 
 **File is Z-down (Flip About X-Axis)** — for a file whose vertical axis points
 down. For an `.h3d` it reads **Flip About X-Axis (file's vertical sense is
@@ -382,7 +385,7 @@ scene; here it is ignored, and the run status says how many the site has.
 
 !!! warning "Not in HVE Studio"
     - The **Type** choice (None / Terrain Map / Aerial Photo). An aerial photo is
-      set separately with **Environment › Aerial Image...** (the **Aerial Image
+      set separately with **Environment › Environment Designer...**, Import stage, **Aerial Pictures** (the **Aerial Image
       Options** window: **Image File**, **Visible**, **Opacity** and the
       image's upper-left and lower-right world coordinates).
     - **Save As...** of the environment geometry to `.h3d`. (A saved case keeps
@@ -421,8 +424,8 @@ comes in, up to about a minute. LiDAR tiles are a desktop feature: USGS's
 lidar server does not let a web page read its files, so there the **LiDAR** tab says to
 download the tile yourself and load it under **Survey Point Cloud (scan)** in the Environment dialog's Terrain section.
 
-The section is the **Terrain (3DEP)** tab of **Download for this area**, above the
-**Map**, between the **Aerial image** and **LiDAR** tabs, because it takes the same area as
+The section is the Import stage's **Terrain (3DEP)** tab, between its **Aerial image** and
+**LiDAR** tabs, because it takes the same area as
 **Download aerial image**: the rectangle dragged under **Select
 area** on the map, or the square of the size chosen beside it (turned by the
 North offset like the case itself). There is no second area to choose here.

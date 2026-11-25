@@ -362,7 +362,7 @@ accelerations and the crush-depth (general damage profile) simulation.
     $\tfrac{1}{2} P_\mathrm{max}^2 / K_u$ per unit area. A node whose peak stays below
     $P_\mathrm{max}/K_u$ recovers fully.
 
-    $K_u$ is the face's **Unloading Stiffness** in the Crush Stiffness window.
+    $K_u$ is the face's **Elastic Stiffness** (HVE: Unloading Stiffness) in the Crush Stiffness window.
     Where a face states none, it is derived from the pair's **Relaxation Length**
     as $K_u = P_\mathrm{max}/(e\,\delta_\mathrm{max})$. That keeps HVE's permanent crush
     $(1-e)\,\delta_\mathrm{max}$ exactly, but unloads along a line instead of HVE's shifted
@@ -386,7 +386,7 @@ accelerations and the crush-depth (general damage profile) simulation.
     error: on the Acura/BMW validation case it falls from 0.07 to about 0 when
     the collision step is quartered, while the elastic law's restitution
     converges. Expect two-vehicle results to differ from HVE's: more rebound
-    where a face states a soft Unloading Stiffness, and more crush on the softer
+    where a face states a soft Elastic Stiffness, and more crush on the softer
     of two vehicles. Setting the environment variable `HVE_DYMESH_UNLOAD=hve`
     restores HVE's unloading law everywhere. The wheel meshes and the
     environment keep their own laws.

@@ -8,7 +8,7 @@ law (for contact with the ground) and its soil properties (for sinkage).
     **Selected Surface** › **Surface Type and Friction** in the Environment
     Designer's **Surfaces** stage. Select the surface — click it in the 3-D
     view of the Environment editor (F4), or pick its row in the Outliner or in
-    **Environment › Environment...**, Terrain, **Surface Materials** — and edit
+    **Environment › Environment Designer...**, Terrain, **Surface Materials** — and edit
     it there. The Shader Editor shows a surface's look only: for a surface it
     names the type and friction on one read-only line, with **Edit in
     Environment Designer**, which opens the Surfaces stage on that surface.

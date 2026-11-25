@@ -19,7 +19,11 @@ are:
 - **Vehicles panel** — Docked at the left. Used for adding vehicles to the
   case, selecting the current vehicle and editing its basic attributes,
   dimensions and weights. It takes the place of HVE's Vehicle Editor dialog.
-- **Viewport** — Displays the current vehicle.
+- **Viewport** — Displays the current vehicle. It opens on the vehicle's front-right
+  corner, a little above, so the side facing you is the right (+y) side, and the
+  vehicle is lit from behind you and above wherever you turn it (in the Vehicle
+  editor only; an event is lit by the case's sun). The Vehicle Designer's small
+  3-D view starts from the same corner.
 - **Vehicle menu** — Present on the menu bar only in the Vehicle editor. It
   opens every vehicle data dialog (see
   [Selecting and Editing Vehicles](#selecting-and-editing-vehicles)).

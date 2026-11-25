@@ -311,10 +311,12 @@ the damage on **Damage Profiles**.
   a damage-only reconstruction (delta-V from crush alone).
 - **Impact sideslip (deg)** and **Velocity at rest** — below the list, shown
   when Impact and Final/Rest are set.
-- **Measured Crush** — **# crush depths** (typed, or stepped with - and +),
+- **Measured Crush** — **Damage Profile (zones)** (typed, or stepped with - and +),
   **C1**...**Cn**, **Damage width**, **Damage offset**, and per-zone A/B
   stiffness.
+- With no depths stored, the **C1 (CDC)**...**C4 (CDC)**, **Damage width (CDC)** and **Damage offset (CDC)** rows show, greyed, the profile EDCRASH takes from the CDC alone; **Start from the CDC's default** copies them in to edit.
 - **Damage Profile Drawing** — see below.
+- **Result** — **Delta-V Total**, **Delta-V Long.**, **Delta-V Lat.**, **Damage Energy** and **Peak Force** for this vehicle, read from the last run when that run was this event (as HVE's Damage Data dialog shows them beside its inputs); before a run the section says so.
 
 ### The damage profile (EDCRASH)
 

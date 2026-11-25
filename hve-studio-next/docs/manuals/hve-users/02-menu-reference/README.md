@@ -75,7 +75,7 @@ HVE in general, see [Differences from HVE](../../getting-started/05-differences-
 | View | **View** ([Chapter 5](05-view-menu.md)); Set Camera became **Tools › Cameras** |
 | Mode | the **editor tabs** Human (F2), Vehicle (F3), Environment (F4), Event (F5), Playback (F6) |
 | Set-up | **Event** ([Chapter 4](04a-setup-menu.md)) |
-| 3-D Edit | not in HVE Studio; site geometry is imported (**Environment › Environment...**, Terrain), and objects are moved with the viewport gizmo |
+| 3-D Edit | not in HVE Studio; site geometry is imported (**Environment › Environment Designer...**, Terrain), and objects are moved with the viewport gizmo |
 | Options | spread over **View**, **Tools**, **Output** and the **Event Information** panel ([Chapter 6](06-options-menu.md)) |
 | Help | **Help › About HVE Studio** ([Chapter 7](07-help-menu.md)) |
 

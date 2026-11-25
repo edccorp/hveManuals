@@ -80,7 +80,7 @@ HVE Studio has five editors:
 - **Event (F5)** — Setting up, executing and playing back reconstruction and simulation events, with the reports on the **Output** menu
 - **Playback (F6)** — Combining several solved events on one timeline and playing them back together
 
-Using the tutorial case, select each tab in turn. The Human editor shows the case's humans, the Vehicle editor the current vehicle with its **Vehicles** list, the Environment editor the site, and the Event editor the current event in **Event Information**. The Vehicles panel's **Identity** and **Configuration** sections show a vehicle's basic attributes (Name, Vehicle Type, Make, Model, Year, Body Style, Number of Axles, Driver Location, Engine Location, Drive Axle(s)); **Environment › Environment…** holds the location and sun, the terrain, the sky, and the physical properties (ambient temperature and pressure, wind, gravity, standing water).
+Using the tutorial case, select each tab in turn. The Human editor shows the case's humans, the Vehicle editor the current vehicle with its **Vehicles** list, the Environment editor the site, and the Event editor the current event in **Event Information**. The Vehicles panel's **Identity** and **Configuration** sections show a vehicle's basic attributes (Name, Vehicle Type, Make, Model, Year, Body Style, Number of Axles, Driver Location, Engine Location, Drive Axle(s)); **Environment › Environment Designer…** holds the location and sun, the terrain, the sky, and the physical properties (ambient temperature and pressure, wind, gravity, standing water).
 
 ### Using Dialogs
 
@@ -128,7 +128,7 @@ The Charger is displayed in the Viewport.
 
 ### Selecting Environments
 
-1. Select the **Environment (F4)** tab and choose **Environment › Environment…**.
+1. Select the **Environment (F4)** tab and choose **Environment › Environment Designer…**.
 2. In the **Terrain** section, under **Scene Geometry**, press **Browse…** and choose `4x2_Intersection.h3d` from the HVE installation's environment geometry.
 3. Tick **Use surfaces as terrain (physics)** and press **Import**.
 

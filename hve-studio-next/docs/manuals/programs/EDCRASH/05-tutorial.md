@@ -73,7 +73,7 @@ Now that we've opened the case, let's save it as an HVE Studio case file:
 
 ## Creating the Environment
 
-The case carries its environment, the intersection from HVE's tutorial site *EdcrashEdsmacTutorial.h3d*. Choose the **Environment** editor tab (F4) to see it, and **Environment › Environment...** to see its settings:
+The case carries its environment, the intersection from HVE's tutorial site *EdcrashEdsmacTutorial.h3d*. Choose the **Environment** editor tab (F4) to see it, and **Environment › Environment Designer...** to see its settings:
 
 - Location *Sydney, NSW, Australia* (latitude 33°53′ S, longitude 151°10′ E), site name *Blind Intersection*.
 - Date and time of the incident, 7/23/99 at 1330.
@@ -182,7 +182,7 @@ Let's conclude event set-up for the Escort by supplying a damage profile, under 
 
 Because we actually measured the damage profile during our vehicle inspection, let's enter the measured width, depth and offset. We measured seven crush depths, so we have six crush zones:
 
-1. Open **Measured Crush (drives Delta-V)** and set **# crush depths** to 7.
+1. Open **Measured Crush (drives Delta-V)** and set **Damage Profile (zones)** to 6 (seven crush depths).
 2. Enter the seven crush depths in **C1** to **C7**, beginning on the left end of the damage profile, according to Table 5-2. In Metric units the depths are entered in meters.
 3. Enter **Damage width** 1.6942 m (169.42 cm) and **Damage offset** 0.
 
@@ -243,7 +243,7 @@ The wheel data have now been assigned for the Nissan Sentra.
 Let's conclude event set-up for the Nissan Sentra by supplying a damage profile:
 
 1. Enter **02RPEW3** in the **CDC** field.
-2. Open **Measured Crush (drives Delta-V)**, set **# crush depths** to 5, and enter **Damage width** 2.20 m and **Damage offset** −0.40 m.
+2. Open **Measured Crush (drives Delta-V)**, set **Damage Profile (zones)** to 4 (five crush depths), and enter **Damage width** 2.20 m and **Damage offset** −0.40 m.
 3. Enter the five crush depths along the right side in **C1** to **C5**, according to Table 5-3.
 
 **Table 5-3: Crush depths for the right side of the Nissan Sentra 4-Dr**

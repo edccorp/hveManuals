@@ -78,7 +78,7 @@ The procedure for using SIMON is the same as for any simulation model in HVE Stu
 
 - Optionally, in the **Human (F2)** editor, add one or more occupants to the case.
 - In the **Vehicle (F3)** editor, add one or more vehicles (**Add...** in the *Vehicles* panel searches the vehicle databases). Optionally, edit any of the vehicle parameters from the **Vehicle** menu.
-- Optionally, in the **Environment (F4)** editor, set up the environment (**Environment › Environment...**) and load a 2- or 3-dimensional terrain.
+- Optionally, in the **Environment (F4)** editor, set up the environment (**Environment › Environment Designer...**) and load a 2- or 3-dimensional terrain.
 - In the **Event (F5)** editor, open **Event › Event Information...** and:
   - Create an event with the **+** button beside **Active Event**.
   - Choose **SIMON** as the **Method** under **Calculation Method**.

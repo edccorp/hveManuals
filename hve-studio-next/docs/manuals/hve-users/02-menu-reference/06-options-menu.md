@@ -212,13 +212,14 @@ stores an option but does not read it, the dialog says so beside the control.
 
 **HVE:** Options › Preferences · **HVE Studio:** Options › Preferences...
 
-Preferences has two tabs: **General**, the settings below, and **Keymap**, the keyboard shortcuts
-([KEYMAP](#keymap)).
+Preferences has three tabs: **General**, the settings below, **Mouse**, the buttons that move the 3-D view
+([MOUSE](#mouse)), and **Keymap**, the keyboard shortcuts ([KEYMAP](#keymap)).
 
 | HVE preference | HVE Studio |
 |---|---|
 | Diagnostic Level | **Diagnostic Level** — grayed: nothing to control (a run's status always says what it assumed) |
 | Auto Backup | **Enable Auto-Save** and **Interval (min)** — a recovery copy, `<case>.autosave.hvex`, written beside the case while there are unsaved changes |
+| *(not in HVE)* | **Editing after a run** (a heading in Preferences) holds **Lock inputs while results are shown** — off by default. Off: a solved event's inputs, its vehicles and the site stay editable, the results stay on screen, and each event whose inputs have moved since its run is marked **out of date** (a note under the event's header and above Key Results, naming what changed, and a count in the window title) until it is run again. On: those inputs are read-only until **Reset**, as in earlier versions. Deleting, reordering or duplicating vehicles, events and humans, Quick Case and Undo always wait for **Reset**. Each run also stores the inputs it ran from (in a `<case>.hvri` file beside the saved case), so an event whose vehicle or site was edited afterwards offers **Restore inputs as run** (the event's settings, its vehicles and humans and the site's physics go back in place, and its results are current again; the site's location, sky and lights stay as they are now; other events using the same vehicle see it as it was then) and **Restore as copies** (the vehicles come back as new vehicles named `<vehicle> (run N)` and the event uses them; the vehicles other events use are untouched) |
 | Date Style | **Date Format** — how dates are shown in the Audit Log, the file browser and the run report |
 | Background Color | **Background Color** — the color of the main window behind the panels |
 | Skidmark Height | Not in HVE Studio |
@@ -334,6 +335,7 @@ The defaults:
 | Edit Mode | Select no faces | Edit Mode | **Alt+A** |
 | Edit Mode | Box select | Edit Mode | **B** |
 | Edit Mode | Select linked (faces sharing a vertex) | Edit Mode | **L** |
+| Help | Help on the window under the pointer (its manual page) | Anywhere | **F1** |
 
 <!-- NAV -->
 
@@ -342,3 +344,25 @@ The defaults:
 ← Previous: [Chapter 5: View Menu](05-view-menu.md)  |  [Index](README.md)  |  Next: [Chapter 6B: Tools Menu](06b-tools-menu.md) →
 
 <!-- /NAV -->
+
+## Mouse
+
+**HVE:** not in HVE · **HVE Studio:** Options › Preferences..., **Mouse** tab
+
+The mouse buttons that move the 3-D view can be changed. **Preset** offers three sets:
+
+| Preset | Orbit | Pan | Zoom (drag up or down) |
+|---|---|---|---|
+| **Today's** | left drag on empty space, or middle drag | right drag, or Shift + middle drag | Ctrl + middle drag |
+| **Blender** | middle drag | Shift + middle drag | Ctrl + middle drag |
+| **Rhino** | right drag | Shift + right drag | Ctrl + right drag |
+
+Below the preset, each gesture has a **Binding** and an **Alternate**: choose a button (left, right or middle) and
+a key held with it (none, Shift, Ctrl or Alt), or **Not used**. Changing any of them makes the preset read **Custom**,
+and an orange **also used above** marks a binding another gesture already has. The mouse wheel always zooms.
+
+Two things do not change. A left press on a vehicle, a gizmo handle or a measurement point still grabs it, so a left-button
+binding moves the view only from empty space. A right click still opens the context menu; a right-button binding applies
+once you drag. The choice belongs to this installation (it is kept with the other preferences, not in a case), and
+applies to the 3-D view and to the Vehicle Designer's small 3-D view (its orbit and zoom; it has no pan), not to the
+extra views.

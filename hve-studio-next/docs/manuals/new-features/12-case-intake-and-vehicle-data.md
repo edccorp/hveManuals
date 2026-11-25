@@ -14,6 +14,7 @@
 | [Provenance](#provenance) | **Tools › Automatic Tools › Provenance...** | Nothing in the physics: it lists, and can remove, the records the other tools keep |
 | [Aboard](#aboard-occupants-and-cargo-on-the-vehicle) | **Inertia / Mass** dialog, *Aboard* section | The occupants and cargo a vehicle carries into every event |
 | [Crush Stiffness from Crash Tests](#crush-stiffness-from-crash-tests) | **Tools › Automatic Tools › Crush Stiffness from Crash Tests...**, or **Vehicle › Editors › Crush Stiffness...**, button **From crash tests...** | One side's A and B, and the A and B of the vehicle's EDCRASH events |
+| [Crush Stiffness from a Barrier Test](#crush-stiffness-from-a-barrier-test) | **Tools › Automatic Tools › Crush Stiffness from a Barrier Test...**, or **Vehicle › Editors › Crush Stiffness...**, button **From a barrier test (law 2)...** | One face's DyMESH law 2 values (Constant, Linear, Quadratic, Cubic, Elastic Stiffness, Structure Restitution, Bumper Restitution) |
 | [EDR Import](#edr-import) | **Tools › Automatic Tools › EDR Import...** | An event vehicle's initial speed and its throttle, brake and steering tables |
 
 These tools are in the workstation product. The viewer product (which opens a
@@ -551,6 +552,11 @@ editing.
 | **Added to the vehicle (every engine)** | The vehicle's weight, CG and rotational inertia with the load combined in, before any engine runs: the hand method, the same in SIMON, EDSMAC4 and every other engine. The CG moves fore and aft, sideways and in height, and every position measured from it (axles and wheels, CG height, the CG-to-side and CG-to-underside distances, roll centers, steer axes, hitch points, accelerometers) moves with it, so the vehicle's geometry stays where it was. The sprung inertias gain the load by the parallel-axis theorem. The springs are the vehicle's own, so SIMON starts it at its entered ride height |
 | **As payload in SIMON and EDVDS (the suspension sags)** | In SIMON and EDVDS, the load as the event's payload, combined with any payload the event already states. SIMON then lowers the body on each suspension by the extra static load and moves the wheels by the CG shift, as HVE does with a payload. Every other engine, and a dolly in any engine, gets the load added to the vehicle instead, and the run status says so |
 
+Under the list the dialog sums up what is aboard: the load, and the **weight
+with it aboard** as the Weight row above plus the load, in the Weight row's
+own unit and at the vehicle's own gravity (an HVE vehicle states 386.4 in/s²),
+so a 200 lb occupant adds about 200 lb to that row's figure.
+
 **On the centerline (ignore sideways offsets)** counts each item's weight and
 its fore-and-aft and height position, but not its sideways offset. A lone
 driver then does not pull the vehicle off a straight line on a flat road, so no
@@ -749,6 +755,85 @@ tests and the b0 it came from.
 !!! note "HVE Studio"
     Kv is not set, and G is shown for reference only: the vehicle stores A and
     B, from which G follows.
+
+## Crush Stiffness from a Barrier Test
+
+**Tools › Automatic Tools › Crush Stiffness from a Barrier Test...**, or the **From a barrier test (law 2)...** button
+under the Crush Stiffness table. It fits DyMESH law 2's values for the **Front** or the **Rear** of the selected vehicle
+from one crash test into a flat **rigid** barrier, and puts them on that face.
+
+It works from the test's own record of the vehicle's acceleration, not from the crush measured afterwards: force is
+the test mass times the acceleration, the crush is its double integral, so the test gives its whole force against
+crush, loading and unloading, and the energy the vehicle took back on rebound. The face is this vehicle's own collision
+body, the one DyMESH crushes in a run: every node on the face's half of the body, how far it sits behind the face, and
+the area it carries. The fit then finds the values that make a flat wall pushing into those nodes reproduce the test:
+**Elastic Stiffness**, **Constant** (the yield pressure), **Linear**, **Quadratic** and **Cubic**, and **Structure
+Restitution**. The bumper's stroke is not fitted: it comes from the face's **No-crush speed**, as the solver sizes it.
+**Bumper Restitution** is not fitted either; Apply sets it to 0.40. A test at 48-56 km/h puts little of its energy
+into the bumper, so it cannot tell one bumper restitution from another, and 0.40 gives the rebound published low-speed
+tests of modern bumpers show: about 0.4 at 8 km/h, falling to about 0.3 at 16 km/h. The plastic slope is held at no less than 0.3 of the yield pressure per 0.5 m of
+crush, the rule that keeps two vehicles sharing crush in a collision.
+
+Not every node near the face is the face's. The solver gives each node its own zone's values, so on the front the
+hood's nodes run the **Top** zone, the underbody's the **Undercarriage** and the fenders' **Left** and **Right**. The fit
+does the same with this vehicle's own values for those zones (and the active event's relaxation length), so the
+fitted face makes up for them and the vehicle reproduces the test in a run, not only in the fit.
+
+**Face:** **Front** or **Rear**.
+
+### 1. The test
+
+- **NHTSA test number**: **Fetch from NHTSA (online)** reads the test's record and its signal archive from NHTSA's
+  Vehicle Crash Test Database, fills in the test mass, the speed, the barrier and the measured crush, and keeps the
+  archive beside the case (`nhtsa_test_<number>_signals.zip`).
+- **File**: **Read** an NHTSA signal archive you downloaded (the EV5 zip a test's documents link), or a CSV of time
+  (s) and the vehicle's longitudinal acceleration (g), with contact at t = 0.
+
+From an archive, the vehicle's X accelerometer is taken in this order: the vehicle CG, then the rear sills, the seats,
+the rear deck, averaged with its left/right partner where there is one. The line under the tabs says which.
+
+### 2. The impact
+
+**Test mass**, **Impact speed**, and **Barrier**: **a fixed wall**, or **a rigid barrier moving into the stationary
+vehicle** (with its **Barrier mass**), which is how a rear test is usually run. **Barrier type (as the test states
+it)**, **The test states an offset** and **The test states an impact angle** are what the record says about the
+barrier; **Measured crush, maximum** is the crush measured after the test (0 when it was not).
+
+### 3. Check and fit
+
+**Check the test and fit** checks the test, then fits. Each check is listed as **ok**, **WARN** or **FAIL**:
+
+The limits below are the full-scale tests'; between 10 and 40 km/h they change linearly with the speed, so a sound
+low-speed test is not refused.
+
+| Check | Fails when |
+|---|---|
+| Sampling | the record is sampled more coarsely than every 1 ms |
+| Sensor offset | it reads more than 2 g in the 5 ms before contact (a warning above 0.5 g; an artifact earlier in the pre-trigger is a warning) |
+| The record's length | it ends before the vehicle stops, or before the force falls to 2% of its peak |
+| Rebound | the record gives a rebound above 0.4 of the impact speed at 40 km/h and up, rising to 0.8 at 10 km/h (a front returns more at low speed): the speed or the signal is wrong |
+| Dynamic crush | outside 150 to 1500 mm at 40 km/h and up (the lower limit falls to 10 mm at 10 km/h), or, at 40 km/h and up, a mean deceleration (the impact speed squared over twice the crush) below 11 g, which no vehicle front gives (a warning below 12.5 g) |
+| Measured crush | the crush measured after the test is more than 20% and 25 mm over the record's dynamic crush: the two are not the same impact (a warning when it is over by less, or when the spring-back is over 300 mm) |
+| Peak | the pulse peaks above 150 g (CFC 60): a sensor fault (a warning outside 10 to 120 g; the 10 g falls to 2 g at 10 km/h) |
+| Barrier | the test names a deformable barrier (DEFORMABLE, or NHTSA's codes MDB and ODB) or a pole, an offset over 50 mm, or an angle over 1 degree. NHTSA's LCB (a load-cell wall) and RGD are rigid |
+| Test mass | (a warning) more than 25% from the vehicle's mass in the case |
+| Face | the collision body has fewer than 30 nodes or 200 in² on that face |
+| The fit | its absorbed energy differs from the test's by more than 35% of the total anywhere along the crush (a warning above 22%), it returns less than half or more than twice the test's rebound energy, or it separates more than 4 in from where the test does |
+
+### 4. The result
+
+The fit against the test, force against crush, loading and unloading; a table of each value **Now** and **Fitted**;
+and the bumper's stroke. **Apply to the Front** (or **Apply to the Rear**) puts the fitted values on that face. It is
+disabled while any check fails, and while a run's results hold this vehicle.
+
+!!! note "HVE Studio"
+    The fit is of a flat wall pushing into the face's nodes, with no solver in the loop, so a DyMESH run of the same
+    test can differ from it by a few percent. Over the 24 NHTSA tests in `tests/data/nhtsa_barrier` every test passes
+    its checks and every fit its own; the warnings are two older tests' pre-trigger artifacts, one small sensor offset
+    and one visibly poorer fit (the Chevrolet Venture).
+
+!!! tip "New in HVE Studio"
+    Crush Stiffness from a Barrier Test.
 
 ## Reading an NHTSA crash test file
 

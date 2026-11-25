@@ -139,15 +139,25 @@ beside it:
   other; it is grayed while results are on screen.
 
   A wheel's panel also has HVE's **Wheel Location**: the wheel's **x** (ahead),
-  **y** (right) and **z** (below) from the CG, in a **Sprung** column (from the
-  sprung CG, which is what the engines read) and a **Total** column (the same
-  point from the total-mass CG); type either. A value marked * comes from the
+  **y** (right) and **z** (below) from the CG, in a **Total** column (from the
+  total-mass CG) and a **Sprung** column (the same point from the sprung CG,
+  which is what the engines read), in the order the Weight table uses; type either. A value marked * comes from the
   vehicle's dimensions (axle position, track width, CG height less the tire
-  radius) until you type one. **Copy to other side** gives the other wheel of
+  radius) until you type one. **Copy position to other side** gives the other wheel of
   the axle this location with y mirrored, and **From the dimensions** clears
-  the wheel's own. **Copy to the left wheel** / **Copy to the right wheel**
-  copies the wheel's tire (and its tables), brake, ABS and suspension inputs to
-  the other wheel of the axle.
+  the wheel's own. **Copy tire, brake & suspension to the left wheel** (or
+  **...to the right wheel**) copies the wheel's tire (and its tables), brake, ABS
+  and suspension inputs to the other wheel of the axle, but not its position, and
+  the popup then says what it copied.
+
+  **The body sits on its wheels.** When wheels are at different depths below the
+  CG, the vehicle view draws the body pitched and rolled (and raised or lowered)
+  so that every tire touches the ground, instead of leaving one tire through the
+  ground and another off it. Lower both rear wheels and the nose tips down; lower
+  the right wheels and the body rolls. The pose is the plane through all the
+  tires' contact points; when four contacts are not in one plane (a single wheel
+  moved) it is the best fit. This is the drawing in the vehicle view only: a run
+  starts from the case's own settle.
 - **A connection** names its type and where it is from the CG, with its **X**, **Y** and **Z** from the CG as fields
   (X forward, Y right, Z down, as on the Connections stage), dragged or typed and applied when the field is left; its
   row opens **Connections...**.
@@ -499,7 +509,8 @@ budget, the closed outer shell) and the active event's mesh preparation
 (tessellation, maximum triangle leg, weld) -- and each wheel's **DyMESH
 contact mesh** (orange), built by the engine's own wheel-mesh routine from the
 wheel's tire: its size designation sets the rim and the section width (a tire
-with none is built as a P225/75R16, and the line under the views says so), and
+with none is given the size its own radius and width make, and the line under
+the views says so), and
 its loaded radius is estimated from the nominal wheel load, which a run settles.
 The drawing follows the options as they change, so the Mesh editor's **Collision** tab below
 can be adjusted while watching the mesh. The line under the views gives the

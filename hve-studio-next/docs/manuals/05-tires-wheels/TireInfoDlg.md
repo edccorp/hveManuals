@@ -32,6 +32,12 @@ tread width, tread depth and nominal pressure. Friction, cornering stiffness and
 spring rates are left unchanged. An unrecognized string, or an obsolete
 designation, is reported in the section and the button stays disabled.
 
+A heavy-truck size with a whole-number width -- 11R22.5, 12R22.5, 8R19.5 -- is
+the tubeless low-profile series and is taken as an 86% sidewall (an 11R22.5 is
+524 mm in radius). The conventional series written with ".00" -- 11.00R20,
+10.00R20 -- keeps HVE's 100%. HVE itself takes 100% for every truck size, which
+makes an 11R22.5 565 mm.
+
 **Opening a case repairs the old default.** HVE's tire databases store a size and no width (0), and a vehicle or tire
 loaded from one before November 2026 kept HVE Studio's starting value, 215 mm (tread 180 mm). When a case opens, every
 tire whose maximum width is exactly 215 mm and whose size gives a different width takes the size's maximum width, and
@@ -66,6 +72,15 @@ tire kept inside EDCVehicles.hvedb is read from the database for this line).
 **Apply Tire** replaces the tire data and all four tables of the wheels chosen in
 **Apply to** (All wheels, one axle, or one wheel) with the database tire's; each
 wheel keeps its own dual setup.
+
+**A database radius that its size contradicts is corrected.** A size that states
+its sidewall -- P245/50R20, LT245/75R16 -- fixes the tire's outer radius. Where a
+database stores a radius more than 5% from it, the tire (picked here, or on a
+vehicle loaded from the database) takes the size's radius, and the Audit Log
+names the tire, the vehicle and both radii. Five tires in VMSTANDARD_7_00.db are
+affected, among them the Hyundai Palisade's P245/50R20, stored at 488 mm against
+the size's 376 mm. A truck size whose sidewall the size does not state keeps the
+stored radius.
 
 ## Used by
 
@@ -129,8 +144,13 @@ Shown read-only in the Physical part of the table. They are set by **Build
 from Tire Size** or the **Tire Database**, not typed. The physics
 re-parses the size itself: DyMESH builds a wheel's contact mesh from it, and
 the soft-soil and radial-spring tire–terrain models take the tire width from
-it. A wheel with no size is flagged "(none: P225/75R16)", the size the engine
-falls back to.
+it. A wheel with no size is flagged "(none: ...)" with the size the engine
+builds for it from the tire's own unloaded radius and max width -- for the
+default tire, 318 mm and 215 mm, a P215/65R14 -- so the size the engine uses
+always describes the tire, and the tire report prints it. The run status says
+when a size and the stored unloaded radius disagree by more than 5% (the stored
+radius is what every engine rolls on; **Build from Tire Size** makes them
+agree).
 
 ## Dual Tires
 

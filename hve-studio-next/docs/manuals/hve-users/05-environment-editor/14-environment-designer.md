@@ -8,8 +8,9 @@ asks their question (the stage's title on a band of the title-bar color, the sit
 name at its right end), and a **Guidance** panel under Key figures whose
 rows name the fix and the stage that owns it. Open it with **Environment ›
 Environment Designer...** (the first item), and it is the Environment editor's
-panel: switching to the Environment editor (F4) opens it where the Environment
-window used to open. **Environment › Environment...** still opens that window.
+panel: switching to the Environment editor (F4) opens it. The separate **Environment**
+and **Aerial Image Options** windows, and their menu items, were removed (2026-11-21):
+the designer holds everything they did.
 
 It is an ordinary docked window, on the left with the 3-D view beside it by
 default: drag its tab to move it, float it, or dock it anywhere, and the
@@ -25,26 +26,12 @@ so a field has one editor and nothing is reachable in one and not the other.
 
 What a stage covers is a tooltip on its title band (the colored bar naming it): hover over the band to read it.
 
-1. **Site**: Location (placement, address, coordinates), the **Map**, and the data
-   for the area you choose on it: **Download for this area**, three tabs right
-   above the map — **Aerial image**, **Terrain (3DEP)** (Geographic terrain,
-   USGS 3DEP) and **LiDAR** (the USGS lidar point cloud) — all take the same
-   area, so you choose it once: the yellow rectangle on the map, a square about
-   the case's location unless you draw one (**Select area**) or press **Area
-   here**. Moving the map does not move it. Under **Download aerial image**,
-   **Your own picture** places a picture of your own (by its georeference or by
-   control points). Either way the picture is laid as ground at once: drivable
-   flat ground where the site is not, and the photograph in the material of every
-   surface under it (see *The picture is ground*). The terrain you download
-   becomes drivable ground too.
-2. **Import** (named *Site Files* before 2026-11-09): at the top, the environment as a file — **Save Environment
-   As...** (the site — its geometry, surfaces, sky and lights — as a
-   `.hveenv.json` file of its own, to use in another case) and **Load
-   Environment...** (one saved that way; the page then says what was loaded
-   and the view frames it; to bring in a site drawn elsewhere use Import >
-   **Import...**), the
-   Environment menu's commands (its **Open Example** opens one of HVE's example
-   sites as a new case); then one tab for each way into the site:
+1. **Site**: where the site is — Location (address, coordinates, date and time),
+   **Search an address** and the **Map**. Nothing is downloaded here: the aerial
+   image, terrain and LiDAR downloads are the **Import** stage's tabs, and they
+   take the location set here. (Until 2026-11-23 the downloads were on both stages.)
+2. **Import** (named *Site Files* before 2026-11-09): everything the site is built
+   from, one tab for each way into it:
    - **3-D models**: the **Imported files** list of the site's 3-D model files
      (DXF, `.h3d`, Inventor, VRML, OBJ, glTF), the scene geometry with
      **Import...** / **Add...** / **Clear** (a geometry file's scale and frame are
@@ -55,8 +42,25 @@ What a stage covers is a tooltip on its title band (the colored bar naming it): 
      Its file is named at the top of the tab, with **Import...** and **Clear**;
      its scale, frame and drawing are in **Survey Point Cloud (scan)** below.
    - **Aerial image**, **Terrain (3DEP)** and **LiDAR**: the downloads for the
-     map's area, each with the map under it (the same downloads and map as the
-     Site stage's).
+     Site stage's location, each with the search and the map under it. All three
+     take the same area, so you choose it once: the yellow rectangle on the map, a
+     square about the case's location unless you draw one (**Select area**) or press
+     **Area here**. Moving the map does not move it. Under **Download aerial image**,
+     **Your own picture** places a picture of your own (by its georeference or by
+     control points). Either way the picture is laid as ground at once: drivable
+     flat ground where the site is not, and the photograph in the material of every
+     surface under it (see *The picture is ground*). The terrain you download
+     becomes drivable ground too.
+
+   Under the tabs, **Aerial Pictures** edits the pictures laid on the ground (the
+   base image and its layers: file, corners and record), and last, closed, **This
+   Environment as a File**: **Save Environment As...** writes the whole environment
+   — site, surfaces and materials, placements, lights, sky and location — to one
+   `.hveenv.json` file, and **Load Environment...** *replaces* this case's environment
+   with such a file (the page then says what was loaded and the view frames it).
+   Load is not an import: to *add* a model, scan or picture to the site, use the
+   tabs above. The Environment menu has the same two commands, and its **Open
+   Example** opens one of HVE's example sites as a new case.
 
    The drivable triangles here are what every vehicle runs on. (This stage was
    called Geometry, then Site Files.)
@@ -145,23 +149,23 @@ What a stage covers is a tooltip on its title band (the colored bar naming it): 
 
 ## Everything in one place
 
-Every section of the **Environment** window and every item of the
+Every section of the old **Environment** window and every item of the
 **Environment** menu has a home in the designer:
 
-| In the Environment window or menu | In the designer |
+| In the old Environment window or menu | In the designer |
 |---|---|
 | Location | Site |
-| Aerial Image... | Site (opens its own window) |
+| Aerial Image... | Import (the **Aerial Pictures** section) |
 | Terrain: scene geometry, site placement, survey point cloud | Import |
-| Geographic terrain (USGS 3DEP), the aerial download | Site |
+| Geographic terrain (USGS 3DEP), the aerial download, LiDAR | Import (its download tabs) |
 | Terrain: Selected Surface | Surfaces |
 | Surface Generator | Surfaces |
 | Edit Mode (materials per face) | Surfaces |
 | Physical | Weather |
 | Sky, Lights | Sky & Lights |
-| Load Environment..., Save Environment As... | Import (Save also on Summary); Open Example is on the Environment menu |
+| Load Environment..., Save Environment As... | Import, **This Environment as a File** (Save also on Summary); Open Example is on the Environment menu |
 
-The Environment window stays available while the designer is new.
+The old windows are gone; there is no second way to reach these.
 
 ## Key figures
 

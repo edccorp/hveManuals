@@ -7,7 +7,7 @@ HVE's 3-D Editor creates environment objects with nine Object Tools — Surface,
 !!! warning "Not in HVE Studio"
     HVE Studio does not build environment geometry. There are no Surface, Cone, Box, Cylinder, Sphere or Text tools, no object editor dialogs, and no vertex editing. A site is **imported**:
 
-    - from a geometry file — DXF, `.h3d`, `.iv`, OBJ or glTF — under **Environment › Environment… › Terrain › Scene Geometry** (enter or browse for the file, set the scale and axis options, tick **Use surfaces as terrain (physics)** if vehicles are to drive on it, and press **Import**); or
+    - from a geometry file — DXF, `.h3d`, `.iv`, OBJ or glTF — under **Environment › Environment Designer… › Terrain › Scene Geometry** (enter or browse for the file, set the scale and axis options, tick **Use surfaces as terrain (physics)** if vehicles are to drive on it, and press **Import**); or
     - with an HVE case: **File › Open Case...** reads a `.hve` case, including the site built for it in HVE's 3-D Editor, with its object types, overlays and friction factors.
 
     Build or edit the site in HVE or in a modeling program and import the result. The tools that remain are described below.
@@ -40,7 +40,7 @@ HVE's Surface tool creates drivable polygons (roads, medians, adjacent surfaces)
 HVE's Box tool creates box-shaped objects such as buildings and curbs.
 
 !!! warning "Not in HVE Studio"
-    There is no Box tool and no Box Editor dialog. Include buildings, curbs and walls in the imported geometry (**Environment › Environment… › Terrain › Scene Geometry**: DXF, `.h3d`, `.iv`, OBJ or glTF), and draw drivable regions or friction zones over the site with the **Surface Generator** (Environment panel, *Surface Generator* section). See [Box Editor Dialog](../../08-environment/BoxEdDlg.md).
+    There is no Box tool and no Box Editor dialog. Include buildings, curbs and walls in the imported geometry (**Environment › Environment Designer… › Terrain › Scene Geometry**: DXF, `.h3d`, `.iv`, OBJ or glTF), and draw drivable regions or friction zones over the site with the **Surface Generator** (Environment panel, *Surface Generator* section). See [Box Editor Dialog](../../08-environment/BoxEdDlg.md).
 
 ## Cylinder Tool
 

@@ -82,6 +82,15 @@ During initialization one mesh is built per selected wheel:
 | Near-rim rings | average of rim and tread stiffness | 0.75 | 0.05 | 0.05 | wheel width |
 | Tread ring | tire *Initial Ride Rate* ÷ contact-patch area | 0.75 | 0.05 | **1.00** | static loaded radius ÷ 4 |
 
+!!! note "HVE Studio: the rim's own stiffness"
+    In HVE the rim's stiffness is the wheel's *Displacement Rate* over its disc area, so the rate at which a
+    damaged wheel moves back also sets how hard its rim is. Those are two different things, and with a realistic
+    (soft) displacement rate the rim came out softer than its own tire. With the redesigned node law (law 2), HVE
+    Studio gives the rim its own stiffness: **11,300 lb/in over the whole wheel face**, measured by crushing the
+    front rim of a finite-element 2015 Toyota Camry (George Mason University's CCSA model) against a flat rigid
+    plate. The *Displacement Rate* then sets only how the wheel moves back once its suspension gives way. The tread
+    still takes the tire's own ride rate, and HVE's original contact keeps HVE's rim.
+
 !!! note "HVE Studio"
     HVE Studio builds the wheel as a **tire section** rather than HVE's six-ring
     cylinder: **120 slices** around (3° apart), and across them a hub ring, a
@@ -355,7 +364,9 @@ tread/rim contact takes over the shear loads through its own friction model.
     Reports**. The **Mesh** box of the **DyMESH Wheel** row (**View › Scene Display**, Vehicle
     group) draws the wheel contact meshes after a run, and its **Nodes** box labels each
     wheel's contact model and tire law. The **Tire Fz' (nodes)** vector row draws the
-    loaded tread-spring node forces of a wheel on Tire Contact Model 4.
+    loaded tread-spring node forces of a wheel on Tire Contact Model 4, and each loaded
+    spring as a coil from the axle to where its node meets the surface (blue lightly
+    loaded, red the most loaded); a side view with **See-through body** on shows them.
 
 ## Quick reference
 

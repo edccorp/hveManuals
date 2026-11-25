@@ -18,7 +18,7 @@ If the site was built in HVE's 3-D Editor, open the case directly:
 
 ### Starting from a geometry file
 
-1. Select the **Environment (F4)** tab and choose **Environment › Environment…**.
+1. Select the **Environment (F4)** tab and choose **Environment › Environment Designer…**.
 2. Open the **Terrain** section. In the **Imported files** list at its top, press **Import...** on the *Scene geometry* row and choose the file.
 3. In the **Import Scene Geometry** window, set the **Scale Factor** (an **Extra Scale** for `.h3d`) and, if the file was modeled Y-up, tick **File is Y-up (rotate to Z-up)**; then press **Import**. (For DXF, OBJ and glTF files, check the elevation range in the summary against the site you expect: nothing in such a file says which way is up, and **File is Z-down (Flip About X-Axis)** corrects one that is inverted -- import it again with it ticked.)
 4. Tick **Use surfaces as terrain (physics)** if vehicles are to drive on the site; leave it clear for geometry that is only a backdrop.

@@ -57,7 +57,7 @@ What a stage covers is a tooltip on its title band (the colored bar naming it): 
    against time) for the chosen vehicle, and **From the EDR** (EDR Import): the
    vehicle's event data recorder record, and for SIMON a driver solved so the run
    follows the recorded speed. The solve keeps running while another stage or tab
-   is shown. EDCRASH, a reconstruction, has no driver: the stage bar leaves it out.
+   is shown. EDCRASH shows only its **Driver Controls** (the wheel data): it reads no throttle, brake or steer table, so it has no **From the EDR** tab.
 5. **Collision Pulse**: a tab for each dialog the calculation method reads, as
    the Event menu grays the rest: **Collision Pulse** and **Contacts** (EDSMAC4's
    vehicle contacts, or EDHIS and GATB's occupant contacts). A method with
@@ -68,7 +68,7 @@ What a stage covers is a tooltip on its title band (the colored bar naming it): 
    For EDCRASH this stage is **Damage Profiles**, the damage it reconstructs from,
    one vehicle at a time (a tab per vehicle): the **CDC**, **PDOF** and
    **Auto-calculate PDOF**, the **A Stiffness** and **B Stiffness**, the impulse
-   center, **Measured Crush** (**# crush depths** is typed, or stepped with its
+   center, **Measured Crush** (**Damage Profile (zones)** is typed, or stepped with its
    - and + buttons) and the **Damage Profile Drawing**; **Crush from Scan**
    (Crush Profile from Scan) beside it measures the crush depths off a scan.
    **Event › Damage Profiles...** (Ctrl+M) opens this stage. See

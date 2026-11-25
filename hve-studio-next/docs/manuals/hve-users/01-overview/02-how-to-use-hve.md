@@ -159,7 +159,7 @@ To create the environment:
 4. In **Physical**, enter the ambient temperature and pressure, the wind speed
    and direction, gravity, and any standing water. The air density is derived
    from the temperature and pressure, as the engines do.
-5. Use **Environment › Aerial Image...** to lay a photograph over the site.
+5. Use **Environment › Environment Designer...**, Import stage, **Aerial Pictures** to lay a photograph over the site.
 
 > **NOTE:** The latitude, longitude, date and time position the sun. The
 > direction of north, and the sun and sky themselves, are set in the Shader

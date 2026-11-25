@@ -389,7 +389,7 @@ EDVDS uses the environment created by the Environment editor (see Figure 2-4). T
 A case in HVE Studio always has exactly one environment; there is nothing to add. To edit it:
 
 1. Choose the **Environment (F4)** editor tab.
-2. The **Environment** panel is displayed (**Environment › Environment…** reopens it).
+2. The **Environment** panel is displayed (**Environment › Environment Designer…** reopens it).
 3. In **Location**, set the location (search an address, paste a coordinate, or enter latitude and longitude) and the date and time of the event.
 4. On the Environment Designer's **Import** stage (**3-D models** tab), open the site's 3-D geometry (`.h3d`, DXF, `.iv`, OBJ or glTF) with **Import...** beside **Scene geometry**.
 5. In **Physical**, enter the ambient temperature and pressure, the wind and the **Gravity**.

@@ -100,7 +100,7 @@ The vehicle is now ready for use in our events. Rotate the view in the viewport 
 
 Now, let's set up the environment:
 
-- Choose the **Environment** editor (the **Environment (F4)** tab) and open **Environment › Environment…**.
+- Choose the **Environment** editor (the **Environment (F4)** tab) and open **Environment › Environment Designer…**.
 - Under *Location*, enter the name `Jefferson City Airport`, the latitude and longitude of Jefferson City, Missouri, USA (38.58 N, 92.20 W; *Search an address* can look a place up), and the date and time of the experimental study, `7/11/93` at `1500`.
 - Set the angle from *true north* to the earth-fixed X axis, `165` degrees. In HVE Studio this is the **North** setting in the *Sun & Sky* section of **View › Shader Editor** (the *Sky* section of the Environment window links to it), shown as the offset from east: enter `75` (165 minus 90).
 

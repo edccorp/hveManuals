@@ -60,7 +60,7 @@ Under those buttons. Animates the camera over the playback time: step to the pre
 
 ## Viewport View tab
 
-Controls for the live Viewport camera, without saving it: **View Controls** (**Orbit** or **Free (Euler)**), **View Preset** buttons (**Top**, **Front**, **Rear**, **Left**, **Right**, **Persp**), the orbit azimuth, elevation, distance and target (or, in Free mode, the eye position and pitch, yaw and roll), **Projection** (**Perspective** or **Orthographic**, with a focal length or field of view), and **Reset Camera**.
+Controls for the live Viewport camera, without saving it: **View Controls** (**Orbit** or **Free (Euler)**), **View Preset** buttons (**Top**, **Front**, **Rear**, **Left**, **Right**, **Persp**), the orbit azimuth, elevation, distance and target (or, in Free mode, the eye position and pitch, yaw and roll), **Projection** (**Perspective** or **Orthographic**, with a focal length or field of view), and **Reset Camera**, which also puts the lens back to the **Default lens** in Preferences.
 
 In Orbit mode, **Eye / Orientation** (linked) shows, read-only, the eye position and the pitch and yaw that the orbit settings give, as the Free mode would show them.
 

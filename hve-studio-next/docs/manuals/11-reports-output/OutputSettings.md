@@ -42,7 +42,9 @@ on a row and **Reset all variables** put HVE's name and the default back.
 ## Limits
 
 The ranges numeric fields are held to, by section, each in the units set in
-Preferences. Every row has two ranges, as HVE's own fields do:
+Preferences; the **Unit** column names them, and shows **--** for a quantity
+that has none (a friction coefficient, a ratio, an efficiency). Every row has
+two ranges, as HVE's own fields do:
 
 - **Usual min / Usual max** — a value outside this range is accepted, with a
   note beside the field or under the table asking you to check it (HVE's

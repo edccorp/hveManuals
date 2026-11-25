@@ -61,7 +61,7 @@ HVE's tutorial changes the vehicles' colors. In HVE Studio a vehicle's color is 
 
 ## Creating the Environment
 
-The case carries its environment, HVE's *4T2_Intersection.h3d* site. Choose the **Environment** editor tab (F4) to see it, and **Environment › Environment...** for its settings: the site *School Bus Stop* in Chicago, Illinois (latitude 41°53′ N, longitude 87°40′ W), on 5/15/97 at 1430, with the earth-fixed X axis at −80 degrees from true north (the **North** setting of the sun and sky, **Edit the sun and sky...**).
+The case carries its environment, HVE's *4T2_Intersection.h3d* site. Choose the **Environment** editor tab (F4) to see it, and **Environment › Environment Designer...** for its settings: the site *School Bus Stop* in Chicago, Illinois (latitude 41°53′ N, longitude 87°40′ W), on 5/15/97 at 1430, with the earth-fixed X axis at −80 degrees from true north (the **North** setting of the sun and sky, **Edit the sun and sky...**).
 
 > **NOTE:** The latitude, longitude, date, time and angle from true north are used to position the sun in the scene. This is, of course, important because the sun is the primary light source for the scene.
 

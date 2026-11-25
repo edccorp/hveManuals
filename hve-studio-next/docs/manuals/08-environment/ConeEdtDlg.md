@@ -8,7 +8,7 @@ In HVE the Cone Object Tool creates and edits 3-D cones — highway delineator c
 
     - For an object the vehicles **interact with** — a pole, post, curb or
       barrier — build it in a CAD or modeling program and import it as part
-      of the environment's terrain geometry (Environment › Environment...,
+      of the environment's terrain geometry (Environment › Environment Designer...,
       Terrain: DXF, `.h3d`, `.iv`, `.wrl`, OBJ or glTF), then set its surface
       type on its material (see
       [Environment Material Properties](EnvrMatPropDlg.md)).

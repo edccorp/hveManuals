@@ -345,9 +345,9 @@ The visual data are not used by the event; they are provided for studies related
 
 > **NOTE:** The visual data (Location, Time, Date and Angle of earth-fixed X axis) affect the lighting of the event! Depending on your view (Camera Position) the scene may be shaded and difficult to see. If the time is after sundown, the view will be dark.
 
-In HVE Studio the environment is edited in the **Environment (F4)** editor with **Environment › Environment…**. A case always has exactly one environment, so there is nothing to add:
+In HVE Studio the environment is edited in the **Environment (F4)** editor with **Environment › Environment Designer…**. A case always has exactly one environment, so there is nothing to add:
 
-1. Choose the **Environment (F4)** editor and open **Environment › Environment…**.
+1. Choose the **Environment (F4)** editor and open **Environment › Environment Designer…**.
 2. In the *Location* section, enter the site name, *Date*, *Time*, *Latitude* and *Longitude* (or paste a coordinate or map link, or search an address).
 3. In the *Terrain* section, load the scene geometry (DXF, `.h3d`, `.iv`, OBJ or glTF).
 4. In the *Physical* section, edit the gravity constant and atmosphere.

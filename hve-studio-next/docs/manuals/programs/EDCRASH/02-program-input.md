@@ -199,7 +199,7 @@ EDCRASH uses the case's environment. The environment is created by defining the 
 In HVE Studio every case has exactly one environment, so there is nothing to add. To edit it:
 
 1. Choose the **Environment** editor tab (F4).
-2. Choose **Environment › Environment...**. The Environment dialog is displayed.
+2. Choose **Environment › Environment Designer...**. The Environment Designer is displayed.
 3. Enter the name, date, time, latitude and longitude of the site. (The location can also be set from a pasted coordinate or an address search.)
 4. On the Environment Designer's **Import** stage (**3-D models** tab), choose the site file with **Import...** beside **Scene geometry** (DXF, `.h3d`, `.iv`, `.wrl`, OBJ or glTF). A case opened from HVE brings its own site with it.
 5. Enter the wind and the atmosphere, including the gravity constant, in the **Ambient** and **Atmosphere** sections.
@@ -476,7 +476,7 @@ After entering the CDC, the damage profile may be edited by over-riding the defa
     - **Derive impulse center from damage profile** — on, EDCRASH computes
       the impulse center from the profile (the default). Off, enter
       **Impulse Center X** and **Y**.
-    - **Measured Crush (drives Delta-V)** — **# crush depths** (2 to 10),
+    - **Measured Crush (drives Delta-V)** — **Damage Profile (zones)** (1 to 9; one more crush depth than zones),
       the depths **C1**, **C2**, ..., **Damage width** and **Damage
       offset**, and **Per-zone A/B** with one A and B per zone (zones =
       depths − 1) and an **All same as zone 1** button. Depths are spaced
@@ -491,7 +491,7 @@ After entering the CDC, the damage profile may be edited by over-riding the defa
       after that the numbers are yours. **Start from the CDC's default** puts
       it back. To enter your own values, type them in **C1** to **Cn**,
       **Damage width** and **Damage offset** (Ctrl+click a field, or double-click it, to type), or set
-      **# crush depths** to the count you measured.
+      **Damage Profile (zones)** to the zones you measured (one fewer than the depths).
 
     HVE Studio does not display barrier results while you enter the profile;
     the damage energy and force appear in Key Results and the Damage Data

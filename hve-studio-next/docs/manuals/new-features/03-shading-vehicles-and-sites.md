@@ -72,20 +72,21 @@ Details:
 
 ## Site shading
 
-Where:
-
-- **Environment › Environment...**, *Terrain* section, under *Scene Geometry*:
-  **Shading**; or
-- the **Shader Editor**, with a road surface selected — under its slot. The two
-  are the same control, and it applies to the whole drawn site.
+Where: the **Shader Editor**, with a surface selected (click it in the 3-D view
+or pick it in the Outliner) — the **Shading** row under its slot. It is set **per
+surface**; a surface welds its normals only with surfaces shaded the same way,
+so a Flat curb beside a Smooth road keeps its edge.
 
 | Setting | Effect |
 | --- | --- |
+| **As the site** | The site's setting, which every surface without its own takes (Flat until changed). |
 | **Flat** | One normal per face, as the file gives it. The default. |
 | **Smooth** | The normals of every face meeting at a point are averaged, so a graded road stops showing its triangles. |
 | **Auto Smooth** | Averaged only between faces within **Auto Smooth Angle (deg)**, so curbs and building edges stay sharp. |
 
-The site's Auto Smooth angle defaults to **30°** (Blender's own default).
+The Auto Smooth angle defaults to **30°** (Blender's own default). **Apply to all
+surfaces** makes the selected surface's setting the site's and clears every
+surface's own, so the whole site is shaded one way again.
 
 !!! note "Photographed sites"
     A photographed site that HVE draws self-lit — the surface shows the photo

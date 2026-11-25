@@ -61,7 +61,7 @@ shown **grayed**, with the stored value.
 
 Under **Measured Crush (drives Delta-V)**:
 
-- **# crush depths** — the number of crush measurements (0 to 10). The number of
+- **Damage Profile (zones)** — the number of zones (0 to 9); the profile holds one more crush depth than zones. The number of
   zones is one less (up to 9). With fewer than 2 depths no profile is entered
   and delta-V stays 0.
 - **C1** ... **Cn** — the crush depths, from the CDC's damaged side.

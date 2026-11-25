@@ -136,25 +136,20 @@ vehicles (two-way)**, under **Humans in Event** and on for a new event, sends th
 rider's push back into the vehicle it strikes and into its own motorcycle. Clear
 it for **one way**, the faster run: the rider still leaves the machine and is
 solved as a body, but it moves no vehicle -- the vehicles are solved as if it had
-no body of its own. **Coupling method** says
-how two way is solved:
+no body of its own. Two way is solved by lockstep: SIMON and the rider are solved
+together in one run, the rider's push reaching the vehicle a step or two late. It
+takes about as long as the one-way run twice over. Before trusting its own start,
+the run checks that SIMON up to the moment the rider left is exactly the
+one-way run; if it is not, the event is solved by repeated runs (passes) instead
+and the status says why. In that case SIMON and the rider are solved again
+and again, the push each time a load on that vehicle. Where a thrown rider
+lands changes a lot with small changes in the car's motion, so the vehicle
+carries the **average** of the pushes solved so far, and the passes stop when
+that average settles. The status says how many passes that took, whether it
+settled, the average impulse and the range the passes spread over. It takes
+several times as long as lockstep. There is no setting to choose between them.
 
-- **Lockstep (one run)**, the default: SIMON and the rider are solved together in
-  one run, the rider's push reaching the vehicle a step or two late. It takes
-  about as long as the one-way run twice over. Before trusting its own start,
-  the run checks that SIMON up to the moment the rider left is exactly the
-  one-way run; if it is not, the event is solved by passes and the status says
-  why.
-- **Passes (iterated to convergence)**: SIMON and the rider are solved again
-  and again, the push each time a load on that vehicle. Where a thrown rider
-  lands changes a lot with small changes in the car's motion, so the vehicle
-  carries the **average** of the pushes solved so far, and the passes stop when
-  that average settles. The status says how many passes that took, whether it
-  settled, the average impulse and the range the passes spread over. It takes
-  several times as long as lockstep.
-
-Either way, read the push as a range, not as one number: the two methods agree
-to within the spread the passes show. The rider's push reaches its own motorcycle too, after it leaves it, whichever
+Read the push as a range, not as one number. The rider's push reaches its own motorcycle too, after it leaves it, whichever
 **Dynamics model** the machine rides. A vehicle with no contact surfaces of its own is given a ground
 and a body surface in HVE's default vehicle material, and the status says so.
 The motorcycle's weight should include its rider (the seeded motorcycle's does).

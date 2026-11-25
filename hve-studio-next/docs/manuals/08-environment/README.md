@@ -1,6 +1,6 @@
 # Environment
 
-Dialog reference for the **Environment** area: one page per HVE dialog, each describing the HVE Studio window that replaces it or saying where its function lives. The environment is edited in the Environment editor (F4) with **Environment › Environment...** and **Aerial Image...**; surface physics in the Environment Designer's Surfaces stage; how surfaces look in the Shader Editor. HVE's primitive editors (box, cone, cylinder, sphere) and surface editor have no HVE Studio equivalent. This chapter also carries three dialogs reached from the vehicle: contact surfaces, their material, and brake lining friction. Part of the [HVE Manual](../README.md).
+Dialog reference for the **Environment** area: one page per HVE dialog, each describing the HVE Studio window that replaces it or saying where its function lives. The environment is edited in the Environment editor (F4) with **Environment › Environment Designer...** (the aerial pictures are its Import stage's **Aerial Pictures** section); surface physics in the Environment Designer's Surfaces stage; how surfaces look in the Shader Editor. HVE's primitive editors (box, cone, cylinder, sphere) and surface editor have no HVE Studio equivalent. This chapter also carries three dialogs reached from the vehicle: contact surfaces, their material, and brake lining friction. Part of the [HVE Manual](../README.md).
 
 ## Pages
 

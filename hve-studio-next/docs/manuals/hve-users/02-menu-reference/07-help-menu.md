@@ -8,7 +8,7 @@ and **About HVE Studio...**.
 
 | HVE item | HVE Studio |
 |---|---|
-| Help Topics | Help › **Manual** — see [HELP TOPICS](#help-topics) |
+| Help Topics | Help › **Manual**, or **F1** for the window under the pointer — see [HELP TOPICS](#help-topics) |
 | User Manuals | Help › **Manual** — see [USER MANUALS](#user-manuals) |
 | Tech Support | Not in HVE Studio — see [TECH SUPPORT](#tech-support) |
 | About | Help › **About HVE Studio...** |
@@ -46,6 +46,13 @@ control to see its tooltip (with **View › Show Guidance Text** off, the
 longer explanations are in those tooltips, or behind a dim **(?)**), and turn
 the option on to show them in the dialogs. If no browser can be started, the address
 is copied to the clipboard and the Help menu says so, under the item.
+
+**F1 — help on the window you are in.** Press **F1** with the pointer over a window (a
+designer, the 3-D view, the Shader Editor, a dialog) and its page of this manual opens,
+at the section about it where there is one. With the pointer over no window, F1 is about
+the window that has the keyboard. A window with no page of its own opens the manual's
+search for its title, and F1 over the menu bar opens the front page. F1 can be bound to
+another key in **Options › Preferences › Keymap** (*Help on the window under the pointer*).
 
 ---
 

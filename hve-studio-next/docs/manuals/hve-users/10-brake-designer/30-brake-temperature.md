@@ -147,7 +147,7 @@ assigned by the user during event set-up:
   Six).
 
 !!! note "HVE Studio"
-    The ambient temperature is **Ambient Temperature** in the **Physical** section of **Environment › Environment…**. The initial temperatures are the **Initial pad/lining temp** and **Initial rotor/drum temp** rows (with **Initial stroke**) of the brake table in **Event › Wheels…**, one column per wheel. They are passed to the engine and the temperature calculation starts from them.
+    The ambient temperature is **Ambient Temperature** in the **Physical** section of **Environment › Environment Designer…**. The initial temperatures are the **Initial pad/lining temp** and **Initial rotor/drum temp** rows (with **Initial stroke**) of the brake table in **Event › Wheels…**, one column per wheel. They are passed to the engine and the temperature calculation starts from them.
 
 > **NOTE:** See Table 29-2 for parameter definitions related to shoe and
 > rotor/drum geometry.

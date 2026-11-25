@@ -18,7 +18,7 @@ The sun and sky are part of the case's **world**, and are edited in the Shader
 Editor:
 
 - **View › Shader Editor**, then **World** in the header; or
-- **Edit the sun and sky...** in **Environment › Environment...**, *Sky*
+- **Edit the sun and sky...** in **Environment › Environment Designer...**, *Sky*
   section, or in the Event editor's **Lighting** section.
 
 Both of those places show a one-line summary — the sun's heading and elevation,
@@ -61,13 +61,17 @@ This places the sun the way Blender's *Sun Position* add-on does.
 | **North** | The compass bearing the case's +X axis points along: 0 = north, 90 = east. This is HVE's *angle of X axis* and Blender's *North Offset* |
 | **Refraction** | Include atmospheric refraction near the horizon (NOAA method only; HVE's method has no refraction term, so the box is disabled) |
 
-Below the fields the panel prints where the sun ended up: *Sun: N deg up, case
-heading N deg.* A problem with an input — a date or time that cannot be read —
+Below the fields the panel prints where the sun ended up: *Sun: N deg up, compass
+azimuth N deg (SW) -- Blender's Sun Position azimuth; shadows fall toward N deg (NE).
+Case heading N deg.* The compass azimuth is the bearing of the sun clockwise from
+north, the number Blender's Sun Position add-on shows for the same place and time;
+the case heading is that bearing in the case's own axes (the compass bearing less
+the bearing of +X, 90 deg when the North offset is 0). A problem with an input — a date or time that cannot be read —
 is reported in orange, and the sun falls back to the manual setting rather than
 being guessed.
 
 Latitude, longitude, date, time, UTC offset, daylight saving and north are the
-**same fields** as **Environment › Environment...**, *Location*. Editing them in
+**same fields** as **Environment › Environment Designer...**, *Location*. Editing them in
 either place edits the case's one value.
 
 Every change here is a step in **Edit › Undo History**, and it undoes with
@@ -257,7 +261,12 @@ chooses whether the world is drawn behind the scene or used for **lighting
 only**. **Light Path > Is Camera Ray** separates what the camera sees from the
 light the world casts: HVE's backdrop sky presets use it to show a flat picture
 (Environment Texture in **Backdrop** projection) behind the scene while a Sky
-Texture lights it.
+Texture lights it. Above the top of a backdrop picture the sky shows, not a
+smeared copy of the picture's top row. HVE's two fisheye sky photographs (Sky 2
+and Sky 6) use the Environment Texture's **Sky dome (fisheye)** projection, with
+the circle's center and radius as the node's **Dome** fields. Every sky preset puts
+a **Mapping** node in front of its picture, set to do nothing as shipped: its
+**Location** moves the sky (a small Y offset lowers it) and its **Rotation** turns it.
 
 ## Shadows
 

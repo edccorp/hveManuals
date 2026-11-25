@@ -7,7 +7,7 @@ coordinates, reversing a face normal, and decimating or tessellating the mesh.
 !!! warning "Not in HVE Studio"
     HVE Studio has no surface editor and does not edit environment geometry.
     Build or edit the site in a CAD or modeling program and import it in
-    **Environment › Environment...**, Terrain (DXF, `.h3d`, `.iv`, `.wrl`, OBJ
+    **Environment › Environment Designer...**, Terrain (DXF, `.h3d`, `.iv`, `.wrl`, OBJ
     or glTF).
 
     What HVE Studio does edit on imported surfaces:
@@ -17,7 +17,7 @@ coordinates, reversing a face normal, and decimating or tessellating the mesh.
     - each surface's **type, friction, stiffness and soil properties**, on the
       Environment Designer's Surfaces stage, under **Surface Type and Friction** (see
       [Environment Material Properties](EnvrMatPropDlg.md));
-    - how the site is **shaded** (Flat, Smooth, Auto Smooth) and how each
+    - how each surface is **shaded** (Flat, Smooth, Auto Smooth) and how each
       surface **looks** (its node material in the Shader Editor).
 
     These edits are kept with the case and re-applied each time the geometry

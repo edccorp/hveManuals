@@ -61,7 +61,7 @@ HVE's walkthrough makes the following edits. Each is already in the finished cas
 
 ## Creating the Environment
 
-The environment is HVE's *Rowena Point* site near Hood River, Oregon — a downhill curve to the right with a substantial super-elevation, a narrow shoulder and a near-vertical cliff at its edge. Choose the **Environment (F4)** editor tab to see it (Figure 5-2), and **Environment › Environment…** for its location, date, time and physical data.
+The environment is HVE's *Rowena Point* site near Hood River, Oregon — a downhill curve to the right with a substantial super-elevation, a narrow shoulder and a near-vertical cliff at its edge. Choose the **Environment (F4)** editor tab to see it (Figure 5-2), and **Environment › Environment Designer…** for its location, date, time and physical data.
 
 ![Figure 5-2](images/hvn-edvds-environment-editor.png)
 *Figure 5-2: The tutorial's environment in the HVE Studio Environment editor. The original 3-D geometry was obtained with a total station; the textures are photos taken at the scene.*

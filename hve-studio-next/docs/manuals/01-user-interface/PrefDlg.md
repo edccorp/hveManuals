@@ -31,7 +31,7 @@ Some fields keep a fixed frame and say so beside the field: an occupant segment'
 **Metric (m, km/h, kg, N)** or **Imperial (ft/in, mph, lb, lbf)**. Every dialog and output that shows a converted value follows this setting at once; see [Units Dialog Box](UnitsDlg.md). A note says that fields still carrying a fixed SI label are being converted.
 
 ### Default lens (mm)
-The 3-D view's lens when HVE Studio starts, and the lens a new camera starts with, as a focal length on the same 35 mm-equivalent scale the Cameras dialog uses: 50 mm is a natural, undistorted view, a smaller number is wider. The field of view it gives is shown beside it, and **50 mm** sets that value in one click. Changing it sets the 3-D view's lens at once; saved cameras keep their own. It is kept with your preferences, for every case. Until you set it the view keeps the 45° vertical field it has always had (about 29 mm).
+The 3-D view's lens when HVE Studio starts, when a case is opened or started and when the view is reset (**Reset Camera**), and the lens a new camera starts with (an on-vehicle driver's-eye camera included), as a focal length on the same 35 mm-equivalent scale the Cameras dialog uses: 50 mm is a natural, undistorted view, a smaller number is wider. The field of view it gives is shown beside it, and **50 mm** sets that value in one click. Changing it sets the 3-D view's lens at once; saved cameras keep their own. It is kept with your preferences, for every case. Until you set it the view keeps the 45° vertical field it has always had (about 29 mm).
 
 ### Background Color
 The color behind the 3-D scene. Click the swatch for a color picker, or type the values.

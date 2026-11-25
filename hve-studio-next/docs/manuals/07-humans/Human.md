@@ -52,7 +52,7 @@ which segment made a contact) and Gray. They are choices of appearance only.
 
 Weight of the selected segment. As the weight changes, the segment mass is
 recalculated by dividing the weight by the acceleration of gravity of the
-current environment (Environment › Environment..., Physical).
+current environment (Environment › Environment Designer..., Physical).
 
 ## Segment Mass
 

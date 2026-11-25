@@ -76,14 +76,16 @@ curve editor, like Blender's Graph Editor: each row is a **key** on the curve.
 - Faint lines mark the column's usual range. Hover a key to read its time and
   value.
 
-Each row is a number (**#**), a **Time (s)** and a value. Click a cell to
-type a value; drag to change it. A time typed out of order puts its row where
+Each row is a number (**#**), a **Time (s)** and a value. A cell is never
+changed by dragging the mouse: click a cell to select it, then type a number to
+replace its value, or double-click it (or press Enter) to edit the value in
+place. A time typed out of order puts its row where
 it belongs in time when you leave the cell, and the rows are numbered again.
 The buttons are **above** the table: **Add** appends a row at the table's own
 time step after the last (half a second for a first step); **Sort by Time** puts
 the rows in time order; **Delete selected** removes the rows selected on their
 numbers; **Delete to end** removes the first selected row and every row after
-it; **Paste** is described below. **X** at the end of a row deletes that row (the last
+it; **Copy** and **Paste** are described below. **X** at the end of a row deletes that row (the last
 remaining row cannot be deleted). A per-wheel table (one column per wheel,
 headed *A1-R*, *A1-L*, ...) has the same buttons above it, and its own
 **Discard per-wheel table**. Side **R** is the right wheel.
@@ -106,10 +108,18 @@ The tables edit like a spreadsheet:
   are added as needed. Values are read in the units the columns show.
 - **Tab** out of the last cell adds a row and moves into it, so a table can be
   typed row after row without the mouse.
+- **Select cells** by dragging across them or with Shift+click: the selection
+  is a block of cells, and the rows it covers are the selected rows.
 - **Select rows** on their numbers: click one, Shift+click for a range,
   Ctrl+click to add one, or drag down the numbers. **Delete selected** or the
   Delete key removes them together; **Delete to end** truncates the table from
-  the first selected row.
+  the first selected row. Escape, with the pointer over the table, clears the
+  selection.
+- **Copy** — Ctrl+C copies the selected cells (or the selected rows) as
+  tab-separated text, which a spreadsheet such as Excel pastes into as many
+  cells, and which another table pastes back. The **Copy** button above the
+  table does the same, or copies the whole table when nothing is selected.
+  Ctrl+V with cells selected pastes at the top-left selected cell.
 - **Limits** — each value column has HVE's two ranges (Output Settings ›
   Limits). A value outside the **usual** range (a pedal force over 400 lb, a
   steering-wheel angle past ±900°) is accepted with a note under the table
@@ -117,11 +127,12 @@ The tables edit like a spreadsheet:
   throttle or brake fraction, over 1000 lb of pedal force, past ±3600° of
   steering-wheel angle) is not accepted: the cell keeps its value and the note
   says why. A pasted block with any such value is not pasted at all, and the
-  note names the first one. Dragging stops at the allowed range's ends. Times
-  have no limit. Right-click a value cell for **Edit limits...**.
+  note names the first one. Times have no limit. Right-click a value cell for
+  **Edit limits...**.
 
-!!! warning "Not in HVE Studio"
-    HVE's **Copy Cell** and **Copy Row** buttons.
+!!! note "HVE Studio"
+    HVE's **Copy Cell** and **Copy Row** buttons are the **Copy** button and
+    Ctrl+C on a selection of cells or rows.
 
 ## Steer
 

@@ -23,7 +23,7 @@ HVE Studio's **Options** menu holds the settings for how the program looks and b
 | Autoposition | Per event and per vehicle: **Auto Position (settle onto terrain)** under the vehicle in the **Vehicle Initial Conditions** section of the **Event Information** panel. It is always on for the planar methods. |
 | Grid | A datum grid is drawn when no site is loaded; it has no settings. See [Set Grid Dialog Box](SetGridDlg.md). |
 | Units | **Options › Preferences... › Units** — see [Units Dialog Box](UnitsDlg.md). |
-| Shadows | **View › Scene Display › Light & Shadow** (**Shadow cascades**): the sun's shadow is drawn in 1 to 4 nested layers, sharp over the vehicles and coarser out to the whole site. HVE's shadow radius, quality, precision and intensity are not offered. |
+| Shadows | **View › Scene Display › Light & Shadow** (**Shadows** turns them off and on; **Shadow cascades**): the sun's shadow is drawn in 1 to 4 nested layers, sharp over the vehicles and coarser out to the whole site. HVE's shadow radius, quality, precision and intensity are not offered. |
 | Render (Ctrl+R) | **View › Scene Display › Rendering** — see [Render Dialog Box](RendOptDlg.md). (In HVE Studio **Ctrl+R** is **Output › Run Simulation...**, in the Event Editor: it opens the Event Designer's **Run** stage and runs the event.) |
 | Playback | **Output › Playback Options...** (Event Editor) |
 | Simulation Controls (Ctrl+Y) | The **Run** stage of the **Event Designer** (**Event › Event Designer...**), *Simulation Controls* section: duration, time steps, termination velocities and the integrator convergence controls the event's method uses. |

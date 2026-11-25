@@ -97,7 +97,10 @@ units set in Preferences.
 - **Each page is its own window**, docked in HVE Reports as a row of tabs.
   Drag a page's tab to the side of another page to show the two side by side,
   to its top or bottom edge to stack them, or out of the window to float it.
-  **Reset Layout** puts every page back as one row of tabs.
+  A floated page has a close box (x), which puts it back in the window.
+  **Reset Layout** puts every page back as one row of tabs. HVE Reports is not
+  reopened when HVE Studio starts: its pages are a run's, and a new session
+  has none until a run.
 - **Print Order...** sets the order in which **Save All Pages** and **Save All
   Pages as HTML** write the pages, and which pages they leave out. The order is
   kept for each engine, in the preferences.

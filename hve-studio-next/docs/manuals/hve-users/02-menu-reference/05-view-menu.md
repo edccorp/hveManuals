@@ -19,7 +19,7 @@ HVE's View menu items map as follows:
 | Toolbar | Not in HVE Studio — see [TOOLBAR](#toolbar) |
 | Status Bar | Not in HVE Studio — see [STATUS BAR](#status-bar) |
 | Set Camera | **Tools › Cameras...**, or right-click the viewport › **Camera Properties...** — see [SET CAMERA](#set-camera) |
-| Overlays | **View › Outliner** for site layers; **Environment › Aerial Image...** for a scanned image — see [OVERLAYS](#overlays) |
+| Overlays | **View › Outliner** for site layers; **Environment › Environment Designer...**, Import stage, **Aerial Pictures** for a scanned image — see [OVERLAYS](#overlays) |
 
 ---
 
@@ -204,8 +204,8 @@ The DyMESH overlay table:
 | Item | Does |
 |---|---|
 | **Panels Outside the Main Window** | Lets a panel dragged out of the main window become a window of its own (for example, the Shader Editor on a second monitor). Takes effect the next time HVE Studio starts. Not available in the browser build |
-| **Playback Controls in Toolbar** | In the Event and Playback editors, the run's state, **Reset**, the playback buttons and the time slider sit in the toolbar at the top, after the editor buttons (on a row of their own when the window is too narrow). Off puts them in a strip at the foot of the 3-D view. On by default. Greyed while **Playback Controls in a Window** is on, because the window then holds the controls |
-| **Playback Controls in a Window** | Moves the toolbar's pickers (the active event and its vehicles, or the active vehicle, human or sequence, by editor) and the playback controls into a window of their own, **Playback Controls**, instead of the toolbar. The window opens docked above the 3-D view and docks like any other: drag its tab to put it below the view or anywhere else, or right-click an empty part of it for **Dock Above the 3-D View**, **Dock Below the 3-D View** and **Back to the Toolbar**. Closing the window puts the controls back in the toolbar. Right-click the window › **Transport Line** puts Play, Reset and the time slider **Beside the Pickers** (the default), **Below the Pickers** or **Above the Pickers**. Kept between sessions. Off by default |
+| **Playback Controls** | Where the Event and Playback editors' run state, **Reset**, playback buttons and time slider sit — one of three: **In the Toolbar** (at the top, after the editor buttons, on a row of their own when the window is too narrow; the default), **Under the 3-D View** (a strip at the foot of the 3-D view) or **In a Window** (below). Kept between sessions |
+| **Playback Controls › In a Window** | Moves the toolbar's pickers (the active event and its vehicles, or the active vehicle, human or sequence, by editor) and the playback controls into a window of their own, **Playback Controls**, instead of the toolbar. The window opens docked above the 3-D view and docks like any other: drag its tab to put it below the view or anywhere else, or right-click an empty part of it for **Dock Above the 3-D View**, **Dock Below the 3-D View** and **Back to the Toolbar**. Closing the window puts the controls back where they were before. Right-click the window › **Transport Line** puts Play, Reset and the time slider **Beside the Pickers** (the default), **Below the Pickers** or **Above the Pickers** |
 | **Show Guidance Text** | Shows the longer explanatory notes in the dialogs. Off by default: each note is then kept off the form and shown as a tooltip when you rest the pointer on the control it explains, or on the dim **(?)** left beside it. A message about a problem with the open case is always shown, whatever this is set to |
 | **UI Size (*n*%)** | How big the whole interface is: text, controls, padding and spacing together. **Larger** (**Ctrl+=**, or **Ctrl** and the keypad **+**) and **Smaller** (**Ctrl+-**) step it by 10 %, from 75 % to 200 %; **Reset to 100%** (**Ctrl+0**) puts it back; **100%**, **125%**, **150%** and **175%** pick a size directly. The shortcuts do nothing while you are typing in a field or a menu is open. Kept between sessions. It is the same setting as the font scale and sizes in **Options › Style Editor**, which shows it at the top with its own **Smaller**, **Larger** and **Reset** |
 
@@ -248,7 +248,7 @@ long.
 | **Collision moments** | The engine's collision moment about the CG while in contact, as arcs: roll Mx (orange), pitch My (yellow), yaw Mz (magenta). Shares the collision force scale |
 | **Tire Fx', Fy'** | Each tire's Fx' (red, longitudinal) and Fy' (green, lateral) at the contact patch |
 | **Tire Fz'** | The normal load, drawn up from the patch on the same scale as Fx' and Fy' |
-| **Tire Fz' (nodes)** | For a DyMESH wheel with tread springs (Tire Contact Model 4), the force of each loaded tread node, drawn from where it meets the surface on the tire scale. Their sum is the wheel's Tire Fz' on a flat road. Nothing is drawn for a wheel running point contact |
+| **Tire Fz' (nodes)** | For a DyMESH wheel with tread springs (Tire Contact Model 4), the force of each loaded tread node, drawn from where it meets the surface on the tire scale, and each loaded node's spring drawn as a coil from the axle out to that point, blue for a lightly loaded node through red for the most loaded one -- look from the side, with **See-through body** on, to see them. Their sum is the wheel's Tire Fz' on a flat road. Nothing is drawn for a wheel running point contact |
 | **Tire friction circle** | SIMON events only. A circle at each tire's contact patch, in the road plane: the rim is the tire's **peak** grip at that instant (its load and speed, on that surface), and a dot joined to the center shows the share in use, in the direction of the tire's horizontal force. It is drawn from the wheel channel **% Avail Mu** (see [SIMON Program Output](../../programs/SIMON/03-program-output.md)). Green under 70% of the peak, amber from 70% to 95%, red at the peak or while the tire slides (its Skid flag is set) — a sliding tire's dot sits inside the rim, because slide friction is below the peak. **Value** prints the share as a percent. The circle has a fixed size, so it has no scale |
 
 Below the table:
@@ -355,7 +355,7 @@ picture, never a surface.
 
 So does the case's aerial image, when it has one: its name (or file name), its
 opacity and an eye that is the picture's own **Visible** switch (the same one as
-in **Environment › Aerial Image...**; it stays in the case). A picture still on a
+in **Environment › Environment Designer...**, Import stage, **Aerial Pictures**; it stays in the case). A picture still on a
 row of its own is not drivable yet: its **Drive** wheel (or **Lay as Ground** in its
 right-click menu) lays it as ground -- drivable flat ground (Road, friction 1)
 wherever the site is not under it, with the photograph in the material of every
@@ -482,8 +482,8 @@ could be shown or hidden. In HVE Studio:
 
 - the site's **layers** are shown and hidden in **View › Outliner** (each
   surface's draw switch);
-- a **scanned image** of the site is laid over the ground with **Environment ›
-  Aerial Image...**.
+- a **scanned image** of the site is laid over the ground with the **Aerial Pictures**
+  section of the Environment Designer's **Import** stage.
 
 !!! warning "Not in HVE Studio"
     Named overlay sets of 3-D Editor objects, and a scanned image registered to

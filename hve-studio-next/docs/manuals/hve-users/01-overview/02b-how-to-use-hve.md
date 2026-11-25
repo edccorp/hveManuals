@@ -306,11 +306,11 @@ hidden. In HVE Studio, the site's layers and surfaces are shown and hidden in
 
 ### Scanned Image Overlay
 
-**Environment › Aerial Image...** lays an image over the site, placed by its
+**Environment › Environment Designer...**, Import stage, **Aerial Pictures** lays an image over the site, placed by its
 world bounds (upper-left and lower-right corners).
 
 ![Figure 2-56](../images/hvn-01-aerial-image.png)
-*Figure 2-56: The Aerial Image Options dialog.*
+*Figure 2-56: The aerial picture's options (the Environment Designer's Aerial Pictures section; the figure shows its earlier window).*
 
 !!! warning "Not in HVE Studio"
     An image registered to the camera position and focal length from which a

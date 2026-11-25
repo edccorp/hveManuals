@@ -222,7 +222,7 @@ Now, let's look at the environment. In HVE's tutorial it is the sample intersect
 
 > **NOTE:** The Latitude, Longitude, Date/Time and angle from true north are used to position the sun in the scene. This is, of course, important because the sun is the primary light source for the scene.
 
-In HVE Studio, choose the **Environment (F4)** editor and open **Environment › Environment…**:
+In HVE Studio, choose the **Environment (F4)** editor and open **Environment › Environment Designer…**:
 
 - In the *Location* section, enter the place, *Date* and *Time*, and the *Latitude* and *Longitude*.
 - In the *Terrain* section, load the scene geometry with **Browse…** and **Import**. The tutorial case carries the intersection embedded in the case.

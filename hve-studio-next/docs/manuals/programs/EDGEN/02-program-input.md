@@ -104,7 +104,7 @@ The environment is defined by the following groups of attributes:
 In HVE Studio every case has exactly one environment, so there is nothing to add. To edit it:
 
 1. Choose the **Environment** editor tab (F4).
-2. Choose **Environment › Environment...**. The Environment dialog is displayed.
+2. Choose **Environment › Environment Designer...**. The Environment Designer is displayed.
 3. Enter the name, date, time, latitude and longitude of the site.
 4. On the Environment Designer's **Import** stage (**3-D models** tab), choose a site file with **Import...** beside **Scene geometry**.
 5. The angle of the earth-fixed X axis from true north is the **North** setting of the sun and sky (**Edit the sun and sky...**), shown as the offset from east (HVE's angle minus 90).
