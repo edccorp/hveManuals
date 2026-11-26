@@ -140,6 +140,19 @@ spaced by one fifth of the maximum deflection about the unloaded radius, springs
 at half the section width, saturating at the full width, stiffness ratio 1.0);
 the dialog notes when that is happening.
 
+### A DyMESH wheel's tread springs
+
+A wheel that runs on its own DyMESH mesh against the environment (**Use DyMESH
+(wheel contact mesh)** and **...also contact the environment** on the
+[Wheel Damage](WheelsDlg1.md) page, with DyMESH and its environment on for the
+event) always meets the ground through the **DyMESH tread springs**, whatever
+model the tire states. Its **Model** cell reads **DyMESH tread** in place of the
+dropdown, and the radial-spring rows are disabled for it. The tread springs are
+five rings of radial springs across the tread, one every 3° around the wheel,
+turning with it; the wheel's mesh takes the sidewall and the rim. A case that
+states another model for such a tire keeps it in the file, and the run status
+says the DyMESH wheel did not use it.
+
 !!! warning "Not in HVE Studio"
     HVE's **Apply To All Tires** button: use a wheel group instead.
 

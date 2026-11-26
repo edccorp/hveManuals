@@ -256,6 +256,17 @@ third-order curve fit.
     bodies pass through each other. The stiffnesses belong to the vehicle and
     are read from HVE vehicle and case files.
 
+!!! note "HVE Studio: which zone a node belongs to"
+    HVE assigns each body node to a zone by direction from the CG: lines from the CG to the corners of the body's
+    bounding box divide it into Front, Back, Right, Left, Top and Undercarriage. Because a car is long ahead of its CG
+    and shallow below it, the line to the front's bottom corner is nearly flat, and the flat underside of a front
+    fascia or air dam a few inches behind the front, or a rounded front corner, falls into Undercarriage or a side.
+    Those nodes then take that zone's stiffness and none of the front's bumper, although a wall reaches them while the
+    bumper is still stroking: at 5 mph about 3% of the shipped vehicles kept up to 4 in of crush there. With the
+    redesigned node law (law 2) HVE Studio moves into the Front (or Back) any side, top or undercarriage node that the
+    wall would reach within the bumper's stroke, unless it faces away from that end. HVE's original contact keeps
+    HVE's zones.
+
 ### Note on occupant response
 
 The **selection** of stiffness coefficients is important for simulations

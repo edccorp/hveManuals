@@ -777,7 +777,11 @@ crush, the rule that keeps two vehicles sharing crush in a collision.
 Not every node near the face is the face's. The solver gives each node its own zone's values, so on the front the
 hood's nodes run the **Top** zone, the underbody's the **Undercarriage** and the fenders' **Left** and **Right**. The fit
 does the same with this vehicle's own values for those zones (and the active event's relaxation length), so the
-fitted face makes up for them and the vehicle reproduces the test in a run, not only in the fit.
+fitted face makes up for them and the vehicle reproduces the test in a run, not only in the fit. The one exception is
+what the barrier reaches while the bumper is still stroking: the underside of the fascia, a low air dam, a rounded
+corner. The solver counts those nodes as the face's, with its bumper, whatever zone their position would give them
+(unless they face away from the barrier), so a bumper crushed within its no-crush speed leaves no damage there, and the
+fit does the same.
 
 **Face:** **Front** or **Rear**.
 
