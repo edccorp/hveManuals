@@ -184,7 +184,7 @@ EDHIS produces a trajectory simulation of the current event. The trajectory simu
 
 The Trajectory Simulation is controlled using the playback controls in the toolbar:
 
-- **Reset** — Clears the results (and unlocks the event's inputs for editing).
+- **Reset** — Clears the results.
 - **|<** — Jump to the start of the simulation
 - **<<** — Step back one output step
 - **Play / Pause** — Play the simulation forwards, or pause it

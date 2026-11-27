@@ -21,9 +21,12 @@ back once every section is hidden), or for **Show all** and **Reset order**.
     HVE Studio it is a panel that stays open, edits the active event directly,
     and also carries the initial conditions that HVE kept in the
     Position/Velocity dialog. While the active event's results are on screen
-    its inputs are locked (a banner says so); **Reset** the run to edit them.
-    Choosing a different event, adding or copying an event and collapsing
-    sections stay available while locked.
+    its inputs stay editable; an edit marks the results **out of date** (a
+    note under the header names what changed), and **Restore inputs as run**
+    puts back the inputs the run used. With **Lock inputs while results are
+    shown** on in **Options › Preferences**, the inputs are locked instead (a
+    banner says so) until **Reset**; choosing a different event, adding or
+    copying an event and collapsing sections stay available while locked.
 
 ## Events
 

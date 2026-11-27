@@ -7,7 +7,8 @@ user-defined speeds along it).
 In HVE Studio this is the **Path Follower** tab of **Driver Controls** (Event
 editor, F5; **Event › Path Follower...** opens Driver Controls on it). It is
 stored per event per vehicle; the vehicle header at the top picks one of the
-event's vehicles. Inputs are locked while the event's results are on screen.
+event's vehicles. An edit made while the event's results are on screen marks
+them out of date.
 
 The speeds are shown only when they are used: the **Speed (…)** column of the
 waypoint table and the **Speed Follower** section's settings appear once **Use

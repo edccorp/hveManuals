@@ -171,8 +171,8 @@ describe each method: see the [program manuals](../../programs/README.md).
 
 ![A solved event playing back](../images/hvn-01-playback.png)
 *A solved SIMON event playing back in the Event editor, with Key Results below
-the viewport. While results are on screen the event's inputs are locked; Reset
-Run to Edit (top left) or Reset (playback bar) unlocks them.*
+the viewport. The event's inputs stay editable while results are on screen; an
+edit marks the results out of date until the event is run again.*
 
 !!! note "HVE Studio"
     HVE's Playback Window also provided video output. In HVE Studio that is

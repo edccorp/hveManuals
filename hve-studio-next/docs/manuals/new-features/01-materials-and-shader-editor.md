@@ -107,7 +107,19 @@ on screen changes until you edit one.
   **Roughness** from the shininess and specular together (a black specular is
   matte whatever the shininess), and the file's **ambient** as an **Emission** in
   the surface's own color, at the ambient's strength. A file that states none of
-  these keeps the defaults. This is a first mapping.
+  these keeps the defaults. This is a first mapping. The default **Roughness**
+  of a site surface is **0.9**, matte like asphalt, concrete and ground, and
+  **0.1** for a surface typed **Water**, which should glint. HVE's own site
+  files state no gloss, so this is what they get.
+
+    !!! note "Cases saved before November 2026"
+        Site surfaces used to default to Roughness 0.45, the vehicles' painted
+        finish, and the sun's reflection showed as a broad white glare across
+        the road that moved with the camera. When such a case is opened, every
+        site surface, surface edit and surface material still at exactly 0.45 is
+        set to its surface's default (0.9, or 0.1 for water). A value you chose
+        yourself is kept, unless it was exactly 0.45. Roughness is display only:
+        no result changes.
 - **Humans.** Nothing is made automatically; use **+ New** or **One material
   per segment**.
 

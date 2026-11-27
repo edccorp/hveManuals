@@ -8,8 +8,8 @@
 In Event Information, with a SINGLETRACK event active, press **Method
 Options...** under Calculation Method. The **SINGLETRACK Options** window opens.
 Everything in it is a machine property or an evidence input; there are no
-solver tuning controls. Changes take effect immediately and are locked while the
-event's results are on screen.
+solver tuning controls. Changes take effect immediately; one made while the
+event's results are on screen marks them out of date.
 
 ## Dynamics model
 

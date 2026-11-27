@@ -619,7 +619,7 @@ This option determines how EDVDS selects the current terrain properties from the
 To execute an EDVDS event, use the playback controls in the toolbar (Figure 2-7) or **Output › Run Simulation…** (Ctrl+R). The playback bar's buttons have the following functions:
 
 - **Run** — Execute the event (grayed while the event's results are on screen)
-- **Reset** — Clear the results so the event can be edited and run again
+- **Reset** — Clear the results
 - **|<** — Jump to the start of the simulation
 - **<<** / **>>** — Step back / forward one output step
 - **Play** / **Pause** — Play the simulation forwards, or pause it
@@ -630,7 +630,7 @@ While a run is in progress the bar shows **Cancel** (and, where available, **Pau
 ![Figure 2-7](images/hvn-playback-bar.png)
 *Figure 2-7: The HVE Studio playback bar, used for starting event execution and for replaying an executed event.*
 
-> **NOTE:** After an event is executed, its inputs are locked while the results are on screen. Press **Reset** to edit the event and run it again.
+> **NOTE:** After a run you can still edit the event; its results stay on screen, marked out of date, until you run it again. To keep a solved event's inputs read-only until **Reset**, turn on **Lock inputs while results are shown** in **Options › Preferences**.
 
 > **NOTE:** Key Results is on the **View** and **Output** menus; velocity vectors and skidmarks are in **View › Scene Display**.
 

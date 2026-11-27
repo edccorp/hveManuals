@@ -38,8 +38,11 @@ into a small number of kinds:
 - diagnostic printouts that are off unless switched on for debugging;
 - fixes for crashes and endless loops (a run that HVE would hang on stops with
   an error message instead);
-- **three deliberate changes to a calculation**, described in
+- **deliberate changes to a calculation**, each made where HVE's form can be
+  shown to be wrong, all listed in
   [Differences from HVE](05-differences-from-hve.md#physics-differences-by-design).
+  Setting an event's **Physics** to **HVE-reference** solves it with the
+  programs as they were validated against HVE, for comparison.
 
 So the program manuals in this set — program descriptions, calculation
 methods, equations and messages — apply to HVE Studio as written, except where a
@@ -102,9 +105,13 @@ All of them are listed in
   and tables are on the **Output** menu. Several events on one timeline — HVE's
   Video Creator — is the **Playback (F6)** editor (see
   [Video and Playback Sequences](../new-features/07-video-and-playback-sequences.md)).
-- **A solved event is locked.** While results are on screen, the inputs they
-  were computed from are read-only, so the results and the inputs shown can
-  never disagree. Press **Reset** to edit again.
+- **You can edit a solved event.** Its results stay on screen, and as soon as
+  an input they were computed from changes they are marked **out of date**,
+  naming what changed, until you run the event again; **Restore inputs as run**
+  puts the run's inputs back. Deleting or reordering vehicles and deleting
+  humans still wait for **Reset**. To keep a solved event's inputs
+  read-only until **Reset**, turn on **Lock inputs while results are shown** in
+  **Options › Preferences**.
 - **Units.** The display is US customary or SI, set in **Options › Preferences**.
   There is no custom unit mix.
 - **HVE Studio tells you when it had to assume something.** When an import could

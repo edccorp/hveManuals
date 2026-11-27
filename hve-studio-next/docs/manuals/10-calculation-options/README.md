@@ -13,8 +13,9 @@ if the active event changes to a different method.
 
 - Changes take effect immediately; there is no OK or Cancel. EDCRASH's window
   has an **Apply Defaults** button.
-- The options are locked while the event's results are on screen; **Reset** the
-  run to edit them.
+- A change made while the event's results are on screen marks them out of date
+  until the event is run again (with **Lock inputs while results are shown** on
+  in **Options › Preferences**, the options are locked until **Reset**).
 - EDSMAC and EDSMAC4 share one window, **EDSMAC Options**.
 - EDSVS, EDVDS and EDVTS have no options window; their pages say why.
 - Where HVE Studio shows an option that an engine refuses, the option is offered

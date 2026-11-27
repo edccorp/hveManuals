@@ -2,7 +2,7 @@
 
 The suspension parameters of the vehicle are displayed and edited using the **Suspension Data** dialog. Open it in the Vehicle Editor (**Vehicle (F3)**) with **Vehicle › Editors › Suspension Data...**, or with **Suspension...** under **Components** in the Vehicles panel. The **Vehicle** list at the top selects the vehicle.
 
-Where HVE edits one wheel at a time (the dialog title names the axle and side) and reaches the springs, inertia, stops and geometry through further dialogs, HVE Studio shows **every axle at once**: the dialog is a table with one column per axle (**Axle 1**, **Axle 2**, ...) and one row per parameter. The values are per axle; both wheels of an axle share them. Values are shown in the units set in Preferences and take effect as they are typed. While results are on screen the vehicle is locked; reset the run to edit it.
+Where HVE edits one wheel at a time (the dialog title names the axle and side) and reaches the springs, inertia, stops and geometry through further dialogs, HVE Studio shows **every axle at once**: the dialog is a table with one column per axle (**Axle 1**, **Axle 2**, ...) and one row per parameter. The values are per axle; both wheels of an axle share them. Values are shown in the units set in Preferences and take effect as they are typed. An edit made while results are on screen marks them out of date.
 
 This dialog contains the following items:
 

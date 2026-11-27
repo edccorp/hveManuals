@@ -10,7 +10,8 @@ selection. Open it from **Event › Driver Controls...** in the Event editor
 The vehicle header at the top picks which of the active event's vehicles to
 edit; it offers only vehicles in the event. As in HVE, driver controls are
 stored **per event per vehicle**, and the dialog says which event's tables are
-being edited. The tables are locked while that event's results are on screen.
+being edited. An edit made while that event's results are on screen marks them
+out of date.
 
 The tabs depend on the method:
 

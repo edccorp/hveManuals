@@ -337,8 +337,7 @@ window of the selected method: *EDCRASH Options*, *EDSMAC Options* (shared by
 EDSMAC and EDSMAC4), *EDGEN Options*, *EDHIS Options*, *SIMON Options*,
 *EDVSM Options*, *GATB Options* or *SINGLETRACK Options*. EDSVS, EDVDS and
 EDVTS have no options window. The button opens the window while a solved run's
-results are on screen too, so you can see which options were run; its fields
-are then read-only until **Reset**.
+results are on screen too; a change made then marks the results out of date.
 
 The integration and output timesteps, the duration and the termination
 criteria are on the Event Designer's **Run** stage, under
@@ -415,16 +414,23 @@ When the event has run, the results stay on screen and the playback bar
 plays them back without recalculating. To replay the event, click **Jump to
 start**, then **Play**, or drag the time slider.
 
-While the results are on screen, the event's inputs are locked (the panels
-say so), so that what is shown always matches what was solved. To change the
-event and re-execute it:
+While the results are on screen, the event's inputs stay editable. To change
+the event and re-execute it:
 
-1. Click **Reset**. The results are discarded and the inputs unlocked.
-2. Select a human or vehicle and make the desired changes.
-3. Click **Run** again.
+1. Select a human or vehicle and make the desired changes. The results stay on
+   screen, marked **out of date** (a note names what changed, and the window
+   title counts the events affected).
+2. Click **Run** again.
+
+**Reset** discards the results. **Restore inputs as run** puts back the inputs
+the run used, and **Restore as copies** adds the vehicles it ran with as new
+vehicles for the event.
 
 !!! note "HVE Studio"
-    The lock covers **every event that has results**, not only the one on
+    Deleting or reordering vehicles, deleting a human, Quick Case and an
+    Undo step that changes a solved event's inputs still wait for **Reset**. To lock a solved event's inputs instead, turn on
+    **Lock inputs while results are shown** in **Options › Preferences**. The
+    lock then covers **every event that has results**, not only the one on
     screen, because a playback sequence plays them all. A vehicle, an occupant
     or the site that a solved event used stays locked while you look at
     another event; an event that has not been run stays editable. The banner

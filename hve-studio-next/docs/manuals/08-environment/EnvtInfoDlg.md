@@ -11,9 +11,9 @@ site, and its friction zones.
     Zones**. Terrain and Physical — what the solver reads — open by default,
     and Friction Zones when the case has any. All five are always present;
     there is no 2-D/3-D distinction. Lengths, speeds, temperature and pressure
-    follow the units set in Options › Preferences. While a solved run is on
-    screen, Terrain, Physical and Friction Zones are read-only; Location and
-    Sky are description and stay editable.
+    follow the units set in Options › Preferences. Editing Terrain, Physical
+    or Friction Zones while a solved run is on screen marks its results out of
+    date; Location and Sky are description and never do.
 
 ![Environment window](images/hvn-environment.png)
 
@@ -495,9 +495,10 @@ listed, resampled to the cell size, so it is one interpretation of several
 surveys. Its heights are made
 **relative to the elevation at the case origin** (z = 0 there), because the
 engines and Auto Position work on a site whose ground is at 0; the offset is
-stated. A site with a download in progress, or with results on screen, is
-locked like the rest of the geometry: the download finishes and waits for the
-results to be discarded.
+stated. Installing it while results are on screen marks them out of date.
+With **Lock inputs while results are shown** on in **Options › Preferences**,
+the site is locked like the rest of the geometry: the download finishes and
+waits for the results to be discarded.
 
 **Where the site came from** — One entry per download, kept in the case: the
 surface's name, whether it was added or replaced the site, the provider and
@@ -688,10 +689,13 @@ status. Pick a type and click **Add Surface** to make one; **Copy** and
 **Delete** manage the list. For the selected surface:
 
 While results are on screen the site's physical properties (these surfaces and
-each surface's type, friction, stiffness and soil) are locked. Every event reads
-the site, so the note there carries **Reset Run to Edit** -- or **Reset *N* Runs
-to Edit** when several events hold results -- which clears the results of every
-event that has them (hover it for the list). The case itself is untouched.
+each surface's type, friction, stiffness and soil) stay editable; every event
+reads the site, so an edit marks every solved event out of date. With **Lock
+inputs while results are shown** on in **Options › Preferences** they are
+locked instead, and the note there carries **Reset Run to Edit** -- or **Reset
+*N* Runs to Edit** when several events hold results -- which clears the results
+of every event that has them (hover it for the list). The case itself is
+untouched.
 
 - **Name**, **Type**, **Applied to the run** and **Show**. Show only draws it:
   a hidden surface still acts in the run while it is applied.

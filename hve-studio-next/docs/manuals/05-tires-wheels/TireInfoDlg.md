@@ -18,8 +18,8 @@ and a tire is picked from HVE's databases in its **Tire Database** section.
 
 ![Tire Properties window](images/hvn-tire-properties.png)
 
-While a solved run is on screen the window is read-only; reset the run to edit
-it. A note at the top says when the vehicle shown is not in the active event.
+An edit made while a solved run is on screen marks its results out of date
+until it is run again. A note at the top says when the vehicle shown is not in the active event.
 
 ## Build from Tire Size
 

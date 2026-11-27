@@ -739,7 +739,7 @@ or no positive b0 (choose b0 instead).
 | --- | --- |
 | **Side** | Front, Rear, Left or Right. A table under it shows A, B and G for that side: **this vehicle now**, **From the tests**, and the **Change** in percent, so you see how far Apply would move it |
 | **Also set it in this vehicle's EDCRASH events with damage on this side (CDC)** | On by default. See below |
-| **Apply** | Sets the stiffness. Locked while this vehicle's results are on screen |
+| **Apply** | Sets the stiffness. After a run it marks the results that used this vehicle out of date; locked while those results are on screen only with **Lock inputs while results are shown** in **Options › Preferences** on |
 
 **Apply** puts A and B on that side of the vehicle (the values in **Vehicle ›
 Editors › Crush Stiffness**; see [Stiffness Coefficient Dialog](../02-vehicles/StiffCoeffDlg.md)).

@@ -182,9 +182,12 @@ sections. Each input has one place in it:
       event first. The last vehicle can be deleted, leaving an empty case like
       **File > New**.
     - While the results of a simulation are on screen, the data of the
-      vehicles that run used is read-only, and Replace, Dup, Del and
-      reordering are disabled as they would change it. Reset the run to edit.
-      **Add...** stays available: a new vehicle is added to the case and joins
+      vehicles that run used stays editable; an edit marks the run's results
+      **out of date** until it is run again. Del and reordering wait for
+      **Reset**, as they would renumber the vehicles the run names (with
+      **Lock inputs while results are shown** on in **Options › Preferences**,
+      the vehicles' data and Replace wait too). **Add...** and **Copy** stay
+      available: a new vehicle is added to the case and joins
       no event, so the results on screen, and the results saved with the case,
       stay valid. Put it in an event that has not been run with that event's
       **Add Vehicle**, or in a new event.

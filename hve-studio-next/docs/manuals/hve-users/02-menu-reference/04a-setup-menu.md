@@ -56,10 +56,13 @@ vehicle list at the top of the dialog, where each vehicle of the event is shown
 with its slot number (V1, V2, …) as in HVE. A dialog opened for a vehicle that is
 not in the active event says so.
 
-**Results lock the inputs.** Once the active event has been run, its inputs are
-locked so they cannot drift away from the results on screen; the dialogs show
-a banner and their fields are grayed. Press **Reset** on the playback bar (or
-**Reset Run to Edit** in Event Information) to edit again.
+**Editing after a run.** Once the active event has been run, its inputs stay
+editable. An edit marks its results **out of date** (a note under the event's
+header names what changed) until the event is run again, so the results on
+screen never silently disagree with the inputs. With **Lock inputs while
+results are shown** on in **Options › Preferences**, the inputs are locked
+instead: the dialogs show a banner and their fields are grayed until **Reset**
+on the playback bar (or **Reset Run to Edit** in Event Information).
 
 ---
 

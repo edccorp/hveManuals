@@ -93,8 +93,8 @@ What a stage covers is a tooltip on its title band (the colored bar naming it): 
 7. **Run**: the simulation controls and the run. Duration, the trajectory, collision,
    separation, curb-impact and human time steps the method reads, the **Output
    Timestep**, **Termination** and **Stopped Vehicle**, then **Run** with its
-   progress, **Reset** and the **Last Result**. A solved event is locked until
-   it is reset, and the stage says so. Fix warnings do not stop a run; the
+   progress, **Reset** and the **Last Result**. A solved event whose inputs
+   have changed since its run is marked out of date, and the stage says so. Fix warnings do not stop a run; the
    stage counts them. The run status lists, in brackets, every warning the run
    raised and every assumption HVE Studio made, each with its count. It is one
    line, so a run with many warnings can fill it: the line then ends with

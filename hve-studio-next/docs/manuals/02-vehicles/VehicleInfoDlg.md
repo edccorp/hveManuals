@@ -12,7 +12,7 @@ New vehicles are added to the case in the Vehicle Editor (**Vehicle (F3)** tab):
 
 ![Vehicles panel](images/hvn-vehicles-panel.png)
 
-While the active event's results are on screen the vehicles they were solved with are locked; reset the run to edit them.
+While the active event's results are on screen the vehicles they were solved with stay editable; an edit marks the results out of date until the event is run again.
 
 ## Identity
 

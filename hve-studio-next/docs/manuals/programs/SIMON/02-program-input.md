@@ -668,7 +668,7 @@ The Restraints data are not used by SIMON.
 *(updated: the SIMON Calculation Options dialog has grown considerably since the Fifth Edition manual, which described only three options — Tire Model Method, Steer DOF and Collision Acceleration Threshold.)*
 
 !!! note "HVE Studio"
-    SIMON's calculation options are in the *SIMON Options* dialog, opened with **Method Options...** under **Calculation Method** in the Event Information panel (Figure 2-4). Its sections are **Time Settings**, **Integration**, **Steering Degree of Freedom**, **Tire model**, **Hydroplaning**, **Solid Axle Inertia**, **Collision history and connections**, **DyMESH (mesh-to-mesh collision)** and **Termination Velocity**. Like every input of a solved event, they are read-only while that event's results are on screen; press **Reset** to edit them.
+    SIMON's calculation options are in the *SIMON Options* dialog, opened with **Method Options...** under **Calculation Method** in the Event Information panel (Figure 2-4). Its sections are **Time Settings**, **Integration**, **Steering Degree of Freedom**, **Tire model**, **Hydroplaning**, **Solid Axle Inertia**, **Collision history and connections**, **DyMESH (mesh-to-mesh collision)** and **Termination Velocity**. Like every input of a solved event, they stay editable after a run, and an edit marks the results out of date until the event is run again (with **Lock inputs while results are shown** in **Options › Preferences** on, they are read-only until **Reset**).
 
 SIMON's Calculation Options include:
 
@@ -766,7 +766,7 @@ When the Sidewall Impact Tire-Terrain Model is used, the Search Direction Z comp
 To execute a SIMON event in HVE Studio, click **Run** on the playback controls in the toolbar (Figure 2-6), or choose **Output › Run Simulation...**, which also opens the Event Designer on its *Run* stage with the run's progress. The playback bar's controls are:
 
 - **Run** — Execute the event (while it runs, press **Esc** to cancel it)
-- **Reset** — Discard the results so the event can be edited and run again
+- **Reset** — Discard the results
 - **|<** — Return to the start of the simulation
 - **<<** and **>>** — Step backward and forward
 - **Play** / **Pause** — Play the simulation forwards, or pause it
@@ -777,9 +777,9 @@ To execute a SIMON event in HVE Studio, click **Run** on the playback controls i
 There is no reverse-play button; step backward with **<<** or drag the time slider.
 
 ![Figure 2-6](images/hvn-playback-bar.png)
-*Figure 2-6: The playback bar under HVE Studio's viewport, after a run (the tooltip is the Run button's: a solved event must be reset before it is run again).*
+*Figure 2-6: The playback bar under HVE Studio's viewport, after a run (the tooltip is the Run button's with **Lock inputs while results are shown** in **Options › Preferences** on: a solved event must then be reset before it is run again).*
 
-> **NOTE:** A solved event's inputs (vehicles, event set-up, options) are read-only while its results are on screen, and the dialogs say so. Press **Reset** to edit them, then **Run** again.
+> **NOTE:** After a run you can still edit the event, its vehicles and its options; its results stay on screen, marked out of date, until you run it again. To keep a solved event's inputs read-only until **Reset**, turn on **Lock inputs while results are shown** in **Options › Preferences**.
 
 > **NOTE:** Use the **View** menu for display options such as Key Results, paths, velocity vectors and skidmarks.
 

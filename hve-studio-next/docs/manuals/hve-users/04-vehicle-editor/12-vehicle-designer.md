@@ -168,8 +168,8 @@ beside it:
   length, and a wheelbase moves the axles about the CG, keeping the weight split
   and the length. A field the Size, Mass & CG stage grays is grayed here too, with
   the same reason (Dimensions from geometry on, wheels placed one by one, a
-  towed unit), and every field is locked while the vehicle's results are on
-  screen.
+  towed unit). An edit made while the vehicle's results are on screen marks
+  them out of date.
 - **A connection** gives its type and where it is from the CG; **Connections...**
   opens its stage.
 
@@ -735,8 +735,8 @@ opens, drawn in the stage's center under the frame's vehicle line, so an edit
 here is the edit, with Key figures and the warnings panel updating beside it.
 The window and the stage draw one editor, so they can never disagree.
 The same editor is a separate window on the Vehicle menu, to work it beside
-another stage. A solved run's inputs are read-only here as everywhere, until
-the run is reset.
+another stage. As everywhere, editing a solved run's inputs here marks its
+results out of date until it is run again.
 
 ![Figure 12-4: the Suspension stage hosting the suspension editor](../images/hvn-04-vehicle-designer-suspension.png)
 

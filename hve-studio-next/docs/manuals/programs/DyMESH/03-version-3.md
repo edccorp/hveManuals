@@ -104,8 +104,9 @@ The DyMESH Options dialog (Options menu) as shown in the deck contains:
 
 !!! note "HVE Studio"
     The dialog is **Event › DyMESH Options**, and its settings belong to the
-    active event (they are read-only while that event's results are on screen,
-    until Reset). It contains:
+    active event (after a run, editing them marks the event's results out of
+    date; with **Lock inputs while results are shown** in **Options › Preferences** on they
+    are read-only while the results are on screen, until Reset). It contains:
 
     - **Enable DyMESH (vehicle-to-vehicle)** — *Use DyMESH*.
     - **Also collide against the ENVIRONMENT** — *Include Environment*.

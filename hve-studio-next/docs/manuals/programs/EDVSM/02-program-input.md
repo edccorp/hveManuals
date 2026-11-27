@@ -608,7 +608,7 @@ This option determines how the tire model searches for polygons beneath the tire
 To execute an EDVSM event, use the playback controls in the toolbar (Figure 2-5). Its controls have the following functions:
 
 - **Run** - Execute the event (also **Output › Run Simulation**)
-- **Reset** - Discard the results so the event can be edited and run again
+- **Reset** - Discard the results
 - **|<** - Jump to the start of the simulation
 - **<<** - Step back one output step
 - **Play** - Play the simulation forwards (Pause while playing)
@@ -619,7 +619,7 @@ To execute an EDVSM event, use the playback controls in the toolbar (Figure 2-5)
 
 *Figure 2-5: The playback controls in the toolbar, used for running an event and replaying its results.*
 
-> **NOTE:** A solved event's inputs are locked while its results are on screen. Press **Reset** to edit them; the event must then be run again.
+> **NOTE:** After a run you can still edit the event; its results stay on screen, marked out of date, until you run it again. To keep a solved event's inputs read-only until **Reset**, turn on **Lock inputs while results are shown** in **Options › Preferences**.
 
 > **NOTE:** Use the **View** menu to choose useful displays: Key Results, and in **View › Scene Display**, Skidmarks, Vectors and the CG Path.
 

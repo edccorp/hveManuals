@@ -8,8 +8,9 @@ In HVE Studio each editor has a menu that lists them.*
 Each of these menus appears only in its own editor: **Vehicle** in the Vehicle
 editor (F3), **Environment** in the Environment editor (F4), **Human** in the
 Human editor (F2). The dialogs edit the vehicle, environment or human selected in
-that editor. Vehicle data is locked while a solved run that used the vehicle is
-on screen; press **Reset** in the Event editor to edit it.
+that editor. Vehicle data stays editable while a solved run that used the
+vehicle is on screen; an edit marks that run's results out of date until it is
+run again.
 
 ---
 

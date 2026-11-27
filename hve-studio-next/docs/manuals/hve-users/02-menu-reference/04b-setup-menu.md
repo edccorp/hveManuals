@@ -5,8 +5,8 @@ HVE's Chapter 4, Set-up Menu, Part B. Which items are available for which
 calculation method is tabulated in [Part A](04a-setup-menu.md#which-items-apply-to-which-method).*
 
 Each item below edits the selected vehicle of the active event unless it says
-otherwise. As in Part A, the fields are locked while the event's results are on
-screen; press **Reset** to edit.
+otherwise. As in Part A, editing a field while the event's results are on
+screen marks them out of date until the event is run again.
 
 | HVE Set-up item | HVE Studio |
 |---|---|

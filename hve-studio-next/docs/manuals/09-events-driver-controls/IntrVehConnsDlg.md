@@ -9,7 +9,8 @@ The dialog is a table with a **Front** and a **Rear** column, one for each
 connection, and the rows **Type**, **X**, **Y**, **Z**, **Height above ground**
 and **Properties**. Values are shown in the units set in Preferences and take
 effect as they are made (**Edit › Undo** takes one back); **Close** closes the
-dialog. The dialog is locked while the vehicle is part of results on screen.
+dialog. An edit made while the vehicle is part of results on screen marks them
+out of date.
 
 ## Front Connection
 

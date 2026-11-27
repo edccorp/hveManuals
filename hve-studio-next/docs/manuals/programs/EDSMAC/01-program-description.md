@@ -51,7 +51,7 @@ The procedure for using EDSMAC in HVE Studio is the same as for any simulator in
     - Position the vehicles and assign velocities (viewport gizmo, or **Event › Position / Velocity**).
     - Assign driver controls (**Event › Driver Controls**: Throttle, Brake and Steer tabs).
     - Press **Run** on the playback bar and compare the results with the evidence.
-4. Modify the inputs as required to achieve the desired match between the simulation and the actual event. A solved event's inputs are locked until you press **Reset**.
+4. Modify the inputs as required to achieve the desired match between the simulation and the actual event. A solved event stays editable: its results stay on screen, marked out of date, until you run it again.
 
 Finally, review the reports in the **Output** menu. The **Playback (F6)** editor plays several events together, and **File › Record Animation** writes a video.
 

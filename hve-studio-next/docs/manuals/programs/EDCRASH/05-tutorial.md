@@ -298,7 +298,7 @@ Now we're ready to execute the event:
 
 1. Press **Run** on the playback controls in the toolbar.
 
-Unlike simulation calculations, which are repetitive, reconstruction calculations are executed only once, and thus happen very quickly. The results appear at once in **Key Results**, and the event's inputs are locked until you press **Reset**.
+Unlike simulation calculations, which are repetitive, reconstruction calculations are executed only once, and thus happen very quickly. The results appear at once in **Key Results**, and the event stays editable: change an input and press **Run** again (the results on screen are marked out of date until you do).
 
 > **NOTE:** HVE Studio then plays a path for each vehicle drawn through its scene positions at the speeds EDCRASH solved, labeled "Showing the reconstruction". It is a picture of the reconstruction, not a simulation.
 

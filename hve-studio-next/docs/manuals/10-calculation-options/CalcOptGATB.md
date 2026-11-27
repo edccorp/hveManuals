@@ -7,7 +7,8 @@
 
 In Event Information, with a GATB event active, press **Method Options...**
 under Calculation Method. The **GATB Options** window opens. Changes take
-effect immediately and are locked while the event's results are on screen.
+effect immediately; one made while the event's results are on screen marks them
+out of date.
 
 ## Input Source
 

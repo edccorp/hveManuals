@@ -25,8 +25,8 @@ tire–terrain model.
 
     SIMON and EDSMAC4 read tire blow-out and wheel damage, and EDVSM reads the
     blow-out; a note at the top says when the event's calculation method does
-    not read a tab. While a solved
-    run is on screen the dialog is read-only.
+    not read a tab. An edit made while a solved
+    run is on screen marks its results out of date.
 
 ![Wheels dialog, Tire Blowout tab](images/hvn-wheels.png)
 

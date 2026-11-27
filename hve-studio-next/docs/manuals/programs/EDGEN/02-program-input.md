@@ -345,14 +345,14 @@ For dialog details, see [Calculation Options for EDGEN](../../10-calculation-opt
 In HVE Studio an event is executed from the **playback bar** under the viewport, or with **Output › Run Simulation...**:
 
 - **Run** — Execute the active event
-- **Reset** — Discard the results so the event can be edited and run again
+- **Reset** — Discard the results
 - **|<**, **<<**, **Play**, **>>**, **>|** — Rewind to start, step back, play, step forward and advance to end of the playback
 
 ![Figure 2-6](images/hvn-playback-bar.png)
 
 *Figure 2-6: The playback bar.*
 
-> **NOTE:** While an event's results are on screen its inputs are locked. Press **Reset** before changing any event set-up option, then **Run** again.
+> **NOTE:** After a run you can still edit the event; its results stay on screen, marked out of date, until you run it again. To keep a solved event's inputs read-only until **Reset**, turn on **Lock inputs while results are shown** in **Options › Preferences**.
 
 > **NOTE:** Remember to use the View menu to choose useful options, such as Key Results.
 

@@ -116,9 +116,11 @@ With no face selected, the keys do nothing in Edit Mode.
     Every field of HVE's Environment Information dialog that HVE Studio has is
     on the Environment panel, in the section named below. There is no OK
     button: an edit takes effect when you leave the field, and Edit › Undo
-    (Ctrl+Z) steps it back. While the results of a run are on screen,
-    the fields the engines read (Terrain, Physical) are locked; press
-    **Reset** on the playback bar or on the Event Designer's Run stage to edit them.
+    (Ctrl+Z) steps it back. The fields the engines read (Terrain, Physical)
+    stay editable while the results of a run are on screen; an edit marks
+    every solved event that reads the site **out of date** until it is run
+    again. (With **Lock inputs while results are shown** on in
+    **Options › Preferences**, they are locked until **Reset**.)
 
 ### Location
 
@@ -321,8 +323,8 @@ site is carried in the case) and has three buttons:
   **display only** (drawn, never driven on), listed under **Display only** in
   the Outliner. Use it to show a detailed model over the surface the events
   drive on: add it with Drivable off, hide **Drivable** in the Outliner, and
-  record. While results are on screen the site is locked, so add the file
-  before running, or **Reset** first.
+  record. Adding it while results are on screen marks them out of date;
+  run again to bring them up to date.
 - **Clear** — remove the geometry.
 
 The **Import Scene Geometry** window asks, for the file just chosen:
@@ -494,10 +496,11 @@ removes every face move.
 
 The placement is kept in the case; the geometry file is not changed.
 Vehicles, friction zones and the point cloud keep their own
-positions. Like every surface property the solver reads, the fields are
-locked while results are on screen; pressing **G**, **R** or **S** then
-says *The site is locked while results are on screen -- Reset the run to
-move it*.
+positions. Like every surface property the solver reads, a change made
+while results are on screen marks them out of date. With **Lock inputs while
+results are shown** on in **Options › Preferences**, the fields are locked
+instead, and pressing **G**, **R** or **S** says *The site is locked while
+results are on screen -- Reset the run to move it*.
 
 !!! note "HVE Studio"
     On a site taken from an HVE case the road is kept twice — the polygons
@@ -547,7 +550,7 @@ Toolkit's *Create Roadway Surface* in Blender:
 | **Use the file's ground class** | Drape only the points the scan file classifies as ground (class 2). Survey processing software usually separates ground from cars, curbs and trees better than the percentile alone can. Offered only when the file has ground-classified points (LAS and PLY can carry classes; E57 and text files cannot). The settings below still apply to what is left. |
 | **Ground percentile** | Each grid point takes this low percentile of the scan heights within half a cell of it, so the road under a parked car is kept and the car is not. |
 | **Fill holes / Max fill** | Grid points with no scan data are filled from their neighbors, up to this distance from measured ground (0 = any distance), and smoothed to follow the slope of the ground around them. Ground further away is left as a hole. |
-| **Below-grade reject** | A single return this far below *all* its neighbors is ignored. |
+| **Below-grade reject / Pit width max** | A patch of returns this far below the ground around it and no wider than this (multipath off wet pavement, a scanner glitch) is removed and filled. Pit width defaults to 1 m. A ditch or dip wider than it, a ramp, the crown and a curb are kept. Raise it if clusters of low returns survive; lower it to protect a narrow real depression. |
 | **Spike reject above / Spike width max** | Anything rising this far above the local ground and no wider than this (a vehicle, a pole) is removed and filled. |
 
 Click **Create Drivable Surface...** and choose where to save the surface (an

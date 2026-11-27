@@ -221,8 +221,9 @@ A timeline strip shows each event as a bar that can be dragged.
 active event — the same as pressing **Run** on the playback bar under the
 viewport or on that stage. While it runs, the progress bar advances and **Pause** /
 **Resume** (where the method allows) and **Cancel** are offered; **Esc** also
-cancels. When it finishes, the event plays back in the viewport and its inputs
-are locked until **Reset**.
+cancels. When it finishes, the event plays back in the viewport; its inputs stay
+editable, and an edit marks the results out of date until the event is run
+again.
 
 !!! note "HVE Studio"
     **Ctrl+R** runs the simulation from anywhere in the Event editor.

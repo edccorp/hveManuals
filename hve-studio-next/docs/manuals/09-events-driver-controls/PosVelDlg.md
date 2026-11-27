@@ -17,9 +17,10 @@ the neighboring panel rather than cover the vehicle), which closes when you clic
 acts, so clicking the next vehicle closes this panel and opens that vehicle's;
 **Open as a window** at its foot opens this
 dialog instead. Turn the panel off with **Show these when a vehicle is clicked in the
-Event editor** at the bottom of either. The panel does not open while the event's results
-are on screen (its fields are the run's locked inputs); **Event › Position / Velocity...**
-still shows them, read-only. It is enabled for every method except EDCRASH and
+Event editor** at the bottom of either. An edit made while the event's results are on
+screen marks them out of date. With **Lock inputs while results are shown** on in
+**Options › Preferences**, the panel does not open while results are on screen;
+**Event › Position / Velocity...** still shows the fields, read-only. It is enabled for every method except EDCRASH and
 READDATAFILE.
 
 ![Position / Velocity dialog](images/hvn-pos-velocity.png)

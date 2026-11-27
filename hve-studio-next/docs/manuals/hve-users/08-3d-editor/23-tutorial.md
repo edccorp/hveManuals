@@ -44,7 +44,7 @@ Each surface's physical properties take the place of HVE's Object Type and Frict
 1. With the surface still selected, set **Friction Multiplier** — for example 0.70 for a wet road, or choose **Wet (0.70)** from **Condition preset**.
 2. The value is stored with the case and used by the next run.
 
-> **NOTE:** While a run's results are on screen, the physics rows are locked. Press **Reset** on the playback bar to edit them.
+> **NOTE:** The physics rows stay editable while a run's results are on screen; an edit marks the results out of date until the event is run again. (With **Lock inputs while results are shown** on in **Options › Preferences**, they are locked until **Reset** on the playback bar.)
 
 ### Assigning Material and Texture Attributes
 

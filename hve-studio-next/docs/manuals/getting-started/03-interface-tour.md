@@ -259,8 +259,9 @@ Typing into a text field never triggers these keys.
 
 !!! note "HVE Studio"
     Moving a vehicle in the viewport edits the same position and heading as
-    **Event › Position / Velocity**. While an event's results are on screen the
-    gizmo is not offered: press **Reset** first (see below).
+    **Event › Position / Velocity**. Moving a vehicle of a solved event marks
+    its results out of date (see below); with **Lock inputs while results are
+    shown** on, the gizmo is not offered until **Reset**.
 
 ## Playback bar and the Run stage
 
@@ -293,16 +294,24 @@ hold the controls they take a third row of their own:
 The **Run** stage of the **Event Designer** (Event › Event Designer..., or
 **Output › Run Simulation...**) carries **Run simulation** and **Reset** at its
 top, with a status line and a progress bar, then the simulation controls; its
-playback is the toolbar's.
+playback is the toolbar's. **Run simulation** on an event that is already
+solved solves it again, replacing its results (with **Lock inputs while
+results are shown** on, it waits for **Reset**).
 
 !!! note "HVE Studio"
-    **The results lock the inputs.** While a solved event's results are on
-    screen, the inputs they were computed from — the event's data, the vehicles
-    and humans it used and the site — are read-only, and Undo is disabled, so a
-    result can never be shown beside inputs it was not computed from. Display
-    settings (materials, cameras, what is drawn) stay editable. Press **Reset**
-    to edit the inputs again. **Run** is grayed for an event that is already
-    solved.
+    **Editing after a run.** A solved event's inputs — the event's data, the
+    vehicles and humans it used and the site — stay editable. The results stay
+    on screen, and once an input they were computed from changes they are
+    marked **out of date**: a note under the event's header and above Key
+    Results names what changed, and the window title counts the events out of
+    date, until the event is run again. **Restore inputs as run** puts the
+    inputs the run used back in place, and **Restore as copies** brings its
+    vehicles back as new vehicles. Deleting or reordering vehicles, deleting
+    humans, Quick Case, and an Undo step that changes a solved event's inputs
+    still wait for **Reset**; a run in progress locks
+    everything. To keep a solved event's inputs read-only until **Reset**, as
+    in earlier versions, turn on **Lock inputs while results are shown** in
+    **Options › Preferences**.
 
 ## Outliner
 
@@ -359,8 +368,9 @@ a text field, is one entry. Click any entry to go straight to that state. An
 edit made after stepping back discards the entries above it. Undo restores the
 whole case, so while results are on screen it only steps over changes to the
 view -- the sun and sky, the location, cameras -- which no program
-reads; a step that changes an input of the solved run is grayed (hover it for
-why) until you press **Reset**.
+reads, and over changes to events that have not been run. Choosing a step that
+changes an input of a solved event asks first (**Clear Results to Undo?**):
+accept, and the results are cleared and the step is made.
 
 Undo also restores what is LOADED from the case, not only the case itself: a
 site geometry or point cloud that was cleared comes back (it is imported again

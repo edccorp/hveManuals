@@ -582,15 +582,20 @@ To execute an event:
 
 1. Choose **Run**. The status shows progress; when the run ends, the event plays
    back in the viewport and Key Results fills in.
-2. To change the set-up, choose **Reset** (or **Reset Run to Edit** in Event
-   Information), make the changes, and choose **Run** again.
+2. To change the set-up, make the changes and choose **Run** again. Until you
+   do, the results stay on screen, marked **out of date**. **Reset** discards
+   the results.
 
 !!! note "HVE Studio"
-    While an event's results are on screen its inputs are **locked**: the
-    set-up dialogs are grayed and show a banner. In HVE, changes made without
-    pressing Reset were silently ignored; HVE Studio does not let them be made.
-    With several events solved, everything a solved event used stays locked
-    until that event is reset; the banner says which events.
+    While an event's results are on screen its inputs stay editable. In HVE,
+    changes made without pressing Reset were silently ignored; in HVE Studio an
+    edit marks the event's results **out of date** (a note naming what changed,
+    and a count in the window title) until the event is run again, and
+    **Restore inputs as run** puts back the inputs the run used. Deleting or
+    reordering vehicles, deleting a human, Quick Case and an Undo step that
+    changes a solved event's inputs still wait for **Reset**. To keep a solved event's inputs read-only until
+    Reset, as earlier versions did, turn on **Lock inputs while results are
+    shown** in **Options › Preferences**.
     Running an event never changes its inputs, and opening a saved case does not
     re-run it.
 

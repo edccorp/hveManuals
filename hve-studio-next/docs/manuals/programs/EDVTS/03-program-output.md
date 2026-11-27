@@ -168,7 +168,7 @@ In HVE Studio the trajectory is played back in the Event editor's viewport as so
 - **<<** / **>>** — Step back / forward one output step
 - **Play** / **Pause** — Play the simulation forwards, or pause it
 - **>|** — Jump to the end of the simulation
-- **Reset** — Clear the results (the event can then be edited and run again)
+- **Reset** — Clear the results
 
 There is no reverse-play button. **Output › Playback Options…** sets the playback rate and frame step, and the **Playback (F6)** editor plays several events in sequence. **File › Record Animation…** makes a movie file.
 

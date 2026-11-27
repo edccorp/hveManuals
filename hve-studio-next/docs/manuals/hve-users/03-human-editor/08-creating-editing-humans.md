@@ -63,8 +63,10 @@ The Humans panel manages all the humans in the current case. It contains:
 !!! note "HVE Studio"
     HVE does not allow a human that is used in an event to be deleted;
     HVE Studio does, and removes it from those events. While the results of a
-    simulation are on screen, Add Human and Remove are disabled, and the
-    human data that run used is read-only until the run is reset.
+    simulation are on screen, Remove waits for **Reset**, and so does Add
+    Human when the new human would join a solved occupant event. The human
+    data the run used stays editable; an edit marks the run's results out of
+    date until it is run again.
 
 > **NOTE:** Although every human's properties are defined using the Human
 > Editor, humans are not positioned using the Human Editor. The position of a

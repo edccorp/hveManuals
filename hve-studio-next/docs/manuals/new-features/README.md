@@ -64,5 +64,6 @@ deliberately left out of the fingerprint HVE Studio uses to decide whether a
 solved result still matches its inputs, so editing a material, moving the sun,
 keying a camera or editing a HUD box never discards a run, and none of them is
 locked while results are on screen. A road surface's type and friction are physics inputs,
-wherever you edit them: they are locked while results are on screen (reset the
-run to edit them), and changing them means solving again.
+wherever you edit them: changing them after a run marks the results out of date until
+you solve again (with **Lock inputs while results are shown** in **Options › Preferences** on, they are locked
+while results are on screen; reset the run to edit them).

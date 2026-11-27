@@ -32,8 +32,8 @@ EDSVS, EDVTS), the load it reads is in brackets in **Loads** and **Slide vs Load
 with an even number of loads it is the lower of the two middle rows, which is how every one of these programs
 picks it (NumTableLoads/2 - 0.5, truncated).
 
-While a solved run is on screen the panel is read-only; reset the run to edit
-it. Edits apply immediately; **Edit › Undo** (Ctrl+Z) takes one back.
+An edit made while a solved run is on screen marks its results out of date.
+Edits apply immediately; **Edit › Undo** (Ctrl+Z) takes one back.
 
 ## Wheel
 

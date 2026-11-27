@@ -12,9 +12,9 @@ The values belong to the active event. *Event-owned* is shown when the event
 the duration or a timestep makes it the event's own: it is saved with the case,
 **Run All Events** runs the event with it, and on Windows and macOS -- where the
 solver runs as a separate program -- the run uses exactly the value shown. The
-progress bar under **Run** reads the event's duration before it is run. The
-controls are locked while the event's results are on screen; **Reset** to edit
-them. Each value is typed or dragged; there are no sliders.
+progress bar under **Run** reads the event's duration before it is run. A
+change made while the event's results are on screen marks them out of date.
+Each value is typed or dragged; there are no sliders.
 
 !!! note "HVE Studio"
     Only the timesteps and tests the active event's engine actually reads are

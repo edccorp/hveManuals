@@ -11,9 +11,10 @@ EDCRASH is a useful tool for investigating the circumstances of an accident. The
 An extremely useful feature of EDCRASH is the ability to quickly and accurately review the results generated from different input scenarios. Termed *what if* analysis, changes can be made to an isolated variable or set of variables and the effects are displayed immediately. Only the parameters that change need to be modified; the event keeps all the previously entered information. For example, the sensitivity of the results to impact positions, rest positions or principal direction of force can be analyzed by merely changing the event and re-executing.
 
 !!! note "HVE Studio"
-    In HVE Studio a solved event is locked while its results are on screen.
-    Press **Reset** on the playback bar, change the input, and press **Run**
-    again. **Reset** is available only once the event has been run (or a run is under
+    In HVE Studio a solved event stays editable: change the input and press
+    **Run** again. Until you do, the results on screen are marked out of date.
+    (With **Lock inputs while results are shown** in **Options › Preferences** on, press **Reset** on the playback bar first.)
+    **Reset** discards the results. It is available only once the event has been run (or a run is under
     way, failed or was canceled); on an event that has never been executed it is
     grayed out.
 
@@ -90,7 +91,7 @@ Once the raw data are acquired and reduced, analyzing the data involves the foll
   - Optionally, enter each vehicle's damage (CDC, PDOF, stiffness and **Measured Crush**).
   - Optionally, enter the Wheel Data for each vehicle (**Event › Driver Controls**).
 - Execute the reconstruction with **Run** on the playback bar.
-- Modify the event set-up parameters as required to eliminate any fatal errors; diagnostic messages should be reviewed to determine their effect on the results. Press **Reset** before editing a solved event.
+- Modify the event set-up parameters as required to eliminate any fatal errors; diagnostic messages should be reviewed to determine their effect on the results. A solved event can be edited and run again; its results are marked out of date until it is.
 - Finally, review the results in **Key Results** and **Output › HVE Reports**. *(In HVE Studio, File › Record Animation writes the 3-D playback to an AVI video; for a rendered movie, export the scene with File › Export Scene for Blender.)*
 - Save your case (**File › Save Case**)!
 

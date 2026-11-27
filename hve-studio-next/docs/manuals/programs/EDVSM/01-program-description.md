@@ -38,7 +38,7 @@ The procedure for using EDVSM in HVE Studio is the same as for any simulation pr
   - Position the vehicle (drag it in the viewport, or type the values under *Vehicle Initial Conditions*) and give it an initial velocity.
   - Assign driver controls (**Event › Driver Controls**: Throttle, Brake, Steer and Gear tables).
 - Press **Run** on the playback controls in the toolbar (or **Output › Run Simulation**).
-- Modify the inputs as required to achieve the desired match between the simulation and the actual event. A solved event is locked against editing until you press **Reset**.
+- Modify the inputs as required to achieve the desired match between the simulation and the actual event. A solved event stays editable: its results stay on screen, marked out of date, until you run it again.
 - Review the results in the same viewport and through the **Output** menu (HVE Reports, Key Results, Output Graph). If desired, record a video with **File › Record Animation**.
 
 <!-- NAV -->

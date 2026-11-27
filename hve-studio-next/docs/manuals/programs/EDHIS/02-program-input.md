@@ -623,8 +623,8 @@ EDHIS has the following user-selectable simulation model options (see [Calculati
 
 To execute an EDHIS event in HVE Studio, use the playback controls in the toolbar (or **Output › Run Simulation**, Ctrl+R):
 
-- **Run** — Execute the active event. Grayed once the event is solved; press Reset to run it again.
-- **Reset** — Clear the results so the event can be edited and run again.
+- **Run** — Execute the active event. On a solved event it solves the event again (with **Lock inputs while results are shown** in **Options › Preferences** on, it is grayed until **Reset**).
+- **Reset** — Clear the results.
 - **|<** — Jump to the start
 - **<<** — Step back one output step
 - **Play / Pause** — Play the results forwards, or pause
@@ -633,7 +633,7 @@ To execute an EDHIS event in HVE Studio, use the playback controls in the toolba
 
 While a run is in progress the bar offers **Pause**/**Resume** and **Cancel**.
 
-> **NOTE:** A solved event's inputs are read-only until you press **Reset**, so the results on screen always describe the inputs shown.
+> **NOTE:** After a run you can still edit the event; its results stay on screen, marked out of date, until you run it again. To keep a solved event's inputs read-only until **Reset**, turn on **Lock inputs while results are shown** in **Options › Preferences**.
 
 > **NOTE:** Use the **View** menu for display options such as Key Results, Vectors and Humans Through Bodywork.
 

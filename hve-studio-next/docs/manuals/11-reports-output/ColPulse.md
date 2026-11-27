@@ -8,8 +8,8 @@ editor (F5); it is enabled for EDCRASH, SIMON, EDHIS and GATB events.
 ![Collision Pulse dialog for a GATB event](images/hvn-collision-pulse.png)
 
 The vehicle header at the top picks one of the event's vehicles; the pulse is
-stored per event per vehicle. The dialog is locked while the event's results are
-on screen.
+stored per event per vehicle. An edit made while the event's results are on
+screen marks them out of date.
 
 With no pulse stated the occupant run still completes, and the occupant
 responds to the vehicle's own prescribed motion only; nothing is made up in its

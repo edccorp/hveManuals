@@ -329,7 +329,7 @@ where:
 On a *4-Spring Tandem* suspension the leading and trailing springs on each side are joined by an equalizer (load-leveling) linkage. At each evaluation EDVDS calculates the change in spring height that would exactly balance the loads on the two springs, and moves the springs toward it. The rate of that movement is also passed to the suspension dampers.
 
 !!! note "HVE Studio"
-    **This is one of the three places where HVE Studio's physics deliberately differs from HVE.**
+    **This is one of the places where HVE Studio's physics deliberately differs from HVE** (see [Differences from HVE](../../getting-started/05-differences-from-hve.md#physics-differences-by-design)).
 
     *What HVE does.* HVE applies the whole balancing correction in a single evaluation: the equalizer rate is the correction divided by the time since the previous evaluation, limited to 60 in/sec. Because that time shrinks whenever the integrator halves its step to meet the Velocity Convergence criterion, the rate — and the damper force it produces — grows as the step shrinks. The result is a loop: a large damper force makes the step harder to converge, the step halves again, and the rate doubles. In HVE's own runs the equalizer sits on its 60 in/sec limit for 30–51% of all evaluations, which shows up as a persistent, growing tandem oscillation in HVE's output. On some inputs the loop ends the run with the *excessive suspension deflection* message for a deflection that was never actually reached. It also makes the answer sensitive to tiny changes: on one of EDC's tutorial maneuvers, HVE's form moves the end position by 3.2 m for a one-part-in-ten-million change in speed.
 

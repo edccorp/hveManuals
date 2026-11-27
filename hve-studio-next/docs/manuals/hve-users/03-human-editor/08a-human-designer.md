@@ -46,9 +46,10 @@ What a stage covers is a tooltip on its title band (the colored bar naming it): 
    everything below it follows (turning the upper leg carries the lower leg and
    the foot), and the pelvis turns the whole body. The angles written are the
    Body Pose stage's own, relative to the parent segment, and posing is switched
-   on if it was off. The human must be in the active event, and the pose is
-   locked while that event's results are on screen; the 3-D view says so if R
-   cannot start.
+   on if it was off. The human must be in the active event. Posing with that
+   event's results on screen marks them out of date (with **Lock inputs while
+   results are shown** on in **Options › Preferences**, the pose is locked
+   instead); the 3-D view says so if R cannot start.
 
    The same works in the **Event** editor's 3-D view: click a body part of a
    human in the scene, which selects that human (the line at the top of the

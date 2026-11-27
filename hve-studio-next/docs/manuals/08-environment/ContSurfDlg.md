@@ -12,8 +12,8 @@ fourth is assigned by assuming a parallelogram.
     in the 3-D view — in the Vehicle editor, and in the Event editor where they
     ride with the vehicle to its event position — with an arrow showing each
     panel's normal; click a panel there to select it. Lengths follow the units
-    set in Options › Preferences. While a solved run is on screen the window is
-    read-only.
+    set in Options › Preferences. An edit made while a solved run is on screen
+    marks its results out of date.
 
 ![Contact Surfaces window](images/hvn-contact-surfaces.png)
 

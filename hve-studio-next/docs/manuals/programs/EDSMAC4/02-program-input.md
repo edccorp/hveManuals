@@ -375,7 +375,7 @@ Each vehicle is positioned relative to the earth-fixed coordinate system by supp
 > **NOTE:** In HVE, Z, roll and pitch are supplied automatically by HVE using AutoPosition.
 
 !!! note "HVE Studio"
-    For an EDSMAC4 event, auto-positioning is always on, because EDSMAC4 is a planar engine: Z, roll and pitch follow the surface. Enter **X Position**, **Y Position**, **Heading**, **Speed**, **Sideslip** and **Yaw rate** for each vehicle in the **Vehicle Initial Conditions** section of Event Information, or in **Event › Position / Velocity** (Ctrl+P), or move the vehicle in the viewport with the gizmo (G to move, R to rotate). A solved event's initial conditions are locked until you press **Reset**.
+    For an EDSMAC4 event, auto-positioning is always on, because EDSMAC4 is a planar engine: Z, roll and pitch follow the surface. Enter **X Position**, **Y Position**, **Heading**, **Speed**, **Sideslip** and **Yaw rate** for each vehicle in the **Vehicle Initial Conditions** section of Event Information, or in **Event › Position / Velocity** (Ctrl+P), or move the vehicle in the viewport with the gizmo (G to move, R to rotate). After a run they stay editable, and an edit marks the results out of date until the event is run again (with **Lock inputs while results are shown** in **Options › Preferences** on, they are locked until **Reset**).
 
 The vehicle velocities are supplied in the form of a total velocity and sideslip angle.
 
@@ -603,8 +603,8 @@ The default search method is From Previous Polygon, Sorted (friction zones and w
 
 To execute an EDSMAC4 event, use the playback controls in the toolbar. Its buttons have the following functions:
 
-- **Run** — Execute the event. Once the event is solved, Run is disabled until you press Reset.
-- **Reset** — Discard the results so the inputs can be edited and the event run again
+- **Run** — Execute the event. On a solved event it solves the event again with its inputs as they are now (with **Lock inputs while results are shown** in **Options › Preferences** on, Run waits for **Reset**).
+- **Reset** — Discard the results
 - **|<** — Jump to the start of the simulation
 - **<<** — Step back one output step
 - **Play / Pause** — Play the simulation forwards, or pause it
@@ -616,7 +616,7 @@ To execute an EDSMAC4 event, use the playback controls in the toolbar. Its butto
 ![Figure 2-5](images/hvn-edsmac4-playback-bar.png)
 *Figure 2-5: The playback controls in the toolbar: the playback buttons and the camera list. Since 2026-11-04 the bar shows the run's state where Run and Reset were; the run is started on the Run stage.*
 
-> **NOTE:** A solved event's inputs are locked while its results are on screen. To change any vehicle, environment or event set-up input, press **Reset** first, then **Run** again.
+> **NOTE:** After a run you can still edit the event; its results stay on screen, marked out of date, until you run it again. To keep a solved event's inputs read-only until **Reset**, turn on **Lock inputs while results are shown** in **Options › Preferences**.
 
 > **NOTE:** Use the **View** menu to choose useful displays, such as **Key Results**, and **View › Scene Display** for **Skidmarks** and the **Velocity** vector.
 

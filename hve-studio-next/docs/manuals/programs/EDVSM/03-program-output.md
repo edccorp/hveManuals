@@ -159,7 +159,7 @@ The trajectory plays back in the Event editor's viewport, controlled by the play
 The playback bar's controls have the following functions:
 
 - **Run** - Execute the event
-- **Reset** - Discard the results so that the event can be edited and run again
+- **Reset** - Discard the results
 - **|<** - Jump to the start of the simulation
 - **<<** - Step back one output step
 - **Play** - Play the simulation forwards (Pause while playing)

@@ -50,7 +50,7 @@ The procedure for using EDHIS in HVE Studio is:
    - Under *Vehicle Initial Conditions*, give the vehicle its initial position and velocity
    - For occupant simulations, assign a collision pulse (**Event › Collision Pulse**)
 5. Run the event (**Run** on the playback bar, or **Output › Run Simulation**).
-6. Edit and re-run the event, if necessary, to achieve the desired match between simulation results and the actual event. A solved event's inputs are read-only until you press **Reset**.
+6. Edit and re-run the event, if necessary, to achieve the desired match between simulation results and the actual event. A solved event stays editable: its results stay on screen, marked out of date, until you run it again.
 7. Finally, review the results on the **Output** menu and play the event back in the viewport. If desired, record a movie with **File › Record Animation**.
 
 !!! note "HVE Studio"

@@ -33,9 +33,10 @@ unexpected behavior. Let the run proceed rather than clicking through the
 interface while DyMESH is working.
 
 !!! note "HVE Studio"
-    Progress is shown on the Event Designer's **Run** stage. Once an event has results on
-    screen its inputs are read-only until you press **Reset**, so a click during
-    or after a run cannot change the case the results describe.
+    Progress is shown on the Event Designer's **Run** stage. While a run is under way
+    the inputs are locked, so a click cannot change the case the solver is
+    reading. After the run they are editable again, and an edit marks the
+    results out of date until the event is run again.
 
 ## 5. No induced damage
 

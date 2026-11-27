@@ -85,7 +85,7 @@ Using the tutorial case, select each tab in turn. The Human editor shows the cas
 ### Using Dialogs
 
 !!! note "HVE Studio"
-    Every HVE Studio dialog is modeless, and a value takes effect as soon as it is entered — there is no OK, Apply or `<Enter>` step. Drag a numeric field left or right to change it, or double-click (or Ctrl+click) it to type a value; a double-click selects the whole number. Units follow **Options › Preferences…**. While a run's results are on screen, the inputs they were computed from are read-only, with a banner saying so; press **Reset** on the playback bar to edit them.
+    Every HVE Studio dialog is modeless, and a value takes effect as soon as it is entered — there is no OK, Apply or `<Enter>` step. Drag a numeric field left or right to change it, or double-click (or Ctrl+click) it to type a value; a double-click selects the whole number. Units follow **Options › Preferences…**. While a run's results are on screen, the inputs they were computed from stay editable; an edit marks the results out of date, with a note saying what changed, until the event is run again.
 
 The most important example is **Event › Position / Velocity…**, the Event Editor's Position/Velocity dialog.
 
@@ -168,9 +168,9 @@ To set up the event:
 
 > **NOTE:** Only the set-up options the chosen calculation method uses are offered on the **Event** menu.
 
-Execute the event with the **playback bar** under the Viewport: **Run** solves the event; **Reset** discards the results so the inputs can be edited again; the transport buttons go to the start, step back, **Play**, step forward and go to the end, and the slider moves through the run. **Output › Run Simulation…** also runs the event, and opens the Event Designer on its **Run** stage, which shows its progress, its status, and its **Duration** and timesteps.
+Execute the event with the **playback bar** under the Viewport: **Run** solves the event; **Reset** discards the results; the transport buttons go to the start, step back, **Play**, step forward and go to the end, and the slider moves through the run. **Output › Run Simulation…** also runs the event, and opens the Event Designer on its **Run** stage, which shows its progress, its status, and its **Duration** and timesteps.
 
-> **NOTE:** Inputs are locked while results are on screen. To change the event after a run, press **Reset**, edit, and **Run** again.
+> **NOTE:** Inputs stay editable while results are on screen. To change the event after a run, edit it and **Run** again; until then the results are marked out of date.
 
 Press **Run**. The Charger moves according to the vehicle model, the terrain, the initial position and velocity, and the steering input, until the simulation's duration (5.0 seconds) is reached. Press **Play** to replay it; replaying does not re-run the physics.
 

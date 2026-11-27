@@ -48,7 +48,7 @@ The procedure for using EDSVS in HVE Studio is the same as for any simulation pr
    - Position the vehicle (drag it in the viewport, or type the values under *Vehicle Initial Conditions*), and assign an initial velocity.
    - Assign driver controls (**Event › Driver Controls**: Steer, Brake and Throttle tables).
 4. Press **Run** on the playback controls in the toolbar (or **Output › Run Simulation**).
-5. Modify the initial conditions and driver inputs as required to achieve the desired match between the simulation and actual event. A solved event is locked against editing until you press **Reset**.
+5. Modify the initial conditions and driver inputs as required to achieve the desired match between the simulation and actual event. A solved event stays editable: its results stay on screen, marked out of date, until you run it again.
 6. Review the results in the same viewport and through the **Output** menu (HVE Reports, Key Results, Output Graph). If desired, record a video with **File › Record Animation**.
 
 ---

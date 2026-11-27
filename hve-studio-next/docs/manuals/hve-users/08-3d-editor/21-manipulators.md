@@ -7,7 +7,7 @@ In HVE, an object selected in the 3-D Editor is positioned and sized with one of
 !!! note "HVE Studio"
     HVE Studio has no manipulator menu. It has **one gizmo**, used in the **Event editor (F5)** to place a vehicle's starting position (and the measured scene positions drawn as ghosts), plus Blender-style keyboard operators: **G** to move and **R** to rotate, and, in the Environment and Vehicle editors, **S** to scale (see the notes at the end of [HVE Manipulators](#hve-manipulators)). The camera has its own controls (see [Chapter 19](19-using-3d-editor.md#navigating-the-3-d-view) and [Cameras](#cameras) below).
 
-    The gizmo is available only while the event's inputs are editable: once a run's results are on screen the start layout is locked until **Reset** on the playback bar.
+    The gizmo is available while the event's inputs are editable, which includes while a run's results are on screen: moving a vehicle then marks the results out of date until the event is run again. It is unavailable while a run is in progress, and, with **Lock inputs while results are shown** on in **Options › Preferences**, until **Reset** on the playback bar.
 
 ## The Vehicle Gizmo
 

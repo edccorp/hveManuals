@@ -580,7 +580,9 @@ stations are spaced equally across it in EDCRASH's own order: C1 is the LEFT
 end of a front or back and the REAR end of a side, and the offset is the
 center of the width from the CG (positive to the right for a front or back,
 forward for a side). **Apply to the event** writes the depths, width and
-offset into Measured Crush; it is locked while results are on screen.
+offset into Measured Crush. After a run it is available as usual and the results are
+marked out of date; with **Lock inputs while results are shown** in **Options › Preferences**
+on it is locked while results are on screen.
 
 #### Payload
 
@@ -707,16 +709,19 @@ In HVE Studio an event is executed from the **playback bar** under the viewport,
 The playback bar's buttons have the following functions:
 
 - **Run** — Execute the active event
-- **Reset** — Discard the results so the event's inputs can be edited and the event run again
+- **Reset** — Discard the results
 - **|<**, **<<**, **Play**, **>>**, **>|** — Rewind to start, step back, play, step forward and advance to end of the playback
 
 Because EDCRASH is a reconstruction program (as opposed to a simulation program), it performs a single set of calculations and terminates. Pressing **Run** causes the EDCRASH calculations to be performed. Pressing **Reset** erases the event output (next chapter); it does not affect the event input.
 
 !!! note "HVE Studio"
-    - While an event's results are on screen its inputs are locked, and the
-      Event Information panel says so ("Showing results for this event --
-      inputs are locked..."). Press **Reset** (or **Reset Run to Edit** in
-      the panel) to edit and re-run.
+    - While an event's results are on screen its inputs stay editable. An
+      edit marks the results out of date, and the Event Information panel
+      says what changed until the event is run again. With
+      **Lock inputs while results are shown** in **Options › Preferences** on, the inputs are
+      locked instead ("Showing results for this event -- inputs are
+      locked..."); press **Reset** (or **Reset Run to Edit** in the panel) to
+      edit and re-run.
     - After the run the viewport plays a path for each vehicle drawn through
       its surveyed positions (Begin Braking, Impact, Separation, Point on
       Curve, End of Rotation, Rest) at the speeds EDCRASH solved, and labels

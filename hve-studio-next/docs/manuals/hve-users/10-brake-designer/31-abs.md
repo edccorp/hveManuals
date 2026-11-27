@@ -144,7 +144,7 @@ may be supported. The interface is divided into two sections:
 The interface, dialogs and associated variables are described below.
 
 !!! note "HVE Studio"
-    Choose **Vehicle › Editors › Brakes › ABS / Brake Design…**. The window has two buttons: **ABS System…** opens the **ABS System** dialog (the system variables, for the whole vehicle) and **ABS Designer…** opens the **ABS Designer** (the wheel variables, one column per wheel: A1 Right, A1 Left, A2 Right, …). In the ABS Designer, the **Brake Group** buttons (B1, B2, ...) above each column tie wheels together: editing a value in one column copies it to every column in the same group. The wheels whose brakes are identical start in the same group. Like every vehicle dialog, both are read-only while a run's results are on screen, until **Reset**.
+    Choose **Vehicle › Editors › Brakes › ABS / Brake Design…**. The window has two buttons: **ABS System…** opens the **ABS System** dialog (the system variables, for the whole vehicle) and **ABS Designer…** opens the **ABS Designer** (the wheel variables, one column per wheel: A1 Right, A1 Left, A2 Right, …). In the ABS Designer, the **Brake Group** buttons (B1, B2, ...) above each column tie wheels together: editing a value in one column copies it to every column in the same group. The wheels whose brakes are identical start in the same group. Like every vehicle dialog, an edit made in either while a run's results are on screen marks those results out of date.
 
     The window also notes that S-cam brake geometry is edited in **Vehicle › Editors › Brakes › Brake Designer** ([Chapter 29](29-brake-designer.md)).
 

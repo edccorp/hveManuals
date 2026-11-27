@@ -19,8 +19,8 @@ law (for contact with the ground) and its soil properties (for sinkage).
     Outliner).
 
     Forces, stiffnesses and damping follow the units set in Options ›
-    Preferences. While a solved run is on screen the physics rows are
-    read-only.
+    Preferences. An edit to the physics rows while a solved run is on
+    screen marks its results out of date.
 
 ## Surface Type
 

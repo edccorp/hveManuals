@@ -10,9 +10,11 @@ the [HVE Manual](../README.md).
     All of these are reached from the **Event** editor (F5). The **Event** menu
     and the **Event Information** panel replace HVE's Event Set-up menu and its
     Event Information dialog. Inputs for an event that has results on screen
-    are read-only until the run is reset (press **Reset** under the viewport or
-    on the Event Designer's Run stage); every one of these dialogs shows a banner saying
-    so.
+    stay editable; an edit marks the results **out of date** (a note says what
+    changed) until the event is run again. With **Lock inputs while results are
+    shown** on in **Options › Preferences**, they are read-only until the run is
+    reset (press **Reset** under the viewport or on the Event Designer's Run
+    stage), and every one of these dialogs shows a banner saying so.
 
 ## Pages
 
