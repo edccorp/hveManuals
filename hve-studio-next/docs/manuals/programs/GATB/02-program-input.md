@@ -582,7 +582,7 @@ The Restraints dialog determines if a belt or airbag restraint system is in use 
 For belt restraint systems, Torso and Lap belt sections may be supplied individually. The following in-use parameters are required for each belt section:
 
 - **Attached To** — The name of the human segment (Pelvis, Abdomen, Chest…) to which the belt is attached.
-- **Attachment Coordinates** — The segment-fixed coordinates of the anchor point for the left and right belt sections.
+- **Attachment Coordinates** — The segment-fixed coordinates of the anchor point for the left and right belt sections. In HVE Studio, a section that states none (it still has the placeholder on the body's centerline) is put on the sides of the occupant's chest or pelvis for the run, and **Place on the Body's Sides** in **Vehicle › Editors › Belt Restraint** writes the same points into the case (see that dialog).
 - **Belt Slack** — The initial slack in the belt for the left and right belt sections.
 
 > **NOTE:** Negative slack may be supplied to model belt pre-loading.

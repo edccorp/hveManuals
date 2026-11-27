@@ -78,6 +78,26 @@ For the left and right belt segments:
 - **I**, **J**, **K** — the belt attachment point on the body segment, in the
   segment's coordinate system. HVE's *Segment Coordinates*.
 
+**Place on the Body's Sides** — sets the two body points of the selected
+section on the sides of the segment of the occupant who sits in this seat in
+the active event (seat one first; the button is unavailable otherwise). The
+torso belt goes on the sides of the chest, high on the D-ring's side and low
+on the buckle's, so it crosses the chest diagonally; the lap belt goes on the
+sides of the pelvis at its center height, so it wraps the hips. The D-ring is
+the torso section's higher vehicle anchor.
+
+!!! note "HVE Studio"
+    A new belt's body points are a placeholder that is on the body's
+    centerline. When a section still has those points, a note under the
+    section says so, and a GATB run uses the same placement as **Place on
+    the Body's Sides** on that occupant instead. An EDHIS run uses the points
+    as stored. The run status
+    then says *belt at seat N meets the sides of the occupant's chest and
+    pelvis*. Before November 2026 the run used the placeholder, which put the
+    shoulder belt straight down the middle of the chest. Points stated by the
+    case, such as those imported from an HVE file or edited here, are used as
+    stated.
+
 ## Vehicle Anchor
 
 **Left end: forward of CG**, **Left end: right of CG**, **Left end: below CG**,
