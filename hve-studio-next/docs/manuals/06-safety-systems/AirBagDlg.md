@@ -69,6 +69,13 @@ center). Used by GATB.
 - **Initial Radius** — initial (undeployed) radius of the airbag.
 - **Passenger Bag Length** — length for non-driver-side (passenger) airbags.
 
+!!! note "HVE Studio"
+    GATB inflates the bag to the **Full Inflated Volume**: the **Initial
+    Radius** and **Passenger Bag Length** set only its shape (a driver's bag is
+    a sphere; a passenger's keeps their proportions). HVE's GATB used the
+    Initial Radius as the inflated bag's size. EDHIS starts the bag at the
+    Initial Radius and grows it to the Full Inflated Volume.
+
 ## Gas Properties
 
 - **Initial Pressure** — initial pressure inside the airbag.
@@ -114,6 +121,17 @@ HVE's typical ranges and defaults are listed under the fields.
     **Bag Mass (kg)**, **Panel Spring Rate (N/m)**, **Panel Friction Coef**,
     **Mass Multiplier**, **Bag Yaw (deg)** and **Bag Roll (deg)**. The defaults
     reproduce the values GATB used to have built in.
+
+!!! note "HVE Studio"
+    GATB inflates the bag from a gas cylinder, and HVE stores no pressure for
+    it. When the bag states a **Mass Flow Rate** and a **Fill Duration**, the
+    cylinder holds that much gas (rate times duration) and its throat lets 95%
+    of it out by the Fill Duration, so the bag is filled when the case says the
+    inflator stops. **Supply Volume**, **Sonic Discharge Coef** and **Sonic
+    Throat Area** then do not change the run and are grayed. Without a rate and
+    duration the cylinder is these fields', holding just enough gas to fill the
+    bag. The run status says which. The bag fires at the **Begin Fill Time** as
+    stated (HVE's GATB rounded it to 0.01 s).
 
 !!! warning "Not in HVE Studio"
     - **OK / Cancel**, and range warnings when a field is left: edits apply
