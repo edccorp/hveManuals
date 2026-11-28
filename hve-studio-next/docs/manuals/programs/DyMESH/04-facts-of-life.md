@@ -51,6 +51,21 @@ behavior of structure not captured in all cases; no induced damage.")
 only enters the damage profile once it has been marked as damaged, which happens
 only after it has penetrated a primary surface and been restored.)*
 
+!!! note "HVE Studio: how crush is shared in a side impact"
+    Each face of a vehicle (front, sides, back, top, undercarriage) has one stiffness over its whole height and
+    length. A real side is not like that: the sill and the base of the B-pillar are far stiffer than the door between
+    them. Measured against 162 NHTSA FMVSS 214 side tests, with each struck side's stiffness fitted to its test, the
+    closing between the two vehicles, both delta-Vs, the struck car's yaw and the shape of its crush profile come out
+    right, but **the crush is shared wrongly**: the struck car keeps about 6 in more crush than the test, and the
+    barrier about 5 in less. The barrier's stiff lower bumper element meets the real car's sill and crushes; here it
+    meets the soft side and the car crushes instead.
+
+    In practice: when a stiff, low striking structure (a barrier's bumper, a truck's bumper or frame, a car's rails)
+    hits a side, expect the struck side's crush to be over-stated. Matching the struck car's measured crush by stiffening
+    its side will then put the delta-V and the closing off. Fit to the delta-V or the closing, and read the side crush
+    with this in mind. Two vehicles meeting front to front have a related limit: the delta-Vs are good, but how the
+    crush divides between the two fronts is not reliably predicted.
+
 ## 6. Mesh quality is a factor
 
 The quality of the vehicle mesh directly affects the result:

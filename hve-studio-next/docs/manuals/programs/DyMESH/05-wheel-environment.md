@@ -231,6 +231,20 @@ as the last collision partner of every vehicle, in this order:
      contact movement (see the [Version 3 chapter](03-version-3.md));
      displacement is horizontal (x, y) only, since vertical wheel motion is a
      suspension degree of freedom.
+
+!!! note "HVE Studio: the wheel stops against its own car"
+    In HVE a displaced wheel can only meet the *other* vehicle, so nothing stops it short of the far side of its own
+    car: in a side impact a struck front wheel was driven 15–26 in inward. With the redesigned node law (law 2),
+    HVE Studio stops it where a car's own structure would. Past a gap, a stiff spring (20,000 lb/in) resists any
+    further travel: **inward** at 0.21 of the wheel's distance from the vehicle's center line (where the frame
+    rail is), and **rearward** 1.5 in on the front axle (the lower A-pillar). The gaps were measured in George
+    Mason University's CCSA finite-element models of a 2015 Toyota Camry and a 2010 Toyota Yaris. A body-on-frame
+    truck's frame sits further in (0.29 on the 2007 Chevrolet Silverado), so on such a truck the wheel is stopped
+    about 3 in early. The stop matters when a side impact strikes the front wheel itself: with a barrier face
+    centered on the wheel it took about 3 in off the struck-side crush and added about 5° of yaw. In the FMVSS 214
+    side test the barrier's face starts behind the front wheel and barely touches it, so there the stop changes
+    nothing; frontal barrier tests change very little. No measured test yet checks the stop's size. HVE's original
+    contact keeps HVE's unbounded wheel.
 4. **Smoothing.** Each wheel's force and moment is averaged with the previous
    step's values (two-point moving average). The smoothed previous vertical
    force is what the tire-model handoff (below) reads.
