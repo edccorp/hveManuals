@@ -66,14 +66,14 @@ The report echoes the ATB "Crash Victim" input cards (Cards B.1–B.3): for each
 The Injury Data Report includes the HIC (Head Injury Criterion), HSI (Head Severity Index) and CSI (Chest Severity Index) results for each human: the HIC value with its time duration and average head resultant acceleration, the HSI value with the maximum head resultant acceleration and its time, and the CSI value with the maximum chest resultant acceleration and its time.
 
 !!! note "HVE Studio"
-    The run status (the Event Designer's **Run** stage) also reports the occupant's peak head and torso accelerations.
+    The run status (the Event Designer's **Run** stage) also reports the occupant's peak head and torso accelerations. The torso figure is the larger of the chest's and the pelvis's peaks, and the status names it by which one it is, for example "pelvis 126.8 g".
 
 ### Message
 
 For a complete listing of messages issued by GATB, see [Chapter 6, Messages](06-messages.md).
 
 !!! note "HVE Studio"
-    A run that stops early is also reported in the run status, with the ATB stop code and the step at which it stopped; peaks from a run whose track stops early are flagged as not comparable with a full run.
+    A run that stops early is also reported in the run status, with the ATB stop code and the step at which it stopped; peaks from a run whose track stops early are flagged as not comparable with a full run. A stop raised while ATB reads its input (for example STOP 81, a vehicle table longer than ATB's 1001 points) ends the run there, as it does in ATB, and nothing is integrated.
 
 ### Program Data
 
